@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "የምላሽ ቋንቋ" },
   "menuLabel_colorScheme": { "message": "_ይዞታዎች" },
   "menuLabel_auto": { "message": "በራሱ" },
-  "menuLabel_enable": { "message": "አስቻለ" },
-  "menuLabel_disable": { "message": "Կասեցնել" },
   "menuLabel_about": { "message": "ስለ" },
   "menuLabel_settings": { "message": "ቅንብሮች" },
   "about_version": { "message": "እትም" },

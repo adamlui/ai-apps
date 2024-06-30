@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Jezik odgovora" },
   "menuLabel_colorScheme": { "message": "Odabir boje" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Omogućivati" },
-  "menuLabel_disable": { "message": "Onemogući" },
   "menuLabel_about": { "message": "O nama" },
   "menuLabel_settings": { "message": "Postavke" },
   "about_version": { "message": "Verzija" },

@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Мова адказу" },
   "menuLabel_colorScheme": { "message": "колеравая схема" },
   "menuLabel_auto": { "message": "Аўта" },
-  "menuLabel_enable": { "message": "Уключыць" },
-  "menuLabel_disable": { "message": "Інваліднасць" },
   "menuLabel_about": { "message": "Пра нас" },
   "menuLabel_settings": { "message": "Налады" },
   "about_version": { "message": "Версія" },

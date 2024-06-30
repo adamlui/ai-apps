@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "उत्तर भाषा" },
   "menuLabel_colorScheme": { "message": "रंग योजनाplasma name" },
   "menuLabel_auto": { "message": "अपने-आप" },
-  "menuLabel_enable": { "message": "कायमु " },
-  "menuLabel_disable": { "message": "नाकामु " },
   "menuLabel_about": { "message": "परिचय" },
   "menuLabel_settings": { "message": "सेटिंग" },
   "about_version": { "message": "संस्करण" },

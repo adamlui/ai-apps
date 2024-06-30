@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Vastauskieli" },
   "menuLabel_colorScheme": { "message": "Väriteema" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Ota käyttöön" },
-  "menuLabel_disable": { "message": "Poista käytöstä" },
   "menuLabel_about": { "message": "Tietoa" },
   "menuLabel_settings": { "message": "Asetukset" },
   "about_version": { "message": "Versio" },

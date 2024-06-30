@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Γλώσσα απάντησης" },
   "menuLabel_colorScheme": { "message": "Σχήμα Χρωμάτων" },
   "menuLabel_auto": { "message": "Αυτόματη εφαρμογή" },
-  "menuLabel_enable": { "message": "Ενεργοποίησε" },
-  "menuLabel_disable": { "message": "Απενεργοποίηση" },
   "menuLabel_about": { "message": "Σχετικά" },
   "menuLabel_settings": { "message": "Ρυθμίσεις" },
   "about_version": { "message": "Έκδοση" },

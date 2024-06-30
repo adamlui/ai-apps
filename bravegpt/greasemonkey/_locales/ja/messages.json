@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "返信言語" },
   "menuLabel_colorScheme": { "message": "配色" },
   "menuLabel_auto": { "message": "自動" },
-  "menuLabel_enable": { "message": "有効" },
-  "menuLabel_disable": { "message": "無効化" },
   "menuLabel_about": { "message": "詳細" },
   "menuLabel_settings": { "message": "設定" },
   "about_version": { "message": "バージョン" },

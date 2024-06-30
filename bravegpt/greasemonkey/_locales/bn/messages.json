@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "উত্তর ভাষা" },
   "menuLabel_colorScheme": { "message": "বর্ণবিন্যাস" },
   "menuLabel_auto": { "message": "স্বয়ংক্রিয়" },
-  "menuLabel_enable": { "message": "সক্ষম করুন" },
-  "menuLabel_disable": { "message": "অক্ষম করুন" },
   "menuLabel_about": { "message": "সম্বন্ধে" },
   "menuLabel_settings": { "message": "সেটিংস" },
   "about_version": { "message": "সংস্করণ" },

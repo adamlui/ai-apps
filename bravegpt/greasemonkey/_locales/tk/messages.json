@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Dilde jogap beriň" },
   "menuLabel_colorScheme": { "message": "Renk Saýlaw" },
   "menuLabel_auto": { "message": "Maşyn" },
-  "menuLabel_enable": { "message": "Mümkin Et" },
-  "menuLabel_disable": { "message": "Söndür" },
   "menuLabel_about": { "message": "_Barada" },
   "menuLabel_settings": { "message": "Saýlamalar" },
   "about_version": { "message": "Veržen" },

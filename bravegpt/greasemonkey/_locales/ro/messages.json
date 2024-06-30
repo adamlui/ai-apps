@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Limbă răspuns" },
   "menuLabel_colorScheme": { "message": "Schema de culori" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Activează" },
-  "menuLabel_disable": { "message": "Dezactivează" },
   "menuLabel_about": { "message": "Despre" },
   "menuLabel_settings": { "message": "Setări" },
   "about_version": { "message": "Versiune" },

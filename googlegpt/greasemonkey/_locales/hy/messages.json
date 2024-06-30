@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Պատասխանելու լեզու" },
   "menuLabel_colorScheme": { "message": "Գունային սխեմա" },
   "menuLabel_auto": { "message": "Ավտոմեքենա" },
-  "menuLabel_enable": { "message": "Միացնել" },
-  "menuLabel_disable": { "message": "&Անջատել" },
   "menuLabel_about": { "message": "Մանրամասն" },
   "menuLabel_settings": { "message": "Կարգավորումներ" },
   "about_version": { "message": "Ստանալ պրեմիում տարբերակը" },

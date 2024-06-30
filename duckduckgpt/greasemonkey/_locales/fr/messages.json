@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Langue de réponse" },
   "menuLabel_colorScheme": { "message": "Jeu de couleurs" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Activer" },
-  "menuLabel_disable": { "message": "Désactiver" },
   "menuLabel_about": { "message": "À propos de" },
   "menuLabel_settings": { "message": "Paramètres" },
   "about_version": { "message": "Version" },

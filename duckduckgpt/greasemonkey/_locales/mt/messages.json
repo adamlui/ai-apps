@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Lingwa tat-Tweġibiet" },
   "menuLabel_colorScheme": { "message": "Skema tal-Kulur" },
   "menuLabel_auto": { "message": "Awto" },
-  "menuLabel_enable": { "message": "Attiva " },
-  "menuLabel_disable": { "message": "Iddiżattiva" },
   "menuLabel_about": { "message": "Dwar" },
   "menuLabel_settings": { "message": "Settings" },
   "about_version": { "message": "Verżjoni" },

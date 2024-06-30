@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "ਜਵਾਬ ਭਾਸ਼ਾ" },
   "menuLabel_colorScheme": { "message": "ਰੰਗ ਸਕੀਮ" },
   "menuLabel_auto": { "message": "ਆਟੋ" },
-  "menuLabel_enable": { "message": "ਸਮਰੱਥ ਕਰੋ" },
-  "menuLabel_disable": { "message": "ਅਯੋਗ" },
   "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },
   "menuLabel_settings": { "message": "GConf ਸੈਟਿੰਗ" },
   "about_version": { "message": "ਵਰਜਨ" },

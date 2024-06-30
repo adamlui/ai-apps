@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Bahasa Balas" },
   "menuLabel_colorScheme": { "message": "Skema Warna" },
   "menuLabel_auto": { "message": "Otomatis" },
-  "menuLabel_enable": { "message": "Fungsikan" },
-  "menuLabel_disable": { "message": "Nonaktifkan" },
   "menuLabel_about": { "message": "Ihwal" },
   "menuLabel_settings": { "message": "Pengaturan" },
   "about_version": { "message": "Versi" },

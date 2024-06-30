@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Luqadda Jawaabta" },
   "menuLabel_colorScheme": { "message": "Qorshaha Midabka" },
   "menuLabel_auto": { "message": "Baabuur" },
-  "menuLabel_enable": { "message": "Ogolow" },
-  "menuLabel_disable": { "message": "Joojin" },
   "menuLabel_about": { "message": "Jabuuti" },
   "menuLabel_settings": { "message": "Settings" },
   "about_version": { "message": "Version" },

@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "ឆ្លើយតប ភាសា" },
   "menuLabel_colorScheme": { "message": "គ្រោងការណ៍ពណ៌" },
   "menuLabel_auto": { "message": "អូតូ" },
-  "menuLabel_enable": { "message": "បើកដំណើរការ" },
-  "menuLabel_disable": { "message": "បិទដំណើរការ" },
   "menuLabel_about": { "message": "អំពី" },
   "menuLabel_settings": { "message": "ការកំណត់មុខងារ" },
   "about_version": { "message": "លេខជំនាន់កម្មវិធី" },

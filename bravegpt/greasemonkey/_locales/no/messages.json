@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Svar Språk" },
   "menuLabel_colorScheme": { "message": "Fargepalett" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Aktiver" },
-  "menuLabel_disable": { "message": "Deaktiver" },
   "menuLabel_about": { "message": "Om" },
   "menuLabel_settings": { "message": "Innstillinger" },
   "about_version": { "message": "Versjon" },

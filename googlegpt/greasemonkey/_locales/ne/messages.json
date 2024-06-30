@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "जवाफ भाषा" },
   "menuLabel_colorScheme": { "message": "रङ योजना" },
   "menuLabel_auto": { "message": "लेखक" },
-  "menuLabel_enable": { "message": "सक्षम पार्नुहोस्,सक्रिय" },
-  "menuLabel_disable": { "message": "असक्षम , निश्क्रिय" },
   "menuLabel_about": { "message": "बारेमा" },
   "menuLabel_settings": { "message": "सेटिङहरू" },
   "about_version": { "message": "संस्करण" },

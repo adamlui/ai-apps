@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Yankhani Chilankhulo" },
   "menuLabel_colorScheme": { "message": "Mtundu Ndondomeko" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Yambitsani" },
-  "menuLabel_disable": { "message": "Kulepheretsa" },
   "menuLabel_about": { "message": "Zokhudza" },
   "menuLabel_settings": { "message": "Zikhazikiko" },
   "about_version": { "message": "Lumikizanani nafe" },

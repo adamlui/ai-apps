@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Reo Whakautu" },
   "menuLabel_colorScheme": { "message": "_Huri" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Ka taea te whakauru" },
-  "menuLabel_disable": { "message": "Mono" },
   "menuLabel_about": { "message": "Mō" },
   "menuLabel_settings": { "message": "Ngā Tautuhinga" },
   "about_version": { "message": "Whakaaturanga" },

@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "ตอบกลับภาษา" },
   "menuLabel_colorScheme": { "message": "ชุดสีplasma name" },
   "menuLabel_auto": { "message": "อัตโนมัติ" },
-  "menuLabel_enable": { "message": "เปิดใช้งาน" },
-  "menuLabel_disable": { "message": "ปิดการใช้งาน" },
   "menuLabel_about": { "message": "เกี่ยวกับ" },
   "menuLabel_settings": { "message": "การตั้งค่า" },
   "about_version": { "message": "เวอร์ชัน" },

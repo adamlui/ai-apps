@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Phendula Ulimi" },
   "menuLabel_colorScheme": { "message": "Uhlelo Lwemibala" },
   "menuLabel_auto": { "message": "Ukuzenzakalela" },
-  "menuLabel_enable": { "message": "Vumela" },
-  "menuLabel_disable": { "message": "Didekile" },
   "menuLabel_about": { "message": "Mayelana" },
   "menuLabel_settings": { "message": "Sebenzisa uhlelo X" },
   "about_version": { "message": "Uhlelo" },

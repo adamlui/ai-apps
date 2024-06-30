@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Svarsprog" },
   "menuLabel_colorScheme": { "message": "Farve skema" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Aktiver" },
-  "menuLabel_disable": { "message": "Deaktivere" },
   "menuLabel_about": { "message": "Om" },
   "menuLabel_settings": { "message": "Indstillinger" },
   "about_version": { "message": "Version" },

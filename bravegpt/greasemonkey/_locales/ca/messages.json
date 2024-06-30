@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Idioma de la resposta" },
   "menuLabel_colorScheme": { "message": "Esquema de color" },
   "menuLabel_auto": { "message": "Automàtic" },
-  "menuLabel_enable": { "message": "Activa" },
-  "menuLabel_disable": { "message": "Desactiva" },
   "menuLabel_about": { "message": "Quant a" },
   "menuLabel_settings": { "message": "Configuració" },
   "about_version": { "message": "Versió" },

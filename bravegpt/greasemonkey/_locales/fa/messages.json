@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "زبان پاسخ" },
   "menuLabel_colorScheme": { "message": "رنگ اسکیما" },
   "menuLabel_auto": { "message": "خودکار" },
-  "menuLabel_enable": { "message": "فعال" },
-  "menuLabel_disable": { "message": "غیر‌فعال" },
   "menuLabel_about": { "message": "درباره" },
   "menuLabel_settings": { "message": "تنظیمات" },
   "about_version": { "message": "نسخه برنامه" },

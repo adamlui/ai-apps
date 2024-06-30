@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Език на отговора" },
   "menuLabel_colorScheme": { "message": "Без запазване" },
   "menuLabel_auto": { "message": "Автоматичен" },
-  "menuLabel_enable": { "message": "Включи" },
-  "menuLabel_disable": { "message": "Изключи" },
   "menuLabel_about": { "message": "Относно" },
   "menuLabel_settings": { "message": "Настройки" },
   "about_version": { "message": "Версия" },

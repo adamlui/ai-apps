@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Javob berish tili" },
   "menuLabel_colorScheme": { "message": "Rang sxemasi" },
   "menuLabel_auto": { "message": "Avtomatik" },
-  "menuLabel_enable": { "message": "Yoqish" },
-  "menuLabel_disable": { "message": "O'chirish" },
   "menuLabel_about": { "message": "Qisqacha ma'lumot" },
   "menuLabel_settings": { "message": "Sozlamalar" },
   "about_version": { "message": "Versiya" },

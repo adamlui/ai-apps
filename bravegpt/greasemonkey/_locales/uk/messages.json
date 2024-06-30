@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Мова відповіді" },
   "menuLabel_colorScheme": { "message": "Схема кольору" },
   "menuLabel_auto": { "message": "Автоматичний режим" },
-  "menuLabel_enable": { "message": "Увімкнути" },
-  "menuLabel_disable": { "message": "Вимкнути" },
   "menuLabel_about": { "message": "Про нас" },
   "menuLabel_settings": { "message": "Налаштування" },
   "about_version": { "message": "Версія" },

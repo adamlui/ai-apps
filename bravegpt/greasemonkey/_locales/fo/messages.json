@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Svar á mál" },
   "menuLabel_colorScheme": { "message": "Farva" },
   "menuLabel_auto": { "message": "Bilur" },
-  "menuLabel_enable": { "message": "Aktivera" },
-  "menuLabel_disable": { "message": "Avlýsir" },
   "menuLabel_about": { "message": "Um" },
   "menuLabel_settings": { "message": "Stillingar" },
   "about_version": { "message": "Útgáva" },

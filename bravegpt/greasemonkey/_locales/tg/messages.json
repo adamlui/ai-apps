@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Забони ҷавоб" },
   "menuLabel_colorScheme": { "message": "Схемаи рангҳо" },
   "menuLabel_auto": { "message": "Худкор" },
-  "menuLabel_enable": { "message": "Фаъол кардан" },
-  "menuLabel_disable": { "message": "Ғайрифаъол кардан" },
   "menuLabel_about": { "message": "Дар бораи" },
   "menuLabel_settings": { "message": "Танзимот" },
   "about_version": { "message": "Версия" },

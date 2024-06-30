@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Cànan freagairte" },
   "menuLabel_colorScheme": { "message": "Scheama Dath" },
   "menuLabel_auto": { "message": "Fèin-ghnìomhach" },
-  "menuLabel_enable": { "message": "Enable" },
-  "menuLabel_disable": { "message": "Disable" },
   "menuLabel_about": { "message": "Mu dheidhinn" },
   "menuLabel_settings": { "message": "Roghainnean" },
   "about_version": { "message": "Versa" },

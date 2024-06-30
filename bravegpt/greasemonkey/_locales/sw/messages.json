@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Jibu Lugha" },
   "menuLabel_colorScheme": { "message": "Mpango wa Rangi" },
   "menuLabel_auto": { "message": "Otomatiki" },
-  "menuLabel_enable": { "message": "Wezesha" },
-  "menuLabel_disable": { "message": "Lemaza" },
   "menuLabel_about": { "message": "Kuhusu" },
   "menuLabel_settings": { "message": "Mipangilio" },
   "about_version": { "message": "Toleo" },

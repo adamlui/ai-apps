@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Tungumál svars" },
   "menuLabel_colorScheme": { "message": "Litaskema" },
   "menuLabel_auto": { "message": "Sjálfvirkt" },
-  "menuLabel_enable": { "message": "Virkja" },
-  "menuLabel_disable": { "message": "Slökkva" },
   "menuLabel_about": { "message": "Um" },
   "menuLabel_settings": { "message": "Stillingar" },
   "about_version": { "message": "Útgáfa" },

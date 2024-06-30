@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Pindura Mutauro" },
   "menuLabel_colorScheme": { "message": "Ruvara Scheme" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Ita kuti zvikwanisike" },
-  "menuLabel_disable": { "message": "Dzima" },
   "menuLabel_about": { "message": "Nezvedu" },
   "menuLabel_settings": { "message": "Masetingi" },
   "about_version": { "message": "Vhezheni" },

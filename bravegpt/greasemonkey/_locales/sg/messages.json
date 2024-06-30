@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Yanga ti awambongi" },
   "menuLabel_colorScheme": { "message": "Mbeni ye so ayeke na yâ ti mbeni ye so ayeke na" },
   "menuLabel_auto": { "message": "Ala Auto" },
-  "menuLabel_enable": { "message": "Enable ti" },
-  "menuLabel_disable": { "message": "Disable fade" },
   "menuLabel_about": { "message": "About sara" },
   "menuLabel_settings": { "message": "Akpengba ye so a leke na yâ ti Bible" },
   "about_version": { "message": "Yângâ tî kodoro" },

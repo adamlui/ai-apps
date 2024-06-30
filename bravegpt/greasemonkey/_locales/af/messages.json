@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Beantwoord Taal" },
   "menuLabel_colorScheme": { "message": "Kleurskema" },
   "menuLabel_auto": { "message": "Ada" },
-  "menuLabel_enable": { "message": "Aktiveer" },
-  "menuLabel_disable": { "message": "Deaktiveer" },
   "menuLabel_about": { "message": "Omtrent" },
   "menuLabel_settings": { "message": "bevel" },
   "about_version": { "message": "Weergawe" },

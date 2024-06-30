@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "회신 언어" },
   "menuLabel_colorScheme": { "message": "색 구성표" },
   "menuLabel_auto": { "message": "자동" },
-  "menuLabel_enable": { "message": "사용" },
-  "menuLabel_disable": { "message": "비활성화" },
   "menuLabel_about": { "message": "소개" },
   "menuLabel_settings": { "message": "설정" },
   "about_version": { "message": "버전" },

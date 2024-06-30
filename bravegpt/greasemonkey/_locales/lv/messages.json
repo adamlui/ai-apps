@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Atbildes valoda" },
   "menuLabel_colorScheme": { "message": "Krāsas shēma" },
   "menuLabel_auto": { "message": "Automātiski" },
-  "menuLabel_enable": { "message": "Iespējot" },
-  "menuLabel_disable": { "message": "Atspējot" },
   "menuLabel_about": { "message": "Par produktu" },
   "menuLabel_settings": { "message": "Iestatījumi" },
   "about_version": { "message": "Versija" },

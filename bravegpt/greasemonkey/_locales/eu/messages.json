@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Erantzun hizkuntza" },
   "menuLabel_colorScheme": { "message": "Kolore eskema" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Aktibatuta" },
-  "menuLabel_disable": { "message": "Ezgaitu" },
   "menuLabel_about": { "message": "Egileari Buruz" },
   "menuLabel_settings": { "message": "Ezarpenak" },
   "about_version": { "message": "Bertsioa" },

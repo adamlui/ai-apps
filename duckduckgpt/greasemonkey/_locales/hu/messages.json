@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Válasz nyelve" },
   "menuLabel_colorScheme": { "message": "Színséma" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Aktiválás" },
-  "menuLabel_disable": { "message": "Kikapcsol" },
   "menuLabel_about": { "message": "A" },
   "menuLabel_settings": { "message": "Beállítások" },
   "about_version": { "message": "Verzió" },

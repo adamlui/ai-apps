@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "ຕອບສະໜອງພາສາ" },
   "menuLabel_colorScheme": { "message": "ແຜນຜັງສີ" },
   "menuLabel_auto": { "message": "ອັດຕະໂນມັດ" },
-  "menuLabel_enable": { "message": "ເປີດໃຊ້ງານ" },
-  "menuLabel_disable": { "message": "ປິດໃຊ້ງານ" },
   "menuLabel_about": { "message": "ກ່ຽວກັບ" },
   "menuLabel_settings": { "message": "ການຕັ້ງຄ່າ" },
   "about_version": { "message": "ຮຸ່ນ" },

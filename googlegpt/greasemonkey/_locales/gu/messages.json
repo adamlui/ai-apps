@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "જવાબની ભાષા" },
   "menuLabel_colorScheme": { "message": "રંગ યોજનાplasma name" },
   "menuLabel_auto": { "message": "આપમેળે" },
-  "menuLabel_enable": { "message": "ઇનેબલ" },
-  "menuLabel_disable": { "message": "ડીઝેબલ" },
   "menuLabel_about": { "message": "માહિતી" },
   "menuLabel_settings": { "message": "સેટિંગ્સ" },
   "about_version": { "message": "આવૃત્તિ" },

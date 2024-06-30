@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Responda lingvo" },
   "menuLabel_colorScheme": { "message": "Kolorara Etosoplasma name" },
   "menuLabel_auto": { "message": "Aŭtomate" },
-  "menuLabel_enable": { "message": "Enŝalti" },
-  "menuLabel_disable": { "message": "Malebligu" },
   "menuLabel_about": { "message": "Alproksimigas" },
   "menuLabel_settings": { "message": "Agordoj" },
   "about_version": { "message": "Versio" },

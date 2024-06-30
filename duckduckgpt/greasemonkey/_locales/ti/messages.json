@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "መልሲ ቋንቋ" },
   "menuLabel_colorScheme": { "message": "መደብ ቀለም" },
   "menuLabel_auto": { "message": "ኣውቶሞቢል" },
-  "menuLabel_enable": { "message": "ፈትኖ" },
-  "menuLabel_disable": { "message": "ኣጥፍእ" },
   "menuLabel_about": { "message": "ብዛዕባ" },
   "menuLabel_settings": { "message": "መቓናት" },
   "about_version": { "message": "መበል" },

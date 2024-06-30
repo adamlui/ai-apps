@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Vastuse keel" },
   "menuLabel_colorScheme": { "message": "Värvi temaatika" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Luba" },
-  "menuLabel_disable": { "message": "Keela" },
   "menuLabel_about": { "message": "Umbes" },
   "menuLabel_settings": { "message": "Seaded" },
   "about_version": { "message": "Versioon" },

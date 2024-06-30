@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Ururimi rw'Ibisubizo" },
   "menuLabel_colorScheme": { "message": "Imiterere y'Amabara" },
   "menuLabel_auto": { "message": "Byikora" },
-  "menuLabel_enable": { "message": "Gushoboza" },
-  "menuLabel_disable": { "message": "Yahagaritswe" },
   "menuLabel_about": { "message": "Ibyerekeye" },
   "menuLabel_settings": { "message": "Gahunda" },
   "about_version": { "message": "Inyandiko" },

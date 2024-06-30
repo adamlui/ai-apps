@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "ལན་འདེབས །" },
   "menuLabel_colorScheme": { "message": "གཞིས་རིམ་མཚོན་མདོག་སྡེ་ཁག" },
   "menuLabel_auto": { "message": "རང་འགུལ" },
-  "menuLabel_enable": { "message": "Etkinleştir" },
-  "menuLabel_disable": { "message": "Devre dışı bırak" },
   "menuLabel_about": { "message": "མྱུར་ཨང་སྐོར།" },
   "menuLabel_settings": { "message": "སྒྲིག་བཀོད" },
   "about_version": { "message": "པར་གཞི།" },

@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Phendula Ulwimi" },
   "menuLabel_colorScheme": { "message": "Imibala" },
   "menuLabel_auto": { "message": "Ezenzekelayo" },
-  "menuLabel_enable": { "message": "Yenziwe yasebenza" },
-  "menuLabel_disable": { "message": "Yenziwe ayasebenza" },
   "menuLabel_about": { "message": "Malunga" },
   "menuLabel_settings": { "message": "Imimiselo" },
   "about_version": { "message": "Inguqulelo" },

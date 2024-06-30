@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Ukubika Citako" },
   "menuLabel_colorScheme": { "message": "Ifikope fya langi" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Kuti mwabombako" },
-  "menuLabel_disable": { "message": "Ukukanakwata amaka" },
   "menuLabel_about": { "message": "pafya" },
   "menuLabel_settings": { "message": "Ifilundwa" },
   "about_version": { "message": "Ukupilibula" },

@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "回复语言" },
   "menuLabel_colorScheme": { "message": "配色方案" },
   "menuLabel_auto": { "message": "自动" },
-  "menuLabel_enable": { "message": "启用" },
-  "menuLabel_disable": { "message": "禁用" },
   "menuLabel_about": { "message": "关于" },
   "menuLabel_settings": { "message": "设置" },
   "about_version": { "message": "版本" },

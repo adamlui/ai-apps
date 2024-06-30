@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Язык ответа" },
   "menuLabel_colorScheme": { "message": "Схема цвета" },
   "menuLabel_auto": { "message": "Auto (Автоматический)" },
-  "menuLabel_enable": { "message": "Включить" },
-  "menuLabel_disable": { "message": "Отключить" },
   "menuLabel_about": { "message": "Шифр" },
   "menuLabel_settings": { "message": "Настройки" },
   "about_version": { "message": "Версия" },

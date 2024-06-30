@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Iaith Ateb" },
   "menuLabel_colorScheme": { "message": "Cynlluniau ysgrifenadwy VFS" },
   "menuLabel_auto": { "message": "Awto" },
-  "menuLabel_enable": { "message": "Galluogi" },
-  "menuLabel_disable": { "message": "Analluogi" },
   "menuLabel_about": { "message": "Gwybodaeth" },
   "menuLabel_settings": { "message": "Gosodiadau" },
   "about_version": { "message": "Fersiwn" },

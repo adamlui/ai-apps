@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Sprooch beäntweren" },
   "menuLabel_colorScheme": { "message": "Faarfschema" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Aktivéieren" },
-  "menuLabel_disable": { "message": "Desaktivéieren" },
   "menuLabel_about": { "message": "Iwwer Qt" },
   "menuLabel_settings": { "message": "Astellungen" },
   "about_version": { "message": "Versioun" },

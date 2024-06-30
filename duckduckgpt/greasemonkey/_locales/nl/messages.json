@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Antwoord taal" },
   "menuLabel_colorScheme": { "message": "Kleurenschema" },
   "menuLabel_auto": { "message": "Automatisch" },
-  "menuLabel_enable": { "message": "Activeer" },
-  "menuLabel_disable": { "message": "Uitschakelen" },
   "menuLabel_about": { "message": "Over" },
   "menuLabel_settings": { "message": "Instellingen" },
   "about_version": { "message": "Versie" },

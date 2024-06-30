@@ -16,8 +16,6 @@
   "menuLabel_replyLanguage": { "message": "Жауап беру тілі" },
   "menuLabel_colorScheme": { "message": "Түстер сұлбасы" },
   "menuLabel_auto": { "message": "Автоматты басқару" },
-  "menuLabel_enable": { "message": "Қосу" },
-  "menuLabel_disable": { "message": "ءوشىرۋ  " },
   "menuLabel_about": { "message": "Туралы" },
   "menuLabel_settings": { "message": "Баптаулар" },
   "about_version": { "message": "Нұсқа" },

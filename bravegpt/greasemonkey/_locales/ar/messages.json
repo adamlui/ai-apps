@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "لغة الرد" },
   "menuLabel_colorScheme": { "message": "مخطط الألوان" },
   "menuLabel_auto": { "message": "تلقائي" },
-  "menuLabel_enable": { "message": "التمكين" },
-  "menuLabel_disable": { "message": "تعطيل" },
   "menuLabel_about": { "message": "عن وزارة الثقافة" },
   "menuLabel_settings": { "message": "الإعدادات" },
   "about_version": { "message": "الإصدار" },

@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Jazyk odpovědi" },
   "menuLabel_colorScheme": { "message": "Barevné schéma" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "Umožnit" },
-  "menuLabel_disable": { "message": "Zakázat" },
   "menuLabel_about": { "message": "O" },
   "menuLabel_settings": { "message": "Nastavení" },
   "about_version": { "message": "Verze" },

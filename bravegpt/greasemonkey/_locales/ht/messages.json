@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Lang Repons" },
   "menuLabel_colorScheme": { "message": "Plan Koulè" },
   "menuLabel_auto": { "message": "Otomatik" },
-  "menuLabel_enable": { "message": "Aktive" },
-  "menuLabel_disable": { "message": "Dezaktive" },
   "menuLabel_about": { "message": "Apwopo" },
   "menuLabel_settings": { "message": "Reglaj" },
   "about_version": { "message": "Vèsyon" },

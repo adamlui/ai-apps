@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Tubag Pinulongan" },
   "menuLabel_colorScheme": { "message": "Skema sa Kolor" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_enable": { "message": "I-enable" },
-  "menuLabel_disable": { "message": "I-disable" },
   "menuLabel_about": { "message": "Mahitungod" },
   "menuLabel_settings": { "message": "Mga Konteksto" },
   "about_version": { "message": "Bersyon" },

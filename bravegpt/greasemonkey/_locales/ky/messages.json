@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Тилге жооп берүү" },
   "menuLabel_colorScheme": { "message": "Түс тандоо" },
   "menuLabel_auto": { "message": "Авто" },
-  "menuLabel_enable": { "message": "Күйгүзүү" },
-  "menuLabel_disable": { "message": "Өчүрүү" },
   "menuLabel_about": { "message": "_Апплет жөнүндө" },
   "menuLabel_settings": { "message": "Чычканды ырастоо" },
   "about_version": { "message": "Версиясы" },

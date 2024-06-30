@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Cevap Dili" },
   "menuLabel_colorScheme": { "message": "Renk Şeması" },
   "menuLabel_auto": { "message": "Otomatik" },
-  "menuLabel_enable": { "message": "Etkinleştir" },
-  "menuLabel_disable": { "message": "Devre dışı bırak" },
   "menuLabel_about": { "message": "Hakkımızda" },
   "menuLabel_settings": { "message": "Ayarlar" },
   "about_version": { "message": "Versiyon" },

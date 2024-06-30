@@ -15,8 +15,6 @@
   "menuLabel_replyLanguage": { "message": "Puo ya go araba" },
   "menuLabel_colorScheme": { "message": "Sekema sa Mmala" },
   "menuLabel_auto": { "message": "AUTO" },
-  "menuLabel_enable": { "message": "E kgontshe" },
-  "menuLabel_disable": { "message": "Disable" },
   "menuLabel_about": { "message": "Ka" },
   "menuLabel_settings": { "message": "Diseting" },
   "about_version": { "message": "Thanolo" },
