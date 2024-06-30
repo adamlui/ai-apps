@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.10
+// @version             2024.6.30.11
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2038,11 +2038,11 @@ setTimeout(async () => {
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild); // clear app content
 
                 // Fill starry BG
-                ['sm', 'med', 'lg'].forEach(size => {
+                ['sm', 'med', 'lg'].forEach((size, idx) => {
                     const starsDiv = document.createElement('div')
                     starsDiv.id = config.bgAnimationsDisabled ? 'stars-off'
                                 : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
-                    starsDiv.style.height = '1px' // so toggle.bgAnimations() doesn't change height
+                    starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
                     appDiv.append(starsDiv)
                 })
 

@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.10
+// @version             2024.6.30.11
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2296,11 +2296,11 @@
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild); // clear app content
 
                 // Fill starry BG
-                ['sm', 'med', 'lg'].forEach(size => {
+                ['sm', 'med', 'lg'].forEach((size, idx) => {
                     const starsDiv = document.createElement('div')
                     starsDiv.id = config.bgAnimationsDisabled ? 'stars-off'
                                 : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
-                    starsDiv.style.height = '1px' // so toggle.bgAnimations() doesn't change height
+                    starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
                     appDiv.append(starsDiv)
                 })
 

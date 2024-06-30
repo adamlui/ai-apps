@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.11
+// @version             2024.6.30.12
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1980,11 +1980,11 @@
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild); // clear app content
 
                 // Fill starry BG
-                ['sm', 'med', 'lg'].forEach(size => {
+                ['sm', 'med', 'lg'].forEach((size, idx) => {
                     const starsDiv = document.createElement('div')
                     starsDiv.id = config.bgAnimationsDisabled ? 'stars-off'
                                 : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
-                    starsDiv.style.height = '1px' // so toggle.bgAnimations() doesn't change height
+                    starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
                     appDiv.append(starsDiv)
                 })
 
