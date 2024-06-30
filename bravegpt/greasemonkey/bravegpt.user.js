@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.7
+// @version             2024.6.29.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -687,7 +687,7 @@ setTimeout(async () => {
 
                         // Init toggle input
                         const settingToggle = document.createElement('input'),
-                              settingToggleAttrs = [['id', setting + '-toggle'], ['type', 'checkbox'], ['disabled', true]]
+                              settingToggleAttrs = [['type', 'checkbox'], ['disabled', true]]
                         settingToggleAttrs.forEach(([attr, value]) => settingToggle.setAttribute(attr, value))
                         settingToggle.checked = config[key] ^ key.includes('Disabled')
                         settingToggle.style.display = 'none' // hide checkbox

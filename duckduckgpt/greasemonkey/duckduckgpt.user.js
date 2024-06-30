@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.6
+// @version             2024.6.29.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -699,7 +699,7 @@
 
                         // Init toggle input
                         const settingToggle = document.createElement('input'),
-                              settingToggleAttrs = [['id', setting + '-toggle'], ['type', 'checkbox'], ['disabled', true]]
+                              settingToggleAttrs = [['type', 'checkbox'], ['disabled', true]]
                         settingToggleAttrs.forEach(([attr, value]) => settingToggle.setAttribute(attr, value))
                         settingToggle.checked = config[key] ^ key.includes('Disabled')
                         settingToggle.style.display = 'none' // hide checkbox
