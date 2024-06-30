@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.9
+// @version             2024.6.30.10
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -391,7 +391,7 @@
                     `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
                         + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
                     '', '', 330) // confirmation width
-                if (modals.settings.get()) // update settings menu entry label
+                if (modals.settings.get()) // update settings menu status label
                     document.querySelector('#replyLanguage-menu-entry span').textContent = replyLanguage
                 break
     }}}
@@ -633,7 +633,7 @@
                 function updateScheme(newScheme) {
                     scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
                     saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
-                    if (modals.settings.get()) // update Settings menu entry label
+                    if (modals.settings.get()) // update Settings menu status label
                         document.querySelector('#scheme-menu-entry span').textContent = newScheme
                     updateAppLogoSrc() ; updateAppStyle() ; updateStars() ; schemeNotify(newScheme)
                 }
@@ -783,21 +783,21 @@
                             }
                         }
 
-                    // Add config word + listeners to pop-up settings
+                    // Add config status + listeners to pop-up settings
                     } else {
-                        const configWordSpan = document.createElement('span')
-                        configWordSpan.style.cssText = 'float: right ; font-size: 11px ; margin-top: 3px ;'
+                        const configStatusSpan = document.createElement('span')
+                        configStatusSpan.style.cssText = 'float: right ; font-size: 11px ; margin-top: 3px ;'
                             + ( !key.includes('about') ? 'text-transform: uppercase !important' : '' )
                         if (key.includes('replyLang')) {
-                            configWordSpan.textContent = config.replyLanguage
+                            configStatusSpan.textContent = config.replyLanguage
                             settingItem.onclick = promptReplyLang
                         } else if (key.includes('scheme')) {
-                            configWordSpan.textContent = config.scheme || 'Auto'
+                            configStatusSpan.textContent = config.scheme || 'Auto'
                             settingItem.onclick = modals.scheme.show
                         } else if (key.includes('about')) {
-                            configWordSpan.textContent = `v${GM_info.script.version}`
+                            configStatusSpan.textContent = `v${GM_info.script.version}`
                             settingItem.onclick = modals.about.show
-                        } settingItem.append(configWordSpan)
+                        } settingItem.append(configStatusSpan)
                     }
                 })
 
@@ -1167,7 +1167,7 @@
           + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
               + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
           + '#ddgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ;'
-              + 'clip-path: polygon(-1% -3%, 45% -3%, 45% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // protrude above corner btns to allow tooltips
+              + 'clip-path: polygon(-1% -3%, 45% -3%, 45% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // show tooltips but bound starry bg
               + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
               + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
               + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
@@ -1508,7 +1508,7 @@
                 config.bgAnimationsDisabled ? 'stars-off' : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSizes[idx]}` ))
             notify(`${settingsProps.bgAnimationsDisabled.label} ${menuState.word[+!config.bgAnimationsDisabled]}`)
         },
-    
+
         proxyMode() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])

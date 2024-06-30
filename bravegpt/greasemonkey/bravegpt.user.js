@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.8
+// @version             2024.6.30.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -770,21 +770,21 @@ setTimeout(async () => {
                             }
                         }
 
-                    // Add config word + listeners to pop-up settings
+                    // Add config status + listeners to pop-up settings
                     } else {
-                        const configWordSpan = document.createElement('span')
-                        configWordSpan.style.cssText = 'float: right ; font-size: 11px ; margin-top: 3px ;'
+                        const configStatusSpan = document.createElement('span')
+                        configStatusSpan.style.cssText = 'float: right ; font-size: 11px ; margin-top: 3px ;'
                             + ( !key.includes('about') ? 'text-transform: uppercase !important' : '' )
                         if (key.includes('replyLang')) {
-                            configWordSpan.textContent = config.replyLanguage
+                            configStatusSpan.textContent = config.replyLanguage
                             settingItem.onclick = promptReplyLang
                         } else if (key.includes('scheme')) {
-                            configWordSpan.textContent = config.scheme || 'Auto'
+                            configStatusSpan.textContent = config.scheme || 'Auto'
                             settingItem.onclick = modals.scheme.show
                         } else if (key.includes('about')) {
-                            configWordSpan.textContent = `v${GM_info.script.version}`
+                            configStatusSpan.textContent = `v${GM_info.script.version}`
                             settingItem.onclick = modals.about.show
-                        } settingItem.append(configWordSpan)
+                        } settingItem.append(configStatusSpan)
                     }
                 })
 
