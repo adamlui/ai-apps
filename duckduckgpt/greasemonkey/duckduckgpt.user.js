@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.2
+// @version             2024.6.30.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1150,7 +1150,7 @@
           + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
               + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
           + '#ddgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ;'
-              + 'clip-path: polygon(0% 0%, 45% 0%, 45% -8%, 100% -8%, 100% 103%, 0% 103%) ;' // protrude above corner btns to allow tooltips
+              + 'clip-path: polygon(-1% -3%, 45% -3%, 45% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // protrude above corner btns to allow tooltips
               + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
               + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
               + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' } ; transition: background 0.25s ease }`
