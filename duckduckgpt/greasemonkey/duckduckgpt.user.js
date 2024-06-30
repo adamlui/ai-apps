@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.11
+// @version             2024.6.29.12
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -517,21 +517,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(config.supportURL) },
-                        function leaveAReview() {
-                            const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
-                                [ function greasyFork() { safeWindowOpen(
-                                      config.greasyForkURL + '/feedback#post-discussion') },
-                                  function productHunt() { safeWindowOpen(
-                                      'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
-                                  function futurepedia() { safeWindowOpen(
-                                      'https://www.futurepedia.io/tool/duckduckgpt#tool-reviews') },
-                                  function alternativeTo() { safeWindowOpen(
-                                      'https://alternativeto.net/software/duckduckgpt/about/') }
-                                ], '', 523) // Review modal width
-                            const reviewBtns = document.getElementById(reviewModalID).querySelectorAll('button')
-                            reviewBtns[0].style.display = 'none' // hide Dismiss button
-                            reviewBtns[1].textContent = ( // remove spaces from AlternativeTo label
-                                reviewBtns[1].textContent.replace(/\s/g, '')) },
+                        function leaveAReview() { modals.feedback.show() },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 527) // About modal width
                 const aboutModal = document.getElementById(aboutModalID)

@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.9
+// @version             2024.6.29.10
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -706,8 +706,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(config.supportURL) },
-                        function leaveAReview() { safeWindowOpen(
-                            config.greasyForkURL + '/feedback#post-discussion') },
+                        function leaveAReview() { modals.feedback.show() },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 515) // About modal width
                 const aboutModal = document.getElementById(aboutModalID)
@@ -747,11 +746,11 @@
                 const buttons = feedbackModal.querySelector('.modal-buttons')
                 buttons.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
 
-                // Title-case GitHub button, hide Dismiss button
+                // Title-case GitHub button + hide Dismiss button + add btn v-padding
                 buttons.querySelectorAll('button').forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else if (btn.textContent == 'Github') btn.textContent = 'GitHub'
-                    btn.style.marginTop = btn.style.marginBottom = '5px'
+                    btn.style.marginTop = btn.style.marginBottom = '5px' // v-pad btns
                 })
             }
         },
