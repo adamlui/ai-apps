@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.10
+// @version             2024.6.29.11
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -578,11 +578,12 @@
                 buttons.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
                                        + ' margin-top: 14px !important' // close gap between title/btns
 
-                // Title-case GitHub button, hide Dismiss button
+                // Format button labels + add v-padding
                 buttons.querySelectorAll('button').forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else if (btn.textContent == 'Github') btn.textContent = 'GitHub'
-                    btn.style.marginTop = btn.style.marginBottom = '5px'
+                    else if (btn.textContent == 'Alternative To') btn.textContent = 'AlternativeTo'
+                    btn.style.marginTop = btn.style.marginBottom = '5px' // v-pad btns
                 })
             }
         },
