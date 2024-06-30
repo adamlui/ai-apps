@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.6
+// @version             2024.6.30.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1199,7 +1199,7 @@ setTimeout(async () => {
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
               + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 -7px 0 ;  padding: 12px 51px 12px 10px ;'
               + 'height: 43px ; line-height: 17px ; width: 100% ; max-height: 200px ; resize: none ;'
-              + `background: ${ scheme == 'dark' ? '#5151519e' : '#eeeeee9e' }}`
+              + `background: ${ scheme == 'dark' ? '#5151519e' : '#eeeeee9e' };`
               + `position: relative ; z-index: 555 ; color: ${ scheme == 'dark' ? '#eee' : '#222' }}`
           + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
               + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
