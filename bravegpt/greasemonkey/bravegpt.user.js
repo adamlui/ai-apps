@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.5
+// @version             2024.6.30.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -234,8 +234,8 @@ setTimeout(async () => {
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize',
-                'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
+    loadSetting('autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled',
+                'fontSize', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
                 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', 16) // init reply font size if unset
@@ -322,6 +322,9 @@ setTimeout(async () => {
         widerSidebar: { type: 'toggle', mobile: false, centered: false,
             label: msgs.menuLabel_widerSidebar || 'Wider Sidebar',
             helptip: msgs.helptip_widerSidebar || 'Horizontally expand search page sidebar' },
+        bgAnimationsDisabled: { type: 'toggle',
+            label: msgs.menuLabel_bgAnimations || 'Background Animations',
+            helptip: msgs.helptip_bgAnimations || 'Show animated backgrounds in UI components' },
         replyLanguage: { type: 'prompt',
             label: msgs.menuLabel_replyLanguage || 'Reply Language',
             helptip: msgs.helptip_replyLanguage || 'Language for BraveGPT to reply in' },
@@ -697,6 +700,9 @@ setTimeout(async () => {
                     } else if (key == 'widerSidebar') {
                         settingIcon = icons.widescreen.create()
                         settingIcon.style.cssText = 'position: relative ; top: 4px ; left: -1.5px ; margin-right: 7.5px'
+                    } else if (key.includes('bgAnimation')) {
+                        settingIcon = icons.sparkles.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 6.5px'
                     } else if (key == 'replyLanguage') {
                         settingIcon = icons.language.create()
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 9px'
@@ -755,6 +761,7 @@ setTimeout(async () => {
                             else if (key.includes('streaming')) toggle.streaming()
                             else if (key.includes('rq')) toggle.relatedQueries()
                             else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
+                            else if (key.includes('Animations')) toggle.bgAnimations()
 
                             // ...or generically toggle/notify
                             else {
@@ -994,6 +1001,16 @@ setTimeout(async () => {
                 slidersSVGattrs.forEach(([attr, value]) => slidersSVG.setAttribute(attr, value))
                 slidersSVG.append(createSVGpath({ stroke: 'none', d: 'M435.48-102.48V-360H533v80h320v97.52H533v80h-97.52Zm-328.48-80V-280h257.52v97.52H107Zm160-169.04v-80H107v-96.96h160v-80h97.52v256.96H267Zm168.48-80v-96.96H853v96.96H435.48Zm160-168.48v-257.52H693v80h160V-680H693v80h-97.52ZM107-680v-97.52h417.52V-680H107Z' }))
                 return slidersSVG
+            }
+        },
+        
+        sparkles: {
+            create() {
+                const sparklesSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      sparklesSVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 0 16 16']]
+                sparklesSVGattrs.forEach(([attr, value]) => sparklesSVG.setAttribute(attr, value))
+                sparklesSVG.append(createSVGpath({ stroke: 'none', d: 'M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z' }))
+                return sparklesSVG
             }
         },
 
@@ -1545,6 +1562,15 @@ setTimeout(async () => {
     // Define TOGGLE functions
 
     const toggle = {
+
+        bgAnimations() {
+            saveSetting('bgAnimationsDisabled', !config.bgAnimationsDisabled)
+            const starSizes = ['sm', 'med', 'lg']
+            appDiv.querySelectorAll('[id*="stars-"]').forEach((starsDiv, idx) => starsDiv.id = (
+                config.bgAnimationsDisabled ? 'stars-off' : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSizes[idx]}` ))
+            notify(`${settingsProps.bgAnimationsDisabled.label} ${menuState.word[+!config.bgAnimationsDisabled]}`)
+        },
+
         proxyMode() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
@@ -2014,7 +2040,9 @@ setTimeout(async () => {
                 // Fill starry BG
                 ['sm', 'med', 'lg'].forEach(size => {
                     const starsDiv = document.createElement('div')
-                    starsDiv.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
+                    starsDiv.id = config.bgAnimationsDisabled ? 'stars-off'
+                                : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
+                    starsDiv.style.height = '1px' // so toggle.bgAnimations() doesn't change height
                     appDiv.append(starsDiv)
                 })
 
