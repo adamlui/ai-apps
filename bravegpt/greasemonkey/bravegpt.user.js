@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30
+// @version             2024.6.30.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -184,6 +184,8 @@
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js#sha256-e1fUJ6xicGd9r42DgN7SzHMzb5FJoWe44f4NbvZmBK4=
 // @require             https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js#sha256-Ffq85bZYmLMrA/XtJen4kacprUwNbYdxEKd0SqhHqJQ=
 // @resource hljsCSS    https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css#sha256-v0N76BFFkH0dCB8bUr4cHSVN8A/zCaOopMuSmJWV/5w=
+// @resource bsbgCSS    https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@d7fd458/styles/css/black-rising-stars.min.css#sha256-bXbVZUD7ciKqK0wU/BLQzh08JwkoNExHHqXITugd/3o=
+// @resource wsbgCSS    https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@d7fd458/styles/css/white-rising-stars.min.css#sha256-ya9newifevSPO1Q4AzMf42yAF6TE+iZHrDbVj0HyuEM=
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
@@ -620,7 +622,7 @@ setTimeout(async () => {
                     saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
                     const schemeMenuEntry = document.getElementById('scheme-menu-entry')
                     if (schemeMenuEntry) schemeMenuEntry.querySelector('span').textContent = newScheme
-                    updateAppLogoSrc() ; updateAppStyle() ; schemeNotify(newScheme)
+                    updateAppLogoSrc() ; updateAppStyle() ; updateStars() ; schemeNotify(newScheme)
                 }
 
                 function schemeNotify(scheme) {
@@ -1119,12 +1121,13 @@ setTimeout(async () => {
           + '#bravegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
           + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
               + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
-          + '#bravegpt {'
-              + `word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: ${ isMobile ? -29 : 20}px ;`
-              + 'border: 1px solid var(--color-divider-subtle) ; border-radius: 18px ;'
-              + 'padding: 24px 23px 45px 23px ; background:'
-                  + ( scheme == 'dark' ? ( isMobile ? 'var(--search-gray-800)' : '#282828' ) : 'white' ) + '}'
-          + '#bravegpt:hover { box-shadow: 0 9px 28px rgba(0, 0, 0, 0.09) }'
+          + `#bravegpt { word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: ${ isMobile ? -29 : 20}px ;`
+              + 'clip-path: polygon(-1% -3%, 45% -3%, 45% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // protrude above corner btns to allow tooltips
+              + 'padding: 24px 23px 45px 23px ;'
+              + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
+              + `border: ${ scheme == 'dark' ? 'none' : '1px solid var(--color-divider-subtle)' } ; border-radius: 18px }`
+          + '#bravegpt:hover { box-shadow: 0 9px 28px rgba(0, 0, 0, 0.09) ;'
+              + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#373f4b 0%, #090a0f' : 'white 0%, white' } 100%) }`
           + '#bravegpt p { margin: 0 }'
           + `#bravegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
           + ( scheme == 'dark' ? '#bravegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
@@ -1160,7 +1163,7 @@ setTimeout(async () => {
               + `font-size: ${config.fontSize}px ; font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ;`
               + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
               + 'margin-top: 12px ; padding: 1.2em 1.2em 0 1.2em ; border-radius: 13px ; overflow: auto ;'
-              + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 }' )
+              + ( scheme == 'dark' ? 'background: #3a3a3acf ; color: #f2f2f2 } ' : ' background: #eaeaeacf ; color: #282828 }' )
           + `#bravegpt footer { margin: ${ isFirefox ? 32 : 27 }px 0 -26px 0 ; border-top: none !important }`
           + '#bravegpt .feedback {'
               + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem; color: #aaa ;'
@@ -1172,7 +1175,7 @@ setTimeout(async () => {
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
               + 'float: left ; left: 7px ; margin: 36px -13px 0 0 ;' // positioning
               + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color:'
-                  + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
+                  + ( scheme == 'dark' ? '#3a3a3acf' : '#eaeaeacf' ) + '}'
           + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem }'
           + '.chatgpt-js > a { color: inherit ; top: .054rem }'
           + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px }'
@@ -1180,8 +1183,8 @@ setTimeout(async () => {
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
               + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 -7px 0 ;  padding: 12px 51px 12px 10px ;'
               + 'height: 43px ; line-height: 17px ; width: 100% ; max-height: 200px ; resize: none ;'
-              + `background: ${ scheme == 'dark' ? '#515151' : '#eeeeee70' } ;`
-              + `color: ${ scheme == 'dark' ? '#eee' : '#222' }}`
+              + `background: ${ scheme == 'dark' ? '#5151519e' : '#eeeeee9e' } ;`
+              + `position: relative ; z-index: 555 ; color: ${ scheme == 'dark' ? '#eee' : '#222' }}`
           + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
               + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
               + `${ isFirefox ? '' : 'margin-top: -31px' }}`
@@ -1199,7 +1202,7 @@ setTimeout(async () => {
           + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
           + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
           + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
-          + '.chatbar-btn {'
+          + '.chatbar-btn { z-index: 560 ;'
               + `border: none ; float: right ; position: relative ; bottom: ${ isFirefox ? 28 : 32 }px ; background: none ; cursor: pointer ;`
               + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
           + '.chatbar-btn:hover {'
@@ -1369,6 +1372,11 @@ setTimeout(async () => {
                 setTimeout(() => slider.style.display = 'none', 55)
             }
         }
+    }
+
+    function updateStars() {
+        ['sm', 'med', 'lg'].forEach(size => appDiv.querySelector(
+            `[id$="stars-${size}"]`).id = `${scheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
     }
 
     function updateTooltip(buttonType) { // text & position
@@ -1996,12 +2004,18 @@ setTimeout(async () => {
 
         reply(answer) {
 
-            // Hide font size slider if visibile
+            // Hide font size slider if visible
             if (appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
 
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
+
+                // Fill starry BG
+                const starsSm = document.createElement('div') ; starsSm.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-sm`
+                const starsMed = document.createElement('div') ; starsMed.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-med`
+                const starsLg = document.createElement('div') ; starsLg.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-lg`
+                appDiv.append(starsSm, starsMed, starsLg)
 
                 // Create/append app title anchor + byline
                 updateTitleAnchor()
@@ -2389,9 +2403,9 @@ setTimeout(async () => {
     })
 
     // Stylize APP elems
-    const appStyle = createStyle() ; updateAppStyle()
-    const hljsStyle = createStyle(GM_getResourceText('hljsCSS'))
-    document.head.append(appStyle, hljsStyle)
+    const appStyle = createStyle() ; updateAppStyle() ; document.head.append(appStyle);
+    ['hljs', 'wsbg', 'bsbg'].forEach(cssType => // code highlighting, white stars, black stars
+        document.head.append(createStyle(GM_getResourceText(`${cssType}CSS`))))
 
     // Stylize SITE elems
     const tweaksStyle = createStyle(),
@@ -2452,7 +2466,7 @@ setTimeout(async () => {
     function handleSchemeChange() {
         if (config.scheme) return // since light/dark hard-set
         const newScheme = isDarkMode() ? 'dark' : 'light'
-        if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
+        if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() ; updateStars() }
     }
 
 }, 1500)
