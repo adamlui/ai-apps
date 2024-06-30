@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Postuli \"?\" post demandoj por respondoj por montri" },
   "helptip_widerSidebar": { "message": "Horizontale pligrandigi serĉpaĝan flankobreton" },
   "helptip_stickySidebar": { "message": "Faras DuckDuckGPT videbla en flankobreto eĉ dum vi rulumas" },
+  "helptip_bgAnimations": { "message": "Montri animaciajn fonojn en UI- komponantoj" },
   "helptip_replyLanguage": { "message": "Lingvo por DuckDuckGPT por respondi en" },
   "helptip_colorScheme": { "message": "Skemo por montri komponantojn de DuckDuckGPT UI en" },
   "placeholder_typeSomething": { "message": "Tajpi ion" },

@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "ප් ‍ රදර්ශනය සඳහා පිළිතුරු සඳහා විමසුම් වලින් පසු \"?\" අවශ් ‍ ය වේ" },
   "helptip_widerSidebar": { "message": "සෙවුම් පිටු පැති තීරුව තිරස්ව පුළුල් කරන්න" },
   "helptip_stickySidebar": { "message": "ඔබ අනුචලනය කරන විට පවා පැති තීරුවේ DuckDuckGPT දෘශ්යමාන කරයි" },
+  "helptip_bgAnimations": { "message": "UI සංරචකවල සජීවිකරණ පසුබිම් පෙන්වන්න" },
   "helptip_replyLanguage": { "message": "සඳහා භාෂාව DuckDuckGPT දී පිළිතුරු" },
   "helptip_colorScheme": { "message": "තුළ DuckDuckGPT UI සංරචක පෙන්වීමට ක් ‍ රමය" },
   "placeholder_typeSomething": { "message": "යමක් ටයිප් කරන්න" },

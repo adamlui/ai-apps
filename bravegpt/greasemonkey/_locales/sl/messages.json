@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Zahtevaj \"/\" pred poizvedbami za prikaz odgovorov" },
   "helptip_suffixMode": { "message": "Zahtevaj \"?\" po poizvedbah za prikaz odgovorov" },
   "helptip_widerSidebar": { "message": "Vodoravno razširi stran za iskanje stranske vrstice" },
+  "helptip_bgAnimations": { "message": "Prikaži animirana ozadja v komponentah uporabniškega vmesnika" },
   "helptip_replyLanguage": { "message": "Jezik, v katerem lahko BraveGPT odgovori" },
   "helptip_colorScheme": { "message": "Shema za prikaz komponent uporabniškega vmesnika BraveGPT v" },
   "placeholder_askSomethingElse": { "message": "Nekaj drugega" },

@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Nõua \"?\" pärast päringuid vastuste kuvamiseks" },
   "helptip_widerSidebar": { "message": "Laienda otsingulehe külgriba horisontaalselt" },
   "helptip_stickySidebar": { "message": "Muudab GoogleGPT külgribal nähtavaks isegi kerimise ajal" },
+  "helptip_bgAnimations": { "message": "Kuva animeeritud taustad kasutajaliidese komponentides" },
   "helptip_replyLanguage": { "message": "GoogleGPT vastamise keel" },
   "helptip_colorScheme": { "message": "Skeem GoogleGPT kasutajaliidese komponentide kuvamiseks" },
   "placeholder_askSomethingElse": { "message": "Küsi midagi" },

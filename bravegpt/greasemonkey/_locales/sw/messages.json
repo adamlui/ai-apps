@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Inahitaji \"/\" kabla ya maswali kwa majibu ya kuonyesha" },
   "helptip_suffixMode": { "message": "Unahitaji \"?\" baada ya maswali kwa majibu ya kuonyesha" },
   "helptip_widerSidebar": { "message": "Panua upau wa pembeni wa ukurasa wa utafutaji kwa mlalo" },
+  "helptip_bgAnimations": { "message": "Onyesha mandharinyuma zilizohuishwa katika vipengele vya UI" },
   "helptip_replyLanguage": { "message": "Lugha ya BraveGPT kujibu" },
   "helptip_colorScheme": { "message": "Mpango wa kuonyesha vipengele vya BraveGPT UI katika" },
   "placeholder_askSomethingElse": { "message": "Uliza kitu kingine" },

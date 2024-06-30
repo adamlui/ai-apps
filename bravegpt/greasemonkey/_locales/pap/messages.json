@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Rekerí \"/\" dilanti di e pregunta pa e respuesta por aparece" },
   "helptip_suffixMode": { "message": "Rekerí \"?\" despues di e pregunta pa e respuesta por aparece" },
   "helptip_widerSidebar": { "message": "Hasi e barra lateral di e pagina di buska mas ancho" },
+  "helptip_bgAnimations": { "message": "Animacion En Componentes Ue" },
   "helptip_replyLanguage": { "message": "Idioma pa BraveGPT por respondé den dje" },
   "helptip_colorScheme": { "message": "Esquema di kolor pa desplegá e komponentenan di BraveGPT UI" },
   "placeholder_askSomethingElse": { "message": "Pidiendo algo mas" },

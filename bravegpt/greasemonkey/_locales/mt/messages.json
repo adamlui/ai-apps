@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Irrikjedi \"/\" qabel ma jintwerew it-tweġibiet" },
   "helptip_suffixMode": { "message": "Teħtieġ \"?\" wara l-mistoqsijiet biex turi t-tweġibiet" },
   "helptip_widerSidebar": { "message": "Espandi orizzontalment il-ġenb tal-paġna tat-tiftix" },
+  "helptip_bgAnimations": { "message": "Uri l-isfondi animati fil-komponenti tal-UI" },
   "helptip_replyLanguage": { "message": "Lingwa għal BraveGPT biex twieġeb" },
   "helptip_colorScheme": { "message": "Skema biex turi l-komponenti tal-UI ta' BraveGPT fi" },
   "placeholder_askSomethingElse": { "message": "Xi ħaġa oħra" },

@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Fuerderen \"?\" no Ufroen fir Äntwerten ze weisen" },
   "helptip_widerSidebar": { "message": "Horizontalt Erweiderung vun der Sich Säit Säitbar" },
   "helptip_stickySidebar": { "message": "Maacht GoogleGPT sichtbar an der Sidebar och wann Dir scrollt" },
+  "helptip_bgAnimations": { "message": "Animéiert Hannergrënn an UI Komponenten uweisen" },
   "helptip_replyLanguage": { "message": "Sprache für GoogleGPT um an zu antworten" },
   "helptip_colorScheme": { "message": "Schema fir GoogleGPT UI Komponenten an ze weisen" },
   "placeholder_askSomethingElse": { "message": "Frot eppes anescht" },

@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Exiger «?» après les requêtes de réponses à afficher" },
   "helptip_widerSidebar": { "message": "Développer horizontalement la barre latérale de la page de recherche" },
   "helptip_stickySidebar": { "message": "Rend DuckDuckGPT visible dans la barre latérale même lorsque vous faites défiler" },
+  "helptip_bgAnimations": { "message": "Afficher les arrière-plans animés dans les composants de l'interface utilisateur" },
   "helptip_replyLanguage": { "message": "Langue de réponse de DuckDuckGPT" },
   "helptip_colorScheme": { "message": "Schéma pour afficher les composants de l'interface utilisateur de DuckDuckGPT dans" },
   "placeholder_typeSomething": { "message": "Tapez quelque chose" },

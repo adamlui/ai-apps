@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "देखाउनका लागि प्रश्नहरू पछि \"?\" आवश्यक छ" },
   "helptip_widerSidebar": { "message": "तेर्सो रूपमा खोजी पृष्ठ साइडबार विस्तार गर्नुहोस्" },
   "helptip_stickySidebar": { "message": "तपाईंले स्क्रोल गर्दा पनि साइडबारमा DuckDuckGPT देखिने बनाउँदछ" },
+  "helptip_bgAnimations": { "message": "UI अवयवहरूमा एनिमेटेड पृष्ठभूमि देखाउनुहोस्" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT लाई जवाफ दिन भाषा" },
   "helptip_colorScheme": { "message": "यसमा DuckDuckGPT UI कम्पोनेन्टहरू प्रदर्शन गर्ने योजना" },
   "placeholder_typeSomething": { "message": "केही टाइप गर्नुहोस्" },

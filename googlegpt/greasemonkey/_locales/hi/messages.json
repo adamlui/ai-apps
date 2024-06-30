@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "दिखाने के लिए प्रश्नों के बाद \"?\" की आवश्यकता है" },
   "helptip_widerSidebar": { "message": "क्षैतिज रूप से खोज पृष्ठ साइडबार का विस्तार करें" },
   "helptip_stickySidebar": { "message": "स्क्रॉल करते समय भी GoogleGPT साइडबार में दिखाई देता है" },
+  "helptip_bgAnimations": { "message": "UI घटकों में एनिमेटेड बैकग्राउंड दिखाएँ" },
   "helptip_replyLanguage": { "message": "में जवाब देने के लिए GoogleGPT के लिए भाषा" },
   "helptip_colorScheme": { "message": "इसमें GoogleGPT UI घटकों को प्रदर्शित करने की योजना" },
   "placeholder_askSomethingElse": { "message": "कुछ और पूछें" },

@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Ke tlhoka \"/\" pele ga ke botsa dipotso gore ke bone dikarabo tse di tshwanelang go bontshiwa" },
   "helptip_suffixMode": { "message": "O tlhoka \"?\" morago ga dipotso tsa dikarabo tse o ka di bontshang" },
   "helptip_widerSidebar": { "message": "Bareng e e kafa letlhakoreng la tsebe ya go senka e atolositswe" },
+  "helptip_bgAnimations": { "message": "SHOW animated background in UI components" },
   "helptip_replyLanguage": { "message": "Puo ya BraveGPT go e araba" },
   "helptip_colorScheme": { "message": "Sekema sa go bontsha dikarolo tsa BraveGPT UI mo" },
   "placeholder_askSomethingElse": { "message": "ASK SENGWE SE SENGWE" },

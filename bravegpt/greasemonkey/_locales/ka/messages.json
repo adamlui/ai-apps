@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Საჩვენებელი პასუხებისთვის მოითხოვეთ „/“ შეკითხვებამდე" },
   "helptip_suffixMode": { "message": "Მოითხოვეთ „?“ შეკითხვების შემდეგ პასუხების სანახავად" },
   "helptip_widerSidebar": { "message": "Ჰორიზონტალურად გააფართოვეთ საძიებო გვერდის გვერდი" },
+  "helptip_bgAnimations": { "message": "Ანიმაციური ფონების ჩვენება UI კომპონენტებში" },
   "helptip_replyLanguage": { "message": "Ენა BraveGPT-ვის პასუხის გასაცემად" },
   "helptip_colorScheme": { "message": "Სქემა, რომელიც აჩვენებს BraveGPT UI კომპონენტებს" },
   "placeholder_askSomethingElse": { "message": "Სხვა რამის კითხვა" },

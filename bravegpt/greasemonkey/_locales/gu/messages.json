@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "જવાબો બતાવવા માટે પ્રશ્નો પહેલાં \"/\" ની જરૂર છે" },
   "helptip_suffixMode": { "message": "બતાવવા માટે જવાબો માટે પ્રશ્નો પછી \"?\" ની જરૂર છે" },
   "helptip_widerSidebar": { "message": "આડી રીતે શોધ પૃષ્ઠની સાઇડબારને વિસ્તૃત કરો" },
+  "helptip_bgAnimations": { "message": "UI ઘટકોમાં એનિમેટેડ બેકગ્રાઉન્ડ્સ બતાવો" },
   "helptip_replyLanguage": { "message": "જવાબ આપવા માટે BraveGPT માટે ભાષા" },
   "helptip_colorScheme": { "message": "BraveGPT UI ઘટકો પ્રદર્શિત કરવાની યોજના" },
   "placeholder_askSomethingElse": { "message": "કઈંક પૂછો" },

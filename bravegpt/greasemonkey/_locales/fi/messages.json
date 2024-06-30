@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Vaadi \"/\" ennen kyselyjä näytettäville vastauksille" },
   "helptip_suffixMode": { "message": "Vaadi \"?\" näytettävien vastausten kyselyjen jälkeen" },
   "helptip_widerSidebar": { "message": "Laajenna hakusivun sivupalkki vaakasuunnassa" },
+  "helptip_bgAnimations": { "message": "Näytä animoidut taustat käyttöliittymän komponenteissa" },
   "helptip_replyLanguage": { "message": "Kieli, jolla BraveGPT vastaa" },
   "helptip_colorScheme": { "message": "Kaavio, jossa näytetään BraveGPT: n käyttöliittymäkomponentit" },
   "placeholder_askSomethingElse": { "message": "Joku muu" },

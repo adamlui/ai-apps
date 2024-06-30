@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Ufuna \"?\" emva kwemibuzo yeempendulo eziza kuboniswa" },
   "helptip_widerSidebar": { "message": "Yandisa ngokuthe tyaba ibar esecaleni yephepha lokukhangela" },
   "helptip_stickySidebar": { "message": "Yenza i-GoogleGPT ibonakale kwibha esecaleni nanjengoko uskrola" },
+  "helptip_bgAnimations": { "message": "Bonisa iimvelaphi zoopopayi kwiingxenye ze-UI" },
   "helptip_replyLanguage": { "message": "Ulwimi lokuphendula nge-GoogleGPT" },
   "helptip_colorScheme": { "message": "Isicwangciso sokubonisa izinto ze-GoogleGPT UI kwi" },
   "placeholder_askSomethingElse": { "message": "Buza enye into" },

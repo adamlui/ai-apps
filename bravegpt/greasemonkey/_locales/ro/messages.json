@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Solicitați „/” înainte de interogări pentru ca răspunsurile să fie afișate" },
   "helptip_suffixMode": { "message": "Solicitați „?” după interogări pentru ca răspunsurile să fie afișate" },
   "helptip_widerSidebar": { "message": "Extindeți orizontal bara laterală a paginii de căutare" },
+  "helptip_bgAnimations": { "message": "Afișați fundaluri animate în componentele UI" },
   "helptip_replyLanguage": { "message": "Limba în care BraveGPT poate răspunde" },
   "helptip_colorScheme": { "message": "Schema de afișare a componentelor BraveGPT UI în" },
   "placeholder_askSomethingElse": { "message": "Altceva" },

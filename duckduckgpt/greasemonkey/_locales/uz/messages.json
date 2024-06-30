@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Javoblar ko'rsatilishi uchun so'rovlar oxiridan \"?\" talab qiling" },
   "helptip_widerSidebar": { "message": "Qidiruv sahifasi yon panelini kengaytirish" },
   "helptip_stickySidebar": { "message": "DuckDuckGPT ni sahifa aylantirilsa ham yon panelda ko'rinadigan qiling" },
+  "helptip_bgAnimations": { "message": "UI komponentlarida animatsion fonlarni ko'rsatish" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT javob beradigan til" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI komponentlarini ko'rsatish sxemasi" },
   "placeholder_typeSomething": { "message": "Biror narsa yozing" },

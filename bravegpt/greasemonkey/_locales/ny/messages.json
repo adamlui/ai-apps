@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Pemphani \"/\" musanafunse mayankho kuti muwonetse" },
   "helptip_suffixMode": { "message": "Pemphani \"?\" pambuyo mafunso mayankho kusonyeza" },
   "helptip_widerSidebar": { "message": "Pang 'onopang' ono kukulitsa kufufuza tsamba sidebar" },
+  "helptip_bgAnimations": { "message": "Onetsani zojambula zam 'mbuyo mu zigawo za UI" },
   "helptip_replyLanguage": { "message": "Chilankhulo cha BraveGPT kuyankha mu" },
   "helptip_colorScheme": { "message": "Ndondomeko kusonyeza BraveGPT UI zigawo mu" },
   "placeholder_askSomethingElse": { "message": "Funsani china" },

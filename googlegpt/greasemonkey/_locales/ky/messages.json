@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Жооптордун көрсөтүлүшү үчүн суроолордон кийин \"?\" талап кылуу" },
   "helptip_widerSidebar": { "message": "Барактын капталын горизонталдуу кеңейтүү" },
   "helptip_stickySidebar": { "message": "Жүгүртүп жатканда да GoogleGPT каптал тилкесинде көрүнөт" },
+  "helptip_bgAnimations": { "message": "UI компоненттеринде жандуу фонду көрсөтүү" },
   "helptip_replyLanguage": { "message": "Жооп берүү үчүн GoogleGPT тили" },
   "helptip_colorScheme": { "message": "GoogleGPT UI компоненттерин көрсөтүү схемасы" },
   "placeholder_askSomethingElse": { "message": "Башка бир нерсе сураңыз" },

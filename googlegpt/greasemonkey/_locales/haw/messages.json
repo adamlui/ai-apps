@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Koi '?' ma hope o nā nīnau no nā pane e hōʻike" },
   "helptip_widerSidebar": { "message": "E hoʻonui i ka ʻaoʻao ʻaoʻao ʻaoʻao" },
   "helptip_stickySidebar": { "message": "E ʻike ʻia ʻo GoogleGPT ma ka ʻaoʻao ʻaoʻao e like me kou ʻōwili ʻana" },
+  "helptip_bgAnimations": { "message": "Hōʻike i nā kāʻei ʻoniʻoni ma nā ʻāpana UI" },
   "helptip_replyLanguage": { "message": "ʻŌlelo no GoogleGPT e pane ai" },
   "helptip_colorScheme": { "message": "Hoʻolālā e hōʻike i nā ʻāpana UI GoogleGPT i loko" },
   "placeholder_askSomethingElse": { "message": "E nīnau i kekahi mea ʻē aʻe" },

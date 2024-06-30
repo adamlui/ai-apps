@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Vyžadovat „/“ před zobrazením dotazů na odpovědi" },
   "helptip_suffixMode": { "message": "Vyžadovat „?“ po dotazech na odpovědi, které mají být zobrazeny" },
   "helptip_widerSidebar": { "message": "Vodorovně rozbalit postranní panel stránky vyhledávání" },
+  "helptip_bgAnimations": { "message": "Zobrazit animovaná pozadí v komponentách uživatelského rozhraní" },
   "helptip_replyLanguage": { "message": "Jazyk pro BraveGPT k odpovědi" },
   "helptip_colorScheme": { "message": "Schéma pro zobrazení komponent uživatelského rozhraní BraveGPT v" },
   "placeholder_askSomethingElse": { "message": "Jiné" },

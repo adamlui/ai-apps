@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Feum \"?\" às deidh ceistean airson freagairtean a shealltainn" },
   "helptip_widerSidebar": { "message": "Leudachadh taobh air an duilleag rannsachaidh" },
   "helptip_stickySidebar": { "message": "Fàg DuckDuckGPT ri fhaicinn anns a' bhàr-taobh eadhon nuair a bhios tu a' scrolladh" },
+  "helptip_bgAnimations": { "message": "Seall cùl - raointean beòthail ann an co - phàirtean an UI" },
   "helptip_replyLanguage": { "message": "Cànan airson DuckDuckGPT freagairt ann" },
   "helptip_colorScheme": { "message": "Scheama airson freagairtean DuckDuckGPT UI a shealltainn ann" },
   "placeholder_typeSomething": { "message": "Type rudeigin" },

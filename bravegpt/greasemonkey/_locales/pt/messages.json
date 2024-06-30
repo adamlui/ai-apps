@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Exigir \"/\" antes das consultas para que as respostas sejam mostradas" },
   "helptip_suffixMode": { "message": "Exigir \"?\" após consultas de respostas para mostrar" },
   "helptip_widerSidebar": { "message": "Expandir horizontalmente a barra lateral da página de pesquisa" },
+  "helptip_bgAnimations": { "message": "Mostrar planos de fundo animados nos componentes da interface do usuário" },
   "helptip_replyLanguage": { "message": "Idioma para o BraveGPT responder" },
   "helptip_colorScheme": { "message": "Esquema para exibir componentes da interface do usuário BraveGPT em" },
   "placeholder_askSomethingElse": { "message": "Algo mais" },

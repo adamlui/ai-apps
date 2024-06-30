@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Vereisen \"?\" na zoekopdrachten voor antwoorden om weer te geven" },
   "helptip_widerSidebar": { "message": "Zijbalk zoekpagina horizontaal uitvouwen" },
   "helptip_stickySidebar": { "message": "Maakt GoogleGPT zichtbaar in de zijbalk, zelfs als u scrolt" },
+  "helptip_bgAnimations": { "message": "Toon geanimeerde achtergronden in UI-componenten" },
   "helptip_replyLanguage": { "message": "Taal voor GoogleGPT om te reageren in" },
   "helptip_colorScheme": { "message": "Schema om GoogleGPT UI-componenten weer te geven in" },
   "placeholder_askSomethingElse": { "message": "Iets anders" },

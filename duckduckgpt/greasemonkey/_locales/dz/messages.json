@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "ལན་ཚུ་སྟོན་ནིའི་དོན་ལུ་འདྲི་དཔྱད་ཀྱི་ཤུལ་ལས་ \"?\" དགོ" },
   "helptip_widerSidebar": { "message": "ཐད་སྙོམས་སྦེ་ འཚོལ་ཞིབ་ཤོག་ལེབ་ཟུར་ཁའི་ཕྲ་རིང་རྒྱ་བསྐྱེད་འབད།" },
   "helptip_stickySidebar": { "message": "སྐད་འགྲེལ་གྱི་གདམས་ལས DuckDuckGPT སྣང་རིགས་གི་ནང་འཛིན་ལགས་ཀྱང་ལོངས་འགན་ལགས།" },
+  "helptip_bgAnimations": { "message": "UIགི་ཡན་ལག་ཚུ་ནང་ལུ་ animated backgroundསྟོན་འབདཝ་ཨིན།" },
   "helptip_replyLanguage": { "message": "ཁྱོད་ཀྱིས་ལན་སླབ་དགོ་པའི་ཚིག་འདི་ ཁྱོད་ཀྱིས་གོ་ཡི།" },
   "helptip_colorScheme": { "message": "ནང་ DuckDuckGPT ཡུ་ཨའི་ཆ་ཤས་ཚུ་བཀྲམ་སྟོན་འབད་ནི་ལུ་ལས་འཆར་་" },
   "placeholder_typeSomething": { "message": "འདི་བཟུམ་གྱི་" },

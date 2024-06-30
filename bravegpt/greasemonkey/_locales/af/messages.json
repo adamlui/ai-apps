@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Vereis \"/\" voor navrae vir antwoorde om te wys" },
   "helptip_suffixMode": { "message": "Vereis \"?\" na navrae vir antwoorde om te wys" },
   "helptip_widerSidebar": { "message": "Horisontaal uit te brei soek bladsy kantbalk" },
+  "helptip_bgAnimations": { "message": "Wys geanimeerde agtergronde in UI-komponente" },
   "helptip_replyLanguage": { "message": "Taal vir BraveGPT om te antwoord in" },
   "helptip_colorScheme": { "message": "Skema om BraveGPT UI-komponente in te vertoon" },
   "placeholder_askSomethingElse": { "message": "Vra iets anders" },

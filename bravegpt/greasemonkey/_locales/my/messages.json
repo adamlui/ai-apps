@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Show ကိုအဖြေများအတွက်မေးမြန်းစုံစမ်းလိုသည်များမတိုင်မီ \"/\" လိုအပ်သည်" },
   "helptip_suffixMode": { "message": "Show ကိုအဖြေများအတွက်မေးမြန်းစုံစမ်းလိုသည်များပြီးနောက် \"?\" လိုအပ်သည်" },
   "helptip_widerSidebar": { "message": "ရှာဖွေရေးစာမျက်နှာ ဘေးဘားတန်းကို အလျားလိုက် တိုးချဲ့ပါ" },
+  "helptip_bgAnimations": { "message": "UI အစိတ်အပိုင်းများတွင် သက်ဝင်လှုပ်ရှားသော နောက်ခံများကို ပြသပါ" },
   "helptip_replyLanguage": { "message": "တုံ့ပြန်ရန် BraveGPT အတွက်ဘာသာစကား" },
   "helptip_colorScheme": { "message": "အတွက် BraveGPT UI ကိုအစိတ်အပိုင်းများကိုပြသဖို့အစီအစဉ်" },
   "placeholder_askSomethingElse": { "message": "အခြားတစ်ခုခုကို မေးပါ" },

@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "דרוש \"/\" לפני שאילתות לתשובות להצגה" },
   "helptip_suffixMode": { "message": "דרוש \"?\" לאחר שאילתות לתשובות להצגה" },
   "helptip_widerSidebar": { "message": "הרחבה אופקית של סרגל הצד של דף החיפוש" },
+  "helptip_bgAnimations": { "message": "הצג רקעים מונפשים ברכיבי ממשק משתמש" },
   "helptip_replyLanguage": { "message": "שפה לתגובה של BraveGPT בעוד" },
   "helptip_colorScheme": { "message": "ערכה להצגת רכיבי ממשק משתמש BraveGPT ב -" },
   "placeholder_askSomethingElse": { "message": "Something else&#10;&#10;" },

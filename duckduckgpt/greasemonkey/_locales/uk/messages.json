@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Вимагати \"?\" після запитів для відображення відповідей" },
   "helptip_widerSidebar": { "message": "Горизонтальне розгортання бічної панелі сторінки пошуку" },
   "helptip_stickySidebar": { "message": "Робить DuckDuckGPT видимим на бічній панелі навіть під час прокрутки" },
+  "helptip_bgAnimations": { "message": "Показувати анімовані фони в компонентах інтерфейсу користувача" },
   "helptip_replyLanguage": { "message": "Мова для відповіді DuckDuckGPT" },
   "helptip_colorScheme": { "message": "Схема відображення компонентів інтерфейсу користувача DuckDuckGPT у" },
   "placeholder_typeSomething": { "message": "Щось типу" },

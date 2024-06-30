@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Cela \"/\" ngaphambi kwemibuzo yeempendulo eziza kuboniswa" },
   "helptip_suffixMode": { "message": "Ufuna \"?\" emva kwemibuzo yeempendulo eziza kuboniswa" },
   "helptip_widerSidebar": { "message": "Yandisa ngokuthe tyaba ibar esecaleni yephepha lokukhangela" },
+  "helptip_bgAnimations": { "message": "Bonisa iimvelaphi zoopopayi kwiingxenye ze-UI" },
   "helptip_replyLanguage": { "message": "Ulwimi lwe-BraveGPT lokuphendula" },
   "helptip_colorScheme": { "message": "Isicwangciso sokubonisa izinto ze-BraveGPT UI kwi" },
   "placeholder_askSomethingElse": { "message": "Buza enye into" },

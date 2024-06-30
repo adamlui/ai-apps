@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Να απαιτείται \"?\" μετά από ερωτήματα για να εμφανίζονται οι απαντήσεις" },
   "helptip_widerSidebar": { "message": "Οριζόντια επέκταση πλαϊνής στήλης σελίδας αναζήτησης" },
   "helptip_stickySidebar": { "message": "Κάνει το GoogleGPT ορατό στην πλαϊνή γραμμή ακόμα και κατά την κύλιση" },
+  "helptip_bgAnimations": { "message": "Εμφάνιση κινούμενου φόντου στα στοιχεία της διεπαφής χρήστη" },
   "helptip_replyLanguage": { "message": "Γλώσσα για να απαντήσει το GoogleGPT σε" },
   "helptip_colorScheme": { "message": "Σχέδιο για την εμφάνιση στοιχείων διεπαφής χρήστη GoogleGPT στο" },
   "placeholder_askSomethingElse": { "message": "Κάτι άλλο" },

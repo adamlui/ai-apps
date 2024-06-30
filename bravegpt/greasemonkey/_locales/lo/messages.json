@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "ຮຽກຮ້ອງໃຫ້ \"/\" ກ່ອນການສອບຖາມ ສໍາ ລັບ ຄໍາ ຕອບເພື່ອສະແດງ" },
   "helptip_suffixMode": { "message": "ຕ້ອງການ \"?\" ຫຼັງຈາກການສອບຖາມສໍາລັບຄໍາຕອບເພື່ອສະແດງ" },
   "helptip_widerSidebar": { "message": "Horizontally ຂະຫຍາຍຫນ້າຄົ້ນຫາ sidebar" },
+  "helptip_bgAnimations": { "message": "ສະແດງພື້ນຫຼັງທີ່ມີພາບເຄື່ອນໄຫວໃນອົງປະກອບ UI" },
   "helptip_replyLanguage": { "message": "ພາສາ ສໍາ ລັບ BraveGPT ເພື່ອຕອບສະ ຫນອງ ໃນ" },
   "helptip_colorScheme": { "message": "ກົນໄກທີ່ຈະສະແດງອົງປະກອບ BraveGPT UI ໃນ" },
   "placeholder_askSomethingElse": { "message": "" },

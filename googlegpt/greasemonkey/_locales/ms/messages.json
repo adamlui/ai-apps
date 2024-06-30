@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Memerlukan \"?\" selepas pertanyaan untuk jawapan ditunjukkan" },
   "helptip_widerSidebar": { "message": "Kembangkan bar sisi halaman carian secara mengufuk" },
   "helptip_stickySidebar": { "message": "Menjadikan GoogleGPT kelihatan di bar sisi walaupun anda menatal" },
+  "helptip_bgAnimations": { "message": "Tunjukkan latar belakang animasi dalam komponen UI" },
   "helptip_replyLanguage": { "message": "Bahasa untuk GoogleGPT menjawab dalam" },
   "helptip_colorScheme": { "message": "Skema untuk memaparkan komponen UI GoogleGPT dalam" },
   "placeholder_askSomethingElse": { "message": "Tanya perkara lain" },

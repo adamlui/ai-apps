@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Exiger «?» après les requêtes de réponses à afficher" },
   "helptip_widerSidebar": { "message": "Développer horizontalement la barre latérale de la page de recherche" },
   "helptip_stickySidebar": { "message": "Rend GoogleGPT visible dans la barre latérale même lorsque vous faites défiler" },
+  "helptip_bgAnimations": { "message": "Afficher les arrière-plans animés dans les composants de l'interface utilisateur" },
   "helptip_replyLanguage": { "message": "Langue de réponse de GoogleGPT" },
   "helptip_colorScheme": { "message": "Schéma pour afficher les composants de l'interface utilisateur GoogleGPT dans" },
   "placeholder_askSomethingElse": { "message": "Demander quelque chose" },

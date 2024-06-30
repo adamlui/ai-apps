@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Жооптордун көрсөтүлүшү үчүн суроолордон кийин \"?\" талап кылуу" },
   "helptip_widerSidebar": { "message": "Барактын капталын горизонталдуу кеңейтүү" },
   "helptip_stickySidebar": { "message": "DuckDuckGPT сиз жылдырганда да каптал тилкесинде көрүнөт" },
+  "helptip_bgAnimations": { "message": "UI компоненттеринде жандуу фонду көрсөтүү" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT үчүн тил" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI компоненттерин көрсөтүү схемасы" },
   "placeholder_typeSomething": { "message": "Бир нерсени терүү" },

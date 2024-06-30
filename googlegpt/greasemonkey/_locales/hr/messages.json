@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Zahtijeva \"?\" nakon upita za prikaz odgovora" },
   "helptip_widerSidebar": { "message": "Vodoravno proširi bočnu traku stranice za pretraživanje" },
   "helptip_stickySidebar": { "message": "Čini GoogleGPT vidljivim u bočnoj traci čak i dok se krećete" },
+  "helptip_bgAnimations": { "message": "Prikaži animirane pozadine u komponentama korisničkog sučelja" },
   "helptip_replyLanguage": { "message": "Jezik na kojem GoogleGPT odgovara" },
   "helptip_colorScheme": { "message": "Shema za prikaz komponenti korisničkog sučelja GoogleGPT-a u" },
   "placeholder_askSomethingElse": { "message": "Nešto drugo" },

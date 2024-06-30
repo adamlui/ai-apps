@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "查询后需要 “?” 才能显示答案" },
   "helptip_widerSidebar": { "message": "水平展开搜索页面侧边栏" },
   "helptip_stickySidebar": { "message": "即使滚动，也能使 DuckDuckGPT 在侧边栏中可见" },
+  "helptip_bgAnimations": { "message": "在 UI 组件中显示动画背景" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT 的回复语言" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI 组件显示方案" },
   "placeholder_typeSomething": { "message": "输入一些内容" },

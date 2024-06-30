@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "د ښودلو لپاره د پوښتنو ځوابونو لپاره \"/\" ته اړتیا لري" },
   "helptip_suffixMode": { "message": "د ښودلو لپاره د پوښتنو وروسته \"?\" ته اړتیا لرئ" },
   "helptip_widerSidebar": { "message": "د لټون پاڼې اړخ چکۍ په افقی ډول پراخه کړئ" },
+  "helptip_bgAnimations": { "message": "د UI رغتوکونو کې متحرک شاليدونه ښودل" },
   "helptip_replyLanguage": { "message": "د BraveGPTT لپاره ژبه په کې د ځواب ویلو لپاره" },
   "helptip_colorScheme": { "message": "د BraveGPT UI اجزاو ښودلو لپاره سکیم" },
   "placeholder_askSomethingElse": { "message": "بل څه وپوښتئ" },

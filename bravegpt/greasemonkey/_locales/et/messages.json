@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Nõua \"/\" enne päringuid vastuste kuvamiseks" },
   "helptip_suffixMode": { "message": "Nõua \"?\" pärast päringuid vastuste kuvamiseks" },
   "helptip_widerSidebar": { "message": "Laienda otsingulehe külgriba horisontaalselt" },
+  "helptip_bgAnimations": { "message": "Kuva animeeritud taustad kasutajaliidese komponentides" },
   "helptip_replyLanguage": { "message": "Keel, milles BraveGPT vastab" },
   "helptip_colorScheme": { "message": "Skeem BraveGPT kasutajaliidese komponentide kuvamiseks" },
   "placeholder_askSomethingElse": { "message": "Küsi midagi" },

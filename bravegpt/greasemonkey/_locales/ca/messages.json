@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Requereix \"/\" abans de les consultes per obtenir respostes per mostrar" },
   "helptip_suffixMode": { "message": "Requereix \"?\" després de les consultes per obtenir respostes per mostrar" },
   "helptip_widerSidebar": { "message": "Expandeix horitzontalment la barra lateral de la pàgina de cerca" },
+  "helptip_bgAnimations": { "message": "Mostra fons animats als components de la interfície d'usuari" },
   "helptip_replyLanguage": { "message": "Idioma en què BraveGPT pot respondre" },
   "helptip_colorScheme": { "message": "Esquema per mostrar els components de la interfície d'usuari de BraveGPT a" },
   "placeholder_askSomethingElse": { "message": "Altra cosa" },

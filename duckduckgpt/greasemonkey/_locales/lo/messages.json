@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "ຕ້ອງການ \"?\" ຫຼັງຈາກການສອບຖາມສໍາລັບຄໍາຕອບເພື່ອສະແດງ" },
   "helptip_widerSidebar": { "message": "Horizontally ຂະຫຍາຍຫນ້າຄົ້ນຫາ sidebar" },
   "helptip_stickySidebar": { "message": "ເຮັດໃຫ້ DuckDuckGPT ສາມາດເບິ່ງເຫັນໄດ້ໃນແຖບຂ້າງເຖິງແມ່ນວ່າເຈົ້າຈະເລື່ອນ" },
+  "helptip_bgAnimations": { "message": "ສະແດງພື້ນຫຼັງທີ່ມີພາບເຄື່ອນໄຫວໃນອົງປະກອບ UI" },
   "helptip_replyLanguage": { "message": "ພາສາ ສໍາ ລັບ DuckDuckGPT ເພື່ອຕອບໃນ" },
   "helptip_colorScheme": { "message": "ກົນລະຍຸດທີ່ຈະສະແດງສ່ວນປະກອບ UI DuckDuckGPT ໃນ" },
   "placeholder_typeSomething": { "message": "ປະເພດບາງສິ່ງບາງຢ່າງ" },

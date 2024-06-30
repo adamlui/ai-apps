@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Unahitaji \"?\" baada ya maswali kwa majibu ya kuonyesha" },
   "helptip_widerSidebar": { "message": "Panua upau wa pembeni wa ukurasa wa utafutaji kwa mlalo" },
   "helptip_stickySidebar": { "message": "Hufanya DuckDuckGPT ionekane kwenye upau wa pembeni hata unapotelezesha" },
+  "helptip_bgAnimations": { "message": "Onyesha mandharinyuma zilizohuishwa katika vipengele vya UI" },
   "helptip_replyLanguage": { "message": "Lugha ya DuckDuckGPT kujibu" },
   "helptip_colorScheme": { "message": "Mpango wa kuonyesha vipengele vya UI vya DuckDuckGPT katika" },
   "placeholder_typeSomething": { "message": "Andika kitu" },

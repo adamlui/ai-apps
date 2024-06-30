@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Wymagaj „/” przed zapytaniami o odpowiedzi do wyświetlenia" },
   "helptip_suffixMode": { "message": "Wymagaj „?” po zapytaniach o odpowiedzi do wyświetlenia" },
   "helptip_widerSidebar": { "message": "Rozwiń pasek boczny strony wyszukiwania w poziomie" },
+  "helptip_bgAnimations": { "message": "Pokaż animowane tła w komponentach interfejsu użytkownika" },
   "helptip_replyLanguage": { "message": "Język odpowiedzi BraveGPT" },
   "helptip_colorScheme": { "message": "Schemat wyświetlania komponentów interfejsu BraveGPT w" },
   "placeholder_askSomethingElse": { "message": "Coś innego" },

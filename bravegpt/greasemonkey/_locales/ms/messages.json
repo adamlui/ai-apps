@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Memerlukan \"/\" sebelum pertanyaan untuk jawapan ditunjukkan" },
   "helptip_suffixMode": { "message": "Memerlukan \"?\" selepas pertanyaan untuk jawapan ditunjukkan" },
   "helptip_widerSidebar": { "message": "Kembangkan bar sisi halaman carian secara mengufuk" },
+  "helptip_bgAnimations": { "message": "Tunjukkan latar belakang animasi dalam komponen UI" },
   "helptip_replyLanguage": { "message": "Bahasa untuk BraveGPT menjawab dalam" },
   "helptip_colorScheme": { "message": "Skema untuk memaparkan komponen UI BraveGPT dalam" },
   "placeholder_askSomethingElse": { "message": "Tanya perkara lain" },

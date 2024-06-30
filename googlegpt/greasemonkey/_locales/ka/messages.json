@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Მოითხოვეთ „?“ შეკითხვების შემდეგ პასუხების სანახავად" },
   "helptip_widerSidebar": { "message": "Ჰორიზონტალურად გააფართოვეთ საძიებო გვერდის გვერდი" },
   "helptip_stickySidebar": { "message": "Ხდის GoogleGPT-ს ხილვადს გვერდითა ზოლში გადახვევის დროსაც კი" },
+  "helptip_bgAnimations": { "message": "Ანიმაციური ფონების ჩვენება UI კომპონენტებში" },
   "helptip_replyLanguage": { "message": "Ენა GoogleGPT-სთვის პასუხის გასაცემად" },
   "helptip_colorScheme": { "message": "Სქემა GoogleGPT UI კომპონენტების საჩვენებლად" },
   "placeholder_askSomethingElse": { "message": "Სხვა რამის კითხვა" },

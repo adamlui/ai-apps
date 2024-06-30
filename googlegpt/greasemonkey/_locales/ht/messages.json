@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Mande \"?\" apre kesyon pou jwenn repons pou montre" },
   "helptip_widerSidebar": { "message": "Horizontally expand search page sidebar" },
   "helptip_stickySidebar": { "message": "Fè GoogleGPT vizib nan ankadre menm jan ou woule" },
+  "helptip_bgAnimations": { "message": "Montre orijin anime nan eleman UI" },
   "helptip_replyLanguage": { "message": "Lang pou GoogleGPT reponn nan" },
   "helptip_colorScheme": { "message": "Plan pou montre eleman GoogleGPT UI nan" },
   "placeholder_askSomethingElse": { "message": "Mande yon lòt bagay/Mande yon lòt bagay" },

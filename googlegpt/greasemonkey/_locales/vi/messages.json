@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Yêu cầu \"?\" sau truy vấn để hiển thị câu trả lời" },
   "helptip_widerSidebar": { "message": "Thanh bên trang tìm kiếm mở rộng theo chiều ngang" },
   "helptip_stickySidebar": { "message": "Làm cho GoogleGPT hiển thị trong thanh bên ngay cả khi bạn cuộn" },
+  "helptip_bgAnimations": { "message": "Hiển thị hình nền động trong các thành phần giao diện người dùng" },
   "helptip_replyLanguage": { "message": "Ngôn ngữ để GoogleGPT trả lời trong" },
   "helptip_colorScheme": { "message": "Đề án hiển thị các thành phần giao diện người dùng GoogleGPT trong" },
   "placeholder_askSomethingElse": { "message": "Khác" },

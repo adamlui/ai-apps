@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Unoda \"?\" mushure memibvunzo yemhinduro kuratidza" },
   "helptip_widerSidebar": { "message": "Horizontally kuwedzera kutsvaka peji sidebar" },
   "helptip_stickySidebar": { "message": "Inoita GoogleGPT kuoneka sidebar kunyange sezvo imi mupumburu" },
+  "helptip_bgAnimations": { "message": "Show animated kumashure muUI zvinoriumba" },
   "helptip_replyLanguage": { "message": "Mutauro weGoogleGPT kupindura mukati" },
   "helptip_colorScheme": { "message": "Chirongwa kuratidza GoogleGPT UI zvinoriumba mu" },
   "placeholder_askSomethingElse": { "message": "Bvunza chimwe chinhu" },

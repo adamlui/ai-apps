@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "ต้องการ \"?\" หลังจากการสอบถามเพื่อให้คำตอบแสดง" },
   "helptip_widerSidebar": { "message": "ขยายแถบด้านข้างของหน้าค้นหาในแนวนอน" },
   "helptip_stickySidebar": { "message": "ทำให้ DuckDuckGPT มองเห็นได้ในแถบด้านข้างแม้ในขณะที่คุณเลื่อน" },
+  "helptip_bgAnimations": { "message": "แสดงแบ็คกราวน์แบบเคลื่อนไหวในคอมโพเนนต์ UI" },
   "helptip_replyLanguage": { "message": "ภาษาสำหรับ DuckDuckGPT เพื่อตอบกลับ" },
   "helptip_colorScheme": { "message": "รูปแบบการแสดงส่วนประกอบ DuckDuckGPT UI ใน" },
   "placeholder_typeSomething": { "message": "พิมพ์บางอย่าง" },

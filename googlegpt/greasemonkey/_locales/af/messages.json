@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Vereis \"?\" na navrae vir antwoorde om te wys" },
   "helptip_widerSidebar": { "message": "Horisontaal uit te brei soek bladsy kantbalk" },
   "helptip_stickySidebar": { "message": "Maak GoogleGPT sigbaar in sybalk selfs as jy blaai" },
+  "helptip_bgAnimations": { "message": "Wys geanimeerde agtergronde in UI-komponente" },
   "helptip_replyLanguage": { "message": "Taal vir GoogleGPT om te antwoord in" },
   "helptip_colorScheme": { "message": "Skema om GoogleGPT UI-komponente in te vertoon" },
   "placeholder_askSomethingElse": { "message": "Vra iets anders" },

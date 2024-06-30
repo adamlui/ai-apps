@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Kinakailangan ng \"?\" pagkatapos ng mga query para sa mga tugon up" },
   "helptip_widerSidebar": { "message": "Уфуқӣ густариш додани панели паҳлӯии саҳифаи ҷустуҷӯ" },
   "helptip_stickySidebar": { "message": "DuckDuckGPT- ро дар панели паҳлӯӣ, ҳатто вақте ки шумо ҳаракат мекунед, намоён мекунад" },
+  "helptip_bgAnimations": { "message": "Намоиши заминаи аниматсионӣ дар ҷузъҳои UI" },
   "helptip_replyLanguage": { "message": "Забон барои DuckDuckGPT барои ҷавоб додан дар" },
   "helptip_colorScheme": { "message": "Нақша барои намоиши ҷузъҳои DuckDuckGPT UI дар" },
   "placeholder_typeSomething": { "message": "Чизеро чоп кунед" },

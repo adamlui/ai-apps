@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Krev '?' etter spørsmål for svar å vise" },
   "helptip_widerSidebar": { "message": "Utvid søkesidens sidefelt horisontalt" },
   "helptip_stickySidebar": { "message": "Gjør DuckDuckGPT synlig i sidefeltet selv når du blar" },
+  "helptip_bgAnimations": { "message": "Vis animerte bakgrunner i UI-komponenter" },
   "helptip_replyLanguage": { "message": "Språk for DuckDuckGPT å svare på" },
   "helptip_colorScheme": { "message": "Opplegg for å vise DuckDuckGPT UI-komponenter i" },
   "placeholder_typeSomething": { "message": "Skriv noe" },

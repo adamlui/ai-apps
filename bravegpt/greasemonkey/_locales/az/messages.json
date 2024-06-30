@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Göstəriləcək cavablar üçün sorğulardan əvvəl \"/\" tələb edin" },
   "helptip_suffixMode": { "message": "Göstəriləcək cavablar üçün sorğulardan sonra \"?\" sorğusu göndərin" },
   "helptip_widerSidebar": { "message": "Axtarış səhifəsinin yan çubuğunu üfüqi istiqamətdə genişləndirin" },
+  "helptip_bgAnimations": { "message": "Animasiya fonlarını Uİ komponentlərində göstərin" },
   "helptip_replyLanguage": { "message": "Cavab vermək üçün BraveGPT dili" },
   "helptip_colorScheme": { "message": "BraveGPT UI komponentlərini göstərmək üçün sxem" },
   "placeholder_askSomethingElse": { "message": "Başqa bir şey soruşun" },

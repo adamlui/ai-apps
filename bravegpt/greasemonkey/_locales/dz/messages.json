@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "ལན་ཚུ་སྟོན་ནིའི་དོན་ལུ་ འདྲི་དཔྱད་ཀྱི་ཧེ་མ་ \"/\" དགོ" },
   "helptip_suffixMode": { "message": "ལན་ཚུ་སྟོན་ནིའི་དོན་ལུ་འདྲི་དཔྱད་ཀྱི་ཤུལ་ལས་ \"?\" དགོ" },
   "helptip_widerSidebar": { "message": "ཐད་སྙོམས་སྦེ་ འཚོལ་ཞིབ་ཤོག་ལེབ་ཟུར་ཁའི་ཕྲ་རིང་རྒྱ་བསྐྱེད་འབད།" },
+  "helptip_bgAnimations": { "message": "UIགི་ཡན་ལག་ཚུ་ནང་ལུ་ animated backgroundསྟོན་འབདཝ་ཨིན།" },
   "helptip_replyLanguage": { "message": "ཁྱོད་ཀྱིས་ལན་སླབ་ནི་དེ་ བློ་ཁོག་ཆེ་ཏོག་ཏོ་ཅིག་ཨིན་ཟེར་སླབ་དགོ།" },
   "helptip_colorScheme": { "message": "ནང་ BraveGPT ཡུ་ཨའི་ཆ་ཤས་ཚུ་བཀྲམ་སྟོན་འབད་ནི་ལུ་ལས་འཆར་" },
   "placeholder_askSomethingElse": { "message": "ད་རུང་དྲི་བ་གཅིག་དྲི་ནི་" },

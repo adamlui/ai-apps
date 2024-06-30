@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Neyðugt \"?\" eftir at hava spurt eftir svarum at vísa" },
   "helptip_widerSidebar": { "message": "Horizontalt víðka leitingarsíðuna" },
   "helptip_stickySidebar": { "message": "Ger DuckDuckGPT sjónligt í sidebar, hóast tú rullar" },
+  "helptip_bgAnimations": { "message": "Vís animeraðar bakgrunnar í UI-komponentum" },
   "helptip_replyLanguage": { "message": "Mál fyri DuckDuckGPT at svara í" },
   "helptip_colorScheme": { "message": "Skema at vísa DuckDuckGPT UI-komponentar í" },
   "placeholder_typeSomething": { "message": "Hvat er tað?" },

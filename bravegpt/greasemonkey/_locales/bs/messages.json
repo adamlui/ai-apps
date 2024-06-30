@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Zahtijevajte \"/\" prije upita za prikaz odgovora" },
   "helptip_suffixMode": { "message": "Zahtijeva \"?\" nakon upita za prikaz odgovora" },
   "helptip_widerSidebar": { "message": "Vodoravno proširi bočnu traku stranice za pretraživanje" },
+  "helptip_bgAnimations": { "message": "Prikaži animirane pozadine u komponentama korisničkog interfejsa" },
   "helptip_replyLanguage": { "message": "Jezik na kojem BraveGPT odgovara" },
   "helptip_colorScheme": { "message": "Šema za prikaz komponenti korisničkog sučelja BraveGPT u" },
   "placeholder_askSomethingElse": { "message": "Pitajte nešto drugo" },

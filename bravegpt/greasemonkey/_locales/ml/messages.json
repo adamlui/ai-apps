@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "കാണിക്കുന്നതിനുള്ള ഉത്തരങ്ങൾക്കായി ചോദ്യങ്ങൾക്ക് മുമ്പായി \"/\" ആവശ്യമാണ്" },
   "helptip_suffixMode": { "message": "കാണിക്കുന്നതിനുള്ള ഉത്തരങ്ങൾക്കുള്ള ചോദ്യങ്ങൾക്ക് ശേഷം \"?\" ആവശ്യമാണ്" },
   "helptip_widerSidebar": { "message": "തിരയൽ പേജ് സൈഡ്ബാർ തിരശ്ചീനമായി വിപുലീകരിക്കുക" },
+  "helptip_bgAnimations": { "message": "UI ഘടകങ്ങളിൽ ആനിമേറ്റുചെയ്‌ത പശ്ചാത്തലങ്ങൾ കാണിക്കുക" },
   "helptip_replyLanguage": { "message": "മറുപടി നൽകാനുള്ള ധീരതയുള്ള GPT-നുള്ള ഭാഷ" },
   "helptip_colorScheme": { "message": "ഇതിൽ BraveGPT UI ഘടകങ്ങൾ പ്രദർശിപ്പിക്കുന്നതിനുള്ള പദ്ധതി" },
   "placeholder_askSomethingElse": { "message": "മറ്റെന്തെങ്കിലും ചോദിക്കുക" },

@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "דאַרפן '/' איידער פֿראגן פֿאַר ענטפֿערס צו ווייַזן" },
   "helptip_suffixMode": { "message": "דאַרפן '?' נאָך פֿראגן פֿאַר ענטפֿערס צו ווייַזן" },
   "helptip_widerSidebar": { "message": "האָריזאָנטאַלי יקספּאַנד זוכן בלאַט סיידבאַר" },
+  "helptip_bgAnimations": { "message": "ווייַזן אַנימאַטעד באַקגראַונדז אין וי קאַמפּאָונאַנץ" },
   "helptip_replyLanguage": { "message": "שפּראַך פֿאַר BraveGPT צו ענטפֿערן" },
   "helptip_colorScheme": { "message": "סכעמע צו ווייַזן BraveGPT UI קאַמפּאָונאַנץ אין" },
   "placeholder_askSomethingElse": { "message": "פרעגן עפּעס אַנדערש" },

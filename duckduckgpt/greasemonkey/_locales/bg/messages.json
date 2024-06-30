@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Изискване на „?“ след запитвания за показване на отговори" },
   "helptip_widerSidebar": { "message": "Хоризонтално разширяване на страничната лента на страницата за търсене" },
   "helptip_stickySidebar": { "message": "Прави DuckDuckGPT видим в страничната лента, дори когато превъртате" },
+  "helptip_bgAnimations": { "message": "Показване на анимирани фонове в компонентите на потребителския интерфейс" },
   "helptip_replyLanguage": { "message": "Език, на който DuckDuckGPT да отговори" },
   "helptip_colorScheme": { "message": "Схема за показване на компонентите на потребителския интерфейс на DuckDuckGPT в" },
   "placeholder_typeSomething": { "message": "Въведете нещо" },

@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Saba \"?\" nyuma y'ibibazo kugirango ibisubizo bigaragare" },
   "helptip_widerSidebar": { "message": "Ongera ubugari ku mpande z'urupapuro rwo gushakisha" },
   "helptip_stickySidebar": { "message": "Gira GoogleGPT igaragara ku ruhande n'iyo uriho uscrollinga" },
+  "helptip_bgAnimations": { "message": "Mbuganyuma in" },
   "helptip_replyLanguage": { "message": "Ururimi rwa GoogleGPT rw'igisubizo" },
   "helptip_colorScheme": { "message": "Icyerekezo cyo kwerekana ibice bya GoogleGPT UI" },
   "placeholder_askSomethingElse": { "message": "Baza ikindi kintu" },

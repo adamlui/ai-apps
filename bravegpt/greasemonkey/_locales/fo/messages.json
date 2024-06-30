@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Tað krevur \"/\" áðrenn spurningar verða gjørdar fyri at fáa svar at vísa" },
   "helptip_suffixMode": { "message": "Neyðugt \"?\" eftir at hava spurt eftir svarum at vísa" },
   "helptip_widerSidebar": { "message": "Horizontalt víðka leitingarsíðuna" },
+  "helptip_bgAnimations": { "message": "Vís animeraðar bakgrunnar í UI-komponentum" },
   "helptip_replyLanguage": { "message": "Tað er ikki neyðugt at gera eina avgerð um, at tað ikki er møguligt at gera eina avgerð um, at" },
   "helptip_colorScheme": { "message": "Skema at vísa BraveGPT UI komponentir í" },
   "placeholder_askSomethingElse": { "message": "Eg vil spyrja teg um okkurt annað" },

@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Baahida \"/\" ka hor su 'aalaha jawaabaha si aad u muujiso" },
   "helptip_suffixMode": { "message": "Baahida \"?\" ka dib su 'aalaha jawaabaha si aad u muujiso" },
   "helptip_widerSidebar": { "message": "Horizontally ballaarinta bogga raadinta sidebar" },
+  "helptip_bgAnimations": { "message": "Muuji asalka animated ee qaybaha UI" },
   "helptip_replyLanguage": { "message": "Luuqadda loogu talagalay BraveGPT si looga jawaabo" },
   "helptip_colorScheme": { "message": "Qorshaha lagu soo bandhigayo qaybaha BraveGPT UI ee" },
   "placeholder_askSomethingElse": { "message": "Weydii wax kale" },

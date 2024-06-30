@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "تتطلب \"/\" قبل الاستعلامات لإظهار الإجابات" },
   "helptip_suffixMode": { "message": "تتطلب \"?\" بعد الاستعلامات لإظهار الإجابات" },
   "helptip_widerSidebar": { "message": "توسيع الشريط الجانبي لصفحة البحث أفقيًا" },
+  "helptip_bgAnimations": { "message": "عرض الخلفيات المتحركة في مكونات واجهة المستخدم" },
   "helptip_replyLanguage": { "message": "لغة BraveGPT للرد في" },
   "helptip_colorScheme": { "message": "مخطط لعرض مكونات واجهة مستخدم BraveGPT في" },
   "placeholder_askSomethingElse": { "message": "أسأل عن شئ آخر" },

@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Baahida \"?\" ka dib su 'aalaha jawaabaha si aad u muujiso" },
   "helptip_widerSidebar": { "message": "Horizontally ballaarinta bogga raadinta sidebar" },
   "helptip_stickySidebar": { "message": "Waxay ka dhigeysaa DuckDuckGPT inuu ku muuqdo bar dhinaca xitaa markaad xoqdo" },
+  "helptip_bgAnimations": { "message": "Muuji asalka animated ee qaybaha UI" },
   "helptip_replyLanguage": { "message": "Luuqadda loogu talagalay DuckDuckGPT si looga jawaabo" },
   "helptip_colorScheme": { "message": "Qorshaha lagu soo bandhigayo qaybaha DuckDuckGPT UI ee" },
   "placeholder_typeSomething": { "message": "Nooca wax" },

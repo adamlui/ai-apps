@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "ត្រូវការ \"?\" បន្ទាប់ពីសំណួរសម្រាប់ចម្លើយដើម្បីបង្ហាញ" },
   "helptip_widerSidebar": { "message": "របារ ចំហៀង ទំព័រ ស្វែងរក ផ្ដេក" },
   "helptip_stickySidebar": { "message": "ធ្វើ ឲ្យ GoogleGPT អាច មើល ឃើញ នៅ ក្នុង របារ ចំហៀង សូម្បី តែ ពេល អ្នក រមូរ" },
+  "helptip_bgAnimations": { "message": "បង្ហាញ ផ្ទៃ ខាង ក្រោយ ដែល មាន ចលនា នៅ ក្នុង សមាសភាគ UI" },
   "helptip_replyLanguage": { "message": "ភាសាសម្រាប់ GoogleGPT ដើម្បីឆ្លើយតបនៅក្នុង" },
   "helptip_colorScheme": { "message": "គ្រោងការណ៍ ត្រូវ បង្ហាញ សមាសភាគ UI របស់ GoogleGPT នៅ ក្នុង" },
   "placeholder_askSomethingElse": { "message": "អ្វីផ្សេងទៀត" },

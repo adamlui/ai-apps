@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "A válaszok megjelenítéséhez „/” szükséges a lekérdezések előtt" },
   "helptip_suffixMode": { "message": "A megjelenítendő válaszok lekérdezése után „?” szükséges" },
   "helptip_widerSidebar": { "message": "Keresési oldal oldalsávjának vízszintes kibontása" },
+  "helptip_bgAnimations": { "message": "Animált hátterek megjelenítése a felhasználói felület összetevőiben" },
   "helptip_replyLanguage": { "message": "A BraveGPT válaszadási nyelve" },
   "helptip_colorScheme": { "message": "A BraveGPT UI komponensek megjelenítésének sémája" },
   "placeholder_askSomethingElse": { "message": "Más kérdésem van" },

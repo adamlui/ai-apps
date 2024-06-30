@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Göstəriləcək cavablar üçün sorğulardan sonra \"?\" sorğusu göndərin" },
   "helptip_widerSidebar": { "message": "Axtarış səhifəsinin yan çubuğunu üfüqi istiqamətdə genişləndirin" },
   "helptip_stickySidebar": { "message": "DuckDuckGPT-ni sürüşdürərkən belə kənar çubuqda görünməsini təmin edir" },
+  "helptip_bgAnimations": { "message": "Animasiya fonlarını Uİ komponentlərində göstərin" },
   "helptip_replyLanguage": { "message": "Cavab vermək üçün DuckDuckGPT üçün dil" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI komponentlərini göstərmək üçün sxem" },
   "placeholder_typeSomething": { "message": "Nəsə yazın" },

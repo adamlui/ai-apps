@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Angen \"?\" ar ôl cwestiynau am atebion i'w dangos" },
   "helptip_widerSidebar": { "message": "Ehangu bar ochr y dudalen chwilio yn llorweddol" },
   "helptip_stickySidebar": { "message": "Gwneud DuckDuckGPT yn weladwy yn y bar ochr hyd yn oed wrth i chi sgrolio" },
+  "helptip_bgAnimations": { "message": "Dangos cefndiroedd wedi'u hanimeiddio mewn cydrannau UI" },
   "helptip_replyLanguage": { "message": "Iaith i DuckDuckGPT ymateb ynddi" },
   "helptip_colorScheme": { "message": "Cynllun i ddangos cydrannau rhyngwyneb DuckDuckGPT yn" },
   "placeholder_typeSomething": { "message": "Teipiwch rywbeth" },

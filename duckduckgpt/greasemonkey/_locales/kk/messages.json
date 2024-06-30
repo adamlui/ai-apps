@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Көрсету үшін жауаптар сұраныстарынан кейін «?» талап етіңіз" },
   "helptip_widerSidebar": { "message": "Іздеу бетінің бүйірлік тақтасын көлденеңінен кеңейту" },
   "helptip_stickySidebar": { "message": "Жылжытқанда да DuckDuckGPT бүйірлік тақтасында көрінеді" },
+  "helptip_bgAnimations": { "message": "UI компоненттерінде анимацияланған фондарды көрсету" },
   "helptip_replyLanguage": { "message": "Жауап беру үшін DuckDuckGPT тілі" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI компоненттерін көрсететін схема" },
   "placeholder_typeSomething": { "message": "Бірдеңе теріңіз" },

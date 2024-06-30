@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "تتطلب \"?\" بعد الاستعلامات لإظهار الإجابات" },
   "helptip_widerSidebar": { "message": "توسيع الشريط الجانبي لصفحة البحث أفقيًا" },
   "helptip_stickySidebar": { "message": "يجعل DuckDuckGPT مرئيًا في الشريط الجانبي حتى أثناء التمرير" },
+  "helptip_bgAnimations": { "message": "عرض الخلفيات المتحركة في مكونات واجهة المستخدم" },
   "helptip_replyLanguage": { "message": "لغة DuckDuckGPT للرد في" },
   "helptip_colorScheme": { "message": "مخطط لعرض مكونات واجهة مستخدم DuckDuckGPT في" },
   "placeholder_typeSomething": { "message": "أكتب شيئا" },

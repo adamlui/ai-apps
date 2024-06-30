@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Asfeg \"/\" s wawal s yidles ur yessekri ara" },
   "helptip_suffixMode": { "message": "Asfeg \"?\" s wawal s yidles ur yessekri ara" },
   "helptip_widerSidebar": { "message": "Tawila n yiched ittel s wawal n tazult" },
+  "helptip_bgAnimations": { "message": "Sken iferdisen imezwura deg yifuyla UI" },
   "helptip_replyLanguage": { "message": "Tazwara i BraveGPT i yeskri" },
   "helptip_colorScheme": { "message": "Tazwara i tura n BraveGPT" },
   "placeholder_askSomethingElse": { "message": "Aderra yiwen ayen" },

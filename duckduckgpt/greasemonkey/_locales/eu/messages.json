@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "'?' eskatzen du erantzunak erakusteko galderen ondoren" },
   "helptip_widerSidebar": { "message": "Zabaldu bilaketa-orriaren alboko barra horizontalean" },
   "helptip_stickySidebar": { "message": "DuckDuckGPT alboko barran ikusgai jartzen du nabigatzen duzun bitartean" },
+  "helptip_bgAnimations": { "message": "Erakutsi atzeko plano animatuak UI osagaietan" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT-ren hizkuntza erantzuteko" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI osagaiak bistaratzeko eskema" },
   "placeholder_typeSomething": { "message": "Idatzi zerbait" },

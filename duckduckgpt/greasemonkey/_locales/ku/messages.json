@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Pêdivî ye '?' piştî pirsan ji bo bersivan nîşan bide" },
   "helptip_widerSidebar": { "message": "Li kêleka rûpela lêgerînê ya horizontî berfireh bike" },
   "helptip_stickySidebar": { "message": "DuckDuckGPT di milê kêlekê de jî dema ku hûn digerînin xuya dike" },
+  "helptip_bgAnimations": { "message": "Di hêmanên UI de paşnavên anîmasyon nîşan bidin" },
   "helptip_replyLanguage": { "message": "Ziman ji bo DuckDuckGPT ku bersivê bide" },
   "helptip_colorScheme": { "message": "Plana nîşandana pêkhateyên UI-ya DuckDuckGPT tê de" },
   "placeholder_typeSomething": { "message": "Tiştek binivîse" },

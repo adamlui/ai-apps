@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Wymagaj „?” po zapytaniach o odpowiedzi do wyświetlenia" },
   "helptip_widerSidebar": { "message": "Rozwiń pasek boczny strony wyszukiwania w poziomie" },
   "helptip_stickySidebar": { "message": "Sprawia, że GoogleGPT jest widoczny na pasku bocznym nawet podczas przewijania" },
+  "helptip_bgAnimations": { "message": "Pokaż animowane tła w komponentach interfejsu użytkownika" },
   "helptip_replyLanguage": { "message": "Język odpowiedzi GoogleGPT" },
   "helptip_colorScheme": { "message": "Schemat wyświetlania komponentów interfejsu GoogleGPT w" },
   "placeholder_askSomethingElse": { "message": "Coś innego" },

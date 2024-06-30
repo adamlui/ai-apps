@@ -42,6 +42,7 @@
   "helptip_prefixMode": { "message": "Kisim \"/\" paslain long ol askim bilong kisim bekim bilong soim" },
   "helptip_suffixMode": { "message": "Kisim \"?\" bihain long ol askim long bekim bilong soim" },
   "helptip_widerSidebar": { "message": "Long sait bilong painim ol samting long hap bilong graun" },
+  "helptip_bgAnimations": { "message": "Show animated backgrounds in UI components" },
   "helptip_replyLanguage": { "message": "Tokples bilong ol man i save bekim tok long ol" },
   "helptip_colorScheme": { "message": "Ol samting bilong soim ol samting i stap insait long en" },
   "placeholder_askSomethingElse": { "message": "Mi laik askim yu long wanpela samting moa" },

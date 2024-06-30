@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Krefjast „?“ eftir fyrirspurnir um svör til að sýna" },
   "helptip_widerSidebar": { "message": "Stækka hliðarsíðu leitarsíðunnar lárétt" },
   "helptip_stickySidebar": { "message": "Gerir GoogleGPT sýnilegt í hliðarstikunni jafnvel þegar þú flettir" },
+  "helptip_bgAnimations": { "message": "Sýna hreyfibakgrunn í íhlutum notendaviðmóts" },
   "helptip_replyLanguage": { "message": "Tungumál fyrir GoogleGPT til að svara á" },
   "helptip_colorScheme": { "message": "Skema til að sýna GoogleGPT notendaviðmótshluta í" },
   "placeholder_askSomethingElse": { "message": "Spurðu um eitthvað annað" },

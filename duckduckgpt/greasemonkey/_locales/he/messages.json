@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "דרוש \"?\" לאחר שאילתות לתשובות להצגה" },
   "helptip_widerSidebar": { "message": "הרחבה אופקית של סרגל הצד של דף החיפוש" },
   "helptip_stickySidebar": { "message": "הופך את DuckDuckGPT לגלוי בסרגל הצידי אפילו כשאתה גולל" },
+  "helptip_bgAnimations": { "message": "הצג רקעים מונפשים ברכיבי ממשק משתמש" },
   "helptip_replyLanguage": { "message": "שפה לתגובת DuckDuckGPT" },
   "helptip_colorScheme": { "message": "ערכה להצגת רכיבי ממשק משתמש של DuckDuckGPT ב -" },
   "placeholder_typeSomething": { "message": "יש להקליד משהו" },

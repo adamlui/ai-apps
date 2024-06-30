@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "A megjelenítendő válaszok lekérdezése után „?” szükséges" },
   "helptip_widerSidebar": { "message": "Keresési oldal oldalsávjának vízszintes kibontása" },
   "helptip_stickySidebar": { "message": "A DuckDuckGPT-t görgetés közben is láthatóvá teszi az oldalsávban" },
+  "helptip_bgAnimations": { "message": "Animált hátterek megjelenítése a felhasználói felület összetevőiben" },
   "helptip_replyLanguage": { "message": "A DuckDuckGPT válaszadási nyelve" },
   "helptip_colorScheme": { "message": "A DuckDuckGPT UI komponensek megjelenítésének sémája" },
   "placeholder_typeSomething": { "message": "Írjon be valamit" },

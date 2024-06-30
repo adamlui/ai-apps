@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Ulefwaya \"?\" panuma ya fipusho pa fyasuko ukulanga" },
   "helptip_widerSidebar": { "message": "Ukulundulula ibuula lya kufwaya" },
   "helptip_stickySidebar": { "message": "Icilenga DuckDuckGPT ukumoneka mu citabo ca ku lubali nangula ilyo ulepilibula" },
+  "helptip_bgAnimations": { "message": "Tulangisheni ifili mu mpindi ya makatasho mu fiputusha fya UI" },
   "helptip_replyLanguage": { "message": "Ululimi lwa DuckDuckGPT ulwa kwasukamo" },
   "helptip_colorScheme": { "message": "Icilangililo cakulangisha ifiputulwa fya UI ifya DuckDuckGPT muli" },
   "placeholder_typeSomething": { "message": "Mulesunga icintu cimo" },

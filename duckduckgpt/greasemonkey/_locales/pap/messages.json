@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Rekerí \"?\" despues di e pregunta pa e respuesta por aparece" },
   "helptip_widerSidebar": { "message": "Hasi e barra lateral di e pagina di buska mas ancho" },
   "helptip_stickySidebar": { "message": "Mantené DuckDuckGPT visibel den e barra lateral aunke bo ta scroll" },
+  "helptip_bgAnimations": { "message": "Animacion En Componentes Ue" },
   "helptip_replyLanguage": { "message": "Idioma pa DuckDuckGPT por respondé den dje" },
   "helptip_colorScheme": { "message": "Esquema di kolor pa desplegá e komponentenan di DuckDuckGPT UI" },
   "placeholder_typeSomething": { "message": "Tipo di algu" },

@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Asfeg \"?\" s wawal s yidles ur yessekri ara" },
   "helptip_widerSidebar": { "message": "Tawila n yiched ittel s wawal n tazult" },
   "helptip_stickySidebar": { "message": "Iteḍi DuckDuckGPT deg tawila s tazult" },
+  "helptip_bgAnimations": { "message": "Sken iferdisen imezwura deg yifuyla UI" },
   "helptip_replyLanguage": { "message": "Tazwara i DuckDuckGPT i yeskri" },
   "helptip_colorScheme": { "message": "Tazwara i tura n DuckDuckGPT" },
   "placeholder_typeSomething": { "message": "Tixsi s umḍan" },

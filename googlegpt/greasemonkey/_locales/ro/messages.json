@@ -44,6 +44,7 @@
   "helptip_suffixMode": { "message": "Solicitați „?” după interogări pentru ca răspunsurile să fie afișate" },
   "helptip_widerSidebar": { "message": "Extindeți orizontal bara laterală a paginii de căutare" },
   "helptip_stickySidebar": { "message": "Face GoogleGPT vizibil în bara laterală chiar și atunci când derulați" },
+  "helptip_bgAnimations": { "message": "Afișați fundaluri animate în componentele UI" },
   "helptip_replyLanguage": { "message": "Limba în care GoogleGPT poate răspunde" },
   "helptip_colorScheme": { "message": "Schema de afișare a componentelor GoogleGPT UI în" },
   "placeholder_askSomethingElse": { "message": "Altceva" },
