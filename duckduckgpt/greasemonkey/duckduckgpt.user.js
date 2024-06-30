@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.6
+// @version             2024.6.30.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -388,8 +388,8 @@
                     `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
                         + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
                     '', '', 330) // confirmation width
-                const replyLangMenuEntry = document.getElementById('replyLanguage-menu-entry')
-                if (replyLangMenuEntry) replyLangMenuEntry.querySelector('span').textContent = replyLanguage
+                if (modals.settings.get()) // update settings menu entry label
+                    document.querySelector('#replyLanguage-menu-entry span').textContent = replyLanguage
                 break
     }}}
 
@@ -630,8 +630,8 @@
                 function updateScheme(newScheme) {
                     scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
                     saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
-                    const schemeMenuEntry = document.getElementById('scheme-menu-entry')
-                    if (schemeMenuEntry) schemeMenuEntry.querySelector('span').textContent = newScheme
+                    if (modals.settings.get()) // update Settings menu entry label
+                        document.querySelector('#scheme-menu-entry span').textContent = newScheme
                     updateAppLogoSrc() ; updateAppStyle() ; updateStars() ; schemeNotify(newScheme)
                 }
 
@@ -1487,9 +1487,9 @@
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
             refreshMenu()
-            const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input')
-            if (proxyToggle && proxyToggle.checked != config.proxyAPIenabled) // update visual state of Settings toggle
-                modals.settings.toggle.switch(proxyToggle)
+            if (modals.settings.get() &&
+                document.querySelector('[id*="proxy"][id*="menu-entry"] input').checked != config.proxyAPIenabled)
+                    modals.settings.toggle.switch(proxyToggle) // update visual state of Settings toggle
             if (appDiv.querySelector('#ddgpt-alert')) location.reload() // re-send query if user alerted 
         },
 

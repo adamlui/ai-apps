@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.4
+// @version             2024.6.30.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -577,8 +577,8 @@
                     `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
                         + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
                     '', '', 330) // confirmation width
-                const replyLangMenuEntry = document.getElementById('replyLanguage-menu-entry')
-                if (replyLangMenuEntry) replyLangMenuEntry.querySelector('span').textContent = replyLanguage
+                if (modals.settings.get()) // update settings menu entry label
+                    document.querySelector('#replyLanguage-menu-entry span').textContent = replyLanguage
                 break
     }}}
 
@@ -811,8 +811,8 @@
                 function updateScheme(newScheme) {
                     scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
                     saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
-                    const schemeMenuEntry = document.getElementById('scheme-menu-entry')
-                    if (schemeMenuEntry) schemeMenuEntry.querySelector('span').textContent = newScheme
+                    if (modals.settings.get()) // update Settings menu entry label
+                        document.querySelector('#scheme-menu-entry span').textContent = newScheme
                     updateAppLogoSrc() ; updateAppStyle() ; updateStars() ; schemeNotify(newScheme)
                 }
 
@@ -1804,9 +1804,9 @@
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
             refreshMenu()
-            const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input')
-            if (proxyToggle && proxyToggle.checked != config.proxyAPIenabled) // update visual state of Settings modal
-                modals.settings.toggle.switch(proxyToggle)
+            if (modals.settings.get() &&
+                document.querySelector('[id*="proxy"][id*="menu-entry"] input').checked != config.proxyAPIenabled)
+                    modals.settings.toggle.switch(proxyToggle) // update visual state of Settings toggle
             if (appDiv.querySelector('googlegpt-alert')) location.reload() // re-send query if user alerted 
         },
 
