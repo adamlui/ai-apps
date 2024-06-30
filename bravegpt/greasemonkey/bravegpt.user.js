@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.20
+// @version             2024.6.30
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1511,12 +1511,6 @@ setTimeout(async () => {
 
     // Define FACTORY functions
 
-    function createSVGpath(attrs) {
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-        for (const attr in attrs) path.setAttributeNS(null, attr, attrs[attr])
-        return path
-    }
-
     function createAnchor(linkHref, displayContent, attrs = {}) {
         const anchor = document.createElement('a'),
               defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
@@ -1527,6 +1521,18 @@ setTimeout(async () => {
             else if (displayContent instanceof HTMLElement) anchor.append(displayContent)
         }
         return anchor
+    }
+
+    function createStyle(content) {
+        const style = document.createElement('style')
+        if (content) style.innerText = content
+        return style
+    }
+
+    function createSVGpath(attrs) {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+        for (const attr in attrs) path.setAttributeNS(null, attr, attrs[attr])
+        return path
     }
 
     // Define TOGGLE functions
@@ -2383,12 +2389,12 @@ setTimeout(async () => {
     })
 
     // Stylize APP elems
-    const appStyle =  document.createElement('style') ; updateAppStyle()
-    const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
+    const appStyle = createStyle() ; updateAppStyle()
+    const hljsStyle = createStyle(GM_getResourceText('hljsCSS'))
     document.head.append(appStyle, hljsStyle)
 
     // Stylize SITE elems
-    const tweaksStyle = document.createElement('style'),
+    const tweaksStyle = createStyle(),
           wsbStyles = 'main.main-column, aside.sidebar { max-width: 521px !important }'
                     + '#bravegpt { width: 521px }'
     updateTweaksStyle() ; document.head.append(tweaksStyle)
@@ -2396,14 +2402,13 @@ setTimeout(async () => {
     // Create/stylize TOOLTIPs
     if (!isMobile) {
         var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
-        const tooltipStyle = document.createElement('style')
-        tooltipStyle.innerText = '.btn-tooltip {'
+        document.head.append(createStyle('.btn-tooltip {'
             + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 5px 6px 3px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
             + 'font-size: 0.58rem ; color: white ;' // font style
             + 'position: absolute ;' // for updateTooltip() calcs
             + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
             + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
-        document.head.append(tooltipStyle)
+        ))
     }
 
     // APPEND to Brave

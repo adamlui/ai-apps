@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.17
+// @version             2024.6.30
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1768,12 +1768,6 @@
 
     // Define FACTORY functions
 
-    function createSVGpath(attrs) {
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-        for (const attr in attrs) path.setAttributeNS(null, attr, attrs[attr])
-        return path
-    }
-
     function createAnchor(linkHref, displayContent, attrs = {}) {
         const anchor = document.createElement('a'),
               defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
@@ -1784,6 +1778,18 @@
             else if (displayContent instanceof HTMLElement) anchor.append(displayContent)
         }
         return anchor
+    }
+
+    function createStyle(content) {
+        const style = document.createElement('style')
+        if (content) style.innerText = content
+        return style
+    }
+
+    function createSVGpath(attrs) {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+        for (const attr in attrs) path.setAttributeNS(null, attr, attrs[attr])
+        return path
     }
 
     // Define TOGGLE functions
@@ -2678,12 +2684,12 @@
     })
 
     // Stylize APP elems
-    const appStyle = document.createElement('style') ; updateAppStyle()
-    const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
+    const appStyle = createStyle() ; updateAppStyle()
+    const hljsStyle = createStyle(GM_getResourceText('hljsCSS'))
     document.head.append(appStyle, hljsStyle)
 
     // Stylize SITE elems
-    const tweaksStyle = document.createElement('style'),
+    const tweaksStyle = createStyle(),
           wsbStyles = '#center_col, #center_col div { max-width: 516px !important ; overflow: hidden }' // shrink center column
                     + '#googlegpt { width: 455px }' // expand GoogleGPT when in limiting Google host container
                     + '#googlegpt ~ div { width: 540px !important }' // expand side snippets
@@ -2695,14 +2701,13 @@
     // Create/stylize TOOLTIPs
     if (!isMobile) {
         var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
-        const tooltipStyle = document.createElement('style')
-        tooltipStyle.innerText = '.btn-tooltip {'
+        document.head.append(createStyle('.btn-tooltip {'
             + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
             + 'font-size: 0.75rem ; color: white ;' // font style
             + 'position: absolute ;' // for updateTooltip() calcs
             + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
             + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
-        document.head.append(tooltipStyle)
+        ))
     }
 
     // APPEND to Google
