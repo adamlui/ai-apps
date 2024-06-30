@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.6
+// @version             2024.6.29.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -691,7 +691,7 @@
     const modals = {
         about: {
             show() {
-                if (document.getElementById('googlegpt-settings')) modals.settings.hide()
+                if (modals.settings.get()) modals.settings.hide()
 
                 // Create/classify modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
@@ -966,8 +966,10 @@
                 return settingsContainer
             },
 
+            get() { return document.getElementById('ddgpt-settings') },
+
             hide() {
-                const settingsContainer = document.getElementById('googlegpt-settings-bg')
+                const settingsContainer = modals.settings.get()?.parentNode
                 if (!settingsContainer) return
                 settingsContainer.style.animation = 'alert-zoom-fade-out 0.075s ease-out' // chatgpt.js keyframes
                 setTimeout(() => settingsContainer.remove(), 50) // delay for fade-out
@@ -976,7 +978,7 @@
             keyHandler() {
                 const dismissKeys = ['Escape', 'Esc'], dismissKeyCodes = [27]
                 if (dismissKeys.includes(event.key) || dismissKeyCodes.includes(event.keyCode)) {
-                    const settingsModal = document.getElementById('googlegpt-settings')
+                    const settingsModal = modals.settings.get()
                     if (settingsModal && settingsModal.style.display !== 'none'
                         && (event.key.includes('Esc') || event.keyCode == 27))
                             modals.settings.hide()
@@ -984,7 +986,7 @@
             },
 
             show() {
-                const settingsContainer = document.getElementById('googlegpt-settings-bg') || modals.settings.createAppend()
+                const settingsContainer = modals.settings.get()?.parentNode || modals.settings.createAppend()
                 settingsContainer.style.display = ''
                 if (isMobile) { // scale 93% to viewport sides
                     const settingsModal = settingsContainer.querySelector('#googlegpt-settings'),

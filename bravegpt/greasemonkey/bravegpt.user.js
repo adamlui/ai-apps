@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.8
+// @version             2024.6.29.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -493,7 +493,7 @@ setTimeout(async () => {
     const modals = {
         about: {
             show() {
-                if (document.getElementById('bravegpt-settings')) modals.settings.hide()
+                if (modals.settings.get()) modals.settings.hide()
 
                 // Create/classify modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
@@ -776,8 +776,10 @@ setTimeout(async () => {
                 return settingsContainer
             },
 
+            get() { return document.getElementById('ddgpt-settings') },
+
             hide() {
-                const settingsContainer = document.getElementById('bravegpt-settings-bg')
+                const settingsContainer = modals.settings.get()?.parentNode
                 if (!settingsContainer) return
                 settingsContainer.style.animation = 'alert-zoom-fade-out 0.075s ease-out' // chatgpt.js keyframes
                 setTimeout(() => settingsContainer.remove(), 50) // delay for fade-out
@@ -786,7 +788,7 @@ setTimeout(async () => {
             keyHandler() {
                 const dismissKeys = ['Escape', 'Esc'], dismissKeyCodes = [27]
                 if (dismissKeys.includes(event.key) || dismissKeyCodes.includes(event.keyCode)) {
-                    const settingsModal = document.getElementById('bravegpt-settings')
+                    const settingsModal = modals.settings.get()
                     if (settingsModal && settingsModal.style.display !== 'none'
                         && (event.key.includes('Esc') || event.keyCode == 27))
                             modals.settings.hide()
@@ -794,7 +796,7 @@ setTimeout(async () => {
             },
 
             show() {
-                const settingsContainer = document.getElementById('bravegpt-settings-bg') || modals.settings.createAppend()
+                const settingsContainer = modals.settings.get()?.parentNode || modals.settings.createAppend()
                 settingsContainer.style.display = ''
                 if (isMobile) { // scale 93% to viewport sides
                     const settingsModal = settingsContainer.querySelector('#bravegpt-settings'),
