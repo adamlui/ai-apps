@@ -13,7 +13,7 @@ $shadows-sm: multiple-box-shadow(700);
 $shadows-med: multiple-box-shadow(200);
 $shadows-lg: multiple-box-shadow(100);
 
-#stars-sm {
+#black-stars-sm {
   width: 1px;
   height: 1px;
   background: transparent;
@@ -31,7 +31,7 @@ $shadows-lg: multiple-box-shadow(100);
   }
 }
 
-#stars-med {
+#black-stars-med {
   width: 2px;
   height: 2px;
   background: transparent;
@@ -49,7 +49,7 @@ $shadows-lg: multiple-box-shadow(100);
   }
 }
 
-#stars-lg {
+#black-stars-lg {
   width: 3px;
   height: 3px;
   border-radius: 3px;
