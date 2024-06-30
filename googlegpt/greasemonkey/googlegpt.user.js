@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.3
+// @version             2024.6.30.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1378,8 +1378,7 @@
               + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
               + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
               + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
-          + '#googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) ;'
-              + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#373f4b 0%, #090a0f' : 'white 0%, white' } 100%) }`
+          + '#googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
           + '#googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
           + `#googlegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
           + ( scheme == 'dark' ? '#googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
@@ -1424,7 +1423,7 @@
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
               + 'position: relative ; z-index: 555 ; height: 16px ; max-height: 200px ; resize: none ;'
               + 'margin: 13px 0 15px 0 ; padding: 13px 55px 13px 10px ;'
-              + 'background: ' + ( scheme == 'dark' ? '#5151519e' : '#eeeeee9e' ) + ' }'
+              + `background: ${ scheme == 'dark' ? '#5151519e' : '#eeeeee9e' }}`
           + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
           + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: 19px }'
           + '.related-query {'
@@ -2267,7 +2266,7 @@
 
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
-                while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
+                while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild); // clear app content
 
                 // Fill starry BG
                 ['sm', 'med', 'lg'].forEach(size => {
@@ -2465,8 +2464,11 @@
                 if (!appDiv.querySelector('footer')) appDiv.append(appFooter)
 
                 // Add reply section listeners
-                replyForm.onkeydown = handleEnter
-                replyForm.onsubmit = handleSubmit
+                replyForm.onkeydown = handleEnter ; replyForm.onsubmit = handleSubmit
+                chatTextarea.onmouseover = chatTextarea.onfocus = () => { if (scheme == 'dark')
+                    appDiv.style.background = 'radial-gradient(ellipse at bottom, #373f4b 0%, #090a0f 100%)' }
+                chatTextarea.onmouseout = chatTextarea.onblur = () => { if (scheme == 'dark' && document.activeElement != chatTextarea)
+                    appDiv.style.background = 'radial-gradient(ellipse at bottom, #2f3031 0%, #090a0f 100%)' }
                 chatTextarea.oninput = autosizeChatbar
                 shuffleBtn.onclick = () => {
                     const randQAprompt = 'Generate a single random question on any topic then answer it.'

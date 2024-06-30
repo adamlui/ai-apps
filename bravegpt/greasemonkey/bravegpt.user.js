@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.2
+// @version             2024.6.30.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1126,8 +1126,7 @@ setTimeout(async () => {
               + 'padding: 24px 23px 45px 23px ;'
               + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
               + `border: ${ scheme == 'dark' ? 'none' : '1px solid var(--color-divider-subtle)' } ; border-radius: 18px }`
-          + '#bravegpt:hover { box-shadow: 0 9px 28px rgba(0, 0, 0, 0.09) ;'
-              + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#373f4b 0%, #090a0f' : 'white 0%, white' } 100%) }`
+          + '#bravegpt:hover { box-shadow: 0 9px 28px rgba(0, 0, 0, 0.09) }'
           + '#bravegpt p { margin: 0 }'
           + `#bravegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
           + ( scheme == 'dark' ? '#bravegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
@@ -1183,7 +1182,7 @@ setTimeout(async () => {
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
               + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 -7px 0 ;  padding: 12px 51px 12px 10px ;'
               + 'height: 43px ; line-height: 17px ; width: 100% ; max-height: 200px ; resize: none ;'
-              + `background: ${ scheme == 'dark' ? '#5151519e' : '#eeeeee9e' } ;`
+              + `background: ${ scheme == 'dark' ? '#5151519e' : '#eeeeee9e' }}`
               + `position: relative ; z-index: 555 ; color: ${ scheme == 'dark' ? '#eee' : '#222' }}`
           + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
               + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
@@ -2009,7 +2008,7 @@ setTimeout(async () => {
 
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
-                while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
+                while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild); // clear app content
 
                 // Fill starry BG
                 ['sm', 'med', 'lg'].forEach(size => {
@@ -2189,8 +2188,11 @@ setTimeout(async () => {
                 if (!appDiv.querySelector('footer')) appDiv.append(appFooter)
 
                 // Add reply section listeners
-                replyForm.onkeydown = handleEnter
-                replyForm.onsubmit = handleSubmit
+                replyForm.onkeydown = handleEnter ; replyForm.onsubmit = handleSubmit
+                chatTextarea.onmouseover = chatTextarea.onfocus = () => { if (scheme == 'dark')
+                    appDiv.style.background = 'radial-gradient(ellipse at bottom, #373f4b 0%, #090a0f 100%)' }
+                chatTextarea.onmouseout = chatTextarea.onblur = () => { if (scheme == 'dark' && document.activeElement != chatTextarea)
+                    appDiv.style.background = 'radial-gradient(ellipse at bottom, #2f3031 0%, #090a0f 100%)' }
                 chatTextarea.oninput = autosizeChatbar
                 shuffleBtn.onclick = () => {
                     const randQAprompt = 'Generate a single random question on any topic then answer it.'

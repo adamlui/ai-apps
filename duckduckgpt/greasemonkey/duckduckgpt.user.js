@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.5
+// @version             2024.6.30.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1154,8 +1154,7 @@
               + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
               + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
               + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
-          + '#ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) ;'
-              + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#373f4b 0%, #090a0f' : 'white 0%, white' } 100%) }`
+          + '#ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
           + '#ddgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
           + `#ddgpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
           + ( scheme == 'dark' ? '#ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
@@ -1202,7 +1201,7 @@
               + 'font-size: 0.92rem ; height: 19px ; width: 82.6% ; max-height: 200px ; resize: none ; '
               + `position: relative ; z-index: 555 ; color: #${ scheme == 'dark' ? 'eee' : '222' } ;`
               + 'margin: 3px 0 15px 0 ; padding: 13px 57px 9px 10px ;'
-              + 'background: ' + ( scheme == 'dark' ? '#5151519e' : '#eeeeee9e' ) + ' } '
+              + `background: ${ scheme == 'dark' ? '#5151519e' : '#eeeeee9e' }}`
           + '.related-queries {'
               + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ; overflow: visible ;'
               + `${ isFirefox ? 'top: -20px ; margin: -3px 0 -10px' : 'top: -25px ; margin: -7px 0 -15px' }}`
@@ -2140,8 +2139,11 @@
                 shuffleBtn.append(shuffleSVG) ; continueChatDiv.append(shuffleBtn)
 
                 // Add reply section listeners
-                replyForm.onkeydown = handleEnter
-                replyForm.onsubmit = handleSubmit
+                replyForm.onkeydown = handleEnter ; replyForm.onsubmit = handleSubmit
+                chatTextarea.onmouseover = chatTextarea.onfocus = () => { if (scheme == 'dark')
+                    appDiv.style.background = 'radial-gradient(ellipse at bottom, #373f4b 0%, #090a0f 100%)' }
+                chatTextarea.onmouseout = chatTextarea.onblur = () => { if (scheme == 'dark' && document.activeElement != chatTextarea)
+                    appDiv.style.background = 'radial-gradient(ellipse at bottom, #2f3031 0%, #090a0f 100%)' }
                 chatTextarea.oninput = autosizeChatbar
                 shuffleBtn.onclick = () => {
                     const randQAprompt = 'Generate a single random question on any topic then answer it.'
