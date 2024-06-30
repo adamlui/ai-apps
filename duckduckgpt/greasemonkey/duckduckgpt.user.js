@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.7
+// @version             2024.6.30.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1487,9 +1487,10 @@
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
             refreshMenu()
-            if (modals.settings.get() &&
-                document.querySelector('[id*="proxy"][id*="menu-entry"] input').checked != config.proxyAPIenabled)
-                    modals.settings.toggle.switch(proxyToggle) // update visual state of Settings toggle
+            if (modals.settings.get()) { // update visual state of Settings toggle
+                const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input')
+                if (proxyToggle.checked != config.proxyAPIenabled) modals.settings.toggle.switch(proxyToggle)
+            }
             if (appDiv.querySelector('#ddgpt-alert')) location.reload() // re-send query if user alerted 
         },
 
