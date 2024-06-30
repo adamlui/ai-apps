@@ -1,10 +1,12 @@
 {
   "devDependencies": {
+    "@adamlui/scss-to-css": "^1.10.2",
     "eslint": "^9.6.0",
     "eslint-plugin-json": "^4.0.0",
     "husky": "^9.0.11"
   },
   "scripts": {
+    "build:css": "scss-to-css",
     "lint": "eslint . --cache",
     "lint:all": "eslint .",
     "lint:fix": "eslint . --fix --cache",
