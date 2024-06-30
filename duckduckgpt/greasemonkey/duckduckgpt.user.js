@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.17
+// @version             2024.6.30
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1186,7 +1186,7 @@
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2' : '' ) + '}'
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '#ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
-          + '#ddgpt + footer { margin: 2px 0 25px }'
+          + '#ddgpt + footer { margin: 2px 0 25px ; position: relative }'
           + `#ddgpt + footer * { color: ${ scheme == 'dark' ? '#ccc' : '#666' } !important }`
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
               + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
@@ -1481,8 +1481,11 @@
         relatedQueries() {
             saveSetting('rqDisabled', !config.rqDisabled)
             const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-            if (relatedQueriesDiv) // update visibility based on latest setting
+            if (relatedQueriesDiv) { // update visibility based on latest setting
                 relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+                appFooter.style.right = ( // counteract right-offset bug from chatbar padding
+                    relatedQueriesDiv.style.display == 'flex' ? 0 : '-72px' )
+            }
             if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
                 get.related(lastQuery).then(queries => show.related(queries))
@@ -2096,6 +2099,7 @@
                                                                  : msgs.tooltip_sendReply || 'Send reply' ) + '...'
                 continueChatDiv.append(chatTextarea)
                 replyForm.append(continueChatDiv) ; replySection.append(replyForm)
+                appFooter.style.right = '-72px' // counteract right-offset bug from chatbar padding
                 appDiv.append(replySection)
 
                 // Create/append send button
@@ -2293,6 +2297,7 @@
                     })
 
                     updateTweaksStyle() // to shorten <pre> max-height
+                    appFooter.style.right = 0 // reset show.reply()'s counteract right-offset bug from chatbar padding
         }}}
     }
 
