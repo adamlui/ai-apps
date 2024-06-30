@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.7
+// @version             2024.6.29.8
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1743,11 +1743,15 @@
         return path
     }
 
-    function createAnchor(linkHref, displayContent) {
+    function createAnchor(linkHref, displayContent, attrs = {}) {
         const anchor = document.createElement('a'),
-              anchorAttrs = [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']]
-        anchorAttrs.forEach(([attr, value]) => anchor.setAttribute(attr, value))
-        if (displayContent) anchor.append(displayContent)
+              defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
+              finalAttrs = { ...defaultAttrs, ...attrs }
+        Object.entries(finalAttrs).forEach(([attr, value]) => anchor.setAttribute(attr, value))
+        if (displayContent) {
+            if (typeof displayContent == 'string') anchor.textContent = displayContent
+            else if (displayContent instanceof HTMLElement) anchor.append(displayContent)
+        }
         return anchor
     }
 

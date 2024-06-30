@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.9
+// @version             2024.6.29.10
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1492,10 +1492,11 @@ setTimeout(async () => {
         return path
     }
 
-    function createAnchor(linkHref, displayContent) {
+    function createAnchor(linkHref, displayContent, attrs = {}) {
         const anchor = document.createElement('a'),
-              anchorAttrs = [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']]
-        anchorAttrs.forEach(([attr, value]) => anchor.setAttribute(attr, value))
+              defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
+              finalAttrs = { ...defaultAttrs, ...attrs }
+        Object.entries(finalAttrs).forEach(([attr, value]) => anchor.setAttribute(attr, value))
         if (displayContent) {
             if (typeof displayContent == 'string') anchor.textContent = displayContent
             else if (displayContent instanceof HTMLElement) anchor.append(displayContent)
