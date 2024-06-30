@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.7
+// @version             2024.6.30.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -382,7 +382,7 @@ setTimeout(async () => {
                     `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
                         + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
                     '', '', 447) // confirmation width
-                if (modals.settings.get()) // update settings menu entry label
+                if (modals.settings.get()) // update settings menu status label
                     document.querySelector('#replyLanguage-menu-entry span').textContent = replyLanguage
                 break
     }}}
@@ -623,7 +623,7 @@ setTimeout(async () => {
                 function updateScheme(newScheme) {
                     scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
                     saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
-                    if (modals.settings.get()) // update Settings menu entry label
+                    if (modals.settings.get()) // update Settings menu status label
                         document.querySelector('#scheme-menu-entry span').textContent = newScheme
                     updateAppLogoSrc() ; updateAppStyle() ; updateStars() ; schemeNotify(newScheme)
                 }
@@ -1139,7 +1139,7 @@ setTimeout(async () => {
           + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
               + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
           + `#bravegpt { word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: ${ isMobile ? -29 : 20}px ;`
-              + 'clip-path: polygon(-1% -3%, 45% -3%, 45% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // protrude above corner btns to allow tooltips
+              + 'clip-path: polygon(-8% -5%, 108% -5%, 109% 105%, -8% 105%) ;' // show tooltips but bound starry bg
               + 'padding: 24px 23px 45px 23px ;'
               + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
               + `border: ${ scheme == 'dark' ? 'none' : '1px solid var(--color-divider-subtle)' } ; border-radius: 18px }`
