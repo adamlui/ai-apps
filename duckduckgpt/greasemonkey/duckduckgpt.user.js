@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.3
+// @version             2024.6.30.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -631,7 +631,7 @@
                     scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
                     saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
                     const schemeMenuEntry = document.getElementById('scheme-menu-entry')
-                    if (schemeMenuEntry) schemeMenuEntry.querySelector('span').textContent = newScheme;
+                    if (schemeMenuEntry) schemeMenuEntry.querySelector('span').textContent = newScheme
                     updateAppLogoSrc() ; updateAppStyle() ; updateStars() ; schemeNotify(newScheme)
                 }
 
@@ -1153,7 +1153,7 @@
               + 'clip-path: polygon(-1% -3%, 45% -3%, 45% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // protrude above corner btns to allow tooltips
               + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
               + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
-              + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' } ; transition: background 0.25s ease }`
+              + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
           + '#ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) ;'
               + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#373f4b 0%, #090a0f' : 'white 0%, white' } 100%) }`
           + '#ddgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
@@ -2359,7 +2359,7 @@
         document.head.append(createStyle(GM_getResourceText(`${cssType}CSS`))))
 
     // Stylize SITE elems
-    const tweaksStyle = document.createElement('style'),
+    const tweaksStyle = createStyle(),
           wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
                     + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
                     + '#app-chatbar { width: 85.6% }',
