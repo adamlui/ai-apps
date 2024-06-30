@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.13
+// @version             2024.6.29.14
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -574,7 +574,7 @@
                 siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
                     `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
                         + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
-                    '', '', 330) // width
+                    '', '', 330) // confirmation width
                 const replyLangMenuEntry = document.getElementById('replyLanguage-menu-entry')
                 if (replyLangMenuEntry) replyLangMenuEntry.querySelector('span').textContent = replyLanguage
                 break
@@ -688,11 +688,16 @@
     // Define MODAL functions
 
     const modals = {
+        init(modal) {
+            modal.classList.add('.googlegpt-modal')
+            modal.onwheel = event => event.preventDefault() // disable wheel-scrolling
+        },
+
         about: {
             show() {
                 if (modals.settings.get()) modals.settings.hide()
 
-                // Create/classify modal
+                // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
                 const aboutModalID = siteAlert(
                     config.appName, // title
@@ -708,9 +713,9 @@
                         function getSupport() { safeWindowOpen(config.supportURL) },
                         function leaveAReview() { modals.feedback.show() },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                    ], '', 515) // About modal width
-                const aboutModal = document.getElementById(aboutModalID)
-                aboutModal.classList.add('googlegpt-modal')
+                    ], '', 515) // modal width
+                const aboutModal = document.getElementById(aboutModalID).firstChild
+                modals.init(aboutModal) // add class, disable wheel-scrolling
 
                 // Resize + format buttons to include emoji + localized label + hide Dismiss button
                 for (const btn of aboutModal.querySelectorAll('button')) {
@@ -730,7 +735,7 @@
         feedback: {
             show() {
 
-                // Create/classify modal
+                // Create/init modal
                 const feedbackModalID = siteAlert(`${
                     msgs.alert_choosePlatform || 'Choose a platform' }:`, '',
                     [ // buttons
@@ -738,9 +743,9 @@
                             config.greasyForkURL + '/feedback#post-discussion') },
                         function github() { safeWindowOpen(
                             config.gitHubURL + '/discussions/new/choose') }
-                    ], '', 333) // width
-                const feedbackModal = document.getElementById(feedbackModalID)
-                feedbackModal.classList.add('googlegpt-modal')
+                    ], '', 333) // modal width
+                const feedbackModal = document.getElementById(feedbackModalID).firstChild
+                modals.init(feedbackModal) // add class, disable wheel-scrolling
 
                 // Re-style button cluster
                 const buttons = feedbackModal.querySelector('.modal-buttons')
@@ -758,7 +763,7 @@
         scheme: {
             show() {
 
-                // Create/classify modal
+                // Create/init modal
                 const schemeModalID = siteAlert(`${
                     config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
                     [ // buttons
@@ -766,8 +771,8 @@
                         function light() { updateScheme('light') },
                         function dark() { updateScheme('dark') }
                 ])
-                const schemeModal = document.getElementById(schemeModalID)
-                schemeModal.classList.add('googlegpt-modal')
+                const schemeModal = document.getElementById(schemeModalID).firstChild
+                modals.init(schemeModal) // add class, disable wheel-scrolling
 
                 // Center button cluster
                 schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
@@ -833,8 +838,8 @@
                 // Init core elems
                 const settingsContainer = document.createElement('div') ; settingsContainer.id = 'googlegpt-settings-bg'
                 settingsContainer.classList = 'no-user-select'
-                const settingsModal = document.createElement('div')
-                settingsModal.id = 'googlegpt-settings' ; settingsModal.className = 'googlegpt-modal'
+                const settingsModal = document.createElement('div') ; settingsModal.id = 'googlegpt-settings'
+                modals.init(settingsModal) // add class, disable wheel-scrolling
                 appIcon.style.cssText += 'width: 52px ; position: relative ; top: -45px ; margin: 9px 41.13% -43px' // size/pos icon
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'

@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.14
+// @version             2024.6.29.15
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -385,7 +385,7 @@
                 siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
                     `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
                         + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
-                    '', '', 330) // width
+                    '', '', 330) // confirmation width
                 const replyLangMenuEntry = document.getElementById('replyLanguage-menu-entry')
                 if (replyLangMenuEntry) replyLangMenuEntry.querySelector('span').textContent = replyLanguage
                 break
@@ -499,11 +499,16 @@
     // Define MODAL functions
 
     const modals = {
+        init(modal) {
+            modal.classList.add('.ddgpt-modal')
+            modal.onwheel = event => event.preventDefault() // disable wheel-scrolling
+        },
+
         about: {
             show() {
                 if (modals.settings.get()) modals.settings.hide()
 
-                // Create/classify modal
+                // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
                 const aboutModalID = siteAlert(
                     config.appName, // title
@@ -519,9 +524,9 @@
                         function getSupport() { safeWindowOpen(config.supportURL) },
                         function leaveAReview() { modals.feedback.show() },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                    ], '', 527) // About modal width
-                const aboutModal = document.getElementById(aboutModalID)
-                aboutModal.classList.add('ddgpt-modal')
+                    ], '', 527) // modal width
+                const aboutModal = document.getElementById(aboutModalID).firstChild
+                modals.init(aboutModal) // add class, disable wheel-scrolling
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 for (const btn of aboutModal.querySelectorAll('button')) {
@@ -541,7 +546,7 @@
         feedback: {
             show() {
 
-                // Create/classify modal
+                // Create/init modal
                 const feedbackModalID = siteAlert(`${
                     msgs.alert_choosePlatform || 'Choose a platform' }:`, '',
                     [ // buttons
@@ -555,9 +560,9 @@
                             'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review') },
                         function alternativeTo() { safeWindowOpen(
                             'https://alternativeto.net/software/duckduckgpt/about/') }
-                    ], '', 408) // width
-                const feedbackModal = document.getElementById(feedbackModalID)
-                feedbackModal.classList.add('ddgpt-modal')
+                    ], '', 408) // modal width
+                const feedbackModal = document.getElementById(feedbackModalID).firstChild
+                modals.init(feedbackModal) // add class, disable wheel-scrolling
 
                 // Re-style button cluster
                 const buttons = feedbackModal.querySelector('.modal-buttons')
@@ -577,7 +582,7 @@
         scheme: {
             show() {
 
-                // Create/classify modal
+                // Create/init modal
                 const schemeModalID = siteAlert(`${
                     config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
                     [ // buttons
@@ -585,8 +590,8 @@
                         function light() { updateScheme('light') },
                         function dark() { updateScheme('dark') }
                 ])
-                const schemeModal = document.getElementById(schemeModalID)
-                schemeModal.classList.add('ddgpt-modal')
+                const schemeModal = document.getElementById(schemeModalID).firstChild
+                modals.init(schemeModal) // add class, disable wheel-scrolling
 
                 // Center button cluster
                 schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
@@ -649,8 +654,8 @@
                 // Init core elems
                 const settingsContainer = document.createElement('div') ; settingsContainer.id = 'ddgpt-settings-bg'
                 settingsContainer.classList = 'no-user-select'
-                const settingsModal = document.createElement('div')
-                settingsModal.id = 'ddgpt-settings' ; settingsModal.className = 'ddgpt-modal'
+                const settingsModal = document.createElement('div') ; settingsModal.id = 'ddgpt-settings'
+                modals.init(settingsModal) // add class, disable wheel-scrolling
                 const settingsIcon = icons.ddgpt.create()
                 settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -33px ; margin: 0 41% -12px' // size/pos icon
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'ddgpt-settings-title'

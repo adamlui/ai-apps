@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.16
+// @version             2024.6.29.17
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -376,7 +376,7 @@ setTimeout(async () => {
                 siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
                     `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
                         + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
-                    '', '', 447) // width
+                    '', '', 447) // confirmation width
                 const replyLangMenuEntry = document.getElementById('replyLanguage-menu-entry')
                 if (replyLangMenuEntry) replyLangMenuEntry.querySelector('span').textContent = replyLanguage
                 break
@@ -490,11 +490,16 @@ setTimeout(async () => {
     // Define MODAL functions
 
     const modals = {
+        init(modal) {
+            modal.classList.add('.bravegpt-modal')
+            modal.onwheel = event => event.preventDefault() // disable wheel-scrolling
+        },
+
         about: {
             show() {
                 if (modals.settings.get()) modals.settings.hide()
 
-                // Create/classify modal
+                // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
                 const aboutModalID = siteAlert(
                     config.appName, // title
@@ -510,9 +515,9 @@ setTimeout(async () => {
                         function getSupport() { safeWindowOpen(config.supportURL) },
                         function leaveAReview() { modals.feedback.show() },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                    ], '', 577) // About modal width
-                const aboutModal = document.getElementById(aboutModalID)
-                aboutModal.classList.add('bravegpt-modal')
+                    ], '', 577) // modal width
+                const aboutModal = document.getElementById(aboutModalID).firstChild
+                modals.init(aboutModal) // add class, disable wheel-scrolling
 
                 // Resize + format buttons to include emoji + localized label + hide Dismiss button
                 for (const btn of aboutModal.querySelectorAll('button')) {
@@ -532,7 +537,7 @@ setTimeout(async () => {
         feedback: {
             show() {
 
-                // Create/classify modal
+                // Create/init modal
                 const feedbackModalID = siteAlert(`${
                     msgs.alert_choosePlatform || 'Choose a platform' }:`, '',
                     [ // buttons
@@ -546,9 +551,9 @@ setTimeout(async () => {
                             'https://www.futurepedia.io/tool/bravegpt#tool-reviews') },
                         function alternativeTo() { safeWindowOpen(
                             'https://alternativeto.net/software/bravegpt/about/') }
-                    ], '', 456) // width
-                const feedbackModal = document.getElementById(feedbackModalID)
-                feedbackModal.classList.add('bravegpt-modal')
+                    ], '', 456) // modal width
+                const feedbackModal = document.getElementById(feedbackModalID).firstChild
+                modals.init(feedbackModal) // add class, disable wheel-scrolling
 
                 // Re-style button cluster
                 const buttons = feedbackModal.querySelector('.modal-buttons')
@@ -567,7 +572,7 @@ setTimeout(async () => {
         scheme: {
             show() {
 
-                // Create/classify modal
+                // Create/init modal
                 const schemeModalID = siteAlert(`${
                     config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
                     [ // buttons
@@ -575,8 +580,8 @@ setTimeout(async () => {
                         function light() { updateScheme('light') },
                         function dark() { updateScheme('dark') }
                 ], '', 503) // px width
-                const schemeModal = document.getElementById(schemeModalID)
-                schemeModal.classList.add('bravegpt-modal')
+                const schemeModal = document.getElementById(schemeModalID).firstChild
+                modals.init(schemeModal) // add class, disable wheel-scrolling
 
                 // Center button cluster
                 schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
@@ -639,8 +644,8 @@ setTimeout(async () => {
                 // Init core elems
                 const settingsContainer = document.createElement('div') ; settingsContainer.id = 'bravegpt-settings-bg'
                 settingsContainer.classList = 'no-user-select'
-                const settingsModal = document.createElement('div')
-                settingsModal.id = 'bravegpt-settings' ; settingsModal.className = 'bravegpt-modal'
+                const settingsModal = document.createElement('div') ; settingsModal.id = 'bravegpt-settings'
+                modals.init(settingsModal) // add class, disable wheel-scrolling
                 const settingsIcon = icons.braveGPT.create()
                 settingsIcon.style.cssText = 'width: 59px ; position: relative ; top: -33px ; margin: 0px 41% -8px' // size/pos icon
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'bravegpt-settings-title'
