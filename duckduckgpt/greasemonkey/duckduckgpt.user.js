@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.4
+// @version             2024.6.30.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1951,13 +1951,14 @@
 
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
-                while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
+                while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild); // clear app content
 
                 // Fill starry BG
-                const starsSm = document.createElement('div') ; starsSm.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-sm`
-                const starsMed = document.createElement('div') ; starsMed.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-med`
-                const starsLg = document.createElement('div') ; starsLg.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-lg`
-                appDiv.append(starsSm, starsMed, starsLg)
+                ['sm', 'med', 'lg'].forEach(size => {
+                    const starsDiv = document.createElement('div')
+                    starsDiv.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
+                    appDiv.append(starsDiv)
+                })
 
                 // Create/append app title anchor
                 updateTitleAnchor()

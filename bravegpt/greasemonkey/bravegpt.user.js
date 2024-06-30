@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.1
+// @version             2024.6.30.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2012,10 +2012,11 @@ setTimeout(async () => {
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
 
                 // Fill starry BG
-                const starsSm = document.createElement('div') ; starsSm.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-sm`
-                const starsMed = document.createElement('div') ; starsMed.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-med`
-                const starsLg = document.createElement('div') ; starsLg.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-lg`
-                appDiv.append(starsSm, starsMed, starsLg)
+                ['sm', 'med', 'lg'].forEach(size => {
+                    const starsDiv = document.createElement('div')
+                    starsDiv.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
+                    appDiv.append(starsDiv)
+                })
 
                 // Create/append app title anchor + byline
                 updateTitleAnchor()
