@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.1
+// @version             2024.6.30.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -184,6 +184,8 @@
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js#sha256-e1fUJ6xicGd9r42DgN7SzHMzb5FJoWe44f4NbvZmBK4=
 // @require             https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js#sha256-Ffq85bZYmLMrA/XtJen4kacprUwNbYdxEKd0SqhHqJQ=
 // @resource hljsCSS    https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css#sha256-v0N76BFFkH0dCB8bUr4cHSVN8A/zCaOopMuSmJWV/5w=
+// @resource bsbgCSS    https://cdn.jsdelivr.net/gh/KudoAI/duckduckgpt@54f7f2c/styles/css/black-rising-stars.min.css#sha256-bXbVZUD7ciKqK0wU/BLQzh08JwkoNExHHqXITugd/3o=
+// @resource wsbgCSS    https://cdn.jsdelivr.net/gh/KudoAI/duckduckgpt@54f7f2c/styles/css/white-rising-stars.min.css#sha256-ya9newifevSPO1Q4AzMf42yAF6TE+iZHrDbVj0HyuEM=
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
@@ -629,8 +631,8 @@
                     scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
                     saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
                     const schemeMenuEntry = document.getElementById('scheme-menu-entry')
-                    if (schemeMenuEntry) schemeMenuEntry.querySelector('span').textContent = newScheme
-                    updateAppLogoSrc() ; updateAppStyle() ; schemeNotify(newScheme)
+                    if (schemeMenuEntry) schemeMenuEntry.querySelector('span').textContent = newScheme;
+                    updateAppLogoSrc() ; updateAppStyle() ; updateStars() ; schemeNotify(newScheme)
                 }
 
                 function schemeNotify(scheme) {
@@ -1148,9 +1150,12 @@
           + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
               + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
           + '#ddgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ;'
+              + 'clip-path: polygon(0% 0%, 45% 0%, 45% -8%, 100% -8%, 100% 103%, 0% 103%) ;' // protrude above corner btns to allow tooltips
               + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
-              + `${ scheme == 'dark' ? 'border: none ; background: #282828' : 'border: 1px solid #dadce0 ; background: #fff' }}`
-          + '#ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
+              + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
+              + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' } ; transition: background 0.25s ease }`
+          + '#ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) ;'
+              + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#373f4b 0%, #090a0f' : 'white 0%, white' } 100%) }`
           + '#ddgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
           + `#ddgpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
           + ( scheme == 'dark' ? '#ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
@@ -1183,7 +1188,7 @@
               + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
               + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
               + 'margin: .99rem 0 7px 0 ; padding: 1.25em 1.25em 0 1.25em ; border-radius: 10px ; overflow: auto ;'
-              + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2' : '' ) + '}'
+              + ( scheme == 'dark' ? 'background: #3a3a3acf ; color: #f2f2f2' : 'background: #eaeaeacf ; color: #202124' ) + '}'
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '#ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
           + '#ddgpt + footer { margin: 2px 0 25px ; position: relative }'
@@ -1191,13 +1196,13 @@
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
               + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
-                  + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
+                  + ( scheme == 'dark' ? '#3a3a3acf' : '#eaeaeacf' ) + '}'
           + '#app-chatbar {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
               + 'font-size: 0.92rem ; height: 19px ; width: 82.6% ; max-height: 200px ; resize: none ; '
-              + `color: #${ scheme == 'dark' ? 'eee' : '222' } ;`
+              + `position: relative ; z-index: 555 ; color: #${ scheme == 'dark' ? 'eee' : '222' } ;`
               + 'margin: 3px 0 15px 0 ; padding: 13px 57px 9px 10px ;'
-              + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' } '
+              + 'background: ' + ( scheme == 'dark' ? '#5151519e' : '#eeeeee9e' ) + ' } '
           + '.related-queries {'
               + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ; overflow: visible ;'
               + `${ isFirefox ? 'top: -20px ; margin: -3px 0 -10px' : 'top: -25px ; margin: -7px 0 -15px' }}`
@@ -1216,7 +1221,7 @@
           + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
           + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
           + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
-          + '.chatbar-btn {'
+          + '.chatbar-btn { z-index: 560 ;'
               + `border: none ; float: right ; position: relative ; bottom: ${ isFirefox ? 50 : 55 }px ; background: none ; cursor: pointer ;`
               + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
           + '.chatbar-btn:hover {'
@@ -1403,6 +1408,11 @@
         }
     }
 
+    function updateStars() {
+        ['sm', 'med', 'lg'].forEach(size => appDiv.querySelector(
+            `[id$="stars-${size}"]`).id = `${scheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
+    }
+
     function updateTooltip(buttonType) { // text & position
         const cornerBtnTypes = ['about', 'settings', 'speak', 'ssb', 'font-size', 'wsb']
                   .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
@@ -1458,6 +1468,7 @@
         }
         return anchor
     }
+
     function createStyle(content) {
         const style = document.createElement('style')
         if (content) style.innerText = content
@@ -1935,12 +1946,18 @@
 
         reply(answer) {
 
-            // Hide font size slider if visibile
+            // Hide font size slider if visible
             if (appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
 
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
+
+                // Fill starry BG
+                const starsSm = document.createElement('div') ; starsSm.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-sm`
+                const starsMed = document.createElement('div') ; starsMed.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-med`
+                const starsLg = document.createElement('div') ; starsLg.id = `${ scheme == 'dark' ? 'white' : 'black' }-stars-lg`
+                appDiv.append(starsSm, starsMed, starsLg)
 
                 // Create/append app title anchor
                 updateTitleAnchor()
@@ -2337,12 +2354,12 @@
     })
 
     // Stylize APP elems
-    const appStyle = createStyle() ; updateAppStyle()
-    const hljsStyle = createStyle(GM_getResourceText('hljsCSS'))
-    document.head.append(appStyle, hljsStyle)
+    const appStyle = createStyle() ; updateAppStyle() ; document.head.append(appStyle);
+    ['hljs', 'wsbg', 'bsbg'].forEach(cssType => // code highlighting, white stars, black stars
+        document.head.append(createStyle(GM_getResourceText(`${cssType}CSS`))))
 
     // Stylize SITE elems
-    const tweaksStyle = createStyle(),
+    const tweaksStyle = document.createElement('style'),
           wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
                     + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
                     + '#app-chatbar { width: 85.6% }',
@@ -2502,7 +2519,7 @@
     function handleSchemeChange() {
         if (config.scheme) return // since light/dark hard-set
         const newScheme = chatgpt.isDarkMode() ? 'dark' : 'light'
-        if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
+        if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() ; updateStars() }
     }
 
 })()
