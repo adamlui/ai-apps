@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.17
+// @version             2024.6.30.18
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1419,7 +1419,7 @@
           + `.kudoai { font-size: ${ isMobile ? 0.85 : 0.75 }rem ; position: relative ; left: ${ isMobile ? 8 : 6 }px ; color: #aaa }`
           + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important }'
           + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
-          + '#corner-btns { float: right ; margin-top: 2px }'
+          + '#corner-btns { float: right }'
           + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 6px ;'
               + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
           + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
@@ -1565,7 +1565,7 @@
         // Update 'by KudoAI' visibility based on corner space available
         const kudoAIspan = appDiv.querySelector('.kudoai')
         if (kudoAIspan) kudoAIspan.style.display = (
-            appDiv.querySelectorAll('.corner-btn').length < ( config.widerSidebar ? 10 : 5 )) ? '' : 'none'
+            appDiv.querySelectorAll('.corner-btn').length < ( config.widerSidebar ? 10 : 4 )) ? '' : 'none'
 
         // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
         const answerPre = appDiv.querySelector('pre'),
