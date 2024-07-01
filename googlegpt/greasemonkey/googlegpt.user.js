@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.10
+// @version             2024.7.1.11
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1330,46 +1330,6 @@
             appLogoImg.onerror = () => appLogoImg.style.display = 'none'
         },
 
-        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() },
-
-        titleElems() {
-            if (appDiv.querySelector('.loading, #googlegpt-alert')) return // only update reply UI
-
-            const appPrefixVisible = !!appDiv.querySelector('#app-prefix'),
-                  appTitleVisible = !!appDiv.querySelector('.app-name'),
-                  logoVisible = !!appDiv.querySelector('img')
-
-            // Create/id/fill/classify/style/append app prefix
-            if (!appPrefixVisible) {
-                const appPrefixSpan = document.createElement('span') ; appPrefixSpan.id = 'app-prefix'
-                appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.className = 'no-user-select'
-                appPrefixSpan.style.marginRight = '-2px'
-                appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
-                appDiv.append(appPrefixSpan)
-            }
-
-            // Create/fill/classify/style/append/update title anchor
-            if (!appTitleVisible || !logoVisible) {
-                const appTitleAnchor = createAnchor(config.appURL, (() => {
-                    if (appLogoImg.loaded) { // size/pos/return app logo img
-                        appLogoImg.width = isMobile ? 177 : isFirefox ? 124 : 122
-                        appLogoImg.style.cssText = (
-                            appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
-                                              + ( isMobile ? '; margin-left: 1px' : '' ) : '' )
-                        return appLogoImg
-                    } else { // create/fill/size/return app name span
-                        const appNameSpan = document.createElement('span')
-                        appNameSpan.innerText = config.appName
-                        appNameSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
-                        return appNameSpan
-                    }
-                })())
-                appTitleAnchor.classList.add('app-name', 'no-user-select')
-                if (!appTitleVisible) appDiv.append(appTitleAnchor)
-                else appDiv.querySelector('.app-name').replaceWith(appTitleAnchor) // for appLogoImg.onload() callback
-            }
-        },
-
         appStyle() {
             appStyle.innerText = (
                 '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
@@ -1535,59 +1495,6 @@
             )
         },
 
-        tweaksStyle() {
-
-            // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
-            const isStandbyMode = appDiv.querySelector('.standby-btn'),
-                  answerIsLoaded = appDiv.querySelector('.corner-btn')
-            tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
-                                  + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
-
-            // Update 'by KudoAI' visibility based on corner space available
-            const kudoAIspan = appDiv.querySelector('.kudoai')
-            if (kudoAIspan) kudoAIspan.style.display = (
-                appDiv.querySelectorAll('.corner-btn').length < ( config.widerSidebar ? 10 : 4 )) ? '' : 'none'
-
-            // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
-            const answerPre = appDiv.querySelector('pre'),
-                  relatedQueries = appDiv.querySelector('.related-queries'),
-                  shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
-                  longerPreHeight = window.innerHeight - 309
-            if (answerPre) answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
-                relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
-        },
-
-        stars() { // for update.scheme()
-            ['sm', 'med', 'lg'].forEach(size => appDiv.querySelector(
-                `[id$="stars-${size}"]`).id = `${scheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
-        },
-
-        tooltip(buttonType) { // text & position
-            const cornerBtnTypes = ['about', 'settings', 'speak', 'ssb', 'font-size', 'wsb']
-                      .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
-            const [ctrAddend, spreadFactor] = [9, 27],
-                  iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.35
-                                              : buttonType == 'shuffle' ? 2.25
-                                              : cornerBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
-            // Update text
-            tooltipDiv.innerText = (
-                buttonType == 'about' ? msgs.menuLabel_about || 'About'
-              : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
-              : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
-              : buttonType == 'ssb' ? (( config.stickySidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                    + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' ))
-              : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
-              : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                    + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
-              : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
-              : buttonType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
-
-            // Update position
-            tooltipDiv.style.top = `${ !/send|shuffle/.test(buttonType) ? -13
-              : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
-            tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
-        },
-
         footerContent() {
             get.json('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
                 (err, advertisersData) => { if (err) return
@@ -1681,8 +1588,100 @@
                 }})
                 return boostedList
             }
-        }
+        },
 
+        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() },
+
+        stars() { // for update.scheme()
+            ['sm', 'med', 'lg'].forEach(size => appDiv.querySelector(
+                `[id$="stars-${size}"]`).id = `${scheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
+        },
+
+        titleElems() {
+            if (appDiv.querySelector('.loading, #googlegpt-alert')) return // only update reply UI
+
+            const appPrefixVisible = !!appDiv.querySelector('#app-prefix'),
+                  appTitleVisible = !!appDiv.querySelector('.app-name'),
+                  logoVisible = !!appDiv.querySelector('img')
+
+            // Create/id/fill/classify/style/append app prefix
+            if (!appPrefixVisible) {
+                const appPrefixSpan = document.createElement('span') ; appPrefixSpan.id = 'app-prefix'
+                appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.className = 'no-user-select'
+                appPrefixSpan.style.marginRight = '-2px'
+                appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
+                appDiv.append(appPrefixSpan)
+            }
+
+            // Create/fill/classify/style/append/update title anchor
+            if (!appTitleVisible || !logoVisible) {
+                const appTitleAnchor = createAnchor(config.appURL, (() => {
+                    if (appLogoImg.loaded) { // size/pos/return app logo img
+                        appLogoImg.width = isMobile ? 177 : isFirefox ? 124 : 122
+                        appLogoImg.style.cssText = (
+                            appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
+                                              + ( isMobile ? '; margin-left: 1px' : '' ) : '' )
+                        return appLogoImg
+                    } else { // create/fill/size/return app name span
+                        const appNameSpan = document.createElement('span')
+                        appNameSpan.innerText = config.appName
+                        appNameSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
+                        return appNameSpan
+                    }
+                })())
+                appTitleAnchor.classList.add('app-name', 'no-user-select')
+                if (!appTitleVisible) appDiv.append(appTitleAnchor)
+                else appDiv.querySelector('.app-name').replaceWith(appTitleAnchor) // for appLogoImg.onload() callback
+            }
+        },
+
+        tooltip(buttonType) { // text & position
+            const cornerBtnTypes = ['about', 'settings', 'speak', 'ssb', 'font-size', 'wsb']
+                      .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
+            const [ctrAddend, spreadFactor] = [9, 27],
+                  iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.35
+                                              : buttonType == 'shuffle' ? 2.25
+                                              : cornerBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
+            // Update text
+            tooltipDiv.innerText = (
+                buttonType == 'about' ? msgs.menuLabel_about || 'About'
+              : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
+              : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
+              : buttonType == 'ssb' ? (( config.stickySidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
+                                    + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' ))
+              : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
+              : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
+                                    + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
+              : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
+              : buttonType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
+
+            // Update position
+            tooltipDiv.style.top = `${ !/send|shuffle/.test(buttonType) ? -13
+              : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
+            tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
+        },
+
+        tweaksStyle() {
+
+            // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
+            const isStandbyMode = appDiv.querySelector('.standby-btn'),
+                  answerIsLoaded = appDiv.querySelector('.corner-btn')
+            tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
+                                  + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
+
+            // Update 'by KudoAI' visibility based on corner space available
+            const kudoAIspan = appDiv.querySelector('.kudoai')
+            if (kudoAIspan) kudoAIspan.style.display = (
+                appDiv.querySelectorAll('.corner-btn').length < ( config.widerSidebar ? 10 : 4 )) ? '' : 'none'
+
+            // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
+            const answerPre = appDiv.querySelector('pre'),
+                  relatedQueries = appDiv.querySelector('.related-queries'),
+                  shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
+                  longerPreHeight = window.innerHeight - 309
+            if (answerPre) answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
+                relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
+        }
     }
 
     // Define UI functions
