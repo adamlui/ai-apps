@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.1
+// @version             2024.7.1.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -419,7 +419,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt',
         mediaHostURL: 'https://media.googlegpt.io/',
         minFontSize: 13, maxFontSize: 24, lineHeightRatio: isMobile ? 1.357 : 1.375,
-        latestAssetCommitHash: '3e88c0d' } // for cached messages.json + app logo/icon
+        latestAssetCommitHash: '683bfd5' } // for cached messages.json + app logo/icon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -1350,7 +1350,7 @@
     function updateAppLogoSrc() {
         appLogoImg.src = `${
             config.mediaHostURL}images/logos/googlegpt/flat/${ scheme == 'dark' ? 'white' : 'black' }`
-          + `/logo480x64.png?${config.latestAssetCommitHash}`
+          + `-green/logo480x64.png?${config.latestAssetCommitHash}`
         appLogoImg.onerror = () => appLogoImg.style.display = 'none'
     }
 
