@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.3
+// @version             2024.7.1.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2067,7 +2067,7 @@
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = icons.widescreen.create()
                     wsbSpan.id = 'wsb-btn' // for toggle.sidebar() + toggle.tooltip()
-                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = `${ isFirefox ? 1 : 0 }px 13.5px 0 0`
+                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = `${ isFirefox ? 0.5 : 0 }px 13.5px 0 0`
                     wsbSpan.append(wsbSVG) ; cornerBtnsDiv.append(wsbSpan)
                 }
 
