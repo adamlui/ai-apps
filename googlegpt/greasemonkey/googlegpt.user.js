@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.9
+// @version             2024.7.1.10
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -774,11 +774,7 @@
                 // Create/init modal
                 const schemeModalID = siteAlert(`${
                     config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
-                    [ // buttons
-                        function auto() { updateScheme('auto') },
-                        function light() { updateScheme('light') },
-                        function dark() { updateScheme('dark') }
-                ])
+                    [ function auto() {}, function light() {}, function dark() {} ]) // buttons
                 const schemeModal = document.getElementById(schemeModalID).firstChild
                 modals.init(schemeModal) // add class, disable wheel-scrolling
 
@@ -806,20 +802,15 @@
                     const newBtn = btn.cloneNode(true) ; btn.parentNode.replaceChild(newBtn, btn)
                     newBtn.onclick = event => {
                         event.stopPropagation() // disable chatgpt.js dismissAlert()
-                        updateScheme(btnScheme) // call corresponding scheme func
+                        const newScheme = btnScheme == 'auto' ? ( isDarkMode() ? 'dark' : 'light' ) : btnScheme
+                        saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
+                        document.querySelector('#scheme-menu-entry span').textContent = newScheme // update Settings menu status label
+                        update.scheme(newScheme) ; schemeNotify(newScheme)
                         schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
                         newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme
                         newBtn.style.cssText = 'pointer-events: none' // disable hover fx to show emphasis
                         setTimeout(() => { newBtn.style.pointerEvents = 'auto'; }, 100) // re-enable hover fx after 100ms to flicker emphasis
                     }
-                }
-
-                function updateScheme(newScheme) {
-                    scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
-                    saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
-                    if (modals.settings.get()) // update Settings menu status label
-                        document.querySelector('#scheme-menu-entry span').textContent = newScheme
-                    update.appLogoSrc() ; update.appStyle() ; update.stars() ; schemeNotify(newScheme)
                 }
 
                 function schemeNotify(scheme) {
@@ -1339,6 +1330,8 @@
             appLogoImg.onerror = () => appLogoImg.style.display = 'none'
         },
 
+        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() },
+
         titleElems() {
             if (appDiv.querySelector('.loading, #googlegpt-alert')) return // only update reply UI
 
@@ -1564,7 +1557,7 @@
                 relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
         },
 
-        stars() { // for handleSchemeChange() + modals.scheme.show()'s updateScheme()
+        stars() { // for update.scheme()
             ['sm', 'med', 'lg'].forEach(size => appDiv.querySelector(
                 `[id$="stars-${size}"]`).id = `${scheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
         },
