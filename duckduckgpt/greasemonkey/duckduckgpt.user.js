@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.12
+// @version             2024.7.1.13
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -622,8 +622,8 @@
                     newBtn.onclick = event => {
                         event.stopPropagation() // disable chatgpt.js dismissAlert()
                         const newScheme = btnScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : btnScheme
-                        saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
-                        document.querySelector('#scheme-menu-entry span').textContent = newScheme // update Settings menu status label
+                        saveSetting('scheme', btnScheme == 'auto' ? false : newScheme)
+                        document.querySelector('#scheme-menu-entry span').textContent = btnScheme // update Settings menu status label
                         update.scheme(newScheme) ; schemeNotify(btnScheme)
                         schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
                         newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme

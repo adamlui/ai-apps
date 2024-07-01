@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.10
+// @version             2024.7.1.11
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -612,9 +612,9 @@ setTimeout(async () => {
                     const newBtn = btn.cloneNode(true) ; btn.parentNode.replaceChild(newBtn, btn)
                     newBtn.onclick = event => {
                         event.stopPropagation() // disable chatgpt.js dismissAlert()
-                        const newScheme = btnScheme == 'auto' ? ( isDarkMode() ? 'dark' : 'light' ) : btnScheme
-                        saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
-                        document.querySelector('#scheme-menu-entry span').textContent = newScheme // update Settings menu status label
+                        const newScheme = btnScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : btnScheme
+                        saveSetting('scheme', btnScheme == 'auto' ? false : newScheme)
+                        document.querySelector('#scheme-menu-entry span').textContent = btnScheme // update Settings menu status label
                         update.scheme(newScheme) ; schemeNotify(btnScheme)
                         schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
                         newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme
