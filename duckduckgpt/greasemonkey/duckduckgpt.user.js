@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.8
+// @version             2024.7.1.9
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1301,11 +1301,12 @@
             )
         },
 
-        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() },
-    
-        stars() { // for handleSchemeChange() + modals.scheme.show()'s update.scheme()
+        scheme(newScheme) {
+            scheme = newScheme ; update.appLogoSrc() ; update.appStyle();
+
+            // Update starry bg
             ['sm', 'med', 'lg'].forEach(size => appDiv.querySelector(
-                `[id$="stars-${size}"]`).id = `${scheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
+                `[id$="stars-${size}"]`).id = `${ newScheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
         },
 
         titleAnchor() {
