@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.13
+// @version             2024.7.1.14
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1704,6 +1704,15 @@
         return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
     }
 
+    function fillStarryBG(targetNode) {
+        ['sm', 'med', 'lg'].forEach((size, idx) => {
+            const starsDiv = document.createElement('div')
+            starsDiv.id = config.bgAnimationsDisabled ? 'stars-off'
+                        : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
+            starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
+            targetNode.append(starsDiv)
+    })}
+
     const fontSizeSlider = {
         fadeInDelay: 5, // ms
         hWheelDistance: 10, // px
@@ -2321,19 +2330,9 @@
 
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
-                while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild); // clear app content
-
-                // Fill starry BG
-                ['sm', 'med', 'lg'].forEach((size, idx) => {
-                    const starsDiv = document.createElement('div')
-                    starsDiv.id = config.bgAnimationsDisabled ? 'stars-off'
-                                : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
-                    starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
-                    appDiv.append(starsDiv)
-                })
-
-                // Create/append app title elems
-                update.titleElems()
+                while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
+                fillStarryBG(appDiv) // add stars to bg
+                update.titleElems() // create/append app title elems
 
                 // Create/append corner buttons div
                 const cornerBtnsDiv = document.createElement('div') ; cornerBtnsDiv.id = 'corner-btns'
