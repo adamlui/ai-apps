@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.16
+// @version             2024.7.1.17
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -952,8 +952,8 @@
                             else if (key.includes('streaming')) toggle.streaming()
                             else if (key.includes('rq')) toggle.relatedQueries()
                             else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
-                            else if (key.includes('bgAnimation')) toggle.animations.bg()
-                            else if (key.includes('fgAnimation')) toggle.animations.fg()
+                            else if (key.includes('bgAnimation')) toggle.animations('bg')
+                            else if (key.includes('fgAnimation')) toggle.animations('fg')
 
                             // ...or generically toggle/notify
                             else {
@@ -1851,18 +1851,10 @@
 
     const toggle = {
 
-        animations: {
-            bg() {
-                saveSetting('bgAnimationsDisabled', !config.bgAnimationsDisabled)
-                update.stars()
-                notify(`${settingsProps.bgAnimationsDisabled.label} ${menuState.word[+!config.bgAnimationsDisabled]}`)
-            },
-
-            fg() {
-                saveSetting('fgAnimationsDisabled', !config.fgAnimationsDisabled)
-                update.appStyle()
-                notify(`${settingsProps.fgAnimationsDisabled.label} ${menuState.word[+!config.fgAnimationsDisabled]}`)
-            }
+        animations(layer) {
+            saveSetting(layer + 'AnimationsDisabled', !config[layer + 'AnimationsDisabled'])
+            update[layer == 'bg' ? 'stars' : 'appStyle']()
+            notify(`${settingsProps[layer + 'AnimationsDisabled'].label} ${menuState.word[+!config[layer + 'AnimationsDisabled']]}`)
         },
 
         proxyMode() {

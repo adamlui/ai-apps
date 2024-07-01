@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.13
+// @version             2024.7.1.14
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -772,8 +772,8 @@
                             else if (key.includes('streaming')) toggle.streaming()
                             else if (key.includes('rq')) toggle.relatedQueries()
                             else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
-                            else if (key.includes('bgAnimation')) toggle.animations.bg()
-                            else if (key.includes('fgAnimation')) toggle.animations.fg()
+                            else if (key.includes('bgAnimation')) toggle.animations('bg')
+                            else if (key.includes('fgAnimation')) toggle.animations('fg')
 
                             // ...or generically toggle/notify
                             else {
@@ -1533,18 +1533,10 @@
 
     const toggle = {
 
-        animations: {
-            bg() {
-                saveSetting('bgAnimationsDisabled', !config.bgAnimationsDisabled)
-                update.stars()
-                notify(`${settingsProps.bgAnimationsDisabled.label} ${menuState.word[+!config.bgAnimationsDisabled]}`)
-            },
-
-            fg() {
-                saveSetting('fgAnimationsDisabled', !config.fgAnimationsDisabled)
-                update.appStyle()
-                notify(`${settingsProps.fgAnimationsDisabled.label} ${menuState.word[+!config.fgAnimationsDisabled]}`)
-            }
+        animations(layer) {
+            saveSetting(layer + 'AnimationsDisabled', !config[layer + 'AnimationsDisabled'])
+            update[layer == 'bg' ? 'stars' : 'appStyle']()
+            notify(`${settingsProps[layer + 'AnimationsDisabled'].label} ${menuState.word[+!config[layer + 'AnimationsDisabled']]}`)
         },
 
         proxyMode() {
