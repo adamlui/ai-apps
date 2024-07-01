@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.8
+// @version             2024.7.1.9
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -819,7 +819,7 @@
                     saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
                     if (modals.settings.get()) // update Settings menu status label
                         document.querySelector('#scheme-menu-entry span').textContent = newScheme
-                    updateAppLogoSrc() ; updateAppStyle() ; updateStars() ; schemeNotify(newScheme)
+                    update.appLogoSrc() ; update.appStyle() ; update.stars() ; schemeNotify(newScheme)
                 }
 
                 function schemeNotify(scheme) {
@@ -1328,6 +1328,370 @@
         }
     }
 
+    // Define UPDATE functions
+
+    const update = {
+
+        appLogoSrc() {
+            appLogoImg.src = `${
+                config.mediaHostURL}images/logos/googlegpt/flat/${ scheme == 'dark' ? 'white' : 'black' }`
+              + `-green/logo480x64.png?${config.latestAssetCommitHash}`
+            appLogoImg.onerror = () => appLogoImg.style.display = 'none'
+        },
+
+        titleElems() {
+            if (appDiv.querySelector('.loading, #googlegpt-alert')) return // only update reply UI
+
+            const appPrefixVisible = !!appDiv.querySelector('#app-prefix'),
+                  appTitleVisible = !!appDiv.querySelector('.app-name'),
+                  logoVisible = !!appDiv.querySelector('img')
+
+            // Create/id/fill/classify/style/append app prefix
+            if (!appPrefixVisible) {
+                const appPrefixSpan = document.createElement('span') ; appPrefixSpan.id = 'app-prefix'
+                appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.className = 'no-user-select'
+                appPrefixSpan.style.marginRight = '-2px'
+                appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
+                appDiv.append(appPrefixSpan)
+            }
+
+            // Create/fill/classify/style/append/update title anchor
+            if (!appTitleVisible || !logoVisible) {
+                const appTitleAnchor = createAnchor(config.appURL, (() => {
+                    if (appLogoImg.loaded) { // size/pos/return app logo img
+                        appLogoImg.width = isMobile ? 177 : isFirefox ? 124 : 122
+                        appLogoImg.style.cssText = (
+                            appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
+                                              + ( isMobile ? '; margin-left: 1px' : '' ) : '' )
+                        return appLogoImg
+                    } else { // create/fill/size/return app name span
+                        const appNameSpan = document.createElement('span')
+                        appNameSpan.innerText = config.appName
+                        appNameSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
+                        return appNameSpan
+                    }
+                })())
+                appTitleAnchor.classList.add('app-name', 'no-user-select')
+                if (!appTitleVisible) appDiv.append(appTitleAnchor)
+                else appDiv.querySelector('.app-name').replaceWith(appTitleAnchor) // for appLogoImg.onload() callback
+            }
+        },
+
+        appStyle() {
+            appStyle.innerText = (
+                '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+              + ( // stylize scrollbars in Chromium/Safari
+                    '#googlegpt *::-webkit-scrollbar { width: 7px }'
+                  + '#googlegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
+                  + '#googlegpt *::-webkit-scrollbar-thumb:hover { background: #a6a6a6 }'
+                  + '#googlegpt *::-webkit-scrollbar-track { background: none }' )
+              + '#googlegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
+              + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
+                  + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
+              + '#googlegpt { border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
+                  + 'clip-path: polygon(-1% -3%, 30% -3%, 30% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // show tooltips but bound starry bg
+                  + `padding: ${ isFirefox ? 20 : 22 }px 26px 6px 26px ;`
+                  + `width: ${ isMobile ? 'auto' : '319px' } ;` // hard-width to prevent Google's flex-wrap moving app to bottom
+                  + ( isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
+                  + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
+                  + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
+                  + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
+              + '#googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
+              + '#googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
+              + `#googlegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
+              + ( scheme == 'dark' ? '#googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+              + '.app-name { font-size: 1.35rem ; font-weight: 700 ; text-decoration: none ;'
+                  + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important }`
+              + `.kudoai { font-size: ${ isMobile ? 0.85 : 0.75 }rem ; position: relative ; left: ${ isMobile ? 8 : 6 }px ; color: #aaa }`
+              + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important }'
+              + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
+              + '#corner-btns { float: right }'
+              + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 6px ;'
+                  + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
+              + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
+                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.185) ; transition: transform 0.05s ease' }}`
+              + '#googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
+              + '#googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
+              + '#font-size-slider-track { width: 98% ; height: 10px ; margin: 0 auto -15px ; padding: 15px 0 ;'
+                  + 'background-color: #ccc ; box-sizing: content-box; background-clip: content-box ; -webkit-background-clip: content-box }'
+              + '#font-size-slider-track::before {' // to add finger cursor to unpadded core only
+                  + 'content: "" ; position: absolute ; top: 10px ; left: 0 ; right: 0 ; height: calc(100% - 20px) ; cursor: pointer }'
+              + '#font-size-slider-thumb { width: 10px ; height: 26px ; border-radius: 30% ; position: relative ; top: -8.25px ;'
+                  + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
+                  + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
+              + ( config.fgAnimationsDisabled ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
+              + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin-top: 20px ;'
+                  + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
+                  + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
+                  + 'transform: scale(1) ; transition: transform 0.1s ease }'
+              + '.standby-btn:hover { border-radius: 6px ;'
+                  + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
+                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.025)' }}`
+              + '#googlegpt > pre {'
+                  + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
+                  + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
+                  + 'margin: 16px 0 0 0 ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;'
+                  + `${ scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
+                                         : 'background: #eaeaeacf ; color: #202124 ; border: none' }}`
+              + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
+              + '#googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
+              + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
+                  + `float: left ; margin: ${ isMobile ? 39 : 28 }px -15px 0 0 ; left: ${ isMobile ? 12 : 6 }px ;` // positioning
+                  + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
+                      + ( scheme == 'dark' ? '#0000' : '#eaeaeacf' ) + '}'
+              + '#app-chatbar {'
+                  + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
+                  + 'position: relative ; z-index: 555 ; height: 16px ; max-height: 200px ; resize: none ;'
+                  + 'margin: 13px 0 15px 0 ; padding: 13px 55px 13px 10px ;'
+                  + `background: ${ scheme == 'dark' ? '#5151519e' : '#eeeeee9e' }}`
+              + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
+              + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: 19px }'
+              + '.related-query {'
+                  + `margin: 5px 4px ${ scheme == 'dark' ? 5 : 2 }px 0 ; padding: 8px 12px 8px 13px ;`
+                  + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
+                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: ${ isMobile ? 1 : 0.81}em ; cursor: pointer ;`
+                  + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
+                  + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
+                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1) ; transition: transform 0.1s ease !important' }}`
+              + '.related-query:hover, .related-query:focus {'
+                  + ( config.fgAnimationsDisabled ? '' : 'transform: scale(1.025) !important ;' )
+                  + `background: ${ scheme == 'dark' ? '#a2a2a270' : '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
+              + '.related-query svg { float: left ; margin: -0.09em 6px 0 0 ;' // related query icon
+                  + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
+              + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
+              + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
+              + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
+              + '.chatbar-btn { z-index: 560 ;'
+                  + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
+                  + `bottom: ${( isFirefox ? 46 : 49 ) + ( hasSidebar ? 3 : 2 )}px ;`
+                  + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
+              + '.chatbar-btn:hover {'
+                  + `${ scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
+              + ( // markdown styles
+                    '#googlegpt > pre h1 { font-size: 1.25em } #googlegpt > pre h2 { font-size: 1.1em }' // size headings
+                  + '#googlegpt > pre > p { margin-bottom: -1.25em }' // eliminate bottom gap
+                  + '#googlegpt > pre ol { padding-left: 1.58em }' // indent
+                  + '#googlegpt > pre ul { margin: -10px 0 -6px ; padding-left: 1.5em }' // reduce v-spacing, indent
+                  + '#googlegpt > pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
+              + 'code.hljs { text-wrap: nowrap ; overflow-x: scroll }' // don't wrap highlighted code to be scrollable horizontally
+              + '.katex-html { display: none }' // hide unrendered math
+              + '.chatgpt-notify { padding: 13px 13px 13px 18px !important }' // pad notifications
+              + '.chatgpt-modal > div { 17px 20px 24px 20px !important ;' // increase alert padding
+                  + 'background-color: white ; color: #202124 }'
+              + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
+              + '.modal-close-btn { top: -8px !important ; right: -8px !important }' // re-pos modal close button
+              + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
+              + `.modal-close-btn:hover { background-color: #${ scheme == 'dark' ? '666464' : 'f2f2f2' } !important }`
+              + '.chatgpt-modal p { margin: 14px 0 -29px 4px ; font-size: 1.28em ; line-height: 1.57 }' // pos/size modal msg
+              + `.modal-buttons { margin: 42px 4px ${ isMobile ? '2px 4px' : '-3px -4px' } !important }` // pos modal buttons
+              + '.chatgpt-modal button {' // alert buttons
+                  + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ;'
+                  + `padding: ${ isMobile? '5px' : '4px 10px' } !important ;`
+                  + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
+                  + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
+              + ( scheme == 'dark' ? // darkmode alert styles
+                  ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
+                      + 'background-color: black !important ; color: white }'
+                  + '.primary-modal-btn { background: white !important ; color: black !important }'
+                  + '.chatgpt-modal a { color: #00cfff !important }'
+                  + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
+              + '#googlegpt footer {'
+                  + 'position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ; line-height: 1.43em ;'
+                  + `margin: ${ isFirefox ? 1 : -2 }px -32px 12px }`
+              + '#googlegpt footer * { color: #aaa ; text-decoration: none }'
+              + `#googlegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
+
+              // Settings modal
+              + '#googlegpt-settings-bg {'
+                  + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
+                  + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
+                  + 'transition: background-color 0.05s ease ;' // speed to transition in show alert routine
+                  + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
+              + '#googlegpt-settings {'
+                  + 'opacity: 0 ; transform: translateX(-2px) translateY(3px) ; min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
+                  + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.3s cubic-bezier(.165,.84,.44,1) ;'
+                  + 'background-image: linear-gradient(180deg,'
+                      + `${ scheme == 'dark' ? '#75c451 -70%, black 57%' : '#9eb4f2 -70%, white 42%' }) ;`
+                  + `border: 1px solid ${ scheme == 'dark' ? 'white ; color: white' : '#b5b5b5 ; color: black' } ;`
+                  + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
+                  + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
+              + '#googlegpt-settings-bg.animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
+              + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
+                  + '50% { opacity: 0.25 ; transform: scale(1.05) }'
+                  + '100% { opacity: 0 ; transform: scale(1.35) }}'
+              + '#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px -15px 0 }'
+              + '#googlegpt-settings-title h4 { font-size: 22px ; font-weight: bold ; margin-top: -3px }' // 'Settings'
+              + '#googlegpt-settings-close-btn {'
+                  + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
+                  + 'position: absolute ; top: 10px ; right: 13px }'
+              + `#googlegpt-settings-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
+              + '#googlegpt-settings-close-btn svg { margin: 6.5px }' // center SVG for hover underlay
+              + `#googlegpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
+              + '#googlegpt-settings ul { list-style: none ; margin-bottom: 2px }' // hide bullets, close bottom gap
+              + '#googlegpt-settings li { font-size: 13.5px ; transition: transform 0.1s ease ;'
+                  + `padding: 6px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
+                  + 'border-radius: 3px }' // make highlight strips slightly rounded
+              + '#googlegpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
+              + '#googlegpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
+              + '#googlegpt-settings li, #googlegpt-settings li label { cursor: pointer }' // add finger on hover
+              + '#googlegpt-settings li:hover {'
+                  + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
+                  + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.16)' }}` // add zoom
+              + '#googlegpt-settings li > input { float: right }' // pos toggles
+              + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
+            )
+        },
+
+        tweaksStyle() {
+
+            // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
+            const isStandbyMode = appDiv.querySelector('.standby-btn'),
+                  answerIsLoaded = appDiv.querySelector('.corner-btn')
+            tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
+                                  + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
+
+            // Update 'by KudoAI' visibility based on corner space available
+            const kudoAIspan = appDiv.querySelector('.kudoai')
+            if (kudoAIspan) kudoAIspan.style.display = (
+                appDiv.querySelectorAll('.corner-btn').length < ( config.widerSidebar ? 10 : 4 )) ? '' : 'none'
+
+            // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
+            const answerPre = appDiv.querySelector('pre'),
+                  relatedQueries = appDiv.querySelector('.related-queries'),
+                  shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
+                  longerPreHeight = window.innerHeight - 309
+            if (answerPre) answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
+                relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
+        },
+
+        stars() { // for handleSchemeChange() + modals.scheme.show()'s updateScheme()
+            ['sm', 'med', 'lg'].forEach(size => appDiv.querySelector(
+                `[id$="stars-${size}"]`).id = `${scheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
+        },
+
+        tooltip(buttonType) { // text & position
+            const cornerBtnTypes = ['about', 'settings', 'speak', 'ssb', 'font-size', 'wsb']
+                      .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
+            const [ctrAddend, spreadFactor] = [9, 27],
+                  iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.35
+                                              : buttonType == 'shuffle' ? 2.25
+                                              : cornerBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
+            // Update text
+            tooltipDiv.innerText = (
+                buttonType == 'about' ? msgs.menuLabel_about || 'About'
+              : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
+              : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
+              : buttonType == 'ssb' ? (( config.stickySidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
+                                    + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' ))
+              : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
+              : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
+                                    + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
+              : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
+              : buttonType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
+
+            // Update position
+            tooltipDiv.style.top = `${ !/send|shuffle/.test(buttonType) ? -13
+              : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
+            tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
+        },
+
+        footerContent() {
+            get.json('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
+                (err, advertisersData) => { if (err) return
+
+                    // Init vars
+                    let chosenAdvertiser, adSelected
+                    const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+                    const currentDate = (() => { // in YYYYMMDD format
+                        const today = new Date(), year = today.getFullYear(),
+                              month = String(today.getMonth() + 1).padStart(2, '0'),
+                              day = String(today.getDate()).padStart(2, '0')
+                        return year + month + day
+                    })()
+
+                    // Select random, active advertiser
+                    for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
+                        if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
+
+                    // Fetch a random, active creative
+                    if (chosenAdvertiser) {
+                        const campaignsURL = 'https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/'
+                                           + chosenAdvertiser + '/text/campaigns.json'
+                        get.json(campaignsURL, (err, campaignsData) => { if (err) return
+
+                            // Select random, active campaign
+                            for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
+                                const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
+                                if (!campaignIsActive) continue // to next campaign since campaign inactive
+
+                                // Select random active group
+                                for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
+
+                                    // Skip disqualified groups
+                                    if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
+                                        || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
+                                        || adGroup.active == false // group explicitly disabled
+                                        || adGroup.targetBrowsers && // target browser(s) exist...
+                                            !adGroup.targetBrowsers.some( // ...but doesn't match user's
+                                                browser => new RegExp(browser, 'i').test(navigator.userAgent))
+                                        || adGroup.targetLocations && ( // target locale(s) exist...
+                                            !config.userLocale || !adGroup.targetLocations.some( // ...but user locale is missing or excluded
+                                                loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
+                                    ) continue // to next group
+
+                                    // Filter out inactive ads, pick random active one
+                                    const activeAds = adGroup.ads.filter(ad => ad.active != false)
+                                    if (activeAds.length == 0) continue // to next group since no ads active
+                                    const chosenAd = activeAds[Math.floor(chatgpt.randomFloat() * activeAds.length)] // random active one
+
+                                    // Build destination URL
+                                    let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
+                                        || campaign.destinationURL || ''
+                                    if (destinationURL.includes('http')) { // insert UTM tags
+                                        const [baseURL, queryString] = destinationURL.split('?'),
+                                              queryParams = new URLSearchParams(queryString || '')
+                                        queryParams.set('utm_source', config.appName.toLowerCase())
+                                        queryParams.set('utm_content', 'app_footer_link')
+                                        destinationURL = baseURL + '?' + queryParams.toString()
+                                    }
+
+                                    // Update footer content
+                                    const newFooterContent = destinationURL ? createAnchor(destinationURL)
+                                                                            : document.createElement('span')
+                                    footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
+                                    footerContent.textContent = chosenAd.text
+                                    footerContent.setAttribute('title', chosenAd.tooltip || '')
+                                    adSelected = true ; break
+                                }
+                                if (adSelected) break // out of campaign loop after ad selection
+            }})}})
+
+            function shuffle(list) {
+                let currentIdx = list.length, tempValue, randomIdx
+                while (currentIdx != 0) { // elements remain to be shuffled
+                    randomIdx = Math.floor(chatgpt.randomFloat() * currentIdx) ; currentIdx -= 1
+                    tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
+                }
+                return list
+            }
+
+            function applyBoosts(list) {
+                let boostedList = [...list],
+                    boostedListLength = boostedList.length - 1 // for applying multiple boosts
+                list.forEach(([name, data]) => { // check for boosts
+                    if (data.boost) { // boost flagged entry's selection probability
+                        const boostPercent = parseInt(data.boost, 10) / 100,
+                              entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
+                                            * boostPercent - 1 // reduced to boosted entries needed
+                        for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
+                        boostedListLength += entriesNeeded // update for subsequent calculations
+                }})
+                return boostedList
+            }
+        }
+
+    }
+
     // Define UI functions
 
     function isDarkMode() {
@@ -1345,237 +1709,6 @@
 
         // Final fallback to matchMedia
         return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
-    }
-
-    function updateAppLogoSrc() {
-        appLogoImg.src = `${
-            config.mediaHostURL}images/logos/googlegpt/flat/${ scheme == 'dark' ? 'white' : 'black' }`
-          + `-green/logo480x64.png?${config.latestAssetCommitHash}`
-        appLogoImg.onerror = () => appLogoImg.style.display = 'none'
-    }
-
-    function updateTitleElems() {
-        if (appDiv.querySelector('.loading, #googlegpt-alert')) return // only update reply UI
-
-        const appPrefixVisible = !!appDiv.querySelector('#app-prefix'),
-              appTitleVisible = !!appDiv.querySelector('.app-name'),
-              logoVisible = !!appDiv.querySelector('img')
-
-        // Create/id/fill/classify/style/append app prefix
-        if (!appPrefixVisible) {
-            const appPrefixSpan = document.createElement('span') ; appPrefixSpan.id = 'app-prefix'
-            appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.className = 'no-user-select'
-            appPrefixSpan.style.marginRight = '-2px'
-            appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
-            appDiv.append(appPrefixSpan)
-        }
-
-        // Create/fill/classify/style/append/update title anchor
-        if (!appTitleVisible || !logoVisible) {
-            const appTitleAnchor = createAnchor(config.appURL, (() => {
-                if (appLogoImg.loaded) { // size/pos/return app logo img
-                    appLogoImg.width = isMobile ? 177 : isFirefox ? 124 : 122
-                    appLogoImg.style.cssText = (
-                        appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
-                                          + ( isMobile ? '; margin-left: 1px' : '' ) : '' )
-                    return appLogoImg
-                } else { // create/fill/size/return app name span
-                    const appNameSpan = document.createElement('span')
-                    appNameSpan.innerText = config.appName
-                    appNameSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
-                    return appNameSpan
-                }
-            })())
-            appTitleAnchor.classList.add('app-name', 'no-user-select')
-            if (!appTitleVisible) appDiv.append(appTitleAnchor)
-            else appDiv.querySelector('.app-name').replaceWith(appTitleAnchor) // for appLogoImg.onload() callback
-        }
-    }
-
-    function updateAppStyle() {
-        appStyle.innerText = (
-            '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-          + ( // stylize scrollbars in Chromium/Safari
-                '#googlegpt *::-webkit-scrollbar { width: 7px }'
-              + '#googlegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
-              + '#googlegpt *::-webkit-scrollbar-thumb:hover { background: #a6a6a6 }'
-              + '#googlegpt *::-webkit-scrollbar-track { background: none }' )
-          + '#googlegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
-          + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
-              + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
-          + '#googlegpt { border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
-              + 'clip-path: polygon(-1% -3%, 30% -3%, 30% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // show tooltips but bound starry bg
-              + `padding: ${ isFirefox ? 20 : 22 }px 26px 6px 26px ;`
-              + `width: ${ isMobile ? 'auto' : '319px' } ;` // hard-width to prevent Google's flex-wrap moving app to bottom
-              + ( isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
-              + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
-              + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
-              + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
-          + '#googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
-          + '#googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
-          + `#googlegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
-          + ( scheme == 'dark' ? '#googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
-          + '.app-name { font-size: 1.35rem ; font-weight: 700 ; text-decoration: none ;'
-              + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important }`
-          + `.kudoai { font-size: ${ isMobile ? 0.85 : 0.75 }rem ; position: relative ; left: ${ isMobile ? 8 : 6 }px ; color: #aaa }`
-          + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important }'
-          + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
-          + '#corner-btns { float: right }'
-          + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 6px ;'
-              + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
-          + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
-              + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.185) ; transition: transform 0.05s ease' }}`
-          + '#googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
-          + '#googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
-          + '#font-size-slider-track { width: 98% ; height: 10px ; margin: 0 auto -15px ; padding: 15px 0 ;'
-              + 'background-color: #ccc ; box-sizing: content-box; background-clip: content-box ; -webkit-background-clip: content-box }'
-          + '#font-size-slider-track::before {' // to add finger cursor to unpadded core only
-              + 'content: "" ; position: absolute ; top: 10px ; left: 0 ; right: 0 ; height: calc(100% - 20px) ; cursor: pointer }'
-          + '#font-size-slider-thumb { width: 10px ; height: 26px ; border-radius: 30% ; position: relative ; top: -8.25px ;'
-              + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
-              + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
-          + ( config.fgAnimationsDisabled ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
-          + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin-top: 20px ;'
-              + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
-              + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
-              + 'transform: scale(1) ; transition: transform 0.1s ease }'
-          + '.standby-btn:hover { border-radius: 6px ;'
-              + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
-              + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.025)' }}`
-          + '#googlegpt > pre {'
-              + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
-              + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
-              + 'margin: 16px 0 0 0 ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;'
-              + `${ scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
-                                     : 'background: #eaeaeacf ; color: #202124 ; border: none' }}`
-          + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-          + '#googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
-          + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-              + `float: left ; margin: ${ isMobile ? 39 : 28 }px -15px 0 0 ; left: ${ isMobile ? 12 : 6 }px ;` // positioning
-              + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
-                  + ( scheme == 'dark' ? '#0000' : '#eaeaeacf' ) + '}'
-          + '#app-chatbar {'
-              + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
-              + 'position: relative ; z-index: 555 ; height: 16px ; max-height: 200px ; resize: none ;'
-              + 'margin: 13px 0 15px 0 ; padding: 13px 55px 13px 10px ;'
-              + `background: ${ scheme == 'dark' ? '#5151519e' : '#eeeeee9e' }}`
-          + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
-          + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: 19px }'
-          + '.related-query {'
-              + `margin: 5px 4px ${ scheme == 'dark' ? 5 : 2 }px 0 ; padding: 8px 12px 8px 13px ;`
-              + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
-              + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: ${ isMobile ? 1 : 0.81}em ; cursor: pointer ;`
-              + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
-              + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
-              + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1) ; transition: transform 0.1s ease !important' }}`
-          + '.related-query:hover, .related-query:focus {'
-              + ( config.fgAnimationsDisabled ? '' : 'transform: scale(1.025) !important ;' )
-              + `background: ${ scheme == 'dark' ? '#a2a2a270' : '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
-          + '.related-query svg { float: left ; margin: -0.09em 6px 0 0 ;' // related query icon
-              + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
-          + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
-          + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
-          + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
-          + '.chatbar-btn { z-index: 560 ;'
-              + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
-              + `bottom: ${( isFirefox ? 46 : 49 ) + ( hasSidebar ? 3 : 2 )}px ;`
-              + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
-          + '.chatbar-btn:hover {'
-              + `${ scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
-          + ( // markdown styles
-                '#googlegpt > pre h1 { font-size: 1.25em } #googlegpt > pre h2 { font-size: 1.1em }' // size headings
-              + '#googlegpt > pre > p { margin-bottom: -1.25em }' // eliminate bottom gap
-              + '#googlegpt > pre ol { padding-left: 1.58em }' // indent
-              + '#googlegpt > pre ul { margin: -10px 0 -6px ; padding-left: 1.5em }' // reduce v-spacing, indent
-              + '#googlegpt > pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
-          + 'code.hljs { text-wrap: nowrap ; overflow-x: scroll }' // don't wrap highlighted code to be scrollable horizontally
-          + '.katex-html { display: none }' // hide unrendered math
-          + '.chatgpt-notify { padding: 13px 13px 13px 18px !important }' // pad notifications
-          + '.chatgpt-modal > div { 17px 20px 24px 20px !important ;' // increase alert padding
-              + 'background-color: white ; color: #202124 }'
-          + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
-          + '.modal-close-btn { top: -8px !important ; right: -8px !important }' // re-pos modal close button
-          + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
-          + `.modal-close-btn:hover { background-color: #${ scheme == 'dark' ? '666464' : 'f2f2f2' } !important }`
-          + '.chatgpt-modal p { margin: 14px 0 -29px 4px ; font-size: 1.28em ; line-height: 1.57 }' // pos/size modal msg
-          + `.modal-buttons { margin: 42px 4px ${ isMobile ? '2px 4px' : '-3px -4px' } !important }` // pos modal buttons
-          + '.chatgpt-modal button {' // alert buttons
-              + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ;'
-              + `padding: ${ isMobile? '5px' : '4px 10px' } !important ;`
-              + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
-              + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
-          + ( scheme == 'dark' ? // darkmode alert styles
-              ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
-                  + 'background-color: black !important ; color: white }'
-              + '.primary-modal-btn { background: white !important ; color: black !important }'
-              + '.chatgpt-modal a { color: #00cfff !important }'
-              + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
-          + '#googlegpt footer {'
-              + 'position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ; line-height: 1.43em ;'
-              + `margin: ${ isFirefox ? 1 : -2 }px -32px 12px }`
-          + '#googlegpt footer * { color: #aaa ; text-decoration: none }'
-          + `#googlegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
-
-          // Settings modal
-          + '#googlegpt-settings-bg {'
-              + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-              + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
-              + 'transition: background-color 0.05s ease ;' // speed to transition in show alert routine
-              + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
-          + '#googlegpt-settings {'
-              + 'opacity: 0 ; transform: translateX(-2px) translateY(3px) ; min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
-              + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.3s cubic-bezier(.165,.84,.44,1) ;'
-              + 'background-image: linear-gradient(180deg,'
-                  + `${ scheme == 'dark' ? '#75c451 -70%, black 57%' : '#9eb4f2 -70%, white 42%' }) ;`
-              + `border: 1px solid ${ scheme == 'dark' ? 'white ; color: white' : '#b5b5b5 ; color: black' } ;`
-              + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
-              + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
-          + '#googlegpt-settings-bg.animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
-          + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
-              + '50% { opacity: 0.25 ; transform: scale(1.05) }'
-              + '100% { opacity: 0 ; transform: scale(1.35) }}'
-          + '#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px -15px 0 }'
-          + '#googlegpt-settings-title h4 { font-size: 22px ; font-weight: bold ; margin-top: -3px }' // 'Settings'
-          + '#googlegpt-settings-close-btn {'
-              + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
-              + 'position: absolute ; top: 10px ; right: 13px }'
-          + `#googlegpt-settings-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
-          + '#googlegpt-settings-close-btn svg { margin: 6.5px }' // center SVG for hover underlay
-          + `#googlegpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
-          + '#googlegpt-settings ul { list-style: none ; margin-bottom: 2px }' // hide bullets, close bottom gap
-          + '#googlegpt-settings li { font-size: 13.5px ; transition: transform 0.1s ease ;'
-              + `padding: 6px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
-              + 'border-radius: 3px }' // make highlight strips slightly rounded
-          + '#googlegpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
-          + '#googlegpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
-          + '#googlegpt-settings li, #googlegpt-settings li label { cursor: pointer }' // add finger on hover
-          + '#googlegpt-settings li:hover {'
-              + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
-              + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.16)' }}` // add zoom
-          + '#googlegpt-settings li > input { float: right }' // pos toggles
-          + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
-    )}
-
-    function updateTweaksStyle() {
-
-        // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
-        const isStandbyMode = appDiv.querySelector('.standby-btn'),
-              answerIsLoaded = appDiv.querySelector('.corner-btn')
-        tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
-                              + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
-
-        // Update 'by KudoAI' visibility based on corner space available
-        const kudoAIspan = appDiv.querySelector('.kudoai')
-        if (kudoAIspan) kudoAIspan.style.display = (
-            appDiv.querySelectorAll('.corner-btn').length < ( config.widerSidebar ? 10 : 4 )) ? '' : 'none'
-
-        // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
-        const answerPre = appDiv.querySelector('pre'),
-              relatedQueries = appDiv.querySelector('.related-queries'),
-              shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
-              longerPreHeight = window.innerHeight - 309
-        if (answerPre) answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
-            relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
     }
 
     const fontSizeSlider = {
@@ -1666,132 +1799,6 @@
         }
     }
 
-    function updateStars() { // for handleSchemeChange() + modals.scheme.show()'s updateScheme()
-        ['sm', 'med', 'lg'].forEach(size => appDiv.querySelector(
-            `[id$="stars-${size}"]`).id = `${scheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
-    }
-
-    function updateTooltip(buttonType) { // text & position
-        const cornerBtnTypes = ['about', 'settings', 'speak', 'ssb', 'font-size', 'wsb']
-                  .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
-        const [ctrAddend, spreadFactor] = [9, 27],
-              iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.35
-                                          : buttonType == 'shuffle' ? 2.25
-                                          : cornerBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
-        // Update text
-        tooltipDiv.innerText = (
-            buttonType == 'about' ? msgs.menuLabel_about || 'About'
-          : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
-          : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
-          : buttonType == 'ssb' ? (( config.stickySidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' ))
-          : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
-          : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
-          : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
-          : buttonType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
-
-        // Update position
-        tooltipDiv.style.top = `${ !/send|shuffle/.test(buttonType) ? -13
-          : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
-        tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
-    }
-
-    function updateFooterContent() {
-        get.json('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
-            (err, advertisersData) => { if (err) return
-
-                // Init vars
-                let chosenAdvertiser, adSelected
-                const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
-                const currentDate = (() => { // in YYYYMMDD format
-                    const today = new Date(), year = today.getFullYear(),
-                          month = String(today.getMonth() + 1).padStart(2, '0'),
-                          day = String(today.getDate()).padStart(2, '0')
-                    return year + month + day
-                })()
-
-                // Select random, active advertiser
-                for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
-                    if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
-
-                // Fetch a random, active creative
-                if (chosenAdvertiser) {
-                    const campaignsURL = 'https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/'
-                                       + chosenAdvertiser + '/text/campaigns.json'
-                    get.json(campaignsURL, (err, campaignsData) => { if (err) return
-
-                        // Select random, active campaign
-                        for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
-                            const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
-                            if (!campaignIsActive) continue // to next campaign since campaign inactive
-
-                            // Select random active group
-                            for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
-
-                                // Skip disqualified groups
-                                if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
-                                    || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
-                                    || adGroup.active == false // group explicitly disabled
-                                    || adGroup.targetBrowsers && // target browser(s) exist...
-                                        !adGroup.targetBrowsers.some( // ...but doesn't match user's
-                                            browser => new RegExp(browser, 'i').test(navigator.userAgent))
-                                    || adGroup.targetLocations && ( // target locale(s) exist...
-                                        !config.userLocale || !adGroup.targetLocations.some( // ...but user locale is missing or excluded
-                                            loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
-                                ) continue // to next group
-
-                                // Filter out inactive ads, pick random active one
-                                const activeAds = adGroup.ads.filter(ad => ad.active != false)
-                                if (activeAds.length == 0) continue // to next group since no ads active
-                                const chosenAd = activeAds[Math.floor(chatgpt.randomFloat() * activeAds.length)] // random active one
-
-                                // Build destination URL
-                                let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
-                                    || campaign.destinationURL || ''
-                                if (destinationURL.includes('http')) { // insert UTM tags
-                                    const [baseURL, queryString] = destinationURL.split('?'),
-                                          queryParams = new URLSearchParams(queryString || '')
-                                    queryParams.set('utm_source', config.appName.toLowerCase())
-                                    queryParams.set('utm_content', 'app_footer_link')
-                                    destinationURL = baseURL + '?' + queryParams.toString()
-                                }
-
-                                // Update footer content
-                                const newFooterContent = destinationURL ? createAnchor(destinationURL)
-                                                                        : document.createElement('span')
-                                footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
-                                footerContent.textContent = chosenAd.text
-                                footerContent.setAttribute('title', chosenAd.tooltip || '')
-                                adSelected = true ; break
-                            }
-                            if (adSelected) break // out of campaign loop after ad selection
-        }})}})
-
-        function shuffle(list) {
-            let currentIdx = list.length, tempValue, randomIdx
-            while (currentIdx != 0) { // elements remain to be shuffled
-                randomIdx = Math.floor(chatgpt.randomFloat() * currentIdx) ; currentIdx -= 1
-                tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
-            }
-            return list
-        }
-
-        function applyBoosts(list) {
-            let boostedList = [...list],
-                boostedListLength = boostedList.length - 1 // for applying multiple boosts
-            list.forEach(([name, data]) => { // check for boosts
-                if (data.boost) { // boost flagged entry's selection probability
-                    const boostPercent = parseInt(data.boost, 10) / 100,
-                          entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
-                                        * boostPercent - 1 // reduced to boosted entries needed
-                    for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
-                    boostedListLength += entriesNeeded // update for subsequent calculations
-            }})
-            return boostedList
-        }
-    }
-
     function handleRQevent(event) { // for attachment/removal in `get.reply()` + `show.reply().handleSubmit()`
         const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]
         if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
@@ -1849,7 +1856,7 @@
 
             fg() {
                 saveSetting('fgAnimationsDisabled', !config.fgAnimationsDisabled)
-                updateAppStyle()
+                update.appStyle()
                 notify(`${settingsProps.fgAnimationsDisabled.label} ${menuState.word[+!config.fgAnimationsDisabled]}`)
             }
         },
@@ -1876,13 +1883,13 @@
                     .catch(err => { consoleErr(err.message)
                         if (get.related.status != 'done') api.tryNew(get.related) })
             }
-            updateTweaksStyle() // toggle <pre> max-height
+            update.tweaksStyle() // toggle <pre> max-height
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
         },
 
         sidebar(mode) {
             saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
-            updateTweaksStyle()
+            update.tweaksStyle()
             const wsbSVGs = document.querySelectorAll('#ws-svg'),
                   ssbSVGs = document.querySelectorAll('#pin-svg')
             if (mode == 'wider' && wsbSVGs.length > 0)
@@ -1937,8 +1944,8 @@
         },
 
         tooltip(event) { // visibility
-            tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
-            updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
+            tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for update.tooltip() y-pos calc
+            update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
             tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
         }
     }
@@ -2117,7 +2124,7 @@
                         if (get.related.status != 'done') api.tryNew(get.related) })
             }
 
-            updateFooterContent()
+            update.footerContent()
         },
 
         json(url, callback) { // for dynamic footer
@@ -2333,7 +2340,7 @@
                 })
 
                 // Create/append app title elems
-                updateTitleElems()
+                update.titleElems()
 
                 // Create/append corner buttons div
                 const cornerBtnsDiv = document.createElement('div') ; cornerBtnsDiv.id = 'corner-btns'
@@ -2455,7 +2462,7 @@
                     kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
                     kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
                     appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
-                    updateTweaksStyle() // show/hide based on corner space available
+                    update.tweaksStyle() // show/hide based on corner space available
                 }
 
                 // Show standby state if prefix/suffix mode on
@@ -2578,7 +2585,7 @@
                         throwOnError: false
                 })})
 
-                if (config.stickySidebar) updateTweaksStyle() // to reset answerPre height
+                if (config.stickySidebar) update.tweaksStyle() // to reset answerPre height
 
                 // Auto-scroll if active
                 if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
@@ -2708,7 +2715,7 @@
                         }, idx * 100)
                     })
 
-                    updateTweaksStyle() // to shorten <pre> max-height
+                    update.tweaksStyle() // to shorten <pre> max-height
         }}}
     }
 
@@ -2744,8 +2751,8 @@
     const hasSidebar = !!document.querySelector('[class*="kp-"]')
 
     // Pre-load LOGO/ICON
-    const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
-    appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleElems() }
+    const appLogoImg = document.createElement('img') ; update.appLogoSrc()
+    appLogoImg.onload = () => { appLogoImg.loaded = true ; update.titleElems() }
     const appIcon = icons.googleGPT.create()
 
     // Create/ID/classify/listenerize GOOGLEGPT container
@@ -2758,7 +2765,7 @@
     })
 
     // Stylize APP elems
-    const appStyle = createStyle() ; updateAppStyle() ; document.head.append(appStyle);
+    const appStyle = createStyle() ; update.appStyle() ; document.head.append(appStyle);
     ['hljs', 'wsbg', 'bsbg'].forEach(cssType => // code highlighting, white stars, black stars
         document.head.append(createStyle(GM_getResourceText(`${cssType}CSS`))))
 
@@ -2770,7 +2777,7 @@
                     + `#app-chatbar { width: ${ hasSidebar ? 85.4 : 85.9 }% !important }`,
           ssbStyles = '#googlegpt { position: sticky ; top: 87px }'
                     + '#googlegpt ~ * { display: none }' // hide sidebar contents
-    updateTweaksStyle() ; document.head.append(tweaksStyle)
+    update.tweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize TOOLTIPs
     if (!isMobile) {
@@ -2778,7 +2785,7 @@
         document.head.append(createStyle('.btn-tooltip {'
             + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
             + 'font-size: 0.75rem ; color: white ;' // font style
-            + 'position: absolute ;' // for updateTooltip() calcs
+            + 'position: absolute ;' // for update.tooltip() calcs
             + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
             + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
         ))
