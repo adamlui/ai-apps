@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.18
+// @version             2024.7.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1445,13 +1445,14 @@
               + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
               + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
               + 'margin: 16px 0 0 0 ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;'
-              + ( scheme == 'dark' ? 'background: #3a3a3acf ; color: #f2f2f2 }' : 'background: #eaeaeacf ; color: #202124 }' )
+              + `${ scheme == 'dark' ? 'background: #3e3c3ccf ; color: #f2f2f2 ; border: 1px solid white'
+                                     : 'background: #eaeaeacf ; color: #202124 ; border: none' }}`
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '#googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
               + `float: left ; margin: ${ isMobile ? 39 : 28 }px -15px 0 0 ; left: ${ isMobile ? 12 : 6 }px ;` // positioning
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
-                  + ( scheme == 'dark' ? '#3a3a3acf' : '#eaeaeacf' ) + '}'
+                  + ( scheme == 'dark' ? '#0000' : '#eaeaeacf' ) + '}'
           + '#app-chatbar {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
               + 'position: relative ; z-index: 555 ; height: 16px ; max-height: 200px ; resize: none ;'

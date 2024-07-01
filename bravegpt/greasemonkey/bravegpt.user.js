@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.16
+// @version             2024.7.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1195,7 +1195,8 @@ setTimeout(async () => {
               + `font-size: ${config.fontSize}px ; font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ;`
               + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
               + 'margin-top: 12px ; padding: 1.2em 1.2em 0 1.2em ; border-radius: 13px ; overflow: auto ;'
-              + ( scheme == 'dark' ? 'background: #3a3a3acf ; color: #f2f2f2 } ' : ' background: #eaeaeacf ; color: #282828 }' )
+              + `${ scheme == 'dark' ? 'background: #3e3c3ccf ; color: #f2f2f2 ; border: 1px solid white'
+                                     : 'background: #eaeaeacf ; color: #282828 ; border: none' }}`
           + `#bravegpt footer { margin: ${ isFirefox ? 32 : 27 }px 0 -26px 0 ; border-top: none !important }`
           + '#bravegpt .feedback {'
               + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem; color: #aaa ;'
@@ -1207,7 +1208,7 @@ setTimeout(async () => {
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
               + 'float: left ; left: 7px ; margin: 36px -13px 0 0 ;' // positioning
               + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color:'
-                  + ( scheme == 'dark' ? '#3a3a3acf' : '#eaeaeacf' ) + '}'
+                  + ( scheme == 'dark' ? '#0000' : '#eaeaeacf' ) + '}'
           + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem }'
           + '.chatgpt-js > a { color: inherit ; top: .054rem }'
           + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px }'

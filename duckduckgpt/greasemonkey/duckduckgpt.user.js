@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.17
+// @version             2024.7.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1220,7 +1220,8 @@
               + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
               + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
               + 'margin: .99rem 0 7px 0 ; padding: 1.25em 1.25em 0 1.25em ; border-radius: 10px ; overflow: auto ;'
-              + ( scheme == 'dark' ? 'background: #3a3a3acf ; color: #f2f2f2' : 'background: #eaeaeacf ; color: #202124' ) + '}'
+              + `${ scheme == 'dark' ? 'background: #3e3c3ccf ; color: #f2f2f2 ; border: 1px solid white'
+                                     : 'background: #eaeaeacf ; color: #202124 ; border: none' }}`
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '#ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
           + '#ddgpt + footer { margin: 2px 0 25px ; position: relative }'
@@ -1228,7 +1229,7 @@
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
               + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
-                  + ( scheme == 'dark' ? '#3a3a3acf' : '#eaeaeacf' ) + '}'
+                  + ( scheme == 'dark' ? '##0000' : '#eaeaeacf' ) + '}'
           + '#app-chatbar {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
               + 'font-size: 0.92rem ; height: 19px ; width: 82.6% ; max-height: 200px ; resize: none ; '
