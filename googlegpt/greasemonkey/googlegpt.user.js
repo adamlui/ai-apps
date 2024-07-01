@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.3
+// @version             2024.7.1.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1365,6 +1365,7 @@
         if (!appPrefixVisible) {
             const appPrefixSpan = document.createElement('span') ; appPrefixSpan.id = 'app-prefix'
             appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.className = 'no-user-select'
+            appPrefixSpan.style.marginRight = '-2px'
             appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
             appDiv.append(appPrefixSpan)
         }
