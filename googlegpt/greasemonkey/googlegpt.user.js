@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.17
+// @version             2024.7.1.18
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -974,7 +974,12 @@
                             configStatusSpan.textContent = config.scheme || 'Auto'
                             settingItem.onclick = modals.scheme.show
                         } else if (key.includes('about')) {
-                            configStatusSpan.textContent = `v${GM_info.script.version}`
+                            const innerDiv = document.createElement('div'),
+                                  textGap = '&emsp;&emsp;&emsp;&emsp;&emsp;'
+                            let innerContent = `Version: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
+                                             + `${ msgs.about_poweredBy || 'Powered by' } <span class="about-em">chatgpt.js</span>${textGap}`
+                            for (let i = 0; i < 7; i++) innerContent += innerContent // make it long af
+                            innerDiv.innerHTML = innerContent ; configStatusSpan.append(innerDiv)
                             settingItem.onclick = modals.about.show
                         } settingItem.append(configStatusSpan)
                     }
@@ -1494,6 +1499,11 @@
                   + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.16)' }}` // add zoom
               + '#googlegpt-settings li > input { float: right }' // pos toggles
               + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
+              + '#about-menu-entry > span {' // outer About status span
+                  + 'width: 92px ; overflow: hidden ; mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) }'
+              + '#about-menu-entry > span > div { animation: ticker linear 60s infinite ; text-wrap: nowrap }'
+              + '@keyframes ticker { 0% { transform: translateX(100%) } 100% { transform: translateX(-2000%) }}'
+              + `.about-em { color: ${ scheme == 'dark' ? 'white' : 'green' } !important }`
             )
         },
 
