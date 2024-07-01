@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.9
+// @version             2024.7.1.10
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -645,6 +645,7 @@ setTimeout(async () => {
                 const settingsContainer = document.createElement('div') ; settingsContainer.id = 'bravegpt-settings-bg'
                 settingsContainer.classList = 'no-user-select'
                 const settingsModal = document.createElement('div') ; settingsModal.id = 'bravegpt-settings'
+                fillStarryBG(settingsModal) // add stars to bg
                 modals.init(settingsModal) // add class, disable wheel-scrolling
                 const settingsIcon = icons.braveGPT.create()
                 settingsIcon.style.cssText = 'width: 59px ; position: relative ; top: -33px ; margin: 0px 41% -8px' // size/pos icon
@@ -1247,6 +1248,7 @@ setTimeout(async () => {
                       + `${ scheme == 'dark' ? '#75c451 -70%, black 57%' : '#4ef900 -31%, white 33%' }) ;`
                   + `border: 1px solid ${ scheme == 'dark' ? 'white ; color: white' : '#b5b5b5 ; color: black' } ;`
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
+                  + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 125%, -28% 125%) ;' // bound starry bg
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '#bravegpt-settings-bg.animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
@@ -1373,12 +1375,14 @@ setTimeout(async () => {
             }
         },
 
-        scheme(newScheme) {
-            scheme = newScheme ; update.appLogoSrc() ; update.appStyle();
+        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() },
 
-            // Update starry bg
-            ['sm', 'med', 'lg'].forEach(size => appDiv.querySelector(
-                `[id$="stars-${size}"]`).id = `${ newScheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
+        stars() {
+            ['sm', 'med', 'lg'].forEach(size =>
+                document.querySelectorAll(`[id*="stars-${size}"]`).forEach(starsDiv =>
+                    starsDiv.id = config.bgAnimationsDisabled ? `stars-${size}-off`
+                    : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
+            ))
         },
 
         titleAnchor() {
@@ -1452,7 +1456,7 @@ setTimeout(async () => {
     function fillStarryBG(targetNode) {
         ['sm', 'med', 'lg'].forEach((size, idx) => {
             const starsDiv = document.createElement('div')
-            starsDiv.id = config.bgAnimationsDisabled ? 'stars-off'
+            starsDiv.id = config.bgAnimationsDisabled ? `stars-${size}-off`
                         : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
             starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
             targetNode.append(starsDiv)
@@ -1595,9 +1599,7 @@ setTimeout(async () => {
         animations: {
             bg() {
                 saveSetting('bgAnimationsDisabled', !config.bgAnimationsDisabled)
-                const starSizes = ['sm', 'med', 'lg']
-                appDiv.querySelectorAll('[id*="stars-"]').forEach((starsDiv, idx) => starsDiv.id = (
-                    config.bgAnimationsDisabled ? 'stars-off' : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSizes[idx]}` ))
+                update.stars()
                 notify(`${settingsProps.bgAnimationsDisabled.label} ${menuState.word[+!config.bgAnimationsDisabled]}`)
             },
 

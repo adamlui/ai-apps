@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.14
+// @version             2024.7.1.15
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -835,6 +835,7 @@
                 const settingsContainer = document.createElement('div') ; settingsContainer.id = 'googlegpt-settings-bg'
                 settingsContainer.classList = 'no-user-select'
                 const settingsModal = document.createElement('div') ; settingsModal.id = 'googlegpt-settings'
+                fillStarryBG(settingsModal) // add stars to bg
                 modals.init(settingsModal) // add class, disable wheel-scrolling
                 appIcon.style.cssText += 'width: 52px ; position: relative ; top: -45px ; margin: 9px 41.13% -43px' // size/pos icon
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
@@ -1467,6 +1468,7 @@
                       + `${ scheme == 'dark' ? '#75c451 -70%, black 57%' : '#9eb4f2 -70%, white 42%' }) ;`
                   + `border: 1px solid ${ scheme == 'dark' ? 'white ; color: white' : '#b5b5b5 ; color: black' } ;`
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
+                  + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 125%, -28% 125%) ;' // bound starry bg
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '#googlegpt-settings-bg.animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
@@ -1590,12 +1592,14 @@
             }
         },
 
-        scheme(newScheme) {
-            scheme = newScheme ; update.appLogoSrc() ; update.appStyle();
+        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() },
 
-            // Update starry bg
-            ['sm', 'med', 'lg'].forEach(size => appDiv.querySelector(
-                `[id$="stars-${size}"]`).id = `${ newScheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
+        stars() {
+            ['sm', 'med', 'lg'].forEach(size =>
+                document.querySelectorAll(`[id*="stars-${size}"]`).forEach(starsDiv =>
+                    starsDiv.id = config.bgAnimationsDisabled ? `stars-${size}-off`
+                    : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
+            ))
         },
 
         titleElems() {
@@ -1850,9 +1854,7 @@
         animations: {
             bg() {
                 saveSetting('bgAnimationsDisabled', !config.bgAnimationsDisabled)
-                const starSizes = ['sm', 'med', 'lg']
-                appDiv.querySelectorAll('[id*="stars-"]').forEach((starsDiv, idx) => starsDiv.id = (
-                    config.bgAnimationsDisabled ? 'stars-off' : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSizes[idx]}` ))
+                update.stars()
                 notify(`${settingsProps.bgAnimationsDisabled.label} ${menuState.word[+!config.bgAnimationsDisabled]}`)
             },
 

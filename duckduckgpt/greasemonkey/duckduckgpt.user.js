@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.11
+// @version             2024.7.1.12
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -654,6 +654,7 @@
                 const settingsContainer = document.createElement('div') ; settingsContainer.id = 'ddgpt-settings-bg'
                 settingsContainer.classList = 'no-user-select'
                 const settingsModal = document.createElement('div') ; settingsModal.id = 'ddgpt-settings'
+                fillStarryBG(settingsModal) // add stars to bg
                 modals.init(settingsModal) // add class, disable wheel-scrolling
                 const settingsIcon = icons.ddgpt.create()
                 settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -33px ; margin: 0 41% -12px' // size/pos icon
@@ -1273,6 +1274,7 @@
                   + 'background-image: linear-gradient(180deg,'
                       + `${ scheme == 'dark' ? '#75c451 -70%, black 57%' : '#7683b7 -70%, white 42%' }) ;`
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
+                  + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 125%, -28% 125%) ;' // bound starry bg
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '#ddgpt-settings-bg.animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
@@ -1301,12 +1303,14 @@
             )
         },
 
-        scheme(newScheme) {
-            scheme = newScheme ; update.appLogoSrc() ; update.appStyle();
+        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() },
 
-            // Update starry bg
-            ['sm', 'med', 'lg'].forEach(size => appDiv.querySelector(
-                `[id$="stars-${size}"]`).id = `${ newScheme == 'dark' ? 'white' : 'black' }-stars-${size}`)
+        stars() {
+            ['sm', 'med', 'lg'].forEach(size =>
+                document.querySelectorAll(`[id*="stars-${size}"]`).forEach(starsDiv =>
+                    starsDiv.id = config.bgAnimationsDisabled ? `stars-${size}-off`
+                    : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
+            ))
         },
 
         titleAnchor() {
@@ -1532,9 +1536,7 @@
         animations: {
             bg() {
                 saveSetting('bgAnimationsDisabled', !config.bgAnimationsDisabled)
-                const starSizes = ['sm', 'med', 'lg']
-                appDiv.querySelectorAll('[id*="stars-"]').forEach((starsDiv, idx) => starsDiv.id = (
-                    config.bgAnimationsDisabled ? 'stars-off' : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSizes[idx]}` ))
+                update.stars()
                 notify(`${settingsProps.bgAnimationsDisabled.label} ${menuState.word[+!config.bgAnimationsDisabled]}`)
             },
 
