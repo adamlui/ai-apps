@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.1
+// @version             2024.7.1.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2189,7 +2189,7 @@
                 // Create/append shuffle button
                 const shuffleBtn = document.createElement('div')
                 shuffleBtn.id = 'shuffle-btn' ; shuffleBtn.className = 'chatbar-btn'
-                shuffleBtn.style.right = `${ isFirefox ? 10 : 8 }px`
+                shuffleBtn.style.right = `${ isFirefox ? 11.5 : 9.5 }px`
                 const shuffleSVG = icons.shuffledArrows.create()
                 shuffleBtn.append(shuffleSVG) ; continueChatDiv.append(shuffleBtn)
 
