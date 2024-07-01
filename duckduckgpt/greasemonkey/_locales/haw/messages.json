@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "E hoʻonui i ka ʻaoʻao ʻaoʻao ʻaoʻao" },
   "helptip_stickySidebar": { "message": "E ʻike ʻia ʻo DuckDuckGPT ma ka ʻaoʻao ʻaoʻao e like me kou ʻōwili ʻana" },
   "helptip_bgAnimations": { "message": "Hōʻike i nā kāʻei ʻoniʻoni ma nā ʻāpana UI" },
+  "helptip_fgAnimations": { "message": "Hōʻike i nā hoʻolalelale mua ma nā ʻāpana UI" },
   "helptip_replyLanguage": { "message": "ʻŌlelo no DuckDuckGPT e pane ai" },
   "helptip_colorScheme": { "message": "Hoʻolālā e hōʻike i nā ʻāpana UI DuckDuckGPT ma" },
   "placeholder_typeSomething": { "message": "Kākau i kekahi mea" },

@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Laajenna hakusivun sivupalkki vaakasuunnassa" },
   "helptip_stickySidebar": { "message": "Tekee GoogleGPT: stä näkyvän sivupalkissa myös vieritettäessä" },
   "helptip_bgAnimations": { "message": "Näytä animoidut taustat käyttöliittymän komponenteissa" },
+  "helptip_fgAnimations": { "message": "Näytä etualan animaatiot käyttöliittymän komponenteissa" },
   "helptip_replyLanguage": { "message": "GoogleGPT: n vastauskieli" },
   "helptip_colorScheme": { "message": "Kaavio GoogleGPT: n käyttöliittymäkomponenttien näyttämiseksi" },
   "placeholder_askSomethingElse": { "message": "Joku muu" },

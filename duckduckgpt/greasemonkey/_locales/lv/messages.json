@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Horizontāli izvērst meklēšanas lapas sānjoslu" },
   "helptip_stickySidebar": { "message": "Padara DuckDuckGPT redzamu sānjoslā pat ritinot" },
   "helptip_bgAnimations": { "message": "Rādīt animētos fonus lietotāja interfeisa komponentos" },
+  "helptip_fgAnimations": { "message": "Rādīt priekšplāna animācijas lietotāja interfeisa komponentos" },
   "helptip_replyLanguage": { "message": "Valoda, kurā DuckDuckGPT var atbildēt" },
   "helptip_colorScheme": { "message": "Shēma, lai parādītu DuckDuckGPT UI komponentus" },
   "placeholder_typeSomething": { "message": "Ierakstiet kaut ko" },

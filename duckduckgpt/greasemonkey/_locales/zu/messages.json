@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Khulisa ibha eseceleni yekhasi lokusesha evundlile" },
   "helptip_stickySidebar": { "message": "Kwenza i-DuckDuckGPT ibonakale kubha eseceleni ngisho nalapho uskrola" },
   "helptip_bgAnimations": { "message": "Veza izizinda ezinopopayi ezingxenyeni ze-UI" },
+  "helptip_fgAnimations": { "message": "Veza izithombe zangaphambili ezingxenyeni ze-UI" },
   "helptip_replyLanguage": { "message": "Ulimi lwe-DuckDuckGPT ongaphendula ngalo" },
   "helptip_colorScheme": { "message": "Uhlelo lokubonisa izingxenye ze-DuckDuckGPT UI ku" },
   "placeholder_typeSomething": { "message": "Thayipha okuthile" },

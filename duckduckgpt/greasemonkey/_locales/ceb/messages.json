@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Horizontal nga pagpalapad sa sidebar sa panid sa pagpangita" },
   "helptip_stickySidebar": { "message": "Gihimo nga makita ang DuckDuckGPT sa sidebar bisan kung nag-scroll ka" },
   "helptip_bgAnimations": { "message": "Ipakita ang mga animated background sa mga sangkap sa UI" },
+  "helptip_fgAnimations": { "message": "Ipakita ang mga animasyon sa foreground sa mga sangkap sa UI" },
   "helptip_replyLanguage": { "message": "Pinulongan alang sa DuckDuckGPT sa pagtubag sa" },
   "helptip_colorScheme": { "message": "Scheme aron ipakita ang mga sangkap sa DuckDuckGPT UI sa" },
   "placeholder_typeSomething": { "message": "Type sa usa ka butang" },

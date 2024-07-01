@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "水平展開搜尋頁面側邊欄" },
   "helptip_stickySidebar": { "message": "即使您滾動，也能使 DuckDuckGPT 在側邊欄中可見" },
   "helptip_bgAnimations": { "message": "在 UI 元件中顯示動畫背景" },
+  "helptip_fgAnimations": { "message": "在 UI 元件中顯示前景動畫" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT 回覆的語言" },
   "helptip_colorScheme": { "message": "在中顯示 DuckDuckGPT UI 元件的方案" },
   "placeholder_typeSomething": { "message": "輸入內容" },

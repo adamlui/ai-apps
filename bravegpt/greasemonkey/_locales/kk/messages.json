@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "Көрсету үшін жауаптар сұраныстарынан кейін «?» талап етіңіз" },
   "helptip_widerSidebar": { "message": "Іздеу бетінің бүйірлік тақтасын көлденеңінен кеңейту" },
   "helptip_bgAnimations": { "message": "UI компоненттерінде анимацияланған фондарды көрсету" },
+  "helptip_fgAnimations": { "message": "UI компоненттерінде алдыңғы анимацияларды көрсету" },
   "helptip_replyLanguage": { "message": "Жауап беру үшін BraveGPT тілі" },
   "helptip_colorScheme": { "message": "BraveGPT UI компоненттерін көрсететін схема" },
   "placeholder_askSomethingElse": { "message": "Басқа нәрсе сұраңыз" },

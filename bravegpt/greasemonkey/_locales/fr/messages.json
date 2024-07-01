@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "Exiger «?» après les requêtes de réponses à afficher" },
   "helptip_widerSidebar": { "message": "Développer horizontalement la barre latérale de la page de recherche" },
   "helptip_bgAnimations": { "message": "Afficher les arrière-plans animés dans les composants de l'interface utilisateur" },
+  "helptip_fgAnimations": { "message": "Afficher les animations de premier plan dans les composants de l'interface utilisateur" },
   "helptip_replyLanguage": { "message": "Langue dans laquelle BraveGPT doit répondre" },
   "helptip_colorScheme": { "message": "Schéma pour afficher les composants de l'interface utilisateur BraveGPT dans" },
   "placeholder_askSomethingElse": { "message": "Demander quelque chose" },

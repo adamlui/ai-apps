@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Arama sayfası kenar çubuğunu yatay olarak genişlet" },
   "helptip_stickySidebar": { "message": "Kaydırırken bile DuckDuckGPT'yi kenar çubuğunda görünür kılar" },
   "helptip_bgAnimations": { "message": "Kullanıcı arayüzü bileşenlerinde animasyonlu arka planları göster" },
+  "helptip_fgAnimations": { "message": "Arayüz bileşenlerinde ön plan animasyonlarını göster" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT'nin yanıtlayacağı dil" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI bileşenlerinin görüntüleneceği şema" },
   "placeholder_typeSomething": { "message": "Bir şeyler yazın" },

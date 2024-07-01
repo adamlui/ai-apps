@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "காட்ட வேண்டிய பதில்களுக்கான கேள்விகளுக்குப் பிறகு \"?\" தேவைப்படுகிறது" },
   "helptip_widerSidebar": { "message": "தேடல் பக்க பக்கப்பட்டியை கிடைமட்டமாக விரிவாக்கவும்" },
   "helptip_bgAnimations": { "message": "UI கூறுகளில் அனிமேஷன் செய்யப்பட்ட பின்னணியைக் காட்டவும்" },
+  "helptip_fgAnimations": { "message": "UI கூறுகளில் முன்னணி அனிமேஷன்களைக் காட்டவும்" },
   "helptip_replyLanguage": { "message": "துணிச்சலான GPT க்கான மொழி இல் பதிலளிக்கவும்" },
   "helptip_colorScheme": { "message": "இதில் BraveGPT UI கூறுகளைக் காண்பிக்கும் திட்டம்" },
   "placeholder_askSomethingElse": { "message": "வேறு ஏதாவது கேளுங்கள்" },

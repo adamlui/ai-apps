@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Іздеу бетінің бүйірлік тақтасын көлденеңінен кеңейту" },
   "helptip_stickySidebar": { "message": "Сіз жылжып жатқанда да GoogleGPT бүйірлік тақтасында көрінетін етеді" },
   "helptip_bgAnimations": { "message": "UI компоненттерінде анимацияланған фондарды көрсету" },
+  "helptip_fgAnimations": { "message": "UI компоненттерінде алдыңғы анимацияларды көрсету" },
   "helptip_replyLanguage": { "message": "Жауап беру үшін GoogleGPT тілі" },
   "helptip_colorScheme": { "message": "GoogleGPT UI компоненттерін көрсететін схема" },
   "placeholder_askSomethingElse": { "message": "Басқа нәрсе сұраңыз" },

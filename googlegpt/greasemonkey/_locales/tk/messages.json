@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Saýt sahypasyny uzynlyk bilen giňelt" },
   "helptip_stickySidebar": { "message": "GoogleGPT-i kenar zolakda görmäge kömek edýär" },
   "helptip_bgAnimations": { "message": "UI komponentlerinde animaly arkaýynlygy görkez" },
+  "helptip_fgAnimations": { "message": "UI komponentlerinde öňki animasiýalary görkez" },
   "helptip_replyLanguage": { "message": "GoogleGPT-de jogap bermek üçin dil" },
   "helptip_colorScheme": { "message": "GoogleGPT UI komponentlerini görkezýän şemasy" },
   "placeholder_askSomethingElse": { "message": "Siz ýene bir soragy sorap bilersiňizmi" },

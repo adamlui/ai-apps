@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Vodorovně rozbalit postranní panel stránky vyhledávání" },
   "helptip_stickySidebar": { "message": "Zviditelní GoogleGPT v postranním panelu i při posouvání" },
   "helptip_bgAnimations": { "message": "Zobrazit animovaná pozadí v komponentách uživatelského rozhraní" },
+  "helptip_fgAnimations": { "message": "Zobrazit animace v popředí v komponentách uživatelského rozhraní" },
   "helptip_replyLanguage": { "message": "Jazyk, ve kterém má GoogleGPT odpovědět" },
   "helptip_colorScheme": { "message": "Schéma pro zobrazení komponent uživatelského rozhraní GoogleGPT v" },
   "placeholder_askSomethingElse": { "message": "Jiné" },

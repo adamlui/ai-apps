@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Te whakawhānui i te whārangi rapu i te taha o te pae" },
   "helptip_stickySidebar": { "message": "Ka kitea a DuckDuckGPT i te taha o te taha ahakoa ka tuhi koe" },
   "helptip_bgAnimations": { "message": "Whakaatuhia nga ahuatanga whakairoiro i roto i nga waahanga UI" },
+  "helptip_fgAnimations": { "message": "Whakaatu i nga whakairoiro o mua i roto i nga waahanga UI" },
   "helptip_replyLanguage": { "message": "Reo mo DuckDuckGPT ki te whakautu i roto i" },
   "helptip_colorScheme": { "message": "He mahere hei whakaatu i nga waahanga DuckDuckGPT UI i roto i" },
   "placeholder_typeSomething": { "message": "Tīpakohia tetahi mea" },

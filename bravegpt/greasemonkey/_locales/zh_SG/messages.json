@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "查询后需要 “?” 才能显示答案" },
   "helptip_widerSidebar": { "message": "水平展开搜索页面侧边栏" },
   "helptip_bgAnimations": { "message": "在 UI 组件中显示动画背景" },
+  "helptip_fgAnimations": { "message": "在 UI 组件中显示前景动画" },
   "helptip_replyLanguage": { "message": "BraveGPT 的回复语言" },
   "helptip_colorScheme": { "message": "在中显示 BraveGPT UI 组件的方案" },
   "placeholder_askSomethingElse": { "message": "其他方面" },

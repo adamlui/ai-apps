@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "ต้องการ \"?\" หลังจากการสอบถามเพื่อให้คำตอบแสดง" },
   "helptip_widerSidebar": { "message": "ขยายแถบด้านข้างของหน้าค้นหาในแนวนอน" },
   "helptip_bgAnimations": { "message": "แสดงแบ็คกราวน์แบบเคลื่อนไหวในคอมโพเนนต์ UI" },
+  "helptip_fgAnimations": { "message": "แสดงภาพเคลื่อนไหวเบื้องหน้าในส่วนประกอบ UI" },
   "helptip_replyLanguage": { "message": "ภาษาสำหรับ BraveGPT เพื่อตอบกลับ" },
   "helptip_colorScheme": { "message": "รูปแบบการแสดงส่วนประกอบ UI ของ BraveGPT ใน" },
   "placeholder_askSomethingElse": { "message": "ถามบางสิ่ง" },

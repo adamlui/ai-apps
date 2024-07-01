@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "הרחבה אופקית של סרגל הצד של דף החיפוש" },
   "helptip_stickySidebar": { "message": "הופך את GoogleGPT לגלוי בסרגל הצידי אפילו כשאתה גולל" },
   "helptip_bgAnimations": { "message": "הצג רקעים מונפשים ברכיבי ממשק משתמש" },
+  "helptip_fgAnimations": { "message": "הצג אנימציות קדמיות ברכיבי ממשק המשתמש" },
   "helptip_replyLanguage": { "message": "השפה שבה GoogleGPT יכול להגיב" },
   "helptip_colorScheme": { "message": "ערכה להצגת רכיבי ממשק המשתמש של GoogleGPT ב -" },
   "placeholder_askSomethingElse": { "message": "Something else&#10;&#10;" },

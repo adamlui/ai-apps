@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Vodoravno proširi bočnu traku stranice za pretraživanje" },
   "helptip_stickySidebar": { "message": "Čini DuckDuckGPT vidljivim u bočnoj traci čak i dok se pomičete" },
   "helptip_bgAnimations": { "message": "Prikaži animirane pozadine u komponentama korisničkog sučelja" },
+  "helptip_fgAnimations": { "message": "Prikaži animacije u prednjem planu u komponentama korisničkog sučelja" },
   "helptip_replyLanguage": { "message": "Jezik na kojem DuckDuckGPT odgovara" },
   "helptip_colorScheme": { "message": "Shema za prikaz komponenti korisničkog sučelja DuckDuckGPT u" },
   "placeholder_typeSomething": { "message": "Upišite nešto" },

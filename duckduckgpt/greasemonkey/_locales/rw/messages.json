@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Ongera ubugari ku mpande z'urupapuro rwo gushakisha" },
   "helptip_stickySidebar": { "message": "Gira GoogleGPT igaragara ku ruhande n'iyo uriho uscrollinga" },
   "helptip_bgAnimations": { "message": "Mbuganyuma in" },
+  "helptip_fgAnimations": { "message": "Iyega in" },
   "helptip_replyLanguage": { "message": "Ururimi rwa DuckDuckGPT rw'igisubizo" },
   "helptip_colorScheme": { "message": "Icyerekezo cyo kwerekana ibice bya DuckDuckGPT UI" },
   "placeholder_typeSomething": { "message": "Andika ikintu" },

@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "అడ్డంగా శోధన పేజీ సైడ్ ‌ బార్ ‌ ను విస్తరించండి" },
   "helptip_stickySidebar": { "message": "మీరు స్క్రోల్ చేస్తున్నప్పుడు కూడా సైడ్ ‌ బార్ ‌ లో DuckDuckGPT కనిపిస్తుంది" },
   "helptip_bgAnimations": { "message": "UI భాగాలలో యానిమేటెడ్ బ్యాక్ ‌ గ్రౌండ్ ‌ లను చూపించు" },
+  "helptip_fgAnimations": { "message": "UI భాగాలలో ఫ్రంట్ ‌ గ్రౌండ్ యానిమేషన్ ‌ లను చూపించు" },
   "helptip_replyLanguage": { "message": "లో ప్రత్యుత్తరం ఇవ్వడానికి DuckDuckGPT కోసం భాష" },
   "helptip_colorScheme": { "message": "లో DuckDuckGPT UI భాగాలను ప్రదర్శించే పథకం" },
   "placeholder_typeSomething": { "message": "ఏదో టైప్ చేయండి " },

@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "'?' eskatzen du erantzunak erakusteko galderen ondoren" },
   "helptip_widerSidebar": { "message": "Zabaldu bilaketa-orriaren alboko barra horizontalean" },
   "helptip_bgAnimations": { "message": "Erakutsi atzeko plano animatuak UI osagaietan" },
+  "helptip_fgAnimations": { "message": "Erakutsi lehen planoko animazioak UI osagaietan" },
   "helptip_replyLanguage": { "message": "BraveGPT-ren hizkuntza erantzuteko" },
   "helptip_colorScheme": { "message": "BraveGPT UI osagaiak bistaratzeko eskema" },
   "placeholder_askSomethingElse": { "message": "Beste zerbait galdetu" },

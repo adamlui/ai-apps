@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Vodorovne rozbaliť bočný panel vyhľadávacej stránky" },
   "helptip_stickySidebar": { "message": "Umožňuje viditeľnosť DuckDuckGPT v bočnom paneli, aj keď sa posúvate" },
   "helptip_bgAnimations": { "message": "Zobraziť animované pozadia v komponentoch používateľského rozhrania" },
+  "helptip_fgAnimations": { "message": "Zobraziť animácie v popredí v komponentoch používateľského rozhrania" },
   "helptip_replyLanguage": { "message": "Jazyk, v ktorom má DuckDuckGPT odpovedať" },
   "helptip_colorScheme": { "message": "Schéma zobrazenia komponentov používateľského rozhrania DuckDuckGPT v" },
   "placeholder_typeSomething": { "message": "Napíšte niečo" },

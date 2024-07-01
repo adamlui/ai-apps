@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Horizontale pligrandigi serĉpaĝan flankobreton" },
   "helptip_stickySidebar": { "message": "Faras GoogleGPT videbla en flanka stango eĉ kiam vi rulumas" },
   "helptip_bgAnimations": { "message": "Montri animaciajn fonojn en UI- komponantoj" },
+  "helptip_fgAnimations": { "message": "Montri malfonanimaciojn en UI-komponentoj" },
   "helptip_replyLanguage": { "message": "Lingvo por GoogleGPT respondi en" },
   "helptip_colorScheme": { "message": "Skemo por montri GoogleGPT UI-komponentojn en" },
   "placeholder_askSomethingElse": { "message": "Demandi ion alian" },

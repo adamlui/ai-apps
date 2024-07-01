@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Udvid søgesidens sidebjælke vandret" },
   "helptip_stickySidebar": { "message": "Gør DuckDuckGPT synlig i sidebjælken, selv når du ruller" },
   "helptip_bgAnimations": { "message": "Vis animerede baggrunde i UI-komponenter" },
+  "helptip_fgAnimations": { "message": "Vis forgrundsanimationer i UI-komponenter" },
   "helptip_replyLanguage": { "message": "Sprog, som DuckDuckGPT skal svare på" },
   "helptip_colorScheme": { "message": "Ordning til visning af DuckDuckGPT UI-komponenter i" },
   "placeholder_typeSomething": { "message": "Skriv noget" },

@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "Kudingeka \"?\" ngemva kwemibuzo yezimpendulo ezizoboniswa" },
   "helptip_widerSidebar": { "message": "Khulisa ibha eseceleni yekhasi lokusesha evundlile" },
   "helptip_bgAnimations": { "message": "Veza izizinda ezinopopayi ezingxenyeni ze-UI" },
+  "helptip_fgAnimations": { "message": "Veza izithombe zangaphambili ezingxenyeni ze-UI" },
   "helptip_replyLanguage": { "message": "Ulimi lwe-BraveGPT lokuphendula" },
   "helptip_colorScheme": { "message": "Uhlelo lokubonisa izingxenye ze-BraveGPT UI ku" },
   "placeholder_askSomethingElse": { "message": "Buza okunye" },

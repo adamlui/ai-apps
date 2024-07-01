@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Vodoravno razširi stran za iskanje stranske vrstice" },
   "helptip_stickySidebar": { "message": "GoogleGPT postane viden v stranski vrstici, tudi ko se pomikate" },
   "helptip_bgAnimations": { "message": "Prikaži animirana ozadja v komponentah uporabniškega vmesnika" },
+  "helptip_fgAnimations": { "message": "Prikaži animacije ospredja v komponentah uporabniškega vmesnika" },
   "helptip_replyLanguage": { "message": "Jezik, v katerem lahko GoogleGPT odgovori" },
   "helptip_colorScheme": { "message": "Shema za prikaz komponent uporabniškega vmesnika GoogleGPT v" },
   "placeholder_askSomethingElse": { "message": "Nekaj drugega" },

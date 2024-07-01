@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Horizontaliai išplėsti paieškos puslapio šoninę juostą" },
   "helptip_stickySidebar": { "message": "Padaro DuckDuckGPT matomą šoninėje juostoje net slenkant" },
   "helptip_bgAnimations": { "message": "Rodyti animuotus UI komponentų fonus" },
+  "helptip_fgAnimations": { "message": "Rodyti priekinio plano animacijas vartotojo sąsajos komponentuose" },
   "helptip_replyLanguage": { "message": "Kalba, kuria DuckDuckGPT turi atsakyti" },
   "helptip_colorScheme": { "message": "Schema, rodanti „DuckDuckGPT“ vartotojo sąsajos komponentus" },
   "placeholder_typeSomething": { "message": "Įveskite ką nors" },

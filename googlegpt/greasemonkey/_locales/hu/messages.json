@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Keresési oldal oldalsávjának vízszintes kibontása" },
   "helptip_stickySidebar": { "message": "A GoogleGPT-t görgetés közben is láthatóvá teszi az oldalsávban" },
   "helptip_bgAnimations": { "message": "Animált hátterek megjelenítése a felhasználói felület összetevőiben" },
+  "helptip_fgAnimations": { "message": "Előtér animációk megjelenítése a felhasználói felület komponenseiben" },
   "helptip_replyLanguage": { "message": "A GoogleGPT által a válaszadáshoz használt nyelv" },
   "helptip_colorScheme": { "message": "A GoogleGPT felhasználói felület összetevőinek megjelenítésére szolgáló séma" },
   "placeholder_askSomethingElse": { "message": "Más kérdésem van" },

@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "क्षैतिज रूप से खोज पृष्ठ साइडबार का विस्तार करें" },
   "helptip_stickySidebar": { "message": "स्क्रॉल करते समय भी DuckDuckGPT साइडबार में दिखाई देता है" },
   "helptip_bgAnimations": { "message": "UI घटकों में एनिमेटेड बैकग्राउंड दिखाएँ" },
+  "helptip_fgAnimations": { "message": "UI घटकों में अग्रभूमि एनिमेशन दिखाएं" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT को जवाब देने के लिए भाषा" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI घटकों को इसमें प्रदर्शित करने की योजना" },
   "placeholder_typeSomething": { "message": "कुछ लिखें" },

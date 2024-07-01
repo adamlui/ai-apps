@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "Postuli \"?\" post demandoj por respondoj por montri" },
   "helptip_widerSidebar": { "message": "Horizontale pligrandigi serĉpaĝan flankobreton" },
   "helptip_bgAnimations": { "message": "Montri animaciajn fonojn en UI- komponantoj" },
+  "helptip_fgAnimations": { "message": "Montri malfonanimaciojn en UI-komponentoj" },
   "helptip_replyLanguage": { "message": "Lingvo por BraveGPT respondi en" },
   "helptip_colorScheme": { "message": "Skemo por montri BraveGPT UI-komponentojn en" },
   "placeholder_askSomethingElse": { "message": "Demandi ion alian" },

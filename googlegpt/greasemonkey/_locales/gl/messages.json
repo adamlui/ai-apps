@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Ampliar horizontalmente a barra lateral da páxina de busca" },
   "helptip_stickySidebar": { "message": "Fai que GoogleGPT sexa visible na barra lateral mesmo mentres se despraza" },
   "helptip_bgAnimations": { "message": "Mostrar os fondos animados nos compoñentes da interface" },
+  "helptip_fgAnimations": { "message": "Mostrar as animacións de primeiro plano nos compoñentes da interface" },
   "helptip_replyLanguage": { "message": "Idioma para que GoogleGPT responda en" },
   "helptip_colorScheme": { "message": "Esquema para mostrar compoñentes da interface de usuario de GoogleGPT en" },
   "placeholder_askSomethingElse": { "message": "Algo máis" },

@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "Feum \"?\" às deidh ceistean airson freagairtean a shealltainn" },
   "helptip_widerSidebar": { "message": "Leudachadh taobh air an duilleag rannsachaidh" },
   "helptip_bgAnimations": { "message": "Seall cùl - raointean beòthail ann an co - phàirtean an UI" },
+  "helptip_fgAnimations": { "message": "Seall beòthachaidhean a 'bheulaibh ann am pàirtean an UI" },
   "helptip_replyLanguage": { "message": "Cànan airson BraveGPT freagairt ann" },
   "helptip_colorScheme": { "message": "Scheama airson freagairtean BraveGPT UI a shealltainn ann" },
   "placeholder_askSomethingElse": { "message": "Faigh ceist eile" },

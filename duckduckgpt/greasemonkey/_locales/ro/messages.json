@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Extindeți orizontal bara laterală a paginii de căutare" },
   "helptip_stickySidebar": { "message": "Face ca DuckDuckGPT să fie vizibil în bara laterală chiar și atunci când derulezi" },
   "helptip_bgAnimations": { "message": "Afișați fundaluri animate în componentele UI" },
+  "helptip_fgAnimations": { "message": "Afișați animațiile din prim-plan în componentele UI" },
   "helptip_replyLanguage": { "message": "Limba în care DuckDuckGPT poate răspunde" },
   "helptip_colorScheme": { "message": "Schema de afișare a componentelor UI DuckDuckGPT în" },
   "placeholder_typeSomething": { "message": "Scrieți ceva" },

@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "ಹುಡುಕಾಟ ಪುಟ ಸೈಡ್ ‌ ಬಾರ್ ‌ ಅನ್ನು ಅಡ್ಡಲಾಗಿ ವಿಸ್ತರಿಸಿ" },
   "helptip_stickySidebar": { "message": "ನೀವು ಸ್ಕ್ರಾಲ್ ಮಾಡುವಾಗಲೂ ಸೈಡ್ ‌ ಬಾರ್ ‌ ನಲ್ಲಿ GoogleGPT ಗೋಚರಿಸುತ್ತದೆ" },
   "helptip_bgAnimations": { "message": "UI ಘಟಕಗಳಲ್ಲಿ ಅನಿಮೇಟೆಡ್ ಹಿನ್ನೆಲೆಗಳನ್ನು ತೋರಿಸಿ" },
+  "helptip_fgAnimations": { "message": "UI ಘಟಕಗಳಲ್ಲಿ ಮುಂಭಾಗದ ಅನಿಮೇಷನ್ ‌ ಗಳನ್ನು ತೋರಿಸಿ" },
   "helptip_replyLanguage": { "message": "ರಲ್ಲಿ ಪ್ರತ್ಯುತ್ತರಿಸಲು GoogleGPT ಗಾಗಿ ಭಾಷೆ" },
   "helptip_colorScheme": { "message": "ನಲ್ಲಿ GoogleGPT UI ಘಟಕಗಳನ್ನು ಪ್ರದರ್ಶಿಸುವ ಯೋಜನೆ" },
   "placeholder_askSomethingElse": { "message": "ಬೇರೆ ಏನನ್ನಾದರೂ ಕೇಳಿ" },

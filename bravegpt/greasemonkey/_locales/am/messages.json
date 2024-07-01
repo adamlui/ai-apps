@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "የሚያስፈልግ \"?\" ከጥያቄዎች በኋላ ለማሳየት" },
   "helptip_widerSidebar": { "message": "አግድም የፍለጋ ገጽ የጎን አሞሌ ያሰፉ" },
   "helptip_bgAnimations": { "message": "በ UI ክፍሎች ውስጥ አኒሜሽን ዳራዎችን ያሳዩ" },
+  "helptip_fgAnimations": { "message": "በ UI ክፍሎች ውስጥ የፊት አኒሜሽኖችን ያሳዩ" },
   "helptip_replyLanguage": { "message": "መልስ ለመስጠት ለ BraveGPT ቋንቋ" },
   "helptip_colorScheme": { "message": "የ BraveGPT UI ክፍሎችን በ ውስጥ ለማሳየት መርሃግብር" },
   "placeholder_askSomethingElse": { "message": "ሌላ ነገር ጠይቅ" },

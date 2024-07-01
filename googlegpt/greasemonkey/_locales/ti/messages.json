@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "ኣብ ዝርከብ ገጽ ሳይድባር ንጎዳእ ምዝርዋህ" },
   "helptip_stickySidebar": { "message": "ኣብ ናይ ሳይድባር GoogleGPT ብምምላእ ንምርኣይ" },
   "helptip_bgAnimations": { "message": "ኣብ UI ኣሃዱታት ተንቀሳቓሲ ድሕረ ባይታታት ኣርኢ" },
+  "helptip_fgAnimations": { "message": "ኣብ UI ኣሃዱታት ናይ ቅድም ኣኒሜሽን ኣርኢ" },
   "helptip_replyLanguage": { "message": "ምልሲ ቋንቋ GoogleGPT ንዝረኣይ" },
   "helptip_colorScheme": { "message": "ናይ መልክዓ ምስዕቢ ብምምላእ GoogleGPT UI ንምርኣይ" },
   "placeholder_askSomethingElse": { "message": "ካልእ ነገር ሕተቶ" },

@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Expandir horizontalmente la barra lateral de la página de búsqueda" },
   "helptip_stickySidebar": { "message": "Hace que DuckDuckGPT sea visible en la barra lateral incluso mientras te desplazas" },
   "helptip_bgAnimations": { "message": "Mostrar fondos animados en los componentes de la interfaz de usuario" },
+  "helptip_fgAnimations": { "message": "Mostrar animaciones en primer plano en los componentes de la interfaz de usuario" },
   "helptip_replyLanguage": { "message": "Idioma para que DuckDuckGPT responda" },
   "helptip_colorScheme": { "message": "Esquema para mostrar los componentes de la interfaz de usuario de DuckDuckGPT en" },
   "placeholder_typeSomething": { "message": "Escribe algo" },

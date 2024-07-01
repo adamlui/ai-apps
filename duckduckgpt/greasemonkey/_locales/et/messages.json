@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Laienda otsingulehe külgriba horisontaalselt" },
   "helptip_stickySidebar": { "message": "Muudab DuckDuckGPT külgribal nähtavaks isegi kerimisel" },
   "helptip_bgAnimations": { "message": "Kuva animeeritud taustad kasutajaliidese komponentides" },
+  "helptip_fgAnimations": { "message": "Näita esiplaani animatsioone kasutajaliidese komponentides" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT vastamise keel" },
   "helptip_colorScheme": { "message": "Skeem DuckDuckGPT kasutajaliidese komponentide kuvamiseks" },
   "placeholder_typeSomething": { "message": "Sisesta midagi" },

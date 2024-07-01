@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "ತೋರಿಸಲು ಉತ್ತರಗಳಿಗಾಗಿ ಪ್ರಶ್ನೆಗಳ ನಂತರ \"?\" ಅಗತ್ಯವಿದೆ" },
   "helptip_widerSidebar": { "message": "ಹುಡುಕಾಟ ಪುಟ ಸೈಡ್ ‌ ಬಾರ್ ‌ ಅನ್ನು ಅಡ್ಡಲಾಗಿ ವಿಸ್ತರಿಸಿ" },
   "helptip_bgAnimations": { "message": "UI ಘಟಕಗಳಲ್ಲಿ ಅನಿಮೇಟೆಡ್ ಹಿನ್ನೆಲೆಗಳನ್ನು ತೋರಿಸಿ" },
+  "helptip_fgAnimations": { "message": "UI ಘಟಕಗಳಲ್ಲಿ ಮುಂಭಾಗದ ಅನಿಮೇಷನ್ ‌ ಗಳನ್ನು ತೋರಿಸಿ" },
   "helptip_replyLanguage": { "message": "ಉತ್ತರಿಸಲು ಬ್ರೇವ್ ಜಿಪಿಟಿಯ ಭಾಷೆ" },
   "helptip_colorScheme": { "message": "ಬ್ರೇವ್ ಜಿಪಿಟಿ ಯುಐ ಘಟಕಗಳನ್ನು ಪ್ರದರ್ಶಿಸುವ ಯೋಜನೆ" },
   "placeholder_askSomethingElse": { "message": "ಬೇರೆ ಏನನ್ನಾದರೂ ಕೇಳಿ" },

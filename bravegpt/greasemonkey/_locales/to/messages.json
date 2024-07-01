@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "Fie maʻu \"?\" hili e ngaahi fakaʻekeʻeke ki he ngaahi tali ke fakahaaʻi" },
   "helptip_widerSidebar": { "message": "Horizontally fakalahi ʻa e peesi kumi ʻi he tafaʻaki" },
   "helptip_bgAnimations": { "message": "Fakaʻaliʻali ʻa e puipuituʻa ʻi he ngaahi konga UI" },
+  "helptip_fgAnimations": { "message": "Fakaʻaliʻali ʻa e animations ki muʻa ʻi he ngaahi konga UI" },
   "helptip_replyLanguage": { "message": "Lea fakafonua ki he BraveGPT ke tali ʻi he" },
   "helptip_colorScheme": { "message": "Fokotuʻutuʻu ke fakaʻaliʻali BraveGPT UI ngaahi konga ʻi he" },
   "placeholder_askSomethingElse": { "message": "Kole ha meʻa kehe" },

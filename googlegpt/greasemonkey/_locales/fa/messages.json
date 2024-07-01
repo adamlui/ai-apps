@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "نوار کناری صفحه جستجو را به صورت افقی گسترش دهید" },
   "helptip_stickySidebar": { "message": "GoogleGPT را حتی در حین پیمایش در نوار کناری قابل مشاهده می کند" },
   "helptip_bgAnimations": { "message": "نمایش پس‌زمینه‌های متحرک در اجزای رابط کاربری" },
+  "helptip_fgAnimations": { "message": "نمایش انیمیشن های پیش زمینه در اجزای UI" },
   "helptip_replyLanguage": { "message": "زبانی که GoogleGPT به آن پاسخ می دهد" },
   "helptip_colorScheme": { "message": "طرحی برای نمایش اجزای رابط کاربری GoogleGPT در" },
   "placeholder_askSomethingElse": { "message": "یک چیز دیگر" },

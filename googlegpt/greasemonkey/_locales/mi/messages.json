@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Te whakawhānui i te whārangi rapu i te taha o te pae" },
   "helptip_stickySidebar": { "message": "Ka kitea a GoogleGPT i te taha o te taha ahakoa ka tirotirohia e koe" },
   "helptip_bgAnimations": { "message": "Whakaatuhia nga ahuatanga whakairoiro i roto i nga waahanga UI" },
+  "helptip_fgAnimations": { "message": "Whakaatu i nga whakairoiro o mua i roto i nga waahanga UI" },
   "helptip_replyLanguage": { "message": "Te reo mo GoogleGPT ki te whakautu i roto i" },
   "helptip_colorScheme": { "message": "He mahere hei whakaatu i nga waahanga GoogleGPT UI i roto i" },
   "placeholder_askSomethingElse": { "message": "Pātai atu ki tētahi atu mea" },

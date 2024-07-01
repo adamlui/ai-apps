@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "האָריזאָנטאַלי יקספּאַנד זוכן בלאַט סיידבאַר" },
   "helptip_stickySidebar": { "message": "מאכט GoogleGPT קענטיק אין סיידבאַר אפילו ווען איר מעגילע" },
   "helptip_bgAnimations": { "message": "ווייַזן אַנימאַטעד באַקגראַונדז אין וי קאַמפּאָונאַנץ" },
+  "helptip_fgAnimations": { "message": "ווייַזן פאָרגראַונד אַנאַמיישאַנז אין וי קאַמפּאָונאַנץ" },
   "helptip_replyLanguage": { "message": "שפּראַך פֿאַר GoogleGPT צו ענטפֿערן אין" },
   "helptip_colorScheme": { "message": "סכעמע צו ווייַזן GoogleGPT UI קאַמפּאָונאַנץ אין" },
   "placeholder_askSomethingElse": { "message": "פרעגן עפּעס אַנדערש" },

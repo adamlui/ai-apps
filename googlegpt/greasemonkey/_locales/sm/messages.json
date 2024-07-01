@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Faʻalauteleina o le search page sidebar" },
   "helptip_stickySidebar": { "message": "Faia GoogleGPT vaaia i sidebar e tusa lava pe e te faitau" },
   "helptip_bgAnimations": { "message": "Faaali atu talaaga animated i vaega UI" },
+  "helptip_fgAnimations": { "message": "Faaali atu animations foreground i vaega UI" },
   "helptip_replyLanguage": { "message": "Gagana mo GoogleGPT e tali atu i" },
   "helptip_colorScheme": { "message": "Fuafuaga e faʻaalia ai GoogleGPT UI vaega i" },
   "placeholder_askSomethingElse": { "message": "Fesili atu i se isi mea" },

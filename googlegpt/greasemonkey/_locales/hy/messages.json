@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Հորիզոնական ընդլայնել որոնման էջի կողագիծը" },
   "helptip_stickySidebar": { "message": "Դարձնում է GoogleGPT - ը տեսանելի կողային գոտում, նույնիսկ այն ժամանակ, երբ դուք թերթում եք" },
   "helptip_bgAnimations": { "message": "Ցույց տալ անիմացիոն ֆոնները UI բաղադրիչներում" },
+  "helptip_fgAnimations": { "message": "Ցույց տալ նախապատմության անիմացիաները UI բաղադրիչներում" },
   "helptip_replyLanguage": { "message": "Լեզու GoogleGPT - ի համար ՝ պատասխանելու համար" },
   "helptip_colorScheme": { "message": "GoogleGPT UI - ի բաղադրիչները ցուցադրելու սխեման" },
   "placeholder_askSomethingElse": { "message": "Հարցրեք մեկ այլ բան" },

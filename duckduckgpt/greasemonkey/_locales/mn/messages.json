@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Хайлтын хуудасны хажуугийн цэсийг хэвтээгээр өргөжүүлэх" },
   "helptip_stickySidebar": { "message": "НугасDuckGPT нь гүйлгэсэн шигээ хажуу цонхонд харагдана" },
   "helptip_bgAnimations": { "message": "Хөдөлгөөнтэй дэвсгэрүүдийг UI бүрэлдэхүүн хэсгүүдэд харуулах" },
+  "helptip_fgAnimations": { "message": "UI бүрэлдэхүүн хэсгүүдэд газрын өмнөх хөдөлгөөнүүдийг харуул" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT-д хариу өгөх хэл" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI хэсгүүдийг харуулах схем" },
   "placeholder_typeSomething": { "message": "Ямар нэг зүйлийг бичнэ үү" },

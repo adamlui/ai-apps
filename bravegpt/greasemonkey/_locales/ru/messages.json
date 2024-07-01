@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "Требовать \"?\" после запросов для ответов, чтобы показать" },
   "helptip_widerSidebar": { "message": "Развернуть боковую панель страницы поиска по горизонтали" },
   "helptip_bgAnimations": { "message": "Показать анимированные фоны в компонентах пользовательского интерфейса" },
+  "helptip_fgAnimations": { "message": "Показать анимацию переднего плана в компонентах пользовательского интерфейса" },
   "helptip_replyLanguage": { "message": "Язык для ответа BraveGPT" },
   "helptip_colorScheme": { "message": "Схема отображения компонентов пользовательского интерфейса BraveGPT в" },
   "placeholder_askSomethingElse": { "message": "Другое" },

@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Stækka hliðarsíðu leitarsíðunnar lárétt" },
   "helptip_stickySidebar": { "message": "Gerir DuckDuckGPT sýnilegt í hliðarstiku jafnvel þegar þú flettir" },
   "helptip_bgAnimations": { "message": "Sýna hreyfibakgrunn í íhlutum notendaviðmóts" },
+  "helptip_fgAnimations": { "message": "Sýna forgrunnshreyfimyndir í íhlutum notendaviðmóts" },
   "helptip_replyLanguage": { "message": "Tungumál fyrir DuckDuckGPT til að svara á" },
   "helptip_colorScheme": { "message": "Skema til að sýna DuckDuckGPT UI hluti í" },
   "placeholder_typeSomething": { "message": "Sláðu eitthvað inn" },

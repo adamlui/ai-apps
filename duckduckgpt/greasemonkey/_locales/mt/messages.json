@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Espandi orizzontalment il-ġenb tal-paġna tat-tiftix" },
   "helptip_stickySidebar": { "message": "Jagħmel DuckDuckGPT viżibbli fil-ġenb anki meta tiskrollja" },
   "helptip_bgAnimations": { "message": "Uri l-isfondi animati fil-komponenti tal-UI" },
+  "helptip_fgAnimations": { "message": "Uri l-animazzjonijiet miksuba fil-komponenti tal-IU" },
   "helptip_replyLanguage": { "message": "Lingwa għal DuckDuckGPT biex twieġeb" },
   "helptip_colorScheme": { "message": "Skema biex turi l-komponenti tal-UI ta' DuckDuckGPT fi" },
   "placeholder_typeSomething": { "message": "Ikteb xi ħaġa" },

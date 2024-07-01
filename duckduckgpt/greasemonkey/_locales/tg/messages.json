@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Уфуқӣ густариш додани панели паҳлӯии саҳифаи ҷустуҷӯ" },
   "helptip_stickySidebar": { "message": "DuckDuckGPT- ро дар панели паҳлӯӣ, ҳатто вақте ки шумо ҳаракат мекунед, намоён мекунад" },
   "helptip_bgAnimations": { "message": "Намоиши заминаи аниматсионӣ дар ҷузъҳои UI" },
+  "helptip_fgAnimations": { "message": "Намоиши аниматсияҳои пешзамина дар ҷузъҳои UI" },
   "helptip_replyLanguage": { "message": "Забон барои DuckDuckGPT барои ҷавоб додан дар" },
   "helptip_colorScheme": { "message": "Нақша барои намоиши ҷузъҳои DuckDuckGPT UI дар" },
   "placeholder_typeSomething": { "message": "Чизеро чоп кунед" },

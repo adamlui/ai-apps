@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "Vereisen \"?\" na zoekopdrachten voor antwoorden om weer te geven" },
   "helptip_widerSidebar": { "message": "Zijbalk zoekpagina horizontaal uitvouwen" },
   "helptip_bgAnimations": { "message": "Toon geanimeerde achtergronden in UI-componenten" },
+  "helptip_fgAnimations": { "message": "Toon animaties op de voorgrond in UI-componenten" },
   "helptip_replyLanguage": { "message": "Taal voor BraveGPT om te reageren in" },
   "helptip_colorScheme": { "message": "Schema om BraveGPT UI-componenten weer te geven in" },
   "placeholder_askSomethingElse": { "message": "Iets anders" },

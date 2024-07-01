@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Хоризонтално проширете ја страничната лента за пребарување" },
   "helptip_stickySidebar": { "message": "Го прави GoogleGPT видлив во страничната лента дури и додека се движите" },
   "helptip_bgAnimations": { "message": "Прикажи анимирани позадини во компонентите на корисничкиот интерфејс" },
+  "helptip_fgAnimations": { "message": "Прикажи анимации во преден план во компонентите на корисничкиот интерфејс" },
   "helptip_replyLanguage": { "message": "Јазик на кој GoogleGPT може да одговори" },
   "helptip_colorScheme": { "message": "Шема за прикажување на компонентите на корисничкиот интерфејс на GoogleGPT во" },
   "placeholder_askSomethingElse": { "message": "Нешто друго" },

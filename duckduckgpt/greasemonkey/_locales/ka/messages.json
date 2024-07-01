@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Ჰორიზონტალურად გააფართოვეთ საძიებო გვერდის გვერდი" },
   "helptip_stickySidebar": { "message": "Ხდის DuckDuckGPT-ს ხილვადს გვერდითა ზოლში გადახვევის დროსაც კი" },
   "helptip_bgAnimations": { "message": "Ანიმაციური ფონების ჩვენება UI კომპონენტებში" },
+  "helptip_fgAnimations": { "message": "Წინა პლანზე ანიმაციების ჩვენება UI კომპონენტებში" },
   "helptip_replyLanguage": { "message": "Ენა DuckDuckGPT-სთვის პასუხის გასაცემად" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI კომპონენტების ჩვენების სქემა" },
   "placeholder_typeSomething": { "message": "Აკრიფეთ რაიმე" },

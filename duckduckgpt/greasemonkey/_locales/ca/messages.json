@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Expandeix horitzontalment la barra lateral de la pàgina de cerca" },
   "helptip_stickySidebar": { "message": "Fes que DuckDuckGPT sigui visible a la barra lateral fins i tot mentre et desplaces" },
   "helptip_bgAnimations": { "message": "Mostra fons animats als components de la interfície d'usuari" },
+  "helptip_fgAnimations": { "message": "Mostra les animacions de primer pla en els components de la interfície d'usuari" },
   "helptip_replyLanguage": { "message": "Idioma en què DuckDuckGPT pot respondre" },
   "helptip_colorScheme": { "message": "Esquema per mostrar els components de la interfície d'usuari de DuckDuckGPT a" },
   "placeholder_typeSomething": { "message": "Escriu alguna cosa" },

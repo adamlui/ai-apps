@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Yandisa ngokuthe tyaba ibar esecaleni yephepha lokukhangela" },
   "helptip_stickySidebar": { "message": "Yenza iDuckDuckGPT ibonakale kwibar esecaleni nanjengoko uskrola" },
   "helptip_bgAnimations": { "message": "Bonisa iimvelaphi zoopopayi kwiingxenye ze-UI" },
+  "helptip_fgAnimations": { "message": "Bonisa oopopayi abangaphambili kwiingxenye ze-UI" },
   "helptip_replyLanguage": { "message": "Ulwimi lweDuckDuckGPT lokuphendula" },
   "helptip_colorScheme": { "message": "Isicwangciso sokubonisa amacandelo e-UI e-DuckDuckGPT" },
   "placeholder_typeSomething": { "message": "Bhala into" },

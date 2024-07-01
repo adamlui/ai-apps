@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "Հարցումներից հետո պահանջեք «?» ցուցադրել պատասխանները" },
   "helptip_widerSidebar": { "message": "Հորիզոնական ընդլայնել որոնման էջի կողագիծը" },
   "helptip_bgAnimations": { "message": "Ցույց տալ անիմացիոն ֆոնները UI բաղադրիչներում" },
+  "helptip_fgAnimations": { "message": "Ցույց տալ նախապատմության անիմացիաները UI բաղադրիչներում" },
   "helptip_replyLanguage": { "message": "Լեզու BraveGPT - ի համար ՝ պատասխանելու համար" },
   "helptip_colorScheme": { "message": "BraveGPT UI բաղադրիչները ցուցադրելու սխեման" },
   "placeholder_askSomethingElse": { "message": "Հարցրեք մեկ այլ բան" },

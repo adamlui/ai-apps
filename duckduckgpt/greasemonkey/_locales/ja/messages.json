@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "検索ページのサイドバーを水平に展開する" },
   "helptip_stickySidebar": { "message": "スクロールしてもサイドバーに DuckDuckGPT が表示されます" },
   "helptip_bgAnimations": { "message": "UIコンポーネントにアニメーション化された背景を表示する" },
+  "helptip_fgAnimations": { "message": "UIコンポーネントにフォアグラウンドアニメーションを表示する" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT が返信する言語" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI コンポーネントを表示するスキーム" },
   "placeholder_typeSomething": { "message": "何か入力してください" },

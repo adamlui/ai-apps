@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Развернуть боковую панель страницы поиска по горизонтали" },
   "helptip_stickySidebar": { "message": "Делает DuckDuckGPT видимым на боковой панели даже при прокрутке" },
   "helptip_bgAnimations": { "message": "Показать анимированные фоны в компонентах пользовательского интерфейса" },
+  "helptip_fgAnimations": { "message": "Показать анимацию переднего плана в компонентах пользовательского интерфейса" },
   "helptip_replyLanguage": { "message": "Язык для ответа DuckDuckGPT" },
   "helptip_colorScheme": { "message": "Схема отображения компонентов пользовательского интерфейса DuckDuckGPT в" },
   "placeholder_typeSomething": { "message": "Введите текст" },

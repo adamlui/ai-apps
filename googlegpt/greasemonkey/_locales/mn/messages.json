@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Хайлтын хуудасны хажуугийн цэсийг хэвтээгээр өргөжүүлэх" },
   "helptip_stickySidebar": { "message": "Хажуугийн цонхонд GoogleGPT харагдуулдаг" },
   "helptip_bgAnimations": { "message": "Хөдөлгөөнтэй дэвсгэрүүдийг UI бүрэлдэхүүн хэсгүүдэд харуулах" },
+  "helptip_fgAnimations": { "message": "UI бүрэлдэхүүн хэсгүүдэд газрын өмнөх хөдөлгөөнүүдийг харуул" },
   "helptip_replyLanguage": { "message": "GoogleGPT-д хариу өгөх хэл" },
   "helptip_colorScheme": { "message": "GoogleGPT UI хэсгүүдийг харуулах схем" },
   "placeholder_askSomethingElse": { "message": "" },

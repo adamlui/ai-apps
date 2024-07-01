@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Qidiruv sahifasi yon panelini kengaytirish" },
   "helptip_stickySidebar": { "message": "GoogleGPT ni sahifa aylantirilsa ham yon panelda ko'rinadigan qiling" },
   "helptip_bgAnimations": { "message": "UI komponentlarida animatsion fonlarni ko'rsatish" },
+  "helptip_fgAnimations": { "message": "UI komponentlarida oldingi fon animatsiyalarini ko'rsatish" },
   "helptip_replyLanguage": { "message": "GoogleGPT javob beradigan til" },
   "helptip_colorScheme": { "message": "GoogleGPT UI komponentlarini ko'rsatish sxemasi" },
   "placeholder_askSomethingElse": { "message": "Boshqa narsa so'rang" },

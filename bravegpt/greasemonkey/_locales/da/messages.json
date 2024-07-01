@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "Kræv \"?\" efter forespørgsler om svar, der skal vises" },
   "helptip_widerSidebar": { "message": "Udvid søgesidens sidebjælke vandret" },
   "helptip_bgAnimations": { "message": "Vis animerede baggrunde i UI-komponenter" },
+  "helptip_fgAnimations": { "message": "Vis forgrundsanimationer i UI-komponenter" },
   "helptip_replyLanguage": { "message": "Sprog for BraveGPT at svare på" },
   "helptip_colorScheme": { "message": "Ordning til visning af BraveGPT UI-komponenter i" },
   "placeholder_askSomethingElse": { "message": "Noget andet" },

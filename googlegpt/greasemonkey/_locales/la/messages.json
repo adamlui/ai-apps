@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Laterale quaerendi paginae horizontaliter expandere" },
   "helptip_stickySidebar": { "message": "Facit GoogleGPT visibile in laterali etiam cum scrollexione" },
   "helptip_bgAnimations": { "message": "Opportuna animationes in components UI" },
+  "helptip_fgAnimations": { "message": "Opportuna animationes preground in components UI" },
   "helptip_replyLanguage": { "message": "Lingua ad quam GoogleGPT respondeat" },
   "helptip_colorScheme": { "message": "Schema ad ostendendum partes UI GoogleGPT" },
   "placeholder_askSomethingElse": { "message": "Interroga aliquid aliud" },

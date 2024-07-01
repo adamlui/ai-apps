@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Zijbalk zoekpagina horizontaal uitvouwen" },
   "helptip_stickySidebar": { "message": "Maakt DuckDuckGPT zichtbaar in de zijbalk, zelfs als u scrolt" },
   "helptip_bgAnimations": { "message": "Toon geanimeerde achtergronden in UI-componenten" },
+  "helptip_fgAnimations": { "message": "Toon animaties op de voorgrond in UI-componenten" },
   "helptip_replyLanguage": { "message": "Taal voor DuckDuckGPT om te reageren in" },
   "helptip_colorScheme": { "message": "Schema om DuckDuckGPT UI-componenten weer te geven in" },
   "placeholder_typeSomething": { "message": "Typ iets" },

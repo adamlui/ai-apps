@@ -45,6 +45,7 @@
   "helptip_suffixMode": { "message": "Reikalauti „?“ po užklausų, kad būtų rodomi atsakymai" },
   "helptip_widerSidebar": { "message": "Horizontaliai išplėsti paieškos puslapio šoninę juostą" },
   "helptip_bgAnimations": { "message": "Rodyti animuotus UI komponentų fonus" },
+  "helptip_fgAnimations": { "message": "Rodyti priekinio plano animacijas vartotojo sąsajos komponentuose" },
   "helptip_replyLanguage": { "message": "Kalba, kuria „BraveGPT“ turi atsakyti" },
   "helptip_colorScheme": { "message": "Schema, rodanti „BraveGPT“ vartotojo sąsajos komponentus" },
   "placeholder_askSomethingElse": { "message": "Kažkas kita" },

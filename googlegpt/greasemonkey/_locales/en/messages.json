@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "Horizontally expand search page sidebar" },
   "helptip_stickySidebar": { "message": "Makes GoogleGPT visible in sidebar even as you scroll" },
   "helptip_bgAnimations": { "message": "Show animated backgrounds in UI components" },
+  "helptip_fgAnimations": { "message": "Show foreground animations in UI components" },
   "helptip_replyLanguage": { "message": "Language for GoogleGPT to reply in" },
   "helptip_colorScheme": { "message": "Scheme to display GoogleGPT UI components in" },
   "placeholder_askSomethingElse": { "message": "Ask something else" },

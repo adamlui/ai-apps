@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "تلاش کے صفحے کے سائڈبار کو افقی طور پر وسعت دیں" },
   "helptip_stickySidebar": { "message": "ڈک ڈک جی پی ٹی کو سائڈبار میں مرئی بناتا ہے یہاں تک کہ جب آپ اسکرول کرتے ہیں" },
   "helptip_bgAnimations": { "message": "UI اجزاء میں متحرک پس منظر دکھائیں" },
+  "helptip_fgAnimations": { "message": "UI اجزاء میں پیش منظر کی حرکت پذیری دکھائیں" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT کو جواب دینے کے لیے زبان" },
   "helptip_colorScheme": { "message": "DuckDuckGPT UI اجزاء کو اس میں ڈسپلے کرنے کی اسکیم" },
   "placeholder_typeSomething": { "message": "کچھ ٹائپ کریں" },

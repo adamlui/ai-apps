@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "অনুভূমিকভাবে অনুসন্ধান পৃষ্ঠার সাইডবার প্রসারিত করুন" },
   "helptip_stickySidebar": { "message": "আপনি স্ক্রোল করার সময়ও সাইডবারে GoogleGPT-কে দৃশ্যমান করে তোলে" },
   "helptip_bgAnimations": { "message": "UI কম্পোনেন্টে অ্যানিমেটেড ব্যাকগ্রাউন্ড দেখান" },
+  "helptip_fgAnimations": { "message": "UI কম্পোনেন্টে ফোরগ্রাউন্ড অ্যানিমেশন দেখান" },
   "helptip_replyLanguage": { "message": "উত্তর দেওয়ার জন্য GoogleGPT এর ভাষা" },
   "helptip_colorScheme": { "message": "GoogleGPT UI উপাদানগুলি প্রদর্শন করার জন্য স্কিম" },
   "placeholder_askSomethingElse": { "message": "অন্য কিছু জিজ্ঞাসা করুন" },

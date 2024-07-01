@@ -47,6 +47,7 @@
   "helptip_widerSidebar": { "message": "A yeke wara lege ti fa tënë na ndo ti mbeni ndo so ayeke na yâ ti mbeni ndo so a yeke wara" },
   "helptip_stickySidebar": { "message": "Zia GoogleGPT abâ na yâ ti mbage ti mbage ti mbage ti mbage ni même tongana mo yeke pika" },
   "helptip_bgAnimations": { "message": "A yeke sara si azo abâ peko ti aye so ayeke na yâ ti UI" },
+  "helptip_fgAnimations": { "message": "A yeke wara a-animation na yâ ti akota mbage ti UI" },
   "helptip_replyLanguage": { "message": "Yanga ti awambongi ti GoogleGPT ti kiri tënë na yâ" },
   "helptip_colorScheme": { "message": "A yeke na lege ti GoogleGPT UI si a yeke fa ye so ayeke na yâ ti Bible" },
   "placeholder_askSomethingElse": { "message": "Hunda mbeni ye nde" },
