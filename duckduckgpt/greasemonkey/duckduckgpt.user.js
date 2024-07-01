@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.16
+// @version             2024.6.30.17
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1241,14 +1241,14 @@
           + '.related-query {'
               + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 4px 10px 5px 10px ;`
               + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
-              + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
+              + `background: ${ scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
               + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.88em ; cursor: pointer ;`
               + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
               + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
               + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1) ; transition: transform 0.1s ease !important' }}`
           + '.related-query:hover, .related-query:focus {'
               + ( config.fgAnimationsDisabled ? '' : 'transform: scale(1.025) !important ;' )
-              + `background: ${ scheme == 'dark' ? '#a2a2a270': '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
+              + `background: ${ scheme == 'dark' ? '#a2a2a270': '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
           + '.related-query svg { position: relative ; top: 4px ; margin-right: 6px ;' // related query icon
               + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
           + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'

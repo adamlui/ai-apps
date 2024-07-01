@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.15
+// @version             2024.6.30.16
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1444,14 +1444,14 @@
           + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: 19px }'
           + '.related-query {'
               + `margin: 5px 4px ${ scheme == 'dark' ? 5 : 2 }px 0 ; padding: 8px 12px 8px 13px ;`
-              + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
+              + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
               + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: ${ isMobile ? 1 : 0.81}em ; cursor: pointer ;`
               + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
               + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
               + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1) ; transition: transform 0.1s ease !important' }}`
           + '.related-query:hover, .related-query:focus {'
               + ( config.fgAnimationsDisabled ? '' : 'transform: scale(1.025) !important ;' )
-              + `background: ${ scheme == 'dark' ? '#a2a2a270' : '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
+              + `background: ${ scheme == 'dark' ? '#a2a2a270' : '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
           + '.related-query svg { float: left ; margin: -0.09em 6px 0 0 ;' // related query icon
               + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
           + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
