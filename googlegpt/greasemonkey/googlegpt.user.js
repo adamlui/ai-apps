@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.30.13
+// @version             2024.6.30.14
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -419,7 +419,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt',
         mediaHostURL: 'https://media.googlegpt.io/',
         minFontSize: 13, maxFontSize: 24, lineHeightRatio: isMobile ? 1.357 : 1.375,
-        latestAssetCommitHash: '81b35f5' } // for cached messages.json + app logo/icon
+        latestAssetCommitHash: '1f999b8' } // for cached messages.json + app logo/icon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -427,8 +427,8 @@
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
-    loadSetting('autoGet', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'fontSize',
-                'notFirstRun', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
+    loadSetting('autoGet', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'bgAnimationsDisabled',
+                'fontSize', 'notFirstRun', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
                 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', isMobile ? 14 : 16.55) // init reply font size if unset
@@ -523,6 +523,9 @@
         bgAnimationsDisabled: { type: 'toggle',
             label: msgs.menuLabel_bgAnimations || 'Background Animations',
             helptip: msgs.helptip_bgAnimations || 'Show animated backgrounds in UI components' },
+        fgAnimationsDisabled: { type: 'toggle',
+            label: msgs.menuLabel_fgAnimations || 'Foreground Animations',
+            helptip: msgs.helptip_fgAnimations || 'Show foreground animations in UI components' },
         replyLanguage: { type: 'prompt',
             label: msgs.menuLabel_replyLanguage || 'Reply Language',
             helptip: msgs.helptip_replyLanguage || 'Language for GoogleGPT to reply in' },
@@ -894,7 +897,10 @@
                         settingIcon = icons.pin.create()
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 7.5px'
                     } else if (key.includes('bgAnimation')) {
-                        settingIcon = icons.sparkles.create()
+                        settingIcon = icons.sparkles.create('bg')
+                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 6.5px'
+                    } else if (key.includes('fgAnimation')) {
+                        settingIcon = icons.sparkles.create('fg')
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 6.5px'
                     } else if (key == 'replyLanguage') {
                         settingIcon = icons.language.create()
@@ -954,7 +960,8 @@
                             else if (key.includes('streaming')) toggle.streaming()
                             else if (key.includes('rq')) toggle.relatedQueries()
                             else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
-                            else if (key.includes('Animations')) toggle.bgAnimations()
+                            else if (key.includes('bgAnimation')) toggle.animations.bg()
+                            else if (key.includes('fgAnimation')) toggle.animations.fg()
 
                             // ...or generically toggle/notify
                             else {
@@ -1230,29 +1237,20 @@
         },
         
         sparkles: {
-            create() {
+            create(style) { // style = ( 'fg' ? filled front sparkle : 'bg' ? filled rear sparkles )
                 const sparklesSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      sparklesSVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 0 16 16']]
+                      sparklesSVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 0 512 512']]
                 sparklesSVGattrs.forEach(([attr, value]) => sparklesSVG.setAttribute(attr, value))
-                sparklesSVG.append(createSVGelem('path', { stroke: 'none', d: 'M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z' }))
+                sparklesSVG.append(createSVGelem('path', { // large front sparkle
+                    fill: style == 'bg' ? 'none' : '', stroke: '', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': 32,
+                    d: 'M259.92,262.91,216.4,149.77a9,9,0,0,0-16.8,0L156.08,262.91a9,9,0,0,1-5.17,5.17L37.77,311.6a9,9,0,0,0,0,16.8l113.14,43.52a9,9,0,0,1,5.17,5.17L199.6,490.23a9,9,0,0,0,16.8,0l43.52-113.14a9,9,0,0,1,5.17-5.17L378.23,328.4a9,9,0,0,0,0-16.8L265.09,268.08A9,9,0,0,1,259.92,262.91Z' }))
+                sparklesSVG.append(createSVGelem('polygon', { // small(est) rear-left sparkle
+                    fill: style == 'fg' ? 'none' : '', stroke: '', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': 24,
+                    points: '108 68 88 16 68 68 16 88 68 108 88 160 108 108 160 88 108 68' }))
+                sparklesSVG.append(createSVGelem('polygon', { // small rear-right sparkle
+                    fill: style == 'fg' ? 'none' : '', stroke: '', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': 32,
+                    points: '426.67 117.33 400 48 373.33 117.33 304 144 373.33 170.67 400 240 426.67 170.67 496 144 426.67 117.33' }))
                 return sparklesSVG
-            }
-        },
-
-        speaker: {
-            create() {
-                const speakerSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      speakerSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
-                speakerSVGattrs.forEach(([attr, value]) => speakerSVG.setAttribute(attr, value))
-                speakerSVG.append(
-                    createSVGelem('path', { stroke: '', 'stroke-width': '2px', fill: 'none',
-                        d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10' }),
-                    createSVGelem('path', { stroke: '', 'stroke-width': '2px', fill: 'none',
-                        d: 'M22,20.847c1.281,-1.306 2,-3.077 2,-4.924c0,-1.846 -0.719,-3.617 -2,-4.923' }),
-                    createSVGelem('path', { stroke: 'none', fill: '',
-                        d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
-                )
-                return speakerSVG
             }
         },
 
@@ -1408,7 +1406,7 @@
           + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 6px ;'
               + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
           + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' } ;`
-              + 'transform: scale(1.185) ; transition: transform 0.05s ease }'
+              + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.185) ; transition: transform 0.05s ease' }}`
           + '#googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
           + '#googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
           + '#font-size-slider-track { width: 98% ; height: 10px ; margin: 0 auto -15px ; padding: 15px 0 ;'
@@ -1418,13 +1416,14 @@
           + '#font-size-slider-thumb { width: 10px ; height: 26px ; border-radius: 30% ; position: relative ; top: -8.25px ;'
               + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
               + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
-          + '#font-size-slider-thumb:hover { transform: scale(1.125) }'
+          + ( config.fgAnimationsDisabled ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
           + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin-top: 20px ;'
               + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
               + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
               + 'transform: scale(1) ; transition: transform 0.1s ease }'
-          + '.standby-btn:hover { border-radius: 6px ; transform: scale(1.025) ;'
-              + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
+          + '.standby-btn:hover { border-radius: 6px ;'
+              + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
+              + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.025)' }}`
           + '#googlegpt > pre {'
               + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
               + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
@@ -1449,8 +1448,9 @@
               + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: ${ isMobile ? 1 : 0.81}em ; cursor: pointer ;`
               + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
               + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
-              + 'transform: scale(1) ; transition: transform 0.1s ease !important }'
-          + '.related-query:hover, .related-query:focus { transform: scale(1.025) !important ;'
+              + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1) ; transition: transform 0.1s ease !important' }}`
+          + '.related-query:hover, .related-query:focus {'
+              + ( config.fgAnimationsDisabled ? '' : 'transform: scale(1.025) !important ;' )
               + `background: ${ scheme == 'dark' ? '#a2a2a270' : '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
           + '.related-query svg { float: left ; margin: -0.09em 6px 0 0 ;' // related query icon
               + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
@@ -1532,7 +1532,7 @@
           + '#googlegpt-settings li, #googlegpt-settings li label { cursor: pointer }' // add finger on hover
           + '#googlegpt-settings li:hover {'
               + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
-              + `${ isMobile ? '' : 'transform: scale(1.16)' }}` // add zoom
+              + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.16)' }}` // add zoom
           + '#googlegpt-settings li > input { float: right }' // pos toggles
           + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
     )}
@@ -1818,12 +1818,20 @@
 
     const toggle = {
 
-        bgAnimations() {
-            saveSetting('bgAnimationsDisabled', !config.bgAnimationsDisabled)
-            const starSizes = ['sm', 'med', 'lg']
-            appDiv.querySelectorAll('[id*="stars-"]').forEach((starsDiv, idx) => starsDiv.id = (
-                config.bgAnimationsDisabled ? 'stars-off' : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSizes[idx]}` ))
-            notify(`${settingsProps.bgAnimationsDisabled.label} ${menuState.word[+!config.bgAnimationsDisabled]}`)
+        animations: {
+            bg() {
+                saveSetting('bgAnimationsDisabled', !config.bgAnimationsDisabled)
+                const starSizes = ['sm', 'med', 'lg']
+                appDiv.querySelectorAll('[id*="stars-"]').forEach((starsDiv, idx) => starsDiv.id = (
+                    config.bgAnimationsDisabled ? 'stars-off' : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSizes[idx]}` ))
+                notify(`${settingsProps.bgAnimationsDisabled.label} ${menuState.word[+!config.bgAnimationsDisabled]}`)
+            },
+
+            fg() {
+                saveSetting('fgAnimationsDisabled', !config.fgAnimationsDisabled)
+                updateAppStyle()
+                notify(`${settingsProps.fgAnimationsDisabled.label} ${menuState.word[+!config.fgAnimationsDisabled]}`)
+            }
         },
 
         proxyMode() {
