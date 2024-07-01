@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.2
+// @version             2024.7.1.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1403,7 +1403,7 @@
           + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
               + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
           + '#googlegpt { border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
-              + 'clip-path: polygon(-1% -3%, 45% -3%, 45% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // show tooltips but bound starry bg
+              + 'clip-path: polygon(-1% -3%, 30% -3%, 30% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // show tooltips but bound starry bg
               + `padding: ${ isFirefox ? 20 : 22 }px 26px 6px 26px ;`
               + `width: ${ isMobile ? 'auto' : '319px' } ;` // hard-width to prevent Google's flex-wrap moving app to bottom
               + ( isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
@@ -2348,7 +2348,7 @@
                 const settingsSpan = document.createElement('span'),
                       settingsSVG = icons.sliders.create()
                 settingsSpan.id = 'settings-btn' // for toggle.tooltip()
-                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = `${ isMobile ? 3 : -3 }px 7px 0 0`
+                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = `${ isMobile ? 3 : -3 }px 10px 0 0`
                 settingsSpan.append(settingsSVG) ; cornerBtnsDiv.append(settingsSpan)
 
                 // Create/append Speak button
@@ -2357,7 +2357,7 @@
                         speakerSVG = icons.speaker.create()
                     speakerSpan.id = 'speak-btn' // for toggle.tooltip()
                     speakerSpan.className = 'corner-btn'
-                    speakerSpan.style.margin = `${ isMobile ? '0.11rem 10px' : '-0.29rem 5px' } 0 0`
+                    speakerSpan.style.margin = `${ isMobile ? '0.11rem 10px' : '-4.5px 8px' } 0 0`
                     speakerSpan.append(speakerSVG) ; cornerBtnsDiv.append(speakerSpan)
                 }
 
@@ -2366,7 +2366,7 @@
                     var ssbSpan = document.createElement('span'),
                         ssbSVG = icons.pin.create()
                     ssbSpan.id = 'ssb-btn' // for toggle.sidebar() + toggle.tooltip()
-                    ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '-1.55px 8px 0 0'
+                    ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '-1.55px 7.5px 0 0'
                     ssbSpan.append(ssbSVG) ; cornerBtnsDiv.append(ssbSpan)
                 }
 
@@ -2376,7 +2376,7 @@
                         fontSizeSVG = icons.fontSize.create()
                     fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
                     fontSizeSpan.className = 'corner-btn'
-                    fontSizeSpan.style.margin = `${ isMobile ? 5 : -2 }px 11px 0 0`
+                    fontSizeSpan.style.margin = `${ isMobile ? 5 : -2 }px 9px 0 0`
                     fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
                 }
 
@@ -2385,7 +2385,7 @@
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = icons.widescreen.create()
                     wsbSpan.id = 'wsb-btn' // for toggle.sidebar() + toggle.tooltip()
-                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-2px 11px 0 0'
+                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-2px 12px 0 0'
                     wsbSpan.append(wsbSVG) ; cornerBtnsDiv.append(wsbSpan)
                 }
 
