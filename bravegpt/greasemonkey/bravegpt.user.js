@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.2.4
+// @version             2024.7.2.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -508,6 +508,31 @@ setTimeout(async () => {
                 modals.hide(document.querySelector('[class$="-modal"]'))
         },
 
+        dragHandlers: {
+            mousedown(event) { // find modal, attach listeners, init XY offsets
+                modals.dragHandlers.draggableElem = document.querySelector('[class$="-modal"]')
+                event.preventDefault(); // prevent sub-elems like icons being draggable
+                ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))
+                const draggableElemRect = modals.dragHandlers.draggableElem.getBoundingClientRect()
+                modals.dragHandlers.offsetX = event.clientX - draggableElemRect.left
+                modals.dragHandlers.offsetY = event.clientY - draggableElemRect.top
+            },
+
+            mousemove(event) { // drag modal
+                if (modals.dragHandlers.draggableElem) {
+                    const newX = event.clientX - modals.dragHandlers.offsetX,
+                          newY = event.clientY - modals.dragHandlers.offsetY
+                    modals.dragHandlers.draggableElem.style.left = `${newX}px`
+                    modals.dragHandlers.draggableElem.style.top = `${newY}px`
+                }
+            },
+
+            mouseup() { // remove listeners, reset modals.dragHandlerss.draggableElem
+                ['mousemove', 'mouseup'].forEach(event => document.removeEventListener(event, modals.dragHandlers[event]))
+                modals.dragHandlers.draggableElem = null
+            }
+        },
+
         hide(modal) {
             const modalContainer = modal?.parentNode
             if (!modalContainer) return
@@ -519,7 +544,7 @@ setTimeout(async () => {
             modal.classList.add('.bravegpt-modal')
             modal.parentNode.classList.add('bravegpt-modal-bg', 'no-user-select')
             modal.onwheel = modal.ontouchmove = event => event.preventDefault() // disable wheel/swipe scrolling
-            modal.onmousedown = dragHandlers.mousedown
+            modal.onmousedown = modals.dragHandlers.mousedown
             fillStarryBG(modal) // add stars
             setTimeout(() => { // dim bg
                 modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
@@ -1717,32 +1742,6 @@ setTimeout(async () => {
             tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for update.tooltip() y-pos calc
             update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
             tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
-        }
-    }
-
-    const dragHandlers = {
-
-        mousedown(event) { // find modal, attach listeners, init XY offsets
-            dragHandlers.draggableElem = document.querySelector('[class$="-modal"]')
-            event.preventDefault(); // prevent sub-elems like icons being draggable
-            ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, dragHandlers[event]))
-            const draggableElemRect = dragHandlers.draggableElem.getBoundingClientRect()
-            dragHandlers.offsetX = event.clientX - draggableElemRect.left
-            dragHandlers.offsetY = event.clientY - draggableElemRect.top
-        },
-
-        mousemove(event) { // drag modal
-            if (dragHandlers.draggableElem) {
-                const newX = event.clientX - dragHandlers.offsetX,
-                      newY = event.clientY - dragHandlers.offsetY
-                dragHandlers.draggableElem.style.left = `${newX}px`
-                dragHandlers.draggableElem.style.top = `${newY}px`
-            }
-        },
-
-        mouseup() { // remove listeners, reset dragHandlerss.draggableElem
-            ['mousemove', 'mouseup'].forEach(event => document.removeEventListener(event, dragHandlers[event]))
-            dragHandlers.draggableElem = null
         }
     }
 
