@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.15
+// @version             2024.7.1.16
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1265,6 +1265,7 @@
                       + 'background-color: black !important ; color: white }'
                   + '.primary-modal-btn { background: white !important ; color: black !important }'
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
+            + '[class$="modal"] { position: absolute }' // to be click-draggable
     
               // Settings modal
               + '#ddgpt-settings-bg {'
@@ -1512,6 +1513,42 @@
                     key: 'Enter', bubbles: true, cancelable: true }))
             }
     }}
+
+    const dragHandlers = {
+
+        mousedown(event) { // find modal, attach listeners, init XY offsets
+            let elem = event.target
+            while (elem && elem != document) { // find draggable elem
+                if (/modal$/.test(elem.className)) { dragHandlers.draggableElem = elem ; break }
+                elem = elem.parentNode
+            }
+            if (dragHandlers.draggableElem) {
+                event.preventDefault(); // prevent sub-elems like icons being draggable
+    
+                // Attach event listeners
+                ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, dragHandlers[event]))
+    
+                // Init XY offsets
+                const draggableElemRect = dragHandlers.draggableElem.getBoundingClientRect()
+                dragHandlers.offsetX = event.clientX - draggableElemRect.left
+                dragHandlers.offsetY = event.clientY - draggableElemRect.top
+            }
+        },
+
+        mousemove(event) { // drag modal
+            if (dragHandlers.draggableElem) {
+                const newX = event.clientX - dragHandlers.offsetX,
+                      newY = event.clientY - dragHandlers.offsetY
+                dragHandlers.draggableElem.style.left = `${newX}px`
+                dragHandlers.draggableElem.style.top = `${newY}px`
+            }
+        },
+
+        mouseup() { // remove listeners, reset dragHandlerss.draggableElem
+            ['mousemove', 'mouseup'].forEach(event => document.removeEventListener(event, dragHandlers[event]))
+            dragHandlers.draggableElem = null
+        }
+    }
 
     // Define FACTORY functions
 
@@ -2572,6 +2609,9 @@
                         if (get.related.status != 'done') api.tryNew(get.related) })
             }
     } else { appAlert('waitingResponse') ; get.reply(msgChain) }
+
+    // Make modals DRAGGABLE
+    document.onmousedown = dragHandlers.mousedown;
 
     // Observe for DDG SCHEME CHANGES to update DDGPT scheme if auto-scheme mode if auto-scheme mode
     (new MutationObserver(handleSchemeChange)).observe( // class changes from DDG appearance settings

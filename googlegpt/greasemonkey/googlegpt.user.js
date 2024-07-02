@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.18
+// @version             2024.7.1.19
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1454,6 +1454,7 @@
                   + '.primary-modal-btn { background: white !important ; color: black !important }'
                   + '.chatgpt-modal a { color: #00cfff !important }'
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
+              + '[class$="modal"] { position: absolute }' // to be click-draggable
               + '#googlegpt footer {'
                   + 'position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ; line-height: 1.43em ;'
                   + `margin: ${ isFirefox ? 1 : -2 }px -32px 12px }`
@@ -1830,6 +1831,42 @@
                     key: 'Enter', bubbles: true, cancelable: true }))
             }
     }}
+
+    const dragHandlers = {
+
+        mousedown(event) { // find modal, attach listeners, init XY offsets
+            let elem = event.target
+            while (elem && elem != document) { // find draggable elem
+                if (/modal$/.test(elem.className)) { dragHandlers.draggableElem = elem ; break }
+                elem = elem.parentNode
+            }
+            if (dragHandlers.draggableElem) {
+                event.preventDefault(); // prevent sub-elems like icons being draggable
+    
+                // Attach event listeners
+                ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, dragHandlers[event]))
+    
+                // Init XY offsets
+                const draggableElemRect = dragHandlers.draggableElem.getBoundingClientRect()
+                dragHandlers.offsetX = event.clientX - draggableElemRect.left
+                dragHandlers.offsetY = event.clientY - draggableElemRect.top
+            }
+        },
+
+        mousemove(event) { // drag modal
+            if (dragHandlers.draggableElem) {
+                const newX = event.clientX - dragHandlers.offsetX,
+                      newY = event.clientY - dragHandlers.offsetY
+                dragHandlers.draggableElem.style.left = `${newX}px`
+                dragHandlers.draggableElem.style.top = `${newY}px`
+            }
+        },
+
+        mouseup() { // remove listeners, reset dragHandlerss.draggableElem
+            ['mousemove', 'mouseup'].forEach(event => document.removeEventListener(event, dragHandlers[event]))
+            dragHandlers.draggableElem = null
+        }
+    }
 
     // Define FACTORY functions
 
@@ -2818,5 +2855,8 @@
                         if (get.related.status != 'done') api.tryNew(get.related) })
             }
     } else { appAlert('waitingResponse') ; get.reply(msgChain) }
+
+    // Make modals DRAGGABLE
+    document.onmousedown = dragHandlers.mousedown
 
 })()
