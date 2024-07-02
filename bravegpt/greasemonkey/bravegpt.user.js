@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.18
+// @version             2024.7.1.19
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -498,6 +498,7 @@ setTimeout(async () => {
     // Define MODAL functions
 
     const modals = {
+
         init(modal) {
             modal.classList.add('.bravegpt-modal')
             modal.parentNode.classList.add('bravegpt-modal-bg', 'no-user-select')
@@ -508,9 +509,17 @@ setTimeout(async () => {
             }, 100) // delay for transition fx
         },
 
+        hide(modal) {
+            const modalContainer = modal?.parentNode
+            if (!modalContainer) return
+            modalContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
+            setTimeout(() => modalContainer.remove(), 105) // delay for fade-out
+        },
+
         about: {
             show() {
-                if (modals.settings.get()) modals.settings.hide()
+                const settingsModal = modals.settings.get()
+                if (settingsModal) modals.hide(settingsModal)
 
                 // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
@@ -642,7 +651,7 @@ setTimeout(async () => {
 
             clickHandler(event) {
                 if (event.target == event.currentTarget || event.target instanceof SVGPathElement)
-                    modals.settings.hide()
+                    modals.hide(modals.settings.get())
             },
 
             createAppend() {
@@ -826,20 +835,13 @@ setTimeout(async () => {
 
             get() { return document.getElementById('bravegpt-settings') },
 
-            hide() {
-                const settingsContainer = modals.settings.get()?.parentNode
-                if (!settingsContainer) return
-                settingsContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
-                setTimeout(() => settingsContainer.remove(), 105) // delay for fade-out
-            },
-
             keyHandler() {
                 const dismissKeys = ['Escape', 'Esc'], dismissKeyCodes = [27]
                 if (dismissKeys.includes(event.key) || dismissKeyCodes.includes(event.keyCode)) {
                     const settingsModal = modals.settings.get()
                     if (settingsModal && settingsModal.style.display !== 'none'
                         && (event.key.includes('Esc') || event.keyCode == 27))
-                            modals.settings.hide()
+                            modals.hide(settingsModal)
                 }
             },
 
