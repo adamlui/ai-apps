@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.2.6
+// @version             2024.7.2.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -226,7 +226,7 @@ setTimeout(async () => {
         appName: 'BraveGPT', appSymbol: '🤖', keyPrefix: 'braveGPT',
         appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt',
-        minFontSize: 13, maxFontSize: 24, lineHeightRatio: 1.313,
+        minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.313,
         latestAssetCommitHash: '32b262c' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
