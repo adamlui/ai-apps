@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.16
+// @version             2024.7.1.17
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -796,11 +796,14 @@
                         } else if (key.includes('about')) {
                             const innerDiv = document.createElement('div'),
                                   textGap = '&emsp;&emsp;&emsp;&emsp;&emsp;'
-                            let innerContent = `Version: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
-                                             + `${ msgs.about_poweredBy || 'Powered by' } <span class="about-em">chatgpt.js</span>${textGap}`
-                            for (let i = 0; i < 7; i++) innerContent += innerContent // make it long af
-                            innerDiv.innerHTML = innerContent ; configStatusSpan.append(innerDiv)
-                            settingItem.onclick = modals.about.show
+                            modals.settings.aboutContent = {}
+                            modals.settings.aboutContent.short = `v${ GM_info.script.version}`
+                            modals.settings.aboutContent.long = `Version: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
+                                + `${ msgs.about_poweredBy || 'Powered by' } <span class="about-em">chatgpt.js</span>${textGap}`
+                            for (let i = 0; i < 7; i++) modals.settings.aboutContent.long += modals.settings.aboutContent.long // make it long af
+                            innerDiv.innerHTML = modals.settings.aboutContent[config.fgAnimationsDisabled ? 'short' : 'long']
+                            innerDiv.style.float = config.fgAnimationsDisabled ? 'right' : ''
+                            configStatusSpan.append(innerDiv) ; settingItem.onclick = modals.about.show
                         } settingItem.append(configStatusSpan)
                     }
                 })
@@ -1306,9 +1309,10 @@
                   + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.16)' }}` // add zoom
               + '#ddgpt-settings li > input { float: right }' // pos toggles
               + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
-              + '#about-menu-entry > span {' // outer About status span
-                  + 'width: 92px ; overflow: hidden ; mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) }'
-              + '#about-menu-entry > span > div { animation: ticker linear 60s infinite ; text-wrap: nowrap }'
+              + '#about-menu-entry > span { width: 92px ; overflow: hidden ;' // outer About status span
+                  + `${ config.fgAnimationsDisabled ? '' : 'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' }}`
+              + '#about-menu-entry > span > div { text-wrap: nowrap ;'
+                  + `${ config.fgAnimationsDisabled ? '' : 'animation: ticker linear 60s infinite' }}`
               + '@keyframes ticker { 0% { transform: translateX(100%) } 100% { transform: translateX(-2000%) }}'
               + `.about-em { color: ${ scheme == 'dark' ? 'white' : 'green' } !important }`
             )
@@ -1583,6 +1587,11 @@
         animations(layer) {
             saveSetting(layer + 'AnimationsDisabled', !config[layer + 'AnimationsDisabled'])
             update[layer == 'bg' ? 'stars' : 'appStyle']()
+            if (layer == 'fg' && modals.settings.get()) { // toggle ticker-scroll of About status label
+                const aboutStatusLabel = document.querySelector('#about-menu-entry > span > div')
+                aboutStatusLabel.innerHTML = modals.settings.aboutContent[config.fgAnimationsDisabled ? 'short' : 'long']
+                aboutStatusLabel.style.float = config.fgAnimationsDisabled ? 'right' : ''
+            }
             notify(`${settingsProps[layer + 'AnimationsDisabled'].label} ${menuState.word[+!config[layer + 'AnimationsDisabled']]}`)
         },
 
