@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.19
+// @version             2024.7.1.20
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -499,6 +499,18 @@ setTimeout(async () => {
 
     const modals = {
 
+        clickHandler(event) { // to dismiss modals
+            if (event.target == event.currentTarget || event.target instanceof SVGPathElement)
+                modals.hide(document.querySelector('[class$="-modal"]'))
+        },
+
+        hide(modal) {
+            const modalContainer = modal?.parentNode
+            if (!modalContainer) return
+            modalContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
+            setTimeout(() => modalContainer.remove(), 105) // delay for fade-out
+        },
+
         init(modal) {
             modal.classList.add('.bravegpt-modal')
             modal.parentNode.classList.add('bravegpt-modal-bg', 'no-user-select')
@@ -507,13 +519,6 @@ setTimeout(async () => {
                 modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
                 modal.parentNode.classList.add('animated')
             }, 100) // delay for transition fx
-        },
-
-        hide(modal) {
-            const modalContainer = modal?.parentNode
-            if (!modalContainer) return
-            modalContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
-            setTimeout(() => modalContainer.remove(), 105) // delay for fade-out
         },
 
         about: {
@@ -827,7 +832,7 @@ setTimeout(async () => {
 
                 // Add listeners to dismiss modal
                 const dismissElems = [settingsContainer, closeBtn, closeSVG]
-                dismissElems.forEach(elem => elem.onclick = modals.settings.clickHandler)
+                dismissElems.forEach(elem => elem.onclick = modals.clickHandler)
                 document.onkeydown = modals.settings.keyHandler
 
                 return settingsContainer

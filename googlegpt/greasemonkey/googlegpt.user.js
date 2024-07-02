@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.23
+// @version             2024.7.1.24
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -697,6 +697,18 @@
 
     const modals = {
 
+        clickHandler(event) { // to dismiss modals
+            if (event.target == event.currentTarget || event.target instanceof SVGPathElement)
+                modals.hide(document.querySelector('[class$="-modal"]'))
+        },
+
+        hide(modal) {
+            const modalContainer = modal?.parentNode
+            if (!modalContainer) return
+            modalContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
+            setTimeout(() => modalContainer.remove(), 105) // delay for fade-out
+        },
+
         init(modal) {
             modal.classList.add('.googlegpt-modal')
             modal.parentNode.classList.add('googlegpt-modal-bg', 'no-user-select')
@@ -705,13 +717,6 @@
                 modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
                 modal.parentNode.classList.add('animated')
             }, 100) // delay for transition fx
-        },
-
-        hide(modal) {
-            const modalContainer = modal?.parentNode
-            if (!modalContainer) return
-            modalContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
-            setTimeout(() => modalContainer.remove(), 105) // delay for fade-out
         },
 
         about: {
@@ -1019,7 +1024,7 @@
 
                 // Add listeners to dismiss modal
                 const dismissElems = [settingsContainer, closeBtn, closeSVG]
-                dismissElems.forEach(elem => elem.onclick = modals.settings.clickHandler)
+                dismissElems.forEach(elem => elem.onclick = modals.clickHandler)
                 document.onkeydown = modals.settings.keyHandler
 
                 return settingsContainer

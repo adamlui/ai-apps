@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.20
+// @version             2024.7.1.21
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -508,6 +508,18 @@
 
     const modals = {
 
+        clickHandler(event) { // to dismiss modals
+            if (event.target == event.currentTarget || event.target instanceof SVGPathElement)
+                modals.hide(document.querySelector('[class$="-modal"]'))
+        },
+
+        hide(modal) {
+            const modalContainer = modal?.parentNode
+            if (!modalContainer) return
+            modalContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
+            setTimeout(() => modalContainer.remove(), 105) // delay for fade-out
+        },
+
         init(modal) {
             modal.classList.add('.ddgpt-modal')
             modal.parentNode.classList.add('ddgpt-modal-bg', 'no-user-select')
@@ -516,13 +528,6 @@
                 modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
                 modal.parentNode.classList.add('animated')
             }, 100) // delay for transition fx
-        },
-
-        hide(modal) {
-            const modalContainer = modal?.parentNode
-            if (!modalContainer) return
-            modalContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
-            setTimeout(() => modalContainer.remove(), 105) // delay for fade-out
         },
 
         about: {
@@ -657,11 +662,6 @@
         },
 
         settings: {
-
-            clickHandler(event) {
-                if (event.target == event.currentTarget || event.target instanceof SVGPathElement)
-                    modals.hide(modals.settings.get())
-            },
 
             createAppend() {
 
@@ -839,7 +839,7 @@
 
                 // Add listeners to dismiss modal
                 const dismissElems = [settingsContainer, closeBtn, closeSVG]
-                dismissElems.forEach(elem => elem.onclick = modals.settings.clickHandler)
+                dismissElems.forEach(elem => elem.onclick = modals.clickHandler)
                 document.onkeydown = modals.settings.keyHandler
 
                 return settingsContainer
