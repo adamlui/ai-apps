@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.18
+// @version             2024.7.1.19
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -509,7 +509,12 @@
     const modals = {
         init(modal) {
             modal.classList.add('.ddgpt-modal')
+            modal.parentNode.classList.add('ddgpt-modal-bg', 'no-user-select')
             modal.onwheel = event => event.preventDefault() // disable wheel-scrolling
+            setTimeout(() => { // dim bg
+                modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
+                modal.parentNode.classList.add('animated')
+            }, 100) // delay for transition fx
         },
 
         about: {
@@ -534,7 +539,7 @@
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 527) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
-                modals.init(aboutModal) // add class, disable wheel-scrolling
+                modals.init(aboutModal) // add classes, disable wheel-scrolling
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 for (const btn of aboutModal.querySelectorAll('button')) {
@@ -548,7 +553,8 @@
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
                         '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
                     else btn.style.display = 'none' // hide Dismiss button
-            }}
+                }
+            }
         },
 
         feedback: {
@@ -570,7 +576,7 @@
                             'https://alternativeto.net/software/duckduckgpt/about/') }
                     ], '', 408) // modal width
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
-                modals.init(feedbackModal) // add class, disable wheel-scrolling
+                modals.init(feedbackModal) // add classes, disable wheel-scrolling
 
                 // Re-style button cluster
                 const buttons = feedbackModal.querySelector('.modal-buttons')
@@ -595,7 +601,7 @@
                     config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
                     [ function auto() {}, function light() {}, function dark() {} ]) // buttons
                 const schemeModal = document.getElementById(schemeModalID).firstChild
-                modals.init(schemeModal) // add class, disable wheel-scrolling
+                modals.init(schemeModal) // add classes, disable wheel-scrolling
 
                 // Center button cluster
                 schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
@@ -651,11 +657,11 @@
             createAppend() {
 
                 // Init core elems
-                const settingsContainer = document.createElement('div') ; settingsContainer.id = 'ddgpt-settings-bg'
-                settingsContainer.classList = 'no-user-select'
+                const settingsContainer = document.createElement('div')
                 const settingsModal = document.createElement('div') ; settingsModal.id = 'ddgpt-settings'
+                settingsContainer.append(settingsModal)
                 fillStarryBG(settingsModal) // add stars to bg
-                modals.init(settingsModal) // add class, disable wheel-scrolling
+                modals.init(settingsModal) // add classes, disable wheel-scrolling
                 const settingsIcon = icons.ddgpt.create()
                 settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -33px ; margin: 0 41% -12px' // size/pos icon
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'ddgpt-settings-title'
@@ -820,7 +826,7 @@
 
                 // Assemble/append elems
                 settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsList)
-                settingsContainer.append(settingsModal) ; document.body.append(settingsContainer)
+                document.body.append(settingsContainer)
 
                 // Add listeners to dismiss modal
                 const dismissElems = [settingsContainer, closeBtn, closeSVG]
@@ -836,7 +842,7 @@
                 const settingsContainer = modals.settings.get()?.parentNode
                 if (!settingsContainer) return
                 settingsContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
-                setTimeout(() => settingsContainer.remove(), 115) // delay for fade-out
+                setTimeout(() => settingsContainer.remove(), 105) // delay for fade-out
             },
 
             keyHandler() {
@@ -851,17 +857,12 @@
 
             show() {
                 const settingsContainer = modals.settings.get()?.parentNode || modals.settings.createAppend()
-                settingsContainer.style.display = ''
+                settingsContainer.style.display = '' // show modal
                 if (isMobile) { // scale 93% to viewport sides
                     const settingsModal = settingsContainer.querySelector('#ddgpt-settings'),
                           scaleRatio = 0.93 * window.innerWidth / settingsModal.offsetWidth
                     settingsModal.style.transform = `scale(${scaleRatio})`
                 }
-                setTimeout(() => { // delay non-0 opacity's for transition fx
-                    settingsContainer.style.backgroundColor = ( 
-                        `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`)
-                    settingsContainer.classList.add('animated'); },
-                100)
             },
 
             toggle: {
@@ -1268,7 +1269,12 @@
                       + 'background-color: black !important ; color: white }'
                   + '.primary-modal-btn { background: white !important ; color: black !important }'
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
-            + '[class$="modal"] {' // native modals + chatgpt.alert()s
+            + '[class*="-modal-bg"] {'
+                + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
+                + 'transition: background-color .15s ease ;' // speed to show bg dim
+                + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
+            + '[class*="-modal-bg"].animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
+            + '[class$="-modal"] {' // native modals + chatgpt.alert()s
                 + 'position: absolute ;' // to be click-draggable
                 + 'opacity: 0 ;' // to fade-in
                 + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
@@ -1276,11 +1282,6 @@
                             + 'transform 0.35s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
 
               // Settings modal
-              + '#ddgpt-settings-bg {'
-                  + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-                  + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
-                  + 'transition: background-color .15s ease ;' // speed to show bg dim
-                  + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
               + '#ddgpt-settings {'
                   + 'min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
                   + `border: 1px solid ${ scheme == 'dark' ? 'white ; color: white' : '#b5b5b5 ; color: black' } ;`
@@ -1289,7 +1290,6 @@
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 125%, -28% 125%) ;' // bound starry bg
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
-              + '#ddgpt-settings-bg.animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'

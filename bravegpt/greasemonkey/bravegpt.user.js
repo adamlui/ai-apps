@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.17
+// @version             2024.7.1.18
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -500,7 +500,12 @@ setTimeout(async () => {
     const modals = {
         init(modal) {
             modal.classList.add('.bravegpt-modal')
+            modal.parentNode.classList.add('bravegpt-modal-bg', 'no-user-select')
             modal.onwheel = event => event.preventDefault() // disable wheel-scrolling
+            setTimeout(() => { // dim bg
+                modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
+                modal.parentNode.classList.add('animated')
+            }, 100) // delay for transition fx
         },
 
         about: {
@@ -525,7 +530,7 @@ setTimeout(async () => {
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 577) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
-                modals.init(aboutModal) // add class, disable wheel-scrolling
+                modals.init(aboutModal) // add classes, disable wheel-scrolling
 
                 // Resize + format buttons to include emoji + localized label + hide Dismiss button
                 for (const btn of aboutModal.querySelectorAll('button')) {
@@ -539,7 +544,8 @@ setTimeout(async () => {
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
                         '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
                     else btn.style.display = 'none' // hide Dismiss button
-            }}
+                }
+            }
         },
 
         feedback: {
@@ -561,7 +567,7 @@ setTimeout(async () => {
                             'https://alternativeto.net/software/bravegpt/about/') }
                     ], '', 456) // modal width
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
-                modals.init(feedbackModal) // add class, disable wheel-scrolling
+                modals.init(feedbackModal) // add classes, disable wheel-scrolling
 
                 // Re-style button cluster
                 const buttons = feedbackModal.querySelector('.modal-buttons')
@@ -586,7 +592,7 @@ setTimeout(async () => {
                     [ function auto() {}, function light() {}, function dark() {} ], // buttons
                     '', 503) // px width
                 const schemeModal = document.getElementById(schemeModalID).firstChild
-                modals.init(schemeModal) // add class, disable wheel-scrolling
+                modals.init(schemeModal) // add classes, disable wheel-scrolling
 
                 // Center button cluster
                 schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
@@ -642,11 +648,11 @@ setTimeout(async () => {
             createAppend() {
 
                 // Init core elems
-                const settingsContainer = document.createElement('div') ; settingsContainer.id = 'bravegpt-settings-bg'
-                settingsContainer.classList = 'no-user-select'
+                const settingsContainer = document.createElement('div')
                 const settingsModal = document.createElement('div') ; settingsModal.id = 'bravegpt-settings'
+                settingsContainer.append(settingsModal)
                 fillStarryBG(settingsModal) // add stars to bg
-                modals.init(settingsModal) // add class, disable wheel-scrolling
+                modals.init(settingsModal) // add classes, disable wheel-scrolling
                 const settingsIcon = icons.braveGPT.create()
                 settingsIcon.style.cssText = 'width: 59px ; position: relative ; top: -33px ; margin: 0px 41% -8px' // size/pos icon
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'bravegpt-settings-title'
@@ -808,7 +814,7 @@ setTimeout(async () => {
 
                 // Assemble/append elems
                 settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsList)
-                settingsContainer.append(settingsModal) ; document.body.append(settingsContainer)
+                document.body.append(settingsContainer)
 
                 // Add listeners to dismiss modal
                 const dismissElems = [settingsContainer, closeBtn, closeSVG]
@@ -824,7 +830,7 @@ setTimeout(async () => {
                 const settingsContainer = modals.settings.get()?.parentNode
                 if (!settingsContainer) return
                 settingsContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
-                setTimeout(() => settingsContainer.remove(), 115) // delay for fade-out
+                setTimeout(() => settingsContainer.remove(), 105) // delay for fade-out
             },
 
             keyHandler() {
@@ -839,17 +845,12 @@ setTimeout(async () => {
 
             show() {
                 const settingsContainer = modals.settings.get()?.parentNode || modals.settings.createAppend()
-                settingsContainer.style.display = ''
+                settingsContainer.style.display = '' // show modal
                 if (isMobile) { // scale 93% to viewport sides
                     const settingsModal = settingsContainer.querySelector('#bravegpt-settings'),
                           scaleRatio = 0.93 * window.innerWidth / settingsModal.offsetWidth
                     settingsModal.style.transform = `scale(${scaleRatio})`
                 }
-                setTimeout(() => { // delay non-0 opacity's for transition fx
-                    settingsContainer.style.backgroundColor = ( 
-                        `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`)
-                    settingsContainer.classList.add('animated'); },
-                100)
             },
 
             toggle: {
@@ -1237,6 +1238,11 @@ setTimeout(async () => {
               + '.primary-modal-btn { background: black !important ; color: white !important }'
               + '.chatgpt-modal button:hover { background-color: #9cdaff !important ; color: black !important ;'
                   + `box-shadow: ${ scheme == 'dark' ? '2px 1px 54px #00cfff' : '2px 1px 30px #9cdaff' } !important }`
+            + '[class*="-modal-bg"] {'
+                + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
+                + 'transition: background-color .15s ease ;' // speed to show bg dim
+                + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
+            + '[class*="-modal-bg"].animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
             + '[class$="modal"] {' // native modals + chatgpt.alert()s
                 + 'position: absolute ;' // to be click-draggable
                 + 'opacity: 0 ;' // to fade-in
@@ -1250,11 +1256,6 @@ setTimeout(async () => {
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
 
               // Settings modal
-              + '#bravegpt-settings-bg {'
-                  + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-                  + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
-                  + 'transition: background-color .15s ease ;' // speed to show bg dim
-                  + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
               + '#bravegpt-settings { font-family: var(--brand-font) ;'
                   + 'min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
                   + 'background-image: linear-gradient(180deg,'
@@ -1263,7 +1264,6 @@ setTimeout(async () => {
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 125%, -28% 125%) ;' // bound starry bg
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
-              + '#bravegpt-settings-bg.animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'

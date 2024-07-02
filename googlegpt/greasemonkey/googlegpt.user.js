@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.21
+// @version             2024.7.1.22
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -698,7 +698,12 @@
     const modals = {
         init(modal) {
             modal.classList.add('.googlegpt-modal')
+            modal.parentNode.classList.add('googlegpt-modal-bg', 'no-user-select')
             modal.onwheel = event => event.preventDefault() // disable wheel-scrolling
+            setTimeout(() => { // dim bg
+                modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
+                modal.parentNode.classList.add('animated')
+            }, 100) // delay for transition fx
         },
 
         about: {
@@ -723,7 +728,7 @@
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 515) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
-                modals.init(aboutModal) // add class, disable wheel-scrolling
+                modals.init(aboutModal) // add classes, disable wheel-scrolling
 
                 // Resize + format buttons to include emoji + localized label + hide Dismiss button
                 for (const btn of aboutModal.querySelectorAll('button')) {
@@ -737,7 +742,8 @@
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
                         '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
                     else btn.style.display = 'none' // hide Dismiss button
-            }}
+                }
+            }
         },
 
         feedback: {
@@ -753,7 +759,7 @@
                             config.gitHubURL + '/discussions/new/choose') }
                     ], '', 333) // modal width
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
-                modals.init(feedbackModal) // add class, disable wheel-scrolling
+                modals.init(feedbackModal) // add classes, disable wheel-scrolling
 
                 // Re-style button cluster
                 const buttons = feedbackModal.querySelector('.modal-buttons')
@@ -776,7 +782,7 @@
                     config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
                     [ function auto() {}, function light() {}, function dark() {} ]) // buttons
                 const schemeModal = document.getElementById(schemeModalID).firstChild
-                modals.init(schemeModal) // add class, disable wheel-scrolling
+                modals.init(schemeModal) // add classes, disable wheel-scrolling
 
                 // Center button cluster
                 schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
@@ -832,11 +838,11 @@
             createAppend() {
 
                 // Init core elems
-                const settingsContainer = document.createElement('div') ; settingsContainer.id = 'googlegpt-settings-bg'
-                settingsContainer.classList = 'no-user-select'
+                const settingsContainer = document.createElement('div')
                 const settingsModal = document.createElement('div') ; settingsModal.id = 'googlegpt-settings'
+                settingsContainer.append(settingsModal)
                 fillStarryBG(settingsModal) // add stars to bg
-                modals.init(settingsModal) // add class, disable wheel-scrolling
+                modals.init(settingsModal) // add classes, disable wheel-scrolling
                 appIcon.style.cssText += 'width: 52px ; position: relative ; top: -45px ; margin: 9px 41.13% -43px' // size/pos icon
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
@@ -1000,7 +1006,7 @@
 
                 // Assemble/append elems
                 settingsModal.append(appIcon, settingsTitleDiv, closeBtn, settingsList)
-                settingsContainer.append(settingsModal) ; document.body.append(settingsContainer)
+                document.body.append(settingsContainer)
 
                 // Add listeners to dismiss modal
                 const dismissElems = [settingsContainer, closeBtn, closeSVG]
@@ -1016,7 +1022,7 @@
                 const settingsContainer = modals.settings.get()?.parentNode
                 if (!settingsContainer) return
                 settingsContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
-                setTimeout(() => settingsContainer.remove(), 115) // delay for fade-out
+                setTimeout(() => settingsContainer.remove(), 105) // delay for fade-out
             },
 
             keyHandler() {
@@ -1031,17 +1037,12 @@
 
             show() {
                 const settingsContainer = modals.settings.get()?.parentNode || modals.settings.createAppend()
-                settingsContainer.style.display = ''
+                settingsContainer.style.display = '' // show modal
                 if (isMobile) { // scale 93% to viewport sides
                     const settingsModal = settingsContainer.querySelector('#googlegpt-settings'),
                           scaleRatio = 0.93 * window.innerWidth / settingsModal.offsetWidth
                     settingsModal.style.transform = `scale(${scaleRatio})`
                 }
-                setTimeout(() => { // delay non-0 opacity's for transition fx
-                    settingsContainer.style.backgroundColor = ( 
-                        `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`)
-                    settingsContainer.classList.add('animated'); },
-                100)
             },
 
             toggle: {
@@ -1457,6 +1458,11 @@
                   + '.primary-modal-btn { background: white !important ; color: black !important }'
                   + '.chatgpt-modal a { color: #00cfff !important }'
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
+            + '[class*="-modal-bg"] {'
+                + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
+                + 'transition: background-color .15s ease ;' // speed to show bg dim
+                + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
+            + '[class*="-modal-bg"].animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
             + '[class$="modal"] {' // native modals + chatgpt.alert()s
                 + 'position: absolute ;' // to be click-draggable
                 + 'opacity: 0 ;' // to fade-in
@@ -1470,11 +1476,6 @@
               + `#googlegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
 
               // Settings modal
-              + '#googlegpt-settings-bg {'
-                  + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-                  + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
-                  + 'transition: background-color .15s ease ;' // speed to show bg dim
-                  + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
               + '#googlegpt-settings {'
                   + 'min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
                   + 'background-image: linear-gradient(180deg,'
@@ -1483,7 +1484,6 @@
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 125%, -28% 125%) ;' // bound starry bg
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
-              + '#googlegpt-settings-bg.animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
