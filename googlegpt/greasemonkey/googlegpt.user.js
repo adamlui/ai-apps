@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.26
+// @version             2024.7.1.27
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -622,6 +622,8 @@
                                 safeWindowOpen(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
                         )
+                        const updateModal = document.getElementById(updateModalID).firstChild
+                        modals.init(updateModal) // add classes/bg, disable wheel-scrolling, dim bg
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
@@ -635,9 +637,11 @@
                 }}
 
                 // Alert to no update found, nav back
-                siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
+                const noUpdateModalID = siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
                     `${ config.appName } (v${ currentVer }) ${ msgs.alert_isUpToDate || 'is up-to-date' }!`, // msg
                         '', '', updateAlertWidth)
+                const noUpdateModal = document.getElementById(noUpdateModalID).firstChild
+                modals.init(noUpdateModal) // add classes/bg, disable wheel-scrolling, dim bg
                 modals.about.show()
     }})}
 
@@ -713,6 +717,7 @@
             modal.classList.add('.googlegpt-modal')
             modal.parentNode.classList.add('googlegpt-modal-bg', 'no-user-select')
             modal.onwheel = modal.ontouchmove = event => event.preventDefault() // disable wheel/swipe scrolling
+            fillStarryBG(modal) // add stars
             setTimeout(() => { // dim bg
                 modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
                 modal.parentNode.classList.add('animated')
@@ -742,7 +747,7 @@
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 515) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
-                modals.init(aboutModal) // add classes, disable wheel-scrolling
+                modals.init(aboutModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Resize + format buttons to include emoji + localized label + hide Dismiss button
                 for (const btn of aboutModal.querySelectorAll('button')) {
@@ -773,7 +778,7 @@
                             config.gitHubURL + '/discussions/new/choose') }
                     ], '', 333) // modal width
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
-                modals.init(feedbackModal) // add classes, disable wheel-scrolling
+                modals.init(feedbackModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Re-style button cluster
                 const buttons = feedbackModal.querySelector('.modal-buttons')
@@ -796,7 +801,7 @@
                     config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
                     [ function auto() {}, function light() {}, function dark() {} ]) // buttons
                 const schemeModal = document.getElementById(schemeModalID).firstChild
-                modals.init(schemeModal) // add classes, disable wheel-scrolling
+                modals.init(schemeModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Center button cluster
                 schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
@@ -850,8 +855,7 @@
                 const settingsContainer = document.createElement('div')
                 const settingsModal = document.createElement('div') ; settingsModal.id = 'googlegpt-settings'
                 settingsContainer.append(settingsModal)
-                fillStarryBG(settingsModal) // add stars to bg
-                modals.init(settingsModal) // add classes, disable wheel-scrolling
+                modals.init(settingsModal) // add classes/stars, disable wheel-scrolling, dim bg
                 appIcon.style.cssText += 'width: 52px ; position: relative ; top: -45px ; margin: 9px 41.13% -43px' // size/pos icon
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
@@ -1468,6 +1472,7 @@
             + '[class$="modal"] {' // native modals + chatgpt.alert()s
                 + 'position: absolute ;' // to be click-draggable
                 + 'opacity: 0 ;' // to fade-in
+                + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 140%, -28% 140%) ;' // bound starry bg
                 + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                 + 'transition: opacity 0.35s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                             + 'transform 0.35s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
@@ -1484,7 +1489,6 @@
                       + `${ scheme == 'dark' ? '#75c451 -70%, black 57%' : '#9eb4f2 -70%, white 42%' }) ;`
                   + `border: 1px solid ${ scheme == 'dark' ? 'white ; color: white' : '#b5b5b5 ; color: black' } ;`
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
-                  + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 125%, -28% 125%) ;' // bound starry bg
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
@@ -2387,7 +2391,7 @@
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
-                fillStarryBG(appDiv) // add stars to bg
+                fillStarryBG(appDiv) // add stars
                 update.titleElems() // create/append app title elems
 
                 // Create/append corner buttons div
