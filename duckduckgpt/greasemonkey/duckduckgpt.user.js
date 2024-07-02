@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.21
+// @version             2024.7.1.22
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -523,7 +523,7 @@
         init(modal) {
             modal.classList.add('.ddgpt-modal')
             modal.parentNode.classList.add('ddgpt-modal-bg', 'no-user-select')
-            modal.onwheel = event => event.preventDefault() // disable wheel-scrolling
+            modal.onwheel = modal.ontouchmove = event => event.preventDefault() // disable wheel/swipe scrolling
             setTimeout(() => { // dim bg
                 modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
                 modal.parentNode.classList.add('animated')

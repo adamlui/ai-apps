@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.21
+// @version             2024.7.1.22
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -514,7 +514,7 @@ setTimeout(async () => {
         init(modal) {
             modal.classList.add('.bravegpt-modal')
             modal.parentNode.classList.add('bravegpt-modal-bg', 'no-user-select')
-            modal.onwheel = event => event.preventDefault() // disable wheel-scrolling
+            modal.onwheel = modal.ontouchmove = event => event.preventDefault() // disable wheel/swipe scrolling
             setTimeout(() => { // dim bg
                 modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
                 modal.parentNode.classList.add('animated')
