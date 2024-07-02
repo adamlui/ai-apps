@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.2.5
+// @version             2024.7.2.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -552,6 +552,13 @@ setTimeout(async () => {
             }, 100) // delay for transition fx
         },
 
+        keyHandler() { // to dismiss modals
+            if (['Escape', 'Esc'].includes(event.key) || event.keyCode == 27) {
+                const modal = document.querySelector('[class$="-modal"]')
+                if (modal) modals.hide(modal)
+            }
+        },
+
         about: {
             show() {
                 const settingsModal = modals.settings.get()
@@ -858,22 +865,11 @@ setTimeout(async () => {
                 // Add listeners to dismiss modal
                 const dismissElems = [settingsContainer, closeBtn, closeSVG]
                 dismissElems.forEach(elem => elem.onclick = modals.clickHandler)
-                document.onkeydown = modals.settings.keyHandler
 
                 return settingsContainer
             },
 
             get() { return document.getElementById('bravegpt-settings') },
-
-            keyHandler() {
-                const dismissKeys = ['Escape', 'Esc'], dismissKeyCodes = [27]
-                if (dismissKeys.includes(event.key) || dismissKeyCodes.includes(event.keyCode)) {
-                    const settingsModal = modals.settings.get()
-                    if (settingsModal && settingsModal.style.display !== 'none'
-                        && (event.key.includes('Esc') || event.keyCode == 27))
-                            modals.hide(settingsModal)
-                }
-            },
 
             show() {
                 const settingsContainer = modals.settings.get()?.parentNode || modals.settings.createAppend()
@@ -2565,6 +2561,9 @@ setTimeout(async () => {
                         if (get.related.status != 'done') api.tryNew(get.related) })
             }
     } else { appAlert('waitingResponse') ; get.reply(msgChain) }
+
+    // Add key listener to dismiss modals
+    document.onkeydown = modals.keyHandler;
 
     // Observe/listen for Brave Search + system SCHEME CHANGES to update BraveGPT scheme if auto-scheme mode
     (new MutationObserver(handleSchemeChange)).observe( // class changes from Brave Search theme settings

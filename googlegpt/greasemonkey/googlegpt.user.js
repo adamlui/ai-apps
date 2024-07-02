@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.2.5
+// @version             2024.7.2.6
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -750,6 +750,13 @@
             }, 100) // delay for transition fx
         },
 
+        keyHandler() { // to dismiss modals
+            if (['Escape', 'Esc'].includes(event.key) || event.keyCode == 27) {
+                const modal = document.querySelector('[class$="-modal"]')
+                if (modal) modals.hide(modal)
+            }
+        },
+
         about: {
             show() {
                 const settingsModal = modals.settings.get()
@@ -1050,22 +1057,11 @@
                 // Add listeners to dismiss modal
                 const dismissElems = [settingsContainer, closeBtn, closeSVG]
                 dismissElems.forEach(elem => elem.onclick = modals.clickHandler)
-                document.onkeydown = modals.settings.keyHandler
 
                 return settingsContainer
             },
 
             get() { return document.getElementById('googlegpt-settings') },
-
-            keyHandler() {
-                const dismissKeys = ['Escape', 'Esc'], dismissKeyCodes = [27]
-                if (dismissKeys.includes(event.key) || dismissKeyCodes.includes(event.keyCode)) {
-                    const settingsModal = modals.settings.get()
-                    if (settingsModal && settingsModal.style.display !== 'none'
-                        && (event.key.includes('Esc') || event.keyCode == 27))
-                            modals.hide(settingsModal)
-                }
-            },
 
             show() {
                 const settingsContainer = modals.settings.get()?.parentNode || modals.settings.createAppend()
@@ -2865,5 +2861,8 @@
                         if (get.related.status != 'done') api.tryNew(get.related) })
             }
     } else { appAlert('waitingResponse') ; get.reply(msgChain) }
+
+    // Add key listener to dismiss modals
+    document.onkeydown = modals.keyHandler
 
 })()
