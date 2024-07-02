@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.2.3
+// @version             2024.7.2.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -519,6 +519,7 @@ setTimeout(async () => {
             modal.classList.add('.bravegpt-modal')
             modal.parentNode.classList.add('bravegpt-modal-bg', 'no-user-select')
             modal.onwheel = modal.ontouchmove = event => event.preventDefault() // disable wheel/swipe scrolling
+            modal.onmousedown = dragHandlers.mousedown
             fillStarryBG(modal) // add stars
             setTimeout(() => { // dim bg
                 modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
@@ -1722,22 +1723,12 @@ setTimeout(async () => {
     const dragHandlers = {
 
         mousedown(event) { // find modal, attach listeners, init XY offsets
-            let elem = event.target
-            while (elem && elem != document) { // find draggable elem
-                if (/modal$/.test(elem.className)) { dragHandlers.draggableElem = elem ; break }
-                elem = elem.parentNode
-            }
-            if (dragHandlers.draggableElem) {
-                event.preventDefault(); // prevent sub-elems like icons being draggable
-    
-                // Attach event listeners
-                ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, dragHandlers[event]))
-    
-                // Init XY offsets
-                const draggableElemRect = dragHandlers.draggableElem.getBoundingClientRect()
-                dragHandlers.offsetX = event.clientX - draggableElemRect.left
-                dragHandlers.offsetY = event.clientY - draggableElemRect.top
-            }
+            dragHandlers.draggableElem = document.querySelector('[class$="-modal"]')
+            event.preventDefault(); // prevent sub-elems like icons being draggable
+            ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, dragHandlers[event]))
+            const draggableElemRect = dragHandlers.draggableElem.getBoundingClientRect()
+            dragHandlers.offsetX = event.clientX - draggableElemRect.left
+            dragHandlers.offsetY = event.clientY - draggableElemRect.top
         },
 
         mousemove(event) { // drag modal
@@ -2575,9 +2566,6 @@ setTimeout(async () => {
                         if (get.related.status != 'done') api.tryNew(get.related) })
             }
     } else { appAlert('waitingResponse') ; get.reply(msgChain) }
-
-    // Make modals DRAGGABLE
-    document.onmousedown = dragHandlers.mousedown;
 
     // Observe/listen for Brave Search + system SCHEME CHANGES to update BraveGPT scheme if auto-scheme mode
     (new MutationObserver(handleSchemeChange)).observe( // class changes from Brave Search theme settings
