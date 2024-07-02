@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.2.9
+// @version             2024.7.2.10
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -595,7 +595,7 @@
                 // Add logo
                 const aboutHeaderLogo = document.createElement('img') ; aboutHeaderLogo.id = 'app-logo'
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
-                aboutHeaderLogo.width = 310 ; aboutHeaderLogo.style.margin = '-21px 20.5% 6px'
+                aboutHeaderLogo.width = 420 ; aboutHeaderLogo.style.margin = '-21px 11% 1px'
                 update.appLogoSrc()
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
