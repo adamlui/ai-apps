@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.23
+// @version             2024.7.1.24
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1227,17 +1227,17 @@ setTimeout(async () => {
                   + '#bravegpt > pre ol { margin: -33px 0 -6px ; }' // reduce v-spacing
                   + '#bravegpt > pre li { margin: -10px 0 ; list-style: inside }' ) // reduce v-spacing, show left symbols
               + '.katex-html { display: none }' // hide unrendered math
-              + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important ;' // increase modal padding
+              + '.chatgpt-modal > div { padding: 24px 20px 14px 20px !important ;' // increase modal padding
                   + 'background-color: white !important ; color: #202124 }'
-              + '.chatgpt-modal h2 { font-size: 32px ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + shrink it
+              + '.chatgpt-modal h2 { font-size: 26px ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + shrink it
               + '.modal-close-btn { top: -7px !important ; right: -7px !important }' // re-pos modal close button
               + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
               + `.modal-close-btn:hover { background-color: #${ scheme == 'dark' ? '666464' : 'f2f2f2' } !important }`
-              + '.chatgpt-modal p { margin: 14px 0 -20px 4px ; font-size: 1.115rem }' // pos/size modal msg
+              + '.chatgpt-modal p { margin: 14px 0 -20px 4px ; font-size: 18px }' // pos/size modal msg
               + `.chatgpt-modal a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
-              + `.modal-buttons { margin: 38px 0px 6px ${ isMobile ? 0 : -7 }px !important }` // pos modal buttons
+              + `.modal-buttons { margin: 38px 0px 1px ${ isMobile ? 0 : -7 }px !important }` // pos modal buttons
               + '.chatgpt-modal button {' // alert buttons
-                  + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; '
+                  + 'font-size: 14px ; text-transform: uppercase ; min-width: 123px ; '
                   + `padding: ${ isMobile? '5px' : '4px 3px' } !important ;`
                   + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
                   + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
