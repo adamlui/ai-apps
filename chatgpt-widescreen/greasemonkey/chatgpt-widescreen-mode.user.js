@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.27.1
+// @version             2024.7.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -851,7 +851,7 @@
     fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
     fullWindowStyle.innerText = (
           sidebarSelector + '{ display: none }' // hide sidebar
-        + sidepadSelector + '{ padding-left: 0px }' ) // remove side padding
+        + sidepadSelector + '{ padding-left: 0 }' ) // remove side padding
 
     // Create/insert chatbar BUTTONS
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],

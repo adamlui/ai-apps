@@ -106,7 +106,7 @@
     fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
     fullWindowStyle.innerText = (
           sidebarSelector + ' { display: none } ' // hide sidebar
-        + sidepadSelector + ' { padding-left: 0px }' ) // remove side padding
+        + sidepadSelector + ' { padding-left: 0 }' ) // remove side padding
 
     // Create/insert chatbar BUTTONS
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
