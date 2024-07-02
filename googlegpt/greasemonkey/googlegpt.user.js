@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.20
+// @version             2024.7.1.21
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1015,8 +1015,8 @@
             hide() {
                 const settingsContainer = modals.settings.get()?.parentNode
                 if (!settingsContainer) return
-                settingsContainer.style.animation = 'alert-zoom-fade-out 0.075s ease-out' // chatgpt.js keyframes
-                setTimeout(() => settingsContainer.remove(), 50) // delay for fade-out
+                settingsContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
+                setTimeout(() => settingsContainer.remove(), 115) // delay for fade-out
             },
 
             keyHandler() {
@@ -1457,7 +1457,12 @@
                   + '.primary-modal-btn { background: white !important ; color: black !important }'
                   + '.chatgpt-modal a { color: #00cfff !important }'
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
-              + '[class$="modal"] { position: absolute }' // to be click-draggable
+            + '[class$="modal"] {' // native modals + chatgpt.alert()s
+                + 'position: absolute ;' // to be click-draggable
+                + 'opacity: 0 ;' // to fade-in
+                + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
+                + 'transition: opacity 0.35s cubic-bezier(.165,.84,.44,1),' // for fade-ins
+                            + 'transform 0.35s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
               + '#googlegpt footer {'
                   + 'position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ; line-height: 1.43em ;'
                   + `margin: ${ isFirefox ? 1 : -2 }px -32px 12px }`
@@ -1468,11 +1473,10 @@
               + '#googlegpt-settings-bg {'
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
                   + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
-                  + 'transition: background-color 0.05s ease ;' // speed to transition in show alert routine
+                  + 'transition: background-color .15s ease ;' // speed to show bg dim
                   + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
               + '#googlegpt-settings {'
-                  + 'opacity: 0 ; transform: translateX(-2px) translateY(3px) ; min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
-                  + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.3s cubic-bezier(.165,.84,.44,1) ;'
+                  + 'min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
                   + 'background-image: linear-gradient(180deg,'
                       + `${ scheme == 'dark' ? '#75c451 -70%, black 57%' : '#9eb4f2 -70%, white 42%' }) ;`
                   + `border: 1px solid ${ scheme == 'dark' ? 'white ; color: white' : '#b5b5b5 ; color: black' } ;`
