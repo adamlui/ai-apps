@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.7.1.27
+// @version             2024.7.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1472,6 +1472,8 @@
             + '[class$="modal"] {' // native modals + chatgpt.alert()s
                 + 'position: absolute ;' // to be click-draggable
                 + 'opacity: 0 ;' // to fade-in
+                + 'background-image: linear-gradient(180deg,' // bg
+                    + `${ scheme == 'dark' ? '#75c451 -70%, black 57%' : '#9eb4f2 -70%, white 42%' }) ;`
                 + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 140%, -28% 140%) ;' // bound starry bg
                 + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                 + 'transition: opacity 0.35s cubic-bezier(.165,.84,.44,1),' // for fade-ins
@@ -1485,8 +1487,6 @@
               // Settings modal
               + '#googlegpt-settings {'
                   + 'min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
-                  + 'background-image: linear-gradient(180deg,'
-                      + `${ scheme == 'dark' ? '#75c451 -70%, black 57%' : '#9eb4f2 -70%, white 42%' }) ;`
                   + `border: 1px solid ${ scheme == 'dark' ? 'white ; color: white' : '#b5b5b5 ; color: black' } ;`
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
