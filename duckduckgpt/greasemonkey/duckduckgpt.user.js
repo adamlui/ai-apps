@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.3.5
+// @version                2024.7.3.6
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1195,14 +1195,14 @@
         ddgpt: {
 
             create() {
-                const ddgptLogo = document.createElement('img') ; ddgptLogo.id = 'app-logo'
+                const ddgptLogo = document.createElement('img') ; ddgptLogo.id = 'ddgpt-logo'
                 logos.ddgpt.update(ddgptLogo)
                 return ddgptLogo
             },
 
             update(...targetLogos) {
                 targetLogos = targetLogos.flat() // flatten array args nested by spread operator
-                if (targetLogos.length == 0) targetLogos = document.querySelectorAll('#app-logo')
+                if (targetLogos.length == 0) targetLogos = document.querySelectorAll('#ddgpt-logo')
                 targetLogos.forEach(logo => logo.src = GM_getResourceText(`ddgpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`))
             }
         }

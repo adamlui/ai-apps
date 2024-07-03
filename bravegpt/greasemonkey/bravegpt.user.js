@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.3.5
+// @version               2024.7.3.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1146,14 +1146,14 @@ setTimeout(async () => {
         braveGPT: {
 
             create() {
-                const braveGPTlogo = document.createElement('img') ; braveGPTlogo.id = 'app-logo'
+                const braveGPTlogo = document.createElement('img') ; braveGPTlogo.id = 'bravegpt-logo'
                 logos.braveGPT.update(braveGPTlogo)
                 return braveGPTlogo
             },
 
             update(...targetLogos) {
                 targetLogos = targetLogos.flat() // flatten array args nested by spread operator
-                if (targetLogos.length == 0) targetLogos = document.querySelectorAll('#app-logo')
+                if (targetLogos.length == 0) targetLogos = document.querySelectorAll('#bravegpt-logo')
                 targetLogos.forEach(logo => logo.src = GM_getResourceText(`bgpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`))
             }
         }
