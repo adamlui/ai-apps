@@ -1,7 +1,7 @@
 <h1>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://media.ddgpt.com/images/logos/duckduckgpt/darkmode371x65.png?latest">
-    <img src="https://media.ddgpt.com/images/logos/duckduckgpt/lightmode371x65.png?latest">
+    <source media="(prefers-color-scheme: dark)" srcset="https://media.ddgpt.com/images/logos/duckduckgpt/darkmode/logo371x65.png?latest">
+    <img src="https://media.ddgpt.com/images/logos/duckduckgpt/lightmode/logo371x65.png?latest">
   </picture>
 </h1>
 
