@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.3.6
+// @version               2024.7.3.7
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1126,7 +1126,7 @@ setTimeout(async () => {
 
             create() {
                 const widescreenSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      widescreenSVGattrs = [['id', 'ws-svg'], ['width', 18], ['height', 18], ['viewBox', '8 8 20 20']]
+                      widescreenSVGattrs = [['id', 'widescreen-icon'], ['width', 18], ['height', 18], ['viewBox', '8 8 20 20']]
                 widescreenSVGattrs.forEach(([attr, value]) => widescreenSVG.setAttribute(attr, value))
                 widescreenSVG.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
                 return widescreenSVG
@@ -1679,7 +1679,7 @@ setTimeout(async () => {
         sidebar(mode) {
             saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
             update.tweaksStyle()
-            const wsbSVGs = document.querySelectorAll('#ws-svg')
+            const wsbSVGs = document.querySelectorAll('#widescreen-icon')
             if (mode == 'wider' && wsbSVGs.length > 0)
                 wsbSVGs.forEach(svg => icons.widescreen.update(svg))  
             notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
