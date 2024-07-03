@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.3.7
+// @version                  2024.7.3.8
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1359,14 +1359,17 @@
                 const widescreenSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       widescreenSVGattrs = [['id', 'widescreen-icon'], ['width', 18], ['height', 18], ['viewBox', '8 8 20 20']]
                 widescreenSVGattrs.forEach(([attr, value]) => widescreenSVG.setAttribute(attr, value))
-                widescreenSVG.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
+                icons.widescreen.update(widescreenSVG)
                 return widescreenSVG
             },
 
-            update(widescreenSVG) {
-                widescreenSVG.removeChild(widescreenSVG.firstChild) // clear path
-                widescreenSVG.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
-                return widescreenSVG
+            update(...targetIcons) {
+                targetIcons = targetIcons.flat() // flatten array args nested by spread operator
+                if (targetIcons.length == 0) targetIcons = document.querySelectorAll('#widescreen-icon')
+                targetIcons.forEach(icon => {
+                    icon.firstChild?.remove() // clear prev paths
+                    icon.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
+                })
             }
         }
     }
@@ -1926,11 +1929,8 @@
 
         sidebar(mode) {
             saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
-            update.tweaksStyle()
-            const wsbSVGs = document.querySelectorAll('#widescreen-icon')
-            if (mode == 'wider' && wsbSVGs.length > 0)
-                wsbSVGs.forEach(svg => icons.widescreen.update(svg))
-            else if (mode == 'sticky') icons.pin.update()
+            update.tweaksStyle() // apply mode to UI
+            icons[mode == 'wider' ? 'widescreen' : 'pin'].update() // toggle icons everywhere
             notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
                 + ' ' + menuState.word[+config[mode + 'Sidebar']])
         },
