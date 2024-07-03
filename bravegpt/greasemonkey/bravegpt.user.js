@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.3
+// @version               2024.7.3.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -183,8 +183,8 @@
 // @require               https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
 // @require               https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js#sha256-e1fUJ6xicGd9r42DgN7SzHMzb5FJoWe44f4NbvZmBK4=
 // @require               https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js#sha256-Ffq85bZYmLMrA/XtJen4kacprUwNbYdxEKd0SqhHqJQ=
-// @resource bgptLSlogo   https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@4fc4bac/media/images/logos/bravegpt/lightmode/logo250x53.png.b64#sha256-NuZgTy/KhSAZdAbD7OOmlDzFdyIEZd62uw5V9QJRPm4=
-// @resource bgptDSlogo   https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@4fc4bac/media/images/logos/bravegpt/darkmode/logo250x53.png.b64#sha256-Gw06BYSU4BjQ4APJ8eIbJvowmdjL8rWC50d25LWzNRY=
+// @resource bgptLSlogo   https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@01dd539/media/images/logos/bravegpt/lightmode/logo730x155.png.b64#sha256-gGomHdYcs/AE4Ep8dAJhPFbCX6uyHmb38vi9hWYJZLI=
+// @resource bgptDSlogo   https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@01dd539/media/images/logos/bravegpt/darkmode/logo730x155.png.b64#sha256-2Qx4bTS8s7dKj4m2dsJdPnijThaYRwYQMi30+KjtopI=
 // @resource hljsCSS      https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css#sha256-v0N76BFFkH0dCB8bUr4cHSVN8A/zCaOopMuSmJWV/5w=
 // @resource bsbgCSS      https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@d7fd458/styles/css/black-rising-stars.min.css#sha256-bXbVZUD7ciKqK0wU/BLQzh08JwkoNExHHqXITugd/3o=
 // @resource wsbgCSS      https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@d7fd458/styles/css/white-rising-stars.min.css#sha256-ya9newifevSPO1Q4AzMf42yAF6TE+iZHrDbVj0HyuEM=
@@ -568,14 +568,13 @@ setTimeout(async () => {
 
                 // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
-                const aboutModalID = siteAlert(
-                    config.appName, // title
+                const aboutModalID = chatgpt.alert('',
                     '🏷️ ' + ( msgs.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
                         + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
                             + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
-                        + '📜 ' + ( msgs.about_sourceCode || 'Source code' ) + ':\n '
-                            + `<a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                        + '📜 ' + ( msgs.about_sourceCode || 'Source code' )
+                            + `: <a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                                 + config.gitHubURL + '</a>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
@@ -585,6 +584,12 @@ setTimeout(async () => {
                     ], '', 577) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
                 modals.init(aboutModal) // add classes/stars, disable wheel-scrolling, dim bg
+
+                // Add logo
+                const aboutHeaderLogo = document.createElement('img') ; aboutHeaderLogo.id = 'app-logo'
+                aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
+                aboutHeaderLogo.width = 375 ; aboutHeaderLogo.style.margin = '-19px 14% 0'
+                logos.braveGPT.update()
 
                 // Resize + format buttons to include emoji + localized label + hide Dismiss button
                 for (const btn of aboutModal.querySelectorAll('button')) {
@@ -1135,11 +1140,27 @@ setTimeout(async () => {
         }
     }
 
+    // Define LOGO functions
+
+    const logos = {
+        braveGPT: {
+
+            create() {
+                const braveGPTlogo = document.createElement('img') ; braveGPTlogo.id = 'app-logo'
+                braveGPTlogo.src = GM_getResourceText(`bgpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`)
+                return braveGPTlogo
+            },
+
+            update() {
+                document.querySelectorAll('#app-logo').forEach(logo =>
+                    logo.src = GM_getResourceText(`bgpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`))                
+            }
+        }
+    }
+
     // Define UPDATE functions
 
     const update = {
-
-        appLogoSrc() { appLogoImg.src = GM_getResourceText(`bgpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`) },
 
         appStyle() {
             appStyle.innerText = (
@@ -1420,7 +1441,7 @@ setTimeout(async () => {
             }
         },
 
-        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() },
+        scheme(newScheme) { scheme = newScheme ; logos.braveGPT.update() ; update.appStyle() ; update.stars() },
 
         stars() {
             ['sm', 'med', 'lg'].forEach(size =>
@@ -1428,30 +1449,6 @@ setTimeout(async () => {
                     starsDiv.id = config.bgAnimationsDisabled ? `stars-${size}-off`
                     : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
             ))
-        },
-
-        titleAnchor() {
-            if (appDiv.querySelector('.loading, #bravegpt-alert')) return // only update reply UI
-
-            const appTitleVisible = !!appDiv.querySelector('.app-name'),
-                  logoVisible = !!appDiv.querySelector('img')              
-
-            // Create/fill/classify/style/append/update title anchor
-            if (!appTitleVisible || !logoVisible) {
-                const appTitleAnchor = createAnchor(config.appURL, (() => {
-                    if (appLogoImg.loaded) { // size/return app logo img
-                        appLogoImg.width = 143 ; return appLogoImg
-                    } else { // create/fill/pos/return app name span
-                        const appNameSpan = document.createElement('span')
-                        appNameSpan.innerText = '🤖 ' + config.appName
-                        appNameSpan.style.marginLeft = '3px'
-                        return appNameSpan
-                    }
-                })())
-                appTitleAnchor.classList.add('app-name', 'no-user-select')
-                if (!appTitleVisible) appDiv.append(appTitleAnchor)
-                else appDiv.querySelector('.app-name').replaceWith(appTitleAnchor) // for appLogoImg.onload() callback
-            }
         },
 
         tooltip(buttonType) { // text & position
@@ -2117,8 +2114,13 @@ setTimeout(async () => {
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
-                fillStarryBG(appDiv) // add stars
-                update.titleAnchor() // create/append app title anchor + byline
+                fillStarryBG(appDiv) // add stars      
+
+                // Create/append title
+                const appHeaderLogo = logos.braveGPT.create() ; appHeaderLogo.width = 143
+                const appTitleAnchor = createAnchor(config.appURL, appHeaderLogo)
+                appTitleAnchor.classList.add('app-name', 'no-user-select')
+                appDiv.append(appTitleAnchor)
 
                 // Create/append About button
                 const aboutSpan = document.createElement('span'),
@@ -2487,10 +2489,6 @@ setTimeout(async () => {
 
     // Init scheme var
     let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
-
-    // Pre-load LOGO
-    const appLogoImg = document.createElement('img') ; update.appLogoSrc()
-    appLogoImg.onload = () => { appLogoImg.loaded = true ; update.titleAnchor() }
 
     // Create/ID/classify/listenerize BRAVEGPT container
     const appDiv = document.createElement('div') ; appDiv.id = 'bravegpt'
