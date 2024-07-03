@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.3.1
+// @version                2024.7.3.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -602,10 +602,9 @@
                 const aboutModal = document.getElementById(aboutModalID).firstChild
 
                 // Add logo
-                const aboutHeaderLogo = document.createElement('img') ; aboutHeaderLogo.id = 'app-logo'
-                aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
+                const aboutHeaderLogo = logos.ddgpt.create()
                 aboutHeaderLogo.width = 420 ; aboutHeaderLogo.style.margin = '-21px 13.5% 1px'
-                update.appLogoSrc()
+                aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 aboutModal.querySelectorAll('button').forEach(btn => {
@@ -1189,14 +1188,27 @@
         }
     }
 
+    // Define LOGO functions
+
+    const logos = {
+        ddgpt: {
+
+            create() {
+                const ddgptLogo = document.createElement('img') ; ddgptLogo.id = 'app-logo'
+                ddgptLogo.src = GM_getResourceText(`ddgpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`)
+                return ddgptLogo
+            },
+
+            update() {
+                document.querySelectorAll('#app-logo').forEach(logo =>
+                    logo.src = GM_getResourceText(`ddgpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`))                
+            }
+        }
+    }
+
     // Define UPDATE functions
 
     const update = {
-
-        appLogoSrc() {
-            document.querySelectorAll('#app-logo').forEach(logo =>
-                logo.src = GM_getResourceText(`ddgpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`))
-        },
 
         appStyle() {
             appStyle.innerText = (
@@ -1399,7 +1411,7 @@
             )
         },
 
-        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() ; toggle.btnGlow() },
+        scheme(newScheme) { scheme = newScheme ; logos.ddgpt.update() ; update.appStyle() ; update.stars() ; toggle.btnGlow() },
 
         stars() {
             ['sm', 'med', 'lg'].forEach(size =>
@@ -2108,11 +2120,11 @@
                 fillStarryBG(appDiv) // add stars
 
                 // Create/append title
-                const appHeaderLogo = document.createElement('img') ; appHeaderLogo.id = 'app-logo'
+                const appHeaderLogo = logos.ddgpt.create()
                 appHeaderLogo.width = 181 ; appHeaderLogo.style.margin = '-7px 0'
                 const appTitleAnchor = createAnchor(config.appURL, appHeaderLogo)
                 appTitleAnchor.classList.add('app-name', 'no-user-select')
-                appDiv.append(appTitleAnchor) ; update.appLogoSrc()
+                appDiv.append(appTitleAnchor)
 
                 // Create/append corner buttons div
                 const cornerBtnsDiv = document.createElement('div') ; cornerBtnsDiv.id = 'corner-btns'
