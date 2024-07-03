@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.3
+// @version                2024.7.3.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -598,13 +598,13 @@
                         function getSupport() { safeWindowOpen(config.supportURL) },
                         function leaveAReview() { modals.feedback.show() },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                    ], '', 615) // modal width
+                    ], '', 577) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
 
                 // Add logo
                 const aboutHeaderLogo = document.createElement('img') ; aboutHeaderLogo.id = 'app-logo'
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
-                aboutHeaderLogo.width = 420 ; aboutHeaderLogo.style.margin = '-21px 16% 1px'
+                aboutHeaderLogo.width = 420 ; aboutHeaderLogo.style.margin = '-21px 13.5% 1px'
                 update.appLogoSrc()
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
@@ -2107,7 +2107,7 @@
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
                 fillStarryBG(appDiv) // add stars
 
-                // Create title
+                // Create/append title
                 const appHeaderLogo = document.createElement('img') ; appHeaderLogo.id = 'app-logo'
                 appHeaderLogo.width = 181 ; appHeaderLogo.style.margin = '-7px 0'
                 const appTitleAnchor = createAnchor(config.appURL, appHeaderLogo)
