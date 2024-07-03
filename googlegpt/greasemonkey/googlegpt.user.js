@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.3.5
+// @version                  2024.7.3.6
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1203,7 +1203,7 @@
 
             create() {
                 const pinSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      pinSVGattrs = [['id', 'pin-svg'], ['width', 17], ['height', 17], ['viewBox', '0 0 16 16']]
+                      pinSVGattrs = [['id', 'pin-icon'], ['width', 17], ['height', 17], ['viewBox', '0 0 16 16']]
                 pinSVGattrs.forEach(([attr, value]) => pinSVG.setAttribute(attr, value))
                 pinSVG.append(icons.pin[config.stickySidebar ? 'filledSVGpath' : 'hollowSVGpath']())
                 return pinSVG
@@ -1354,7 +1354,7 @@
 
             create() {
                 const widescreenSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      widescreenSVGattrs = [['id', 'ws-svg'], ['width', 18], ['height', 18], ['viewBox', '8 8 20 20']]
+                      widescreenSVGattrs = [['id', 'widescreen-icon'], ['width', 18], ['height', 18], ['viewBox', '8 8 20 20']]
                 widescreenSVGattrs.forEach(([attr, value]) => widescreenSVG.setAttribute(attr, value))
                 widescreenSVG.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
                 return widescreenSVG
@@ -1924,8 +1924,8 @@
         sidebar(mode) {
             saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
             update.tweaksStyle()
-            const wsbSVGs = document.querySelectorAll('#ws-svg'),
-                  ssbSVGs = document.querySelectorAll('#pin-svg')
+            const wsbSVGs = document.querySelectorAll('#widescreen-icon'),
+                  ssbSVGs = document.querySelectorAll('#pin-icon')
             if (mode == 'wider' && wsbSVGs.length > 0)
                 wsbSVGs.forEach(svg => icons.widescreen.update(svg))                
             else if (mode == 'sticky' && ssbSVGs.length > 0)
