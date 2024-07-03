@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.3.6
+// @version                  2024.7.3.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1205,14 +1205,17 @@
                 const pinSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       pinSVGattrs = [['id', 'pin-icon'], ['width', 17], ['height', 17], ['viewBox', '0 0 16 16']]
                 pinSVGattrs.forEach(([attr, value]) => pinSVG.setAttribute(attr, value))
-                pinSVG.append(icons.pin[config.stickySidebar ? 'filledSVGpath' : 'hollowSVGpath']())
+                icons.pin.update(pinSVG)
                 return pinSVG
             },
 
-            update(pinSVG) {
-                pinSVG.removeChild(pinSVG.firstChild) // clear path
-                pinSVG.append(icons.pin[config.stickySidebar ? 'filledSVGpath' : 'hollowSVGpath']())
-                return pinSVG
+            update(...targetIcons) {
+                targetIcons = targetIcons.flat() // flatten array args nested by spread operator
+                if (targetIcons.length == 0) targetIcons = document.querySelectorAll('#pin-icon')
+                targetIcons.forEach(icon => {
+                    icon.firstChild?.remove() // clear prev paths
+                    icon.append(icons.pin[config.stickySidebar ? 'filledSVGpath' : 'hollowSVGpath']())
+                })
             }
         },
         
@@ -1924,12 +1927,10 @@
         sidebar(mode) {
             saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
             update.tweaksStyle()
-            const wsbSVGs = document.querySelectorAll('#widescreen-icon'),
-                  ssbSVGs = document.querySelectorAll('#pin-icon')
+            const wsbSVGs = document.querySelectorAll('#widescreen-icon')
             if (mode == 'wider' && wsbSVGs.length > 0)
-                wsbSVGs.forEach(svg => icons.widescreen.update(svg))                
-            else if (mode == 'sticky' && ssbSVGs.length > 0)
-                ssbSVGs.forEach(svg => icons.pin.update(svg))  
+                wsbSVGs.forEach(svg => icons.widescreen.update(svg))
+            else if (mode == 'sticky') icons.pin.update()
             notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
                 + ' ' + menuState.word[+config[mode + 'Sidebar']])
         },
