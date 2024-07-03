@@ -86,8 +86,8 @@
 // @description:no         Legger til AI-svar til DuckDuckGo (drevet av GPT-4o!)
 // @description:nso        Ya go etela ditshenyegi tsa AI mo DuckDuckGo (e dirwang ke GPT-4o!)
 // @description:ny         Imawonjezera mayankho a AI ku DuckDuckGo (yoyendetsedwa ndi GPT-4o!)
-// @description:oc        Ajusta de respòstas d'IA a DuckDuckGo (amb GPT-4o!)
-// @description:om        Deebii AI DuckDuckGo (GPT-4o'n kan hojjetu!) irratti dabalata.
+// @description:oc         Ajusta de respòstas d'IA a DuckDuckGo (amb GPT-4o!)
+// @description:om         Deebii AI DuckDuckGo (GPT-4o'n kan hojjetu!) irratti dabalata.
 // @description:or         DuckDuckGo କୁ AI ଉତ୍ତର ଯୋଗ କରେ (GPT-4o ଦ୍ୱାରା ଚାଳିତ!)
 // @description:pa         DuckDuckGo (GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ!) ਵਿੱਚ AI ਜਵਾਬ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ
 // @description:pl         Dodaje odpowiedzi AI do DuckDuckGo (obsługiwane przez GPT-4o!)
@@ -95,7 +95,7 @@
 // @description:pt         Adiciona respostas de IA ao DuckDuckGo (desenvolvido por GPT-4o!)
 // @description:pt-BR      Adiciona respostas de IA ao DuckDuckGo (desenvolvido por GPT-4o!)
 // @description:qu         DuckDuckGo (GPT-4o nisqawan kallpachasqa!) nisqaman AI kutichiykunata yapan.
-// @description:rm        Agiuntescha respostas d'IA a DuckDuckGo (propulsà da GPT-4o!)
+// @description:rm         Agiuntescha respostas d'IA a DuckDuckGo (propulsà da GPT-4o!)
 // @description:rn         Abafasha inyandiko z'IA ku DuckDuckGo (yashyizweho na GPT-4o!)
 // @description:ro         Adaugă răspunsuri AI la DuckDuckGo (alimentat de GPT-4o!)
 // @description:ru         Добавляет ответы ИИ в DuckDuckGo (на базе GPT-4o!)
@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.2.11
+// @version                2024.7.3
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -436,7 +436,6 @@
                             }, '', updateAlertWidth
                         )
                         const updateModal = document.getElementById(updateModalID).firstChild
-                        modals.init(updateModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
@@ -446,6 +445,8 @@
                             updateBtns[0].textContent = msgs.buttonLabel_dismiss || 'Dismiss'
                         }
 
+                        modals.init(updateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
+
                         return
                 }}
 
@@ -454,7 +455,7 @@
                     `${ config.appName } (v${ currentVer }) ${ msgs.alert_isUpToDate || 'is up-to-date' }!`, // msg
                         '', '', updateAlertWidth)
                 const noUpdateModal = document.getElementById(noUpdateModalID).firstChild
-                modals.init(noUpdateModal) // add classes/stars, disable wheel-scrolling, dim bg
+                modals.init(noUpdateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 modals.about.show()
     }})}
 
@@ -552,8 +553,12 @@
         },
 
         init(modal) {
+
+            // Add classes
             modal.classList.add('.ddgpt-modal')
             modal.parentNode.classList.add('ddgpt-modal-bg', 'no-user-select')
+
+            // Add listeners
             modal.onwheel = modal.ontouchmove = event => event.preventDefault() // disable wheel/swipe scrolling
             modal.onmousedown = modals.dragHandlers.mousedown
             fillStarryBG(modal) // add stars
@@ -561,6 +566,9 @@
                 modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
                 modal.parentNode.classList.add('animated')
             }, 100) // delay for transition fx
+
+            // Glowup btns
+            if (scheme == 'dark' && !config.fgAnimationsDisabled) toggle.btnGlow()
         },
 
         keyHandler() { // to dismiss modals
@@ -582,27 +590,28 @@
                         + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
                             + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
-                        + '📜 ' + ( msgs.about_sourceCode || 'Source code' ) + ':\n '
-                            + `<a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                        + '📜 ' + ( msgs.about_sourceCode || 'Source code' )
+                            + `: <a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                                 + config.gitHubURL + '</a>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(config.supportURL) },
                         function leaveAReview() { modals.feedback.show() },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                    ], '', 527) // modal width
+                    ], '', 615) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
-                modals.init(aboutModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Add logo
                 const aboutHeaderLogo = document.createElement('img') ; aboutHeaderLogo.id = 'app-logo'
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
-                aboutHeaderLogo.width = 420 ; aboutHeaderLogo.style.margin = '-21px 11% 1px'
+                aboutHeaderLogo.width = 420 ; aboutHeaderLogo.style.margin = '-21px 16% 1px'
                 update.appLogoSrc()
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
-                for (const btn of aboutModal.querySelectorAll('button')) {
-                    btn.style.height = '52px' // re-size to fit meaty text content
+                aboutModal.querySelectorAll('button').forEach(btn => {
+                    btn.style.cssText = 'height: 52px ; min-width: 136px'
+
+                    // Emojize/localize label
                     if (/updates/i.test(btn.textContent)) btn.textContent = (
                         '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
@@ -612,7 +621,9 @@
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
                         '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
                     else btn.style.display = 'none' // hide Dismiss button
-                }
+                })
+
+                modals.init(aboutModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
             }
         },
 
@@ -635,7 +646,6 @@
                             'https://alternativeto.net/software/duckduckgpt/about/') }
                     ], '', 408) // modal width
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
-                modals.init(feedbackModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Re-style button cluster
                 const buttons = feedbackModal.querySelector('.modal-buttons')
@@ -649,6 +659,8 @@
                     else if (btn.textContent == 'Alternative To') btn.textContent = 'AlternativeTo'
                     btn.style.marginTop = btn.style.marginBottom = '5px' // v-pad btns
                 })
+
+                modals.init(feedbackModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
             }
         },
 
@@ -660,7 +672,6 @@
                     config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
                     [ function auto() {}, function light() {}, function dark() {} ]) // buttons
                 const schemeModal = document.getElementById(schemeModalID).firstChild
-                modals.init(schemeModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Center button cluster
                 schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
@@ -689,13 +700,15 @@
                         const newScheme = btnScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : btnScheme
                         saveSetting('scheme', btnScheme == 'auto' ? false : newScheme)
                         document.querySelector('#scheme-menu-entry span').textContent = btnScheme // update Settings menu status label
-                        update.scheme(newScheme) ; schemeNotify(btnScheme)
                         schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
                         newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme
                         newBtn.style.cssText = 'pointer-events: none' // disable hover fx to show emphasis
                         setTimeout(() => { newBtn.style.pointerEvents = 'auto'; }, 100) // re-enable hover fx after 100ms to flicker emphasis
+                        update.scheme(newScheme) ; schemeNotify(btnScheme)
                     }
                 }
+
+                modals.init(schemeModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
 
                 function schemeNotify(scheme) {
                     notify(` ${ msgs.menuLabel_colorScheme || 'Color Scheme' }: `
@@ -1300,7 +1313,7 @@
               + ( scheme == 'dark' ? // additional darkmode alert styles
                   ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                       + 'background-color: black !important ; color: white }'
-                  + '.primary-modal-btn { background: white !important ; color: black !important }'
+                  + '.primary-modal-btn { background: hsl(186 100% 69%) !important ; color: black !important }'
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
             + '[class*="-modal-bg"] {'
                 + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
@@ -1314,10 +1327,40 @@
                     + `${ scheme == 'dark' ? '#99a8a6 -70%, black 57%' : '#b6ebff -64%, white 33%' }) ;`
                 + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
                 + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 140%, -28% 140%) ;' // bound starry bg
+                + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 150%, -28% 150%) ;' // bound starry bg
                 + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                 + 'transition: opacity 0.35s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                             + 'transform 0.35s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
+
+              // Glowing modal btns
+              + ':root { --glow-color: hsl(186 100% 69%); }'
+              + '.glowing-btn { perspective: 2em ; font-weight: 900 ; animation: border-flicker 2s linear infinite ;'
+                  + '-webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) ;' 
+                  + 'box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) ;' 
+                  + '-moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) }' 
+              + '.glowing-txt { animation: text-flicker 3s linear infinite ;'
+                  + '-webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
+                  + '-moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
+                  + 'text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) }'
+              + '.faulty-letter { opacity: 0.5 ; animation: faulty-flicker 2s linear infinite }'
+              + '.glowing-btn::before { content: "" ; position: absolute ; top: 0 ; bottom: 0 ; left: 0 ; right: 0 ;'
+                  + 'opacity: 0.7 ; filter: blur(1em) ; transform: translateY(120%) rotateX(95deg) scale(1, 0.35) ;'
+                  + 'background: var(--glow-color) ; pointer-events: none }'
+              + '.glowing-btn::after { content: "" ; position: absolute ; top: 0 ; bottom: 0 ; left: 0 ; right: 0 ;'
+                  + 'opacity: 0 ; z-index: -1 ; box-shadow: 0 0 2em 0.2em var(--glow-color) ;'
+                  + 'background-color: var(--glow-color) ; transition: opacity 100ms linear }'
+              + '.glowing-btn:hover { color: rgba(0, 0, 0, 0.8) ; text-shadow: none ; animation: none }'
+              + '.glowing-btn:hover .glowing-txt { animation: none }'
+              + '.glowing-btn:hover .faulty-letter { animation: none ; text-shadow: none ; opacity: 1 }'
+              + '.glowing-btn:hover:before { filter: blur(1.5em) ; opacity: 1 }'
+              + '.glowing-btn:hover:after { opacity: 1 }'
+              + '@keyframes faulty-flicker { 0% { opacity: 0.1 } 2% { opacity: 0.1 } 4% { opacity: 0.5 } 19% { opacity: 0.5 }'
+                  + '21% { opacity: 0.1 } 23% { opacity: 1 } 80% { opacity: 0.5 } 83% { opacity: 0.4 } 87% { opacity: 1 }}'
+              + '@keyframes text-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 8% { opacity: 0.1 } 9% { opacity: 1 }'
+                  + '12% { opacity: 0.1 } 20% { opacity: 1 } 25% { opacity: 0.3 } 30% { opacity: 1 } 70% { opacity: 0.7 }'
+                  + '72% { opacity: 0.2 } 77% { opacity: 0.9 } 100% { opacity: 0.9 }}'
+              + '@keyframes border-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
+                  + '70% { opacity: 0.7 } 100% { opacity: 1 }}'
 
               // Settings modal
               + '#ddgpt-settings {'
@@ -1356,7 +1399,7 @@
             )
         },
 
-        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() },
+        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() ; toggle.btnGlow() },
 
         stars() {
             ['sm', 'med', 'lg'].forEach(size =>
@@ -1565,12 +1608,32 @@
         animations(layer) {
             saveSetting(layer + 'AnimationsDisabled', !config[layer + 'AnimationsDisabled'])
             update[layer == 'bg' ? 'stars' : 'appStyle']()
-            if (layer == 'fg' && modals.settings.get()) { // toggle ticker-scroll of About status label
+            if (layer == 'fg' && modals.settings.get()) {
+
+                // Toggle ticker-scroll of About status label
                 const aboutStatusLabel = document.querySelector('#about-menu-entry > span > div')
                 aboutStatusLabel.innerHTML = modals.settings.aboutContent[config.fgAnimationsDisabled ? 'short' : 'long']
                 aboutStatusLabel.style.float = config.fgAnimationsDisabled ? 'right' : ''
+
+                // Toggle button glow
+                if (scheme == 'dark') toggle.btnGlow()
             }
             notify(`${settingsProps[layer + 'AnimationsDisabled'].label} ${menuState.word[+!config[layer + 'AnimationsDisabled']]}`)
+        },
+
+        btnGlow(state = '') {
+            const removeCondition = state == 'off' || scheme != 'dark' || config.fgAnimationsDisabled
+            document.querySelectorAll('[class*="-modal"] button').forEach((btn, idx) => {
+                setTimeout(() => btn.classList[removeCondition ? 'remove' : 'add']('glowing-btn'),
+                    (idx +1) *50 *chatgpt.randomFloat()) // to unsync flickers                
+                let btnTextSpan = btn.querySelector('span')
+                if (!btnTextSpan) { // wrap btn.textContent for .glowing-txt
+                    btnTextSpan = document.createElement('span')
+                    btnTextSpan.textContent = btn.textContent ; btn.textContent = ''
+                    btn.append(btnTextSpan)
+                }
+                btnTextSpan.classList[removeCondition ? 'remove' : 'add']('glowing-txt')
+            })
         },
 
         proxyMode() {
@@ -2602,7 +2665,7 @@
     // Add key listener to dismiss modals
     document.onkeydown = modals.keyHandler;
 
-    // Observe for DDG SCHEME CHANGES to update DDGPT scheme if auto-scheme mode if auto-scheme mode
+    // Observe for DDG SCHEME CHANGES to update DDGPT scheme if auto-scheme mode
     (new MutationObserver(handleSchemeChange)).observe( // class changes from DDG appearance settings
         document.documentElement, { attributes: true, attributeFilter: ['class'] })
     function handleSchemeChange() {
