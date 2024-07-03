@@ -1,206 +1,208 @@
 // ==UserScript==
-// @name                BraveGPT 🤖
-// @description         Adds AI answers to Brave Search (powered by GPT-4o!)
-// @description:af      Voeg AI-antwoorde by Brave Search (aangedryf deur GPT-4o!)
-// @description:am      የ Brave Search ውስጥ AI መልቀቅን አድርግ፣ (GPT-4o በመሣሪያዎቹ ውስጥ!)
-// @description:ar      يضيف إجابات AI إلى Brave Search (مدعوم بواسطة GPT-4o!)
-// @description:as      Brave Search-লৈ AI উত্তৰ যোগ দিয়ে (GPT-4o দ্বাৰা পাওৱা হৈছে!)
-// @description:az      Brave Search-ya AI cavablarını əlavə edir (GPT-4o tərəfindən dəstəklənir!)
-// @description:be      Дадае ІА адказы на Brave Search (падтрымліваецца GPT-4o!)
-// @description:bg      Добавя ИИ отговори в Brave Search (поддържан от GPT-4o!)
-// @description:bn      Brave Search-ত AI উত্তর যোগ করে (GPT-4o দ্বারা প্রচালিত!)
-// @description:bs      Dodaje AI odgovore na Brave Search (pokreće GPT-4o!)
-// @description:ca      Afegeix respostes d'IA a Brave Search (impulsat per GPT-4o!)
-// @description:ceb     Nagdugang ug mga tubag AI ngadto sa Brave Search (gipadagan sa GPT-4o!)
-// @description:co      Aggiunge risposte AI a Brave Search (supportate da GPT-4o!)
-// @description:cs      Přidává AI odpovědi do Brave Search (poháněno GPT-4o!)
-// @description:cy      Ychwanegu atebion AI i Brave Search (a yrrir gan GPT-4o!)
-// @description:da      Tilføjer AI-svar til Brave Search (drevet af GPT-4o!)
-// @description:de      Fügt AI-Antworten zu Brave Search hinzu (betrieben von GPT-4o!)
-// @description:el      Προσθέτει απαντήσεις AI στο Brave Search (τροφοδοτούμενο από GPT-4o!)
-// @description:en      Adds AI answers to Brave Search (powered by GPT-4o!)
-// @description:eo      Aldonas AI-respondojn al Brave Search (ebligita de GPT-4o!)
-// @description:es      Añade respuestas de IA a Brave Search (impulsado por GPT-4o!)
-// @description:et      Lisab AI-vastused Brave Search'le (juhitud GPT-4o-ga!)
-// @description:eu      Gehitu IA erantzunak Brave Search-n (GPT-4o-k bultzatuta!)
-// @description:fa      پاسخهای هوشمصنوعی به Brave Search اضافه میشود (توسط GPT-4o پشتیبانی میشود!)
-// @description:fi      Lisää tekoälyvastauksia Brave Search:hun (ohjattu GPT-4o:lla!)
-// @description:fil     Nagdaragdag ng mga sagot ng AI sa Brave Search (pinapagana ng GPT-4o!)
-// @description:fo      Bætir AI svar við Brave Search (drifin af GPT-4o!)
-// @description:fr      Ajoute des réponses IA à Brave Search (propulsé par GPT-4o!)
-// @description:fr-CA   Ajoute des réponses IA à Brave Search (propulsé par GPT-4o!)
-// @description:fy      Foeget AI-antwurden ta oan Brave Search (dreaun troch GPT-4o!)
-// @description:ga      Cuirtear freagraí AI le Brave Search (dírítear ag GPT-4o!)
-// @description:gd      Cur freagairtichean AI ris an Brave Search (air a thug seachad le GPT-4o!)
-// @description:gl      Engade respostas de IA a Brave Search (impulsado por GPT-4o!)
-// @description:gu      Brave Search માટે AI જવાબો ઉમેરે છે (GPT-4o દ્વારા પોવરેડ!)
-// @description:ha      Ƙaddara takardun AI zu Brave Search (da aka fi GPT-4o!)
-// @description:haw     Hoʻohui aku i nā hoʻopiʻi AI iā Brave Search (hoʻohui ʻia e GPT-4o!)
-// @description:he      מוסיף תשובות AI ל-Brave Search (מופעל על ידי GPT-4o!)
-// @description:hi      Brave Search में AI उत्तर जोड़ता है (GPT-4o द्वारा संचालित!)
-// @description:hmn     Ntxig AI nruab nruab rau Brave Search (pab cuam GPT-4o!)
-// @description:hr      Dodaje AI odgovore na Brave Search (pokreće GPT-4o!)
-// @description:ht      Ajoute repons AI nan Brave Search (pòte pa GPT-4o!)
-// @description:hu      AI válaszokat ad hozzá a Brave Search-hoz (GPT-4o által hajtva!)
-// @description:hy      Ավելացնում է AI պատասխաններ Brave Search-ում (աջակցված է GPT-4o-ով!)
-// @description:ia      Adde responas AI a Brave Search (propulsate per GPT-4o!)
-// @description:id      Menambahkan jawaban AI ke Brave Search (didukung oleh GPT-4o!)
-// @description:ig      Tinye ihe ndekọ AI n'ụzọ ọgụgụ Brave Search (n'efu na GPT-4o!)
-// @description:ii      Brave Search ᐸᔦᒪᔪᐃᓃᑦ AI ᓇᑕᐅᒪᐃᑦᓯ (GPT-4o ᓂᑕᔪᑦᓯᐏᑦᑕᒥᔭ!)
-// @description:is      Bætir AI svar við Brave Search (keyrir á GPT-4o!)
-// @description:it      Aggiunge risposte AI a Brave Search (alimentato da GPT-4o!)
-// @description:iu      Brave Search ᑲᑎᒪᔪᖅᑐᖅᑐᐃᓐᓇᓂᒃ AI ᑎᑎᕋᖃᕐᓯᒪᓂᖏᓐ (GPT-4o ᑐᑭᒧᑦᑖᑦ!)
-// @description:ja      Brave Search に AI 回答を追加します (GPT-4o で動作！)
-// @description:jv      Nambéhi pirangga AI nganti Brave Search (diduweni déning GPT-4o!)
-// @description:ka      ამატებს AI პასუხებს Brave Search-ს (იმართება GPT-4o!)
-// @description:kk      Brave Search-ға AI жауаптарын қосады (GPT-4o арқылы жұмыс істейді!)
-// @description:kl      Brave Search-mi AI-t Kalaallit Nunaanni iluani (GPT-4o! -nip ilaanni!)
-// @description:km      បន្ថែមចម្លើយ AI ទៅ Brave Search (ដំណើរការដោយ GPT-4o!)
-// @description:kn      Brave Search ಗೆ AI ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ (GPT-4o ನಿಂದ ನಡೆಸಲ್ಪಡುತ್ತಿದೆ!)
-// @description:ko      Brave Search에 AI 답변을 추가합니다(GPT-4o 제공!)
-// @description:ku      Bersivên AI-ê li Brave Search zêde dike (ji hêla GPT-4o ve hatî hêzdar kirin!)
-// @description:ky      Brave Search'го AI жоопторун кошот (GPT-4o тарабынан иштейт!)
-// @description:la      Addit AI responsa Brave Search (powered per GPT-4o!)
-// @description:lb      Füügt AI Äntwerten op Brave Search (ugedriwwen duerch GPT-4o!)
-// @description:lg      Yambula emisomo ey'ensobi ku Brave Search (enkuuma GPT-4o!)
-// @description:ln      Ebakisi biyano ya AI na Brave Search (ezali na nguya ya GPT-4o!)
-// @description:lo      ເພີ່ມຄໍາຕອບ AI ໃຫ້ກັບ Brave Search (ຂັບເຄື່ອນໂດຍ GPT-4o!)
-// @description:lt      Prideda AI atsakymus į „Brave Search“ (maitina GPT-4o!)
-// @description:lv      Pievieno AI atbildes Brave Search (darbina GPT-4o!)
-// @description:mg      Manampy valiny AI amin'ny Brave Search (nampiasain'ny GPT-4o!)
-// @description:mi      Ka taapirihia nga whakautu AI ki a Brave Search (whakamahia e GPT-4o!)
-// @description:mk      Додава одговори со вештачка интелигенција на Brave Search (напојувано од GPT-4o!)
-// @description:ml      Brave Search-യിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു (GPT-4o നൽകുന്നതാണ്!)
-// @description:mn      Brave Search-д AI хариултуудыг нэмдэг (GPT-4o-оор ажилладаг!)
-// @description:mr      Brave Search ला AI उत्तरे जोडते (GPT-4o द्वारे समर्थित!)
-// @description:ms      Menambahkan jawapan AI pada Brave Search (dikuasakan oleh GPT-4o!)
-// @description:mt      Iżżid it-tweġibiet AI għal Brave Search (mħaddma minn GPT-4o!)
-// @description:my      Brave Search (GPT-4o ဖြင့် စွမ်းဆောင်ထားသည့်) တွင် AI အဖြေများကို ပေါင်းထည့်သည်
-// @description:na      Aeta AI teroma i Brave Search (ira GPT-4o reke akea!)
-// @description:nb      Legger til AI-svar på Brave Search (drevet av GPT-4o!)
-// @description:nd      Iyatholakala amaswelelo e-AI kuBrave Search (kuyatholakala ngokulawula uGPT-4o!)
-// @description:ne      Brave Search मा AI जवाफहरू थप्छ (GPT-4o द्वारा संचालित!)
-// @description:ng      Ondjova mbelelo dha AI moBrave Search (uumbuli nguGPT-4o!)
-// @description:nl      Voegt AI-antwoorden toe aan Brave Search (mogelijk gemaakt door GPT-4o!)
-// @description:nn      Legg til AI-svar på Brave Search (drevet av GPT-4o!)
-// @description:no      Legger til AI-svar til Brave Search (drevet av GPT-4o!)
-// @description:nso     Ya go etela ditshenyegi tsa AI mo Brave Search (e dirwang ke GPT-4o!)
-// @description:ny      Imawonjezera mayankho a AI ku Brave Search (yoyendetsedwa ndi GPT-4o!)
-// @description:oc      Ajusta de respòstas d'IA a Brave Search (amb GPT-4o!)
-// @description:om      Deebii AI Brave Search (GPT-4o'n kan hojjetu!) irratti dabalata.
-// @description:or      Brave Search କୁ AI ଉତ୍ତର ଯୋଗ କରେ (GPT-4o ଦ୍ୱାରା ଚାଳିତ!)
-// @description:pa      Brave Search (GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ!) ਵਿੱਚ AI ਜਵਾਬ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ
-// @description:pl      Dodaje odpowiedzi AI do Brave Search (obsługiwane przez GPT-4o!)
-// @description:ps      Brave Search ته د AI ځوابونه اضافه کوي (د GPT-4o لخوا پرمخ وړل کیږي!)
-// @description:pt      Adiciona respostas de IA ao Brave Search (desenvolvido por GPT-4o!)
-// @description:pt-BR   Adiciona respostas de IA ao Brave Search (desenvolvido por GPT-4o!)
-// @description:qu      Brave Search (GPT-4o nisqawan kallpachasqa!) nisqaman AI kutichiykunata yapan.
-// @description:rm      Agiuntescha respostas d'IA a Brave Search (propulsà da GPT-4o!)
-// @description:rn      Abafasha inyandiko z'IA ku Brave Search (yashyizweho na GPT-4o!)
-// @description:ro      Adaugă răspunsuri AI la Brave Search (alimentat de GPT-4o!)
-// @description:ru      Добавляет ответы ИИ в Brave Search (на базе GPT-4o!)
-// @description:rw      Ongeraho ibisubizo bya AI kuri Brave Search (ikoreshwa na GPT-4o!)
-// @description:sa      Brave Search (GPT-4o द्वारा संचालितम्!) इत्यत्र AI उत्तराणि योजयति ।
-// @description:sat     Brave Search ar AI jawab khon ojantok (GPT-4o! sebadha manju)
-// @description:sc      Agiungit rispostas de IA a Brave Search (motorizadu da GPT-4o!)
-// @description:sd      شامل ڪري ٿو AI جوابن کي Brave Search (GPT-4o پاران طاقتور!)
-// @description:se      Lávdegáhtii AI vástid Brave Search (GPT-4o! vuosttas!)
-// @description:sg      Nâ tî-kûzâ mái vêdáara AI mbi Brave Search (ngâ GPT-4o!)
-// @description:si      Brave Search වෙත AI පිළිතුරු එක් කරයි (GPT-4o මගින් බලගන්වයි!)
-// @description:sk      Pridáva odpovede AI do Brave Search (poháňané GPT-4o!)
-// @description:sl      Dodaja odgovore AI v Brave Search (poganja GPT-4o!)
-// @description:sm      Faʻaopoopo tali AI ile Brave Search (faʻamalosia e GPT-4o!)
-// @description:sn      Inowedzera mhinduro dzeAI kuBrave Search (inofambiswa neGPT-4o!)
-// @description:so      Waxay ku dartay jawaabaha AI Brave Search (waxaa ku shaqeeya GPT-4o!)
-// @description:sq      Shton përgjigjet e AI në Brave Search (mundësuar nga GPT-4o!)
-// @description:sr      Додаје АИ одговоре у Brave Search (покреће ГПТ-4о!)
-// @description:ss      Iphendvulela izindlela zezilungiselelo ku-Brave Search (izenzakalo nge-GPT-4o!)
-// @description:st      E kopanetse diqoqo tsa AI ka Brave Search (ka sebelisoa ke GPT-4o!)
-// @description:su      Nambahkeun jawaban AI kana Brave Search (dikuatkeun ku GPT-4o!)
-// @description:sv      Lägger till AI-svar till Brave Search (driven av GPT-4o!)
-// @description:sw      Inaongeza majibu ya AI kwa Brave Search (inaendeshwa na GPT-4o!)
-// @description:ta      Brave Search க்கு AI பதில்களைச் சேர்க்கிறது (GPT-4o மூலம் இயக்கப்படுகிறது!)
-// @description:te      Brave Searchకి AI సమాధానాలను జోడిస్తుంది (GPT-4o ద్వారా ఆధారితం!)
-// @description:tg      Ба Brave Search ҷавобҳои AI илова мекунад (аз ҷониби GPT-4o!)
-// @description:th      เพิ่มคำตอบ AI ให้กับ Brave Search (ขับเคลื่อนโดย GPT-4o!)
-// @description:ti      ናብ Brave Search (ብGPT-4o ዝሰርሕ!) ናይ AI መልስታት ይውስኸሉ።
-// @description:tk      Brave Search-a AI jogaplaryny goşýar (GPT-4o bilen işleýär!)
-// @description:tl      Nagdadagdag ng mga sagot ng AI sa Brave Search (pinapatakbo ng GPT-4o!)
-// @description:tn      O amogela dipotso tsa AI mo Brave Search (e a nang le GPT-4o!)
-// @description:to      Tambisa mabizo a AI ku Brave Search (mukutenga na GPT-4o!)
-// @description:tr      Brave Search'ya yapay zeka yanıtları ekler (GPT-4o tarafından desteklenmektedir!)
-// @description:ts      Ku engetela tinhlamulo ta AI eka Brave Search (leyi fambiwaka hi GPT-4o!)
-// @description:tt      Brave Search'ка AI җаваплары өсти (GPT-4o белән эшләнгән!)
-// @description:tw      Ɔde AI mmuae ka Brave Search (a GPT-4o na ɛma ahoɔden!) ho.
-// @description:ug      Brave Search ۋەبسېتكە AI جاۋابلار قوشۇدۇ (GPT-4o تەكشۈرگۈچى بىلەن!)
-// @description:uk      Додає відповіді штучного інтелекту в Brave Search (на базі GPT-4o!)
-// @description:ur      Brave Search میں AI جوابات شامل کرتا ہے (GPT-4o کے ذریعے تقویت یافتہ!)
-// @description:uz      Brave Search-ga AI javoblarini qo'shadi (GPT-4o tomonidan quvvatlanadi!)
-// @description:vi      Thêm câu trả lời AI vào Brave Search (được cung cấp bởi GPT-4o!)
-// @description:xh      Yongeza iimpendulo ze-AI kwi-Brave Search (ixhaswe yi-GPT-4o!)
-// @description:yi      לייגט אַי ענטפֿערס צו Brave Search (Powered דורך GPT-4o!)
-// @description:yo      Ṣe afikun awọn idahun AI si Brave Search (agbara nipasẹ GPT-4o!)
-// @description:zh      为 Brave Search 添加 AI 答案（由 GPT-4o 提供支持！）
-// @description:zh-CN   为 Brave Search 添加 AI 答案（由 GPT-4o 提供支持！）
-// @description:zh-HK   為 Brave Search 添加 AI 答案（由 GPT-4o 提供支援！）
-// @description:zh-SG   为 Brave Search 添加 AI 答案（由 GPT-4o 提供支持！）
-// @description:zh-TW   為 Brave Search 添加 AI 答案（由 GPT-4o 提供支援！）
-// @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
-// @author              KudoAI
-// @namespace           https://kudoai.com
-// @version             2024.7.2.8
-// @license             MIT
-// @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
-// @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
-// @compatible          chrome except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
-// @compatible          firefox
-// @compatible          edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
-// @compatible          opera after allowing userscript manager access to search page results in opera://extensions
-// @compatible          brave except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
-// @compatible          vivaldi
-// @compatible          waterfox
-// @compatible          librewolf
-// @compatible          ghost
-// @compatible          qq
-// @compatible          whale
-// @compatible          kiwi
-// @compatible          mask
-// @compatible          orion
-// @match               *://search.brave.com/search*
-// @include             https://auth0.openai.com
-// @connect             binjie.fun
-// @connect             chatgpt.com
-// @connect             gptforlove.com
-// @connect             greasyfork.org
-// @connect             jsdelivr.net
-// @connect             mixerbox.com
-// @connect             openai.com
-// @connect             sogou.com
-// @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.3/dist/chatgpt.min.js#sha256-EDN+mCc+0Y4YVzJEoNikd4/rAIaJDLAdb+erWvupXTM=
-// @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha256-dppVXeVTurw1ozOPNE3XqhYmDJPOosfbKQcHyQSE58w=
-// @require             https://cdn.jsdelivr.net/npm/generate-ip@2.4.2/dist/generate-ip.min.js#sha256-PRvQIDVWK/a+aAqEFVQv7RePbRe/tX6tWQVM80rAe2M=
-// @require             https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js#sha256-g3pvpbDHNrUrveKythkPMF2j/J7UFoHbUyFQcFe1yEY=
-// @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
-// @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js#sha256-e1fUJ6xicGd9r42DgN7SzHMzb5FJoWe44f4NbvZmBK4=
-// @require             https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js#sha256-Ffq85bZYmLMrA/XtJen4kacprUwNbYdxEKd0SqhHqJQ=
-// @resource hljsCSS    https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css#sha256-v0N76BFFkH0dCB8bUr4cHSVN8A/zCaOopMuSmJWV/5w=
-// @resource bsbgCSS    https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@d7fd458/styles/css/black-rising-stars.min.css#sha256-bXbVZUD7ciKqK0wU/BLQzh08JwkoNExHHqXITugd/3o=
-// @resource wsbgCSS    https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@d7fd458/styles/css/white-rising-stars.min.css#sha256-ya9newifevSPO1Q4AzMf42yAF6TE+iZHrDbVj0HyuEM=
-// @grant               GM_getValue
-// @grant               GM_setValue
-// @grant               GM_deleteValue
-// @grant               GM_cookie
-// @grant               GM_registerMenuCommand
-// @grant               GM_unregisterMenuCommand
-// @grant               GM_getResourceText
-// @grant               GM_xmlhttpRequest
-// @grant               GM.xmlHttpRequest
+// @name                  BraveGPT 🤖
+// @description           Adds AI answers to Brave Search (powered by GPT-4o!)
+// @description:af        Voeg AI-antwoorde by Brave Search (aangedryf deur GPT-4o!)
+// @description:am        የ Brave Search ውስጥ AI መልቀቅን አድርግ፣ (GPT-4o በመሣሪያዎቹ ውስጥ!)
+// @description:ar        يضيف إجابات AI إلى Brave Search (مدعوم بواسطة GPT-4o!)
+// @description:as        Brave Search-লৈ AI উত্তৰ যোগ দিয়ে (GPT-4o দ্বাৰা পাওৱা হৈছে!)
+// @description:az        Brave Search-ya AI cavablarını əlavə edir (GPT-4o tərəfindən dəstəklənir!)
+// @description:be        Дадае ІА адказы на Brave Search (падтрымліваецца GPT-4o!)
+// @description:bg        Добавя ИИ отговори в Brave Search (поддържан от GPT-4o!)
+// @description:bn        Brave Search-ত AI উত্তর যোগ করে (GPT-4o দ্বারা প্রচালিত!)
+// @description:bs        Dodaje AI odgovore na Brave Search (pokreće GPT-4o!)
+// @description:ca        Afegeix respostes d'IA a Brave Search (impulsat per GPT-4o!)
+// @description:ceb       Nagdugang ug mga tubag AI ngadto sa Brave Search (gipadagan sa GPT-4o!)
+// @description:co        Aggiunge risposte AI a Brave Search (supportate da GPT-4o!)
+// @description:cs        Přidává AI odpovědi do Brave Search (poháněno GPT-4o!)
+// @description:cy        Ychwanegu atebion AI i Brave Search (a yrrir gan GPT-4o!)
+// @description:da        Tilføjer AI-svar til Brave Search (drevet af GPT-4o!)
+// @description:de        Fügt AI-Antworten zu Brave Search hinzu (betrieben von GPT-4o!)
+// @description:el        Προσθέτει απαντήσεις AI στο Brave Search (τροφοδοτούμενο από GPT-4o!)
+// @description:en        Adds AI answers to Brave Search (powered by GPT-4o!)
+// @description:eo        Aldonas AI-respondojn al Brave Search (ebligita de GPT-4o!)
+// @description:es        Añade respuestas de IA a Brave Search (impulsado por GPT-4o!)
+// @description:et        Lisab AI-vastused Brave Search'le (juhitud GPT-4o-ga!)
+// @description:eu        Gehitu IA erantzunak Brave Search-n (GPT-4o-k bultzatuta!)
+// @description:fa        پاسخهای هوشمصنوعی به Brave Search اضافه میشود (توسط GPT-4o پشتیبانی میشود!)
+// @description:fi        Lisää tekoälyvastauksia Brave Search:hun (ohjattu GPT-4o:lla!)
+// @description:fil       Nagdaragdag ng mga sagot ng AI sa Brave Search (pinapagana ng GPT-4o!)
+// @description:fo        Bætir AI svar við Brave Search (drifin af GPT-4o!)
+// @description:fr        Ajoute des réponses IA à Brave Search (propulsé par GPT-4o!)
+// @description:fr-CA     Ajoute des réponses IA à Brave Search (propulsé par GPT-4o!)
+// @description:fy        Foeget AI-antwurden ta oan Brave Search (dreaun troch GPT-4o!)
+// @description:ga        Cuirtear freagraí AI le Brave Search (dírítear ag GPT-4o!)
+// @description:gd        Cur freagairtichean AI ris an Brave Search (air a thug seachad le GPT-4o!)
+// @description:gl        Engade respostas de IA a Brave Search (impulsado por GPT-4o!)
+// @description:gu        Brave Search માટે AI જવાબો ઉમેરે છે (GPT-4o દ્વારા પોવરેડ!)
+// @description:ha        Ƙaddara takardun AI zu Brave Search (da aka fi GPT-4o!)
+// @description:haw       Hoʻohui aku i nā hoʻopiʻi AI iā Brave Search (hoʻohui ʻia e GPT-4o!)
+// @description:he        מוסיף תשובות AI ל-Brave Search (מופעל על ידי GPT-4o!)
+// @description:hi        Brave Search में AI उत्तर जोड़ता है (GPT-4o द्वारा संचालित!)
+// @description:hmn       Ntxig AI nruab nruab rau Brave Search (pab cuam GPT-4o!)
+// @description:hr        Dodaje AI odgovore na Brave Search (pokreće GPT-4o!)
+// @description:ht        Ajoute repons AI nan Brave Search (pòte pa GPT-4o!)
+// @description:hu        AI válaszokat ad hozzá a Brave Search-hoz (GPT-4o által hajtva!)
+// @description:hy        Ավելացնում է AI պատասխաններ Brave Search-ում (աջակցված է GPT-4o-ով!)
+// @description:ia        Adde responas AI a Brave Search (propulsate per GPT-4o!)
+// @description:id        Menambahkan jawaban AI ke Brave Search (didukung oleh GPT-4o!)
+// @description:ig        Tinye ihe ndekọ AI n'ụzọ ọgụgụ Brave Search (n'efu na GPT-4o!)
+// @description:ii        Brave Search ᐸᔦᒪᔪᐃᓃᑦ AI ᓇᑕᐅᒪᐃᑦᓯ (GPT-4o ᓂᑕᔪᑦᓯᐏᑦᑕᒥᔭ!)
+// @description:is        Bætir AI svar við Brave Search (keyrir á GPT-4o!)
+// @description:it        Aggiunge risposte AI a Brave Search (alimentato da GPT-4o!)
+// @description:iu        Brave Search ᑲᑎᒪᔪᖅᑐᖅᑐᐃᓐᓇᓂᒃ AI ᑎᑎᕋᖃᕐᓯᒪᓂᖏᓐ (GPT-4o ᑐᑭᒧᑦᑖᑦ!)
+// @description:ja        Brave Search に AI 回答を追加します (GPT-4o で動作！)
+// @description:jv        Nambéhi pirangga AI nganti Brave Search (diduweni déning GPT-4o!)
+// @description:ka        ამატებს AI პასუხებს Brave Search-ს (იმართება GPT-4o!)
+// @description:kk        Brave Search-ға AI жауаптарын қосады (GPT-4o арқылы жұмыс істейді!)
+// @description:kl        Brave Search-mi AI-t Kalaallit Nunaanni iluani (GPT-4o! -nip ilaanni!)
+// @description:km        បន្ថែមចម្លើយ AI ទៅ Brave Search (ដំណើរការដោយ GPT-4o!)
+// @description:kn        Brave Search ಗೆ AI ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ (GPT-4o ನಿಂದ ನಡೆಸಲ್ಪಡುತ್ತಿದೆ!)
+// @description:ko        Brave Search에 AI 답변을 추가합니다(GPT-4o 제공!)
+// @description:ku        Bersivên AI-ê li Brave Search zêde dike (ji hêla GPT-4o ve hatî hêzdar kirin!)
+// @description:ky        Brave Search'го AI жоопторун кошот (GPT-4o тарабынан иштейт!)
+// @description:la        Addit AI responsa Brave Search (powered per GPT-4o!)
+// @description:lb        Füügt AI Äntwerten op Brave Search (ugedriwwen duerch GPT-4o!)
+// @description:lg        Yambula emisomo ey'ensobi ku Brave Search (enkuuma GPT-4o!)
+// @description:ln        Ebakisi biyano ya AI na Brave Search (ezali na nguya ya GPT-4o!)
+// @description:lo        ເພີ່ມຄໍາຕອບ AI ໃຫ້ກັບ Brave Search (ຂັບເຄື່ອນໂດຍ GPT-4o!)
+// @description:lt        Prideda AI atsakymus į „Brave Search“ (maitina GPT-4o!)
+// @description:lv        Pievieno AI atbildes Brave Search (darbina GPT-4o!)
+// @description:mg        Manampy valiny AI amin'ny Brave Search (nampiasain'ny GPT-4o!)
+// @description:mi        Ka taapirihia nga whakautu AI ki a Brave Search (whakamahia e GPT-4o!)
+// @description:mk        Додава одговори со вештачка интелигенција на Brave Search (напојувано од GPT-4o!)
+// @description:ml        Brave Search-യിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു (GPT-4o നൽകുന്നതാണ്!)
+// @description:mn        Brave Search-д AI хариултуудыг нэмдэг (GPT-4o-оор ажилладаг!)
+// @description:mr        Brave Search ला AI उत्तरे जोडते (GPT-4o द्वारे समर्थित!)
+// @description:ms        Menambahkan jawapan AI pada Brave Search (dikuasakan oleh GPT-4o!)
+// @description:mt        Iżżid it-tweġibiet AI għal Brave Search (mħaddma minn GPT-4o!)
+// @description:my        Brave Search (GPT-4o ဖြင့် စွမ်းဆောင်ထားသည့်) တွင် AI အဖြေများကို ပေါင်းထည့်သည်
+// @description:na        Aeta AI teroma i Brave Search (ira GPT-4o reke akea!)
+// @description:nb        Legger til AI-svar på Brave Search (drevet av GPT-4o!)
+// @description:nd        Iyatholakala amaswelelo e-AI kuBrave Search (kuyatholakala ngokulawula uGPT-4o!)
+// @description:ne        Brave Search मा AI जवाफहरू थप्छ (GPT-4o द्वारा संचालित!)
+// @description:ng        Ondjova mbelelo dha AI moBrave Search (uumbuli nguGPT-4o!)
+// @description:nl        Voegt AI-antwoorden toe aan Brave Search (mogelijk gemaakt door GPT-4o!)
+// @description:nn        Legg til AI-svar på Brave Search (drevet av GPT-4o!)
+// @description:no        Legger til AI-svar til Brave Search (drevet av GPT-4o!)
+// @description:nso       Ya go etela ditshenyegi tsa AI mo Brave Search (e dirwang ke GPT-4o!)
+// @description:ny        Imawonjezera mayankho a AI ku Brave Search (yoyendetsedwa ndi GPT-4o!)
+// @description:oc        Ajusta de respòstas d'IA a Brave Search (amb GPT-4o!)
+// @description:om        Deebii AI Brave Search (GPT-4o'n kan hojjetu!) irratti dabalata.
+// @description:or        Brave Search କୁ AI ଉତ୍ତର ଯୋଗ କରେ (GPT-4o ଦ୍ୱାରା ଚାଳିତ!)
+// @description:pa        Brave Search (GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ!) ਵਿੱਚ AI ਜਵਾਬ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ
+// @description:pl        Dodaje odpowiedzi AI do Brave Search (obsługiwane przez GPT-4o!)
+// @description:ps        Brave Search ته د AI ځوابونه اضافه کوي (د GPT-4o لخوا پرمخ وړل کیږي!)
+// @description:pt        Adiciona respostas de IA ao Brave Search (desenvolvido por GPT-4o!)
+// @description:pt-BR     Adiciona respostas de IA ao Brave Search (desenvolvido por GPT-4o!)
+// @description:qu        Brave Search (GPT-4o nisqawan kallpachasqa!) nisqaman AI kutichiykunata yapan.
+// @description:rm        Agiuntescha respostas d'IA a Brave Search (propulsà da GPT-4o!)
+// @description:rn        Abafasha inyandiko z'IA ku Brave Search (yashyizweho na GPT-4o!)
+// @description:ro        Adaugă răspunsuri AI la Brave Search (alimentat de GPT-4o!)
+// @description:ru        Добавляет ответы ИИ в Brave Search (на базе GPT-4o!)
+// @description:rw        Ongeraho ibisubizo bya AI kuri Brave Search (ikoreshwa na GPT-4o!)
+// @description:sa        Brave Search (GPT-4o द्वारा संचालितम्!) इत्यत्र AI उत्तराणि योजयति ।
+// @description:sat       Brave Search ar AI jawab khon ojantok (GPT-4o! sebadha manju)
+// @description:sc        Agiungit rispostas de IA a Brave Search (motorizadu da GPT-4o!)
+// @description:sd        شامل ڪري ٿو AI جوابن کي Brave Search (GPT-4o پاران طاقتور!)
+// @description:se        Lávdegáhtii AI vástid Brave Search (GPT-4o! vuosttas!)
+// @description:sg        Nâ tî-kûzâ mái vêdáara AI mbi Brave Search (ngâ GPT-4o!)
+// @description:si        Brave Search වෙත AI පිළිතුරු එක් කරයි (GPT-4o මගින් බලගන්වයි!)
+// @description:sk        Pridáva odpovede AI do Brave Search (poháňané GPT-4o!)
+// @description:sl        Dodaja odgovore AI v Brave Search (poganja GPT-4o!)
+// @description:sm        Faʻaopoopo tali AI ile Brave Search (faʻamalosia e GPT-4o!)
+// @description:sn        Inowedzera mhinduro dzeAI kuBrave Search (inofambiswa neGPT-4o!)
+// @description:so        Waxay ku dartay jawaabaha AI Brave Search (waxaa ku shaqeeya GPT-4o!)
+// @description:sq        Shton përgjigjet e AI në Brave Search (mundësuar nga GPT-4o!)
+// @description:sr        Додаје АИ одговоре у Brave Search (покреће ГПТ-4о!)
+// @description:ss        Iphendvulela izindlela zezilungiselelo ku-Brave Search (izenzakalo nge-GPT-4o!)
+// @description:st        E kopanetse diqoqo tsa AI ka Brave Search (ka sebelisoa ke GPT-4o!)
+// @description:su        Nambahkeun jawaban AI kana Brave Search (dikuatkeun ku GPT-4o!)
+// @description:sv        Lägger till AI-svar till Brave Search (driven av GPT-4o!)
+// @description:sw        Inaongeza majibu ya AI kwa Brave Search (inaendeshwa na GPT-4o!)
+// @description:ta        Brave Search க்கு AI பதில்களைச் சேர்க்கிறது (GPT-4o மூலம் இயக்கப்படுகிறது!)
+// @description:te        Brave Searchకి AI సమాధానాలను జోడిస్తుంది (GPT-4o ద్వారా ఆధారితం!)
+// @description:tg        Ба Brave Search ҷавобҳои AI илова мекунад (аз ҷониби GPT-4o!)
+// @description:th        เพิ่มคำตอบ AI ให้กับ Brave Search (ขับเคลื่อนโดย GPT-4o!)
+// @description:ti        ናብ Brave Search (ብGPT-4o ዝሰርሕ!) ናይ AI መልስታት ይውስኸሉ።
+// @description:tk        Brave Search-a AI jogaplaryny goşýar (GPT-4o bilen işleýär!)
+// @description:tl        Nagdadagdag ng mga sagot ng AI sa Brave Search (pinapatakbo ng GPT-4o!)
+// @description:tn        O amogela dipotso tsa AI mo Brave Search (e a nang le GPT-4o!)
+// @description:to        Tambisa mabizo a AI ku Brave Search (mukutenga na GPT-4o!)
+// @description:tr        Brave Search'ya yapay zeka yanıtları ekler (GPT-4o tarafından desteklenmektedir!)
+// @description:ts        Ku engetela tinhlamulo ta AI eka Brave Search (leyi fambiwaka hi GPT-4o!)
+// @description:tt        Brave Search'ка AI җаваплары өсти (GPT-4o белән эшләнгән!)
+// @description:tw        Ɔde AI mmuae ka Brave Search (a GPT-4o na ɛma ahoɔden!) ho.
+// @description:ug        Brave Search ۋەبسېتكە AI جاۋابلار قوشۇدۇ (GPT-4o تەكشۈرگۈچى بىلەن!)
+// @description:uk        Додає відповіді штучного інтелекту в Brave Search (на базі GPT-4o!)
+// @description:ur        Brave Search میں AI جوابات شامل کرتا ہے (GPT-4o کے ذریعے تقویت یافتہ!)
+// @description:uz        Brave Search-ga AI javoblarini qo'shadi (GPT-4o tomonidan quvvatlanadi!)
+// @description:vi        Thêm câu trả lời AI vào Brave Search (được cung cấp bởi GPT-4o!)
+// @description:xh        Yongeza iimpendulo ze-AI kwi-Brave Search (ixhaswe yi-GPT-4o!)
+// @description:yi        לייגט אַי ענטפֿערס צו Brave Search (Powered דורך GPT-4o!)
+// @description:yo        Ṣe afikun awọn idahun AI si Brave Search (agbara nipasẹ GPT-4o!)
+// @description:zh        为 Brave Search 添加 AI 答案（由 GPT-4o 提供支持！）
+// @description:zh-CN     为 Brave Search 添加 AI 答案（由 GPT-4o 提供支持！）
+// @description:zh-HK     為 Brave Search 添加 AI 答案（由 GPT-4o 提供支援！）
+// @description:zh-SG     为 Brave Search 添加 AI 答案（由 GPT-4o 提供支持！）
+// @description:zh-TW     為 Brave Search 添加 AI 答案（由 GPT-4o 提供支援！）
+// @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
+// @author                KudoAI
+// @namespace             https://kudoai.com
+// @version               2024.7.3
+// @license               MIT
+// @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
+// @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
+// @compatible            chrome except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
+// @compatible            firefox
+// @compatible            edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
+// @compatible            opera after allowing userscript manager access to search page results in opera://extensions
+// @compatible            brave except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
+// @compatible            vivaldi
+// @compatible            waterfox
+// @compatible            librewolf
+// @compatible            ghost
+// @compatible            qq
+// @compatible            whale
+// @compatible            kiwi
+// @compatible            mask
+// @compatible            orion
+// @match                 *://search.brave.com/search*
+// @include               https://auth0.openai.com
+// @connect               binjie.fun
+// @connect               chatgpt.com
+// @connect               gptforlove.com
+// @connect               greasyfork.org
+// @connect               jsdelivr.net
+// @connect               mixerbox.com
+// @connect               openai.com
+// @connect               sogou.com
+// @require               https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.3/dist/chatgpt.min.js#sha256-EDN+mCc+0Y4YVzJEoNikd4/rAIaJDLAdb+erWvupXTM=
+// @require               https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha256-dppVXeVTurw1ozOPNE3XqhYmDJPOosfbKQcHyQSE58w=
+// @require               https://cdn.jsdelivr.net/npm/generate-ip@2.4.2/dist/generate-ip.min.js#sha256-PRvQIDVWK/a+aAqEFVQv7RePbRe/tX6tWQVM80rAe2M=
+// @require               https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js#sha256-g3pvpbDHNrUrveKythkPMF2j/J7UFoHbUyFQcFe1yEY=
+// @require               https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
+// @require               https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js#sha256-e1fUJ6xicGd9r42DgN7SzHMzb5FJoWe44f4NbvZmBK4=
+// @require               https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js#sha256-Ffq85bZYmLMrA/XtJen4kacprUwNbYdxEKd0SqhHqJQ=
+// @resource bgptLSlogo   https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@4fc4bac/media/images/logos/bravegpt/lightmode/logo250x53.png.b64#sha256-NuZgTy/KhSAZdAbD7OOmlDzFdyIEZd62uw5V9QJRPm4=
+// @resource bgptDSlogo   https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@4fc4bac/media/images/logos/bravegpt/darkmode/logo250x53.png.b64#sha256-Gw06BYSU4BjQ4APJ8eIbJvowmdjL8rWC50d25LWzNRY=
+// @resource hljsCSS      https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css#sha256-v0N76BFFkH0dCB8bUr4cHSVN8A/zCaOopMuSmJWV/5w=
+// @resource bsbgCSS      https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@d7fd458/styles/css/black-rising-stars.min.css#sha256-bXbVZUD7ciKqK0wU/BLQzh08JwkoNExHHqXITugd/3o=
+// @resource wsbgCSS      https://cdn.jsdelivr.net/gh/KudoAI/bravegpt@d7fd458/styles/css/white-rising-stars.min.css#sha256-ya9newifevSPO1Q4AzMf42yAF6TE+iZHrDbVj0HyuEM=
+// @grant                 GM_getValue
+// @grant                 GM_setValue
+// @grant                 GM_deleteValue
+// @grant                 GM_cookie
+// @grant                 GM_registerMenuCommand
+// @grant                 GM_unregisterMenuCommand
+// @grant                 GM_getResourceText
+// @grant                 GM_xmlhttpRequest
+// @grant                 GM.xmlHttpRequest
 // @noframes
-// @downloadURL         https://update.greasyfork.org/scripts/462440/bravegpt.user.js
-// @updateURL           https://update.greasyfork.org/scripts/462440/bravegpt.meta.js
-// @homepageURL         https://www.bravegpt.com
-// @supportURL          https://support.bravegpt.com
-// @contributionURL     https://github.com/sponsors/KudoAI
+// @downloadURL           https://update.greasyfork.org/scripts/462440/bravegpt.user.js
+// @updateURL             https://update.greasyfork.org/scripts/462440/bravegpt.meta.js
+// @homepageURL           https://www.bravegpt.com
+// @supportURL            https://support.bravegpt.com
+// @contributionURL       https://github.com/sponsors/KudoAI
 // ==/UserScript==
 
 // Dependencies:
@@ -1137,12 +1139,7 @@ setTimeout(async () => {
 
     const update = {
 
-        appLogoSrc() {
-            appLogoImg.onerror = () => appLogoImg.style.display = 'none'
-            appLogoImg.src = 'data:image/png;base64,'
-                + ( scheme == 'light' ? 'iVBORw0KGgoAAAANSUhEUgAAAPoAAAA1CAYAAABoUvZcAAAACXBIWXMAAAsTAAALEwEAmpwYAAAMGGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIiB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMy0wMy0yMFQyMzowNzowOC0wNzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjQtMDQtMTJUMDQ6MDE6MTctMDc6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMDQtMTJUMDQ6MDE6MTctMDc6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBwaG90b3Nob3A6SUNDUHJvZmlsZT0ic1JHQiBJRUM2MTk2Ni0yLjEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ZTgxNTM4MTQtOWQ0NC1hZDQ1LWEyYzYtMDY3YjIxMjlkMDc1IiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ZDUwZDFiZTItMzY3NC1kNTRiLWJkNDQtZGE2ZGE0MjE2ZjFkIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MjdiY2U5OTUtOTdmYS0wODQ4LTg4MjktNmRmMWEwY2MwMDg1IiB0aWZmOk9yaWVudGF0aW9uPSIxIiB0aWZmOlhSZXNvbHV0aW9uPSI3MjAwMDAvMTAwMDAiIHRpZmY6WVJlc29sdXRpb249IjcyMDAwMC8xMDAwMCIgdGlmZjpSZXNvbHV0aW9uVW5pdD0iMiIgZXhpZjpDb2xvclNwYWNlPSIxIiBleGlmOlBpeGVsWERpbWVuc2lvbj0iNzMwIiBleGlmOlBpeGVsWURpbWVuc2lvbj0iMTU1Ij4gPHBob3Rvc2hvcDpUZXh0TGF5ZXJzPiA8cmRmOkJhZz4gPHJkZjpsaSBwaG90b3Nob3A6TGF5ZXJOYW1lPSInZ3B0JyIgcGhvdG9zaG9wOkxheWVyVGV4dD0iZ3B0Ii8+IDwvcmRmOkJhZz4gPC9waG90b3Nob3A6VGV4dExheWVycz4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+YWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjgyNTg1NWVhLThmZjYtNjk0OC04ODZmLWIxMmZmZDBjMGJlMTwvcmRmOmxpPiA8L3JkZjpCYWc+IDwvcGhvdG9zaG9wOkRvY3VtZW50QW5jZXN0b3JzPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjI3YmNlOTk1LTk3ZmEtMDg0OC04ODI5LTZkZjFhMGNjMDA4NSIgc3RFdnQ6d2hlbj0iMjAyMy0wMy0yMFQyMzowNzowOC0wNzowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY29udmVydGVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJmcm9tIGltYWdlL3BuZyB0byBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo5YzQwMzgzYy03Mzg4LWNlNDgtYTE4MC1kZTVjNGU0YTA0ZmEiIHN0RXZ0OndoZW49IjIwMjMtMDMtMjFUMTk6NDI6MjEtMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmNlOTczNzJkLTdlZTgtZTg0NC1iODdjLTc1ODc3MzcxMzdkZCIgc3RFdnQ6d2hlbj0iMjAyNC0wNC0xMlQwNDowMToxNy0wNzowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY29udmVydGVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJmcm9tIGFwcGxpY2F0aW9uL3ZuZC5hZG9iZS5waG90b3Nob3AgdG8gaW1hZ2UvcG5nIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJkZXJpdmVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJjb252ZXJ0ZWQgZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZTgxNTM4MTQtOWQ0NC1h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'
-                                      : 'iVBORw0KGgoAAAANSUhEUgAAAPoAAAA1CAYAAABoUvZcAAAACXBIWXMAAAsTAAALEwEAmpwYAAAMDGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIiB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMy0wMy0yMFQyMzowNzowOC0wNzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjQtMDQtMTJUMDQ6MDItMDc6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMDQtMTJUMDQ6MDItMDc6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBwaG90b3Nob3A6SUNDUHJvZmlsZT0ic1JHQiBJRUM2MTk2Ni0yLjEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjdmZjk2MmQtZTkyMi00YTQzLTgyMzYtMDYyY2Q5YWQyYjhiIiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YmNjZTNmODEtMjI4Yy0xNjRmLWExMjAtMjRlMjg1ODk2ZGUxIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MjdiY2U5OTUtOTdmYS0wODQ4LTg4MjktNmRmMWEwY2MwMDg1IiB0aWZmOk9yaWVudGF0aW9uPSIxIiB0aWZmOlhSZXNvbHV0aW9uPSI3MjAwMDAvMTAwMDAiIHRpZmY6WVJlc29sdXRpb249IjcyMDAwMC8xMDAwMCIgdGlmZjpSZXNvbHV0aW9uVW5pdD0iMiIgZXhpZjpDb2xvclNwYWNlPSIxIiBleGlmOlBpeGVsWERpbWVuc2lvbj0iNzMwIiBleGlmOlBpeGVsWURpbWVuc2lvbj0iMTU1Ij4gPHBob3Rvc2hvcDpUZXh0TGF5ZXJzPiA8cmRmOkJhZz4gPHJkZjpsaSBwaG90b3Nob3A6TGF5ZXJOYW1lPSInZ3B0JyIgcGhvdG9zaG9wOkxheWVyVGV4dD0iZ3B0Ii8+IDwvcmRmOkJhZz4gPC9waG90b3Nob3A6VGV4dExheWVycz4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+YWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjgyNTg1NWVhLThmZjYtNjk0OC04ODZmLWIxMmZmZDBjMGJlMTwvcmRmOmxpPiA8L3JkZjpCYWc+IDwvcGhvdG9zaG9wOkRvY3VtZW50QW5jZXN0b3JzPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjI3YmNlOTk1LTk3ZmEtMDg0OC04ODI5LTZkZjFhMGNjMDA4NSIgc3RFdnQ6d2hlbj0iMjAyMy0wMy0yMFQyMzowNzowOC0wNzowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY29udmVydGVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJmcm9tIGltYWdlL3BuZyB0byBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo5YzQwMzgzYy03Mzg4LWNlNDgtYTE4MC1kZTVjNGU0YTA0ZmEiIHN0RXZ0OndoZW49IjIwMjMtMDMtMjFUMTk6NDI6MjEtMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmU1OWQ5NzU4LTk1ZjEtZGE0Ni05YmFiLTM2YjM1YWE0YzhiNiIgc3RFdnQ6d2hlbj0iMjAyNC0wNC0xMlQwNDowMi0wNzowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY29udmVydGVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJmcm9tIGFwcGxpY2F0aW9uL3ZuZC5hZG9iZS5waG90b3Nob3AgdG8gaW1hZ2UvcG5nIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJkZXJpdmVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJjb252ZXJ0ZWQgZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MjdmZjk2MmQtZTkyMi00YTQzLTgyMzYt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' )
-        },
+        appLogoSrc() { appLogoImg.src = GM_getResourceText(`bgpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`) },
 
         appStyle() {
             appStyle.innerText = (
