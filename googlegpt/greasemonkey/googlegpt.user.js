@@ -149,7 +149,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.3
+// @version               2024.7.3.1
 // @license               MIT
 // @icon                  https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -766,14 +766,13 @@
 
                 // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
-                const aboutModalID = siteAlert(
-                    config.appName, // title
+                const aboutModalID = chatgpt.alert('',
                     '🏷️ ' + ( msgs.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
                         + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
                             + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
-                        + '📜 ' + ( msgs.about_sourceCode || 'Source code' ) + ':\n   '
-                            + `<a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                        + '📜 ' + ( msgs.about_sourceCode || 'Source code' )
+                            + `: <a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                                 + config.gitHubURL + '</a>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
@@ -783,6 +782,11 @@
                     ], '', 515) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
                 modals.init(aboutModal) // add classes/stars, disable wheel-scrolling, dim bg
+
+                // Add logo
+                const aboutHeaderLogo = logos.googleGPT.create()
+                aboutHeaderLogo.width = 405 ; aboutHeaderLogo.style.margin = '-13px 10.5% -1px'
+                aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Resize + format buttons to include emoji + localized label + hide Dismiss button
                 for (const btn of aboutModal.querySelectorAll('button')) {
@@ -891,7 +895,8 @@
                 const settingsModal = document.createElement('div') ; settingsModal.id = 'googlegpt-settings'
                 settingsContainer.append(settingsModal)
                 modals.init(settingsModal) // add classes/stars, disable wheel-scrolling, dim bg
-                appIcon.style.cssText += 'width: 52px ; position: relative ; top: -45px ; margin: 9px 41.13% -43px' // size/pos icon
+                const settingsIcon = icons.googleGPT.create()
+                settingsIcon.style.cssText += 'width: 52px ; position: relative ; top: -45px ; margin: 9px 41.13% -43px' // size/pos icon
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
                 const settingsTitleIcon = icons.sliders.create()
@@ -1053,7 +1058,7 @@
                 closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
 
                 // Assemble/append elems
-                settingsModal.append(appIcon, settingsTitleDiv, closeBtn, settingsList)
+                settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsList)
                 document.body.append(settingsContainer)
 
                 // Add listeners to dismiss modal
@@ -1359,11 +1364,27 @@
         }
     }
 
+    // Define LOGO functions
+
+    const logos = {
+        googleGPT: {
+
+            create() {
+                const googleGPTlogo = document.createElement('img') ; googleGPTlogo.id = 'app-logo'
+                googleGPTlogo.src = GM_getResourceText(`ggpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`)
+                return googleGPTlogo
+            },
+
+            update() {
+                document.querySelectorAll('#app-logo').forEach(logo =>
+                    logo.src = GM_getResourceText(`ggpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`))                
+            }
+        }
+    }
+
     // Define UPDATE functions
 
     const update = {
-
-        appLogoSrc() { appLogoImg.src = GM_getResourceText(`ggpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`) },
 
         appStyle() {
             appStyle.innerText = (
@@ -1637,7 +1658,7 @@
             }
         },
 
-        scheme(newScheme) { scheme = newScheme ; update.appLogoSrc() ; update.appStyle() ; update.stars() },
+        scheme(newScheme) { scheme = newScheme ; logos.googleGPT.update() ; update.appStyle() ; update.stars() },
 
         stars() {
             ['sm', 'med', 'lg'].forEach(size =>
@@ -1645,44 +1666,6 @@
                     starsDiv.id = config.bgAnimationsDisabled ? `stars-${size}-off`
                     : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
             ))
-        },
-
-        titleElems() {
-            if (appDiv.querySelector('.loading, #googlegpt-alert')) return // only update reply UI
-
-            const appPrefixVisible = !!appDiv.querySelector('#app-prefix'),
-                  appTitleVisible = !!appDiv.querySelector('.app-name'),
-                  logoVisible = !!appDiv.querySelector('img')
-
-            // Create/id/fill/classify/style/append app prefix
-            if (!appPrefixVisible) {
-                const appPrefixSpan = document.createElement('span') ; appPrefixSpan.id = 'app-prefix'
-                appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.className = 'no-user-select'
-                appPrefixSpan.style.marginRight = '-2px'
-                appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
-                appDiv.append(appPrefixSpan)
-            }
-
-            // Create/fill/classify/style/append/update title anchor
-            if (!appTitleVisible || !logoVisible) {
-                const appTitleAnchor = createAnchor(config.appURL, (() => {
-                    if (appLogoImg.loaded) { // size/pos/return app logo img
-                        appLogoImg.width = isMobile ? 177 : isFirefox ? 124 : 122
-                        appLogoImg.style.cssText = (
-                            appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
-                                              + ( isMobile ? '; margin-left: 1px' : '' ) : '' )
-                        return appLogoImg
-                    } else { // create/fill/size/return app name span
-                        const appNameSpan = document.createElement('span')
-                        appNameSpan.innerText = config.appName
-                        appNameSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
-                        return appNameSpan
-                    }
-                })())
-                appTitleAnchor.classList.add('app-name', 'no-user-select')
-                if (!appTitleVisible) appDiv.append(appTitleAnchor)
-                else appDiv.querySelector('.app-name').replaceWith(appTitleAnchor) // for appLogoImg.onload() callback
-            }
         },
 
         tooltip(buttonType) { // text & position
@@ -2376,7 +2359,20 @@
             if (!appDiv.querySelector('pre')) {
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
                 fillStarryBG(appDiv) // add stars
-                update.titleElems() // create/append app title elems
+
+                // Create/append title
+                const appPrefixSpan = document.createElement('span') ; appPrefixSpan.id = 'app-prefix'
+                appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.className = 'no-user-select'
+                appPrefixSpan.style.marginRight = '-2px'
+                appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
+                appDiv.append(appPrefixSpan)
+                const appHeaderLogo = logos.googleGPT.create()
+                appHeaderLogo.width = isMobile ? 177 : isFirefox ? 124 : 122
+                appHeaderLogo.style.cssText = `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
+                                            + ( isMobile ? '; margin-left: 1px' : '' )
+                const appTitleAnchor = createAnchor(config.appURL, appHeaderLogo)
+                appTitleAnchor.classList.add('app-name', 'no-user-select')
+                appDiv.append(appTitleAnchor)
 
                 // Create/append corner buttons div
                 const cornerBtnsDiv = document.createElement('div') ; cornerBtnsDiv.id = 'corner-btns'
@@ -2785,11 +2781,6 @@
     ])
     let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
     const hasSidebar = !!document.querySelector('[class*="kp-"]')
-
-    // Pre-load LOGO/ICON
-    const appLogoImg = document.createElement('img') ; update.appLogoSrc()
-    appLogoImg.onload = () => { appLogoImg.loaded = true ; update.titleElems() }
-    const appIcon = icons.googleGPT.create()
 
     // Create/ID/classify/listenerize GOOGLEGPT container
     const appDiv = document.createElement('div') ; appDiv.id = 'googlegpt' ;  appDiv.classList.add('fade-in')
