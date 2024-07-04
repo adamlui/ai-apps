@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.3.15
+// @version               2024.7.3.16
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1598,7 +1598,7 @@ setTimeout(async () => {
             starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
             starsDivsContainer.append(starsDiv)
         })
-        targetNode.append(starsDivsContainer)
+        targetNode.prepend(starsDivsContainer)
     }
 
     const fontSizeSlider = {

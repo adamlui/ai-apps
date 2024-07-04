@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.3.14
+// @version                2024.7.3.15
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1538,7 +1538,7 @@
             starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
             starsDivsContainer.append(starsDiv)
         })
-        targetNode.append(starsDivsContainer)
+        targetNode.prepend(starsDivsContainer)
     }
 
     const fontSizeSlider = {
