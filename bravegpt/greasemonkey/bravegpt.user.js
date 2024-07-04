@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.4.3
+// @version               2024.7.4.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1247,10 +1247,10 @@ setTimeout(async () => {
               + '.kudoai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
               + '.kudoai a { color: #aaa ; text-decoration: none !important }'
               + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
-              + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
+              + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
                   + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
               + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
-                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.185) ; transition: transform 0.05s ease' }}`
+                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.285)' }}`
               + '#bravegpt .loading {'
                   + 'margin-bottom: -55px ;' // offset vs. #bravegpt bottom-padding footer accomodation
                   + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
