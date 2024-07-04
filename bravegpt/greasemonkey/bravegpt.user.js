@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.3.8
+// @version               2024.7.3.9
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -428,7 +428,6 @@ setTimeout(async () => {
                             }, '', updateAlertWidth
                         )
                         const updateModal = document.getElementById(updateModalID).firstChild
-                        modals.init(updateModal) // add classes/bg, disable wheel-scrolling, dim bg
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
@@ -438,6 +437,8 @@ setTimeout(async () => {
                             updateBtns[0].textContent = msgs.buttonLabel_dismiss || 'Dismiss'
                         }
 
+                        modals.init(updateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
+
                         return
                 }}
 
@@ -446,7 +447,7 @@ setTimeout(async () => {
                     `${ config.appName } (v${ currentVer }) ${ msgs.alert_isUpToDate || 'is up-to-date' }!`, // msg
                         '', '', updateAlertWidth)
                 const noUpdateModal = document.getElementById(noUpdateModalID).firstChild
-                modals.init(noUpdateModal) // add classes/bg, disable wheel-scrolling, dim bg
+                modals.init(noUpdateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 modals.about.show()
     }})}
 
@@ -544,8 +545,12 @@ setTimeout(async () => {
         },
 
         init(modal) {
+
+            // Add classes
             modal.classList.add('.bravegpt-modal')
             modal.parentNode.classList.add('bravegpt-modal-bg', 'no-user-select')
+
+            // Add listeners
             modal.onwheel = modal.ontouchmove = event => event.preventDefault() // disable wheel/swipe scrolling
             modal.onmousedown = modals.dragHandlers.mousedown
             fillStarryBG(modal) // add stars
@@ -553,6 +558,9 @@ setTimeout(async () => {
                 modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
                 modal.parentNode.classList.add('animated')
             }, 100) // delay for transition fx
+
+            // Glowup btns
+            if (scheme == 'dark' && !config.fgAnimationsDisabled) toggle.btnGlow()
         },
 
         keyHandler() { // to dismiss modals
@@ -582,18 +590,19 @@ setTimeout(async () => {
                         function getSupport() { safeWindowOpen(config.supportURL) },
                         function leaveAReview() { modals.feedback.show() },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                    ], '', 577) // modal width
+                    ], '', 585) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
-                modals.init(aboutModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Add logo
                 const aboutHeaderLogo = logos.braveGPT.create()
-                aboutHeaderLogo.width = 375 ; aboutHeaderLogo.style.margin = '-19px 14% 0'
+                aboutHeaderLogo.width = 375 ; aboutHeaderLogo.style.margin = '-19px 16% 0'
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
-                // Resize + format buttons to include emoji + localized label + hide Dismiss button
-                for (const btn of aboutModal.querySelectorAll('button')) {
-                    btn.style.height = '53px' // re-size to fit meaty text content
+                // Resize/format buttons to include emoji + localized label + hide Dismiss button
+                aboutModal.querySelectorAll('button').forEach(btn => {
+                    btn.style.cssText = 'height: 53px ; min-width: 136px'
+
+                    // Emojize/localize label
                     if (/updates/i.test(btn.textContent)) btn.textContent = (
                         '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
@@ -603,7 +612,9 @@ setTimeout(async () => {
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
                         '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
                     else btn.style.display = 'none' // hide Dismiss button
-                }
+                })
+
+                modals.init(aboutModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
             }
         },
 
@@ -626,7 +637,6 @@ setTimeout(async () => {
                             'https://alternativeto.net/software/bravegpt/about/') }
                     ], '', 456) // modal width
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
-                modals.init(feedbackModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Re-style button cluster
                 const buttons = feedbackModal.querySelector('.modal-buttons')
@@ -639,6 +649,8 @@ setTimeout(async () => {
                     else if (btn.textContent == 'Alternative To') btn.textContent = 'AlternativeTo'
                     btn.style.marginTop = btn.style.marginBottom = '5px' // v-pad btns
                 })
+
+                modals.init(feedbackModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btn
             }
         },
 
@@ -651,7 +663,6 @@ setTimeout(async () => {
                     [ function auto() {}, function light() {}, function dark() {} ], // buttons
                     '', 503) // px width
                 const schemeModal = document.getElementById(schemeModalID).firstChild
-                modals.init(schemeModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Center button cluster
                 schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
@@ -680,13 +691,15 @@ setTimeout(async () => {
                         const newScheme = btnScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : btnScheme
                         saveSetting('scheme', btnScheme == 'auto' ? false : newScheme)
                         document.querySelector('#scheme-menu-entry span').textContent = btnScheme // update Settings menu status label
-                        update.scheme(newScheme) ; schemeNotify(btnScheme)
                         schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
                         newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme
                         newBtn.style.cssText = 'pointer-events: none' // disable hover fx to show emphasis
                         setTimeout(() => { newBtn.style.pointerEvents = 'auto'; }, 100) // re-enable hover fx after 100ms to flicker emphasis
+                        update.scheme(newScheme) ; schemeNotify(btnScheme)
                     }
                 }
+
+                modals.init(schemeModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
 
                 function schemeNotify(scheme) {
                     notify(` ${ msgs.menuLabel_colorScheme || 'Color Scheme' }: `
@@ -1300,15 +1313,45 @@ setTimeout(async () => {
                     + `${ scheme == 'dark' ? '#99a8a6 -70%, black 57%' : '#b6ebff -64%, white 33%' }) ;`
                 + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
                 + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 140%, -28% 140%) ;' // bound starry bg
+                + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 150%, -28% 150%) ;' // bound starry bg
                 + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                 + 'transition: opacity 0.35s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                             + 'transform 0.35s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
               + ( scheme == 'dark' ? // additional darkmode modal styles
                   ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                       + 'background-color: black !important ; color: white }'
-                  + '.primary-modal-btn { background: white !important ; color: black !important }'
+                  + '.primary-modal-btn { background: hsl(186 100% 69%) !important ; color: black !important }'
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
+
+              // Glowing modal btns
+              + ':root { --glow-color: hsl(186 100% 69%); }'
+              + '.glowing-btn { perspective: 2em ; font-weight: 900 ; animation: border-flicker 2s linear infinite ;'
+                  + '-webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) ;' 
+                  + 'box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) ;' 
+                  + '-moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) }' 
+              + '.glowing-txt { animation: text-flicker 3s linear infinite ;'
+                  + '-webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
+                  + '-moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
+                  + 'text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) }'
+              + '.faulty-letter { opacity: 0.5 ; animation: faulty-flicker 2s linear infinite }'
+              + '.glowing-btn::before { content: "" ; position: absolute ; top: 0 ; bottom: 0 ; left: 0 ; right: 0 ;'
+                  + 'opacity: 0.7 ; filter: blur(1em) ; transform: translateY(120%) rotateX(95deg) scale(1, 0.35) ;'
+                  + 'background: var(--glow-color) ; pointer-events: none }'
+              + '.glowing-btn::after { content: "" ; position: absolute ; top: 0 ; bottom: 0 ; left: 0 ; right: 0 ;'
+                  + 'opacity: 0 ; z-index: -1 ; box-shadow: 0 0 2em 0.2em var(--glow-color) ;'
+                  + 'background-color: var(--glow-color) ; transition: opacity 100ms linear }'
+              + '.glowing-btn:hover { color: rgba(0, 0, 0, 0.8) ; text-shadow: none ; animation: none }'
+              + '.glowing-btn:hover .glowing-txt { animation: none }'
+              + '.glowing-btn:hover .faulty-letter { animation: none ; text-shadow: none ; opacity: 1 }'
+              + '.glowing-btn:hover:before { filter: blur(1.5em) ; opacity: 1 }'
+              + '.glowing-btn:hover:after { opacity: 1 }'
+              + '@keyframes faulty-flicker { 0% { opacity: 0.1 } 2% { opacity: 0.1 } 4% { opacity: 0.5 } 19% { opacity: 0.5 }'
+                  + '21% { opacity: 0.1 } 23% { opacity: 1 } 80% { opacity: 0.5 } 83% { opacity: 0.4 } 87% { opacity: 1 }}'
+              + '@keyframes text-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 8% { opacity: 0.1 } 9% { opacity: 1 }'
+                  + '12% { opacity: 0.1 } 20% { opacity: 1 } 25% { opacity: 0.3 } 30% { opacity: 1 } 70% { opacity: 0.7 }'
+                  + '72% { opacity: 0.2 } 77% { opacity: 0.9 } 100% { opacity: 0.9 }}'
+              + '@keyframes border-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
+                  + '70% { opacity: 0.7 } 100% { opacity: 1 }}'
 
               // Settings modal
               + '#bravegpt-settings { font-family: var(--brand-font) ;'
@@ -1445,7 +1488,7 @@ setTimeout(async () => {
             }
         },
 
-        scheme(newScheme) { scheme = newScheme ; logos.braveGPT.update() ; update.appStyle() ; update.stars() },
+        scheme(newScheme) { scheme = newScheme ; logos.braveGPT.update() ; update.appStyle() ; update.stars() ; toggle.btnGlow() },
 
         stars() {
             ['sm', 'med', 'lg'].forEach(size =>
@@ -1645,12 +1688,32 @@ setTimeout(async () => {
         animations(layer) {
             saveSetting(layer + 'AnimationsDisabled', !config[layer + 'AnimationsDisabled'])
             update[layer == 'bg' ? 'stars' : 'appStyle']()
-            if (layer == 'fg' && modals.settings.get()) { // toggle ticker-scroll of About status label
+            if (layer == 'fg' && modals.settings.get()) {
+
+                // Toggle ticker-scroll of About status label
                 const aboutStatusLabel = document.querySelector('#about-menu-entry > span > div')
                 aboutStatusLabel.innerHTML = modals.settings.aboutContent[config.fgAnimationsDisabled ? 'short' : 'long']
                 aboutStatusLabel.style.float = config.fgAnimationsDisabled ? 'right' : ''
+
+                // Toggle button glow
+                if (scheme == 'dark') toggle.btnGlow()
             }
             notify(`${settingsProps[layer + 'AnimationsDisabled'].label} ${menuState.word[+!config[layer + 'AnimationsDisabled']]}`)
+        },
+
+        btnGlow(state = '') {
+            const removeCondition = state == 'off' || scheme != 'dark' || config.fgAnimationsDisabled
+            document.querySelectorAll('[class*="-modal"] button').forEach((btn, idx) => {
+                setTimeout(() => btn.classList[removeCondition ? 'remove' : 'add']('glowing-btn'),
+                    (idx +1) *50 *chatgpt.randomFloat()) // to unsync flickers                
+                let btnTextSpan = btn.querySelector('span')
+                if (!btnTextSpan) { // wrap btn.textContent for .glowing-txt
+                    btnTextSpan = document.createElement('span')
+                    btnTextSpan.textContent = btn.textContent ; btn.textContent = ''
+                    btn.append(btnTextSpan)
+                }
+                btnTextSpan.classList[removeCondition ? 'remove' : 'add']('glowing-txt')
+            })
         },
 
         proxyMode() {
