@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.4.1
+// @version                2024.7.4.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1288,7 +1288,7 @@
                   + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.185) ; transition: transform 0.05s ease' }}`
               + '#ddgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
               + '#ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
-              + '#font-size-slider-track { width: 98% ; height: 10px ; margin: -6px auto -13px ; padding: 15px 0 ;'
+              + '#font-size-slider-track { width: 98% ; height: 7px ; margin: -6px auto -13px ; padding: 15px 0 ;'
                   + 'background-color: #ccc ; box-sizing: content-box; background-clip: content-box ; -webkit-background-clip: content-box }'
               + '#font-size-slider-track::before {' // to add finger cursor to unpadded core only
                   + 'content: "" ; position: absolute ; top: 10px ; left: 0 ; right: 0 ; height: calc(100% - 20px) ; cursor: pointer }'

@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.4.2
+// @version                  2024.7.4.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1488,7 +1488,7 @@
                   + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.185) ; transition: transform 0.05s ease' }}`
               + '#googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
               + '#googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
-              + '#font-size-slider-track { width: 98% ; height: 10px ; margin: 0 auto -15px ; padding: 15px 0 ;'
+              + '#font-size-slider-track { width: 98% ; height: 7px ; margin: 0 auto -15px ; padding: 15px 0 ;'
                   + 'background-color: #ccc ; box-sizing: content-box; background-clip: content-box ; -webkit-background-clip: content-box }'
               + '#font-size-slider-track::before {' // to add finger cursor to unpadded core only
                   + 'content: "" ; position: absolute ; top: 10px ; left: 0 ; right: 0 ; height: calc(100% - 20px) ; cursor: pointer }'
