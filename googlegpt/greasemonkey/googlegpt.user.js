@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.4.6
+// @version                  2024.7.4.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1190,17 +1190,18 @@
         },
 
         googleGPT: {
-            create() {
+            create(color = '') {
                 const googleGPTicon = document.createElement('img') ; googleGPTicon.id = 'googlegpt-icon'
-                icons.googleGPT.update(googleGPTicon)
+                icons.googleGPT.update(googleGPTicon, color)
                 return googleGPTicon
             },
 
-            update(...targetIcons) {
-                targetIcons = targetIcons.flat() // flatten array args nested by spread operator
+            update(targetIcons = [], color = '') {
+                if (!Array.isArray(targetIcons)) targetIcons = [targetIcons]
                 if (targetIcons.length == 0) targetIcons = document.querySelectorAll('#googlegpt-icon')
                 targetIcons.forEach(icon => {
-                    icon.src = GM_getResourceText(`ggptIcon${ scheme == 'dark' ? 'White' : 'Black' }`)
+                    icon.src = GM_getResourceText(`ggptIcon${( color.charAt(0).toUpperCase() + color.slice(1) )
+                                                          || ( scheme == 'dark' ? 'White' : 'Black' )}`)
                     icon.style.filter = icon.style.webkitFilter = ( // add RGB shift effect
                         'drop-shadow(2px 1px 0px #ff5b5b) drop-shadow(-1px -1px 0px #49d749)'
                       + ( scheme == 'light' ? 'drop-shadow(white 1px 1px)' : '' ))
