@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.4.7
+// @version               2024.7.4.8
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -230,7 +230,7 @@ setTimeout(async () => {
         appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.313,
-        latestAssetCommitHash: 'f30f8b3' } // for cached messages.json
+        latestAssetCommitHash: '8a4b4fb' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -239,7 +239,7 @@ setTimeout(async () => {
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'fgAnimationsDisabled',
                 'fontSize', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
-                'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+                'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', 16) // init reply font size if unset
     if ( // disable streaming in unspported envs
@@ -325,6 +325,9 @@ setTimeout(async () => {
         widerSidebar: { type: 'toggle', mobile: false, centered: false,
             label: msgs.menuLabel_widerSidebar || 'Wider Sidebar',
             helptip: msgs.helptip_widerSidebar || 'Horizontally expand search page sidebar' },
+        stickySidebar: { type: 'toggle', mobile: false, centered: false,
+            label: msgs.menuLabel_stickySidebar || 'Sticky Sidebar',
+            helptip: msgs.helptip_stickySidebar || 'Makes BraveGPT visible in sidebar even as you scroll' },
         bgAnimationsDisabled: { type: 'toggle',
             label: msgs.menuLabel_bgAnimations || 'Background Animations',
             helptip: msgs.helptip_bgAnimations || 'Show animated backgrounds in UI components' },
@@ -773,6 +776,9 @@ setTimeout(async () => {
                     } else if (key == 'widerSidebar') {
                         settingIcon = icons.widescreen.create()
                         settingIcon.style.cssText = 'position: relative ; top: 4px ; left: -1.5px ; margin-right: 7.5px'
+                    } else if (key == 'stickySidebar') {
+                        settingIcon = icons.pin.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 7.5px'
                     } else if (key.includes('bgAnimation')) {
                         settingIcon = icons.sparkles.create('bg')
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 6.5px'
@@ -1037,7 +1043,34 @@ setTimeout(async () => {
                 return moonSVG
             }
         },
-        
+
+        pin: {
+            filledSVGpath() { return createSVGelem('path', { stroke: '',
+                d: 'M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z'
+            })},
+
+            hollowSVGpath() { return createSVGelem('path', { stroke: '',
+                d: 'M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146zm.122 2.112v-.002.002zm0-.002v.002a.5.5 0 0 1-.122.51L6.293 6.878a.5.5 0 0 1-.511.12H5.78l-.014-.004a4.507 4.507 0 0 0-.288-.076 4.922 4.922 0 0 0-.765-.116c-.422-.028-.836.008-1.175.15l5.51 5.509c.141-.34.177-.753.149-1.175a4.924 4.924 0 0 0-.192-1.054l-.004-.013v-.001a.5.5 0 0 1 .12-.512l3.536-3.535a.5.5 0 0 1 .532-.115l.096.022c.087.017.208.034.344.034.114 0 .23-.011.343-.04L9.927 2.028c-.029.113-.04.23-.04.343a1.779 1.779 0 0 0 .062.46z'
+            })},
+
+            create() {
+                const pinSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      pinSVGattrs = [['id', 'pin-icon'], ['width', 17], ['height', 17], ['viewBox', '0 0 16 16']]
+                pinSVGattrs.forEach(([attr, value]) => pinSVG.setAttribute(attr, value))
+                icons.pin.update(pinSVG)
+                return pinSVG
+            },
+
+            update(...targetIcons) {
+                targetIcons = targetIcons.flat() // flatten array args nested by spread operator
+                if (targetIcons.length == 0) targetIcons = document.querySelectorAll('#pin-icon')
+                targetIcons.forEach(icon => {
+                    icon.firstChild?.remove() // clear prev paths
+                    icon.append(icons.pin[config.stickySidebar ? 'filledSVGpath' : 'hollowSVGpath']())
+                })
+            }
+        },
+
         questionMark: {
             create() {
                 const questionMarkSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -1550,7 +1583,7 @@ setTimeout(async () => {
         },
 
         tooltip(buttonType) { // text & position
-            const cornerBtnTypes = ['about', 'settings', 'speak', 'font-size', 'wsb']
+            const cornerBtnTypes = ['about', 'settings', 'speak', 'ssb', 'font-size', 'wsb']
                       .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
             const [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [9, 25] : [5, 28],
                   iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.35
@@ -1561,6 +1594,8 @@ setTimeout(async () => {
                 buttonType == 'about' ? msgs.menuLabel_about || 'About'
               : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
               : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
+              : buttonType == 'ssb' ? (( config.stickySidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
+                                       + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' ))
               : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
               : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
                                        + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
@@ -1576,12 +1611,23 @@ setTimeout(async () => {
         tweaksStyle() {
 
             // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
+            const isStandbyMode = appDiv.querySelector('.standby-btn'),
+                  answerIsLoaded = appDiv.querySelector('.corner-btn')
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
+                                  + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
 
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
             if (kudoAIspan) kudoAIspan.style.display = (
                 appDiv.querySelectorAll('.corner-btn').length < ( config.widerSidebar ? 10 : 5 )) ? '' : 'none'
+    
+            // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
+            const answerPre = appDiv.querySelector('pre'),
+                  relatedQueries = appDiv.querySelector('.related-queries'),
+                  shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 304,
+                  longerPreHeight = window.innerHeight - 278
+            if (answerPre) answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
+                relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
         }
     }
 
@@ -2264,6 +2310,15 @@ setTimeout(async () => {
                     speakerSpan.append(speakerSVG) ; appDiv.append(speakerSpan)
                 }
 
+                // Create/append Sticky Sidebar button
+                if (!isMobile) {
+                    var ssbSpan = document.createElement('span'),
+                        ssbSVG = icons.pin.create()
+                    ssbSpan.id = 'ssb-btn' // for toggle.sidebar() + toggle.tooltip()
+                    ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '1px 9px 0 0'
+                    ssbSpan.append(ssbSVG) ; appDiv.append(ssbSpan)
+                }
+
                 // Create/append Font Size button
                 if (answer != 'standby') {
                     var fontSizeSpan = document.createElement('span'),
@@ -2333,10 +2388,11 @@ setTimeout(async () => {
                         })}}
                     })
                 }
+                if (ssbSVG) ssbSVG.onclick = () => toggle.sidebar('sticky')
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (wsbSVG) wsbSVG.onclick = () => toggle.sidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, settingsSpan, speakerSpan, fontSizeSpan, wsbSpan].forEach(span => {
+                    [aboutSpan, settingsSpan, speakerSpan, ssbSpan, fontSizeSpan, wsbSpan].forEach(span => {
                         if (span) span.onmouseover = span.onmouseout = toggle.tooltip })
 
                 // Create/append 'by KudoAI'
@@ -2461,6 +2517,8 @@ setTimeout(async () => {
                         ],
                         throwOnError: false
                 })})
+
+                if (config.stickySidebar) update.tweaksStyle() // to reset answerPre height
 
                 // Auto-scroll if active
                 if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled)
@@ -2628,7 +2686,9 @@ setTimeout(async () => {
     // Stylize SITE elems
     const tweaksStyle = createStyle(),
           wsbStyles = 'main.main-column, aside.sidebar { max-width: 521px !important }'
-                    + '#bravegpt { width: 521px }'
+                    + '#bravegpt { width: 521px }',
+          ssbStyles = '#bravegpt { position: sticky ; top: 83px }'
+                    + '#bravegpt ~ * { display: none }' // hide sidebar contents
     update.tweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize TOOLTIPs
