@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.3.12
+// @version                  2024.7.3.13
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1464,7 +1464,6 @@
               + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
               + '#googlegpt { border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
-                  + 'clip-path: polygon(-1% -3%, 30% -3%, 30% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // show tooltips but bound starry bg
                   + `padding: ${ isFirefox ? 20 : 22 }px 26px 6px 26px ;`
                   + `width: ${ isMobile ? 'auto' : '319px' } ;` // hard-width to prevent Google's flex-wrap moving app to bottom
                   + ( isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
@@ -1582,7 +1581,6 @@
                     + `${ scheme == 'dark' ? '#99a8a6 -70%, black 57%' : '#b6ebff -64%, white 33%' }) ;`
                 + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
                 + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 150%, -28% 150%) ;' // bound starry bg
                 + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                 + 'transition: opacity 0.35s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                             + 'transform 0.35s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
@@ -1838,13 +1836,18 @@
     }
 
     function fillStarryBG(targetNode) {
-        ['sm', 'med', 'lg'].forEach((size, idx) => {
+        const starsDivsContainer = document.createElement('div')
+        starsDivsContainer.style.cssText = 'position: absolute ; overflow: clip ; height: 100% ; width: 100% ;'
+                                         + 'z-index: -1'; // allow interactive elems to be clicked
+        ['sm', 'med', 'lg'].forEach((starSize, idx) => {
             const starsDiv = document.createElement('div')
             starsDiv.id = config.bgAnimationsDisabled ? 'stars-off'
-                        : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
+                        : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
             starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
-            targetNode.append(starsDiv)
-    })}
+            starsDivsContainer.append(starsDiv)
+        })
+        targetNode.append(starsDivsContainer)
+    }
 
     const fontSizeSlider = {
         fadeInDelay: 5, // ms

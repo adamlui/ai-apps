@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.3.12
+// @version                2024.7.3.13
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1267,7 +1267,6 @@
               + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
               + '#ddgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ;'
-                  + 'clip-path: polygon(-1% -3%, 45% -3%, 45% -8%, 101% -8%, 101% 102%, -1% 102%) ;' // show tooltips but bound starry bg
                   + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
                   + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
                   + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
@@ -1389,7 +1388,6 @@
                     + `${ scheme == 'dark' ? '#99a8a6 -70%, black 57%' : '#b6ebff -64%, white 33%' }) ;`
                 + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
                 + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                + 'clip-path: polygon(-28% -3%, 128% -3%, 128% 150%, -28% 150%) ;' // bound starry bg
                 + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                 + 'transition: opacity 0.35s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                             + 'transform 0.35s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
@@ -1530,13 +1528,18 @@
     function isCenteredMode() { return document.documentElement.classList.toString().includes('center') }
 
     function fillStarryBG(targetNode) {
-        ['sm', 'med', 'lg'].forEach((size, idx) => {
+        const starsDivsContainer = document.createElement('div')
+        starsDivsContainer.style.cssText = 'position: absolute ; overflow: clip ; height: 100% ; width: 100% ;'
+                                         + 'z-index: -1'; // allow interactive elems to be clicked
+        ['sm', 'med', 'lg'].forEach((starSize, idx) => {
             const starsDiv = document.createElement('div')
             starsDiv.id = config.bgAnimationsDisabled ? 'stars-off'
-                        : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
+                        : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
             starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
-            targetNode.append(starsDiv)
-    })}
+            starsDivsContainer.append(starsDiv)
+        })
+        targetNode.append(starsDivsContainer)
+    }
 
     const fontSizeSlider = {
         fadeInDelay: 5, // ms
