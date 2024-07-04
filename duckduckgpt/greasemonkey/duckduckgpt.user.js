@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.3.15
+// @version                2024.7.3.16
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1652,10 +1652,7 @@
               defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
               finalAttrs = { ...defaultAttrs, ...attrs }
         Object.entries(finalAttrs).forEach(([attr, value]) => anchor.setAttribute(attr, value))
-        if (displayContent) {
-            if (typeof displayContent == 'string') anchor.textContent = displayContent
-            else if (displayContent instanceof HTMLElement) anchor.append(displayContent)
-        }
+        if (displayContent) anchor.append(displayContent)
         return anchor
     }
 
