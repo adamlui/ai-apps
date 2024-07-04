@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.3.9
+// @version               2024.7.3.10
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -590,7 +590,7 @@ setTimeout(async () => {
                         function getSupport() { safeWindowOpen(config.supportURL) },
                         function leaveAReview() { modals.feedback.show() },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                    ], '', 585) // modal width
+                    ], '', 617) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
 
                 // Add logo
@@ -1234,7 +1234,7 @@ setTimeout(async () => {
                   + 'margin-top: 12px ; padding: 1.2em 1.2em 0 1.2em ; border-radius: 13px ; overflow: auto ;'
                   + `${ scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
                                          : 'background: #eaeaeacf ; color: #282828 ; border: none' }}`
-              + `#bravegpt footer { margin: ${ isFirefox ? 32 : 27 }px 0 -26px 0 ; border-top: none !important }`
+              + `#bravegpt footer { margin: ${ isFirefox ? 32 : 27 }px 18px -26px 0 ; border-top: none !important }`
               + '#bravegpt .feedback {'
                   + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem; color: #aaa ;'
                   + 'letter-spacing: .02em ; position: relative ; right: -18px ; bottom: 15px }'
