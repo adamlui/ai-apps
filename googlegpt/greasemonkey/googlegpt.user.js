@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.4
+// @version                  2024.7.4.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -790,12 +790,12 @@
                         function getSupport() { safeWindowOpen(config.supportURL) },
                         function leaveAReview() { modals.feedback.show() },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                    ], '', 515) // modal width
+                    ], '', 585) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
 
                 // Add logo
                 const aboutHeaderLogo = logos.googleGPT.create()
-                aboutHeaderLogo.width = 405 ; aboutHeaderLogo.style.margin = '-13px 10.5% -1px'
+                aboutHeaderLogo.width = 405 ; aboutHeaderLogo.style.margin = '-13px 14.5% -1px'
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
