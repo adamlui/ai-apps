@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.3.10
+// @version               2024.7.3.11
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -690,7 +690,6 @@ setTimeout(async () => {
                         event.stopPropagation() // disable chatgpt.js dismissAlert()
                         const newScheme = btnScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : btnScheme
                         saveSetting('scheme', btnScheme == 'auto' ? false : newScheme)
-                        document.querySelector('#scheme-menu-entry span').textContent = btnScheme // update Settings menu status label
                         schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
                         newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme
                         newBtn.style.cssText = 'pointer-events: none' // disable hover fx to show emphasis
@@ -851,7 +850,7 @@ setTimeout(async () => {
                             configStatusSpan.textContent = config.replyLanguage
                             settingItem.onclick = promptReplyLang
                         } else if (key.includes('scheme')) {
-                            configStatusSpan.textContent = config.scheme || 'Auto'
+                            modals.settings.updateSchemeStatus(configStatusSpan)
                             settingItem.onclick = modals.scheme.show
                         } else if (key.includes('about')) {
                             const innerDiv = document.createElement('div'),
@@ -916,6 +915,17 @@ setTimeout(async () => {
                         knobSpan.style.transform = settingToggle.checked ? 'translateX(14px) translateY(0)' : 'translateX(0)'
                     }, 1) // min delay to trigger transition fx
                 }
+            },
+
+            updateSchemeStatus(schemeStatusSpan = null) {
+                schemeStatusSpan = schemeStatusSpan || document.querySelector('#scheme-menu-entry span')
+                if (schemeStatusSpan) {
+                    while (schemeStatusSpan.firstChild) schemeStatusSpan.removeChild(schemeStatusSpan.firstChild) // clear old status
+                    schemeStatusSpan.append(...( // status txt + icon
+                        config.scheme == 'dark' ? [document.createTextNode(msgs.scheme_dark || 'Dark'), icons.moon.create()]
+                      : config.scheme == 'light' ? [document.createTextNode(msgs.scheme_light || 'Light'), icons.sun.create()]
+                      : [document.createTextNode(msgs.menuLabel_auto || 'Auto'), icons.cycleArrows.create()]
+                ))}
             }
         }
     }
@@ -943,6 +953,16 @@ setTimeout(async () => {
                 autoSpeechBalloonSVGattrs.forEach(([attr, value]) => autoSpeechBalloonSVG.setAttribute(attr, value))
                 autoSpeechBalloonSVG.append(createSVGelem('path', { stroke: 'none', d: 'M323-41v-247h-10q-105 0-172.5-67T73-528q0-105 74-179t179-74h36l-44-44 69-69 162 162-162 162-69-69 44-44h-36q-64 0-109.5 45.5T171-528q0 64 45.5 109.5T326-373h95v96l96-96h117q64 0 109.5-45.5T789-528q0-64-45.5-109.5T634-683h10v-98h-10q105 0 179 74t74 179q0 105-74 179t-179 74h-77L323-41Z' }))
                 return autoSpeechBalloonSVG
+            }
+        },
+
+        cycleArrows: {
+            create() {
+                const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      arrowsSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 -1020 960 960']]
+                arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
+                arrowsSVG.append(createSVGelem('path', { stroke: 'none', d: 'M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z' }))
+                return arrowsSVG
             }
         },
 
@@ -998,6 +1018,17 @@ setTimeout(async () => {
                 languageSVGattrs.forEach(([attr, value]) => languageSVG.setAttribute(attr, value))
                 languageSVG.append(createSVGelem('path', { stroke: 'none', d: 'm459-48 188-526h125L960-48H847l-35-100H603L568-48H459ZM130-169l-75-75 196-196q-42-45-78-101t-55-105h117q17 32 40.5 67.5T325-514q35-37 70-93t64-119H0v-106h290v-80h106v80h290v106H572q-23 74-70 152T399-438l82 85-39 111-118-121-194 194Zm508-79h139l-69-197-70 197Z' })                )
                 return languageSVG                
+            }
+        },
+
+        moon: {
+            create() {
+                const moonSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      moonSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 24 24']]
+                moonSVGattrs.forEach(([attr, value]) => moonSVG.setAttribute(attr, value))
+                moonSVG.append(createSVGelem('path', { fill: 'none', stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round',
+                    d: 'M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z' }))
+                return moonSVG
             }
         },
         
@@ -1103,6 +1134,16 @@ setTimeout(async () => {
                 speechBalloonSVGattrs.forEach(([attr, value]) => speechBalloonSVG.setAttribute(attr, value))
                 speechBalloonSVG.append(createSVGelem('path', { stroke: 'none', d: 'M350-212q-32.55 0-55.27-22.73Q272-257.45 272-290v-64h492v-342h63.67q33.33 0 55.83 22.72Q906-650.55 906-618v576L736-212H350ZM54-256v-582.4q0-32.38 22.72-54.99Q99.45-916 132-916h482q32.55 0 55.28 22.72Q692-870.55 692-838v334q0 32.55-22.72 55.27Q646.55-426 614-426H224L54-256Zm540-268v-294H152v294h442Zm-442 0v-294 294Z' }))
                 return speechBalloonSVG
+            }
+        },
+
+        sun: {
+            create() {
+                const sunSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      sunSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960']]
+                sunSVGattrs.forEach(([attr, value]) => sunSVG.setAttribute(attr, value))
+                sunSVG.append(createSVGelem('path', { stroke: 'none', d: 'M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z' }))
+                return sunSVG
             }
         },
 
@@ -1380,6 +1421,8 @@ setTimeout(async () => {
                   + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
                   + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.16)' }}` // add zoom
               + '#bravegpt-settings li > input { float: right }' // pos toggles
+              + '#scheme-menu-entry > span { margin: 0 -2px !important }' // align Scheme status
+              + '#scheme-menu-entry > span > svg { position: relative ; top: 3px ; margin-left: 3px }' // v-align/left-pad Scheme status icon
               + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
               + '#about-menu-entry > span { width: 92px ; overflow: hidden ;' // outer About status span
                   + `${ config.fgAnimationsDisabled ? '' : 'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' }}`
@@ -1488,7 +1531,10 @@ setTimeout(async () => {
             }
         },
 
-        scheme(newScheme) { scheme = newScheme ; logos.braveGPT.update() ; update.appStyle() ; update.stars() ; toggle.btnGlow() },
+        scheme(newScheme) {
+            scheme = newScheme ; logos.braveGPT.update() ; update.appStyle() ; update.stars() ; toggle.btnGlow() ; 
+            modals.settings.updateSchemeStatus()
+        },
 
         stars() {
             ['sm', 'med', 'lg'].forEach(size =>
