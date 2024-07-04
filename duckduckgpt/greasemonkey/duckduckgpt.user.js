@@ -1463,6 +1463,8 @@
                   + `${ config.fgAnimationsDisabled ? '' : 'animation: ticker linear 60s infinite' }}`
               + '@keyframes ticker { 0% { transform: translateX(100%) } 100% { transform: translateX(-2000%) }}'
               + `.about-em { color: ${ scheme == 'dark' ? 'white' : 'green' } !important }`
+
+              + '#black-stars-sm, #white-stars-sm { filter: blur(1px) }'
             )
         },
 
