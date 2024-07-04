@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.4.6
+// @version                2024.7.4.7
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1463,8 +1463,6 @@
                   + `${ config.fgAnimationsDisabled ? '' : 'animation: ticker linear 60s infinite' }}`
               + '@keyframes ticker { 0% { transform: translateX(100%) } 100% { transform: translateX(-2000%) }}'
               + `.about-em { color: ${ scheme == 'dark' ? 'white' : 'green' } !important }`
-
-              + '#black-stars-sm, #white-stars-sm { filter: blur(1px) }'
             )
         },
 
@@ -1536,7 +1534,7 @@
 
     function fillStarryBG(targetNode) {
         const starsDivsContainer = document.createElement('div')
-        starsDivsContainer.style.cssText = 'position: absolute ; overflow: clip ; height: 100% ; width: 100% ;'
+        starsDivsContainer.style.cssText = 'position: absolute ; top: 0 ; left: 0 ; height: 100% ; width: 100% ; overflow: clip ;'
                                          + 'z-index: -1'; // allow interactive elems to be clicked
         ['sm', 'med', 'lg'].forEach((starSize, idx) => {
             const starsDiv = document.createElement('div')
