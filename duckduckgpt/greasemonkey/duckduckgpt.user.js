@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.4.2
+// @version                2024.7.4.3
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1588,6 +1588,7 @@
 
             // Add event listener for seek/dragging by inputEvents.down on track
             slider.addEventListener(inputEvents.down, event => {
+                event.preventDefault() // prevent text selection
                 const clientX = event.clientX || event.touches?.[0]?.clientX
                 moveThumb(clientX - slider.getBoundingClientRect().left - sliderThumb.offsetWidth / 2)
                 isDragging = true ; startX = clientX ; startLeft = sliderThumb.offsetLeft // manually init dragging
