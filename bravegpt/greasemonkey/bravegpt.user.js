@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.3.11
+// @version               2024.7.3.12
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -514,6 +514,7 @@ setTimeout(async () => {
 
         dragHandlers: {
             mousedown(event) { // find modal, attach listeners, init XY offsets
+                if (getComputedStyle(event.target).cursor == 'pointer') return // don't activate drag when clicking on interactive elems
                 modals.dragHandlers.draggableElem = document.querySelector('[class$="-modal"]')
                 event.preventDefault(); // prevent sub-elems like icons being draggable
                 ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))

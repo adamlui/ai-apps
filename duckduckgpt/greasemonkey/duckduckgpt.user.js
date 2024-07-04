@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.3.10
+// @version                2024.7.3.11
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -523,6 +523,7 @@
 
         dragHandlers: {
             mousedown(event) { // find modal, attach listeners, init XY offsets
+                if (getComputedStyle(event.target).cursor == 'pointer') return // don't activate drag when clicking on interactive elems
                 modals.dragHandlers.draggableElem = document.querySelector('[class$="-modal"]')
                 event.preventDefault(); // prevent sub-elems like icons being draggable
                 ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))
