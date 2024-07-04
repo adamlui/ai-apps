@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.4.5
+// @version               2024.7.4.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -454,8 +454,11 @@ setTimeout(async () => {
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow || scheme == 'dark' ? '' : 'shadow' )
+        const notifIcon = icons.braveGPT.create() ; notifIcon.width = 29
+        notifIcon.style.cssText = 'position: relative ; top: 4.8px ; margin-right: 6px'
+        chatgpt.notify(msg, position, notifDuration, shadow || scheme == 'dark' ? '' : 'shadow')
+        const notifs = document.querySelectorAll('.chatgpt-notif')
+        notifs[notifs.length -1].prepend(notifIcon)
     }
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {

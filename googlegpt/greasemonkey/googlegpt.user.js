@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.4.7
+// @version                  2024.7.4.8
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -653,8 +653,11 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow || scheme == 'dark' ? '' : 'shadow' )
+        const notifIcon = icons.googleGPT.create('white') ; notifIcon.width = 29
+        notifIcon.style.cssText = 'position: relative ; top: 2.8px ; margin-right: 6px'
+        chatgpt.notify(msg, position, notifDuration, shadow || scheme == 'dark' ? '' : 'shadow')
+        const notifs = document.querySelectorAll('.chatgpt-notif')
+        notifs[notifs.length -1].prepend(notifIcon)
     }
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
