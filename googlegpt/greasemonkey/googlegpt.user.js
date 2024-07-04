@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.3.11
+// @version                  2024.7.3.12
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -714,7 +714,7 @@
         dragHandlers: {
             mousedown(event) { // find modal, attach listeners, init XY offsets
                 if (getComputedStyle(event.target).cursor == 'pointer') return // don't activate drag when clicking on interactive elems
-                modals.dragHandlers.draggableElem = document.querySelector('[class$="-modal"]')
+                modals.dragHandlers.draggableElem = event.target.closest('[class$="-modal"]')
                 event.preventDefault(); // prevent sub-elems like icons being draggable
                 ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))
                 const draggableElemRect = modals.dragHandlers.draggableElem.getBoundingClientRect()
