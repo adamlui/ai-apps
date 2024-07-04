@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.4.3
+// @version                2024.7.4.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2306,6 +2306,7 @@
                     appDiv.append(standbyBtn)
                     standbyBtn.onclick = () => {
                         appAlert('waitingResponse')
+                        appFooter.style.right = 0 // reset counteract right-offset bug from chatbar padding
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
                         show.reply.submitSrc = 'click' ; show.reply.chatbarFocused = false
                         get.reply(msgChain)
