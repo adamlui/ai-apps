@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.3.13
+// @version                  2024.7.3.14
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1841,7 +1841,7 @@
                                          + 'z-index: -1'; // allow interactive elems to be clicked
         ['sm', 'med', 'lg'].forEach((starSize, idx) => {
             const starsDiv = document.createElement('div')
-            starsDiv.id = config.bgAnimationsDisabled ? 'stars-off'
+            starsDiv.id = config.bgAnimationsDisabled ? `stars-${starSize}-off`
                         : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
             starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
             starsDivsContainer.append(starsDiv)

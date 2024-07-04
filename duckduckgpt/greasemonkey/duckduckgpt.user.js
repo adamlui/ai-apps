@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.3.13
+// @version                2024.7.3.14
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1533,7 +1533,7 @@
                                          + 'z-index: -1'; // allow interactive elems to be clicked
         ['sm', 'med', 'lg'].forEach((starSize, idx) => {
             const starsDiv = document.createElement('div')
-            starsDiv.id = config.bgAnimationsDisabled ? 'stars-off'
+            starsDiv.id = config.bgAnimationsDisabled ? `stars-${starSize}-off`
                         : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
             starsDiv.style.height = `${ idx +1 }px` // so toggle.bgAnimations() doesn't change height
             starsDivsContainer.append(starsDiv)
