@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.3.16
+// @version                2024.7.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -649,15 +649,17 @@
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
 
                 // Re-style button cluster
-                const buttons = feedbackModal.querySelector('.modal-buttons')
-                buttons.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
+                const btnsDiv = feedbackModal.querySelector('.modal-buttons')
+                btnsDiv.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
                                        + ' margin-top: 14px !important' // close gap between title/btns
 
                 // Format button labels + add v-padding
-                buttons.querySelectorAll('button').forEach((btn, idx) => {
+                const btns = btnsDiv.querySelectorAll('button'), lastIdx = btns.length -1
+                btns.forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else if (btn.textContent == 'Github') btn.textContent = 'GitHub'
                     else if (btn.textContent == 'Alternative To') btn.textContent = 'AlternativeTo'
+                    if (idx == lastIdx) btn.classList.remove('primary-modal-btn') // de-emphasize last link
                     btn.style.marginTop = btn.style.marginBottom = '5px' // v-pad btns
                 })
 

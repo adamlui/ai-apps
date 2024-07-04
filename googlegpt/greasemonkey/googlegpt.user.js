@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.3.16
+// @version                  2024.7.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -833,13 +833,15 @@
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
 
                 // Re-style button cluster
-                const buttons = feedbackModal.querySelector('.modal-buttons')
-                buttons.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
+                const btnsDiv = feedbackModal.querySelector('.modal-buttons')
+                btnsDiv.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
 
-                // Title-case GitHub button + hide Dismiss button + add btn v-padding
-                buttons.querySelectorAll('button').forEach((btn, idx) => {
+                // Format button labels + add v-padding
+                const btns = btnsDiv.querySelectorAll('button'), lastIdx = btns.length -1
+                btns.forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else if (btn.textContent == 'Github') btn.textContent = 'GitHub'
+                    if (idx == lastIdx) btn.classList.remove('primary-modal-btn') // de-emphasize last link
                     btn.style.marginTop = btn.style.marginBottom = '5px' // v-pad btns
                 })
 
