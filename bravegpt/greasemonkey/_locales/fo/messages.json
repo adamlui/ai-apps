@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Horizontalt víðka leitingarsíðuna" },
   "helptip_stickySidebar": { "message": "Ger BraveGPT sjónligt í sidebar, eisini tá tú rullar" },
   "helptip_bgAnimations": { "message": "Vís animeraðar bakgrunnar í UI-komponentum" },
+  "helptip_fgAnimations": { "message": "Vís framsýningar í UI-komponentum" },
   "helptip_replyLanguage": { "message": "Tað er ikki neyðugt at gera eina avgerð um, at tað ikki er møguligt at gera eina avgerð um, at" },
   "helptip_colorScheme": { "message": "Skema at vísa BraveGPT UI komponentir í" },
   "placeholder_askSomethingElse": { "message": "Eg vil spyrja teg um okkurt annað" },

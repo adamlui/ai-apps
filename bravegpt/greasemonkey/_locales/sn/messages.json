@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Horizontally kuwedzera kutsvaka peji sidebar" },
   "helptip_stickySidebar": { "message": "Inoita BraveGPT kuoneka sidebar kunyange sezvo imi mupumburu" },
   "helptip_bgAnimations": { "message": "Show animated kumashure muUI zvinoriumba" },
+  "helptip_fgAnimations": { "message": "Ratidza mifananidzo yepamberi muUI zvinoriumba" },
   "helptip_replyLanguage": { "message": "Mutauro weBraveGPT kupindura mukati" },
   "helptip_colorScheme": { "message": "Chirongwa kuratidza BraveGPT UI zvinoriumba muna" },
   "placeholder_askSomethingElse": { "message": "Bvunza chimwe chinhu" },

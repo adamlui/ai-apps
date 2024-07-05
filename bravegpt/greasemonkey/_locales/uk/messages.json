@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Горизонтальне розгортання бічної панелі сторінки пошуку" },
   "helptip_stickySidebar": { "message": "Робить BraveGPT видимим на бічній панелі навіть під час прокрутки" },
   "helptip_bgAnimations": { "message": "Показувати анімовані фони в компонентах інтерфейсу користувача" },
+  "helptip_fgAnimations": { "message": "Показувати анімацію переднього плану в компонентах інтерфейсу користувача" },
   "helptip_replyLanguage": { "message": "Мова для відповіді BraveGPT" },
   "helptip_colorScheme": { "message": "Схема відображення компонентів інтерфейсу користувача BraveGPT у" },
   "placeholder_askSomethingElse": { "message": "Задати питання" },

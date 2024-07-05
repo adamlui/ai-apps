@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Seitenleiste der Suchseite horizontal erweitern" },
   "helptip_stickySidebar": { "message": "Macht BraveGPT in der Seitenleiste sichtbar, auch wenn Sie scrollen" },
   "helptip_bgAnimations": { "message": "Animierte Hintergründe in UI-Komponenten anzeigen" },
+  "helptip_fgAnimations": { "message": "Vordergrundanimationen in UI-Komponenten anzeigen" },
   "helptip_replyLanguage": { "message": "Sprache für BraveGPT zum Antworten" },
   "helptip_colorScheme": { "message": "Schema zur Anzeige von BraveGPT-UI-Komponenten in" },
   "placeholder_askSomethingElse": { "message": "Ein anderes System" },

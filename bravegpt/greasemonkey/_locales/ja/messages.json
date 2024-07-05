@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "検索ページのサイドバーを水平に展開する" },
   "helptip_stickySidebar": { "message": "スクロールしてもBraveGPTがサイドバーに表示されるようにします" },
   "helptip_bgAnimations": { "message": "UIコンポーネントにアニメーション化された背景を表示する" },
+  "helptip_fgAnimations": { "message": "UIコンポーネントにフォアグラウンドアニメーションを表示する" },
   "helptip_replyLanguage": { "message": "BraveGPT が返信する言語" },
   "helptip_colorScheme": { "message": "BraveGPT UI コンポーネントを表示するスキーム" },
   "placeholder_askSomethingElse": { "message": "他の何か" },

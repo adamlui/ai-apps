@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "تلاش کے صفحے کے سائڈبار کو افقی طور پر وسعت دیں" },
   "helptip_stickySidebar": { "message": "اسکرول کرتے وقت بھی BraveGPT سائڈبار میں نظر آتا ہے" },
   "helptip_bgAnimations": { "message": "UI اجزاء میں متحرک پس منظر دکھائیں" },
+  "helptip_fgAnimations": { "message": "UI اجزاء میں پیش منظر کی حرکت پذیری دکھائیں" },
   "helptip_replyLanguage": { "message": "میں جواب دینے کے لئے BraveGPT کے لئے زبان" },
   "helptip_colorScheme": { "message": "اس میں BraveGPT UI اجزاء ڈسپلے کرنے کی اسکیم" },
   "placeholder_askSomethingElse": { "message": "کچھ پوچھیں" },

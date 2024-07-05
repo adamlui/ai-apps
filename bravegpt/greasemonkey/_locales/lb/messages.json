@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Horizontalt Erweiderung vun der Sich Säit Säitbar" },
   "helptip_stickySidebar": { "message": "Maacht BraveGPT sichtbar an der Sidebar och wann Dir scrollt" },
   "helptip_bgAnimations": { "message": "Animéiert Hannergrënn an UI Komponenten uweisen" },
+  "helptip_fgAnimations": { "message": "Weist Virgrondanimatiounen an UI Komponenten" },
   "helptip_replyLanguage": { "message": "Sprache für BraveGPT, um zu antworten an" },
   "helptip_colorScheme": { "message": "Schema fir BraveGPT UI Komponenten an ze weisen" },
   "placeholder_askSomethingElse": { "message": "Frot eppes anescht" },

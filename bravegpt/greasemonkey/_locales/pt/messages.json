@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Expandir horizontalmente a barra lateral da página de pesquisa" },
   "helptip_stickySidebar": { "message": "Torna o BraveGPT visível na barra lateral mesmo enquanto você rola" },
   "helptip_bgAnimations": { "message": "Mostrar planos de fundo animados nos componentes da interface do usuário" },
+  "helptip_fgAnimations": { "message": "Mostrar animações em primeiro plano nos componentes da interface do usuário" },
   "helptip_replyLanguage": { "message": "Idioma para o BraveGPT responder" },
   "helptip_colorScheme": { "message": "Esquema para exibir componentes da interface do usuário BraveGPT em" },
   "placeholder_askSomethingElse": { "message": "Algo mais" },

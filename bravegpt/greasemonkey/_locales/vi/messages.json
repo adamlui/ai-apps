@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Thanh bên trang tìm kiếm mở rộng theo chiều ngang" },
   "helptip_stickySidebar": { "message": "Làm cho BraveGPT hiển thị trong thanh bên ngay cả khi bạn cuộn" },
   "helptip_bgAnimations": { "message": "Hiển thị hình nền động trong các thành phần giao diện người dùng" },
+  "helptip_fgAnimations": { "message": "Hiển thị hoạt ảnh tiền cảnh trong các thành phần giao diện người dùng" },
   "helptip_replyLanguage": { "message": "Ngôn ngữ để BraveGPT trả lời trong" },
   "helptip_colorScheme": { "message": "Sơ đồ hiển thị các thành phần UI BraveGPT trong" },
   "placeholder_askSomethingElse": { "message": "Khác" },

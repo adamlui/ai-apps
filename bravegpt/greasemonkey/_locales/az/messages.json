@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Axtarış səhifəsinin yan çubuğunu üfüqi istiqamətdə genişləndirin" },
   "helptip_stickySidebar": { "message": "BraveGPT-ni sürüşdürərkən belə kənar çubuqda görünməsini təmin edir" },
   "helptip_bgAnimations": { "message": "Animasiya fonlarını Uİ komponentlərində göstərin" },
+  "helptip_fgAnimations": { "message": "Ön animasiyaları UI komponentlərində göstərin" },
   "helptip_replyLanguage": { "message": "Cavab vermək üçün BraveGPT dili" },
   "helptip_colorScheme": { "message": "BraveGPT UI komponentlərini göstərmək üçün sxem" },
   "placeholder_askSomethingElse": { "message": "Başqa bir şey soruşun" },

@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Іздеу бетінің бүйірлік тақтасын көлденеңінен кеңейту" },
   "helptip_stickySidebar": { "message": "Сіз жылжып жатқанда да BraveGPT бүйірлік тақтасында көрінетін етеді" },
   "helptip_bgAnimations": { "message": "UI компоненттерінде анимацияланған фондарды көрсету" },
+  "helptip_fgAnimations": { "message": "UI компоненттерінде алдыңғы анимацияларды көрсету" },
   "helptip_replyLanguage": { "message": "Жауап беру үшін BraveGPT тілі" },
   "helptip_colorScheme": { "message": "BraveGPT UI компоненттерін көрсететін схема" },
   "placeholder_askSomethingElse": { "message": "Басқа нәрсе сұраңыз" },

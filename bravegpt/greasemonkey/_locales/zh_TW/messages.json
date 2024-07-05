@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "水平展開搜尋頁面側邊欄" },
   "helptip_stickySidebar": { "message": "即使您滾動，也能使 BraveGPT 在側邊欄中可見" },
   "helptip_bgAnimations": { "message": "在 UI 元件中顯示動畫背景" },
+  "helptip_fgAnimations": { "message": "在 UI 元件中顯示前景動畫" },
   "helptip_replyLanguage": { "message": "BraveGPT 回覆的語言" },
   "helptip_colorScheme": { "message": "在中顯示 BraveGPT UI 元件的方案" },
   "placeholder_askSomethingElse": { "message": "詢問其他問題" },

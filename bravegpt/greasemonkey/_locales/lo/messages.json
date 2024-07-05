@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Horizontally ຂະຫຍາຍຫນ້າຄົ້ນຫາ sidebar" },
   "helptip_stickySidebar": { "message": "ເຮັດໃຫ້ BraveGPT ສາມາດເບິ່ງເຫັນໄດ້ໃນແຖບຂ້າງເຖິງແມ່ນວ່າເຈົ້າຈະເລື່ອນ" },
   "helptip_bgAnimations": { "message": "ສະແດງພື້ນຫຼັງທີ່ມີພາບເຄື່ອນໄຫວໃນອົງປະກອບ UI" },
+  "helptip_fgAnimations": { "message": "ສະແດງພາບເຄື່ອນໄຫວດ້ານໜ້າໃນອົງປະກອບ UI" },
   "helptip_replyLanguage": { "message": "ພາສາ ສໍາ ລັບ BraveGPT ເພື່ອຕອບສະ ຫນອງ ໃນ" },
   "helptip_colorScheme": { "message": "ກົນໄກທີ່ຈະສະແດງອົງປະກອບ BraveGPT UI ໃນ" },
   "placeholder_askSomethingElse": { "message": "" },

@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Ჰორიზონტალურად გააფართოვეთ საძიებო გვერდის გვერდი" },
   "helptip_stickySidebar": { "message": "Ხდის BraveGPT-ს ხილვადს გვერდითა ზოლში გადახვევის დროსაც კი" },
   "helptip_bgAnimations": { "message": "Ანიმაციური ფონების ჩვენება UI კომპონენტებში" },
+  "helptip_fgAnimations": { "message": "Წინა პლანზე ანიმაციების ჩვენება UI კომპონენტებში" },
   "helptip_replyLanguage": { "message": "Ენა BraveGPT-ვის პასუხის გასაცემად" },
   "helptip_colorScheme": { "message": "Სქემა, რომელიც აჩვენებს BraveGPT UI კომპონენტებს" },
   "placeholder_askSomethingElse": { "message": "Სხვა რამის კითხვა" },

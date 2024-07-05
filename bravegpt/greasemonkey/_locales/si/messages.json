@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "සෙවුම් පිටු පැති තීරුව තිරස්ව පුළුල් කරන්න" },
   "helptip_stickySidebar": { "message": "ඔබ අනුචලනය කරන විට පවා පැති තීරුවේ BraveGPT දෘශ් ‍ යමාන කරයි" },
   "helptip_bgAnimations": { "message": "UI සංරචකවල සජීවිකරණ පසුබිම් පෙන්වන්න" },
+  "helptip_fgAnimations": { "message": "UI සංරචකවල පෙරබිම් සජීවීකරණ පෙන්වන්න" },
   "helptip_replyLanguage": { "message": "ප් ‍ රතිචාර දැක්වීමට නිර්භීත GPT සඳහා භාෂාව" },
   "helptip_colorScheme": { "message": "තුළ නිර්භීත GPT UI සංරචක ප් ‍ රදර්ශනය කිරීමේ ක් ‍ රමය" },
   "placeholder_askSomethingElse": { "message": "වෙනත් යමක් ඇසුවොත්" },

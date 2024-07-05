@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Utvid søkesidens sidefelt horisontalt" },
   "helptip_stickySidebar": { "message": "Gjør BraveGPT synlig i sidefeltet selv når du blar" },
   "helptip_bgAnimations": { "message": "Vis animerte bakgrunner i UI-komponenter" },
+  "helptip_fgAnimations": { "message": "Vis forgrunnsanimasjoner i UI-komponenter" },
   "helptip_replyLanguage": { "message": "Språk for BraveGPT å svare på" },
   "helptip_colorScheme": { "message": "Opplegg for å vise BraveGPT UI-komponenter i" },
   "placeholder_askSomethingElse": { "message": "Spør noe annet" },

@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Пашырыць бакавую панэль пошуку па гарызанталі" },
   "helptip_stickySidebar": { "message": "Робіць BraveGPT бачным у бакавой панэлі, нават калі вы пракручваеце" },
   "helptip_bgAnimations": { "message": "Паказваць аніміраваныя фоны ў кампанентах карыстацкага інтэрфейсу" },
+  "helptip_fgAnimations": { "message": "Паказваць анімацыю на пярэднім плане ў кампанентах карыстацкага інтэрфейсу" },
   "helptip_replyLanguage": { "message": "Мова для адказу BraveGPT" },
   "helptip_colorScheme": { "message": "Схема адлюстравання кампанентаў карыстацкага інтэрфейсу BraveGPT у" },
   "placeholder_askSomethingElse": { "message": "Спытаць што-небудзь яшчэ" },

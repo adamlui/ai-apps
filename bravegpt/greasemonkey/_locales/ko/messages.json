@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "검색 페이지 사이드바를 가로로 확장" },
   "helptip_stickySidebar": { "message": "스크롤할 때에도 사이드바에 BraveGPT를 표시합니다" },
   "helptip_bgAnimations": { "message": "UI 구성 요소에 애니메이션 배경 표시" },
+  "helptip_fgAnimations": { "message": "UI 구성 요소에 전경 애니메이션 표시" },
   "helptip_replyLanguage": { "message": "BraveGPT가 회신할 수 있는 언어" },
   "helptip_colorScheme": { "message": "BraveGPT UI 구성 요소를 표시하는 구성표" },
   "placeholder_askSomethingElse": { "message": "기타" },

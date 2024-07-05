@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Extindeți orizontal bara laterală a paginii de căutare" },
   "helptip_stickySidebar": { "message": "Face BraveGPT vizibil în bara laterală chiar și atunci când derulați" },
   "helptip_bgAnimations": { "message": "Afișați fundaluri animate în componentele UI" },
+  "helptip_fgAnimations": { "message": "Afișați animațiile din prim-plan în componentele UI" },
   "helptip_replyLanguage": { "message": "Limba în care BraveGPT poate răspunde" },
   "helptip_colorScheme": { "message": "Schema de afișare a componentelor BraveGPT UI în" },
   "placeholder_askSomethingElse": { "message": "Altceva" },

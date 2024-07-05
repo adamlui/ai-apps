@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Хайлтын хуудасны хажуугийн цэсийг хэвтээгээр өргөжүүлэх" },
   "helptip_stickySidebar": { "message": "Хажуугийн цонхонд BraveGPT харагдуулдаг" },
   "helptip_bgAnimations": { "message": "Хөдөлгөөнтэй дэвсгэрүүдийг UI бүрэлдэхүүн хэсгүүдэд харуулах" },
+  "helptip_fgAnimations": { "message": "UI бүрэлдэхүүн хэсгүүдэд газрын өмнөх хөдөлгөөнүүдийг харуул" },
   "helptip_replyLanguage": { "message": "BraveGPT-д хариулах хэл" },
   "helptip_colorScheme": { "message": "BraveGPT UI компонентуудыг харуулах схем" },
   "placeholder_askSomethingElse": { "message": "" },

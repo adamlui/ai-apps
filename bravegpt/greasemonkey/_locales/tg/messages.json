@@ -52,6 +52,7 @@
   "helptip_widerSidebar": { "message": "Уфуқӣ густариш додани панели паҳлӯии саҳифаи ҷустуҷӯ" },
   "helptip_stickySidebar": { "message": "Name" },
   "helptip_bgAnimations": { "message": "Намоиши заминаи аниматсионӣ дар ҷузъҳои UI" },
+  "helptip_fgAnimations": { "message": "Намоиши аниматсияҳои пешзамина дар ҷузъҳои UI" },
   "helptip_replyLanguage": { "message": "Забон барои BraveGPT барои ҷавоб додан дар" },
   "helptip_colorScheme": { "message": "Нақша барои намоиши ҷузъҳои BraveGPT UI дар" },
   "placeholder_askSomethingElse": { "message": "Як чизи дигарро пурсед" },
