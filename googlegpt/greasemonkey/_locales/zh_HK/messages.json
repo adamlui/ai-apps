@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "在查詢答案後需要 \"?\" 才能顯示" },
   "helptip_widerSidebar": { "message": "水平展開搜尋頁面側邊欄" },
   "helptip_stickySidebar": { "message": "即使您滾動，也能使 GoogleGPT 在側邊欄中可見" },
+  "helptip_anchorMode": { "message": "將 GoogleGPT 錨定到視窗底部" },
   "helptip_bgAnimations": { "message": "在 UI 元件中顯示動畫背景" },
   "helptip_fgAnimations": { "message": "在 UI 元件中顯示前景動畫" },
   "helptip_replyLanguage": { "message": "GoogleGPT 回覆的語言" },

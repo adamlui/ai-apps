@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Pieprasīt \"?\" pēc vaicājumiem par atbildēm, lai parādītu" },
   "helptip_widerSidebar": { "message": "Horizontāli izvērst meklēšanas lapas sānjoslu" },
   "helptip_stickySidebar": { "message": "Padara GoogleGPT redzamu sānjoslā pat ritinot" },
+  "helptip_anchorMode": { "message": "Piestipriniet GoogleGPT pie loga apakšas" },
   "helptip_bgAnimations": { "message": "Rādīt animētos fonus lietotāja interfeisa komponentos" },
   "helptip_fgAnimations": { "message": "Rādīt priekšplāna animācijas lietotāja interfeisa komponentos" },
   "helptip_replyLanguage": { "message": "GoogleGPT valoda, kurā atbildēt" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "'?' eskatzen du erantzunak erakusteko galderen ondoren" },
   "helptip_widerSidebar": { "message": "Zabaldu bilaketa-orriaren alboko barra horizontalean" },
   "helptip_stickySidebar": { "message": "GoogleGPT ikusgai jartzen du alboko barran mugitzen zaren bitartean ere" },
+  "helptip_anchorMode": { "message": "Ainguratu GoogleGPT leihoaren behealdean" },
   "helptip_bgAnimations": { "message": "Erakutsi atzeko plano animatuak UI osagaietan" },
   "helptip_fgAnimations": { "message": "Erakutsi lehen planoko animazioak UI osagaietan" },
   "helptip_replyLanguage": { "message": "GoogleGPT-ren hizkuntza erantzuteko" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "காட்ட வேண்டிய பதில்களுக்கான கேள்விகளுக்குப் பிறகு \"?\" தேவைப்படுகிறது" },
   "helptip_widerSidebar": { "message": "தேடல் பக்க பக்கப்பட்டியை கிடைமட்டமாக விரிவாக்கவும்" },
   "helptip_stickySidebar": { "message": "நீங்கள் உருட்டும்போது கூட பக்கப்பட்டியில் DuckDuckGPT தெரியும்" },
+  "helptip_anchorMode": { "message": "சாளரத்தின் அடிப்பகுதியில் ஆங்கர் டக் டக் GPT" },
   "helptip_bgAnimations": { "message": "UI கூறுகளில் அனிமேஷன் செய்யப்பட்ட பின்னணியைக் காட்டவும்" },
   "helptip_fgAnimations": { "message": "UI கூறுகளில் முன்னணி அனிமேஷன்களைக் காட்டவும்" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT க்கான மொழியில் பதிலளிக்கவும்" },

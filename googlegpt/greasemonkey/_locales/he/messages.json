@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "דרוש \"?\" לאחר שאילתות לתשובות להצגה" },
   "helptip_widerSidebar": { "message": "הרחבה אופקית של סרגל הצד של דף החיפוש" },
   "helptip_stickySidebar": { "message": "הופך את GoogleGPT לגלוי בסרגל הצידי אפילו כשאתה גולל" },
+  "helptip_anchorMode": { "message": "עגן את GoogleGPT לתחתית החלון" },
   "helptip_bgAnimations": { "message": "הצג רקעים מונפשים ברכיבי ממשק משתמש" },
   "helptip_fgAnimations": { "message": "הצג אנימציות קדמיות ברכיבי ממשק המשתמש" },
   "helptip_replyLanguage": { "message": "השפה שבה GoogleGPT יכול להגיב" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Հարցումներից հետո պահանջեք «?» ցուցադրել պատասխանները" },
   "helptip_widerSidebar": { "message": "Հորիզոնական ընդլայնել որոնման էջի կողագիծը" },
   "helptip_stickySidebar": { "message": "Դարձնում է DuckDuckGPT - ն տեսանելի կողային գոտում նույնիսկ այն ժամանակ, երբ դուք թերթում եք" },
+  "helptip_anchorMode": { "message": "Anchor DuckDuckGPT պատուհանի ներքևում" },
   "helptip_bgAnimations": { "message": "Ցույց տալ անիմացիոն ֆոնները UI բաղադրիչներում" },
   "helptip_fgAnimations": { "message": "Ցույց տալ նախապատմության անիմացիաները UI բաղադրիչներում" },
   "helptip_replyLanguage": { "message": "Լեզու DuckDuckGPT - ի համար ՝ պատասխանելու համար" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Жооптордун көрсөтүлүшү үчүн суроолордон кийин \"?\" талап кылуу" },
   "helptip_widerSidebar": { "message": "Барактын капталын горизонталдуу кеңейтүү" },
   "helptip_stickySidebar": { "message": "Жүгүртүп жатканда да BraveGPT каптал тилкесинде көрүнөт" },
+  "helptip_anchorMode": { "message": "Терезенин түбүнө чейин BraveGPT анкери" },
   "helptip_bgAnimations": { "message": "UI компоненттеринде жандуу фонду көрсөтүү" },
   "helptip_fgAnimations": { "message": "UI компоненттеринде алдыңкы анимацияларды көрсөтүү" },
   "helptip_replyLanguage": { "message": "Жооп берүү үчүн BraveGPT тили" },

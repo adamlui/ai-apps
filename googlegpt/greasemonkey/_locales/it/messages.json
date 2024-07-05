@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Richiedi \"?\" dopo le domande per le risposte da mostrare" },
   "helptip_widerSidebar": { "message": "Espandi orizzontalmente la barra laterale della pagina di ricerca" },
   "helptip_stickySidebar": { "message": "Rende visibile GoogleGPT nella barra laterale anche mentre scorri" },
+  "helptip_anchorMode": { "message": "Ancorare GoogleGPT alla parte inferiore della finestra" },
   "helptip_bgAnimations": { "message": "Mostra sfondi animati nei componenti dell'interfaccia utente" },
   "helptip_fgAnimations": { "message": "Mostra animazioni in primo piano nei componenti dell'interfaccia utente" },
   "helptip_replyLanguage": { "message": "Lingua in cui GoogleGPT può rispondere" },

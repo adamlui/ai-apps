@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "דאַרפן '?' נאָך פֿראגן פֿאַר ענטפֿערס צו ווייַזן" },
   "helptip_widerSidebar": { "message": "האָריזאָנטאַלי יקספּאַנד זוכן בלאַט סיידבאַר" },
   "helptip_stickySidebar": { "message": "מאכט DuckDuckGPT קענטיק אין סיידבאַר אפילו ווען איר מעגילע" },
+  "helptip_anchorMode": { "message": "אַנקער DuckDuckGPT צו די דנאָ פון די פֿענצטער" },
   "helptip_bgAnimations": { "message": "ווייַזן אַנימאַטעד באַקגראַונדז אין וי קאַמפּאָונאַנץ" },
   "helptip_fgAnimations": { "message": "ווייַזן פאָרגראַונד אַנאַמיישאַנז אין וי קאַמפּאָונאַנץ" },
   "helptip_replyLanguage": { "message": "שפּראַך פֿאַר DuckDuckGPT צו ענטפֿערן אין" },

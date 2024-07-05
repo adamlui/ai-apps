@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Saba \"?\" nyuma y'ibibazo kugirango ibisubizo bigaragare" },
   "helptip_widerSidebar": { "message": "Ongera ubugari ku mpande z'urupapuro rwo gushakisha" },
   "helptip_stickySidebar": { "message": "Kigaragara in Umurongo wo ku mpande ATARIIGIHARWE Nka" },
+  "helptip_anchorMode": { "message": "GPT to Hasi: Bya Idirishya" },
   "helptip_bgAnimations": { "message": "Mbuganyuma in" },
   "helptip_fgAnimations": { "message": "Iyega in" },
   "helptip_replyLanguage": { "message": "Ururimi rwa BraveGPT rw'igisubizo" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "చూపించడానికి సమాధానాల కోసం ప్రశ్నల తర్వాత \"?\" అవసరం" },
   "helptip_widerSidebar": { "message": "అడ్డంగా శోధన పేజీ సైడ్ ‌ బార్ ‌ ను విస్తరించండి" },
   "helptip_stickySidebar": { "message": "మీరు స్క్రోల్ చేస్తున్నప్పుడు కూడా సైడ్ ‌ బార్ ‌ లో BraveGPT కనిపిస్తుంది" },
+  "helptip_anchorMode": { "message": "విండో దిగువన యాంకర్ బ్రేవ్GPT" },
   "helptip_bgAnimations": { "message": "UI భాగాలలో యానిమేటెడ్ బ్యాక్ ‌ గ్రౌండ్ ‌ లను చూపించు" },
   "helptip_fgAnimations": { "message": "UI భాగాలలో ఫ్రంట్ ‌ గ్రౌండ్ యానిమేషన్ ‌ లను చూపించు" },
   "helptip_replyLanguage": { "message": "లో ప్రత్యుత్తరం ఇవ్వడానికి BraveGPT కోసం భాష" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "د ښودلو لپاره د پوښتنو وروسته \"?\" ته اړتیا لرئ" },
   "helptip_widerSidebar": { "message": "د لټون پاڼې اړخ چکۍ په افقی ډول پراخه کړئ" },
   "helptip_stickySidebar": { "message": "په سایډ بار (sidebar) کې د GoogleGPT ښکاره کوي حتی کله چې تاسو سکرول کوئ" },
+  "helptip_anchorMode": { "message": "د GoogleGPT نښلونکی د کړکۍ لاندې ته" },
   "helptip_bgAnimations": { "message": "د UI رغتوکونو کې متحرک شاليدونه ښودل" },
   "helptip_fgAnimations": { "message": "د کارن برسېر په برخو کې مخکنی سېلنونه ښودل" },
   "helptip_replyLanguage": { "message": "د GoogleGPT لپاره ژبه ترڅو ځواب ورکړي" },

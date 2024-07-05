@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Sorgulardan sonra gösterilecek cevaplar için \"?\" iste" },
   "helptip_widerSidebar": { "message": "Arama sayfası kenar çubuğunu yatay olarak genişlet" },
   "helptip_stickySidebar": { "message": "Kaydırırken bile BraveGPT'yi kenar çubuğunda görünür kılar" },
+  "helptip_anchorMode": { "message": "BraveGPT'yi pencerenin altına sabitleyin" },
   "helptip_bgAnimations": { "message": "Kullanıcı arayüzü bileşenlerinde animasyonlu arka planları göster" },
   "helptip_fgAnimations": { "message": "Arayüz bileşenlerinde ön plan animasyonlarını göster" },
   "helptip_replyLanguage": { "message": "BraveGPT'nin yanıtlayacağı dil" },

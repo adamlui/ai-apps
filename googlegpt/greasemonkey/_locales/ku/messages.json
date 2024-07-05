@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Pêdivî ye '?' piştî pirsan ji bo bersivan nîşan bide" },
   "helptip_widerSidebar": { "message": "Li kêleka rûpela lêgerînê ya horizontî berfireh bike" },
   "helptip_stickySidebar": { "message": "Gava ku hûn digerînin GoogleGPT di milê kêlekê de xuya dike" },
+  "helptip_anchorMode": { "message": "GoogleGPT li binê pencereyê veşêre" },
   "helptip_bgAnimations": { "message": "Di hêmanên UI de paşnavên anîmasyon nîşan bidin" },
   "helptip_fgAnimations": { "message": "Di hêmanên UI de anîmasyonên pêşîn nîşan bidin" },
   "helptip_replyLanguage": { "message": "Zimanê ku GoogleGPT tê de bersivê bide" },

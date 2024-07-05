@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "ප් ‍ රදර්ශනය සඳහා පිළිතුරු සඳහා විමසුම් වලින් පසු \"?\" අවශ් ‍ ය වේ" },
   "helptip_widerSidebar": { "message": "සෙවුම් පිටු පැති තීරුව තිරස්ව පුළුල් කරන්න" },
   "helptip_stickySidebar": { "message": "ඔබ අනුචලනය කරන විට පවා පැති තීරුවේ GoogleGPT දෘශ් ‍ යමාන කරයි" },
+  "helptip_anchorMode": { "message": "Anchor GoogleGPT to bottom of window" },
   "helptip_bgAnimations": { "message": "UI සංරචකවල සජීවිකරණ පසුබිම් පෙන්වන්න" },
   "helptip_fgAnimations": { "message": "UI සංරචකවල පෙරබිම් සජීවීකරණ පෙන්වන්න" },
   "helptip_replyLanguage": { "message": "ප් ‍ රතිචාර දැක්වීමට GoogleGPT සඳහා භාෂාව" },

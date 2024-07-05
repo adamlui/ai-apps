@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Neyðugt \"?\" eftir at hava spurt eftir svarum at vísa" },
   "helptip_widerSidebar": { "message": "Horizontalt víðka leitingarsíðuna" },
   "helptip_stickySidebar": { "message": "Ger BraveGPT sjónligt í sidebar, eisini tá tú rullar" },
+  "helptip_anchorMode": { "message": "Anker BraveGPT til botn av vindeyganum" },
   "helptip_bgAnimations": { "message": "Vís animeraðar bakgrunnar í UI-komponentum" },
   "helptip_fgAnimations": { "message": "Vís framsýningar í UI-komponentum" },
   "helptip_replyLanguage": { "message": "Tað er ikki neyðugt at gera eina avgerð um, at tað ikki er møguligt at gera eina avgerð um, at" },

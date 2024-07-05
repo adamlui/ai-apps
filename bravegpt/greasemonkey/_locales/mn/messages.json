@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Харуулахын тулд асуултуудын дараа \"?\" шаардах" },
   "helptip_widerSidebar": { "message": "Хайлтын хуудасны хажуугийн цэсийг хэвтээгээр өргөжүүлэх" },
   "helptip_stickySidebar": { "message": "Хажуугийн цонхонд BraveGPT харагдуулдаг" },
+  "helptip_anchorMode": { "message": "Зангуу BraveGPT цонхны ёроолд байна" },
   "helptip_bgAnimations": { "message": "Хөдөлгөөнтэй дэвсгэрүүдийг UI бүрэлдэхүүн хэсгүүдэд харуулах" },
   "helptip_fgAnimations": { "message": "UI бүрэлдэхүүн хэсгүүдэд газрын өмнөх хөдөлгөөнүүдийг харуул" },
   "helptip_replyLanguage": { "message": "BraveGPT-д хариулах хэл" },

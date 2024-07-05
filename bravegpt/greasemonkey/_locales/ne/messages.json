@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "देखाउनका लागि प्रश्नहरू पछि \"?\" आवश्यक छ" },
   "helptip_widerSidebar": { "message": "तेर्सो रूपमा खोजी पृष्ठ साइडबार विस्तार गर्नुहोस्" },
   "helptip_stickySidebar": { "message": "तपाईंले स्क्रोल गर्दा पनि BraveGPT लाई साइडबारमा देखिने बनाउँछ" },
+  "helptip_anchorMode": { "message": "विन्डोको तल एङ्कर BraveGPT" },
   "helptip_bgAnimations": { "message": "UI अवयवहरूमा एनिमेटेड पृष्ठभूमि देखाउनुहोस्" },
   "helptip_fgAnimations": { "message": "UI अवयवहरूमा अग्रभूमि एनिमेसनहरू देखाउनुहोस्" },
   "helptip_replyLanguage": { "message": "जवाफ दिन BraveGPT को लागि भाषा" },

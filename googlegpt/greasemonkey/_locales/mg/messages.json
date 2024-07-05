@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Mitaky \"?\" aorian'ny fanontaniana mba hiseho ny valiny" },
   "helptip_widerSidebar": { "message": "Ampitomboy ny sakany amin'ny sisin'ny pejy fitadiavana" },
   "helptip_stickySidebar": { "message": "Ataovy hita maso amin'ny sisiny ny GoogleGPT na dia misokatra aza ianao" },
+  "helptip_anchorMode": { "message": "Ny vatofantsika GoogleGPT ka hatramin'ny faran'ny fikandrana" },
   "helptip_bgAnimations": { "message": "Asehoy anatin'ny singa fototra UI ireo afaran'ny sary mihetsiketsika" },
   "helptip_fgAnimations": { "message": "Asehoy ireo sary mihetsika amina singantaharo UI eo aloha" },
   "helptip_replyLanguage": { "message": "Fiteny ampiasain'ny GoogleGPT amin'ny famaliana" },

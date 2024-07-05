@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "دکھانے کے جوابات کے لیے سوالات کے بعد \"?\" کی ضرورت ہے" },
   "helptip_widerSidebar": { "message": "تلاش کے صفحے کے سائڈبار کو افقی طور پر وسعت دیں" },
   "helptip_stickySidebar": { "message": "اسکرول کرتے وقت بھی BraveGPT سائڈبار میں نظر آتا ہے" },
+  "helptip_anchorMode": { "message": "ونڈو کے نیچے تک اینکر بہادر جی پی ٹی" },
   "helptip_bgAnimations": { "message": "UI اجزاء میں متحرک پس منظر دکھائیں" },
   "helptip_fgAnimations": { "message": "UI اجزاء میں پیش منظر کی حرکت پذیری دکھائیں" },
   "helptip_replyLanguage": { "message": "میں جواب دینے کے لئے BraveGPT کے لئے زبان" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "ንሕቶታት \"?\" ቀጺሉ መልሲ ክርእይ ንድሕረት" },
   "helptip_widerSidebar": { "message": "ኣብ ዝርከብ ገጽ ሳይድባር ንጎዳእ ምዝርዋህ" },
   "helptip_stickySidebar": { "message": "ኣብ ናይ ሳይድባር DuckDuckGPT ብምምላእ ንምርኣይ" },
+  "helptip_anchorMode": { "message": "ኣብ ታሕቲ መስኮት ዘሎ ኣንከር DuckDuckGPT" },
   "helptip_bgAnimations": { "message": "ኣብ UI ኣሃዱታት ተንቀሳቓሲ ድሕረ ባይታታት ኣርኢ" },
   "helptip_fgAnimations": { "message": "ኣብ UI ኣሃዱታት ናይ ቅድም ኣኒሜሽን ኣርኢ" },
   "helptip_replyLanguage": { "message": "ምልሲ ቋንቋ DuckDuckGPT ንዝረኣይ" },

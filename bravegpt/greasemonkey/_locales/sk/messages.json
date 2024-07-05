@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Vyžadovať „?“ po vyhľadávaní odpovedí, ktoré sa majú zobraziť" },
   "helptip_widerSidebar": { "message": "Vodorovne rozbaliť bočný panel vyhľadávacej stránky" },
   "helptip_stickySidebar": { "message": "Zviditeľňuje BraveGPT v bočnom paneli aj pri posúvaní" },
+  "helptip_anchorMode": { "message": "Ukotviť BraveGPT do spodnej časti okna" },
   "helptip_bgAnimations": { "message": "Zobraziť animované pozadia v komponentoch používateľského rozhrania" },
   "helptip_fgAnimations": { "message": "Zobraziť animácie v popredí v komponentoch používateľského rozhrania" },
   "helptip_replyLanguage": { "message": "Jazyk, v ktorom môže BraveGPT odpovedať" },

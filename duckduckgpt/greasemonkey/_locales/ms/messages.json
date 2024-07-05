@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Memerlukan \"?\" selepas pertanyaan untuk jawapan ditunjukkan" },
   "helptip_widerSidebar": { "message": "Kembangkan bar sisi halaman carian secara mengufuk" },
   "helptip_stickySidebar": { "message": "Menjadikan DuckDuckGPT kelihatan di bar sisi walaupun anda menatal" },
+  "helptip_anchorMode": { "message": "Anchor DuckDuckGPT ke bahagian bawah tetingkap" },
   "helptip_bgAnimations": { "message": "Tunjukkan latar belakang animasi dalam komponen UI" },
   "helptip_fgAnimations": { "message": "Tunjukkan animasi latar depan dalam komponen UI" },
   "helptip_replyLanguage": { "message": "Bahasa untuk DuckDuckGPT menjawab dalam" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Javoblar ko'rsatilishi uchun so'rovlar oxiridan \"?\" talab qiling" },
   "helptip_widerSidebar": { "message": "Qidiruv sahifasi yon panelini kengaytirish" },
   "helptip_stickySidebar": { "message": "GoogleGPT ni sahifa aylantirilsa ham yon panelda ko'rinadigan qiling" },
+  "helptip_anchorMode": { "message": "GoogleGPT-ni oynaning pastki qismiga mahkamlang" },
   "helptip_bgAnimations": { "message": "UI komponentlarida animatsion fonlarni ko'rsatish" },
   "helptip_fgAnimations": { "message": "UI komponentlarida oldingi fon animatsiyalarini ko'rsatish" },
   "helptip_replyLanguage": { "message": "GoogleGPT javob beradigan til" },

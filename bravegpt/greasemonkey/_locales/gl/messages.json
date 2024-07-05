@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Require \"?\" despois de consultas de respostas para mostrar" },
   "helptip_widerSidebar": { "message": "Ampliar horizontalmente a barra lateral da páxina de busca" },
   "helptip_stickySidebar": { "message": "Fai que BraveGPT sexa visible na barra lateral mesmo mentres se despraza" },
+  "helptip_anchorMode": { "message": "Ancre BraveGPT a fond de fenêtre" },
   "helptip_bgAnimations": { "message": "Mostrar os fondos animados nos compoñentes da interface" },
   "helptip_fgAnimations": { "message": "Mostrar as animacións de primeiro plano nos compoñentes da interface" },
   "helptip_replyLanguage": { "message": "Language for BraveGPT para responder en" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Neyðugt \"?\" eftir at hava spurt eftir svarum at vísa" },
   "helptip_widerSidebar": { "message": "Horizontalt víðka leitingarsíðuna" },
   "helptip_stickySidebar": { "message": "Ger GoogleGPT sjónligt í sidebar, eisini tá tú rullar" },
+  "helptip_anchorMode": { "message": "Ankar GoogleGPT til botn í vindeyganum" },
   "helptip_bgAnimations": { "message": "Vís animeraðar bakgrunnar í UI-komponentum" },
   "helptip_fgAnimations": { "message": "Vís framsýningar í UI-komponentum" },
   "helptip_replyLanguage": { "message": "Talan fyri GoogleGPT at svara í" },

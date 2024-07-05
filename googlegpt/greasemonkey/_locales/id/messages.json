@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Wajibkan \"?\" setelah kueri untuk menampilkan jawaban" },
   "helptip_widerSidebar": { "message": "Perluas bilah sisi halaman pencarian secara horizontal" },
   "helptip_stickySidebar": { "message": "Membuat GoogleGPT terlihat di bilah sisi bahkan saat Anda menggulir" },
+  "helptip_anchorMode": { "message": "Jangkar GoogleGPT ke bagian bawah jendela" },
   "helptip_bgAnimations": { "message": "Tampilkan latar belakang animasi di komponen UI" },
   "helptip_fgAnimations": { "message": "Tampilkan animasi latar depan dalam komponen UI" },
   "helptip_replyLanguage": { "message": "Bahasa untuk dibalas oleh GoogleGPT" },

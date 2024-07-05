@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "ತೋರಿಸಲು ಉತ್ತರಗಳಿಗಾಗಿ ಪ್ರಶ್ನೆಗಳ ನಂತರ \"?\" ಅಗತ್ಯವಿದೆ" },
   "helptip_widerSidebar": { "message": "ಹುಡುಕಾಟ ಪುಟ ಸೈಡ್ ‌ ಬಾರ್ ‌ ಅನ್ನು ಅಡ್ಡಲಾಗಿ ವಿಸ್ತರಿಸಿ" },
   "helptip_stickySidebar": { "message": "ನೀವು ಸ್ಕ್ರಾಲ್ ಮಾಡುವಾಗಲೂ ಸೈಡ್ ‌ ಬಾರ್ ‌ ನಲ್ಲಿ ಡಕ್ ‌ ಡಕ್ ‌ ಜಿಪಿಟಿಯನ್ನು ಗೋಚರಿಸುವಂತೆ ಮಾಡುತ್ತದೆ" },
+  "helptip_anchorMode": { "message": "ವಿಂಡೋದ ಕೆಳಭಾಗದಿಂದ ಆಂಕರ್ ಡಕ್ ‌ ಡಕ್ ‌ ಜಿಪಿಟಿ" },
   "helptip_bgAnimations": { "message": "UI ಘಟಕಗಳಲ್ಲಿ ಅನಿಮೇಟೆಡ್ ಹಿನ್ನೆಲೆಗಳನ್ನು ತೋರಿಸಿ" },
   "helptip_fgAnimations": { "message": "UI ಘಟಕಗಳಲ್ಲಿ ಮುಂಭಾಗದ ಅನಿಮೇಷನ್ ‌ ಗಳನ್ನು ತೋರಿಸಿ" },
   "helptip_replyLanguage": { "message": "ಉತ್ತರಿಸಲು DuckDuckGPT ಗಾಗಿ ಭಾಷೆ" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "দেখানোর জন্য উত্তরের জন্য প্রশ্নের পরে \"?\" প্রয়োজন" },
   "helptip_widerSidebar": { "message": "অনুভূমিকভাবে অনুসন্ধান পৃষ্ঠার সাইডবার প্রসারিত করুন" },
   "helptip_stickySidebar": { "message": "আপনি স্ক্রোল করার সময়ও সাইডবারে GoogleGPT-কে দৃশ্যমান করে তোলে" },
+  "helptip_anchorMode": { "message": "অ্যাঙ্কর GoogleGPT উইন্ডোর নীচে" },
   "helptip_bgAnimations": { "message": "UI কম্পোনেন্টে অ্যানিমেটেড ব্যাকগ্রাউন্ড দেখান" },
   "helptip_fgAnimations": { "message": "UI কম্পোনেন্টে ফোরগ্রাউন্ড অ্যানিমেশন দেখান" },
   "helptip_replyLanguage": { "message": "উত্তর দেওয়ার জন্য GoogleGPT এর ভাষা" },

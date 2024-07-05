@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Pieprasīt \"?\" pēc vaicājumiem par atbildēm, lai parādītu" },
   "helptip_widerSidebar": { "message": "Horizontāli izvērst meklēšanas lapas sānjoslu" },
   "helptip_stickySidebar": { "message": "Padara BraveGPT redzamu sānjoslā pat ritinot" },
+  "helptip_anchorMode": { "message": "Noenkurojiet BraveGPT līdz loga apakšai" },
   "helptip_bgAnimations": { "message": "Rādīt animētos fonus lietotāja interfeisa komponentos" },
   "helptip_fgAnimations": { "message": "Rādīt priekšplāna animācijas lietotāja interfeisa komponentos" },
   "helptip_replyLanguage": { "message": "Valoda, kurā BraveGPT var atbildēt" },

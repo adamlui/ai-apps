@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "표시할 답변에 대한 쿼리 후 \"?\" 필요" },
   "helptip_widerSidebar": { "message": "검색 페이지 사이드바를 가로로 확장" },
   "helptip_stickySidebar": { "message": "스크롤할 때에도 DuckDuckGPT를 사이드바에 표시합니다" },
+  "helptip_anchorMode": { "message": "DuckDuckGPT를 창 하단에 고정" },
   "helptip_bgAnimations": { "message": "UI 구성 요소에 애니메이션 배경 표시" },
   "helptip_fgAnimations": { "message": "UI 구성 요소에 전경 애니메이션 표시" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT가 회신할 언어" },

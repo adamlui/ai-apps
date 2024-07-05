@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "A megjelenítendő válaszok lekérdezése után „?” szükséges" },
   "helptip_widerSidebar": { "message": "Keresési oldal oldalsávjának vízszintes kibontása" },
   "helptip_stickySidebar": { "message": "A GoogleGPT-t görgetés közben is láthatóvá teszi az oldalsávban" },
+  "helptip_anchorMode": { "message": "Horgonyozza a GoogleGPT-t az ablak aljához" },
   "helptip_bgAnimations": { "message": "Animált hátterek megjelenítése a felhasználói felület összetevőiben" },
   "helptip_fgAnimations": { "message": "Előtér animációk megjelenítése a felhasználói felület komponenseiben" },
   "helptip_replyLanguage": { "message": "A GoogleGPT által a válaszadáshoz használt nyelv" },

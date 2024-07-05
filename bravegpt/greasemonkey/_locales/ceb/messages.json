@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Gikinahanglan \"?\" human sa mga pangutana alang sa mga tubag sa pagpakita" },
   "helptip_widerSidebar": { "message": "Horizontal nga pagpalapad sa sidebar sa panid sa pagpangita" },
   "helptip_stickySidebar": { "message": "Gihimo nga makita ang BraveGPT sa sidebar bisan kung nag-scroll ka" },
+  "helptip_anchorMode": { "message": "Anchor BraveGPT sa ilawom sa bintana" },
   "helptip_bgAnimations": { "message": "Ipakita ang mga animated background sa mga sangkap sa UI" },
   "helptip_fgAnimations": { "message": "Ipakita ang mga animasyon sa foreground sa mga sangkap sa UI" },
   "helptip_replyLanguage": { "message": "Pinulongan alang sa BraveGPT sa pagtubag sa" },

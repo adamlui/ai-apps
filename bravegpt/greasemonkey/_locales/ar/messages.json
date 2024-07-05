@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "تتطلب \"?\" بعد الاستعلامات لإظهار الإجابات" },
   "helptip_widerSidebar": { "message": "توسيع الشريط الجانبي لصفحة البحث أفقيًا" },
   "helptip_stickySidebar": { "message": "يجعل BraveGPT مرئيًا في الشريط الجانبي حتى أثناء التمرير" },
+  "helptip_anchorMode": { "message": "قم بتثبيت BraveGPT أسفل النافذة" },
   "helptip_bgAnimations": { "message": "عرض الخلفيات المتحركة في مكونات واجهة المستخدم" },
   "helptip_fgAnimations": { "message": "عرض الرسوم المتحركة الأمامية في مكونات واجهة المستخدم" },
   "helptip_replyLanguage": { "message": "لغة BraveGPT للرد في" },

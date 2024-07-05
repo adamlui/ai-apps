@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Fuerderen \"?\" no Ufroen fir Äntwerten ze weisen" },
   "helptip_widerSidebar": { "message": "Horizontalt Erweiderung vun der Sich Säit Säitbar" },
   "helptip_stickySidebar": { "message": "Maacht GoogleGPT sichtbar an der Sidebar och wann Dir scrollt" },
+  "helptip_anchorMode": { "message": "Anker GoogleGPT no ënnen an der Fënster" },
   "helptip_bgAnimations": { "message": "Animéiert Hannergrënn an UI Komponenten uweisen" },
   "helptip_fgAnimations": { "message": "Weist Virgrondanimatiounen an UI Komponenten" },
   "helptip_replyLanguage": { "message": "Sprache für GoogleGPT um an zu antworten" },

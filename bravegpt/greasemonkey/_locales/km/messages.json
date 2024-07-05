@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "ត្រូវការ \"?\" បន្ទាប់ពីសំណួរសម្រាប់ចម្លើយដើម្បីបង្ហាញ" },
   "helptip_widerSidebar": { "message": "របារ ចំហៀង ទំព័រ ស្វែងរក ផ្ដេក" },
   "helptip_stickySidebar": { "message": "ធ្វើ ឲ្យ BraveGPT អាច មើល ឃើញ នៅ ក្នុង របារ ចំហៀង សូម្បី តែ ពេល អ្នក រមូរ" },
+  "helptip_anchorMode": { "message": "យុថ្កា ក្លាហានGPT ទៅ បាត បង្អួច" },
   "helptip_bgAnimations": { "message": "បង្ហាញ ផ្ទៃ ខាង ក្រោយ ដែល មាន ចលនា នៅ ក្នុង សមាសភាគ UI" },
   "helptip_fgAnimations": { "message": "បង្ហាញ ចលនា ផ្ទៃ ខាង មុខ ក្នុង សមាសភាគ UI" },
   "helptip_replyLanguage": { "message": "ភាសាសម្រាប់ BraveGPT ដើម្បីឆ្លើយតបនៅក្នុង" },

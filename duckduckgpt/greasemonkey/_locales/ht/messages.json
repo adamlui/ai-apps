@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Mande \"?\" apre kesyon pou jwenn repons pou montre" },
   "helptip_widerSidebar": { "message": "Horizontally expand search page sidebar" },
   "helptip_stickySidebar": { "message": "Fè DuckDuckGPT vizib nan ankadre menm jan ou woule" },
+  "helptip_anchorMode": { "message": "Anchor DuckDuckGPT nan pati anba fenèt la" },
   "helptip_bgAnimations": { "message": "Montre orijin anime nan eleman UI" },
   "helptip_fgAnimations": { "message": "Montre animasyon prensipal nan eleman UI" },
   "helptip_replyLanguage": { "message": "Lang pou DuckDuckGPT pou reponn nan" },

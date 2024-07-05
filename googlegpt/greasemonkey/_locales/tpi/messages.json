@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Kisim \"?\" bihain long ol askim long bekim bilong soim" },
   "helptip_widerSidebar": { "message": "Long sait bilong painim ol samting long hap bilong graun" },
   "helptip_stickySidebar": { "message": "Dispela i mekim GoogleGPT i kamap ples klia long sait bilong ol samting, maski yu save skrapim ol samting" },
+  "helptip_anchorMode": { "message": "GoogleGPT i go daun long windo" },
   "helptip_bgAnimations": { "message": "Show animated backgrounds in UI components" },
   "helptip_fgAnimations": { "message": "Ol piksa bilong piksa long ol samting bilong UI" },
   "helptip_replyLanguage": { "message": "Tokples bilong bekim tok long Google" },

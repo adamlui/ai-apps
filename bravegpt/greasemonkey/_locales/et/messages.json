@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Nõua \"?\" pärast päringuid vastuste kuvamiseks" },
   "helptip_widerSidebar": { "message": "Laienda otsingulehe külgriba horisontaalselt" },
   "helptip_stickySidebar": { "message": "Muudab BraveGPT külgribal nähtavaks isegi kerimise ajal" },
+  "helptip_anchorMode": { "message": "Ankur BraveGPT akna alumisse ossa" },
   "helptip_bgAnimations": { "message": "Kuva animeeritud taustad kasutajaliidese komponentides" },
   "helptip_fgAnimations": { "message": "Näita esiplaani animatsioone kasutajaliidese komponentides" },
   "helptip_replyLanguage": { "message": "Keel, milles BraveGPT vastab" },

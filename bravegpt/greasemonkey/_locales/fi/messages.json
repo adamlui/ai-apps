@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Vaadi \"?\" näytettävien vastausten kyselyjen jälkeen" },
   "helptip_widerSidebar": { "message": "Laajenna hakusivun sivupalkki vaakasuunnassa" },
   "helptip_stickySidebar": { "message": "Tekee BraveGPT: stä näkyvän sivupalkissa myös vieritettäessä" },
+  "helptip_anchorMode": { "message": "Ankkuri BraveGPT ikkunan alareunaan" },
   "helptip_bgAnimations": { "message": "Näytä animoidut taustat käyttöliittymän komponenteissa" },
   "helptip_fgAnimations": { "message": "Näytä etualan animaatiot käyttöliittymän komponenteissa" },
   "helptip_replyLanguage": { "message": "Kieli, jolla BraveGPT vastaa" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "查询后需要 “?” 才能显示答案" },
   "helptip_widerSidebar": { "message": "水平展开搜索页面侧边栏" },
   "helptip_stickySidebar": { "message": "即使滚动，GoogleGPT 也会在侧边栏中可见" },
+  "helptip_anchorMode": { "message": "将 GoogleGPT 锚定到窗口底部" },
   "helptip_bgAnimations": { "message": "在 UI 组件中显示动画背景" },
   "helptip_fgAnimations": { "message": "在 UI 组件中显示前景动画" },
   "helptip_replyLanguage": { "message": "GoogleGPT 回复的语言" },

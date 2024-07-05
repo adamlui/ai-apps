@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "બતાવવા માટે જવાબો માટે પ્રશ્નો પછી \"?\" ની જરૂર છે" },
   "helptip_widerSidebar": { "message": "આડી રીતે શોધ પૃષ્ઠની સાઇડબારને વિસ્તૃત કરો" },
   "helptip_stickySidebar": { "message": "તમે સ્ક્રોલ કરો ત્યારે પણ GoogleGPT સાઇડબારમાં દૃશ્યમાન બને છે" },
+  "helptip_anchorMode": { "message": "વિન્ડોની નીચે GoogleGPT એન્કર કરો" },
   "helptip_bgAnimations": { "message": "UI ઘટકોમાં એનિમેટેડ બેકગ્રાઉન્ડ્સ બતાવો" },
   "helptip_fgAnimations": { "message": "UI ઘટકોમાં અગ્રભૂમિ એનિમેશન બતાવો" },
   "helptip_replyLanguage": { "message": "જવાબ આપવા માટે GoogleGPT માટે ભાષા" },

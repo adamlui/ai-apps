@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Angen \"?\" ar ôl cwestiynau am atebion i'w dangos" },
   "helptip_widerSidebar": { "message": "Ehangu bar ochr y dudalen chwilio yn llorweddol" },
   "helptip_stickySidebar": { "message": "Gwneud BraveGPT yn weladwy yn y bar ochr hyd yn oed wrth i chi sgrolio" },
+  "helptip_anchorMode": { "message": "GPT i waelod y ffenestr" },
   "helptip_bgAnimations": { "message": "Dangos cefndiroedd wedi'u hanimeiddio mewn cydrannau UI" },
   "helptip_fgAnimations": { "message": "Dangos animeiddiadau blaendir mewn cydrannau rhyngwynebol" },
   "helptip_replyLanguage": { "message": "Iaith ar gyfer BraveGPT i ymateb ynddi" },

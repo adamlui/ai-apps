@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "ต้องการ \"?\" หลังจากการสอบถามเพื่อให้คำตอบแสดง" },
   "helptip_widerSidebar": { "message": "ขยายแถบด้านข้างของหน้าค้นหาในแนวนอน" },
   "helptip_stickySidebar": { "message": "ทำให้ BraveGPT มองเห็นได้ในแถบด้านข้างแม้ในขณะที่คุณเลื่อน" },
+  "helptip_anchorMode": { "message": "Anchor BraveGPT ที่ด้านล่างของหน้าต่าง" },
   "helptip_bgAnimations": { "message": "แสดงแบ็คกราวน์แบบเคลื่อนไหวในคอมโพเนนต์ UI" },
   "helptip_fgAnimations": { "message": "แสดงภาพเคลื่อนไหวเบื้องหน้าในส่วนประกอบ UI" },
   "helptip_replyLanguage": { "message": "ภาษาสำหรับ BraveGPT เพื่อตอบกลับ" },

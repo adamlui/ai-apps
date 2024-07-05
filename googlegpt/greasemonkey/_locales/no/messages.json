@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Krev '?' etter spørsmål for svar å vise" },
   "helptip_widerSidebar": { "message": "Utvid søkesidens sidefelt horisontalt" },
   "helptip_stickySidebar": { "message": "Gjør GoogleGPT synlig i sidefeltet selv når du blar" },
+  "helptip_anchorMode": { "message": "Anker GoogleGPT nederst i vinduet" },
   "helptip_bgAnimations": { "message": "Vis animerte bakgrunner i UI-komponenter" },
   "helptip_fgAnimations": { "message": "Vis forgrunnsanimasjoner i UI-komponenter" },
   "helptip_replyLanguage": { "message": "Språk for GoogleGPT å svare på" },

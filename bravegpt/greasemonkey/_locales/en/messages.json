@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Require \"?\" after queries for answers to show" },
   "helptip_widerSidebar": { "message": "Horizontally expand search page sidebar" },
   "helptip_stickySidebar": { "message": "Makes BraveGPT visible in sidebar even as you scroll" },
+  "helptip_anchorMode": { "message": "Anchor BraveGPT to bottom of window" },
   "helptip_bgAnimations": { "message": "Show animated backgrounds in UI components" },
   "helptip_fgAnimations": { "message": "Show foreground animations in UI components" },
   "helptip_replyLanguage": { "message": "Language for BraveGPT to reply in" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Требовать \"?\" после запросов для ответов, чтобы показать" },
   "helptip_widerSidebar": { "message": "Развернуть боковую панель страницы поиска по горизонтали" },
   "helptip_stickySidebar": { "message": "Делает GoogleGPT видимым на боковой панели даже при прокрутке" },
+  "helptip_anchorMode": { "message": "Привязка GoogleGPT к нижней части окна" },
   "helptip_bgAnimations": { "message": "Показать анимированные фоны в компонентах пользовательского интерфейса" },
   "helptip_fgAnimations": { "message": "Показать анимацию переднего плана в компонентах пользовательского интерфейса" },
   "helptip_replyLanguage": { "message": "Язык для ответа GoogleGPT" },

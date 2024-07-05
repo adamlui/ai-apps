@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Rekerí \"?\" despues di e pregunta pa e respuesta por aparece" },
   "helptip_widerSidebar": { "message": "Hasi e barra lateral di e pagina di buska mas ancho" },
   "helptip_stickySidebar": { "message": "Mantené DuckDuckGPT visibel den e barra lateral aunke bo ta scroll" },
+  "helptip_anchorMode": { "message": "Anchor DuckDuckDuckGPT a base di bentana" },
   "helptip_bgAnimations": { "message": "Animacion En Componentes Ue" },
   "helptip_fgAnimations": { "message": "SimpanSimpan Animacion en Componentes Untuk Nanti" },
   "helptip_replyLanguage": { "message": "Idioma pa DuckDuckGPT por respondé den dje" },

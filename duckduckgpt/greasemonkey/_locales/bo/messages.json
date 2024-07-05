@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "ལན་སྟོན་པའི་འདྲི་རྩད་རྗེས་སུ་ \"?\" དགོས་" },
   "helptip_widerSidebar": { "message": "ཕྱོགས་རིས་འཚོལ་བཤེར་ཤོག་ངོས་ཟུར་པང་རྒྱ་བསྐྱེད་པ" },
   "helptip_stickySidebar": { "message": "DuckDuckGPT ཕྱོགས་ཀྱི་སྒྲོམ་ནང་མཐོང་ཐུབ་པའི་ནུས་པ་ཡོད ། ཁྱོད་ཀྱིས་ཤོག་སྒྲིལ་རྒྱབ་སྐབས་ཀྱང་" },
+  "helptip_anchorMode": { "message": "སྐར་ཁུང་རྩོམ་སྒྲིག་པ །_08/03/2020" },
   "helptip_bgAnimations": { "message": "UI ཡན་ལག་ཁག་ཏུ་སེམས་ཅན་གྱི་རྒྱབ་སྐྱོར་སྟོན་པ" },
   "helptip_fgAnimations": { "message": "UI ཡན་ལག་ཁག་གི་མདུན་ངོས་ཀྱི་རྣམ་པར་རིས་སྟོན་པ" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT གྱིས་ལན་འདེབས་བྱས་པ །" },

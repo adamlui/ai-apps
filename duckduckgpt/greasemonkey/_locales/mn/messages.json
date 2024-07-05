@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Харуулахын тулд асуултуудын дараа \"?\" шаардах" },
   "helptip_widerSidebar": { "message": "Хайлтын хуудасны хажуугийн цэсийг хэвтээгээр өргөжүүлэх" },
   "helptip_stickySidebar": { "message": "НугасDuckGPT нь гүйлгэсэн шигээ хажуу цонхонд харагдана" },
+  "helptip_anchorMode": { "message": "Anchor DuckDuckGPT цонхны доод хэсэг" },
   "helptip_bgAnimations": { "message": "Хөдөлгөөнтэй дэвсгэрүүдийг UI бүрэлдэхүүн хэсгүүдэд харуулах" },
   "helptip_fgAnimations": { "message": "UI бүрэлдэхүүн хэсгүүдэд газрын өмнөх хөдөлгөөнүүдийг харуул" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT-д хариу өгөх хэл" },

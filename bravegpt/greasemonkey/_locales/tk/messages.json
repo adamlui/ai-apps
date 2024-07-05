@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "\"?\" soragyna jogap bermek üçin soraga jogap bermek" },
   "helptip_widerSidebar": { "message": "Saýt sahypasyny uzynlyk bilen giňelt" },
   "helptip_stickySidebar": { "message": "BraveGPT-i kenar zolakda görmäge kömek edýär" },
+  "helptip_anchorMode": { "message": "Anker BraveGPT penjiräniň aşagynda" },
   "helptip_bgAnimations": { "message": "UI komponentlerinde animaly arkaýynlygy görkez" },
   "helptip_fgAnimations": { "message": "UI komponentlerinde öňki animasiýalary görkez" },
   "helptip_replyLanguage": { "message": "Bu soraga jogap bermek üçin batyrgaýlyk gerek" },

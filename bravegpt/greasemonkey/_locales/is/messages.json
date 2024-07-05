@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Krefjast „?“ eftir fyrirspurnir um svör til að sýna" },
   "helptip_widerSidebar": { "message": "Stækka hliðarsíðu leitarsíðunnar lárétt" },
   "helptip_stickySidebar": { "message": "Gerir BraveGPT sýnilegt í hliðarstikunni jafnvel þegar þú flettir" },
+  "helptip_anchorMode": { "message": "Festu BraveGPT við botn gluggans" },
   "helptip_bgAnimations": { "message": "Sýna hreyfibakgrunn í íhlutum notendaviðmóts" },
   "helptip_fgAnimations": { "message": "Sýna forgrunnshreyfimyndir í íhlutum notendaviðmóts" },
   "helptip_replyLanguage": { "message": "Tungumál fyrir BraveGPT til að svara á" },

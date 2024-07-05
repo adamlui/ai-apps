@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Kræv \"?\" efter forespørgsler om svar, der skal vises" },
   "helptip_widerSidebar": { "message": "Udvid søgesidens sidebjælke vandret" },
   "helptip_stickySidebar": { "message": "Gør BraveGPT synlig i sidebjælken, selv når du ruller" },
+  "helptip_anchorMode": { "message": "Anker BraveGPT til bunden af vinduet" },
   "helptip_bgAnimations": { "message": "Vis animerede baggrunde i UI-komponenter" },
   "helptip_fgAnimations": { "message": "Vis forgrundsanimationer i UI-komponenter" },
   "helptip_replyLanguage": { "message": "Sprog for BraveGPT at svare på" },

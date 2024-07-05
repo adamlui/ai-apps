@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Unoda \"?\" mushure memibvunzo yemhinduro kuratidza" },
   "helptip_widerSidebar": { "message": "Horizontally kuwedzera kutsvaka peji sidebar" },
   "helptip_stickySidebar": { "message": "Inoita DuckDuckGPT kuoneka sidebar kunyange sezvo imi mupumburu" },
+  "helptip_anchorMode": { "message": "Anchor DuckDuckGPT kusvika pasi pehwindo" },
   "helptip_bgAnimations": { "message": "Show animated kumashure muUI zvinoriumba" },
   "helptip_fgAnimations": { "message": "Ratidza mifananidzo yepamberi muUI zvinoriumba" },
   "helptip_replyLanguage": { "message": "Language nokuti DuckDuckGPT kupindura mukati" },

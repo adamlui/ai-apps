@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Show ကိုအဖြေများအတွက်မေးမြန်းစုံစမ်းလိုသည်များပြီးနောက် \"?\" လိုအပ်သည်" },
   "helptip_widerSidebar": { "message": "ရှာဖွေရေးစာမျက်နှာ ဘေးဘားတန်းကို အလျားလိုက် တိုးချဲ့ပါ" },
   "helptip_stickySidebar": { "message": "သင် scroll လုပ်နေစဉ်ပင်ဘေးဘားတွင် BraveGPT ကိုမြင်သာစေသည်" },
+  "helptip_anchorMode": { "message": "Anchor BraveGPT to bottom of window" },
   "helptip_bgAnimations": { "message": "UI အစိတ်အပိုင်းများတွင် သက်ဝင်လှုပ်ရှားသော နောက်ခံများကို ပြသပါ" },
   "helptip_fgAnimations": { "message": "UI အစိတ်အပိုင်းများတွင် ရှေ့မျက်နှာပြင် သက်ဝင်လှုပ်ရှားမှုများကို ပြသပါ" },
   "helptip_replyLanguage": { "message": "တုံ့ပြန်ရန် BraveGPT အတွက်ဘာသာစကား" },

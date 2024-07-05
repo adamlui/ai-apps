@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "'?' eskatzen du erantzunak erakusteko galderen ondoren" },
   "helptip_widerSidebar": { "message": "Zabaldu bilaketa-orriaren alboko barra horizontalean" },
   "helptip_stickySidebar": { "message": "DuckDuckGPT alboko barran ikusgai jartzen du nabigatzen duzun bitartean" },
+  "helptip_anchorMode": { "message": "Ainguratu DuckDuckGPT leihoaren behealdean" },
   "helptip_bgAnimations": { "message": "Erakutsi atzeko plano animatuak UI osagaietan" },
   "helptip_fgAnimations": { "message": "Erakutsi lehen planoko animazioak UI osagaietan" },
   "helptip_replyLanguage": { "message": "DuckDuckGPT-ren hizkuntza erantzuteko" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "A hunda ti tene \"?\" na peko ti so mo hunda ti wara kiringo tënë ti fa" },
   "helptip_widerSidebar": { "message": "A yeke wara lege ti fa tënë na ndo ti mbeni ndo so ayeke na yâ ti mbeni ndo so a yeke wara" },
   "helptip_stickySidebar": { "message": "A yeke bâ ni na yâ ti mbeni kete kete kete kete kete kete kete kete kete kete kete kete kete kete kete kete kete kete kete" },
+  "helptip_anchorMode": { "message": "Anchor DuckDuckGPT na gbe ti fenêtre" },
   "helptip_bgAnimations": { "message": "A yeke sara si azo abâ peko ti aye so ayeke na yâ ti UI" },
   "helptip_fgAnimations": { "message": "A yeke wara a-animation na yâ ti akota mbage ti UI" },
   "helptip_replyLanguage": { "message": "A yeke nzoni e kiri tënë na hundango tënë ni" },

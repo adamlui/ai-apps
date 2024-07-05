@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Изискване на „?“ след запитвания за показване на отговори" },
   "helptip_widerSidebar": { "message": "Хоризонтално разширяване на страничната лента на страницата за търсене" },
   "helptip_stickySidebar": { "message": "Прави BraveGPT видим в страничната лента, дори когато превъртате" },
+  "helptip_anchorMode": { "message": "Котва BraveGPT до дъното на прозореца" },
   "helptip_bgAnimations": { "message": "Показване на анимирани фонове в компонентите на потребителския интерфейс" },
   "helptip_fgAnimations": { "message": "Показване на анимации на преден план в компонентите на потребителския интерфейс" },
   "helptip_replyLanguage": { "message": "Език, на който BraveGPT да отговори" },

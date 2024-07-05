@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "കാണിക്കുന്നതിനുള്ള ഉത്തരങ്ങൾക്കുള്ള ചോദ്യങ്ങൾക്ക് ശേഷം \"?\" ആവശ്യമാണ്" },
   "helptip_widerSidebar": { "message": "തിരയൽ പേജ് സൈഡ്ബാർ തിരശ്ചീനമായി വിപുലീകരിക്കുക" },
   "helptip_stickySidebar": { "message": "നിങ്ങൾ സ്ക്രോൾ ചെയ്യുമ്പോൾ പോലും സൈഡ്ബാറിൽ ഡക്ക്ഡക്ക് ജിപിടി ദൃശ്യമാക്കുന്നു" },
+  "helptip_anchorMode": { "message": "വിൻഡോയുടെ അടിയിലേക്ക് ആങ്കർ ഡക്ക്ഡക്ക് ജിപിടി" },
   "helptip_bgAnimations": { "message": "UI ഘടകങ്ങളിൽ ആനിമേറ്റുചെയ്‌ത പശ്ചാത്തലങ്ങൾ കാണിക്കുക" },
   "helptip_fgAnimations": { "message": "UI ഘടകങ്ങളിൽ മുൻവശത്തെ ആനിമേഷനുകൾ കാണിക്കുക" },
   "helptip_replyLanguage": { "message": "മറുപടി നൽകാൻ DuckDuckGPT-നുള്ള ഭാഷ" },

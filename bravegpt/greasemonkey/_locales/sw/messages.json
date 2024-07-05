@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Unahitaji \"?\" baada ya maswali kwa majibu ya kuonyesha" },
   "helptip_widerSidebar": { "message": "Panua upau wa pembeni wa ukurasa wa utafutaji kwa mlalo" },
   "helptip_stickySidebar": { "message": "Hufanya BraveGPT ionekane kwenye upau wa pembeni hata unapotelezesha" },
+  "helptip_anchorMode": { "message": "Nanga BraveGPT hadi chini ya dirisha" },
   "helptip_bgAnimations": { "message": "Onyesha mandharinyuma zilizohuishwa katika vipengele vya UI" },
   "helptip_fgAnimations": { "message": "Onyesha uhuishaji wa mbele katika vipengele vya UI" },
   "helptip_replyLanguage": { "message": "Lugha ya BraveGPT kujibu" },

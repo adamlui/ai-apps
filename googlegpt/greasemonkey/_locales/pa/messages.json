@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "ਦਿਖਾਉਣ ਲਈ ਜਵਾਬਾਂ ਲਈ ਪੁੱਛਗਿੱਛਾਂ ਤੋਂ ਬਾਅਦ \"?\" ਦੀ ਲੋੜ ਹੈ" },
   "helptip_widerSidebar": { "message": "ਖਿਤਿਜੀ ਖੋਜ ਪੇਜ਼ ਬਾਹੀ ਫੈਲਾਓ" },
   "helptip_stickySidebar": { "message": "ਜਦੋਂ ਤੁਸੀਂ ਸਕ੍ਰੌਲ ਕਰਦੇ ਹੋ ਤਾਂ ਵੀ GoogleGPT ਬਾਹੀ ਵਿੱਚ ਦਿਖਾਈ ਦਿੰਦਾ ਹੈ" },
+  "helptip_anchorMode": { "message": "ਐਂਕਰ GoogleGPT ਨੂੰ ਵਿੰਡੋ ਦੇ ਤਲ ਤੱਕ" },
   "helptip_bgAnimations": { "message": "UI ਭਾਗਾਂ ਵਿੱਚ ਐਨੀਮੇਟਡ ਬੈਕਗਰਾਊਂਡ ਵੇਖੋ" },
   "helptip_fgAnimations": { "message": "UI ਭਾਗਾਂ ਵਿੱਚ ਫਾਰਗਰਾਊਂਡ ਐਨੀਮੇਸ਼ਨ ਵੇਖੋ" },
   "helptip_replyLanguage": { "message": "ਵਿੱਚ ਜਵਾਬ ਦੇਣ ਲਈ GoogleGPT ਲਈ ਭਾਸ਼ਾ" },

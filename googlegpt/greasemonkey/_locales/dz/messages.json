@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "ལན་ཚུ་སྟོན་ནིའི་དོན་ལུ་འདྲི་དཔྱད་ཀྱི་ཤུལ་ལས་ \"?\" དགོ" },
   "helptip_widerSidebar": { "message": "ཐད་སྙོམས་སྦེ་ འཚོལ་ཞིབ་ཤོག་ལེབ་ཟུར་ཁའི་ཕྲ་རིང་རྒྱ་བསྐྱེད་འབད།" },
   "helptip_stickySidebar": { "message": "སྐད་འགྲེལ་གྱི་གདམས་ལས GoogleGPT སྣང་རིགས་གི་ནང་འཛིན་ལགས་ཀྱང་ལོངས་འགན་ལགས།" },
+  "helptip_anchorMode": { "message": "སྒོ་སྒྲིག་གི་འོག་ལུ་ GoogleGPT སྒོ་སྒྲིག་གི་འོག་ལུ་" },
   "helptip_bgAnimations": { "message": "UIགི་ཡན་ལག་ཚུ་ནང་ལུ་ animated backgroundསྟོན་འབདཝ་ཨིན།" },
   "helptip_fgAnimations": { "message": "ཌའི་ལོག་གི་ཁ་བྱང་ཚུ་ ཌའི་ལོག་གི་ཁ་བྱང་ཚུ་ནང་སེལ་འཐུ་འབད།" },
   "helptip_replyLanguage": { "message": "Google གིས་ལན་འདེབས་འབད་" },

@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "የሚያስፈልግ \"?\" ከጥያቄዎች በኋላ ለማሳየት" },
   "helptip_widerSidebar": { "message": "አግድም የፍለጋ ገጽ የጎን አሞሌ ያሰፉ" },
   "helptip_stickySidebar": { "message": "DuckDuckGPT በሚንሸራተትበት ጊዜ እንኳን በጎን አሞሌ ውስጥ እንዲታይ ያደርገዋል" },
+  "helptip_anchorMode": { "message": "መልህቅ DuckDuckGPT ወደ መስኮት ታችኛው ክፍል" },
   "helptip_bgAnimations": { "message": "በ UI ክፍሎች ውስጥ አኒሜሽን ዳራዎችን ያሳዩ" },
   "helptip_fgAnimations": { "message": "በ UI ክፍሎች ውስጥ የፊት አኒሜሽኖችን ያሳዩ" },
   "helptip_replyLanguage": { "message": "ቋንቋ ለ DuckDuckGPT በ ውስጥ መልስ ለመስጠት" },

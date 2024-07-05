@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "\"Ibibazo\" nyuma yo kubaza inyishu" },
   "helptip_widerSidebar": { "message": "Kuroneko Kuroneko Kuroneko See fewer" },
   "helptip_stickySidebar": { "message": "GoogleGPT iboneka mu ruzitiro naho woba uri mu ruzitiro" },
+  "helptip_anchorMode": { "message": "GoogleGPT iri munsi y'idirisha" },
   "helptip_bgAnimations": { "message": "Erekana amasanamu y'amashusho mu bihimba vya UI" },
   "helptip_fgAnimations": { "message": "Erekana amashusho ya mbere mu bihimba vya UI" },
   "helptip_replyLanguage": { "message": "Ururimi rwa GoogleGPT ngo rusubize mu" },

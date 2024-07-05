@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Fie maʻu \"?\" hili e ngaahi fakaʻekeʻeke ki he ngaahi tali ke fakahaaʻi" },
   "helptip_widerSidebar": { "message": "Horizontally fakalahi ʻa e peesi kumi ʻi he tafaʻaki" },
   "helptip_stickySidebar": { "message": "ʻAi DuckDuckGPT ke ʻasi ʻi he tafaʻaki ʻo hange ko hoʻo scroll" },
+  "helptip_anchorMode": { "message": "Taula DuckDuckGPT ki he konga ki lalo ʻo e matapa sioʻata" },
   "helptip_bgAnimations": { "message": "Fakaʻaliʻali ʻa e puipuituʻa ʻi he ngaahi konga UI" },
   "helptip_fgAnimations": { "message": "Fakaʻaliʻali ʻa e animations ki muʻa ʻi he ngaahi konga UI" },
   "helptip_replyLanguage": { "message": "Lea fakafonua ki he DuckDuckGPT ke tali ʻi he" },

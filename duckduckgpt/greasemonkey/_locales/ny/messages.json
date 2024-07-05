@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Pemphani \"?\" pambuyo mafunso mayankho kusonyeza" },
   "helptip_widerSidebar": { "message": "Pang 'onopang' ono kukulitsa kufufuza tsamba sidebar" },
   "helptip_stickySidebar": { "message": "Amapangitsa DuckDuckGPT kuwonekera mu sidebar ngakhale pamene inu mpukutu" },
+  "helptip_anchorMode": { "message": "Anchor DuckDuckGPT pansi pawindo" },
   "helptip_bgAnimations": { "message": "Onetsani zojambula zam 'mbuyo mu zigawo za UI" },
   "helptip_fgAnimations": { "message": "Onetsani zojambula zakutsogolo mu zigawo za UI" },
   "helptip_replyLanguage": { "message": "Chilankhulo cha DuckDuckGPT kuyankha mu" },

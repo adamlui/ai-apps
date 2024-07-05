@@ -51,6 +51,7 @@
   "helptip_suffixMode": { "message": "Javoblar ko'rsatilishi uchun so'rovlar oxiridan \"?\" talab qiling" },
   "helptip_widerSidebar": { "message": "Qidiruv sahifasi yon panelini kengaytirish" },
   "helptip_stickySidebar": { "message": "BraveGPT-ni hatto aylanayotganingizda ham yon panelda ko'rinadigan qiladi" },
+  "helptip_anchorMode": { "message": "BraveGPT-ni oynaning pastki qismiga mahkamlang" },
   "helptip_bgAnimations": { "message": "UI komponentlarida animatsion fonlarni ko'rsatish" },
   "helptip_fgAnimations": { "message": "UI komponentlarida oldingi fon animatsiyalarini ko'rsatish" },
   "helptip_replyLanguage": { "message": "BraveGPT javob beradigan til" },
