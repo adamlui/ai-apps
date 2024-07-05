@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.4.11
+// @version               2024.7.5
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1584,7 +1584,9 @@ setTimeout(async () => {
 
         tooltip(buttonType) { // text & position
             const cornerBtnTypes = ['about', 'settings', 'speak', 'pin', 'font-size', 'wsb']
-                      .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
+                      .filter(type => { // exclude invisible ones                                                
+                          const btn = appDiv.querySelector(`#${type}-btn`)
+                          return btn && getComputedStyle(btn).display != 'none' })
             const [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [9, 25] : [5, 28],
                   iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.35
                                               : buttonType == 'shuffle' ? 2.35
