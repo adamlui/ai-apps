@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "വിശാലമായ സൈഡ്ബാർ" },
   "menuLabel_stickySidebar": { "message": "സ്റ്റിക്കി സൈഡ്ബാർ" },
   "menuLabel_pinTo": { "message": "പിൻ ചെയ്യുക" },
-  "menuLabel_sidebar": { "message": "വശത്തു് കാണുവാന്‍Name" },
+  "menuLabel_top": { "message": "മുകളില്" },
   "menuLabel_bottom": { "message": "താഴെ" },
   "menuLabel_bgAnimations": { "message": "പശ്ചാത്തല ആനിമേഷനുകൾ" },
   "menuLabel_replyLanguage": { "message": "മറുപടി ഭാഷ" },

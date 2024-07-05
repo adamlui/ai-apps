@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Wider Sidebar" },
   "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_pinTo": { "message": "Pin үчүн" },
-  "menuLabel_sidebar": { "message": "Sidebar" },
+  "menuLabel_top": { "message": "position" },
   "menuLabel_bottom": { "message": "position" },
   "menuLabel_bgAnimations": { "message": "Фондук анимациялар" },
   "menuLabel_replyLanguage": { "message": "Тилге жооп берүү" },

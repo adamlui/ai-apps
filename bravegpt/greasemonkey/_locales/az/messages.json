@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Daha geniş yan panel" },
   "menuLabel_stickySidebar": { "message": "Yapışqan Kənar sahə" },
   "menuLabel_pinTo": { "message": "PİN kod" },
-  "menuLabel_sidebar": { "message": "Kənar Hissə" },
+  "menuLabel_top": { "message": "Üst" },
   "menuLabel_bottom": { "message": "Alt" },
   "menuLabel_bgAnimations": { "message": "Fon Animasiyaları" },
   "menuLabel_replyLanguage": { "message": "Cavab Dili" },

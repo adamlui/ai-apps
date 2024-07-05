@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "ਚੌੜੀ ਬਾਹੀ" },
   "menuLabel_stickySidebar": { "message": "ਸਟਿੱਕੀ ਬਾਹੀ" },
   "menuLabel_pinTo": { "message": "ਨੂੰ ਪਿੰਨ ਕਰੋ" },
-  "menuLabel_sidebar": { "message": "ਬਾਹੀ" },
+  "menuLabel_top": { "message": "ਵੱਲ" },
   "menuLabel_bottom": { "message": "ਤਲ" },
   "menuLabel_background": { "message": "ਪਿਛੋਕੜ" },
   "menuLabel_foreground": { "message": "ਫਾਰਗਰਾਊਂਡ" },

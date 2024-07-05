@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Sidebar rộng hơn" },
   "menuLabel_stickySidebar": { "message": "Thanh bên dính" },
   "menuLabel_pinTo": { "message": "Ghim vào" },
-  "menuLabel_sidebar": { "message": "Thanh bên " },
+  "menuLabel_top": { "message": "Trên" },
   "menuLabel_bottom": { "message": "Dưới" },
   "menuLabel_bgAnimations": { "message": "Hoạt ảnh nền" },
   "menuLabel_replyLanguage": { "message": "Ngôn ngữ trả lời" },

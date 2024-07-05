@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Bar Ochr Ehangach" },
   "menuLabel_stickySidebar": { "message": "Bar Ochr Gludiog" },
   "menuLabel_pinTo": { "message": "PIN i" },
-  "menuLabel_sidebar": { "message": "Bar ochr" },
+  "menuLabel_top": { "message": "Top" },
   "menuLabel_bottom": { "message": "Gwaelod" },
   "menuLabel_background": { "message": "Cefndir" },
   "menuLabel_foreground": { "message": "Wedi canfod:" },

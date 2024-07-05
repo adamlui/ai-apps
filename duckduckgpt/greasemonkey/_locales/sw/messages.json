@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Upau Mpana wa Pembeni" },
   "menuLabel_stickySidebar": { "message": "Upau wa Pembeni wenye Nata" },
   "menuLabel_pinTo": { "message": "Nenda kwenye" },
-  "menuLabel_sidebar": { "message": "[UPAU WA PEMBENI] " },
+  "menuLabel_top": { "message": "Juu" },
   "menuLabel_bottom": { "message": "Chini" },
   "menuLabel_background": { "message": "Usuli" },
   "menuLabel_foreground": { "message": "Mandharinyuma" },

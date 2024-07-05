@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Barra lateral més àmplia" },
   "menuLabel_stickySidebar": { "message": "Barra lateral sticky" },
   "menuLabel_pinTo": { "message": "Anota a" },
-  "menuLabel_sidebar": { "message": "Barra lateral" },
+  "menuLabel_top": { "message": "Top" },
   "menuLabel_bottom": { "message": "Bottom" },
   "menuLabel_background": { "message": "Fons" },
   "menuLabel_foreground": { "message": "Primer pla" },

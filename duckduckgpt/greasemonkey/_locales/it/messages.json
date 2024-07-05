@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Barra laterale più ampia" },
   "menuLabel_stickySidebar": { "message": "Barra laterale fissa" },
   "menuLabel_pinTo": { "message": "Fissare a" },
-  "menuLabel_sidebar": { "message": "Sidebar" },
+  "menuLabel_top": { "message": "In alto" },
   "menuLabel_bottom": { "message": "Giù" },
   "menuLabel_background": { "message": "Preliminari" },
   "menuLabel_foreground": { "message": "Primo piano" },

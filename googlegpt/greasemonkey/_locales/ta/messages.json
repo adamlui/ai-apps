@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "அகலப் பக்கப்பட்டி" },
   "menuLabel_stickySidebar": { "message": "ஒட்டும் பக்கப்பட்டி" },
   "menuLabel_pinTo": { "message": "இதில் பின் செய்யவும்" },
-  "menuLabel_sidebar": { "message": "நழுவுName" },
+  "menuLabel_top": { "message": "பம்பரம்" },
   "menuLabel_bottom": { "message": "அடிப்பகுதி" },
   "menuLabel_background": { "message": "பின்னணி" },
   "menuLabel_foreground": { "message": "முன்தோற்றம்" },

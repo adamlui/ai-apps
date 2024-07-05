@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "ཟུར་ལྗང་ཁུ །" },
   "menuLabel_stickySidebar": { "message": "ཟུར་སྟོང་།" },
   "menuLabel_pinTo": { "message": "སྦྲེལ་མཐུད །" },
-  "menuLabel_sidebar": { "message": "ཟུར་མཛར" },
+  "menuLabel_top": { "message": "སྟེང་དུ" },
   "menuLabel_bottom": { "message": "གཤམ" },
   "menuLabel_background": { "message": "Arka Plan" },
   "menuLabel_foreground": { "message": "མདུན་ངོས" },

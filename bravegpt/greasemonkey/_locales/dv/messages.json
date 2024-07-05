@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Wider Sidebar" },
   "menuLabel_stickySidebar": { "message": "ސްޓިކީ ސައިޑްބާރ އެވެ" },
   "menuLabel_pinTo": { "message": "ޕިން ޓު..." },
-  "menuLabel_sidebar": { "message": "ސައިޑްބާރ އެވެ" },
+  "menuLabel_top": { "message": "މަތި" },
   "menuLabel_bottom": { "message": "ތިރި" },
   "menuLabel_bgAnimations": { "message": "ބެކްގްރައުންޑް އެނިމޭޝަންސް" },
   "menuLabel_replyLanguage": { "message": "ޖަވާބުދޭ ބަހުރުވަ" },

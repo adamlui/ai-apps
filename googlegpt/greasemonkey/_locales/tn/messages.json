@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Bareng e Kgolwane ya mo Letlhakoreng" },
   "menuLabel_stickySidebar": { "message": "STICKY SIDEBAR" },
   "menuLabel_pinTo": { "message": "PIN to" },
-  "menuLabel_sidebar": { "message": "SIDEBAR" },
+  "menuLabel_top": { "message": "TOP" },
   "menuLabel_bottom": { "message": "Bottom" },
   "menuLabel_background": { "message": "<g id=\"1\">Bokamorago</g>:" },
   "menuLabel_foreground": { "message": "Tse di fa pele" },

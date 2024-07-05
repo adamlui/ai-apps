@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "ཟུར་ཟུར་རྒྱ་ཆེ་དྲགས་" },
   "menuLabel_stickySidebar": { "message": "ཟུར་ཟུར་གྱི་ཐེམ་སྐུམ།" },
   "menuLabel_pinTo": { "message": "འདི་ནང་ལུ་ཨེབ་གཏང་འབད།" },
-  "menuLabel_sidebar": { "message": "ཟུར་ཟུར་བྷ་རི།" },
+  "menuLabel_top": { "message": "སྟེང་" },
   "menuLabel_bottom": { "message": "འོག་ངོས།" },
   "menuLabel_bgAnimations": { "message": "བརྙན་ཟློས་ཀྱི་རྒྱབ་ཁོར་" },
   "menuLabel_replyLanguage": { "message": "ལན་སློག" },

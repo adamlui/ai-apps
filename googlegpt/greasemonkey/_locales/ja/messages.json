@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "より広いサイドバー" },
   "menuLabel_stickySidebar": { "message": "固定サイドバー" },
   "menuLabel_pinTo": { "message": "ピン留め先" },
-  "menuLabel_sidebar": { "message": "サイドバー" },
+  "menuLabel_top": { "message": "トップ" },
   "menuLabel_bottom": { "message": "下部" },
   "menuLabel_background": { "message": "【背景技術】" },
   "menuLabel_foreground": { "message": "前景" },

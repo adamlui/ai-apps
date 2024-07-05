@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Platesnė šoninė juosta" },
   "menuLabel_stickySidebar": { "message": "Lipni Šoninė Juosta" },
   "menuLabel_pinTo": { "message": "Prisegti prie" },
-  "menuLabel_sidebar": { "message": "Šoninė juosta" },
+  "menuLabel_top": { "message": "Viršus" },
   "menuLabel_bottom": { "message": "Apačia" },
   "menuLabel_bgAnimations": { "message": "Foninės animacijos" },
   "menuLabel_replyLanguage": { "message": "Atsakymo kalba" },

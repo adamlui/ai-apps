@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "चौड़ा साइडबार" },
   "menuLabel_stickySidebar": { "message": "चिपचिपा साइडबार" },
   "menuLabel_pinTo": { "message": "पर पिन करें" },
-  "menuLabel_sidebar": { "message": "Name" },
+  "menuLabel_top": { "message": "शीर्ष" },
   "menuLabel_bottom": { "message": "नीचे" },
   "menuLabel_bgAnimations": { "message": "बैकग्राउंड ऐनिमेशन" },
   "menuLabel_replyLanguage": { "message": "उत्तर भाषा" },

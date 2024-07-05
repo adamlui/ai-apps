@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "फराकिलो साइडबार" },
   "menuLabel_stickySidebar": { "message": "टाँसिने साइडबार" },
   "menuLabel_pinTo": { "message": "पिन गर्न" },
-  "menuLabel_sidebar": { "message": "साइडबार " },
+  "menuLabel_top": { "message": "Orientation" },
   "menuLabel_bottom": { "message": "Orientation" },
   "menuLabel_background": { "message": "पृष्ठभूमि" },
   "menuLabel_foreground": { "message": "अग्रभूमि" },

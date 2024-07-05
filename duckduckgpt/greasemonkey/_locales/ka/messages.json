@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Ფართო გვერდითი ზოლი" },
   "menuLabel_stickySidebar": { "message": "Მიჭიკარტებული გვერდითი ზოლი" },
   "menuLabel_pinTo": { "message": "PIN ‑ კოდი" },
-  "menuLabel_sidebar": { "message": "გვერდითა ზოლი" },
+  "menuLabel_top": { "message": "ზედა" },
   "menuLabel_bottom": { "message": "ქვედა" },
   "menuLabel_background": { "message": "წინამძღვრები" },
   "menuLabel_foreground": { "message": "წინა პლანი" },

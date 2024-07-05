@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Bilah Sisi Lebih Luas" },
   "menuLabel_stickySidebar": { "message": "Sidebar Sticky" },
   "menuLabel_pinTo": { "message": "Sematkan ke" },
-  "menuLabel_sidebar": { "message": "Bilah Samping" },
+  "menuLabel_top": { "message": "Teratas" },
   "menuLabel_bottom": { "message": "Bawah" },
   "menuLabel_background": { "message": "Latar Belakang" },
   "menuLabel_foreground": { "message": "Latar Depan" },

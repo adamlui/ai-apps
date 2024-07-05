@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Ширша бічна панель" },
   "menuLabel_stickySidebar": { "message": "Липка бічна панель" },
   "menuLabel_pinTo": { "message": "Закріпити на" },
-  "menuLabel_sidebar": { "message": "Сайдбар" },
+  "menuLabel_top": { "message": "Верх" },
   "menuLabel_bottom": { "message": "Низ" },
   "menuLabel_background": { "message": "Фонові проби" },
   "menuLabel_foreground": { "message": "Передньоплан" },

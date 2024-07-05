@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Larger Sidebar cantidad" },
   "menuLabel_stickySidebar": { "message": "Sticky Sidebar cantidad" },
   "menuLabel_pinTo": { "message": "Pin di To" },
-  "menuLabel_sidebar": { "message": "Sidebar" },
+  "menuLabel_top": { "message": "Top" },
   "menuLabel_bottom": { "message": "Abou" },
   "menuLabel_background": { "message": "Background" },
   "menuLabel_foreground": { "message": "Foreground" },

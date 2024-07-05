@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Kwagura Impande" },
   "menuLabel_stickySidebar": { "message": "Umurongo wo ku mpande" },
   "menuLabel_pinTo": { "message": "Kuri" },
-  "menuLabel_sidebar": { "message": "Umurongo wo ku mpande" },
+  "menuLabel_top": { "message": "Hejuru" },
   "menuLabel_bottom": { "message": "Hasi:" },
   "menuLabel_bgAnimations": { "message": "Iyega rya mbuganyuma" },
   "menuLabel_replyLanguage": { "message": "Ururimi rw'Ibisubizo" },

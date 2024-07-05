@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Кеңірек бүйірлік тақта" },
   "menuLabel_stickySidebar": { "message": "Жабысқақ бүйірлік панель" },
   "menuLabel_pinTo": { "message": "Жіберу" },
-  "menuLabel_sidebar": { "message": "Бүйір панелі" },
+  "menuLabel_top": { "message": "% 1 Ð±Ð°ÒÐ°Ð½Ñ" },
   "menuLabel_bottom": { "message": "Төмен" },
   "menuLabel_bgAnimations": { "message": "Фондық анимациялар" },
   "menuLabel_replyLanguage": { "message": "Жауап беру тілі" },

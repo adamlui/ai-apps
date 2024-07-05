@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Šira bočna traka" },
   "menuLabel_stickySidebar": { "message": "Ljepljivi sidebar" },
   "menuLabel_pinTo": { "message": "Prikvači na" },
-  "menuLabel_sidebar": { "message": "Bočna traka" },
+  "menuLabel_top": { "message": "Izdvajamo" },
   "menuLabel_bottom": { "message": "Dole" },
   "menuLabel_background": { "message": "Pozadina" },
   "menuLabel_foreground": { "message": "Prednji plan" },

@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Breiðari hliðarslá" },
   "menuLabel_stickySidebar": { "message": "Límd hliðarslá" },
   "menuLabel_pinTo": { "message": "Festa við" },
-  "menuLabel_sidebar": { "message": "Hliðarslá" },
+  "menuLabel_top": { "message": "Efst" },
   "menuLabel_bottom": { "message": "Botn" },
   "menuLabel_background": { "message": "Bakgrunnur" },
   "menuLabel_foreground": { "message": "Forgrunnslitur" },

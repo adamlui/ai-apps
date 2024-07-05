@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Ավելի լայն կողագոտի" },
   "menuLabel_stickySidebar": { "message": "Կպչուն կողագոտի" },
   "menuLabel_pinTo": { "message": "Նշել" },
-  "menuLabel_sidebar": { "message": "Կողագոտի" },
+  "menuLabel_top": { "message": "Սկիզբ" },
   "menuLabel_bottom": { "message": "Վերջ" },
   "menuLabel_bgAnimations": { "message": "Ֆոնային անիմացիաներ" },
   "menuLabel_replyLanguage": { "message": "Պատասխանելու լեզու" },

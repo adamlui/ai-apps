@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "وسیع سائڈبار" },
   "menuLabel_stickySidebar": { "message": "چپچپا سائڈبار" },
   "menuLabel_pinTo": { "message": "پر پن کریں" },
-  "menuLabel_sidebar": { "message": "سائیڈ بار" },
+  "menuLabel_top": { "message": "اوپر" },
   "menuLabel_bottom": { "message": "نیچے" },
   "menuLabel_background": { "message": "پس منظر " },
   "menuLabel_foreground": { "message": "پیش منظر" },

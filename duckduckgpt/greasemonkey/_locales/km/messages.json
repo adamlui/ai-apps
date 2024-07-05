@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "របារចំហៀងធំជាង" },
   "menuLabel_stickySidebar": { "message": "របារចំហៀងស្អិត" },
   "menuLabel_pinTo": { "message": "ខ្ទាស់ទៅ" },
-  "menuLabel_sidebar": { "message": "Name" },
+  "menuLabel_top": { "message": "កំពូល" },
   "menuLabel_bottom": { "message": "បាត" },
   "menuLabel_background": { "message": "សាវតារ" },
   "menuLabel_foreground": { "message": "ផ្ទៃ​ខាង​មុខ" },

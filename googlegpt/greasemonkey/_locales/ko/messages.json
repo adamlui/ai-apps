@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "더 넓은 사이드바" },
   "menuLabel_stickySidebar": { "message": "고정 사이드바" },
   "menuLabel_pinTo": { "message": "고정 위치:" },
-  "menuLabel_sidebar": { "message": "사이드바" },
+  "menuLabel_top": { "message": "상의" },
   "menuLabel_bottom": { "message": "하위" },
   "menuLabel_background": { "message": "배경" },
   "menuLabel_foreground": { "message": "글자색" },

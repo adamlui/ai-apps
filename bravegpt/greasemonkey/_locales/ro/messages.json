@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Bară laterală mai lată" },
   "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_pinTo": { "message": "Fixează la" },
-  "menuLabel_sidebar": { "message": "Latură laterală" },
+  "menuLabel_top": { "message": "Sus" },
   "menuLabel_bottom": { "message": "Jos" },
   "menuLabel_bgAnimations": { "message": "Animații de fundal" },
   "menuLabel_replyLanguage": { "message": "Limbă răspuns" },

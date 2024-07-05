@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Pi laj Sidebar" },
   "menuLabel_stickySidebar": { "message": "Baton Sidebar" },
   "menuLabel_pinTo": { "message": "PIN pou" },
-  "menuLabel_sidebar": { "message": "Sidebar" },
+  "menuLabel_top": { "message": "<g id=\"1\">[anwo]</g>" },
   "menuLabel_bottom": { "message": "anba/fon/bas/culot/derrière/dessous/du bas/fesse " },
   "menuLabel_bgAnimations": { "message": "Animasyon antesedan" },
   "menuLabel_replyLanguage": { "message": "Lang Repons" },

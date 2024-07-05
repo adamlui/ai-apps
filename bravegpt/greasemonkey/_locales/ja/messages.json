@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "より広いサイドバー" },
   "menuLabel_stickySidebar": { "message": "固定サイドバー" },
   "menuLabel_pinTo": { "message": "ピン留め先" },
-  "menuLabel_sidebar": { "message": "サイドバー" },
+  "menuLabel_top": { "message": "トップ" },
   "menuLabel_bottom": { "message": "下部" },
   "menuLabel_bgAnimations": { "message": "背景アニメーション" },
   "menuLabel_replyLanguage": { "message": "返信言語" },

@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Wider Sidebar" },
   "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_pinTo": { "message": "PIN ki" },
-  "menuLabel_sidebar": { "message": "Te taha o te taha" },
+  "menuLabel_top": { "message": "Orientation" },
   "menuLabel_bottom": { "message": "Orientation" },
   "menuLabel_bgAnimations": { "message": "Ngā Whakaahua o muri" },
   "menuLabel_replyLanguage": { "message": "Reo Whakautu" },

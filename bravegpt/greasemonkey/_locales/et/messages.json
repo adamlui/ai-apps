@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Laiem külgriba" },
   "menuLabel_stickySidebar": { "message": "Kleepuv moodul" },
   "menuLabel_pinTo": { "message": "Kinnita asukohta" },
-  "menuLabel_sidebar": { "message": "Külgriba" },
+  "menuLabel_top": { "message": "Üleval" },
   "menuLabel_bottom": { "message": "All" },
   "menuLabel_bgAnimations": { "message": "Taustaanimatsioonid" },
   "menuLabel_replyLanguage": { "message": "Vastuse keel" },

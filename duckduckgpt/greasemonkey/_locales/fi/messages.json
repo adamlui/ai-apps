@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Leveämpi sivupalkki" },
   "menuLabel_stickySidebar": { "message": "Kiinnitetty sivupalkki" },
   "menuLabel_pinTo": { "message": "Kiinnitä kohteeseen" },
-  "menuLabel_sidebar": { "message": "Sivupalkki" },
+  "menuLabel_top": { "message": "Yläosa" },
   "menuLabel_bottom": { "message": "Alaosassa" },
   "menuLabel_background": { "message": "Taustaa" },
   "menuLabel_foreground": { "message": "Tulosaineisto" },

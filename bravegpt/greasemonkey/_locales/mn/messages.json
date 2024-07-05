@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Өргөн талын цэс" },
   "menuLabel_stickySidebar": { "message": "Наалттай хажуу цэс" },
   "menuLabel_pinTo": { "message": "-нд зүү" },
-  "menuLabel_sidebar": { "message": "Хажуугийн цэс" },
+  "menuLabel_top": { "message": "Дээд" },
   "menuLabel_bottom": { "message": "Доод" },
   "menuLabel_bgAnimations": { "message": "Арын хөдөлгөөнт дүрс" },
   "menuLabel_replyLanguage": { "message": "Хариулах Хэл" },

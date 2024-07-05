@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "ሰፋሕቲ ጎኒ ባር" },
   "menuLabel_stickySidebar": { "message": "ስቲኪ ጎድባር" },
   "menuLabel_pinTo": { "message": "Pin to" },
-  "menuLabel_sidebar": { "message": "ጎድኒ ባር" },
+  "menuLabel_top": { "message": "ላዕለዋይ" },
   "menuLabel_bottom": { "message": "ኣብ ታሕቲ" },
   "menuLabel_bgAnimations": { "message": "ናይ ድሕረ ባይታ ኣኒሜሽን" },
   "menuLabel_replyLanguage": { "message": "መልሲ ቋንቋ" },

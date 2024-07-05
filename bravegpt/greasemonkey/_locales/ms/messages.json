@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Bar Sisi Lebih Luas" },
   "menuLabel_stickySidebar": { "message": "Palang Sisi Melekit" },
   "menuLabel_pinTo": { "message": "Pin ke" },
-  "menuLabel_sidebar": { "message": "Sidebar" },
+  "menuLabel_top": { "message": "Atas" },
   "menuLabel_bottom": { "message": "Bawah" },
   "menuLabel_bgAnimations": { "message": "Animasi Latar Belakang" },
   "menuLabel_replyLanguage": { "message": "Bahasa Balasan" },

@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Upamhi Sidebar" },
   "menuLabel_stickySidebar": { "message": "Zvishoma nezvishoma mumatope Sidebar" },
   "menuLabel_pinTo": { "message": "PIN ku" },
-  "menuLabel_sidebar": { "message": "Nezvedu" },
+  "menuLabel_top": { "message": "Pamusoro" },
   "menuLabel_bottom": { "message": "Pazasi" },
   "menuLabel_bgAnimations": { "message": "Mifananidzo yekumashure" },
   "menuLabel_replyLanguage": { "message": "Pindura Mutauro" },

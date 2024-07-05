@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "更寬的側邊欄" },
   "menuLabel_stickySidebar": { "message": "固定側邊欄" },
   "menuLabel_pinTo": { "message": "釘選至" },
-  "menuLabel_sidebar": { "message": "側邊欄" },
+  "menuLabel_top": { "message": "頁頂" },
   "menuLabel_bottom": { "message": "底端" },
   "menuLabel_bgAnimations": { "message": "背景動畫" },
   "menuLabel_replyLanguage": { "message": "回覆語言" },

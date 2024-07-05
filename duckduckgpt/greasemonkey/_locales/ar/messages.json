@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "الشريط الجانبي الأوسع" },
   "menuLabel_stickySidebar": { "message": "شريط جانبي ثابت" },
   "menuLabel_pinTo": { "message": "قم بالتثبيت على" },
-  "menuLabel_sidebar": { "message": "الشريط الجانبي" },
+  "menuLabel_top": { "message": "أعلى" },
   "menuLabel_bottom": { "message": "الأسفل" },
   "menuLabel_background": { "message": "المعلومات الأساسية" },
   "menuLabel_foreground": { "message": "المقدمة" },

@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "แถบด้านข้างที่กว้างขึ้น" },
   "menuLabel_stickySidebar": { "message": "แถบด้านข้างแบบสติ๊กกี้" },
   "menuLabel_pinTo": { "message": "ตรึงไว้ที่" },
-  "menuLabel_sidebar": { "message": "แถบด้านข้าง" },
+  "menuLabel_top": { "message": "อันดับสูงสุด" },
   "menuLabel_bottom": { "message": "อันดับท้าย" },
   "menuLabel_background": { "message": "ภูมิหลัง " },
   "menuLabel_foreground": { "message": "เบื้องหน้า" },

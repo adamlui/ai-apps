@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Ibha Eseceleni Ebanzi" },
   "menuLabel_stickySidebar": { "message": "Ibha eseceleni Enamathelayo" },
   "menuLabel_pinTo": { "message": "Phini ku-" },
-  "menuLabel_sidebar": { "message": "Ingxenye-fasitela" },
+  "menuLabel_top": { "message": "Phezulu" },
   "menuLabel_bottom": { "message": "Phansi" },
   "menuLabel_background": { "message": "Isizanda" },
   "menuLabel_foreground": { "message": "Okungaphambili" },

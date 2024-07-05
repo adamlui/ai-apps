@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "סרגל צדדי רחב יותר" },
   "menuLabel_stickySidebar": { "message": "סרגל צדדי דביק" },
   "menuLabel_pinTo": { "message": "הצמד אל" },
-  "menuLabel_sidebar": { "message": "סרגל צד" },
+  "menuLabel_top": { "message": "עליון" },
   "menuLabel_bottom": { "message": "למטה" },
   "menuLabel_background": { "message": "רקע" },
   "menuLabel_foreground": { "message": "חזית" },

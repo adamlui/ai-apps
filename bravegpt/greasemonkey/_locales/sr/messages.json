@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Šira bočna traka" },
   "menuLabel_stickySidebar": { "message": "Sticky sajdbar" },
   "menuLabel_pinTo": { "message": "Prikvači na" },
-  "menuLabel_sidebar": { "message": "Bočna traka" },
+  "menuLabel_top": { "message": "Najbolji" },
   "menuLabel_bottom": { "message": "Dno" },
   "menuLabel_bgAnimations": { "message": "Pozadinske animacije" },
   "menuLabel_replyLanguage": { "message": "Jezik odgovora" },

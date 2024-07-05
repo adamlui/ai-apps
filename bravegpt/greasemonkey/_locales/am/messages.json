@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "ሰፊ የጎን አሞሌ" },
   "menuLabel_stickySidebar": { "message": "Sticky የጎን አሞሌ" },
   "menuLabel_pinTo": { "message": "PIN ወደ" },
-  "menuLabel_sidebar": { "message": "የጎን አሞሌ" },
+  "menuLabel_top": { "message": "Top" },
   "menuLabel_bottom": { "message": "አንተ ላይ ነህ ወይም ታች" },
   "menuLabel_bgAnimations": { "message": "የጀርባ አኒሜሽኖች" },
   "menuLabel_replyLanguage": { "message": "የምላሽ ቋንቋ" },

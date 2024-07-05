@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Hirondelle Sidebar" },
   "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_pinTo": { "message": "A yeke nzoni e sara ye tongana nyen?" },
-  "menuLabel_sidebar": { "message": "Sidebar ti" },
+  "menuLabel_top": { "message": "Top ti" },
   "menuLabel_bottom": { "message": "Kota Bottom" },
   "menuLabel_bgAnimations": { "message": "Animation ti pekoModifier" },
   "menuLabel_replyLanguage": { "message": "Yanga ti awambongi" },

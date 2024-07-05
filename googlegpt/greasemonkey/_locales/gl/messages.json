@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Barra lateral máis ampla" },
   "menuLabel_stickySidebar": { "message": "Barra lateral pegajosa" },
   "menuLabel_pinTo": { "message": "Pinxa para" },
-  "menuLabel_sidebar": { "message": "Barra lateral" },
+  "menuLabel_top": { "message": "Arriba" },
   "menuLabel_bottom": { "message": "Abaixo" },
   "menuLabel_background": { "message": "Fondo" },
   "menuLabel_foreground": { "message": "Primeiro plano" },

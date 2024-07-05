@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Širší bočný panel" },
   "menuLabel_stickySidebar": { "message": "Lepkavý bočný panel" },
   "menuLabel_pinTo": { "message": "Pripnúť na" },
-  "menuLabel_sidebar": { "message": "Bočný panel" },
+  "menuLabel_top": { "message": "Hore" },
   "menuLabel_bottom": { "message": "Dole" },
   "menuLabel_background": { "message": "Kontext" },
   "menuLabel_foreground": { "message": "Popredia" },

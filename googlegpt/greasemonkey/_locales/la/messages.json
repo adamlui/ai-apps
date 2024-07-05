@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Latus Laterale Latius" },
   "menuLabel_stickySidebar": { "message": "Laterale Lapsus" },
   "menuLabel_pinTo": { "message": "Pin ad" },
-  "menuLabel_sidebar": { "message": "Sidebar" },
+  "menuLabel_top": { "message": "Orientation" },
   "menuLabel_bottom": { "message": "Orientation" },
   "menuLabel_background": { "message": "Fundus:" },
   "menuLabel_foreground": { "message": "Imperium" },

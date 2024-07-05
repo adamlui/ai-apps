@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Larĝa flankobreto" },
   "menuLabel_stickySidebar": { "message": "Gluiĝema flankobreto" },
   "menuLabel_pinTo": { "message": "Stifto al" },
-  "menuLabel_sidebar": { "message": "Flankreko" },
+  "menuLabel_top": { "message": "Supre" },
   "menuLabel_bottom": { "message": "Malsupre" },
   "menuLabel_bgAnimations": { "message": "Fonanimacioj" },
   "menuLabel_replyLanguage": { "message": "Responda lingvo" },

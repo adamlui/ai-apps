@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "ကျယ်ပြန့်သော ဘေးဘား" },
   "menuLabel_stickySidebar": { "message": "စေးကပ်သော ဘေးဘား" },
   "menuLabel_pinTo": { "message": "PIN ကို" },
-  "menuLabel_sidebar": { "message": "ဘေးဘား" },
+  "menuLabel_top": { "message": "ထိပ်" },
   "menuLabel_bottom": { "message": "အောက်ခြေ" },
   "menuLabel_bgAnimations": { "message": "နောက်ခံ သက်ဝင်လှုပ်ရှားမှုများ" },
   "menuLabel_replyLanguage": { "message": "ပြန်ကြားချက်ဘာသာစကား" },

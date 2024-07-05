@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Bredare sidofält" },
   "menuLabel_stickySidebar": { "message": "Klistrad sidopanel" },
   "menuLabel_pinTo": { "message": "Fäst på" },
-  "menuLabel_sidebar": { "message": "Sidofält" },
+  "menuLabel_top": { "message": "Upptill" },
   "menuLabel_bottom": { "message": "Nertill" },
   "menuLabel_bgAnimations": { "message": "Bakgrundsanimationer" },
   "menuLabel_replyLanguage": { "message": "Svarsspråk" },

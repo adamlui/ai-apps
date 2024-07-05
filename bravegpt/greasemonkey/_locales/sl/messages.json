@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Širša stranska vrstica" },
   "menuLabel_stickySidebar": { "message": "Lepljiva stranska vrstica" },
   "menuLabel_pinTo": { "message": "Pripni na" },
-  "menuLabel_sidebar": { "message": "Stranski stolpec" },
+  "menuLabel_top": { "message": "Na vrh" },
   "menuLabel_bottom": { "message": "Dno" },
   "menuLabel_bgAnimations": { "message": "Animacije v ozadju" },
   "menuLabel_replyLanguage": { "message": "Jezik odgovora" },

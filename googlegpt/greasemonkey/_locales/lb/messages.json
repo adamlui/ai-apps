@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Breet Säitbar" },
   "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_pinTo": { "message": "Pin op" },
-  "menuLabel_sidebar": { "message": "D'Sidebar uweisen" },
+  "menuLabel_top": { "message": "Uëwen" },
   "menuLabel_bottom": { "message": "Ënnen" },
   "menuLabel_background": { "message": "Hannergrond" },
   "menuLabel_foreground": { "message": "Virdergrond:" },

@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "පුළුල් පැති පුවරුව" },
   "menuLabel_stickySidebar": { "message": "ඇලෙන සුළු පැති පුවරුව" },
   "menuLabel_pinTo": { "message": "වෙත සලකුණු කරන්න" },
-  "menuLabel_sidebar": { "message": "ලිස්සන්නName" },
+  "menuLabel_top": { "message": "වෙත" },
   "menuLabel_bottom": { "message": "පහළ" },
   "menuLabel_background": { "message": "පසුබිම" },
   "menuLabel_foreground": { "message": "active-color" },

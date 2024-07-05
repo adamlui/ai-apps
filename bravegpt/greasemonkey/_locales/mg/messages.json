@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Sisiny mivelatra kokoa" },
   "menuLabel_stickySidebar": { "message": "Anjan'ny Sidebar miraikitra" },
   "menuLabel_pinTo": { "message": "PIN ao amin'ny" },
-  "menuLabel_sidebar": { "message": "Miverena" },
+  "menuLabel_top": { "message": "Ambony" },
   "menuLabel_bottom": { "message": "Ambany" },
   "menuLabel_bgAnimations": { "message": "Sary mihetsika afara" },
   "menuLabel_replyLanguage": { "message": "Fiteny Valiny" },

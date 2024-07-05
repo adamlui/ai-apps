@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Barra lateral mais ampla" },
   "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_pinTo": { "message": "Pin para" },
-  "menuLabel_sidebar": { "message": "Sidebar" },
+  "menuLabel_top": { "message": "Topo" },
   "menuLabel_bottom": { "message": "Base" },
   "menuLabel_bgAnimations": { "message": "Animações de fundo" },
   "menuLabel_replyLanguage": { "message": "Idioma da resposta" },

@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Barre latérale plus large" },
   "menuLabel_stickySidebar": { "message": "Colonne latérale épinglée" },
   "menuLabel_pinTo": { "message": "Épingler sur " },
-  "menuLabel_sidebar": { "message": "Barre latérale" },
+  "menuLabel_top": { "message": "Ventes" },
   "menuLabel_bottom": { "message": "Bas" },
   "menuLabel_bgAnimations": { "message": "Animations d'arrière-plan" },
   "menuLabel_replyLanguage": { "message": "Langue de réponse" },

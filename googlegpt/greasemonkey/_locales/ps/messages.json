@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "پراخ اړخپټه" },
   "menuLabel_stickySidebar": { "message": "سريښناکه اړخ چکۍ" },
   "menuLabel_pinTo": { "message": "ته PIN کړئ" },
-  "menuLabel_sidebar": { "message": "Sidebar" },
+  "menuLabel_top": { "message": ":بره" },
   "menuLabel_bottom": { "message": ":لاندې" },
   "menuLabel_background": { "message": "شا لید (پس مظر)" },
   "menuLabel_foreground": { "message": "active-color" },

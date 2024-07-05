@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Daha Geniş Kenar Çubuğu" },
   "menuLabel_stickySidebar": { "message": "Yapışkan Kenar Çubuğu" },
   "menuLabel_pinTo": { "message": "Şuna sabitle:" },
-  "menuLabel_sidebar": { "message": "Kenar Çubuğu" },
+  "menuLabel_top": { "message": "Üst" },
   "menuLabel_bottom": { "message": "Alt" },
   "menuLabel_bgAnimations": { "message": "Arka Plan Animasyonları" },
   "menuLabel_replyLanguage": { "message": "Cevap Dili" },

@@ -13,7 +13,7 @@
   "menuLabel_widerSidebar": { "message": "Szélesebb oldalsáv" },
   "menuLabel_stickySidebar": { "message": "Ragadós oldalsáv" },
   "menuLabel_pinTo": { "message": "Rögzítés ide:" },
-  "menuLabel_sidebar": { "message": "Oldalrúd" },
+  "menuLabel_top": { "message": "Felette" },
   "menuLabel_bottom": { "message": "Alul" },
   "menuLabel_bgAnimations": { "message": "Háttéranimációk" },
   "menuLabel_replyLanguage": { "message": "Válasz nyelve" },
