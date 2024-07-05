@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Auina atu se tali" },
   "tooltip_feelingLucky": { "message": "Ou te lagona le laki" },
   "tooltip_minimize": { "message": "Minimize" },
+  "tooltip_restore": { "message": "Toefuataiina" },
   "tooltip_close": { "message": "Tapuni" },
   "tooltip_sendRelatedQuery": { "message": "Auina atu fesili e fesootai i ai" },
   "helptip_proxyAPImode": { "message": "Faʻaaoga se Proxy API mo le leai-login avanoa i AI" },

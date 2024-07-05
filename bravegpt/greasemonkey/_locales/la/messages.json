@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Mitto Responsum" },
   "tooltip_askRandQuestion": { "message": "Interroga quaestionem fortuitam" },
   "tooltip_minimize": { "message": "Deminuere" },
+  "tooltip_restore": { "message": "RECTRIUS" },
   "tooltip_close": { "message": "Claudere" },
   "tooltip_sendRelatedQuery": { "message": "Mitto quaestionem relatam" },
   "helptip_proxyAPImode": { "message": "Utitur API Proxy ad accessum AI sine login" },

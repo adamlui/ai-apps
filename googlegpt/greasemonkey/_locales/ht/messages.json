@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Voye repons" },
   "tooltip_feelingLucky": { "message": "Mwen santi mwen gen chans/Mwen santi mwen gen chans/Je me" },
   "tooltip_minimize": { "message": "réduire/misyon/pou minimize" },
+  "tooltip_restore": { "message": "Restore" },
   "tooltip_close": { "message": "Fèmen" },
   "tooltip_sendRelatedQuery": { "message": "Voye demann ki gen rapò" },
   "helptip_proxyAPImode": { "message": "Sèvi ak yon API Proxy pou pa gen aksè login nan AI" },

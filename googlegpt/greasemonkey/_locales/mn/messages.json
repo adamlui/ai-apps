@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Хариулт илгээх" },
   "tooltip_feelingLucky": { "message": "Би азтай санагдаж байна" },
   "tooltip_minimize": { "message": "Багасгах" },
+  "tooltip_restore": { "message": "Сэргээх" },
   "tooltip_close": { "message": "Хаах" },
   "tooltip_sendRelatedQuery": { "message": "Холбогдох асуулга илгээх" },
   "helptip_proxyAPImode": { "message": "AI-д логингүй нэвтрэх прокси API ашигладаг" },

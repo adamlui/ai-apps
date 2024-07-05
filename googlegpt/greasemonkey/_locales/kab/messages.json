@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Sselk yidles" },
   "tooltip_feelingLucky": { "message": "D-nessin ad t-ttufaḥ" },
   "tooltip_minimize": { "message": "Semẓi" },
+  "tooltip_restore": { "message": "Err-it-id" },
   "tooltip_close": { "message": "Sser" },
   "tooltip_sendRelatedQuery": { "message": "Sselk tazult n teqsiwin" },
   "helptip_proxyAPImode": { "message": "Yefka API Proxy i ttwazriwin ur n-twafed ara" },

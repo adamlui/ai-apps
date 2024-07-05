@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "ప్రత్యుత్తరం పంపండి" },
   "tooltip_askRandQuestion": { "message": "యాదృచ్ఛిక ప్రశ్న అడగండి" },
   "tooltip_minimize": { "message": "(n) చిన్న గా చేయండి" },
+  "tooltip_restore": { "message": "పునరుద్ధరించండి" },
   "tooltip_close": { "message": "క్లోజ్ చేయండి" },
   "tooltip_sendRelatedQuery": { "message": "సంబంధిత ప్రశ్నను పంపండి" },
   "helptip_proxyAPImode": { "message": "AIకి లాగిన్ చేయని యాక్సెస్ కోసం ప్రాక్సీ APIని ఉపయోగిస్తుంది" },

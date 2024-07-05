@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Siųsti atsakymą" },
   "tooltip_feelingLucky": { "message": "Man pasisekė" },
   "tooltip_minimize": { "message": "Suskleisti" },
+  "tooltip_restore": { "message": "Atkurti" },
   "tooltip_close": { "message": "Užverti" },
   "tooltip_sendRelatedQuery": { "message": "Siųsti susijusią užklausą" },
   "helptip_proxyAPImode": { "message": "Naudoja tarpinio serverio API, kad negalėtų prisijungti prie AI" },

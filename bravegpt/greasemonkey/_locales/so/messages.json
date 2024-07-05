@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Jawaab u dir" },
   "tooltip_askRandQuestion": { "message": "Weydii su 'aal lama filaan ah" },
   "tooltip_minimize": { "message": "Ugu yaree" },
+  "tooltip_restore": { "message": "Soo celinta" },
   "tooltip_close": { "message": "Xir" },
   "tooltip_sendRelatedQuery": { "message": "U dir su 'aalaha la xiriira" },
   "helptip_proxyAPImode": { "message": "Isticmaal API Proxy oo loogu talagalay helitaanka no-login ee AI" },

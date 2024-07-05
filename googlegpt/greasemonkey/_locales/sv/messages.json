@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Skicka svar" },
   "tooltip_feelingLucky": { "message": "Jag känner mig lyckligt lottad" },
   "tooltip_minimize": { "message": "Minska" },
+  "tooltip_restore": { "message": "Återställ" },
   "tooltip_close": { "message": "Stäng" },
   "tooltip_sendRelatedQuery": { "message": "Skicka relaterad fråga" },
   "helptip_proxyAPImode": { "message": "Använder ett proxy-API för åtkomst utan inloggning till AI" },

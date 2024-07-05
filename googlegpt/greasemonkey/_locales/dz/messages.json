@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "ང་བཅས་ཀྱིས་ལན་རྐྱབ་ཨིན། ང་བཅས་ཀྱིས་ལན་རྐྱབ་ཨིན།" },
   "tooltip_feelingLucky": { "message": "ང་བྱིན་རླབས་ཅན་ཅིག་ཨིན་ཟེར་ ང་གིས་ অনুভৱའབདཝ་ཨིན་" },
   "tooltip_minimize": { "message": "དམའ་ཕབ་རྐྱབས།" },
+  "tooltip_restore": { "message": "བསྐྱར་གསོ་འབད་ (_R)" },
   "tooltip_close": { "message": "སྒོ་བསྡམས་" },
   "tooltip_sendRelatedQuery": { "message": "འབྲེལ་བ་ཡོད་པའི་དྲི་བ་ཚུ་གཏང་འབད།" },
   "helptip_proxyAPImode": { "message": "AIལུ་ ཐོ་བཀོད་འབད་ནིའི་དོན་ལུ་ Proxy API ལག་ལེན་འཐབ་དགོ།" },

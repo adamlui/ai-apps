@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Жауап жіберу" },
   "tooltip_feelingLucky": { "message": "Мен өзімді бақытты сезінемін" },
   "tooltip_minimize": { "message": "& Түю" },
+  "tooltip_restore": { "message": "Қалпына келтіру" },
   "tooltip_close": { "message": "Жабу" },
   "tooltip_sendRelatedQuery": { "message": "Тиісті сұранысты жіберу" },
   "helptip_proxyAPImode": { "message": "AI-ге логинсіз кіру үшін прокси API пайдаланады" },

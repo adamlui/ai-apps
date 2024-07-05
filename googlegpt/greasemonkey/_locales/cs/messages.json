@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Odeslat odpověď" },
   "tooltip_feelingLucky": { "message": "I'm Feeling Lucky" },
   "tooltip_minimize": { "message": "Minimalizovat" },
+  "tooltip_restore": { "message": "Obnovit" },
   "tooltip_close": { "message": "Zavřít" },
   "tooltip_sendRelatedQuery": { "message": "Odeslat související dotaz" },
   "helptip_proxyAPImode": { "message": "Používá proxy API pro přístup bez přihlášení k AI" },

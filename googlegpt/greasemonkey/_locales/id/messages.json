@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Kirim balasan" },
   "tooltip_feelingLucky": { "message": "saya lagi beruntung" },
   "tooltip_minimize": { "message": "Minimalkan" },
+  "tooltip_restore": { "message": "Pulihkan" },
   "tooltip_close": { "message": "Tutup" },
   "tooltip_sendRelatedQuery": { "message": "Kirim kueri terkait" },
   "helptip_proxyAPImode": { "message": "Menggunakan api Proxy untuk akses tanpa login ke AI" },

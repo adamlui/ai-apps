@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Envoyer un Réponse" },
   "tooltip_feelingLucky": { "message": "I Feel Fortunate" },
   "tooltip_minimize": { "message": "Minimisá" },
+  "tooltip_restore": { "message": "Restorashon" },
   "tooltip_close": { "message": "Será" },
   "tooltip_sendRelatedQuery": { "message": "Envoyer un message a Konan" },
   "helptip_proxyAPImode": { "message": "Usa un Proxy API pa acceso sin login na AI" },

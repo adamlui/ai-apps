@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Senda svar" },
   "tooltip_feelingLucky": { "message": "Mér finnst ég heppinn" },
   "tooltip_minimize": { "message": "& Lágmarka" },
+  "tooltip_restore": { "message": "Endurheimta" },
   "tooltip_close": { "message": "Loka" },
   "tooltip_sendRelatedQuery": { "message": "Senda tengda fyrirspurn" },
   "helptip_proxyAPImode": { "message": "Notar Proxy API fyrir aðgang án innskráningar að AI" },

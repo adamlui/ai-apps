@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "উত্তর পাঠান" },
   "tooltip_feelingLucky": { "message": "আমি ভাগ্যবান বোধ করছি" },
   "tooltip_minimize": { "message": "ছোট কর" },
+  "tooltip_restore": { "message": "পুনঃস্থাপন করুন" },
   "tooltip_close": { "message": "বন্ধ করুন" },
   "tooltip_sendRelatedQuery": { "message": "সম্পর্কিত ক্যোয়ারী পাঠান" },
   "helptip_proxyAPImode": { "message": "AI-তে নো-লগিন অ্যাক্সেসের জন্য একটি প্রক্সি API ব্যবহার করে" },

@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Sūtīt atbildi" },
   "tooltip_askRandQuestion": { "message": "Uzdot nejauši izvēlētu jautājumu" },
   "tooltip_minimize": { "message": "Adreses rÄ«kjosla" },
+  "tooltip_restore": { "message": "Atjaunot" },
   "tooltip_close": { "message": "Aizvērt" },
   "tooltip_sendRelatedQuery": { "message": "Sūtīt saistīto vaicājumu" },
   "helptip_proxyAPImode": { "message": "Izmanto starpniekservera API, lai bez pieteikšanās piekļūtu MI" },

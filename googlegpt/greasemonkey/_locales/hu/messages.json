@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Válasz elküldése" },
   "tooltip_feelingLucky": { "message": "Szerencsésnek érzem magam" },
   "tooltip_minimize": { "message": "A karbantartási költségek" },
+  "tooltip_restore": { "message": "Helyreállítás" },
   "tooltip_close": { "message": "Bezárás" },
   "tooltip_sendRelatedQuery": { "message": "Kapcsolódó lekérdezés küldése" },
   "helptip_proxyAPImode": { "message": "Proxy API-t használ a mesterséges intelligenciához való bejelentkezés nélküli hozzáféréshez" },

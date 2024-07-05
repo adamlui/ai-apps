@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "وەڵام بنێرە" },
   "tooltip_feelingLucky": { "message": "Ez Xwe Bext Dibînim" },
   "tooltip_minimize": { "message": "Piçûk bike" },
+  "tooltip_restore": { "message": "Vesazkirin" },
   "tooltip_close": { "message": "Bigire" },
   "tooltip_sendRelatedQuery": { "message": "پرسیاری پەیوەندیدار بنێرە" },
   "helptip_proxyAPImode": { "message": "Ji bo gihîştina ne-têketinê ya AI-ê Proxy API-ê bikar tîne" },

@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Send reply" },
   "tooltip_feelingLucky": { "message": "I'm Feeling Lucky" },
   "tooltip_minimize": { "message": "Minimize" },
+  "tooltip_restore": { "message": "Restore" },
   "tooltip_close": { "message": "Close" },
   "tooltip_sendRelatedQuery": { "message": "Send related query" },
   "helptip_proxyAPImode": { "message": "Uses a Proxy API for no-login access to AI" },

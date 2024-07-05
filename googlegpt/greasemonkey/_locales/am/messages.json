@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "መልስ ላክ" },
   "tooltip_feelingLucky": { "message": "እድለኛ እንደሆንኩ ይሰማኛል" },
   "tooltip_minimize": { "message": "ያሳንሱ" },
+  "tooltip_restore": { "message": "ዳግም አስጀምር" },
   "tooltip_close": { "message": "ዝጋ" },
   "tooltip_sendRelatedQuery": { "message": "ተዛማጅ ጥያቄ ይላኩ" },
   "helptip_proxyAPImode": { "message": "ለ AI ምንም ምዝገባ መዳረሻ ፕሮክሲ ኤፒአይ ይጠቀማል" },

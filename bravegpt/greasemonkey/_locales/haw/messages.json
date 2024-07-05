@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Hoʻouna pane" },
   "tooltip_askRandQuestion": { "message": "E nīnau i ka nīnau maʻamau" },
   "tooltip_minimize": { "message": "Hoemi" },
+  "tooltip_restore": { "message": "Hoʻihoʻi" },
   "tooltip_close": { "message": "Pani" },
   "tooltip_sendRelatedQuery": { "message": "E hoʻouna i ka nīnau pili" },
   "helptip_proxyAPImode": { "message": "Hoʻohana i kahi API Proxy no ke komo ʻole ʻana iā AI" },

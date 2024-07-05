@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Kirap bekim" },
   "tooltip_feelingLucky": { "message": "Mi pilim olsem mi gat gutpela blesing" },
   "tooltip_minimize": { "message": "Minimisim" },
+  "tooltip_restore": { "message": "Ripim bek" },
   "tooltip_close": { "message": "Klostu" },
   "tooltip_sendRelatedQuery": { "message": "Send a related query" },
   "helptip_proxyAPImode": { "message": "Wokim wanpela Proxy API bilong no-login access long AI" },

@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Tumizani yankho" },
   "tooltip_askRandQuestion": { "message": "Funsani mwachisawawa" },
   "tooltip_minimize": { "message": "Lumikizanani nafe" },
+  "tooltip_restore": { "message": "Kubwezeretsa" },
   "tooltip_close": { "message": "tseka" },
   "tooltip_sendRelatedQuery": { "message": "Tumizani mafunso okhudzana" },
   "helptip_proxyAPImode": { "message": "Gwiritsani ntchito Proxy API kuti musalowe mu AI" },

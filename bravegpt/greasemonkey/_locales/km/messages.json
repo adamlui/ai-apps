@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "ផ្ញើការឆ្លើយតប" },
   "tooltip_askRandQuestion": { "message": "សួរសំណួរចៃដន្យ" },
   "tooltip_minimize": { "message": "បង្រួម​អប្បបរមា" },
+  "tooltip_restore": { "message": "ស្ដារ" },
   "tooltip_close": { "message": "បិទ" },
   "tooltip_sendRelatedQuery": { "message": "ផ្ញើសំណួរដែលពាក់ព័ន្ធ" },
   "helptip_proxyAPImode": { "message": "ប្រើ API Proxy សម្រាប់ការចូលដោយគ្មានការចូលទៅកាន់ AI" },

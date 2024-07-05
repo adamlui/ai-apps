@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "பதில் அனுப்பு" },
   "tooltip_feelingLucky": { "message": "நான் அதிர்ஷ்டசாலி போல் உணர்கிறேன்" },
   "tooltip_minimize": { "message": "சிறிதாக்கு" },
+  "tooltip_restore": { "message": "மீட்டமை" },
   "tooltip_close": { "message": "மூடு" },
   "tooltip_sendRelatedQuery": { "message": "தொடர்புடைய வினவலை அனுப்பவும்" },
   "helptip_proxyAPImode": { "message": "AI-க்கான உள்நுழைவு அணுகலுக்கு ப்ராக்ஸி API ஐப் பயன்படுத்துகிறது" },

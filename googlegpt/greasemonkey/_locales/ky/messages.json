@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Жооп жөнөтүү" },
   "tooltip_feelingLucky": { "message": "Мен бактылуу сезип жатам" },
   "tooltip_minimize": { "message": "Кыскартуу" },
+  "tooltip_restore": { "message": "Калыбына келтирүү" },
   "tooltip_close": { "message": "Жабуу" },
   "tooltip_sendRelatedQuery": { "message": "Тиешелүү сурам жөнөтүү" },
   "helptip_proxyAPImode": { "message": "AIге логинсиз кирүү үчүн прокси API колдонот" },

@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "發送回覆" },
   "tooltip_feelingLucky": { "message": "我覺得自己很幸運" },
   "tooltip_minimize": { "message": "最小化" },
+  "tooltip_restore": { "message": "恢復" },
   "tooltip_close": { "message": "關閉" },
   "tooltip_sendRelatedQuery": { "message": "傳送相關查詢" },
   "helptip_proxyAPImode": { "message": "使用 Proxy API 無需登入即可存取 AI" },

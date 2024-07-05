@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Send svar" },
   "tooltip_feelingLucky": { "message": "Jeg føler mig heldig" },
   "tooltip_minimize": { "message": "Minimer" },
+  "tooltip_restore": { "message": "Genskab" },
   "tooltip_close": { "message": "Luk" },
   "tooltip_sendRelatedQuery": { "message": "Send relateret forespørgsel" },
   "helptip_proxyAPImode": { "message": "Bruger en proxy-API til nul-login-adgang til AI" },

@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "ส่งข้อความ" },
   "tooltip_askRandQuestion": { "message": "ถามคำถามแบบสุ่ม" },
   "tooltip_minimize": { "message": "% 1 à¸à¸´à¹à¸¥à¹à¸à¸à¹/ à¸§à¸´à¸à¸²à¸à¸µ" },
+  "tooltip_restore": { "message": "กู้คืน" },
   "tooltip_close": { "message": "ปิด" },
   "tooltip_sendRelatedQuery": { "message": "ส่งคำค้นหาที่เกี่ยวข้อง" },
   "helptip_proxyAPImode": { "message": "ใช้ API พร็อกซีสำหรับการเข้าถึง AI โดยไม่ต้องเข้าสู่ระบบ" },

@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Надіслати відповідь" },
   "tooltip_feelingLucky": { "message": "Мені пощастило" },
   "tooltip_minimize": { "message": "Згорнути" },
+  "tooltip_restore": { "message": "Відновити" },
   "tooltip_close": { "message": "Закрити" },
   "tooltip_sendRelatedQuery": { "message": "Надіслати пов 'язаний запит" },
   "helptip_proxyAPImode": { "message": "Використовує проксі API для доступу без входу до AI" },

@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Ohereza igisubizo" },
   "tooltip_feelingLucky": { "message": "Ndumva nishimye" },
   "tooltip_minimize": { "message": "Kugabanya ingano" },
+  "tooltip_restore": { "message": "Kugarura" },
   "tooltip_close": { "message": "Funga" },
   "tooltip_sendRelatedQuery": { "message": "Ohereza ikibazo gihuye" },
   "helptip_proxyAPImode": { "message": "Koresha Proxy API kugirango winjire kuri AI utinjiye" },

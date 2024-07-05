@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "要返信" },
   "tooltip_askRandQuestion": { "message": "ランダムな質問をする" },
   "tooltip_minimize": { "message": "最小化" },
+  "tooltip_restore": { "message": "復元" },
   "tooltip_close": { "message": "Close" },
   "tooltip_sendRelatedQuery": { "message": "関連するクエリを送信" },
   "helptip_proxyAPImode": { "message": "AI へのノーログインアクセスにプロキシ API を使用" },

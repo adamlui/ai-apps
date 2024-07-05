@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "መልሲ ልኣኽ" },
   "tooltip_feelingLucky": { "message": "ዕድለኛ እየ ዝስምዓኒ" },
   "tooltip_minimize": { "message": "ምጉዳል" },
+  "tooltip_restore": { "message": "ናብ ዝነበሮ ምለስ" },
   "tooltip_close": { "message": "ዕጾ" },
   "tooltip_sendRelatedQuery": { "message": "ምስዚ ዚተሓሓዝ ሕቶ ልኣኽ" },
   "helptip_proxyAPImode": { "message": "ምትእታት Proxy API ብዘይ መእተዊ ናብ AI ንእትው" },

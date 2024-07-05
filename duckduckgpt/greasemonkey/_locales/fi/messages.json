@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Vastaa" },
   "tooltip_askRandQuestion": { "message": "Esitä satunnainen kysymys" },
   "tooltip_minimize": { "message": "MInimoi" },
+  "tooltip_restore": { "message": "Palauta" },
   "tooltip_close": { "message": "Sulje" },
   "tooltip_sendRelatedQuery": { "message": "Lähetä liittyvä kysely" },
   "helptip_proxyAPImode": { "message": "Käyttää välityspalvelimen sovellusliittymää tekoälyn kirjautumattomaan käyttöön" },

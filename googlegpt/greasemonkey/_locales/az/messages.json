@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "Göndər" },
   "tooltip_feelingLucky": { "message": "Şanslı olduğumu hiss edirəm" },
   "tooltip_minimize": { "message": "Ən kiçik edin" },
+  "tooltip_restore": { "message": "Bərpa et" },
   "tooltip_close": { "message": "Bağla" },
   "tooltip_sendRelatedQuery": { "message": "Əlaqəli sorğu göndərin" },
   "helptip_proxyAPImode": { "message": "AI-yə giriş imkanı olmayan giriş üçün Proksi API-sindən istifadə edir" },

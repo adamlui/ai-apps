@@ -40,6 +40,7 @@
   "tooltip_sendReply": { "message": "שלח תגובה" },
   "tooltip_askRandQuestion": { "message": "שאל שאלה אקראית" },
   "tooltip_minimize": { "message": "מזער" },
+  "tooltip_restore": { "message": "שחזור" },
   "tooltip_close": { "message": "סגירה" },
   "tooltip_sendRelatedQuery": { "message": "שלח שאילתה קשורה" },
   "helptip_proxyAPImode": { "message": "משתמש ב - Proxy API לגישה ללא כניסה ל - AI" },
