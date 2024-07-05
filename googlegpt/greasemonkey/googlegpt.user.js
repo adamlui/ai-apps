@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.4.13
+// @version                  2024.7.4.14
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2525,11 +2525,11 @@
 
                 // Create/append Pin button
                 if (!isMobile) {
-                    var pinSVG = document.createElement('span'),
+                    var pinSpan = document.createElement('span'),
                         pinSVG = icons.pin.create()
-                    pinSVG.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
-                    pinSVG.className = 'corner-btn' ; pinSVG.style.margin = '-1.55px 7.5px 0 0'
-                    pinSVG.append(pinSVG) ; cornerBtnsDiv.append(pinSVG)
+                    pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
+                    pinSpan.className = 'corner-btn' ; pinSpan.style.margin = '-1.55px 7.5px 0 0'
+                    pinSpan.append(pinSVG) ; cornerBtnsDiv.append(pinSpan)
                 }
 
                 // Create/append Font Size button
@@ -2606,7 +2606,7 @@
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (wsbSVG) wsbSVG.onclick = () => toggle.sidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, settingsSpan, speakerSpan, pinSVG, fontSizeSpan, wsbSpan].forEach(span => {
+                    [aboutSpan, settingsSpan, speakerSpan, pinSpan, fontSizeSpan, wsbSpan].forEach(span => {
                         if (span) span.onmouseover = span.onmouseout = toggle.tooltip })
 
                 // Create/append 'by KudoAI' if it fits
