@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.4.8
+// @version                2024.7.4.9
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1480,7 +1480,7 @@
         },
 
         tooltip(buttonType) { // text & position
-            const cornerBtnTypes = ['about', 'settings', 'speak', 'ssb', 'font-size', 'wsb']
+            const cornerBtnTypes = ['about', 'settings', 'speak', 'pin', 'font-size', 'wsb']
                       .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
             const [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [8, 28] : [6, 27.5],
                   iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.5
@@ -1491,7 +1491,7 @@
                 buttonType == 'about' ? msgs.menuLabel_about || 'About'
               : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
               : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
-              : buttonType == 'ssb' ? (( config.stickySidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
+              : buttonType == 'pin' ? (( config.stickySidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
                                        + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' ))
               : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
               : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
@@ -2209,13 +2209,13 @@
                     speakerSpan.append(speakerSVG) ; cornerBtnsDiv.append(speakerSpan)
                 }
 
-                // Create/append Sticky Sidebar button
+                // Create/append Pin button
                 if (!isCentered && !isMobile) {
-                    var ssbSpan = document.createElement('span'),
-                        ssbSVG = icons.pin.create()
-                    ssbSpan.id = 'ssb-btn' // for toggle.sidebar() + toggle.tooltip()
-                    ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '1px 9px 0 0'
-                    ssbSpan.append(ssbSVG) ; cornerBtnsDiv.append(ssbSpan)
+                    var pinSpan = document.createElement('span'),
+                        pinSVG = icons.pin.create()
+                    pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
+                    pinSpan.className = 'corner-btn' ; pinSpan.style.margin = '1px 9px 0 0'
+                    pinSpan.append(pinSVG) ; cornerBtnsDiv.append(pinSpan)
                 }
 
                 // Create/append Font Size button
@@ -2287,11 +2287,11 @@
                         })}}
                     })
                 }
-                if (ssbSVG) ssbSVG.onclick = () => toggle.sidebar('sticky')
+                if (pinSVG) pinSVG.onclick = () => toggle.sidebar('sticky')
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (wsbSVG) wsbSVG.onclick = () => toggle.sidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, settingsSpan, speakerSpan, ssbSpan, fontSizeSpan, wsbSpan].forEach(span => {
+                    [aboutSpan, settingsSpan, speakerSpan, pinSpan, fontSizeSpan, wsbSpan].forEach(span => {
                         if (span) span.onmouseover = span.onmouseout = toggle.tooltip })
 
                 // Create/append 'by KudoAI'
