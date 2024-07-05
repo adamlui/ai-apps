@@ -15,7 +15,7 @@
   "menuLabel_pinTo": { "message": "Speld na" },
   "menuLabel_top": { "message": "Bo" },
   "menuLabel_bottom": { "message": "Onder" },
-  "menuLabel_nothing": { "message": "" },
+  "menuLabel_nothing": { "message": "Niks nie" },
   "menuLabel_background": { "message": "Agtergrond" },
   "menuLabel_foreground": { "message": "Voorgrond:" },
   "menuLabel_animations": { "message": "Animasies" },
