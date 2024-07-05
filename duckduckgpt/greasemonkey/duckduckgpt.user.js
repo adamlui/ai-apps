@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.5
+// @version                2024.7.5.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -768,7 +768,7 @@
                         settingIcon = icons.inwardCarets.create()
                         settingIcon.style.cssText = 'position: relative ; top: 4.5px ; margin-right: 7px'
                     } else if (key == 'autoScroll') {
-                        settingIcon = icons.downArrows.create()
+                        settingIcon = icons.arrowsDown.create()
                         settingIcon.style.cssText = 'position: relative ; top: 3.5px ; left: -1.5px ; margin-right: 6px'
                     } else if (key == 'rqDisabled') {
                         settingIcon = icons.speechBalloon.create()
@@ -942,7 +942,7 @@
                     schemeStatusSpan.append(...( // status txt + icon
                         config.scheme == 'dark' ? [document.createTextNode(msgs.scheme_dark || 'Dark'), icons.moon.create()]
                       : config.scheme == 'light' ? [document.createTextNode(msgs.scheme_light || 'Light'), icons.sun.create()]
-                      : [document.createTextNode(msgs.menuLabel_auto || 'Auto'), icons.cycleArrows.create()]
+                      : [document.createTextNode(msgs.menuLabel_auto || 'Auto'), icons.arrowsCycle.create()]
                 ))}
             }
         }
@@ -964,6 +964,51 @@
             }
         },
 
+        arrowUp: {
+            create() {
+                const arrowUpSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      arrowUpSVGattrs = [['width', 16], ['height', 16], ['viewBox', '4 2 16 16'],
+                                         ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']]
+                arrowUpSVGattrs.forEach(([attr, value]) => arrowUpSVG.setAttribute(attr, value))
+                arrowUpSVG.append(createSVGelem('path', { stroke: '', fill: 'none', 'stroke-width': '2', linecap: 'round', 'stroke-linejoin': 'round',
+                    d: 'M7 11L12 6L17 11M12 18V7' }))
+                return arrowUpSVG
+            }
+        },
+
+        arrowsCycle: {
+            create() {
+                const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      arrowsSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 -1020 960 960']]
+                arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
+                arrowsSVG.append(createSVGelem('path', { stroke: 'none', d: 'M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z' }))
+                return arrowsSVG
+            }
+        },
+
+        arrowsDown: {
+            create() {
+                const arrowsDownSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      arrowsDownSVGattrs = [['width', 19], ['height', 19], ['viewBox', '0 0 24 24']]
+                arrowsDownSVGattrs.forEach(([attr, value]) => arrowsDownSVG.setAttribute(attr, value))
+                arrowsDownSVG.append(
+                    createSVGelem('path', { stroke: 'none', d: 'M18,13H6a1,1,0,0,1,0-2H18a1,1,0,0,1,0,2Z' }),
+                    createSVGelem('path', { stroke: 'none', d: 'M14.71,18.29a1,1,0,0,1,0,1.42l-2,2a1,1,0,0,1-1.42,0l-2-2a1,1,0,0,1,1.42-1.42l.29.3V16a1,1,0,0,1,2,0v2.59l.29-.3A1,1,0,0,1,14.71,18.29ZM11.29,8.71a1,1,0,0,0,1.42,0l2-2a1,1,0,1,0-1.42-1.42l-.29.3V3a1,1,0,0,0-2,0V5.59l-.29-.3A1,1,0,0,0,9.29,6.71Z' })
+                )
+                return arrowsDownSVG
+            }
+        },
+
+        arrowsTwistedRight: {
+            create() {
+                const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      arrowsSVGattrs = [['width', 21], ['height', 21], ['viewBox', '-1 -1 32 32']]
+                arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
+                arrowsSVG.append(createSVGelem('path', { stroke: '', d: 'M23.707,16.293L28.414,21l-4.707,4.707l-1.414-1.414L24.586,22H23c-2.345,0-4.496-1.702-6.702-3.753c0.498-0.458,0.984-0.92,1.46-1.374C19.624,18.6,21.393,20,23,20h1.586l-2.293-2.293L23.707,16.293zM23,11h1.586l-2.293,2.293l1.414,1.414L28.414,10l-4.707-4.707l-1.414,1.414L24.586,9H23c-2.787,0-5.299,2.397-7.957,4.936C12.434,16.425,9.736,19,7,19H4v2h3c3.537,0,6.529-2.856,9.424-5.618C18.784,13.129,21.015,11,23,11zM11.843,14.186c0.5-0.449,0.995-0.914,1.481-1.377C11.364,11.208,9.297,10,7,10H4v2h3C8.632,12,10.25,12.919,11.843,14.186z' }))
+                return arrowsSVG
+            }
+        },
+
         autoSpeechBalloon: {
             create() {
                 const autoSpeechBalloonSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -974,34 +1019,11 @@
             }
         },
 
-        cycleArrows: {
-            create() {
-                const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      arrowsSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 -1020 960 960']]
-                arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
-                arrowsSVG.append(createSVGelem('path', { stroke: 'none', d: 'M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z' }))
-                return arrowsSVG
-            }
-        },
-
         ddgpt: {
             create() {
                 const ddgptIcon = document.createElement('img')
                 ddgptIcon.src = GM_getResourceText('ddgptIcon')
                 return ddgptIcon
-            }
-        },
-
-        downArrows: {
-            create() {
-                const downArrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      downArrowsSVGattrs = [['width', 19], ['height', 19], ['viewBox', '0 0 24 24']]
-                downArrowsSVGattrs.forEach(([attr, value]) => downArrowsSVG.setAttribute(attr, value))
-                downArrowsSVG.append(
-                    createSVGelem('path', { stroke: 'none', d: 'M18,13H6a1,1,0,0,1,0-2H18a1,1,0,0,1,0,2Z' }),
-                    createSVGelem('path', { stroke: 'none', d: 'M14.71,18.29a1,1,0,0,1,0,1.42l-2,2a1,1,0,0,1-1.42,0l-2-2a1,1,0,0,1,1.42-1.42l.29.3V16a1,1,0,0,1,2,0v2.59l.29-.3A1,1,0,0,1,14.71,18.29ZM11.29,8.71a1,1,0,0,0,1.42,0l2-2a1,1,0,1,0-1.42-1.42l-.29.3V3a1,1,0,0,0-2,0V5.59l-.29-.3A1,1,0,0,0,9.29,6.71Z' })
-                )
-                return downArrowsSVG
             }
         },
 
@@ -1094,16 +1116,6 @@
                 schemeSVGattrs.forEach(([attr, value]) => schemeSVG.setAttribute(attr, value))
                 schemeSVG.append(createSVGelem('path', { stroke: 'none', d: 'M479.92-34q-91.56 0-173.4-35.02t-142.16-95.34q-60.32-60.32-95.34-142.24Q34-388.53 34-480.08q0-91.56 35.02-173.4t95.34-142.16q60.32-60.32 142.24-95.34Q388.53-926 480.08-926q91.56 0 173.4 35.02t142.16 95.34q60.32 60.32 95.34 142.24Q926-571.47 926-479.92q0 91.56-35.02 173.4t-95.34 142.16q-60.32 60.32-142.24 95.34Q571.47-34 479.92-34ZM530-174q113-19 186.5-102.78T790-480q0-116.71-73.5-201.35Q643-766 530-785v611Z' }))
                 return schemeSVG
-            }
-        },
-
-        shuffledArrows: {
-            create() {
-                const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      arrowsSVGattrs = [['width', 21], ['height', 21], ['viewBox', '-1 -1 32 32']]
-                arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
-                arrowsSVG.append(createSVGelem('path', { stroke: '', d: 'M23.707,16.293L28.414,21l-4.707,4.707l-1.414-1.414L24.586,22H23c-2.345,0-4.496-1.702-6.702-3.753c0.498-0.458,0.984-0.92,1.46-1.374C19.624,18.6,21.393,20,23,20h1.586l-2.293-2.293L23.707,16.293zM23,11h1.586l-2.293,2.293l1.414,1.414L28.414,10l-4.707-4.707l-1.414,1.414L24.586,9H23c-2.787,0-5.299,2.397-7.957,4.936C12.434,16.425,9.736,19,7,19H4v2h3c3.537,0,6.529-2.856,9.424-5.618C18.784,13.129,21.015,11,23,11zM11.843,14.186c0.5-0.449,0.995-0.914,1.481-1.377C11.364,11.208,9.297,10,7,10H4v2h3C8.632,12,10.25,12.919,11.843,14.186z' }))
-                return arrowsSVG
             }
         },
         
@@ -1199,18 +1211,6 @@
                 sunglassesSVGattrs.forEach(([attr, value]) => sunglassesSVG.setAttribute(attr, value))
                 sunglassesSVG.append(createSVGelem('path', { stroke: 'none', d: 'M507.44,185.327c-4.029-5.124-10.185-8.112-16.704-8.112c0,0-48.021,0-156.827,0h-65.774H243.87h-65.774c-108.806,0-156.827,0-156.827,0c-6.519,0-12.675,2.988-16.714,8.112c-4.028,5.125-5.486,11.815-3.965,18.152c0,0,12.421,56.269,19.927,82.534c7.506,26.265,26.265,48.772,86.29,48.772s59.827,0,74.828,0c21.258,0,46.256-19.99,55.028-45.023c4.97-14.16,12.756-32.738,19.338-47.876c6.582,15.138,14.368,33.716,19.338,47.876c8.773,25.033,33.77,45.023,55.028,45.023c15.001,0,14.803,0,74.828,0s78.784-22.507,86.29-48.772c7.496-26.264,19.918-82.534,19.918-82.534C512.935,197.142,511.478,190.452,507.44,185.327z M90.339,278.734C45.314,263.732,40.318,198.7,40.318,198.7s22.507,0,55.028,0L90.339,278.734z M340.464,278.734c-45.015-15.001-50.022-80.034-50.022-80.034s22.508,0,55.029,0L340.464,278.734z' }))
                 return sunglassesSVG
-            }
-        },
-
-        upArrow: {
-            create() {
-                const upArrowSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      upArrowSVGattrs = [['width', 16], ['height', 16], ['viewBox', '4 2 16 16'],
-                                         ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']]
-                upArrowSVGattrs.forEach(([attr, value]) => upArrowSVG.setAttribute(attr, value))
-                upArrowSVG.append(createSVGelem('path', { stroke: '', fill: 'none', 'stroke-width': '2', linecap: 'round', 'stroke-linejoin': 'round',
-                    d: 'M7 11L12 6L17 11M12 18V7' }))
-                return upArrowSVG
             }
         },
 
@@ -2349,7 +2349,7 @@
 
                 // Create/append send button
                 const sendBtn = document.createElement('button'),
-                      sendSVG = icons.upArrow.create()
+                      sendSVG = icons.arrowUp.create()
                 sendBtn.id = 'send-btn' ; sendBtn.className = 'chatbar-btn'
                 sendBtn.style.right = `${ isFirefox ? 8 : 7 }px`
                 sendBtn.append(sendSVG) ; continueChatDiv.append(sendBtn)
@@ -2358,7 +2358,7 @@
                 const shuffleBtn = document.createElement('div')
                 shuffleBtn.id = 'shuffle-btn' ; shuffleBtn.className = 'chatbar-btn'
                 shuffleBtn.style.right = `${ isFirefox ? 11.5 : 9.5 }px`
-                const shuffleSVG = icons.shuffledArrows.create()
+                const shuffleSVG = icons.arrowsTwistedRight.create()
                 shuffleBtn.append(shuffleSVG) ; continueChatDiv.append(shuffleBtn)
 
                 // Add reply section listeners
