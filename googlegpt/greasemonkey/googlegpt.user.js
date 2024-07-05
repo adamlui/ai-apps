@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.5.2
+// @version                  2024.7.5.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -430,7 +430,7 @@
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
-    loadSetting('autoGet', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'bgAnimationsDisabled',
+    loadSetting('autoGet', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'fgAnimationsDisabled',
                 'fontSize', 'notFirstRun', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
                 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
