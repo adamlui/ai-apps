@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Limbă actualizată" },
   "alert_willReplyIn": { "message": "va răspunde în" },
   "alert_yourSysLang": { "message": "limba sistemului dvs" },
+  "alert_choosePlatform": { "message": "Alegeți o platformă" },
   "alert_updateAvail": { "message": "Actualizare disponibilă" },
   "alert_newerVer": { "message": "Actualizare" },
   "alert_isAvail": { "message": "este disponibil" },

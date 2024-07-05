@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "ቋንቋ ዘምኗል" },
   "alert_willReplyIn": { "message": "ውስጥ መልስ ይሆናል" },
   "alert_yourSysLang": { "message": "የእርስዎ የስርዓት ቋንቋ" },
+  "alert_choosePlatform": { "message": "መድረክ ይምረጡ" },
   "alert_updateAvail": { "message": "ዝመና ይገኛል!" },
   "alert_newerVer": { "message": "አንድ ዝማኔ ወደ" },
   "alert_isAvail": { "message": "ይገኛል" },

@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Լեզուն թարմացվել է" },
   "alert_willReplyIn": { "message": "կպատասխանի" },
   "alert_yourSysLang": { "message": "համակարգի լեզուն" },
+  "alert_choosePlatform": { "message": "Ընտրեք հարթակ" },
   "alert_updateAvail": { "message": "Թարմացումը հասանելի է" },
   "alert_newerVer": { "message": "Թարմացում" },
   "alert_isAvail": { "message": "առկա է" },

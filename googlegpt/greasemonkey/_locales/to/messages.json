@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Fakatonutonu ʻo e Lea Fakafonuá" },
   "alert_willReplyIn": { "message": "ʻe tali mai ʻi he" },
   "alert_yourSysLang": { "message": "hoʻo lea fakafonua ʻi he system" },
+  "alert_choosePlatform": { "message": "Fili ha fakavaʻe" },
   "alert_updateAvail": { "message": "ʻOku lava ke maʻu e fakamatala fakamuimuitaha" },
   "alert_newerVer": { "message": "Ko ha fakamatala fakamuimuitaha ki he" },
   "alert_isAvail": { "message": "ʻoku lava ke maʻu" },

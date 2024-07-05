@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "تم تحديث اللغة" },
   "alert_willReplyIn": { "message": "سيتم الرد في" },
   "alert_yourSysLang": { "message": "لغة النظام" },
+  "alert_choosePlatform": { "message": "اختيار منصة" },
   "alert_updateAvail": { "message": "تحديث متوفر" },
   "alert_newerVer": { "message": "تحديث لـ" },
   "alert_isAvail": { "message": "متوفر" },

@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Idioma Actualizacion" },
   "alert_willReplyIn": { "message": "lo responde den" },
   "alert_yourSysLang": { "message": "bo sistema di lenguahe" },
+  "alert_choosePlatform": { "message": "Elegí un plataforma" },
   "alert_updateAvail": { "message": "Actualizacion Disponible" },
   "alert_newerVer": { "message": "Un update pa" },
   "alert_isAvail": { "message": "ta disponibel" },

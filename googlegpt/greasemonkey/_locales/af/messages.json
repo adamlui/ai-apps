@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Taal opgedateer" },
   "alert_willReplyIn": { "message": "die antwoord in" },
   "alert_yourSysLang": { "message": "jou stelsel taal" },
+  "alert_choosePlatform": { "message": "Kies 'n platform" },
   "alert_updateAvail": { "message": "Opdatering beskikbaar" },
   "alert_newerVer": { "message": "'n Opdatering na" },
   "alert_isAvail": { "message": "is beskikbaar" },

@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Mál dagførd" },
   "alert_willReplyIn": { "message": "hann svarar í" },
   "alert_yourSysLang": { "message": "skipanarmál" },
+  "alert_choosePlatform": { "message": "Vel eina platform" },
   "alert_updateAvail": { "message": "Dagføring er klár" },
   "alert_newerVer": { "message": "Núverandi tíðindi" },
   "alert_isAvail": { "message": "tað er tøkt" },

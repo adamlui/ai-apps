@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Språk uppdaterat" },
   "alert_willReplyIn": { "message": "kommer att svara i" },
   "alert_yourSysLang": { "message": "systemspråk" },
+  "alert_choosePlatform": { "message": "Välj en plattform" },
   "alert_updateAvail": { "message": "Uppdatering tillgänglig" },
   "alert_newerVer": { "message": "Uppdatera till" },
   "alert_isAvail": { "message": "är tillgänglig" },

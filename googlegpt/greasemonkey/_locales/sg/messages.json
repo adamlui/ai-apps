@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Yanga ti awambongi ti kodoro" },
   "alert_willReplyIn": { "message": "lo kiri tënë na lo" },
   "alert_yourSysLang": { "message": "yanga ti awambongi ti mo" },
+  "alert_choosePlatform": { "message": "Soro mbeni platforme" },
   "alert_updateAvail": { "message": "Aye so asi laso" },
   "alert_newerVer": { "message": "Mbeni ye so a sara na yâ ti fini dunia" },
   "alert_isAvail": { "message": "yeke available" },

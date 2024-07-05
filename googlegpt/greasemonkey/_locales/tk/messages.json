@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Til ýygnaýarlanýar" },
   "alert_willReplyIn": { "message": "biz hem jogap berip bileris" },
   "alert_yourSysLang": { "message": "dil sistemasy" },
+  "alert_choosePlatform": { "message": "Bir platforma girmek" },
   "alert_updateAvail": { "message": "Täzeleşdir" },
   "alert_newerVer": { "message": "Täzeleşdirmek" },
   "alert_isAvail": { "message": "häzir bar" },

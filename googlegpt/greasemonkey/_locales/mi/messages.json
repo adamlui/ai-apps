@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Reo whakahoutia" },
   "alert_willReplyIn": { "message": "ka whakahoki ahau i roto i" },
   "alert_yourSysLang": { "message": "tō reo pūnaha" },
+  "alert_choosePlatform": { "message": "Kōwhiri i tētahi papa" },
   "alert_updateAvail": { "message": "Ngā whakahōu e wātea ana" },
   "alert_newerVer": { "message": "He whakahou ki" },
   "alert_isAvail": { "message": "kei te wātea ahau" },

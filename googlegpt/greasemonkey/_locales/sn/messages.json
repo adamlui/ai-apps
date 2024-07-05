@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Mutauro wakagadziridzwa" },
   "alert_willReplyIn": { "message": "achapindura mukati" },
   "alert_yourSysLang": { "message": "hurongwa hwako mutauro" },
+  "alert_choosePlatform": { "message": "Sarudza chikuva" },
   "alert_updateAvail": { "message": "Zadzisa zviripo" },
   "alert_newerVer": { "message": "An update kuti" },
   "alert_isAvail": { "message": "inowanika" },

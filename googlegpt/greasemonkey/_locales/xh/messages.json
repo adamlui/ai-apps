@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Ulwimi luhlaziyiwe" },
   "alert_willReplyIn": { "message": "iza kuphendula ingekapheli" },
   "alert_yourSysLang": { "message": "ulwimi lwenkqubo yakho" },
+  "alert_choosePlatform": { "message": "Khetha iwebhusayithi" },
   "alert_updateAvail": { "message": "Uhlaziyo luyafumaneka" },
   "alert_newerVer": { "message": "Inkcazelo ehlaziyiweyo" },
   "alert_isAvail": { "message": "iyafumaneka" },

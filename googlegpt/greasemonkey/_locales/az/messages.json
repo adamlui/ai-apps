@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Dil yeniləndi" },
   "alert_willReplyIn": { "message": "cavab verəcək" },
   "alert_yourSysLang": { "message": "sistem diliniz" },
+  "alert_choosePlatform": { "message": "Platforma seçin" },
   "alert_updateAvail": { "message": "Mövcud Güncelle" },
   "alert_newerVer": { "message": "Yenilənmə" },
   "alert_isAvail": { "message": "mövcuddur" },

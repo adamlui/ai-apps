@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Тил жаңыртылды" },
   "alert_willReplyIn": { "message": "жооп берет" },
   "alert_yourSysLang": { "message": "Системалык тил" },
+  "alert_choosePlatform": { "message": "Платформаны тандоо" },
   "alert_updateAvail": { "message": "Баяндалмасы табылган жок" },
   "alert_newerVer": { "message": "Жаңыртуу" },
   "alert_isAvail": { "message": "жеткиликтүү" },

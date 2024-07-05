@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Bahasa dikemas kini" },
   "alert_willReplyIn": { "message": "akan membalas dalam" },
   "alert_yourSysLang": { "message": "Bahasa Sistem" },
+  "alert_choosePlatform": { "message": "Pilih platform" },
   "alert_updateAvail": { "message": "Kemas kini tersedia" },
   "alert_newerVer": { "message": "Pengemaskinian kepada" },
   "alert_isAvail": { "message": "tersedia" },

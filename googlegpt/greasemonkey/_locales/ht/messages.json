@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Lang mete ajou" },
   "alert_willReplyIn": { "message": "pral reponn nan/répondre à" },
   "alert_yourSysLang": { "message": "lang sistèm ou/votre langue système" },
+  "alert_choosePlatform": { "message": "Chwazi yon platfòm" },
   "alert_updateAvail": { "message": "Mizajou ki disponib" },
   "alert_newerVer": { "message": "Yon aktyalizasyon pou" },
   "alert_isAvail": { "message": "ki disponib/à votre disposition/sont disponibles" },

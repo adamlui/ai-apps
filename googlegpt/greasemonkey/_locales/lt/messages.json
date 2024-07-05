@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Kalba atnaujinta" },
   "alert_willReplyIn": { "message": "atsakys po" },
   "alert_yourSysLang": { "message": "Sistemos kalba" },
+  "alert_choosePlatform": { "message": "Pasirinkti platformą" },
   "alert_updateAvail": { "message": "Yra naujinys" },
   "alert_newerVer": { "message": "Atnaujinta į" },
   "alert_isAvail": { "message": "yra prieinama" },

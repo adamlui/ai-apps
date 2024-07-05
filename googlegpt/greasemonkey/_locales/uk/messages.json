@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Мову оновлено" },
   "alert_willReplyIn": { "message": "відповість у" },
   "alert_yourSysLang": { "message": "мова вашої системи" },
+  "alert_choosePlatform": { "message": "Виберіть платформу" },
   "alert_updateAvail": { "message": "Доступне оновлення" },
   "alert_newerVer": { "message": "Оновлення до" },
   "alert_isAvail": { "message": "не доступно" },

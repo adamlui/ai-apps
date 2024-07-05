@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "បានអាប់ដេតភាសា" },
   "alert_willReplyIn": { "message": "នឹងឆ្លើយតបនៅក្នុង" },
   "alert_yourSysLang": { "message": "ភាសាប្រព័ន្ធរបស់អ្នក" },
+  "alert_choosePlatform": { "message": "ជ្រើសរើសវេទិកា" },
   "alert_updateAvail": { "message": "ការអាប់ដេតមាន" },
   "alert_newerVer": { "message": "អាប់ដេតទៅ" },
   "alert_isAvail": { "message": "មាន" },

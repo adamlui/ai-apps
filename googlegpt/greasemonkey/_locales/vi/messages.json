@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Đã cập nhật ngôn ngữ" },
   "alert_willReplyIn": { "message": "sẽ trả lời trong" },
   "alert_yourSysLang": { "message": "Ngôn ngữ hệ thống" },
+  "alert_choosePlatform": { "message": "Chọn một nền tảng" },
   "alert_updateAvail": { "message": "Cập nhật có sẵn" },
   "alert_newerVer": { "message": "bản cập nhật" },
   "alert_isAvail": { "message": "is available" },

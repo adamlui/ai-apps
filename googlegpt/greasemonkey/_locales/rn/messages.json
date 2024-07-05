@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Ururimi Updated" },
   "alert_willReplyIn": { "message": "ashura In" },
   "alert_yourSysLang": { "message": "ururimi rwawe rwa sisitemu" },
+  "alert_choosePlatform": { "message": "Hitamwo ikibuga" },
   "alert_updateAvail": { "message": "Amakuru agezweho" },
   "alert_newerVer": { "message": "Update None None" },
   "alert_isAvail": { "message": "none None available" },

@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "taalbestand bijgewerkt" },
   "alert_willReplyIn": { "message": "zal antwoorden in" },
   "alert_yourSysLang": { "message": "Systeemtaal" },
+  "alert_choosePlatform": { "message": "Kies een platform" },
   "alert_updateAvail": { "message": "Güncelleme uygun" },
   "alert_newerVer": { "message": "Updaten naar" },
   "alert_isAvail": { "message": "is beschikbaar" },

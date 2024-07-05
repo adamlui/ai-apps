@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Lugha imesasishwa" },
   "alert_willReplyIn": { "message": "atajibu ndani ya" },
   "alert_yourSysLang": { "message": "lugha ya mfumo wako" },
+  "alert_choosePlatform": { "message": "Chagua tovuti" },
   "alert_updateAvail": { "message": "Sasisho lipo" },
   "alert_newerVer": { "message": "Sasisho kwa" },
   "alert_isAvail": { "message": "inapatikana" },

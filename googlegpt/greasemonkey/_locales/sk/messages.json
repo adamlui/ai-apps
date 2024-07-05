@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Jazyk bol aktualizovaný" },
   "alert_willReplyIn": { "message": "odpovie v" },
   "alert_yourSysLang": { "message": "váš systémový jazyk" },
+  "alert_choosePlatform": { "message": "Vyberte platformu" },
   "alert_updateAvail": { "message": "Aktualizácia k dispozícii" },
   "alert_newerVer": { "message": "Aktualizujte na" },
   "alert_isAvail": { "message": "k dispozícii" },

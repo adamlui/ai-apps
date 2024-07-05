@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Puo e ntshwafaditswe" },
   "alert_willReplyIn": { "message": "o tlile go araba ka" },
   "alert_yourSysLang": { "message": "puo ya gago ya thulaganyo" },
+  "alert_choosePlatform": { "message": "Tlhopha polateforomo ya thelebišene" },
   "alert_updateAvail": { "message": "Diphetogo tse di leng teng" },
   "alert_newerVer": { "message": "Update kwa" },
   "alert_isAvail": { "message": "e teng" },

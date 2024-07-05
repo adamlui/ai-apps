@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Valoda atjaunināta" },
   "alert_willReplyIn": { "message": "atbildēs pēc" },
   "alert_yourSysLang": { "message": "jūsu sistēmas valoda" },
+  "alert_choosePlatform": { "message": "Izvēlieties platformu" },
   "alert_updateAvail": { "message": "Pieejams jauninājums" },
   "alert_newerVer": { "message": "Atjauninājums uz" },
   "alert_isAvail": { "message": "ir pieejams" },

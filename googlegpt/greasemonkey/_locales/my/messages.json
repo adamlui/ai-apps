@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "ဘာသာစကားကို အပ်ဒိတ်လုပ်ထားသည်" },
   "alert_willReplyIn": { "message": "ဖြေကြားပေးပါမည် ။" },
   "alert_yourSysLang": { "message": "သင် ၏ စနစ်ဘာသာစကား" },
+  "alert_choosePlatform": { "message": "ပလက်ဖောင်းကို ရွေးပါ" },
   "alert_updateAvail": { "message": "အသစ်မထွက်သေး" },
   "alert_newerVer": { "message": "သို့ အပ်ဒိတ်တစ်ခု" },
   "alert_isAvail": { "message": "ရရှိနိုင်ပါသည်" },

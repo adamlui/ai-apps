@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Keel uuendatud" },
   "alert_willReplyIn": { "message": "vastab pärast" },
   "alert_yourSysLang": { "message": "teie süsteemi keel" },
+  "alert_choosePlatform": { "message": "Vali platvorm" },
   "alert_updateAvail": { "message": "Saadaval on uuendus" },
   "alert_newerVer": { "message": "Uuendus kuni" },
   "alert_isAvail": { "message": "on saadaval" },

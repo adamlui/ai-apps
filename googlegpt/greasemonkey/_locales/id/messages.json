@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Bahasa diperbarui" },
   "alert_willReplyIn": { "message": "akan membalas dalam" },
   "alert_yourSysLang": { "message": "Bahasa sistem" },
+  "alert_choosePlatform": { "message": "Pilih platform" },
   "alert_updateAvail": { "message": "Pembaruan tersedia" },
   "alert_newerVer": { "message": "Pembaruan untuk" },
   "alert_isAvail": { "message": "Install package not available" },

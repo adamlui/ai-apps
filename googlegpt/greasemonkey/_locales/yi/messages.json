@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "שפּראַך דערהייַנטיקט" },
   "alert_willReplyIn": { "message": "וועט ענטפערן אין" },
   "alert_yourSysLang": { "message": "דיין סיסטעם שפּראַך" },
+  "alert_choosePlatform": { "message": "קלייַבן אַ פּלאַטפאָרמע" },
   "alert_updateAvail": { "message": "דערהייַנטיקן בנימצא" },
   "alert_newerVer": { "message": "אַ דערהייַנטיקן צו" },
   "alert_isAvail": { "message": "איז בנימצא" },

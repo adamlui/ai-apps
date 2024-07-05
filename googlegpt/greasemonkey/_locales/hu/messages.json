@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Nyelv frissítve" },
   "alert_willReplyIn": { "message": "válaszolni fog a következőben" },
   "alert_yourSysLang": { "message": "Rendszer nyelve" },
+  "alert_choosePlatform": { "message": "Válasszon platformot" },
   "alert_updateAvail": { "message": "Frissítés érhető el" },
   "alert_newerVer": { "message": "Frissítés" },
   "alert_isAvail": { "message": "elérhető" },

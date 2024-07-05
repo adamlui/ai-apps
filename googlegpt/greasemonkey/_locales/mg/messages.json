@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Nohavaozina ny fiteny" },
   "alert_willReplyIn": { "message": "hamaly amin'ny" },
   "alert_yourSysLang": { "message": "fitenin'ny rafitrao" },
+  "alert_choosePlatform": { "message": "Misafidiana sehatra iray" },
   "alert_updateAvail": { "message": "Fanavaozana misy" },
   "alert_newerVer": { "message": "Fanavaozana amin'ny" },
   "alert_isAvail": { "message": "azo" },

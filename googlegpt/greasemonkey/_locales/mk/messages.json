@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Јазикот е ажуриран" },
   "alert_willReplyIn": { "message": "ќе ви одговори за" },
   "alert_yourSysLang": { "message": "јазикот на вашиот систем" },
+  "alert_choosePlatform": { "message": "Изберете платформа" },
   "alert_updateAvail": { "message": "Достапна надградба" },
   "alert_newerVer": { "message": "Ажурирање на" },
   "alert_isAvail": { "message": "е достапен" },

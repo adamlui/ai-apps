@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Tokples i go bek" },
   "alert_willReplyIn": { "message": "em bai bekim tok long" },
   "alert_yourSysLang": { "message": "tokples bilong yu" },
+  "alert_choosePlatform": { "message": "Piksaim wanpela platform" },
   "alert_updateAvail": { "message": "Tok pisin i go pinis" },
   "alert_newerVer": { "message": "Ol nupela tok" },
   "alert_isAvail": { "message": "em i kamap pinis" },

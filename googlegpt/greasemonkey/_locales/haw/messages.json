@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Hōʻano hou ʻia ka ʻōlelo" },
   "alert_willReplyIn": { "message": "e pane mai" },
   "alert_yourSysLang": { "message": "kāu ʻōlelo ʻōnaehana" },
+  "alert_choosePlatform": { "message": "E koho i kahi paepae" },
   "alert_updateAvail": { "message": "Loaʻa ka hōʻano hou" },
   "alert_newerVer": { "message": "He mea hou i" },
   "alert_isAvail": { "message": "loaʻa" },

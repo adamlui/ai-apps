@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Il-lingwa ġiet aġġornata" },
   "alert_willReplyIn": { "message": "se twieġeb" },
   "alert_yourSysLang": { "message": "il-lingwa tas-sistema tiegħek" },
+  "alert_choosePlatform": { "message": "AGĦŻEL PJATTAFORMA" },
   "alert_updateAvail": { "message": "Aġġornament disponibbli" },
   "alert_newerVer": { "message": "Aġġornament għal" },
   "alert_isAvail": { "message": "huwa disponibbli" },

@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "השפה עודכנה" },
   "alert_willReplyIn": { "message": "נשיב בעוד" },
   "alert_yourSysLang": { "message": "שפת המערכת שלך" },
+  "alert_choosePlatform": { "message": "בחירת פלטפורמה" },
   "alert_updateAvail": { "message": "עדכון זמין" },
   "alert_newerVer": { "message": "עדכון ל -" },
   "alert_isAvail": { "message": "%s זמין" },

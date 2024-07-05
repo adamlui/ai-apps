@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Tungumál uppfært" },
   "alert_willReplyIn": { "message": "mun svara í" },
   "alert_yourSysLang": { "message": "tungumál kerfisins þíns" },
+  "alert_choosePlatform": { "message": "Veldu verkvang" },
   "alert_updateAvail": { "message": "Ný uppfærsla í boði" },
   "alert_newerVer": { "message": "Breyting á" },
   "alert_isAvail": { "message": "er í boði" },

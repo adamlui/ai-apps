@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Tazwara n yidles tserka" },
   "alert_willReplyIn": { "message": "yesskri deg" },
   "alert_yourSysLang": { "message": "tazwara n tezra" },
+  "alert_choosePlatform": { "message": "Fren asebter" },
   "alert_updateAvail": { "message": "Tserkit tazwara" },
   "alert_newerVer": { "message": "Tserkit ad" },
   "alert_isAvail": { "message": "yella" },

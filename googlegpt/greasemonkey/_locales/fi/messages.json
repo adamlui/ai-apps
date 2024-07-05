@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Kieli päivitetty" },
   "alert_willReplyIn": { "message": "vastaa" },
   "alert_yourSysLang": { "message": "järjestelmäkohtainen dokumentaatiokieli" },
+  "alert_choosePlatform": { "message": "Valitse alusta" },
   "alert_updateAvail": { "message": "Päivitys saatavilla" },
   "alert_newerVer": { "message": "Päivitä" },
   "alert_isAvail": { "message": "on käytettävissä" },

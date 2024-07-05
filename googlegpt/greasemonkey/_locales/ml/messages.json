@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "ഭാഷ അപ്‌ഡേറ്റുചെയ്‌തു" },
   "alert_willReplyIn": { "message": "ൽ മറുപടി നൽകും" },
   "alert_yourSysLang": { "message": "നിങ്ങളുടെ സിസ്റ്റം ഭാഷ" },
+  "alert_choosePlatform": { "message": "ഒരു പ്ലാറ്റ്ഫോം തിരഞ്ഞെടുക്കുക" },
   "alert_updateAvail": { "message": "%d അപ്‌ഡേറ്റ് ലഭ്യമാണ്" },
   "alert_newerVer": { "message": "ഇതിലേക്കുള്ള ഒരു അപ്‌ഡേറ്റ്" },
   "alert_isAvail": { "message": "ലഭ്യമാണ്" },

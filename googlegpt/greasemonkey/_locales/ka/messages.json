@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Ენა განახლებულია" },
   "alert_willReplyIn": { "message": "უპასუხებს" },
   "alert_yourSysLang": { "message": "სისტემური ენა" },
+  "alert_choosePlatform": { "message": "Აირჩიეთ პლატფორმა" },
   "alert_updateAvail": { "message": "ხელმისაწვდომია განახლება" },
   "alert_newerVer": { "message": "Განახლება" },
   "alert_isAvail": { "message": "თავისუფალია" },

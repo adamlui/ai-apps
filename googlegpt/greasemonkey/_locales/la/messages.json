@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Lingua renovata" },
   "alert_willReplyIn": { "message": "respondebit in" },
   "alert_yourSysLang": { "message": "lingua tua systematis" },
+  "alert_choosePlatform": { "message": "Mutare platform" },
   "alert_updateAvail": { "message": "Renovatio praesto" },
   "alert_newerVer": { "message": "Renovatio ad" },
   "alert_isAvail": { "message": "praesto est" },

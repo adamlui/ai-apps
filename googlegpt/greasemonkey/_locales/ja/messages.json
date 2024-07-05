@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "言語が更新されました" },
   "alert_willReplyIn": { "message": "あとで返信します" },
   "alert_yourSysLang": { "message": "システム言語" },
+  "alert_choosePlatform": { "message": "プラットフォームを選択" },
   "alert_updateAvail": { "message": "利用可能なアップデート" },
   "alert_newerVer": { "message": "に更新します" },
   "alert_isAvail": { "message": "利用可能" },

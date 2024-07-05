@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Jezik je ažuriran" },
   "alert_willReplyIn": { "message": "će odgovoriti u" },
   "alert_yourSysLang": { "message": "vaš sistemski jezik" },
+  "alert_choosePlatform": { "message": "Izaberite platformu" },
   "alert_updateAvail": { "message": "Dostupna nadogradnja" },
   "alert_newerVer": { "message": "Ažuriranje za" },
   "alert_isAvail": { "message": "je dostupna" },

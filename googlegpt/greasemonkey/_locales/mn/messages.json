@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Хэл шинэчилсэн" },
   "alert_willReplyIn": { "message": "хариулт өгөх болно" },
   "alert_yourSysLang": { "message": "Системийн Хэл" },
+  "alert_choosePlatform": { "message": "Платформыг сонгоно уу" },
   "alert_updateAvail": { "message": "Шинэчлэх (update) боломжтой" },
   "alert_newerVer": { "message": "Шинэчлэх" },
   "alert_isAvail": { "message": "нэвтрэх боломжтой" },

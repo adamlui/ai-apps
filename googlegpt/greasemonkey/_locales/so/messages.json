@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Luuqadda la cusbooneysiiyay" },
   "alert_willReplyIn": { "message": "ka jawaabi doonaa in" },
   "alert_yourSysLang": { "message": "luqadda nidaamkaaga" },
+  "alert_choosePlatform": { "message": "Dooro barxad" },
   "alert_updateAvail": { "message": "Cusboonaysiinta waa la heli karaa" },
   "alert_newerVer": { "message": "Cusbooneysiin ku socota" },
   "alert_isAvail": { "message": "waa la heli karaa" },

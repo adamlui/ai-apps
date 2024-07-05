@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Ludimi lwa lwa Tumama updated" },
   "alert_willReplyIn": { "message": "asuka Iwashita" },
   "alert_yourSysLang": { "message": "mfumo ya lulimi lwenu" },
+  "alert_choosePlatform": { "message": "Saleni icikuulwa" },
   "alert_updateAvail": { "message": "Update Pali Pali" },
   "alert_newerVer": { "message": "Update ku ya" },
   "alert_isAvail": { "message": "alipo" },

@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Gi-update ang sinultian" },
   "alert_willReplyIn": { "message": "motubag diha" },
   "alert_yourSysLang": { "message": "ang imong sistema nga pinulongan" },
+  "alert_choosePlatform": { "message": "Pagpili usa ka plataporma" },
   "alert_updateAvail": { "message": "Magamit ang pag-update" },
   "alert_newerVer": { "message": "Usa ka update sa" },
   "alert_isAvail": { "message": "mao available" },

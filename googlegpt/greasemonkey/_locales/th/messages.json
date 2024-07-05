@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "อัปเดตภาษาแล้ว" },
   "alert_willReplyIn": { "message": "จะตอบกลับใน" },
   "alert_yourSysLang": { "message": "ภาษาระบบของคุณ" },
+  "alert_choosePlatform": { "message": "เลือกแพลตฟอร์ม" },
   "alert_updateAvail": { "message": "มีอัพเดตให้ใช้งาน" },
   "alert_newerVer": { "message": "อัพเดทไปยัง" },
   "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },

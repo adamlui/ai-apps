@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Sprog opdateret" },
   "alert_willReplyIn": { "message": "vil svare om" },
   "alert_yourSysLang": { "message": "Systemsprog" },
+  "alert_choosePlatform": { "message": "Vælg en platform" },
   "alert_updateAvail": { "message": "Der er en tilgængelig opdatering" },
   "alert_newerVer": { "message": "En opdatering til" },
   "alert_isAvail": { "message": "er tilgængelig" },

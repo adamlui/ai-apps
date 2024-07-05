@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "نوی ژبه تازه کړئ" },
   "alert_willReplyIn": { "message": "به ځواب ورکړي" },
   "alert_yourSysLang": { "message": "خپل د ژبې سیسټم" },
+  "alert_choosePlatform": { "message": "یو پلیټ فارم غوره کړئ" },
   "alert_updateAvail": { "message": "اوسمهالیزې شته" },
   "alert_newerVer": { "message": "ته تازه معلومات" },
   "alert_isAvail": { "message": "شتون لري" },

@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Chilankhulo kusinthidwa" },
   "alert_willReplyIn": { "message": "adzayankha mu" },
   "alert_yourSysLang": { "message": "chilankhulo chanu cha dongosolo" },
+  "alert_choosePlatform": { "message": "Sankhani nsanja" },
   "alert_updateAvail": { "message": "Sinthani likupezeka" },
   "alert_newerVer": { "message": "An pomwe kuti" },
   "alert_isAvail": { "message": "ipezeka" },

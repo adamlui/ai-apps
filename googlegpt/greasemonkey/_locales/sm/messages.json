@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Gagana faʻafouina" },
   "alert_willReplyIn": { "message": "o le a ou tali atu i" },
   "alert_yourSysLang": { "message": "o le gagana o lau 'upega tafaʻilagi" },
+  "alert_choosePlatform": { "message": "Filifili se tulaga" },
   "alert_updateAvail": { "message": "Fa'afouga o lo'o avanoa" },
   "alert_newerVer": { "message": "Faʻafouga" },
   "alert_isAvail": { "message": "o loo maua" },

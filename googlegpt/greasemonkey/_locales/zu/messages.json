@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Ulimi lubuyekeziwe" },
   "alert_willReplyIn": { "message": "uzophendula ku-" },
   "alert_yourSysLang": { "message": "uhlelo lwakho lolimi" },
+  "alert_choosePlatform": { "message": "Khetha inkundla" },
   "alert_updateAvail": { "message": "Okwakamuva Kuyatholakala" },
   "alert_newerVer": { "message": "Izilungiso eziya ku-" },
   "alert_isAvail": { "message": "iyatholakala" },

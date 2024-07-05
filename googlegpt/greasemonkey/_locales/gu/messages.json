@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "ભાષા અપડેટ થયેલ છે" },
   "alert_willReplyIn": { "message": "માં જવાબ આપશે" },
   "alert_yourSysLang": { "message": "તમારી સિસ્ટમ ભાષા" },
+  "alert_choosePlatform": { "message": "એક પ્લેટફોર્મ પસંદ કરો" },
   "alert_updateAvail": { "message": "સુધારો ઉપલબ્ધ" },
   "alert_newerVer": { "message": "માં સુધારો" },
   "alert_isAvail": { "message": "ઉપલબ્ધ છે" },

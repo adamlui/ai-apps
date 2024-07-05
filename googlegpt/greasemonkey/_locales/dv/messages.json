@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "ބަހުރުވަ އަޕްޑޭޓްކޮށްފި" },
   "alert_willReplyIn": { "message": "ޖަވާބު ދެއްވާނެއެވެ" },
   "alert_yourSysLang": { "message": "ތިޔަބޭފުޅުންގެ ސިސްޓަމް ލެންގުއޭޖް" },
+  "alert_choosePlatform": { "message": "ޕްލެޓްފޯމެއް ހޮވާށެވެ" },
   "alert_updateAvail": { "message": "ލިބެން ހުރި އަޕްޑޭޓް" },
   "alert_newerVer": { "message": "އަޕްޑޭޓެއް" },
   "alert_isAvail": { "message": "ލިބެން ހުންނާނެ" },

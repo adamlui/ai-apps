@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "زمان نوێکرایەوە" },
   "alert_willReplyIn": { "message": "پاسخ بدۆزێنرێت لە" },
   "alert_yourSysLang": { "message": "زمانی سیستەمەکە" },
+  "alert_choosePlatform": { "message": "Platformek hilbijêrin" },
   "alert_updateAvail": { "message": "نوێکردنەوە بەردەستە" },
   "alert_newerVer": { "message": "نوێکراوە بۆ" },
   "alert_isAvail": { "message": "بەردەستە" },

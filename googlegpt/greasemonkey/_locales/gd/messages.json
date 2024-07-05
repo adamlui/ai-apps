@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Cànan ùraichte" },
   "alert_willReplyIn": { "message": "freagairidh e ann an" },
   "alert_yourSysLang": { "message": "do chànan siostaim" },
+  "alert_choosePlatform": { "message": "Tagh àrd - ùrlar" },
   "alert_updateAvail": { "message": "Ùrachadh ri fhaighinn" },
   "alert_newerVer": { "message": "Ùrachadh gu" },
   "alert_isAvail": { "message": "ri fhaighinn" },

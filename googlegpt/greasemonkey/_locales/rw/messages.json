@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Ururimi rwarahinduwe" },
   "alert_willReplyIn": { "message": "izajya isubizamo" },
   "alert_yourSysLang": { "message": "ururimi rwa sisitemu yawe" },
+  "alert_choosePlatform": { "message": "A" },
   "alert_updateAvail": { "message": "Guhindura birahari" },
   "alert_newerVer": { "message": "Guhindura kuri" },
   "alert_isAvail": { "message": "iraboneka" },

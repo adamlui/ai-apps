@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "ພາສາອັບເດດ" },
   "alert_willReplyIn": { "message": "ຕອບກັບ" },
   "alert_yourSysLang": { "message": "ພາສາລະບົບຂອງທ່ານ" },
+  "alert_choosePlatform": { "message": "ເລືອກແພລະຕະຟອມ" },
   "alert_updateAvail": { "message": "ອັບເດດທີ່ມີຢູ່" },
   "alert_newerVer": { "message": "ການອັບເດດ" },
   "alert_isAvail": { "message": "ມີ" },

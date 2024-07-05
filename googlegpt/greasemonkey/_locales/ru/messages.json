@@ -61,6 +61,7 @@
   "alert_langUpdated": { "message": "Язык обновлен" },
   "alert_willReplyIn": { "message": "Отвечу" },
   "alert_yourSysLang": { "message": "Язык системы" },
+  "alert_choosePlatform": { "message": "Выберите платформу" },
   "alert_updateAvail": { "message": "Доступны обновления" },
   "alert_newerVer": { "message": "Обновление для" },
   "alert_isAvail": { "message": "доступно" },
