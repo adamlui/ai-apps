@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.5.1
+// @version                2024.7.5.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -765,7 +765,7 @@
                         settingIcon = icons.autoSpeechBalloon.create()
                         settingIcon.style.cssText = 'position: relative ; top: 4.5px ; margin-right: 7px'
                     } else if (key == 'autoFocusChatbarDisabled') {
-                        settingIcon = icons.inwardCarets.create()
+                        settingIcon = icons.caretsInward.create()
                         settingIcon.style.cssText = 'position: relative ; top: 4.5px ; margin-right: 7px'
                     } else if (key == 'autoScroll') {
                         settingIcon = icons.arrowsDown.create()
@@ -1019,6 +1019,16 @@
             }
         },
 
+        caretsInward: {
+            create() {
+                const caretsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      caretsSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 24 24']]
+                caretsSVGattrs.forEach(([attr, value]) => caretsSVG.setAttribute(attr, value))
+                caretsSVG.append(createSVGelem('path', { stroke: '', d: 'M11.29,9.71a1,1,0,0,0,1.42,0l5-5a1,1,0,1,0-1.42-1.42L12,7.59,7.71,3.29A1,1,0,0,0,6.29,4.71Zm1.42,4.58a1,1,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L12,16.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z' }))
+                return caretsSVG
+            }
+        },
+
         ddgpt: {
             create() {
                 const ddgptIcon = document.createElement('img')
@@ -1038,17 +1048,6 @@
                 )
                 return fontSizeSVG
             }
-        },
-
-        inwardCarets: {
-            create() {
-                const caretsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      caretsSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 24 24']]
-                caretsSVGattrs.forEach(([attr, value]) => caretsSVG.setAttribute(attr, value))
-                caretsSVG.append(createSVGelem('path', { stroke: '', d: 'M11.29,9.71a1,1,0,0,0,1.42,0l5-5a1,1,0,1,0-1.42-1.42L12,7.59,7.71,3.29A1,1,0,0,0,6.29,4.71Zm1.42,4.58a1,1,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L12,16.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z' }))
-                return caretsSVG
-            }
-
         },
 
         language: {
