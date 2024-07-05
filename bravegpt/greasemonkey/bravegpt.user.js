@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.4.8
+// @version               2024.7.4.9
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -230,7 +230,7 @@ setTimeout(async () => {
         appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.313,
-        latestAssetCommitHash: '8a4b4fb' } // for cached messages.json
+        latestAssetCommitHash: '5414f27' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -329,10 +329,10 @@ setTimeout(async () => {
             label: msgs.menuLabel_stickySidebar || 'Sticky Sidebar',
             helptip: msgs.helptip_stickySidebar || 'Makes BraveGPT visible in sidebar even as you scroll' },
         bgAnimationsDisabled: { type: 'toggle',
-            label: msgs.menuLabel_bgAnimations || 'Background Animations',
+            label: `${ msgs.menuLabel_background || 'Background' } ${ msgs.menuLabel_animations || 'Animations' }`,
             helptip: msgs.helptip_bgAnimations || 'Show animated backgrounds in UI components' },
         fgAnimationsDisabled: { type: 'toggle',
-            label: msgs.menuLabel_fgAnimations || 'Foreground Animations',
+            label: `${ msgs.menuLabel_foreground || 'Foreground' } ${ msgs.menuLabel_animations || 'Animations' }`,
             helptip: msgs.helptip_fgAnimations || 'Show foreground animations in UI components' },
         replyLanguage: { type: 'prompt',
             label: msgs.menuLabel_replyLanguage || 'Reply Language',
