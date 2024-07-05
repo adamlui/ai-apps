@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Lalahi ʻo e mataʻitohí" },
   "tooltip_sendReply": { "message": "ʻAve ʻa e talí" },
   "tooltip_askRandQuestion": { "message": "Fai ha fehuʻi noaʻia" },
+  "tooltip_minimize": { "message": "Fakasiʻisiʻi" },
   "tooltip_close": { "message": "Tāpuni" },
   "tooltip_sendRelatedQuery": { "message": "ʻAve ʻa e fehuʻi ʻoku fekauʻaki" },
   "helptip_proxyAPImode": { "message": "Fakaʻaongaʻi ha API fakafofonga ki he ʻikai lava ke hu ki he ʻi ai" },

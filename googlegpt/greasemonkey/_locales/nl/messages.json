@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Lettertypegrootte" },
   "tooltip_sendReply": { "message": "Reactie versturen" },
   "tooltip_feelingLucky": { "message": "Ik voel me gelukkig" },
+  "tooltip_minimize": { "message": "Minimaliseer" },
   "tooltip_close": { "message": "Afsluiten" },
   "tooltip_sendRelatedQuery": { "message": "Verwante query verzenden" },
   "helptip_proxyAPImode": { "message": "Gebruikt een proxy-API voor geen aanmeldingstoegang tot AI" },

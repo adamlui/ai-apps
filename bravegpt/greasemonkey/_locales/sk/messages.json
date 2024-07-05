@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Veľkosť písma" },
   "tooltip_sendReply": { "message": "Odpovedať" },
   "tooltip_askRandQuestion": { "message": "Opýtajte sa náhodnú otázku" },
+  "tooltip_minimize": { "message": "Minimalizovať" },
   "tooltip_close": { "message": "Zatvoriť" },
   "tooltip_sendRelatedQuery": { "message": "Odoslať súvisiacu otázku" },
   "helptip_proxyAPImode": { "message": "Používa rozhranie Proxy API na prístup bez prihlásenia k umelej inteligencii" },

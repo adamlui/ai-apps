@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "フォントサイズ" },
   "tooltip_sendReply": { "message": "要返信" },
   "tooltip_feelingLucky": { "message": "ついてる気がしてさ" },
+  "tooltip_minimize": { "message": "最小化" },
   "tooltip_close": { "message": "Close" },
   "tooltip_sendRelatedQuery": { "message": "関連するクエリを送信" },
   "helptip_proxyAPImode": { "message": "AI へのノーログインアクセスにプロキシ API を使用" },

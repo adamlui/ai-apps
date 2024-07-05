@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Betűméret" },
   "tooltip_sendReply": { "message": "Válasz elküldése" },
   "tooltip_askRandQuestion": { "message": "Véletlenszerű kérdés feltevése" },
+  "tooltip_minimize": { "message": "A karbantartási költségek" },
   "tooltip_close": { "message": "Bezárás" },
   "tooltip_sendRelatedQuery": { "message": "Kapcsolódó lekérdezés küldése" },
   "helptip_proxyAPImode": { "message": "Proxy API-t használ a mesterséges intelligenciához való bejelentkezés nélküli hozzáféréshez" },

@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "حجم الخط" },
   "tooltip_sendReply": { "message": "أرسل رد" },
   "tooltip_feelingLucky": { "message": "أشعر أنني محظوظ" },
+  "tooltip_minimize": { "message": "التصغير" },
   "tooltip_close": { "message": "إغلاق" },
   "tooltip_sendRelatedQuery": { "message": "إرسال استعلام ذي صلة" },
   "helptip_proxyAPImode": { "message": "يستخدم واجهة برمجة تطبيقات بروكسي للوصول دون تسجيل الدخول إلى الذكاء الاصطناعي" },

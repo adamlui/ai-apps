@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Daqs tat-tipa" },
   "tooltip_sendReply": { "message": "Ibgħat tweġiba" },
   "tooltip_feelingLucky": { "message": "Qed Inħossni Xortikati" },
+  "tooltip_minimize": { "message": "Imminimizza" },
   "tooltip_close": { "message": "Agħlaq" },
   "tooltip_sendRelatedQuery": { "message": "Ibgħat mistoqsija relatata" },
   "helptip_proxyAPImode": { "message": "Uża API Proxy għall-aċċess mingħajr login għall-IA" },

@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Cabbirka font" },
   "tooltip_sendReply": { "message": "Jawaab u dir" },
   "tooltip_feelingLucky": { "message": "Waxaan dareemayaa nasiib wacan" },
+  "tooltip_minimize": { "message": "Ugu yaree" },
   "tooltip_close": { "message": "Xir" },
   "tooltip_sendRelatedQuery": { "message": "U dir su 'aalaha la xiriira" },
   "helptip_proxyAPImode": { "message": "Isticmaal API Proxy oo loogu talagalay helitaanka no-login ee AI" },

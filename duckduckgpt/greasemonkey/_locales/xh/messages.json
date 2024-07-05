@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Iifonti" },
   "tooltip_sendReply": { "message": "Thumela impendulo" },
   "tooltip_askRandQuestion": { "message": "Buza umbuzo ongakhethiyo" },
+  "tooltip_minimize": { "message": "Yenza ibe nkulu" },
   "tooltip_close": { "message": "Vala" },
   "tooltip_sendRelatedQuery": { "message": "Thumela umbuzo onento yokwenza noko" },
   "helptip_proxyAPImode": { "message": "Usebenzisa i-API yeProxy ukuze ungangeni kwiAI" },

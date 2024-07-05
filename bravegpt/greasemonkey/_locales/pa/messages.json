@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "ਫੋਂਟ ਸਾਈਜ਼" },
   "tooltip_sendReply": { "message": "ਜਵਾਬ ਭੇਜੋ" },
   "tooltip_askRandQuestion": { "message": "ਬੇਤਰਤੀਬੇ ਸਵਾਲ ਪੁੱਛੋ" },
+  "tooltip_minimize": { "message": "ਘੱਟੋ- ਘੱਟ" },
   "tooltip_close": { "message": "ਬੰਦ" },
   "tooltip_sendRelatedQuery": { "message": "ਸੰਬੰਧਿਤ ਪੁੱਛਗਿੱਛ ਭੇਜੋ" },
   "helptip_proxyAPImode": { "message": "ਏਆਈ ਤੱਕ ਨੋ-ਲੌਗਇਨ ਪਹੁੰਚ ਲਈ ਇੱਕ ਪ੍ਰੌਕਸੀ ਏਪੀਆਈ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ" },

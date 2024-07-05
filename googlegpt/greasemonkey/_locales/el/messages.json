@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Μέγεθος γραμματοσειράς" },
   "tooltip_sendReply": { "message": "Αποστολή απάντησης" },
   "tooltip_feelingLucky": { "message": "Αισθάνομαι Τυχερός" },
+  "tooltip_minimize": { "message": "Ελαχιστοποίηση" },
   "tooltip_close": { "message": "Κλείσιμο" },
   "tooltip_sendRelatedQuery": { "message": "Αποστολή σχετικού ερωτήματος" },
   "helptip_proxyAPImode": { "message": "Χρησιμοποιεί ένα API διακομιστή μεσολάβησης για πρόσβαση χωρίς σύνδεση στην τεχνητή νοημοσύνη" },

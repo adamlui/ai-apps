@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "فونٹ سائز" },
   "tooltip_sendReply": { "message": "جواب بھیجیں" },
   "tooltip_askRandQuestion": { "message": "بے ترتیب سوال پوچھیں" },
+  "tooltip_minimize": { "message": "ونڈو چھوٹی کریں" },
   "tooltip_close": { "message": "بند" },
   "tooltip_sendRelatedQuery": { "message": "متعلقہ استفسار بھیجیں" },
   "helptip_proxyAPImode": { "message": "AI تک نو لاگ ان رسائی کے لیے ایک پراکسی API استعمال کرتا ہے" },

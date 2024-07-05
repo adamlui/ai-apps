@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "字体大小" },
   "tooltip_sendReply": { "message": "回复" },
   "tooltip_askRandQuestion": { "message": "随机抽题" },
+  "tooltip_minimize": { "message": "最小化" },
   "tooltip_close": { "message": "关闭" },
   "tooltip_sendRelatedQuery": { "message": "发送相关查询" },
   "helptip_proxyAPImode": { "message": "使用代理 API 无需登录即可访问 AI" },

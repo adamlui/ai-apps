@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Памер мурашкі" },
   "tooltip_sendReply": { "message": "Даслаць адказ" },
   "tooltip_askRandQuestion": { "message": "Задаць выпадковае пытанне" },
+  "tooltip_minimize": { "message": "Згарнуць" },
   "tooltip_close": { "message": "Закрыць" },
   "tooltip_sendRelatedQuery": { "message": "Даслаць адпаведны запыт" },
   "helptip_proxyAPImode": { "message": "Выкарыстоўвае API проксі для доступу без уваходу ў ІІ" },

@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "اندازه فونت" },
   "tooltip_sendReply": { "message": "ارسال پاسخ" },
   "tooltip_askRandQuestion": { "message": "سوال تصادفی بپرس" },
+  "tooltip_minimize": { "message": "حداقل کردن" },
   "tooltip_close": { "message": "بستن" },
   "tooltip_sendRelatedQuery": { "message": "ارسال درخواست مرتبط" },
   "helptip_proxyAPImode": { "message": "از یک API پروکسی برای دسترسی بدون ورود به هوش مصنوعی استفاده می کند" },

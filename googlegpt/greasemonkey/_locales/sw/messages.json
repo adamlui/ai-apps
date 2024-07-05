@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Ukubwa wa fonti" },
   "tooltip_sendReply": { "message": "Tuma jibu" },
   "tooltip_feelingLucky": { "message": "Ninahisi Bahati" },
+  "tooltip_minimize": { "message": "Kadilio la chini" },
   "tooltip_close": { "message": "Funga" },
   "tooltip_sendRelatedQuery": { "message": "Tuma swali linalohusiana" },
   "helptip_proxyAPImode": { "message": "Inatumia API Wakala kwa ufikiaji usioingia kwenye AI" },

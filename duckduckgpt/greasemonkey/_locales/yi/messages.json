@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "פּונקטן" },
   "tooltip_sendReply": { "message": "שיקן ענטפער" },
   "tooltip_askRandQuestion": { "message": "פרעגן טראַפ - קשיא" },
+  "tooltip_minimize": { "message": "מינאַמייז" },
   "tooltip_close": { "message": "נאָענט" },
   "tooltip_sendRelatedQuery": { "message": "שיקן פֿאַרבונדענע אָנפֿרעג" },
   "helptip_proxyAPImode": { "message": "ניצט אַ פּראָקסי אַפּי פֿאַר קיין לאָגין אַקסעס צו אַי" },

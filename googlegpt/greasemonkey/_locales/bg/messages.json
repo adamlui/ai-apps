@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Размер на мравка" },
   "tooltip_sendReply": { "message": "За отговор" },
   "tooltip_feelingLucky": { "message": "Чувствам се късметлия" },
+  "tooltip_minimize": { "message": "?њ???????????·???Ђ?°???µ" },
   "tooltip_close": { "message": "Затвори" },
   "tooltip_sendRelatedQuery": { "message": "Изпращане на свързано запитване" },
   "helptip_proxyAPImode": { "message": "Използва приложен програмен интерфейс (API) за прокси сървър (Proxy API) за достъп без влизане до изку" },

@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Momotuhi" },
   "tooltip_sendReply": { "message": "Tukua mai he whakautu" },
   "tooltip_feelingLucky": { "message": "Kei te ite ahau i te waimarie" },
+  "tooltip_minimize": { "message": "Minimize" },
   "tooltip_close": { "message": "Whakamoe&#x0D;" },
   "tooltip_sendRelatedQuery": { "message": "Tukua mai he pātai e pā ana" },
   "helptip_proxyAPImode": { "message": "Whakamahia he API Proxy mo te urunga kore-login ki AI" },

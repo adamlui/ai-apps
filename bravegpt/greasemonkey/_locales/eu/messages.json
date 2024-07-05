@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Letra-tamaina " },
   "tooltip_sendReply": { "message": "Erantzuna bidali" },
   "tooltip_askRandQuestion": { "message": "Egin ausazko galdera" },
+  "tooltip_minimize": { "message": "Txikiendu" },
   "tooltip_close": { "message": "Itxi" },
   "tooltip_sendRelatedQuery": { "message": "Bidali erlazionatutako kontsulta" },
   "helptip_proxyAPImode": { "message": "Proxy API bat erabiltzen du AI-ra saioa hasi gabe sartzeko" },

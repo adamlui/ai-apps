@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "चींटी आकार" },
   "tooltip_sendReply": { "message": "जवाब भेजें" },
   "tooltip_askRandQuestion": { "message": "बेतरतीब सवाल पूछें" },
+  "tooltip_minimize": { "message": "न्यूनतम" },
   "tooltip_close": { "message": "बंद करें" },
   "tooltip_sendRelatedQuery": { "message": "संबंधित क्वेरी भेजें" },
   "helptip_proxyAPImode": { "message": "AI तक नो - लॉगिन एक्सेस के लिए एक प्रॉक्सी एपीआई का उपयोग करता है" },

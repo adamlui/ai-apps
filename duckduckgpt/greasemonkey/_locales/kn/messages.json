@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "à² à²à³à²£à²²à²à³à²·à²£à²à²³à²¨à³à²¨à³ à²à³à²¨à³à²¯ à²¬à²¾à²°à²¿à²à³ à²¬à²³à²à³à²¦à²¾à²°à²¨à²¿à²à²¦ à²¬à²¦à²²à²¾à²¯à²¿à²¸à²²à²¾à²à²¿à²¦à³à²¦à³" },
   "tooltip_sendReply": { "message": "ಪ್ರತ್ಯುತ್ತರ ಕಳುಹಿಸಿ" },
   "tooltip_askRandQuestion": { "message": "ಯಾದೃಚ್ಛಿಕ ಪ್ರಶ್ನೆಯನ್ನು ಕೇಳಿ" },
+  "tooltip_minimize": { "message": "& ಕನಿಷ್ಠೀಕರಿಸು" },
   "tooltip_close": { "message": "ಮುಚ್ಚಿ" },
   "tooltip_sendRelatedQuery": { "message": "ಸಂಬಂಧಿತ ಪ್ರಶ್ನೆಯನ್ನು ಕಳುಹಿಸಿ" },
   "helptip_proxyAPImode": { "message": "AI ಗೆ ಯಾವುದೇ ಲಾಗಿನ್ ಪ್ರವೇಶಕ್ಕಾಗಿ ಪ್ರಾಕ್ಸಿ API ಅನ್ನು ಬಳಸುತ್ತದೆ" },

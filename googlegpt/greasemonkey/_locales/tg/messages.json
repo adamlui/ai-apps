@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Андозаи мӯрча" },
   "tooltip_sendReply": { "message": "Фиристодани ҷавоб" },
   "tooltip_feelingLucky": { "message": "I 'm Feeling Lucky" },
+  "tooltip_minimize": { "message": "& Печонидан" },
   "tooltip_close": { "message": "Пӯшидан" },
   "tooltip_sendRelatedQuery": { "message": "Фиристодани дархости марбута" },
   "helptip_proxyAPImode": { "message": "Name" },

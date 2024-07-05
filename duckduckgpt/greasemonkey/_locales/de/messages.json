@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Schriftgröße" },
   "tooltip_sendReply": { "message": "Antwort senden" },
   "tooltip_askRandQuestion": { "message": "Zufällige Frage stellen" },
+  "tooltip_minimize": { "message": "Minimieren" },
   "tooltip_close": { "message": "Schließen" },
   "tooltip_sendRelatedQuery": { "message": "Zugehörige Abfrage senden" },
   "helptip_proxyAPImode": { "message": "Verwendet eine Proxy-API für den No-Login-Zugriff auf KI" },

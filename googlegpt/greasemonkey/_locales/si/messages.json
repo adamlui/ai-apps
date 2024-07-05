@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "අකුරු ප්‍රමාණය" },
   "tooltip_sendReply": { "message": "ඊ-මේල් මගින් පිලිතුරු දෙන්න" },
   "tooltip_feelingLucky": { "message": "මම වාසනාවන්තයි" },
+  "tooltip_minimize": { "message": "කුඩා කරන්න" },
   "tooltip_close": { "message": "වසන්න" },
   "tooltip_sendRelatedQuery": { "message": "අදාළ විමසුම යවන්න" },
   "helptip_proxyAPImode": { "message": "AI වෙත ලොගින් නොවන ප්රවේශය සඳහා ප්රොක්සි API භාවිතා කරයි" },

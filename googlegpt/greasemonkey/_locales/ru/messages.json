@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Размер шрифта" },
   "tooltip_sendReply": { "message": "Отправить ответ" },
   "tooltip_feelingLucky": { "message": "\"Мне повезёт!\"" },
+  "tooltip_minimize": { "message": "Свернуть" },
   "tooltip_close": { "message": "Закрыть" },
   "tooltip_sendRelatedQuery": { "message": "Отправить связанный запрос" },
   "helptip_proxyAPImode": { "message": "Использует API прокси для доступа к ИИ без входа в систему" },

@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "폰트 크기" },
   "tooltip_sendReply": { "message": "답변 필요" },
   "tooltip_feelingLucky": { "message": "운이 좋은 게 느껴져" },
+  "tooltip_minimize": { "message": "최소화" },
   "tooltip_close": { "message": "닫기" },
   "tooltip_sendRelatedQuery": { "message": "관련 쿼리 보내기" },
   "helptip_proxyAPImode": { "message": "AI에 대한 노-로그인 액세스에 프록시 API 사용" },

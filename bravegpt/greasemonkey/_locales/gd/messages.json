@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Meud fonnt" },
   "tooltip_sendReply": { "message": "Cuir freagairt" },
   "tooltip_askRandQuestion": { "message": "Faigh ceist air thuaiream" },
+  "tooltip_minimize": { "message": "Fìor-lùghdaich" },
   "tooltip_close": { "message": "Dùin" },
   "tooltip_sendRelatedQuery": { "message": "Cuir ceist co-cheangailte" },
   "helptip_proxyAPImode": { "message": "A' cleachdadh API Proxy airson faighinn gu AI gun logadh a-steach" },

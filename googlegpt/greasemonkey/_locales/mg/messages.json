@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Haben'ny endritsoratra" },
   "tooltip_sendReply": { "message": "Alefaso valiny" },
   "tooltip_feelingLucky": { "message": "Tsara vintana aho" },
+  "tooltip_minimize": { "message": "Hanakely" },
   "tooltip_close": { "message": "Akato" },
   "tooltip_sendRelatedQuery": { "message": "Alefaso fanontaniana mifandraika" },
   "helptip_proxyAPImode": { "message": "Mampiasa Proxy API ho an'ny fidirana tsy misy login amin'ny AI" },

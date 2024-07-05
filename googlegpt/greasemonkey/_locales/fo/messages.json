@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Skriftstødd" },
   "tooltip_sendReply": { "message": "Sende svar" },
   "tooltip_feelingLucky": { "message": "Eg føli meg heppin" },
+  "tooltip_minimize": { "message": "Minimalisera" },
   "tooltip_close": { "message": "Sløkk" },
   "tooltip_sendRelatedQuery": { "message": "Send viðkomandi spurning" },
   "helptip_proxyAPImode": { "message": "Brúka Proxy API til ikki-login atgongd til AI" },

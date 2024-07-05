@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Font size ti" },
   "tooltip_sendReply": { "message": "Répondre Répondre" },
   "tooltip_askRandQuestion": { "message": "Ask random question na" },
+  "tooltip_minimize": { "message": "Mbi Minimize" },
   "tooltip_close": { "message": "Pene ni da" },
   "tooltip_sendRelatedQuery": { "message": "Ti tokua mbeni hundango tënë so andu tënë ni" },
   "helptip_proxyAPImode": { "message": "Sara kua na mbeni API ti proxy ti wara lege ti sara kua na aye so ayeke na lege ni ape" },

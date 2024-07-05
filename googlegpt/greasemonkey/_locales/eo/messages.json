@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "grando de tiparo" },
   "tooltip_sendReply": { "message": "Sendi  La Respondo" },
   "tooltip_feelingLucky": { "message": "I 'm Feeling Lucky" },
+  "tooltip_minimize": { "message": "& Minimumigu" },
   "tooltip_close": { "message": "Fermi" },
   "tooltip_sendRelatedQuery": { "message": "Sendi rilatan peton" },
   "helptip_proxyAPImode": { "message": "Uzas Proxy API por ne-login aliro al AI" },

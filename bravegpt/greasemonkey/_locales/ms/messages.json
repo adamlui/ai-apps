@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Saiz huruf" },
   "tooltip_sendReply": { "message": "Balas" },
   "tooltip_askRandQuestion": { "message": "Tanya soalan rawak" },
+  "tooltip_minimize": { "message": "Minimum" },
   "tooltip_close": { "message": "Tutup" },
   "tooltip_sendRelatedQuery": { "message": "Hantar pertanyaan berkaitan" },
   "helptip_proxyAPImode": { "message": "Menggunakan api Proksi untuk akses tanpa log masuk ke AI" },

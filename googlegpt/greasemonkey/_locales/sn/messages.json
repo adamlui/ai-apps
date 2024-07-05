@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Saizi yefonti" },
   "tooltip_sendReply": { "message": "Tumira mhinduro" },
   "tooltip_feelingLucky": { "message": "Ndinonzwa Lucky" },
+  "tooltip_minimize": { "message": "dzikamisa" },
   "tooltip_close": { "message": "vhara" },
   "tooltip_sendRelatedQuery": { "message": "Tumira mubvunzo wakabatana" },
   "helptip_proxyAPImode": { "message": "Anoshandisa munhu Proxy API kuti hapana- Login kuwana AI" },

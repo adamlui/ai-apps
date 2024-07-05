@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Големина на фонтот" },
   "tooltip_sendReply": { "message": "Прати одговор" },
   "tooltip_askRandQuestion": { "message": "Поставете случајно прашање" },
+  "tooltip_minimize": { "message": "Минимизираj" },
   "tooltip_close": { "message": "Затвори" },
   "tooltip_sendRelatedQuery": { "message": "Испрати поврзано барање" },
   "helptip_proxyAPImode": { "message": "Користи Proxy API за пристап без најава до AI" },

@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "د ليکبڼې کچه" },
   "tooltip_sendReply": { "message": "ځواب وليږه" },
   "tooltip_askRandQuestion": { "message": "له تصادفي ډول پوښتنه وکړئ" },
+  "tooltip_minimize": { "message": "ووړول" },
   "tooltip_close": { "message": "بندول" },
   "tooltip_sendRelatedQuery": { "message": "اړونده پوښتنې ولیږئ" },
   "helptip_proxyAPImode": { "message": "AI ته د نه ننوتلو لاسرسي لپاره د پراکسي API کاروي" },

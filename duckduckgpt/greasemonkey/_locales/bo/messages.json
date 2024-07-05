@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "ཡིག་གཟུགས་ཆེ་ཆུང་།" },
   "tooltip_sendReply": { "message": "ལན་སློག ལན་སློག" },
   "tooltip_askRandQuestion": { "message": "དྲི་བ་དྲིས་ལན །" },
+  "tooltip_minimize": { "message": "ཆེ་ཆུང་།" },
   "tooltip_close": { "message": "ཁ་རྒྱབ།" },
   "tooltip_sendRelatedQuery": { "message": "འབྲེལ་བ་ཡོད་པའི་དྲི་བ་གཏོང་བ" },
   "helptip_proxyAPImode": { "message": "AI ནང་འཛུལ་མི་བྱེད་པའི་Proxy API ལག་ལེན་འཐབ་།" },

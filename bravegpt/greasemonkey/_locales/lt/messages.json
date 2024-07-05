@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Šrifto dydis" },
   "tooltip_sendReply": { "message": "Siųsti atsakymą" },
   "tooltip_askRandQuestion": { "message": "Užduoti atsitiktinį klausimą" },
+  "tooltip_minimize": { "message": "Suskleisti" },
   "tooltip_close": { "message": "Užverti" },
   "tooltip_sendRelatedQuery": { "message": "Siųsti susijusią užklausą" },
   "helptip_proxyAPImode": { "message": "Naudoja tarpinio serverio API, kad negalėtų prisijungti prie AI" },

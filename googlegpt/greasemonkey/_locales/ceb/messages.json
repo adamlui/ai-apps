@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Gidak-on sa font" },
   "tooltip_sendReply": { "message": "Ipadala ang tubag" },
   "tooltip_feelingLucky": { "message": "Gibati nako nga swerte" },
+  "tooltip_minimize": { "message": "I-minimize" },
   "tooltip_close": { "message": "Duol" },
   "tooltip_sendRelatedQuery": { "message": "Ipadala ang may kalabutan nga pangutana" },
   "helptip_proxyAPImode": { "message": "Paggamit usa ka Proxy API alang sa dili pag-login nga pag-access sa AI" },

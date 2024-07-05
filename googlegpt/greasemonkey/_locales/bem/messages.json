@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Ubukulu bwa filembo" },
   "tooltip_sendReply": { "message": "Tuma Mwakitwile" },
   "tooltip_feelingLucky": { "message": "I Feel Lucky ukulele" },
+  "tooltip_minimize": { "message": "Minimise" },
   "tooltip_close": { "message": "Fela Kuti Close" },
   "tooltip_sendRelatedQuery": { "message": "Tumineni ifipusho ifilanda pali ili lyashi" },
   "helptip_proxyAPImode": { "message": "Ibomfya API iya kwimininako ukwabula ukwingila mu AI" },

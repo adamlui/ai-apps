@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Şriftiň ululygy" },
   "tooltip_sendReply": { "message": "Jawap iber" },
   "tooltip_feelingLucky": { "message": "Men bagtly duýýaryn" },
+  "tooltip_minimize": { "message": "Gysgaldyryň" },
   "tooltip_close": { "message": "Ýap" },
   "tooltip_sendRelatedQuery": { "message": "Baglanyşykly soragy iber" },
   "helptip_proxyAPImode": { "message": "AI-de loginsiz giriş üçin proxy API-ni ulan" },

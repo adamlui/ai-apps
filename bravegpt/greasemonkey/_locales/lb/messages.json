@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Schrëftgréisst" },
   "tooltip_sendReply": { "message": "Äntwert schécken" },
   "tooltip_askRandQuestion": { "message": "Stellt zoufälleg Fro" },
+  "tooltip_minimize": { "message": "& Kleng maachen" },
   "tooltip_close": { "message": "Zoumaachen" },
   "tooltip_sendRelatedQuery": { "message": "Zesummenhang Ufro schécken" },
   "helptip_proxyAPImode": { "message": "Benotzt e Proxy-API fir keen Login Zougang zu AI" },

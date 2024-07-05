@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Kakulidwe ka fonti" },
   "tooltip_sendReply": { "message": "Tumizani yankho" },
   "tooltip_feelingLucky": { "message": "Ine ndikumverera mwayi" },
+  "tooltip_minimize": { "message": "Lumikizanani nafe" },
   "tooltip_close": { "message": "tseka" },
   "tooltip_sendRelatedQuery": { "message": "Tumizani mafunso okhudzana" },
   "helptip_proxyAPImode": { "message": "Gwiritsani ntchito Proxy API kuti musalowe mu AI" },

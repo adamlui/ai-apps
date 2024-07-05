@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Kirjasuurus" },
   "tooltip_sendReply": { "message": "Saada vastus" },
   "tooltip_askRandQuestion": { "message": "Esita juhuslik küsimus" },
+  "tooltip_minimize": { "message": "Vähenda" },
   "tooltip_close": { "message": "Sulge" },
   "tooltip_sendRelatedQuery": { "message": "Saada seotud päring" },
   "helptip_proxyAPImode": { "message": "Kasutab puhverserveri API-d sisselogimiseta juurdepääsuks tehisintellektile" },

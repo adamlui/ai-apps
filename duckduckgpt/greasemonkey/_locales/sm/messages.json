@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Font tele" },
   "tooltip_sendReply": { "message": "Auina atu se tali" },
   "tooltip_askRandQuestion": { "message": "Fesili faafuasei" },
+  "tooltip_minimize": { "message": "Minimize" },
   "tooltip_close": { "message": "Tapuni" },
   "tooltip_sendRelatedQuery": { "message": "Auina atu fesili e fesootai i ai" },
   "helptip_proxyAPImode": { "message": "Faʻaaoga se Proxy API mo le leai-login avanoa i AI" },

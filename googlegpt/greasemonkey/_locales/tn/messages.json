@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Saese ya font" },
   "tooltip_sendReply": { "message": "SEND ANSWER" },
   "tooltip_feelingLucky": { "message": "Ke Ikutlwa ke na le Letlhogonolo" },
+  "tooltip_minimize": { "message": "Fokotsa selekanyo sa yone" },
   "tooltip_close": { "message": "Tswala" },
   "tooltip_sendRelatedQuery": { "message": "ROMELA DIPOTSO TSE DI AMAN" },
   "helptip_proxyAPImode": { "message": "O dirisa Proxy API gore o seka wa tsena mo tirong ya AI" },

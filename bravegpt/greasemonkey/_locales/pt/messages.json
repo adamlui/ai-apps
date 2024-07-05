@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Tamanho da fonte" },
   "tooltip_sendReply": { "message": "Enviar resposta" },
   "tooltip_askRandQuestion": { "message": "pergunta aleatória" },
+  "tooltip_minimize": { "message": "Minimizar" },
   "tooltip_close": { "message": "Close (Fechar)" },
   "tooltip_sendRelatedQuery": { "message": "Enviar consulta relacionada" },
   "helptip_proxyAPImode": { "message": "Usa uma API Proxy para acesso sem login à IA" },

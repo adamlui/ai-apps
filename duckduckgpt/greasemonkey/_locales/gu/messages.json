@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "ફોન્ટ માપ" },
   "tooltip_sendReply": { "message": "જવાબ મોકલો" },
   "tooltip_askRandQuestion": { "message": "રેન્ડમ પ્રશ્ન પૂછો" },
+  "tooltip_minimize": { "message": "ઓછુ કરવુ" },
   "tooltip_close": { "message": "બંધ કરો" },
   "tooltip_sendRelatedQuery": { "message": "સંબંધિત ક્વેરી મોકલો" },
   "helptip_proxyAPImode": { "message": "AI ની નો-લોગિન ઍક્સેસ માટે પ્રોક્સી API નો ઉપયોગ કરે છે" },

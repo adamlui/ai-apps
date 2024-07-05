@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "Қаріп өлшемі" },
   "tooltip_sendReply": { "message": "Жауап жіберу" },
   "tooltip_askRandQuestion": { "message": "Кездейсоқ сұрақ қою" },
+  "tooltip_minimize": { "message": "& Түю" },
   "tooltip_close": { "message": "Жабу" },
   "tooltip_sendRelatedQuery": { "message": "Тиісті сұранысты жіберу" },
   "helptip_proxyAPImode": { "message": "AI-ге логинсіз кіру үшін прокси API пайдаланады" },

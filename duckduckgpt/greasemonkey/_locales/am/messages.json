@@ -39,6 +39,7 @@
   "tooltip_fontSize": { "message": "የፎንት መጠን" },
   "tooltip_sendReply": { "message": "መልስ ላክ" },
   "tooltip_askRandQuestion": { "message": "የዘፈቀደ ጥያቄ ይጠይቁ" },
+  "tooltip_minimize": { "message": "ያሳንሱ" },
   "tooltip_close": { "message": "ዝጋ" },
   "tooltip_sendRelatedQuery": { "message": "ተዛማጅ ጥያቄ ይላኩ" },
   "helptip_proxyAPImode": { "message": "ለ AI ምንም ምዝገባ መዳረሻ ፕሮክሲ ኤፒአይ ይጠቀማል" },
