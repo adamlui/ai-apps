@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.4.9
+// @version                  2024.7.4.10
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -423,7 +423,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt',
         mediaHostURL: 'https://media.googlegpt.io/',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: isMobile ? 1.357 : 1.375,
-        latestAssetCommitHash: '88e0a25' } // for cached messages.json
+        latestAssetCommitHash: '98f3aa2' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
