@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.5.11
+// @version                  2024.7.5.12
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1822,7 +1822,11 @@
         },
 
         chatbarWidth() {
-            document.getElementById('app-chatbar').style.width = isMobile ? '81.4%' : config.anchored ? '83.3%' : hasSidebar ? '79.3%' : '80.1%' },
+            const chatbar = appDiv.querySelector('#app-chatbar')
+            if (chatbar) chatbar.style.width = `${
+                isMobile ? 81.4 : config.anchored ? 83.3 : config.widerSidebar ? (
+                    hasSidebar ? 85.4 : 85.9 ) : ( hasSidebar ? 79.3 : 80.1 )}%`
+        },
 
         footerContent() {
             get.json('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
@@ -2239,7 +2243,7 @@
                 if (mode == 'sticky' && config.anchored) toggle.anchorMode()
                 saveSetting(mode + 'Sidebar', true)
             } else saveSetting(mode + 'Sidebar', false)
-            update.tweaksStyle() // apply new state to UI
+            update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
             icons[mode == 'wider' ? 'widescreen' : 'pin'].update() // toggle icons everywhere
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const stickySidebarToggle = document.querySelector('[id*="sticky"][id*="menu-entry"] input')
@@ -2870,7 +2874,6 @@
                 continueChatDiv.append(chatTextarea)
                 replyForm.append(continueChatDiv) ; replySection.append(replyForm)
                 appDiv.insertBefore(replySection, appDiv.querySelector('footer'))
-                update.chatbarWidth()
 
                 // Create/append send button
                 const sendBtn = document.createElement('button'),
@@ -2964,8 +2967,9 @@
                 && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top )) { // app fully above fold
                     appDiv.querySelector('#app-chatbar').focus() ; show.reply.chatbarFocused = true }
 
-            // Restore minimized/restored state + chatbar width if anchored
-            if (config.anchored) { update.appBottomPos() ; update.chatbarWidth() }
+            // Update styles
+            if (config.anchored) update.appBottomPos() // restore minimized/restored state if anchored
+            update.chatbarWidth()
 
             show.reply.submitSrc = 'none' // for reply section builder's mobile scroll-to-top if user interacted
 
@@ -3136,7 +3140,6 @@
           wsbStyles = '#center_col, #center_col div { max-width: 516px !important ; overflow: hidden }' // shrink center column
                     + '#googlegpt { width: 455px }' // expand GoogleGPT when in limiting Google host container
                     + '#googlegpt ~ div { width: 540px !important }' // expand side snippets
-                    + `#app-chatbar { width: ${ hasSidebar ? 85.4 : 85.9 }% !important }`,
           ssbStyles = '#googlegpt { position: sticky ; top: 87px }'
                     + '#googlegpt ~ * { display: none }', // hide sidebar contents
           anchorStyles = '#googlegpt { position: fixed ; bottom: -7px ; right: 35px ; width: 388px }'
