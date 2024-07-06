@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.6.3
+// @version                2024.7.6.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -203,7 +203,7 @@
 // @updateURL              https://update.greasyfork.org/scripts/459849/duckduckgpt.meta.js
 // @homepageURL            https://www.duckduckgpt.com
 // @supportURL             https://support.duckduckgpt.com
-// @contributionURL       https://github.com/sponsors/KudoAI
+// @contributionURL        https://github.com/sponsors/KudoAI
 // ==/UserScript==
 
 // Dependencies:
@@ -466,11 +466,28 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        const notifIcon = icons.ddgpt.create() ; notifIcon.width = 29
-        notifIcon.style.cssText = 'position: relative ; top: 4.8px ; margin-right: 6px'
+
+        // Strip state word to append styled one later
+        const foundState = menuState.word.find(word => msg.includes(word))
+        if (foundState) msg = msg.replace(foundState, '')
+
+        // Show notification
         chatgpt.notify(msg, position, notifDuration, shadow || scheme == 'dark' ? '' : 'shadow')
-        const notifs = document.querySelectorAll('.chatgpt-notif')
-        notifs[notifs.length -1].prepend(notifIcon)
+        const notifs = document.querySelectorAll('.chatgpt-notif'),
+              notif = notifs[notifs.length -1]
+
+        // Prepend app icon
+        const notifIcon = icons.ddgpt.create()
+        notifIcon.style.cssText = 'width: 29px ; position: relative ; top: 4.8px ; margin-right: 6px'
+        notif.prepend(notifIcon)
+
+        // Append styled state word
+        if (foundState) {
+            const styledState = document.createElement('span')
+            styledState.style.cssText = `font-weight: bold ; color: ${
+                foundState == menuState.word[0] ? 'rgb(239, 72, 72)' : '#5cef48' }`
+            styledState.append(foundState) ; notif.append(styledState)
+        }
     }
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {

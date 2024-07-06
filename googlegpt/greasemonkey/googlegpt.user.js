@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.6.2
+// @version                  2024.7.6.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -655,11 +655,28 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        const notifIcon = icons.googleGPT.create('white') ; notifIcon.width = 29
-        notifIcon.style.cssText = 'position: relative ; top: 2.8px ; margin-right: 6px'
+
+        // Strip state word to append styled one later
+        const foundState = menuState.word.find(word => msg.includes(word))
+        if (foundState) msg = msg.replace(foundState, '')
+
+        // Show notification
         chatgpt.notify(msg, position, notifDuration, shadow || scheme == 'dark' ? '' : 'shadow')
-        const notifs = document.querySelectorAll('.chatgpt-notif')
-        notifs[notifs.length -1].prepend(notifIcon)
+        const notifs = document.querySelectorAll('.chatgpt-notif'),
+              notif = notifs[notifs.length -1]
+
+        // Prepend app icon,
+        const notifIcon = icons.googleGPT.create('white')
+        notifIcon.style.cssText = 'width: 29px ; position: relative ; top: 2.8px ; margin-right: 6px'
+        notif.prepend(notifIcon)
+
+        // Append styled state word
+        if (foundState) {
+            const styledState = document.createElement('span')
+            styledState.style.color = (
+                foundState == menuState.word[0] ? 'rgb(239, 72, 72)' : '#5cef48' )
+            styledState.append(foundState) ; notif.append(styledState)
+        }
     }
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
