@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.6.2
+// @version                2024.7.6.3
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -334,7 +334,7 @@
         stickySidebar: { type: 'toggle', mobile: false, centered: false,
             label: msgs.menuLabel_stickySidebar || 'Sticky Sidebar',
             helptip: msgs.helptip_stickySidebar || 'Makes DuckDuckGPT visible in sidebar even as you scroll' },
-        anchor: { type: 'toggle',
+        anchor: { type: 'toggle', mobile: false, centered: false,
             label: msgs.mode_anchor || 'Anchor Mode',
             helptip: msgs.helptip_anchorMode || 'Anchor DuckDuckGPT to bottom of window' },
         bgAnimationsDisabled: { type: 'toggle',
