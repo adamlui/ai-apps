@@ -656,7 +656,7 @@
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
 
-        // Strip state word to append styled one later
+        // Strip state word to append colored one later
         const foundState = menuState.word.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
@@ -672,10 +672,9 @@
 
         // Append styled state word
         if (foundState) {
-            const styledState = document.createElement('span')
-            styledState.style.color = (
-                foundState == menuState.word[0] ? 'rgb(239, 72, 72)' : '#5cef48' )
-            styledState.append(foundState) ; notif.append(styledState)
+            const coloredState = document.createElement('span')
+            coloredState.style.color = foundState == menuState.word[0] ? 'rgb(239, 72, 72)' : '#5cef48'
+            coloredState.append(foundState) ; notif.append(coloredState)
         }
     }
 
