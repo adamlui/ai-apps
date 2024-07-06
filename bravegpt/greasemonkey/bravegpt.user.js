@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.5.13
+// @version               2024.7.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2549,7 +2549,6 @@ setTimeout(async () => {
                 if (!isMobile) appDiv.append(tooltipDiv)
 
                 // Add corner button listeners
-                pinSVG.onclick = menus.pin.toggle
                 chevronSVG.onclick = toggle.minimized
                 aboutSVG.onclick = modals.about.show
                 settingsSVG.onclick = modals.settings.show
@@ -2598,7 +2597,7 @@ setTimeout(async () => {
                         })}}
                     })
                 }
-                if (pinSVG) pinSVG.onmouseover = pinSVG.onmouseout = menus.pin.toggle
+                pinSVG.onclick = pinSVG.onmouseover = pinSVG.onmouseout = menus.pin.toggle
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (wsbSVG) wsbSVG.onclick = () => toggle.sidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips

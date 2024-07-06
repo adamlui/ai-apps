@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.5.14
+// @version                2024.7.6
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2450,7 +2450,6 @@
                 if (!isMobile) appDiv.append(tooltipDiv)
 
                 // Add corner button listeners
-                pinSVG.onclick = menus.pin.toggle
                 chevronSVG.onclick = toggle.minimized
                 aboutSVG.onclick = modals.about.show
                 settingsSVG.onclick = modals.settings.show
@@ -2499,7 +2498,7 @@
                         })}}
                     })
                 }
-                if (pinSVG) pinSVG.onmouseover = pinSVG.onmouseout = menus.pin.toggle
+                pinSVG.onclick = pinSVG.onmouseover = pinSVG.onmouseout = menus.pin.toggle
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (wsbSVG) wsbSVG.onclick = () => toggle.sidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips
