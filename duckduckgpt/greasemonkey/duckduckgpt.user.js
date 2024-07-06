@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.5.11
+// @version                2024.7.5.12
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1028,7 +1028,8 @@
                 pinMenu.append(pinMenuUL)
 
                 // Add listeners to make visibility stick when mousing from pinSVG
-                pinMenu.onmouseover = pinMenu.onmouseout = menus.pin.toggle
+                pinMenu.onmouseover = menus.pin.toggle
+                pinMenu.onmouseout = pinMenu.remove // instead of toggle so re-mouseover doesn't show ghost
             },
 
             toggle() { // visibility

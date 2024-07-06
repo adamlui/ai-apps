@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.5.13
+// @version                  2024.7.5.14
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1209,7 +1209,8 @@
                 pinMenu.append(pinMenuUL)
 
                 // Add listeners to make visibility stick when mousing from pinSVG
-                pinMenu.onmouseover = pinMenu.onmouseout = menus.pin.toggle
+                pinMenu.onmouseover = menus.pin.toggle
+                pinMenu.onmouseout = pinMenu.remove // instead of toggle so re-mouseover doesn't show ghost
             },
 
             toggle() { // visibility

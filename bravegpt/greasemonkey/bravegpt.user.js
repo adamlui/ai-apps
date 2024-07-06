@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.5.10
+// @version               2024.7.5.11
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1022,7 +1022,8 @@ setTimeout(async () => {
                 pinMenu.append(pinMenuUL)
 
                 // Add listeners to make visibility stick when mousing from pinSVG
-                pinMenu.onmouseover = pinMenu.onmouseout = menus.pin.toggle
+                pinMenu.onmouseover = menus.pin.toggle
+                pinMenu.onmouseout = pinMenu.remove // instead of toggle so re-mouseover doesn't show ghost
             },
 
             toggle() { // visibility
