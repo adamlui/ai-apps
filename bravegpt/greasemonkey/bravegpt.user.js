@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.5.2
+// @version               2024.7.5.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -230,16 +230,16 @@ setTimeout(async () => {
         appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.313,
-        latestAssetCommitHash: 'ca48dfb' } // for cached messages.json
+        latestAssetCommitHash: '3db7021' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'fgAnimationsDisabled',
-                'fontSize', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
-                'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+    loadSetting('anchored', 'autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'fgAnimationsDisabled',
+                'fontSize', 'minimized', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled',
+                'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', 16) // init reply font size if unset
     if ( // disable streaming in unspported envs
@@ -328,6 +328,9 @@ setTimeout(async () => {
         stickySidebar: { type: 'toggle', mobile: false, centered: false,
             label: msgs.menuLabel_stickySidebar || 'Sticky Sidebar',
             helptip: msgs.helptip_stickySidebar || 'Makes BraveGPT visible in sidebar even as you scroll' },
+        anchor: { type: 'toggle',
+            label: msgs.mode_anchor || 'Anchor Mode',
+            helptip: msgs.helptip_anchorMode || 'Anchor BraveGPT to bottom of window' },
         bgAnimationsDisabled: { type: 'toggle',
             label: `${ msgs.menuLabel_background || 'Background' } ${ msgs.menuLabel_animations || 'Animations' }`,
             helptip: msgs.helptip_bgAnimations || 'Show animated backgrounds in UI components' },
@@ -779,6 +782,9 @@ setTimeout(async () => {
                     } else if (key == 'stickySidebar') {
                         settingIcon = icons.pin.create()
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 7.5px'
+                    } else if (key.includes('anchor')) {
+                        settingIcon = icons.anchor.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -2.5px ; margin-right: 5.5px'
                     } else if (key.includes('bgAnimation')) {
                         settingIcon = icons.sparkles.create('bg')
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 6.5px'
@@ -843,6 +849,7 @@ setTimeout(async () => {
                             else if (key.includes('streaming')) toggle.streaming()
                             else if (key.includes('rq')) toggle.relatedQueries()
                             else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
+                            else if (key.includes('anchor')) toggle.anchorMode()
                             else if (key.includes('bgAnimation')) toggle.animations('bg')
                             else if (key.includes('fgAnimation')) toggle.animations('fg')
 
@@ -942,6 +949,81 @@ setTimeout(async () => {
         }
     }
 
+    // Define MENU functions
+
+    const menus = {
+        fadeInDelay: 5, // ms
+
+        show(menu) {
+            menu.style.display = ''
+            setTimeout(() => menu.classList.add('active'), menus.fadeInDelay)
+        },
+
+        pin: {
+            clickHandler() {
+                const pinMenu = event.target.closest('#pin-menu'),
+                      itemLabel = event.target.textContent,
+                      prevOffsetTop = appDiv.offsetTop
+
+                // Switch mode
+                if ([msgs.menuLabel_top, 'Top'].includes(itemLabel)) toggle.sidebar('sticky')
+                else if ([msgs.menuLabel_bottom, 'Bottom'].includes(itemLabel)) toggle.anchorMode()
+                else if ([msgs.menuLabel_nothing, 'Nothing'].includes(itemLabel)) {
+                    toggle.sidebar('sticky', 'off') ; toggle.anchorMode('off') }
+
+                // Close/update menu
+                if (appDiv.offsetTop != prevOffsetTop) pinMenu.remove() // since app moved
+                else menus.pin.update(pinMenu) // since menu stayed in place
+            },
+
+            createAppend() {
+                const pinMenu = document.createElement('div') ; pinMenu.id = 'pin-menu'
+                pinMenu.classList.add('bravegpt-menu', 'fade-in-less', 'no-user-select')
+                menus.pin.update(pinMenu) ; appDiv.append(pinMenu)
+                return pinMenu
+            },
+
+            update(pinMenu) {
+                while (pinMenu.firstChild) pinMenu.removeChild(pinMenu.firstChild) // clear content
+
+                // Init elems/labels/checkmark
+                const pinMenuUL = document.querySelector('#pin-menu ul') || document.createElement('ul'),
+                      pinMenuItems = [], pinMenulabels = [
+                          `${ msgs.tooltip_pinTo || 'Pin to' }...`, msgs.menuLabel_top || 'Top',
+                           msgs.menuLabel_bottom || 'Bottom', msgs.menuLabel_nothing || 'Nothing' ]
+                const checkmarkSVG = icons.checkmark.create()
+                checkmarkSVG.style.cssText = 'position: fixed ; margin-top: 3px ; right: 142px'
+
+                // Fill menu UL
+                for (let i = 0 ; i < 4 ; i++) {
+                    pinMenuItems.push(document.createElement('li'))
+                    pinMenuItems[i].textContent = pinMenulabels[i]
+                    pinMenuItems[i].className = 'bravegpt-menu-item'
+                    if (i == 0) {
+                        pinMenuItems[i].innerHTML = `<b>${pinMenulabels[i]}</b>` // bolden header item
+                        pinMenuItems[i].classList.add('bravegpt-menu-header')
+                    }
+                    else pinMenuItems[i].style.paddingLeft = '22px' // left-pad to fit checkmark in sub-items
+                    if (config.stickySidebar && i == 1 || config.anchored && i == 2 || !config.stickySidebar && !config.anchored && i == 3)
+                        pinMenuItems[i].prepend(checkmarkSVG)
+                    pinMenuItems[i].onclick = menus.pin.clickHandler
+                    pinMenuUL.append(pinMenuItems[i])
+                }
+                pinMenu.append(pinMenuUL)
+
+                // Add listeners to make visibility stick when mousing from pinSVG
+                pinMenu.onmouseover = pinMenu.onmouseout = menus.pin.toggle
+            },
+
+            toggle() { // visibility
+                const pinMenu = document.getElementById('pin-menu') || menus.pin.createAppend(),
+                      menuTopPos = ( event.clientY || event.touches?.[0]?.clientY ) > window.innerHeight /2 ? -74 : 48   
+                pinMenu.style.cssText = `top: ${menuTopPos}px ; opacity: `
+                    + `${ event.type == 'mouseover' ? 1 : event.type == 'mouseout' ? 0 : +!parseInt(pinMenu.style.opacity, 10) }`
+            }
+        }
+    }
+
     // Define ICON functions
 
     const icons = {
@@ -955,6 +1037,18 @@ setTimeout(async () => {
                     d: 'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z' }
                 ))
                 return aboutSVG
+            }
+        },
+
+        anchor: {
+            create() {
+                const anchorSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      anchorSVGattrs = [['width', 19], ['height', 19], ['viewBox', '0 0 24 24']]
+                anchorSVGattrs.forEach(([attr, value]) => anchorSVG.setAttribute(attr, value))
+                anchorSVG.append(createSVGelem('path', { stroke: 'none',
+                    d: 'M12,2 C13.6568542,2 15,3.34314575 15,5 C15,6.30588222 14.1656226,7.41688515 13.0009007,7.82897577 L13.0008722,19.9379974 C15.8984799,19.5763478 18.3147266,17.665053 19.3940412,15.0596838 L19.417,15 L17,15 C15.9853611,15 15.6358608,13.6848035 16.4495309,13.1641077 L16.5527864,13.1055728 L20.5527864,11.1055728 C21.2176875,10.7731223 22,11.256618 22,12 C22,17.5228475 17.5228475,22 12,22 C6.4771525,22 2,17.5228475 2,12 C2,11.2957433 2.70213089,10.8247365 3.34138467,11.0597803 L3.4472136,11.1055728 L7.4472136,13.1055728 C8.35473419,13.5593331 8.07916306,14.8919819 7.11853213,14.9938221 L7,15 L4.582,15 L4.60595876,15.0596838 C5.68539551,17.6653477 8.10206662,19.5767802 11.0001109,19.9381201 L11.0000889,7.82932572 C9.8348501,7.41751442 9,6.30625206 9,5 C9,3.34314575 10.3431458,2 12,2 Z M12,4 C11.4477153,4 11,4.44771525 11,5 C11,5.55228475 11.4477153,6 12,6 C12.5522847,6 13,5.55228475 13,5 C13,4.44771525 12.5522847,4 12,4 Z' }
+                ))
+                return anchorSVG
             }
         },
 
@@ -1029,7 +1123,36 @@ setTimeout(async () => {
                 caretsSVG.append(createSVGelem('path', { stroke: '', d: 'M11.29,9.71a1,1,0,0,0,1.42,0l5-5a1,1,0,1,0-1.42-1.42L12,7.59,7.71,3.29A1,1,0,0,0,6.29,4.71Zm1.42,4.58a1,1,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L12,16.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z' }))
                 return caretsSVG
             }
+        },
 
+        checkmark: {
+            create() {
+                const checkmarkSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      checkmarkSVGattrs = [['width', 11], ['height', 11], ['viewBox', '0 0 20 20']]
+                checkmarkSVGattrs.forEach(([attr, value]) => checkmarkSVG.setAttribute(attr, value))
+                checkmarkSVG.append(createSVGelem('path', { stroke: 'none', d: 'M0 11l2-2 5 5L18 3l2 2L7 18z' }))
+                return checkmarkSVG
+            }
+        },
+
+        chevronDown: {
+            create() {
+                const chevronSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      chevronSVGattrs = [['width', 20], ['height', 20], ['viewBox', '0 0 16 16']]
+                chevronSVGattrs.forEach(([attr, value]) => chevronSVG.setAttribute(attr, value))
+                chevronSVG.append(createSVGelem('path', { stroke: 'none', d: 'M1 5l7 4.61L15 5v2.39L8 12 1 7.39z' }))
+                return chevronSVG                
+            }
+        },
+
+        chevronUp: {
+            create() {
+                const chevronSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      chevronSVGattrs = [['width', 20], ['height', 20], ['viewBox', '0 0 16 16']]
+                chevronSVGattrs.forEach(([attr, value]) => chevronSVG.setAttribute(attr, value))
+                chevronSVG.append(createSVGelem('path', { stroke: 'none', d: 'M15 11L8 6.39 1 11V8.61L8 4l7 4.61z' }))
+                return chevronSVG                
+            }
         },
 
         fontSize: {
@@ -1088,7 +1211,7 @@ setTimeout(async () => {
                 if (targetIcons.length == 0) targetIcons = document.querySelectorAll('#pin-icon')
                 targetIcons.forEach(icon => {
                     icon.firstChild?.remove() // clear prev paths
-                    icon.append(icons.pin[config.stickySidebar ? 'filledSVGpath' : 'hollowSVGpath']())
+                    icon.append(icons.pin[config.stickySidebar || config.anchored ? 'filledSVGpath' : 'hollowSVGpath']())
                 })
             }
         },
@@ -1233,6 +1356,16 @@ setTimeout(async () => {
                     icon.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
                 })
             }
+        },
+
+        webCorner: {
+            create() {
+                const webSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      webSVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 0 32 32']]
+                webSVGattrs.forEach(([attr, value]) => webSVG.setAttribute(attr, value))
+                webSVG.append(createSVGelem('path', { stroke: 'none', d: 'M29.9,2.6c-0.1-0.2-0.3-0.4-0.5-0.5C29.3,2,29.1,2,29,2H3C2.4,2,2,2.4,2,3s0.4,1,1,1h2c5,0,9,4,9,9c0,1.9-0.6,3.8-1.8,5.4l-4.9,4.9c-0.4,0.4-0.4,1,0,1.4C7.5,24.9,7.7,25,8,25s0.5-0.1,0.7-0.3l4.9-4.9c1.6-1.2,3.4-1.8,5.4-1.8c5,0,9,4,9,9v2    c0,0.6,0.4,1,1,1s1-0.4,1-1V3C30,2.9,30,2.7,29.9,2.6zM26.6,4l-4.8,4.8c0-1.9-0.8-3.5-2-4.8H26.6z M11.3,4H15c2.7,0,4.8,2.2,4.8,4.8c0,1-0.3,2-0.9,2.9l-3,3C16,14.2,16,13.6,16,13C16,9.3,14.1,6,11.3,4z M19,16c-0.6,0-1.2,0-1.7,0.1l3-3c0.8-0.6,1.8-0.9,2.9-0.9c2.7,0,4.8,2.2,4.8,4.8v3.7C26,17.9,22.7,16,19,16z M23.2,10.2L28,5.4v6.8C26.8,11,25.1,10.2,23.2,10.2z' }))
+                return webSVG
+            }
         }
     }
 
@@ -1258,6 +1391,8 @@ setTimeout(async () => {
     // Define UPDATE functions
 
     const update = {
+
+        appBottomPos() { appDiv.style.bottom = `${ config.minimized ? 56 - appDiv.offsetHeight : -32 }px` },
 
         appStyle() {
             appStyle.innerText = (
@@ -1385,22 +1520,33 @@ setTimeout(async () => {
                 + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
                 + 'transition: background-color .15s ease ;' // speed to show bg dim
                 + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
-            + '[class*="-modal-bg"].animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
-            + '[class$="modal"] {' // native modals + chatgpt.alert()s
-                + 'position: absolute ;' // to be click-draggable
-                + 'opacity: 0 ;' // to fade-in
-                + 'background-image: linear-gradient(180deg,' // bg
-                    + `${ scheme == 'dark' ? '#99a8a6 -70%, black 57%' : '#b6ebff -64%, white 33%' }) ;`
-                + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
-                + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
-                + 'transition: opacity 0.35s cubic-bezier(.165,.84,.44,1),' // for fade-ins
-                            + 'transform 0.35s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
+              + '[class*="-modal-bg"].animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
+              + '[class$="modal"] {' // native modals + chatgpt.alert()s
+                  + 'position: absolute ;' // to be click-draggable
+                  + 'opacity: 0 ;' // to fade-in
+                  + 'background-image: linear-gradient(180deg,' // bg
+                      + `${ scheme == 'dark' ? '#99a8a6 -70%, black 57%' : '#b6ebff -64%, white 33%' }) ;`
+                  + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
+                  + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                  + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
+                  + 'transition: opacity 0.35s cubic-bezier(.165,.84,.44,1),' // for fade-ins
+                              + 'transform 0.35s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
               + ( scheme == 'dark' ? // additional darkmode modal styles
                   ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                       + 'background-color: black !important ; color: white }'
                   + '.primary-modal-btn { background: hsl(186 100% 69%) !important ; color: black !important }'
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
+              + '.bravegpt-menu {'
+                  + 'font-family: "Source Sans Pro", sans-serif ; font-size: 12px ;'
+                  + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ; border-radius: 3px ;`
+                  + ( scheme == 'dark' ? 'background-color: black ; color: white ; fill: white'
+                                       : 'background-color: #f7f7f7d6 ; color: black ; fill: black' ) + ';'
+                  + 'position: absolute ; right: 82px ; z-index: 2250 ;'
+                  + 'box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ;  }'
+              + '.bravegpt-menu ul { padding: 5.5px 0 ; margin: 0 ; list-style: none }'
+              + '.bravegpt-menu-item { padding: 0 10px ; line-height: 20.5px ; cursor: pointer }'
+              + '.bravegpt-menu-item:not(.bravegpt-menu-header):hover {'
+                  + 'cursor: pointer ; background: blue ; color: white ; fill: white }'
 
               // Glowing modal btns
               + ':root { --glow-color: hsl(186 100% 69%); }'
@@ -1583,7 +1729,7 @@ setTimeout(async () => {
         },
 
         tooltip(buttonType) { // text & position
-            const cornerBtnTypes = ['about', 'settings', 'speak', 'pin', 'font-size', 'wsb']
+            const cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'pin', 'font-size', 'wsb']
                       .filter(type => { // exclude invisible ones                                                
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
@@ -1593,11 +1739,11 @@ setTimeout(async () => {
                                               : cornerBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
             // Update text
             tooltipDiv.innerText = (
-                buttonType == 'about' ? msgs.menuLabel_about || 'About'
+                buttonType == 'chevron' ? msgs[`tooltip_${ config.minimized ? 'restore' : 'minimize' }`]
+                                                      || ( config.minimized ? 'Restore' : 'Minimize' )
+              : buttonType == 'about' ? msgs.menuLabel_about || 'About'
               : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
               : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
-              : buttonType == 'pin' ? (( config.stickySidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                       + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' ))
               : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
               : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
                                        + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
@@ -1616,20 +1762,26 @@ setTimeout(async () => {
             const isStandbyMode = appDiv.querySelector('.standby-btn'),
                   answerIsLoaded = appDiv.querySelector('.corner-btn')
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
-                                  + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
+                                  + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles
+                                    : config.anchored ? anchorStyles : '' )
 
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
             if (kudoAIspan) kudoAIspan.style.display = (
                 appDiv.querySelectorAll('.corner-btn').length < ( config.widerSidebar ? 10 : 5 )) ? '' : 'none'
+            if (kudoAIspan) kudoAIspan.style.display = (
+                appDiv.querySelectorAll('.corner-btn').length < (
+                    config.anchored || !config.widerSidebar ? 5 : 10 )) ? '' : 'none'
     
             // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
             const answerPre = appDiv.querySelector('pre'),
                   relatedQueries = appDiv.querySelector('.related-queries'),
                   shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 304,
                   longerPreHeight = window.innerHeight - 278
-            if (answerPre) answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
-                relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
+            if (answerPre) answerPre.style.maxHeight = (
+                config.stickySidebar ? ( relatedQueries?.offsetHeight > 0 ? `${shorterPreHeight}px` : `${longerPreHeight}px` )
+              : config.anchored ? `${ longerPreHeight - 100 }px` : 'none'
+            )
         }
     }
 
@@ -1787,6 +1939,22 @@ setTimeout(async () => {
 
     const toggle = {
 
+        anchorMode(state = '') {
+            const prevState = config.anchored // for restraining notif if no change from #pin-menu Nothing-click
+            if (state == 'on' || !state && !config.anchored) { // toggle on
+                if (config.stickySidebar) toggle.sidebar('sticky')
+                saveSetting('anchored', true)
+            } else saveSetting('anchored', false)
+            update.tweaksStyle() // apply new state to UI
+            if (modals.settings.get()) { // update visual state of Settings toggle
+                const anchorToggle = document.querySelector('[id*="anchor"][id*="menu-entry"] input')
+                if (anchorToggle.checked != config.anchored) modals.settings.toggle.switch(anchorToggle)
+            }
+            icons.pin.update()
+            if (prevState != config.anchored)
+                notify(( msgs.mode_anchor || 'Anchor Mode' ) + ' ' + menuState.word[+config.anchored])
+        },
+
         animations(layer) {
             saveSetting(layer + 'AnimationsDisabled', !config[layer + 'AnimationsDisabled'])
             update[layer == 'bg' ? 'stars' : 'appStyle']()
@@ -1818,6 +1986,18 @@ setTimeout(async () => {
             })
         },
 
+        minimized() {
+            saveSetting('minimized', !config.minimized)
+            const chevronBtn = appDiv.querySelector('#chevron-btn')
+            if (chevronBtn) { // update icon
+                const chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
+                chevronSVG.onclick = toggle.minimized
+                chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
+            }
+            update.appBottomPos()
+            if (!isMobile) tooltipDiv.style.opacity = 0 // remove lingering tooltip
+        },
+
         proxyMode() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
@@ -1844,10 +2024,19 @@ setTimeout(async () => {
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
         },
 
-        sidebar(mode) {
-            saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
-            update.tweaksStyle() // apply mode to UI
+        sidebar(mode, state = '') {
+            const prevStickyState = config.stickySidebar // for restraining notif if no change from #pin-menu Nothing-click
+            if (state == 'on' || !state && !config[mode + 'Sidebar']) { // toggle on
+                if (mode == 'sticky' && config.anchored) toggle.anchorMode()
+                saveSetting(mode + 'Sidebar', true)
+            } else saveSetting(mode + 'Sidebar', false)
+            update.tweaksStyle() // apply new state to UI
             icons[mode == 'wider' ? 'widescreen' : 'pin'].update() // toggle icons everywhere
+            if (modals.settings.get()) { // update visual state of Settings toggle
+                const stickySidebarToggle = document.querySelector('[id*="sticky"][id*="menu-entry"] input')
+                if (stickySidebarToggle.checked != config.stickySidebar) modals.settings.toggle.switch(stickySidebarToggle)
+            }
+            if (mode == 'sticky' && prevStickyState == config.stickySidebar) return
             notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
                 + ' ' + menuState.word[+config[mode + 'Sidebar']])
         },
@@ -2289,6 +2478,14 @@ setTimeout(async () => {
                 appTitleAnchor.classList.add('app-name', 'no-user-select')
                 appDiv.append(appTitleAnchor)
 
+                // Create/append Chevron button
+                const chevronSpan = document.createElement('span'),
+                      chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
+                chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
+                chevronSpan.className = 'corner-btn' ; chevronSpan.style.margin = '0.5px 1px 0 11px'
+                chevronSpan.style.display = 'none' // to activate from anchorStyles only
+                chevronSpan.append(chevronSVG) ; appDiv.append(chevronSpan)
+
                 // Create/append About button
                 const aboutSpan = document.createElement('span'),
                       aboutSVG = icons.about.create()
@@ -2343,6 +2540,8 @@ setTimeout(async () => {
                 if (!isMobile) appDiv.append(tooltipDiv)
 
                 // Add corner button listeners
+                pinSVG.onclick = menus.pin.toggle
+                chevronSVG.onclick = toggle.minimized
                 aboutSVG.onclick = modals.about.show
                 settingsSVG.onclick = modals.settings.show
                 if (speakerSVG) speakerSVG.onclick = () => {
@@ -2390,11 +2589,11 @@ setTimeout(async () => {
                         })}}
                     })
                 }
-                if (pinSVG) pinSVG.onclick = () => toggle.sidebar('sticky')
+                if (pinSVG) pinSVG.onmouseover = pinSVG.onmouseout = menus.pin.toggle
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (wsbSVG) wsbSVG.onclick = () => toggle.sidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, settingsSpan, speakerSpan, pinSpan, fontSizeSpan, wsbSpan].forEach(span => {
+                    [aboutSpan, settingsSpan, chevronSpan, speakerSpan, fontSizeSpan, wsbSpan].forEach(span => {
                         if (span) span.onmouseover = span.onmouseout = toggle.tooltip })
 
                 // Create/append 'by KudoAI'
@@ -2403,7 +2602,6 @@ setTimeout(async () => {
                 kudoAIspan.style.cssText = 'position: relative ; bottom: 8px ; font-size: 12px'
                 kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
                 appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
-                update.tweaksStyle() // show/hide based on corner space available
 
                 // Show standby state if prefix/suffix mode on
                 if (answer == 'standby') {
@@ -2425,6 +2623,8 @@ setTimeout(async () => {
                     balloonTipSpan.className = 'balloon-tip'
                     appDiv.append(balloonTipSpan, answerPre)
                 }
+
+                update.tweaksStyle() // show/hide 'by KudoAI', update pre-height based on mode
             }
 
             // Build reply section if missing
@@ -2532,6 +2732,9 @@ setTimeout(async () => {
                 && !isMobile // exclude mobile devices to not auto-popup OSD keyboard
                 && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top )) { // app fully above fold
                     appDiv.querySelector('#app-chatbar').focus() ; show.reply.chatbarFocused = true }
+
+            // Restore minimized/restored state if anchored
+            if (config.anchored) update.appBottomPos()
 
             show.reply.submitSrc = 'none' // for reply section builder's mobile scroll-to-top if user interacted
 
@@ -2690,7 +2893,10 @@ setTimeout(async () => {
           wsbStyles = 'main.main-column, aside.sidebar { max-width: 521px !important }'
                     + '#bravegpt { width: 521px }',
           ssbStyles = '#bravegpt { position: sticky ; top: 83px }'
-                    + '#bravegpt ~ * { display: none }' // hide sidebar contents
+                    + '#bravegpt ~ * { display: none }', // hide sidebar contents
+          anchorStyles = '#bravegpt { position: fixed ; bottom: -7px ; right: 35px ; width: 441px }'
+                       + '[class*="feedback"], .related-queries, .wsb-btn  { display: none }'
+                       + '#chevron-btn { display: block !important }'
     update.tweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize TOOLTIPs
@@ -2701,7 +2907,7 @@ setTimeout(async () => {
             + 'font-size: 0.58rem ; color: white ;' // font style
             + 'position: absolute ;' // for update.tooltip() calcs
             + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
-            + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
+            + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 1250 }' // visibility
         ))
     }
 
