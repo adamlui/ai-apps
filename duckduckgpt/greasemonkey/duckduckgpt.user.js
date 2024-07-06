@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.5.10
+// @version                2024.7.5.11
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1622,6 +1622,11 @@
             )
         },
 
+        chatbarWidth() {
+            const chatbar = appDiv.querySelector('#app-chatbar')
+            if (chatbar) chatbar.style.width = `${ config.widerSidebar && !config.anchored ? 85.6 : 82.6 }%`
+        },
+
         scheme(newScheme) {
             scheme = newScheme ; logos.ddgpt.update() ; update.appStyle() ; update.stars() ; toggle.btnGlow() ; 
             modals.settings.updateSchemeStatus()
@@ -1842,7 +1847,7 @@
                 if (config.stickySidebar) toggle.sidebar('sticky')
                 saveSetting('anchored', true)
             } else saveSetting('anchored', false)
-            update.tweaksStyle() // apply new state to UI
+            update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const anchorToggle = document.querySelector('[id*="anchor"][id*="menu-entry"] input')
                 if (anchorToggle.checked != config.anchored) modals.settings.toggle.switch(anchorToggle)
@@ -1930,7 +1935,7 @@
                 if (mode == 'sticky' && config.anchored) toggle.anchorMode()
                 saveSetting(mode + 'Sidebar', true)
             } else saveSetting(mode + 'Sidebar', false)
-            update.tweaksStyle() // apply new state to UI
+            update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
             icons[mode == 'wider' ? 'widescreen' : 'pin'].update() // toggle icons everywhere
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const stickySidebarToggle = document.querySelector('[id*="sticky"][id*="menu-entry"] input')
@@ -2634,8 +2639,9 @@
                 && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top )) { // app fully above fold
                     appDiv.querySelector('#app-chatbar').focus() ; show.reply.chatbarFocused = true }
 
-            // Restore minimized/restored state if anchored
-            if (config.anchored) update.appBottomPos()
+            // Update styles
+            if (config.anchored) update.appBottomPos() // restore minimized/restored state if anchored
+            update.chatbarWidth()
 
             show.reply.submitSrc = 'none' // for reply section builder's mobile scroll-to-top if user interacted
 
@@ -2788,8 +2794,7 @@
     // Stylize SITE elems
     const tweaksStyle = createStyle(),
           wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
-                    + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
-                    + '#app-chatbar { width: 85.6% }',
+                    + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }',
           ssbStyles = '#ddgpt { position: sticky ; top: 14px }'
                     + '#ddgpt ~ * { display: none }' // hide sidebar contents
                     + 'body, div.site-wrapper { overflow: clip }', // replace `overflow: hidden` to allow stickiness
