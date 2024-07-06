@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.5.6
+// @version               2024.7.5.7
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -986,26 +986,36 @@ setTimeout(async () => {
             update(pinMenu) {
                 while (pinMenu.firstChild) pinMenu.removeChild(pinMenu.firstChild) // clear content
 
-                // Init elems/labels/checkmark
+                // Init elems/labels
                 const pinMenuUL = document.querySelector('#pin-menu ul') || document.createElement('ul'),
                       pinMenuItems = [], pinMenulabels = [
                           `${ msgs.tooltip_pinTo || 'Pin to' }...`, msgs.menuLabel_top || 'Top',
                            msgs.menuLabel_bottom || 'Bottom', msgs.menuLabel_nothing || 'Nothing' ]
-                const checkmarkSVG = icons.checkmark.create()
-                checkmarkSVG.style.cssText = 'position: fixed ; margin-top: 3px ; right: 142px'
+
+                // Init icons
+                const webCornerSVG = icons.webCorner.create(),
+                      anchorSVG = icons.anchor.create(),
+                      checkmarkSVG = icons.checkmark.create()
+                webCornerSVG.style.cssText = anchorSVG.style.cssText = (
+                    'position: relative ; top: 1.5px ; right: 5px ; margin-left: 5px' )
+                webCornerSVG.style.width = webCornerSVG.style.height = '11px'
+                anchorSVG.style.width = anchorSVG.style.height = '12px'
+                checkmarkSVG.style.cssText = 'position: relative ; float: right ; margin-right: -18px ; top: 5px'
 
                 // Fill menu UL
                 for (let i = 0 ; i < 4 ; i++) {
                     pinMenuItems.push(document.createElement('li'))
                     pinMenuItems[i].textContent = pinMenulabels[i]
                     pinMenuItems[i].className = 'bravegpt-menu-item'
-                    if (i == 0) {
-                        pinMenuItems[i].innerHTML = `<b>${pinMenulabels[i]}</b>` // bolden header item
-                        pinMenuItems[i].classList.add('bravegpt-menu-header')
-                    }
-                    else pinMenuItems[i].style.paddingLeft = '22px' // left-pad to fit checkmark in sub-items
+                    if (i == 0) { // format header item
+                        pinMenuItems[i].innerHTML = `<b>${pinMenulabels[i]}</b>`
+                        pinMenuItems[i].classList.add('bravegpt-menu-header') // to not apply hover fx in appStyle
+                        pinMenuItems[i].style.marginBottom = '1px'
+                    } else if (i == 3) pinMenuItems[i].style.paddingLeft = '27px' // left-pad 'Nothing' item to align w/ items w/ icons
+                    pinMenuItems[i].style.paddingRight = '25px' // make room for checkmark
+                    pinMenuItems[i].prepend(i == 1 ? webCornerSVG : i == 2 ? anchorSVG : '')
                     if (config.stickySidebar && i == 1 || config.anchored && i == 2 || !config.stickySidebar && !config.anchored && i == 3)
-                        pinMenuItems[i].prepend(checkmarkSVG)
+                        pinMenuItems[i].append(checkmarkSVG)
                     pinMenuItems[i].onclick = menus.pin.clickHandler
                     pinMenuUL.append(pinMenuItems[i])
                 }
@@ -1128,7 +1138,7 @@ setTimeout(async () => {
         checkmark: {
             create() {
                 const checkmarkSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      checkmarkSVGattrs = [['width', 11], ['height', 11], ['viewBox', '0 0 20 20']]
+                      checkmarkSVGattrs = [['width', 10], ['height', 10], ['viewBox', '0 0 20 20']]
                 checkmarkSVGattrs.forEach(([attr, value]) => checkmarkSVG.setAttribute(attr, value))
                 checkmarkSVG.append(createSVGelem('path', { stroke: 'none', d: 'M0 11l2-2 5 5L18 3l2 2L7 18z' }))
                 return checkmarkSVG
