@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.5.5
+// @version                  2024.7.5.6
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1953,8 +1953,6 @@
         tweaksStyle() {
 
             // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
-            const isStandbyMode = appDiv.querySelector('.standby-btn'),
-                  answerIsLoaded = appDiv.querySelector('.corner-btn')
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                                   + ( config.stickySidebar ? ssbStyles : config.anchored ? anchorStyles : '' )
 

@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.5.5
+// @version                2024.7.5.6
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1012,6 +1012,7 @@
                     else pinMenuItems[i].style.paddingLeft = '22px' // left-pad to fit checkmark in sub-items
                     if (config.stickySidebar && i == 1 || config.anchored && i == 2 || !config.stickySidebar && !config.anchored && i == 3)
                         pinMenuItems[i].prepend(checkmarkSVG)
+
                     pinMenuItems[i].onclick = menus.pin.clickHandler
                     pinMenuUL.append(pinMenuItems[i])
                 }
@@ -1656,11 +1657,8 @@
         tweaksStyle() {
 
             // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
-            const isStandbyMode = appDiv.querySelector('.standby-btn'),
-                  answerIsLoaded = appDiv.querySelector('.corner-btn')
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
-                                  + ( config.stickySidebar ? ssbStyles
-                                    : config.anchored ? anchorStyles : '' )
+                                  + ( config.stickySidebar ? ssbStyles : config.anchored ? anchorStyles : '' )
     
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
