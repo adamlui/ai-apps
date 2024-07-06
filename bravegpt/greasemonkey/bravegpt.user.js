@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.5.3
+// @version               2024.7.5.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1762,8 +1762,8 @@ setTimeout(async () => {
             const isStandbyMode = appDiv.querySelector('.standby-btn'),
                   answerIsLoaded = appDiv.querySelector('.corner-btn')
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
-                                  + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles
-                                    : config.anchored ? anchorStyles : '' )
+                                  + ( config.stickySidebar ? ssbStyles : config.anchored ? anchorStyles : '' )
+
 
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
