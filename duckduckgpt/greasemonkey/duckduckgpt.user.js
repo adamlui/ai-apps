@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.5.9
+// @version                2024.7.5.10
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1700,12 +1700,6 @@
             starsDiv.id = config.bgAnimationsDisabled ? `stars-${starSize}-off`
                 : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
             starsDivsContainer.append(starsDiv)
-            if (starSize == 'sm') { // create blurry clone for enhanced 3D
-                const blurryStarsDiv = document.createElement('div')
-                blurryStarsDiv.id = starsDiv.id
-                blurryStarsDiv.style.filter = 'blur(1px)'
-                starsDivsContainer.append(blurryStarsDiv)
-            }
         })
         targetNode.prepend(starsDivsContainer)
     }
