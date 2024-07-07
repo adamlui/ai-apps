@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.6.12
+// @version               2024.7.6.13
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -298,52 +298,52 @@ setTimeout(async () => {
 
     // Init SETTINGS props
     const settingsProps = {
-        proxyAPIenabled: { type: 'toggle',
+        proxyAPIenabled: { type: 'toggle', icon: 'sunglasses',
             label: msgs.menuLabel_proxyAPImode || 'Proxy API Mode',
             helptip: msgs.helptip_proxyAPImode || 'Uses a Proxy API for no-login access to AI' },
-        streamingDisabled: { type: 'toggle',
+        streamingDisabled: { type: 'toggle', icon: 'signalStream',
             label: msgs.mode_streaming || 'Streaming Mode',
             helptip: msgs.helptip_streamingMode || 'Receive replies in a continuous text stream' },
-        autoGetDisabled: { type: 'toggle',
+        autoGetDisabled: { type: 'toggle', icon: 'speechBalloonLasso',
             label: msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers',
             helptip: msgs.helptip_autoGetAnswers || 'Auto-send queries to BraveGPT when using search engine' },
-        autoFocusChatbarDisabled: { type: 'toggle', mobile: false,
+        autoFocusChatbarDisabled: { type: 'toggle', mobile: false, icon: 'caretsInward',
             label: msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar',
             helptip: msgs.helptip_autoFocusChatbar || 'Auto-focus chatbar whenever it appears' },
-        autoScroll: { type: 'toggle', mobile: false,
+        autoScroll: { type: 'toggle', mobile: false, icon: 'arrowsDown',
             label: `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`,
             helptip: msgs.helptip_autoScroll || 'Auto-scroll responses as they generate in Streaming Mode' },
-        rqDisabled: { type: 'toggle',
+        rqDisabled: { type: 'toggle', icon: 'speechBalloons',
             label: `${ msgs.menuLabel_show || 'Show' } ${ msgs.menuLabel_relatedQueries || 'Related Queries' }`,
             helptip: msgs.helptip_showRelatedQueries || 'Show related queries below chatbar' },
-        prefixEnabled: { type: 'toggle',
+        prefixEnabled: { type: 'toggle', icon: 'slash',
             label: `${ msgs.menuLabel_require || 'Require' } "/" ${ msgs.menuLabel_beforeQuery || 'before query' }`,
             helptip: msgs.helptip_prefixMode || 'Require "/" before queries for answers to show' },
-        suffixEnabled: { type: 'toggle',
+        suffixEnabled: { type: 'toggle', icon: 'questionMark',
             label: `${ msgs.menuLabel_require || 'Require' } "?" ${ msgs.menuLabel_afterQuery || 'after query' }`,
             helptip: msgs.helptip_suffixMode || 'Require "?" after queries for answers to show' },
-        widerSidebar: { type: 'toggle', mobile: false,
+        widerSidebar: { type: 'toggle', mobile: false, icon: 'widescreen',
             label: msgs.menuLabel_widerSidebar || 'Wider Sidebar',
             helptip: msgs.helptip_widerSidebar || 'Horizontally expand search page sidebar' },
-        stickySidebar: { type: 'toggle', mobile: false,
+        stickySidebar: { type: 'toggle', mobile: false, icon: 'webCorner',
             label: msgs.menuLabel_stickySidebar || 'Sticky Sidebar',
             helptip: msgs.helptip_stickySidebar || 'Makes BraveGPT visible in sidebar even as you scroll' },
-        anchor: { type: 'toggle', mobile: false,
+        anchor: { type: 'toggle', mobile: false, icon: 'anchor',
             label: msgs.mode_anchor || 'Anchor Mode',
             helptip: msgs.helptip_anchorMode || 'Anchor BraveGPT to bottom of window' },
-        bgAnimationsDisabled: { type: 'toggle',
+        bgAnimationsDisabled: { type: 'toggle', icon: 'sparkles',
             label: `${ msgs.menuLabel_background || 'Background' } ${ msgs.menuLabel_animations || 'Animations' }`,
             helptip: msgs.helptip_bgAnimations || 'Show animated backgrounds in UI components' },
-        fgAnimationsDisabled: { type: 'toggle',
+        fgAnimationsDisabled: { type: 'toggle', icon: 'sparkles',
             label: `${ msgs.menuLabel_foreground || 'Foreground' } ${ msgs.menuLabel_animations || 'Animations' }`,
             helptip: msgs.helptip_fgAnimations || 'Show foreground animations in UI components' },
-        replyLanguage: { type: 'prompt',
+        replyLanguage: { type: 'prompt', icon: 'languageChars',
             label: msgs.menuLabel_replyLanguage || 'Reply Language',
             helptip: msgs.helptip_replyLanguage || 'Language for BraveGPT to reply in' },
-        scheme: { type: 'modal',
+        scheme: { type: 'modal', icon: 'scheme',
             label: msgs.menuLabel_colorScheme || 'Color Scheme',
             helptip: msgs.helptip_colorScheme || 'Scheme to display BraveGPT UI components in' },
-        about: { type: 'modal',
+        about: { type: 'modal', icon: 'questionMarkCircle',
             label: `${ msgs.menuLabel_about || 'About' } ${config.appName}...` }
     }
 
