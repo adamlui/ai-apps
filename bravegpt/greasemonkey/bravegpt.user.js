@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.6.7
+// @version               2024.7.6.8
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -797,7 +797,7 @@ setTimeout(async () => {
                         settingIcon = icons.widescreen.create()
                         settingIcon.style.cssText = 'position: relative ; top: 4px ; left: -1.5px ; margin-right: 7.5px'
                     } else if (key == 'stickySidebar') {
-                        settingIcon = icons.pin.create()
+                        settingIcon = icons.webCorner.create()
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 7.5px'
                     } else if (key.includes('anchor')) {
                         settingIcon = icons.anchor.create()

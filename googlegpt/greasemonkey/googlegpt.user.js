@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.6.5
+// @version                  2024.7.6.6
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -983,7 +983,7 @@
                         settingIcon = icons.widescreen.create()
                         settingIcon.style.cssText = 'position: relative ; top: 4px ; left: -1.5px ; margin-right: 7.5px'
                     } else if (key == 'stickySidebar') {
-                        settingIcon = icons.pin.create()
+                        settingIcon = icons.webCorner.create()
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 7.5px'
                     } else if (key.includes('anchor')) {
                         settingIcon = icons.anchor.create()
