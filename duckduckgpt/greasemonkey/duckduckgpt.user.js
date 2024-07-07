@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.6.15
+// @version                2024.7.6.16
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -478,15 +478,24 @@
 
         // Prepend app icon
         const notifIcon = icons.ddgpt.create()
-        notifIcon.style.cssText = 'width: 29px ; position: relative ; top: 4.8px ; margin-right: 6px'
+        notifIcon.style.cssText = 'width: 29px ; position: relative ; top: 4.8px ; margin-right: 8px'
         notif.prepend(notifIcon)
+
+        // Append mode icon
+        const mode = Object.keys(settingsProps).find(key => settingsProps[key].label.includes(msg.trim()))
+        if (mode && !/(?:pre|suf)fix/.test(mode)) {
+            const modeIcon = icons[settingsProps[mode].icon].create()
+            modeIcon.style.cssText = 'width: 28px ; height: 28px ; position: relative ; top: 6px ; margin-left: 11px'
+                                   + ( /autoget|focus|scroll/i.test(mode) ? '; top: 3.5px' : '' ) // raise some icons
+            notif.append(modeIcon)
+        }
 
         // Append styled state word
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `font-weight: bold ; color: ${
                 foundState == menuState.word[0] ? 'rgb(239, 72, 72)' : '#5cef48' }`
-            styledState.append(foundState) ; notif.append(styledState)
+            styledState.append(foundState) ; notif.insertBefore(styledState, notif.children[2])
         }
     }
 
@@ -736,11 +745,20 @@
                 modals.init(schemeModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
 
                 function schemeNotify(scheme) {
+
+                    // Show notification
                     notify(` ${ msgs.menuLabel_colorScheme || 'Color Scheme' }: `
                            + ( scheme == 'light' ? msgs.scheme_light   || 'Light' :
                                scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
-                                                 : msgs.menuLabel_auto || 'Auto' ).toUpperCase()
-                )}
+                                                 : msgs.menuLabel_auto || 'Auto' ).toUpperCase() )
+                    const notifs = document.querySelectorAll('.chatgpt-notif'),
+                          notif = notifs[notifs.length -1]
+
+                    // Append scheme icon
+                    const schemeIcon = icons[scheme == 'light' ? 'sun' : scheme == 'dark' ? 'moon' : 'arrowsCycle'].create()
+                    schemeIcon.style.cssText = 'width: 23px ; height: 23px ; position: relative ; top: 3px ; margin-left: 6px'
+                    notif.append(schemeIcon)
+                }
             }
         },
 
@@ -1360,7 +1378,8 @@
 
             update(...targetIcons) {
                 targetIcons = targetIcons.flat() // flatten array args nested by spread operator
-                if (targetIcons.length == 0) targetIcons = document.querySelectorAll('#widescreen-icon')
+                if (targetIcons.length == 0)
+                    targetIcons = document.querySelectorAll('#widescreen-icon:not(.chatgpt-notif *)')
                 targetIcons.forEach(icon => {
                     icon.firstChild?.remove() // clear prev paths
                     icon.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
@@ -1490,7 +1509,7 @@
                   + '#ddgpt > pre ul { margin: -28px 0 -21px }' // reduce v-padding
                   + '#ddgpt > pre ul > li { margin: -10px 0 0 1.2em ; list-style: inside }' ) // reduce v-padding, show bullets
               + '.katex-html { display: none } ' // hide unrendered math
-              + '.chatgpt-notif { padding: 11px 15px 6px 12px !important }' // pad site notifications
+              + '.chatgpt-notif { fill: white ; stroke: white ; color: white ; padding: 11px 15px 6px 12px !important }'
               + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important ;' // increase alert padding
                   + 'background-color: white !important ; color: black }'
               + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
