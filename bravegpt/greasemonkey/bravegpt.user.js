@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.6.8
+// @version               2024.7.6.9
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -809,7 +809,7 @@ setTimeout(async () => {
                         settingIcon = icons.sparkles.create('fg')
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 6.5px'
                     } else if (key == 'replyLanguage') {
-                        settingIcon = icons.language.create()
+                        settingIcon = icons.languageChars.create()
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 9px'
                     } else if (key == 'scheme') {
                         settingIcon = icons.scheme.create()
@@ -1196,13 +1196,13 @@ setTimeout(async () => {
             }
         },
 
-        language: {
+        languageChars: {
             create() {
-                const languageSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      languageSVGattrs = [['width', 15], ['height', 15], ['viewBox', '0 -960 960 960']]
-                languageSVGattrs.forEach(([attr, value]) => languageSVG.setAttribute(attr, value))
-                languageSVG.append(createSVGelem('path', { stroke: 'none', d: 'm459-48 188-526h125L960-48H847l-35-100H603L568-48H459ZM130-169l-75-75 196-196q-42-45-78-101t-55-105h117q17 32 40.5 67.5T325-514q35-37 70-93t64-119H0v-106h290v-80h106v80h290v106H572q-23 74-70 152T399-438l82 85-39 111-118-121-194 194Zm508-79h139l-69-197-70 197Z' })                )
-                return languageSVG                
+                const languageCharsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      languageCharsSVGattrs = [['width', 15], ['height', 15], ['viewBox', '0 -960 960 960']]
+                languageCharsSVGattrs.forEach(([attr, value]) => languageCharsSVG.setAttribute(attr, value))
+                languageCharsSVG.append(createSVGelem('path', { stroke: 'none', d: 'm459-48 188-526h125L960-48H847l-35-100H603L568-48H459ZM130-169l-75-75 196-196q-42-45-78-101t-55-105h117q17 32 40.5 67.5T325-514q35-37 70-93t64-119H0v-106h290v-80h106v80h290v106H572q-23 74-70 152T399-438l82 85-39 111-118-121-194 194Zm508-79h139l-69-197-70 197Z' })                )
+                return languageCharsSVG                
             }
         },
 
