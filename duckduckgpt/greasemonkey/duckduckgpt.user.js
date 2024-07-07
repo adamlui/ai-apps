@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.6.12
+// @version                2024.7.6.13
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -776,19 +776,19 @@
                     // Create/prepend icons
                     const settingIcon = icons[setting.icon].create(key.match(/bg|fg/)?.[0] ?? '')
                     settingIcon.style.cssText = 'position: relative ;' + (
-                        key.includes('proxy') ? 'top: 3px ; left: -0.5px ; margin-right: 9px'
-                      : key.includes('streaming') ? 'top: 3px ; left: 0.5px ; margin-right: 9px'
+                        /proxy/i.test(key) ? 'top: 3px ; left: -0.5px ; margin-right: 9px'
+                      : /streaming/i.test(key) ? 'top: 3px ; left: 0.5px ; margin-right: 9px'
                       : /auto(?:get|focus)/i.test(key) ? 'top: 4.5px ; margin-right: 7px'
-                      : key.includes('autoScroll') ? 'top: 3.5px ; left: -1.5px ; margin-right: 6px'
+                      : /autoscroll/i.test(key) ? 'top: 3.5px ; left: -1.5px ; margin-right: 6px'
                       : /^rq/.test(key) ? 'top: 2.5px ; left: 0.5px ; margin-right: 9px ; transform: scaleY(-1)'
-                      : key.includes('prefix') ? 'top: 2.5px ; left: 0.5px ; margin-right: 9px'
-                      : key.includes('suffix') ? 'top: 4px ; left: -1.5px ; margin-right: 7px'
-                      : key.includes('Sidebar') ? 'top: 4px ; left: -1.5px ; margin-right: 7.5px'
-                      : key == 'anchor' ? 'top: 3px ; left: -2.5px ; margin-right: 5.5px'
-                      : key.includes('Animation') ? 'top: 3px ; left: -1.5px ; margin-right: 6.5px'
-                      : key.includes('replyLanguage') ? 'top: 3px ; left: -1.5px ; margin-right: 9px'
-                      : key.includes('scheme') ? 'top: 2.5px ; left: -1.5px ; margin-right: 8px'
-                      : key.includes('about') ? 'top: 3px ; left: -3px ; margin-right: 5.5px' : ''
+                      : /prefix/i.test(key) ? 'top: 2.5px ; left: 0.5px ; margin-right: 9px'
+                      : /suffix/i.test(key) ? 'top: 4px ; left: -1.5px ; margin-right: 7px'
+                      : /sidebar/i.test(key) ? 'top: 4px ; left: -1.5px ; margin-right: 7.5px'
+                      : /anchor/i.test(key) ? 'top: 3px ; left: -2.5px ; margin-right: 5.5px'
+                      : /animation/i.test(key) ? 'top: 3px ; left: -1.5px ; margin-right: 6.5px'
+                      : /replylang/i.test(key) ? 'top: 3px ; left: -1.5px ; margin-right: 9px'
+                      : /scheme/i.test(key) ? 'top: 2.5px ; left: -1.5px ; margin-right: 8px'
+                      : /about/i.test(key) ? 'top: 3px ; left: -3px ; margin-right: 5.5px' : ''
                     )
                     settingItem.prepend(settingIcon)
 
