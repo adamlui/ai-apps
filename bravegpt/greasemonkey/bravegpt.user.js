@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.6.11
+// @version               2024.7.6.12
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1056,18 +1056,6 @@ setTimeout(async () => {
 
     const icons = {
 
-        questionMarkCircle: {
-            create() {
-                const questionMarkSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      questionMarkSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
-                questionMarkSVGattrs.forEach(([attr, value]) => questionMarkSVG.setAttribute(attr, value))
-                questionMarkSVG.append(createSVGelem('path', { stroke: 'none',
-                    d: 'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z' }
-                ))
-                return questionMarkSVG
-            }
-        },
-
         anchor: {
             create() {
                 const anchorSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -1077,18 +1065,6 @@ setTimeout(async () => {
                     d: 'M12,2 C13.6568542,2 15,3.34314575 15,5 C15,6.30588222 14.1656226,7.41688515 13.0009007,7.82897577 L13.0008722,19.9379974 C15.8984799,19.5763478 18.3147266,17.665053 19.3940412,15.0596838 L19.417,15 L17,15 C15.9853611,15 15.6358608,13.6848035 16.4495309,13.1641077 L16.5527864,13.1055728 L20.5527864,11.1055728 C21.2176875,10.7731223 22,11.256618 22,12 C22,17.5228475 17.5228475,22 12,22 C6.4771525,22 2,17.5228475 2,12 C2,11.2957433 2.70213089,10.8247365 3.34138467,11.0597803 L3.4472136,11.1055728 L7.4472136,13.1055728 C8.35473419,13.5593331 8.07916306,14.8919819 7.11853213,14.9938221 L7,15 L4.582,15 L4.60595876,15.0596838 C5.68539551,17.6653477 8.10206662,19.5767802 11.0001109,19.9381201 L11.0000889,7.82932572 C9.8348501,7.41751442 9,6.30625206 9,5 C9,3.34314575 10.3431458,2 12,2 Z M12,4 C11.4477153,4 11,4.44771525 11,5 C11,5.55228475 11.4477153,6 12,6 C12.5522847,6 13,5.55228475 13,5 C13,4.44771525 12.5522847,4 12,4 Z' }
                 ))
                 return anchorSVG
-            }
-        },
-
-        arrowUp: {
-            create() {
-                const arrowUpSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      arrowUpSVGattrs = [['width', 16], ['height', 16], ['viewBox', '4 2 16 16'],
-                                         ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']]
-                arrowUpSVGattrs.forEach(([attr, value]) => arrowUpSVG.setAttribute(attr, value))
-                arrowUpSVG.append(createSVGelem('path', { stroke: '', fill: 'none', 'stroke-width': '2', linecap: 'round', 'stroke-linejoin': 'round',
-                    d: 'M7 11L12 6L17 11M12 18V7' }))
-                return arrowUpSVG
             }
         },
 
@@ -1125,13 +1101,15 @@ setTimeout(async () => {
             }
         },
 
-        speechBalloonLasso: {
+        arrowUp: {
             create() {
-                const speechBalloonLassoSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      speechBalloonLassoSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960']]
-                speechBalloonLassoSVGattrs.forEach(([attr, value]) => speechBalloonLassoSVG.setAttribute(attr, value))
-                speechBalloonLassoSVG.append(createSVGelem('path', { stroke: 'none', d: 'M323-41v-247h-10q-105 0-172.5-67T73-528q0-105 74-179t179-74h36l-44-44 69-69 162 162-162 162-69-69 44-44h-36q-64 0-109.5 45.5T171-528q0 64 45.5 109.5T326-373h95v96l96-96h117q64 0 109.5-45.5T789-528q0-64-45.5-109.5T634-683h10v-98h-10q105 0 179 74t74 179q0 105-74 179t-179 74h-77L323-41Z' }))
-                return speechBalloonLassoSVG
+                const arrowUpSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      arrowUpSVGattrs = [['width', 16], ['height', 16], ['viewBox', '4 2 16 16'],
+                                         ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']]
+                arrowUpSVGattrs.forEach(([attr, value]) => arrowUpSVG.setAttribute(attr, value))
+                arrowUpSVG.append(createSVGelem('path', { stroke: '', fill: 'none', 'stroke-width': '2', linecap: 'round', 'stroke-linejoin': 'round',
+                    d: 'M7 11L12 6L17 11M12 18V7' }))
+                return arrowUpSVG
             }
         },
 
@@ -1253,6 +1231,18 @@ setTimeout(async () => {
                 return questionMarkSVG
             }
         },
+
+        questionMarkCircle: {
+            create() {
+                const questionMarkSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      questionMarkSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
+                questionMarkSVGattrs.forEach(([attr, value]) => questionMarkSVG.setAttribute(attr, value))
+                questionMarkSVG.append(createSVGelem('path', { stroke: 'none',
+                    d: 'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z' }
+                ))
+                return questionMarkSVG
+            }
+        },
         
         scheme: {
             create() {
@@ -1329,6 +1319,16 @@ setTimeout(async () => {
             }
         },
 
+        speechBalloonLasso: {
+            create() {
+                const speechBalloonLassoSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      speechBalloonLassoSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960']]
+                speechBalloonLassoSVGattrs.forEach(([attr, value]) => speechBalloonLassoSVG.setAttribute(attr, value))
+                speechBalloonLassoSVG.append(createSVGelem('path', { stroke: 'none', d: 'M323-41v-247h-10q-105 0-172.5-67T73-528q0-105 74-179t179-74h36l-44-44 69-69 162 162-162 162-69-69 44-44h-36q-64 0-109.5 45.5T171-528q0 64 45.5 109.5T326-373h95v96l96-96h117q64 0 109.5-45.5T789-528q0-64-45.5-109.5T634-683h10v-98h-10q105 0 179 74t74 179q0 105-74 179t-179 74h-77L323-41Z' }))
+                return speechBalloonLassoSVG
+            }
+        },
+
         speechBalloons: {
             create() {
                 const speechBalloonSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -1359,6 +1359,16 @@ setTimeout(async () => {
             }
         },
 
+        webCorner: {
+            create() {
+                const webSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      webSVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 0 32 32']]
+                webSVGattrs.forEach(([attr, value]) => webSVG.setAttribute(attr, value))
+                webSVG.append(createSVGelem('path', { stroke: 'none', d: 'M29.9,2.6c-0.1-0.2-0.3-0.4-0.5-0.5C29.3,2,29.1,2,29,2H3C2.4,2,2,2.4,2,3s0.4,1,1,1h2c5,0,9,4,9,9c0,1.9-0.6,3.8-1.8,5.4l-4.9,4.9c-0.4,0.4-0.4,1,0,1.4C7.5,24.9,7.7,25,8,25s0.5-0.1,0.7-0.3l4.9-4.9c1.6-1.2,3.4-1.8,5.4-1.8c5,0,9,4,9,9v2    c0,0.6,0.4,1,1,1s1-0.4,1-1V3C30,2.9,30,2.7,29.9,2.6zM26.6,4l-4.8,4.8c0-1.9-0.8-3.5-2-4.8H26.6z M11.3,4H15c2.7,0,4.8,2.2,4.8,4.8c0,1-0.3,2-0.9,2.9l-3,3C16,14.2,16,13.6,16,13C16,9.3,14.1,6,11.3,4z M19,16c-0.6,0-1.2,0-1.7,0.1l3-3c0.8-0.6,1.8-0.9,2.9-0.9c2.7,0,4.8,2.2,4.8,4.8v3.7C26,17.9,22.7,16,19,16z M23.2,10.2L28,5.4v6.8C26.8,11,25.1,10.2,23.2,10.2z' }))
+                return webSVG
+            }
+        },
+
         widescreen: {
             wideSVGpath() { return createSVGelem('path', {
                 stroke: '', fill: '', 'fill-rule': 'evenodd', d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z'
@@ -1383,16 +1393,6 @@ setTimeout(async () => {
                     icon.firstChild?.remove() // clear prev paths
                     icon.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
                 })
-            }
-        },
-
-        webCorner: {
-            create() {
-                const webSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      webSVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 0 32 32']]
-                webSVGattrs.forEach(([attr, value]) => webSVG.setAttribute(attr, value))
-                webSVG.append(createSVGelem('path', { stroke: 'none', d: 'M29.9,2.6c-0.1-0.2-0.3-0.4-0.5-0.5C29.3,2,29.1,2,29,2H3C2.4,2,2,2.4,2,3s0.4,1,1,1h2c5,0,9,4,9,9c0,1.9-0.6,3.8-1.8,5.4l-4.9,4.9c-0.4,0.4-0.4,1,0,1.4C7.5,24.9,7.7,25,8,25s0.5-0.1,0.7-0.3l4.9-4.9c1.6-1.2,3.4-1.8,5.4-1.8c5,0,9,4,9,9v2    c0,0.6,0.4,1,1,1s1-0.4,1-1V3C30,2.9,30,2.7,29.9,2.6zM26.6,4l-4.8,4.8c0-1.9-0.8-3.5-2-4.8H26.6z M11.3,4H15c2.7,0,4.8,2.2,4.8,4.8c0,1-0.3,2-0.9,2.9l-3,3C16,14.2,16,13.6,16,13C16,9.3,14.1,6,11.3,4z M19,16c-0.6,0-1.2,0-1.7,0.1l3-3c0.8-0.6,1.8-0.9,2.9-0.9c2.7,0,4.8,2.2,4.8,4.8v3.7C26,17.9,22.7,16,19,16z M23.2,10.2L28,5.4v6.8C26.8,11,25.1,10.2,23.2,10.2z' }))
-                return webSVG
             }
         }
     }
