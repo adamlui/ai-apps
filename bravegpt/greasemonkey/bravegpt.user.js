@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.7.1
+// @version               2024.7.7.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1029,10 +1029,14 @@ setTimeout(async () => {
             },
 
             toggle() { // visibility
-                const pinMenu = document.getElementById('pin-menu') || menus.pin.createAppend(),
-                      menuTopPos = ( event.clientY || event.touches?.[0]?.clientY ) > window.innerHeight /2 ? -74 : 48   
-                pinMenu.style.cssText = `top: ${menuTopPos}px ; opacity: `
-                    + `${ event.type == 'mouseover' ? 1 : event.type == 'mouseout' ? 0 : +!parseInt(pinMenu.style.opacity, 10) }`
+                const pinMenu = document.getElementById('pin-menu') || menus.pin.createAppend()
+                if (!menus.pin.topPos)
+                     menus.pin.topPos = ( event.clientY || event.touches?.[0]?.clientY ) < 195 ? 58 : -73
+                if (!menus.pin.rightPos)
+                     menus.pin.rightPos = appDiv.getBoundingClientRect().right - event.clientX - pinMenu.offsetWidth/2
+                pinMenu.style.top = `${menus.pin.topPos}px` ; pinMenu.style.right = `${menus.pin.rightPos}px`
+                pinMenu.style.opacity = (
+                    event.type == 'mouseover' ? 1 : event.type == 'mouseout' ? 0 : +!parseInt(pinMenu.style.opacity, 10) )
             }
         }
     }
@@ -1546,10 +1550,9 @@ setTimeout(async () => {
                       + 'background-color: black !important ; color: white }'
                   + '.primary-modal-btn { background: hsl(186 100% 69%) !important ; color: black !important }'
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
-              + '.bravegpt-menu {'
-                  + 'font-family: "Source Sans Pro", sans-serif ; font-size: 12px ;'
-                  + 'position: absolute ; right: 82px ; z-index: 2250 }'
-              + '.bravegpt-menu ul { padding: 1.5px 0 ; margin: 0 ; list-style: none }'
+              + '.bravegpt-menu { position: absolute ; z-index: 2250 ;'
+                  + 'padding: 3.5px 5px 4.5px !important ; font-family: "Source Sans Pro", sans-serif ; font-size: 12px }'
+              + '.bravegpt-menu ul { margin: 0 ; padding: 0 ; list-style: none }'
               + '.bravegpt-menu-item { padding: 0 5px ; line-height: 20.5px }'
               + '.bravegpt-menu-item:not(.bravegpt-menu-header):hover {'
                   + 'cursor: pointer ; background: white ; color: black ; fill: black }'
@@ -1945,7 +1948,7 @@ setTimeout(async () => {
     const toggle = {
 
         anchorMode(state = '') {
-            const prevState = config.anchored // for restraining notif if no change from #pin-menu Nothing-click
+            const prevState = config.anchored // for restraining notif if no change from #pin-menu 'Sidebar' click
             if (state == 'on' || !state && !config.anchored) { // toggle on
                 if (config.stickySidebar) toggle.sidebar('sticky')
                 saveSetting('anchored', true)
@@ -1955,8 +1958,10 @@ setTimeout(async () => {
                 const anchorToggle = document.querySelector('[id*="anchor"][id*="menu-entry"] input')
                 if (anchorToggle.checked != config.anchored) modals.settings.toggle.switch(anchorToggle)
             }
-            if (prevState != config.anchored)
+            if (prevState != config.anchored) {
+                menus.pin.topPos = menus.pin.rightPos = null
                 notify(( msgs.mode_anchor || 'Anchor Mode' ) + ' ' + menuState.word[+config.anchored])
+            }
         },
 
         animations(layer) {
@@ -2616,6 +2621,7 @@ setTimeout(async () => {
                         appAlert('waitingResponse')
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
                         show.reply.submitSrc = 'click' ; show.reply.chatbarFocused = false
+                        menus.pin.topPos = menus.pin.rightPos = null
                         get.reply(msgChain)
                     }
 

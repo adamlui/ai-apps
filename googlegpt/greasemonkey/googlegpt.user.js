@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.7.2
+// @version                  2024.7.7.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1215,10 +1215,14 @@
             },
 
             toggle() { // visibility
-                const pinMenu = document.getElementById('pin-menu') || menus.pin.createAppend(),
-                      menuTopPos = ( event.clientY || event.touches?.[0]?.clientY ) > window.innerHeight /2 ? -81 : 48   
-                pinMenu.style.cssText = `top: ${menuTopPos}px ; opacity: `
-                    + `${ event.type == 'mouseover' ? 1 : event.type == 'mouseout' ? 0 : +!parseInt(pinMenu.style.opacity, 10) }`
+                const pinMenu = document.getElementById('pin-menu') || menus.pin.createAppend()
+                if (!menus.pin.topPos)
+                     menus.pin.topPos = ( event.clientY || event.touches?.[0]?.clientY ) < 195 ? 51 : -79
+                if (!menus.pin.rightPos)
+                     menus.pin.rightPos = appDiv.getBoundingClientRect().right - event.clientX - pinMenu.offsetWidth/2
+                pinMenu.style.top = `${menus.pin.topPos}px` ; pinMenu.style.right = `${menus.pin.rightPos}px`
+                pinMenu.style.opacity = (
+                    event.type == 'mouseover' ? 1 : event.type == 'mouseout' ? 0 : +!parseInt(pinMenu.style.opacity, 10) )
             }
         }
     }
@@ -1734,10 +1738,9 @@
                   + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                   + 'transition: opacity 0.35s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                               + 'transform 0.35s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
-              + '.googlegpt-menu {'
-                  + 'font-family: "Source Sans Pro", sans-serif ; font-size: 12px ;'
-                  + 'position: absolute ; right: 82px ; z-index: 2250 }'
-              + '.googlegpt-menu ul { padding: 1.5px 0 ; margin: 0 ; list-style: none }'
+              + '.googlegpt-menu { position: absolute ; z-index: 12250 ;'
+                  + 'padding: 3.5px 5px !important ; font-family: "Source Sans Pro", sans-serif ; font-size: 12px }'
+              + '.googlegpt-menu ul { margin: 0 ; padding: 0 ; list-style: none }'
               + '.googlegpt-menu-item { padding: 0 5px ; line-height: 20.5px }'
               + '.googlegpt-menu-item:not(.googlegpt-menu-header):hover {'
                   + 'cursor: pointer ; background: white ; color: black ; fill: black }'
@@ -2150,7 +2153,7 @@
     const toggle = {
 
         anchorMode(state = '') {
-            const prevState = config.anchored // for restraining notif if no change from #pin-menu Nothing-click
+            const prevState = config.anchored // for restraining notif if no change from #pin-menu 'Sidebar' click
             if (state == 'on' || !state && !config.anchored) { // toggle on
                 if (config.stickySidebar) toggle.sidebar('sticky')
                 saveSetting('anchored', true)
@@ -2160,8 +2163,10 @@
                 const anchorToggle = document.querySelector('[id*="anchor"][id*="menu-entry"] input')
                 if (anchorToggle.checked != config.anchored) modals.settings.toggle.switch(anchorToggle)
             }
-            if (prevState != config.anchored)
+            if (prevState != config.anchored) {
+                menus.pin.topPos = menus.pin.rightPos = null
                 notify(( msgs.mode_anchor || 'Anchor Mode' ) + ' ' + menuState.word[+config.anchored])
+            }
         },
 
         animations(layer) {
@@ -2836,6 +2841,7 @@
                         appAlert('waitingResponse')
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
                         show.reply.submitSrc = 'click' ; show.reply.chatbarFocused = false
+                        menus.pin.topPos = menus.pin.rightPos = null
                         get.reply(msgChain)
                     }
 
