@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.6.3
+// @version               2024.7.6.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -322,10 +322,10 @@ setTimeout(async () => {
         suffixEnabled: { type: 'toggle',
             label: `${ msgs.menuLabel_require || 'Require' } "?" ${ msgs.menuLabel_afterQuery || 'after query' }`,
             helptip: msgs.helptip_suffixMode || 'Require "?" after queries for answers to show' },
-        widerSidebar: { type: 'toggle', mobile: false, centered: false,
+        widerSidebar: { type: 'toggle', mobile: false
             label: msgs.menuLabel_widerSidebar || 'Wider Sidebar',
             helptip: msgs.helptip_widerSidebar || 'Horizontally expand search page sidebar' },
-        stickySidebar: { type: 'toggle', mobile: false, centered: false,
+        stickySidebar: { type: 'toggle', mobile: false
             label: msgs.menuLabel_stickySidebar || 'Sticky Sidebar',
             helptip: msgs.helptip_stickySidebar || 'Makes BraveGPT visible in sidebar even as you scroll' },
         anchor: { type: 'toggle', mobile: false,
