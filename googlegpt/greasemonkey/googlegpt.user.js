@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.6.4
+// @version                  2024.7.6.5
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -971,7 +971,7 @@
                         settingIcon = icons.arrowsDown.create()
                         settingIcon.style.cssText = 'position: relative ; top: 3.5px ; left: -1.5px ; margin-right: 6px'
                     } else if (key == 'rqDisabled') {
-                        settingIcon = icons.speechBalloon.create()
+                        settingIcon = icons.speechBalloons.create()
                         settingIcon.style.cssText = 'position: relative ; top: 2.5px ; left: 0.5px ; margin-right: 9px ; transform: scaleY(-1)'
                     } else if (key == 'prefixEnabled') {
                         settingIcon = icons.slash.create()
@@ -1527,7 +1527,7 @@
             }
         },
 
-        speechBalloon: {
+        speechBalloons: {
             create() {
                 const speechBalloonSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       speechBalloonSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 -960 960 960']]
