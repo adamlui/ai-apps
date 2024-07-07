@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.6.11
+// @version                2024.7.6.12
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -774,56 +774,22 @@
                     settingItem.append(settingLabel) ; settingsList.append(settingItem)
 
                     // Create/prepend icons
-                    let settingIcon
-                    if (key == 'proxyAPIenabled') {
-                        settingIcon = icons.sunglasses.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -0.5px ; margin-right: 9px'
-                    } else if (key == 'streamingDisabled') {
-                        settingIcon = icons.signalStream.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: 0.5px ; margin-right: 9px'
-                    } else if (key == 'autoGet') {
-                        settingIcon = icons.speechBalloonLasso.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 4.5px ; margin-right: 7px'
-                    } else if (key == 'autoFocusChatbarDisabled') {
-                        settingIcon = icons.caretsInward.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 4.5px ; margin-right: 7px'
-                    } else if (key == 'autoScroll') {
-                        settingIcon = icons.arrowsDown.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 3.5px ; left: -1.5px ; margin-right: 6px'
-                    } else if (key == 'rqDisabled') {
-                        settingIcon = icons.speechBalloons.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 2.5px ; left: 0.5px ; margin-right: 9px ; transform: scaleY(-1)'
-                    } else if (key == 'prefixEnabled') {
-                        settingIcon = icons.slash.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 2.5px ; left: 0.5px ; margin-right: 9px'
-                    } else if (key == 'suffixEnabled') {
-                        settingIcon = icons.questionMark.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 4px ; left: -1.5px ; margin-right: 7px'
-                    } else if (key == 'widerSidebar') {
-                        settingIcon = icons.widescreen.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 4px ; left: -1.5px ; margin-right: 7.5px'
-                    } else if (key == 'stickySidebar') {
-                        settingIcon = icons.webCorner.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 4px ; left: -1.5px ; margin-right: 7.5px'
-                    } else if (key.includes('anchor')) {
-                        settingIcon = icons.anchor.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -2.5px ; margin-right: 5.5px'
-                    } else if (key.includes('bgAnimation')) {
-                        settingIcon = icons.sparkles.create('bg')
-                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 6.5px'
-                    } else if (key.includes('fgAnimation')) {
-                        settingIcon = icons.sparkles.create('fg')
-                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 6.5px'
-                    } else if (key == 'replyLanguage') {
-                        settingIcon = icons.languageChars.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 9px'
-                    } else if (key == 'scheme') {
-                        settingIcon = icons.scheme.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 2.5px ; left: -1.5px ; margin-right: 8px'
-                    } else if (key == 'about') {
-                        settingIcon = icons.questionMarkCircle.create()
-                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -3px ; margin-right: 5.5px'
-                    }
+                    const settingIcon = icons[setting.icon].create(key.match(/bg|fg/)?.[0] ?? '')
+                    settingIcon.style.cssText = 'position: relative ;' + (
+                        key.includes('proxy') ? 'top: 3px ; left: -0.5px ; margin-right: 9px'
+                      : key.includes('streaming') ? 'top: 3px ; left: 0.5px ; margin-right: 9px'
+                      : /auto(?:get|focus)/i.test(key) ? 'top: 4.5px ; margin-right: 7px'
+                      : key.includes('autoScroll') ? 'top: 3.5px ; left: -1.5px ; margin-right: 6px'
+                      : /^rq/.test(key) ? 'top: 2.5px ; left: 0.5px ; margin-right: 9px ; transform: scaleY(-1)'
+                      : key.includes('prefix') ? 'top: 2.5px ; left: 0.5px ; margin-right: 9px'
+                      : key.includes('suffix') ? 'top: 4px ; left: -1.5px ; margin-right: 7px'
+                      : key.includes('Sidebar') ? 'top: 4px ; left: -1.5px ; margin-right: 7.5px'
+                      : key == 'anchor' ? 'top: 3px ; left: -2.5px ; margin-right: 5.5px'
+                      : key.includes('Animation') ? 'top: 3px ; left: -1.5px ; margin-right: 6.5px'
+                      : key.includes('replyLanguage') ? 'top: 3px ; left: -1.5px ; margin-right: 9px'
+                      : key.includes('scheme') ? 'top: 2.5px ; left: -1.5px ; margin-right: 8px'
+                      : key.includes('about') ? 'top: 3px ; left: -3px ; margin-right: 5.5px' : ''
+                    )
                     settingItem.prepend(settingIcon)
 
                     // Create/append toggles/listeners
