@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.6.17
+// @version                2024.7.6.18
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -485,8 +485,9 @@
         const mode = Object.keys(settingsProps).find(key => settingsProps[key].label.includes(msg.trim()))
         if (mode && !/(?:pre|suf)fix/.test(mode)) {
             const modeIcon = icons[settingsProps[mode].icon].create()
-            modeIcon.style.cssText = 'width: 28px ; height: 28px ; position: relative ; top: 6px ; margin-left: 11px'
-                                   + ( /autoget|focus|scroll/i.test(mode) ? '; top: 3.5px' : '' ) // raise some icons
+            modeIcon.style.cssText = 'width: 28px ; height: 28px ; position: relative ; top: 6px ; margin-left: 11px ;'
+                                   + ( /autoget|focus|scroll/i.test(mode) ? 'top: 3.5px' : '' ) // raise some icons
+                                   + ( /animation/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink sparkles icon
             notif.append(modeIcon)
         }
 
