@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.6.9
+// @version               2024.7.6.10
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -815,7 +815,7 @@ setTimeout(async () => {
                         settingIcon = icons.scheme.create()
                         settingIcon.style.cssText = 'position: relative ; top: 2.5px ; left: -1.5px ; margin-right: 8px'
                     } else if (key == 'about') {
-                        settingIcon = icons.about.create()
+                        settingIcon = icons.questionMarkCircle.create()
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -3px ; margin-right: 5.5px'
                     }
                     settingItem.prepend(settingIcon)
@@ -1056,15 +1056,15 @@ setTimeout(async () => {
 
     const icons = {
 
-        about: {
+        questionMarkCircle: {
             create() {
-                const aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      aboutSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
-                aboutSVGattrs.forEach(([attr, value]) => aboutSVG.setAttribute(attr, value))
-                aboutSVG.append(createSVGelem('path', { stroke: 'none',
+                const questionMarkSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      questionMarkSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
+                questionMarkSVGattrs.forEach(([attr, value]) => questionMarkSVG.setAttribute(attr, value))
+                questionMarkSVG.append(createSVGelem('path', { stroke: 'none',
                     d: 'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z' }
                 ))
-                return aboutSVG
+                return questionMarkSVG
             }
         },
 
@@ -2514,7 +2514,7 @@ setTimeout(async () => {
 
                 // Create/append About button
                 const aboutSpan = document.createElement('span'),
-                      aboutSVG = icons.about.create()
+                      aboutSVG = icons.questionMarkCircle.create()
                 aboutSpan.id = 'about-btn' // for toggle.tooltip()
                 aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = '0.8px'
                 aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
