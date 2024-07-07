@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.7.1
+// @version                  2024.7.7.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1938,7 +1938,7 @@
                       .filter(type => { // exclude invisible ones                                                
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
-            const [ctrAddend, spreadFactor] = [11, 28],
+            const [ctrAddend, spreadFactor] = [8, 28],
                   iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.35
                                               : buttonType == 'shuffle' ? 2.25
                                               : cornerBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
