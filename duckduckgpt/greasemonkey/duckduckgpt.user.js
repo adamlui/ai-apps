@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.6.16
+// @version                2024.7.6.17
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1061,7 +1061,7 @@
         arrowsCycle: {
             create() {
                 const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      arrowsSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 -1020 960 960']]
+                      arrowsSVGattrs = [['id', 'arrows-cycle'], ['width', 13], ['height', 13], ['viewBox', '197 -924 573 891']]
                 arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
                 arrowsSVG.append(createSVGelem('path', { stroke: 'none', d: 'M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z' }))
                 return arrowsSVG
@@ -1616,8 +1616,10 @@
                   + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
                   + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.16)' }}` // add zoom
               + '#ddgpt-settings li > input { float: right }' // pos toggles
-              + '#scheme-menu-entry > span { margin: 0 -2px !important }' // align Scheme status
-              + '#scheme-menu-entry > span > svg { position: relative ; top: 3px ; margin-left: 3px }' // v-align/left-pad Scheme status icon
+              + '#scheme-menu-entry > span { margin: 0 -2px }' // align Scheme status
+              + '#scheme-menu-entry > span > svg { position: relative ; top: 3px ; margin-left: 4px }' // v-align/left-pad Scheme status icon
+              + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
+              + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
               + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
               + '#about-menu-entry > span { width: 92px ; overflow: hidden ;' // outer About status span
                   + `${ config.fgAnimationsDisabled ? '' : 'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' }}`
