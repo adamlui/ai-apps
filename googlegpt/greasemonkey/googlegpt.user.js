@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.7
+// @version                  2024.7.7.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -432,7 +432,7 @@
                       : window.location.hostname.split('.').pop()
     loadSetting('anchored', 'autoGet', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'fgAnimationsDisabled',
                 'fontSize', 'minimized', 'notFirstRun', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled',
-                 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+                'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', isMobile ? 14 : 16.55) // init reply font size if unset
     if ( // disable streaming in unspported envs
@@ -1166,7 +1166,7 @@
 
             createAppend() {
                 const pinMenu = document.createElement('div') ; pinMenu.id = 'pin-menu'
-                pinMenu.classList.add('googlegpt-menu', 'fade-in-less', 'no-user-select')
+                pinMenu.classList.add('googlegpt-menu', 'btn-tooltip', 'fade-in-less', 'no-user-select')
                 menus.pin.update(pinMenu) ; appDiv.append(pinMenu)
                 return pinMenu
             },
@@ -1184,7 +1184,7 @@
 
                 // Style icons
                 pinMenuIcons.forEach(icon => icon.style.cssText = (
-                    'width: 12px ; height: 12px ; position: relative ; top: 1.5px ; right: 5px ; margin-left: 5px'))
+                    'width: 12px ; height: 12px ; position: relative ; top: 1px ; right: 5px ; margin-left: 5px'))
                 pinMenuIcons[0].style.width = pinMenuIcons[0].style.height = '11px' // shrink corner web icon
                 pinMenuIcons[3].style.cssText = 'position: relative ; float: right ; margin-right: -16px ; top: 4px' // re-style checkmarks
 
@@ -1195,9 +1195,9 @@
                     pinMenuItems[i].className = 'googlegpt-menu-item'
                     if (i == 0) { // format header item
                         pinMenuItems[i].innerHTML = `<b>${pinMenulabels[i]}</b>`
-                        pinMenuItems[i].classList.add('googlegpt-menu-header') // to not apply hover fx in appStyle
-                        pinMenuItems[i].style.marginBottom = '1px'
-                    }
+                        pinMenuItems[i].classList.add('googlegpt-menu-header') // to not apply hover fx from appStyle
+                        pinMenuItems[i].style.cssText = 'margin-bottom: 1px ; border-bottom: 1px dotted white'
+                    } else if (i == 1) pinMenuItems[i].style.marginTop = '3px' // top-pad first non-header item
                     pinMenuItems[i].style.paddingRight = '24px' // make room for checkmark
                     pinMenuItems[i].prepend(i > 0 ? pinMenuIcons[i -1] : '') // prepend left icon
                     if (i == 1 && config.stickySidebar // 'Top' item + Sticky mode on
@@ -1423,7 +1423,7 @@
         sidebar: {
             create() {
                 const sidebarSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      sidebarSVGattrs = [['width', 15], ['height', 15], ['viewBox', '0 -1075 900 900']]
+                      sidebarSVGattrs = [['width', 15], ['height', 15], ['viewBox', '0 -975 900 1000']]
                 sidebarSVGattrs.forEach(([attr, value]) => sidebarSVG.setAttribute(attr, value))
                 sidebarSVG.append(createSVGelem('path', { stroke: 'none', d: 'M800-160q33 0 56.5-23.5T880-240v-480q0-33-23.5-56.5T800-800H160q-33 0-56.5 23.5T80-720v480q0 33 23.5 56.5T160-160h640Zm-240-80H160v-480h400v480Zm80 0v-480H800v480H640Zm160 0v-480 480Zm-160 0h-80 80Zm0-480h-80 80Z' }))
                 return sidebarSVG
@@ -1736,15 +1736,11 @@
                               + 'transform 0.35s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
               + '.googlegpt-menu {'
                   + 'font-family: "Source Sans Pro", sans-serif ; font-size: 12px ;'
-                  + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ; border-radius: 5px ;`
-                  + ( scheme == 'dark' ? 'background-color: black ; color: white ; fill: white'
-                                       : 'background-color: #f7f7f7d6 ; color: black ; fill: black' ) + ';'
-                  + 'position: absolute ; right: 82px ; z-index: 2250 ;'
-                  + 'box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ;  }'
-              + '.googlegpt-menu ul { padding: 5.5px 0 ; margin: 0 ; list-style: none }'
-              + '.googlegpt-menu-item { padding: 0 10px ; line-height: 20.5px }'
+                  + 'position: absolute ; right: 82px ; z-index: 2250 }'
+              + '.googlegpt-menu ul { padding: 1.5px 0 ; margin: 0 ; list-style: none }'
+              + '.googlegpt-menu-item { padding: 0 5px ; line-height: 20.5px }'
               + '.googlegpt-menu-item:not(.googlegpt-menu-header):hover {'
-                  + 'cursor: pointer ; background: blue ; color: white ; fill: white }'
+                  + 'cursor: pointer ; background: white ; color: black ; fill: black }'
               + '#googlegpt footer {'
                   + 'position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ; line-height: 1.43em ;'
                   + `margin: ${ isFirefox ? 1 : -2 }px -32px 12px }`
@@ -3151,7 +3147,7 @@
         var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
         document.head.append(createStyle('.btn-tooltip {'
             + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-            + 'font-size: 0.75rem ; color: white ;' // font style
+            + 'font-size: 0.75rem ; color: white ; fill: white ; stroke: white ;' // font/icon style
             + 'position: absolute ;' // for update.tooltip() calcs
             + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
             + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 1250 }' // visibility
