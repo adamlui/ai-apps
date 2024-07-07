@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.6.18
+// @version               2024.7.6.19
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -472,7 +472,7 @@ setTimeout(async () => {
 
         // Prepend app icon
         const notifIcon = icons.braveGPT.create()
-        notifIcon.style.cssText = 'width: 29px ; position: relative ; top: 4.8px ; margin-right: 8px'
+        notifIcon.style.cssText = 'width: 29px ; position: relative ; top: 4.8px ; margin-right: 6px'
         notif.prepend(notifIcon)
 
         // Append mode icon
@@ -493,7 +493,7 @@ setTimeout(async () => {
         }
     }
 
-    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = 474) {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width)}
 
     function appAlert(...alerts) {
