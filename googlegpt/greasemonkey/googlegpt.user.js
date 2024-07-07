@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.6.13
+// @version                  2024.7.6.14
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1603,7 +1603,9 @@
                   + ( isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
                   + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
                   + `background: radial-gradient(ellipse at bottom, ${ scheme == 'dark' ? '#2f3031 0%, #090a0f' : 'white 0%, white' } 100%) ;`
-                  + ( !config.fgAnimationsDisabled ? 'transition: bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1) ;' : '' ) // smoothen Anchor minimize/restore
+                  + ( !config.fgAnimationsDisabled ?
+                        'transition: bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1)' // smoothen Anchor minimize/restore
+                                  + 'opacity 0.5s ease, transform 0.5s ease ;' : '' ) // smoothen 1st app fade-in
                   + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
               + '#googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
               + '#googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
@@ -1667,7 +1669,7 @@
                   + `background: ${ scheme == 'dark' ? '#a2a2a270' : '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
               + '.related-query svg { float: left ; margin: -0.09em 6px 0 0 ;' // related query icon
                   + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
-              + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
+              + '.fade-in { opacity: 0 ; transform: translateY(10px) }'
               + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
               + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
               + '.chatbar-btn { z-index: 560 ;'
