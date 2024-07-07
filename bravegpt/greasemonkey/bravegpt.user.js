@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.6.5
+// @version               2024.7.6.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -776,7 +776,7 @@ setTimeout(async () => {
                         settingIcon = icons.signalStream.create()
                         settingIcon.style.cssText = 'position: relative ; top: 3px ; left: 0.5px ; margin-right: 9px'
                     } else if (key.includes('autoGet')) {
-                        settingIcon = icons.autoSpeechBalloon.create()
+                        settingIcon = icons.speechBalloonArrowed.create()
                         settingIcon.style.cssText = 'position: relative ; top: 4.5px ; margin-right: 7px'
                     } else if (key == 'autoFocusChatbarDisabled') {
                         settingIcon = icons.caretsInward.create()
@@ -1125,13 +1125,13 @@ setTimeout(async () => {
             }
         },
 
-        autoSpeechBalloon: {
+        speechBalloonArrowed: {
             create() {
-                const autoSpeechBalloonSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      autoSpeechBalloonSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960']]
-                autoSpeechBalloonSVGattrs.forEach(([attr, value]) => autoSpeechBalloonSVG.setAttribute(attr, value))
-                autoSpeechBalloonSVG.append(createSVGelem('path', { stroke: 'none', d: 'M323-41v-247h-10q-105 0-172.5-67T73-528q0-105 74-179t179-74h36l-44-44 69-69 162 162-162 162-69-69 44-44h-36q-64 0-109.5 45.5T171-528q0 64 45.5 109.5T326-373h95v96l96-96h117q64 0 109.5-45.5T789-528q0-64-45.5-109.5T634-683h10v-98h-10q105 0 179 74t74 179q0 105-74 179t-179 74h-77L323-41Z' }))
-                return autoSpeechBalloonSVG
+                const speechBalloonArrowedSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      speechBalloonArrowedSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960']]
+                speechBalloonArrowedSVGattrs.forEach(([attr, value]) => speechBalloonArrowedSVG.setAttribute(attr, value))
+                speechBalloonArrowedSVG.append(createSVGelem('path', { stroke: 'none', d: 'M323-41v-247h-10q-105 0-172.5-67T73-528q0-105 74-179t179-74h36l-44-44 69-69 162 162-162 162-69-69 44-44h-36q-64 0-109.5 45.5T171-528q0 64 45.5 109.5T326-373h95v96l96-96h117q64 0 109.5-45.5T789-528q0-64-45.5-109.5T634-683h10v-98h-10q105 0 179 74t74 179q0 105-74 179t-179 74h-77L323-41Z' }))
+                return speechBalloonArrowedSVG
             }
         },
 
