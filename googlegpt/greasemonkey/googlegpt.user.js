@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.6.20
+// @version                  2024.7.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -422,7 +422,7 @@
         appURL: 'https://www.googlegpt.io', gitHubURL: 'https://github.com/KudoAI/googlegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: isMobile ? 1.357 : 1.375,
-        latestAssetCommitHash: '4c16362' } // for cached messages.json
+        latestAssetCommitHash: '95e63e0' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -1155,9 +1155,9 @@
 
                 // Switch mode
                 if ([msgs.menuLabel_top, 'Top'].includes(itemLabel)) toggle.sidebar('sticky')
-                else if ([msgs.menuLabel_bottom, 'Bottom'].includes(itemLabel)) toggle.anchorMode()
-                else if ([msgs.menuLabel_nothing, 'Nothing'].includes(itemLabel)) {
+                else if ([msgs.menuLabel_sidebar, 'Sidebar'].includes(itemLabel)) {
                     toggle.sidebar('sticky', 'off') ; toggle.anchorMode('off') }
+                else if ([msgs.menuLabel_bottom, 'Bottom'].includes(itemLabel)) toggle.anchorMode()
 
                 // Close/update menu
                 if (appDiv.offsetTop != prevOffsetTop) pinMenu.remove() // since app moved
@@ -1174,21 +1174,19 @@
             update(pinMenu) {
                 while (pinMenu.firstChild) pinMenu.removeChild(pinMenu.firstChild) // clear content
 
-                // Init elems/labels
+                // Init core elems
                 const pinMenuUL = document.querySelector('#pin-menu ul') || document.createElement('ul'),
-                      pinMenuItems = [], pinMenulabels = [
-                          `${ msgs.tooltip_pinTo || 'Pin to' }...`, msgs.menuLabel_top || 'Top',
-                           msgs.menuLabel_bottom || 'Bottom', msgs.menuLabel_nothing || 'Nothing' ]
+                      pinMenuItems = []
+                const pinMenulabels = [
+                    `${ msgs.tooltip_pinTo || 'Pin to' }...`, msgs.menuLabel_top || 'Top',
+                    msgs.menuLabel_sidebar || 'Sidebar', msgs.menuLabel_bottom || 'Bottom' ]
+                const pinMenuIcons = [icons.webCorner.create(), icons.sidebar.create(), icons.anchor.create(), icons.checkmark.create()]
 
-                // Init icons
-                const webCornerSVG = icons.webCorner.create(),
-                      anchorSVG = icons.anchor.create(),
-                      checkmarkSVG = icons.checkmark.create()
-                webCornerSVG.style.cssText = anchorSVG.style.cssText = (
-                    'position: relative ; top: 1.5px ; right: 5px ; margin-left: 5px' )
-                webCornerSVG.style.width = webCornerSVG.style.height = '11px'
-                anchorSVG.style.width = anchorSVG.style.height = '12px'
-                checkmarkSVG.style.cssText = 'position: relative ; float: right ; margin-right: -18px ; top: 5px'
+                // Style icons
+                pinMenuIcons.forEach(icon => icon.style.cssText = (
+                    'width: 12px ; height: 12px ; position: relative ; top: 1.5px ; right: 5px ; margin-left: 5px'))
+                pinMenuIcons[0].style.width = pinMenuIcons[0].style.height = '11px' // shrink corner web icon
+                pinMenuIcons[3].style.cssText = 'position: relative ; float: right ; margin-right: -16px ; top: 4px' // re-style checkmarks
 
                 // Fill menu UL
                 for (let i = 0 ; i < 4 ; i++) {
@@ -1199,11 +1197,13 @@
                         pinMenuItems[i].innerHTML = `<b>${pinMenulabels[i]}</b>`
                         pinMenuItems[i].classList.add('googlegpt-menu-header') // to not apply hover fx in appStyle
                         pinMenuItems[i].style.marginBottom = '1px'
-                    } else if (i == 3) pinMenuItems[i].style.paddingLeft = '27px' // left-pad 'Nothing' item to align w/ items w/ icons
-                    pinMenuItems[i].style.paddingRight = '25px' // make room for checkmark
-                    pinMenuItems[i].prepend(i == 1 ? webCornerSVG : i == 2 ? anchorSVG : '')
-                    if (config.stickySidebar && i == 1 || config.anchored && i == 2 || !config.stickySidebar && !config.anchored && i == 3)
-                        pinMenuItems[i].append(checkmarkSVG)
+                    }
+                    pinMenuItems[i].style.paddingRight = '24px' // make room for checkmark
+                    pinMenuItems[i].prepend(i > 0 ? pinMenuIcons[i -1] : '') // prepend left icon
+                    if (i == 1 && config.stickySidebar // 'Top' item + Sticky mode on
+                     || i == 2 && !config.stickySidebar && !config.anchored // 'Sidebar' item + no mode on
+                     || i == 3 && config.anchored) // 'Bottom' item + Anchor mode on
+                            pinMenuItems[i].append(pinMenuIcons[pinMenuIcons.length -1]) // append right checkmark
                     pinMenuItems[i].onclick = menus.pin.clickHandler
                     pinMenuUL.append(pinMenuItems[i])
                 }
@@ -1379,29 +1379,12 @@
         },
 
         pin: {
-            filledSVGpath() { return createSVGelem('path', { stroke: '',
-                d: 'M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z'
-            })},
-
-            hollowSVGpath() { return createSVGelem('path', { stroke: '',
-                d: 'M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146zm.122 2.112v-.002.002zm0-.002v.002a.5.5 0 0 1-.122.51L6.293 6.878a.5.5 0 0 1-.511.12H5.78l-.014-.004a4.507 4.507 0 0 0-.288-.076 4.922 4.922 0 0 0-.765-.116c-.422-.028-.836.008-1.175.15l5.51 5.509c.141-.34.177-.753.149-1.175a4.924 4.924 0 0 0-.192-1.054l-.004-.013v-.001a.5.5 0 0 1 .12-.512l3.536-3.535a.5.5 0 0 1 .532-.115l.096.022c.087.017.208.034.344.034.114 0 .23-.011.343-.04L9.927 2.028c-.029.113-.04.23-.04.343a1.779 1.779 0 0 0 .062.46z'
-            })},
-
             create() {
                 const pinSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       pinSVGattrs = [['id', 'pin-icon'], ['width', 17], ['height', 17], ['viewBox', '0 0 16 16']]
                 pinSVGattrs.forEach(([attr, value]) => pinSVG.setAttribute(attr, value))
-                icons.pin.update(pinSVG)
+                pinSVG.append(createSVGelem('path', { stroke: '', d: 'M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z' }))
                 return pinSVG
-            },
-
-            update(...targetIcons) {
-                targetIcons = targetIcons.flat() // flatten array args nested by spread operator
-                if (targetIcons.length == 0) targetIcons = document.querySelectorAll('#pin-icon')
-                targetIcons.forEach(icon => {
-                    icon.firstChild?.remove() // clear prev paths
-                    icon.append(icons.pin[config.stickySidebar || config.anchored ? 'filledSVGpath' : 'hollowSVGpath']())
-                })
             }
         },
         
@@ -1434,6 +1417,16 @@
                 schemeSVGattrs.forEach(([attr, value]) => schemeSVG.setAttribute(attr, value))
                 schemeSVG.append(createSVGelem('path', { stroke: 'none', d: 'M479.92-34q-91.56 0-173.4-35.02t-142.16-95.34q-60.32-60.32-95.34-142.24Q34-388.53 34-480.08q0-91.56 35.02-173.4t95.34-142.16q60.32-60.32 142.24-95.34Q388.53-926 480.08-926q91.56 0 173.4 35.02t142.16 95.34q60.32 60.32 95.34 142.24Q926-571.47 926-479.92q0 91.56-35.02 173.4t-95.34 142.16q-60.32 60.32-142.24 95.34Q571.47-34 479.92-34ZM530-174q113-19 186.5-102.78T790-480q0-116.71-73.5-201.35Q643-766 530-785v611Z' }))
                 return schemeSVG
+            }
+        },
+        
+        sidebar: {
+            create() {
+                const sidebarSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      sidebarSVGattrs = [['width', 15], ['height', 15], ['viewBox', '0 -1075 900 900']]
+                sidebarSVGattrs.forEach(([attr, value]) => sidebarSVG.setAttribute(attr, value))
+                sidebarSVG.append(createSVGelem('path', { stroke: 'none', d: 'M800-160q33 0 56.5-23.5T880-240v-480q0-33-23.5-56.5T800-800H160q-33 0-56.5 23.5T80-720v480q0 33 23.5 56.5T160-160h640Zm-240-80H160v-480h400v480Zm80 0v-480H800v480H640Zm160 0v-480 480Zm-160 0h-80 80Zm0-480h-80 80Z' }))
+                return sidebarSVG
             }
         },
         
@@ -2171,7 +2164,6 @@
                 const anchorToggle = document.querySelector('[id*="anchor"][id*="menu-entry"] input')
                 if (anchorToggle.checked != config.anchored) modals.settings.toggle.switch(anchorToggle)
             }
-            icons.pin.update()
             if (prevState != config.anchored)
                 notify(( msgs.mode_anchor || 'Anchor Mode' ) + ' ' + menuState.word[+config.anchored])
         },
@@ -2252,7 +2244,7 @@
                 saveSetting(mode + 'Sidebar', true)
             } else saveSetting(mode + 'Sidebar', false)
             update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
-            icons[mode == 'wider' ? 'widescreen' : 'pin'].update() // toggle icons everywhere
+            if (mode == 'wider') icons.widescreen.update() // toggle icons everywhere
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const stickySidebarToggle = document.querySelector('[id*="sticky"][id*="menu-entry"] input')
                 if (stickySidebarToggle.checked != config.stickySidebar) modals.settings.toggle.switch(stickySidebarToggle)
