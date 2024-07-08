@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.7.3
+// @version                2024.7.8
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1450,10 +1450,10 @@
               + ( config.fgAnimationsDisabled ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
               + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
                   + 'border-radius: 4px ; border: 1px solid #888 ;'
-                  + 'transform: scale(1) ; transition: transform 0.1s ease !important }'
+                  + 'transition: transform 0.1s ease !important }'
               + '.standby-btn:hover { border-radius: 4px ;'
                   + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
-                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.025)' }}`
+                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.045)' }}`
               + '#ddgpt > pre {'
                   + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
                   + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
@@ -1484,9 +1484,9 @@
                   + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.88em ; cursor: pointer ;`
                   + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
                   + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
-                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1) ; transition: transform 0.1s ease !important' }}`
+                  + `${ config.fgAnimationsDisabled ? '' : 'transition: transform 0.1s ease !important' }}`
               + '.related-query:hover, .related-query:focus {'
-                  + ( config.fgAnimationsDisabled ? '' : 'transform: scale(1.025) !important ;' )
+                  + ( config.fgAnimationsDisabled ? '' : 'transform: scale(1.055) !important ;' )
                   + `background: ${ scheme == 'dark' ? '#a2a2a270': '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
               + '.related-query svg { position: relative ; top: 4px ; margin-right: 6px ;' // related query icon
                   + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
@@ -1587,7 +1587,7 @@
                   + 'min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
-              + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
+              + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
               + '#ddgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 3px -3px 0 }'
