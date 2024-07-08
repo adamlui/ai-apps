@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.8.2
+// @version               2024.7.8.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -849,6 +849,7 @@ setTimeout(async () => {
                             // Call specialized toggle funcs
                             if (key.includes('proxy')) toggle.proxyMode()
                             else if (key.includes('streaming')) toggle.streaming()
+                            else if (/autoget/i.test(key)) toggle.autoGet()
                             else if (key.includes('rq')) toggle.relatedQueries()
                             else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
                             else if (key.includes('anchor')) toggle.anchorMode()
@@ -1978,6 +1979,12 @@ setTimeout(async () => {
                 if (scheme == 'dark') toggle.btnGlow()
             }
             notify(`${settingsProps[layer + 'AnimationsDisabled'].label} ${menuState.word[+!config[layer + 'AnimationsDisabled']]}`)
+        },
+
+        autoGet() {
+            saveSetting('autoGetDisabled', !config.autoGetDisabled)
+            if (appDiv.querySelector('.standby-btn')) show.reply.standbyBtnClickHandler()
+            notify(`${settingsProps.autoGetDisabled.label} ${menuState.word[+!config.autoGetDisabled]}`)
         },
 
         btnGlow(state = '') {
