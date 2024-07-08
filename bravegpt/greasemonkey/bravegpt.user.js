@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.7.2
+// @version               2024.7.7.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -459,14 +459,14 @@ setTimeout(async () => {
 
     // Define FEEDBACK functions
 
-    function notify(msg, position = '', notifDuration = '', shadow = '') {
+    function notify(msg, position = '', notifDuration = '', shadow = 'shadow') {
 
         // Strip state word to append styled one later
         const foundState = menuState.word.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(msg, position, notifDuration, shadow || scheme == 'dark' ? '' : 'shadow')
+        chatgpt.notify(msg, position, notifDuration, shadow)
         const notifs = document.querySelectorAll('.chatgpt-notif'),
               notif = notifs[notifs.length -1]
 
