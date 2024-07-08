@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.8.3
+// @version               2024.7.8.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -847,10 +847,12 @@ setTimeout(async () => {
                             modals.settings.toggle.switch(settingToggle) // visually switch toggle
 
                             // Call specialized toggle funcs
+                            const manualGetMatch = /(?:suf|pre)fix/.exec(key)
                             if (key.includes('proxy')) toggle.proxyMode()
                             else if (key.includes('streaming')) toggle.streaming()
                             else if (/autoget/i.test(key)) toggle.autoGet()
                             else if (key.includes('rq')) toggle.relatedQueries()
+                            else if (manualGetMatch) toggle.manualGet(manualGetMatch[0])
                             else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
                             else if (key.includes('anchor')) toggle.anchorMode()
                             else if (key.includes('bgAnimation')) toggle.animations('bg')
@@ -1984,7 +1986,14 @@ setTimeout(async () => {
         autoGet() {
             saveSetting('autoGetDisabled', !config.autoGetDisabled)
             if (appDiv.querySelector('.standby-btn')) show.reply.standbyBtnClickHandler()
+            if (!config.autoGetDisabled) // disable Prefix/Suffix mode if enabled
+                ['prefix', 'suffix'].forEach(manualMode => {
+                    if (config[manualMode + 'Enabled']) toggle.manualGet(manualMode) })
             notify(`${settingsProps.autoGetDisabled.label} ${menuState.word[+!config.autoGetDisabled]}`)
+            if (modals.settings.get()) { // update visual state of Settings toggle
+                const autoGetToggle = document.querySelector('[id*="autoGet"][id*="menu-entry"] input')
+                if (autoGetToggle.checked == config.autoGetDisabled) modals.settings.toggle.switch(autoGetToggle)
+            }
         },
 
         btnGlow(state = '') {
@@ -2000,6 +2009,17 @@ setTimeout(async () => {
                 }
                 btnTextSpan.classList[removeCondition ? 'remove' : 'add']('glowing-txt')
             })
+        },
+
+        manualGet(mode) { // Prefix/Suffix modes
+            const modeKey = mode + 'Enabled'
+            saveSetting(modeKey, !config[modeKey])
+            if (config[modeKey] && !config.autoGetDisabled) toggle.autoGet() // disable Auto-Get mode if enabled
+            notify(`${settingsProps[modeKey].label} ${menuState.word[+config[modeKey]]}`)
+            if (modals.settings.get()) { // update visual state of Settings toggle
+                const modeToggle = document.querySelector(`[id*="${modeKey}"][id*="menu-entry"] input`)
+                if (modeToggle.checked != config[modeKey]) modals.settings.toggle.switch(modeToggle)
+            }
         },
 
         minimized() {
