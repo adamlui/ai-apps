@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.8
+// @version                  2024.7.8.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2837,13 +2837,14 @@
                     standbyBtn.className = 'standby-btn'
                     standbyBtn.textContent = msgs.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
                     appDiv.append(standbyBtn)
-                    standbyBtn.onclick = () => {
+                    this.standbyBtnClickHandler = function() {
                         appAlert('waitingResponse')
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
                         show.reply.submitSrc = 'click' ; show.reply.chatbarFocused = false
                         menus.pin.topPos = menus.pin.rightPos = null
                         get.reply(msgChain)
                     }
+                    standbyBtn.onclick = this.standbyBtnClickHandler
 
                 // Otherwise create/append answer bubble
                 } else {

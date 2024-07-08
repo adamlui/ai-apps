@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.8
+// @version                2024.7.8.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2517,7 +2517,7 @@
                     standbyBtn.className = 'standby-btn'
                     standbyBtn.textContent = msgs.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
                     appDiv.append(standbyBtn)
-                    standbyBtn.onclick = () => {
+                    this.standbyBtnClickHandler = function() {
                         appAlert('waitingResponse')
                         appFooter.style.right = 0 // reset counteract right-offset bug from chatbar padding
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
@@ -2525,6 +2525,7 @@
                         menus.pin.topPos = menus.pin.rightPos = null
                         get.reply(msgChain)
                     }
+                    standbyBtn.onclick = this.standbyBtnClickHandler
 
                 // Otherwise create/append answer bubble
                 } else {
