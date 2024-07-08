@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.7.3
+// @version                  2024.7.7.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2897,10 +2897,6 @@
 
                 // Add reply section listeners
                 replyForm.onkeydown = handleEnter ; replyForm.onsubmit = handleSubmit
-                chatTextarea.onmouseover = chatTextarea.onfocus = () => { if (scheme == 'dark')
-                    appDiv.style.background = 'radial-gradient(ellipse at bottom, #373f4b 0%, #090a0f 100%)' }
-                chatTextarea.onmouseout = chatTextarea.onblur = () => { if (scheme == 'dark' && document.activeElement != chatTextarea)
-                    appDiv.style.background = 'radial-gradient(ellipse at bottom, #2f3031 0%, #090a0f 100%)' }
                 chatTextarea.oninput = autosizeChatbar
                 shuffleBtn.onclick = () => {
                     const randQAprompt = 'Generate a single random question on any topic then answer it.'
