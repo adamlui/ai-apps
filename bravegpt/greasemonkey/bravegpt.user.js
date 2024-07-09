@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.8.8
+// @version               2024.7.8.9
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1456,7 +1456,7 @@ setTimeout(async () => {
               + '.standby-btn { width: 100% ; padding: 13px 0 ; cursor: pointer ; margin: 14px 0 20px ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                   + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
-                  + 'transition: transform 0.1s ease }'
+                  + 'transition: transform 0.15s ease }'
               + '.standby-btn:hover { border-radius: 4px ;'
                   + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
                   + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.045)' }}`
@@ -1554,6 +1554,8 @@ setTimeout(async () => {
                       + 'background-color: black !important ; color: white }'
                   + '.primary-modal-btn { background: hsl(186 100% 69%) !important ; color: black !important }'
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
+              + '[class$="-modal"] button { transition: transform 0.15s ease }'
+              + '[class$="-modal"] button:hover { transform: scale(1.085) }'
               + '.bravegpt-menu { position: absolute ; z-index: 2250 ;'
                   + 'padding: 3.5px 5px 4.5px !important ; font-family: "Source Sans Pro", sans-serif ; font-size: 12px }'
               + '.bravegpt-menu ul { margin: 0 ; padding: 0 ; list-style: none }'

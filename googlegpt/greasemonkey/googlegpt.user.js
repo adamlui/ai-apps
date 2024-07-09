@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.8.8
+// @version                  2024.7.8.9
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1655,7 +1655,7 @@
               + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin-top: 20px ;'
                   + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
                   + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
-                  + 'transition: transform 0.1s ease }'
+                  + 'transition: transform 0.15s ease }'
               + '.standby-btn:hover { border-radius: 6px ;'
                   + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
                   + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.045)' }}`
@@ -1742,6 +1742,8 @@
                   + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                   + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                               + 'transform 0.55s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
+              + '[class$="-modal"] button { transition: transform 0.15s ease }'
+              + '[class$="-modal"] button:hover { transform: scale(1.085) }'
               + '.googlegpt-menu { position: absolute ; z-index: 12250 ;'
                   + 'padding: 3.5px 5px !important ; font-family: "Source Sans Pro", sans-serif ; font-size: 12px }'
               + '.googlegpt-menu ul { margin: 0 ; padding: 0 ; list-style: none }'
