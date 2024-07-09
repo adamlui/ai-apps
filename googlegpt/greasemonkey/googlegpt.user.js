@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.8.6
+// @version                  2024.7.8.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1929,7 +1929,7 @@
         rqVisibility() {
             const relatedQueriesDiv = appDiv.querySelector('.related-queries')
             if (relatedQueriesDiv) // update visibility based on latest setting
-                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+                relatedQueriesDiv.style.display = config.rqDisabled || config.anchored ? 'none' : 'flex'
         },
 
         scheme(newScheme) {
@@ -2164,8 +2164,9 @@
         anchorMode(state = '') {
             const prevState = config.anchored // for restraining notif if no change from #pin-menu 'Sidebar' click
             if (state == 'on' || !state && !config.anchored) { // toggle on
-                if (config.stickySidebar) toggle.sidebar('sticky')
                 saveSetting('anchored', true)
+                if (config.stickySidebar) toggle.sidebar('sticky') // off
+                update.rqVisibility()
             } else saveSetting('anchored', false)
             update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
             if (modals.settings.get()) { // update visual state of Settings toggle

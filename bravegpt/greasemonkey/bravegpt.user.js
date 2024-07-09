@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.8.6
+// @version               2024.7.8.7
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1732,7 +1732,7 @@ setTimeout(async () => {
         rqVisibility() {
             const relatedQueriesDiv = appDiv.querySelector('.related-queries')
             if (relatedQueriesDiv) // update visibility based on latest setting
-                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+                relatedQueriesDiv.style.display = config.rqDisabled || config.anchored ? 'none' : 'flex'
         },
 
         scheme(newScheme) {
@@ -1959,8 +1959,9 @@ setTimeout(async () => {
         anchorMode(state = '') {
             const prevState = config.anchored // for restraining notif if no change from #pin-menu 'Sidebar' click
             if (state == 'on' || !state && !config.anchored) { // toggle on
-                if (config.stickySidebar) toggle.sidebar('sticky')
                 saveSetting('anchored', true)
+                if (config.stickySidebar) toggle.sidebar('sticky') // off
+                update.rqVisibility()
             } else saveSetting('anchored', false)
             update.tweaksStyle() // apply new state to UI
             if (modals.settings.get()) { // update visual state of Settings toggle
