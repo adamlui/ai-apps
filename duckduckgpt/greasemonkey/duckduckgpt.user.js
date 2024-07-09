@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.9.4
+// @version                2024.7.9.5
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1681,7 +1681,7 @@
         },
 
         tooltip(buttonType) { // text & position
-            const cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'pin', 'font-size', 'wsb']
+            const cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'font-size', 'pin', 'wsb']
                       .filter(type => { // exclude invisible ones                                                
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
@@ -2477,15 +2477,6 @@
                     speakerSpan.append(speakerSVG) ; cornerBtnsDiv.append(speakerSpan)
                 }
 
-                // Create/append Pin button
-                if (!isCentered && !isMobile) {
-                    var pinSpan = document.createElement('span'),
-                        pinSVG = icons.pin.create()
-                    pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
-                    pinSpan.className = 'corner-btn' ; pinSpan.style.margin = '1px 9px 0 0'
-                    pinSpan.append(pinSVG) ; cornerBtnsDiv.append(pinSpan)
-                }
-
                 // Create/append Font Size button
                 if (answer != 'standby') {
                     var fontSizeSpan = document.createElement('span'),
@@ -2493,6 +2484,15 @@
                     fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
                     fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.marginRight = '10px'
                     fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
+                }
+
+                // Create/append Pin button
+                if (!isCentered && !isMobile) {
+                    var pinSpan = document.createElement('span'),
+                        pinSVG = icons.pin.create()
+                    pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
+                    pinSpan.className = 'corner-btn' ; pinSpan.style.margin = '1px 9px 0 0'
+                    pinSpan.append(pinSVG) ; cornerBtnsDiv.append(pinSpan)
                 }
 
                 // Create/append Wider Sidebar button

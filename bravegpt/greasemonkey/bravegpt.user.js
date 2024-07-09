@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.9.5
+// @version               2024.7.9.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1775,7 +1775,7 @@ setTimeout(async () => {
         },
 
         tooltip(buttonType) { // text & position
-            const cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'pin', 'font-size', 'wsb']
+            const cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'font-size', 'pin', 'wsb']
                       .filter(type => { // exclude invisible ones                                                
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
@@ -2575,15 +2575,6 @@ setTimeout(async () => {
                     speakerSpan.append(speakerSVG) ; appDiv.append(speakerSpan)
                 }
 
-                // Create/append Pin button
-                if (!isMobile) {
-                    var pinSpan = document.createElement('span'),
-                        pinSVG = icons.pin.create()
-                    pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
-                    pinSpan.className = 'corner-btn' ; pinSpan.style.margin = '1px 9px 0 0'
-                    pinSpan.append(pinSVG) ; appDiv.append(pinSpan)
-                }
-
                 // Create/append Font Size button
                 if (answer != 'standby') {
                     var fontSizeSpan = document.createElement('span'),
@@ -2591,6 +2582,15 @@ setTimeout(async () => {
                     fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
                     fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = '1px 10px 0 2px'
                     fontSizeSpan.append(fontSizeSVG) ; appDiv.append(fontSizeSpan)
+                }
+
+                // Create/append Pin button
+                if (!isMobile) {
+                    var pinSpan = document.createElement('span'),
+                        pinSVG = icons.pin.create()
+                    pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
+                    pinSpan.className = 'corner-btn' ; pinSpan.style.margin = '1px 9px 0 0'
+                    pinSpan.append(pinSVG) ; appDiv.append(pinSpan)
                 }
 
                 // Create/append Wider Sidebar button
