@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.8.11
+// @version                2024.7.8.12
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1663,8 +1663,8 @@
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
             const [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [6, 29] : [8, 29],
-                  iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.5
-                                              : buttonType == 'shuffle' ? 2.5
+                  iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.48
+                                              : buttonType == 'shuffle' ? 2.48
                                               : cornerBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
             // Update text
             tooltipDiv.innerText = (
