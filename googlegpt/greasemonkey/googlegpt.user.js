@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.8.5
+// @version                  2024.7.8.6
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1926,6 +1926,12 @@
             }
         },
 
+        rqVisibility() {
+            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+            if (relatedQueriesDiv) // update visibility based on latest setting
+                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+        },
+
         scheme(newScheme) {
             scheme = newScheme ; logos.googleGPT.update() ; icons.googleGPT.update()
             update.appStyle() ; update.stars() ; toggle.btnGlow() ; modals.settings.updateSchemeStatus()
@@ -2252,10 +2258,8 @@
 
         relatedQueries() {
             saveSetting('rqDisabled', !config.rqDisabled)
-            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-            if (relatedQueriesDiv) // update visibility based on latest setting
-                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
-            if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
+            update.rqVisibility()
+            if (!config.rqDisabled && !appDiv.querySelector('.related-queries')) { // get related queries for 1st time
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
                 get.related(lastQuery).then(queries => show.related(queries))
                     .catch(err => { consoleErr(err.message)

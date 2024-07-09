@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.8.5
+// @version               2024.7.8.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1729,6 +1729,12 @@ setTimeout(async () => {
             }
         },
 
+        rqVisibility() {
+            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+            if (relatedQueriesDiv) // update visibility based on latest setting
+                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+        },
+
         scheme(newScheme) {
             scheme = newScheme ; logos.braveGPT.update() ; update.appStyle() ; update.stars() ; toggle.btnGlow() ; 
             modals.settings.updateSchemeStatus()
@@ -2047,10 +2053,8 @@ setTimeout(async () => {
 
         relatedQueries() {
             saveSetting('rqDisabled', !config.rqDisabled)
-            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-            if (relatedQueriesDiv) // update visibility based on latest setting
-                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
-            if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
+            update.rqVisibility()
+            if (!config.rqDisabled && !appDiv.querySelector('.related-queries')) { // get related queries for 1st time
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
                 get.related(lastQuery).then(queries => show.related(queries))
                     .catch(err => { consoleErr(err.message)
