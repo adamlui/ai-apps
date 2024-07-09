@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.8.12
+// @version                2024.7.9
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1267,11 +1267,37 @@
         },
         
         sliders: {
+            strokeWidth: 2, // px
+
             create() {
                 const slidersSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      slidersSVGattrs = [['width', 20], ['height', 20], ['viewBox', '0 -960 960 960']]
+                      slidersSVGattrs = [['width', 19], ['height', 19], ['viewBox', '0 0 25 25']]
                 slidersSVGattrs.forEach(([attr, value]) => slidersSVG.setAttribute(attr, value))
-                slidersSVG.append(createSVGelem('path', { stroke: 'none', d: 'M435.48-102.48V-360H533v80h320v97.52H533v80h-97.52Zm-328.48-80V-280h257.52v97.52H107Zm160-169.04v-80H107v-96.96h160v-80h97.52v256.96H267Zm168.48-80v-96.96H853v96.96H435.48Zm160-168.48v-257.52H693v80h160V-680H693v80h-97.52ZM107-680v-97.52h417.52V-680H107Z' }))
+
+                // Top track
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
+                    x1: 2, y1: 5.5, x2: 12, y2: 5.5 }))
+                slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': icons.sliders.strokeWidth,
+                    cx: 18, cy: 5.5, r: 2.5 }))
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
+                    x1: 21, y1: 5.5, x2: 23, y2: 5.5 }))
+
+                // Middle track
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
+                    x1: 2, y1: 12.5, x2: 4, y2: 12.5 }))
+                slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': icons.sliders.strokeWidth,
+                    cx: 7, cy: 12.5, r: 2.5 }))
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
+                    x1: 13, y1: 12.5, x2: 23, y2: 12.5 }))
+
+                // Bottom track
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
+                    x1: 2, y1: 19.5, x2: 6.5, y2: 19.5 }))
+                slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': icons.sliders.strokeWidth,
+                    cx: 12.5, cy: 19.5, r: 2.5 }))
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
+                    x1: 15, y1: 19.5, x2: 23, y2: 19.5 }))
+
                 return slidersSVG
             }
         },
@@ -2443,7 +2469,7 @@
                 const settingsSpan = document.createElement('span'),
                       settingsSVG = icons.sliders.create()
                 settingsSpan.id = 'settings-btn' // for toggle.tooltip()
-                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = '-1px 10.5px 0 0'
+                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = '0 10.5px 0 0.5px'
                 settingsSpan.append(settingsSVG) ; cornerBtnsDiv.append(settingsSpan)
 
                 // Create/append Speak button
