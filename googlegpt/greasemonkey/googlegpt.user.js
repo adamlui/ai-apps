@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.9
+// @version                  2024.7.9.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1457,43 +1457,41 @@
                 return slashSVG
             }
         },
-        
-                sliders: {
-            strokeWidth: 2, // px
 
+        sliders: {
             create() {
                 const slidersSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       slidersSVGattrs = [['width', 19], ['height', 19], ['viewBox', '0 0 25 25']]
                 slidersSVGattrs.forEach(([attr, value]) => slidersSVG.setAttribute(attr, value))
 
                 // Top track
-                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
                     x1: 2, y1: 5.5, x2: 12, y2: 5.5 }))
-                slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': icons.sliders.strokeWidth,
-                    cx: 18, cy: 5.5, r: 2.5 }))
-                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
+                slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
+                    cx: 18, cy: 5.5, r: 3 }))
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
                     x1: 21, y1: 5.5, x2: 23, y2: 5.5 }))
 
                 // Middle track
-                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
                     x1: 2, y1: 12.5, x2: 4, y2: 12.5 }))
-                slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': icons.sliders.strokeWidth,
-                    cx: 7, cy: 12.5, r: 2.5 }))
-                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
-                    x1: 13, y1: 12.5, x2: 23, y2: 12.5 }))
+                slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
+                    cx: 8, cy: 12.5, r: 3 }))
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
+                    x1: 14, y1: 12.5, x2: 23, y2: 12.5 }))
 
                 // Bottom track
-                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
-                    x1: 2, y1: 19.5, x2: 6.5, y2: 19.5 }))
-                slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': icons.sliders.strokeWidth,
-                    cx: 12.5, cy: 19.5, r: 2.5 }))
-                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': icons.sliders.strokeWidth, 'stroke-linecap': 'round',
-                    x1: 15, y1: 19.5, x2: 23, y2: 19.5 }))
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
+                    x1: 2, y1: 19.5, x2: 8.5, y2: 19.5 }))
+                slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
+                    cx: 14.5, cy: 19.5, r: 3 }))
+                slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
+                    x1: 17, y1: 19.5, x2: 23, y2: 19.5 }))
 
                 return slidersSVG
             }
         },
-        
+
         sparkles: {
             create(style) { // style = ( 'fg' ? filled front sparkle : 'bg' ? filled rear sparkles )
                 const sparklesSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
