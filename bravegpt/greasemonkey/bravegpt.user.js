@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.8.9
+// @version               2024.7.8.10
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -631,8 +631,8 @@ setTimeout(async () => {
                 const aboutModal = document.getElementById(aboutModalID).firstChild
 
                 // Add logo
-                const aboutHeaderLogo = logos.braveGPT.create()
-                aboutHeaderLogo.width = 375 ; aboutHeaderLogo.style.margin = '-19px 16% 0'
+                const aboutHeaderLogo = logos.braveGPT.create() ; aboutHeaderLogo.width = 375
+                aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: -19px ${ isMobile ? 'auto' : '16%' } 0`
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
