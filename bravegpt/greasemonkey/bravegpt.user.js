@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.9.4
+// @version               2024.7.9.5
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1987,9 +1987,8 @@ setTimeout(async () => {
             if (state == 'on' || !state && !config.anchored) { // toggle on
                 saveSetting('anchored', true)
                 if (config.stickySidebar) toggle.sidebar('sticky') // off
-                update.rqVisibility()
             } else saveSetting('anchored', false)
-            update.tweaksStyle() // apply new state to UI
+            update.tweaksStyle() ; update.rqVisibility() // apply new state to UI
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const anchorToggle = document.querySelector('[id*="anchor"][id*="menu-entry"] input')
                 if (anchorToggle.checked != config.anchored) modals.settings.toggle.switch(anchorToggle)

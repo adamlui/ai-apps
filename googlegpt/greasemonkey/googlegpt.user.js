@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.9.3
+// @version                  2024.7.9.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2194,9 +2194,8 @@
             if (state == 'on' || !state && !config.anchored) { // toggle on
                 saveSetting('anchored', true)
                 if (config.stickySidebar) toggle.sidebar('sticky') // off
-                update.rqVisibility()
             } else saveSetting('anchored', false)
-            update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
+            update.tweaksStyle() ; update.chatbarWidth() ; update.rqVisibility() // apply new state to UI
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const anchorToggle = document.querySelector('[id*="anchor"][id*="menu-entry"] input')
                 if (anchorToggle.checked != config.anchored) modals.settings.toggle.switch(anchorToggle)

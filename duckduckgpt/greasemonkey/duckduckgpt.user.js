@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.9.3
+// @version                2024.7.9.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1886,9 +1886,8 @@
             if (state == 'on' || !state && !config.anchored) { // toggle on
                 saveSetting('anchored', true)
                 if (config.stickySidebar) toggle.sidebar('sticky') // off
-                update.rqVisibility()
             } else saveSetting('anchored', false)
-            update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
+            update.tweaksStyle() ; update.chatbarWidth() ; update.rqVisibility() // apply new state to UI
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const anchorToggle = document.querySelector('[id*="anchor"][id*="menu-entry"] input')
                 if (anchorToggle.checked != config.anchored) modals.settings.toggle.switch(anchorToggle)
