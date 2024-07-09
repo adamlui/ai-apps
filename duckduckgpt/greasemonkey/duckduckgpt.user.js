@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.8.10
+// @version                2024.7.8.11
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1529,10 +1529,11 @@
                   + `${ scheme == 'dark' ? 'background: none ; color: white' : '' }}`
               + '.primary-modal-btn { background: black !important ; color: white !important }'
               + '.chatgpt-modal button:hover { background-color: #9cdaff !important ; color: black !important }'
-              + ( scheme == 'dark' ? // additional darkmode alert styles
+              + ( scheme == 'dark' ? // darkmode chatgpt.alert() styles
                   ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                       + 'background-color: black !important ; color: white }'
                   + '.primary-modal-btn { background: hsl(186 100% 69%) !important ; color: black !important }'
+                  + '.chatgpt-modal a { color: #00cfff !important }'
                   + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
               + '[class*="-modal-bg"] {'
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
@@ -1549,8 +1550,8 @@
                   + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                   + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                               + 'transform 0.55s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
-              + '[class$="-modal"] button { transition: transform 0.15s ease }'
-              + '[class$="-modal"] button:hover { transform: scale(1.085) }'
+              + ( !config.fgAnimationsDisabled ? ( '[class$="-modal"] button { transition: transform 0.15s ease }' 
+                                                 + '[class$="-modal"] button:hover { transform: scale(1.085) }' ) : '' )
               + '.ddgpt-menu { position: absolute ; z-index: 2250 ;'
                   + 'padding: 3.5px 5px !important ; font-family: "Source Sans Pro", sans-serif ; font-size: 12px }'
               + '.ddgpt-menu ul { margin: 0 ; padding: 0 ; list-style: none }'
