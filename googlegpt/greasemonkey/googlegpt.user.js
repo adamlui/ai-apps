@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.10.4
+// @version                  2024.7.10.5
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -970,9 +970,9 @@
 
                 // Init settings lists
                 const settingsLists = [], middleGap = 30, // px
+                      settingsListContainer = document.createElement('div'),
                       settingsListCnt = ( isMobile && ( isPortrait || settingsKeys.length < 8 )) ? 1 : 2,
-                      settingsListCap = Math.floor(settingsKeys.length /2),
-                      settingsListContainer = document.createElement('div')   
+                      settingItemCap = Math.floor(settingsKeys.length /2)
                 for (let i = 0 ; i < settingsListCnt ; i++) settingsLists.push(document.createElement('ul'))
                 if (settingsListCnt > 1) { // style multi-list landscape mode
                     settingsListContainer.style.cssText = ( // make/pad flexbox, add middle gap
@@ -990,7 +990,7 @@
                     const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
                     settingItem.title = setting.helptip || '' // for hover assistance
                     const settingLabel = document.createElement('label') ; settingLabel.textContent = setting.label
-                    settingItem.append(settingLabel) ; (settingsLists[isPortrait ? 0 : +!(idx < settingsListCap)]).append(settingItem)
+                    settingItem.append(settingLabel) ; (settingsLists[isPortrait ? 0 : +!(idx < settingItemCap)]).append(settingItem)
 
                     // Create/prepend icons
                     const settingIcon = icons[setting.icon].create(key.match(/bg|fg/)?.[0] ?? '')
