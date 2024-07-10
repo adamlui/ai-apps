@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.10.1
+// @version                2024.7.10.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1463,7 +1463,7 @@
               + '#ddgpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
               + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
-              + '#ddgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ; z-index: 12345 ;'
+              + '#ddgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ; z-index: 5555 ;'
                   + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
                   + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -70%, black 57%' : '#b6ebff -64%, white 33%' }) ;`
                   + ( !config.fgAnimationsDisabled ?
@@ -1581,9 +1581,9 @@
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
                   + 'transition: background-color .15s ease ;' // speed to show bg dim
                   + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
-              + '[class*="-modal-bg"].animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
+              + '[class*="-modal-bg"].animated > div { z-index: 13456 ; opacity: 0.98 ; transform: translateX(0) translateY(0) }'
               + '[class$="-modal"] {' // native modals + chatgpt.alert()s
-                  + 'position: absolute ;' // to be click-draggable
+                  + 'z-index: 13456 ; position: absolute ;' // to be click-draggable
                   + 'opacity: 0 ;' // to fade-in
                   + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -200px, black 200px' : '#b6ebff -296px, white 171px' }) ;`
                   + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`

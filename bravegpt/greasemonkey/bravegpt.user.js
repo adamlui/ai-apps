@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.10.1
+// @version               2024.7.10.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1463,7 +1463,7 @@ setTimeout(async () => {
               + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
               + `#bravegpt { word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: ${ isMobile ? -29 : 20}px ;`
-                  + 'z-index: 12345 ; padding: 24px 23px 45px 23px ;'
+                  + 'z-index: 5555 ; padding: 24px 23px 45px 23px ;'
                   + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -200px, black 200px' : 'white 0%, white 100%' }) ;`
                   + ( !config.fgAnimationsDisabled ?
                         'transition: bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1),' // smoothen Anchor minimize/restore
@@ -1585,9 +1585,9 @@ setTimeout(async () => {
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
                   + 'transition: background-color .15s ease ;' // speed to show bg dim
                   + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
-              + '[class*="-modal-bg"].animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
+              + '[class*="-modal-bg"].animated > div { z-index: 13456 ; opacity: 0.98 ; transform: translateX(0) translateY(0) }'
               + '[class$="-modal"] {' // native modals + chatgpt.alert()s
-                  + 'position: absolute ;' // to be click-draggable
+                  + 'z-index: 13456 ; position: absolute ;' // to be click-draggable
                   + 'opacity: 0 ;' // to fade-in
                   + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -70%, black 57%' : '#b6ebff -64%, white 33%' }) ;`
                   + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
