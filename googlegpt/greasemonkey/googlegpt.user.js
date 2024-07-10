@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.10.2
+// @version                  2024.7.10.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -414,7 +414,8 @@
           isFirefox = chatgpt.browser.isFirefox(),
           isEdge = !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'),
           isBrave = !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'),
-          isMobile = chatgpt.browser.isMobile()
+          isMobile = chatgpt.browser.isMobile(),
+          isPortrait = isMobile && (window.innerWidth < window.innerHeight)
 
     // Init CONFIG
     const config = {
@@ -953,10 +954,13 @@
                       settingsContainer.append(settingsModal)
                 modals.init(settingsModal) // add classes/stars, disable wheel-scrolling, dim bg
 
+                // Init settings keys
+                const settingsKeys = Object.keys(settingsProps).filter(key => !(isMobile && settingsProps[key].mobile == false))
+
                 // Init logo
                 const settingsIcon = icons.googleGPT.create()
                 settingsIcon.style.cssText = 'width: 52px ; position: relative ; top: -45px ;'
-                                           + `margin: 9px ${ isMobile ? '41.13% -46px' : '47% -41px' }`
+                                           + `margin: 9px ${ isPortrait ? '41.13% -46px' : '46.23% -41px' }`
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
@@ -965,11 +969,10 @@
                 settingsTitleH4.prepend(settingsTitleIcon) ; settingsTitleDiv.append(settingsTitleH4)
 
                 // Init settings lists
-                const settingsKeys = Object.keys(settingsProps), settingsLists = [],
-                      settingsListCnt = isMobile || settingsKeys.length < 15 ? 1 : 2,
+                const settingsLists = [], middleGap = 30, // px
+                      settingsListCnt = ( isMobile && ( isPortrait || settingsKeys.length < 8 )) ? 1 : 2,
                       settingsListCap = Math.floor(settingsKeys.length /2),
-                      settingsListContainer = document.createElement('div'),
-                      middleGap = 30 // px
+                      settingsListContainer = document.createElement('div')   
                 for (let i = 0 ; i < settingsListCnt ; i++) settingsLists.push(document.createElement('ul'))
                 if (settingsListCnt > 1) { // style multi-list landscape mode
                     settingsListContainer.style.cssText = ( // make/pad flexbox, add middle gap
@@ -987,7 +990,7 @@
                     const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
                     settingItem.title = setting.helptip || '' // for hover assistance
                     const settingLabel = document.createElement('label') ; settingLabel.textContent = setting.label
-                    settingItem.append(settingLabel) ; (settingsLists[isMobile ? 0 : +!(idx < settingsListCap)]).append(settingItem)
+                    settingItem.append(settingLabel) ; (settingsLists[isPortrait ? 0 : +!(idx < settingsListCap)]).append(settingItem)
 
                     // Create/prepend icons
                     const settingIcon = icons[setting.icon].create(key.match(/bg|fg/)?.[0] ?? '')
@@ -1831,14 +1834,14 @@
 
               // Settings modal
               + '#googlegpt-settings {'
-                  + `min-width: ${ isMobile ? 288 : 688 }px ; max-width: 75vw ; word-wrap: break-word ;`
+                  + `min-width: ${ isPortrait ? 288 : 688 }px ; max-width: 75vw ; word-wrap: break-word ;`
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
               + '#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px -15px 0 }'
-              + `#googlegpt-settings-title h4 { font-size: ${ isMobile ? 22 : 29 }px ; font-weight: bold ; margin: 0 0 27px }`
+              + `#googlegpt-settings-title h4 { font-size: ${ isPortrait ? 22 : 29 }px ; font-weight: bold ; margin: 0 0 27px }`
               + '#googlegpt-settings-close-btn {'
                   + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
                   + 'position: absolute ; top: 10px ; right: 13px }'
@@ -1846,7 +1849,7 @@
               + '#googlegpt-settings-close-btn svg { margin: 6.5px }' // center SVG for hover underlay
               + `#googlegpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
               + '#googlegpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
-                  + `width: ${ isMobile ? 100 : 50 }% }` // set width based on column cnt
+                  + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#googlegpt-settings li { height: 24px ; font-size: 13.5px ; transition: transform 0.1s ease ;'
                   + `padding: 6px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
