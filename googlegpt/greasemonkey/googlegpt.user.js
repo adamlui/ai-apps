@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.10.3
+// @version                  2024.7.10.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -750,8 +750,8 @@
                 event.preventDefault(); // prevent sub-elems like icons being draggable
                 ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))
                 const draggableElemRect = modals.dragHandlers.draggableElem.getBoundingClientRect()
-                modals.dragHandlers.offsetX = event.clientX - draggableElemRect.left
-                modals.dragHandlers.offsetY = event.clientY - draggableElemRect.top
+                modals.dragHandlers.offsetX = event.clientX - draggableElemRect.left +21
+                modals.dragHandlers.offsetY = event.clientY - draggableElemRect.top +12
             },
 
             mousemove(event) { // drag modal

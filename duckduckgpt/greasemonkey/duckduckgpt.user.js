@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.10.3
+// @version                2024.7.10.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -562,8 +562,8 @@
                 event.preventDefault(); // prevent sub-elems like icons being draggable
                 ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))
                 const draggableElemRect = modals.dragHandlers.draggableElem.getBoundingClientRect()
-                modals.dragHandlers.offsetX = event.clientX - draggableElemRect.left
-                modals.dragHandlers.offsetY = event.clientY - draggableElemRect.top
+                modals.dragHandlers.offsetX = event.clientX - draggableElemRect.left +21
+                modals.dragHandlers.offsetY = event.clientY - draggableElemRect.top +12
             },
     
             mousemove(event) { // drag modal
