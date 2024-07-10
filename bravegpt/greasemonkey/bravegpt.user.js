@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.10
+// @version               2024.7.10.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -761,22 +761,39 @@ setTimeout(async () => {
 
             createAppend() {
 
-                // Init core elems
-                const settingsContainer = document.createElement('div')
-                const settingsModal = document.createElement('div') ; settingsModal.id = 'bravegpt-settings'
-                settingsContainer.append(settingsModal)
+                // Init master elems
+                const settingsContainer = document.createElement('div'),
+                      settingsModal = document.createElement('div') ; settingsModal.id = 'bravegpt-settings'
+                      settingsContainer.append(settingsModal)
                 modals.init(settingsModal) // add classes/stars, disable wheel-scrolling, dim bg
+
+                // Init logo
                 const settingsIcon = icons.braveGPT.create()
-                settingsIcon.style.cssText = 'width: 59px ; position: relative ; top: -33px ; margin: 0 41% -8px' // size/pos icon
+                settingsIcon.style.cssText = `width: ${ isMobile ? 59 : 62 }px ; position: relative ; top: -33px ;`
+                                           + `margin: 0 ${ isMobile ? 41.2 : 45 }% -8px`
+                // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'bravegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
                 const settingsTitleIcon = icons.sliders.create()
                 settingsTitleIcon.style.cssText = 'width: 21px ; height: 21px ; margin-right: -4px ; position: relative ; top: 2px ; right: 10px'
                 settingsTitleH4.prepend(settingsTitleIcon) ; settingsTitleDiv.append(settingsTitleH4)
-                const settingsList = document.createElement('ul')
+
+                // Init settings lists
+                const settingsKeys = Object.keys(settingsProps), settingsLists = [],
+                      settingsListCnt = isMobile || settingsKeys.length < 15 ? 1 : 2,
+                      settingsListCap = Math.floor(settingsKeys.length /2),
+                      settingsListContainer = document.createElement('div'),
+                      middleGap = 34 // px
+                for (let i = 0 ; i < settingsListCnt ; i++) settingsLists.push(document.createElement('ul'))
+                if (settingsListCnt > 1) { // style multi-list landscape mode
+                    settingsListContainer.style.cssText = ( // make/pad flexbox, add middle gap
+                        `display: flex ; padding: 11px 12px 13px ; gap: ${ middleGap /2 }px` )
+                    settingsLists[0].style.cssText = ( // add vertical separator
+                        `padding-right: ${ middleGap /2 }px ; border-right: 1px dotted white` )
+                }
 
                 // Create/append setting icons/labels/toggles
-                Object.keys(settingsProps).forEach((key, idx) => {
+                settingsKeys.forEach((key, idx) => {
                     const setting = settingsProps[key]
                     if (isMobile && setting.mobile == false) return
 
@@ -784,7 +801,7 @@ setTimeout(async () => {
                     const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
                     settingItem.title = setting.helptip || '' // for hover assistance
                     const settingLabel = document.createElement('label') ; settingLabel.textContent = setting.label
-                    settingItem.append(settingLabel) ; settingsList.append(settingItem)
+                    settingItem.append(settingLabel) ; (settingsLists[isMobile ? 0 : +!(idx < settingsListCap)]).append(settingItem)
 
                     // Create/prepend icons
                     const settingIcon = icons[setting.icon].create(key.match(/bg|fg/)?.[0] ?? '')
@@ -890,6 +907,7 @@ setTimeout(async () => {
                         } settingItem.append(configStatusSpan)
                     }
                 })
+                settingsListContainer.append(...settingsLists)
 
                 // Create close button
                 const closeBtn = document.createElement('div') ; closeBtn.id = 'bravegpt-settings-close-btn'
@@ -902,7 +920,7 @@ setTimeout(async () => {
                 closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
 
                 // Assemble/append elems
-                settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsList)
+                settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsListContainer)
                 document.body.append(settingsContainer)
 
                 // Add listeners to dismiss modal
@@ -1618,22 +1636,23 @@ setTimeout(async () => {
 
               // Settings modal
               + '#bravegpt-settings { font-family: var(--brand-font) ;'
-                  + 'min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
+                  + `min-width: ${ isMobile ? 288 : 758 }px ; max-width: 75vw ; word-wrap: break-word ;`
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
-              + '#bravegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px -3px 0 }'
-              + '#bravegpt-settings-title h4 { font-size: 26px ; font-weight: bold ; margin-top: -31px }' // 'Settings'
+              + `#bravegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 ${ isMobile ? -31 : -6 }px -3px 0 }`
+              + `#bravegpt-settings-title h4 { font-size: ${ isMobile ? 26 : 30 }px ; font-weight: bold ; margin: -31px 17px 7px 0 }`
               + '#bravegpt-settings-close-btn {'
                   + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
                   + 'position: absolute ; top: 10px ; right: 13px }'
               + `#bravegpt-settings-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
               + '#bravegpt-settings-close-btn svg { margin: 6.5px }' // center SVG for hover underlay
               + `#bravegpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
-              + '#bravegpt-settings ul { list-style: none ; margin: 0 }' // hide bullets, override Brave ul margins
-              + '#bravegpt-settings li { font-size: 14.5px ; transition: transform 0.1s ease ;'
+              + '#bravegpt-settings ul { list-style: none ; padding: 0 ; margin: 0 ;' // hide bullets, override Brave ul margins
+                  + `width: ${ isMobile ? 100 : 50 }% }` // set width based on column cnt
+              + '#bravegpt-settings li { height: 37px ; font-size: 14.5px ; transition: transform 0.1s ease ;'
                   + `padding: 7px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
               + '#bravegpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug

@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.10
+// @version                2024.7.10.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -767,22 +767,39 @@
 
             createAppend() {
 
-                // Init core elems
-                const settingsContainer = document.createElement('div')
-                const settingsModal = document.createElement('div') ; settingsModal.id = 'ddgpt-settings'
-                settingsContainer.append(settingsModal)
+                // Init master elems
+                const settingsContainer = document.createElement('div'),
+                      settingsModal = document.createElement('div') ; settingsModal.id = 'ddgpt-settings'
+                      settingsContainer.append(settingsModal)
                 modals.init(settingsModal) // add classes/stars, disable wheel-scrolling, dim bg
+
+                // Init logo
                 const settingsIcon = icons.ddgpt.create()
-                settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -33px ; margin: 0 41% -12px' // size/pos icon
+                settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -33px ;'
+                                           + `margin: 0 ${ isMobile ? 43 : 46.3 }% -12px`
+                // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'ddgpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
                 const settingsTitleIcon = icons.sliders.create()
                 settingsTitleIcon.style.cssText = 'width: 21px ; height: 21px ; margin-right: 3px ; position: relative ; top: 2.5px ; right: 3px'
                 settingsTitleH4.prepend(settingsTitleIcon) ; settingsTitleDiv.append(settingsTitleH4)
-                const settingsList = document.createElement('ul')
+
+                // Init settings lists
+                const settingsKeys = Object.keys(settingsProps), settingsLists = [],
+                      settingsListCnt = isMobile || settingsKeys.length < 15 ? 1 : 2,
+                      settingsListCap = Math.floor(settingsKeys.length /2),
+                      settingsListContainer = document.createElement('div'),
+                      middleGap = 30 // px
+                for (let i = 0 ; i < settingsListCnt ; i++) settingsLists.push(document.createElement('ul'))
+                if (settingsListCnt > 1) { // style multi-list landscape mode
+                    settingsListContainer.style.cssText = ( // make/pad flexbox, add middle gap
+                        `display: flex ; padding: 11px 12px 13px ; gap: ${ middleGap /2 }px` )
+                    settingsLists[0].style.cssText = ( // add vertical separator
+                        `padding-right: ${ middleGap /2 }px ; border-right: 1px dotted white` )
+                }
 
                 // Create/append setting icons/labels/toggles
-                Object.keys(settingsProps).forEach((key, idx) => {
+                settingsKeys.forEach((key, idx) => {
                     const setting = settingsProps[key]
                     if (isMobile && setting.mobile == false || isCentered && setting.centered == false) return
 
@@ -790,7 +807,7 @@
                     const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
                     settingItem.title = setting.helptip || '' // for hover assistance
                     const settingLabel = document.createElement('label') ; settingLabel.textContent = setting.label
-                    settingItem.append(settingLabel) ; settingsList.append(settingItem)
+                    settingItem.append(settingLabel) ; (settingsLists[isMobile ? 0 : +!(idx < settingsListCap)]).append(settingItem)
 
                     // Create/prepend icons
                     const settingIcon = icons[setting.icon].create(key.match(/bg|fg/)?.[0] ?? '')
@@ -896,6 +913,7 @@
                         } settingItem.append(configStatusSpan)
                     }
                 })
+                settingsListContainer.append(...settingsLists)
 
                 // Create close button
                 const closeBtn = document.createElement('div') ; closeBtn.id = 'ddgpt-settings-close-btn'
@@ -908,7 +926,7 @@
                 closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
 
                 // Assemble/append elems
-                settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsList)
+                settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsListContainer)
                 document.body.append(settingsContainer)
 
                 // Add listeners to dismiss modal
@@ -1447,7 +1465,7 @@
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
               + '#ddgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ; z-index: 12345 ;'
                   + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
-                  + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -200px, black 200px' : 'white 0%, white 100%' }) ;`
+                  + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -70%, black 57%' : '#b6ebff -64%, white 33%' }) ;`
                   + ( !config.fgAnimationsDisabled ?
                         'transition: bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1),' // smoothen Anchor minimize/restore
                                   + 'opacity 0.5s ease, transform 0.5s ease ;' : '' ) // smoothen 1st app fade-in
@@ -1567,7 +1585,7 @@
               + '[class$="-modal"] {' // native modals + chatgpt.alert()s
                   + 'position: absolute ;' // to be click-draggable
                   + 'opacity: 0 ;' // to fade-in
-                  + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -70%, black 57%' : '#b6ebff -64%, white 33%' }) ;`
+                  + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -200px, black 200px' : '#b6ebff -296px, white 171px' }) ;`
                   + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                   + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
@@ -1614,22 +1632,23 @@
 
               // Settings modal
               + '#ddgpt-settings {'
-                  + 'min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
+                  + `min-width: ${ isMobile ? 288 : 688 }px ; max-width: 75vw ; word-wrap: break-word ;`
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
               + '#ddgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 3px -3px 0 }'
-              + '#ddgpt-settings-title h4 { font-size: 26px ; font-weight: bold ; margin-top: -39px }' // 'Settings'
+              + `#ddgpt-settings-title h4 { font-size: ${ isMobile ? 26 : 31 }px ; font-weight: bold ; margin-top: -39px }`
               + '#ddgpt-settings-close-btn {'
                   + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
                   + 'position: absolute ; top: 10px ; right: 13px }'
               + `#ddgpt-settings-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
               + '#ddgpt-settings-close-btn svg { margin: 6.5px }' // center SVG for hover underlay
               + `#ddgpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
-              + '#ddgpt-settings ul { list-style: none ; margin-bottom: -7px }' // hide bullets, close bottom gap
-              + '#ddgpt-settings li { font-size: 14.5px ; transition: transform 0.1s ease ;'
+              + '#ddgpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
+                  + `width: ${ isMobile ? 100 : 50 }% }` // set width based on column cnt
+              + '#ddgpt-settings li { height: 25px ; font-size: 14.5px ; transition: transform 0.1s ease ;'
                   + `padding: 4px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
               + '#ddgpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug

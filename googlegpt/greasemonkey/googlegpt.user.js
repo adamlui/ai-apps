@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.10
+// @version                  2024.7.10.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -947,22 +947,39 @@
 
             createAppend() {
 
-                // Init core elems
-                const settingsContainer = document.createElement('div')
-                const settingsModal = document.createElement('div') ; settingsModal.id = 'googlegpt-settings'
-                settingsContainer.append(settingsModal)
+                // Init master elems
+                const settingsContainer = document.createElement('div'),
+                      settingsModal = document.createElement('div') ; settingsModal.id = 'googlegpt-settings'
+                      settingsContainer.append(settingsModal)
                 modals.init(settingsModal) // add classes/stars, disable wheel-scrolling, dim bg
+
+                // Init logo
                 const settingsIcon = icons.googleGPT.create()
-                settingsIcon.style.cssText += 'width: 52px ; position: relative ; top: -45px ; margin: 9px 41.13% -43px' // size/pos icon
+                settingsIcon.style.cssText = 'width: 52px ; position: relative ; top: -45px ;'
+                                           + `margin: 9px ${ isMobile ? '41.13% -46px' : '47% -41px' }`
+                // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
                 const settingsTitleIcon = icons.sliders.create()
                 settingsTitleIcon.style.cssText = 'width: 20px ; height: 20px ; position: relative ; top: 3px ; right: 7px'
                 settingsTitleH4.prepend(settingsTitleIcon) ; settingsTitleDiv.append(settingsTitleH4)
-                const settingsList = document.createElement('ul')
+
+                // Init settings lists
+                const settingsKeys = Object.keys(settingsProps), settingsLists = [],
+                      settingsListCnt = isMobile || settingsKeys.length < 15 ? 1 : 2,
+                      settingsListCap = Math.floor(settingsKeys.length /2),
+                      settingsListContainer = document.createElement('div'),
+                      middleGap = 30 // px
+                for (let i = 0 ; i < settingsListCnt ; i++) settingsLists.push(document.createElement('ul'))
+                if (settingsListCnt > 1) { // style multi-list landscape mode
+                    settingsListContainer.style.cssText = ( // make/pad flexbox, add middle gap
+                        `display: flex ; padding: 11px 12px 13px ; gap: ${ middleGap /2 }px` )
+                    settingsLists[0].style.cssText = ( // add vertical separator
+                        `padding-right: ${ middleGap /2 }px ; border-right: 1px dotted white` )
+                }
 
                 // Create/append setting icons/labels/toggles
-                Object.keys(settingsProps).forEach((key, idx) => {
+                settingsKeys.forEach((key, idx) => {
                     const setting = settingsProps[key]
                     if (isMobile && setting.mobile == false) return
 
@@ -970,7 +987,7 @@
                     const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
                     settingItem.title = setting.helptip || '' // for hover assistance
                     const settingLabel = document.createElement('label') ; settingLabel.textContent = setting.label
-                    settingItem.append(settingLabel) ; settingsList.append(settingItem)
+                    settingItem.append(settingLabel) ; (settingsLists[isMobile ? 0 : +!(idx < settingsListCap)]).append(settingItem)
 
                     // Create/prepend icons
                     const settingIcon = icons[setting.icon].create(key.match(/bg|fg/)?.[0] ?? '')
@@ -1076,6 +1093,7 @@
                         } settingItem.append(configStatusSpan)
                     }
                 })
+                settingsListContainer.append(...settingsLists)
 
                 // Create close button
                 const closeBtn = document.createElement('div') ; closeBtn.id = 'googlegpt-settings-close-btn'
@@ -1088,7 +1106,7 @@
                 closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
 
                 // Assemble/append elems
-                settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsList)
+                settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsListContainer)
                 document.body.append(settingsContainer)
 
                 // Add listeners to dismiss modal
@@ -1813,22 +1831,23 @@
 
               // Settings modal
               + '#googlegpt-settings {'
-                  + 'min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
+                  + `min-width: ${ isMobile ? 288 : 688 }px ; max-width: 75vw ; word-wrap: break-word ;`
                   + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
               + '#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px -15px 0 }'
-              + '#googlegpt-settings-title h4 { font-size: 22px ; font-weight: bold ; margin-top: -3px }' // 'Settings'
+              + `#googlegpt-settings-title h4 { font-size: ${ isMobile ? 22 : 29 }px ; font-weight: bold ; margin: 0 0 27px }`
               + '#googlegpt-settings-close-btn {'
                   + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
                   + 'position: absolute ; top: 10px ; right: 13px }'
               + `#googlegpt-settings-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
               + '#googlegpt-settings-close-btn svg { margin: 6.5px }' // center SVG for hover underlay
               + `#googlegpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
-              + '#googlegpt-settings ul { list-style: none ; margin-bottom: 2px }' // hide bullets, close bottom gap
-              + '#googlegpt-settings li { font-size: 13.5px ; transition: transform 0.1s ease ;'
+              + '#googlegpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
+                  + `width: ${ isMobile ? 100 : 50 }% }` // set width based on column cnt
+              + '#googlegpt-settings li { height: 24px ; font-size: 13.5px ; transition: transform 0.1s ease ;'
                   + `padding: 6px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
               + '#googlegpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
