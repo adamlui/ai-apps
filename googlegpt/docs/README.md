@@ -58,7 +58,7 @@
 
 <h3>Highly customizable:</h3>
 
-<img width=633 src="https://media.googlegpt.io/images/screenshots/desktop/settings-modal.gif?latest">
+<img width=633 src="https://media.googlegpt.io/images/screenshots/desktop/settings-modal.gif">
 
 </div>
 
