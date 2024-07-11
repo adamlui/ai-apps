@@ -40,21 +40,25 @@
 <div align="center"><img src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png?latest">
 <br><br>
 
-<h3>Customizable color scheme:</h3>
-
-<img src="https://media.googlegpt.io/images/screenshots/desktop/color-scheme-modal.png?latest">
-
 <h3>Mobile compatible:</h3>
 
-<img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png?latest">
+<img width=265 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png?latest">
+
+<h3>Customizable color scheme:</h3>
+
+<img width=400 src="https://media.googlegpt.io/images/screenshots/desktop/color-scheme-modal.gif?latest">
 
 <h3>Scalable display size:</h3>
 
-<img src="https://media.googlegpt.io/images/screenshots/desktop/font-size-slider.gif">
+<img width=388 src="https://media.googlegpt.io/images/screenshots/desktop/font-size-slider.gif">
 
 <h3>Math (KaTeX) rendering:</h3>
 
-<img width=665 src="https://media.googlegpt.io/images/screenshots/desktop/math-formulas/dark-on-dark.png?latest">
+<img width=488 src="https://media.googlegpt.io/images/screenshots/desktop/math-formulas/dark-on-dark.png?latest">
+
+<h3>Highly customizable:</h3>
+
+<img width=633 src="https://media.googlegpt.io/images/screenshots/desktop/settings-modal.gif?latest">
 
 </div>
 
