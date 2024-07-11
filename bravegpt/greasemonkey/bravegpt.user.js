@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.10.5
+// @version               2024.7.11
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -798,7 +798,6 @@ setTimeout(async () => {
                 // Create/append setting icons/labels/toggles
                 settingsKeys.forEach((key, idx) => {
                     const setting = settingsProps[key]
-                    if (isMobile && setting.mobile == false) return
 
                     // Create/append item/label elems
                     const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
