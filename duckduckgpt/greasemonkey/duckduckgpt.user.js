@@ -148,11 +148,11 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.11.1
+// @version                2024.7.11.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
-// @antifeature            ads A small, inobtrusive text ad displays below DuckDuckGPT chatbar ~50% of the time to motivate author to spend time upgrading script w/ new enhancements.
+// @antifeature            ads A small text ad displays below DuckDuckGPT chatbar ~50% of the time (only in Sidebar mode). This motivates me to spend otherwise unpaid time upgrading script w/ new features & APIs.
 // @compatible             chrome except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible             firefox
 // @compatible             edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
