@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.12.3
+// @version                  2024.7.12.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2059,10 +2059,11 @@
 
         tweaksStyle() {
 
-            // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
+            // Update tweaks style based on settings
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                                   + ( config.stickySidebar ? ssbStyles
-                                    : config.anchored ? ( anchorStyles + ( config.expanded ? expandedStyles : '' )) : '' )
+                                    : config.anchored ? ( anchorStyles + (
+                                          config.expanded ? expandedStyles : config.minimized ? minimizedStyles : '' )) : '' )
 
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
@@ -2070,7 +2071,7 @@
                 appDiv.querySelectorAll('.corner-btn').length < (
                     config.anchored || !config.widerSidebar ? 4 : 10 )) ? '' : 'none'
 
-            // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
+            // Update <pre> max-height for various mode toggles
             const answerPre = appDiv.querySelector('pre'),
                   relatedQueries = appDiv.querySelector('.related-queries'),
                   shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
@@ -2336,7 +2337,8 @@
                 chevronSVG.onclick = () => toggle.minimized()
                 chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
             }
-            update.appBottomPos()
+            update.appBottomPos() // toggle visual minimization
+            update.tweaksStyle() // toggle Font Size + Speak btn visibility
             if (!isMobile) tooltipDiv.style.opacity = 0 // remove lingering tooltip
         },
 

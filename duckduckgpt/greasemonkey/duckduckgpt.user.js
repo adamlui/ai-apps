@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.12.3
+// @version                2024.7.12.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1766,18 +1766,19 @@
     
         tweaksStyle() {
 
-            // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
+            // Update tweaks style based on settings
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                                   + ( config.stickySidebar ? ssbStyles
-                                    : config.anchored ? ( anchorStyles + ( config.expanded ? expandedStyles : '' )) : '' )
+                                    : config.anchored ? ( anchorStyles + (
+                                          config.expanded ? expandedStyles : config.minimized ? minimizedStyles : '' )) : '' )
     
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
             if (kudoAIspan) kudoAIspan.style.display = (
                 appDiv.querySelectorAll('.corner-btn').length < (
                     isMobile ? 3 : config.anchored || !config.widerSidebar ? 5 : 8 )) ? '' : 'none'
-    
-            // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
+
+            // Update <pre> max-height for various mode toggles
             const answerPre = appDiv.querySelector('pre'),
                   relatedQueries = appDiv.querySelector('.related-queries'),
                   shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 245,
@@ -2029,7 +2030,8 @@
                 chevronSVG.onclick = () => toggle.minimized()
                 chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
             }
-            update.appBottomPos()
+            update.appBottomPos() // toggle visual minimization
+            update.tweaksStyle() // toggle Font Size + Speak btn visibility
             if (!isMobile) tooltipDiv.style.opacity = 0 // remove lingering tooltip
         },
 
@@ -2939,6 +2941,7 @@
           anchorStyles = '#ddgpt { position: fixed ; bottom: -7px ; right: 35px ; width: 388px }'
                        + '[class*="feedback"], .related-queries, #wsb-btn  { display: none }'
                        + '#chevron-btn, #arrows-btn { display: block !important }',
+          minimizedStyles = '#speak-btn, #font-size-btn { display: none }',
           expandedStyles = '#ddgpt { width: 528px }'
     update.tweaksStyle() ; document.head.append(tweaksStyle)
 

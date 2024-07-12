@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.12.4
+// @version               2024.7.12.5
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1859,10 +1859,11 @@ setTimeout(async () => {
 
         tweaksStyle() {
 
-            // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
+            // Update tweaks style based on settings
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                                   + ( config.stickySidebar ? ssbStyles
-                                    : config.anchored ? ( anchorStyles + ( config.expanded ? expandedStyles : '' )) : '' )
+                                    : config.anchored ? ( anchorStyles + (
+                                          config.expanded ? expandedStyles : config.minimized ? minimizedStyles : '' )) : '' )
 
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
@@ -1871,8 +1872,8 @@ setTimeout(async () => {
             if (kudoAIspan) kudoAIspan.style.display = (
                 appDiv.querySelectorAll('.corner-btn').length < (
                     config.anchored || !config.widerSidebar ? 5 : 10 )) ? '' : 'none'
-    
-            // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
+
+            // Update <pre> max-height for various mode toggles
             const answerPre = appDiv.querySelector('pre'),
                   relatedQueries = appDiv.querySelector('.related-queries'),
                   shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 304,
@@ -2128,7 +2129,8 @@ setTimeout(async () => {
                 chevronSVG.onclick = () => toggle.minimized()
                 chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
             }
-            update.appBottomPos()
+            update.appBottomPos() // toggle visual minimization
+            update.tweaksStyle() // toggle Font Size + Speak btn visibility
             if (!isMobile) tooltipDiv.style.opacity = 0 // remove lingering tooltip
         },
 
