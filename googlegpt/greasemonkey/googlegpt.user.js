@@ -149,11 +149,12 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.11.6
+// @version                  2024.7.11.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
 // @antifeature              ads A very tiny text ad displays below GoogleGPT chatbar. This motivates me to spend otherwise unpaid time upgrading script w/ new features & APIs.
+// @antifeature              referral-link
 // @compatible               chrome except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible               firefox
 // @compatible               edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
@@ -3252,6 +3253,59 @@
            })()
     hostContainer.prepend(appDiv)
     setTimeout(() => appDiv.classList.add('active'), 100) // fade in
+
+    // Strip Google TRACKING
+    document.addEventListener(inputEvents.down, event => {
+        let a = event.target
+        while (a && !a.href) a = a.parentElement
+        if (!a) return
+        a.removeAttribute('ping')
+        const inlineMousedown = a.getAttribute('onmousedown')
+        if (inlineMousedown && /\ba?rwt\(/.test(inlineMousedown)) {
+            a.removeAttribute('onmousedown') ; a.removeAttribute('ping')
+            if (isChrome) event.stopImmediatePropagation() // since inline listener still runs
+        }
+        let realURL = getRealURL(a)
+        if (realURL) {
+            a.href = realURL
+            realURL = getRealURL(a) ; if (realURL) a.href = realURL // do again for old mobile UA
+        }
+
+        function getRealURL(a) {
+            if (!a.protocol.startsWith('http')) return
+            let url
+            if ((a.hostname.startsWith('www.google.') || a.hostname == location.hostname) &&
+               ['/url', // mobile: /url?q=<url>
+                '/local_url', // Maps/Dito: /local_url?q=<url>
+                '/searchurl/rr.html', '/linkredirect'].includes(a.pathname)) {
+
+                    // HTTP/FTP URLs
+                    url = /[?&](?:q|url|dest)=((?:https?|ftp)[%:][^&]+)/.exec(a.search)
+                    if (url) return decodeURIComponent(url[1])
+
+                    // Help pages, e.g. safe browsing (/url?...&q=%2Fsupport%2Fanswer...)
+                    url = /[?&](?:q|url)=((?:%2[Ff]|\/)[^&]+)/.exec(a.search)
+                    if (url) return a.origin + decodeURIComponent(url[1])
+
+                    // Android intents (/searchurl/rr.html#...&url=...)
+                    url = /[#&]url=(https?[:%][^&]+)/.exec(a.hash)
+                    if (url) return decodeURIComponent(url[1])
+            }
+
+            // Google Search w/ old mobile UA (e.g. Firefox 41)
+            if (a.hostname == 'googleweblight.com' && a.pathname == '/fp') {
+                url = /[?&]u=((?:https?|ftp)[%:][^&]+)/.exec(a.search)
+                if (url) return decodeURIComponent(url[1])
+            }
+        }
+    }, true) // invoke during capturing phase
+
+    // REFERRALIZE links to support author
+    setTimeout(() =>
+        document.querySelectorAll('a[href^="https://www.amazon."]').forEach(anchor => {
+        const url = new URL(anchor.href) ; url.searchParams.set('tag', 'kudo-ai-20')
+        anchor.href = url.toString()
+    }), 1500)
 
     // Init footer CTA to share feedback
     let footerContent = createAnchor('#', msgs.link_shareFeedback || 'Share feedback', { target: '_self' })
