@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.12.2
+// @version               2024.7.12.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1498,7 +1498,7 @@ setTimeout(async () => {
                   + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -200px, black 200px' : 'white 0%, white 100%' }) ;`
                   + ( !config.fgAnimationsDisabled ?
                         'transition: bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1),' // smoothen Anchor vertical minimize/restore
-                                  + 'width 0.167s cubic-bezier(0,0,.2,1),' // smoothen Anchor horizontal expand/shrink
+                                  + 'width 0.167s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor horizontal expand/shrink
                                   + 'opacity 0.5s ease, transform 0.5s ease ;' : '' ) // smoothen 1st app fade-in
                   + `border: ${ scheme == 'dark' ? 'none' : '1px solid var(--color-divider-subtle)' } ; border-radius: 18px }`
               + '#bravegpt:hover { box-shadow: 0 9px 28px rgba(0, 0, 0, 0.09) }'
@@ -1538,7 +1538,8 @@ setTimeout(async () => {
                   + `font-size: ${config.fontSize}px ; font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ;`
                   + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
                   + 'margin-top: 12px ; padding: 1.2em 1.2em 0 1.2em ; border-radius: 13px ; overflow: auto ;'
-                  + 'transition: max-height 0.167s cubic-bezier(0,0,.2,1) ;' // smoothen Anchor mode vertical expand/shrink
+                  + ( !config.fgAnimationsDisabled ? // smoothen Anchor mode vertical expand/shrink
+                        'transition: max-height 0.167s cubic-bezier(0, 0, 0.2, 1) ;' : '' )
                   + `${ scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
                                          : 'background: #eaeaeacf ; color: #282828 ; border: none' }}`
               + `#bravegpt footer { margin: ${ isFirefox ? 32 : 27 }px 18px -26px 0 ; border-top: none !important }`

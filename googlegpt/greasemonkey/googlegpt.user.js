@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.12.2
+// @version                  2024.7.12.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1699,7 +1699,7 @@
                   + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -200px, black 200px' : 'white 0%, white 100%' }) ;`
                   + ( !config.fgAnimationsDisabled ?
                         'transition: bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1),' // smoothen Anchor vertical minimize/restore
-                      + ( config.anchored ? 'width 0.167s cubic-bezier(0,0,.2,1),' : '' ) // smoothen Anchor horizontal expand/shrink
+                      + ( config.anchored ? 'width 0.167s cubic-bezier(0, 0, 0.2, 1),' : '' ) // smoothen Anchor horizontal expand/shrink
                                   + 'opacity 0.5s ease, transform 0.5s ease ;' : '' ) // smoothen 1st app fade-in
                   + `border: ${ scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
               + '#googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
@@ -1737,7 +1737,8 @@
                   + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
                   + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
                   + 'margin: 16px 0 0 0 ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;'
-                  + 'transition: max-height 0.167s cubic-bezier(0,0,.2,1) ;' // smoothen Anchor mode vertical expand/shrink
+                  + ( !config.fgAnimationsDisabled ? // smoothen Anchor mode vertical expand/shrink
+                        'transition: max-height 0.167s cubic-bezier(0, 0, 0.2, 1) ;' : '' )
                   + `${ scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
                                          : 'background: #eaeaeacf ; color: #202124 ; border: none' }}`
               + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
