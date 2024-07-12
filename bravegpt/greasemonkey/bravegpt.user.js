@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.12.1
+// @version               2024.7.12.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1093,6 +1093,33 @@ setTimeout(async () => {
             }
         },
 
+        arrowsDiagonal: {
+            inwardSVGpath() { return createSVGelem('path', { stroke: 'none',
+                d: 'M5 1h2v6H1V5h2.59L0 1.41 1.41 0 5 3.59zm7.41 10H15V9H9v6h2v-2.59L14.59 16 16 14.59z'
+            })},
+
+            outwardSVGpath() { return createSVGelem('path', { stroke: 'none',
+                d: 'M8 6.59L6.59 8 3 4.41V7H1V1h6v2H4.41zM13 9v2.59L9.41 8 8 9.41 11.59 13H9v2h6V9z'
+            })},
+
+            create() {
+                const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      arrowsSVGattrs = [['id', 'arrows-diagonal-icon'], ['width', 16], ['height', 16], ['viewBox', '0 0 16 16']]
+                arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
+                icons.arrowsDiagonal.update(arrowsSVG)
+                return arrowsSVG
+            },
+
+            update(...targetIcons) {
+                targetIcons = targetIcons.flat() // flatten array args nested by spread operator
+                if (targetIcons.length == 0) targetIcons = document.querySelectorAll('#arrows-diagonal-icon')
+                targetIcons.forEach(icon => {
+                    icon.firstChild?.remove() // clear prev paths
+                    icon.append(icons.arrowsDiagonal[config.expanded ? 'inwardSVGpath' : 'outwardSVGpath']())
+                })
+            }
+        },
+
         arrowsDown: {
             create() {
                 const arrowsDownSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -1470,7 +1497,8 @@ setTimeout(async () => {
                   + 'z-index: 5555 ; padding: 24px 23px 45px 23px ;'
                   + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -200px, black 200px' : 'white 0%, white 100%' }) ;`
                   + ( !config.fgAnimationsDisabled ?
-                        'transition: bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1),' // smoothen Anchor minimize/restore
+                        'transition: bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1),' // smoothen Anchor vertical minimize/restore
+                                  + 'width 0.167s cubic-bezier(0,0,.2,1),' // smoothen Anchor horizontal expand/shrink
                                   + 'opacity 0.5s ease, transform 0.5s ease ;' : '' ) // smoothen 1st app fade-in
                   + `border: ${ scheme == 'dark' ? 'none' : '1px solid var(--color-divider-subtle)' } ; border-radius: 18px }`
               + '#bravegpt:hover { box-shadow: 0 9px 28px rgba(0, 0, 0, 0.09) }'
@@ -1510,6 +1538,7 @@ setTimeout(async () => {
                   + `font-size: ${config.fontSize}px ; font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ;`
                   + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
                   + 'margin-top: 12px ; padding: 1.2em 1.2em 0 1.2em ; border-radius: 13px ; overflow: auto ;'
+                  + 'transition: max-height 0.167s cubic-bezier(0,0,.2,1) ;' // smoothen Anchor mode vertical expand/shrink
                   + `${ scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
                                          : 'background: #eaeaeacf ; color: #282828 ; border: none' }}`
               + `#bravegpt footer { margin: ${ isFirefox ? 32 : 27 }px 18px -26px 0 ; border-top: none !important }`
@@ -1798,7 +1827,7 @@ setTimeout(async () => {
         },
 
         tooltip(buttonType) { // text & position
-            const cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'font-size', 'pin', 'wsb']
+            const cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'font-size', 'pin', 'wsb', 'arrows']
                       .filter(type => { // exclude invisible ones                                                
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
@@ -1816,6 +1845,8 @@ setTimeout(async () => {
               : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
               : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
                                        + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
+              : buttonType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
+                                                           : `${ msgs.tooltip_expand || 'Expand' }` )
               : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
               : buttonType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
 
@@ -1829,8 +1860,8 @@ setTimeout(async () => {
 
             // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
-                                  + ( config.stickySidebar ? ssbStyles : config.anchored ? anchorStyles : '' )
-
+                                  + ( config.stickySidebar ? ssbStyles
+                                    : config.anchored ? ( anchorStyles + ( config.expanded ? expandedStyles : '' )) : '' )
 
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
@@ -1847,7 +1878,7 @@ setTimeout(async () => {
                   longerPreHeight = window.innerHeight - 278
             if (answerPre) answerPre.style.maxHeight = (
                 config.stickySidebar ? ( relatedQueries?.offsetHeight > 0 ? `${shorterPreHeight}px` : `${longerPreHeight}px` )
-              : config.anchored ? `${ longerPreHeight - 100 }px` : 'none'
+              : config.anchored ? `${ longerPreHeight - ( config.expanded ? 115 : 365 ) }px` : 'none'
             )
         }
     }
@@ -2011,7 +2042,10 @@ setTimeout(async () => {
             if (state == 'on' || !state && !config.anchored) { // toggle on
                 saveSetting('anchored', true)
                 if (config.stickySidebar) toggle.sidebar('sticky') // off
-            } else saveSetting('anchored', false)
+            } else {
+                saveSetting('anchored', false)
+                if (config.expanded) toggle.expandedMode('off')
+            }
             update.tweaksStyle() ; update.rqVisibility() // apply new state to UI
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const anchorToggle = document.querySelector('[id*="anchor"][id*="menu-entry"] input')
@@ -2067,6 +2101,13 @@ setTimeout(async () => {
             })
         },
 
+        expandedMode(state = '') {
+            saveSetting('expanded', state == 'on' || !state && !config.expanded)
+            if (config.minimized) toggle.minimized('off') // since user wants to see stuff
+            update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
+            icons.arrowsDiagonal.update() ; tooltipDiv.style.opacity = 0 // update icon/tooltip
+        },
+
         manualGet(mode) { // Prefix/Suffix modes
             const modeKey = mode + 'Enabled'
             saveSetting(modeKey, !config[modeKey])
@@ -2078,12 +2119,12 @@ setTimeout(async () => {
             }
         },
 
-        minimized() {
-            saveSetting('minimized', !config.minimized)
+        minimized(state = '') {
+            saveSetting('minimized', state == 'on' || !state && !config.minimized)
             const chevronBtn = appDiv.querySelector('#chevron-btn')
             if (chevronBtn) { // update icon
                 const chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
-                chevronSVG.onclick = toggle.minimized
+                chevronSVG.onclick = () => toggle.minimized()
                 chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
             }
             update.appBottomPos()
@@ -2617,22 +2658,28 @@ setTimeout(async () => {
                     pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
                     pinSpan.className = 'corner-btn' ; pinSpan.style.margin = '1px 9px 0 0'
                     pinSpan.append(pinSVG) ; appDiv.append(pinSpan)
-                }
 
-                // Create/append Wider Sidebar button
-                if (!isMobile) {                    
+                // Create/append Wider Sidebar button         
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = icons.widescreen.create()
                     wsbSpan.id = 'wsb-btn' // for toggle.sidebar() + toggle.tooltip()
                     wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.151em 11px 0 0'
                     wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan)
+
+                // Create/append Expand/Shrink button
+                    var arrowsSpan = document.createElement('span'),
+                        arrowsSVG = icons.arrowsDiagonal.create()
+                    arrowsSpan.id = 'arrows-btn' // for toggle.tooltip()
+                    arrowsSpan.className = 'corner-btn' ; arrowsSpan.style.margin = '1.5px 12px 0 0'
+                    arrowsSpan.style.display = 'none' // to activate from anchorStyles only
+                    arrowsSpan.append(arrowsSVG) ; appDiv.append(arrowsSpan)
                 }
 
                 // Add tooltips
                 if (!isMobile) appDiv.append(tooltipDiv)
 
                 // Add corner button listeners
-                if (chevronSVG) chevronSVG.onclick = toggle.minimized
+                if (chevronSVG) chevronSVG.onclick = () => toggle.minimized()
                 aboutSVG.onclick = modals.about.show
                 settingsSVG.onclick = modals.settings.show
                 if (speakerSVG) speakerSVG.onclick = () => {
@@ -2683,8 +2730,9 @@ setTimeout(async () => {
                 if (pinSVG) pinSVG.onclick = pinSVG.onmouseover = pinSVG.onmouseout = menus.pin.toggle
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (wsbSVG) wsbSVG.onclick = () => toggle.sidebar('wider')
+                if (arrowsSVG) arrowsSVG.onclick = () => toggle.expandedMode()
                 if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, settingsSpan, chevronSpan, speakerSpan, fontSizeSpan, wsbSpan].forEach(span => {
+                    [aboutSpan, settingsSpan, chevronSpan, speakerSpan, fontSizeSpan, wsbSpan, arrowsSpan].forEach(span => {
                         if (span) span.onmouseover = span.onmouseout = toggle.tooltip })
 
                 // Create/append 'by KudoAI'
@@ -2989,7 +3037,8 @@ setTimeout(async () => {
                     + '#bravegpt ~ * { display: none }', // hide sidebar contents
           anchorStyles = '#bravegpt { position: fixed ; bottom: -7px ; right: 35px ; width: 441px }'
                        + '[class*="feedback"], .related-queries, #wsb-btn  { display: none }'
-                       + '#chevron-btn { display: block !important }'
+                       + '#chevron-btn, #arrows-btn { display: block !important }',
+          expandedStyles = '#bravegpt { width: 538px }'
     update.tweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize TOOLTIPs
