@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.6
+// @version             2024.7.11
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -377,10 +377,7 @@
     nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // AUTO-CLEAR on first visit if enabled
-    if (config.autoclear) {
-        setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
-        if (!config.notifDisabled) notify(`${ msgs.mode_autoClear || 'Auto-Clear' }: ${menuState.word[1]}`)
-    }
+    if (config.autoclear) setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
 
     // Define SCRIPT functions
 
