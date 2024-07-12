@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.12.4
+// @version                2024.7.12.5
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -233,7 +233,7 @@
         appURL: 'https://www.duckduckgpt.com', gitHubURL: 'https://github.com/KudoAI/duckduckgpt',
         greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.28,
-        latestAssetCommitHash: 'e444209' } // for cached messages.json
+        latestAssetCommitHash: 'fc22961' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -3077,8 +3077,7 @@
     })
 
     // REFERRALIZE links to support author
-    setTimeout(() =>
-        document.querySelectorAll('a[href^="https://www.amazon."]').forEach(anchor => {
+    setTimeout(() => document.querySelectorAll('a[href^="https://www.amazon."]').forEach(anchor => {
         const url = new URL(anchor.href) ; url.searchParams.set('tag', 'kudo-ai-20')
         anchor.href = url.toString()
     }), 1500)
@@ -3097,7 +3096,7 @@
             }
     } else { appAlert('waitingResponse') ; get.reply(msgChain) }
 
-    // Add key listener to dismiss modals
+    // Add key listener to DISMISS modals
     document.onkeydown = modals.keyHandler;
 
     // Observe for DDG SCHEME CHANGES to update DDGPT scheme if auto-scheme mode
