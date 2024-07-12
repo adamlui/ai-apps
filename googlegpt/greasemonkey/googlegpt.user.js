@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.12
+// @version                  2024.7.12.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2788,12 +2788,14 @@
                 appDiv.append(cornerBtnsDiv)
 
                 // Create/append Chevron button
-                const chevronSpan = document.createElement('span'),
-                      chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
-                chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
-                chevronSpan.className = 'corner-btn' ; chevronSpan.style.margin = '-3.5px 1px 0 11px'
-                chevronSpan.style.display = 'none' // to activate from anchorStyles only
-                chevronSpan.append(chevronSVG) ; cornerBtnsDiv.append(chevronSpan)
+                if (!isMobile) {
+                    var chevronSpan = document.createElement('span'),
+                        chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
+                    chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
+                    chevronSpan.className = 'corner-btn' ; chevronSpan.style.margin = '-3.5px 1px 0 11px'
+                    chevronSpan.style.display = 'none' // to activate from anchorStyles only
+                    chevronSpan.append(chevronSVG) ; cornerBtnsDiv.append(chevronSpan)
+                }
 
                 // Create/append About button
                 const aboutSpan = document.createElement('span'),
@@ -2851,7 +2853,7 @@
                 if (!isMobile) appDiv.append(tooltipDiv)
 
                 // Add corner button listeners
-                chevronSVG.onclick = toggle.minimized
+                if (chevronSVG) chevronSVG.onclick = toggle.minimized
                 aboutSVG.onclick = modals.about.show
                 settingsSVG.onclick = modals.settings.show
                 if (speakerSVG) speakerSVG.onclick = () => {
