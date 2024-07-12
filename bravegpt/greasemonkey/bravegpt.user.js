@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.12.3
+// @version               2024.7.12.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2105,7 +2105,7 @@ setTimeout(async () => {
         expandedMode(state = '') {
             saveSetting('expanded', state == 'on' || !state && !config.expanded)
             if (config.minimized) toggle.minimized('off') // since user wants to see stuff
-            update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
+            update.tweaksStyle() // apply new state to UI
             icons.arrowsDiagonal.update() ; tooltipDiv.style.opacity = 0 // update icon/tooltip
         },
 
