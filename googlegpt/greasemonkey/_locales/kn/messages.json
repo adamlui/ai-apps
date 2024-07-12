@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "ನಾನು ಅದೃಷ್ಟಶಾಲಿಯಾಗಿದ್ದೇನೆ" },
   "tooltip_minimize": { "message": "& ಕನಿಷ್ಠೀಕರಿಸು" },
   "tooltip_restore": { "message": "ಮರುಸ್ಥಾಪಿಸು" },
+  "tooltip_expand": { "message": "ಹಿಗ್ಗಿಸು" },
+  "tooltip_shrink": { "message": "ಕುಗ್ಗಿಸಿ" },
   "tooltip_close": { "message": "ಮುಚ್ಚಿ" },
   "tooltip_sendRelatedQuery": { "message": "ಸಂಬಂಧಿತ ಪ್ರಶ್ನೆಯನ್ನು ಕಳುಹಿಸಿ" },
   "helptip_proxyAPImode": { "message": "AI ಗೆ ಯಾವುದೇ ಲಾಗಿನ್ ಪ್ರವೇಶಕ್ಕಾಗಿ ಪ್ರಾಕ್ಸಿ API ಅನ್ನು ಬಳಸುತ್ತದೆ" },

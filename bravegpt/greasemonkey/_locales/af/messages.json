@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Stel ewekansige vraag" },
   "tooltip_minimize": { "message": "Minimeer" },
   "tooltip_restore": { "message": "Herstel" },
+  "tooltip_expand": { "message": "Uitbrei" },
+  "tooltip_shrink": { "message": "Verklein" },
   "tooltip_close": { "message": "Maak toe" },
   "tooltip_sendRelatedQuery": { "message": "Stuur verwante navraag" },
   "helptip_proxyAPImode": { "message": "Gebruik 'n Proxy API vir no-login toegang tot AI" },

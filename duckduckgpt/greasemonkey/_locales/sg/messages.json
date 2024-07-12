@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Ask random question na" },
   "tooltip_minimize": { "message": "Mbi Minimize" },
   "tooltip_restore": { "message": "Ngbâ ti kiri na fini" },
+  "tooltip_expand": { "message": "Kangbi ni Kangbi ni" },
+  "tooltip_shrink": { "message": "Yângâ tî kodoro ti Shrink" },
   "tooltip_close": { "message": "Pene ni da" },
   "tooltip_sendRelatedQuery": { "message": "Ti tokua mbeni hundango tënë so andu tënë ni" },
   "helptip_proxyAPImode": { "message": "Sara kua na mbeni API ti proxy ti wara lege ti sara kua na aye so ayeke na lege ni ape" },

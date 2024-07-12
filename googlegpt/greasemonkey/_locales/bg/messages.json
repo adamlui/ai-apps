@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Чувствам се късметлия" },
   "tooltip_minimize": { "message": "?њ???????????·???Ђ?°???µ" },
   "tooltip_restore": { "message": "?’?Љ?·?Ѓ?‚?°???????Џ???°???µ" },
+  "tooltip_expand": { "message": "Разгъване" },
+  "tooltip_shrink": { "message": "Изостряне" },
   "tooltip_close": { "message": "Затвори" },
   "tooltip_sendRelatedQuery": { "message": "Изпращане на свързано запитване" },
   "helptip_proxyAPImode": { "message": "Използва приложен програмен интерфейс (API) за прокси сървър (Proxy API) за достъп без влизане до изку" },

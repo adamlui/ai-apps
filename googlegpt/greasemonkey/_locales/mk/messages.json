@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Се чувствувам среќно" },
   "tooltip_minimize": { "message": "Минимизираj" },
   "tooltip_restore": { "message": "Да се врати" },
+  "tooltip_expand": { "message": "Прошири" },
+  "tooltip_shrink": { "message": "Психијатар" },
   "tooltip_close": { "message": "Затвори" },
   "tooltip_sendRelatedQuery": { "message": "Испрати поврзано барање" },
   "helptip_proxyAPImode": { "message": "Користи Proxy API за пристап без најава до AI" },

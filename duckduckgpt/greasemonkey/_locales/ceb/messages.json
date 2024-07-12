@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Pangutan-a ang random nga pangutana" },
   "tooltip_minimize": { "message": "I-minimize" },
   "tooltip_restore": { "message": "Iuli" },
+  "tooltip_expand": { "message": "Pagpalapad" },
+  "tooltip_shrink": { "message": "Pagminus" },
   "tooltip_close": { "message": "Duol" },
   "tooltip_sendRelatedQuery": { "message": "Ipadala ang may kalabutan nga pangutana" },
   "helptip_proxyAPImode": { "message": "Paggamit usa ka Proxy API alang sa dili pag-login nga pag-access sa AI" },

@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Swali kwa Random" },
   "tooltip_minimize": { "message": "Minimise" },
   "tooltip_restore": { "message": "Bwesesha" },
+  "tooltip_expand": { "message": "Ukwishibilapo nafimbi" },
+  "tooltip_shrink": { "message": "Shrink" },
   "tooltip_close": { "message": "Fela Kuti Close" },
   "tooltip_sendRelatedQuery": { "message": "Tumineni ifipusho ifilanda pali ili lyashi" },
   "helptip_proxyAPImode": { "message": "Ibomfya API iya kwimininako ukwabula ukwingila mu AI" },

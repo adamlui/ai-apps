@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "I 'm Feeling Lucky" },
   "tooltip_minimize": { "message": "& Minimumigu" },
   "tooltip_restore": { "message": "Restaŭri" },
+  "tooltip_expand": { "message": "Etendi" },
+  "tooltip_shrink": { "message": "Ŝrumpi" },
   "tooltip_close": { "message": "Fermi" },
   "tooltip_sendRelatedQuery": { "message": "Sendi rilatan peton" },
   "helptip_proxyAPImode": { "message": "Uzas Proxy API por ne-login aliro al AI" },

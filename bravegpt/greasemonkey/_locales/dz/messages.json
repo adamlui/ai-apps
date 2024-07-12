@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "དྲི་བ་ཚུ་" },
   "tooltip_minimize": { "message": "དམའ་ཕབ་རྐྱབས།" },
   "tooltip_restore": { "message": "བསྐྱར་གསོ་འབད་ (_R)" },
+  "tooltip_expand": { "message": "རྒྱ་སྐྱེད་འབད་" },
+  "tooltip_shrink": { "message": "སེངྒེ་" },
   "tooltip_close": { "message": "སྒོ་བསྡམས་" },
   "tooltip_sendRelatedQuery": { "message": "འབྲེལ་བ་ཡོད་པའི་དྲི་བ་ཚུ་གཏང་འབད།" },
   "helptip_proxyAPImode": { "message": "AIལུ་ ཐོ་བཀོད་འབད་ནིའི་དོན་ལུ་ Proxy API ལག་ལེན་འཐབ་དགོ།" },

@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Osjećam se sretno" },
   "tooltip_minimize": { "message": "Minimalizovati" },
   "tooltip_restore": { "message": "Vratiti" },
+  "tooltip_expand": { "message": "Proširiti" },
+  "tooltip_shrink": { "message": "Smanji" },
   "tooltip_close": { "message": "Zatvori" },
   "tooltip_sendRelatedQuery": { "message": "Pošaljite povezani upit" },
   "helptip_proxyAPImode": { "message": "Koristi proxy API za pristup AI bez prijave" },

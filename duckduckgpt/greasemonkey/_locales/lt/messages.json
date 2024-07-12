@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Užduoti atsitiktinį klausimą" },
   "tooltip_minimize": { "message": "Suskleisti" },
   "tooltip_restore": { "message": "Atkurti" },
+  "tooltip_expand": { "message": "Išskleisti" },
+  "tooltip_shrink": { "message": "Sinusas" },
   "tooltip_close": { "message": "Užverti" },
   "tooltip_sendRelatedQuery": { "message": "Siųsti susijusią užklausą" },
   "helptip_proxyAPImode": { "message": "Naudoja tarpinio serverio API, kad negalėtų prisijungti prie AI" },

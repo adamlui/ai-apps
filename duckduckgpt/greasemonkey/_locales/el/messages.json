@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Κάντε τυχαία ερώτηση" },
   "tooltip_minimize": { "message": "Ελαχιστοποίηση" },
   "tooltip_restore": { "message": "Επαναφορά" },
+  "tooltip_expand": { "message": "Ανάπτυξη" },
+  "tooltip_shrink": { "message": "Σμίκρυνση" },
   "tooltip_close": { "message": "Κλείσιμο" },
   "tooltip_sendRelatedQuery": { "message": "Αποστολή σχετικού ερωτήματος" },
   "helptip_proxyAPImode": { "message": "Χρησιμοποιεί ένα API διακομιστή μεσολάβησης για πρόσβαση χωρίς σύνδεση στην τεχνητή νοημοσύνη" },

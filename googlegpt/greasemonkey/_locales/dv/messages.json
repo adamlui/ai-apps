@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "އައި އެމް ފީލިންގ ލަކީ" },
   "tooltip_minimize": { "message": "އެންމެ ކުޑަކުރުން" },
   "tooltip_restore": { "message": "ރީސްޓޯރ" },
+  "tooltip_expand": { "message": "އިތުރުކުރުން" },
+  "tooltip_shrink": { "message": "ކުޑަވުން" },
   "tooltip_close": { "message": "ލެއްޕުން" },
   "tooltip_sendRelatedQuery": { "message": "ގުޅުންހުރި ސުވާލު ތައް ފޮނުވުން" },
   "helptip_proxyAPImode": { "message": "އެއައި އަށް ނޯ-ލޮގިން އެކްސެސް އަށް ޕްރޮކްސީ އެޕީއައި އެއް ބޭނުން ކުރެއެވެ" },

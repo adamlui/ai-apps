@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "የዘፈቀደ ጥያቄ ይጠይቁ" },
   "tooltip_minimize": { "message": "ያሳንሱ" },
   "tooltip_restore": { "message": "ዳግም አስጀምር" },
+  "tooltip_expand": { "message": "አይስላንድ" },
+  "tooltip_shrink": { "message": "Shrink" },
   "tooltip_close": { "message": "ዝጋ" },
   "tooltip_sendRelatedQuery": { "message": "ተዛማጅ ጥያቄ ይላኩ" },
   "helptip_proxyAPImode": { "message": "ለ AI ምንም ምዝገባ መዳረሻ ፕሮክሲ ኤፒአይ ይጠቀማል" },

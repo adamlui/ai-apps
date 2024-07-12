@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Mă simt norocos" },
   "tooltip_minimize": { "message": "Minimizare" },
   "tooltip_restore": { "message": "Restaurare" },
+  "tooltip_expand": { "message": "Extindere" },
+  "tooltip_shrink": { "message": "Micsora" },
   "tooltip_close": { "message": "Închideți" },
   "tooltip_sendRelatedQuery": { "message": "Trimitere interogare asociată" },
   "helptip_proxyAPImode": { "message": "Utilizează un API Proxy pentru acces fără conectare la AI" },

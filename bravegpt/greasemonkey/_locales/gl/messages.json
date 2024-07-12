@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Facer unha pregunta aleatoria" },
   "tooltip_minimize": { "message": "Barra de ferramentas de Enderezo" },
   "tooltip_restore": { "message": "& Restaurar" },
+  "tooltip_expand": { "message": "Despregar" },
+  "tooltip_shrink": { "message": "Reducir" },
   "tooltip_close": { "message": "Pechar" },
   "tooltip_sendRelatedQuery": { "message": "Enviar consulta relacionada" },
   "helptip_proxyAPImode": { "message": "Usa unha API Proxy para o acceso sen login á IA" },

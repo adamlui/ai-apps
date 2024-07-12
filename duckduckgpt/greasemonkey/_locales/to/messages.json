@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Fai ha fehuʻi noaʻia" },
   "tooltip_minimize": { "message": "Fakasiʻisiʻi" },
   "tooltip_restore": { "message": "Toe Fakafoki Mai" },
+  "tooltip_expand": { "message": "Fakalahi" },
+  "tooltip_shrink": { "message": "Holomui" },
   "tooltip_close": { "message": "Tāpuni" },
   "tooltip_sendRelatedQuery": { "message": "ʻAve ʻa e fehuʻi ʻoku fekauʻaki" },
   "helptip_proxyAPImode": { "message": "Fakaʻaongaʻi ha API fakafofonga ki he ʻikai lava ke hu ki he ʻi ai" },

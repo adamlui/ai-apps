@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "زه خوشحاله احساس کوم" },
   "tooltip_minimize": { "message": "ووړول" },
   "tooltip_restore": { "message": "بيا زېرمه کړئ" },
+  "tooltip_expand": { "message": "پراخ کړئ" },
+  "tooltip_shrink": { "message": "غونجول" },
   "tooltip_close": { "message": "بندول" },
   "tooltip_sendRelatedQuery": { "message": "اړونده پوښتنې ولیږئ" },
   "helptip_proxyAPImode": { "message": "AI ته د نه ننوتلو لاسرسي لپاره د پراکسي API کاروي" },

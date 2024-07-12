@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "I 'm Feeling Lucky" },
   "tooltip_minimize": { "message": "& Печонидан" },
   "tooltip_restore": { "message": "Барқарор кардан" },
+  "tooltip_expand": { "message": "Густариш додан" },
+  "tooltip_shrink": { "message": "Шакл:" },
   "tooltip_close": { "message": "Пӯшидан" },
   "tooltip_sendRelatedQuery": { "message": "Фиристодани дархости марбута" },
   "helptip_proxyAPImode": { "message": "Name" },

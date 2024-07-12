@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Egin ausazko galdera" },
   "tooltip_minimize": { "message": "Txikiendu" },
   "tooltip_restore": { "message": "Berrezarri" },
+  "tooltip_expand": { "message": "Zabaldu" },
+  "tooltip_shrink": { "message": "Txikitu" },
   "tooltip_close": { "message": "Itxi" },
   "tooltip_sendRelatedQuery": { "message": "Bidali erlazionatutako kontsulta" },
   "helptip_proxyAPImode": { "message": "Proxy API bat erabiltzen du AI-ra saioa hasi gabe sartzeko" },

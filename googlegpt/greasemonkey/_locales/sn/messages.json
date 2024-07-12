@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Ndinonzwa Lucky" },
   "tooltip_minimize": { "message": "dzikamisa" },
   "tooltip_restore": { "message": "Dzorerazve" },
+  "tooltip_expand": { "message": "Wedzera" },
+  "tooltip_shrink": { "message": "Shrink" },
   "tooltip_close": { "message": "vhara" },
   "tooltip_sendRelatedQuery": { "message": "Tumira mubvunzo wakabatana" },
   "helptip_proxyAPImode": { "message": "Anoshandisa munhu Proxy API kuti hapana- Login kuwana AI" },

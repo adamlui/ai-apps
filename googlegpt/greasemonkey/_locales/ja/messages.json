@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "ついてる気がしてさ" },
   "tooltip_minimize": { "message": "最小化" },
   "tooltip_restore": { "message": "復元" },
+  "tooltip_expand": { "message": "拡大する" },
+  "tooltip_shrink": { "message": "小さく" },
   "tooltip_close": { "message": "Close" },
   "tooltip_sendRelatedQuery": { "message": "関連するクエリを送信" },
   "helptip_proxyAPImode": { "message": "AI へのノーログインアクセスにプロキシ API を使用" },

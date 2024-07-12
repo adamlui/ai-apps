@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Postavite naključno vprašanje" },
   "tooltip_minimize": { "message": "Pomanjšaj" },
   "tooltip_restore": { "message": "Obnovi" },
+  "tooltip_expand": { "message": "Razširi" },
+  "tooltip_shrink": { "message": "Skrči" },
   "tooltip_close": { "message": "Zapri" },
   "tooltip_sendRelatedQuery": { "message": "Pošlji povezano poizvedbo" },
   "helptip_proxyAPImode": { "message": "Uporablja proxy API za dostop brez prijave do umetne inteligence" },

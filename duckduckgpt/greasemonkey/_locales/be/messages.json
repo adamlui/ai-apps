@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Задаць выпадковае пытанне" },
   "tooltip_minimize": { "message": "Згарнуць" },
   "tooltip_restore": { "message": "Аднавіць" },
+  "tooltip_expand": { "message": "Разгарнуць" },
+  "tooltip_shrink": { "message": "Павелічэнне рэзкасці" },
   "tooltip_close": { "message": "Закрыць" },
   "tooltip_sendRelatedQuery": { "message": "Даслаць адпаведны запыт" },
   "helptip_proxyAPImode": { "message": "Выкарыстоўвае API проксі для доступу без уваходу ў ІІ" },

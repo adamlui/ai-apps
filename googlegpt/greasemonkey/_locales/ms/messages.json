@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Saya Rasa Bertuah" },
   "tooltip_minimize": { "message": "Minimum" },
   "tooltip_restore": { "message": "Pulihkan" },
+  "tooltip_expand": { "message": "Mengembangkan" },
+  "tooltip_shrink": { "message": "Kuncup" },
   "tooltip_close": { "message": "Tutup" },
   "tooltip_sendRelatedQuery": { "message": "Hantar pertanyaan berkaitan" },
   "helptip_proxyAPImode": { "message": "Menggunakan api Proksi untuk akses tanpa log masuk ke AI" },

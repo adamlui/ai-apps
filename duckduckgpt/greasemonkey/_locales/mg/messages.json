@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Manontania fanontaniana kisendrasendra" },
   "tooltip_minimize": { "message": "Hanakely" },
   "tooltip_restore": { "message": "Avereno" },
+  "tooltip_expand": { "message": "Manitatra" },
+  "tooltip_shrink": { "message": "Hampihemotra" },
   "tooltip_close": { "message": "Akato" },
   "tooltip_sendRelatedQuery": { "message": "Alefaso fanontaniana mifandraika" },
   "helptip_proxyAPImode": { "message": "Mampiasa Proxy API ho an'ny fidirana tsy misy login amin'ny AI" },

@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Danas se osećam kao srećković" },
   "tooltip_minimize": { "message": "Spusti" },
   "tooltip_restore": { "message": "Vrati" },
+  "tooltip_expand": { "message": "Прошири" },
+  "tooltip_shrink": { "message": "Smanji" },
   "tooltip_close": { "message": "Zatvori" },
   "tooltip_sendRelatedQuery": { "message": "Pošaljite povezani upit" },
   "helptip_proxyAPImode": { "message": "Koristi proksi API za pristup veštačkoj inteligenciji bez prijave" },

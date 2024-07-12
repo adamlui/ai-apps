@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Em sento afortunat" },
   "tooltip_minimize": { "message": "Minimitza" },
   "tooltip_restore": { "message": "Restaura" },
+  "tooltip_expand": { "message": "Expandeix" },
+  "tooltip_shrink": { "message": "Psiquiatre" },
   "tooltip_close": { "message": "Tanca" },
   "tooltip_sendRelatedQuery": { "message": "Envia una consulta relacionada" },
   "helptip_proxyAPImode": { "message": "Utilitza una API de proxy per accedir sense inici de sessió a la IA" },

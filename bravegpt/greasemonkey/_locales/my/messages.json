@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "ကျပန်းမေးခွန်းမေးပါ" },
   "tooltip_minimize": { "message": "အနည်းဆုံး" },
   "tooltip_restore": { "message": "ပြန်သွင်းမည်" },
+  "tooltip_expand": { "message": "ချဲ့ထွင်ပါ" },
+  "tooltip_shrink": { "message": "ကျုံ့ပါ" },
   "tooltip_close": { "message": "ပိတ်ရန်" },
   "tooltip_sendRelatedQuery": { "message": "ဆက်စပ်မေးမြန်းချက် ပေးပို့ပါ" },
   "helptip_proxyAPImode": { "message": "APK ကိုဒေါင်းလုပ်_APK ကိုအန်းဒရွိုက်သည် Download" },

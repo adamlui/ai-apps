@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Poze kesyon owaza" },
   "tooltip_minimize": { "message": "réduire/misyon/pou minimize" },
   "tooltip_restore": { "message": "Restore" },
+  "tooltip_expand": { "message": "agrandi" },
+  "tooltip_shrink": { "message": "retresi/rakornir/vini pi piti/rétrécir" },
   "tooltip_close": { "message": "Fèmen" },
   "tooltip_sendRelatedQuery": { "message": "Voye demann ki gen rapò" },
   "helptip_proxyAPImode": { "message": "Sèvi ak yon API Proxy pou pa gen aksè login nan AI" },

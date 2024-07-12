@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Rwy'n teimlo'n lwcus" },
   "tooltip_minimize": { "message": "Lleihau" },
   "tooltip_restore": { "message": "Adfer" },
+  "tooltip_expand": { "message": "Dangos" },
+  "tooltip_shrink": { "message": "Lleihau" },
   "tooltip_close": { "message": "Cau" },
   "tooltip_sendRelatedQuery": { "message": "Anfon ymholiad cysylltiedig" },
   "helptip_proxyAPImode": { "message": "Defnyddio API Proxy ar gyfer mynediad dim login i AI" },

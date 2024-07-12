@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Buza umbuzo ongakhethiyo" },
   "tooltip_minimize": { "message": "Yenza ibe nkulu" },
   "tooltip_restore": { "message": "Buyisela" },
+  "tooltip_expand": { "message": "Yandisa" },
+  "tooltip_shrink": { "message": "Nciphisa/-finyeza" },
   "tooltip_close": { "message": "Vala" },
   "tooltip_sendRelatedQuery": { "message": "Thumela umbuzo onento yokwenza noko" },
   "helptip_proxyAPImode": { "message": "Usebenzisa i-API yeProxy ukuze ungangeni kwiAI" },

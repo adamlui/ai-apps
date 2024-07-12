@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Qed Inħossni Xortikati" },
   "tooltip_minimize": { "message": "Imminimizza" },
   "tooltip_restore": { "message": "Irrestawra" },
+  "tooltip_expand": { "message": "Stat Membru" },
+  "tooltip_shrink": { "message": "Niżżel" },
   "tooltip_close": { "message": "Agħlaq" },
   "tooltip_sendRelatedQuery": { "message": "Ibgħat mistoqsija relatata" },
   "helptip_proxyAPImode": { "message": "Uża API Proxy għall-aċċess mingħajr login għall-IA" },

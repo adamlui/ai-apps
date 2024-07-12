@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Numva nishimye" },
   "tooltip_minimize": { "message": "Minimise None" },
   "tooltip_restore": { "message": "Gusubiza ibintu mu buryo" },
+  "tooltip_expand": { "message": "Guteza imbere" },
+  "tooltip_shrink": { "message": "Gusubiza ibintu mu buryo" },
   "tooltip_close": { "message": "Ugara" },
   "tooltip_sendRelatedQuery": { "message": "Rungika Rungika Ibibazo bifitaniye isano" },
   "helptip_proxyAPImode": { "message": "Koresha API ya Proxy ngo ntihagire uwushobora kwinjira muri AI" },

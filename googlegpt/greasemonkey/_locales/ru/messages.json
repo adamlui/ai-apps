@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "\"Мне повезёт!\"" },
   "tooltip_minimize": { "message": "Свернуть" },
   "tooltip_restore": { "message": "Вернуть" },
+  "tooltip_expand": { "message": "Развернуть" },
+  "tooltip_shrink": { "message": "Авторазмер" },
   "tooltip_close": { "message": "Закрыть" },
   "tooltip_sendRelatedQuery": { "message": "Отправить связанный запрос" },
   "helptip_proxyAPImode": { "message": "Использует API прокси для доступа к ИИ без входа в систему" },

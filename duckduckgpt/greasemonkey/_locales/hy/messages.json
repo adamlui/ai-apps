@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Պատահական հարց տվեք" },
   "tooltip_minimize": { "message": "Նվազեցնել" },
   "tooltip_restore": { "message": "Հաշվի չառնել" },
+  "tooltip_expand": { "message": "Տարածել" },
+  "tooltip_shrink": { "message": "Նեղանալ" },
   "tooltip_close": { "message": "Փակել" },
   "tooltip_sendRelatedQuery": { "message": "Ուղարկել համապատասխան հարցում" },
   "helptip_proxyAPImode": { "message": "Օգտագործում է վստահված անձի API ՝ առանց AI - ին մուտք գործելու համար" },

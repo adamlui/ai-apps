@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Mul on vedanud" },
   "tooltip_minimize": { "message": "Vähenda" },
   "tooltip_restore": { "message": "Taasta" },
+  "tooltip_expand": { "message": "Laienda" },
+  "tooltip_shrink": { "message": "Kahandamine" },
   "tooltip_close": { "message": "Sulge" },
   "tooltip_sendRelatedQuery": { "message": "Saada seotud päring" },
   "helptip_proxyAPImode": { "message": "Kasutab puhverserveri API-d sisselogimiseta juurdepääsuks tehisintellektile" },

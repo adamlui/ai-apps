@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "म भाग्यमानी महसुस गर्दैछु" },
   "tooltip_minimize": { "message": "सानो पार्नुहोस्" },
   "tooltip_restore": { "message": "पूर्वावस्थामा ल्याउनुहोस्" },
+  "tooltip_expand": { "message": "ठूलो बनाउनु" },
+  "tooltip_shrink": { "message": "खुम्चाउनुहोस्" },
   "tooltip_close": { "message": "बन्द गर्नुहोस्" },
   "tooltip_sendRelatedQuery": { "message": "सम्बन्धित क्वेरी पठाउनुहोस्" },
   "helptip_proxyAPImode": { "message": "AI मा लगइन नभएको पहुँचको लागि प्रोक्सी API प्रयोग गर्दछ" },

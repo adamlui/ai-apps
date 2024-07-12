@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de comments" },
   "tooltip_minimize": { "message": "& Kleng maachen" },
   "tooltip_restore": { "message": "Zerécksetzen" },
+  "tooltip_expand": { "message": "Erweideren" },
+  "tooltip_shrink": { "message": "Verréngeren" },
   "tooltip_close": { "message": "Zoumaachen" },
   "tooltip_sendRelatedQuery": { "message": "Zesummenhang Ufro schécken" },
   "helptip_proxyAPImode": { "message": "Benotzt e Proxy-API fir keen Login Zougang zu AI" },

@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Tunnen itseni onnekkaaksi" },
   "tooltip_minimize": { "message": "MInimoi" },
   "tooltip_restore": { "message": "Palauta" },
+  "tooltip_expand": { "message": "Laajenna" },
+  "tooltip_shrink": { "message": "Kutista" },
   "tooltip_close": { "message": "Sulje" },
   "tooltip_sendRelatedQuery": { "message": "Lähetä liittyvä kysely" },
   "helptip_proxyAPImode": { "message": "Käyttää välityspalvelimen sovellusliittymää tekoälyn kirjautumattomaan käyttöön" },

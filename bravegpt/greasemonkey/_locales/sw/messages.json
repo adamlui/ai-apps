@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Uliza swali la kiholela" },
   "tooltip_minimize": { "message": "Kadilio la chini" },
   "tooltip_restore": { "message": "Rejesha" },
+  "tooltip_expand": { "message": "Panua" },
+  "tooltip_shrink": { "message": "Punguza" },
   "tooltip_close": { "message": "Funga" },
   "tooltip_sendRelatedQuery": { "message": "Tuma swali linalohusiana" },
   "helptip_proxyAPImode": { "message": "Inatumia API Wakala kwa ufikiaji usioingia kwenye AI" },

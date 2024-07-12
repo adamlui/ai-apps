@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Tôi đang cảm thấy may mắn" },
   "tooltip_minimize": { "message": "Thu nhỏ" },
   "tooltip_restore": { "message": "Khôi phục" },
+  "tooltip_expand": { "message": "Mở rộng" },
+  "tooltip_shrink": { "message": "Thu Nhỏ/Co Lại (Shrink)" },
   "tooltip_close": { "message": "Đóng" },
   "tooltip_sendRelatedQuery": { "message": "Gửi truy vấn liên quan" },
   "helptip_proxyAPImode": { "message": "Sử dụng API Proxy để truy cập AI mà không cần đăng nhập" },

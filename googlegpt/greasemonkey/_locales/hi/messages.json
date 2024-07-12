@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "आज मेरी किस्मत अच्छी हैTHGB" },
   "tooltip_minimize": { "message": "न्यूनतम" },
   "tooltip_restore": { "message": "रीस्टोर करें" },
+  "tooltip_expand": { "message": "विस्तार" },
+  "tooltip_shrink": { "message": "सिकोड़ें" },
   "tooltip_close": { "message": "बंद करें" },
   "tooltip_sendRelatedQuery": { "message": "संबंधित क्वेरी भेजें" },
   "helptip_proxyAPImode": { "message": "AI तक नो - लॉगिन एक्सेस के लिए एक प्रॉक्सी एपीआई का उपयोग करता है" },

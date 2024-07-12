@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "איך בין מאַזלדיק" },
   "tooltip_minimize": { "message": "מינאַמייז" },
   "tooltip_restore": { "message": "ריסטאָר" },
+  "tooltip_expand": { "message": "פֿאַרגרעסער" },
+  "tooltip_shrink": { "message": "דערלאָז שרימפּן" },
   "tooltip_close": { "message": "נאָענט" },
   "tooltip_sendRelatedQuery": { "message": "שיקן פֿאַרבונדענע אָנפֿרעג" },
   "helptip_proxyAPImode": { "message": "ניצט אַ פּראָקסי אַפּי פֿאַר קיין לאָגין אַקסעס צו אַי" },

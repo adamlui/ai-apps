@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Ngizizwa Nginenhlanhla" },
   "tooltip_minimize": { "message": "Khulisa" },
   "tooltip_restore": { "message": "Buyisela" },
+  "tooltip_expand": { "message": "Nweba" },
+  "tooltip_shrink": { "message": "Nciphisa" },
   "tooltip_close": { "message": "Vala" },
   "tooltip_sendRelatedQuery": { "message": "Thumela umbuzo ohlobene" },
   "helptip_proxyAPImode": { "message": "Isebenzisa i-Proxy API ukuze ingangeni ku-AI" },

@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Задайте випадкове запитання" },
   "tooltip_minimize": { "message": "Згорнути" },
   "tooltip_restore": { "message": "Відновити" },
+  "tooltip_expand": { "message": "Розгорнути" },
+  "tooltip_shrink": { "message": "стискатися" },
   "tooltip_close": { "message": "Закрити" },
   "tooltip_sendRelatedQuery": { "message": "Надіслати пов 'язаний запит" },
   "helptip_proxyAPImode": { "message": "Використовує проксі API для доступу без входу до AI" },

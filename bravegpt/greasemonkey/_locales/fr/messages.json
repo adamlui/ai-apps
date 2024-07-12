@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Poser une question aléatoire" },
   "tooltip_minimize": { "message": "Minimiser" },
   "tooltip_restore": { "message": "Restaurer" },
+  "tooltip_expand": { "message": "Agrandir" },
+  "tooltip_shrink": { "message": "Diminuer" },
   "tooltip_close": { "message": "Fermer" },
   "tooltip_sendRelatedQuery": { "message": "Envoyer une requête associée" },
   "helptip_proxyAPImode": { "message": "Utilise une API proxy pour un accès sans connexion à l'IA" },

@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "隨機提問" },
   "tooltip_minimize": { "message": "最小化" },
   "tooltip_restore": { "message": "恢復" },
+  "tooltip_expand": { "message": "展開" },
+  "tooltip_shrink": { "message": "收縮" },
   "tooltip_close": { "message": "關閉" },
   "tooltip_sendRelatedQuery": { "message": "傳送相關查詢" },
   "helptip_proxyAPImode": { "message": "使用 Proxy API 無需登入即可存取 AI" },

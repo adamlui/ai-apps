@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Ke Ikutlwa ke na le Letlhogonolo" },
   "tooltip_minimize": { "message": "Fokotsa selekanyo sa yone" },
   "tooltip_restore": { "message": "RESTURE" },
+  "tooltip_expand": { "message": "Atolosa" },
+  "tooltip_shrink": { "message": "Khutshwane" },
   "tooltip_close": { "message": "Tswala" },
   "tooltip_sendRelatedQuery": { "message": "ROMELA DIPOTSO TSE DI AMAN" },
   "helptip_proxyAPImode": { "message": "O dirisa Proxy API gore o seka wa tsena mo tirong ya AI" },

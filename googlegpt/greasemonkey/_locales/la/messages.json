@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Ego sum felix" },
   "tooltip_minimize": { "message": "Deminuere" },
   "tooltip_restore": { "message": "RECTRIUS" },
+  "tooltip_expand": { "message": "Expandum" },
+  "tooltip_shrink": { "message": "Accipere" },
   "tooltip_close": { "message": "Claudere" },
   "tooltip_sendRelatedQuery": { "message": "Mitto quaestionem relatam" },
   "helptip_proxyAPImode": { "message": "Utitur API Proxy ad accessum AI sine login" },

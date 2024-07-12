@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Czuję, że mam szczęście" },
   "tooltip_minimize": { "message": "Minimalizuj" },
   "tooltip_restore": { "message": "Przywróć" },
+  "tooltip_expand": { "message": "Rozwiń" },
+  "tooltip_shrink": { "message": "Straty towaru" },
   "tooltip_close": { "message": "Zamknij" },
   "tooltip_sendRelatedQuery": { "message": "Wyślij powiązane zapytanie" },
   "helptip_proxyAPImode": { "message": "Używa interfejsu API serwera proxy w celu uzyskania dostępu bez logowania do sztucznej inteligencji" },

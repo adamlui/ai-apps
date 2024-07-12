@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "હું નસીબદાર અનુભવું છું" },
   "tooltip_minimize": { "message": "ઓછુ કરવુ" },
   "tooltip_restore": { "message": "પાછું લાવો" },
+  "tooltip_expand": { "message": "એક્સપાન્ડ કરો" },
+  "tooltip_shrink": { "message": "સંકોચો" },
   "tooltip_close": { "message": "બંધ કરો" },
   "tooltip_sendRelatedQuery": { "message": "સંબંધિત ક્વેરી મોકલો" },
   "helptip_proxyAPImode": { "message": "AI ની નો-લોગિન ઍક્સેસ માટે પ્રોક્સી API નો ઉપયોગ કરે છે" },

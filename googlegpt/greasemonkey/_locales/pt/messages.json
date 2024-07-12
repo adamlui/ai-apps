@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Sinto-me com sorte" },
   "tooltip_minimize": { "message": "Minimizar" },
   "tooltip_restore": { "message": "Restaurar" },
+  "tooltip_expand": { "message": "Expandir" },
+  "tooltip_shrink": { "message": "Reduzir" },
   "tooltip_close": { "message": "Close (Fechar)" },
   "tooltip_sendRelatedQuery": { "message": "Enviar consulta relacionada" },
   "helptip_proxyAPImode": { "message": "Usa uma API Proxy para acesso sem login à IA" },

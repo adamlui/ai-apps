@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "എനിക്ക് ഭാഗ്യമുണ്ടെന്ന് തോന്നുന്നു" },
   "tooltip_minimize": { "message": "ചുരുക്കുക" },
   "tooltip_restore": { "message": "പടിഞ്ഞാറന്‌" },
+  "tooltip_expand": { "message": "വലുതാക്കുക" },
+  "tooltip_shrink": { "message": "ചുരുക്കുക" },
   "tooltip_close": { "message": "ക്ലോസ് ചെയ്യുക" },
   "tooltip_sendRelatedQuery": { "message": "ബന്ധപ്പെട്ട ചോദ്യം അയയ്ക്കുക" },
   "helptip_proxyAPImode": { "message": "AI-ലേക്ക് നോ-ലോഗിൻ ആക്‌സസ് ചെയ്യുന്നതിന് ഒരു പ്രോക്സി API ഉപയോഗിക്കുന്നു" },

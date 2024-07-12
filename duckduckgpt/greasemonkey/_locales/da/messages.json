@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "Random Spørgsmål" },
   "tooltip_minimize": { "message": "Minimer" },
   "tooltip_restore": { "message": "Genskab" },
+  "tooltip_expand": { "message": "Vis" },
+  "tooltip_shrink": { "message": "Gør mindre" },
   "tooltip_close": { "message": "Luk" },
   "tooltip_sendRelatedQuery": { "message": "Send relateret forespørgsel" },
   "helptip_proxyAPImode": { "message": "Bruger en proxy-API til nul-login-adgang til AI" },

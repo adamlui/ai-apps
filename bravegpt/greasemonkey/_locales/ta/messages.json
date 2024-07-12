@@ -41,6 +41,8 @@
   "tooltip_askRandQuestion": { "message": "சீரற்ற கேள்வியைக் கேளுங்கள்" },
   "tooltip_minimize": { "message": "சிறிதாக்கு" },
   "tooltip_restore": { "message": "மீட்டமை" },
+  "tooltip_expand": { "message": "விரிக்கவும்" },
+  "tooltip_shrink": { "message": "கூர்மையாக்கு" },
   "tooltip_close": { "message": "மூடு" },
   "tooltip_sendRelatedQuery": { "message": "தொடர்புடைய வினவலை அனுப்பவும்" },
   "helptip_proxyAPImode": { "message": "AI-க்கான உள்நுழைவு அணுகலுக்கு ப்ராக்ஸி API ஐப் பயன்படுத்துகிறது" },

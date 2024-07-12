@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "میں خوش قسمت محسوس کر رہا ہوں" },
   "tooltip_minimize": { "message": "ونڈو چھوٹی کریں" },
   "tooltip_restore": { "message": "واپس بحال کریں" },
+  "tooltip_expand": { "message": "توسیع" },
+  "tooltip_shrink": { "message": "سکڑیں" },
   "tooltip_close": { "message": "بند" },
   "tooltip_sendRelatedQuery": { "message": "متعلقہ استفسار بھیجیں" },
   "helptip_proxyAPImode": { "message": "AI تک نو لاگ ان رسائی کے لیے ایک پراکسی API استعمال کرتا ہے" },

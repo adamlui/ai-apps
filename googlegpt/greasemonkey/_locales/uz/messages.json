@@ -41,6 +41,8 @@
   "tooltip_feelingLucky": { "message": "Men o‘zimni omadli his qilyapman" },
   "tooltip_minimize": { "message": "Yigʻish" },
   "tooltip_restore": { "message": "Qayta tiklash" },
+  "tooltip_expand": { "message": "Kengaytirish" },
+  "tooltip_shrink": { "message": "Shakllar" },
   "tooltip_close": { "message": "Yopish" },
   "tooltip_sendRelatedQuery": { "message": "Tegishli so'rov yuboring" },
   "helptip_proxyAPImode": { "message": "Kirishsiz AI uchun Proxy API foydalanadi" },
