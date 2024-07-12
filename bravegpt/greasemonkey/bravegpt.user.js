@@ -148,11 +148,12 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.11.5
+// @version               2024.7.11.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
 // @antifeature           ads A very tiny text ad displays below BraveGPT chatbar. This motivates me to spend otherwise unpaid time upgrading script w/ new features & APIs.
+// @antifeature           referral-link
 // @compatible            chrome except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible            firefox
 // @compatible            edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
@@ -3019,6 +3020,13 @@ setTimeout(async () => {
     let footerContent = createAnchor('#', msgs.link_shareFeedback || 'Share feedback', { target: '_self' })
     footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
     footerContent.onclick = modals.feedback.show
+
+    // REFERRALIZE links to support author
+    setTimeout(() =>
+        document.querySelectorAll('a[href^="https://www.amazon."]').forEach(anchor => {
+        const url = new URL(anchor.href) ; url.searchParams.set('tag', 'kudo-ai-20')
+        anchor.href = url.toString()
+    }), 1500)
 
     // Show STANDBY mode or get/show ANSWER
     let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]

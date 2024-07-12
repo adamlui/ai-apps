@@ -148,11 +148,12 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.11.4
+// @version                2024.7.11.5
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
 // @antifeature            ads A very tiny text ad displays below DuckDuckGPT chatbar (only in Sidebar mode). This motivates me to spend otherwise unpaid time upgrading script w/ new features & APIs.
+// @antifeature            referral-link
 // @compatible             chrome except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible             firefox
 // @compatible             edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
@@ -3017,6 +3018,13 @@
                 return boostedList
             }
     })
+
+    // REFERRALIZE links to support author
+    setTimeout(() =>
+        document.querySelectorAll('a[href^="https://www.amazon."]').forEach(anchor => {
+        const url = new URL(anchor.href) ; url.searchParams.set('tag', 'kudo-ai-20')
+        anchor.href = url.toString()
+    }), 1500)
 
     // Show STANDBY mode or get/show ANSWER
     let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
