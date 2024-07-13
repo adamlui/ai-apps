@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.12.12
+// @version               2024.7.12.13
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1333,7 +1333,7 @@ setTimeout(async () => {
 
                 // Bottom track
                 slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
-                    x1: 2, y1: 19.5, x2: 8.5, y2: 19.5 }))
+                    x1: 2, y1: 19.5, x2: 8, y2: 19.5 }))
                 slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
                     cx: 14.5, cy: 19.5, r: 3 }))
                 slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',

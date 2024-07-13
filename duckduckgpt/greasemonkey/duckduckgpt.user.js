@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.12.10
+// @version                2024.7.12.11
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1339,7 +1339,7 @@
 
                 // Bottom track
                 slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
-                    x1: 2, y1: 19.5, x2: 8.5, y2: 19.5 }))
+                    x1: 2, y1: 19.5, x2: 8, y2: 19.5 }))
                 slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
                     cx: 14.5, cy: 19.5, r: 3 }))
                 slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',

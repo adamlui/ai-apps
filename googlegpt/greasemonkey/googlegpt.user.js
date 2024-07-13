@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.12.11
+// @version                  2024.7.12.12
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1531,7 +1531,7 @@
 
                 // Bottom track
                 slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
-                    x1: 2, y1: 19.5, x2: 8.5, y2: 19.5 }))
+                    x1: 2, y1: 19.5, x2: 8, y2: 19.5 }))
                 slidersSVG.append(createSVGelem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
                     cx: 14.5, cy: 19.5, r: 3 }))
                 slidersSVG.append(createSVGelem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
