@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.12.14
+// @version               2024.7.13
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -475,15 +475,15 @@ setTimeout(async () => {
 
         // Prepend app icon
         const notifIcon = icons.braveGPT.create()
-        notifIcon.style.cssText = 'width: 29px ; position: relative ; top: 4.8px ; margin-right: 6px'
+        notifIcon.style.cssText = 'width: 32px ; position: relative ; top: 6px ; margin-right: 6px'
         notif.prepend(notifIcon)
 
         // Append mode icon
         const mode = Object.keys(settingsProps).find(key => settingsProps[key].label.includes(msg.trim()))
         if (mode && !/(?:pre|suf)fix/.test(mode)) {
             const modeIcon = icons[settingsProps[mode].icon].create()
-            modeIcon.style.cssText = 'width: 28px ; height: 28px ; position: relative ; top: 6px ; margin-left: 11px ;'
-                                   + ( /autoget|focus|scroll/i.test(mode) ? 'top: 3.5px' : '' ) // raise some icons
+            modeIcon.style.cssText = 'width: 28px ; height: 28px ; position: relative ; top: 3px ; margin-left: 11px ;'
+                                   + ( /autoget|focus|scroll/i.test(mode) ? 'top: 0.5px' : '' ) // raise some icons
                                    + ( /animation/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink sparkles icon
             notif.append(modeIcon)
         }
@@ -1596,7 +1596,8 @@ setTimeout(async () => {
                   + '#bravegpt > pre ol { margin: -33px 0 -6px ; }' // reduce v-spacing
                   + '#bravegpt > pre li { margin: -10px 0 ; list-style: inside }' ) // reduce v-spacing, show left symbols
               + '.katex-html { display: none }' // hide unrendered math
-              + '.chatgpt-notif { fill: white ; stroke: white ; font-size: 25px !important }' // shrink notifications
+              + '.chatgpt-notif { fill: white ; stroke: white ; font-size: 25px !important ; padding: 6.5px 14px 8.5px 11.5px !important }'
+              + '.notif-close-btn { display: none !important }' // hide notif close btn
               + '.chatgpt-modal > div { padding: 24px 20px 14px 20px !important ;' // increase modal padding
                   + 'background-color: white !important ; color: #202124 }'
               + '.chatgpt-modal h2 { font-size: 26px ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + shrink it

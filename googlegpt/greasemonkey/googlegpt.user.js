@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.12.13
+// @version                  2024.7.13
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -670,15 +670,15 @@
 
         // Prepend app icon
         const notifIcon = icons.googleGPT.create('white')
-        notifIcon.style.cssText = 'width: 29px ; position: relative ; top: 2.8px ; margin-right: 6px'
+        notifIcon.style.cssText = 'width: 26px ; position: relative ; top: 2.8px ; margin-right: 6px'
         notif.prepend(notifIcon)
 
         // Append mode icon
         const mode = Object.keys(settingsProps).find(key => settingsProps[key].label.includes(msg.trim()))
         if (mode && !/(?:pre|suf)fix/.test(mode)) {
             const modeIcon = icons[settingsProps[mode].icon].create()
-            modeIcon.style.cssText = 'width: 28px ; height: 28px ; position: relative ; top: 6px ; margin-left: 11px ;'
-                                   + ( /autoget|focus|scroll/i.test(mode) ? 'top: 3.5px' : '' ) // raise some icons
+            modeIcon.style.cssText = 'width: 28px ; height: 28px ; position: relative ; top: 3px ; margin-left: 11px ;'
+                                   + ( /autoget|focus|scroll/i.test(mode) ? 'top: 0.5px' : '' ) // raise some icons
                                    + ( /animation/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink sparkles icon
             notif.append(modeIcon)
         }
@@ -1787,7 +1787,8 @@
                   + '#googlegpt > pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
               + 'code.hljs { text-wrap: nowrap ; overflow-x: scroll }' // don't wrap highlighted code to be scrollable horizontally
               + '.katex-html { display: none }' // hide unrendered math
-              + '.chatgpt-notif { fill: white ; stroke: white ; padding: 13px 13px 13px 18px !important }' // pad notifications
+              + '.chatgpt-notif { fill: white ; stroke: white ; font-size: 25px !important ; padding: 13px 14px 13px 13px !important }'
+              + '.notif-close-btn { display: none !important }' // hide notif close btn
               + '.chatgpt-modal > div { 17px 20px 24px 20px !important ;' // increase alert padding
                   + 'background-color: white ; color: #202124 }'
               + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it

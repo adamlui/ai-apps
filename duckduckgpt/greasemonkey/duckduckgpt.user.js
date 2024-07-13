@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.12.12
+// @version                2024.7.13
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -481,15 +481,15 @@
 
         // Prepend app icon
         const notifIcon = icons.ddgpt.create()
-        notifIcon.style.cssText = 'width: 29px ; position: relative ; top: 4.8px ; margin-right: 8px'
+        notifIcon.style.cssText = 'width: 31px ; position: relative ; top: 5.8px ; margin-right: 8px'
         notif.prepend(notifIcon)
 
         // Append mode icon
         const mode = Object.keys(settingsProps).find(key => settingsProps[key].label.includes(msg.trim()))
         if (mode && !/(?:pre|suf)fix/.test(mode)) {
             const modeIcon = icons[settingsProps[mode].icon].create()
-            modeIcon.style.cssText = 'width: 28px ; height: 28px ; position: relative ; top: 6px ; margin-left: 11px ;'
-                                   + ( /autoget|focus|scroll/i.test(mode) ? 'top: 3.5px' : '' ) // raise some icons
+            modeIcon.style.cssText = 'width: 28px ; height: 28px ; position: relative ; top: 3.5px ; margin-left: 11px ;'
+                                   + ( /autoget|focus|scroll/i.test(mode) ? 'top: -3px' : '' ) // raise some icons
                                    + ( /animation/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink sparkles icon
             notif.append(modeIcon)
         }
@@ -1591,7 +1591,8 @@
                   + '#ddgpt > pre ul { margin: -28px 0 -21px }' // reduce v-padding
                   + '#ddgpt > pre ul > li { margin: -10px 0 0 1.2em ; list-style: inside }' ) // reduce v-padding, show bullets
               + '.katex-html { display: none } ' // hide unrendered math
-              + '.chatgpt-notif { fill: white ; stroke: white ; color: white ; padding: 11px 15px 6px 12px !important }'
+              + '.chatgpt-notif { fill: white ; stroke: white ; color: white ; padding: 7.5px 14px 6.5px 11.5px !important }'
+              + '.notif-close-btn { display: none !important }' // hide notif close btn
               + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important ;' // increase alert padding
                   + 'background-color: white !important ; color: black }'
               + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
