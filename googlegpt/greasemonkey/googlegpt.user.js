@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.12.9
+// @version                  2024.7.12.10
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1354,7 +1354,7 @@
         checkmark: {
             create() {
                 const checkmarkSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      checkmarkSVGattrs = [['width', 10], ['height', 10], ['viewBox', '0 0 20 20']]
+                      checkmarkSVGattrs = [['id', 'checkmark-icon'], ['width', 10], ['height', 10], ['viewBox', '0 0 20 20']]
                 checkmarkSVGattrs.forEach(([attr, value]) => checkmarkSVG.setAttribute(attr, value))
                 checkmarkSVG.append(createSVGelem('path', { stroke: 'none', d: 'M0 11l2-2 5 5L18 3l2 2L7 18z' }))
                 return checkmarkSVG
@@ -1829,6 +1829,7 @@
               + '.googlegpt-menu-item { padding: 0 5px ; line-height: 20.5px }'
               + '.googlegpt-menu-item:not(.googlegpt-menu-header):hover {'
                   + 'cursor: pointer ; background: white ; color: black ; fill: black }'
+              + '#checkmark-icon { fill: #b3f96d } .googlegpt-menu-item:hover #checkmark-icon { fill: green }'
               + '#googlegpt footer {'
                   + 'position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ; line-height: 1.43em ;'
                   + `margin: ${ isFirefox ? 1 : -2 }px -32px 12px }`

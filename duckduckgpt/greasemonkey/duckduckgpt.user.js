@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.12.8
+// @version                2024.7.12.9
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1174,7 +1174,7 @@
         checkmark: {
             create() {
                 const checkmarkSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      checkmarkSVGattrs = [['width', 10], ['height', 10], ['viewBox', '0 0 20 20']]
+                      checkmarkSVGattrs = [['id', 'checkmark-icon'], ['width', 10], ['height', 10], ['viewBox', '0 0 20 20']]
                 checkmarkSVGattrs.forEach(([attr, value]) => checkmarkSVG.setAttribute(attr, value))
                 checkmarkSVG.append(createSVGelem('path', { stroke: 'none', d: 'M0 11l2-2 5 5L18 3l2 2L7 18z' }))
                 return checkmarkSVG
@@ -1635,6 +1635,7 @@
               + '.ddgpt-menu-item { padding: 0 5px ; line-height: 20.5px }'
               + '.ddgpt-menu-item:not(.ddgpt-menu-header):hover {'
                   + 'cursor: pointer ; background: white ; color: black ; fill: black }'
+              + '#checkmark-icon { fill: #b3f96d } .ddgpt-menu-item:hover #checkmark-icon { fill: green }'
 
               // Glowing modal btns
               + ':root { --glow-color: hsl(186 100% 69%); }'
