@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.12.8
+// @version               2024.7.12.9
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1495,7 +1495,9 @@ setTimeout(async () => {
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
               + `#bravegpt { word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: ${ isMobile ? -29 : 20}px ;`
                   + 'z-index: 5555 ; padding: 24px 23px 45px 23px ;'
-                  + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -200px, black 200px' : 'white 0%, white 100%' }) ;`
+                  + `background-image: linear-gradient(180deg, ${
+                        scheme == 'dark' ? '#99a8a6 -70%, black 57%'
+                                         : `${ config.bgAnimationsDisabled ? 'white' : '#b6ebff' } -64%, white 33%` }) ;`
                   + ( !config.fgAnimationsDisabled ?
                         'transition: bottom 0.1s cubic-bezier(0.4, 0, 0.2, 1),' // smoothen Anchor vertical minimize/restore
                                   + 'width 0.167s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor horizontal expand/shrink
@@ -2060,7 +2062,7 @@ setTimeout(async () => {
 
         animations(layer) {
             saveSetting(layer + 'AnimationsDisabled', !config[layer + 'AnimationsDisabled'])
-            update[layer == 'bg' ? 'stars' : 'appStyle']()
+            update.appStyle() ; if (layer == 'bg') update.stars()
             if (layer == 'fg' && modals.settings.get()) {
 
                 // Toggle ticker-scroll of About status label
