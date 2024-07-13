@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.12.6
+// @version                  2024.7.12.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2062,8 +2062,7 @@
             // Update tweaks style based on settings
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                                   + ( config.stickySidebar ? ssbStyles
-                                    : config.anchored ? ( anchorStyles + (
-                                          config.expanded ? expandedStyles : config.minimized ? minimizedStyles : '' )) : '' )
+                                    : config.anchored ? ( anchorStyles + ( config.expanded ? expandedStyles : '' )) : '' )
 
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
@@ -2338,7 +2337,6 @@
                 chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
             }
             update.appBottomPos() // toggle visual minimization
-            update.tweaksStyle() // toggle Font Size + Speak btn visibility
             if (!isMobile) tooltipDiv.style.opacity = 0 // remove lingering tooltip
         },
 
@@ -3280,7 +3278,6 @@
           anchorStyles = '#googlegpt { position: fixed ; bottom: -7px ; right: 35px ; width: 388px }'
                        + '[class*="feedback"], .related-queries, #wsb-btn  { display: none }'
                        + '#chevron-btn, #arrows-btn { display: block !important }',
-          minimizedStyles = '#speak-btn, #font-size-btn { display: none }',
           expandedStyles = '#googlegpt { width: 528px }'
     update.tweaksStyle() ; document.head.append(tweaksStyle)
 

@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.12.7
+// @version               2024.7.12.8
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1862,8 +1862,7 @@ setTimeout(async () => {
             // Update tweaks style based on settings
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                                   + ( config.stickySidebar ? ssbStyles
-                                    : config.anchored ? ( anchorStyles + (
-                                          config.expanded ? expandedStyles : config.minimized ? minimizedStyles : '' )) : '' )
+                                    : config.anchored ? ( anchorStyles + ( config.expanded ? expandedStyles : '' )) : '' )
 
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
@@ -2130,7 +2129,6 @@ setTimeout(async () => {
                 chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
             }
             update.appBottomPos() // toggle visual minimization
-            update.tweaksStyle() // toggle Font Size + Speak btn visibility
             if (!isMobile) tooltipDiv.style.opacity = 0 // remove lingering tooltip
         },
 
@@ -3041,7 +3039,6 @@ setTimeout(async () => {
           anchorStyles = '#bravegpt { position: fixed ; bottom: -7px ; right: 35px ; width: 441px }'
                        + '[class*="feedback"], .related-queries, #wsb-btn  { display: none }'
                        + '#chevron-btn, #arrows-btn { display: block !important }',
-          minimizedStyles = '#speak-btn, #font-size-btn { display: none }',
           expandedStyles = '#bravegpt { width: 538px }'
     update.tweaksStyle() ; document.head.append(tweaksStyle)
 

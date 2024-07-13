@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.12.5
+// @version                2024.7.12.6
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1769,8 +1769,7 @@
             // Update tweaks style based on settings
             tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                                   + ( config.stickySidebar ? ssbStyles
-                                    : config.anchored ? ( anchorStyles + (
-                                          config.expanded ? expandedStyles : config.minimized ? minimizedStyles : '' )) : '' )
+                                    : config.anchored ? ( anchorStyles + ( config.expanded ? expandedStyles : '' )) : '' )
     
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
@@ -2031,7 +2030,6 @@
                 chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
             }
             update.appBottomPos() // toggle visual minimization
-            update.tweaksStyle() // toggle Font Size + Speak btn visibility
             if (!isMobile) tooltipDiv.style.opacity = 0 // remove lingering tooltip
         },
 
@@ -2941,7 +2939,6 @@
           anchorStyles = '#ddgpt { position: fixed ; bottom: -7px ; right: 35px ; width: 388px }'
                        + '[class*="feedback"], .related-queries, #wsb-btn  { display: none }'
                        + '#chevron-btn, #arrows-btn { display: block !important }',
-          minimizedStyles = '#speak-btn, #font-size-btn { display: none }',
           expandedStyles = '#ddgpt { width: 528px }'
     update.tweaksStyle() ; document.head.append(tweaksStyle)
 
