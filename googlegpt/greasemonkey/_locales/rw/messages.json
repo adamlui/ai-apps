@@ -94,7 +94,7 @@
   "alert_try": { "message": "Gerageza" },
   "alert_switchingOn": { "message": "kugenda kuri" },
   "alert_switchingOff": { "message": "guhindura kuri" },
-  "buttonLabel_sendQueryToGPT": { "message": "Ohereza ikibazo cyo gushakisha kuri GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Ohereza ikibazo cyo gushakisha kuri GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Ibyinshi kuri ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Reka Isuzuma" },
   "buttonLabel_getSupport": { "message": "Gufashwa" },

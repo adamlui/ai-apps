@@ -94,7 +94,7 @@
   "alert_try": { "message": "Try" },
   "alert_switchingOn": { "message": "Açma" },
   "alert_switchingOff": { "message": "Kapatma" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT'ye arama sorgusu gönder" },
+  "buttonLabel_sendQueryToApp": { "message": "DuckDuckGPT'ye arama sorgusu gönder" },
   "buttonLabel_moreApps": { "message": "Daha Fazla ChatGPT Uygulaması" },
   "buttonLabel_leaveReview": { "message": "Bir Yorum Bırakın" },
   "buttonLabel_getSupport": { "message": "Destek Al" },

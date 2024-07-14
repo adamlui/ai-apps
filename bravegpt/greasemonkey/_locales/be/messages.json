@@ -94,7 +94,7 @@
   "alert_try": { "message": "Паспрабаваць" },
   "alert_switchingOn": { "message": "уключэнне" },
   "alert_switchingOff": { "message": "выключэнне" },
-  "buttonLabel_sendQueryToGPT": { "message": "Адправіць пошукавы запыт у GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Адправіць пошукавы запыт у BraveGPT" },
   "buttonLabel_moreApps": { "message": "Іншыя праграмы ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Пакінуць водгук" },
   "buttonLabel_getSupport": { "message": "Атрымаць падтрымку" },

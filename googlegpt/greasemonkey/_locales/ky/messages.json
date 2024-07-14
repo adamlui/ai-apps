@@ -94,7 +94,7 @@
   "alert_try": { "message": "Аракет" },
   "alert_switchingOn": { "message": "которулуп жатат" },
   "alert_switchingOff": { "message": "өчүрүү" },
-  "buttonLabel_sendQueryToGPT": { "message": "Издөө суроосун GPTге жөнөтүү" },
+  "buttonLabel_sendQueryToApp": { "message": "Издөө суроосун GoogleGPTге жөнөтүү" },
   "buttonLabel_moreApps": { "message": "Көбүрөөк ChatGPT колдонмолору" },
   "buttonLabel_leaveReview": { "message": "Сын-пикир калтыруу" },
   "buttonLabel_getSupport": { "message": "Колдоо алуу" },

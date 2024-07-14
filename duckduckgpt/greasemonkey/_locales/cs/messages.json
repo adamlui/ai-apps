@@ -94,7 +94,7 @@
   "alert_try": { "message": "Vyzkoušet" },
   "alert_switchingOn": { "message": "Zapínání" },
   "alert_switchingOff": { "message": "vypnutí" },
-  "buttonLabel_sendQueryToGPT": { "message": "Odeslat vyhledávací dotaz do GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Odeslat vyhledávací dotaz do DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Další aplikace ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Napsat hodnocení" },
   "buttonLabel_getSupport": { "message": "Získat podporu" },

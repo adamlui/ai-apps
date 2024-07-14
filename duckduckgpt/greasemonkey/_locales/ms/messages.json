@@ -94,7 +94,7 @@
   "alert_try": { "message": "Cubalah" },
   "alert_switchingOn": { "message": "dihidupkan" },
   "alert_switchingOff": { "message": "mematikan" },
-  "buttonLabel_sendQueryToGPT": { "message": "Hantar pertanyaan carian ke GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Hantar pertanyaan carian ke DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Lebih Banyak Aplikasi ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Tinggalkan ulasan" },
   "buttonLabel_getSupport": { "message": "Dapatkan Sokongan" },

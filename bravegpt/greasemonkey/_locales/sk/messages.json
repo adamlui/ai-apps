@@ -94,7 +94,7 @@
   "alert_try": { "message": "Vyskúšať" },
   "alert_switchingOn": { "message": "zapnutie" },
   "alert_switchingOff": { "message": "Vypnutie" },
-  "buttonLabel_sendQueryToGPT": { "message": "Odoslať vyhľadávací dopyt do GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Odoslať vyhľadávací dopyt do BraveGPT" },
   "buttonLabel_moreApps": { "message": "Ďalšie ChatGPT aplikácie" },
   "buttonLabel_leaveReview": { "message": "Napísať referenciu" },
   "buttonLabel_getSupport": { "message": "Získať podporu" },

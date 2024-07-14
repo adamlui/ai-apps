@@ -94,7 +94,7 @@
   "alert_try": { "message": "Versuchen, versuch, versuche, versucht, versuchen Sie" },
   "alert_switchingOn": { "message": "Einschalten" },
   "alert_switchingOff": { "message": "Abschaltung" },
-  "buttonLabel_sendQueryToGPT": { "message": "Suchanfrage an GPT senden" },
+  "buttonLabel_sendQueryToApp": { "message": "Suchanfrage an GoogleGPT senden" },
   "buttonLabel_moreApps": { "message": "Weitere ChatGPT-Apps" },
   "buttonLabel_leaveReview": { "message": "Bewertung hinterlassen" },
   "buttonLabel_getSupport": { "message": "Support erhalten" },

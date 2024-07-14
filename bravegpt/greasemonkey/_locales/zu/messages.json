@@ -94,7 +94,7 @@
   "alert_try": { "message": "uzame" },
   "alert_switchingOn": { "message": "ukuvula" },
   "alert_switchingOff": { "message": "ukuvala" },
-  "buttonLabel_sendQueryToGPT": { "message": "Thumela umbuzo wokusesha ku-GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Thumela umbuzo wokusesha ku-BraveGPT" },
   "buttonLabel_moreApps": { "message": "Ama-app engeziwe e-ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Shiya Okushiwo Abanye" },
   "buttonLabel_getSupport": { "message": "Thola Usizo" },

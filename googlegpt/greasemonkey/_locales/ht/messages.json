@@ -94,7 +94,7 @@
   "alert_try": { "message": "Eseye" },
   "alert_switchingOn": { "message": "chanje sou/changer sur" },
   "alert_switchingOff": { "message": "etenn/échanger/é" },
-  "buttonLabel_sendQueryToGPT": { "message": "Voye rechèch rechèch nan GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Voye rechèch rechèch nan GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Plis Apps ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Kite yon Revizyon" },
   "buttonLabel_getSupport": { "message": "Jwenn Sipò" },

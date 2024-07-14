@@ -94,7 +94,7 @@
   "alert_try": { "message": "Próbáld ki" },
   "alert_switchingOn": { "message": "Bekapcsolás" },
   "alert_switchingOff": { "message": "Kikapcsolás" },
-  "buttonLabel_sendQueryToGPT": { "message": "Keresési lekérdezés küldése a GPT-nek" },
+  "buttonLabel_sendQueryToApp": { "message": "Keresési lekérdezés küldése a BraveGPT-nek" },
   "buttonLabel_moreApps": { "message": "További ChatGPT alkalmazások" },
   "buttonLabel_leaveReview": { "message": "Írjál egy véleményt" },
   "buttonLabel_getSupport": { "message": "Kérj támogatást" },

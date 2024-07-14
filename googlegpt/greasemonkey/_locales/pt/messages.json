@@ -94,7 +94,7 @@
   "alert_try": { "message": "Tentar" },
   "alert_switchingOn": { "message": "Ligar" },
   "alert_switchingOff": { "message": "Desligar" },
-  "buttonLabel_sendQueryToGPT": { "message": "Enviar consulta de pesquisa para GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Enviar consulta de pesquisa para GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Mais aplicativos ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Deixe um comentário" },
   "buttonLabel_getSupport": { "message": "Obter suporte" },

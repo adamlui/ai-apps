@@ -94,7 +94,7 @@
   "alert_try": { "message": "कोशिश करें" },
   "alert_switchingOn": { "message": "स्विच ऑन किया जा रहा है" },
   "alert_switchingOff": { "message": "स्विच ऑफ किया जा रहा है" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT को खोज क्वेरी भेजें" },
+  "buttonLabel_sendQueryToApp": { "message": "BraveGPT को खोज क्वेरी भेजें" },
   "buttonLabel_moreApps": { "message": "और ChatGPT ऐप्स" },
   "buttonLabel_leaveReview": { "message": "समीक्षा लिखें" },
   "buttonLabel_getSupport": { "message": "सपोर्ट प्राप्त करें" },

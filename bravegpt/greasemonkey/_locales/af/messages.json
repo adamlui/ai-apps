@@ -94,7 +94,7 @@
   "alert_try": { "message": "ek Joke Net" },
   "alert_switchingOn": { "message": "skakelaar aan" },
   "alert_switchingOff": { "message": "afskakel" },
-  "buttonLabel_sendQueryToGPT": { "message": "Stuur soektog navraag na GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Stuur soektog navraag na BraveGPT" },
   "buttonLabel_moreApps": { "message": "Meer ChatGPT-programme" },
   "buttonLabel_leaveReview": { "message": "Los Kommentaar" },
   "buttonLabel_getSupport": { "message": "Kry Ondersteuning" },

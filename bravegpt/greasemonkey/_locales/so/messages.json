@@ -94,7 +94,7 @@
   "alert_try": { "message": "Isku day" },
   "alert_switchingOn": { "message": "badiyadka to badiyadka to" },
   "alert_switchingOff": { "message": "badiyadka to badar" },
-  "buttonLabel_sendQueryToGPT": { "message": "U dir su 'aalaha raadinta GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "U dir su 'aalaha raadinta BraveGPT" },
   "buttonLabel_moreApps": { "message": "Codsiyada ChatGPT dheeraad ah" },
   "buttonLabel_leaveReview": { "message": "Ka tag dib u eegis" },
   "buttonLabel_getSupport": { "message": "Tageero raadso" },

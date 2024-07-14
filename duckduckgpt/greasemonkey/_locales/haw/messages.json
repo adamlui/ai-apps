@@ -94,7 +94,7 @@
   "alert_try": { "message": "Hono" },
   "alert_switchingOn": { "message": "ke hoʻololi ʻana" },
   "alert_switchingOff": { "message": "e hoopau ana" },
-  "buttonLabel_sendQueryToGPT": { "message": "E hoʻouna i ka nīnau huli iā GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "E hoʻouna i ka nīnau huli iā DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Nā polokalamu ChatGPT hou aku" },
   "buttonLabel_leaveReview": { "message": "E waiho i kahi loiloi" },
   "buttonLabel_getSupport": { "message": "Loaʻa Kākoʻo" },

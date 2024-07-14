@@ -94,7 +94,7 @@
   "alert_try": { "message": "Conare" },
   "alert_switchingOn": { "message": "commutans on" },
   "alert_switchingOff": { "message": "commutans off" },
-  "buttonLabel_sendQueryToGPT": { "message": "Mitte quaestionem quaerendi ad GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Mitte quaestionem quaerendi ad DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Plura ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Relinquere Recensionem" },
   "buttonLabel_getSupport": { "message": "Accipe Sustentationem" },

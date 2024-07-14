@@ -94,7 +94,7 @@
   "alert_try": { "message": "Tontonkanyapo" },
   "alert_switchingOn": { "message": "ukucinja" },
   "alert_switchingOff": { "message": "ukuleka" },
-  "buttonLabel_sendQueryToGPT": { "message": "Tumineni ifipusho fya kufwaya pa GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Tumineni ifipusho fya kufwaya pa GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Ukulele ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Lekisha Review" },
   "buttonLabel_getSupport": { "message": "Peeleniko bambi Peeleni" },

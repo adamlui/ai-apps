@@ -94,7 +94,7 @@
   "alert_try": { "message": "Andramo" },
   "alert_switchingOn": { "message": "mandeha" },
   "alert_switchingOff": { "message": "miala" },
-  "buttonLabel_sendQueryToGPT": { "message": "Alefaso ny fanontaniana fitadiavana amin'ny GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Alefaso ny fanontaniana fitadiavana amin'ny GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Fampiharana ChatGPT maro kokoa" },
   "buttonLabel_leaveReview": { "message": "Miala Fanamarihana" },
   "buttonLabel_getSupport": { "message": "Mahazoa Fanohanana" },

@@ -94,7 +94,7 @@
   "alert_try": { "message": "פּרוּווט" },
   "alert_switchingOn": { "message": "באַשטימען אויף" },
   "alert_switchingOff": { "message": "באַשטימען אַוועק" },
-  "buttonLabel_sendQueryToGPT": { "message": "שיקן זוכן אָנפֿרעג צו GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "שיקן זוכן אָנפֿרעג צו GoogleGPT" },
   "buttonLabel_moreApps": { "message": "מער ChatGPT אַפּפּס" },
   "buttonLabel_leaveReview": { "message": "לאָזן אַ רעצענזיע" },
   "buttonLabel_getSupport": { "message": "באַקומען שטיצן" },

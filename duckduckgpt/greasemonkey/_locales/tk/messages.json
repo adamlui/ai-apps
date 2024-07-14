@@ -94,7 +94,7 @@
   "alert_try": { "message": "Synap gör" },
   "alert_switchingOn": { "message": "üýtgeşik" },
   "alert_switchingOff": { "message": "çykyş" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT-de gözleg soragyny iber" },
+  "buttonLabel_sendQueryToApp": { "message": "DuckDuckGPT-de gözleg soragyny iber" },
   "buttonLabel_moreApps": { "message": "ÇatGPT Ulymalary" },
   "buttonLabel_leaveReview": { "message": "Çykyş goý" },
   "buttonLabel_getSupport": { "message": "Ýolbaşçylyk maslahaty" },

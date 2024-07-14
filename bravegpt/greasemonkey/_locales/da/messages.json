@@ -94,7 +94,7 @@
   "alert_try": { "message": "Prøv" },
   "alert_switchingOn": { "message": "SÅDAN TÆNDES DET" },
   "alert_switchingOff": { "message": "Slukning" },
-  "buttonLabel_sendQueryToGPT": { "message": "Send søgeforespørgsel til GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Send søgeforespørgsel til BraveGPT" },
   "buttonLabel_moreApps": { "message": "Flere ChatGPT-apps" },
   "buttonLabel_leaveReview": { "message": "Skriv en anmeldelse" },
   "buttonLabel_getSupport": { "message": "Få hjælp" },

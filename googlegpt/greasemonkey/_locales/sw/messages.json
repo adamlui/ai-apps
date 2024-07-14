@@ -94,7 +94,7 @@
   "alert_try": { "message": "Jaribu" },
   "alert_switchingOn": { "message": "kuwasha" },
   "alert_switchingOff": { "message": "kuzima" },
-  "buttonLabel_sendQueryToGPT": { "message": "Tuma swali la utafutaji kwa GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Tuma swali la utafutaji kwa GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Programu Zaidi za GumzoGPT" },
   "buttonLabel_leaveReview": { "message": "Acha Tathmini" },
   "buttonLabel_getSupport": { "message": "Pata Usaidizi" },

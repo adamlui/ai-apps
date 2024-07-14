@@ -94,7 +94,7 @@
   "alert_try": { "message": "جرب" },
   "alert_switchingOn": { "message": "جاري التشغيل" },
   "alert_switchingOff": { "message": "قَطْعُ التّيّارِ الكَهْرَبَائِيّ" },
-  "buttonLabel_sendQueryToGPT": { "message": "إرسال استعلام البحث إلى GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "إرسال استعلام البحث إلى BraveGPT" },
   "buttonLabel_moreApps": { "message": "المزيد من تطبيقات ChatGPT" },
   "buttonLabel_leaveReview": { "message": "اترك تقييماً" },
   "buttonLabel_getSupport": { "message": "احصل على الدعم" },

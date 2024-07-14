@@ -94,7 +94,7 @@
   "alert_try": { "message": "Sinash" },
   "alert_switchingOn": { "message": "yoqish" },
   "alert_switchingOff": { "message": "o'chirish" },
-  "buttonLabel_sendQueryToGPT": { "message": "Qidiruv so'rovini GPT-ga yuboring" },
+  "buttonLabel_sendQueryToApp": { "message": "Qidiruv so'rovini GoogleGPT-ga yuboring" },
   "buttonLabel_moreApps": { "message": "Boshqa ChatGPT ilovalari" },
   "buttonLabel_leaveReview": { "message": "Sharh qoldiring" },
   "buttonLabel_getSupport": { "message": "Yordam oling" },

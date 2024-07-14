@@ -94,7 +94,7 @@
   "alert_try": { "message": "ພະ ຍາ ຍາມ" },
   "alert_switchingOn": { "message": "ການເປີດໃຊ້ງານ" },
   "alert_switchingOff": { "message": "ການປິດການໃຊ້ງານ" },
-  "buttonLabel_sendQueryToGPT": { "message": "ສົ່ງຄໍາຖາມຄົ້ນຫາໄປທີ່ GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "ສົ່ງຄໍາຖາມຄົ້ນຫາໄປທີ່ GoogleGPT" },
   "buttonLabel_moreApps": { "message": "ແອັບພລິເຄຊັນ ChatGPT ຫຼາຍຂຶ້ນ" },
   "buttonLabel_leaveReview": { "message": "ໃຫ້ການທົບທວນຄືນ" },
   "buttonLabel_getSupport": { "message": "ໄດ້ຮັບການສະໜັບສະໜູນ" },

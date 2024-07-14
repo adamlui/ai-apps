@@ -94,7 +94,7 @@
   "alert_try": { "message": "Taumafai" },
   "alert_switchingOn": { "message": "suia i luga" },
   "alert_switchingOff": { "message": "faʻamutaina o le Faʻamutaina" },
-  "buttonLabel_sendQueryToGPT": { "message": "Auina atu fesili sailiiliga i le GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Auina atu fesili sailiiliga i le BraveGPT" },
   "buttonLabel_moreApps": { "message": "Sili ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Tuu se Toe Iloiloga" },
   "buttonLabel_getSupport": { "message": "Maua Lagolago" },

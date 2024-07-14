@@ -94,7 +94,7 @@
   "alert_try": { "message": "& Probéieren" },
   "alert_switchingOn": { "message": "wiesselen un" },
   "alert_switchingOff": { "message": "auszeschalten" },
-  "buttonLabel_sendQueryToGPT": { "message": "Suchanfrage an GPT senden" },
+  "buttonLabel_sendQueryToApp": { "message": "Suchanfrage an GoogleGPT senden" },
   "buttonLabel_moreApps": { "message": "Méi ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de" },
   "buttonLabel_getSupport": { "message": "Kréien Support" },

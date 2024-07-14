@@ -94,7 +94,7 @@
   "alert_try": { "message": "Feuch" },
   "alert_switchingOn": { "message": "a' tionndadh air" },
   "alert_switchingOff": { "message": "a' tionndadh dheth" },
-  "buttonLabel_sendQueryToGPT": { "message": "Cuir ceist rannsachaidh gu GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Cuir ceist rannsachaidh gu BraveGPT" },
   "buttonLabel_moreApps": { "message": "Barrachd Apps ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Fàg ath-bhreithneachadh" },
   "buttonLabel_getSupport": { "message": "Faigh Taic" },

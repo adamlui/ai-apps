@@ -94,7 +94,7 @@
   "alert_try": { "message": "Mēģināt" },
   "alert_switchingOn": { "message": "Ieslēgšana" },
   "alert_switchingOff": { "message": "Svaru Izslēgšana" },
-  "buttonLabel_sendQueryToGPT": { "message": "Sūtīt meklēšanas vaicājumu GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Sūtīt meklēšanas vaicājumu DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Vairāk ChatGPT lietotņu" },
   "buttonLabel_leaveReview": { "message": "Atstāt atsauksmi" },
   "buttonLabel_getSupport": { "message": "Saņemt atbalstu" },

@@ -94,7 +94,7 @@
   "alert_try": { "message": "މަސައްކަތްކުރުން" },
   "alert_switchingOn": { "message": "ސްވިޗް އޮން ކުރުމެވެ" },
   "alert_switchingOff": { "message": "ސްވިޗް އޮފް ކުރުމެވެ" },
-  "buttonLabel_sendQueryToGPT": { "message": "ސާޗް ކުއަރީ ޖީޕީޓީއަށް ފޮނުވުން" },
+  "buttonLabel_sendQueryToApp": { "message": "ސެންޑް ސަރޗް ކިއުރީ ޓޯ GoogleGPT" },
   "buttonLabel_moreApps": { "message": "އިތުރު ޗެޓްޖީޕީޓީ އެޕްތައް" },
   "buttonLabel_leaveReview": { "message": "ލީވް އަ ރިވިއު" },
   "buttonLabel_getSupport": { "message": "ގެޓް ސަޕޯޓް" },

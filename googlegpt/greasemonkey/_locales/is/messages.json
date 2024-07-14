@@ -94,7 +94,7 @@
   "alert_try": { "message": "Prófa" },
   "alert_switchingOn": { "message": "að kveikja á" },
   "alert_switchingOff": { "message": "slökkt" },
-  "buttonLabel_sendQueryToGPT": { "message": "Senda leitarfyrirspurn til GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Senda leitarfyrirspurn til GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Fleiri ChatGPT öpp" },
   "buttonLabel_leaveReview": { "message": "Skildu eftir umsögn" },
   "buttonLabel_getSupport": { "message": "Fá stuðning" },

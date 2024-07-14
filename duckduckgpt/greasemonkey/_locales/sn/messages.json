@@ -94,7 +94,7 @@
   "alert_try": { "message": "Edza" },
   "alert_switchingOn": { "message": "kushandura pamusoro" },
   "alert_switchingOff": { "message": "kudzima" },
-  "buttonLabel_sendQueryToGPT": { "message": "Tumira mubvunzo wekutsvaga kuGPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Tumira mubvunzo wekutsvaga kuDuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Zvakawanda ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Taura nesu" },
   "buttonLabel_getSupport": { "message": "Kuwana Rutsigiro" },

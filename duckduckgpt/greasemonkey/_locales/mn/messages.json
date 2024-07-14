@@ -94,7 +94,7 @@
   "alert_try": { "message": "Турших" },
   "alert_switchingOn": { "message": "асаах" },
   "alert_switchingOff": { "message": "унтраах" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT руу хайлтын хайлт илгээх" },
+  "buttonLabel_sendQueryToApp": { "message": "DuckDuckGPT руу хайлтын хайлт илгээх" },
   "buttonLabel_moreApps": { "message": "Илүү их чатGPT аппууд" },
   "buttonLabel_leaveReview": { "message": "Сэтгэгдэл үлдээх" },
   "buttonLabel_getSupport": { "message": "Тусламж авах" },

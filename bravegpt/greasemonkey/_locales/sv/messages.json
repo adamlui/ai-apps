@@ -94,7 +94,7 @@
   "alert_try": { "message": "Prova" },
   "alert_switchingOn": { "message": "Påslagning" },
   "alert_switchingOff": { "message": "Så här stänger man av" },
-  "buttonLabel_sendQueryToGPT": { "message": "Skicka sökfråga till GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Skicka sökfråga till BraveGPT" },
   "buttonLabel_moreApps": { "message": "Fler ChatGPT-appar" },
   "buttonLabel_leaveReview": { "message": "Lämna en recension" },
   "buttonLabel_getSupport": { "message": "Få support" },

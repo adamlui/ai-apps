@@ -94,7 +94,7 @@
   "alert_try": { "message": "Спробуйте" },
   "alert_switchingOn": { "message": "Увімкнення" },
   "alert_switchingOff": { "message": "Вимкнення" },
-  "buttonLabel_sendQueryToGPT": { "message": "Надіслати пошуковий запит до GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Надіслати пошуковий запит до DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Більше додатків ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Залишити відгук" },
   "buttonLabel_getSupport": { "message": "Отримати підтримку" },

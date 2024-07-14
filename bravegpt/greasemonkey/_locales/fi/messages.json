@@ -94,7 +94,7 @@
   "alert_try": { "message": "Kokeile" },
   "alert_switchingOn": { "message": "PÄÄLLEKYTKEMINEN" },
   "alert_switchingOff": { "message": "Sammutetaan" },
-  "buttonLabel_sendQueryToGPT": { "message": "Lähetä hakukysely GPT: lle" },
+  "buttonLabel_sendQueryToApp": { "message": "Lähetä hakukysely BraveGPT: lle" },
   "buttonLabel_moreApps": { "message": "Lisää ChatGPT-sovelluksia" },
   "buttonLabel_leaveReview": { "message": "Jätä arvostelu" },
   "buttonLabel_getSupport": { "message": "Ota yhteyttä" },

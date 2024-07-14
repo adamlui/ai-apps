@@ -94,7 +94,7 @@
   "alert_try": { "message": "ha probado" },
   "alert_switchingOn": { "message": "ENCENDIDO" },
   "alert_switchingOff": { "message": "Apagado" },
-  "buttonLabel_sendQueryToGPT": { "message": "Enviar consulta de búsqueda a GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Enviar consulta de búsqueda a BraveGPT" },
   "buttonLabel_moreApps": { "message": "Más aplicaciones de ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Deja una reseña" },
   "buttonLabel_getSupport": { "message": "Obtener asistencia" },

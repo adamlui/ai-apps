@@ -94,7 +94,7 @@
   "alert_try": { "message": "ፈትኖ" },
   "alert_switchingOn": { "message": "ምቕያር" },
   "alert_switchingOff": { "message": "ምጥፋእ" },
-  "buttonLabel_sendQueryToGPT": { "message": "ናይ ምርምር ሕቶ ናብ GPT ልኣኽ" },
+  "buttonLabel_sendQueryToApp": { "message": "ናይ ምርምር ሕቶ ናብ GoogleGPT ልኣኽ" },
   "buttonLabel_moreApps": { "message": "ዝያዳ ናይ ChatGPT መተግበሪታት" },
   "buttonLabel_leaveReview": { "message": "ግምገማ ሓዲግካ" },
   "buttonLabel_getSupport": { "message": "ደገፍ ርኸቡ" },

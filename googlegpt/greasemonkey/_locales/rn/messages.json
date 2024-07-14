@@ -94,7 +94,7 @@
   "alert_try": { "message": "Gerageza" },
   "alert_switchingOn": { "message": "guhinduranya" },
   "alert_switchingOff": { "message": "numa Numa" },
-  "buttonLabel_sendQueryToGPT": { "message": "Rungika Rungika Kurondera ibibazo kuri GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Rungika Rungika Kurondera ibibazo kuri GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Izindi porogaramu za ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Leave a Review None None" },
   "buttonLabel_getSupport": { "message": "Nurondere imfashanyo" },

@@ -94,7 +94,7 @@
   "alert_try": { "message": "Pokušavam!" },
   "alert_switchingOn": { "message": "Uključivanje" },
   "alert_switchingOff": { "message": "Isključivanje" },
-  "buttonLabel_sendQueryToGPT": { "message": "Pošaljite upit za pretragu GPT-u" },
+  "buttonLabel_sendQueryToApp": { "message": "Pošaljite upit za pretragu BraveGPT-u" },
   "buttonLabel_moreApps": { "message": "Još ChatGPT aplikacija" },
   "buttonLabel_leaveReview": { "message": "Ostavite komentar i ocenite turu" },
   "buttonLabel_getSupport": { "message": "Plaćena Podrška" },

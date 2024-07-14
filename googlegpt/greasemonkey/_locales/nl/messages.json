@@ -94,7 +94,7 @@
   "alert_try": { "message": "Proberen" },
   "alert_switchingOn": { "message": "het inschakelen" },
   "alert_switchingOff": { "message": "Uitschakelen" },
-  "buttonLabel_sendQueryToGPT": { "message": "Stuur zoekopdracht naar GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Stuur zoekopdracht naar GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Meer ChatGPT-apps" },
   "buttonLabel_leaveReview": { "message": "Recensie achterlaten" },
   "buttonLabel_getSupport": { "message": "Neem contact op" },

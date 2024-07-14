@@ -94,7 +94,7 @@
   "alert_try": { "message": "هڅه کول" },
   "alert_switchingOn": { "message": "سویچ کول" },
   "alert_switchingOff": { "message": "بندول، بندول" },
-  "buttonLabel_sendQueryToGPT": { "message": "لټون پوښتن GPT ته واستوئ" },
+  "buttonLabel_sendQueryToApp": { "message": "لټون پوښتن BraveGPT ته واستوئ" },
   "buttonLabel_moreApps": { "message": "نور چیټ جی پی ټي ایپونه" },
   "buttonLabel_leaveReview": { "message": "بیاکتنه پریږدئ" },
   "buttonLabel_getSupport": { "message": "مرسته ترلاسه کړئ" },

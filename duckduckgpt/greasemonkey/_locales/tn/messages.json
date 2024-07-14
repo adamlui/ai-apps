@@ -94,7 +94,7 @@
   "alert_try": { "message": "Leka" },
   "alert_switchingOn": { "message": "go tshuba" },
   "alert_switchingOff": { "message": "go tima" },
-  "buttonLabel_sendQueryToGPT": { "message": "Romela potso ya go senka go GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Romela potso ya go senka go DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Di-app tse Dintsi tsa ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Tlogela Tshekatsheko" },
   "buttonLabel_getSupport": { "message": "Bona Kemonokeng" },

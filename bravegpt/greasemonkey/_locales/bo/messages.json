@@ -94,7 +94,7 @@
   "alert_try": { "message": "བརྟག་ཞིབ" },
   "alert_switchingOn": { "message": "བསྒྱུར་རྩོམ །" },
   "alert_switchingOff": { "message": "ཕྱིར་འབུད་པ །" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPTལ་འཚོལ་བཤེར་གཏོང་།" },
+  "buttonLabel_sendQueryToApp": { "message": "BraveGPTལ་འཚོལ་བཤེར་གཏོང་།" },
   "buttonLabel_moreApps": { "message": "འདྲ་ཕབ །" },
   "buttonLabel_leaveReview": { "message": "དཔྱད་རྩོམ །" },
   "buttonLabel_getSupport": { "message": "རོགས་རམ་ཐོབ་པ" },

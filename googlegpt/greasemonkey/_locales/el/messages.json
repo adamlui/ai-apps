@@ -94,7 +94,7 @@
   "alert_try": { "message": "Δοκιμή" },
   "alert_switchingOn": { "message": "Ενεργοποίηση" },
   "alert_switchingOff": { "message": "Απενεργοποιήση" },
-  "buttonLabel_sendQueryToGPT": { "message": "Αποστολή ερωτήματος αναζήτησης στο GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Αποστολή ερωτήματος αναζήτησης στο GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Περισσότερες εφαρμογές ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Κάντε μία κριτική" },
   "buttonLabel_getSupport": { "message": "Λάβετε υποστήριξη" },

@@ -94,7 +94,7 @@
   "alert_try": { "message": "& Zama" },
   "alert_switchingOn": { "message": "ukuyivula" },
   "alert_switchingOff": { "message": "ukucima" },
-  "buttonLabel_sendQueryToGPT": { "message": "Thumela umbuzo wokukhangela kwi-GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Thumela umbuzo wokukhangela kwi-DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Ii-app ezingakumbi zeChatGPT" },
   "buttonLabel_leaveReview": { "message": "Shiya Uluvo" },
   "buttonLabel_getSupport": { "message": "Fumana Uncedo" },

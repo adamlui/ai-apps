@@ -94,7 +94,7 @@
   "alert_try": { "message": "முயற்சிக்க" },
   "alert_switchingOn": { "message": "இயக்குகிறது" },
   "alert_switchingOff": { "message": "சுவிட்ச் ஆஃப்" },
-  "buttonLabel_sendQueryToGPT": { "message": "தேடல் வினவலை GPT க்கு அனுப்பவும்" },
+  "buttonLabel_sendQueryToApp": { "message": "தேடல் வினவலை DuckDuckGPT க்கு அனுப்பவும்" },
   "buttonLabel_moreApps": { "message": "மேலும் ChatGPT பயன்பாடுகள்" },
   "buttonLabel_leaveReview": { "message": "ஒரு மதிப்பாய்வை விடுங்கள்" },
   "buttonLabel_getSupport": { "message": "ஆதரவைப் பெறுக" },

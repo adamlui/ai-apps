@@ -94,7 +94,7 @@
   "alert_try": { "message": "تلاش کردن" },
   "alert_switchingOn": { "message": "روشن شدن" },
   "alert_switchingOff": { "message": "خاموش کردن" },
-  "buttonLabel_sendQueryToGPT": { "message": "درخواست جستجو را به GPT ارسال کنید" },
+  "buttonLabel_sendQueryToApp": { "message": "درخواست جستجو را به GoogleGPT ارسال کنید" },
   "buttonLabel_moreApps": { "message": "برنامه های بیشتر ChatGPT" },
   "buttonLabel_leaveReview": { "message": "نظر بدهید" },
   "buttonLabel_getSupport": { "message": "پشتیبانی" },

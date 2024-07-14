@@ -94,7 +94,7 @@
   "alert_try": { "message": "cəhd etmək" },
   "alert_switchingOn": { "message": "dəyişdirilir" },
   "alert_switchingOff": { "message": "söndürülür" },
-  "buttonLabel_sendQueryToGPT": { "message": "Axtarış sorğusunu GPT-yə göndərin" },
+  "buttonLabel_sendQueryToApp": { "message": "Axtarış sorğusunu BraveGPT-yə göndərin" },
   "buttonLabel_moreApps": { "message": "Daha çox ChatGPT Proqramları" },
   "buttonLabel_leaveReview": { "message": "Rəy bildirin" },
   "buttonLabel_getSupport": { "message": "Dəstək Əldə Edin" },

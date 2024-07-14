@@ -94,7 +94,7 @@
   "alert_try": { "message": "प्रयास गर्नुहोस्" },
   "alert_switchingOn": { "message": "स्विच अन गर्दै" },
   "alert_switchingOff": { "message": "स्विच अफ गर्दै" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT मा खोजी क्वेरी पठाउनुहोस्" },
+  "buttonLabel_sendQueryToApp": { "message": "GoogleGPT मा खोजी क्वेरी पठाउनुहोस्" },
   "buttonLabel_moreApps": { "message": "थप ChatGPT अनुप्रयोगहरू" },
   "buttonLabel_leaveReview": { "message": "समीक्षा छोड्नुहोस्" },
   "buttonLabel_getSupport": { "message": "सहायता प्राप्त गर्नुहोस्" },

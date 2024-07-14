@@ -94,7 +94,7 @@
   "alert_try": { "message": "Sserki" },
   "alert_switchingOn": { "message": "twiɣ ad" },
   "alert_switchingOff": { "message": "twiɣ ad-d" },
-  "buttonLabel_sendQueryToGPT": { "message": "Sselk tazult i GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Sselk tazult i GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Plura Apps ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Ssefru d amaynut" },
   "buttonLabel_getSupport": { "message": "Tadlis" },

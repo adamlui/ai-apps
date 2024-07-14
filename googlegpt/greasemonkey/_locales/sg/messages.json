@@ -94,7 +94,7 @@
   "alert_try": { "message": "Try ti try" },
   "alert_switchingOn": { "message": "change thinga" },
   "alert_switchingOff": { "message": "ti zia lege ti sarango ye ti lo" },
-  "buttonLabel_sendQueryToGPT": { "message": "Bâ tënë ti gingo nda ti ye na GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Bâ tënë ti gingo nda ti ye na GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Ambeni application ti ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Gbu li ti mo na ndo ti mbeni ye so mo bâ" },
   "buttonLabel_getSupport": { "message": "Gi ti wara mungo maboko" },

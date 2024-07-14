@@ -94,7 +94,7 @@
   "alert_try": { "message": "Скачать" },
   "alert_switchingOn": { "message": "Включение" },
   "alert_switchingOff": { "message": "Выключение" },
-  "buttonLabel_sendQueryToGPT": { "message": "Отправить поисковый запрос в GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Отправить поисковый запрос в DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Другие приложения ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Оставить отзыв" },
   "buttonLabel_getSupport": { "message": "Получить поддержку" },

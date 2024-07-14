@@ -94,7 +94,7 @@
   "alert_try": { "message": "Cais" },
   "alert_switchingOn": { "message": "troi ymlaen" },
   "alert_switchingOff": { "message": "diffodd" },
-  "buttonLabel_sendQueryToGPT": { "message": "Anfon ymholiad chwilio at GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Anfon ymholiad chwilio at DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Mwy o ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Gadael Adolygiad" },
   "buttonLabel_getSupport": { "message": "Cael cymorth" },

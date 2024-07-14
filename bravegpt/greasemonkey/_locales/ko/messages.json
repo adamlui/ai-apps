@@ -94,7 +94,7 @@
   "alert_try": { "message": "트라이" },
   "alert_switchingOn": { "message": "스위치 켜기" },
   "alert_switchingOff": { "message": "스위치 끄기" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT로 검색어 전송" },
+  "buttonLabel_sendQueryToApp": { "message": "BraveGPT로 검색어 전송" },
   "buttonLabel_moreApps": { "message": "더 많은 ChatGPT 앱" },
   "buttonLabel_leaveReview": { "message": "상품 후기를 남겨주세요" },
   "buttonLabel_getSupport": { "message": "지원받기" },

@@ -94,7 +94,7 @@
   "alert_try": { "message": "Lumikizanani nafe" },
   "alert_switchingOn": { "message": "kusinthanitsa" },
   "alert_switchingOff": { "message": "kuzimitsa" },
-  "buttonLabel_sendQueryToGPT": { "message": "Tumizani funso lofufuzira ku GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Tumizani funso lofufuzira ku GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Zambiri Mapulogalamu a ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Siyani ndemanga" },
   "buttonLabel_getSupport": { "message": "Pezani Thandizo" },

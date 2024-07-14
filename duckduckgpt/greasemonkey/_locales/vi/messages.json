@@ -94,7 +94,7 @@
   "alert_try": { "message": "Thử" },
   "alert_switchingOn": { "message": "Mở máy" },
   "alert_switchingOff": { "message": "Tắt" },
-  "buttonLabel_sendQueryToGPT": { "message": "Gửi truy vấn tìm kiếm đến GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Gửi truy vấn tìm kiếm đến DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Các ứng dụng ChatGPT khác" },
   "buttonLabel_leaveReview": { "message": "Đánh giá" },
   "buttonLabel_getSupport": { "message": "Đề nghị hỗ trợ" },

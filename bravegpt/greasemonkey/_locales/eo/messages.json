@@ -94,7 +94,7 @@
   "alert_try": { "message": "Nu, provu!" },
   "alert_switchingOn": { "message": "ŝalti" },
   "alert_switchingOff": { "message": "malŝalti" },
-  "buttonLabel_sendQueryToGPT": { "message": "Sendi serĉopeton al GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Sendi serĉopeton al BraveGPT" },
   "buttonLabel_moreApps": { "message": "Pli ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Lasi revizion" },
   "buttonLabel_getSupport": { "message": "Akiri subtenon" },

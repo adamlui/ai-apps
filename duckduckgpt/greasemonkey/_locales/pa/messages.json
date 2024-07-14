@@ -94,7 +94,7 @@
   "alert_try": { "message": "ਕੋਸ਼ਿਸ ਕਰੋ" },
   "alert_switchingOn": { "message": "ਚਾਲੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ" },
   "alert_switchingOff": { "message": "ਬੰਦ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ" },
-  "buttonLabel_sendQueryToGPT": { "message": "ਖੋਜ ਕਿਊਰੀ GPT ਨੂੰ ਭੇਜੋ" },
+  "buttonLabel_sendQueryToApp": { "message": "ਖੋਜ ਕਿਊਰੀ DuckDuckGPT ਨੂੰ ਭੇਜੋ" },
   "buttonLabel_moreApps": { "message": "ਹੋਰ ChatGPT ਐਪਸ" },
   "buttonLabel_leaveReview": { "message": "ਇੱਕ ਸਮੀਖਿਆ ਛੱਡੋ" },
   "buttonLabel_getSupport": { "message": "ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਕਰੋ" },

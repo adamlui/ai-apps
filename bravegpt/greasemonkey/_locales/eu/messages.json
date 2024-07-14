@@ -94,7 +94,7 @@
   "alert_try": { "message": "Saiatu" },
   "alert_switchingOn": { "message": "pizten" },
   "alert_switchingOff": { "message": "itzaltzea" },
-  "buttonLabel_sendQueryToGPT": { "message": "Bidali bilaketa-kontsulta GPT-ra" },
+  "buttonLabel_sendQueryToApp": { "message": "Bidali bilaketa-kontsulta BraveGPT-ra" },
   "buttonLabel_moreApps": { "message": "ChatGPT aplikazio gehiago" },
   "buttonLabel_leaveReview": { "message": "Utzi Iritzia" },
   "buttonLabel_getSupport": { "message": "Laguntza lortu" },

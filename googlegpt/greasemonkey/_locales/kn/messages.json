@@ -94,7 +94,7 @@
   "alert_try": { "message": "ಪ್ರಯತ್ನಿಸು( T)" },
   "alert_switchingOn": { "message": "ಆನ್ ಮಾಡಲಾಗುತ್ತಿದೆ" },
   "alert_switchingOff": { "message": "ಸ್ವಿಚ್ ಆಫ್ ಮಾಡಲಾಗುತ್ತಿದೆ" },
-  "buttonLabel_sendQueryToGPT": { "message": "ಹುಡುಕಾಟ ಪ್ರಶ್ನೆಯನ್ನು GPT ಗೆ ಕಳುಹಿಸಿ" },
+  "buttonLabel_sendQueryToApp": { "message": "ಹುಡುಕಾಟ ಪ್ರಶ್ನೆಯನ್ನು GoogleGPT ಗೆ ಕಳುಹಿಸಿ" },
   "buttonLabel_moreApps": { "message": "ಇನ್ನಷ್ಟು ChatGPT ಅಪ್ಲಿಕೇಶನ್ ಗಳು" },
   "buttonLabel_leaveReview": { "message": "ವಿಮರ್ಶೆಯನ್ನು ಬಿಡಿ" },
   "buttonLabel_getSupport": { "message": "ಬೆಂಬಲ ಪಡೆಯಿರಿ" },

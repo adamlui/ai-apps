@@ -94,7 +94,7 @@
   "alert_try": { "message": "Intenta- ho" },
   "alert_switchingOn": { "message": "activant" },
   "alert_switchingOff": { "message": "desactivar" },
-  "buttonLabel_sendQueryToGPT": { "message": "Envia la consulta de cerca a GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Envia la consulta de cerca a DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Més aplicacions de ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Deixa una ressenya" },
   "buttonLabel_getSupport": { "message": "Obteniu suport" },

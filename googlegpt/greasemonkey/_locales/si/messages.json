@@ -94,7 +94,7 @@
   "alert_try": { "message": "උත්සහ කරන්න" },
   "alert_switchingOn": { "message": "ක් ‍ රියාත්මක වෙමින්" },
   "alert_switchingOff": { "message": "ක් ‍ රියා විරහිත කරමින්" },
-  "buttonLabel_sendQueryToGPT": { "message": "සෙවුම් විමසුම GPT වෙත යවන්න" },
+  "buttonLabel_sendQueryToApp": { "message": "සෙවුම් විමසුම GoogleGPT වෙත යවන්න" },
   "buttonLabel_moreApps": { "message": "තවත් ChatGPT යෙදුම්" },
   "buttonLabel_leaveReview": { "message": "සමාලෝචනයක් එක් කරන්න" },
   "buttonLabel_getSupport": { "message": "සහාය ලබාගන්න" },

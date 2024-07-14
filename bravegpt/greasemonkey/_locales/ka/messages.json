@@ -94,7 +94,7 @@
   "alert_try": { "message": "ცდა" },
   "alert_switchingOn": { "message": "ჩართვა" },
   "alert_switchingOff": { "message": "გამორთვა" },
-  "buttonLabel_sendQueryToGPT": { "message": "Ძიების მოთხოვნის GPT ‑ სთვის გაგზავნა" },
+  "buttonLabel_sendQueryToApp": { "message": "Ძიების მოთხოვნის BraveGPT ‑ სთვის გაგზავნა" },
   "buttonLabel_moreApps": { "message": "Სხვა ChatGPT აპები" },
   "buttonLabel_leaveReview": { "message": "შეფასების დატოვება" },
   "buttonLabel_getSupport": { "message": "მხარდაჭერის მიღება" },

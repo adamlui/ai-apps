@@ -94,7 +94,7 @@
   "alert_try": { "message": "Purba" },
   "alert_switchingOn": { "message": "kambio riba" },
   "alert_switchingOff": { "message": "kaká Kaká" },
-  "buttonLabel_sendQueryToGPT": { "message": "Buscar por Materia GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Buscar por Materia GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Mas informacion de ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Leave a Testimonial" },
   "buttonLabel_getSupport": { "message": "Recibí Apoyo" },

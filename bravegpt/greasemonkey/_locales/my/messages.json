@@ -94,7 +94,7 @@
   "alert_try": { "message": "ကြိုးစားပါ" },
   "alert_switchingOn": { "message": "ဖွင့်နေသည်" },
   "alert_switchingOff": { "message": "ခလုတ်ပိတ်ခြင်း" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT ထံရှာဖွေရေးမေးခွန်းကိုပို့ပါ" },
+  "buttonLabel_sendQueryToApp": { "message": "BraveGPT ထံရှာဖွေရေးမေးခွန်းကိုပို့ပါ" },
   "buttonLabel_moreApps": { "message": "နောက်ထပ် ChatGPT Apps ကပ" },
   "buttonLabel_leaveReview": { "message": "တစ်ဦးပြန်လည်ဆန်းစစ်ခြင်း Leave" },
   "buttonLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ။" },

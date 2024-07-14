@@ -94,7 +94,7 @@
   "alert_try": { "message": "ลอง" },
   "alert_switchingOn": { "message": "การเปิดเครื่อง" },
   "alert_switchingOff": { "message": "การปิดสวิตช์" },
-  "buttonLabel_sendQueryToGPT": { "message": "ส่งคำค้นหาไปยัง GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "ส่งคำค้นหาไปยัง BraveGPT" },
   "buttonLabel_moreApps": { "message": "แอป ChatGPT เพิ่มเติม" },
   "buttonLabel_leaveReview": { "message": "ออกจากการรีวิว" },
   "buttonLabel_getSupport": { "message": "รับความช่วยเหลือ" },

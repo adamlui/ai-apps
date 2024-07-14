@@ -94,7 +94,7 @@
   "alert_try": { "message": "TRY" },
   "alert_switchingOn": { "message": "接通" },
   "alert_switchingOff": { "message": "断电" },
-  "buttonLabel_sendQueryToGPT": { "message": "将搜索查询发送到 GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "将搜索查询发送到 BraveGPT" },
   "buttonLabel_moreApps": { "message": "更多 ChatGPT 应用" },
   "buttonLabel_leaveReview": { "message": "发表评论" },
   "buttonLabel_getSupport": { "message": "獲取支援" },

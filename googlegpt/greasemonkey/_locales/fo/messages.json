@@ -94,7 +94,7 @@
   "alert_try": { "message": "Royn" },
   "alert_switchingOn": { "message": "skift um" },
   "alert_switchingOff": { "message": "at venda sær" },
-  "buttonLabel_sendQueryToGPT": { "message": "Send leitarannsókn til GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Send leitarannsókn til GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Fleiri ChatGPT apps" },
   "buttonLabel_leaveReview": { "message": "Skriva eina gjøgnumgongd" },
   "buttonLabel_getSupport": { "message": "Fá stuðul" },

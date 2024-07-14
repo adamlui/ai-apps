@@ -94,7 +94,7 @@
   "alert_try": { "message": "Басқа пароль" },
   "alert_switchingOn": { "message": "қосу" },
   "alert_switchingOff": { "message": "Өшіру" },
-  "buttonLabel_sendQueryToGPT": { "message": "Іздеу сұранысын GPT-ге жіберу" },
+  "buttonLabel_sendQueryToApp": { "message": "Іздеу сұранысын BraveGPT-ге жіберу" },
   "buttonLabel_moreApps": { "message": "Қосымша ChatGPT қолданбалары" },
   "buttonLabel_leaveReview": { "message": "Пікір қалдыру" },
   "buttonLabel_getSupport": { "message": "Қолдау алу" },

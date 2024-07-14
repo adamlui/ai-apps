@@ -94,7 +94,7 @@
   "alert_try": { "message": "試行" },
   "alert_switchingOn": { "message": "スイッチを入れる" },
   "alert_switchingOff": { "message": "スイッチをオフにする" },
-  "buttonLabel_sendQueryToGPT": { "message": "検索クエリを GPT に送信" },
+  "buttonLabel_sendQueryToApp": { "message": "検索クエリを DuckDuckGPT に送信" },
   "buttonLabel_moreApps": { "message": "その他の ChatGPT アプリ" },
   "buttonLabel_leaveReview": { "message": "レビューを書く" },
   "buttonLabel_getSupport": { "message": "サポートを受ける" },

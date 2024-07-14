@@ -94,7 +94,7 @@
   "alert_try": { "message": "Sulayi" },
   "alert_switchingOn": { "message": "sa switching on" },
   "alert_switchingOff": { "message": "nag-turn off" },
-  "buttonLabel_sendQueryToGPT": { "message": "Ipadala ang query sa pagpangita sa GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Ipadala ang query sa pagpangita sa BraveGPT" },
   "buttonLabel_moreApps": { "message": "Dugang nga ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Magbilin usa ka Pagrepaso" },
   "buttonLabel_getSupport": { "message": "Kuhaa ang Suporta" },

@@ -94,7 +94,7 @@
   "alert_try": { "message": "& Кӯшиш кунед" },
   "alert_switchingOn": { "message": "переключить вкл" },
   "alert_switchingOff": { "message": "хомӯш кардан" },
-  "buttonLabel_sendQueryToGPT": { "message": "Фиристодани дархости ҷустуҷӯӣ ба GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Фиристодани дархости ҷустуҷӯӣ ба DuckDuckGPT" },
   "buttonLabel_moreApps": { "message": "Бештар ChatGPT Барномаҳо" },
   "buttonLabel_leaveReview": { "message": "Баррасиро тарк кунед" },
   "buttonLabel_getSupport": { "message": "Гирифтани Дастгирӣ" },

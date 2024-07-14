@@ -94,7 +94,7 @@
   "alert_try": { "message": "Încercați" },
   "alert_switchingOn": { "message": "PORNIREA" },
   "alert_switchingOff": { "message": "DECONECTAREA" },
-  "buttonLabel_sendQueryToGPT": { "message": "Trimiteți interogarea de căutare către GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Trimiteți interogarea de căutare către BraveGPT" },
   "buttonLabel_moreApps": { "message": "Mai multe aplicații ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Lasă-ne o recenzie" },
   "buttonLabel_getSupport": { "message": "Primește asistență" },

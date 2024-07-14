@@ -94,7 +94,7 @@
   "alert_try": { "message": "Bandyti" },
   "alert_switchingOn": { "message": "Įjungti" },
   "alert_switchingOff": { "message": "Išjungti" },
-  "buttonLabel_sendQueryToGPT": { "message": "Siųsti paieškos užklausą GPT" },
+  "buttonLabel_sendQueryToApp": { "message": "Siųsti paieškos užklausą GoogleGPT" },
   "buttonLabel_moreApps": { "message": "Daugiau ChatGPT programų" },
   "buttonLabel_leaveReview": { "message": "Palikite apžvalgą" },
   "buttonLabel_getSupport": { "message": "Gauti palaikymą" },
