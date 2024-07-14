@@ -38,7 +38,7 @@
   "buttonLabel_getSupport": { "message": "احصل على الدعم" },
   "buttonLabel_updateCheck": { "message": "مرابة التحديثات" },
   "buttonLabel_update": { "message": "تحديث" },
-  "buttonLabel_dismiss": { "message": "‫رفض‬" },
+  "buttonLabel_dismiss": { "message": "إغلاق" },
   "link_viewChanges": { "message": "عرض سجل التغييرات" },
   "unit_seconds": { "message": "ثواني" },
   "state_enabled": { "message": "مُفعل" },
