@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.13.7
+// @version               2024.7.14
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1876,11 +1876,14 @@ setTimeout(async () => {
 
             // Update 'by KudoAI' visibility based on corner space available
             const kudoAIspan = appDiv.querySelector('.kudoai')
-            if (kudoAIspan) kudoAIspan.style.display = (
-                appDiv.querySelectorAll('.corner-btn').length < ( config.widerSidebar ? 10 : 5 )) ? '' : 'none'
-            if (kudoAIspan) kudoAIspan.style.display = (
-                appDiv.querySelectorAll('.corner-btn').length < (
-                    config.anchored || !config.widerSidebar ? 5 : 10 )) ? '' : 'none'
+            if (kudoAIspan) {
+                const visibleBtnCnt = [...appDiv.querySelectorAll('.corner-btn')]
+                    .filter(btn => getComputedStyle(btn).display != 'none').length
+                kudoAIspan.style.display = visibleBtnCnt <= (
+                    config.anchored && config.expanded ? 10
+                 : !config.anchored && config.widerSidebar ? 9
+                 :  config.anchored && !config.expanded ? 6 : 4 ) ? '' : 'none'
+            }
 
             // Update <pre> max-height for various mode toggles
             const answerPre = appDiv.querySelector('pre'),
