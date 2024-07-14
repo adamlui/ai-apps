@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.13.5
+// @version                2024.7.13.6
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -234,7 +234,7 @@
         appURL: 'https://www.duckduckgpt.com', gitHubURL: 'https://github.com/KudoAI/duckduckgpt',
         greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.28,
-        latestAssetCommitHash: 'fc22961' } // for cached messages.json
+        latestAssetCommitHash: '71a963b' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -2679,7 +2679,7 @@
                 if (answer == 'standby') {
                     const standbyBtn = document.createElement('button')
                     standbyBtn.className = 'standby-btn'
-                    standbyBtn.textContent = msgs.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
+                    standbyBtn.textContent = msgs.buttonLabel_sendQueryToApp || `Send search query to ${config.appName}`
                     appDiv.append(standbyBtn)
                     show.reply.standbyBtnClickHandler = function() {
                         appAlert('waitingResponse')
