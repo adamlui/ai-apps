@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT သမိုင်း" },
-  "appDesc": { "message": "chatgpt.com သို့သွားရောက်သည့်အခါ ချတ်မှတ်တမ်းကို အလိုအလျောက်ရှင်းပေးသည်။" },
+  "appDesc": { "message": "chatgpt.com သို့သွားရောက်သည့်အခါ ချတ်မှတ်တမ်းကို အလိုအလျောက်ရှင်းပေးသည်" },
   "menuLabel_autoClear": { "message": "ချက်တင်များကို အလိုအလျောက်ရှင်းလင်းပါ" },
   "menuLabel_toggleVis": { "message": "မြင်ကွင်းကို ထိန်းကျောင်းပါ" },
   "menuLabel_modeNotifs": { "message": "မုဒ် အသိပေးချက်များ" },
@@ -17,7 +17,7 @@
   "alert_isUpToDate": { "message": "နောက်ဆုံးအခြေအနေတွင်ရှိသည်" },
   "buttonLabel_moreApps": { "message": "နောက်ထပ် ChatGPT အက်ပ်များ" },
   "buttonLabel_leaveReview": { "message": "သုံးသပ်ချက်တစ်ခုချန်ထားပါ" },
-  "buttonLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ။" },
+  "buttonLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ" },
   "buttonLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
   "buttonLabel_dismiss": { "message": "ထုတ်ပယ်ပါ" },

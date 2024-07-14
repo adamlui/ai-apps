@@ -35,12 +35,12 @@
   "alert_isUpToDate": { "message": "နောက်ဆုံးအခြေအနေတွင်ရှိသည်" },
   "buttonLabel_moreApps": { "message": "နောက်ထပ် ChatGPT အက်ပ်များ" },
   "buttonLabel_leaveReview": { "message": "သုံးသပ်ချက်တစ်ခုချန်ထားပါ" },
-  "buttonLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ။" },
+  "buttonLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ" },
   "buttonLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
   "buttonLabel_dismiss": { "message": "ပယ်ဖျက်မည်" },
   "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ပါ" },
   "unit_seconds": { "message": "စက္ကန့်" },
-  "state_enabled": { "message": "ဖွင့်ထားသည်။" },
+  "state_enabled": { "message": "ဖွင့်ထားသည်" },
   "state_disabled": { "message": "မသန်စွမ်း" }
 }
