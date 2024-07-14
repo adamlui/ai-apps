@@ -224,6 +224,13 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ## 📜 Related scripts
 
+### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.com)
+
+> Add AI to Amazon shopping.
+<br>[Install](https://greasyfork.org/scripts/500663-amazongpt) /
+[Readme](https://amazongpt.kudoai.com/#readme) /
+[Discuss](https://amazongpt.kudoai.com/discussions)
+
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png?latest"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png?latest"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png?latest"></a>
 
 > Generate endless answers from all-knowing ChatGPT (in any language!)
@@ -237,13 +244,6 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br>[Install](https://docs.bravegpt.com/#-installation) /
 [Readme](https://docs.bravegpt.com/#readme) /
 [Discuss](https://github.bravegpt.com/discussions)
-
-### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?latest" width=17> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
-
-> Bring the magic of ChatGPT to DuckDuckGo (powered by GPT-4o!)
-<br>[Install](https://docs.ddgpt.com/#-installation) /
-[Readme](https://docs.ddgpt.com/#readme) /
-[Discuss](https://github.ddgpt.com/discussions)
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
