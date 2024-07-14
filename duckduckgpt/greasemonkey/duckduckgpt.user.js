@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.14.1
+// @version                2024.7.14.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -241,9 +241,9 @@
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('anchored', 'autoGet', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'fgAnimationsDisabled',
-                'fontSize', 'minimized', 'notFirstRun', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled',
-                'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+    loadSetting('anchored', 'autoGet', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'expanded',
+                'fgAnimationsDisabled', 'fontSize', 'minimized', 'notFirstRun', 'prefixEnabled', 'proxyAPIenabled',
+                'replyLanguage', 'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', 16.4) // init reply font size if unset
     if ( // disable streaming in unspported envs

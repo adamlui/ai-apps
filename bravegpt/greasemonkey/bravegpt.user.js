@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.14
+// @version               2024.7.14.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -241,9 +241,9 @@ setTimeout(async () => {
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('anchored', 'autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'fgAnimationsDisabled',
-                'fontSize', 'minimized', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled',
-                'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+    loadSetting('anchored', 'autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'expanded',
+                'fgAnimationsDisabled', 'fontSize', 'minimized', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
+                'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', 16) // init reply font size if unset
     if ( // disable streaming in unspported envs
