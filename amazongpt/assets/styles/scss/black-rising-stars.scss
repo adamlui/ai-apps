@@ -1,0 +1,73 @@
+// black-rising-stars.scss
+// © 2024 sarazond © 2024 Adam Lui
+
+@function multiple-box-shadow($n) {
+  $value: "#{random(2000)}px #{random(2000)}px #332f2f";
+  @for $i from 2 through $n {
+    $value: "#{$value}, #{random(2000)}px #{random(2000)}px #332f2f";
+  }
+  @return unquote($value);
+}
+
+$shadows-sm: multiple-box-shadow(700);
+$shadows-med: multiple-box-shadow(200);
+$shadows-lg: multiple-box-shadow(100);
+
+#black-stars-sm {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-sm;
+  animation: animStar 50s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-sm;
+  }
+}
+
+#black-stars-med {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-med;
+  animation: animStar 100s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-med;
+  }
+}
+
+#black-stars-lg {
+  width: 3px;
+  height: 3px;
+  border-radius: 3px;
+  background: transparent;
+  box-shadow: $shadows-lg;
+  animation: animStar 150s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-lg;
+  }
+}
+
+@keyframes animStar {
+  from { transform: translateY(0px); } to { transform: translateY(-2000px); }
+}
