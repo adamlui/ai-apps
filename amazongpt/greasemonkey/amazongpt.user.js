@@ -3,10 +3,10 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.15
+// @version                2024.7.15.1
 // @license                MIT
-// @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black/icon48.png?v=1ac5561
-// @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black/icon64.png?v=1ac5561
+// @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
+// @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
 // @match                  *://*.amazon.com/*
 // @match                  *://*.amazon.ae/*
 // @match                  *://*.amazon.be/*
@@ -45,7 +45,7 @@
 // @require                https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha256-dppVXeVTurw1ozOPNE3XqhYmDJPOosfbKQcHyQSE58w=
 // @require                https://cdn.jsdelivr.net/npm/generate-ip@2.4.2/dist/generate-ip.min.js#sha256-PRvQIDVWK/a+aAqEFVQv7RePbRe/tX6tWQVM80rAe2M=
 // @require                https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js#sha256-Ffq85bZYmLMrA/XtJen4kacprUwNbYdxEKd0SqhHqJQ=
-// @resource amzgptLSicon  https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black/icon64.png.b64?v=1ac5561#sha256-0MmyfJPlwTuBqBQvqpXX1q2zsJ4Vf4Fi53F9frg8pRk=
+// @resource amzgptLSicon  https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png.b64?v=0fddfc7#sha256-0AAauajMY4eRCDUtqRMRqBl1gaxxF0mFt4eRnFGlU24=
 // @resource amzgptDSicon  https://amazongpt.kudoai.com/assets/images/icons/amazongpt/white/icon64.png.b64?v=1ac5561#sha256-qTQ5tnMF6XeH3UZkQOlJZvdE1nkn5/9srNKJqFtcCDo=
 // @resource amzgptLSlogo  https://amazongpt.kudoai.com/assets/images/logos/amazongpt/black-gold/logo509x74.png.b64?v=1ac5561#sha256-wSW1EtGtscP0ZcUweFBqKfswt3NzEjbKxn5COYyihVA=
 // @resource amzgptDSlogo  https://amazongpt.kudoai.com/assets/images/logos/amazongpt/white-teal/logo509x74.png.b64?v=1ac5561#sha256-EWstwtlU8+gXSM98gpr6OR3OZ63ttHVNp/NQ7IMzFDA=
@@ -611,7 +611,7 @@
                 // Init logo
                 const settingsIcon = icons.amzgpt.create()
                 settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -39px ;'
-                                           + `margin: 0 ${ isPortrait ? 43 : 45.3 }% 3px`
+                                           + `margin: 0 ${ isPortrait ? 43 : 45.3 }% 7px`
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'amzgpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
