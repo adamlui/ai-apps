@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.15.1
+// @version                2024.7.15.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -89,7 +89,7 @@
         appURL: 'https://amazongpt.kudoai.com', gitHubURL: 'https://github.com/KudoAI/amazongpt',
         greasyForkURL: 'https://greasyfork.org/scripts/500663-amazongpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.28,
-        latestAssetCommitHash: '1ac5561' } // for cached messages.json
+        latestAssetCommitHash: 'f0b1432' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -2296,8 +2296,14 @@
     document.body.append(appDiv)
     setTimeout(() => appDiv.classList.add('active'), 350) // fade in
 
-    // Show STANDBY mode or get/show ANSWER
-    let msgChain = [{ role: 'user', content: augmentQuery('hi there bot') }]
+    // Get/show FIRST REPLY
+    const firstQuery = (
+        /\/dp\//.test(location) ? ('Tell me more about this product, including benefits and the brand if possible.'
+                                + ' Also talk about similar products in a markdown list. The product is: ' + document.title)
+       : /\/b\//.test(location) ? ('Tell me more about what to look for when shopping for this category: ' + document.title)
+       : 'Wassup bot'
+    )
+    let msgChain = [{ role: 'user', content: augmentQuery(firstQuery) }]
     appAlert('waitingResponse') ; get.reply(msgChain)
 
     // Add key listener to DISMISS modals
