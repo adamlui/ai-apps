@@ -25,7 +25,7 @@
 
 <img height=10px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
-### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black/icon48.png" width=18> [AmazonGPT](../amazongpt)
+### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=18> [AmazonGPT](../amazongpt)
 
 > 将 AI 添加到 Amazon 购物.
 <br>[Install](https://greasyfork.org/scripts/500663-amazongpt) /

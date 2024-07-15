@@ -224,7 +224,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ## 📜 Related scripts
 
-### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.com)
+### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.com)
 
 > Add AI to Amazon shopping.
 <br>[Install](https://greasyfork.org/scripts/500663-amazongpt) /
