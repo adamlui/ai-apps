@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.14.4
+// @version                2024.7.15
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black/icon48.png?v=1ac5561
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black/icon64.png?v=1ac5561
@@ -1365,8 +1365,8 @@
                                               : cornerBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
             // Update text
             tooltipDiv.innerText = (
-                buttonType == 'chevron' ? msgs[`tooltip_${ config.minimized ? 'restore' : 'minimize' }`]
-                                                      || ( config.minimized ? 'Restore' : 'Minimize' )
+                buttonType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
+                                                             : `${ msgs.tooltip_minimize || 'Minimize' }` )
               : buttonType == 'about' ? msgs.menuLabel_about || 'About'
               : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
               : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
