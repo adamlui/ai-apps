@@ -91,7 +91,7 @@
   "alert_checkCloudflare": { "message": "Slaag asseblief Cloudflare-sekuriteitskontrole" },
   "alert_notWorking": { "message": "werk nie" },
   "alert_ifIssuePersists": { "message": "As die probleem voortduur" },
-  "alert_try": { "message": "ek Joke Net" },
+  "alert_try": { "message": "Probeer" },
   "alert_switchingOn": { "message": "skakelaar aan" },
   "alert_switchingOff": { "message": "afskakel" },
   "buttonLabel_sendQueryToApp": { "message": "Stuur soektog navraag na GoogleGPT" },
