@@ -1,0 +1,113 @@
+name: Sync (amazongpt/ to KudoAI/amazongpt/) && (amazongpt/greasemonkey/ to adamlui/userscripts/chatgpt/amazongpt/)
+
+on:
+  push:
+    branches: [main]
+    paths: [amazongpt/**]
+
+jobs:
+  build:
+    if: (github.repository == 'adamlui/chatgpt-apps') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout adamlui/chatgpt-apps
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-apps
+          path: adamlui/chatgpt-apps
+          fetch-depth: 2
+
+      - name: Checkout KudoAI/amazongpt
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: KudoAI/amazongpt
+          path: KudoAI/amazongpt
+
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
+
+      - name: Sync docs between root & /greasemonkey
+        id: sync_docs
+        run: |
+          shopt -s globstar
+          cd ${{ github.workspace }}/adamlui/chatgpt-apps/amazongpt
+          loc_prefixes=( "root" "gm" )
+
+          # Sync LICENSE.md
+          for prefix in "${loc_prefixes[@]}" ; do
+            eval "${prefix}_license_content=\$(git show HEAD:\"./\$([[ \$prefix == \"gm\" ]] && echo \"greasemonkey/\" || echo \"\")LICENSE.md\")"
+            eval "${prefix}_license_modified=\$(git log -1 --format=\"%ct\" -- \"\$([[ \$prefix == \"gm\" ]] && echo \"greasemonkey/\" || echo \"\")LICENSE.md\")"
+          done
+          if (( root_license_modified > gm_license_modified )) ; then
+            if [[ "$root_license_content" != "$gm_license_content" ]] ; then
+              cp -f "LICENSE.md" "greasemonkey/LICENSE.md" ; sync_src="root" ; fi
+          elif (( gm_license_modified > root_license_modified )) ; then
+            if [[ "$gm_license_content" != "$root_license_content" ]] ; then
+              cp -f "greasemonkey/LICENSE.md" "LICENSE.md" ; sync_src="greasemonkey" ; fi ; fi
+
+          # Sync other docs
+          for file in docs/**/*.md ; do
+            for prefix in "${loc_prefixes[@]}" ; do
+              eval "${prefix}_doc_path=\"./\$([[ \$prefix == \"gm\" ]] && echo \"greasemonkey/\" || echo \"\")docs/${file#"docs/"}\""
+              eval "${prefix}_doc_content=\$(git show HEAD:\"\$${prefix}_doc_path\")"
+              eval "${prefix}_doc_modified=\$(git log -1 --format=\"%ct\" -- \"\$${prefix}_doc_path\")"
+            done
+            if (( root_doc_modified > gm_doc_modified )) ; then
+              if [[ "$root_doc_content" != "$gm_doc_content" ]] ; then
+                cp -f "$root_doc_path" "$gm_doc_path" ; sync_src="root" ; fi
+            elif (( gm_doc_modified > root_doc_modified )) ; then
+              if [[ "$gm_doc_content" != "$root_doc_content" ]] ; then
+                cp -f "$gm_doc_path" "$root_doc_path" ; sync_src="greasemonkey" ; fi ; fi
+          done
+
+          # Store sync src for commit msg in self-push step
+          echo "sync_src=$sync_src" >> $GITHUB_OUTPUT
+
+      - name: Sync amazongpt/ to KudoAI/amazongpt/
+        run: |
+          rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/amazongpt/ \
+            ${{ github.workspace }}/KudoAI/amazongpt/
+
+      - name: Sync amazongpt/greasemonkey/ to adamlui/userscripts/chatgpt/amazongpt/
+        run: |
+          rsync -avhr --delete \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/amazongpt/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/userscripts/chatgpt/amazongpt/
+
+      - name: Push to adamlui/chatgpt-apps
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: --force
+          add_options: --all
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `${{ steps.sync_docs.outputs.sync_src }}`]"
+          file_pattern: "amazongpt/**"
+          repository: adamlui/chatgpt-apps
+
+      - name: Push to KudoAI/amazongpt
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: --force
+          add_options: --all
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]"
+          file_pattern: "**"
+          repository: KudoAI/amazongpt
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: --force
+          add_options: --all
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/amazongpt`]"
+          file_pattern: "chatgpt/amazongpt/**"
+          repository: adamlui/userscripts
