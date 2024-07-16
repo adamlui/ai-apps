@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.15.5
+// @version                2024.7.16
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -234,10 +234,12 @@
                     [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
                       : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                 saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
+                const langUpdatedAlertID = siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
                     `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
                         + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
                     '', '', 375) // confirmation width
+                const langUpdatedAlert = document.getElementById(langUpdatedAlertID).firstChild
+                modals.init(langUpdatedAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 if (modals.settings.get()) // update settings menu status label
                     document.querySelector('#replyLanguage-menu-entry span').textContent = replyLanguage
                 break
@@ -338,7 +340,7 @@
         }
     }
 
-    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = 488) {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function appAlert(...alerts) {
@@ -1603,7 +1605,7 @@
                                 : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
                                             : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!/Tampermonkey|ScriptCat/.test(getUserscriptManager())) { // alert userscript manager unsupported, suggest TM/SC
-                siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
+                const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
                         + ( !isEdge && !isBrave ? // suggest TM for supported browsers
                             ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
@@ -1611,15 +1613,19 @@
                         + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
                         + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`
                 )
+                const suggestAlert = document.getElementById(suggestAlertID).firstChild
+                modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 if (streamingToggle && streamingToggle.checked == config.streamingDisabled) // revert Settings auto-toggle
                     modals.settings.toggle.switch(streamingToggle)
             } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) { // alert TM/browser unsupported, suggest SC
-                siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
+                const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
                         + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
                         + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
                             + `${ msgs.alert_instead || 'instead' }.`
                 )
+                const suggestAlert = document.getElementById(suggestAlertID).firstChild
+                modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 if (streamingToggle && streamingToggle.checked == config.streamingDisabled) // revert Settings auto-toggle
                     modals.settings.toggle.switch(streamingToggle)
             } else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
@@ -1630,7 +1636,8 @@
                 const switchPhrase = msgs.alert_switchingOn || 'switching on'
                 msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
                 const alertID = siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg),
-                      alert = document.getElementById(alertID)
+                      alert = document.getElementById(alertID.firstChild)
+                modals.init(alert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggle.proxyMode() }
                 if (streamingToggle && streamingToggle.checked == config.streamingDisabled) // revert Settings auto-toggle
                     modals.settings.toggle.switch(streamingToggle)
