@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.15.3
+// @version                2024.7.15.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2169,8 +2169,7 @@
 
             // Focus chatbar conditionally
             if (!config.autoFocusChatbarDisabled && !show.reply.chatbarFocused // do only once if enabled
-                && !isMobile // exclude mobile devices to not auto-popup OSD keyboard
-                && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top )) { // app fully above fold
+                && !isMobile) { // exclude mobile devices to not auto-popup OSD keyboard
                     appDiv.querySelector('#app-chatbar').focus() ; show.reply.chatbarFocused = true }
 
             // Update styles
