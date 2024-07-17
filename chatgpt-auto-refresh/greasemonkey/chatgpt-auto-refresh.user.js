@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.17
+// @version             2024.7.17.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -601,11 +601,9 @@
     async function insertToggle() {
 
         // Insert toggle
-        const parentToInsertInto = document.querySelector('nav ' +
-            (isGPT4oUI ? '' // nav div itself
-                : '> div:not(.invisible)')) // upper nav div
+                const parentToInsertInto = document.querySelector('nav > div:nth-of-type(2)') // upper nav div
         if (!parentToInsertInto.contains(navToggleDiv))
-            parentToInsertInto.insertBefore(navToggleDiv, parentToInsertInto.children[1])
+             parentToInsertInto.insertBefore(navToggleDiv, parentToInsertInto.children[1])
 
         // Tweak styles
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
