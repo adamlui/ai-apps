@@ -2,7 +2,7 @@
   "appName": { "message": "ChatGPT אַוטאָ-פאָרזעצן" },
   "appDesc": { "message": "אָטאַמאַטיק פאָרזעצן צו דזשענערייט קייפל ChatGPT רעספּאָנסעס" },
   "menuLabel_modeNotifs": { "message": "מאָדע נאָטיפיקאַטיאָנס" },
-  "menuLabel_about": { "message": "dialogs-action" },
+  "menuLabel_about": { "message": "וועגן" },
   "about_version": { "message": "ווערסיע" },
   "about_poweredBy": { "message": "פּאַוערד דורך" },
   "about_sourceCode": { "message": "מקור קאָד" },
