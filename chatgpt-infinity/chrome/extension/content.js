@@ -67,11 +67,9 @@
     async function insertToggle() {
 
         // Insert toggle
-        const parentToInsertInto = document.querySelector('nav ' +
-            (isGPT4oUI ? '' // nav div itself
-                : '> div:not(.invisible)')) // upper nav div
+        const parentToInsertInto = document.querySelector('nav > div:nth-of-type(2)') // mid nav div
         if (!parentToInsertInto.contains(navToggleDiv))
-            parentToInsertInto.insertBefore(navToggleDiv, parentToInsertInto.children[1])
+             parentToInsertInto.insertBefore(navToggleDiv, parentToInsertInto.children[1])
 
         // Tweak styles
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
