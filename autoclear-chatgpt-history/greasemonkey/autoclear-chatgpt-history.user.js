@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.11
+// @version             2024.7.16
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -399,7 +399,7 @@
         }))
 
         // Add 'Toggle Visibility' command
-        const tvLabel = menuState.symbol[+config.toggleHidden] + ' '
+        const tvLabel = menuState.symbol[+!config.toggleHidden] + ' '
                       + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
                       + menuState.separator + menuState.word[+!config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
