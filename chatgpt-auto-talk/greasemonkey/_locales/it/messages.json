@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Talk" },
+  "appDesc": { "message": "Riproduci automaticamente le risposte ChatGPT" },
+  "menuLabel_about": { "message": "Generalità" },
+  "about_version": { "message": "Versione" },
+  "about_poweredBy": { "message": "Offerto da" },
+  "about_sourceCode": { "message": "Codice sorgente" },
+  "mode_autoTalk": { "message": "Auto-Talk" },
+  "alert_updateAvail": { "message": "Aggiornamento disponibile" },
+  "alert_newerVer": { "message": "Invia aggiornamento a:" },
+  "alert_isAvail": { "message": "è disponibile" },
+  "alert_upToDate": { "message": "Aggiornato" },
+  "alert_isUpToDate": { "message": "è aggiornato" },
+  "buttonLabel_moreApps": { "message": "Altre app ChatGPT" },
+  "buttonLabel_leaveReview": { "message": "Aggiungi una Valutazione" },
+  "buttonLabel_getSupport": { "message": "Richiedi Assistenza" },
+  "buttonLabel_updateCheck": { "message": "Cerca aggiornamenti" },
+  "buttonLabel_update": { "message": "Aggiornare" },
+  "buttonLabel_dismiss": { "message": "Ignora" },
+  "link_viewChanges": { "message": "Visualizza modifiche" }
+}

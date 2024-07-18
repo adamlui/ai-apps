@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Talk" },
+  "appDesc": { "message": "Amabile ChatGPT Amabile" },
+  "menuLabel_about": { "message": "pafya" },
+  "about_version": { "message": "Ukupilibula" },
+  "about_poweredBy": { "message": "Amapola by Amapola" },
+  "about_sourceCode": { "message": "Ifyebo fyaba mu cipande ca kubalilapo" },
+  "mode_autoTalk": { "message": "Auto-Talk" },
+  "alert_updateAvail": { "message": "Update Pali Pali" },
+  "alert_newerVer": { "message": "Update kuli kuli" },
+  "alert_isAvail": { "message": "alipo" },
+  "alert_upToDate": { "message": "Fela Kuti Up-to-date" },
+  "alert_isUpToDate": { "message": "fela Anikulapo Kuti updated" },
+  "buttonLabel_moreApps": { "message": "Ukulele ChatGPT Apps" },
+  "buttonLabel_leaveReview": { "message": "Lekisha Review" },
+  "buttonLabel_getSupport": { "message": "Peeleniko bambi Peeleni" },
+  "buttonLabel_updateCheck": { "message": "Moneni Ifyebo Fyabamo Lyonse" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Ukufumishiwapo" },
+  "link_viewChanges": { "message": "Moneni ifyo ifintu fyayaluka" }
+}

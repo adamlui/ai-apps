@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Xerrada automàtica de ChatGPT" },
+  "appDesc": { "message": "Reprodueix automàticament les respostes de ChatGPT" },
+  "menuLabel_about": { "message": "Quant a" },
+  "about_version": { "message": "Versió" },
+  "about_poweredBy": { "message": "Desenvolupat per" },
+  "about_sourceCode": { "message": "Codi font" },
+  "mode_autoTalk": { "message": "Conversació automàtica" },
+  "alert_updateAvail": { "message": "Nova versió disponible!" },
+  "alert_newerVer": { "message": "Una actualització a" },
+  "alert_isAvail": { "message": "està disponible" },
+  "alert_upToDate": { "message": "Actualitzat" },
+  "alert_isUpToDate": { "message": "està actualitzat" },
+  "buttonLabel_moreApps": { "message": "Més aplicacions de ChatGPT" },
+  "buttonLabel_leaveReview": { "message": "Deixa una ressenya" },
+  "buttonLabel_getSupport": { "message": "Obteniu suport" },
+  "buttonLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
+  "buttonLabel_update": { "message": "Actualització" },
+  "buttonLabel_dismiss": { "message": "Descarta" },
+  "link_viewChanges": { "message": "Mostra els canvis" }
+}

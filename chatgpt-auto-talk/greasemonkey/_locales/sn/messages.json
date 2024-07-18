@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Taura nesu" },
+  "appDesc": { "message": "Tamba wega ChatGPT mhinduro" },
+  "menuLabel_about": { "message": "Nezvedu" },
+  "about_version": { "message": "Vhezheni" },
+  "about_poweredBy": { "message": "Inofambiswa ne" },
+  "about_sourceCode": { "message": "Kunobva kodhi" },
+  "mode_autoTalk": { "message": "Auto-Kutaura" },
+  "alert_updateAvail": { "message": "Zadzisa zviripo" },
+  "alert_newerVer": { "message": "An update kuti" },
+  "alert_isAvail": { "message": "inowanika" },
+  "alert_upToDate": { "message": "Up-to-date" },
+  "alert_isUpToDate": { "message": "is up-to-date" },
+  "buttonLabel_moreApps": { "message": "Zvakawanda ChatGPT Apps" },
+  "buttonLabel_leaveReview": { "message": "Taura nesu" },
+  "buttonLabel_getSupport": { "message": "Kuwana Rutsigiro" },
+  "buttonLabel_updateCheck": { "message": "Ongorora nokuti Updates" },
+  "buttonLabel_update": { "message": "Kugadziridza" },
+  "buttonLabel_dismiss": { "message": "Dzinga" },
+  "link_viewChanges": { "message": "Vonanyi cinjo" }
+}

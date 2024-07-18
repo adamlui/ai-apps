@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Talk" },
+  "appDesc": { "message": "Ol bekim bilong ol askim" },
+  "menuLabel_about": { "message": "About" },
+  "about_version": { "message": "Tok Pisin" },
+  "about_poweredBy": { "message": "Em i gat bikpela strong" },
+  "about_sourceCode": { "message": "Kod bilong as" },
+  "mode_autoTalk": { "message": "Auto-Talk" },
+  "alert_updateAvail": { "message": "Ol nupela samting i stap" },
+  "alert_newerVer": { "message": "Ol nupela tok" },
+  "alert_isAvail": { "message": "em i stap" },
+  "alert_upToDate": { "message": "UPDATE" },
+  "alert_isUpToDate": { "message": "ol i save mekim ol samting i kamap" },
+  "buttonLabel_moreApps": { "message": "Ol app bilong ChatGPT" },
+  "buttonLabel_leaveReview": { "message": "Leave a review" },
+  "buttonLabel_getSupport": { "message": "Kisim helpim" },
+  "buttonLabel_updateCheck": { "message": "Lukim ol nupela tok" },
+  "buttonLabel_update": { "message": "UPDATE" },
+  "buttonLabel_dismiss": { "message": "Lusim" },
+  "link_viewChanges": { "message": "Lukim ol senis" }
+}

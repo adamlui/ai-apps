@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT 자동 대화" },
+  "appDesc": { "message": "ChatGPT 응답 자동 재생" },
+  "menuLabel_about": { "message": "소개" },
+  "about_version": { "message": "버전" },
+  "about_poweredBy": { "message": "Powered by" },
+  "about_sourceCode": { "message": "원본 코드" },
+  "mode_autoTalk": { "message": "자동 대화" },
+  "alert_updateAvail": { "message": "업데이트 사용 가능" },
+  "alert_newerVer": { "message": "다음으로 업데이트" },
+  "alert_isAvail": { "message": "사용가능" },
+  "alert_upToDate": { "message": "최신 버전입니다" },
+  "alert_isUpToDate": { "message": "최신판입니다." },
+  "buttonLabel_moreApps": { "message": "더 많은 ChatGPT 앱" },
+  "buttonLabel_leaveReview": { "message": "상품 후기를 남겨주세요" },
+  "buttonLabel_getSupport": { "message": "지원받기" },
+  "buttonLabel_updateCheck": { "message": "업데이트 확인" },
+  "buttonLabel_update": { "message": "업데이트" },
+  "buttonLabel_dismiss": { "message": "무시하기" },
+  "link_viewChanges": { "message": "변경 보기" }
+}

@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ޗެޓްޖީޕީޓީ އޮޓޯ-ޓޯކް" },
+  "appDesc": { "message": "ޗެޓްޖީޕީޓީ ރެސްޕޮންސްތައް އޮޓޮމެޓިކުން ކުޅެވޭނެއެވެ" },
+  "menuLabel_about": { "message": "މިއާއި ބެހޭ" },
+  "about_version": { "message": "ވާރޝަން" },
+  "about_poweredBy": { "message": "ޕަވަރޑް ބައި" },
+  "about_sourceCode": { "message": "ސޯސް ކޯޑް" },
+  "mode_autoTalk": { "message": "އޮޓޯ ޓޯކް" },
+  "alert_updateAvail": { "message": "އަޕްޑޭޓް ލިބެން ހުރެއެވެ" },
+  "alert_newerVer": { "message": "އަށް އަޕްޑޭޓެއް..." },
+  "alert_isAvail": { "message": "ލިބެން ހުރެއެވެ" },
+  "alert_upToDate": { "message": "އަޕްޑޭޓް" },
+  "alert_isUpToDate": { "message": "ޒަމާނާ އެއްގޮތެވެ" },
+  "buttonLabel_moreApps": { "message": "އިތުރު ޗެޓްޖީޕީޓީ އެޕްސް" },
+  "buttonLabel_leaveReview": { "message": "ރިވިއުއެއް ދޫކޮށްލާށެވެ" },
+  "buttonLabel_getSupport": { "message": "ސަޕޯޓް ހޯދުން" },
+  "buttonLabel_updateCheck": { "message": "އަޕްޑޭޓްސް ހުރިތޯ ބަލާށެވެ" },
+  "buttonLabel_update": { "message": "އަޕްޑޭޓް" },
+  "buttonLabel_dismiss": { "message": "ދުރުކޮށްލުން" },
+  "link_viewChanges": { "message": "ބަދަލުތައް ބަލާށެވެ" }
+}

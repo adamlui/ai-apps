@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Αυτόματη συνομιλία" },
+  "appDesc": { "message": "Αυτόματη αναπαραγωγή αποκρίσεων ChatGPT" },
+  "menuLabel_about": { "message": "Σχετικά" },
+  "about_version": { "message": "Έκδοση" },
+  "about_poweredBy": { "message": "Με την υποστήριξη" },
+  "about_sourceCode": { "message": "Source code" },
+  "mode_autoTalk": { "message": "Αυτόματη συνομιλία" },
+  "alert_updateAvail": { "message": "Υπάρχει διαθέσιμη ενημέρωση" },
+  "alert_newerVer": { "message": "Ενημέρωση" },
+  "alert_isAvail": { "message": "Μη διαθέσιμο" },
+  "alert_upToDate": { "message": "Ενημερωμένο" },
+  "alert_isUpToDate": { "message": " είναι ενήμερο." },
+  "buttonLabel_moreApps": { "message": "Περισσότερες εφαρμογές ChatGPT" },
+  "buttonLabel_leaveReview": { "message": "Κάντε μία κριτική" },
+  "buttonLabel_getSupport": { "message": "Λάβετε υποστήριξη" },
+  "buttonLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
+  "buttonLabel_update": { "message": "Ενημέρωση" },
+  "buttonLabel_dismiss": { "message": " Κλείσιμο" },
+  "link_viewChanges": { "message": "Εμφάνιση αλλαγών" }
+}

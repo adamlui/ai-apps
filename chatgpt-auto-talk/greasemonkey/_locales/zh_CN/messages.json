@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT 自动通话" },
+  "appDesc": { "message": "自动播放 ChatGPT 回复" },
+  "menuLabel_about": { "message": "关于" },
+  "about_version": { "message": "版本" },
+  "about_poweredBy": { "message": "技术支持方" },
+  "about_sourceCode": { "message": "源代码" },
+  "mode_autoTalk": { "message": "自动通话" },
+  "alert_updateAvail": { "message": "更新可用" },
+  "alert_newerVer": { "message": "以下内容的更新：" },
+  "alert_isAvail": { "message": "是可用的" },
+  "alert_upToDate": { "message": "已最新" },
+  "alert_isUpToDate": { "message": "是最新的" },
+  "buttonLabel_moreApps": { "message": "更多 ChatGPT 应用" },
+  "buttonLabel_leaveReview": { "message": "发表评论" },
+  "buttonLabel_getSupport": { "message": "獲取支援" },
+  "buttonLabel_updateCheck": { "message": "检查更新" },
+  "buttonLabel_update": { "message": "更新" },
+  "buttonLabel_dismiss": { "message": "撤消" },
+  "link_viewChanges": { "message": "查看修改" }
+}

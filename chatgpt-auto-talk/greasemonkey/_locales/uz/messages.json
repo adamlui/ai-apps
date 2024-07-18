@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT avtomatik suhbat" },
+  "appDesc": { "message": "ChatGPT javoblarini avtomatik o'ynatish" },
+  "menuLabel_about": { "message": "Qisqacha ma'lumot" },
+  "about_version": { "message": "Versiya" },
+  "about_poweredBy": { "message": "Tomonidan qo'llab-quvvatlanadi" },
+  "about_sourceCode": { "message": "Ochiq kod" },
+  "mode_autoTalk": { "message": "Avtomatik suhbat" },
+  "alert_updateAvail": { "message": "Mavjud yangilanishlar" },
+  "alert_newerVer": { "message": "Yangilash" },
+  "alert_isAvail": { "message": "mavjud." },
+  "alert_upToDate": { "message": "Yangilash" },
+  "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
+  "buttonLabel_moreApps": { "message": "Boshqa ChatGPT ilovalari" },
+  "buttonLabel_leaveReview": { "message": "Sharh qoldiring" },
+  "buttonLabel_getSupport": { "message": "Yordam oling" },
+  "buttonLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
+  "buttonLabel_update": { "message": "Yangilash" },
+  "buttonLabel_dismiss": { "message": "Rad etish" },
+  "link_viewChanges": { "message": "O'zgarishlarni ko'rish" }
+}

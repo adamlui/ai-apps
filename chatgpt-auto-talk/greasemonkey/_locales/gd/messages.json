@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto - Talk" },
+  "appDesc": { "message": "Cluich freagairtean ChatGPT gu fèin - obrachail" },
+  "menuLabel_about": { "message": "Mar deidhinn" },
+  "about_version": { "message": "Tionndadh" },
+  "about_poweredBy": { "message": "Powered by" },
+  "about_sourceCode": { "message": "Bun-tùs a' chod" },
+  "mode_autoTalk": { "message": "A 'bruidhinn gu fèin - obrachail" },
+  "alert_updateAvail": { "message": "Chan eil ùrachadh ri fhaighinn" },
+  "alert_newerVer": { "message": "An update to" },
+  "alert_isAvail": { "message": "tha e ri fhaotainn" },
+  "alert_upToDate": { "message": "Up to date" },
+  "alert_isUpToDate": { "message": "up - upstairs" },
+  "buttonLabel_moreApps": { "message": "Barrachd Apps ChatGPT" },
+  "buttonLabel_leaveReview": { "message": "Leave a Review" },
+  "buttonLabel_getSupport": { "message": "Faigh Taic" },
+  "buttonLabel_updateCheck": { "message": "Thoir sùil airson ùrachaidhean" },
+  "buttonLabel_update": { "message": "Ùraich" },
+  "buttonLabel_dismiss": { "message": "Cuir air falbh" },
+  "link_viewChanges": { "message": "Seall na h - atharraichean" }
+}

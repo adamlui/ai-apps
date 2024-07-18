@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "שיחה אוטומטית עם ChatGPT" },
+  "appDesc": { "message": "הפעלה אוטומטית של תגובות ChatGPT" },
+  "menuLabel_about": { "message": "אודות" },
+  "about_version": { "message": "גירסה" },
+  "about_poweredBy": { "message": "באמצעות " },
+  "about_sourceCode": { "message": "קוד מקור" },
+  "mode_autoTalk": { "message": "שיחה אוטומטית" },
+  "alert_updateAvail": { "message": "עדכון זמין" },
+  "alert_newerVer": { "message": "עדכון לגבי" },
+  "alert_isAvail": { "message": "%s זמין" },
+  "alert_upToDate": { "message": "מעודכן" },
+  "alert_isUpToDate": { "message": "מעודכן" },
+  "buttonLabel_moreApps": { "message": "עוד אפליקציות ChatGPT" },
+  "buttonLabel_leaveReview": { "message": "כתבי חוות דעת" },
+  "buttonLabel_getSupport": { "message": "קבל תמיכה" },
+  "buttonLabel_updateCheck": { "message": "חפש עדכונים" },
+  "buttonLabel_update": { "message": "עדכון" },
+  "buttonLabel_dismiss": { "message": "שחרור" },
+  "link_viewChanges": { "message": "הצגת השינויים" }
+}

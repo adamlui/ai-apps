@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "చాట్ జిపిటి ఆటో-టాక్" },
+  "appDesc": { "message": "చాట్ జిపిటి ప్రతిస్పందనలను స్వయంచాలకంగా ప్లే చేయండి" },
+  "menuLabel_about": { "message": "గురించి" },
+  "about_version": { "message": "వివరణం" },
+  "about_poweredBy": { "message": "ద్వారా ఆధారితం" },
+  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "mode_autoTalk": { "message": "ఆటో-టాక్" },
+  "alert_updateAvail": { "message": "ఎటువంటి నవీకరణ అందుబాటులోలేదు" },
+  "alert_newerVer": { "message": "కు అప్ ‌ డేట్" },
+  "alert_isAvail": { "message": "అందుబాటులో ఉంది" },
+  "alert_upToDate": { "message": "అప్-టు-డేట్" },
+  "alert_isUpToDate": { "message": "తాజాగా ఉంది" },
+  "buttonLabel_moreApps": { "message": "మరిన్ని ChatGPT యాప్ ‌ లు" },
+  "buttonLabel_leaveReview": { "message": "సమీక్షను వదిలివేయండి" },
+  "buttonLabel_getSupport": { "message": "సహకారం తీసుకోండి" },
+  "buttonLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
+  "buttonLabel_update": { "message": "అప్‌డేట్" },
+  "buttonLabel_dismiss": { "message": "తీసివేయండి" },
+  "link_viewChanges": { "message": "మార్పులను చూడండి" }
+}

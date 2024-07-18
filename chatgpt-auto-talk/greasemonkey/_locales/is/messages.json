@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Talk" },
+  "appDesc": { "message": "Spila sjálfkrafa ChatGPT svör" },
+  "menuLabel_about": { "message": "Um" },
+  "about_version": { "message": "Útgáfa" },
+  "about_poweredBy": { "message": "Knúið af" },
+  "about_sourceCode": { "message": "Upprunakóði@ info: whatsthis" },
+  "mode_autoTalk": { "message": "Sjálfvirkt tal" },
+  "alert_updateAvail": { "message": "Ný uppfærsla í boði" },
+  "alert_newerVer": { "message": "Breyting á" },
+  "alert_isAvail": { "message": "er í boði" },
+  "alert_upToDate": { "message": "Uppfært" },
+  "alert_isUpToDate": { "message": "er uppfært" },
+  "buttonLabel_moreApps": { "message": "Fleiri ChatGPT öpp" },
+  "buttonLabel_leaveReview": { "message": "Skildu eftir umsögn" },
+  "buttonLabel_getSupport": { "message": "Fá stuðning" },
+  "buttonLabel_updateCheck": { "message": "Leita að uppfærslum" },
+  "buttonLabel_update": { "message": "Uppfæra" },
+  "buttonLabel_dismiss": { "message": "Hafna" },
+  "link_viewChanges": { "message": "Skoða breytingar" }
+}

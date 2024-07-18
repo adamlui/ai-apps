@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT स्वतः कुराकानी" },
+  "appDesc": { "message": "ChatGPT प्रतिक्रियाहरू स्वचालित रूपमा प्ले गर्नुहोस्" },
+  "menuLabel_about": { "message": "बारेमा" },
+  "about_version": { "message": "संस्करण " },
+  "about_poweredBy": { "message": "समर्थनकर्ता " },
+  "about_sourceCode": { "message": "स्रोत सङ्केत" },
+  "mode_autoTalk": { "message": "अटो - टक" },
+  "alert_updateAvail": { "message": "कुनै अपडेट उपलब्ध छैन।" },
+  "alert_newerVer": { "message": "यसमा अद्यावधिक गर्नुहोस्" },
+  "alert_isAvail": { "message": "<x id=\"1\"/>\"<x id=\"2\"/>\" उपलब्ध<x id=\"3\"/> छ" },
+  "alert_upToDate": { "message": "अद्यावधिक गर्नुहोस्" },
+  "alert_isUpToDate": { "message": "अद्यावधिक गर्नुहोस्" },
+  "buttonLabel_moreApps": { "message": "थप ChatGPT अनुप्रयोगहरू" },
+  "buttonLabel_leaveReview": { "message": "समीक्षा छोड्नुहोस्" },
+  "buttonLabel_getSupport": { "message": "सहायता प्राप्त गर्नुहोस्" },
+  "buttonLabel_updateCheck": { "message": "अद्यावधिकहरूको लागि जाँच गर्नुहोस्" },
+  "buttonLabel_update": { "message": "अद्यावधिक गर्नुहोस्" },
+  "buttonLabel_dismiss": { "message": "खारेज " },
+  "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" }
+}

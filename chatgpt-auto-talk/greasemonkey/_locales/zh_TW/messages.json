@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT 自動對話" },
+  "appDesc": { "message": "自動播放 ChatGPT 回應" },
+  "menuLabel_about": { "message": "關於我們" },
+  "about_version": { "message": "版本" },
+  "about_poweredBy": { "message": "技術提供" },
+  "about_sourceCode": { "message": "原始碼" },
+  "mode_autoTalk": { "message": "自動對話" },
+  "alert_updateAvail": { "message": "有可用更新" },
+  "alert_newerVer": { "message": "最新消息：" },
+  "alert_isAvail": { "message": "可用" },
+  "alert_upToDate": { "message": "最新" },
+  "alert_isUpToDate": { "message": "是最新的" },
+  "buttonLabel_moreApps": { "message": "更多 ChatGPT 應用程式" },
+  "buttonLabel_leaveReview": { "message": "留下評語" },
+  "buttonLabel_getSupport": { "message": "取得支援" },
+  "buttonLabel_updateCheck": { "message": "檢查更新" },
+  "buttonLabel_update": { "message": "更新" },
+  "buttonLabel_dismiss": { "message": "返回" },
+  "link_viewChanges": { "message": "查看變更" }
+}

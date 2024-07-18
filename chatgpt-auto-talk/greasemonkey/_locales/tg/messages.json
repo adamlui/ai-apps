@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ЧатGPT худкор- гуфтугӯ" },
+  "appDesc": { "message": "Awtomatikong maglagay ng mga tugon sa ChatGPT" },
+  "menuLabel_about": { "message": "_Дар бораи" },
+  "about_version": { "message": "Версия" },
+  "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },
+  "about_sourceCode": { "message": "Рамзи манбаъ" },
+  "mode_autoTalk": { "message": "Ð  Ð ° Ð ¼ Ð ¾ Ð" },
+  "alert_updateAvail": { "message": "I-update ang magagamit" },
+  "alert_newerVer": { "message": "Ang isang pag-update sa" },
+  "alert_isAvail": { "message": "дастрас аст" },
+  "alert_upToDate": { "message": "Ба рӯз расонӣ" },
+  "alert_isUpToDate": { "message": "up-to-date аст" },
+  "buttonLabel_moreApps": { "message": "Бештар ChatGPT Барномаҳо" },
+  "buttonLabel_leaveReview": { "message": "Тафсирро тарк кунед" },
+  "buttonLabel_getSupport": { "message": "Гирифтани Дастгирӣ" },
+  "buttonLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
+  "buttonLabel_update": { "message": "Навсозӣ кардан" },
+  "buttonLabel_dismiss": { "message": "Рад кардан" },
+  "link_viewChanges": { "message": "Tingnan ang mga pagbabago" }
+}

@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Talk" },
+  "appDesc": { "message": "ChatGPT-antwoorden automatisch afspelen" },
+  "menuLabel_about": { "message": "Over" },
+  "about_version": { "message": "Versie" },
+  "about_poweredBy": { "message": "Ondersteund door" },
+  "about_sourceCode": { "message": "Broncode" },
+  "mode_autoTalk": { "message": "AUTOMATISCH BEANTWOORDEN" },
+  "alert_updateAvail": { "message": "Güncelleme uygun" },
+  "alert_newerVer": { "message": "Updaten naar" },
+  "alert_isAvail": { "message": "is beschikbaar" },
+  "alert_upToDate": { "message": "Bijgewerkt" },
+  "alert_isUpToDate": { "message": "<PROTECTED> is geactualiseerd" },
+  "buttonLabel_moreApps": { "message": "Meer ChatGPT-apps" },
+  "buttonLabel_leaveReview": { "message": "Recensie achterlaten" },
+  "buttonLabel_getSupport": { "message": "Neem contact op" },
+  "buttonLabel_updateCheck": { "message": "Controleer op updates" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Afwijzen" },
+  "link_viewChanges": { "message": "Wijzigingen weergeven" }
+}

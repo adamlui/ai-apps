@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Talk" },
+  "appDesc": { "message": "Automatically play ChatGPT responses" },
+  "menuLabel_about": { "message": "About" },
+  "about_version": { "message": "Version" },
+  "about_poweredBy": { "message": "Powered by" },
+  "about_sourceCode": { "message": "Source code" },
+  "mode_autoTalk": { "message": "Auto-Talk" },
+  "alert_updateAvail": { "message": "Update available" },
+  "alert_newerVer": { "message": "An update to" },
+  "alert_isAvail": { "message": "is available" },
+  "alert_upToDate": { "message": "Up-to-date" },
+  "alert_isUpToDate": { "message": "is up-to-date" },
+  "buttonLabel_moreApps": { "message": "More ChatGPT Apps" },
+  "buttonLabel_leaveReview": { "message": "Podaj mnenje" },
+  "buttonLabel_getSupport": { "message": "Podpora" },
+  "buttonLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
+  "buttonLabel_update": { "message": "Posodobi" },
+  "buttonLabel_dismiss": { "message": "Opusti" },
+  "link_viewChanges": { "message": "Poglej spremembe" }
+}

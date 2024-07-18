@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Автоматски разговор за ChatGPT" },
+  "appDesc": { "message": "Автоматски пуштајте одговори на ChatGPT" },
+  "menuLabel_about": { "message": "За" },
+  "about_version": { "message": "верзија" },
+  "about_poweredBy": { "message": "Овозможено од" },
+  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "mode_autoTalk": { "message": "Автоматски разговор" },
+  "alert_updateAvail": { "message": "Достапно е ажурирање" },
+  "alert_newerVer": { "message": "Ажурирање на" },
+  "alert_isAvail": { "message": "е достапен" },
+  "alert_upToDate": { "message": "Ажурираj" },
+  "alert_isUpToDate": { "message": "е ажуриран" },
+  "buttonLabel_moreApps": { "message": "Повеќе апликации за ChatGPT" },
+  "buttonLabel_leaveReview": { "message": "Остави еден преглед" },
+  "buttonLabel_getSupport": { "message": "Добијте поддршка" },
+  "buttonLabel_updateCheck": { "message": "Провери за нова верзија" },
+  "buttonLabel_update": { "message": "Ажурирај" },
+  "buttonLabel_dismiss": { "message": "Отфрли" },
+  "link_viewChanges": { "message": "Прикажи ги промените" }
+}

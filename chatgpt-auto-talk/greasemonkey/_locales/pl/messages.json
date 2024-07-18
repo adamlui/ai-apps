@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "CzatGPT Automatyczna rozmowa" },
+  "appDesc": { "message": "Automatycznie odtwarzaj odpowiedzi ChatGPT" },
+  "menuLabel_about": { "message": "Informacje o" },
+  "about_version": { "message": "Wersja" },
+  "about_poweredBy": { "message": "Obsługiwane przez" },
+  "about_sourceCode": { "message": "Kod źródłowy" },
+  "mode_autoTalk": { "message": "Automatyczna rozmowa" },
+  "alert_updateAvail": { "message": "Dostępna jest aktualizacja" },
+  "alert_newerVer": { "message": "Aktualizuj" },
+  "alert_isAvail": { "message": "jest dostępna" },
+  "alert_upToDate": { "message": "Aktualne" },
+  "alert_isUpToDate": { "message": "jest aktualny" },
+  "buttonLabel_moreApps": { "message": "Więcej aplikacji ChatGPT" },
+  "buttonLabel_leaveReview": { "message": "Dodaj opinię" },
+  "buttonLabel_getSupport": { "message": "Uzyskać wsparcie" },
+  "buttonLabel_updateCheck": { "message": "Sprawdź aktualizacje" },
+  "buttonLabel_update": { "message": "Aktualizuj" },
+  "buttonLabel_dismiss": { "message": "Odrzuć" },
+  "link_viewChanges": { "message": "Przegląd zmian" }
+}

@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Kūkākūkā ʻAuto-Kūkākūkā ʻo ChatGPT" },
+  "appDesc": { "message": "Pāʻani ʻakomi i nā pane ChatGPT" },
+  "menuLabel_about": { "message": "Ho‘ākāka" },
+  "about_version": { "message": "Manao" },
+  "about_poweredBy": { "message": "Hoʻāmana ʻia e" },
+  "about_sourceCode": { "message": "Hoʻopā'ālua" },
+  "mode_autoTalk": { "message": "Kamaʻilio ʻOkoʻa" },
+  "alert_updateAvail": { "message": "Loaʻa ka hōʻano hou" },
+  "alert_newerVer": { "message": "He mea hou i" },
+  "alert_isAvail": { "message": "loaʻa" },
+  "alert_upToDate": { "message": "ʻikepili hou āpau" },
+  "alert_isUpToDate": { "message": "he mea hou" },
+  "buttonLabel_moreApps": { "message": "Nā polokalamu ChatGPT hou aku" },
+  "buttonLabel_leaveReview": { "message": "E waiho i kahi loiloi" },
+  "buttonLabel_getSupport": { "message": "Loaʻa Kākoʻo" },
+  "buttonLabel_updateCheck": { "message": "E nānā i nā mea hou" },
+  "buttonLabel_update": { "message": "Hōʻano hou" },
+  "buttonLabel_dismiss": { "message": "Hoʻokuʻu" },
+  "link_viewChanges": { "message": "Nānā i nā hoʻololi" }
+}

@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Mazungumzo ya Kiotomatiki ya ChatGPT" },
+  "appDesc": { "message": "Cheza majibu ya ChatGPT kiotomatiki" },
+  "menuLabel_about": { "message": "Kuhusu" },
+  "about_version": { "message": "Toleo" },
+  "about_poweredBy": { "message": "Imewezeshwa na" },
+  "about_sourceCode": { "message": "Msimbo wa chanzo" },
+  "mode_autoTalk": { "message": "Mazungumzo ya Kiotomatiki" },
+  "alert_updateAvail": { "message": "Sasisho lipo" },
+  "alert_newerVer": { "message": "Sasisho kwa" },
+  "alert_isAvail": { "message": "inapatikana" },
+  "alert_upToDate": { "message": "Imesasishwa" },
+  "alert_isUpToDate": { "message": "imesasishwa" },
+  "buttonLabel_moreApps": { "message": "Programu Zaidi za GumzoGPT" },
+  "buttonLabel_leaveReview": { "message": "Acha Tathmini" },
+  "buttonLabel_getSupport": { "message": "Pata Usaidizi" },
+  "buttonLabel_updateCheck": { "message": "Angalia Masasisho" },
+  "buttonLabel_update": { "message": "Sasisho" },
+  "buttonLabel_dismiss": { "message": "Puuza" },
+  "link_viewChanges": { "message": "Angalia mabadiliko" }
+}

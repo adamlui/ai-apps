@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Talk" },
+  "appDesc": { "message": "Awtomatikong i-play ang mga tugon sa ChatGPT" },
+  "menuLabel_about": { "message": "Mahitungod" },
+  "about_version": { "message": "Bersyon:" },
+  "about_poweredBy": { "message": "Powered by" },
+  "about_sourceCode": { "message": "Gigikana sa kodigo" },
+  "mode_autoTalk": { "message": "Auto-Talk" },
+  "alert_updateAvail": { "message": "Magamit ang pag-update" },
+  "alert_newerVer": { "message": "Usa ka update sa" },
+  "alert_isAvail": { "message": "mao available" },
+  "alert_upToDate": { "message": "Up-to-Date nga" },
+  "alert_isUpToDate": { "message": "uPDATE kini" },
+  "buttonLabel_moreApps": { "message": "Dugang nga ChatGPT Apps" },
+  "buttonLabel_leaveReview": { "message": "Magbilin usa ka Pagrepaso" },
+  "buttonLabel_getSupport": { "message": "Kuhaa ang Suporta" },
+  "buttonLabel_updateCheck": { "message": "Susiha ang mga Update" },
+  "buttonLabel_update": { "message": "I-update" },
+  "buttonLabel_dismiss": { "message": "I-dismiss" },
+  "link_viewChanges": { "message": "Tan-awa ang mga kausaban" }
+}

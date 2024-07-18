@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT พูดคุยอัตโนมัติ" },
+  "appDesc": { "message": "เล่นการตอบกลับ ChatGPT โดยอัตโนมัติ" },
+  "menuLabel_about": { "message": "เกี่ยวกับ" },
+  "about_version": { "message": "เวอร์ชัน" },
+  "about_poweredBy": { "message": "สนับสนุนโดย" },
+  "about_sourceCode": { "message": "รหัสต้นฉบับ" },
+  "mode_autoTalk": { "message": "พูดอัตโนมัติ" },
+  "alert_updateAvail": { "message": "มีอัพเดตให้ใช้งาน" },
+  "alert_newerVer": { "message": "อัพเดทเป็น" },
+  "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },
+  "alert_upToDate": { "message": "ถึงวันที่    .........................................  …………….." },
+  "alert_isUpToDate": { "message": "อัพเดทแล้ว" },
+  "buttonLabel_moreApps": { "message": "แอป ChatGPT เพิ่มเติม" },
+  "buttonLabel_leaveReview": { "message": "ออกจากการรีวิว" },
+  "buttonLabel_getSupport": { "message": "รับความช่วยเหลือ" },
+  "buttonLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
+  "buttonLabel_update": { "message": "อัปเดต" },
+  "buttonLabel_dismiss": { "message": "ยกเลิก" },
+  "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" }
+}

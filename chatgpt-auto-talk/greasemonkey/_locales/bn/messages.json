@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT অটো-টক" },
+  "appDesc": { "message": "স্বয়ংক্রিয়ভাবে ChatGPT প্রতিক্রিয়াগুলি চালান" },
+  "menuLabel_about": { "message": "সম্বন্ধে" },
+  "about_version": { "message": "সংস্করণ" },
+  "about_poweredBy": { "message": "নিবেদন করছেন" },
+  "about_sourceCode": { "message": "সোর্স কোড" },
+  "mode_autoTalk": { "message": "অটো-টক" },
+  "alert_updateAvail": { "message": "আপডেট উপলব্ধ" },
+  "alert_newerVer": { "message": "-এ একটি আপডেট" },
+  "alert_isAvail": { "message": "সহজলভ্য" },
+  "alert_upToDate": { "message": "হালনাগাদ" },
+  "alert_isUpToDate": { "message": "আপ-টু-ডেট" },
+  "buttonLabel_moreApps": { "message": "আরও চ্যাটজিপিটি অ্যাপস" },
+  "buttonLabel_leaveReview": { "message": "একটি রিভিউ লিখুন" },
+  "buttonLabel_getSupport": { "message": "সহায়তা পান" },
+  "buttonLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
+  "buttonLabel_update": { "message": "আপডেট করুন" },
+  "buttonLabel_dismiss": { "message": "খারিজ করুন" },
+  "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" }
+}

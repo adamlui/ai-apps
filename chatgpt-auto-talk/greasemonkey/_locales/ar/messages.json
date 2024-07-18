@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "المحادثة التلقائية ChatGPT" },
+  "appDesc": { "message": "تشغيل استجابات ChatGPT تلقائيًا" },
+  "menuLabel_about": { "message": "نبذة" },
+  "about_version": { "message": "الإصدار" },
+  "about_poweredBy": { "message": "مُقدم من" },
+  "about_sourceCode": { "message": "شيفرة مصدرية" },
+  "mode_autoTalk": { "message": "التحدث التلقائي" },
+  "alert_updateAvail": { "message": "تحديث متوفر" },
+  "alert_newerVer": { "message": "تحديث لـ" },
+  "alert_isAvail": { "message": "متوفر" },
+  "alert_upToDate": { "message": "محدّث" },
+  "alert_isUpToDate": { "message": "محدث" },
+  "buttonLabel_moreApps": { "message": "المزيد من تطبيقات ChatGPT" },
+  "buttonLabel_leaveReview": { "message": "اترك تقييماً" },
+  "buttonLabel_getSupport": { "message": "احصل على الدعم" },
+  "buttonLabel_updateCheck": { "message": "مرابة التحديثات" },
+  "buttonLabel_update": { "message": "التحديث" },
+  "buttonLabel_dismiss": { "message": "تجاهل" },
+  "link_viewChanges": { "message": "عرض سجل التغييرات" }
+}

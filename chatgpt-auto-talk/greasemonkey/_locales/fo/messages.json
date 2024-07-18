@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Talk" },
+  "appDesc": { "message": "Spæl sjálvvirkandi ChatGPT svar" },
+  "menuLabel_about": { "message": "Um" },
+  "about_version": { "message": "Útgáva:" },
+  "about_poweredBy": { "message": "Powered by SFX" },
+  "about_sourceCode": { "message": "Ada keldukota" },
+  "mode_autoTalk": { "message": "Sjálvstýrisrøða" },
+  "alert_updateAvail": { "message": "Dagføring er klár" },
+  "alert_newerVer": { "message": "Núverandi tíðindi" },
+  "alert_isAvail": { "message": "tað er tøkt" },
+  "alert_upToDate": { "message": "Uppdaterað" },
+  "alert_isUpToDate": { "message": "núverandi tíðindi" },
+  "buttonLabel_moreApps": { "message": "Fleiri ChatGPT apps" },
+  "buttonLabel_leaveReview": { "message": "Skriva eina gjøgnumgongd" },
+  "buttonLabel_getSupport": { "message": "Fá stuðul" },
+  "buttonLabel_updateCheck": { "message": "Gev gætur eftir dagføringum" },
+  "buttonLabel_update": { "message": "Dagfør" },
+  "buttonLabel_dismiss": { "message": "Avsakað" },
+  "link_viewChanges": { "message": "Sí broytingar" }
+}

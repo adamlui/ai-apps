@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT automatska konverzacija" },
+  "appDesc": { "message": "Automatski reproduciraj ChatGPT odgovore" },
+  "menuLabel_about": { "message": "O nama" },
+  "about_version": { "message": "Verzija" },
+  "about_poweredBy": { "message": "omogućio" },
+  "about_sourceCode": { "message": "Izvorni kod" },
+  "mode_autoTalk": { "message": "Automatski razgovor" },
+  "alert_updateAvail": { "message": "Ažuriranje dostupno" },
+  "alert_newerVer": { "message": "Ažuriranje za" },
+  "alert_isAvail": { "message": "je dostupno" },
+  "alert_upToDate": { "message": "Up to date" },
+  "alert_isUpToDate": { "message": "je ažuran" },
+  "buttonLabel_moreApps": { "message": "Još ChatGPT aplikacija" },
+  "buttonLabel_leaveReview": { "message": "Napiši recenziju" },
+  "buttonLabel_getSupport": { "message": "Zatražite podršku" },
+  "buttonLabel_updateCheck": { "message": "Potražite ažuriranja" },
+  "buttonLabel_update": { "message": "Nadogradi" },
+  "buttonLabel_dismiss": { "message": "Otkaži" },
+  "link_viewChanges": { "message": "Vidi promjene" }
+}

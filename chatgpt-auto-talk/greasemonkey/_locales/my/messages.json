@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT အလိုအလျောက်စကားပြော" },
+  "appDesc": { "message": "ChatGPT တုံ့ပြန်ချက်များကို အလိုအလျောက်ဖွင့်ပါ" },
+  "menuLabel_about": { "message": "အကြောင်း" },
+  "about_version": { "message": "မူ -" },
+  "about_poweredBy": { "message": "စွမ်းဆောင်ရည် -" },
+  "about_sourceCode": { "message": "ပင္မကုဒ္" },
+  "mode_autoTalk": { "message": "အလိုအလျောက်စကားပြော" },
+  "alert_updateAvail": { "message": "အသစ်မထွက်သေး" },
+  "alert_newerVer": { "message": "သို့ အပ်ဒိတ်တစ်ခု" },
+  "alert_isAvail": { "message": "ရရှိနိုင်ပါသည်" },
+  "alert_upToDate": { "message": "နောက်ဆုံးရ" },
+  "alert_isUpToDate": { "message": "up-to-date ဖြစ်အောင်နေပါ" },
+  "buttonLabel_moreApps": { "message": "နောက်ထပ် ChatGPT Apps ကပ" },
+  "buttonLabel_leaveReview": { "message": "တစ်ဦးပြန်လည်ဆန်းစစ်ခြင်း Leave" },
+  "buttonLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ။ " },
+  "buttonLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
+  "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
+  "buttonLabel_dismiss": { "message": "ထုတ်ပယ်ပါ" },
+  "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ရန်" }
+}

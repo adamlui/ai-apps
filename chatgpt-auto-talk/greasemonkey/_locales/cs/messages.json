@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Talk" },
+  "appDesc": { "message": "Automaticky přehrávat odpovědi ChatGPT" },
+  "menuLabel_about": { "message": "O nás" },
+  "about_version": { "message": "Verze" },
+  "about_poweredBy": { "message": "Běží na" },
+  "about_sourceCode": { "message": "Zdrojový kód" },
+  "mode_autoTalk": { "message": "Auto-Talk" },
+  "alert_updateAvail": { "message": "Aktualizace k dispozici" },
+  "alert_newerVer": { "message": "Aktualizace na" },
+  "alert_isAvail": { "message": "je k dispozici" },
+  "alert_upToDate": { "message": "aktuální" },
+  "alert_isUpToDate": { "message": "jenž se vyzná" },
+  "buttonLabel_moreApps": { "message": "Další aplikace ChatGPT" },
+  "buttonLabel_leaveReview": { "message": "Napsat hodnocení" },
+  "buttonLabel_getSupport": { "message": "Získat podporu" },
+  "buttonLabel_updateCheck": { "message": "Zjistit novější verzi" },
+  "buttonLabel_update": { "message": "Aktualizovat" },
+  "buttonLabel_dismiss": { "message": "Zamítnout" },
+  "link_viewChanges": { "message": "Zobrazit změny" }
+}

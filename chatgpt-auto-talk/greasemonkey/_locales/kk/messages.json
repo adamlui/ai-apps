@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Talk" },
+  "appDesc": { "message": "ChatGPT жауаптарын автоматты түрде ойнаңыз" },
+  "menuLabel_about": { "message": "Туралы" },
+  "about_version": { "message": "Нұсқа" },
+  "about_poweredBy": { "message": "Сайтты жасаған" },
+  "about_sourceCode": { "message": "Бастапқы код" },
+  "mode_autoTalk": { "message": "Автоматты сөйлесу" },
+  "alert_updateAvail": { "message": "Қолжетімді жаңарту" },
+  "alert_newerVer": { "message": "Жаңарту" },
+  "alert_isAvail": { "message": "қол жетімді" },
+  "alert_upToDate": { "message": "Жаңартылған" },
+  "alert_isUpToDate": { "message": "жаңартылған" },
+  "buttonLabel_moreApps": { "message": "Қосымша ChatGPT қолданбалары" },
+  "buttonLabel_leaveReview": { "message": "Пікір қалдыру" },
+  "buttonLabel_getSupport": { "message": "Қолдау алу" },
+  "buttonLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
+  "buttonLabel_update": { "message": "Жаңарту" },
+  "buttonLabel_dismiss": { "message": "Жұмыстан шығару" },
+  "link_viewChanges": { "message": "Өзгерістерді көру" }
+}

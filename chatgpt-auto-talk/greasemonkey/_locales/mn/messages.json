@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ЧатGPT Auto-Talk" },
+  "appDesc": { "message": "ChatGPT хариултуудыг автоматаар тоглуулах" },
+  "menuLabel_about": { "message": "Бидний тухай" },
+  "about_version": { "message": "Хувилбар" },
+  "about_poweredBy": { "message": "ИЛЧЛЭГЧ" },
+  "about_sourceCode": { "message": "ᠰᠣᠷᠪᠤᠯᠵᠢ ᠺᠣᠳ᠋ " },
+  "mode_autoTalk": { "message": "Автоматаар яриа хийх" },
+  "alert_updateAvail": { "message": "Шинэчлэх (update) боломжтой" },
+  "alert_newerVer": { "message": "Шинэчлэлт" },
+  "alert_isAvail": { "message": "авах боломжтой" },
+  "alert_upToDate": { "message": "Шинэчлэгдсэн" },
+  "alert_isUpToDate": { "message": "одоогийн байдлаар" },
+  "buttonLabel_moreApps": { "message": "Илүү их чатGPT аппууд" },
+  "buttonLabel_leaveReview": { "message": "Сэтгэгдэл үлдээх" },
+  "buttonLabel_getSupport": { "message": "Тусламж авах" },
+  "buttonLabel_updateCheck": { "message": "Шинэчлэлтүүдийг шалгана уу" },
+  "buttonLabel_update": { "message": "Шинэчлэх" },
+  "buttonLabel_dismiss": { "message": "Татгалзах" },
+  "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" }
+}

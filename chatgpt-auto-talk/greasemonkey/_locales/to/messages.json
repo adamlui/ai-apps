@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT talanoa ki he meʻalele" },
+  "appDesc": { "message": "Vaʻinga ʻotometiki pe ChatGPT ngaahi tali" },
+  "menuLabel_about": { "message": "Fekauʻaki mo e" },
+  "about_version": { "message": "Tatau" },
+  "about_poweredBy": { "message": "Fakalele ʻe he" },
+  "about_sourceCode": { "message": "Maʻuʻanga fakamatala" },
+  "mode_autoTalk": { "message": "Talanoa ki he meʻalele" },
+  "alert_updateAvail": { "message": "ʻOku lava ke maʻu e fakamatala fakamuimuitaha" },
+  "alert_newerVer": { "message": "Ko ha fakamatala fakamuimuitaha ki he" },
+  "alert_isAvail": { "message": "ʻoku lava ke maʻu" },
+  "alert_upToDate": { "message": "ʻO aʻu mai ki he ʻaho ni" },
+  "alert_isUpToDate": { "message": "ʻOku aʻu ki he ʻaho ni" },
+  "buttonLabel_moreApps": { "message": "Ngaahi polokalama ChatGPT lahi ange" },
+  "buttonLabel_leaveReview": { "message": "Tuku ha Toe Vakaiʻi" },
+  "buttonLabel_getSupport": { "message": "Maʻu ha Tokoni" },
+  "buttonLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
+  "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
+  "buttonLabel_dismiss": { "message": "Tukuange" },
+  "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" }
+}

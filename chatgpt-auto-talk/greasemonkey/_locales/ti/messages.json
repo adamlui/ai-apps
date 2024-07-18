@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Talk" },
+  "appDesc": { "message": "መልሲ ChatGPT ብገዛእ ርእሱ ተጻወት" },
+  "menuLabel_about": { "message": "ብዛዕባ" },
+  "about_version": { "message": "መበል" },
+  "about_poweredBy": { "message": "ብ" },
+  "about_sourceCode": { "message": "ምንጪ ኮድ" },
+  "mode_autoTalk": { "message": "Auto-Talk" },
+  "alert_updateAvail": { "message": "ዝዘመነ" },
+  "alert_newerVer": { "message": "ዝዘመነ" },
+  "alert_isAvail": { "message": "ተዳልዩ ኣሎ" },
+  "alert_upToDate": { "message": "ዝቕጽል" },
+  "alert_isUpToDate": { "message": "ዝዘመነ" },
+  "buttonLabel_moreApps": { "message": "ዝያዳ ናይ ChatGPT መተግበሪታት" },
+  "buttonLabel_leaveReview": { "message": "ግምገማ ሓዲግካ" },
+  "buttonLabel_getSupport": { "message": "ደገፍ ርኸቡ" },
+  "buttonLabel_updateCheck": { "message": "ዝቕጽል ሓበሬታ ርአ" },
+  "buttonLabel_update": { "message": "ኣሐድስ" },
+  "buttonLabel_dismiss": { "message": "ምጥፋእ" },
+  "link_viewChanges": { "message": "ለውጢ ርኣዮ" }
+}

@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT ավտոմատ զրույց" },
+  "appDesc": { "message": "Ավտոմատ կերպով խաղալ ChatGPT - ի պատասխանները" },
+  "menuLabel_about": { "message": "Մոտ " },
+  "about_version": { "message": "Ստանալ պրեմիում տարբերակը" },
+  "about_poweredBy": { "message": "🇦🇲" },
+  "about_sourceCode": { "message": "Ծրագրային կոդ" },
+  "mode_autoTalk": { "message": "Ավտոմատ զրույց" },
+  "alert_updateAvail": { "message": "Թարմացումը հասանելի է" },
+  "alert_newerVer": { "message": "Թարմացում" },
+  "alert_isAvail": { "message": "ազատ է" },
+  "alert_upToDate": { "message": "Թարմացված" },
+  "alert_isUpToDate": { "message": "արդիական է" },
+  "buttonLabel_moreApps": { "message": "Այլ ChatGPT հավելվածներ" },
+  "buttonLabel_leaveReview": { "message": "Թողնել ակնարկ" },
+  "buttonLabel_getSupport": { "message": "Ստանալ աջակցում" },
+  "buttonLabel_updateCheck": { "message": "Ստուգել թարմացումները" },
+  "buttonLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },
+  "buttonLabel_dismiss": { "message": "Փակել" },
+  "link_viewChanges": { "message": "Դիտել փոփոխությունները" }
+}

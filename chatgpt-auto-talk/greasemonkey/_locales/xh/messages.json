@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Ukuncokola ngokuzenzekelayo nge-ChatGPT" },
+  "appDesc": { "message": "Dlala ngokuzenzekelayo iimpendulo zeChatGPT" },
+  "menuLabel_about": { "message": "Malunga" },
+  "about_version": { "message": "Inguqulelo" },
+  "about_poweredBy": { "message": "Ixhaswa ngu" },
+  "about_sourceCode": { "message": "Ikhowudi engumthombo" },
+  "mode_autoTalk": { "message": "Ukuncokola ngokuzenzekelayo" },
+  "alert_updateAvail": { "message": "Uhlaziyo luyafumaneka" },
+  "alert_newerVer": { "message": "Inkcazelo ehlaziyiweyo kwi" },
+  "alert_isAvail": { "message": "iyafumaneka" },
+  "alert_upToDate": { "message": "Eyangoku" },
+  "alert_isUpToDate": { "message": "isexesheni" },
+  "buttonLabel_moreApps": { "message": "Ii-app ezingakumbi zeChatGPT" },
+  "buttonLabel_leaveReview": { "message": "Shiya Uluvo" },
+  "buttonLabel_getSupport": { "message": "Fumana Uncedo" },
+  "buttonLabel_updateCheck": { "message": "Khangela Izinto Ezintsha" },
+  "buttonLabel_update": { "message": "Lungisa" },
+  "buttonLabel_dismiss": { "message": "Gxotha" },
+  "link_viewChanges": { "message": "Jonga izinto ezitshintshiweyo" }
+}

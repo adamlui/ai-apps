@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Kuganira mu buryo bwikora" },
+  "appDesc": { "message": "GukinaGPT" },
+  "menuLabel_about": { "message": "Bigyanye" },
+  "about_version": { "message": "Umukoro" },
+  "about_poweredBy": { "message": "Ku" },
+  "about_sourceCode": { "message": "C Inkomoko ITEGEKONGENGA" },
+  "mode_autoTalk": { "message": "Kuganira mu buryo bwikora" },
+  "alert_updateAvail": { "message": "Bihari" },
+  "alert_newerVer": { "message": "Kuri" },
+  "alert_isAvail": { "message": "bihari" },
+  "alert_upToDate": { "message": "Kuvugurura" },
+  "alert_isUpToDate": { "message": "Kuvugurura" },
+  "buttonLabel_moreApps": { "message": "Porogaramu" },
+  "buttonLabel_leaveReview": { "message": "A" },
+  "buttonLabel_getSupport": { "message": "Gushigikira" },
+  "buttonLabel_updateCheck": { "message": "Kugirango" },
+  "buttonLabel_update": { "message": "Kuvugurura" },
+  "buttonLabel_dismiss": { "message": "Kureka" },
+  "link_viewChanges": { "message": "Amahinduka" }
+}

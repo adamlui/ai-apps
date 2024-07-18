@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT automaatne rääkimine" },
+  "appDesc": { "message": "Esita ChatGPT vastused automaatselt" },
+  "menuLabel_about": { "message": "Yense" },
+  "about_version": { "message": "Versioon" },
+  "about_poweredBy": { "message": "Powered by" },
+  "about_sourceCode": { "message": "Lähtekood" },
+  "mode_autoTalk": { "message": "Automaatne rääkimine" },
+  "alert_updateAvail": { "message": "Saadaval on uuendus" },
+  "alert_newerVer": { "message": "Uuendus versioonile" },
+  "alert_isAvail": { "message": "on saadaval" },
+  "alert_upToDate": { "message": "ajakohane" },
+  "alert_isUpToDate": { "message": "ajakohane" },
+  "buttonLabel_moreApps": { "message": "Veel ChatGPT rakendusi" },
+  "buttonLabel_leaveReview": { "message": "Jäta arvustus" },
+  "buttonLabel_getSupport": { "message": "Saage tuge" },
+  "buttonLabel_updateCheck": { "message": "Kontrolli uuendusi" },
+  "buttonLabel_update": { "message": "Uuenda" },
+  "buttonLabel_dismiss": { "message": "Loobu" },
+  "link_viewChanges": { "message": "Vaata muudatusi" }
+}

@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT Auto-Conversa" },
+  "appDesc": { "message": "Reproducir automaticamente as respostas de ChatGPT" },
+  "menuLabel_about": { "message": "Acerca de" },
+  "about_version": { "message": "Versión" },
+  "about_poweredBy": { "message": "Fornecido por" },
+  "about_sourceCode": { "message": "Código fonte" },
+  "mode_autoTalk": { "message": "Conversa automática" },
+  "alert_updateAvail": { "message": "Actualización dispoñible" },
+  "alert_newerVer": { "message": "Unha actualización de" },
+  "alert_isAvail": { "message": "Esta dispoñibel" },
+  "alert_upToDate": { "message": "Ao día" },
+  "alert_isUpToDate": { "message": "está actualizado" },
+  "buttonLabel_moreApps": { "message": "Máis aplicacións de ChatGPT" },
+  "buttonLabel_leaveReview": { "message": "Deixa unha opinión" },
+  "buttonLabel_getSupport": { "message": "Asistencia" },
+  "buttonLabel_updateCheck": { "message": "Check for updates" },
+  "buttonLabel_update": { "message": "Actualizar" },
+  "buttonLabel_dismiss": { "message": "Rexeitar" },
+  "link_viewChanges": { "message": "Ver cambios" }
+}
