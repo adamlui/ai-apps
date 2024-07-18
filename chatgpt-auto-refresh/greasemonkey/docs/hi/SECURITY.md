@@ -6,7 +6,7 @@
         </picture>
         &nbsp;हिंदी |
         <a href="../SECURITY.md">English</a> |
-        <a href="../https://docs.chatgptautorefresh.com/zh-cn/SECURITY.md">简体中文</a>
+        <a href="../zh-cn/SECURITY.md">简体中文</a>
     </h6>
 </div>
 
