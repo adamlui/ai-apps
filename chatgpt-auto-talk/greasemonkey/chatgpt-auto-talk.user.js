@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.18
+// @version             2024.7.18.1
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon48.png?9f1ed3c
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon64.png?9f1ed3c
@@ -398,11 +398,23 @@
 
     function registerMenu() {
 
-        // Add command to toggle auto-clear
+        // Add command to toggle auto-talk
         const atLabel = menuState.symbol[+!config.autoTalkDisabled] + ' '
                       + ( msgs.mode_autoTalk || 'Auto-Talk' )
                       + menuState.separator + menuState.word[+!config.autoTalkDisabled]
         menuIDs.push(GM_registerMenuCommand(atLabel, () => document.getElementById('atToggleLabel').click()))
+
+        // Add command to toggle visibility of toggle
+        const tvLabel = menuState.symbol[+!config.toggleHidden] + ' '
+                      + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
+                      + menuState.separator + menuState.word[+!config.toggleHidden]
+        menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
+            saveSetting('toggleHidden', !config.toggleHidden)
+            navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
+            if (!config.notifDisabled) notify((
+                msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menuState.word[+!config.toggleHidden])
+            refreshMenu()
+        }))
 
         // Add command to launch About modal
         const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || config.appName }`
