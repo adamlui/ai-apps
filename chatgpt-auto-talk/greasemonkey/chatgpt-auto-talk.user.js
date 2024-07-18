@@ -136,7 +136,7 @@
 // @description:es      Reproducir automáticamente respuestas de ChatGPT
 // @description:et      ChatGPT vastuste automaatne esitamine
 // @description:eu      ChatGPT erantzunak automatikoki erreproduzitu
-// @description:fa      پخش خودکار پاسخ‌های ChatGPT
+// @description:fa      پخش خودکار پاسخهای ChatGPT
 // @description:fi      Toista ChatGPT-vastaukset automaattisesti
 // @description:fo      Spæl ChatGPT svar sjálvvirkandi
 // @description:fr      Lire automatiquement les réponses de ChatGPT
@@ -154,7 +154,7 @@
 // @description:id      Mainkan respons ChatGPT secara otomatis
 // @description:is      Spilaðu sjálfkrafa svör ChatGPT
 // @description:it      Riprodurre automaticamente le risposte di ChatGPT
-// @description:ja      ChatGPTの回答を自動的に再生する
+// @description:ja      ChatGPT の回答を自動的に再生する
 // @description:jv      Puter balasan ChatGPT kanthi otomatis
 // @description:ka      ავტომატურად ითამაშეთ ChatGPT პასუხები
 // @description:kab     Melk ikdimen n d-yitran n ChatGPT
@@ -217,15 +217,15 @@
 // @description:vi      Tự động phát các phản hồi của ChatGPT
 // @description:xh      Dlala iimpendulo zeChatGPT ngokuzenzekelayo
 // @description:yi      שפּיל אויטאָמאַטיש ChatGPT ענטפֿערס
-// @description:zh      自动播放ChatGPT的回复
-// @description:zh-CN   自动播放ChatGPT的回复
-// @description:zh-HK   自動播放ChatGPT的回覆
-// @description:zh-SG   自动播放ChatGPT的回复
-// @description:zh-TW   自動播放ChatGPT的回覆
+// @description:zh      自动播放 ChatGPT 的回复
+// @description:zh-CN   自动播放 ChatGPT 的回复
+// @description:zh-HK   自動播放 ChatGPT 的回覆
+// @description:zh-SG   自动播放 ChatGPT 的回复
+// @description:zh-TW   自動播放 ChatGPT 的回覆
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.17.7
+// @version             2024.7.17.8
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon48.png?9f1ed3c
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon64.png?9f1ed3c
