@@ -6,7 +6,8 @@
         </picture>
         &nbsp;हिंदी |
         <a href="../PRIVACY.md">English</a> |
-        <a href="../zh-cn/PRIVACY.md">简体中文</a>
+        <a href="../zh-cn/PRIVACY.md">简体中文</a> |
+        <a href="../ja/PRIVACY.md">日本語</a>
     </h6>
 </div>
 
