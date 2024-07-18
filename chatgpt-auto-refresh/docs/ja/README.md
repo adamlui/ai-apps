@@ -4,15 +4,16 @@
             <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/earth/white/icon32.svg?latest">
             <img height=14 src="https://media.chatgptautorefresh.com/images/icons/earth/black/icon32.svg?latest">
         </picture>
-        &nbsp;English |
-        <a href="zh-cn#readme">简体中文</a> |
-        <a href="ja#readme">日本語</a>
+        &nbsp;日本語 |
+        <a href="../..#readme">English</a> |
+        <a href="../zh-cn#readme">简体中文</a> |
+        <a href="../hi#readme">हिंदी</a>
     </h6>
 </div>
 
-# <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon512.png?latest"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon512.png?latest"></picture> ChatGPT Auto Refresh ↻ &nbsp;<a href="https://twitter.com/intent/tweet?text=Tired%20of%20constant%20interruptions%20on%20ChatGPT%3F%20Auto-refresh%20your%20sessions%20w%2F%20this%20plug-in%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
+# <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon512.png?latest"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon512.png?latest"></picture> ChatGPT 自動更新 ↻ &nbsp;<a href="https://twitter.com/intent/tweet?text=ChatGPT%20の絶え間ない中断にうんざりしていませんか？%20このプラグインでセッションを自動更新しましょう！%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 
-<a href="https://greasyfork.chatgptautorefresh.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/Users-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://greasyfork.chatgptautorefresh.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/ユーザー-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.chatgptautorefresh.com/stargazers"><img height=31 alt="[GitHub stars]" src="https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=Stars&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="../LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.chatgptautorefresh.com/commits"><img height=31 alt="[GitHub commits]" src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
@@ -23,13 +24,13 @@
 <a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-auto-refresh?tab=stats"><img height=31 alt="[jsDelivr stats]" src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-auto-refresh?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Requests&labelColor=464646&color=2bbbd8"></a>
 <a href="https://chatgptautorefresh.com?utm_source=chatgpt_auto_refresh&utm_content=github_shield"><img height=31 alt="[www.chatgptautorefresh.com]" src="https://img.shields.io/badge/web-www.chatgptautorefresh.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
-### Keeps ChatGPT sessions fresh via background requests to eliminate network errors + Cloudflare checks.
+### 背景リクエストを介して ChatGPT セッションを最新の状態に保ち、ネットワーク エラーと Cloudflare チェックを排除します。
 
-<a href="https://greasyfork.chatgptautorefresh.com"><img title="Install this script" height=45 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg?latest"></a>
+<a href="https://greasyfork.chatgptautorefresh.com"><img title="このスクリプトをインストール" height=45 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#-インストール"><img height=45 title="インストール方法" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg?latest"></a>
 <br>
-[Discuss](https://github.chatgptautorefresh.com/discussions) /
-[Review](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
-[Contact author](https://github.com/adamlui)
+[ディスカッション](https://github.chatgptautorefresh.com/discussions) /
+[レビュー](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
+[作者に連絡する](https://github.com/adamlui)
 
 #
 
@@ -42,11 +43,11 @@
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png?latest">
 
-## 💡 What it does
+## 💡 それが何をするか
 
-- Removes **10-minute time limit** from conversations (when in Temporary Chat mode)
+- 会話から **10 分間の制限** を削除します (一時チャット モードの場合)
 
-- Get rid of annoying **Cloudflare checks**:
+- 迷惑な **Cloudflare チェック** を取り除きます:
 
 <div align="center">
     
@@ -54,7 +55,7 @@
 
 </div>
 
-- Get rid of annoying **ChatGPT network errors**:
+- 迷惑な **ChatGPT ネットワーク エラー** を取り除きます:
 
 <div align="center">
 
@@ -66,35 +67,35 @@
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png?latest">
 
-## 💊 Benefits
+## 💊 利点
 
-&nbsp;&nbsp;&nbsp;🛡️ <strong>Safe</strong> — No unnecessary account-related requests sent
+&nbsp;&nbsp;&nbsp;🛡️ <strong>安全</strong> — 不要なアカウント関連のリクエストは送信されません
 
-&nbsp;&nbsp;&nbsp;🪶 <strong>Lightweight</strong> — Very little code used, only what's neccessary (keep session alive) saving memory
+&nbsp;&nbsp;&nbsp;🪶 <strong>軽量</strong> — 使用されるコードは非常に少なく、必要なコード (セッションを維持) のみでメモリを節約します
 
-&nbsp;&nbsp;&nbsp;⌛ <strong>Time-saver</strong> — No more constant copy/paste/refresh just from minutes of inactivity!
+&nbsp;&nbsp;&nbsp;⌛ <strong>時間の節約</strong> — 数分間の非アクティブ状態だけで、もうコピー/貼り付け/更新を繰り返す必要はありません!
 
-&nbsp;&nbsp;&nbsp;🤯 <mark>Works ***even in background tabs!***</mark>
+&nbsp;&nbsp;&nbsp;🤯 <mark>***バックグラウンド タブでも動作します!***</mark>
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png?latest">
 
-## 🗨️ User feedback
+## 🗨️ ユーザーのフィードバック
 
 <img width=535 src="https://media.chatgptautorefresh.com/images/reviews/greasy-fork.png?latest">
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png?latest">
 
-## 🚀 Installation
+## 🚀 インストール
 
-1. Install a userscript manager:
-    - ScriptCat for [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Firefox](https://addons.mozilla.org/firefox/addon/scriptcat/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh)
-    - Violentmonkey for [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)
-    - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf) or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) for Chrome
-    - or Tampermonkey for [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
+1. ユーザースクリプト マネージャーをインストールします:
+    - ScriptCat for [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Firefox](https://addons.mozilla.org/firefox/addon/scriptcat/) または [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh)
+    - Violentmonkey for [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/) または [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)
+    - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf) または [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) for Chrome
+    - または Tampermonkey for [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) または [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
 
-2. Install [ChatGPT Auto Refresh](https://greasyfork.chatgptautorefresh.com) (will load in userscript manager installed above)
+2. [ChatGPT 自動更新](https://greasyfork.chatgptautorefresh.com) をインストールします (上記でインストールしたユーザースクリプト マネージャーに読み込まれます)
 
-3. Visit [chatgpt.com](https://chatgpt.com) as normal, and sessions will auto-refresh at a regular interval!
+3. 通常どおり [chatgpt.com](https://chatgpt.com) にアクセスすると、セッションが定期的に自動更新されます!
 
 <div align="center">
     
@@ -104,7 +105,7 @@
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png?latest">
 
-## ⚡ Dependencies
+## ⚡ 依存関係
 
 <h6>
 <div align="center">
@@ -118,17 +119,17 @@
 </a>
 <br><br>
 
-ChatGPT Auto Refresh relies on code from the powerful <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> library
-<br>© 2023–2024 <a href="https://www.kudoai.com">KudoAI</a> & contributors under the MIT license.
+ChatGPT 自動更新 は強力な <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> ライブラリのコードに依存しています
+<br>© 2023–2024 <a href="https://www.kudoai.com">KudoAI</a> & MIT ライセンスの下での貢献者。
 
 </div>
 </h6>
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png?latest">
 
-## 🌐 Compatibility
+## 🌐 互換性
 
-ChatGPT Auto Refresh is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Violentmonkey](https://violentmonkey.github.io), [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf), [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) or [Tampermonkey](https://www.tampermonkey.net):
+ChatGPT 自動更新 は、[ScriptCat](https://docs.scriptcat.org)、[Violentmonkey](https://violentmonkey.github.io)、[OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf)、[OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) または [Tampermonkey](https://www.tampermonkey.net) を使用して、次のブラウザと互換性があります:
 
 - [Google Chrome](https://www.chrome.com)
 - [Mozilla Firefox](https://www.firefox.com)
@@ -143,17 +144,17 @@ ChatGPT Auto Refresh is compatible w/ the following browsers using [ScriptCat](h
 
 <br>
 
-<a href="https://greasyfork.chatgptautorefresh.com"><img title="Install this script" height=42 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#-installation"><img height=42 title="How to install" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg?latest"></a>
+<a href="https://greasyfork.chatgptautorefresh.com"><img title="このスクリプトをインストール" height=42 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#-インストール"><img height=42 title="インストール方法" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg?latest"></a>
 <br>
-[Discuss](https://github.chatgptautorefresh.com/discussions) / 
-[Leave a review](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
-[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
+[ディスカッション](https://github.chatgptautorefresh.com/discussions) / 
+[レビューを残す](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
+[その他の ChatGPT ユーザースクリプト](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png?latest">
 
-## 🧠 Contributors
+## 🧠 貢献者
 
-This project exists thanks to code, testing, issues, translations & ideas from the following contributors:
+このプロジェクトは、次の貢献者によるコード、テスト、問題、翻訳、およびアイデアのおかげで存在します:
 
 <div align="center">
 
@@ -179,7 +180,6 @@ This project exists thanks to code, testing, issues, translations & ideas from t
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/53054099?first-contrib=2023.2.3-added-eslint-plugin-userscripts&h=50&w=50&mask=circle&maxage=7d "@Yash-Singh1")](https://github.com/Yash-Singh1)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-shortened-hungarian-menu-label&h=50&w=50&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
 <a href="https://greasyfork.org/users/670188-hacker09"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/web-stores/greasy-fork/white/icon50.png?latest"><img width=50 src="https://media.chatgptautorefresh.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2024.6.27-portuguese-translation-corrections" title="hacker09"></picture></a>
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22633385?first-contrib=2023.07.17-add-ja-doc-md&h=47&w=47&mask=circle&maxage=7d "@eltociear")](https://github.com/eltociear)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110?h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 <a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptautorefresh.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptautorefresh.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
@@ -188,34 +188,34 @@ This project exists thanks to code, testing, issues, translations & ideas from t
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png?latest">
 
-## 🤖 More ChatGPT apps
+## 🤖 その他の ChatGPT アプリ
 
-For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
+さらに多くの素晴らしい ChatGPT アプリについては、https://github.com/adamlui/chatgpt-apps をご覧ください。
 <br><br>
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png?latest">
 
-## 📜 Related scripts
+## 📜 関連スクリプト
 
-### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png?latest"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg?latest" width="auto" height="24">
-> Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
-<br>[Install](https://docs.chatgptwidescreen.com/#-greasemonkey-userscript) /
+### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png?latest"> [ChatGPT ワイドスクリーン モード](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg?latest" width="auto" height="24">
+> ChatGPT にワイドスクリーン + フルスクリーン モードを追加して、表示を強化し、スクロールを減らします。
+<br>[インストール](https://docs.chatgptwidescreen.com/#-greasemonkey-userscript) /
 [Readme](https://docs.chatgptwidescreen.com/#readme) /
-[Discuss](https://github.chatgptwidescreen.com/discussions)
+[ディスカッション](https://github.chatgptwidescreen.com/discussions)
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png?latest"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png?latest"></picture> [ChatGPT Auto-Continue ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg?latest"></a>
-> Automatically continue generating multiple ChatGPT responses.<br>
-[Install](https://docs.chatgptautocontinue.com/#-installation) /
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png?latest"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png?latest"></picture> [ChatGPT 自動継続 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg?latest"></a>
+> 複数の ChatGPT 応答を自動的に生成します。<br>
+[インストール](https://docs.chatgptautocontinue.com/#-インストール) /
 [Readme](https://docs.chatgptautocontinue.com/#readme) /
-[Discuss](https://github.chatgptautocontinue.com/discussions)
+[ディスカッション](https://github.chatgptautocontinue.com/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png?latest"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png?latest"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png?latest"></a>
-> Generate endless answers from all-knowing ChatGPT (in any language!)
-<br>[Install](https://docs.chatgptinfinity.com/#-greasemonkey-userscript) / 
+> 全知の ChatGPT から無限の回答を生成します (どの言語でも!)
+<br>[インストール](https://docs.chatgptinfinity.com/#-greasemonkey-userscript) / 
 [Readme](https://docs.chatgptinfinity.com/#readme) / 
-[Discuss](https://github.chatgptinfinity.com/discussions)
+[ディスカッション](https://github.chatgptinfinity.com/discussions)
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png?latest">
   
-<a href="https://github.com/adamlui/userscripts">**More userscripts**</a> /
-<a href="#english--%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">Back to top ↑</a>
+<a href="https://github.com/adamlui/userscripts">**その他のユーザースクリプト**</a> /
+<a href="#日本語--english--简体中文">トップに戻る ↑</a>
