@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.17.1
+// @version             2024.7.18
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -601,13 +601,12 @@
     async function insertToggle() {
 
         // Insert toggle
-                const parentToInsertInto = document.querySelector('nav > div:nth-of-type(2)') // upper nav div
-        if (!parentToInsertInto.contains(navToggleDiv))
-             parentToInsertInto.insertBefore(navToggleDiv, parentToInsertInto.children[1])
+        const toggleParent = document.querySelector('nav')
+        if (!toggleParent.contains(navToggleDiv))
+            toggleParent.insertBefore(navToggleDiv, toggleParent.children[1])
 
         // Tweak styles
-        if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
-        if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
+        navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         navToggleDiv.style.paddingLeft = '8px'
         document.getElementById('auto-refresh-toggle-navicon').src = `${ // update navicon color in case scheme changed
             config.mediaHostURL}images/icons/auto-refresh/`
@@ -620,7 +619,7 @@
         const navicon = document.getElementById('auto-refresh-toggle-navicon') || document.createElement('img')
         navicon.id = 'auto-refresh-toggle-navicon'
         navicon.style.width = navicon.style.height = '1.25rem'
-        navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
+        navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
         const toggleInput = document.getElementById('auto-refresh-toggle-input') || document.createElement('input')
@@ -631,7 +630,7 @@
         const switchSpan = document.getElementById('auto-refresh-switch-span') || document.createElement('span')
         switchSpan.id = 'auto-refresh-switch-span'
         const switchStyles = {
-            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 152 }px`,
+            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 154 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
             bottom: `${ !firstLink ? -0.15 : isFirefox || !isGPT4oUI ? 0.05 : 0 }em`,
             width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'

@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.17.8
+// @version             2024.7.18
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon48.png?9f1ed3c
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon64.png?9f1ed3c
@@ -535,13 +535,12 @@
     async function insertToggle() {
 
         // Insert toggle
-        const parentToInsertInto = document.querySelector('nav > div:nth-of-type(2)') // upper nav div
-        if (!parentToInsertInto.contains(navToggleDiv))
-             parentToInsertInto.insertBefore(navToggleDiv, parentToInsertInto.children[1])
+        const toggleParent = document.querySelector('nav')
+        if (!toggleParent.contains(navToggleDiv))
+            toggleParent.insertBefore(navToggleDiv, toggleParent.children[1])
 
         // Tweak styles
-        if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
-        if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
+        navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         navToggleDiv.style.paddingLeft = '8px'
         document.getElementById('atToggleNavicon').src = `${ // update navicon color in case scheme changed
             config.assetHostURL }assets/images/icons/speaker/${
@@ -554,7 +553,7 @@
         const navicon = document.getElementById('atToggleNavicon') || document.createElement('img')
         navicon.id = 'atToggleNavicon'
         navicon.style.width = navicon.style.height = '1.25rem'
-        navicon.style.marginLeft = isGPT4oUI ? '3px' : '5px' ; navicon.style.marginRight = '2.5px'
+        navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
         const toggleInput = document.getElementById('atToggleInput') || document.createElement('input')
@@ -565,7 +564,7 @@
         const switchSpan = document.getElementById('atSwitchSpan') || document.createElement('span')
         switchSpan.id = 'atSwitchSpan'
         const switchStyles = {
-            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 152 }px`,
+            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 154 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
             bottom: `${ !firstLink ? -0.15 : isFirefox || !isGPT4oUI ? 0.05 : 0 }em`,
             width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
