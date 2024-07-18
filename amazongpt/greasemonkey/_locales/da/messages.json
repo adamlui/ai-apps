@@ -48,7 +48,7 @@
   "alert_upToDate": { "message": "Opdateret" },
   "alert_isUpToDate": { "message": "er opdateret" },
   "alert_isUnsupportedIn": { "message": "understøttes ikke i" },
-  "alert_whenUsing": { "message": "NovoMix 30 kan også" },
+  "alert_whenUsing": { "message": "ved brug" },
   "alert_pleaseUse": { "message": "Anvend en anden kapselstyrke*" },
   "alert_instead": { "message": "istedet" },
   "alert_unavailable": { "message": "utilgængelig" },
