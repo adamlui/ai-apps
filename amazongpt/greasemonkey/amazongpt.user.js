@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.18
+// @version                2024.7.18.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1999,7 +1999,7 @@
                 fillStarryBG(appDiv) // add stars
 
                 // Create/append title
-                const appHeaderLogo = logos.amzgpt.create() ; appHeaderLogo.width = 181
+                const appHeaderLogo = logos.amzgpt.create() ; appHeaderLogo.style.width = isMobile ? '55%' : '181px'
                 const appTitleAnchor = createAnchor(config.appURL, appHeaderLogo)
                 appTitleAnchor.classList.add('app-name', 'no-user-select')
                 appDiv.append(appTitleAnchor)
@@ -2046,16 +2046,21 @@
                 fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.marginRight = '10px'
                 fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
 
-                const arrowsSpan = document.createElement('span'),
-                      arrowsSVG = icons.arrowsDiagonal.create()
-                arrowsSVG.style.transform = 'rotate(-7deg)' // tilt slightly to hint expansions are often horizontal-only
-                arrowsSpan.id = 'arrows-btn' // for toggle.tooltip()
-                arrowsSpan.className = 'corner-btn' ; arrowsSpan.style.margin = '0.5px 12px 0 0'
-                arrowsSpan.style.display = 'none' // to activate from anchorStyles only
-                arrowsSpan.append(arrowsSVG) ; cornerBtnsDiv.append(arrowsSpan)
+                
+                if (!isMobile) {
+
+                // Create/append Expand/Shrink button    
+                    var arrowsSpan = document.createElement('span'),
+                        arrowsSVG = icons.arrowsDiagonal.create()
+                    arrowsSVG.style.transform = 'rotate(-7deg)' // tilt slightly to hint expansions are often horizontal-only
+                    arrowsSpan.id = 'arrows-btn' // for toggle.tooltip()
+                    arrowsSpan.className = 'corner-btn' ; arrowsSpan.style.margin = '0.5px 12px 0 0'
+                    arrowsSpan.style.display = 'none' // to activate from anchorStyles only
+                    arrowsSpan.append(arrowsSVG) ; cornerBtnsDiv.append(arrowsSpan)
 
                 // Add tooltips
-                if (!isMobile) appDiv.append(tooltipDiv)
+                    appDiv.append(tooltipDiv)
+                }
 
                 // Add corner button listeners
                 if (chevronSVG) chevronSVG.onclick = () => toggle.minimized()
@@ -2280,7 +2285,9 @@
 
     // Stylize SITE elems
     const tweaksStyle = createStyle(),
-          anchorStyles = '#amzgpt { position: fixed ; bottom: -7px ; right: 35px ; width: 441px }'
+          anchorStyles = '#amzgpt { position: fixed ; bottom: -7px ;'
+                                 + `right: ${ isMobile ? window.innerWidth *0.02 : 35 }px ;`
+                                 + `width: ${ isMobile ? '96%' : '441px' }}`
                        + '#chevron-btn, #arrows-btn { display: block !important }',
           expandedStyles = '#amzgpt { width: 528px }'
     update.tweaksStyle() ; document.head.append(tweaksStyle)
