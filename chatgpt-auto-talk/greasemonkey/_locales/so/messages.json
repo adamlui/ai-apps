@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Si otomaatig ah u ciyaar jawaabaha ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Muuqaalka Toggle" },
   "menuLabel_about": { "message": "Jabuuti" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Waxa fudaydiyay:" },

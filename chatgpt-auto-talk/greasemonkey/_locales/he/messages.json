@@ -1,6 +1,7 @@
 {
   "appName": { "message": "שיחה אוטומטית עם ChatGPT" },
   "appDesc": { "message": "הפעלה אוטומטית של תגובות ChatGPT" },
+  "menuLabel_toggleVis": { "message": "החלף מצב חשיפה" },
   "menuLabel_about": { "message": "אודות" },
   "about_version": { "message": "גירסה" },
   "about_poweredBy": { "message": "באמצעות " },

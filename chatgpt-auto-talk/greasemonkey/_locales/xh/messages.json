@@ -1,6 +1,7 @@
 {
   "appName": { "message": "Ukuncokola ngokuzenzekelayo nge-ChatGPT" },
   "appDesc": { "message": "Dlala ngokuzenzekelayo iimpendulo zeChatGPT" },
+  "menuLabel_toggleVis": { "message": "Ukubonakala kwento" },
   "menuLabel_about": { "message": "Malunga" },
   "about_version": { "message": "Inguqulelo" },
   "about_poweredBy": { "message": "Ixhaswa ngu" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Spila sjálfkrafa ChatGPT svör" },
+  "menuLabel_toggleVis": { "message": "Víxla sýnileika" },
   "menuLabel_about": { "message": "Um" },
   "about_version": { "message": "Útgáfa" },
   "about_poweredBy": { "message": "Knúið af" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT automātiskā saruna" },
   "appDesc": { "message": "Automātiski atskaņot ChatGPT atbildes" },
+  "menuLabel_toggleVis": { "message": "Pārslēgt redzamību" },
   "menuLabel_about": { "message": "Par produktu " },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Izstrādāts" },

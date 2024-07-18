@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Ukukhuluma Okuzenzakalelayo" },
   "appDesc": { "message": "Dlala ngokuzenzakalelayo izimpendulo ze-ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Guqula Ukubonakala" },
   "menuLabel_about": { "message": "Mayelana" },
   "about_version": { "message": "Uhlelo" },
   "about_poweredBy": { "message": "Ixhaswa yi-" },

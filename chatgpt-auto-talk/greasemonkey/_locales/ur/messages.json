@@ -1,6 +1,7 @@
 {
   "appName": { "message": "چیٹ جی پی ٹی آٹو ٹاک" },
   "appDesc": { "message": "ChatGPT جوابات خود بخود چلائیں" },
+  "menuLabel_toggleVis": { "message": "مرئیت ٹوگل کریں" },
   "menuLabel_about": { "message": "متعلق" },
   "about_version": { "message": "ورژن" },
   "about_poweredBy": { "message": "تقویت یافتہ از" },

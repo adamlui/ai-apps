@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Erreproduzitu automatikoki ChatGPT erantzunak" },
+  "menuLabel_toggleVis": { "message": "Txandakatu ikusgaitasuna" },
   "menuLabel_about": { "message": "Egileari Buruz" },
   "about_version": { "message": "Bertsioa" },
   "about_poweredBy": { "message": "Teknologia: " },

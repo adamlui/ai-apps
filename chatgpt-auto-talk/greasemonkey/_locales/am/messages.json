@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT ራስ-ንግግር" },
   "appDesc": { "message": "በራስ-ሰር ChatGPT ምላሾችን ይጫወቱ" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_about": { "message": "ስለ" },
   "about_version": { "message": "እትም" },
   "about_poweredBy": { "message": "የተጎለበተው በ" },

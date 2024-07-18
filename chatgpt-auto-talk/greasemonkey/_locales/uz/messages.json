@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT avtomatik suhbat" },
   "appDesc": { "message": "ChatGPT javoblarini avtomatik o'ynatish" },
+  "menuLabel_toggleVis": { "message": "Koʻrinishni oʻzgartirish" },
   "menuLabel_about": { "message": "Qisqacha ma'lumot" },
   "about_version": { "message": "Versiya" },
   "about_poweredBy": { "message": "Tomonidan qo'llab-quvvatlanadi" },

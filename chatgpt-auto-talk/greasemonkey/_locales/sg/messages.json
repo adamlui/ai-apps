@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-talk" },
   "appDesc": { "message": "Gbu li ti mo na ndo ti atënë so ayeke na yâ ti Bible" },
+  "menuLabel_toggleVis": { "message": "A yeke bâ ni na lê ti azo" },
   "menuLabel_about": { "message": "About sara" },
   "about_version": { "message": "Yângâ tî kodoro" },
   "about_poweredBy": { "message": "A yeke sara kua na ni" },

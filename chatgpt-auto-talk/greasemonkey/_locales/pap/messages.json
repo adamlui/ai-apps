@@ -1,6 +1,7 @@
 {
   "appName": { "message": "Kaká Auto Talk" },
   "appDesc": { "message": "Reparacion Automatica ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Topi Visibilitá" },
   "menuLabel_about": { "message": "About About" },
   "about_version": { "message": "Vershon" },
   "about_poweredBy": { "message": "Potenciá por" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Milalao avy hatrany ChatGPT valiny" },
+  "menuLabel_toggleVis": { "message": "_fahitana" },
   "menuLabel_about": { "message": "Mikasika ny" },
   "about_version": { "message": "Kinova" },
   "about_poweredBy": { "message": "Ampandehanin'i" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ObrolanGPT Auto - Talk" },
   "appDesc": { "message": "Putar respons ChatGPT secara otomatis" },
+  "menuLabel_toggleVis": { "message": "Jungkitkan visibilitas" },
   "menuLabel_about": { "message": "Ihwal" },
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Didukung oleh " },

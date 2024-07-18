@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT automaatne rääkimine" },
   "appDesc": { "message": "Esita ChatGPT vastused automaatselt" },
+  "menuLabel_toggleVis": { "message": "Vaheta nähtavust" },
   "menuLabel_about": { "message": "Yense" },
   "about_version": { "message": "Versioon" },
   "about_poweredBy": { "message": "Powered by" },

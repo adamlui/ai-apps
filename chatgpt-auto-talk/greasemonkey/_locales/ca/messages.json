@@ -1,6 +1,7 @@
 {
   "appName": { "message": "Xerrada automàtica de ChatGPT" },
   "appDesc": { "message": "Reprodueix automàticament les respostes de ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Commuta la visibilitat" },
   "menuLabel_about": { "message": "Quant a" },
   "about_version": { "message": "Versió" },
   "about_poweredBy": { "message": "Desenvolupat per" },

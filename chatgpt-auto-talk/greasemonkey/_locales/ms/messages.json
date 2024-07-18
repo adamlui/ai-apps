@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Main jawapan ChatGPT secara automatik" },
+  "menuLabel_toggleVis": { "message": "Kejelasan Item" },
   "menuLabel_about": { "message": "" },
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Dijana oleh" },

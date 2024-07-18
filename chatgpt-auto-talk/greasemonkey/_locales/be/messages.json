@@ -1,6 +1,7 @@
 {
   "appName": { "message": "Аўтаматычная размова ChatGPT" },
   "appDesc": { "message": "Аўтаматычна прайграваць адказы на чат GPT" },
+  "menuLabel_toggleVis": { "message": "Пераключыць бачнасць" },
   "menuLabel_about": { "message": "Пра нас" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Пры падтрымцы" },

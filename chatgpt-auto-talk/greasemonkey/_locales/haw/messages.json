@@ -1,6 +1,7 @@
 {
   "appName": { "message": "Kūkākūkā ʻAuto-Kūkākūkā ʻo ChatGPT" },
   "appDesc": { "message": "Pāʻani ʻakomi i nā pane ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Hoʻololi i ka ʻike" },
   "menuLabel_about": { "message": "Ho‘ākāka" },
   "about_version": { "message": "Manao" },
   "about_poweredBy": { "message": "Hoʻāmana ʻia e" },

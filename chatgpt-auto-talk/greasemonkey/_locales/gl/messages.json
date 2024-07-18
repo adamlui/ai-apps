@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Conversa" },
   "appDesc": { "message": "Reproducir automaticamente as respostas de ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Conmutar a visibilidade" },
   "menuLabel_about": { "message": "Acerca de" },
   "about_version": { "message": "Versión" },
   "about_poweredBy": { "message": "Fornecido por" },

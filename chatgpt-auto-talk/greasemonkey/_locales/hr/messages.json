@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT automatski razgovor" },
   "appDesc": { "message": "Automatski pokreni ChatGPT odgovore" },
+  "menuLabel_toggleVis": { "message": "Uključi/isključi vidljivost" },
   "menuLabel_about": { "message": "O nama" },
   "about_version": { "message": "Verzija" },
   "about_poweredBy": { "message": "Pokreće" },

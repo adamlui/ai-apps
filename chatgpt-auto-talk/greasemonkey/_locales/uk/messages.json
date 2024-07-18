@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Автоматично відтворювати відповіді ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Перемкнути видимість" },
   "menuLabel_about": { "message": "Про нас" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Працює на" },

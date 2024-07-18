@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ޗެޓްޖީޕީޓީ އޮޓޯ-ޓޯކް" },
   "appDesc": { "message": "ޗެޓްޖީޕީޓީ ރެސްޕޮންސްތައް އޮޓޮމެޓިކުން ކުޅެވޭނެއެވެ" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_about": { "message": "މިއާއި ބެހޭ" },
   "about_version": { "message": "ވާރޝަން" },
   "about_poweredBy": { "message": "ޕަވަރޑް ބައި" },

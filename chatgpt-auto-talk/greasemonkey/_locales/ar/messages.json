@@ -1,6 +1,7 @@
 {
   "appName": { "message": "المحادثة التلقائية ChatGPT" },
   "appDesc": { "message": "تشغيل استجابات ChatGPT تلقائيًا" },
+  "menuLabel_toggleVis": { "message": "تبديل الرؤية" },
   "menuLabel_about": { "message": "نبذة" },
   "about_version": { "message": "الإصدار" },
   "about_poweredBy": { "message": "مُقدم من" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Afspil automatisk ChatGPT-svar" },
+  "menuLabel_toggleVis": { "message": "Slå synlighed til og fra" },
   "menuLabel_about": { "message": "Om" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Drevet af" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT automatinis pokalbis" },
   "appDesc": { "message": "Automatiškai paleisti ChatGPT atsakymus" },
+  "menuLabel_toggleVis": { "message": "Perjungti matomumą" },
   "menuLabel_about": { "message": "Apie" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Įgalino Proneta" },

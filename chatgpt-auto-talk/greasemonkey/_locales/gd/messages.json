@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto - Talk" },
   "appDesc": { "message": "Cluich freagairtean ChatGPT gu fèin - obrachail" },
+  "menuLabel_toggleVis": { "message": "Toglaich an fhaicsinneachdrawable-action" },
   "menuLabel_about": { "message": "Mar deidhinn" },
   "about_version": { "message": "Tionndadh" },
   "about_poweredBy": { "message": "Powered by" },

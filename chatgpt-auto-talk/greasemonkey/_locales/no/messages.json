@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Spill ChatGPT-svar automatisk" },
+  "menuLabel_toggleVis": { "message": "Synleg bokmerke" },
   "menuLabel_about": { "message": "Om" },
   "about_version": { "message": "Versjon" },
   "about_poweredBy": { "message": "Drevet av" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT स्वतः कुराकानी" },
   "appDesc": { "message": "ChatGPT प्रतिक्रियाहरू स्वचालित रूपमा प्ले गर्नुहोस्" },
+  "menuLabel_toggleVis": { "message": "दृश्यता टगल गर्नुहोस्" },
   "menuLabel_about": { "message": "बारेमा" },
   "about_version": { "message": "संस्करण " },
   "about_poweredBy": { "message": "समर्थनकर्ता " },

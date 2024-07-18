@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Taaalo otometi ChatGPT tali" },
+  "menuLabel_toggleVis": { "message": "Toggle Vaaiga" },
   "menuLabel_about": { "message": "E uiga i" },
   "about_version": { "message": "Faaliliuga" },
   "about_poweredBy": { "message": "Malosiaga e ala i" },

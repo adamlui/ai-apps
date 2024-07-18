@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT 自动通话" },
   "appDesc": { "message": "自动播放 ChatGPT 回复" },
+  "menuLabel_toggleVis": { "message": "切换可见性" },
   "menuLabel_about": { "message": "关于" },
   "about_version": { "message": "版本" },
   "about_poweredBy": { "message": "技术支持方" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Amabile ChatGPT Amabile" },
+  "menuLabel_toggleVis": { "message": "Toggle Bipasha Basu" },
   "menuLabel_about": { "message": "pafya" },
   "about_version": { "message": "Ukupilibula" },
   "about_poweredBy": { "message": "Amapola by Amapola" },

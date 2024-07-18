@@ -1,6 +1,7 @@
 {
   "appName": { "message": "చాట్ జిపిటి ఆటో-టాక్" },
   "appDesc": { "message": "చాట్ జిపిటి ప్రతిస్పందనలను స్వయంచాలకంగా ప్లే చేయండి" },
+  "menuLabel_toggleVis": { "message": "దృశ్యమానతను టోగుల్ చేయండి" },
   "menuLabel_about": { "message": "గురించి" },
   "about_version": { "message": "వివరణం" },
   "about_poweredBy": { "message": "ద్వారా ఆధారితం" },

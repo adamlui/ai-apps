@@ -1,6 +1,7 @@
 {
   "appName": { "message": "Автоматично говорене чрез ChatGPT" },
   "appDesc": { "message": "Автоматично възпроизвеждане на отговорите на ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Превключване на видимостта" },
   "menuLabel_about": { "message": "Относно" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Създадено от" },

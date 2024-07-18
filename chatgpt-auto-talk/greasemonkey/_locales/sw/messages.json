@@ -1,6 +1,7 @@
 {
   "appName": { "message": "Mazungumzo ya Kiotomatiki ya ChatGPT" },
   "appDesc": { "message": "Cheza majibu ya ChatGPT kiotomatiki" },
+  "menuLabel_toggleVis": { "message": "Washa Mwonekano" },
   "menuLabel_about": { "message": "Kuhusu" },
   "about_version": { "message": "Toleo" },
   "about_poweredBy": { "message": "Imewezeshwa na" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "Conversación automática de ChatGPT" },
   "appDesc": { "message": "Reproducir automáticamente las respuestas de ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Activar la visibilidad" },
   "menuLabel_about": { "message": "Acerca de" },
   "about_version": { "message": "Versión" },
   "about_poweredBy": { "message": "Con la tecnología de" },

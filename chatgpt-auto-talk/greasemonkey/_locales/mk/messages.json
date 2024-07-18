@@ -1,6 +1,7 @@
 {
   "appName": { "message": "Автоматски разговор за ChatGPT" },
   "appDesc": { "message": "Автоматски пуштајте одговори на ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Вклучи видливост" },
   "menuLabel_about": { "message": "За" },
   "about_version": { "message": "верзија" },
   "about_poweredBy": { "message": "Овозможено од" },

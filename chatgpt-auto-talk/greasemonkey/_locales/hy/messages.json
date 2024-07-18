@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT ավտոմատ զրույց" },
   "appDesc": { "message": "Ավտոմատ կերպով խաղալ ChatGPT - ի պատասխանները" },
+  "menuLabel_toggleVis": { "message": "Փոխել տեսանելիությունը" },
   "menuLabel_about": { "message": "Մոտ " },
   "about_version": { "message": "Ստանալ պրեմիում տարբերակը" },
   "about_poweredBy": { "message": "🇦🇲" },

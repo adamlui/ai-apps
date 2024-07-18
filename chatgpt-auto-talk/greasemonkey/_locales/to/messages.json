@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT talanoa ki he meʻalele" },
   "appDesc": { "message": "Vaʻinga ʻotometiki pe ChatGPT ngaahi tali" },
+  "menuLabel_toggleVis": { "message": "Tuʻu maʻu ʻi hono fakaʻasi" },
   "menuLabel_about": { "message": "Fekauʻaki mo e" },
   "about_version": { "message": "Tatau" },
   "about_poweredBy": { "message": "Fakalele ʻe he" },

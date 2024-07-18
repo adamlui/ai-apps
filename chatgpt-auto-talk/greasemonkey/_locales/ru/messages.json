@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Автоматически воспроизводить ответы ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Переключить отображение" },
   "menuLabel_about": { "message": "О нас" },
   "about_version": { "message": "Редакция" },
   "about_poweredBy": { "message": "На базе технологии" },

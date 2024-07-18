@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT ಆಟೋ-ಟಾಕ್" },
   "appDesc": { "message": "ಚಾಟ್ ಜಿಪಿಟಿ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪ್ಲೇ ಮಾಡಿ" },
+  "menuLabel_toggleVis": { "message": "ಗೋಚರತೆಯನ್ನು ಟಾಗಲ್ ಮಾಡಿ" },
   "menuLabel_about": { "message": "ಕುರಿತಾಗಿ" },
   "about_version": { "message": "ಆವೃತ್ತಿ" },
   "about_poweredBy": { "message": "ಸಾಮರ್ಥ್ಯ ಇವರಿಂದ " },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "ChatGPT жауаптарын автоматты түрде ойнаңыз" },
+  "menuLabel_toggleVis": { "message": "Көріністі терістеу" },
   "menuLabel_about": { "message": "Туралы" },
   "about_version": { "message": "Нұсқа" },
   "about_poweredBy": { "message": "Сайтты жасаған" },

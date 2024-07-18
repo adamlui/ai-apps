@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Ol bekim bilong ol askim" },
+  "menuLabel_toggleVis": { "message": "Toksave long ol samting" },
   "menuLabel_about": { "message": "About" },
   "about_version": { "message": "Tok Pisin" },
   "about_poweredBy": { "message": "Em i gat bikpela strong" },

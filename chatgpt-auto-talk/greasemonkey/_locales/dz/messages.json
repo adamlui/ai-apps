@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT རང་མགོ་རང་འདྲོངས་ཁ་བརྡུང་།" },
   "appDesc": { "message": "ChatGPT ལན་སློགཚུ་ རང་བཞིན་གྱིས་འབད།" },
+  "menuLabel_toggleVis": { "message": "མཐོང་སྣང་ལུ་ ཐོ་གལ།" },
   "menuLabel_about": { "message": "སྐོར་ལས་" },
   "about_version": { "message": "ཐོན་རིམ།" },
   "about_poweredBy": { "message": "དབང་ཤུགས་ཀྱི་ཐོག་ལས་" },

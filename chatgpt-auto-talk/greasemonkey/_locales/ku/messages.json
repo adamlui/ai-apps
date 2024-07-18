@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Takk" },
   "appDesc": { "message": "Bersivên ChatGPT bixweber bilîzin" },
+  "menuLabel_toggleVis": { "message": "Veguhastina Dîtinê" },
   "menuLabel_about": { "message": "Derbarê de..." },
   "about_version": { "message": "وەشان" },
   "about_poweredBy": { "message": "پشتگیریکراو لە لایەن" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT အလိုအလျောက်စကားပြော" },
   "appDesc": { "message": "ChatGPT တုံ့ပြန်ချက်များကို အလိုအလျောက်ဖွင့်ပါ" },
+  "menuLabel_toggleVis": { "message": "မြင်ကွင်းကို ထိန်းကျောင်းပါ" },
   "menuLabel_about": { "message": "အကြောင်း" },
   "about_version": { "message": "မူ -" },
   "about_poweredBy": { "message": "စွမ်းဆောင်ရည် -" },

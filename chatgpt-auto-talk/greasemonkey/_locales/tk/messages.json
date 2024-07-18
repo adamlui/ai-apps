@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ÇatGPT Auto-Talk" },
   "appDesc": { "message": "ÇatGPT jogaplaryny otomatik oýna" },
+  "menuLabel_toggleVis": { "message": "Görnüşi toggle" },
   "menuLabel_about": { "message": "_Barada" },
   "about_version": { "message": "Veržen" },
   "about_poweredBy": { "message": "Güýçli" },

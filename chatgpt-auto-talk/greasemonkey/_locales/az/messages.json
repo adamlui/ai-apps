@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "ChatGPT cavablarını avtomatik olaraq oynayın" },
+  "menuLabel_toggleVis": { "message": "Görünmə Dəyişdir" },
   "menuLabel_about": { "message": "Haqqında" },
   "about_version": { "message": "Versiya " },
   "about_poweredBy": { "message": "Ərsəyə gətirən" },

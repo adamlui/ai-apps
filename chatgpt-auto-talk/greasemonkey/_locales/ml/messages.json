@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT ഓട്ടോ-ടോക്ക്" },
   "appDesc": { "message": "ചാറ്റ് ജിപിടി പ്രതികരണങ്ങൾ യാന്ത്രികമായി പ്ലേ ചെയ്യുക" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_about": { "message": "സംബന്ധിച്ച്" },
   "about_version": { "message": "പതിപ്പ്" },
   "about_poweredBy": { "message": "പിന്തുണയ്ക്കുന്നത്:" },

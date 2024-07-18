@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Αυτόματη συνομιλία" },
   "appDesc": { "message": "Αυτόματη αναπαραγωγή αποκρίσεων ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Εναλλαγή ορατότητας" },
   "menuLabel_about": { "message": "Σχετικά" },
   "about_version": { "message": "Έκδοση" },
   "about_poweredBy": { "message": "Με την υποστήριξη" },

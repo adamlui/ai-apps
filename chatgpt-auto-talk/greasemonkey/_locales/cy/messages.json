@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto - Talk" },
   "appDesc": { "message": "Chwarae ymatebion ChatGPT yn awtomatig" },
+  "menuLabel_toggleVis": { "message": "Toglu Gwelededd" },
   "menuLabel_about": { "message": "Gwybodaeth" },
   "about_version": { "message": "Fersiwn" },
   "about_poweredBy": { "message": "Wedi'i gynnal gan" },

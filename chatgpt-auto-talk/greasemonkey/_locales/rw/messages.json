@@ -1,6 +1,7 @@
 {
   "appName": { "message": "Kuganira mu buryo bwikora" },
   "appDesc": { "message": "GukinaGPT" },
+  "menuLabel_toggleVis": { "message": "Ukugaragara" },
   "menuLabel_about": { "message": "Bigyanye" },
   "about_version": { "message": "Umukoro" },
   "about_poweredBy": { "message": "Ku" },

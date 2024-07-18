@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Tshameka dikarabo tsa ChatGPT ka go itirisa" },
+  "menuLabel_toggleVis": { "message": "Toggle Visibility" },
   "menuLabel_about": { "message": "Kaga" },
   "about_version": { "message": "VERSION" },
   "about_poweredBy": { "message": "E tsamaisiwa ke" },

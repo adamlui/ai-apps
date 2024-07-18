@@ -1,6 +1,7 @@
 {
   "appName": { "message": "گفتگوی خودکار ChatGPT" },
   "appDesc": { "message": "به طور خودکار پاسخ های ChatGPT را پخش کنید" },
+  "menuLabel_toggleVis": { "message": "تغییر نمایانی" },
   "menuLabel_about": { "message": "درباره" },
   "about_version": { "message": "نسخه برنامه" },
   "about_poweredBy": { "message": "قدرت گرفته توسط" },

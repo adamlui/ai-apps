@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "መልሲ ChatGPT ብገዛእ ርእሱ ተጻወት" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_about": { "message": "ብዛዕባ" },
   "about_version": { "message": "መበል" },
   "about_poweredBy": { "message": "ብ" },

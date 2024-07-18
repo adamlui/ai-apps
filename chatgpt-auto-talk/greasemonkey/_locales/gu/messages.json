@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT સ્વતઃ ચર્ચા" },
   "appDesc": { "message": "ChatGPT પ્રતિસાદો આપમેળે વગાડો" },
+  "menuLabel_toggleVis": { "message": "દૃશ્યમાનતાને દબાણ કરો" },
   "menuLabel_about": { "message": "માહિતી " },
   "about_version": { "message": "આવૃત્તિ" },
   "about_poweredBy": { "message": "દ્વારા સંચાલિત" },

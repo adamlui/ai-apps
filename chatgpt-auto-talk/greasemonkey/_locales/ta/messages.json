@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT தானியங்கு பேச்சு" },
   "appDesc": { "message": "ChatGPT பதில்களை தானாக இயக்கவும்" },
+  "menuLabel_toggleVis": { "message": "தெரிவுநிலையை மாற்றுக" },
   "menuLabel_about": { "message": "இறக்கப் போகிறது" },
   "about_version": { "message": "பதிப்பு" },
   "about_poweredBy": { "message": "மூலம் இயக்கப்படுகிறது" },

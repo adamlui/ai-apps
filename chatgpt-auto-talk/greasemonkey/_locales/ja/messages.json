@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT自動トーク" },
   "appDesc": { "message": "ChatGPT応答を自動的に再生" },
+  "menuLabel_toggleVis": { "message": "可視性をトグルします。" },
   "menuLabel_about": { "message": "詳細" },
   "about_version": { "message": "バージョン" },
   "about_poweredBy": { "message": "Powered by" },

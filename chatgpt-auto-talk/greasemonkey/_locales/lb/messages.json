@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Spillt automatesch ChatGPT Äntwerten" },
+  "menuLabel_toggleVis": { "message": "Visibilitéit wiesselen" },
   "menuLabel_about": { "message": "Iwwer Qt" },
   "about_version": { "message": "Versioun" },
   "about_poweredBy": { "message": "Bereetgestallt vun" },

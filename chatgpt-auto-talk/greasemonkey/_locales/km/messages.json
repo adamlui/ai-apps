@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ការ និយាយ ដោយ ស្វ័យ ប្រវត្តិ របស់ ChatGPT" },
   "appDesc": { "message": "ចាក់ ការ ឆ្លើយ តប ChatGPT ដោយ ស្វ័យ ប្រវត្តិ" },
+  "menuLabel_toggleVis": { "message": "បិទ/បើកលទ្ធភាពមើលឃើញ" },
   "menuLabel_about": { "message": "អំពី" },
   "about_version": { "message": "លេខជំនាន់កម្មវិធី" },
   "about_poweredBy": { "message": "ដំណើរការ​ដោយ" },

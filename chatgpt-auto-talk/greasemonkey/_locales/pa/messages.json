@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ਗੱਲਬਾਤGPT ਆਟੋ- ਟਾਕ" },
   "appDesc": { "message": "ਆਟੋਮੈਟਿਕ ਚੈਟGPT ਜਵਾਬ ਚਲਾਓ" },
+  "menuLabel_toggleVis": { "message": "ਦਿਖਣਯੋਗਤਾ ਬਦਲੋ" },
   "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },
   "about_version": { "message": "ਵਰਜਨ" },
   "about_poweredBy": { "message": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },

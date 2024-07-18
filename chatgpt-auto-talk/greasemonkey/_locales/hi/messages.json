@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT ऑटो - टॉक" },
   "appDesc": { "message": "ChatGPT प्रतिक्रियाओं को स्वचालित रूप से चलाएं" },
+  "menuLabel_toggleVis": { "message": "दृश्यता टॉगल करें" },
   "menuLabel_about": { "message": "परिचय" },
   "about_version": { "message": "संस्करण" },
   "about_poweredBy": { "message": "...द्वारा पावरशुदा" },

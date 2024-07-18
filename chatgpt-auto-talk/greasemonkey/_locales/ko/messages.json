@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT 자동 대화" },
   "appDesc": { "message": "ChatGPT 응답 자동 재생" },
+  "menuLabel_toggleVis": { "message": "표시 여부를 토글합니다" },
   "menuLabel_about": { "message": "소개" },
   "about_version": { "message": "버전" },
   "about_poweredBy": { "message": "Powered by" },

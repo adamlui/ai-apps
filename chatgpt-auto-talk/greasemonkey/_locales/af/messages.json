@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Outo-gesprek" },
   "appDesc": { "message": "Speel ChatGPT-antwoorde outomaties" },
+  "menuLabel_toggleVis": { "message": "Wissel sigbaarheid" },
   "menuLabel_about": { "message": "Omtrent" },
   "about_version": { "message": "Weergawe" },
   "about_poweredBy": { "message": "Aangedryf deur" },

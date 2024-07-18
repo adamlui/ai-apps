@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT ავტომატური საუბარი" },
   "appDesc": { "message": "ChatGPT პასუხების ავტომატური დაკვრა" },
+  "menuLabel_toggleVis": { "message": "ხილულობის გადართვა" },
   "menuLabel_about": { "message": "პროგრამის შესახებ" },
   "about_version": { "message": "ვერსია" },
   "about_poweredBy": { "message": "აგებულია KDE-ზე" },

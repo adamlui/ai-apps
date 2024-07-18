@@ -1,6 +1,7 @@
 {
   "appName": { "message": "NAME OF TRANSLATORS" },
   "appDesc": { "message": "Aŭtomate ludi ChatGPT- respondojn" },
+  "menuLabel_toggleVis": { "message": "Ŝarĝante videblecon" },
   "menuLabel_about": { "message": "Alproksimigas" },
   "about_version": { "message": "Versio" },
   "about_poweredBy": { "message": "funkciigita de" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Otomatik Konuşma" },
   "appDesc": { "message": "ChatGPT yanıtlarını otomatik olarak oynat" },
+  "menuLabel_toggleVis": { "message": "Görünürlüğü Aç/Kapat" },
   "menuLabel_about": { "message": "Hakkında" },
   "about_version": { "message": "Versiyon" },
   "about_poweredBy": { "message": "Destek" },

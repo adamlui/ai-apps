@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Te tākaro aunoa ChatGPT whakautu" },
+  "menuLabel_toggleVis": { "message": "Ko te tirohanga a te hunga e kite ana i a ia" },
   "menuLabel_about": { "message": "Mō" },
   "about_version": { "message": "Whakaaturanga" },
   "about_poweredBy": { "message": "Te mana o te mana" },

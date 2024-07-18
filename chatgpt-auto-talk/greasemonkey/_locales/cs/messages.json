@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Automaticky přehrávat odpovědi ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Přepnout viditelnost" },
   "menuLabel_about": { "message": "O nás" },
   "about_version": { "message": "Verze" },
   "about_poweredBy": { "message": "Běží na" },

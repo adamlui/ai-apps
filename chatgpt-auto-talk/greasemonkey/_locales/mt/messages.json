@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Ilgħab awtomatikament it-tweġibiet taċ-ChatGPT" },
+  "menuLabel_toggleVis": { "message": "Aqleb il-Viżibbiltà" },
   "menuLabel_about": { "message": "Dwar" },
   "about_version": { "message": "Verżjoni" },
   "about_poweredBy": { "message": "Imħaddem minn" },

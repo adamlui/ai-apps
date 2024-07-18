@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "ChatGPT-antwoorden automatisch afspelen" },
+  "menuLabel_toggleVis": { "message": "Zichtbaarheid afdwingen" },
   "menuLabel_about": { "message": "Over" },
   "about_version": { "message": "Versie" },
   "about_poweredBy": { "message": "Ondersteund door" },

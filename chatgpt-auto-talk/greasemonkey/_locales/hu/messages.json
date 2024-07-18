@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "ChatGPT-válaszok automatikus lejátszása" },
+  "menuLabel_toggleVis": { "message": "Láthatóság váltása" },
   "menuLabel_about": { "message": "További információk" },
   "about_version": { "message": "Verió" },
   "about_poweredBy": { "message": "Kiszolgálja:" },

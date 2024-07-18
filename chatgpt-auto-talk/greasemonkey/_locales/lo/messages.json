@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "ຫຼິ້ນໂດຍອັດຕະໂນມັດ ຄໍາ ຕອບຂອງ ChatGPT" },
+  "menuLabel_toggleVis": { "message": "ປິດການເບິ່ງເຫັນ" },
   "menuLabel_about": { "message": "ກ່ຽວກັບ" },
   "about_version": { "message": "ຮຸ່ນ" },
   "about_poweredBy": { "message": "ຂັບເຄື່ອນໂດຍ" },

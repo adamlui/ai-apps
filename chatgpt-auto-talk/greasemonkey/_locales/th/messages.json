@@ -1,6 +1,7 @@
 {
   "appName": { "message": "ChatGPT พูดคุยอัตโนมัติ" },
   "appDesc": { "message": "เล่นการตอบกลับ ChatGPT โดยอัตโนมัติ" },
+  "menuLabel_toggleVis": { "message": "เปิด/ปิดการมองเห็น" },
   "menuLabel_about": { "message": "เกี่ยวกับ" },
   "about_version": { "message": "เวอร์ชัน" },
   "about_poweredBy": { "message": "สนับสนุนโดย" },
