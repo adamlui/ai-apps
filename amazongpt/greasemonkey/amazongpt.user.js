@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.19.3
+// @version                2024.7.19.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -77,10 +77,10 @@
 (async () => {
 
     // Init BROWSER FLAGS
-    const isChrome = !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome'),
+    const isChrome = chatgpt.browser.isChrome(),
           isFirefox = chatgpt.browser.isFirefox(),
-          isEdge = !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'),
-          isBrave = !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'),
+          isEdge = chatgpt.browser.isEdge(),
+          isBrave = chatgpt.browser.isBrave(),
           isMobile = chatgpt.browser.isMobile(),
           isPortrait = isMobile && (window.innerWidth < window.innerHeight)
 
