@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.9.3
+// This library is a condensed version of chatgpt.js v3.0.0
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -73,8 +73,9 @@ const chatgpt = {
                     + 'background-color: ' + ( scheme == 'dark' ? '#00cfff' : '#9cdaff' ) + ';'
                     + 'box-shadow: 2px 1px ' + ( scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' ) + '}'
                 + '.modal-close-btn {'
-                    + 'cursor: pointer ; width: 20px ; height: 20px ; float: right ; position: relative ; right: -2px }'
-                + '.modal-close-btn svg { margin: 5px 5px }' // center SVG for hover overlay
+                    + 'cursor: pointer ; width: 29px ; height: 29px ; border-radius: 17px ;'
+                    + 'float: right ; position: relative ; right: -6px ; top: -5px }'
+                + '.modal-close-btn svg { margin: 10px }' // center SVG for hover underlay
                 + `.modal-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
 
                 // Checkbox styles
@@ -172,7 +173,7 @@ const chatgpt = {
             modalContainer.style.display = '';
             setTimeout(() => { // delay non-0 opacity's for transition fx
                 modalContainer.style.backgroundColor = ( 
-                    `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0 })`);
+                    `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.1 })`);
                 modalContainer.classList.add('animated'); }, 100);
         }
 
@@ -180,13 +181,15 @@ const chatgpt = {
         const clickHandler = event => { // explicitly defined to support removal post-dismissal
             if (event.target == event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); };
         const keyHandler = event => { // to dismiss active alert
-            const dismissKeys = [13, 27]; // enter/esc
-            if (dismissKeys.includes(event.keyCode)) {
+            const dismissKeys = [' ', 'Spacebar', 'Enter', 'Return', 'Escape', 'Esc'],
+                  dismissKeyCodes = [32, 13, 27];
+            if (dismissKeys.includes(event.key) || dismissKeyCodes.includes(event.keyCode)) {
                 for (const alertId of alertQueue) { // look to handle only if triggering alert is active
                     const alert = document.getElementById(alertId);
                     if (alert && alert.style.display !== 'none') { // active alert found
-                        if (event.keyCode === 27) dismissAlert(); // if esc pressed, dismiss alert & do nothing
-                        else if (event.keyCode === 13) { // else if enter pressed
+                        if (event.key.includes('Esc') || event.keyCode == 27) // esc pressed
+                            dismissAlert(); // dismiss alert & do nothing
+                        else if ([' ', 'Spacebar', 'Enter', 'Return'].includes(event.key) || [32, 13].includes(event.keyCode)) { // space/enter pressed
                             const mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
                             if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
                         } return;
@@ -267,22 +270,20 @@ const chatgpt = {
     isIdle: function() {
         return new Promise(resolve => {
             (function checkIsIdle() {
-                if (chatgpt.getRegenerateButton()) resolve(true);
-                else setTimeout(checkIsIdle, 200);
+                chatgpt.getRegenerateButton() ? resolve(true) : setTimeout(checkIsIdle, 200);
             })();
     });},
 
     isLoaded: function() {
         return new Promise(resolve => {
             (function checkIsLoaded() {
-                if (chatgpt.getNewChatButton()) resolve(true);
-                else setTimeout(checkIsLoaded, 200);
+                chatgpt.getNewChatButton() ? resolve(true) : setTimeout(checkIsLoaded, 200);
             })();
     });},
 
     notify: async function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-        const fadeDuration = 0.3, // sec duration of fade-out
+        const fadeDuration = 0.35, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
         // Create/append notification div
@@ -479,12 +480,9 @@ const chatgpt = {
 
         toggle: function() {
             const isMobileDevice = chatgpt.browser.isMobile(),
-                  isGPT4oUI = !!document.documentElement.className.includes(' '),
-                  navBtnSelector = isMobileDevice ? '#__next button' : isGPT4oUI ? 'nav button' : 'main button',
+                  navBtnSelector = isMobileDevice ? '#__next button' : 'nav button',
                   isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : isGPT4oUI ? btn => btn.querySelectorAll('svg path[d*="M8.857 3h6.286c1.084"]').length > 0
-                              : /* post-GPT-4o desktop */ btn => [...btn.querySelectorAll('*')]
-                                    .some(child => child.style.transform.includes('translateY'));
+                              : btn => btn.querySelectorAll('svg path[d*="M8.857 3h6.286c1.084"]').length > 0;
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         },
@@ -494,8 +492,7 @@ const chatgpt = {
             return Promise.race([
                 new Promise(resolve => {
                     (function checkNewChatLink() {
-                        if (chatgpt.getNewChatLink()) resolve(true);
-                        else setTimeout(checkNewChatLink, 200);
+                        chatgpt.getNewChatLink() ? resolve(true) : setTimeout(checkNewChatLink, 200);
                     })();
                 }),
                 new Promise(resolve => setTimeout(resolve, 5000)) // since New Chat link not always present
