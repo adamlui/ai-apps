@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.17
+// @version             2024.7.19
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -585,11 +585,8 @@
     function updateBtnSVG(mode, state = '') {
 
         // Define SVG viewbox + elems
-        const svgViewBox = (
-            // move to XY coords to crop whitespace
-            ( mode == 'newChat' ? '11 6 ' : mode == 'wideScreen' ? '8 8 ' : mode == 'fullWindow' ? '0 0 ' : '8 8 ' )
-            // shrink to fit size
-          + ( mode == 'newChat' ? '13 13' : mode == 'wideScreen' ? '20 20 ' : mode == 'fullWindow' ? '24 24' : '20 20' ))
+        const svgViewBox = ( mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '-2 -0.5 ' : '8 8 ' ) // move to XY coords to crop whitespace
+                         + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' ) // shrink to fit size
         const fullScreenONelems = [
             createSVGelem('path', { fill: btnColor, d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
             createSVGelem('path', { fill: btnColor, d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
@@ -659,13 +656,13 @@
     function updateTooltip(buttonType) { // text & position
         tooltipDiv.innerText = msgs['tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON'))]
-        const ctrAddend = 25 + ( isGPT4oUI ? 10 : site == 'poe' ? 45 : 13 ),
-              spreadFactor = isGPT4oUI ? 30 : site == 'poe' ? 35 : 32,
+        const ctrAddend = 25 + ( site == 'poe' ? 45 : 12 ),
+              spreadFactor = site == 'poe' ? 35 : 31,
               iniRoffset = spreadFactor * ( buttonType.includes('fullScreen') ? 1
                                           : buttonType.includes('fullWindow') ? 2
                                           : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
         tooltipDiv.style.right = `${ // horizontal position
-            iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
+            iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
     }
 
     // Define TOGGLE functions
@@ -872,8 +869,7 @@
 
     // Create/insert chatbar BUTTONS
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
-          bOffset = isGPT4oUI ? -0.91 : site == 'poe' ? -0.02 : 1.8,
-          rOffset = isGPT4oUI ? -0.45 : site == 'poe' ? -0.34 : 3.05
+          bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
     let btnColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
@@ -881,8 +877,8 @@
             window[buttonName] = document.createElement('div') // create button
             window[buttonName].id = buttonType + '-button' // for toggleTooltip()
             updateBtnSVG(buttonType) // insert icon
-            window[buttonName].style.cssText = `right: ${ rOffset + i * bOffset }rem ;` // position left of prev button
-                + `bottom: ${ /chatgpt|openai/.test(site) && !isGPT4oUI ? '11px' : '' }` // scooch up pre-GPT-4o UI
+            window[buttonName].style.cssText = 'position: relative ; top: 0 ;'
+                                             + `right: ${ rOffset + i * bOffset }px` // position left of prev button
             window[buttonName].style.cursor = 'pointer' // add finger cursor
             if (isGPT4oUI || site == 'poe') window[buttonName].style.position = 'relative' // override static pos
             if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
