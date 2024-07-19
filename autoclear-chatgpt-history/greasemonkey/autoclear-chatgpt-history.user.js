@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.19.1
+// @version             2024.7.19.2
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -458,7 +458,7 @@
                     const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                           function futurepedia() { safeWindowOpen(
-                              'https://www.futurepedia.io/tool/autoclear-chatgpt-history#autoclear-chatgpt-history-review') }])
+                              'https://www.futurepedia.io/tool/autoclear-chatgpt-history#tool-reviews') }])
                     document.getElementById(reviewModalID).querySelector('button')
                         .style.display = 'none' }, // hide dismiss button
                 function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
