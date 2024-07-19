@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.19.4
+// @version                2024.7.19.5
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -77,7 +77,8 @@
 (async () => {
 
     // Init BROWSER FLAGS
-    const isChrome = chatgpt.browser.isChrome(),
+    const isChromium = chatgpt.browser.isChromium(),
+          isChrome = chatgpt.browser.isChrome(),
           isFirefox = chatgpt.browser.isFirefox(),
           isEdge = chatgpt.browser.isEdge(),
           isBrave = chatgpt.browser.isBrave(),
@@ -1319,7 +1320,7 @@
               + `#amzgpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
               + '#amzgpt-settings ul { list-style: none ; padding: 0 ; margin: 0 0 2px -3px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
-              + `#amzgpt-settings li { display: ${ isChrome ? 'ruby-text' : 'block ruby' } ;`
+              + `#amzgpt-settings li { display: ${ isChromium ? 'ruby-text' : 'block ruby' } ;`
                   + 'list-style: none ; height: 37px ; font-size: 15.5px ; transition: transform 0.1s ease ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                   + `padding: 6px 10px 4px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
