@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.19.5
+// @version                2024.7.19.6
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2287,8 +2287,8 @@
     // Stylize SITE elems
     const tweaksStyle = createStyle(),
           anchorStyles = '#amzgpt { position: fixed ; bottom: -7px ;'
-                                 + `right: ${ isMobile ? window.innerWidth *0.02 : 35 }px ;`
-                                 + `width: ${ isMobile ? '96%' : '441px' }}`
+                                 + `right: ${ isMobile ? window.innerWidth *0.01 : 35 }px ;`
+                                 + `width: ${ isMobile ? '98%' : '441px' }}`
                        + '#chevron-btn, #arrows-btn { display: block !important }',
           expandedStyles = '#amzgpt { width: 528px }'
     update.tweaksStyle() ; document.head.append(tweaksStyle)
