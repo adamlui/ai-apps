@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.19.2
+// @version                2024.7.19.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2244,9 +2244,9 @@
                 if (newLength < prevLength) { // if deleting txt
                     chatTextarea.style.height = 'auto' // ...auto-fit height
                     if (parseInt(getComputedStyle(chatTextarea).height, 10) < 55) { // if down to one line
-                        chatTextarea.style.height = '43px' } // ...reset to original height
+                        chatTextarea.style.height = '46px' } // ...reset to original height
                 }
-                chatTextarea.style.height = `${ chatTextarea.scrollHeight > 60 ? ( chatTextarea.scrollHeight +2 ) : 43 }px`
+                chatTextarea.style.height = `${ chatTextarea.scrollHeight > 60 ? ( chatTextarea.scrollHeight +2 ) : 46 }px`
                 prevLength = newLength
             }
         }
