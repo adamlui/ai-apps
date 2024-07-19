@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.19
+// @version                2024.7.19.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -42,7 +42,7 @@
 // @connect                openai.com
 // @connect                sogou.com
 // @connect                webraft.in
-// @require                https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.0.0/dist/chatgpt.min.js#sha256-5/XagrKUR9YE/S6vMo3kcSCxht/SrBdHYdgz98aajlg=
+// @require                https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.0.1/dist/chatgpt.min.js#sha256-jCJMPu044aK37jtC2wMMKnNgHbXJ5Pm9ZdIqDERob7k=
 // @require                https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha256-dppVXeVTurw1ozOPNE3XqhYmDJPOosfbKQcHyQSE58w=
 // @require                https://cdn.jsdelivr.net/npm/generate-ip@2.4.2/dist/generate-ip.min.js#sha256-PRvQIDVWK/a+aAqEFVQv7RePbRe/tX6tWQVM80rAe2M=
 // @require                https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js#sha256-Ffq85bZYmLMrA/XtJen4kacprUwNbYdxEKd0SqhHqJQ=

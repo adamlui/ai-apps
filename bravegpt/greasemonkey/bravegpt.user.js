@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.19
+// @version               2024.7.19.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -179,7 +179,7 @@
 // @connect               openai.com
 // @connect               sogou.com
 // @connect               webraft.in
-// @require               https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.0.0/dist/chatgpt.min.js#sha256-5/XagrKUR9YE/S6vMo3kcSCxht/SrBdHYdgz98aajlg=
+// @require               https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.0.1/dist/chatgpt.min.js#sha256-jCJMPu044aK37jtC2wMMKnNgHbXJ5Pm9ZdIqDERob7k=
 // @require               https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha256-dppVXeVTurw1ozOPNE3XqhYmDJPOosfbKQcHyQSE58w=
 // @require               https://cdn.jsdelivr.net/npm/generate-ip@2.4.2/dist/generate-ip.min.js#sha256-PRvQIDVWK/a+aAqEFVQv7RePbRe/tX6tWQVM80rAe2M=
 // @require               https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js#sha256-g3pvpbDHNrUrveKythkPMF2j/J7UFoHbUyFQcFe1yEY=

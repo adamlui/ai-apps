@@ -225,13 +225,13 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.19
+// @version             2024.7.19.1
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
-// @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.0.0/dist/chatgpt.min.js#sha256-5/XagrKUR9YE/S6vMo3kcSCxht/SrBdHYdgz98aajlg=
+// @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.0.1/dist/chatgpt.min.js#sha256-jCJMPu044aK37jtC2wMMKnNgHbXJ5Pm9ZdIqDERob7k=
 // @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
 // @grant               GM_setValue
