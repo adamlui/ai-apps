@@ -260,7 +260,7 @@
         else if (site == 'poe') { // left-align attach file button
             const attachFileBtn = chatbar.querySelector('button[class*="File"]')
             attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
-            document.querySelector(inputSelector).style.paddingLeft = '2.35rem' // to accomodate new btn pos
+            document.querySelector(inputSelector).style.padding = '0 13px 0 40px' // accommodate new btn pos
         }
 
         // Insert buttons
@@ -436,9 +436,7 @@
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
             /chatgpt|openai/.test(site) ? (
-                  ( inputSelector + ( // widen/narrow input to be flush w/ btns
-                        isGPT4oUI ? '{ margin-right: -62px }'
-                                  : `{ padding-right: ${ config.ncbDisabled ? 150 : 176 }px }` ))
+                  ( inputSelector + '{ margin-right: -43px }' ) // widen/narrow input to be flush w/ btns
                 + ( '[id$="-button"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) // hide footer
