@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.19.4
+// @version             2024.7.19.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -445,9 +445,7 @@
                     const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                           function productHunt() { safeWindowOpen(
-                              'https://www.producthunt.com/products/chatgpt-widescreen-mode/reviews/new') },
-                          function futurepedia() { safeWindowOpen(
-                              'https://www.futurepedia.io/tool/chatgpt-widescreen-mode#chatgpt-widescreen-mode-review') }])
+                              'https://www.producthunt.com/products/chatgpt-widescreen-mode/reviews/new') }])
                     document.getElementById(reviewModalID).querySelector('button')
                         .style.display = 'none' }, // hide dismiss button
                 function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
