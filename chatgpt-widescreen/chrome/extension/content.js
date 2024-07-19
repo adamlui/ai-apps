@@ -363,7 +363,7 @@
         tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON')))
             const ctrAddend = 25 + ( site == 'poe' ? 45 : 12 ),
-            spreadFactor = site == 'poe' ? 35 : 31,
+            spreadFactor = site == 'poe' ? 35 : 30.5,
             iniRoffset = spreadFactor * ( buttonType.includes('fullScreen') ? 1
                                           : buttonType.includes('fullWindow') ? 2
                                           : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
