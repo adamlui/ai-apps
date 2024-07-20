@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.19.2
+// @version                  2024.7.19.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1078,8 +1078,9 @@
                             }
                         }
 
-                    // Add config status + listeners to pop-up settings
+                    // Add .active + config status + listeners to pop-up settings
                     } else {
+                        settingItem.classList.add('active')
                         const configStatusSpan = document.createElement('span')
                         configStatusSpan.style.cssText = 'float: right ; font-size: 11px ; margin-top: '
                             + ( key.includes('about') ? '5px' : '3px ; text-transform: uppercase !important')
@@ -1140,17 +1141,19 @@
 
             toggle: {
                 switch(settingToggle) {
-                    settingToggle.checked = !settingToggle.checked    
+                    settingToggle.checked = !settingToggle.checked
                     modals.settings.toggle.updateStyles(settingToggle)        
                 },
 
                 updateStyles(settingToggle) { // for .toggle.show() + staggered switch animations in .createAppend()
-                    const switchSpan = settingToggle.parentNode.querySelector('span'),
+                    const settingLi = settingToggle.parentNode,
+                          switchSpan = settingLi.querySelector('span'),
                           knobSpan = switchSpan.querySelector('span')
                     setTimeout(() => {
                         switchSpan.style.backgroundColor = settingToggle.checked ? '#ad68ff' : '#ccc'
                         switchSpan.style.boxShadow = settingToggle.checked ? '2px 1px 9px #d8a9ff' : 'none'
                         knobSpan.style.transform = settingToggle.checked ? 'translateX(14px) translateY(0)' : 'translateX(0)'
+                        settingLi.classList[settingToggle.checked ? 'add' : 'remove']('active') // dim/brighten setting entry
                     }, 1) // min delay to trigger transition fx
                 }
             },
@@ -1893,13 +1896,15 @@
               + `#googlegpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
               + '#googlegpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
-              + '#googlegpt-settings li { height: 24px ; font-size: 13.5px ; transition: transform 0.1s ease ;'
+              + '#googlegpt-settings li {'
+                  + `opacity: ${ scheme == 'dark' ? 0.65 : 0.45 } ; height: 24px ; font-size: 13.5px ; transition: transform 0.1s ease ;`
                   + `padding: 6px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
+              + '#googlegpt-settings li.active { opacity: 1 }'
               + '#googlegpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
               + '#googlegpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
               + '#googlegpt-settings li, #googlegpt-settings li label { cursor: pointer }' // add finger on hover
-              + '#googlegpt-settings li:hover {'
+              + '#googlegpt-settings li:hover { opacity: 1 ;'
                   + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
                   + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.22)' }}` // add zoom
               + '#googlegpt-settings li > input { float: right }' // pos toggles

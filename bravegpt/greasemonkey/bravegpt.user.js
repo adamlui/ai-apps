@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.19.2
+// @version               2024.7.19.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -892,8 +892,9 @@ setTimeout(async () => {
                             }
                         }
 
-                    // Add config status + listeners to pop-up settings
+                    // Add .active + config status + listeners to pop-up settings
                     } else {
+                        settingItem.classList.add('active')
                         const configStatusSpan = document.createElement('span')
                         configStatusSpan.style.cssText = 'float: right ; font-size: 11px ; margin-top: 3px ;'
                             + ( !key.includes('about') ? 'text-transform: uppercase !important' : '' )
@@ -954,17 +955,19 @@ setTimeout(async () => {
 
             toggle: {
                 switch(settingToggle) {
-                    settingToggle.checked = !settingToggle.checked    
+                    settingToggle.checked = !settingToggle.checked
                     modals.settings.toggle.updateStyles(settingToggle)        
                 },
 
                 updateStyles(settingToggle) { // for .toggle.show() + staggered switch animations in .createAppend()
-                    const switchSpan = settingToggle.parentNode.querySelector('span'),
+                    const settingLi = settingToggle.parentNode,
+                          switchSpan = settingLi.querySelector('span'),
                           knobSpan = switchSpan.querySelector('span')
                     setTimeout(() => {
                         switchSpan.style.backgroundColor = settingToggle.checked ? '#ad68ff' : '#ccc'
                         switchSpan.style.boxShadow = settingToggle.checked ? '2px 1px 9px #d8a9ff' : 'none'
                         knobSpan.style.transform = settingToggle.checked ? 'translateX(14px) translateY(0)' : 'translateX(0)'
+                        settingLi.classList[settingToggle.checked ? 'add' : 'remove']('active') // dim/brighten setting entry
                     }, 1) // min delay to trigger transition fx
                 }
             },
@@ -1698,13 +1701,15 @@ setTimeout(async () => {
               + `#bravegpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
               + '#bravegpt-settings ul { list-style: none ; padding: 0 ; margin: 0 ;' // hide bullets, override Brave ul margins
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
-              + '#bravegpt-settings li { height: 37px ; font-size: 14.5px ; transition: transform 0.1s ease ;'
+              + '#bravegpt-settings li {'
+                  + `opacity: ${ scheme == 'dark' ? 0.65 : 0.45 } ; height: 37px ; font-size: 14.5px ; transition: transform 0.1s ease ;`
                   + `padding: 7px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
+              + '#bravegpt-settings li.active { opacity: 1 }'
               + '#bravegpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
               + '#bravegpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
               + '#bravegpt-settings li, #bravegpt-settings li label { cursor: pointer }' // add finger on hover
-              + '#bravegpt-settings li:hover {'
+              + '#bravegpt-settings li:hover { opacity: 1 ;'
                   + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
                   + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.22)' }}` // add zoom
               + '#bravegpt-settings li > input { float: right }' // pos toggles

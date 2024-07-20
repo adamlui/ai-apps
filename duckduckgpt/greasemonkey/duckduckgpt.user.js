@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.19.3
+// @version                2024.7.19.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -898,8 +898,9 @@
                             }
                         }
 
-                    // Add config status + listeners to pop-up settings
+                    // Add .active + config status + listeners to pop-up settings
                     } else {
+                        settingItem.classList.add('active')
                         const configStatusSpan = document.createElement('span')
                         configStatusSpan.style.cssText = 'float: right ; font-size: 11px ; margin-top: 3px ;'
                             + ( !key.includes('about') ? 'text-transform: uppercase !important' : '' )
@@ -960,17 +961,19 @@
 
             toggle: {
                 switch(settingToggle) {
-                    settingToggle.checked = !settingToggle.checked    
+                    settingToggle.checked = !settingToggle.checked
                     modals.settings.toggle.updateStyles(settingToggle)        
                 },
 
                 updateStyles(settingToggle) { // for .toggle.show() + staggered switch animations in .createAppend()
-                    const switchSpan = settingToggle.parentNode.querySelector('span'),
+                    const settingLi = settingToggle.parentNode,
+                          switchSpan = settingLi.querySelector('span'),
                           knobSpan = switchSpan.querySelector('span')
                     setTimeout(() => {
                         switchSpan.style.backgroundColor = settingToggle.checked ? '#ad68ff' : '#ccc'
                         switchSpan.style.boxShadow = settingToggle.checked ? '2px 1px 9px #d8a9ff' : 'none'
                         knobSpan.style.transform = settingToggle.checked ? 'translateX(14px) translateY(0)' : 'translateX(0)'
+                        settingLi.classList[settingToggle.checked ? 'add' : 'remove']('active') // dim/brighten setting entry
                     }, 1) // min delay to trigger transition fx
                 }
             },
@@ -1694,13 +1697,15 @@
               + `#ddgpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
               + '#ddgpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
-              + '#ddgpt-settings li { height: 25px ; font-size: 14.5px ; transition: transform 0.1s ease ;'
+              + '#ddgpt-settings li {'
+                  + `opacity: ${ scheme == 'dark' ? 0.65 : 0.45 } ; height: 25px ; font-size: 14.5px ; transition: transform 0.1s ease ;`
                   + `padding: 4px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
+              + '#ddgpt-settings li.active { opacity: 1 }'
               + '#ddgpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
               + '#ddgpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
               + '#ddgpt-settings li, #ddgpt-settings li label { cursor: pointer }' // add finger on hover
-              + '#ddgpt-settings li:hover {'
+              + '#ddgpt-settings li:hover { opacity: 1 ;'
                   + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
                   + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.22)' }}` // add zoom
               + '#ddgpt-settings li > input { float: right }' // pos toggles

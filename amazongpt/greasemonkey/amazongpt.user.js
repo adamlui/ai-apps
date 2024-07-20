@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.19.6
+// @version                2024.7.19.7
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -714,8 +714,9 @@
                             }
                         }
 
-                    // Add config status + listeners to pop-up settings
+                    // Add .active + config status + listeners to pop-up settings
                     } else {
+                        settingItem.classList.add('active')
                         const configStatusSpan = document.createElement('span')
                         configStatusSpan.style.cssText = 'float: right ; font-size: 11px ; margin-top: 3px ;'
                             + ( !key.includes('about') ? 'text-transform: uppercase !important' : '' )
@@ -781,12 +782,14 @@
                 },
 
                 updateStyles(settingToggle) { // for .toggle.show() + staggered switch animations in .createAppend()
-                    const switchSpan = settingToggle.parentNode.querySelector('span'),
+                    const settingLi = settingToggle.parentNode,
+                          switchSpan = settingLi.querySelector('span'),
                           knobSpan = switchSpan.querySelector('span')
                     setTimeout(() => {
                         switchSpan.style.backgroundColor = settingToggle.checked ? '#ad68ff' : '#ccc'
                         switchSpan.style.boxShadow = settingToggle.checked ? '2px 1px 9px #d8a9ff' : 'none'
                         knobSpan.style.transform = settingToggle.checked ? 'translateX(14px) translateY(0)' : 'translateX(0)'
+                        settingLi.classList[settingToggle.checked ? 'add' : 'remove']('active') // dim/brighten setting entry
                     }, 1) // min delay to trigger transition fx
                 }
             },
@@ -1320,15 +1323,17 @@
               + `#amzgpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
               + '#amzgpt-settings ul { list-style: none ; padding: 0 ; margin: 0 0 2px -3px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
-              + `#amzgpt-settings li { display: ${ isChromium ? 'ruby-text' : 'block ruby' } ;`
+              + '#amzgpt-settings li {'
+                  + `opacity: ${ scheme == 'dark' ? 0.65 : 0.45 } ; display: ${ isChromium ? 'ruby-text' : 'block ruby' } ;`
                   + 'list-style: none ; height: 37px ; font-size: 15.5px ; transition: transform 0.1s ease ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                   + `padding: 6px 10px 4px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
+              + '#amzgpt-settings li.active { opacity: 1 }'
               + '#amzgpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
               + '#amzgpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
               + '#amzgpt-settings li, #amzgpt-settings li label { cursor: pointer }' // add finger on hover
-              + '#amzgpt-settings li:hover {'
+              + '#amzgpt-settings li:hover { opacity: 1 ;'
                   + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
                   + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.22)' }}` // add zoom
               + '#amzgpt-settings li > input { float: right }' // pos toggles
