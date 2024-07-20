@@ -12,8 +12,20 @@
 <a href="https://www.kudoai.com?utm_source=amazongpt&utm_content=github_shield"><img height=35 alt="[Built by KudoAI]" src="https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
 <img src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/mice-md-reply-darkmode.png">
-</div>
 
 <br>
+<br>
 
-**Install link**: https://greasyfork.org/scripts/500663-amazongpt
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
+
+<h3>🤖 Bring the magic of AI to Amazon Shopping 🛒</h3>
+
+<a href="https://greasyfork.org/scripts/500663-amazongpt"><img height=50 alt="Install this script" src="https://amazongpt.kudoai.com/assets/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=50 alt="How to install" title="How to install" src="https://amazongpt.kudoai.com/assets/images/buttons/greasy-fork/help-button.svg"></a>
+<br>
+[Discuss](https://github.com/KudoAI/amazongpt/discussions) / 
+[Review](https://greasyfork.org/scripts/500663-amazongpt#post-discussion) / 
+[Contact author](https://github.com/adamlui)
+
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
+
+</div>
