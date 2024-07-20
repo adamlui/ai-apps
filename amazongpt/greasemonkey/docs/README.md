@@ -35,3 +35,41 @@
 <img src="https://amazongpt.kudoai.com/assets/images/screenshots/mobile/hey-there-reply-darkmode.png">
 
 </div>
+
+<br>
+<br>
+
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png?latest">
+
+## 🚀 Installation
+
+1. Install a userscript manager:
+    - ScriptCat for [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Firefox](https://addons.mozilla.org/firefox/addon/scriptcat/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh)
+    - Tampermonkey for [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
+    - Violentmonkey* for [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)
+    - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf)* or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland)* for Chrome
+
+2. Install [AmazonGPT](https://greasyfork.org/scripts/500663-amazongpt) (will load in userscript manager installed above)
+
+3. Visit [Amazon.com](https://amazon.com), engage bot!
+
+##### _*Violentmonkey, OrangeMonkey & OrangeMonkey Pro do not support Streaming Mode, so are not recommended_
+
+<br><a href="https://github.com/sponsors/KudoAI"><img src="https://amazongpt.kudoai.com/assets/images/banners/sponsor/$10/banner1660x260.png?latest"></a>
+
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png?latest">
+
+## <img width=25px src="https://amazongpt.kudoai.com/assets/images/icons/platforms/tampermonkey/icon28.png?latest"> Tampermonkey Users
+
+If you are installing **Tampermonkey** (v5.2.0+) for the first time from the [Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), you must enable **Developer Mode** for userscripts to function.
+
+To do so, visit [chrome://extensions](chrome://extensions) > activate **Developer Mode** toggle > restart browser
+
+<img width=635 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/chrome/developer-mode-toggle.png?latest">
+
+💡 _**Note:** If you installed Tampermonkey from the add-on store for [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/), then Developer Mode is not required._
+
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png?latest">
+
+<a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT apps**</a> / 
+<a href="#-bring-the-magic-of-ai-to-amazon-shopping-">Back to top ↑</a>
