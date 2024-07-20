@@ -63,7 +63,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 <div align="center">
 
-<img width=735 src="https://media.ddgpt.com/images/screenshots/desktop/chrome/developer-mode-toggle.png?latest">
+<img width=635 src="https://media.ddgpt.com/images/screenshots/desktop/chrome/developer-mode-toggle.png?latest">
 
 </div>
 
