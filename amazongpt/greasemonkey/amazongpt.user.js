@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.19.7
+// @version                2024.7.19.8
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -448,7 +448,7 @@
             if (scheme == 'dark' && !config.fgAnimationsDisabled) toggle.btnGlow()
         },
 
-        keyHandler() { // to dismiss modals
+        keyHandler(event) { // to dismiss modals
             if (['Escape', 'Esc'].includes(event.key) || event.keyCode == 27) {
                 const modal = document.querySelector('[class$="-modal"]')
                 if (modal) modals.hide(modal)
