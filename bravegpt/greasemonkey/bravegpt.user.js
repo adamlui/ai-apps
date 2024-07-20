@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.19.7
+// @version               2024.7.19.8
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -814,7 +814,7 @@ setTimeout(async () => {
                     settingItem.append(settingLabel) ; (settingsLists[isPortrait ? 0 : +(idx >= settingItemCap)]).append(settingItem)
 
                     // Create/prepend icons
-                    const settingIcon = icons[setting.icon].create(key.match(/bg|fg/)?.[0] ?? '')
+                    const settingIcon = icons[setting.icon].create(/bg|fg/.exec(key)?.[0] ?? '')
                     settingIcon.style.cssText = 'position: relative ;' + (
                         /proxy/i.test(key) ? 'top: 3px ; left: -0.5px ; margin-right: 9px'
                       : /streaming/i.test(key) ? 'top: 3px ; left: 0.5px ; margin-right: 9px'
@@ -880,7 +880,7 @@ setTimeout(async () => {
                             else if (/autoget/i.test(key)) toggle.autoGet()
                             else if (key.includes('rq')) toggle.relatedQueries()
                             else if (manualGetMatch) toggle.manualGet(manualGetMatch[0])
-                            else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
+                            else if (key.includes('Sidebar')) toggle.sidebar(/(.*?)Sidebar$/.exec(key)[1])
                             else if (key.includes('anchor')) toggle.anchorMode()
                             else if (key.includes('bgAnimation')) toggle.animations('bg')
                             else if (key.includes('fgAnimation')) toggle.animations('fg')

@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.19.9
+// @version                2024.7.19.10
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -647,7 +647,7 @@
                     settingItem.append(settingLabel) ; (settingsLists[isPortrait ? 0 : +(idx >= settingItemCap)]).append(settingItem)
 
                     // Create/prepend icons
-                    const settingIcon = icons[setting.icon].create(key.match(/bg|fg/)?.[0] ?? '')
+                    const settingIcon = icons[setting.icon].create(/bg|fg/.exec(key)?.[0] ?? '')
                     settingIcon.style.cssText = 'position: relative ;' + (
                         /proxy/i.test(key) ? 'top: 3px ; left: -0.5px ; margin-right: 9px'
                       : /streaming/i.test(key) ? 'top: 3px ; left: 0.5px ; margin-right: 9px'

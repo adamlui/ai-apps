@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.19.7
+// @version                  2024.7.19.8
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1000,7 +1000,7 @@
                     settingItem.append(settingLabel) ; (settingsLists[isPortrait ? 0 : +(idx >= settingItemCap)]).append(settingItem)
 
                     // Create/prepend icons
-                    const settingIcon = icons[setting.icon].create(key.match(/bg|fg/)?.[0] ?? '')
+                    const settingIcon = icons[setting.icon].create(/bg|fg/.exec(key)?.[0] ?? '')
                     settingIcon.style.cssText = 'position: relative ;' + (
                         /proxy/i.test(key) ? 'top: 3px ; left: -0.5px ; margin-right: 9px'
                       : /streaming/i.test(key) ? 'top: 3px ; left: 0.5px ; margin-right: 9px'
@@ -1066,7 +1066,7 @@
                             else if (/autoget/i.test(key)) toggle.autoGet()
                             else if (key.includes('rq')) toggle.relatedQueries()
                             else if (manualGetMatch) toggle.manualGet(manualGetMatch[0])
-                            else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
+                            else if (key.includes('Sidebar')) toggle.sidebar(/(.*?)Sidebar$/.exec(key)[1])
                             else if (key.includes('anchor')) toggle.anchorMode()
                             else if (key.includes('bgAnimation')) toggle.animations('bg')
                             else if (key.includes('fgAnimation')) toggle.animations('fg')
