@@ -90,7 +90,15 @@ If you are installing **Tampermonkey** (v5.2.0+) for the first time from the [Ch
 
 To do so, visit [chrome://extensions](chrome://extensions) > activate **Developer Mode** toggle > restart browser
 
+<br>
+
+<div align="center">
+
 <img width=635 src="https://media.googlegpt.io/images/screenshots/desktop/chrome/developer-mode-toggle.png?latest">
+
+</div>
+
+<br>
 
 💡 _**Note:** If you installed Tampermonkey from the add-on store for [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/), then Developer Mode is not required._
 

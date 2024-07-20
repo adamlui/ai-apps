@@ -39,7 +39,7 @@
 <br>
 <br>
 
-<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png?latest">
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
 
 ## 🚀 Installation
 
@@ -55,21 +55,29 @@
 
 ##### _*Violentmonkey, OrangeMonkey & OrangeMonkey Pro do not support Streaming Mode, so are not recommended_
 
-<br><a href="https://github.com/sponsors/KudoAI"><img src="https://amazongpt.kudoai.com/assets/images/banners/sponsor/$10/banner1660x260.png?latest"></a>
+<br><a href="https://github.com/sponsors/KudoAI"><img src="https://amazongpt.kudoai.com/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
-<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png?latest">
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
 
-## <img width=25px src="https://amazongpt.kudoai.com/assets/images/icons/platforms/tampermonkey/icon28.png?latest"> Tampermonkey Users
+## <img width=25px src="https://amazongpt.kudoai.com/assets/images/icons/platforms/tampermonkey/icon28.png"> Tampermonkey Users
 
 If you are installing **Tampermonkey** (v5.2.0+) for the first time from the [Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), you must enable **Developer Mode** for userscripts to function.
 
 To do so, visit [chrome://extensions](chrome://extensions) > activate **Developer Mode** toggle > restart browser
 
-<img width=635 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/chrome/developer-mode-toggle.png?latest">
+<br>
+
+<div align="center">
+
+<img width=635 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/chrome/developer-mode-toggle.png">
+
+</div>
+
+<br>
 
 💡 _**Note:** If you installed Tampermonkey from the add-on store for [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/), then Developer Mode is not required._
 
-<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png?latest">
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT apps**</a> / 
 <a href="#-bring-the-magic-of-ai-to-amazon-shopping-">Back to top ↑</a>
