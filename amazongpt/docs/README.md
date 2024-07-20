@@ -28,4 +28,10 @@
 
 <img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
 
+<br>
+<br>
+<br>
+
+<img src="https://amazongpt.kudoai.com/assets/images/screenshots/mobile/hey-there-reply-darkmode.png">
+
 </div>
