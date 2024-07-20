@@ -79,5 +79,43 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 <img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
 
+## 🌐 Compatibility 
+
+**AmazonGPT** is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Tampermonkey](https://www.tampermonkey.net), [Violentmonkey](https://violentmonkey.github.io)\*, [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf)* or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland)*.
+
+### 🖥️ Desktop
+
+- [Google Chrome](https://www.chrome.com)
+- [Mozilla Firefox](https://www.firefox.com)
+- [Microsoft Edge](https://www.microsoft.com/edge)
+- [Safari](https://www.apple.com/safari/)
+- [Opera](https://www.opera.com)
+- [Brave](https://brave.com)
+- [Vivaldi](https://vivaldi.com)
+- [Waterfox](https://www.waterfox.net)
+- [LibreWolf](https://librewolf.net)
+- [Ghost](https://ghostbrowser.com)
+- [QQ](https://browser.qq.com)
+- [Whale](https://whale.naver.com)
+
+<br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://amazongpt.kudoai.com/assets/images/logos/platforms/android/head-plus-word/white/logo150x24.png"><img alt="Android" width=111 src="https://amazongpt.kudoai.com/assets/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png"></picture><br>
+
+- [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/) (using [Tampermonkey](https://addons.mozilla.org/firefox/addon/tampermonkey/) or [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/)* for Firefox)
+- [Kiwi](https://kiwibrowser.com) (using [ScriptCat](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Violentmonkey](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag)* or [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf)* for Chrome)
+- [Waterfox](https://play.google.com/store/apps/details?id=net.waterfox.android.release) (using [Tampermonkey](https://addons.mozilla.org/firefox/addon/tampermonkey/) or [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/)* for Firefox)
+- [Mask Browser](https://play.google.com/store/apps/details?id=net.maskbrowser.browser) (using [Tampermonkey](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) for Edge ; ScriptCat for [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh) or [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf) ; or Violentmonkey* for [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao) or [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag))
+
+<br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://amazongpt.kudoai.com/assets/images/logos/platforms/ios/apple-plus-word/white/logo150x71.png"><img alt="iOS" width=55 src="https://amazongpt.kudoai.com/assets/images/logos/platforms/ios/apple-plus-word/black/logo150x71.png"></picture>
+
+- [Orion](https://apps.apple.com/app/orion-browser-by-kagi/id1484498200)
+
+##### _*Violentmonkey, OrangeMonkey & OrangeMonkey Pro do not support Streaming Mode, so are not recommended_
+
+<br>
+
+If you've tested it to work in a browser not listed, create a [pull request](https://github.googlegpt.io/pulls) to become a contributor!
+
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
+
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT apps**</a> / 
 <a href="#-bring-the-magic-of-ai-to-amazon-shopping-">Back to top ↑</a>
