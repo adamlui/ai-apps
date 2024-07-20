@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.19.5
+// @version                  2024.7.19.6
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1249,7 +1249,7 @@
                 pinMenu.onmouseout = pinMenu.remove // instead of toggle so re-mouseover doesn't show ghost
             },
 
-            toggle() { // visibility
+            toggle(event) { // visibility
                 const pinMenu = document.getElementById('pin-menu') || menus.pin.createAppend()
                 if (!menus.pin.topPos)
                      menus.pin.topPos = ( event.clientY || event.touches?.[0]?.clientY ) < 195 ? 51 : -79

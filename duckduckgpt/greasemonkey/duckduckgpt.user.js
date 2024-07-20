@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.19.6
+// @version                2024.7.19.7
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1069,7 +1069,7 @@
                 pinMenu.onmouseout = pinMenu.remove // instead of toggle so re-mouseover doesn't show ghost
             },
 
-            toggle() { // visibility
+            toggle(event) { // visibility
                 const pinMenu = document.getElementById('pin-menu') || menus.pin.createAppend()
                 if (!menus.pin.topPos)
                      menus.pin.topPos = ( event.clientY || event.touches?.[0]?.clientY ) < 195 ? 53 : -85
