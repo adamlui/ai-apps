@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.19.7
+// @version                2024.7.19.8
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -817,7 +817,7 @@
                     const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
                     settingItem.title = setting.helptip || '' // for hover assistance
                     const settingLabel = document.createElement('label') ; settingLabel.textContent = setting.label
-                    settingItem.append(settingLabel) ; (settingsLists[isPortrait ? 0 : +!(idx < settingItemCap)]).append(settingItem)
+                    settingItem.append(settingLabel) ; (settingsLists[isPortrait ? 0 : +(idx >= settingItemCap)]).append(settingItem)
 
                     // Create/prepend icons
                     const settingIcon = icons[setting.icon].create(key.match(/bg|fg/)?.[0] ?? '')
