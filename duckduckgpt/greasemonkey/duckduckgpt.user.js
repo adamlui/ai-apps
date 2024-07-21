@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.20.2
+// @version                2024.7.21
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -3013,7 +3013,7 @@
           hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
                                                                         : '[class*="sidebar"]')
     appElems.forEach(elem => hostContainer.prepend(elem))
-    appElems.toReversed().forEach((elem, idx) => // fade in staggered
+    appElems.reverse().forEach((elem, idx) => // fade in staggered
         setTimeout(() => elem.classList.add('active'), idx * 550 - 200))
 
     // REPLACE hostContainer max-width w/ min-width for better UI
