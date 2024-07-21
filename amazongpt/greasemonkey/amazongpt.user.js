@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.20.7
+// @version                2024.7.20.8
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -15,6 +15,7 @@
 // @compatible             vivaldi except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible             waterfox
 // @compatible             librewolf
+// @compatible             ghost
 // @match                  *://*.amazon.com/*
 // @match                  *://*.amazon.ae/*
 // @match                  *://*.amazon.be/*
@@ -85,8 +86,7 @@
 (async () => {
 
     // Init BROWSER FLAGS
-    const isChromium = chatgpt.browser.isChromium(),
-          isChrome = chatgpt.browser.isChrome(),
+    const isChrome = chatgpt.browser.isChrome(),
           isFirefox = chatgpt.browser.isFirefox(),
           isEdge = chatgpt.browser.isEdge(),
           isBrave = chatgpt.browser.isBrave(),
@@ -1332,13 +1332,13 @@
               + '#amzgpt-settings ul { list-style: none ; padding: 0 ; margin: 0 0 2px -3px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#amzgpt-settings li {'
-                  + `opacity: ${ scheme == 'dark' ? 0.65 : 0.45 } ; display: ${ isChromium ? 'ruby-text' : 'block ruby' } ;`
+                  + `opacity: ${ scheme == 'dark' ? 0.65 : 0.45 } ;`
                   + 'list-style: none ; height: 37px ; font-size: 15.5px ; transition: transform 0.1s ease ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                   + `padding: 6px 10px 4px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
               + '#amzgpt-settings li.active { opacity: 1 }'
-              + '#amzgpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
+              + '#amzgpt-settings li label { display: contents ; padding-right: 20px }' // right-pad labels so toggles don't hug
               + '#amzgpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
               + '#amzgpt-settings li, #amzgpt-settings li label { cursor: pointer }' // add finger on hover
               + '#amzgpt-settings li:hover { opacity: 1 ;'
