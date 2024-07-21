@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.21
+// @version                2024.7.21.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -740,8 +740,9 @@
                                   textGap = '&emsp;&emsp;&emsp;&emsp;&emsp;'
                             modals.settings.aboutContent = {}
                             modals.settings.aboutContent.short = `v${ GM_info.script.version}`
-                            modals.settings.aboutContent.long = `Version: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
-                                + `${ msgs.about_poweredBy || 'Powered by' } <span class="about-em">chatgpt.js</span>${textGap}`
+                            modals.settings.aboutContent.long = (
+                                  `${ msgs.about_version || 'Version' }: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
+                                + `${ msgs.about_poweredBy || 'Powered by' } <span class="about-em">chatgpt.js</span>${textGap}` )
                             for (let i = 0; i < 7; i++) modals.settings.aboutContent.long += modals.settings.aboutContent.long // make it long af
                             innerDiv.innerHTML = modals.settings.aboutContent[config.fgAnimationsDisabled ? 'short' : 'long']
                             innerDiv.style.float = config.fgAnimationsDisabled ? 'right' : ''

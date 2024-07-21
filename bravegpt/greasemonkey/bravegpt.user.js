@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.21
+// @version               2024.7.21.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -909,8 +909,9 @@ setTimeout(async () => {
                                   textGap = '&emsp;&emsp;&emsp;&emsp;&emsp;'
                             modals.settings.aboutContent = {}
                             modals.settings.aboutContent.short = `v${ GM_info.script.version}`
-                            modals.settings.aboutContent.long = `Version: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
-                                + `${ msgs.about_poweredBy || 'Powered by' } <span class="about-em">chatgpt.js</span>${textGap}`
+                            modals.settings.aboutContent.long = (
+                                  `${ msgs.about_version || 'Version' }: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
+                                + `${ msgs.about_poweredBy || 'Powered by' } <span class="about-em">chatgpt.js</span>${textGap}` )
                             for (let i = 0; i < 7; i++) modals.settings.aboutContent.long += modals.settings.aboutContent.long // make it long af
                             innerDiv.innerHTML = modals.settings.aboutContent[config.fgAnimationsDisabled ? 'short' : 'long']
                             innerDiv.style.float = config.fgAnimationsDisabled ? 'right' : ''
