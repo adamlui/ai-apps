@@ -113,7 +113,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 <br>
 
-If you've tested it to work in a browser not listed, create a [pull request](https://github.googlegpt.io/pulls) to become a contributor!
+If you've tested it to work in a browser not listed, create a [pull request](https://github.com/KudoAI/amazongpt/pulls) to become a contributor!
 
 <img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
 
