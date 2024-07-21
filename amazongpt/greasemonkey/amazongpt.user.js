@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.21.3
+// @version                2024.7.21.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -626,7 +626,7 @@
                 // Init logo
                 const settingsIcon = icons.amzgpt.create()
                 settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -39px ;'
-                                           + `margin: 0 ${ isPortrait ? 43 : 45.3 }% 7px`
+                                           + `margin: 0 ${ isPortrait ? 40.5 : 45.3 }% 7px`
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'amzgpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
@@ -1325,7 +1325,8 @@
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
-              + '#amzgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 24px 8px 0 }'
+              + '#amzgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ;'
+                  + `margin: 0 ${ isMobile ? 6 : 24 }px 8px 0 }`
               + `#amzgpt-settings-title h4 { font-size: ${ isPortrait ? 26 : 31 }px ; font-weight: bold ; margin-top: -39px }`
               + '#amzgpt-settings-close-btn {'
                   + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
@@ -1354,7 +1355,7 @@
               + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
               + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
               + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
-              + '#about-menu-entry > span { width: 92px ; height: 20px ; overflow: hidden ;' // outer About status span
+              + `#about-menu-entry > span { width: ${ isMobile ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
                   + `${ config.fgAnimationsDisabled ? '' : (
                             'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
                   + '-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' )}}`
