@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.20.1
+// @version                2024.7.20.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2811,7 +2811,7 @@
 
                 // Auto-scroll if active
                 if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
-                    if (config.stickySidebar) answerPre.scrollTop = answerPre.scrollHeight
+                    if (config.stickySidebar || config.anchored) answerPre.scrollTop = answerPre.scrollHeight
                     else window.scrollBy({ top: appDiv.querySelector('#app-chatbar').getBoundingClientRect().bottom - window.innerHeight +12 })
                 }
             }
