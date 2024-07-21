@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.20.3
+// @version                2024.7.20.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -11,6 +11,7 @@
 // @compatible             firefox
 // @compatible             edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible             opera
+// @compatible             brave except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @match                  *://*.amazon.com/*
 // @match                  *://*.amazon.ae/*
 // @match                  *://*.amazon.be/*
@@ -2266,7 +2267,7 @@
 
     registerMenu() // create browser toolbar menu
 
-    if (document.querySelector('form[action*="Captcha"]')) return // exit if on Captcha page
+    if (document.querySelector('form[action*="Captcha"], a > img[src*="/error"]')) return // exit if on Captcha/404 page
 
     // Init ALERTS
     const appAlerts = {
