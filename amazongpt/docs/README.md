@@ -104,10 +104,6 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 - [Waterfox](https://play.google.com/store/apps/details?id=net.waterfox.android.release) (using [Tampermonkey](https://addons.mozilla.org/firefox/addon/tampermonkey/) or [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/)* for Firefox)
 - [Mask Browser](https://play.google.com/store/apps/details?id=net.maskbrowser.browser) (using [Tampermonkey](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) for Edge ; ScriptCat for [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh) or [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf) ; or Violentmonkey* for [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao) or [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag))
 
-<br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://amazongpt.kudoai.com/assets/images/logos/platforms/ios/apple-plus-word/white/logo150x71.png"><img alt="iOS" width=55 src="https://amazongpt.kudoai.com/assets/images/logos/platforms/ios/apple-plus-word/black/logo150x71.png"></picture>
-
-- [Orion](https://apps.apple.com/app/orion-browser-by-kagi/id1484498200)
-
 ##### _*Violentmonkey, OrangeMonkey & OrangeMonkey Pro do not support Streaming Mode, so are not recommended_
 
 <br>
