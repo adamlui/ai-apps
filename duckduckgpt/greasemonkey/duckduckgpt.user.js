@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.20
+// @version                2024.7.20.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -159,7 +159,7 @@
 // @compatible             edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible             opera after allowing userscript manager access to search page results in opera://extensions
 // @compatible             brave except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
-// @compatible             vivaldi
+// @compatible             vivaldi except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible             waterfox
 // @compatible             librewolf
 // @compatible             ghost

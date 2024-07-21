@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.19.8
+// @version               2024.7.20
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -159,7 +159,7 @@
 // @compatible            edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible            opera after allowing userscript manager access to search page results in opera://extensions
 // @compatible            brave except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
-// @compatible            vivaldi
+// @compatible            vivaldi except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible            waterfox
 // @compatible            librewolf
 // @compatible            ghost

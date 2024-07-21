@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.19.8
+// @version                  2024.7.20
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -161,7 +161,7 @@
 // @compatible               safari
 // @compatible               opera after allowing userscript manager access to search page results in opera://extensions
 // @compatible               brave except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
-// @compatible               vivaldi
+// @compatible               vivaldi except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible               waterfox
 // @compatible               librewolf
 // @compatible               ghost
