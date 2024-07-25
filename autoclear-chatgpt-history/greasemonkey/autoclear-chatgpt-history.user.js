@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.24
+// @version             2024.7.25
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -545,11 +545,13 @@
         const notifs = document.querySelectorAll('.chatgpt-notif'),
               notif = notifs[notifs.length -1]
 
-        // Append colored state word
+        // Append styled state word
         if (foundState) {
-            const coloredState = document.createElement('span')
-            coloredState.style.color = foundState == menuState.word[0] ? 'rgb(239, 72, 72)' : '#5cef48'
-            coloredState.append(foundState) ; notif.append(coloredState)
+            const styledState = document.createElement('span')
+            styledState.style.cssText = `color: ${
+                foundState == menuState.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                                                : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
+            styledState.append(foundState) ; notif.append(styledState)
         }
     }
 

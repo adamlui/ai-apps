@@ -51,11 +51,13 @@
         const notifs = document.querySelectorAll('.chatgpt-notif'),
               notif = notifs[notifs.length -1]
 
-        // Append colored state word
+        // Append styled state word
         if (foundState) {
-            const coloredState = document.createElement('span')
-            coloredState.style.color = foundState == 'OFF' ? 'rgb(239, 72, 72)' : '#5cef48'
-            coloredState.append(foundState) ; notif.append(coloredState)
+            const styledState = document.createElement('span')
+            styledState.style.cssText = `color: ${
+                foundState == 'OFF' ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                                    : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
+            styledState.append(foundState) ; notif.append(styledState)
         }
     }
 
