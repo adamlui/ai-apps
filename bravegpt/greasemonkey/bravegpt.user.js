@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.25
+// @version               2024.7.25.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2291,7 +2291,7 @@ setTimeout(async () => {
         let nn = Math.floor(new Date().getTime() / 1e3)
         const fD = e => {
             let t = CryptoJS.enc.Utf8.parse(e),
-                o = CryptoJS.AES.encrypt(t, 'fjfsd我w4真3dd服iuhf了wf', {
+                o = CryptoJS.AES.encrypt(t, 'brhbtehbwrb3274grhvHR诶ur3i', {
                     mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7
             })
             return o.toString()
