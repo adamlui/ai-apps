@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.25.3
+// @version                  2024.7.25.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2548,6 +2548,7 @@
             const ip = ipv4.generate({ verbose: false })
             let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ip, 'X-Real-IP': ip }
             if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
+            else if (api == 'MixerBox') { headers.Accept = '*/*' ; headers['Alt-Used'] = headers.Host = 'chatai.mixerbox.com' }
             headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // preserve expected traffic src
             return headers
         },
