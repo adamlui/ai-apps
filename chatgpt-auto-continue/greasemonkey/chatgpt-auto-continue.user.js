@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.24
+// @version             2024.7.24.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -313,7 +313,6 @@
               + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
           + '.chatgpt-modal button:hover { transform: scale(1.055) }'
           + '.modal-buttons { margin-left: -13px !important }'
-          + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
           + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
               + 'transform: none !important }' // disable distracting click zoom effect
         )
