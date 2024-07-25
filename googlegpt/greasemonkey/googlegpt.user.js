@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.25.1
+// @version                  2024.7.25.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -369,7 +369,6 @@
 // @connect                  mixerbox.com
 // @connect                  openai.com
 // @connect                  sogou.com
-// @connect                  webraft.in
 // @require                  https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.0.1/dist/chatgpt.min.js#sha256-jCJMPu044aK37jtC2wMMKnNgHbXJ5Pm9ZdIqDERob7k=
 // @require                  https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha256-dppVXeVTurw1ozOPNE3XqhYmDJPOosfbKQcHyQSE58w=
 // @require                  https://cdn.jsdelivr.net/npm/generate-ip@2.4.2/dist/generate-ip.min.js#sha256-PRvQIDVWK/a+aAqEFVQv7RePbRe/tX6tWQVM80rAe2M=
@@ -463,10 +462,7 @@
             method: 'POST', streamable: true, accumulatesText: false },
         'OpenAI': {
             endpoint: 'https://api.openai.com/v1/chat/completions', expectedOrigin: 'https://chatgpt.com',
-            method: 'POST', streamable: true },
-        'Webraft': {
-            endpoint: 'https://api.webraft.in/freeapi/chat/completions', key: 'wr-gqPB118cE91zRSM3ZJGMle',
-            method: 'POST', streamable: false, models: ['gpt-4'] }
+            method: 'POST', streamable: true }
     }
     const apiIDs = { gptForLove: { parentID: '' }, aiChatOS: { userID: '#/chat/' + Date.now() }}
 
@@ -2551,7 +2547,6 @@
             const ip = ipv4.generate({ verbose: false })
             let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ip, 'X-Real-IP': ip }
             if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
-            else if (api == 'Webraft') headers.Authorization = 'Bearer ' + apis.Webraft.key
             headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // preserve expected traffic src
             return headers
         },
@@ -2574,11 +2569,6 @@
                 if (apiIDs.gptForLove.parentID) payload.options = { parentMessageId: apiIDs.gptForLove.parentID }
             } else if (api == 'MixerBox AI')
                 payload = { prompt: msgs, model: 'gpt-3.5-turbo' }
-            else if (api == 'Webraft')
-                payload = {
-                    model: apis.Webraft.models[Math.floor(chatgpt.randomFloat() * apis.Webraft.models.length)],
-                    messages: msgs, temperature: 0.7
-                }
             return JSON.stringify(payload)
         }
     }
@@ -2776,18 +2766,6 @@
                             respText = extractedData.join('')
                             caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                             if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
-                        } catch (err) { // try diff API
-                            consoleInfo(logPrefix + 'Response text: ' + resp.responseText)
-                            consoleErr(logPrefix + appAlerts.parseFailed, err)
-                            if (caller.status != 'done') api.tryNew(caller)
-                        }
-                    } else if (caller.status != 'done') api.tryNew(caller)
-                } else if (caller.api == 'Webraft') {
-                    if (resp.responseText) {
-                        try { // to show response or return related queries
-                            respText = JSON.parse(resp.response).choices[0].message.content
-                            caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                            if (caller == get.reply) show.reply(respText) ; else resolve(arrayify(respText))
                         } catch (err) { // try diff API
                             consoleInfo(logPrefix + 'Response text: ' + resp.responseText)
                             consoleErr(logPrefix + appAlerts.parseFailed, err)
