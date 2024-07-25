@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.19.5
+// @version             2024.7.24
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -815,6 +815,7 @@
           + '.chatgpt-modal button {'
               + 'font-size: 0.77rem ; text-transform: uppercase ;'
               + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+          + '.chatgpt-modal button:hover { transform: scale(1.055) }'
           + '.modal-buttons { margin-left: -13px !important }'
         )
         document.head.append(chatgptAlertStyle)
