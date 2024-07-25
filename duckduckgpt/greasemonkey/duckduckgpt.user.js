@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.21.3
+// @version                2024.7.24
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1545,7 +1545,7 @@
                   + 'transition: transform 0.15s ease !important }'
               + '.standby-btn:hover { border-radius: 4px ;'
                   + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
-                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.045)' }}`
+                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
               + '#ddgpt > pre {'
                   + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
                   + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
@@ -1641,7 +1641,7 @@
                   + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                               + 'transform 0.55s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
               + ( !config.fgAnimationsDisabled ? ( '[class$="-modal"] button { transition: transform 0.15s ease }' 
-                                                 + '[class$="-modal"] button:hover { transform: scale(1.085) }' ) : '' )
+                                                 + '[class$="-modal"] button:hover { transform: scale(1.055) }' ) : '' )
               + '.ddgpt-menu { position: absolute ; z-index: 2250 ;'
                   + 'padding: 3.5px 5px !important ; font-family: "Source Sans Pro", sans-serif ; font-size: 12px }'
               + '.ddgpt-menu ul { margin: 0 ; padding: 0 ; list-style: none }'

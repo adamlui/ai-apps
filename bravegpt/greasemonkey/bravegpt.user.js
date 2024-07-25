@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.21.2
+// @version               2024.7.24
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1547,7 +1547,7 @@ setTimeout(async () => {
                   + 'transition: transform 0.15s ease }'
               + '.standby-btn:hover { border-radius: 4px ;'
                   + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
-                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.045)' }}`
+                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
               + '#bravegpt > pre {'
                   + `font-size: ${config.fontSize}px ; font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ;`
                   + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
@@ -1645,7 +1645,7 @@ setTimeout(async () => {
                   + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                               + 'transform 0.55s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
               + ( !config.fgAnimationsDisabled ? ( '[class$="-modal"] button { transition: transform 0.15s ease }' 
-                                                 + '[class$="-modal"] button:hover { transform: scale(1.085) }' ) : '' )
+                                                 + '[class$="-modal"] button:hover { transform: scale(1.055) }' ) : '' )
               + '.bravegpt-menu { position: absolute ; z-index: 2250 ;'
                   + 'padding: 3.5px 5px 4.5px !important ; font-family: "Source Sans Pro", sans-serif ; font-size: 12px }'
               + '.bravegpt-menu ul { margin: 0 ; padding: 0 ; list-style: none }'
