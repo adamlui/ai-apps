@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.25.2
+// @version                2024.7.25.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -623,8 +623,9 @@
                                                                            && !(isCentered && settingsProps[key].centered == false))
                 // Init logo
                 const settingsIcon = icons.amzgpt.create()
-                settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -39px ;'
-                                           + `margin: 0 ${ isPortrait ? 40.5 : 45.3 }% 7px`
+                settingsIcon.style.cssText = 'width: 65px ; position: relative ; top: -39px ;'
+                                           + `margin: 0 ${ isPortrait ? '39% 0' : '45% 9px' } ;`
+                                           + 'filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))'
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'amzgpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'

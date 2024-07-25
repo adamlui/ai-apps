@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.25.2
+// @version                  2024.7.25.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -965,8 +965,9 @@
 
                 // Init logo
                 const settingsIcon = icons.googleGPT.create()
-                settingsIcon.style.cssText = 'width: 52px ; position: relative ; top: -45px ;'
-                                           + `margin: 9px ${ isPortrait ? '41.13% -46px' : '46.23% -41px' }`
+                settingsIcon.style.cssText = `width: ${ isPortrait ? 64 : 65 }px ; position: relative ; top: -49px ;`
+                                           + `margin: 13px ${ isPortrait ? '40.6% -46px' : '45.7% -41px' } ;`
+                                           + 'filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))'
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'

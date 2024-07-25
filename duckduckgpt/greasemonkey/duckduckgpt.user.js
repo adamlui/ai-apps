@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.25.2
+// @version                2024.7.25.3
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -784,8 +784,9 @@
                                                                            && !(isCentered && settingsProps[key].centered == false))
                 // Init logo
                 const settingsIcon = icons.ddgpt.create()
-                settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -33px ;'
-                                           + `margin: 0 ${ isPortrait ? 43 : 46.3 }% -12px`
+                settingsIcon.style.cssText = 'width: 65px ; position: relative ; top: -41px ;'
+                                           + `margin: 0 ${ isPortrait ? 40.6 : 45.5 }% -12px ;`
+                                           + 'filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))'
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'ddgpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'

@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.25.2
+// @version               2024.7.25.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -778,8 +778,9 @@ setTimeout(async () => {
 
                 // Init logo
                 const settingsIcon = icons.braveGPT.create()
-                settingsIcon.style.cssText = `width: ${ isPortrait ? 59 : 62 }px ; position: relative ; top: -33px ;`
-                                           + `margin: 0 ${ isPortrait ? 41.2 : 45 }% -8px`
+                settingsIcon.style.cssText = `width: ${ isPortrait ? 63 : 67 }px ; position: relative ; top: -39px ;`
+                                           + `margin: 0 ${ isPortrait ? 40.2 : 44.6 }% -8px ;`
+                                           + 'filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))'
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'bravegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
