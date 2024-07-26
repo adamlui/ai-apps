@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.26
+// @version                2024.7.26.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1342,7 +1342,8 @@
                   + `padding: 6px 10px 4px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
               + '#amzgpt-settings li.active { opacity: 1 }'
-              + '#amzgpt-settings li label { display: contents ; padding-right: 20px }' // right-pad labels so toggles don't hug
+              + '#amzgpt-settings li label { display: contents ; padding-right: 20px ;' // right-pad labels so toggles don't hug
+                  + 'font-weight: normal }' // override Amazon boldening
               + '#amzgpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
               + '#amzgpt-settings li, #amzgpt-settings li label { cursor: pointer }' // add finger on hover
               + '#amzgpt-settings li:hover { opacity: 1 ;'
