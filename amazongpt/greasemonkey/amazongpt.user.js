@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.26.1
+// @version                2024.7.26.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1761,10 +1761,15 @@
 
         createHeaders: function(api) {
             const ip = ipv4.generate({ verbose: false })
-            let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ip, 'X-Real-IP': ip }
+            const headers = {
+                'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate, br, zstd',
+                'Connection': 'keep-alive', 'Content-Type': 'application/json', 'DNT': '1',
+                'Host': new URL(apis[api].endpoint).hostname, 'Origin': apis[api].expectedOrigin,
+                'X-Forwarded-For': ip, 'X-Real-IP': ip
+            }
+            headers.Referer = headers.Origin + '/'
             if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
-            else if (api == 'MixerBox') { headers.Accept = '*/*' ; headers['Alt-Used'] = headers.Host = 'chatai.mixerbox.com' }
-            headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // preserve expected traffic src
+            else if (api == 'MixerBox') { headers.Accept = '*/*' ; headers['Alt-Used'] = headers.Host }
             return headers
         },
 

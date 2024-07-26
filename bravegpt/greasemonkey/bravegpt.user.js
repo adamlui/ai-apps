@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.26
+// @version               2024.7.26.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2335,10 +2335,15 @@ setTimeout(async () => {
 
         createHeaders: function(api) {
             const ip = ipv4.generate({ verbose: false })
-            let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ip, 'X-Real-IP': ip }
+            const headers = {
+                'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate, br, zstd',
+                'Connection': 'keep-alive', 'Content-Type': 'application/json', 'DNT': '1',
+                'Host': new URL(apis[api].endpoint).hostname, 'Origin': apis[api].expectedOrigin,
+                'X-Forwarded-For': ip, 'X-Real-IP': ip
+            }
+            headers.Referer = headers.Origin + '/'
             if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
-            else if (api == 'MixerBox') { headers.Accept = '*/*' ; headers['Alt-Used'] = headers.Host = 'chatai.mixerbox.com' }
-            headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // preserve expected traffic src
+            else if (api == 'MixerBox') { headers.Accept = '*/*' ; headers['Alt-Used'] = headers.Host }
             return headers
         },
 
