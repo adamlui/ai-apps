@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.25.4
+// @version                2024.7.26
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1876,14 +1876,8 @@
                     if (resp.response) {
                         try { // to show response
                             respText = JSON.parse(resp.response).choices[0].message.content
-                            caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                            show.reply(respText)
-                        } catch (err) { // suggest proxy or try diff API
-                            consoleInfo(logPrefix + 'Response text: ' + resp.response)
-                            consoleErr(logPrefix + appAlerts.parseFailed, err)
-                            if (caller == get.reply) appAlert('openAInotWorking, suggestProxy')
-                            else if (caller.status != 'done') api.tryNew(caller)
-                        }
+                            handleProcessCompletion()
+                        } catch (err) { handleProcessError(err) }
                     } else { // suggest proxy or try diff API
                         if (caller == get.reply) appAlert('openAInotWorking, suggestProxy')
                         else if (caller.status != 'done') api.tryNew(caller)
@@ -1893,21 +1887,16 @@
                         && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags]
                             .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
                             .join('|')).test(resp.responseText)) {
-                                try { // to show response
-                                    const text = resp.responseText, chunkSize = 1024
-                                    let currentIdx = 0
-                                    while (currentIdx < text.length) {
-                                        const chunk = text.substring(currentIdx, currentIdx + chunkSize)
-                                        currentIdx += chunkSize ; respText += chunk
-                                    }
-                                    if (!respText) throw new Error()
-                                    caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                                    show.reply(respText)
-                                } catch (err) { // try diff API
-                                    consoleInfo(logPrefix + 'Response text: ' + resp.responseText)
-                                    consoleErr(logPrefix + appAlerts.parseFailed, err)
-                                    if (caller.status != 'done') api.tryNew(caller)
-                                }
+                        try { // to show response
+                            const text = resp.responseText, chunkSize = 1024
+                            let currentIdx = 0
+                            while (currentIdx < text.length) {
+                                const chunk = text.substring(currentIdx, currentIdx + chunkSize)
+                                currentIdx += chunkSize ; respText += chunk
+                            }
+                            if (!respText) throw new Error()
+                            handleProcessCompletion()
+                        } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'GPTforLove') {
                     if (resp.responseText && !resp.responseText.includes('Fail')) {
@@ -1915,14 +1904,8 @@
                             let chunks = resp.responseText.trim().split('\n'),
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
                             if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
-                            respText = lastObj.text
-                            caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                            show.reply(respText)
-                        } catch (err) { // try diff API
-                            consoleInfo(logPrefix + 'Response text: ' + resp.responseText)
-                            consoleErr(logPrefix + appAlerts.parseFailed, err)
-                            if (caller.status != 'done') api.tryNew(caller)
-                        }
+                            respText = lastObj.text ; handleProcessCompletion()
+                        } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'MixerBox AI') {
                     if (resp.responseText) {
@@ -1930,15 +1913,21 @@
                             const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
                                 .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                                 .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                            respText = extractedData.join('')
-                            caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                            show.reply(respText)
-                        } catch (err) { // try diff API
-                            consoleInfo(logPrefix + 'Response text: ' + resp.responseText)
-                            consoleErr(logPrefix + appAlerts.parseFailed, err)
-                            if (caller.status != 'done') api.tryNew(caller)
-                        }
+                            respText = extractedData.join('') ; handleProcessCompletion()
+                        } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
+                }
+
+                function handleProcessCompletion() {
+                    caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs)
+                    caller.attemptCnt = null ; show.reply(respText)
+                }
+
+                function handleProcessError(err) { // suggest proxy or try diff API
+                    consoleInfo(logPrefix + 'Response text: ' + resp.response)
+                    consoleErr(logPrefix + appAlerts.parseFailed, err)
+                    if (caller.api == 'OpenAI') appAlert('openAInotWorking, suggestProxy')
+                    else if (caller.status != 'done') api.tryNew(caller)
                 }
             })
         },

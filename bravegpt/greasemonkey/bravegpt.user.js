@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.7.25.4
+// @version               2024.7.26
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2500,14 +2500,8 @@ setTimeout(async () => {
                     if (resp.response) {
                         try { // to show response or return related queries
                             respText = JSON.parse(resp.response).choices[0].message.content
-                            caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                            if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
-                        } catch (err) { // suggest proxy or try diff API
-                            consoleInfo(logPrefix + 'Response text: ' + resp.response)
-                            consoleErr(logPrefix + appAlerts.parseFailed, err)
-                            if (caller == get.reply) appAlert('openAInotWorking, suggestProxy')
-                            else if (caller.status != 'done') api.tryNew(caller)
-                        }
+                            handleProcessCompletion()
+                        } catch (err) { handleProcessError(err) }
                     } else { // suggest proxy or try diff API
                         if (caller == get.reply) appAlert('openAInotWorking, suggestProxy')
                         else if (caller.status != 'done') api.tryNew(caller)
@@ -2517,21 +2511,16 @@ setTimeout(async () => {
                         && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags]
                             .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
                             .join('|')).test(resp.responseText)) {
-                                try { // to show response or return related queries
-                                    const text = resp.responseText, chunkSize = 1024
-                                    let currentIdx = 0
-                                    while (currentIdx < text.length) {
-                                        const chunk = text.substring(currentIdx, currentIdx + chunkSize)
-                                        currentIdx += chunkSize ; respText += chunk
-                                    }
-                                    if (!respText) throw new Error()
-                                    caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                                    if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
-                                } catch (err) { // try diff API
-                                    consoleInfo(logPrefix + 'Response text: ' + resp.responseText)
-                                    consoleErr(logPrefix + appAlerts.parseFailed, err)
-                                    if (caller.status != 'done') api.tryNew(caller)
-                                }
+                        try { // to show response or return related queries
+                            const text = resp.responseText, chunkSize = 1024
+                            let currentIdx = 0
+                            while (currentIdx < text.length) {
+                                const chunk = text.substring(currentIdx, currentIdx + chunkSize)
+                                currentIdx += chunkSize ; respText += chunk
+                            }
+                            if (!respText) throw new Error()
+                            handleProcessCompletion()
+                        } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'GPTforLove') {
                     if (resp.responseText && !resp.responseText.includes('Fail')) {
@@ -2539,14 +2528,8 @@ setTimeout(async () => {
                             let chunks = resp.responseText.trim().split('\n'),
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
                             if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
-                            respText = lastObj.text
-                            caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                            if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
-                        } catch (err) { // try diff API
-                            consoleInfo(logPrefix + 'Response text: ' + resp.responseText)
-                            consoleErr(logPrefix + appAlerts.parseFailed, err)
-                            if (caller.status != 'done') api.tryNew(caller)
-                        }
+                            respText = lastObj.text ; handleProcessCompletion()
+                        } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'MixerBox AI') {
                     if (resp.responseText) {
@@ -2554,15 +2537,21 @@ setTimeout(async () => {
                             const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
                                 .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                                 .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                            respText = extractedData.join('')
-                            caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                            if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
-                        } catch (err) { // try diff API
-                            consoleInfo(logPrefix + 'Response text: ' + resp.responseText)
-                            consoleErr(logPrefix + appAlerts.parseFailed, err)
-                            if (caller.status != 'done') api.tryNew(caller)
-                        }
+                            respText = extractedData.join('') ; handleProcessCompletion()
+                        } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
+                }
+
+                function handleProcessCompletion() {
+                    caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                    if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
+                }
+
+                function handleProcessError(err) { // suggest proxy or try diff API
+                    consoleInfo(logPrefix + 'Response text: ' + resp.response)
+                    consoleErr(logPrefix + appAlerts.parseFailed, err)
+                    if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking, suggestProxy')
+                    else if (caller.status != 'done') api.tryNew(caller)
                 }
 
                 function arrayify(strList) { // for get.related() calls
