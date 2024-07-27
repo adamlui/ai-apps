@@ -53,6 +53,12 @@
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-continue/docs/zh-cn#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT 自动刷新 ↻](../../chatgpt-auto-refresh) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
+
+> 保持 ChatGPT 会话新鲜，消除聊天时间限制 + 网络错误 + Cloudflare 检查。
+<br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-refresh/docs/zh-cn#-如何安装) /
+[自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-refresh/docs/zh-cn#readme) /
+
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/white/icon64.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/black/icon64.png"></picture> [ChatGPT 自动谈话 📣](../chatgpt-auto-talk)
 
 > 自动播放 ChatGPT 的回复。
