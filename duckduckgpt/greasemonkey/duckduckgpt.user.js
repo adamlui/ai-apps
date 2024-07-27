@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.26.2
+// @version                createAppend()
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1833,7 +1833,7 @@
         fadeInDelay: 5, // ms
         hWheelDistance: 10, // px
 
-        createAppend: function() {
+        createAppend() {
 
             // Create/append slider elems
             fontSizeSlider.cursorOverlay = document.createElement('div')
@@ -1903,7 +1903,7 @@
             return slider            
         },
 
-        toggle: function(state = '') {
+        toggle(state = '') {
             const slider = document.getElementById('font-size-slider-track') || fontSizeSlider.createAppend()
 
             // Toggle visibility
@@ -2202,7 +2202,7 @@
 
     const api = {
 
-        pick: function(caller) {
+        pick(caller) {
             const logPrefix = `get.${caller.name}() » `
             const untriedAPIs = Object.keys(apis).filter(api =>
                    api != ( caller == get.reply ? 'OpenAI' : '' ) // exclude OpenAI for get.reply() since Proxy Mode
@@ -2217,7 +2217,7 @@
             return chosenAPI
         },
 
-        tryNew: function(caller, reason = 'err') {
+        tryNew(caller, reason = 'err') {
             consoleErr(`Error using ${apis[caller.api].endpoint} due to ${reason}`)
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
                 consoleInfo('Trying another endpoint...')
@@ -2230,12 +2230,12 @@
             }
         },
 
-        clearTimedOut: function(triedAPIs) { // to retry on new queries
+        clearTimedOut(triedAPIs) { // to retry on new queries
             triedAPIs.splice(0, triedAPIs.length, // empty apiArray
                 ...triedAPIs.filter(entry => Object.values(entry)[0] != 'timeout')) // replace w/ err'd APIs
         },
 
-        createHeaders: function(api) {
+        createHeaders(api) {
             const ip = ipv4.generate({ verbose: false })
             const headers = {
                 'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate, br, zstd',
@@ -2249,7 +2249,7 @@
             return headers
         },
 
-        createPayload: function(api, msgs) {
+        createPayload(api, msgs) {
             let payload = {}
             if (api == 'OpenAI')
                 payload = { messages: msgs, model: 'gpt-3.5-turbo', max_tokens: 4000 }

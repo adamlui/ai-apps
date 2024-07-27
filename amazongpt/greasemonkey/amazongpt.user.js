@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.26.2
+// @version                2024.7.27
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1448,7 +1448,7 @@
         fadeInDelay: 5, // ms
         hWheelDistance: 10, // px
 
-        createAppend: function() {
+        createAppend() {
 
             // Create/append slider elems
             fontSizeSlider.cursorOverlay = document.createElement('div')
@@ -1518,7 +1518,7 @@
             return slider
         },
 
-        toggle: function(state = '') {
+        toggle(state = '') {
             const slider = document.getElementById('font-size-slider-track') || fontSizeSlider.createAppend()
 
             // Toggle visibility
@@ -1727,7 +1727,7 @@
 
     const api = {
 
-        pick: function(caller) {
+        pick(caller) {
             const logPrefix = `get.${caller.name}() » `
             const untriedAPIs = Object.keys(apis).filter(api =>
                    api != ( caller == get.reply ? 'OpenAI' : '' ) // exclude OpenAI for get.reply() since Proxy Mode
@@ -1742,7 +1742,7 @@
             return chosenAPI
         },
 
-        tryNew: function(caller, reason = 'err') {
+        tryNew(caller, reason = 'err') {
             consoleErr(`Error using ${apis[caller.api].endpoint} due to ${reason}`)
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
                 consoleInfo('Trying another endpoint...')
@@ -1754,12 +1754,12 @@
             }
         },
 
-        clearTimedOut: function(triedAPIs) { // to retry on new queries
+        clearTimedOut(triedAPIs) { // to retry on new queries
             triedAPIs.splice(0, triedAPIs.length, // empty apiArray
                 ...triedAPIs.filter(entry => Object.values(entry)[0] != 'timeout')) // replace w/ err'd APIs
         },
 
-        createHeaders: function(api) {
+        createHeaders(api) {
             const ip = ipv4.generate({ verbose: false })
             const headers = {
                 'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate, br, zstd',
@@ -1773,7 +1773,7 @@
             return headers
         },
 
-        createPayload: function(api, msgs) {
+        createPayload(api, msgs) {
             let payload = {}
             if (api == 'OpenAI')
                 payload = { messages: msgs, model: 'gpt-3.5-turbo', max_tokens: 4000 }
