@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.28
+// @version                2024.7.28.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1400,8 +1400,8 @@
               : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
 
             // Update position
-            tooltipDiv.style.top = `${ !/send/.test(buttonType) ? -15
-              : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
+            tooltipDiv.style.top = `${ !/send/.test(buttonType) ? -21
+              : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top -36 }px`
             tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
         },
 
