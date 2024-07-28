@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.27
+// @version                2024.7.27.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1367,8 +1367,8 @@
         },
 
         scheme(newScheme) {
-            scheme = newScheme ; logos.amzgpt.update() ; update.appStyle() ; update.stars() ; toggle.btnGlow() ;
-            modals.settings.updateSchemeStatus()
+            scheme = newScheme ; logos.amzgpt.update() ; icons.amzgpt.update()
+            update.appStyle() ; update.stars() ; toggle.btnGlow() ; modals.settings.updateSchemeStatus()
         },
 
         stars() {
