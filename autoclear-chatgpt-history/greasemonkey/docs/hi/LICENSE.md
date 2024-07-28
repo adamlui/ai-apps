@@ -1,8 +1,8 @@
 <div align="right">
     <h6>
         <picture>
-            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/earth/white/icon32.svg?latest">
-            <img height=14 src="https://media.autoclearchatgpt.com/images/icons/earth/black/icon32.svg?latest">
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/earth/white/icon32.svg">
+            <img height=14 src="https://media.autoclearchatgpt.com/images/icons/earth/black/icon32.svg">
         </picture>
         &nbsp;हिंदी |
         <a href="../../LICENSE.md">English</a>
