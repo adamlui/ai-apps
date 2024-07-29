@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.27.1
+// @version                2024.7.29
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2245,7 +2245,7 @@
             }
             headers.Referer = headers.Origin + '/'
             if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
-            else if (api == 'MixerBox') { headers.Accept = '*/*' ; headers['Alt-Used'] = headers.Host }
+            else if (api == 'MixerBox AI') { headers.Accept = '*/*' ; headers['Alt-Used'] = headers.Host }
             return headers
         },
 

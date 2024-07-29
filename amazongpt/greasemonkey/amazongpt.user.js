@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.28.1
+// @version                2024.7.29
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1769,7 +1769,7 @@
             }
             headers.Referer = headers.Origin + '/'
             if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
-            else if (api == 'MixerBox') { headers.Accept = '*/*' ; headers['Alt-Used'] = headers.Host }
+            else if (api == 'MixerBox AI') { headers.Accept = '*/*' ; headers['Alt-Used'] = headers.Host }
             return headers
         },
 
