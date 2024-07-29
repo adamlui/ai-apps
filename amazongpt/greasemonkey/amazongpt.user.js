@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.29.2
+// @version                2024.7.29.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1715,7 +1715,7 @@
         let nn = Math.floor(new Date().getTime() / 1e3)
         const fD = e => {
             let t = CryptoJS.enc.Utf8.parse(e),
-                o = CryptoJS.AES.encrypt(t, 'brhbtehbwrb3274grhvHR诶ur3i', {
+                o = CryptoJS.AES.encrypt(t, decodeURI('woVB%E7%B2%97%E8%AF%B6%E7%9B%91%E7%9D%A3%E4%BA%BAenfje'), {
                     mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7
             })
             return o.toString()
@@ -1762,14 +1762,18 @@
         createHeaders(api) {
             const ip = ipv4.generate({ verbose: false })
             const headers = {
-                'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate, br, zstd',
+                'Accept': /MixerBox|OpenAI/.test(api) ? '*/*' : 'application/json, text/plain, */*',
+                'Accept-Encoding': 'gzip, deflate, br, zstd',
                 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'DNT': '1',
                 'Host': new URL(apis[api].endpoint).hostname, 'Origin': apis[api].expectedOrigin,
-                'X-Forwarded-For': ip, 'X-Real-IP': ip
+                'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': (
+                    api == 'AIchatOS' ? 'cross-site' : api == 'MixerBox AI' ? 'same-origin' : 'same-site' ),
+                'TE': 'trailers', 'X-Forwarded-For': ip, 'X-Real-IP': ip
             }
             headers.Referer = headers.Origin + '/'
+            if (api != 'MixerBox AI') headers.Priority = `u=${ api == 'OpenAI' ? 4 : 0 }`
             if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
-            else if (api == 'MixerBox AI') { headers.Accept = '*/*' ; headers['Alt-Used'] = headers.Host }
+            else if (api == 'MixerBox AI') headers['Alt-Used'] = headers.Host
             return headers
         },
 
