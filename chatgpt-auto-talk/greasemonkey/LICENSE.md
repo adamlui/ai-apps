@@ -1,3 +1,14 @@
+<div align="right">
+    <h6>
+        <picture>
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/earth/white/icon32.svg?latest">
+            <img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/earth/black/icon32.svg?latest">
+        </picture>
+        &nbsp;English |
+        <a href="docs/zh-cn/LICENSE.md">简体中文</a>
+    </h6>
+</div>
+
 # 🏛️ MIT License
 
 **Copyright © 2024 [Adam Lui](https://github.com/adamlui).**
