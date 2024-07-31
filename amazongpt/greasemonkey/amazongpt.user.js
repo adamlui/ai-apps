@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.30
+// @version                2024.7.30.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -130,7 +130,8 @@
     const apis = {
         'AIchatOS': {
             endpoint: 'https://api.binjie.fun/api/generateStream', expectedOrigin: 'https://chat18.aichatos8.com',
-            method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'] },
+            method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
+            userID: '#/chat/' + Date.now() },
         'GPTforLove': {
             endpoint: 'https://api11.gptforlove.com/chat-process', expectedOrigin: 'https://ai27.gptforlove.com',
             method: 'POST', streamable: true, accumulatesText: true },
@@ -1784,7 +1785,7 @@
             else if  (api == 'AIchatOS') {
                 payload = {
                     prompt: msgs[msgs.length - 1].content,
-                    withoutContext: false, userId: apiIDs.aiChatOS.userID, network: true
+                    withoutContext: false, userId: apis.AIchatOS.userID, network: true
                 }
             } else if (api == 'GPTforLove') {
                 payload = {
@@ -1792,7 +1793,7 @@
                     secret: generateGPTforLoveKey(), top_p: 1, temperature: 0.8,
                     systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully.'
                 }
-                if (apiIDs.gptForLove.parentID) payload.options = { parentMessageId: apiIDs.gptForLove.parentID }
+                if (apis.GPTforLove.parentID) payload.options = { parentMessageId: apis.GPTforLove.parentID }
             } else if (api == 'MixerBox AI')
                 payload = { prompt: msgs, model: 'gpt-3.5-turbo' }
             return JSON.stringify(payload)
@@ -1913,7 +1914,7 @@
                         try { // to show response
                             let chunks = resp.responseText.trim().split('\n'),
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
-                            if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
+                            if (lastObj.id) apis.GPTforLove.parentID = lastObj.id
                             respText = lastObj.text ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
@@ -1970,7 +1971,7 @@
                     if (caller.api == 'GPTforLove') { // extract parentID + latest chunk text
                         const jsonLines = accumulatedChunks.split('\n'),
                               nowResult = JSON.parse(jsonLines[jsonLines.length - 1])
-                        if (nowResult.id) apiIDs.gptForLove.parentID = nowResult.id // for contextual replies
+                        if (nowResult.id) apis.GPTforLove.parentID = nowResult.id // for contextual replies
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
                     if (caller.status != 'done') { // app waiting or sending
