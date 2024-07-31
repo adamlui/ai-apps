@@ -11,7 +11,7 @@
     </h6>
 </div>
 
-# <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon512.png"></picture> ChatGPT 自動更新 ↻ &nbsp;<a href="https://twitter.com/intent/tweet?text=ChatGPT%20の絶え間ない中断にうんざりしていませんか？%20このプラグインでセッションを自動更新しましょう！%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
+# <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> ChatGPT 自動更新 ↻ &nbsp;<a href="https://twitter.com/intent/tweet?text=ChatGPT%20の絶え間ない中断にうんざりしていませんか？%20このプラグインでセッションを自動更新しましょう！%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/ユーザー-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.chatgptautorefresh.com/stargazers"><img height=31 alt="[GitHub スター]" src="https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=%E5%87%BA%E6%BC%94%E8%80%85&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
