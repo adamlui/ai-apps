@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.30
+// @version                2024.7.30.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1796,7 +1796,8 @@
                     .filter(btn => getComputedStyle(btn).display != 'none').length
                 kudoAIspan.style.display = visibleBtnCnt <= (
                     config.anchored && config.expanded ? 10
-                 : !config.anchored && config.widerSidebar ? 7 : 4 ) ? '' : 'none'
+                 : !config.anchored && config.widerSidebar ? 7
+                 : isMobile ? 3 : 4 ) ? '' : 'none'
             }
 
             // Update <pre> max-height for various mode toggles
