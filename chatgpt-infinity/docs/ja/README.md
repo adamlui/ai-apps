@@ -1,8 +1,8 @@
 <div align="right">
     <h6>
         <picture>
-            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/earth/white/icon32.svg?latest">
-            <img height=14 src="https://media.chatgptinfinity.com/images/icons/earth/black/icon32.svg?latest">
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/earth/white/icon32.svg">
+            <img height=14 src="https://media.chatgptinfinity.com/images/icons/earth/black/icon32.svg">
         </picture>
         &nbsp;日本語 |
         <a href="../README.md">English</a> |
@@ -33,11 +33,11 @@
 <br>
 
 <a href="https://chrome.chatgptinfinity.com" target="_blank">
-    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png?latest"></a>
+    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://edge.chatgptinfinity.com" target="_blank">
-    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png?latest"></a>
+    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
 <a href="https://greasyfork.chatgptinfinity.com" target="_blank">
-    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png?latest"></a>
+    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>
 
@@ -47,7 +47,7 @@
 
 <div align="center">
 
-<img src="https://media.chatgptinfinity.com/images/screenshots/infinity-mode-on-ss-zoomed-out.png?latest">
+<img src="https://media.chatgptinfinity.com/images/screenshots/infinity-mode-on-ss-zoomed-out.png">
 
 </div>
 
@@ -63,22 +63,22 @@
 
 ## 🚀 インストール方法
 
-### <img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png?latest"><img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png?latest"> ブラウザ拡張機能:
+### <img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"><img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> ブラウザ拡張機能:
 
 1. ChatGPT Infinity 拡張機能をインストールします ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com))
 
 2. 通常通り [chatgpt.com](https://chatgpt.com) を訪れると、サイドバーとツールバーメニューにトグルが表示されます
 
-*プロのヒント：拡張機能のトグルに簡単にアクセスするには、(1) ブラウザのツールバーで <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/chrome-puzzle-piece/gray.png?latest"> をクリックし、(2) 次に拡張機能名の横にある <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/push-pin/blue.png?latest"> をクリックします。*
+*プロのヒント：拡張機能のトグルに簡単にアクセスするには、(1) ブラウザのツールバーで <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/chrome-puzzle-piece/gray.png"> をクリックし、(2) 次に拡張機能名の横にある <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/push-pin/blue.png"> をクリックします。*
 
 <div align="center">
 
-<img width=268 src="https://media.chatgptinfinity.com/images/screenshots/chrome-extension-pin-instructions.png?latest">
-<img width=268 src="https://media.chatgptinfinity.com/images/screenshots/chrome-extension-menu.png?latest">
+<img width=268 src="https://media.chatgptinfinity.com/images/screenshots/chrome-extension-pin-instructions.png">
+<img width=268 src="https://media.chatgptinfinity.com/images/screenshots/chrome-extension-menu.png">
 
 </div>
 
-### <img height=17 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png?latest"><img height=17.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png?latest"> Greasemonkey ユーザースクリプト:
+### <img height=17 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img height=17.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey ユーザースクリプト:
 
 1. Tampermonkey ([Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) または Violentmonkey ([Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)) をインストールします
 
@@ -88,7 +88,7 @@
 
 <div align="center">
 
-<img src="https://media.chatgptinfinity.com/images/screenshots/sidebar-toggle-on-w-cursor.png?latest">
+<img src="https://media.chatgptinfinity.com/images/screenshots/sidebar-toggle-on-w-cursor.png">
 
 <p>
 
@@ -133,7 +133,7 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 - **[QQ](https://browser.qq.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Whale](https://whale.naver.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 
-<br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/white/logo150x24.png?latest"><img alt="Android" width=111 src="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png?latest"></picture><br>
+<br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/white/logo150x24.png"><img alt="Android" width=111 src="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png"></picture><br>
 
 - **[Kiwi](https://kiwibrowser.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)**（[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
@@ -145,11 +145,11 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 <div align="center">
 
 <a href="https://chrome.chatgptinfinity.com">
-    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-chrome-button.png?latest"></a>
+    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptinfinity.com">
-    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-edge-button.png?latest"></a>
+    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-edge-button.png"></a>
 <a href="https://greasyfork.chatgptinfinity.com">
-    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-userscript-button.png?latest"></a>
+    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-userscript-button.png"></a>
 
 <br>
 
@@ -168,7 +168,7 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/5162926?first-contrib=2023.11.27-ui-change-report&h=50&w=50&mask=circle&maxage=7d "@xspeed1989")](https://github.com/xspeed1989)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/37517008?first-contrib=2023.12.05-first-button-bug-report&h=50&w=50&mask=circle&maxage=7d "@Chipsum")](https://github.com/Chipsum)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-truncate-toggle-label-idea&h=50&w=50&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
-<a href="https://greasyfork.org/users/1000404-misspent"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/white/icon50.png?latest"><img width=50 src="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.7.29-share-box-popup-bug-alert" title="misspent"></picture></a>
+<a href="https://greasyfork.org/users/1000404-misspent"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=50 src="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.7.29-share-box-popup-bug-alert" title="misspent"></picture></a>
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22633385?first-contrib=2024.6.22-add-japanese-readme&h=50&w=50&mask=circle&maxage=7d "@eltociear")](https://github.com/eltociear)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
@@ -182,28 +182,28 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 
 ## 📜 関連アプリ
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png?latest"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png?latest"></picture> [ChatGPT 自動更新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg?latest"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自動更新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
 
 > ChatGPT セッションを新鮮に保ち、チャット時間制限 + ネットワークエラー + Cloudflare チェックを排除します。
 <br>[インストール](https://docs.chatgptautorefresh.com/#-installation) / 
 [README](https://docs.chatgptautorefresh.com/#readme) / 
 [議論](https://github.chatgptautorefresh.com/discussions)
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png?latest"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png?latest"></picture> [ChatGPT 自動継続 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg?latest"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自動継続 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 
 > 複数の ChatGPT 応答を自動的に生成し続けます。<br>
 [インストール](https://docs.chatgptautocontinue.com/#-installation) / 
 [README](https://docs.chatgptautocontinue.com/#readme) / 
 [議論](https://github.chatgptautocontinue.com/discussions)
 
-### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png?latest"> [ChatGPT ワイドスクリーンモード](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg?latest" width="auto" height="24" />
+### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT ワイドスクリーンモード](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
 > ChatGPT にワイドスクリーン + フルスクリーンモードを追加して、視聴体験を向上させ、スクロールを減らします。
 <br>[インストール](https://docs.chatgptwidescreen.com/#-installation) / 
 [README](https://docs.chatgptwidescreen.com/#readme) / 
 [議論](https://github.chatgptwidescreen.com/discussions)
 
-<img height=6px width="100%" src="https://media.chatgptinfinity.com/images/separators/gradient-aqua.png?latest">
+<img height=6px width="100%" src="https://media.chatgptinfinity.com/images/separators/gradient-aqua.png">
   
 <a href="https://github.com/adamlui/chatgpt-apps">**その他の ChatGPT アドオン**</a> / 
 <a href="#">トップに戻る ↑</a>
