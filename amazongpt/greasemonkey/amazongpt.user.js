@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.30.1
+// @version                2024.7.30.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -142,7 +142,6 @@
             endpoint: 'https://api.openai.com/v1/chat/completions', expectedOrigin: 'https://chatgpt.com',
             method: 'POST', streamable: true }
     }
-    const apiIDs = { gptForLove: { parentID: '' }, aiChatOS: { userID: '#/chat/' + Date.now() }}
 
     // Init INPUT EVENTS
     const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>

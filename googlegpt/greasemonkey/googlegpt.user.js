@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.30.2
+// @version                  2024.7.30.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -465,7 +465,6 @@
             endpoint: 'https://api.openai.com/v1/chat/completions', expectedOrigin: 'https://chatgpt.com',
             method: 'POST', streamable: true }
     }
-    const apiIDs = { gptForLove: { parentID: '' }, aiChatOS: { userID: '#/chat/' + Date.now() }}
 
     // Init INPUT EVENTS
     const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
