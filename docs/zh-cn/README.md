@@ -63,7 +63,7 @@
 
 > 自动播放 ChatGPT 的回复。
 <br>[安装](https://greasyfork.org/scripts/500940-chatgpt-auto-talk) /
-[自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-talk#readme) /
+[自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-talk/docs/zh-cn#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT 自动刷新 ↻](../../chatgpt-auto-refresh) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
