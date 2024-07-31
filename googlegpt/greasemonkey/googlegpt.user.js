@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.29.3
+// @version                  2024.7.30
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1827,7 +1827,7 @@
               + '[class$="-modal"] {' // native modals + chatgpt.alert()s
                   + 'z-index: 13456 ; position: absolute ;' // to be click-draggable
                   + 'opacity: 0 ;' // to fade-in
-                  + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -70%, black 57%' : '#b6ebff -64%, white 33%' }) ;`
+                  + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -200px, black 200px' : '#b6ebff -296px, white 171px' }) ;`
                   + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                   + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
@@ -1914,7 +1914,7 @@
               + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
               + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
               + '#about-menu-entry > span { width: 92px ; height: 20px ; overflow: hidden ;' // outer About status span
-                  + `${ config.fgAnimationsDisabled ? '' : (
+                  + `${ config.fgAnimationsDisabled ? '' : ( // fade edges
                             'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
                   + '-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' )}}`
               + '#about-menu-entry > span > div { text-wrap: nowrap ;'
