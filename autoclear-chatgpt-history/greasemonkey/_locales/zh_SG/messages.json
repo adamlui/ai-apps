@@ -24,6 +24,6 @@
   "link_viewChanges": { "message": "查看修改" },
   "state_enabled": { "message": "启用" },
   "state_disabled": { "message": "禁用" },
-  "state_on": { "message": "开启" },
-  "state_off": { "message": "关闭" }
+  "state_on": { "message": "开" },
+  "state_off": { "message": "关" }
 }
