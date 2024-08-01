@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.7.25
+// @version             2024.8.1
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -258,7 +258,7 @@
         appName: 'ChatGPT Auto-Talk', appSymbol: '📣', keyPrefix: 'chatGPTautoTalk',
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-talk',
         greasyForkURL: 'https://greasyfork.org/en/scripts/500940-chatgpt-auto-talk',
-        latestAssetCommitHash: '230b068' } // for cached messages.json + navicon
+        latestAssetCommitHash: '9a191c2' } // for cached messages.json + navicon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -296,8 +296,8 @@
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
-        symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
-        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+        symbol: ['❌', '✔️'], separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ',
+        word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
     }
 
     registerMenu() // create browser toolbar menu
