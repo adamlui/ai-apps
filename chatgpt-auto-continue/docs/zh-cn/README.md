@@ -24,7 +24,7 @@
 ### 聊天中断时自动继续生成 ChatGPT 响应。
 
 <a href="https://greasyfork.chatgptautocontinue.com"><img height=45 title="安装这个脚本
-" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-如何安装"><img height=45 title="如何安装" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/help-button.svg"></a>
+" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/zh-cn/install-button.svg?54af935"></a><a href="#-如何安装"><img height=45 title="如何安装" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [讨论](https://github.chatgptautocontinue.com/discussions) /
 [审查](https://greasyfork.chatgptautocontinue.com/feedback#post-discussion) /
