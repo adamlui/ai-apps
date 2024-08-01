@@ -64,6 +64,29 @@ ChatGPT 自动谈话 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 </div>
 </h6>
 
+## 📜 相关脚本
+
+### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://amazongpt.kudoai.com/assets/images/badges/awesome/badge.svg"></a>
+
+> 将 AI 添加到 Amazon 购物。
+<br>[安装](https://amazongpt.kudoai.com/#-installation) /
+[自述文件](https://amazongpt.kudoai.com/#readme) /
+[讨论](https://amazongpt.kudoai.com/discussions)
+
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT无限 ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+
+> 从无所不知的 ChatGPT (任何语言!) 生成无穷无尽的答案。<br>
+[安装](https://docs.chatgptinfinity.com/zh-cn/#-如何安装) / 
+[自述文件](https://docs.chatgptinfinity.com/zh-cn/#readme) / 
+[讨论](https://github.chatgptinfinity.com/discussions)
+
+### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
+
+> 向 ChatGPT 添加宽屏 + 全屏模式以减少滚动。<br>
+[安装](https://docs.chatgptwidescreen.com/zh-cn/#-如何安装) / 
+[自述文件](https://docs.chatgptwidescreen.com/zh-cn/#readme) / 
+[讨论](https://github.chatgptwidescreen.com/discussions)
+
 #
 
 <a href="https://github.com/adamlui/chatgpt-apps">**更多 ChatGPT 应用**</a> / 

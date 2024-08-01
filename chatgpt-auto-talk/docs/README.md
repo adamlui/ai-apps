@@ -54,6 +54,29 @@ ChatGPT Auto-Talk relies on code from the powerful [chatgpt.js](https://github.c
 </div>
 </h6>
 
+## 📜 Related scripts
+
+### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://amazongpt.kudoai.com/assets/images/badges/awesome/badge.svg"></a>
+
+> Add AI to Amazon shopping.
+<br>[Install](https://amazongpt.kudoai.com/#-installation) /
+[Readme](https://amazongpt.kudoai.com/#readme) /
+[Discuss](https://amazongpt.kudoai.com/discussions)
+
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+
+> Generate endless answers from all-knowing ChatGPT (in any language!)
+<br>[Install](https://docs.chatgptinfinity.com/#-installation) / 
+[Readme](https://docs.chatgptinfinity.com/#readme) / 
+[Discuss](https://github.chatgptinfinity.com/discussions)
+
+### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
+
+> Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing.
+<br>[Install](https://docs.chatgptwidescreen.com/#-installation) / 
+[Readme](https://docs.chatgptwidescreen.com/#readme) / 
+[Discuss](https://github.chatgptwidescreen.com/discussions)
+
 #
 
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT apps**</a> / 
