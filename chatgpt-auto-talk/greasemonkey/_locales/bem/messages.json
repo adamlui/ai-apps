@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Moneni Ifyebo Fyabamo Lyonse" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Ukufumishiwapo" },
-  "link_viewChanges": { "message": "Moneni ifyo ifintu fyayaluka" }
+  "link_viewChanges": { "message": "Moneni ifyo ifintu fyayaluka" },
+  "state_enabled": { "message": "Ukusuminisha Ukubomba" },
+  "state_disabled": { "message": "Ukukanya Ukubomba" },
+  "state_on": { "message": "pa" },
+  "state_off": { "message": "ukuleka" }
 }

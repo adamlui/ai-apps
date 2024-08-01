@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Täzeleşmeler üçin barlaň" },
   "buttonLabel_update": { "message": "Täzele" },
   "buttonLabel_dismiss": { "message": "Çykyş" },
-  "link_viewChanges": { "message": "Özgertmeleri Gör" }
+  "link_viewChanges": { "message": "Özgertmeleri Gör" },
+  "state_enabled": { "message": "Jawany Mümkin Et" },
+  "state_disabled": { "message": "Mümkin edigili" },
+  "state_on": { "message": "% jeminden" },
+  "state_off": { "message": "çyk" }
 }

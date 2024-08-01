@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Nach Updates suchen" },
   "buttonLabel_update": { "message": "Aktualisieren" },
   "buttonLabel_dismiss": { "message": "Verwerfen" },
-  "link_viewChanges": { "message": "Änderungen anzeigen" }
+  "link_viewChanges": { "message": "Änderungen anzeigen" },
+  "state_enabled": { "message": "aktiviert" },
+  "state_disabled": { "message": "deaktiviert" },
+  "state_on": { "message": "auf, über" },
+  "state_off": { "message": "unter, von, ab" }
 }

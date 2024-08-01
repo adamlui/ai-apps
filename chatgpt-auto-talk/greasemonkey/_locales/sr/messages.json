@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Провери допуне" },
   "buttonLabel_update": { "message": "Ažuriraj" },
   "buttonLabel_dismiss": { "message": "Odbaci" },
-  "link_viewChanges": { "message": "Pogledajte promene" }
+  "link_viewChanges": { "message": "Pogledajte promene" },
+  "state_enabled": { "message": "Omoguceno" },
+  "state_disabled": { "message": "onemogućen" },
+  "state_on": { "message": "on (uključeno)" },
+  "state_off": { "message": "off (isključeno)" }
 }

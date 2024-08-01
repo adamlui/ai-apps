@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Semak Kemaskini" },
   "buttonLabel_update": { "message": "Kemas kini" },
   "buttonLabel_dismiss": { "message": "Singkir" },
-  "link_viewChanges": { "message": "Lihat perubahan" }
+  "link_viewChanges": { "message": "Lihat perubahan" },
+  "state_enabled": { "message": "dibenarkan" },
+  "state_disabled": { "message": "dilumpuhkan" },
+  "state_on": { "message": "ke atas" },
+  "state_off": { "message": "mati" }
 }

@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Gev gætur eftir dagføringum" },
   "buttonLabel_update": { "message": "Dagfør" },
   "buttonLabel_dismiss": { "message": "Avsakað" },
-  "link_viewChanges": { "message": "Sí broytingar" }
+  "link_viewChanges": { "message": "Sí broytingar" },
+  "state_enabled": { "message": "Virkið" },
+  "state_disabled": { "message": "Óvirkið" },
+  "state_on": { "message": "t" },
+  "state_off": { "message": "av" }
 }

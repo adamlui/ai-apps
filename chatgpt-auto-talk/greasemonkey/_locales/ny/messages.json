@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Fufuzani Zosintha" },
   "buttonLabel_update": { "message": "Sinthani" },
   "buttonLabel_dismiss": { "message": "Kuthamangitsidwa" },
-  "link_viewChanges": { "message": "Onani zosintha" }
+  "link_viewChanges": { "message": "Onani zosintha" },
+  "state_enabled": { "message": "Utheketsa" },
+  "state_disabled": { "message": "Usatheketsa" },
+  "state_on": { "message": "pa" },
+  "state_off": { "message": "m 'munsi" }
 }

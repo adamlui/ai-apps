@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
   "buttonLabel_update": { "message": "Nduru tënëModifier" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
-  "link_viewChanges": { "message": "View changes" }
+  "link_viewChanges": { "message": "View changes" },
+  "state_enabled": { "message": "enable awe" },
+  "state_disabled": { "message": "disable awe" },
+  "state_on": { "message": "na ndö ti" },
+  "state_off": { "message": "ti zia lege ni" }
 }

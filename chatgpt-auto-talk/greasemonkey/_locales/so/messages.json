@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
   "buttonLabel_update": { "message": "Cusboonaysiinta" },
   "buttonLabel_dismiss": { "message": "Iska tuur" },
-  "link_viewChanges": { "message": "Eeg isbeddellada" }
+  "link_viewChanges": { "message": "Eeg isbeddellada" },
+  "state_enabled": { "message": "La daaray" },
+  "state_disabled": { "message": "La damiyay" },
+  "state_on": { "message": "korka" },
+  "state_off": { "message": "Dami" }
 }

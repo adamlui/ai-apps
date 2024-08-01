@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Check for updates" },
   "buttonLabel_update": { "message": "Actualizar" },
   "buttonLabel_dismiss": { "message": "Rexeitar" },
-  "link_viewChanges": { "message": "Ver cambios" }
+  "link_viewChanges": { "message": "Ver cambios" },
+  "state_enabled": { "message": "activado" },
+  "state_disabled": { "message": "desactivado" },
+  "state_on": { "message": "aceso" },
+  "state_off": { "message": "apagado" }
 }

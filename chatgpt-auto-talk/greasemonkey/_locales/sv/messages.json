@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
   "buttonLabel_update": { "message": "Uppdatera" },
   "buttonLabel_dismiss": { "message": "Avfärda" },
-  "link_viewChanges": { "message": "Visa ändringar" }
+  "link_viewChanges": { "message": "Visa ändringar" },
+  "state_enabled": { "message": "aktiverad" },
+  "state_disabled": { "message": "inaktiverad" },
+  "state_on": { "message": "på" },
+  "state_off": { "message": "av" }
 }

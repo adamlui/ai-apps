@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "ዝቕጽል ሓበሬታ ርአ" },
   "buttonLabel_update": { "message": "ኣሐድስ" },
   "buttonLabel_dismiss": { "message": "ምጥፋእ" },
-  "link_viewChanges": { "message": "ለውጢ ርኣዮ" }
+  "link_viewChanges": { "message": "ለውጢ ርኣዮ" },
+  "state_enabled": { "message": "ከምዝሰርሕ ዝተገብረ" },
+  "state_disabled": { "message": "ከምዘይሰርሕ ዝተገብረ" },
+  "state_on": { "message": "o" },
+  "state_off": { "message": "ዝወጽ" }
 }

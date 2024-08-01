@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Tjek for Opdateringer" },
   "buttonLabel_update": { "message": "Opdatér" },
   "buttonLabel_dismiss": { "message": "Afvis" },
-  "link_viewChanges": { "message": "Se ændringer" }
+  "link_viewChanges": { "message": "Se ændringer" },
+  "state_enabled": { "message": "aktiveret" },
+  "state_disabled": { "message": "deaktiveret" },
+  "state_on": { "message": "til" },
+  "state_off": { "message": "slukket" }
 }

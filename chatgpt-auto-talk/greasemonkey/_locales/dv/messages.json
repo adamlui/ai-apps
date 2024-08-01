@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "އަޕްޑޭޓްސް ހުރިތޯ ބަލާށެވެ" },
   "buttonLabel_update": { "message": "އަޕްޑޭޓް" },
   "buttonLabel_dismiss": { "message": "ދުރުކޮށްލުން" },
-  "link_viewChanges": { "message": "ބަދަލުތައް ބަލާށެވެ" }
+  "link_viewChanges": { "message": "ބަދަލުތައް ބަލާށެވެ" },
+  "state_enabled": { "message": "އެނޭބަލްކޮށްފައި" },
+  "state_disabled": { "message": "ބޭނުންނުކުރެވޭ ގޮތަށް ހަދާފައި" },
+  "state_on": { "message": "މަތީގައި" },
+  "state_off": { "message": "އޮފް" }
 }

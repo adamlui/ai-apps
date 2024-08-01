@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT 自動對話" },
   "appDesc": { "message": "自動播放 ChatGPT 回應" },
-  "menuLabel_toggleVis": { "message": "切換項目可見度" },
+  "menuLabel_toggleVis": { "message": "切換可見度" },
   "menuLabel_about": { "message": "關於我們" },
   "about_version": { "message": "版本" },
   "about_poweredBy": { "message": "技術提供" },
@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "檢查更新" },
   "buttonLabel_update": { "message": "更新" },
   "buttonLabel_dismiss": { "message": "返回" },
-  "link_viewChanges": { "message": "查看變更" }
+  "link_viewChanges": { "message": "查看變更" },
+  "state_enabled": { "message": "啟用" },
+  "state_disabled": { "message": "禁用" },
+  "state_on": { "message": "開" },
+  "state_off": { "message": "關" }
 }

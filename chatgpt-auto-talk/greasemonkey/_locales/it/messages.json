@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Cerca aggiornamenti" },
   "buttonLabel_update": { "message": "Aggiornare" },
   "buttonLabel_dismiss": { "message": "Ignora" },
-  "link_viewChanges": { "message": "Visualizza modifiche" }
+  "link_viewChanges": { "message": "Visualizza modifiche" },
+  "state_enabled": { "message": "abilitato" },
+  "state_disabled": { "message": "disabled" },
+  "state_on": { "message": "il" },
+  "state_off": { "message": "off" }
 }

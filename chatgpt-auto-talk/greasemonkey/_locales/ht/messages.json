@@ -18,5 +18,9 @@
   "buttonLabel_updateCheck": { "message": "Tcheke pou Mizajou" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "ranvwaye /rejte/revoke /abandone/elimine/rejeter /renvoyer/révoquer/éliminer/abandonner/annuler" },
-  "link_viewChanges": { "message": "Gade chanjman yo" }
+  "link_viewChanges": { "message": "Gade chanjman yo" },
+  "state_enabled": { "message": "pèmèt" },
+  "state_disabled": { "message": "Andikape" },
+  "state_on": { "message": "nan dat" },
+  "state_off": { "message": "etenn/koupe " }
 }
