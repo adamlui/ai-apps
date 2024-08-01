@@ -77,7 +77,7 @@ ChatGPT Auto-Talk relies on code from the powerful [chatgpt.js](https://github.c
 [Readme](https://docs.chatgptwidescreen.com/#readme) / 
 [Discuss](https://github.chatgptwidescreen.com/discussions)
 
-#
+<img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT apps**</a> / 
 <a href="#-chatgpt-auto-talk-">Back to top ↑</a>

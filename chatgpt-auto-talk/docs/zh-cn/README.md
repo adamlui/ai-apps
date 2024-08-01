@@ -87,7 +87,7 @@ ChatGPT 自动谈话 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 [自述文件](https://docs.chatgptwidescreen.com/zh-cn/#readme) / 
 [讨论](https://github.chatgptwidescreen.com/discussions)
 
-#
+<img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-apps">**更多 ChatGPT 应用**</a> / 
 <a href="#-chatgpt-自动谈话-">回到顶部 ↑</a>
