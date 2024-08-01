@@ -64,7 +64,7 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/white/icon64.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon64.png"></picture> [ChatGPT Auto-Talk 📣](../chatgpt-auto-talk)
 
 > Auto-play ChatGPT responses.
-<br>[Install](https://greasyfork.org/scripts/500940-chatgpt-auto-talk) /
+<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-talk#-installation) /
 [Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-talk#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
