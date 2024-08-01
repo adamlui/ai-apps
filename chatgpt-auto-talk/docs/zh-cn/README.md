@@ -44,3 +44,22 @@
 2. 安装 [ChatGPT 自动谈话](https://greasyfork.org/scripts/500940-chatgpt-auto-talk) (将加载上面安装的用户脚本管理器)
 
 3. 正常访问 [chatgpt.com](https://chatgpt.com)，回复将自动朗读!
+
+## ⚡ 依赖关系
+
+<h6>
+<div align="center">
+<br>
+
+<a href="https://chatgpt.js.org/#/zh-cn/">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/white/logo600x62.png?main">
+        <img width=546 src="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/black/logo600x62.png?main">
+    </picture>
+</a>
+<br><br>
+
+ChatGPT 自动谈话 依赖于功能强大的 [chatgpt.js](https://github.com/KudoAI/chatgpt.js) 库 © 2023–2024 KudoAI 和 MIT 许可下的贡献者的代码。
+
+</div>
+</h6>

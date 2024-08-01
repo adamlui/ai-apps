@@ -33,3 +33,23 @@
 2. Install [ChatGPT Auto-Talk](https://greasyfork.org/scripts/500940-chatgpt-auto-talk) (will load in userscript manager installed above)
 
 3. Visit [chatgpt.com](https://chatgpt.com) as normal, and replies will automatically be read aloud!
+
+## ⚡ Dependencies
+
+<h6>
+<div align="center">
+<br >
+
+<a href="https://chatgpt.js.org">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/white/logo600x62.png?main">
+        <img width=546 src="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/black/logo600x62.png?main">
+    </picture>
+</a>
+<br><br>
+
+ChatGPT Auto-Talk relies on code from the powerful [chatgpt.js](https://github.com/KudoAI/chatgpt.js) library
+<br>© 2023–2024 KudoAI & contributors under the MIT license.
+
+</div>
+</h6>
