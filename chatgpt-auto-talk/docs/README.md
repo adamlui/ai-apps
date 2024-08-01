@@ -12,3 +12,24 @@
 [Discuss](https://github.com/adamlui/chatgpt-auto-talk/discussions) /
 [Review](https://greasyfork.org/scripts/500940-chatgpt-auto-talk#post-discussion) /
 [Contact author](https://github.com/adamlui)
+
+#
+
+<div align="center">
+
+<img width=305 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/screenshots/auto-talk-sidebar-toggle-enabled.png">
+<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/screenshots/auto-talk-on-notif.png">
+
+</div>
+
+## 🚀 Installation
+
+1. Install a userscript manager:
+    - ScriptCat for [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Firefox](https://addons.mozilla.org/firefox/addon/scriptcat/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh)
+    - Violentmonkey for [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)
+    - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf) or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) for Chrome
+    - or Tampermonkey for [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
+
+2. Install [ChatGPT Auto-Talk](https://greasyfork.org/scripts/500940-chatgpt-auto-talk) (will load in userscript manager installed above)
+
+3. Visit [chatgpt.com](https://chatgpt.com) as normal, and replies will automatically be read aloud!

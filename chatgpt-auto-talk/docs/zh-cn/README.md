@@ -23,3 +23,24 @@
 [讨论](https://github.com/adamlui/chatgpt-auto-talk/discussions) /
 [审查](https://greasyfork.org/scripts/500940-chatgpt-auto-talk#post-discussion) /
 [联系作者](https://github.com/adamlui)
+
+#
+
+<div align="center">
+
+<img width=305 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/screenshots/zh-cn/auto-talk-sidebar-toggle-enabled.png">
+<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/screenshots/zh-cn/auto-talk-on-notif.png">
+
+</div>
+
+## 🚀 如何安装
+
+1. 安装用户脚本管理器：
+    - ScriptCat 为了 [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Firefox](https://addons.mozilla.org/firefox/addon/scriptcat/) 或 [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh)
+    - Violentmonkey 为了 [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/) 或 [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)
+    - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf) 或 [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) 为了 Chrome
+    - 或 Tampermonkey 为了 [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) 或 [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
+
+2. 安装 [ChatGPT 自动谈话](https://greasyfork.org/scripts/500940-chatgpt-auto-talk) (将加载上面安装的用户脚本管理器)
+
+3. 正常访问 [chatgpt.com](https://chatgpt.com)，回复将自动朗读!
