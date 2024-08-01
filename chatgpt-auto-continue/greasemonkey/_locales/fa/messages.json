@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "بررسی به روز رسانی" },
   "buttonLabel_update": { "message": "به‌روز‌رسانی" },
   "buttonLabel_dismiss": { "message": "مخفی شود" },
-  "link_viewChanges": { "message": "نمایش تغییرات" }
+  "link_viewChanges": { "message": "نمایش تغییرات" },
+  "state_on": { "message": "در مورد" },
+  "state_off": { "message": "خاموش" }
 }

@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "buttonLabel_update": { "message": "Жаңарту" },
   "buttonLabel_dismiss": { "message": "Жұмыстан шығару" },
-  "link_viewChanges": { "message": "Өзгерістерді көру" }
+  "link_viewChanges": { "message": "Өзгерістерді көру" },
+  "state_on": { "message": "қосулы" },
+  "state_off": { "message": "өшірулі" }
 }

@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Begiratu _eguneraketak" },
   "buttonLabel_update": { "message": "Eguneratu" },
   "buttonLabel_dismiss": { "message": "Bistatik kendu" },
-  "link_viewChanges": { "message": "Ikusi aldaketak" }
+  "link_viewChanges": { "message": "Ikusi aldaketak" },
+  "state_on": { "message": "on" },
+  "state_off": { "message": "off" }
 }

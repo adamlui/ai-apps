@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Шинэчлэлтүүдийг шалгана уу" },
   "buttonLabel_update": { "message": "Шинэчлэх" },
   "buttonLabel_dismiss": { "message": "Дуусах" },
-  "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" }
+  "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" },
+  "state_on": { "message": "on" },
+  "state_off": { "message": "Унт." }
 }

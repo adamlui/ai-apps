@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
   "buttonLabel_update": { "message": "อัปเดต" },
   "buttonLabel_dismiss": { "message": "ยกเลิก" },
-  "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" }
+  "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" },
+  "state_on": { "message": "เมื่อ" },
+  "state_off": { "message": "off" }
 }

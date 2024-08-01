@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "檢查更新" },
   "buttonLabel_update": { "message": "更新" },
   "buttonLabel_dismiss": { "message": "忽略" },
-  "link_viewChanges": { "message": "查看變更" }
+  "link_viewChanges": { "message": "查看變更" },
+  "state_on": { "message": "開" },
+  "state_off": { "message": "關" }
 }

@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Ստուգել թարմացումները" },
   "buttonLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },
   "buttonLabel_dismiss": { "message": "Փակել" },
-  "link_viewChanges": { "message": "Դիտել փոփոխությունները" }
+  "link_viewChanges": { "message": "Դիտել փոփոխությունները" },
+  "state_on": { "message": "on" },
+  "state_off": { "message": "Անջատել" }
 }

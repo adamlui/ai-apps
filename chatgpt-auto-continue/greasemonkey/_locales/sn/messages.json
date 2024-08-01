@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Ongorora nokuti Updates" },
   "buttonLabel_update": { "message": "Kugadziridza" },
   "buttonLabel_dismiss": { "message": "Dzinga" },
-  "link_viewChanges": { "message": "Vonanyi cinjo" }
+  "link_viewChanges": { "message": "Vonanyi cinjo" },
+  "state_on": { "message": "pamusoro" },
+  "state_off": { "message": "kure" }
 }

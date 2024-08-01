@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Провери допуне" },
   "buttonLabel_update": { "message": "Ažuriraj" },
   "buttonLabel_dismiss": { "message": "Odbaci" },
-  "link_viewChanges": { "message": "Prikaži promjene" }
+  "link_viewChanges": { "message": "Prikaži promjene" },
+  "state_on": { "message": "on (uključeno)" },
+  "state_off": { "message": "off (isključeno)" }
 }

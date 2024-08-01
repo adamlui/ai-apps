@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Tirohia nga whakahoutanga" },
   "buttonLabel_update": { "message": "Whakahou" },
   "buttonLabel_dismiss": { "message": "Te whakahawea" },
-  "link_viewChanges": { "message": "Tirohia nga huringa" }
+  "link_viewChanges": { "message": "Tirohia nga huringa" },
+  "state_on": { "message": "runga" },
+  "state_off": { "message": "..e whakaweto ana." }
 }

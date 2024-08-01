@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi" },
   "buttonLabel_update": { "message": "Atjauninināt" },
   "buttonLabel_dismiss": { "message": "Noraidīt" },
-  "link_viewChanges": { "message": "Skatīt izmaiņas" }
+  "link_viewChanges": { "message": "Skatīt izmaiņas" },
+  "state_on": { "message": "ieslēgts" },
+  "state_off": { "message": "izslēgt" }
 }

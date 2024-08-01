@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
   "buttonLabel_update": { "message": "Ažuriraj" },
   "buttonLabel_dismiss": { "message": "Odbaci" },
-  "link_viewChanges": { "message": "Pregledaj promjene" }
+  "link_viewChanges": { "message": "Pregledaj promjene" },
+  "state_on": { "message": "na" },
+  "state_off": { "message": "popusta" }
 }

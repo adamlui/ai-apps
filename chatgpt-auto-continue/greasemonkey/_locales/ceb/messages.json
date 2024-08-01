@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Susiha ang mga Update" },
   "buttonLabel_update": { "message": "I-update" },
   "buttonLabel_dismiss": { "message": "I-dismiss" },
-  "link_viewChanges": { "message": "Tan-awa ang mga kausaban" }
+  "link_viewChanges": { "message": "Tan-awa ang mga kausaban" },
+  "state_on": { "message": "sa on" },
+  "state_off": { "message": "off" }
 }

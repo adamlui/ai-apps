@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "යාවත්කාලීන සඳහා පරීක් ‍ ෂා කරන්න" },
   "buttonLabel_update": { "message": "යාවත් කාළීන" },
   "buttonLabel_dismiss": { "message": "ඉවතලන්න" },
-  "link_viewChanges": { "message": "වෙනස්කම් බලන්න" }
+  "link_viewChanges": { "message": "වෙනස්කම් බලන්න" },
+  "state_on": { "message": "" },
+  "state_off": { "message": "ගූගල්" }
 }

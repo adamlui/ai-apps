@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ" },
   "buttonLabel_update": { "message": "ನವೀಕರಿಸಿ" },
   "buttonLabel_dismiss": { "message": "ವಜಾಗೊಳಿಸಿ" },
-  "link_viewChanges": { "message": "ಬದಲಾವಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" }
+  "link_viewChanges": { "message": "ಬದಲಾವಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" },
+  "state_on": { "message": "--" },
+  "state_off": { "message": "ಆಫ್" }
 }

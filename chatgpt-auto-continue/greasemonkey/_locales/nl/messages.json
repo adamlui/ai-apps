@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Controleer op updates" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Afwijzen" },
-  "link_viewChanges": { "message": "Wijzigingen weergeven" }
+  "link_viewChanges": { "message": "Wijzigingen weergeven" },
+  "state_on": { "message": "aan" },
+  "state_off": { "message": "uit" }
 }

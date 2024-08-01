@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "ዝቕጽል ሓበሬታ ርአ" },
   "buttonLabel_update": { "message": "ኣሐድስ" },
   "buttonLabel_dismiss": { "message": "ምጥፋእ" },
-  "link_viewChanges": { "message": "ለውጢ ርአ" }
+  "link_viewChanges": { "message": "ለውጢ ርአ" },
+  "state_on": { "message": "o" },
+  "state_off": { "message": "ዝወጽ" }
 }

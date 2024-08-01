@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Verificá las actualizaciones" },
   "buttonLabel_update": { "message": "Aktualidat" },
   "buttonLabel_dismiss": { "message": "Disimulashon" },
-  "link_viewChanges": { "message": "Bista riba kambionan" }
+  "link_viewChanges": { "message": "Bista riba kambionan" },
+  "state_on": { "message": "riba" },
+  "state_off": { "message": "for di" }
 }

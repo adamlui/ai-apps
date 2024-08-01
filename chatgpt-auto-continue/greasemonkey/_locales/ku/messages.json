@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "بچۆڕە بۆ نوێکردنەوەکان" },
   "buttonLabel_update": { "message": "نوێ بکەرەوە" },
   "buttonLabel_dismiss": { "message": "پارێزگا بکە" },
-  "link_viewChanges": { "message": "گۆڕانکاریەکان بینەرە" }
+  "link_viewChanges": { "message": "گۆڕانکاریەکان بینەرە" },
+  "state_on": { "message": "vekirî" },
+  "state_off": { "message": "girtî" }
 }

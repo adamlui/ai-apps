@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
   "buttonLabel_update": { "message": "Lungisa" },
   "buttonLabel_dismiss": { "message": "Susa" },
-  "link_viewChanges": { "message": "Buka ushintsho" }
+  "link_viewChanges": { "message": "Buka ushintsho" },
+  "state_on": { "message": "ku" },
+  "state_off": { "message": "ivaliwe" }
 }

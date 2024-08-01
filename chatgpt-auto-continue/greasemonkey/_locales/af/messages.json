@@ -19,5 +19,7 @@
   "buttonLabel_updateCheck": { "message": "Kyk vir opdaterings" },
   "buttonLabel_update": { "message": "Opdateer" },
   "buttonLabel_dismiss": { "message": "Laat vaar" },
-  "link_viewChanges": { "message": "Besigtig veranderinge" }
+  "link_viewChanges": { "message": "Besigtig veranderinge" },
+  "state_on": { "message": "op" },
+  "state_off": { "message": "af" }
 }
