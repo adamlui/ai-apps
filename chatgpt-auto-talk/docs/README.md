@@ -53,3 +53,6 @@ ChatGPT Auto-Talk relies on code from the powerful [chatgpt.js](https://github.c
 
 </div>
 </h6>
+
+<a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT apps**</a> / 
+<a href="#-chatgpt-auto-talk-">Back to top ↑</a>
