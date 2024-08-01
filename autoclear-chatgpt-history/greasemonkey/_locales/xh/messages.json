@@ -22,8 +22,8 @@
   "buttonLabel_update": { "message": "Lungisa" },
   "buttonLabel_dismiss": { "message": "Gxotha" },
   "link_viewChanges": { "message": "Jonga izinto ezitshintshiweyo" },
-  "state_enabled": { "message": "Ayikwazi ukuvula Ovakalayo- Umncedisi (Alib)!" },
-  "state_disabled": { "message": "Igama Lokuvakalayo" },
+  "state_enabled": { "message": "yenziwe yasebenza" },
+  "state_disabled": { "message": "ikhubazekile" },
   "state_on": { "message": "zingaphelanga" },
   "state_off": { "message": "cima" }
 }
