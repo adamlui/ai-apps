@@ -54,6 +54,11 @@ ChatGPT Auto-Talk relies on code from the powerful [chatgpt.js](https://github.c
 </div>
 </h6>
 
+## 🤖 More ChatGPT apps
+
+For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
+<br><br>
+
 ## 📜 Related scripts
 
 ### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://amazongpt.kudoai.com/assets/images/badges/awesome/badge.svg"></a>
@@ -79,5 +84,5 @@ ChatGPT Auto-Talk relies on code from the powerful [chatgpt.js](https://github.c
 
 <img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/separators/gradient-aqua.png">
 
-<a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT apps**</a> / 
+<a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#-chatgpt-auto-talk-">Back to top ↑</a>
