@@ -206,4 +206,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT add-ons**</a> /
-<a href="https://github.chatgptwidescreen.com#readme">Back to top ↑</a>
+<a href="https://github.chatgptwidescreen.com/#readme">Back to top ↑</a>

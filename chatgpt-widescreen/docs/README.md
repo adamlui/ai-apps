@@ -1,5 +1,5 @@
 <div align="right">
-<h5>English | <a href="zh-cn#readme">简体中文</a></h5>
+<h5>English | <a href="zh-cn/#readme">简体中文</a></h5>
 </div>
 
 <img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></img>

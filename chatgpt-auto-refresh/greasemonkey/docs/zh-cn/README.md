@@ -5,8 +5,8 @@
             <img height=14 src="https://media.chatgptautorefresh.com/images/icons/earth/black/icon32.svg">
         </picture>
         &nbsp;简体中文 |
-        <a href="../..#readme">English</a> |
-        <a href="../ja#readme">日本語</a>
+        <a href="../../#readme">English</a> |
+        <a href="../ja/#readme">日本語</a>
     </h6>
 </div>
 
@@ -209,7 +209,7 @@ ChatGPT 自动刷新 与使用 [ScriptCat](https://docs.scriptcat.org)、[Violen
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT无限 ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
 <br>[安装](https://docs.chatgptinfinity.com/zh-cn#-greasemonkey-用户脚本) /
-[自述文件](https://docs.chatgptinfinity.com/zh-cn#readme) /
+[自述文件](https://docs.chatgptinfinity.com/zh-cn/#readme) /
 [讨论](https://github.chatgptinfinity.com/discussions)
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">

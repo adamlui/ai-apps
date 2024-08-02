@@ -5,7 +5,7 @@
             <img height=14 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-icon32.svg">
         </picture>
         &nbsp;English |
-        <a href="zh-cn#readme">简体中文</a>
+        <a href="zh-cn/#readme">简体中文</a>
     </h6>
 </div>
 
@@ -29,71 +29,71 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
 > Add AI to Amazon shopping.
 <br>[Install](https://greasyfork.org/scripts/500663-amazongpt) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/amazongpt#readme) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/amazongpt/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.autoclearchatgpt.com/images/icons/openai/black/icon32.png"></picture> [Autoclear ChatGPT History](../autoclear-chatgpt-history) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://media.autoclearchatgpt.com/images/badges/awesome/badge.svg"></a>
 
 > Auto-clear your ChatGPT query history for maximum privacy.
-<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/autoclear-chatgpt-history#-installation) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/autoclear-chatgpt-history#readme) /
+<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/autoclear-chatgpt-history/#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/autoclear-chatgpt-history/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=21> [BraveGPT](../bravegpt) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
 > Adds AI answers to Brave Search (powered by GPT-4o!)
-<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/bravegpt#-installation) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/bravegpt#readme) /
+<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/bravegpt/#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/bravegpt/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT Auto-Continue ⏩](../chatgpt-auto-continue) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 
 > Automatically continue generating multiple ChatGPT responses.
-<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-continue#-installation) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-continue#readme) /
+<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-continue/#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-continue/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT Auto Refresh ↻](../chatgpt-auto-refresh) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
 
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
-<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-refresh#-installation) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-refresh#readme) /
+<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-refresh/#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-refresh/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon32.png"></picture> [ChatGPT Auto-Talk 📣](../chatgpt-auto-talk) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/badges/awesome/badge.svg"></a>
 
 > Auto-play ChatGPT responses.
-<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-talk#-installation) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-talk#readme) /
+<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-talk/#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-talk/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT Infinity ∞](../chatgpt-infinity) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 > Generate endless answers from all-knowing ChatGPT (in any language!)
-<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity#-installation) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity#readme) /
+<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <img width=19 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](../chatgpt-widescreen) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
-<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen#-installation) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen#readme) /
+<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=20> [DuckDuckGPT](../duckduckgpt) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
 
 > Adds AI answers to DuckDuckGo (powered by GPT-4o!)
-<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/duckduckgpt#-installation) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/duckduckgpt#readme) /
+<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/duckduckgpt/#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/duckduckgpt/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=19 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture> [GoogleGPT](../googlegpt) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg"></a>
 
 > Adds AI answers to Google Search (powered by Google Gemma + GPT-4o!)
 <br>[Install](https://greasyfork.org/scripts/478597-googlegpt) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/googlegpt#readme) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/googlegpt/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">

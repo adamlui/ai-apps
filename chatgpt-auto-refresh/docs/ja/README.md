@@ -5,9 +5,9 @@
             <img height=14 src="https://media.chatgptautorefresh.com/images/icons/earth/black/icon32.svg">
         </picture>
         &nbsp;日本語 |
-        <a href="../..#readme">English</a> |
-        <a href="../zh-cn#readme">简体中文</a> |
-        <a href="../hi#readme">हिंदी</a>
+        <a href="../../#readme">English</a> |
+        <a href="../zh-cn/#readme">简体中文</a> |
+        <a href="../hi/#readme">हिंदी</a>
     </h6>
 </div>
 
