@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.7.30.3
+// @version                2024.8.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -120,7 +120,6 @@
 
     // Init UI VARS
     let scheme = config.scheme || ( chatgpt.browser.isDarkMode() ? 'dark' : 'light' )
-    const isCentered = isCenteredMode()
 
     // Init FETCHER
     const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
@@ -619,8 +618,8 @@
                 modals.init(settingsModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Init settings keys
-                const settingsKeys = Object.keys(settingsProps).filter(key => !(isMobile && settingsProps[key].mobile == false)
-                                                                           && !(isCentered && settingsProps[key].centered == false))
+                const settingsKeys = Object.keys(settingsProps).filter(key => !(isMobile && settingsProps[key].mobile == false))
+
                 // Init logo
                 const settingsIcon = icons.amzgpt.create()
                 settingsIcon.style.cssText = 'width: 65px ; position: relative ; top: -39px ;'
@@ -1428,8 +1427,6 @@
 
     // Define UI functions
 
-    function isCenteredMode() { return document.documentElement.classList.toString().includes('center') }
-
     function fillStarryBG(targetNode) {
         const starsDivsContainer = document.createElement('div')
         starsDivsContainer.style.cssText = 'position: absolute ; top: 0 ; left: 0 ;' // hug targetNode's top-left corner
@@ -2011,7 +2008,7 @@
                 appDiv.append(cornerBtnsDiv)
 
                 // Create/append Chevron button
-                if (!isCentered && !isMobile) {
+                if (!isMobile) {
                     var chevronSpan = document.createElement('span'),
                         chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
                     chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
