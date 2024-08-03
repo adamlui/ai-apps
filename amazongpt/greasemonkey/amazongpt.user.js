@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.3.1
+// @version                2024.8.3.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1712,7 +1712,7 @@
         let nn = Math.floor(new Date().getTime() / 1e3)
         const fD = e => {
             let t = CryptoJS.enc.Utf8.parse(e),
-                o = CryptoJS.AES.encrypt(t, decodeURI('woVB%E7%B2%97%E8%AF%B6%E7%9B%91%E7%9D%A3%E4%BA%BAenfje'), {
+                o = CryptoJS.AES.encrypt(t, 'vrewbhjvbrejhbevwjh156645', {
                     mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7
             })
             return o.toString()

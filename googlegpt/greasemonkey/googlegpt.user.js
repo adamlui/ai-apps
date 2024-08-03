@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.7.30.4
+// @version                  2024.8.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2499,7 +2499,7 @@
         let nn = Math.floor(new Date().getTime() / 1e3)
         const fD = e => {
             let t = CryptoJS.enc.Utf8.parse(e),
-                o = CryptoJS.AES.encrypt(t, decodeURI('woVB%E7%B2%97%E8%AF%B6%E7%9B%91%E7%9D%A3%E4%BA%BAenfje'), {
+                o = CryptoJS.AES.encrypt(t, 'vrewbhjvbrejhbevwjh156645', {
                     mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7
             })
             return o.toString()
