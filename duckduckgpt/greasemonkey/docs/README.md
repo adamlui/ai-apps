@@ -213,19 +213,19 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ## 📜 Related scripts
 
+### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=17> [AmazonGPT](https://amazongpt.kudoai.com) &nbsp;<a href="https://devpost.com/software/amazongpt"><img height=20 src="https://amazongpt.kudoai.com/assets/images/badges/wolfram-award/badge.png"></a>
+
+> Add AI to Amazon shopping.
+<br>[Install](https://amazongpt.kudoai.com/#-installation) /
+[Readme](https://amazongpt.kudoai.com/#readme) /
+[Discuss](https://amazongpt.kudoai.com/discussions)
+
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](https://github.chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://github.chatgptinfinity.com/#-installation) / 
 [Readme](https://github.chatgptinfinity.com/#readme) / 
 [Discuss](https://chatgptinfinity.com/discuss)
-
-### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
-
-> Bring the magic of ChatGPT to Brave Search (powered by GPT-4o!)
-<br>[Install](https://github.bravegpt.com/#-installation) /
-[Readme](https://github.bravegpt.com/#readme) /
-[Discuss](https://github.bravegpt.com/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture> [GoogleGPT](https://github.kudoai.com/googlegpt) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.ddgpt.com/images/badges/awesome/badge.svg"></a>
 
