@@ -25,7 +25,7 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
 <img height=10px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
-### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=18> [AmazonGPT](../amazongpt) &nbsp;<a href="https://devpost.com/software/amazongpt"><img height=20 src="https://amazongpt.kudoai.com/assets/images/badges/wolfram-award/badge.png"></a>
+### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=18> [AmazonGPT](../amazongpt) &nbsp;<a href="https://devpost.com/software/amazongpt"><img height=20 src="https://amazongpt.kudoai.com/assets/images/badges/wolfram-award/gold-badge.png"></a>
 
 > Add AI to Amazon shopping.
 <br>[Install](https://greasyfork.org/scripts/500663-amazongpt) /
