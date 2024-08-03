@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.3
+// @version                2024.8.3.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2008,14 +2008,12 @@
                 appDiv.append(cornerBtnsDiv)
 
                 // Create/append Chevron button
-                if (!isMobile) {
-                    var chevronSpan = document.createElement('span'),
-                        chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
-                    chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
-                    chevronSpan.className = 'corner-btn' ; chevronSpan.style.margin = '-1.5px 1px 0 11px'
-                    chevronSpan.style.display = 'none' // to activate from anchorStyles only
-                    chevronSpan.append(chevronSVG) ; cornerBtnsDiv.append(chevronSpan)
-                }
+                const chevronSpan = document.createElement('span'),
+                      chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
+                chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
+                chevronSpan.className = 'corner-btn' ; chevronSpan.style.margin = '-1.5px 1px 0 11px'
+                chevronSpan.style.display = 'none' // to activate from anchorStyles only
+                chevronSpan.append(chevronSVG) ; cornerBtnsDiv.append(chevronSpan)
 
                 // Create/append About button
                 const aboutSpan = document.createElement('span'),
