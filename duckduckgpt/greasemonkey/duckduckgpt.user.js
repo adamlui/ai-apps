@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.4.3
+// @version                2024.8.4.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -264,20 +264,25 @@
     const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
     const apis = {
         'AIchatOS': {
-            endpoint: 'https://api.binjie.fun/api/generateStream', expectedOrigin: 'https://chat18.aichatos8.com',
+            endpoint: 'https://api.binjie.fun/api/generateStream',
+            expectedOrigin: { url: 'https://chat18.aichatos8.com', headers: { secFetchSite: 'cross-site' }},
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
             userID: '#/chat/' + Date.now() },
         'Free Chat': {
-            endpoint: 'https://demo-g0ra.onrender.com/single/chat_messages', expectedOrigin: 'https://e10.frechat.xyz',
+            endpoint: 'https://demo-g0ra.onrender.com/single/chat_messages',
+            expectedOrigin: { url: 'https://e10.frechat.xyz', headers: { secFetchSite: 'cross-site' }},
             method: 'PUT', streamable: true, accumulatesText: false },
         'GPTforLove': {
-            endpoint: 'https://api11.gptforlove.com/chat-process', expectedOrigin: 'https://ai27.gptforlove.com',
+            endpoint: 'https://api11.gptforlove.com/chat-process',
+            expectedOrigin: { url: 'https://ai27.gptforlove.com', headers: { secFetchSite: 'same-site' }},
             method: 'POST', streamable: true, accumulatesText: true },
         'MixerBox AI': {
-            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', expectedOrigin: 'https://chatai.mixerbox.com',
+            endpoint: 'https://chatai.mixerbox.com/api/chat/stream',
+            expectedOrigin: { url: 'https://chatai.mixerbox.com', headers: { secFetchSite: 'same-origin' }},
             method: 'POST', streamable: true, accumulatesText: false },
         'OpenAI': {
-            endpoint: 'https://api.openai.com/v1/chat/completions', expectedOrigin: 'https://chatgpt.com',
+            endpoint: 'https://api.openai.com/v1/chat/completions',
+            expectedOrigin: { url: 'https://chatgpt.com', headers: { secFetchSite: 'same-site' }},
             method: 'POST', streamable: true }
     }
 
@@ -2243,9 +2248,8 @@
                 'Accept': /Free Chat|MixerBox|OpenAI/.test(api) ? '*/*' : 'application/json, text/plain, */*',
                 'Accept-Encoding': 'gzip, deflate, br, zstd',
                 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'DNT': '1',
-                'Host': new URL(apis[api].endpoint).hostname, 'Origin': apis[api].expectedOrigin,
-                'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': (
-                    /AIchatOS|Free Chat/.test(api) ? 'cross-site' : api == 'MixerBox AI' ? 'same-origin' : 'same-site' ),
+                'Host': new URL(apis[api].endpoint).hostname, 'Origin': apis[api].expectedOrigin.url,
+                'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': apis[api].expectedOrigin.headers.secFetchSite,
                 'TE': 'trailers', 'X-Forwarded-For': ip, 'X-Real-IP': ip
             }
             headers.Referer = headers.Origin + '/'
@@ -2421,7 +2425,7 @@
                     }
                 } else if (caller.api == 'AIchatOS') {
                     if (resp.responseText
-                        && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags]
+                        && !new RegExp([apis.AIchatOS.expectedOrigin.url, ...apis.AIchatOS.failFlags]
                             .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
                             .join('|')).test(resp.responseText)) {
                         try { // to show response or return related queries
