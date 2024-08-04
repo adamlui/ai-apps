@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.4.1
+// @version                2024.8.4.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -52,6 +52,7 @@
 // @connect                greasyfork.org
 // @connect                jsdelivr.net
 // @connect                mixerbox.com
+// @connect                onrender.com
 // @connect                openai.com
 // @connect                sogou.com
 // @require                https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.0.1/dist/chatgpt.min.js#sha256-jCJMPu044aK37jtC2wMMKnNgHbXJ5Pm9ZdIqDERob7k=
@@ -131,6 +132,9 @@
             endpoint: 'https://api.binjie.fun/api/generateStream', expectedOrigin: 'https://chat18.aichatos8.com',
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
             userID: '#/chat/' + Date.now() },
+        'Free Chat': {
+            endpoint: 'https://demo-g0ra.onrender.com/single/chat_messages', expectedOrigin: 'https://e10.frechat.xyz',
+            method: 'PUT', streamable: true, accumulatesText: false },
         'GPTforLove': {
             endpoint: 'https://api11.gptforlove.com/chat-process', expectedOrigin: 'https://ai27.gptforlove.com',
             method: 'POST', streamable: true, accumulatesText: true },
@@ -1781,7 +1785,9 @@
                     prompt: msgs[msgs.length - 1].content,
                     withoutContext: false, userId: apis.AIchatOS.userID, network: true
                 }
-            } else if (api == 'GPTforLove') {
+            } else if (api == 'Free Chat')
+                payload = { messages: msgs, model: 'THUDM/glm-4-9b-chat' }
+            else if (api == 'GPTforLove') {
                 payload = {
                     prompt: msgs[msgs.length - 1].content,
                     secret: generateGPTforLoveKey(), top_p: 1, temperature: 0.8,
@@ -1892,7 +1898,7 @@
                         && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags]
                             .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
                             .join('|')).test(resp.responseText)) {
-                        try { // to show response
+                        try { // to show response or return related queries
                             const text = resp.responseText, chunkSize = 1024
                             let currentIdx = 0
                             while (currentIdx < text.length) {
@@ -1903,6 +1909,12 @@
                             handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
+                } else if (caller.api == 'Free Chat') {
+                    if (resp.responseText) {
+                        try { // to show response or return related queries
+                            respText = resp.responseText ; handleProcessCompletion()
+                        } catch (err) { handleProcessError(err) }
+                    } else if (caller.status != 'done') api.tryNew(caller)             
                 } else if (caller.api == 'GPTforLove') {
                     if (resp.responseText && !resp.responseText.includes('Fail')) {
                         try { // to show response
