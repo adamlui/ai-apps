@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.4.2
+// @version               2024.8.4.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2338,12 +2338,12 @@ setTimeout(async () => {
         createHeaders(api) {
             const ip = ipv4.generate({ verbose: false })
             const headers = {
-                'Accept': /MixerBox|OpenAI/.test(api) ? '*/*' : 'application/json, text/plain, */*',
+                'Accept': /Free Chat|MixerBox|OpenAI/.test(api) ? '*/*' : 'application/json, text/plain, */*',
                 'Accept-Encoding': 'gzip, deflate, br, zstd',
                 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'DNT': '1',
                 'Host': new URL(apis[api].endpoint).hostname, 'Origin': apis[api].expectedOrigin,
                 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': (
-                    api == 'AIchatOS' ? 'cross-site' : api == 'MixerBox AI' ? 'same-origin' : 'same-site' ),
+                    /AIchatOS|Free Chat/.test(api) ? 'cross-site' : api == 'MixerBox AI' ? 'same-origin' : 'same-site' ),
                 'TE': 'trailers', 'X-Forwarded-For': ip, 'X-Real-IP': ip
             }
             headers.Referer = headers.Origin + '/'

@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.4.2
+// @version                2024.8.4.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1761,12 +1761,12 @@
         createHeaders(api) {
             const ip = ipv4.generate({ verbose: false })
             const headers = {
-                'Accept': /MixerBox|OpenAI/.test(api) ? '*/*' : 'application/json, text/plain, */*',
+                'Accept': /Free Chat|MixerBox|OpenAI/.test(api) ? '*/*' : 'application/json, text/plain, */*',
                 'Accept-Encoding': 'gzip, deflate, br, zstd',
                 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'DNT': '1',
                 'Host': new URL(apis[api].endpoint).hostname, 'Origin': apis[api].expectedOrigin,
                 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': (
-                    api == 'AIchatOS' ? 'cross-site' : api == 'MixerBox AI' ? 'same-origin' : 'same-site' ),
+                    /AIchatOS|Free Chat/.test(api) ? 'cross-site' : api == 'MixerBox AI' ? 'same-origin' : 'same-site' ),
                 'TE': 'trailers', 'X-Forwarded-For': ip, 'X-Real-IP': ip
             }
             headers.Referer = headers.Origin + '/'
