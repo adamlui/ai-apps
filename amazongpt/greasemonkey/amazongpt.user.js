@@ -1911,7 +1911,7 @@
                     } else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'Free Chat') {
                     if (resp.responseText) {
-                        try { // to show response or return related queries
+                        try { // to show response
                             respText = resp.responseText ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)             
