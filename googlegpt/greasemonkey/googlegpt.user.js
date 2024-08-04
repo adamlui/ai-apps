@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.3
+// @version                  2024.8.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1860,8 +1860,8 @@
                   + 'text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) }'
               + '.faulty-letter { opacity: 0.5 ; animation: faulty-flicker 2s linear infinite }'
               + '.glowing-btn::before { content: "" ; position: absolute ; top: 0 ; bottom: 0 ; left: 0 ; right: 0 ;'
-                  + 'opacity: 0.7 ; filter: blur(1em) ; transform: translateY(120%) rotateX(95deg) scale(1, 0.35) ;'
-                  + 'background: var(--glow-color) ; pointer-events: none }'
+                  + 'opacity: 0.7 ; filter: blur(1em) ; pointer-events: none ;'
+                  + ( !isMobile ? 'background: var(--glow-color) ; transform: translateY(120%) rotateX(95deg) scale(1, 0.35)' : '' ) + '}'
               + '.glowing-btn::after { content: "" ; position: absolute ; top: 0 ; bottom: 0 ; left: 0 ; right: 0 ;'
                   + 'opacity: 0 ; z-index: -1 ; box-shadow: 0 0 2em 0.2em var(--glow-color) ;'
                   + 'background-color: var(--glow-color) ; transition: opacity 100ms linear }'
