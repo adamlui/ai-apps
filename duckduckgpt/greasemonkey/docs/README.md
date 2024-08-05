@@ -111,8 +111,8 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 <div align='center'>
 
-![](https://user-images.githubusercontent.com/10906554/229062641-abff9d17-21cc-49b2-a98e-7793c231c4f2.png)
-![](https://user-images.githubusercontent.com/10906554/229728672-3fec6a2d-c4fe-4738-871d-56c1d97cb2c5.png)
+![](https://media.ddgpt.com/images/screenshots/desktop/proxy-mode/tm-menu.png)
+![](https://media.ddgpt.com/images/screenshots/desktop/proxy-mode/notif.png)
 
 </div>
 
