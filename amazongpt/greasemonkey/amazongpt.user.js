@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.4.10
+// @version                2024.8.5
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -132,12 +132,14 @@
             endpoint: 'https://api.binjie.fun/api/generateStream',
             expectedOrigin: {
                 url: 'https://chat18.aichatos8.com',
-                headers: { 'Accept': 'application/json, text/plain, */*', 'Sec-Fetch-Site': 'cross-site' }},
+                headers: { 'Accept': 'application/json, text/plain, */*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
             userID: '#/chat/' + Date.now() },
         'Free Chat': {
             endpoint: 'https://demo-g0ra.onrender.com/single/chat_messages',
-            expectedOrigin: { url: 'https://e10.frechat.xyz', headers: { 'Accept': '*/*', 'Sec-Fetch-Site': 'cross-site' }},
+            expectedOrigin: {
+                url: 'https://e10.frechat.xyz',
+                headers: { 'Accept': '*/*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
             method: 'PUT', streamable: true, accumulatesText: false,
             availModels: [
                 'deepseek-ai/deepseek-llm-67b-chat', 'gemma2-9b-it', 'THUDM/glm-4-9b-chat', 'gpt-4o-mini-2024-07-18',
@@ -147,15 +149,19 @@
             endpoint: 'https://api11.gptforlove.com/chat-process',
             expectedOrigin: {
                 url: 'https://ai27.gptforlove.com',
-                headers: { 'Accept': 'application/json, text/plain, */*', 'Sec-Fetch-Site': 'same-site' }},
+                headers: { 'Accept': 'application/json, text/plain, */*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'same-site' }},
             method: 'POST', streamable: true, accumulatesText: true },
         'MixerBox AI': {
             endpoint: 'https://chatai.mixerbox.com/api/chat/stream',
-            expectedOrigin: { url: 'https://chatai.mixerbox.com', headers: { 'Accept': '*/*', 'Sec-Fetch-Site': 'same-origin' }},
+            expectedOrigin: {
+                url: 'https://chatai.mixerbox.com',
+                headers: { 'Accept': '*/*', 'Alt-Used': 'chatai.mixerbox.com', 'Sec-Fetch-Site': 'same-origin' }},
             method: 'POST', streamable: true, accumulatesText: false },
         'OpenAI': {
             endpoint: 'https://api.openai.com/v1/chat/completions',
-            expectedOrigin: { url: 'https://chatgpt.com', headers: { 'Accept': '*/*', 'Sec-Fetch-Site': 'same-site' }},
+            expectedOrigin: {
+                url: 'https://chatgpt.com',
+                headers: { 'Accept': '*/*', 'Priority': 'u=4', 'Sec-Fetch-Site': 'same-site' }},
             method: 'POST', streamable: true }
     }
 
@@ -1774,17 +1780,15 @@
         createHeaders(api) {
             const ip = ipv4.generate({ verbose: false })
             const headers = {
-                'Accept': apis[api].expectedOrigin.headers.Accept,
                 'Accept-Encoding': 'gzip, deflate, br, zstd',
                 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'DNT': '1',
                 'Host': new URL(apis[api].endpoint).hostname, 'Origin': apis[api].expectedOrigin.url,
-                'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': apis[api].expectedOrigin.headers['Sec-Fetch-Site'],
+                'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors',
                 'TE': 'trailers', 'X-Forwarded-For': ip, 'X-Real-IP': ip
             }
             headers.Referer = headers.Origin + '/'
-            if (api != 'MixerBox AI') headers.Priority = `u=${ api == 'OpenAI' ? 4 : 0 }`
             if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
-            else if (api == 'MixerBox AI') headers['Alt-Used'] = headers.Host
+            Object.assign(headers, apis[api].expectedOrigin.headers)
             return headers
         },
 
