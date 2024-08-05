@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.4.8
+// @version                2024.8.4.9
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -265,12 +265,14 @@
     const apis = {
         'AIchatOS': {
             endpoint: 'https://api.binjie.fun/api/generateStream',
-            expectedOrigin: { url: 'https://chat18.aichatos8.com', headers: { secFetchSite: 'cross-site' }},
+            expectedOrigin: {
+                url: 'https://chat18.aichatos8.com',
+                headers: { accept: 'application/json, text/plain, */*', secFetchSite: 'cross-site' }},
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
             userID: '#/chat/' + Date.now() },
         'Free Chat': {
             endpoint: 'https://demo-g0ra.onrender.com/single/chat_messages',
-            expectedOrigin: { url: 'https://e10.frechat.xyz', headers: { secFetchSite: 'cross-site' }},
+            expectedOrigin: { url: 'https://e10.frechat.xyz', headers: { accept: '*/*', secFetchSite: 'cross-site' }},
             method: 'PUT', streamable: true, accumulatesText: false,
             availModels: [
                 'deepseek-ai/deepseek-llm-67b-chat', 'gemma2-9b-it', 'THUDM/glm-4-9b-chat', 'gpt-4o-mini-2024-07-18',
@@ -278,15 +280,17 @@
                 '01-ai/Yi-1.5-34B-Chat-16K' ]},
         'GPTforLove': {
             endpoint: 'https://api11.gptforlove.com/chat-process',
-            expectedOrigin: { url: 'https://ai27.gptforlove.com', headers: { secFetchSite: 'same-site' }},
+            expectedOrigin: {
+                url: 'https://ai27.gptforlove.com',
+                headers: { accept: 'application/json, text/plain, */*', secFetchSite: 'same-site' }},
             method: 'POST', streamable: true, accumulatesText: true },
         'MixerBox AI': {
             endpoint: 'https://chatai.mixerbox.com/api/chat/stream',
-            expectedOrigin: { url: 'https://chatai.mixerbox.com', headers: { secFetchSite: 'same-origin' }},
+            expectedOrigin: { url: 'https://chatai.mixerbox.com', headers: { accept: '*/*', secFetchSite: 'same-origin' }},
             method: 'POST', streamable: true, accumulatesText: false },
         'OpenAI': {
             endpoint: 'https://api.openai.com/v1/chat/completions',
-            expectedOrigin: { url: 'https://chatgpt.com', headers: { secFetchSite: 'same-site' }},
+            expectedOrigin: { url: 'https://chatgpt.com', headers: { accept: '*/*', secFetchSite: 'same-site' }},
             method: 'POST', streamable: true }
     }
 
@@ -2248,7 +2252,7 @@
         createHeaders(api) {
             const ip = ipv4.generate({ verbose: false })
             const headers = {
-                'Accept': /Free Chat|MixerBox|OpenAI/.test(api) ? '*/*' : 'application/json, text/plain, */*',
+                'Accept': apis[api].expectedOrigin.headers.accept,
                 'Accept-Encoding': 'gzip, deflate, br, zstd',
                 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'DNT': '1',
                 'Host': new URL(apis[api].endpoint).hostname, 'Origin': apis[api].expectedOrigin.url,
