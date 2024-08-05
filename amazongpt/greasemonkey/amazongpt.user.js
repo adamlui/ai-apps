@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.4.4
+// @version                2024.8.4.5
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -136,7 +136,11 @@
         'Free Chat': {
             endpoint: 'https://demo-g0ra.onrender.com/single/chat_messages',
             expectedOrigin: { url: 'https://e10.frechat.xyz', headers: { secFetchSite: 'cross-site' }},
-            method: 'PUT', streamable: true, accumulatesText: false },
+            method: 'PUT', streamable: true, accumulatesText: false,
+            availModels: [
+                'deepseek-ai/deepseek-llm-67b-chat', 'gemma2-9b-it', 'THUDM/glm-4-9b-chat', 'gpt-4o-mini-2024-07-18',
+                'llama3-70b-8192', 'mixtral-8x7b-32768', 'nous-hermes-2-mixtral-8x7b-dpo', 'Qwen/Qwen2-57B-A14B-Instruct',
+                '01-ai/Yi-1.5-34B-Chat-16K' ]},
         'GPTforLove': {
             endpoint: 'https://api11.gptforlove.com/chat-process',
             expectedOrigin: { url: 'https://ai27.gptforlove.com', headers: { secFetchSite: 'same-site' }},
@@ -1789,9 +1793,10 @@
                     prompt: msgs[msgs.length - 1].content,
                     withoutContext: false, userId: apis.AIchatOS.userID, network: true
                 }
-            } else if (api == 'Free Chat')
-                payload = { messages: msgs, model: 'THUDM/glm-4-9b-chat' }
-            else if (api == 'GPTforLove') {
+            } else if (api == 'Free Chat') {
+                const availModels = apis['Free Chat'].availModels
+                payload = { messages: msgs, model: availModels[Math.floor(chatgpt.randomFloat() * availModels.length)] }
+            } else if (api == 'GPTforLove') {
                 payload = {
                     prompt: msgs[msgs.length - 1].content,
                     secret: generateGPTforLoveKey(), top_p: 1, temperature: 0.8,
@@ -1902,7 +1907,7 @@
                         && !new RegExp([apis.AIchatOS.expectedOrigin.url, ...apis.AIchatOS.failFlags]
                             .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
                             .join('|')).test(resp.responseText)) {
-                        try { // to show response or return related queries
+                        try { // to show response
                             const text = resp.responseText, chunkSize = 1024
                             let currentIdx = 0
                             while (currentIdx < text.length) {
@@ -1914,7 +1919,7 @@
                         } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'Free Chat') {
-                    if (resp.responseText) {
+                    if (resp.responseText && !resp.responseText.includes('literal_error')) {
                         try { // to show response
                             respText = resp.responseText ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
@@ -1971,7 +1976,7 @@
                     chunk = extractedChunks.join('')
                 }
                 accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
-                if (/['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // GPTforLove fail
+                if (/literal_error|['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // Free Chat|GPTforLove fail
                     consoleErr('Response', accumulatedChunks)
                     if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return
