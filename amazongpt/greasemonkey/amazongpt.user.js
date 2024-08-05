@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.4.5
+// @version                2024.8.4.6
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1788,19 +1788,20 @@
             let payload = {}
             if (api == 'OpenAI')
                 payload = { messages: msgs, model: 'gpt-3.5-turbo', max_tokens: 4000 }
-            else if  (api == 'AIchatOS') {
+            else if (api == 'AIchatOS') {
                 payload = {
                     prompt: msgs[msgs.length - 1].content,
                     withoutContext: false, userId: apis.AIchatOS.userID, network: true
                 }
             } else if (api == 'Free Chat') {
-                const availModels = apis['Free Chat'].availModels
+                const availModels = apis[api].availModels
                 payload = { messages: msgs, model: availModels[Math.floor(chatgpt.randomFloat() * availModels.length)] }
             } else if (api == 'GPTforLove') {
                 payload = {
                     prompt: msgs[msgs.length - 1].content,
                     secret: generateGPTforLoveKey(), top_p: 1, temperature: 0.8,
-                    systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully.'
+                    systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI.'
+                                 + 'Follow the user\'s instructions carefully.'
                 }
                 if (apis.GPTforLove.parentID) payload.options = { parentMessageId: apis.GPTforLove.parentID }
             } else if (api == 'MixerBox AI')
