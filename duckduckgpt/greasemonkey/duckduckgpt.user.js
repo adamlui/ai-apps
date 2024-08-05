@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.4.7
+// @version                2024.8.4.8
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -640,7 +640,7 @@
                 // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
                 const aboutModalID = chatgpt.alert('',
-                    '🏷️ ' + ( msgs.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
+                    '🏷️ ' + ( msgs.about_version || 'Version' ) + ': <span class="about-em">' + GM_info.script.version + '</span>\n'
                         + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
                             + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'

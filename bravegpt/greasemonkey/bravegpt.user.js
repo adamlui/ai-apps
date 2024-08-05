@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.4.7
+// @version               2024.8.4.8
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -634,7 +634,7 @@ setTimeout(async () => {
                 // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
                 const aboutModalID = chatgpt.alert('',
-                    '🏷️ ' + ( msgs.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
+                    '🏷️ ' + ( msgs.about_version || 'Version' ) + ': <span class="about-em">' + GM_info.script.version + '</span>\n'
                         + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
                             + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'

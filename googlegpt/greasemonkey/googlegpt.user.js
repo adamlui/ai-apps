@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.4.7
+// @version                  2024.8.4.8
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -829,7 +829,7 @@
                 // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
                 const aboutModalID = chatgpt.alert('',
-                    '🏷️ ' + ( msgs.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
+                    '🏷️ ' + ( msgs.about_version || 'Version' ) + ': <span class="about-em">' + GM_info.script.version + '</span>\n'
                         + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
                             + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
