@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.4.6
+// @version                2024.8.4.7
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2183,7 +2183,7 @@
                     sendBtn.onmouseover = sendBtn.onmouseout = toggle.tooltip
 
                 // Scroll to top on mobile if user interacted
-                if (isMobile && show.reply.submitSrc) {
+                if (isMobile && show.reply.userInteracted) {
                     document.body.scrollTop = 0 // Safari
                     document.documentElement.scrollTop = 0 // Chromium/FF/IE
                 }
@@ -2198,14 +2198,16 @@
                 answerPre.scrollTop = answerPre.scrollHeight
 
             // Focus chatbar conditionally
-            if (!config.autoFocusChatbarDisabled && !show.reply.chatbarFocused // do only once if enabled
-                && !isMobile) { // exclude mobile devices to not auto-popup OSD keyboard
-                    appDiv.querySelector('#app-chatbar').focus() ; show.reply.chatbarFocused = true }
+            if (!show.reply.chatbarFocused // do only once
+                && !isMobile // exclude mobile devices to not auto-popup OSD keyboard
+                && (!config.autoFocusChatbarDisabled // AF enabled
+                    || (config.autoFocusChatbarDisabled && show.reply.userInteracted)) // ...or AF disabled & user interacted
+            ) { appDiv.querySelector('#app-chatbar').focus() ; show.reply.chatbarFocused = true }
 
             // Update styles
-           update.appBottomPos() // restore minimized/restored state
+            update.appBottomPos() // restore minimized/restored state
 
-            show.reply.submitSrc = 'none' // for reply section builder's mobile scroll-to-top if user interacted
+            show.reply.userInteracted = false
 
             function handleEnter(event) {
                 if (event.key == 'Enter' || event.keyCode == 13) {
@@ -2249,7 +2251,8 @@
                     replySection.classList.add('loading', 'no-user-select')
                     replySection.innerText = appAlerts.waitingResponse
 
-                    show.reply.chatbarFocused = false // for auto-focus routine
+                    // Set flags
+                    show.reply.chatbarFocused = false ; show.reply.userInteracted = true
                 }
             }
 

@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.4.6
+// @version                  2024.8.4.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2249,7 +2249,6 @@
             const chatbar = appDiv.querySelector('textarea')
             if (chatbar) {
                 chatbar.value = event.target.textContent
-                show.reply.submitSrc = 'click' // for show.reply()'s mobile scroll-to-top if user interacted
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
             }
@@ -3024,7 +3023,7 @@
                     show.reply.standbyBtnClickHandler = function() {
                         appAlert('waitingResponse')
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
-                        show.reply.submitSrc = 'click' ; show.reply.chatbarFocused = false
+                        show.reply.userInteracted = true ; show.reply.chatbarFocused = false
                         menus.pin.topPos = menus.pin.rightPos = null
                         get.reply(msgChain)
                     }
@@ -3091,7 +3090,6 @@
                                        + 'Try to give an answer that is 25-50 words.'
                                        + 'Do not type anything but the question and answer. Reply in markdown.'
                     chatTextarea.value = augmentQuery(randQAprompt)
-                    show.reply.submitSrc = 'click' // for show.reply()'s mobile scroll-to-top if user interacted
                     chatTextarea.dispatchEvent(new KeyboardEvent('keydown', {
                         key: 'Enter', bubbles: true, cancelable: true }))
                 }
@@ -3101,7 +3099,7 @@
                 }
 
                 // Scroll to top on mobile if user interacted
-                if (isMobile && show.reply.submitSrc) {
+                if (isMobile && show.reply.userInteracted) {
                     document.body.scrollTop = 0 // Safari
                     document.documentElement.scrollTop = 0 // Chromium/FF/IE
                 }
@@ -3144,16 +3142,18 @@
             }
 
             // Focus chatbar conditionally
-            if (!config.autoFocusChatbarDisabled && !show.reply.chatbarFocused // do only once if enabled
+            if (!show.reply.chatbarFocused // do only once
                 && !isMobile // exclude mobile devices to not auto-popup OSD keyboard
-                && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top )) { // app fully above fold
-                    appDiv.querySelector('#app-chatbar').focus() ; show.reply.chatbarFocused = true }
+                && ((!config.autoFocusChatbarDisabled && ( config.anchored // include Anchored mode if AF enabled
+                        || ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top ))) // ...or un-Anchored if fully above fold
+                    || (config.autoFocusChatbarDisabled && config.anchored && show.reply.userInteracted)) // ...or Anchored if AF disabled & user interacted
+            ) { appDiv.querySelector('#app-chatbar').focus() ; show.reply.chatbarFocused = true }
 
             // Update styles
             if (config.anchored) update.appBottomPos() // restore minimized/restored state if anchored
             update.chatbarWidth()
 
-            show.reply.submitSrc = 'none' // for reply section builder's mobile scroll-to-top if user interacted
+            show.reply.userInteracted = false
 
             function handleEnter(event) {
                 if (event.key == 'Enter' || event.keyCode == 13) {
@@ -3199,7 +3199,8 @@
                     replySection.classList.add('loading', 'no-user-select')
                     replySection.innerText = appAlerts.waitingResponse
 
-                    show.reply.chatbarFocused = false // for auto-focus routine
+                    // Set flags
+                    show.reply.chatbarFocused = false ; show.reply.userInteracted = true
                 }
             }
 
