@@ -114,8 +114,8 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 <div align='center'>
 
-![](https://media.bravegpt.com/images/screenshots/desktop/tampermonkey-proxy-mode-menu.png)
-![](https://media.bravegpt.com/images/screenshots/desktop/proxy-mode-notification.png)
+![](https://media.bravegpt.com/images/screenshots/desktop/proxy-mode-tm-menu.png)
+![](https://media.bravegpt.com/images/screenshots/desktop/proxy-mode-notif.png)
 
 </div>
 
