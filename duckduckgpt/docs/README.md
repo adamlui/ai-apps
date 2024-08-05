@@ -227,7 +227,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://github.chatgptinfinity.com/#readme) / 
 [Discuss](https://chatgptinfinity.com/discuss)
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture> [GoogleGPT](https://github.kudoai.com/googlegpt) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.ddgpt.com/images/badges/awesome/badge.svg"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg"></a>
 
 > Bring the magic of AI to Google Search (powered by Google Gemma + GPT-4o!)
 <br>[Install](https://greasyfork.org/scripts/478597-googlegpt) /
