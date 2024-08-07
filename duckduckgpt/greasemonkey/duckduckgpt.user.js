@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.7
+// @version                2024.8.7.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2453,7 +2453,7 @@
                         } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'Free Chat') {
-                    if (resp.responseText && !resp.responseText.includes('literal_error')) {
+                    if (resp.responseText && !/literal_error|^Not Found$/.test(resp.responseText)) {
                         try { // to show response or return related queries
                             respText = resp.responseText ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
@@ -2516,7 +2516,7 @@
                     chunk = extractedChunks.join('')
                 }
                 accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
-                if (/literal_error|['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // Free Chat|GPTforLove fail
+                if (/literal_error|^Not Found$|['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // Free Chat|GPTforLove fail
                     consoleErr('Response', accumulatedChunks)
                     if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return

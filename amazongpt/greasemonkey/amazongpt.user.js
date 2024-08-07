@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.7
+// @version                2024.8.7.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1928,7 +1928,7 @@
                         } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'Free Chat') {
-                    if (resp.responseText && !resp.responseText.includes('literal_error')) {
+                    if (resp.responseText && !/literal_error|^Not Found$/.test(resp.responseText)) {
                         try { // to show response
                             respText = resp.responseText ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
@@ -1985,7 +1985,7 @@
                     chunk = extractedChunks.join('')
                 }
                 accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
-                if (/literal_error|['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // Free Chat|GPTforLove fail
+                if (/literal_error|^Not Found$|['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // Free Chat|GPTforLove fail
                     consoleErr('Response', accumulatedChunks)
                     if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return
