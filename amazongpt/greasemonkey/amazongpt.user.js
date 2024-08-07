@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.7.1
+// @version                2024.8.7.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -504,7 +504,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(config.supportURL) },
-                        function leaveAReview() { modals.feedback.show() },
+                        function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 656) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
@@ -535,17 +535,20 @@
         },
 
         feedback: {
-            show() {
+            show(options) {
 
-                // Create/init modal
+                // Init buttons
+                let btns = [
+                    function greasyFork() { safeWindowOpen(
+                        config.greasyForkURL + '/feedback#post-discussion') }
+                ]
+                if (options.sites == 'feedback') btns.push(
+                    function github() { safeWindowOpen(
+                        config.gitHubURL + '/discussions/new/choose') })
+
+                // Create/show modal
                 const feedbackModalID = siteAlert(`${
-                    msgs.alert_choosePlatform || 'Choose a platform' }:`, '',
-                    [ // buttons
-                        function greasyFork() { safeWindowOpen(
-                            config.greasyForkURL + '/feedback#post-discussion') },
-                        function github() { safeWindowOpen(
-                            config.gitHubURL + '/discussions/new/choose') }
-                    ], '', 408) // modal width
+                    msgs.alert_choosePlatform || 'Choose a platform' }:`, '', btns, '', 408)
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
 
                 // Re-style button cluster
@@ -554,12 +557,12 @@
                                        + 'margin: 25px 0 -3px !important' // close gap between title/btns
 
                 // Format button labels + add v-padding
-                const btns = btnsDiv.querySelectorAll('button'), lastIdx = btns.length -1
+                btns = btnsDiv.querySelectorAll('button')
                 btns.forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else if (btn.textContent == 'Github') btn.textContent = 'GitHub'
                     else if (btn.textContent == 'Alternative To') btn.textContent = 'AlternativeTo'
-                    if (idx == lastIdx) btn.classList.remove('primary-modal-btn') // de-emphasize last link
+                    if (idx == btns.length -1) btn.classList.remove('primary-modal-btn') // de-emphasize last link
                     btn.style.marginTop = btn.style.marginBottom = '5px' // v-pad btns
                 })
 

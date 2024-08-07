@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.7.1
+// @version               2024.8.7.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -654,7 +654,7 @@ setTimeout(async () => {
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(config.supportURL) },
-                        function leaveAReview() { modals.feedback.show() },
+                        function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 617) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
@@ -685,23 +685,26 @@ setTimeout(async () => {
         },
 
         feedback: {
-            show() {
+            show(options) {
 
-                // Create/init modal
+                // Init buttons
+                let btns = [
+                    function greasyFork() { safeWindowOpen(
+                        config.greasyForkURL + '/feedback#post-discussion') },
+                    function productHunt() { safeWindowOpen(
+                        'https://www.producthunt.com/products/bravegpt/reviews/new') },
+                    function futurepedia() { safeWindowOpen(
+                        'https://www.futurepedia.io/tool/bravegpt#tool-reviews') },
+                    function alternativeTo() { safeWindowOpen(
+                        'https://alternativeto.net/software/bravegpt/about/') }
+                ]
+                if (options.sites == 'feedback') btns.splice(1, 0,
+                    function github() { safeWindowOpen(
+                        config.gitHubURL + '/discussions/new/choose') })
+
+                // Create/show modal
                 const feedbackModalID = siteAlert(`${
-                    msgs.alert_choosePlatform || 'Choose a platform' }:`, '',
-                    [ // buttons
-                        function greasyFork() { safeWindowOpen(
-                            config.greasyForkURL + '/feedback#post-discussion') },
-                        function github() { safeWindowOpen(
-                            config.gitHubURL + '/discussions/new/choose') },
-                        function productHunt() { safeWindowOpen(
-                            'https://www.producthunt.com/products/bravegpt/reviews/new') },
-                        function futurepedia() { safeWindowOpen(
-                            'https://www.futurepedia.io/tool/bravegpt#tool-reviews') },
-                        function alternativeTo() { safeWindowOpen(
-                            'https://alternativeto.net/software/bravegpt/about/') }
-                    ], '', 456) // modal width
+                    msgs.alert_choosePlatform || 'Choose a platform' }:`, '', btns, '', 456)
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
 
                 // Re-style button cluster
@@ -709,12 +712,12 @@ setTimeout(async () => {
                 btnsDiv.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
 
                 // Format button labels + add v-padding
-                const btns = btnsDiv.querySelectorAll('button'), lastIdx = btns.length -1
+                btns = btnsDiv.querySelectorAll('button')
                 btns.forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else if (btn.textContent == 'Github') btn.textContent = 'GitHub'
                     else if (btn.textContent == 'Alternative To') btn.textContent = 'AlternativeTo'
-                    if (idx == lastIdx) btn.classList.remove('primary-modal-btn') // de-emphasize last link
+                    if (idx == btns.length -1) btn.classList.remove('primary-modal-btn') // de-emphasize last link
                     btn.style.marginTop = btn.style.marginBottom = '5px' // v-pad btns
                 })
 
@@ -3128,7 +3131,7 @@ setTimeout(async () => {
     // Init footer CTA to share feedback
     let footerContent = createAnchor('#', msgs.link_shareFeedback || 'Share feedback', { target: '_self' })
     footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
-    footerContent.onclick = modals.feedback.show
+    footerContent.onclick = () => modals.feedback.show({ sites: 'feedback' })
 
     // REFERRALIZE links to support author
     setTimeout(() => document.querySelectorAll('a[href^="https://www.amazon."]').forEach(anchor => {

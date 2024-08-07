@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.7.1
+// @version                  2024.8.7.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -849,7 +849,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(config.supportURL) },
-                        function leaveAReview() { modals.feedback.show() },
+                        function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 585) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
@@ -880,17 +880,26 @@
         },
 
         feedback: {
-            show() {
+            show(options) {
 
-                // Create/init modal
+                // Init buttons
+                let btns = [
+                    function greasyFork() { safeWindowOpen(
+                        config.greasyForkURL + '/feedback#post-discussion') },
+                    function productHunt() { safeWindowOpen(
+                        'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
+                    function futurepedia() { safeWindowOpen(
+                        'https://www.futurepedia.io/tool/duckduckgpt#tool-reviews') },
+                    function alternativeTo() { safeWindowOpen(
+                        'https://alternativeto.net/software/duckduckgpt/about/') }
+                ]
+                if (options.sites == 'feedback') btns.splice(1, 0,
+                    function github() { safeWindowOpen(
+                        config.gitHubURL + '/discussions/new/choose') })
+
+                // Create/show modal
                 const feedbackModalID = siteAlert(`${
-                    msgs.alert_choosePlatform || 'Choose a platform' }:`, '',
-                    [ // buttons
-                        function greasyFork() { safeWindowOpen(
-                            config.greasyForkURL + '/feedback#post-discussion') },
-                        function github() { safeWindowOpen(
-                            config.gitHubURL + '/discussions/new/choose') }
-                    ], '', 333) // modal width
+                    msgs.alert_choosePlatform || 'Choose a platform' }:`, '', btns, '', 333)
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
 
                 // Re-style button cluster
@@ -898,11 +907,11 @@
                 btnsDiv.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
 
                 // Format button labels + add v-padding
-                const btns = btnsDiv.querySelectorAll('button'), lastIdx = btns.length -1
+                btns = btnsDiv.querySelectorAll('button')
                 btns.forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else if (btn.textContent == 'Github') btn.textContent = 'GitHub'
-                    if (idx == lastIdx) btn.classList.remove('primary-modal-btn') // de-emphasize last link
+                    if (idx == btns.length -1) btn.classList.remove('primary-modal-btn') // de-emphasize last link
                     btn.style.marginTop = btn.style.marginBottom = '5px' // v-pad btns
                 })
 
@@ -3419,7 +3428,7 @@
 
     // Init footer CTA to share feedback
     let footerContent = createAnchor('#', msgs.link_shareFeedback || 'Share feedback', { target: '_self' })
-    footerContent.onclick = modals.feedback.show
+    footerContent.onclick = () => modals.feedback.show({ sites: 'feedback' })
 
     // Show STANDBY mode or get/show ANSWER
     let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]

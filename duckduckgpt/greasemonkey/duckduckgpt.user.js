@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.7.1
+// @version                2024.8.7.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -660,7 +660,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(config.supportURL) },
-                        function leaveAReview() { modals.feedback.show() },
+                        function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 577) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
@@ -691,23 +691,26 @@
         },
 
         feedback: {
-            show() {
+            show(options) {
 
-                // Create/init modal
+                // Init buttons
+                let btns = [
+                    function greasyFork() { safeWindowOpen(
+                        config.greasyForkURL + '/feedback#post-discussion') },
+                    function productHunt() { safeWindowOpen(
+                        'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
+                    function futurepedia() { safeWindowOpen(
+                        'https://www.futurepedia.io/tool/duckduckgpt#tool-reviews') },
+                    function alternativeTo() { safeWindowOpen(
+                        'https://alternativeto.net/software/duckduckgpt/about/') }
+                ]
+                if (options.sites == 'feedback') btns.splice(1, 0,
+                    function github() { safeWindowOpen(
+                        config.gitHubURL + '/discussions/new/choose') })
+
+                // Create/show modal
                 const feedbackModalID = siteAlert(`${
-                    msgs.alert_choosePlatform || 'Choose a platform' }:`, '',
-                    [ // buttons
-                        function greasyFork() { safeWindowOpen(
-                            config.greasyForkURL + '/feedback#post-discussion') },
-                        function github() { safeWindowOpen(
-                            config.gitHubURL + '/discussions/new/choose') },
-                        function productHunt() { safeWindowOpen(
-                            'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
-                        function futurepedia() { safeWindowOpen(
-                            'https://www.futurepedia.io/tool/duckduckgpt#tool-reviews') },
-                        function alternativeTo() { safeWindowOpen(
-                            'https://alternativeto.net/software/duckduckgpt/about/') }
-                    ], '', 408) // modal width
+                    msgs.alert_choosePlatform || 'Choose a platform' }:`, '', btns, '', 408)
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
 
                 // Re-style button cluster
@@ -716,12 +719,12 @@
                                        + ' margin-top: 14px !important' // close gap between title/btns
 
                 // Format button labels + add v-padding
-                const btns = btnsDiv.querySelectorAll('button'), lastIdx = btns.length -1
+                btns = btnsDiv.querySelectorAll('button')
                 btns.forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else if (btn.textContent == 'Github') btn.textContent = 'GitHub'
                     else if (btn.textContent == 'Alternative To') btn.textContent = 'AlternativeTo'
-                    if (idx == lastIdx) btn.classList.remove('primary-modal-btn') // de-emphasize last link
+                    if (idx == btns.length -1) btn.classList.remove('primary-modal-btn') // de-emphasize last link
                     btn.style.marginTop = btn.style.marginBottom = '5px' // v-pad btns
                 })
 
@@ -3016,7 +3019,7 @@
                             'feedback-prompt') // DDG class
     let footerContent = createAnchor('#', msgs.link_shareFeedback || 'Share feedback', { target: '_self' })
     footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
-    footerContent.onclick = modals.feedback.show
+    footerContent.onclick = () => modals.feedback.show({ sites: 'feedback' })
     appFooter.append(footerContent)
 
     // APPEND DDGPT + footer to DDG
