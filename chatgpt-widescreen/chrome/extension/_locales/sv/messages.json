@@ -32,11 +32,11 @@
   "alert_isUpToDate": { "message": "är aktuell" },
   "alert_pressF11": { "message": "Tryck på F11 för att avsluta helskärmsläge" },
   "alert_f11reason": { "message": "F11 användes för att komma in i helskärm, och på grund av webbläsarens säkerhetsskäl måste samma nyckel användas för att avsluta den" },
-  "buttonLabel_moreApps": { "message": "Fler ChatGPT-appar" },
-  "buttonLabel_leaveReview": { "message": "Lämna en recension" },
-  "buttonLabel_getSupport": { "message": "Få support" },
-  "buttonLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
-  "buttonLabel_update": { "message": "Uppdatera" },
-  "buttonLabel_dismiss": { "message": "Avfärda" },
+  "btnLabel_moreApps": { "message": "Fler ChatGPT-appar" },
+  "btnLabel_leaveReview": { "message": "Lämna en recension" },
+  "btnLabel_getSupport": { "message": "Få support" },
+  "btnLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
+  "btnLabel_update": { "message": "Uppdatera" },
+  "btnLabel_dismiss": { "message": "Avfärda" },
   "link_viewChanges": { "message": "Visa ändringar" }
 }

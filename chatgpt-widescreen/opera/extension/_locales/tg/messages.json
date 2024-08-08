@@ -32,11 +32,11 @@
   "alert_isUpToDate": { "message": "карты для навител андроид" },
   "alert_pressF11": { "message": "Фишурдани F11 барои баромадан аз экрани пурра" },
   "alert_f11reason": { "message": "F11 барои ворид кардани экрани пурра истифода мешуд ва бо сабабҳои амниятӣ браузер бояд барои баромадан аз он ҳамон калидро истифода барад" },
-  "buttonLabel_moreApps": { "message": "Бештар ChatGPT Барномаҳо" },
-  "buttonLabel_leaveReview": { "message": "Тафсирро тарк кунед" },
-  "buttonLabel_getSupport": { "message": "Гирифтани Дастгирӣ" },
-  "buttonLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
-  "buttonLabel_update": { "message": "Навсозӣ кардан" },
-  "buttonLabel_dismiss": { "message": "Рад кардан" },
+  "btnLabel_moreApps": { "message": "Бештар ChatGPT Барномаҳо" },
+  "btnLabel_leaveReview": { "message": "Тафсирро тарк кунед" },
+  "btnLabel_getSupport": { "message": "Гирифтани Дастгирӣ" },
+  "btnLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
+  "btnLabel_update": { "message": "Навсозӣ кардан" },
+  "btnLabel_dismiss": { "message": "Рад кардан" },
   "link_viewChanges": { "message": "Tingnan ang mga pagbab" }
 }

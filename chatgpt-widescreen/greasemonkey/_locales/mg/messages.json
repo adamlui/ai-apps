@@ -32,11 +32,11 @@
   "alert_isUpToDate": { "message": "mampihena" },
   "alert_pressF11": { "message": "Fitoerana F11" },
   "alert_f11reason": { "message": "Ny fampiasana ny tranonkala dia tsy maintsy ampiasaina, ary tsy maintsy ampiasaina ho an'ny rehetra" },
-  "buttonLabel_moreApps": { "message": "More ChatGPT Apps" },
-  "buttonLabel_leaveReview": { "message": "Mametraha fanamarihana" },
-  "buttonLabel_getSupport": { "message": "Mitadiava fanampiana" },
-  "buttonLabel_updateCheck": { "message": "Jereo ny vaovao momba ny famerenana" },
-  "buttonLabel_update": { "message": "Vaovao farany" },
-  "buttonLabel_dismiss": { "message": "Hiditra" },
+  "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
+  "btnLabel_leaveReview": { "message": "Mametraha fanamarihana" },
+  "btnLabel_getSupport": { "message": "Mitadiava fanampiana" },
+  "btnLabel_updateCheck": { "message": "Jereo ny vaovao momba ny famerenana" },
+  "btnLabel_update": { "message": "Vaovao farany" },
+  "btnLabel_dismiss": { "message": "Hiditra" },
   "link_viewChanges": { "message": "Jereo ny fiovana" }
 }

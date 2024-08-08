@@ -32,11 +32,11 @@
   "alert_isUpToDate": { "message": "estas ĝisdata" },
   "alert_pressF11": { "message": "Premu F11 por forlasi la tutan ekranon" },
   "alert_f11reason": { "message": "F11 kutimis eniri plenan ekranon, kaj pro retumilaj sekureckialoj, la sama ŝlosilo devas esti utiligita por forlasi ĝin" },
-  "buttonLabel_moreApps": { "message": "Pli ChatGPT Apps" },
-  "buttonLabel_leaveReview": { "message": "Lasi revizion" },
-  "buttonLabel_getSupport": { "message": "Akiri subtenon" },
-  "buttonLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
-  "buttonLabel_update": { "message": "Ĝisdatigi" },
-  "buttonLabel_dismiss": { "message": "Malakcepti" },
+  "btnLabel_moreApps": { "message": "Pli ChatGPT Apps" },
+  "btnLabel_leaveReview": { "message": "Lasi revizion" },
+  "btnLabel_getSupport": { "message": "Akiri subtenon" },
+  "btnLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
+  "btnLabel_update": { "message": "Ĝisdatigi" },
+  "btnLabel_dismiss": { "message": "Malakcepti" },
   "link_viewChanges": { "message": "Montri ŝanĝojn" }
 }

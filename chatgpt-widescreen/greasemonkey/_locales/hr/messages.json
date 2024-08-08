@@ -32,11 +32,11 @@
   "alert_isUpToDate": { "message": "Ažuriraj" },
   "alert_pressF11": { "message": "Pritisnite F11 za izlaz" },
   "alert_f11reason": { "message": "F11 je korišten za ulazak preko cijelog zaslona, a zbog sigurnosnih razloga preglednika, isti ključ mora se koristiti za izlazak iz njega" },
-  "buttonLabel_moreApps": { "message": "Još aplikacija za ChatGPT" },
-  "buttonLabel_leaveReview": { "message": "Ostavi recenziju" },
-  "buttonLabel_getSupport": { "message": "Podrška" },
-  "buttonLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
-  "buttonLabel_update": { "message": "Ažurirana" },
-  "buttonLabel_dismiss": { "message": "Odbaci" },
+  "btnLabel_moreApps": { "message": "Još aplikacija za ChatGPT" },
+  "btnLabel_leaveReview": { "message": "Ostavi recenziju" },
+  "btnLabel_getSupport": { "message": "Podrška" },
+  "btnLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
+  "btnLabel_update": { "message": "Ažurirana" },
+  "btnLabel_dismiss": { "message": "Odbaci" },
   "link_viewChanges": { "message": "Pregledaj promjene" }
 }
