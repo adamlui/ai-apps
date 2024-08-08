@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.7.3
+// @version                2024.8.7.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2203,6 +2203,8 @@
             // Render/show answer
             const answerPre = appDiv.querySelector('pre')
             answerPre.innerHTML = marked.parse(answer) // render markdown
+            if (scheme == 'dark' && answerPre.firstChild.tagName == 'P')
+                answerPre.firstChild.prepend('>> ') // since speech balloon tip missing
 
             // Auto-scroll if active
             if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled)
