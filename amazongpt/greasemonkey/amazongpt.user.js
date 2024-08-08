@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.7.2
+// @version                2024.8.7.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -140,7 +140,7 @@
             expectedOrigin: {
                 url: 'https://e10.frechat.xyz',
                 headers: { 'Accept': '*/*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
-            method: 'PUT', streamable: true, accumulatesText: false,
+            method: 'PUT', streamable: true, accumulatesText: false, failFlags: ['literal_error', 'me@promplate.dev', '^Not Found$'],
             availModels: [
                 'deepseek-ai/deepseek-llm-67b-chat', 'gemma2-9b-it', 'THUDM/glm-4-9b-chat', 'gpt-4o-mini-2024-07-18',
                 'llama3-70b-8192', 'mixtral-8x7b-32768', 'nous-hermes-2-mixtral-8x7b-dpo', 'Qwen/Qwen2-57B-A14B-Instruct',
@@ -150,7 +150,7 @@
             expectedOrigin: {
                 url: 'https://ai27.gptforlove.com',
                 headers: { 'Accept': 'application/json, text/plain, */*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'same-site' }},
-            method: 'POST', streamable: true, accumulatesText: true },
+            method: 'POST', streamable: true, accumulatesText: true, failFlags: ['[\'"]?status[\'"]?:\\s*[\'"]Fail[\'"]'] },
         'MixerBox AI': {
             endpoint: 'https://chatai.mixerbox.com/api/chat/stream',
             expectedOrigin: {
@@ -1916,7 +1916,7 @@
                     }
                 } else if (caller.api == 'AIchatOS') {
                     if (resp.responseText
-                        && !new RegExp([apis.AIchatOS.expectedOrigin.url, ...apis.AIchatOS.failFlags]
+                        && !new RegExp([apis[caller.api].expectedOrigin.url, ...apis[caller.api].failFlags]
                             .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
                             .join('|')).test(resp.responseText)) {
                         try { // to show response
@@ -1931,13 +1931,13 @@
                         } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'Free Chat') {
-                    if (resp.responseText && !/literal_error|^Not Found$/.test(resp.responseText)) {
+                    if (resp.responseText && !new RegExp(apis[caller.api].failFlags.join('|')).test(resp.responseText)) {
                         try { // to show response
                             respText = resp.responseText ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
                     } else if (caller.status != 'done') api.tryNew(caller)             
                 } else if (caller.api == 'GPTforLove') {
-                    if (resp.responseText && !resp.responseText.includes('Fail')) {
+                    if (resp.responseText && !new RegExp(apis[caller.api].failFlags.join('|')).test(resp.responseText)) {
                         try { // to show response
                             let chunks = resp.responseText.trim().split('\n'),
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
@@ -1988,7 +1988,7 @@
                     chunk = extractedChunks.join('')
                 }
                 accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
-                if (/literal_error|^Not Found$|['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // Free Chat|GPTforLove fail
+                if (new RegExp(Object.values(apis).flatMap(api => api.failFlags || []).join('|')).test(accumulatedChunks)) {
                     consoleErr('Response', accumulatedChunks)
                     if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return
