@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.8.1
+// @version                2024.8.8.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -103,7 +103,7 @@
         appURL: 'https://amazongpt.kudoai.com', gitHubURL: 'https://github.com/KudoAI/amazongpt',
         greasyForkURL: 'https://greasyfork.org/scripts/500663-amazongpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.28,
-        latestAssetCommitHash: '9854037' } // for cached messages.json
+        latestAssetCommitHash: '336c110' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -320,8 +320,8 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = msgs.buttonLabel_update || 'Update'
-                            updateBtns[0].textContent = msgs.buttonLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = msgs.btnLabel_update || 'Update'
+                            updateBtns[0].textContent = msgs.btnLabel_dismiss || 'Dismiss'
                         }
 
                         modals.init(updateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
@@ -523,13 +523,13 @@
 
                     // Emojize/localize label
                     if (/updates/i.test(btn.textContent)) btn.textContent = (
-                        '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
+                        '🚀 ' + ( msgs.btnLabel_updateCheck || 'Check for Updates' ))
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
-                        '🧠 ' + ( msgs.buttonLabel_getSupport || 'Get Support' ))
+                        '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
                     else if (/review/i.test(btn.textContent)) btn.textContent = (
-                        '⭐ ' + ( msgs.buttonLabel_leaveReview || 'Leave a Review' ))
+                        '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave a Review' ))
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
-                        '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
+                        '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
                     else btn.style.display = 'none' // hide Dismiss button
                 })
 

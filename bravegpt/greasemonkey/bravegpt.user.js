@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.8.2
+// @version               2024.8.8.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -234,7 +234,7 @@ setTimeout(async () => {
         appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.313,
-        latestAssetCommitHash: 'f061f3d' } // for cached messages.json
+        latestAssetCommitHash: '8afaa3b' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -470,8 +470,8 @@ setTimeout(async () => {
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = msgs.buttonLabel_update || 'Update'
-                            updateBtns[0].textContent = msgs.buttonLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = msgs.btnLabel_update || 'Update'
+                            updateBtns[0].textContent = msgs.btnLabel_dismiss || 'Dismiss'
                         }
 
                         modals.init(updateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
@@ -673,13 +673,13 @@ setTimeout(async () => {
 
                     // Emojize/localize label
                     if (/updates/i.test(btn.textContent)) btn.textContent = (
-                        '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
+                        '🚀 ' + ( msgs.btnLabel_updateCheck || 'Check for Updates' ))
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
-                        '🧠 ' + ( msgs.buttonLabel_getSupport || 'Get Support' ))
+                        '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
                     else if (/review/i.test(btn.textContent)) btn.textContent = (
-                        '⭐ ' + ( msgs.buttonLabel_leaveReview || 'Leave a Review' ))
+                        '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave a Review' ))
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
-                        '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
+                        '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
                     else btn.style.display = 'none' // hide Dismiss button
                 })
 
@@ -2813,7 +2813,7 @@ setTimeout(async () => {
                 if (answer == 'standby') {
                     const standbyBtn = document.createElement('button')
                     standbyBtn.className = 'standby-btn'
-                    standbyBtn.textContent = msgs.buttonLabel_sendQueryToApp || `Send search query to ${config.appName}`
+                    standbyBtn.textContent = msgs.btnLabel_sendQueryToApp || `Send search query to ${config.appName}`
                     appDiv.append(standbyBtn)
                     show.reply.standbyBtnClickHandler = function() {
                         appAlert('waitingResponse')

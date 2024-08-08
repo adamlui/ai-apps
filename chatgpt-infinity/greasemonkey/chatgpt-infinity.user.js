@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.7
+// @version             2024.8.8
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -245,7 +245,7 @@
         gitHubURL: 'https://github.com/adamlui/chatgpt-infinity',
         greasyForkURL: 'https://greasyfork.org/scripts/465051-chatgpt-infinity',
         mediaHostURL: 'https://media.chatgptinfinity.com/',
-        latestAssetCommitHash: 'fab6865' } // for cached messages.json + navicon
+        latestAssetCommitHash: 'f5402e4' } // for cached messages.json + navicon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = 'https://support.chatgptinfinity.com'
@@ -465,13 +465,13 @@
         // Re-format buttons to include emoji + localized label + hide Dismiss button
         for (const button of document.getElementById(aboutModalID).querySelectorAll('button')) {
             if (/updates/i.test(button.textContent)) button.textContent = (
-                '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
+                '🚀 ' + ( msgs.btnLabel_updateCheck || 'Check for Updates' ))
             else if (/support/i.test(button.textContent)) button.textContent = (
-                '🧠 ' + ( msgs.buttonLabel_getSupport || 'Get Support' ))
+                '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
             else if (/review/i.test(button.textContent)) button.textContent = (
-                '⭐ ' + ( msgs.buttonLabel_leaveReview || 'Leave a Review' ))
+                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave a Review' ))
             else if (/apps/i.test(button.textContent)) button.textContent = (
-                '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
+                '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
             else button.style.display = 'none' // hide Dismiss button
         }
     }
@@ -511,8 +511,8 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = msgs.buttonLabel_update || 'Update'
-                            updateBtns[0].textContent = msgs.buttonLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = msgs.btnLabel_update || 'Update'
+                            updateBtns[0].textContent = msgs.btnLabel_dismiss || 'Dismiss'
                         }
 
                         return
