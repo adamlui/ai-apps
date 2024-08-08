@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.8.3
+// @version               2024.8.8.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1728,10 +1728,16 @@ setTimeout(async () => {
               + '#bravegpt-settings ul { list-style: none ; padding: 0 ; margin: 0 ;' // hide bullets, override Brave ul margins
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#bravegpt-settings li {'
-                  + `opacity: ${ scheme == 'dark' ? 0.65 : 0.45 } ; height: 37px ; font-size: 14.5px ; transition: transform 0.1s ease ;`
+                  + `color: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for text
+                  + `fill: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
+                  + `stroke: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
+                  + 'height: 37px ; font-size: 14.5px ; transition: transform 0.1s ease ;'
                   + `padding: 7px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
-              + '#bravegpt-settings li.active { opacity: 1 }'
+              + '#bravegpt-settings li.active {'
+                  + `color: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for text
+                  + `fill: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for icons
+                  + `stroke: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' }}` // for icons
               + '#bravegpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
               + '#bravegpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
               + '#bravegpt-settings li, #bravegpt-settings li label { cursor: pointer }' // add finger on hover

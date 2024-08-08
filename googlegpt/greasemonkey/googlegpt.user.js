@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.8.3
+// @version                  2024.8.8.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1930,10 +1930,16 @@
               + '#googlegpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#googlegpt-settings li {'
-                  + `opacity: ${ scheme == 'dark' ? 0.65 : 0.45 } ; height: 24px ; font-size: 13.5px ; transition: transform 0.1s ease ;`
+                  + `color: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for text
+                  + `fill: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
+                  + `stroke: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
+                  + 'height: 24px ; font-size: 13.5px ; transition: transform 0.1s ease ;'
                   + `padding: 6px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
-              + '#googlegpt-settings li.active { opacity: 1 }'
+              + '#googlegpt-settings li.active {'
+                  + `color: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for text
+                  + `fill: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for icons
+                  + `stroke: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' }}` // for icons
               + '#googlegpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
               + '#googlegpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
               + '#googlegpt-settings li, #googlegpt-settings li label { cursor: pointer }' // add finger on hover

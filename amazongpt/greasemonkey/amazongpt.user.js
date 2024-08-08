@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.8.2
+// @version                2024.8.8.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1362,12 +1362,17 @@
               + '#amzgpt-settings ul { list-style: none ; padding: 0 ; margin: 0 0 2px -3px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#amzgpt-settings li {'
-                  + `opacity: ${ scheme == 'dark' ? 0.65 : 0.45 } ;`
+                  + `color: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for text
+                  + `fill: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
+                  + `stroke: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
                   + 'list-style: none ; height: 37px ; font-size: 15.5px ; transition: transform 0.1s ease ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                   + `padding: 6px 10px 4px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
-              + '#amzgpt-settings li.active { opacity: 1 }'
+              + '#amzgpt-settings li.active {'
+                  + `color: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for text
+                  + `fill: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for icons
+                  + `stroke: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' }}` // for icons
               + '#amzgpt-settings li label { display: contents ; padding-right: 20px ;' // right-pad labels so toggles don't hug
                   + 'font-weight: normal }' // override Amazon boldening
               + '#amzgpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border

@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.8.3
+// @version                2024.8.8.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1723,10 +1723,16 @@
               + '#ddgpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#ddgpt-settings li {'
-                  + `opacity: ${ scheme == 'dark' ? 0.65 : 0.45 } ; height: 25px ; font-size: 14.5px ; transition: transform 0.1s ease ;`
+                  + `color: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for text
+                  + `fill: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
+                  + `stroke: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
+                  + 'height: 25px ; font-size: 14.5px ; transition: transform 0.1s ease ;'
                   + `padding: 4px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
-              + '#ddgpt-settings li.active { opacity: 1 }'
+              + '#ddgpt-settings li.active {'
+                  + `color: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for text
+                  + `fill: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for icons
+                  + `stroke: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' }}` // for icons
               + '#ddgpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
               + '#ddgpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
               + '#ddgpt-settings li, #ddgpt-settings li label { cursor: pointer }' // add finger on hover
