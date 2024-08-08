@@ -180,7 +180,7 @@ jobs:
           else
             for readme in $(find docs/ -name "README.md") ; do
               old_readme=$(<"$readme")
-              sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/gI" "$readme"
+              sed -i -E "s|(badge/[^-]+-)[0-9.,km+]+([^?]+\?logo=weightsandbiases)|\1$total_users\2|gI" "$readme"
               new_readme=$(<"$readme")
               if [ "$old_readme" != "$new_readme" ] ; then users_updated=true ; fi
             done
