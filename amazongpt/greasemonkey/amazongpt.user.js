@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.7.5
+// @version                2024.8.7.6
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -126,7 +126,6 @@
     const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
 
     // Init API props
-    const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
     const apis = {
         'AIchatOS': {
             endpoint: 'https://api.binjie.fun/api/generateStream',
@@ -159,7 +158,10 @@
                 headers: { 'Accept': '*/*', 'Alt-Used': 'chatai.mixerbox.com', 'Sec-Fetch-Site': 'same-origin' }},
             method: 'POST', streamable: true, accumulatesText: false },
         'OpenAI': {
-            endpoint: 'https://api.openai.com/v1/chat/completions',
+            endpoints: {
+                auth: 'https://auth0.openai.com',
+                completions: 'https://api.openai.com/v1/chat/completions',
+                session: 'https://chatgpt.com/api/auth/session' },
             expectedOrigin: {
                 url: 'https://chatgpt.com',
                 headers: { 'Accept': '*/*', 'Priority': 'u=4', 'Sec-Fetch-Site': 'same-site' }},
@@ -1711,9 +1713,9 @@
     function deleteOpenAIcookies() {
         GM_deleteValue(config.keyPrefix + '_openAItoken')
         if (getUserscriptManager() != 'Tampermonkey') return
-        GM_cookie.list({ url: openAIendpoints.auth }, (cookies, error) => {
+        GM_cookie.list({ url: apis.OpenAI.endpoints.auth }, (cookies, error) => {
             if (!error) { for (const cookie of cookies) {
-                GM_cookie.delete({ url: openAIendpoints.auth, name: cookie.name })
+                GM_cookie.delete({ url: apis.OpenAI.endpoints.auth, name: cookie.name })
     }}})}
 
     function getOpenAItoken() {
@@ -1721,7 +1723,7 @@
             const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
             consoleInfo('OpenAI access token: ' + accessToken)
             if (!accessToken) {
-                xhr({ url: openAIendpoints.session, onload: resp => {
+                xhr({ url: apis.OpenAI.endpoints.session, onload: resp => {
                     if (isBlockedbyCloudflare(resp.responseText)) {
                         appAlert('checkCloudflare') ; return }
                     try {
@@ -1760,12 +1762,12 @@
             if (!chosenAPI) { consoleErr('No proxy APIs left untried') ; return null }
 
             // Log chosen API endpoint
-            consoleInfo(logPrefix + 'Endpoint used: ' + apis[chosenAPI].endpoint)
+            consoleInfo(`${logPrefix} Endpoint used: ${ apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint }`)
             return chosenAPI
         },
 
         tryNew(caller, reason = 'err') {
-            consoleErr(`Error using ${apis[caller.api].endpoint} due to ${reason}`)
+            consoleErr(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
                 consoleInfo('Trying another endpoint...')
                 caller.triedAPIs.push({ [caller.api]: reason }) ; caller.attemptCnt++
@@ -1786,7 +1788,8 @@
             const headers = {
                 'Accept-Encoding': 'gzip, deflate, br, zstd',
                 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'DNT': '1',
-                'Host': new URL(apis[api].endpoint).hostname, 'Origin': apis[api].expectedOrigin.url,
+                'Host': new URL(apis[api].endpoints?.completions || apis[api].endpoint).hostname,
+                'Origin': apis[api].expectedOrigin.url,
                 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors',
                 'TE': 'trailers', 'X-Forwarded-For': ip, 'X-Real-IP': ip
             }
@@ -1861,9 +1864,10 @@
                 if (config.proxyAPIenabled && get.reply.status != 'done' && !get.reply.sender)
                     api.tryNew(get.reply, 'timeout') }, config.streamingDisabled ? 9000 : 6000)
 
-            // Get/show answer from ChatGPT
+            // Get/show answer from AI
             xhr({
-                method: apis[get.reply.api].method, url: apis[get.reply.api].endpoint,
+                method: apis[get.reply.api].method,
+                url: apis[get.reply.api].endpoints?.completions || apis[get.reply.api].endpoint,
                 responseType: config.streamingDisabled || !config.proxyAPIenabled ? 'text' : 'stream',
                 headers: api.createHeaders(get.reply.api), data: api.createPayload(get.reply.api, msgChain),
                 onload: resp => dataProcess.text(get.reply, resp),
