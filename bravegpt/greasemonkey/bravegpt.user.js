@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.8
+// @version               2024.8.8.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2495,17 +2495,18 @@ setTimeout(async () => {
             setTimeout(() => { if (get.related.status != 'done') api.tryNew(get.related, 'timeout') }, 7000)
 
             return new Promise(resolve => {
-                const rqPrompt = 'Show a numbered list of queries related to this one:\n\n' + query
-                   + '\n\nMake sure to suggest a variety that can even greatly deviate from the original topic.'
-                   + ' For example, if the original query asked about someone\'s wife,'
-                       + ' a good related query could involve a different relative and using their name.'
-                   + ' Another example, if the query asked about a game/movie/show,'
-                       + ' good related queries could involve pertinent characters.'
-                   + ' Another example, if the original query asked how to learn JavaScript,'
-                       + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
-                   + ' But the key is variety. Do not be repetitive.'
-                       + ' You must entice user to want to ask one of your related queries.'
-                   + ` Reply in ${config.replyLanguage}`
+                const rqPrompt = `Show a numbered list of queries related to this one:\n\n${query}\n\n`
+                    + ( get.related.api != 'Free Chat' ? ( // to evade long query automated detection
+                        + ' Make sure to suggest a variety that can even greatly deviate from the original topic.'
+                        + ' For example, if the original query asked about someone\'s wife,'
+                            + ' a good related query could involve a different relative and using their name.'
+                        + ' Another example, if the query asked about a game/movie/show,'
+                            + ' good related queries could involve pertinent characters.'
+                        + ' Another example, if the original query asked how to learn JavaScript,'
+                            + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
+                        + ' But the key is variety. Do not be repetitive.'
+                            + ' You must entice user to want to ask one of your related queries.' ) : '' )
+                    + ` Reply in ${config.replyLanguage}`
                 xhr({
                     method: apis[get.related.api].method,
                     url: apis[get.related.api].endpoints?.completions || apis[get.related.api].endpoint,
