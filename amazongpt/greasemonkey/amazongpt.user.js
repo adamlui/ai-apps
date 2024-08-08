@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.7.6
+// @version                2024.8.8
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1480,6 +1480,7 @@
             const slider = document.createElement('div') ; slider.id = 'font-size-slider-track'
             slider.className = 'fade-in-less' ; slider.style.display = 'none'
             const sliderThumb = document.createElement('div') ; sliderThumb.id = 'font-size-slider-thumb'
+            sliderThumb.title = Math.floor(config.fontSize *10) /10 + 'px'
             slider.append(sliderThumb)
             appDiv.insertBefore(slider, appDiv.querySelector('.btn-tooltip,' // desktop
                                                            + 'pre')) // mobile
@@ -1537,6 +1538,7 @@
                 answerPre.style.fontSize = fontSize + 'px'
                 answerPre.style.lineHeight = fontSize * config.lineHeightRatio + 'px'
                 saveSetting('fontSize', fontSize)
+                sliderThumb.title = Math.floor(config.fontSize *10) /10 + 'px'
             }
 
             return slider

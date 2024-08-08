@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.7.6
+// @version               2024.8.8
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1966,6 +1966,7 @@ setTimeout(async () => {
             const slider = document.createElement('div') ; slider.id = 'font-size-slider-track'
             slider.className = 'fade-in-less' ; slider.style.display = 'none'
             const sliderThumb = document.createElement('div') ; sliderThumb.id = 'font-size-slider-thumb'
+            sliderThumb.title = Math.floor(config.fontSize *10) /10 + 'px'
             slider.append(sliderThumb)
             appDiv.insertBefore(slider, appDiv.querySelector('.btn-tooltip,' // desktop
                                                            + 'pre')) // mobile
@@ -2023,6 +2024,7 @@ setTimeout(async () => {
                 answerPre.style.fontSize = fontSize + 'px'
                 answerPre.style.lineHeight = fontSize * config.lineHeightRatio + 'px'
                 saveSetting('fontSize', fontSize)
+                sliderThumb.title = Math.floor(config.fontSize *10) /10 + 'px'
             }
 
             return slider            
