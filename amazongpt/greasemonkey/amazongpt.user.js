@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.8
+// @version                2024.8.8.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2102,7 +2102,9 @@
                 aboutSVG.onclick = modals.about.show
                 settingsSVG.onclick = modals.settings.show
                 if (speakerSVG) speakerSVG.onclick = () => {
-                    const dialectMap = [
+                    const wholeAnswer = appDiv.querySelector('pre').textContent
+                    const cjsSpeakOptions = { voice: 2, pitch: 1, speed: 1.5 }
+                    const sgtDialectMap = [
                         { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
                         { code: 'ar', regex: /^(ara?(bic)?|اللغة العربية)$/i, rate: 1.5 },
                         { code: 'cs', regex: /^(cze(ch)?|[cč]e[sš].*|cs)$/i, rate: 1.4 },
@@ -2123,9 +2125,8 @@
                         { code: 'vi', regex: /^vi[eệ]?t?(namese)?$/i, rate: 1.5 },
                         { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
                     ]
-                    const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
-                          payload = { text: appDiv.querySelector('pre').textContent, curTime: Date.now(),
-                                      spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
+                    const sgtReplyDialect = sgtDialectMap.find(entry => entry.regex.test(config.replyLanguage)) || sgtDialectMap[0],
+                          payload = { text: wholeAnswer, curTime: Date.now(), spokenDialect: sgtReplyDialect.code, rate: sgtReplyDialect.rate.toString() },
                           key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
                           iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
                     const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
@@ -2135,7 +2136,7 @@
                             + encodeURIComponent(securePayload),
                         method: 'GET', responseType: 'arraybuffer',
                         onload: async resp => {
-                            if (resp.status != 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
+                            if (resp.status != 200) chatgpt.speak(wholeAnswer, cjsSpeakOptions)
                             else {
                                 const audioContext = new (window.AudioContext || window.webkitAudioContext)()
                                 audioContext.decodeAudioData(resp.response, buffer => {
@@ -2143,8 +2144,8 @@
                                     audioSrc.buffer = buffer
                                     audioSrc.connect(audioContext.destination) // connect source to speakers
                                     audioSrc.start(0) // play audio
-                        })}}
-                    })
+                                }).catch(() => chatgpt.speak(wholeAnswer, cjsSpeakOptions))
+                    }}})
                 }
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (arrowsSVG) arrowsSVG.onclick = () => toggle.expandedMode()
