@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.8.4
+// @version                  2024.8.9
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2719,7 +2719,7 @@
 
             return new Promise(resolve => {
                 const rqPrompt = `Show a numbered list of queries related to this one:\n\n${query}\n\n`
-                    + ( get.related.api != 'Free Chat' ? ( // to evade long query automated detection
+                    + ( get.related.api == 'Free Chat' ? '' : ( // to evade long query automated detection
                         + ' Make sure to suggest a variety that can even greatly deviate from the original topic.'
                         + ' For example, if the original query asked about someone\'s wife,'
                             + ' a good related query could involve a different relative and using their name.'
@@ -2728,7 +2728,7 @@
                         + ' Another example, if the original query asked how to learn JavaScript,'
                             + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
                         + ' But the key is variety. Do not be repetitive.'
-                            + ' You must entice user to want to ask one of your related queries.' ) : '' )
+                            + ' You must entice user to want to ask one of your related queries.' ))
                     + ` Reply in ${config.replyLanguage}`
                 xhr({
                     method: apis[get.related.api].method,
