@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.8
+// @version             2024.8.9
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -605,13 +605,14 @@
         // Create/stylize knob, append to switch
         const knobSpan = document.getElementById('infinity-toggle-knob-span') || document.createElement('span')
         knobSpan.id = 'infinity-toggle-knob-span'
-        const knobWidth = 13
+        const knobWidth = 12
         const knobStyles = {
-            position: 'absolute', left: '3px', bottom: `${ isFirefox && !firstLink ? 0.075 : 0.055 }em`,
+            position: 'absolute', left: '3px', bottom: '1.25px',
             width: `${ knobWidth }px`, height: `${ knobWidth }px`, content: '""', borderRadius: '28px',
             transform: toggleInput.checked ? // init opposite final pos
-                'translateX(0)' : `translateX(${ knobWidth }px) translateY(0)`,
-            backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
+                'translateX(0)' : 'translateX(13px) translateY(0)',
+            backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s',
+            boxShadow: 'rgba(0, 0, 0, .3) 0 1px 2px 0'
         }
         Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
@@ -636,7 +637,7 @@
         setTimeout(() => {
             switchSpan.style.backgroundColor = toggleInput.checked ? '#ad68ff' : '#ccc'
             switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
-            knobSpan.style.transform = toggleInput.checked ? `translateX(${ knobWidth }px) translateY(0)` : 'translateX(0)'
+            knobSpan.style.transform = toggleInput.checked ? 'translateX(13px) translateY(0)' : 'translateX(0)'
         }, 1) // min delay to trigger transition fx
     }
 

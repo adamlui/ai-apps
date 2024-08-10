@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.8
+// @version             2024.8.9
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -588,13 +588,14 @@
         // Create/ID/stylize knob, append to switch
         const knobSpan = document.getElementById('atToggleKnobSpan') || document.createElement('span')
         knobSpan.id = 'atToggleKnobSpan'
-        const knobWidth = 13
+        const knobWidth = 12
         const knobStyles = {
-            position: 'absolute', left: '3px', bottom: `${ isFirefox && !firstLink ? 0.075 : 0.055 }em`,
-            width: `${ knobWidth }px`, height: `${ knobWidth }px`, content: '""', borderRadius: '28px',
+            position: 'absolute', left: '3px', bottom: '1.25px',
+            width: `${knobWidth}px`, height: `${knobWidth}px`, content: '""', borderRadius: '28px',
             transform: toggleInput.checked ? // init opposite final pos
-                'translateX(0)' : `translateX(${ knobWidth }px) translateY(0)`,
-            backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
+                'translateX(0)' : 'translateX(13px) translateY(0)',
+            backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s',
+            boxShadow: 'rgba(0, 0, 0, .3) 0 1px 2px 0'
         }
         Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
@@ -620,7 +621,7 @@
             if (toggleInput.checked) {
                 switchSpan.style.backgroundColor = '#AD68FF'
                 switchSpan.style.boxShadow = '2px 1px 9px #D8A9FF'
-                knobSpan.style.transform = `translateX(${ knobWidth }px) translateY(0)`
+                knobSpan.style.transform = 'translateX(13px) translateY(0)'
             } else {
                 switchSpan.style.backgroundColor = '#CCC'
                 switchSpan.style.boxShadow = 'none'
