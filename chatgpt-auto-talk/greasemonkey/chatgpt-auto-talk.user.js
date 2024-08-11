@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.10
+// @version             2024.8.10.1
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -362,7 +362,7 @@
 
     // Add LISTENER to toggle switch/label/config/menu
     navToggleDiv.onclick = () => {
-        const toggleInput = document.getElementById('atToggleInput')
+        const toggleInput = document.getElementById('auto-talk-toggle-input')
         toggleInput.checked = !toggleInput.checked ; config.autoTalkDisabled = !toggleInput.checked
         updateToggleHTML() ; refreshMenu()
         notify(`${ msgs.mode_autoTalk || 'Auto-Talk' }: ${menuState.word[+!config.autoTalkDisabled]}`)
@@ -403,7 +403,7 @@
         const atLabel = menuState.symbol[+!config.autoTalkDisabled] + ' '
                       + ( msgs.mode_autoTalk || 'Auto-Talk' )
                       + menuState.separator + menuState.word[+!config.autoTalkDisabled]
-        menuIDs.push(GM_registerMenuCommand(atLabel, () => document.getElementById('atToggleLabel').click()))
+        menuIDs.push(GM_registerMenuCommand(atLabel, () => document.getElementById('auto-talk-toggle-label').click()))
 
         // Add command to toggle visibility of toggle
         const tvLabel = menuState.symbol[+!config.toggleHidden] + ' '
@@ -556,9 +556,9 @@
         // Tweak styles
         navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         navToggleDiv.style.paddingLeft = '8px'
-        document.getElementById('atToggleKnobSpan').style.boxShadow = (
+        document.getElementById('auto-talk-toggle-knob-span').style.boxShadow = (
             'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
-        document.getElementById('atToggleNavicon').src = `${ // update navicon color in case scheme changed
+        document.getElementById('auto-talk-toggle-navicon').src = `${ // update navicon color in case scheme changed
             config.assetHostURL }assets/images/icons/speaker/${
             chatgpt.isDarkMode() ? 'white' : 'black' }-icon.svg`
     }
@@ -566,14 +566,14 @@
     function updateToggleHTML() {
 
         // Create/size/position navicon
-        const navicon = document.getElementById('atToggleNavicon') || document.createElement('img')
-        navicon.id = 'atToggleNavicon'
+        const navicon = document.getElementById('auto-talk-toggle-navicon') || document.createElement('img')
+        navicon.id = 'auto-talk-toggle-navicon'
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
-        const toggleInput = document.getElementById('atToggleInput') || document.createElement('input')
-        toggleInput.id = 'atToggleInput' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
+        const toggleInput = document.getElementById('auto-talk-toggle-input') || document.createElement('input')
+        toggleInput.id = 'auto-talk-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
         toggleInput.style.display = 'none' ; toggleInput.checked = !config.autoTalkDisabled
 
         // Create/ID/stylize switch
@@ -588,8 +588,8 @@
         Object.assign(switchSpan.style, switchStyles)
 
         // Create/ID/stylize knob, append to switch
-        const knobSpan = document.getElementById('atToggleKnobSpan') || document.createElement('span')
-        knobSpan.id = 'atToggleKnobSpan'
+        const knobSpan = document.getElementById('auto-talk-toggle-knob-span') || document.createElement('span')
+        knobSpan.id = 'auto-talk-toggle-knob-span'
         const knobWidth = 12
         const knobStyles = {
             position: 'absolute', left: '3px', bottom: '1.25px',
@@ -601,8 +601,8 @@
         Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
         // Create/ID/stylize/fill label
-        const toggleLabel = document.getElementById('atToggleLabel') || document.createElement('label')
-        toggleLabel.id = 'atToggleLabel'
+        const toggleLabel = document.getElementById('auto-talk-toggle-label') || document.createElement('label')
+        toggleLabel.id = 'auto-talk-toggle-label'
         if (!firstLink) { // add font size/weight since no firstLink to borrow from
             toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
         toggleLabel.style.marginLeft = `-${ !firstLink ? 23 : 41 }px` // left-shift to navicon
