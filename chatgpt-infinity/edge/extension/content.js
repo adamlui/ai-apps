@@ -78,7 +78,6 @@
         navToggleDiv.style.paddingLeft = '8px'
         document.getElementById('infinity-toggle-knob-span').style.boxShadow = (
             'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
-        toggleParent.style.paddingTop = '13px'
         const navicon = document.getElementById('infinity-toggle-navicon')
         if (navicon) navicon.src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/infinity-symbol/${
