@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.9
+// @version             2024.8.10
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -603,6 +603,8 @@
         // Tweak styles
         navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         navToggleDiv.style.paddingLeft = '8px'
+        document.getElementById('auto-refresh-toggle-knob-span').style.boxShadow = (
+            'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
         document.getElementById('auto-refresh-toggle-navicon').src = `${ // update navicon color in case scheme changed
             config.mediaHostURL}images/icons/auto-refresh/`
           + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${config.latestAssetCommitHash}`
@@ -641,8 +643,7 @@
             width: `${knobWidth}px`, height: `${knobWidth}px`, content: '""', borderRadius: '28px',
             transform: toggleInput.checked ? // init opposite final pos
                 'translateX(0)' : 'translateX(13px) translateY(0)',
-            backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s',
-            boxShadow: 'rgba(0, 0, 0, .3) 0 1px 2px 0'
+            backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
         }
         Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
