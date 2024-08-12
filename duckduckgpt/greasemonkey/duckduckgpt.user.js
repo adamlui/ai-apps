@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.9
+// @version                2024.8.12
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -172,11 +172,11 @@
 // @include                https://auth0.openai.com
 // @connect                binjie.fun
 // @connect                chatgpt.com
+// @connect                free-chat.asia
 // @connect                gptforlove.com
 // @connect                greasyfork.org
 // @connect                jsdelivr.net
 // @connect                mixerbox.com
-// @connect                onrender.com
 // @connect                openai.com
 // @connect                sogou.com
 // @require                https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.0.1/dist/chatgpt.min.js#sha256-jCJMPu044aK37jtC2wMMKnNgHbXJ5Pm9ZdIqDERob7k=
@@ -270,7 +270,7 @@
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
             userID: '#/chat/' + Date.now() },
         'Free Chat': {
-            endpoint: 'https://demo-3d93.onrender.com/single/chat_messages',
+            endpoint: 'https://promplate-api.free-chat.asia/single/chat_messages',
             expectedOrigin: {
                 url: 'https://e10.frechat.xyz',
                 headers: { 'Accept': '*/*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
