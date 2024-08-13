@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.10
+// @version             2024.8.12
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -265,7 +265,7 @@
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-refresh',
         greasyForkURL: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh',
         mediaHostURL: 'https://media.chatgptautorefresh.com/',
-        latestAssetCommitHash: '59a1dba' } // for cached messages.json + navicon
+        latestAssetCommitHash: '0e54b0c' } // for cached messages.json + navicon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = 'https://support.chatgptautorefresh.com'
@@ -507,7 +507,7 @@
             else if (/support/i.test(button.textContent)) button.textContent = (
                 '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
             else if (/review/i.test(button.textContent)) button.textContent = (
-                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave a Review' ))
+                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave Review' ))
             else if (/apps/i.test(button.textContent)) button.textContent = (
                 '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
             else button.style.display = 'none' // hide Dismiss button

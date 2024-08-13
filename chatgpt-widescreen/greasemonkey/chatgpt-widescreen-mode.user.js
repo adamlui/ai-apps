@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.8
+// @version             2024.8.12
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -267,7 +267,7 @@
         appName: 'ChatGPT Widescreen Mode', appSymbol: '🖥️', keyPrefix: site + 'Widescreen',
         gitHubURL: 'https://github.com/adamlui/chatgpt-widescreen',
         greasyForkURL: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
-        latestAssetCommitHash: '879b687' } // for messages.json
+        latestAssetCommitHash: 'd112844' } // for messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -458,7 +458,7 @@
             else if (/support/i.test(button.textContent)) button.textContent = (
                 '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
             else if (/review/i.test(button.textContent)) button.textContent = (
-                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave a Review' ))
+                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave Review' ))
             else if (/apps/i.test(button.textContent)) button.textContent = (
                 '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
             else button.style.display = 'none' // hide Dismiss button

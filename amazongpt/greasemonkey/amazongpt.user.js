@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.12
+// @version                2024.8.12.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -103,7 +103,7 @@
         appURL: 'https://amazongpt.kudoai.com', gitHubURL: 'https://github.com/KudoAI/amazongpt',
         greasyForkURL: 'https://greasyfork.org/scripts/500663-amazongpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.28,
-        latestAssetCommitHash: '336c110' } // for cached messages.json
+        latestAssetCommitHash: '913fce6' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -527,7 +527,7 @@
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
                         '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
                     else if (/review/i.test(btn.textContent)) btn.textContent = (
-                        '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave a Review' ))
+                        '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave Review' ))
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
                         '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
                     else btn.style.display = 'none' // hide Dismiss button

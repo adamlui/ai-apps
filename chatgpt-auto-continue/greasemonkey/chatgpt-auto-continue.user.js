@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.8
+// @version             2024.8.12
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -252,7 +252,7 @@
         appName: 'ChatGPT Auto-Continue', appSymbol: '≫', keyPrefix: 'chatGPTautoContinue',
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-continue',
         greasyForkURL: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue',
-        latestAssetCommitHash: '261d238' } // for cached messages.json
+        latestAssetCommitHash: '0bb02c0' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -394,7 +394,7 @@
             else if (/support/i.test(button.textContent)) button.textContent = (
                 '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
             else if (/review/i.test(button.textContent)) button.textContent = (
-                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave a Review' ))
+                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave Review' ))
             else if (/apps/i.test(button.textContent)) button.textContent = (
                 '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
             else button.style.display = 'none' // hide Dismiss button

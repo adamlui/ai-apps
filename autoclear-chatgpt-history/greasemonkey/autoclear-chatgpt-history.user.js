@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.10
+// @version             2024.8.12
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -268,7 +268,7 @@
         gitHubURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
         greasyForkURL: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history',
         mediaHostURL: 'https://media.autoclearchatgpt.com/',
-        latestAssetCommitHash: '47a81d8' } // for cached messages.json + navicon
+        latestAssetCommitHash: '1b5e3d4' } // for cached messages.json + navicon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = 'https://support.autoclearchatgpt.com'
@@ -472,7 +472,7 @@
             else if (/support/i.test(button.textContent)) button.textContent = (
                 '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
             else if (/review/i.test(button.textContent)) button.textContent = (
-                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave a Review' ))
+                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave Review' ))
             else if (/apps/i.test(button.textContent)) button.textContent = (
                 '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
             else button.style.display = 'none' // hide Dismiss button

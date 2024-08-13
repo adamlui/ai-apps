@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.10.1
+// @version             2024.8.12
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -257,7 +257,7 @@
         appName: 'ChatGPT Auto-Talk', appSymbol: '📣', keyPrefix: 'chatGPTautoTalk',
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-talk',
         greasyForkURL: 'https://greasyfork.org/en/scripts/500940-chatgpt-auto-talk',
-        latestAssetCommitHash: 'f8521d0' } // for cached messages.json + navicon
+        latestAssetCommitHash: '040cd9b' } // for cached messages.json + navicon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -460,7 +460,7 @@
             else if (/support/i.test(button.textContent)) button.textContent = (
                 '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
             else if (/review/i.test(button.textContent)) button.textContent = (
-                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave a Review' ))
+                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave Review' ))
             else if (/apps/i.test(button.textContent)) button.textContent = (
                 '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
             else button.style.display = 'none' // hide Dismiss button
