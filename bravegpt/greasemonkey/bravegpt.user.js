@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.12.1
+// @version               2024.8.13
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2503,7 +2503,7 @@ setTimeout(async () => {
             return new Promise(resolve => {
                 const rqPrompt = `Show a numbered list of queries related to this one:\n\n${query}\n\n`
                     + ( get.related.api == 'Free Chat' ? '' : ( // to evade long query automated detection
-                        + ' Make sure to suggest a variety that can even greatly deviate from the original topic.'
+                           'Make sure to suggest a variety that can even greatly deviate from the original topic.'
                         + ' For example, if the original query asked about someone\'s wife,'
                             + ' a good related query could involve a different relative and using their name.'
                         + ' Another example, if the query asked about a game/movie/show,'
