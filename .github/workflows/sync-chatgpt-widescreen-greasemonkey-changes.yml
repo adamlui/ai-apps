@@ -85,7 +85,7 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git add .
-          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `chatgpt-widescreen/greasemonkey`]" || true
+          git commit -n -m "$(echo '${{ github.event.head_commit.message }}' | sed 's/`/\`/g') ↞ [auto-sync from \`chatgpt-widescreen/greasemonkey\`]" || true
           git push
 
       - name: Push changes to adamlui/chatgpt-widescreen
@@ -94,7 +94,7 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git add .
-          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey`]" || true
+          git commit -n -m $(echo '${{ github.event.head_commit.message }}' | sed 's/`/\`/g') ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey\`]" || true
           git push
 
       - name: Push changes to adamlui/userscripts
@@ -103,5 +103,5 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git add .
-          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey`]" || true
+          git commit -n -m "$(echo '${{ github.event.head_commit.message }}' | sed 's/`/\`/g') ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey\`]" || true
           git push

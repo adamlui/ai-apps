@@ -88,7 +88,7 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git add .
-          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `${{ steps.sync_docs.outputs.sync_src }}`]" || true
+          git commit -n -m "$(echo '${{ github.event.head_commit.message }}' | sed 's/`/\`/g') ↞ [auto-sync from \`${{ steps.sync_docs.outputs.sync_src }}\`]" || true
           git push
 
       - name: Push changes to adamlui/autoclear-chatgpt-history
@@ -97,7 +97,7 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git add .
-          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]" || true
+          git commit -n -m "$(echo '${{ github.event.head_commit.message }}' | sed 's/`/\`/g') ↞ [auto-sync from \`adamlui/chatgpt-apps\`]" || true
           git push
 
       - name: Push changes to adamlui/userscripts
@@ -106,5 +106,5 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git add .
-          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/autoclear-chatgpt-history`]" || true
+          git commit -n -m "$(echo '${{ github.event.head_commit.message }}' | sed 's/`/\`/g') ↞ [auto-sync from \`adamlui/chatgpt-apps/autoclear-chatgpt-history\`]" || true
           git push
