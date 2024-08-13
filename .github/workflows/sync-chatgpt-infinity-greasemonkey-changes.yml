@@ -79,32 +79,29 @@ jobs:
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/ \
             ${{ github.workspace }}/adamlui/chatgpt-infinity/
 
-      - name: Push to adamlui/chatgpt-apps
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `chatgpt-infinity/greasemonkey`]"
-          file_pattern: "chatgpt-infinity/**"
-          repository: adamlui/chatgpt-apps
+      - name: Push changes to adamlui/chatgpt-apps
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-apps
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `chatgpt-infinity/greasemonkey`]" || true
+          git push
 
-      - name: Push to adamlui/chatgpt-infinity
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey`]"
-          file_pattern: "**"
-          repository: adamlui/chatgpt-infinity
+      - name: Push changes to adamlui/chatgpt-infinity
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-infinity
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey`]" || true
+          git push
 
-      - name: Push to adamlui/userscripts
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey`]"
-          file_pattern: "chatgpt/chatgpt-infinity/**"
-          repository: adamlui/userscripts
+      - name: Push changes to adamlui/userscripts
+        run: |
+          cd ${{ github.workspace }}/adamlui/userscripts
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey`]" || true
+          git push

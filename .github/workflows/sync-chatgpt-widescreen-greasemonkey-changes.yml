@@ -79,32 +79,29 @@ jobs:
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ \
             ${{ github.workspace }}/adamlui/chatgpt-widescreen/
 
-      - name: Push to adamlui/chatgpt-apps
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `chatgpt-widescreen/greasemonkey`]"
-          file_pattern: "chatgpt-widescreen/**"
-          repository: adamlui/chatgpt-apps
+      - name: Push changes to adamlui/chatgpt-apps
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-apps
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `chatgpt-widescreen/greasemonkey`]" || true
+          git push
 
-      - name: Push to adamlui/chatgpt-widescreen
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey`]"
-          file_pattern: "**"
-          repository: adamlui/chatgpt-widescreen
+      - name: Push changes to adamlui/chatgpt-widescreen
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey`]" || true
+          git push
 
-      - name: Push to adamlui/userscripts
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey`]"
-          file_pattern: "chatgpt/chatgpt-widescreen/**"
-          repository: adamlui/userscripts
+      - name: Push changes to adamlui/userscripts
+        run: |
+          cd ${{ github.workspace }}/adamlui/userscripts
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey`]" || true
+          git push
