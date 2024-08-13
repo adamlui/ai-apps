@@ -33,6 +33,7 @@
   "alert_pressF11": { "message": "Appuyez sur F11 pour quitter le mode plein écran" },
   "alert_f11reason": { "message": "F11 a été utilisé pour entrer en mode plein écran et, pour des raisons de sécurité du navigateur, la même touche doit être utilisée pour en sortir" },
   "btnLabel_moreApps": { "message": "Plus d'applications ChatGPT" },
+  "btnLabel_leaveReview": { "message": "Laissez Review" },
   "btnLabel_getSupport": { "message": "Obtenir de l’aide" },
   "btnLabel_updateCheck": { "message": "Vérifier les mises à jour" },
   "btnLabel_update": { "message": "Mettre à jour" },

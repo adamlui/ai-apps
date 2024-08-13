@@ -33,6 +33,7 @@
   "alert_pressF11": { "message": "Pritisnite F11 za izhod iz celozaslonskega načina" },
   "alert_f11reason": { "message": "F11 je bil uporabljen za vstop v celozaslonski način, zaradi varnostnih razlogov brskalnika pa je treba za izhod iz njega uporabiti isti ključ" },
   "btnLabel_moreApps": { "message": "Več aplikacij ChatGPT" },
+  "btnLabel_leaveReview": { "message": "Dodajte oceno" },
   "btnLabel_getSupport": { "message": "Podpora" },
   "btnLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
   "btnLabel_update": { "message": "Update" },

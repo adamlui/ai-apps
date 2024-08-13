@@ -33,6 +33,7 @@
   "alert_pressF11": { "message": "Nospiediet F11, lai izietu no pilnekrāna režīma" },
   "alert_f11reason": { "message": "F11 tika izmantots, lai ieietu pilnekrāna režīmā, un pārlūkprogrammas drošības apsvērumu dēļ, lai to izietu, ir jāizmanto tā pati atslēga" },
   "btnLabel_moreApps": { "message": "Vairāk ChatGPT lietotņu" },
+  "btnLabel_leaveReview": { "message": "Atstāt atsauksmi?" },
   "btnLabel_getSupport": { "message": "Saņemt atbalstu" },
   "btnLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi" },
   "btnLabel_update": { "message": "Atjauninināt" },
