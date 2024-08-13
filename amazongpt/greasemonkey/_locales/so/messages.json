@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "badiyadka to badiyadka to" },
   "alert_switchingOff": { "message": "badiyadka to badar" },
   "btnLabel_moreApps": { "message": "Codsiyada ChatGPT dheeraad ah" },
-  "btnLabel_leaveReview": { "message": "Ka tag dib u eegis" },
+  "btnLabel_leaveReview": { "message": "Dib u eegista Ka tag" },
   "btnLabel_getSupport": { "message": "Hel Tageero" },
   "btnLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
   "btnLabel_update": { "message": "Cusboonaysiinta" },

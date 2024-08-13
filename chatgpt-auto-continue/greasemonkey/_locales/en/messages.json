@@ -14,7 +14,7 @@
   "alert_isUpToDate": { "message": "is up-to-date" },
   "notif_chatAutoContinued": { "message": "Chat Auto-Continued" },
   "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
-  "btnLabel_leaveReview": { "message": "Leave a Review" },
+  "btnLabel_leaveReview": { "message": "Leave Review" },
   "btnLabel_getSupport": { "message": "Get Support" },
   "btnLabel_updateCheck": { "message": "Check for Updates" },
   "btnLabel_update": { "message": "Update" },

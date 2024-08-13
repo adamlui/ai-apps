@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "स्विच ऑन किया जा रहा है" },
   "alert_switchingOff": { "message": "स्विच ऑफ किया जा रहा है" },
   "btnLabel_moreApps": { "message": "और ChatGPT ऐप्स" },
-  "btnLabel_leaveReview": { "message": "समीक्षा लिखें" },
+  "btnLabel_leaveReview": { "message": "समीक्षा छोड़ें" },
   "btnLabel_getSupport": { "message": "सपोर्ट प्राप्त करें" },
   "btnLabel_updateCheck": { "message": "अद्यतन के लिए जाँचें" },
   "btnLabel_update": { "message": "अपडेट करें" },

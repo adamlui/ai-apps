@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "מעודכן" },
   "alert_isUpToDate": { "message": "מעודכן" },
   "btnLabel_moreApps": { "message": "עוד אפליקציות ChatGPT" },
-  "btnLabel_leaveReview": { "message": "כתבי חוות דעת" },
+  "btnLabel_leaveReview": { "message": "השארת חוות דעת" },
   "btnLabel_getSupport": { "message": "קבל תמיכה" },
   "btnLabel_updateCheck": { "message": "חפש עדכונים" },
   "btnLabel_update": { "message": "עדכון" },

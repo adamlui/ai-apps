@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "Įjungti" },
   "alert_switchingOff": { "message": "Išjungti" },
   "btnLabel_moreApps": { "message": "Daugiau „ChatGPT“ programų" },
-  "btnLabel_leaveReview": { "message": "Palikite apžvalgą" },
+  "btnLabel_leaveReview": { "message": "Palikite atsiliepimą" },
   "btnLabel_getSupport": { "message": "Gauti palaikymą" },
   "btnLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
   "btnLabel_update": { "message": "Naujinti" },

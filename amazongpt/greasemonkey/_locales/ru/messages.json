@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "Включение" },
   "alert_switchingOff": { "message": "Выключение" },
   "btnLabel_moreApps": { "message": "Другие приложения ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Оставьте отзыв" },
+  "btnLabel_leaveReview": { "message": "Оставить Отзыв" },
   "btnLabel_getSupport": { "message": "Получить поддержку" },
   "btnLabel_updateCheck": { "message": "Проверить наличие обновлений" },
   "btnLabel_update": { "message": "Обновить" },

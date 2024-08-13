@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "whakawhiti" },
   "btnLabel_sendQueryToApp": { "message": "Tukuna he uiuinga rapu ki te BraveGPT" },
   "btnLabel_moreApps": { "message": "Ētahi atu ChatGPT Apps" },
-  "btnLabel_leaveReview": { "message": "Waiho he arotake" },
+  "btnLabel_leaveReview": { "message": "Waiho i te arotake" },
   "btnLabel_getSupport": { "message": "Tautoko" },
   "btnLabel_updateCheck": { "message": "Tirohia nga whakahoutanga" },
   "btnLabel_update": { "message": "Whakahou" },

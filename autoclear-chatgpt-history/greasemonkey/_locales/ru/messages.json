@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "<PROG_NAME> в актуальном состоянии!" },
   "btnLabel_moreApps": { "message": "Другие приложения ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Оставьте отзыв" },
+  "btnLabel_leaveReview": { "message": "Оставить Отзыв" },
   "btnLabel_getSupport": { "message": "Получить поддержку" },
   "btnLabel_updateCheck": { "message": "Проверить наличие обновлений" },
   "btnLabel_update": { "message": "Обновить" },

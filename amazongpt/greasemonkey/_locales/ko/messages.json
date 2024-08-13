@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "스위치 켜기" },
   "alert_switchingOff": { "message": "스위치 끄기" },
   "btnLabel_moreApps": { "message": "더 많은 ChatGPT 앱" },
-  "btnLabel_leaveReview": { "message": "상품 후기를 남겨주세요" },
+  "btnLabel_leaveReview": { "message": "리뷰를 남겨 주세요" },
   "btnLabel_getSupport": { "message": "지원받기" },
   "btnLabel_updateCheck": { "message": "업데이트 확인" },
   "btnLabel_update": { "message": "업데이트" },

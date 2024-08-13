@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "Vklop" },
   "alert_switchingOff": { "message": "Izklop" },
   "btnLabel_moreApps": { "message": "Več aplikacij ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Podaj mnenje" },
+  "btnLabel_leaveReview": { "message": "Dodajte oceno" },
   "btnLabel_getSupport": { "message": "Podpora" },
   "btnLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
   "btnLabel_update": { "message": "Posodobi" },

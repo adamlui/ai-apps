@@ -14,7 +14,7 @@
   "alert_isUpToDate": { "message": "Ažuriraj" },
   "notif_chatAutoContinued": { "message": "Razgovor je automatski nastavljen" },
   "btnLabel_moreApps": { "message": "Još aplikacija za ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Ostavi recenziju" },
+  "btnLabel_leaveReview": { "message": "Ostavite recenziju" },
   "btnLabel_getSupport": { "message": "Podrška" },
   "btnLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
   "btnLabel_update": { "message": "Ažuriraj" },

@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "guhindura kuri" },
   "btnLabel_sendQueryToApp": { "message": "Ohereza ikibazo cyo gushakisha kuri DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Ibyinshi kuri ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Reka Isuzuma" },
+  "btnLabel_leaveReview": { "message": "Isubiramo" },
   "btnLabel_getSupport": { "message": "Gufashwa" },
   "btnLabel_updateCheck": { "message": "Reba niba hari ihinduka" },
   "btnLabel_update": { "message": "Hindura" },

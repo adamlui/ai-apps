@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "a' tionndadh dheth" },
   "btnLabel_sendQueryToApp": { "message": "Cuir ceist rannsachaidh gu BraveGPT" },
   "btnLabel_moreApps": { "message": "Barrachd Apps ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Fàg ath-bhreithneachadh" },
+  "btnLabel_leaveReview": { "message": "Leave Review" },
   "btnLabel_getSupport": { "message": "Faigh Taic" },
   "btnLabel_updateCheck": { "message": "Dèan sgrùdadh airson Ùrachaidhean" },
   "btnLabel_update": { "message": "Ùrachadh" },

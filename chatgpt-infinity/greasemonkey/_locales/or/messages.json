@@ -34,7 +34,7 @@
   "alert_upToDate": { "message": "ଆପଡେଟ୍-ତାତେ" },
   "alert_isUpToDate": { "message": "ଆପଡେଟ୍-ତାତେ ଅଛି" },
   "btnLabel_moreApps": { "message": "ଅଧିକ ଚାଟGPT ପ୍ରୟୋଗଗୁଡ଼ିକ" },
-  "btnLabel_leaveReview": { "message": "ଏକ ସମୀକ୍ଷା ଛାଡି ଦିଅନ୍ତୁ" },
+  "btnLabel_leaveReview": { "message": "ସମୀକ୍ଷା ଛାଡନ୍ତୁ" },
   "btnLabel_getSupport": { "message": "ସପୋର୍ଟ ପାଆନ୍ତୁ" },
   "btnLabel_updateCheck": { "message": "ଅପଡେଟ୍ ପରୀକ୍ଷା କରନ୍ତୁ" },
   "btnLabel_update": { "message": "ଅପଡେଟ୍" },

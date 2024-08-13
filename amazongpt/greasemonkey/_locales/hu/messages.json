@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "Bekapcsolás." },
   "alert_switchingOff": { "message": "Kikapcsolás" },
   "btnLabel_moreApps": { "message": "További ChatGPT alkalmazások" },
-  "btnLabel_leaveReview": { "message": "Írjál egy véleményt" },
+  "btnLabel_leaveReview": { "message": "Írj értékelést" },
   "btnLabel_getSupport": { "message": "Kérj támogatást" },
   "btnLabel_updateCheck": { "message": "Frissítések keresése" },
   "btnLabel_update": { "message": "Frissítés" },

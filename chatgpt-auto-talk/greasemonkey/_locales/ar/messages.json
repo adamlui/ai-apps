@@ -13,7 +13,7 @@
   "alert_upToDate": { "message": "محدّث" },
   "alert_isUpToDate": { "message": "محدث" },
   "btnLabel_moreApps": { "message": "المزيد من تطبيقات ChatGPT" },
-  "btnLabel_leaveReview": { "message": "اترك تقييماً" },
+  "btnLabel_leaveReview": { "message": "اترك مراجعة" },
   "btnLabel_getSupport": { "message": "احصل على الدعم" },
   "btnLabel_updateCheck": { "message": "مرابة التحديثات" },
   "btnLabel_update": { "message": "التحديث" },

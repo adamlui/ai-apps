@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "جاري التشغيل" },
   "alert_switchingOff": { "message": "قَطْعُ التّيّارِ الكَهْرَبَائِيّ" },
   "btnLabel_moreApps": { "message": "المزيد من تطبيقات ChatGPT" },
-  "btnLabel_leaveReview": { "message": "اترك تقييماً" },
+  "btnLabel_leaveReview": { "message": "اترك مراجعة" },
   "btnLabel_getSupport": { "message": "احصل على الدعم" },
   "btnLabel_updateCheck": { "message": "مرابة التحديثات" },
   "btnLabel_update": { "message": "التحديث" },

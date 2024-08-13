@@ -11,7 +11,7 @@
   "alert_newerVer": { "message": "En opdatering til" },
   "alert_isAvail": { "message": "er tilgængelig" },
   "alert_upToDate": { "message": "Opdateret" },
-  "alert_isUpToDate": { "message": "{      0      } er opdateret" },
+  "alert_isUpToDate": { "message": "{       0       } er opdateret" },
   "notif_chatAutoContinued": { "message": "Chat Auto-Continued" },
   "btnLabel_moreApps": { "message": "Flere ChatGPT-apps" },
   "btnLabel_leaveReview": { "message": "Skriv en anmeldelse" },

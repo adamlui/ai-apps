@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "cập nhật" },
   "alert_isUpToDate": { "message": "Cập nhật" },
   "btnLabel_moreApps": { "message": "Các ứng dụng ChatGPT khác" },
-  "btnLabel_leaveReview": { "message": "Đánh giá" },
+  "btnLabel_leaveReview": { "message": "Gửi phản hồi" },
   "btnLabel_getSupport": { "message": "Đề nghị hỗ trợ" },
   "btnLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
   "btnLabel_update": { "message": "Cập nhật" },

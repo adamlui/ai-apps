@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "Up to date" },
   "alert_isUpToDate": { "message": "je ažuran" },
   "btnLabel_moreApps": { "message": "Još ChatGPT aplikacija" },
-  "btnLabel_leaveReview": { "message": "Napiši recenziju" },
+  "btnLabel_leaveReview": { "message": "Pošalji recenziju" },
   "btnLabel_getSupport": { "message": "Zatražite podršku" },
   "btnLabel_updateCheck": { "message": "Potražite ažuriranja" },
   "btnLabel_update": { "message": "Nadogradi" },

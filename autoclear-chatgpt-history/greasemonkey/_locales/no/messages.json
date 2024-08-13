@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "Oppdatert" },
   "alert_isUpToDate": { "message": "er oppdatert" },
   "btnLabel_moreApps": { "message": "Flere ChatGPT-apper" },
-  "btnLabel_leaveReview": { "message": "Legg igjen en anmeldelse" },
+  "btnLabel_leaveReview": { "message": "Skriv en omtale" },
   "btnLabel_getSupport": { "message": "Brukerstøtte" },
   "btnLabel_updateCheck": { "message": "Se etter oppdateringer" },
   "btnLabel_update": { "message": "Oppdater" },

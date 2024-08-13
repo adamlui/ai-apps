@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "kisim bek" },
   "btnLabel_sendQueryToApp": { "message": "Send search query to GoogleGPT" },
   "btnLabel_moreApps": { "message": "Ol app bilong ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Leave a review" },
+  "btnLabel_leaveReview": { "message": "Lusim toksave" },
   "btnLabel_getSupport": { "message": "Kisim helpim" },
   "btnLabel_updateCheck": { "message": "Lukim ol eleksen" },
   "btnLabel_update": { "message": "UPDATE" },

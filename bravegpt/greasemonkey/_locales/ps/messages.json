@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "بندول، بندول" },
   "btnLabel_sendQueryToApp": { "message": "لټون پوښتن BraveGPT ته واستوئ" },
   "btnLabel_moreApps": { "message": "نور چیټ جی پی ټي ایپونه" },
-  "btnLabel_leaveReview": { "message": "بیاکتنه پریږدئ" },
+  "btnLabel_leaveReview": { "message": "د رخصتۍ بیاکتنه" },
   "btnLabel_getSupport": { "message": "مرسته ترلاسه کړئ" },
   "btnLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
   "btnLabel_update": { "message": "تازه کړئ" },

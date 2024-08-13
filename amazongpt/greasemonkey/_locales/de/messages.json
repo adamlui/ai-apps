@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "Einschalten" },
   "alert_switchingOff": { "message": "Abschaltung" },
   "btnLabel_moreApps": { "message": "Weitere ChatGPT-Apps" },
-  "btnLabel_leaveReview": { "message": "Bewertung hinterlassen" },
+  "btnLabel_leaveReview": { "message": "Hinterlasse eine Bewertung" },
   "btnLabel_getSupport": { "message": "Support erhalten" },
   "btnLabel_updateCheck": { "message": "Nach Updates suchen" },
   "btnLabel_update": { "message": "Aktualisieren" },

@@ -34,7 +34,7 @@
   "alert_upToDate": { "message": "تازه شوی" },
   "alert_isUpToDate": { "message": "تازه ده" },
   "btnLabel_moreApps": { "message": "نور چیټ جی پی ټي ایپونه" },
-  "btnLabel_leaveReview": { "message": "بیاکتنه پریږدئ" },
+  "btnLabel_leaveReview": { "message": "د رخصتۍ بیاکتنه" },
   "btnLabel_getSupport": { "message": "مرسته ترلاسه کړئ" },
   "btnLabel_updateCheck": { "message": "تازه کړه ورکړئ" },
   "btnLabel_update": { "message": "تازه کړه" },

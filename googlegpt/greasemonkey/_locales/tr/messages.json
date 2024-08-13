@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "Kapatma" },
   "btnLabel_sendQueryToApp": { "message": "GoogleGPT'ye arama sorgusu gönder" },
   "btnLabel_moreApps": { "message": "Daha Fazla ChatGPT Uygulaması" },
-  "btnLabel_leaveReview": { "message": "Bir Yorum Bırakın" },
+  "btnLabel_leaveReview": { "message": "İncelemeyi bırak" },
   "btnLabel_getSupport": { "message": "Destek Al" },
   "btnLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
   "btnLabel_update": { "message": "Update" },

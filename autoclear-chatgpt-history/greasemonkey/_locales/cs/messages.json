@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "aktuální" },
   "alert_isUpToDate": { "message": "jenž se vyzná" },
   "btnLabel_moreApps": { "message": "Další aplikace ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Napsat hodnocení" },
+  "btnLabel_leaveReview": { "message": "Přidat Hodnocení" },
   "btnLabel_getSupport": { "message": "Získat podporu" },
   "btnLabel_updateCheck": { "message": "Zjistit novější verzi" },
   "btnLabel_update": { "message": "Aktualizovat" },

@@ -33,7 +33,6 @@
   "alert_pressF11": { "message": "Толық экраннан шығу үшін F11 пернесін басыңыз" },
   "alert_f11reason": { "message": "F11 толық экранды енгізу үшін пайдаланылды, және браузердің қауіпсіздігіне байланысты, оны шығу үшін сол кілтті пайдалану керек" },
   "btnLabel_moreApps": { "message": "Қосымша ChatGPT қолданбалары" },
-  "btnLabel_leaveReview": { "message": "Пікір қалдыру" },
   "btnLabel_getSupport": { "message": "Қолдау алу" },
   "btnLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "btnLabel_update": { "message": "Жаңарту" },

@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "Ilaa taariiqda" },
   "alert_isUpToDate": { "message": "waa up-to-date" },
   "btnLabel_moreApps": { "message": "Codsiyada ChatGPT dheeraad ah" },
-  "btnLabel_leaveReview": { "message": "Ka tag dib u eegis" },
+  "btnLabel_leaveReview": { "message": "Dib u eegista Ka tag" },
   "btnLabel_getSupport": { "message": "Tageero raadso" },
   "btnLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
   "btnLabel_update": { "message": "Cusboonaysiinta" },

@@ -34,7 +34,7 @@
   "alert_upToDate": { "message": "Ho an'ny daty" },
   "alert_isUpToDate": { "message": "efa eo an-toerana" },
   "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
-  "btnLabel_leaveReview": { "message": "Mametraha fanamarihana" },
+  "btnLabel_leaveReview": { "message": "Fandaozana ny famerenana" },
   "btnLabel_getSupport": { "message": "Mitadiava fanampiana" },
   "btnLabel_updateCheck": { "message": "Hanova ny Fanovana" },
   "btnLabel_update": { "message": "Hanova" },

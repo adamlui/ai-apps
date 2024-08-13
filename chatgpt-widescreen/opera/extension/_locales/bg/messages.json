@@ -33,7 +33,6 @@
   "alert_pressF11": { "message": "Натиснете F11, за да излезете от цял екран" },
   "alert_f11reason": { "message": "F11 се използва за влизане на цял екран и поради причини, свързани със сигурността на браузъра, същият ключ трябва да се използва за излизане от него" },
   "btnLabel_moreApps": { "message": "Още приложения за ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Оставете коментар" },
   "btnLabel_getSupport": { "message": "Вземи поддръжка" },
   "btnLabel_updateCheck": { "message": "Проверка за обновяване" },
   "btnLabel_update": { "message": "Актуализация" },

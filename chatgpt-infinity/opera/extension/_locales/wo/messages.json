@@ -34,7 +34,7 @@
   "alert_upToDate": { "message": "Baax naa la" },
   "alert_isUpToDate": { "message": "ñuy ñoop naa la" },
   "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
-  "btnLabel_leaveReview": { "message": "Xët yi lëkkalook wii \"'Review\"'" },
+  "btnLabel_leaveReview": { "message": "Xët yi lëkkalook wii \"Xët yi lëkkalook" },
   "btnLabel_getSupport": { "message": "Yal-ku Lagoon" },
   "btnLabel_updateCheck": { "message": "Noppa baaxal" },
   "btnLabel_update": { "message": "Baaxal" },

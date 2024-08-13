@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "កំពុងបើក" },
   "alert_switchingOff": { "message": "បិទ" },
   "btnLabel_moreApps": { "message": "កម្មវិធី ChatGPT ច្រើនទៀត" },
-  "btnLabel_leaveReview": { "message": "ទុកការពិនិត្យឡើងវិញ" },
+  "btnLabel_leaveReview": { "message": "សូមទុកមតិ" },
   "btnLabel_getSupport": { "message": "ទទួលបានការគាំទ្រ" },
   "btnLabel_updateCheck": { "message": "ពិនិត្យរកអាប់ដេត" },
   "btnLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },

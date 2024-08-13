@@ -19,7 +19,7 @@
   "alert_upToDate": { "message": "Sursum-ad-date" },
   "alert_isUpToDate": { "message": "est sursum-ad-date" },
   "btnLabel_moreApps": { "message": "Magis ChatGPT Apps" },
-  "btnLabel_leaveReview": { "message": "Retinere" },
+  "btnLabel_leaveReview": { "message": "REVISORUM EXAMINATIS" },
   "btnLabel_getSupport": { "message": "Supportum" },
   "btnLabel_updateCheck": { "message": "Check for Updates" },
   "btnLabel_update": { "message": "opus" },

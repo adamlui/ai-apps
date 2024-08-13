@@ -14,7 +14,7 @@
   "alert_isUpToDate": { "message": "е актуален" },
   "notif_chatAutoContinued": { "message": "Автоматично продължаване на чата" },
   "btnLabel_moreApps": { "message": "Още приложения за ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Оставете коментар" },
+  "btnLabel_leaveReview": { "message": "Оставете рецензия" },
   "btnLabel_getSupport": { "message": "Вземи поддръжка" },
   "btnLabel_updateCheck": { "message": "Проверка за обновяване" },
   "btnLabel_update": { "message": "Актуализация" },

@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "etenn/échanger/é" },
   "btnLabel_sendQueryToApp": { "message": "Voye rechèch rechèch nan BraveGPT" },
   "btnLabel_moreApps": { "message": "Plis Apps ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Kite yon Revizyon" },
+  "btnLabel_leaveReview": { "message": "Kite Revizyon" },
   "btnLabel_getSupport": { "message": "Jwenn Sipò" },
   "btnLabel_updateCheck": { "message": "Tcheke pou Updates" },
   "btnLabel_update": { "message": "Update" },

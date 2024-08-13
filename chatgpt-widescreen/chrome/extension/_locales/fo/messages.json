@@ -33,7 +33,6 @@
   "alert_pressF11": { "message": "Press F11 til at fara út fullan skíggja" },
   "alert_f11reason": { "message": "F11 var brúkt til at koma inn í fulla skjalið, og av tí at flogfarið er tryggjað, eigur tað at verða brúkt til at fara út úr henni" },
   "btnLabel_moreApps": { "message": "Fleiri ChatGPT apps" },
-  "btnLabel_leaveReview": { "message": "Skriva eina gjøgnumgongd" },
   "btnLabel_getSupport": { "message": "Fá stuðul" },
   "btnLabel_updateCheck": { "message": "Hygg eftir UPDATE" },
   "btnLabel_update": { "message": "Dagfør" },

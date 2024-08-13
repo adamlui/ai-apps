@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "بروزرسانی" },
   "alert_isUpToDate": { "message": "به روز است" },
   "btnLabel_moreApps": { "message": "برنامه های بیشتر ChatGPT" },
-  "btnLabel_leaveReview": { "message": "نظر بدهید" },
+  "btnLabel_leaveReview": { "message": "بررسی را ترک کنید" },
   "btnLabel_getSupport": { "message": "پشتیبانی" },
   "btnLabel_updateCheck": { "message": "بررسی به روز رسانی" },
   "btnLabel_update": { "message": "به‌روز‌رسانی" },

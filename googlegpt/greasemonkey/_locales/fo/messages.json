@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "at venda sær" },
   "btnLabel_sendQueryToApp": { "message": "Send leitarannsókn til GoogleGPT" },
   "btnLabel_moreApps": { "message": "Fleiri ChatGPT apps" },
-  "btnLabel_leaveReview": { "message": "Skriva eina gjøgnumgongd" },
+  "btnLabel_leaveReview": { "message": "Loyvi endurskoðan" },
   "btnLabel_getSupport": { "message": "Fá stuðul" },
   "btnLabel_updateCheck": { "message": "Gev gætur eftir dagføringum" },
   "btnLabel_update": { "message": "Dagfør" },

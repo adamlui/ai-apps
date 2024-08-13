@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "བསྒྱུར་རྩོམ །" },
   "alert_switchingOff": { "message": "ཕྱིར་འབུད་པ །" },
   "btnLabel_moreApps": { "message": "འདྲ་ཕབ །" },
-  "btnLabel_leaveReview": { "message": "དཔྱད་རྩོམ །" },
+  "btnLabel_leaveReview": { "message": "བསྐྱར་ཞིབ་སྤར་བ" },
   "btnLabel_getSupport": { "message": "རོགས་རམ་ཐོབ་པ" },
   "btnLabel_updateCheck": { "message": "ད་ལྟའི་གནས་ཚུལ་འཚོལ་བ །" },
   "btnLabel_update": { "message": "གསར་བསྒྱུར" },

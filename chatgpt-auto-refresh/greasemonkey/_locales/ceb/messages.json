@@ -19,7 +19,7 @@
   "alert_upToDate": { "message": "Sama sa kasamtangang petsa" },
   "alert_isUpToDate": { "message": "kasamtangang petsa na" },
   "btnLabel_moreApps": { "message": "Dugang nga ChatGPT Apps" },
-  "btnLabel_leaveReview": { "message": "Magbilin usa ka Pagrepaso" },
+  "btnLabel_leaveReview": { "message": "Biyai ang Review" },
   "btnLabel_getSupport": { "message": "Kuhaa ang Suporta" },
   "btnLabel_updateCheck": { "message": "Susiha ang mga Update" },
   "btnLabel_update": { "message": "I-update" },

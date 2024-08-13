@@ -34,7 +34,7 @@
   "alert_upToDate": { "message": "Gus dàta" },
   "alert_isUpToDate": { "message": "gu dàta" },
   "btnLabel_moreApps": { "message": "Barrachd Apps ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Leave a Review" },
+  "btnLabel_leaveReview": { "message": "Leave Review" },
   "btnLabel_getSupport": { "message": "Faigh Taic" },
   "btnLabel_updateCheck": { "message": "Seall air Ùrachaidhean" },
   "btnLabel_update": { "message": "Ùrachadh" },

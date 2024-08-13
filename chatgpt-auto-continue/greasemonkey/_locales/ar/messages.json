@@ -14,7 +14,7 @@
   "alert_isUpToDate": { "message": "محدث" },
   "notif_chatAutoContinued": { "message": "متابعة تلقائية للدردشة" },
   "btnLabel_moreApps": { "message": "المزيد من تطبيقات ChatGPT" },
-  "btnLabel_leaveReview": { "message": "اترك تقييماً" },
+  "btnLabel_leaveReview": { "message": "اترك مراجعة" },
   "btnLabel_getSupport": { "message": "احصل على الدعم" },
   "btnLabel_updateCheck": { "message": "مرابة التحديثات" },
   "btnLabel_update": { "message": "تحديث" },

@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "接通" },
   "alert_switchingOff": { "message": "断电" },
   "btnLabel_moreApps": { "message": "更多 ChatGPT 应用" },
-  "btnLabel_leaveReview": { "message": "发表评论" },
+  "btnLabel_leaveReview": { "message": "离开评论" },
   "btnLabel_getSupport": { "message": "獲取支援" },
   "btnLabel_updateCheck": { "message": "检查更新" },
   "btnLabel_update": { "message": "更新" },

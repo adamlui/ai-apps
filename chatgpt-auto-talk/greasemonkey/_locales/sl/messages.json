@@ -13,7 +13,7 @@
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "is up-to-date" },
   "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
-  "btnLabel_leaveReview": { "message": "Podaj mnenje" },
+  "btnLabel_leaveReview": { "message": "Dodajte oceno" },
   "btnLabel_getSupport": { "message": "Podpora" },
   "btnLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
   "btnLabel_update": { "message": "Posodobi" },

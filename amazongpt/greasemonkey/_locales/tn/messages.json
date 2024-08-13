@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "go tshuba" },
   "alert_switchingOff": { "message": "go tima" },
   "btnLabel_moreApps": { "message": "Di-app tse Dintsi tsa ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Leave a Review" },
+  "btnLabel_leaveReview": { "message": "Leave Review" },
   "btnLabel_getSupport": { "message": "Bona Kemonokeng" },
   "btnLabel_updateCheck": { "message": "Tlhatlhoba Diphetogo" },
   "btnLabel_update": { "message": "Ntshwafatso" },

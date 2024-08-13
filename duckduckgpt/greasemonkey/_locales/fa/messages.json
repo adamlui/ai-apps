@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "خاموش کردن" },
   "btnLabel_sendQueryToApp": { "message": "درخواست جستجو را به DuckDuckGPT ارسال کنید" },
   "btnLabel_moreApps": { "message": "برنامه های بیشتر ChatGPT" },
-  "btnLabel_leaveReview": { "message": "نظر بدهید" },
+  "btnLabel_leaveReview": { "message": "بررسی را ترک کنید" },
   "btnLabel_getSupport": { "message": "پشتیبانی" },
   "btnLabel_updateCheck": { "message": "بررسی به روز رسانی" },
   "btnLabel_update": { "message": "به‌روز‌رسانی" },

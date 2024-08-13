@@ -34,7 +34,7 @@
   "alert_upToDate": { "message": "Ikuzimu" },
   "alert_isUpToDate": { "message": "ikuzimu" },
   "btnLabel_moreApps": { "message": "Porogaramu" },
-  "btnLabel_leaveReview": { "message": "A" },
+  "btnLabel_leaveReview": { "message": "Isubiramo" },
   "btnLabel_getSupport": { "message": "Gushigikira" },
   "btnLabel_updateCheck": { "message": "Emeza guhindura" },
   "btnLabel_update": { "message": "Hindura" },

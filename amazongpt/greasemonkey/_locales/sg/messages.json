@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "change thinga." },
   "alert_switchingOff": { "message": "ti zia lege ti sarango ye ti lo" },
   "btnLabel_moreApps": { "message": "Ambeni application ti ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Gbu li ti mo na ndo ti mbeni ye so mo bâ" },
+  "btnLabel_leaveReview": { "message": "A kiri a bâ ni" },
   "btnLabel_getSupport": { "message": "Gi ti wara mungo maboko" },
   "btnLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
   "btnLabel_update": { "message": "Nduru tënëModifier" },

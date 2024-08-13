@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "ഇന്നുവരെയുള്ള_മാറ്റങ്ങള്‍_വരുത്തിയത്" },
   "alert_isUpToDate": { "message": "ഇന്നുവരെയുള്ള_മാറ്റങ്ങള്‍_വരുത്തിയത്" },
   "btnLabel_moreApps": { "message": "കൂടുതൽ ChatGPT ആപ്പുകൾ" },
-  "btnLabel_leaveReview": { "message": "ഒരു അവലോകനം ഉപേക്ഷിക്കുക" },
+  "btnLabel_leaveReview": { "message": "അവലോകനം ഉപേക്ഷിക്കുക" },
   "btnLabel_getSupport": { "message": "പിന്തുണ നേടുക" },
   "btnLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
   "btnLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },

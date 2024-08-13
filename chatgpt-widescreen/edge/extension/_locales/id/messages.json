@@ -33,7 +33,6 @@
   "alert_pressF11": { "message": "Tekan F11 untuk keluar dari layar penuh" },
   "alert_f11reason": { "message": "F11 digunakan untuk memasuki layar penuh, dan karena alasan keamanan browser, kunci yang sama harus digunakan untuk keluar" },
   "btnLabel_moreApps": { "message": "Aplikasi ChatGPT Lainnya" },
-  "btnLabel_leaveReview": { "message": "Buat Ulasan" },
   "btnLabel_getSupport": { "message": "Mendapat dukungan" },
   "btnLabel_updateCheck": { "message": "Periksa Pemutakhiran" },
   "btnLabel_update": { "message": "Pembaruan" },

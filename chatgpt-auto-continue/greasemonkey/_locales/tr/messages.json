@@ -14,7 +14,7 @@
   "alert_isUpToDate": { "message": "Güncel" },
   "notif_chatAutoContinued": { "message": "Sohbet Otomatik Devam Ediyor" },
   "btnLabel_moreApps": { "message": "Daha Fazla ChatGPT Uygulaması" },
-  "btnLabel_leaveReview": { "message": "Bir Yorum Bırakın" },
+  "btnLabel_leaveReview": { "message": "İncelemeyi bırak" },
   "btnLabel_getSupport": { "message": "Destek Al" },
   "btnLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
   "btnLabel_update": { "message": "Update" },

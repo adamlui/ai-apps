@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "activant" },
   "alert_switchingOff": { "message": "desactivar" },
   "btnLabel_moreApps": { "message": "Més aplicacions de ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Deixa una ressenya" },
+  "btnLabel_leaveReview": { "message": "Deixar valoració" },
   "btnLabel_getSupport": { "message": "Obteniu suport" },
   "btnLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
   "btnLabel_update": { "message": "Actualització" },

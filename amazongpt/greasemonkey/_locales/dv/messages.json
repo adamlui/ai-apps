@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "ސްވިޗް އޮން ކުރުމެވެ" },
   "alert_switchingOff": { "message": "ސްވިޗް އޮފް ކުރުމެވެ" },
   "btnLabel_moreApps": { "message": "އިތުރު ޗެޓްޖީޕީޓީ އެޕްސް" },
-  "btnLabel_leaveReview": { "message": "ރިވިއުއެއް ދޫކޮށްލާށެވެ" },
+  "btnLabel_leaveReview": { "message": "ރިވިއު ދޫކޮށްލާށެވެ" },
   "btnLabel_getSupport": { "message": "ސަޕޯޓް ހޯދުން" },
   "btnLabel_updateCheck": { "message": "އަޕްޑޭޓްސް ހުރިތޯ ބަލާށެވެ" },
   "btnLabel_update": { "message": "އަޕްޑޭޓް" },

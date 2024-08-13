@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "ဖွင့်နေသည်" },
   "alert_switchingOff": { "message": "ခလုတ်ပိတ်ခြင်း" },
   "btnLabel_moreApps": { "message": "နောက်ထပ် ChatGPT Apps ကပ" },
-  "btnLabel_leaveReview": { "message": "တစ်ဦးပြန်လည်ဆန်းစစ်ခြင်း Leave" },
+  "btnLabel_leaveReview": { "message": "ပြန်လည်သုံးသပ်မှုကိုစွန့်ခွာပါ" },
   "btnLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ။ " },
   "btnLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "btnLabel_update": { "message": "နောက်ဆုံးသတင်း" },

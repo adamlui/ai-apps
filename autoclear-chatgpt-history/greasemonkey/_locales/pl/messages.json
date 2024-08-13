@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "Aktualne" },
   "alert_isUpToDate": { "message": "jest aktualny" },
   "btnLabel_moreApps": { "message": "Więcej aplikacji ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Dodaj opinię" },
+  "btnLabel_leaveReview": { "message": "Zostaw opinię" },
   "btnLabel_getSupport": { "message": "Uzyskać wsparcie" },
   "btnLabel_updateCheck": { "message": "Sprawdzanie aktualizacji" },
   "btnLabel_update": { "message": "Aktualizuj" },

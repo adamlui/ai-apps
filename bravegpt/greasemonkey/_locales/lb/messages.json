@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "auszeschalten" },
   "btnLabel_sendQueryToApp": { "message": "Suchanfrage an BraveGPT senden" },
   "btnLabel_moreApps": { "message": "Méi ChatGPT Apps" },
-  "btnLabel_leaveReview": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de" },
+  "btnLabel_leaveReview": { "message": "Ik ben heel benieuwd naar jouw mening laat het me" },
   "btnLabel_getSupport": { "message": "Kréien Support" },
   "btnLabel_updateCheck": { "message": "Fakten an Erënnerungen" },
   "btnLabel_update": { "message": "Aktualiséieren" },

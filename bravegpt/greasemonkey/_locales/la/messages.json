@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "commutans off" },
   "btnLabel_sendQueryToApp": { "message": "Mitte quaestionem quaerendi ad BraveGPT" },
   "btnLabel_moreApps": { "message": "Plura ChatGPT Apps" },
-  "btnLabel_leaveReview": { "message": "Relinquere Recensionem" },
+  "btnLabel_leaveReview": { "message": "REVISORUM EXAMINATIS" },
   "btnLabel_getSupport": { "message": "Accipe Sustentationem" },
   "btnLabel_updateCheck": { "message": "Revidere Renovationes" },
   "btnLabel_update": { "message": "Renovatio" },

@@ -33,7 +33,6 @@
   "alert_pressF11": { "message": "דרוק F11 צו אַרויסגאַנג פול פאַרשטעלן" },
   "alert_f11reason": { "message": "F11 איז געניצט צו אַרייַן פול פאַרשטעלן, און רעכט צו בלעטערער זיכערהייט סיבות, דער זעלביקער שליסל מוזן זיין געוויינט צו אַרויסגאַנג עס" },
   "btnLabel_moreApps": { "message": "מער ChatGPT אַפּפּס" },
-  "btnLabel_leaveReview": { "message": "לאָזן אַ רעצענזיע" },
   "btnLabel_getSupport": { "message": "באַקומען שטיצן" },
   "btnLabel_updateCheck": { "message": "זוך נייע ווערסיעס" },
   "btnLabel_update": { "message": "דערהייַנטיקן" },

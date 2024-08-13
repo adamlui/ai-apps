@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "已最新" },
   "alert_isUpToDate": { "message": "是最新的" },
   "btnLabel_moreApps": { "message": "更多 ChatGPT 应用" },
-  "btnLabel_leaveReview": { "message": "发表评论" },
+  "btnLabel_leaveReview": { "message": "离开评论" },
   "btnLabel_getSupport": { "message": "獲取支援" },
   "btnLabel_updateCheck": { "message": "检查更新" },
   "btnLabel_update": { "message": "更新" },

@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "نوێکردنەوەی تایبەتی" },
   "alert_isUpToDate": { "message": "تایبەتی نوێکردنەوەی" },
   "btnLabel_moreApps": { "message": "زیاتری ئاپەکانی ChatGPT" },
-  "btnLabel_leaveReview": { "message": "راي بنێرە" },
+  "btnLabel_leaveReview": { "message": "Bihêle Review" },
   "btnLabel_getSupport": { "message": "پشتگیری بگرە" },
   "btnLabel_updateCheck": { "message": "بچۆڕە بۆ نوێکردنەوەکان" },
   "btnLabel_update": { "message": "نوێ بکەرەوە" },

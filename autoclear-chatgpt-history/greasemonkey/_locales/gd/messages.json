@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "Up to date" },
   "alert_isUpToDate": { "message": "tha Updates" },
   "btnLabel_moreApps": { "message": "Barrachd Apps ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Leave a Review" },
+  "btnLabel_leaveReview": { "message": "Leave Review" },
   "btnLabel_getSupport": { "message": "Faigh Taic" },
   "btnLabel_updateCheck": { "message": "Thoir sùil airson ùrachaidhean" },
   "btnLabel_update": { "message": "Ùraich" },

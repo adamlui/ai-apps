@@ -19,7 +19,7 @@
   "alert_upToDate": { "message": "Ir aktuāls" },
   "alert_isUpToDate": { "message": "ir aktuāls" },
   "btnLabel_moreApps": { "message": "Vairāk ChatGPT lietotņu" },
-  "btnLabel_leaveReview": { "message": "Atstāt atsauksmi" },
+  "btnLabel_leaveReview": { "message": "Atstāt atsauksmi?" },
   "btnLabel_getSupport": { "message": "Saņemt atbalstu" },
   "btnLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi" },
   "btnLabel_update": { "message": "Atjauninināt" },

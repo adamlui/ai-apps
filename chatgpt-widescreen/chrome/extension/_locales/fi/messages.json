@@ -33,7 +33,6 @@
   "alert_pressF11": { "message": "Paina F11 poistuaksesi koko näytöstä" },
   "alert_f11reason": { "message": "F11: tä käytettiin siirtymään koko näytölle, ja selaimen turvallisuussyistä samaa avainta on käytettävä poistumaan siitä" },
   "btnLabel_moreApps": { "message": "Lisää ChatGPT-sovelluksia" },
-  "btnLabel_leaveReview": { "message": "Jätä arvostelu" },
   "btnLabel_getSupport": { "message": "Ota yhteyttä" },
   "btnLabel_updateCheck": { "message": "Tarkista päivitykset" },
   "btnLabel_update": { "message": "Päivitä" },

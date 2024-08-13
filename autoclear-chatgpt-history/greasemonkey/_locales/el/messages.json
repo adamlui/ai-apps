@@ -16,7 +16,7 @@
   "alert_upToDate": { "message": "Ενημερωμένο" },
   "alert_isUpToDate": { "message": "είναι ενήμερο" },
   "btnLabel_moreApps": { "message": "Περισσότερες εφαρμογές ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Κάντε μία κριτική" },
+  "btnLabel_leaveReview": { "message": "Αφήστε μια Kριτική" },
   "btnLabel_getSupport": { "message": "Λάβετε υποστήριξη" },
   "btnLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
   "btnLabel_update": { "message": "Ενημέρωση" },

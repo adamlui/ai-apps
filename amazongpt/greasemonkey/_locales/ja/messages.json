@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "スイッチを入れる" },
   "alert_switchingOff": { "message": "スイッチをオフにする" },
   "btnLabel_moreApps": { "message": "その他のChatGPTアプリ" },
-  "btnLabel_leaveReview": { "message": "レビューを書く" },
+  "btnLabel_leaveReview": { "message": "レビューを残す" },
   "btnLabel_getSupport": { "message": "サポートを受ける" },
   "btnLabel_updateCheck": { "message": "更新を確認" },
   "btnLabel_update": { "message": "更新情報" },

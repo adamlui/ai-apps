@@ -96,7 +96,7 @@
   "alert_switchingOff": { "message": "spegnimento" },
   "btnLabel_sendQueryToApp": { "message": "Invia query di ricerca a DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Altre app ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Aggiungi una Valutazione" },
+  "btnLabel_leaveReview": { "message": "Lascia la recensione" },
   "btnLabel_getSupport": { "message": "Richiedi Assistenza" },
   "btnLabel_updateCheck": { "message": "Cerca aggiornamenti" },
   "btnLabel_update": { "message": "Aggiorna" },

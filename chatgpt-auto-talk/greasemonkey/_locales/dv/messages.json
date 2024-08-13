@@ -13,7 +13,7 @@
   "alert_upToDate": { "message": "އަޕްޑޭޓް" },
   "alert_isUpToDate": { "message": "ޒަމާނާ އެއްގޮތެވެ" },
   "btnLabel_moreApps": { "message": "އިތުރު ޗެޓްޖީޕީޓީ އެޕްސް" },
-  "btnLabel_leaveReview": { "message": "ރިވިއުއެއް ދޫކޮށްލާށެވެ" },
+  "btnLabel_leaveReview": { "message": "ރިވިއު ދޫކޮށްލާށެވެ" },
   "btnLabel_getSupport": { "message": "ސަޕޯޓް ހޯދުން" },
   "btnLabel_updateCheck": { "message": "އަޕްޑޭޓްސް ހުރިތޯ ބަލާށެވެ" },
   "btnLabel_update": { "message": "އަޕްޑޭޓް" },

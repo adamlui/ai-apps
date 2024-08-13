@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "ku" },
   "alert_switchingOff": { "message": "bidakora" },
   "btnLabel_moreApps": { "message": "Porogaramu" },
-  "btnLabel_leaveReview": { "message": "A" },
+  "btnLabel_leaveReview": { "message": "Isubiramo" },
   "btnLabel_getSupport": { "message": "Gushigikira" },
   "btnLabel_updateCheck": { "message": "Kugirango" },
   "btnLabel_update": { "message": "Kuvugurura" },

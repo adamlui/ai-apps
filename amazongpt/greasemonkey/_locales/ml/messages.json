@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "സ്വിച്ച് ഓൺ ചെയ്യുന്നു" },
   "alert_switchingOff": { "message": "സ്വിച്ച് ഓഫ്" },
   "btnLabel_moreApps": { "message": "കൂടുതൽ ChatGPT ആപ്പുകൾ" },
-  "btnLabel_leaveReview": { "message": "ഒരു അവലോകനം ഉപേക്ഷിക്കുക" },
+  "btnLabel_leaveReview": { "message": "അവലോകനം ഉപേക്ഷിക്കുക" },
   "btnLabel_getSupport": { "message": "പിന്തുണ നേടുക" },
   "btnLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
   "btnLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },

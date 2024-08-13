@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "ŝalti" },
   "alert_switchingOff": { "message": "malŝalti" },
   "btnLabel_moreApps": { "message": "Pli ChatGPT Apps" },
-  "btnLabel_leaveReview": { "message": "Lasi revizion" },
+  "btnLabel_leaveReview": { "message": "Leave Review" },
   "btnLabel_getSupport": { "message": "Akiri subtenon" },
   "btnLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
   "btnLabel_update": { "message": "Ĝisdatigi" },

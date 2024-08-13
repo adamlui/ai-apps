@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "переключить вкл" },
   "alert_switchingOff": { "message": "хомӯш кардан" },
   "btnLabel_moreApps": { "message": "Бештар ChatGPT Барномаҳо" },
-  "btnLabel_leaveReview": { "message": "Тафсирро тарк кунед" },
+  "btnLabel_leaveReview": { "message": "Баромадан аз тафсир" },
   "btnLabel_getSupport": { "message": "Гирифтани Дастгирӣ" },
   "btnLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
   "btnLabel_update": { "message": "Навсозӣ кардан" },

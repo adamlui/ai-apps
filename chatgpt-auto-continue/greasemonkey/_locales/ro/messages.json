@@ -14,7 +14,7 @@
   "alert_isUpToDate": { "message": "Actualizat" },
   "notif_chatAutoContinued": { "message": "Chat auto-continuat" },
   "btnLabel_moreApps": { "message": "Mai multe aplicații ChatGPT" },
-  "btnLabel_leaveReview": { "message": "Lasă-ne o recenzie" },
+  "btnLabel_leaveReview": { "message": "Lasă o recenzie" },
   "btnLabel_getSupport": { "message": "Primește asistență" },
   "btnLabel_updateCheck": { "message": "Caută actualizări" },
   "btnLabel_update": { "message": "Actualizare" },

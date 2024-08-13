@@ -70,7 +70,7 @@
   "alert_switchingOn": { "message": "ਚਾਲੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ" },
   "alert_switchingOff": { "message": "ਬੰਦ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ" },
   "btnLabel_moreApps": { "message": "ਹੋਰ ChatGPT ਐਪਸ" },
-  "btnLabel_leaveReview": { "message": "ਇੱਕ ਸਮੀਖਿਆ ਛੱਡੋ" },
+  "btnLabel_leaveReview": { "message": "ਸਮੀਖਿਆ ਛੱਡੋ" },
   "btnLabel_getSupport": { "message": "ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਕਰੋ" },
   "btnLabel_updateCheck": { "message": "ਨਵੇਂ ਐਪੀਸੋਡ ਲਈ ਚੈੱਕ ਕਰੋ" },
   "btnLabel_update": { "message": "ਅੱਪਡੇਟ ਕਰੋ" },
