@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.15
+// @version                2024.8.15.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2415,14 +2415,14 @@
             setTimeout(() => { if (get.related.status != 'done') api.tryNew(get.related, 'timeout') }, 7000)
 
             // Get queries
-            return new Promise(resolve => { xhr({
+            return new Promise(resolve => xhr({
                 method: apis[get.related.api].method,
                 url: apis[get.related.api].endpoints?.completions || apis[get.related.api].endpoint,
                 responseType: 'text', headers: api.createHeaders(get.related.api),
                 data: api.createPayload(get.related.api, [{ role: 'user', content: rqPrompt }]),
                 onload: resp => dataProcess.text(get.related, resp).then(resolve),
                 onerror: err => { consoleErr(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) }
-            })})
+            }))
         }
     }
 

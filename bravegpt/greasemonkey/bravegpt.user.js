@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.15
+// @version               2024.8.15.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2515,14 +2515,14 @@ setTimeout(async () => {
             setTimeout(() => { if (get.related.status != 'done') api.tryNew(get.related, 'timeout') }, 7000)
 
             // Get queries
-            return new Promise(resolve => { xhr({
+            return new Promise(resolve => xhr({
                 method: apis[get.related.api].method,
                 url: apis[get.related.api].endpoints?.completions || apis[get.related.api].endpoint,
                 responseType: 'text', headers: api.createHeaders(get.related.api),
                 data: api.createPayload(get.related.api, [{ role: 'user', content: rqPrompt }]),
                 onload: resp => dataProcess.text(get.related, resp).then(resolve),
                 onerror: err => { consoleErr(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) }
-            })})
+            }))
         }
     }
 
