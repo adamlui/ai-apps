@@ -2447,7 +2447,7 @@
                 const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input')
                 if (proxyToggle.checked != config.proxyAPIenabled) modals.settings.toggle.switch(proxyToggle)
             }
-            if (appDiv.querySelector('googlegpt-alert')) location.reload() // re-send query if user alerted 
+            if (appDiv.querySelector('#googlegpt-alert')) location.reload() // re-send query if user alerted 
         },
 
         relatedQueries() {
