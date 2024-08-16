@@ -9,6 +9,12 @@ jobs:
   build:
     if: (github.repository == 'adamlui/chatgpt-apps') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
     runs-on: ubuntu-latest
+    env:
+      GIT_AUTHOR_NAME: ${{ github.event.commits[0].author.name }}
+      GIT_AUTHOR_EMAIL: ${{ github.event.commits[0].author.email }}
+      GIT_COMMITTER_NAME: kudo-sync-bot
+      GIT_COMMITTER_EMAIL: auto-sync@kudoai.com
+
     steps:
 
       - name: Checkout adamlui/chatgpt-apps
@@ -94,8 +100,6 @@ jobs:
       - name: Push changes to adamlui/chatgpt-apps
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
-          git config --global user.name "kudo-sync-bot"
-          git config --global user.email "auto-sync@kudoai.com"
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`chatgpt-widescreen/edge\`]" || true
           git push
@@ -103,8 +107,6 @@ jobs:
       - name: Push changes to adamlui/chatgpt-widescreen
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
-          git config --global user.name "kudo-sync-bot"
-          git config --global user.email "auto-sync@kudoai.com"
           git add .
           git commit -n -m $ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-widescreen/edge\`]" || true
           git push
@@ -112,8 +114,6 @@ jobs:
       - name: Push changes to adamlui/userscripts
         run: |
           cd ${{ github.workspace }}/adamlui/userscripts
-          git config --global user.name "kudo-sync-bot"
-          git config --global user.email "auto-sync@kudoai.com"
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-widescreen/edge\`]" || true
           git push
