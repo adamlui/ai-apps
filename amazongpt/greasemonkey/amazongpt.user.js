@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.12.1
+// @version                2024.8.16
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1775,9 +1775,10 @@
 
         tryNew(caller, reason = 'err') {
             consoleErr(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
+            caller.triedAPIs.push({ [caller.api]: reason })
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
                 consoleInfo('Trying another endpoint...')
-                caller.triedAPIs.push({ [caller.api]: reason }) ; caller.attemptCnt++
+                caller.attemptCnt++
                 caller(caller == get.reply ? msgChain : stripQueryAugments(msgChain)[msgChain.length - 1].content)
             } else {
                 consoleInfo('No remaining untried endpoints')
@@ -1865,11 +1866,21 @@
             if (!get.reply.api) { // no more proxy APIs left untried
                 appAlert('proxyNotWorking', 'suggestOpenAI') ; return }
 
-            if (!config.proxyAPIenabled) // init OpenAI key
+            // Init OpenAI key
+            if (!config.proxyAPIenabled)
                 config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
-            else setTimeout(() => { // try diff API after 6-9s of no response
-                if (config.proxyAPIenabled && get.reply.status != 'done' && !get.reply.sender)
-                    api.tryNew(get.reply, 'timeout') }, config.streamingDisabled ? 9000 : 6000)
+
+            // Try diff API after 6-9s of no response
+            else {
+                const iniAPI = get.reply.api
+                setTimeout(() => {
+                    if (config.proxyAPIenabled // only do in Proxy mode
+                        && get.reply.status != 'done' && !get.reply.sender // still no reply received
+                        && get.reply.api == iniAPI // not already trying diff API from err
+                        && get.reply.triedAPIs.length != Object.keys(apis).length -1 // untried APIs remain
+                    ) api.tryNew(get.reply, 'timeout')
+                }, config.streamingDisabled ? 9000 : 6000)
+            }
 
             // Get/show answer from AI
             xhr({

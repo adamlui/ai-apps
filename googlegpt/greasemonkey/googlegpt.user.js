@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.15.2
+// @version                  2024.8.16
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2568,9 +2568,10 @@
 
         tryNew(caller, reason = 'err') {
             consoleErr(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
+            caller.triedAPIs.push({ [caller.api]: reason })
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
                 consoleInfo('Trying another endpoint...')
-                caller.triedAPIs.push({ [caller.api]: reason }) ; caller.attemptCnt++
+                caller.attemptCnt++
                 caller(caller == get.reply ? msgChain : stripQueryAugments(msgChain)[msgChain.length - 1].content)
                     .then(result => { if (caller == get.related) show.related(result) ; else return })
             } else {
@@ -2659,11 +2660,21 @@
             if (!get.reply.api) { // no more proxy APIs left untried
                 appAlert('proxyNotWorking', 'suggestOpenAI') ; return }
 
-            if (!config.proxyAPIenabled) // init OpenAI key
+            // Init OpenAI key
+            if (!config.proxyAPIenabled)
                 config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
-            else setTimeout(() => { // try diff API after 6-9s of no response
-                if (config.proxyAPIenabled && get.reply.status != 'done' && !get.reply.sender)
-                    api.tryNew(get.reply, 'timeout') }, config.streamingDisabled ? 9000 : 6000)
+
+            // Try diff API after 6-9s of no response
+            else {
+                const iniAPI = get.reply.api
+                setTimeout(() => {
+                    if (config.proxyAPIenabled // only do in Proxy mode
+                        && get.reply.status != 'done' && !get.reply.sender // still no reply received
+                        && get.reply.api == iniAPI // not already trying diff API from err
+                        && get.reply.triedAPIs.length != Object.keys(apis).length -1 // untried APIs remain
+                    ) api.tryNew(get.reply, 'timeout')
+                }, config.streamingDisabled ? 9000 : 6000)
+            }
 
             // Get/show answer from AI
             xhr({
@@ -2729,7 +2740,13 @@
                 + ` Reply in ${config.replyLanguage}`
 
             // Try diff API after 7s of no response
-            setTimeout(() => { if (get.related.status != 'done') api.tryNew(get.related, 'timeout') }, 7000)
+            const iniAPI = get.related.api
+            setTimeout(() => {
+                if (get.related.status != 'done' // still no queries received
+                    && get.related.api == iniAPI // not already trying diff API from err
+                    && get.related.triedAPIs.length != Object.keys(apis).length // untried APIs remain
+                ) api.tryNew(get.related, 'timeout')
+            }, 7000)
 
             // Get queries
             return new Promise(resolve => xhr({
