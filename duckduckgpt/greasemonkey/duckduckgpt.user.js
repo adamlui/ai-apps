@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16
+// @version                2024.8.16.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2409,7 +2409,7 @@
                 config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
 
             // Init prompt
-            const rqPrompt = `Show a numbered list of queries related to this one:\n\n${query}\n\n`
+            const rqPrompt = `Reply w/ a numbered list of queries related to this one:\n\n${query}\n\n`
                 + ( get.related.api == 'Free Chat' ? '' : ( // to evade long query automated detection
                        'Make sure to suggest a variety that can even greatly deviate from the original topic.'
                     + ' For example, if the original query asked about someone\'s wife,'
