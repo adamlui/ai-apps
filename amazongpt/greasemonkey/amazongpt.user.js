@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16.5
+// @version                2024.8.16.6
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -58,11 +58,15 @@
 // @require                https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.0.1/dist/chatgpt.min.js#sha256-jCJMPu044aK37jtC2wMMKnNgHbXJ5Pm9ZdIqDERob7k=
 // @require                https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha256-dppVXeVTurw1ozOPNE3XqhYmDJPOosfbKQcHyQSE58w=
 // @require                https://cdn.jsdelivr.net/npm/generate-ip@2.4.2/dist/generate-ip.min.js#sha256-PRvQIDVWK/a+aAqEFVQv7RePbRe/tX6tWQVM80rAe2M=
+// @require                https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js#sha256-g3pvpbDHNrUrveKythkPMF2j/J7UFoHbUyFQcFe1yEY=
+// @require                https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
+// @require                https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js#sha256-e1fUJ6xicGd9r42DgN7SzHMzb5FJoWe44f4NbvZmBK4=
 // @require                https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js#sha256-Ffq85bZYmLMrA/XtJen4kacprUwNbYdxEKd0SqhHqJQ=
 // @resource amzgptLSicon  https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png.b64?v=0fddfc7#sha256-0AAauajMY4eRCDUtqRMRqBl1gaxxF0mFt4eRnFGlU24=
 // @resource amzgptDSicon  https://amazongpt.kudoai.com/assets/images/icons/amazongpt/white/icon64.png.b64?v=1ac5561#sha256-qTQ5tnMF6XeH3UZkQOlJZvdE1nkn5/9srNKJqFtcCDo=
 // @resource amzgptLSlogo  https://amazongpt.kudoai.com/assets/images/logos/amazongpt/black-gold/logo509x74.png.b64?v=1ac5561#sha256-wSW1EtGtscP0ZcUweFBqKfswt3NzEjbKxn5COYyihVA=
 // @resource amzgptDSlogo  https://amazongpt.kudoai.com/assets/images/logos/amazongpt/white-teal/logo509x74.png.b64?v=1ac5561#sha256-EWstwtlU8+gXSM98gpr6OR3OZ63ttHVNp/NQ7IMzFDA=
+// @resource hljsCSS       https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css#sha256-v0N76BFFkH0dCB8bUr4cHSVN8A/zCaOopMuSmJWV/5w=
 // @resource bsbgCSS       https://amazongpt.kudoai.com/assets/styles/css/black-rising-stars.min.css?v=1ac5561#sha256-bXbVZUD7ciKqK0wU/BLQzh08JwkoNExHHqXITugd/3o=
 // @resource wsbgCSS       https://amazongpt.kudoai.com/assets/styles/css/white-rising-stars.min.css?v=1ac5561#sha256-ya9newifevSPO1Q4AzMf42yAF6TE+iZHrDbVj0HyuEM=
 // @grant                  GM_getValue
@@ -85,6 +89,8 @@
 // Dependencies:
 // ✓ chatgpt.js (https://chatgpt.js.org) © 2023–2024 KudoAI & contributors under the MIT license
 // ✓ generate-ip (https://generate-ip.org) © 2024 Adam Lui & contributors under the MIT license
+// ✓ highlight.js (https://highlightjs.org) © 2006 Ivan Sagalaev under the BSD 3-Clause license
+// ✓ KaTeX (https://katex.org) © 2013–2020 Khan Academy & other contributors under the MIT license
 // ✓ Marked (https://marked.js.org) © 2018+ MarkedJS © 2011–2018 Christopher Jeffrey under the MIT license
 
 (async () => {
@@ -2226,8 +2232,29 @@
             // Render/show answer
             const answerPre = appDiv.querySelector('pre')
             answerPre.innerHTML = marked.parse(answer) // render markdown
+            hljs.highlightAll() // highlight code
             if (scheme == 'dark' && answerPre.firstChild.tagName == 'P')
                 answerPre.firstChild.prepend('>> ') // since speech balloon tip missing
+
+            // Typeset math
+            answerPre.querySelectorAll('code').forEach(codeBlock => // add linebreaks after semicolons
+                codeBlock.innerHTML = codeBlock.innerHTML.replace(/;\s*/g, ';<br>'))
+            const elemsToRenderMathIn = [answerPre, ...answerPre.querySelectorAll('*')]
+            elemsToRenderMathIn.forEach(elem => { renderMathInElement(elem, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                    { left: '\\begin{equation}', right: '\\end{equation}', display: true },
+                    { left: '\\begin{align}', right: '\\end{align}', display: true },
+                    { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
+                    { left: '\\begin{gather}', right: '\\end{gather}', display: true },
+                    { left: '\\begin{CD}', right: '\\end{CD}', display: true },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                throwOnError: false
+            })})
 
             // Auto-scroll if active
             if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled)
@@ -2337,7 +2364,7 @@
 
     // Stylize APP elems
     const appStyle = createStyle() ; update.appStyle() ; document.head.append(appStyle);
-    ['wsbg', 'bsbg'].forEach(cssType => // code highlighting, white stars, black stars
+    ['hljs', 'wsbg', 'bsbg'].forEach(cssType => // code highlighting, white stars, black stars
         document.head.append(createStyle(GM_getResourceText(`${cssType}CSS`))))
 
     // Stylize SITE elems
