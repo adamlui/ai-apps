@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16.3
+// @version                2024.8.16.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1977,7 +1977,7 @@
                             handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
                     } else { // suggest proxy or try diff API
-                        if (caller == get.reply) appAlert('openAInotWorking, suggestProxy')
+                        if (caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                         else if (caller.status != 'done') api.tryNew(caller)
                     }
                 } else if (caller.api == 'AIchatOS') {
@@ -2030,7 +2030,7 @@
                 function handleProcessError(err) { // suggest proxy or try diff API
                     consoleInfo(logPrefix + 'Response text: ' + resp.response)
                     consoleErr(logPrefix + appAlerts.parseFailed, err)
-                    if (caller.api == 'OpenAI') appAlert('openAInotWorking, suggestProxy')
+                    if (caller.api == 'OpenAI') appAlert('openAInotWorking', 'suggestProxy')
                     else if (caller.status != 'done') api.tryNew(caller)
                 }
         })}
