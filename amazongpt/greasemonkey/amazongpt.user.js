@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16.1
+// @version                2024.8.16.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2011,7 +2011,7 @@
                     chunk = extractedChunks.join('')
                 }
                 accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
-                if (new RegExp(Object.values(apis).flatMap(api => api.failFlags || []).join('|')).test(accumulatedChunks)) {
+                if (apis[caller.api].failFlags && new RegExp(apis[caller.api].failFlags.join('|')).test(accumulatedChunks)) {
                     consoleErr('Response', accumulatedChunks)
                     if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return

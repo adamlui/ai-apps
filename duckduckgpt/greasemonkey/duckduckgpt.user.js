@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16.1
+// @version                2024.8.16.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2553,7 +2553,7 @@
                     chunk = extractedChunks.join('')
                 }
                 accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
-                if (new RegExp(Object.values(apis).flatMap(api => api.failFlags || []).join('|')).test(accumulatedChunks)) {
+                if (apis[caller.api].failFlags && new RegExp(apis[caller.api].failFlags.join('|')).test(accumulatedChunks)) {
                     consoleErr('Response', accumulatedChunks)
                     if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return
