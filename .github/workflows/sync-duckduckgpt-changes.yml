@@ -96,6 +96,7 @@ jobs:
       - name: Push changes to adamlui/chatgpt-apps
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
+          git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`${{ steps.sync_docs.outputs.sync_src }}\`]" || true
           git push
@@ -103,6 +104,7 @@ jobs:
       - name: Push changes to KudoAI/duckduckgpt
         run: |
           cd ${{ github.workspace }}/KudoAI/duckduckgpt
+          git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps\`]" || true
           git push
@@ -110,6 +112,7 @@ jobs:
       - name: Push changes to adamlui/userscripts
         run: |
           cd ${{ github.workspace }}/adamlui/userscripts
+          git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/duckduckgpt\`]" || true
           git push
