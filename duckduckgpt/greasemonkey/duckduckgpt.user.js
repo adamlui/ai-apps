@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16.5
+// @version                2024.8.16.6
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -234,7 +234,7 @@
         appURL: 'https://www.duckduckgpt.com', gitHubURL: 'https://github.com/KudoAI/duckduckgpt',
         greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.28,
-        latestAssetCommitHash: '3809be4' } // for cached messages.json
+        latestAssetCommitHash: '765596b' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -512,14 +512,19 @@
         notifIcon.style.cssText = 'width: 31px ; position: relative ; top: 5.8px ; margin-right: 8px'
         notif.prepend(notifIcon)
 
-        // Append mode icon
-        const mode = Object.keys(settingsProps).find(key => settingsProps[key].label.includes(msg.trim()))
+        // Append notif type icon
+        const iconStyles = 'width: 28px ; height: 28px ; position: relative ; top: 3.5px ; margin-left: 11px ;',
+              mode = Object.keys(settingsProps).find(key => settingsProps[key].label.includes(msg.trim()))
         if (mode && !/(?:pre|suf)fix/.test(mode)) {
             const modeIcon = icons[settingsProps[mode].icon].create()
-            modeIcon.style.cssText = 'width: 28px ; height: 28px ; position: relative ; top: 3.5px ; margin-left: 11px ;'
+            modeIcon.style.cssText = iconStyles
                                    + ( /autoget|focus|scroll/i.test(mode) ? 'top: -3px' : '' ) // raise some icons
                                    + ( /animation/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink sparkles icon
             notif.append(modeIcon)
+        } else if (msg.includes(msgs.notif_copiedToClipboard || 'copied to clipboard')) {
+            const copyIcon = icons.copy.create()
+            copyIcon.style.cssText = iconStyles + 'width: 23px ; height: 23px'
+            notif.append(copyIcon)
         }
 
         // Append styled state word
@@ -1218,6 +1223,19 @@
             }
         },
 
+        checkmarkDouble: {
+            create() {
+                const checkmarksSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      checkmarksSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 24 24']]
+                checkmarksSVGattrs.forEach(([attr, value]) => checkmarksSVG.setAttribute(attr, value))
+                checkmarksSVG.append(
+                    createSVGelem('path', { stroke: 'none', d: 'M23.228 8.01785C23.6186 7.62741 23.6187 6.99424 23.2283 6.60363L22.5213 5.89638C22.1309 5.50577 21.4977 5.50563 21.1071 5.89607L10.0862 16.9122C9.69563 17.3027 9.6955 17.9359 10.0859 18.3265L10.7929 19.0337C11.1833 19.4243 11.8165 19.4245 12.2071 19.034L23.228 8.01785Z' }),
+                    createSVGelem('path', { stroke: 'none', d: 'M17.2285 8.01777C17.619 7.62724 17.619 6.99408 17.2285 6.60356L16.5214 5.89645C16.1309 5.50592 15.4977 5.50592 15.1072 5.89645L5.54542 15.4582L2.76773 12.6805C2.37721 12.29 1.74404 12.29 1.35352 12.6805L0.646409 13.3876C0.255884 13.7782 0.255885 14.4113 0.646409 14.8019L4.83831 18.9938C5.22883 19.3843 5.862 19.3843 6.25252 18.9938L17.2285 8.01777Z' })
+                )
+                return checkmarksSVG
+            }
+        },
+
         chevronDown: {
             create() {
                 const chevronSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -1235,6 +1253,23 @@
                 chevronSVGattrs.forEach(([attr, value]) => chevronSVG.setAttribute(attr, value))
                 chevronSVG.append(createSVGelem('path', { stroke: 'none', d: 'M15 11L8 6.39 1 11V8.61L8 4l7 4.61z' }))
                 return chevronSVG                
+            }
+        },
+
+        copy: {
+            create(parentElem) {
+                const copySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      copySVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 0 1024 1024']],
+                      copySVGtitle = document.createElementNS('http://www.w3.org/2000/svg', 'title')
+                if (parentElem) copySVGtitle.textContent = `${ msgs.tooltip_copy || 'Copy' } ${(
+                    parentElem.tagName == 'CODE' ? msgs.tooltip_code || 'Code' : msgs.tooltip_reply || 'Reply' ).toLowerCase() }`
+                copySVGattrs.forEach(([attr, value]) => copySVG.setAttribute(attr, value))
+                copySVG.append(
+                    copySVGtitle,
+                    createSVGelem('path', { stroke: 'none', d: 'M768 832a128 128 0 0 1-128 128H192A128 128 0 0 1 64 832V384a128 128 0 0 1 128-128v64a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64h64z' }),
+                    createSVGelem('path', { stroke: 'none', d: 'M384 128a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64V192a64 64 0 0 0-64-64H384zm0-64h448a128 128 0 0 1 128 128v448a128 128 0 0 1-128 128H384a128 128 0 0 1-128-128V192A128 128 0 0 1 384 64z' })
+                )
+                return copySVG
             }
         },
 
@@ -2453,7 +2488,7 @@
             reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream', err.message))
             function processStreamText({ done, value }) {
                 if (done) {
-                    caller.status = 'done' ; caller.sender = null
+                    show.copyBtns() ; caller.status = 'done' ; caller.sender = null
                     api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                     return
                 }
@@ -2559,7 +2594,7 @@
                 }
 
                 function handleProcessCompletion() {
-                    caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                    show.copyBtns() ; caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                     if (caller == get.reply) show.reply(respText) ; else resolve(arrayify(respText))
                 }
 
@@ -2581,6 +2616,61 @@
     // Define SHOW functions
 
     const show = {
+
+        copyBtns() {
+            if (appDiv.querySelector('#ddgpt > pre > svg, code > svg')) return
+
+            const iconStyles = 'float: right ; cursor: pointer',
+                  codeIconStyles = 'position: relative ; right: -9px ; top: -6px',
+                  replyIconSize = '15px', codeIconSize = '13px'
+
+            // Show icons
+            appDiv.querySelectorAll('#ddgpt > pre, code').forEach(parentElem => {
+                const copySVG = icons.copy.create(parentElem) ; copySVG.className = 'copy-icon'
+                let elemToPrepend = copySVG
+                copySVG.onclick = () => handleCopyClick(event, parentElem)
+                copySVG.style.cssText = iconStyles
+                copySVG.style.height = copySVG.style.width = replyIconSize
+                copySVG.style.fill = scheme == 'dark' || parentElem.tagName == 'CODE' ? 'white' : ''
+                if (parentElem.tagName == 'CODE') { // re-style icon + wrap in div for v-offset
+                    copySVG.style.cssText += ';' + codeIconStyles
+                    copySVG.style.height = copySVG.style.width = codeIconSize
+                    elemToPrepend = document.createElement('div')
+                    elemToPrepend.style.height = '11px'
+                    elemToPrepend.append(copySVG)
+                }
+                parentElem.prepend(elemToPrepend)
+            })
+
+            function handleCopyClick(event, parentElem) {
+                const reCopyCTA = new RegExp(
+                    `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')
+                const textToCopy = parentElem.textContent.replace(reCopyCTA, ''),
+                      copySVG = event.target, checkmarksSVG = icons.checkmarkDouble.create(), iconParent = copySVG.parentNode
+
+                // Style icon
+                checkmarksSVG.style.cssText = iconStyles
+                checkmarksSVG.style.height = checkmarksSVG.style.width = replyIconSize
+                checkmarksSVG.style.fill = scheme == 'dark' || parentElem.tagName == 'CODE' ? 'white' : ''
+                if (parentElem.tagName == 'CODE') { // re-style checkmarks icon
+                    checkmarksSVG.style.cssText += ';' + codeIconStyles
+                    checkmarksSVG.style.height = checkmarksSVG.style.width = codeIconSize
+                }
+
+                // Update icon
+                iconParent.replaceChild(checkmarksSVG, copySVG)
+                setTimeout(() => { iconParent.replaceChild(copySVG, checkmarksSVG) }, 1355)
+
+                // Copy text
+                navigator.clipboard.writeText(textToCopy).then(() => notify(
+                    `${ // msg
+                        parentElem.tagName == 'CODE' ? ( msgs.tooltip_code || 'Code' ) : ( msgs.tooltip_reply || 'Reply' )} ${
+                        msgs.notif_copiedToClipboard || 'copied to clipboard' }`,
+                    `${ // v-pos
+                        event.clientY < window.innerHeight /2 ? 'top' : 'bottom' }-right`
+                ))
+            }
+        },
 
         reply(answer) {
 
