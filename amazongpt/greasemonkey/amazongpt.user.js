@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16.2
+// @version                2024.8.16.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1911,6 +1911,49 @@
 
     const dataProcess = {
 
+        stream(caller, stream) {
+            if (config.streamingDisabled || !config.proxyAPIenabled) return
+            const reader = stream.response.getReader() ; let accumulatedChunks = ''
+            reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream', err.message))
+            function processStreamText({ done, value }) {
+                if (done) {
+                    caller.status = 'done' ; caller.sender = null
+                    api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                    return
+                }
+                let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
+                if (caller.api == 'MixerBox AI') { // pre-process chunks
+                    const extractedChunks = Array.from(chunk.matchAll(/data:(.*)/g), match => match[1]
+                        .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
+                        .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
+                    chunk = extractedChunks.join('')
+                }
+                accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
+                if (apis[caller.api].failFlags && new RegExp(apis[caller.api].failFlags.join('|')).test(accumulatedChunks)) {
+                    consoleErr('Response', accumulatedChunks)
+                    if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
+                    return
+                }
+                try { // to show stream text
+                    let textToShow
+                    if (caller.api == 'GPTforLove') { // extract parentID + latest chunk text
+                        const jsonLines = accumulatedChunks.split('\n'),
+                              nowResult = JSON.parse(jsonLines[jsonLines.length - 1])
+                        if (nowResult.id) apis.GPTforLove.parentID = nowResult.id // for contextual replies
+                        textToShow = nowResult.text
+                    } else textToShow = accumulatedChunks
+                    if (caller.status != 'done') { // app waiting or sending
+                        if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
+                        if (caller.sender == caller.api) show.reply(textToShow)
+                    }
+                } catch (err) { consoleErr('Error showing stream', err.message) }
+                return reader.read().then(({ done, value }) => {
+                    if (caller.sender == caller.api) // am designated sender, recurse
+                        processStreamText({ done, value })
+                }).catch(err => consoleErr('Error reading stream', err.message))
+            }
+        },
+
         text(caller, resp) {
             return new Promise(() => {
                 let respText = ''
@@ -1990,51 +2033,7 @@
                     if (caller.api == 'OpenAI') appAlert('openAInotWorking, suggestProxy')
                     else if (caller.status != 'done') api.tryNew(caller)
                 }
-            })
-        },
-
-        stream(caller, stream) {
-            if (config.streamingDisabled || !config.proxyAPIenabled) return
-            const reader = stream.response.getReader() ; let accumulatedChunks = ''
-            reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream', err.message))
-            function processStreamText({ done, value }) {
-                if (done) {
-                    caller.status = 'done' ; caller.sender = null
-                    api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                    return
-                }
-                let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
-                if (caller.api == 'MixerBox AI') { // pre-process chunks
-                    const extractedChunks = Array.from(chunk.matchAll(/data:(.*)/g), match => match[1]
-                        .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
-                        .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                    chunk = extractedChunks.join('')
-                }
-                accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
-                if (apis[caller.api].failFlags && new RegExp(apis[caller.api].failFlags.join('|')).test(accumulatedChunks)) {
-                    consoleErr('Response', accumulatedChunks)
-                    if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
-                    return
-                }
-                try { // to show stream text
-                    let textToShow
-                    if (caller.api == 'GPTforLove') { // extract parentID + latest chunk text
-                        const jsonLines = accumulatedChunks.split('\n'),
-                              nowResult = JSON.parse(jsonLines[jsonLines.length - 1])
-                        if (nowResult.id) apis.GPTforLove.parentID = nowResult.id // for contextual replies
-                        textToShow = nowResult.text
-                    } else textToShow = accumulatedChunks
-                    if (caller.status != 'done') { // app waiting or sending
-                        if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
-                        if (caller.sender == caller.api) show.reply(textToShow)
-                    }
-                } catch (err) { consoleErr('Error showing stream', err.message) }
-                return reader.read().then(({ done, value }) => {
-                    if (caller.sender == caller.api) // am designated sender, recurse
-                        processStreamText({ done, value })
-                }).catch(err => consoleErr('Error reading stream', err.message))
-            }
-        }
+        })}
     }
 
     // Define SHOW functions
