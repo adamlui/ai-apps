@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.17.2
+// @version                2024.8.17.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -932,16 +932,6 @@
                     createSVGelem('path', { stroke: 'none', d: 'M14.71,18.29a1,1,0,0,1,0,1.42l-2,2a1,1,0,0,1-1.42,0l-2-2a1,1,0,0,1,1.42-1.42l.29.3V16a1,1,0,0,1,2,0v2.59l.29-.3A1,1,0,0,1,14.71,18.29ZM11.29,8.71a1,1,0,0,0,1.42,0l2-2a1,1,0,1,0-1.42-1.42l-.29.3V3a1,1,0,0,0-2,0V5.59l-.29-.3A1,1,0,0,0,9.29,6.71Z' })
                 )
                 return arrowsDownSVG
-            }
-        },
-
-        arrowsTwistedRight: {
-            create() {
-                const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      arrowsSVGattrs = [['width', 21], ['height', 21], ['viewBox', '-1 -1 32 32']]
-                arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
-                arrowsSVG.append(createSVGelem('path', { stroke: '', d: 'M23.707,16.293L28.414,21l-4.707,4.707l-1.414-1.414L24.586,22H23c-2.345,0-4.496-1.702-6.702-3.753c0.498-0.458,0.984-0.92,1.46-1.374C19.624,18.6,21.393,20,23,20h1.586l-2.293-2.293L23.707,16.293zM23,11h1.586l-2.293,2.293l1.414,1.414L28.414,10l-4.707-4.707l-1.414,1.414L24.586,9H23c-2.787,0-5.299,2.397-7.957,4.936C12.434,16.425,9.736,19,7,19H4v2h3c3.537,0,6.529-2.856,9.424-5.618C18.784,13.129,21.015,11,23,11zM11.843,14.186c0.5-0.449,0.995-0.914,1.481-1.377C11.364,11.208,9.297,10,7,10H4v2h3C8.632,12,10.25,12.919,11.843,14.186z' }))
-                return arrowsSVG
             }
         },
 
