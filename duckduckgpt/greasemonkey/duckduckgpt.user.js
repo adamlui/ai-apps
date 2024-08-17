@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.17
+// @version                2024.8.17.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2876,40 +2876,40 @@
                 continueChatDiv.append(chatTextarea)
                 replyForm.append(continueChatDiv) ; replySection.append(replyForm)
                 appFooter.style.right = '-72px' // counteract right-offset bug from chatbar padding
-                appDiv.append(replySection)
+                appDiv.append(replySection);
 
-                // Create/append send button
-                const sendBtn = document.createElement('button'),
-                      sendSVG = icons.arrowUp.create()
-                sendBtn.id = 'send-btn' ; sendBtn.className = 'chatbar-btn'
-                sendBtn.style.right = `${ isFirefox ? 8 : 7 }px`
-                sendBtn.append(sendSVG) ; continueChatDiv.append(sendBtn)
+                // Create/append chatbar buttons
+                ['send', 'shuffle'].forEach(btnType => {
 
-                // Create/append shuffle button
-                const shuffleBtn = document.createElement('div')
-                shuffleBtn.id = 'shuffle-btn' ; shuffleBtn.className = 'chatbar-btn'
-                shuffleBtn.style.right = `${ isFirefox ? 11.5 : 9.5 }px`
-                const shuffleSVG = icons.arrowsTwistedRight.create()
-                shuffleBtn.append(shuffleSVG) ; continueChatDiv.append(shuffleBtn)
+                    // Create/ID/classify/pos button
+                    const btnElem = document.createElement(btnType === 'send' ? 'button' : 'div')
+                    btnElem.id = `${btnType}-btn` ; btnElem.className = 'chatbar-btn'
+                    btnElem.style.right = `${ btnType == 'send' ? ( isFirefox ? 8 : 7 ) : ( isFirefox ? 11.5 : 9.5 )}px`
+
+                    // Append icon
+                    btnElem.append(icons[btnType == 'send' ? 'arrowUp' : 'arrowsTwistedRight'].create())
+
+                    // Add listeners
+                    if (!isMobile) // add hover listener for tooltips
+                        btnElem.onmouseover = btnElem.onmouseout = toggle.tooltip
+                    if (btnType == 'shuffle') btnElem.onclick = () => {
+                        const randQAprompt = 'Generate a single random question on any topic then answer it.'
+                                           + `${ !config.proxyAPIenabled ? 'Don\'t talk about Canberra, Tokyo, blue whales, photosynthesis,'
+                                                                         + ' deserts, mindfulness meditation, the Fibonacci sequence,'
+                                                                         + ' Jupiter, the Great Wall of China, Sheakespeare or da Vinci.' : '' }`
+                                           + 'Try to give an answer that is 25-50 words.'
+                                           + 'Do not type anything but the question and answer. Reply in markdown.'
+                        chatTextarea.value = augmentQuery(randQAprompt)
+                        chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
+                    }
+
+                    // Append button
+                    continueChatDiv.append(btnElem)
+                })
 
                 // Add reply section listeners
                 replyForm.onkeydown = handleEnter ; replyForm.onsubmit = handleSubmit
                 chatTextarea.oninput = autosizeChatbar
-                shuffleBtn.onclick = () => {
-                    const randQAprompt = 'Generate a single random question on any topic then answer it.'
-                                       + `${ !config.proxyAPIenabled ? 'Don\'t talk about Canberra, Tokyo, blue whales, photosynthesis,'
-                                                                     + ' deserts, mindfulness meditation, the Fibonacci sequence,'
-                                                                     + ' Jupiter, the Great Wall of China, Sheakespeare or da Vinci.' : '' }`
-                                       + 'Try to give an answer that is 25-50 words.'
-                                       + 'Do not type anything but the question and answer. Reply in markdown.'
-                    chatTextarea.value = augmentQuery(randQAprompt)
-                    chatTextarea.dispatchEvent(new KeyboardEvent('keydown', {
-                        key: 'Enter', bubbles: true, cancelable: true }))
-                }
-                if (!isMobile) { // add hover listeners for tooltips
-                    sendBtn.onmouseover = sendBtn.onmouseout = toggle.tooltip
-                    shuffleBtn.onmouseover = shuffleBtn.onmouseout = toggle.tooltip
-                }
 
                 // Scroll to top on mobile if user interacted
                 if (isMobile && show.reply.userInteracted) {

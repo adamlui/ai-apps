@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.17
+// @version                2024.8.17.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2301,20 +2301,30 @@
                 chatTextarea.placeholder = `${ msgs.tooltip_sendReply || 'Send reply' }...`
                 continueChatDiv.append(chatTextarea)
                 replyForm.append(continueChatDiv) ; replySection.append(replyForm)
-                appDiv.append(replySection)
+                appDiv.append(replySection);
 
-                // Create/append send button
-                const sendBtn = document.createElement('button'),
-                      sendSVG = icons.arrowUp.create()
-                sendBtn.id = 'send-btn' ; sendBtn.className = 'chatbar-btn'
-                sendBtn.style.right = `${ isFirefox ? 8 : 7 }px`
-                sendBtn.append(sendSVG) ; continueChatDiv.append(sendBtn)
+                // Create/append chatbar buttons
+                ['send'].forEach(btnType => {
+
+                    // Create/ID/classify/pos button
+                    const btnElem = document.createElement('button')
+                    btnElem.id = `${btnType}-btn` ; btnElem.className = 'chatbar-btn'
+                    btnElem.style.right = `${ isFirefox ? 8 : 7 }px`
+
+                    // Append icon
+                    btnElem.append(icons.arrowUp.create())
+
+                    // Add listeners
+                    if (!isMobile) // add hover listener for tooltips
+                        btnElem.onmouseover = btnElem.onmouseout = toggle.tooltip
+
+                    // Append button
+                    continueChatDiv.append(btnElem)
+                })
 
                 // Add reply section listeners
                 replyForm.onkeydown = handleEnter ; replyForm.onsubmit = handleSubmit
                 chatTextarea.oninput = autosizeChatbar
-                if (!isMobile) // add hover listeners for tooltips
-                    sendBtn.onmouseover = sendBtn.onmouseout = toggle.tooltip
 
                 // Scroll to top on mobile if user interacted
                 if (isMobile && show.reply.userInteracted) {
