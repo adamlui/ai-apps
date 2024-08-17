@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16.6
+// @version                2024.8.16.7
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -877,7 +877,8 @@
                         const settingToggle = document.createElement('input'),
                               settingToggleAttrs = [['type', 'checkbox'], ['disabled', true]]
                         settingToggleAttrs.forEach(([attr, value]) => settingToggle.setAttribute(attr, value))
-                        settingToggle.checked = config[key] ^ key.includes('Disabled')
+                        settingToggle.checked = config[key] ^ key.includes('Disabled') // init based on config/name
+                                              && !(key == 'streamingDisabled' && !config.proxyAPIenabled) // uncheck Streaming in OpenAI mode
                         settingToggle.style.display = 'none' // hide checkbox
 
                         // Create/stylize switch
@@ -909,7 +910,8 @@
 
                         // Add click listener
                         settingItem.onclick = () => {
-                            modals.settings.toggle.switch(settingToggle) // visually switch toggle
+                            if (!(key == 'streamingDisabled' && !config.proxyAPIenabled)) // visually switch toggle if not Streaminng in OpenAI mode
+                                modals.settings.toggle.switch(settingToggle)
 
                             // Call specialized toggle funcs
                             const manualGetMatch = /(?:suf|pre)fix/.exec(key)
@@ -2128,9 +2130,14 @@
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
             refreshMenu()
-            if (modals.settings.get()) { // update visual state of Settings toggle
-                const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input')
-                if (proxyToggle.checked != config.proxyAPIenabled) modals.settings.toggle.switch(proxyToggle)
+            if (modals.settings.get()) { // update visual states of Settings toggles
+                const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input'),
+                      streamingToggle = document.querySelector('[id*="streaming"][id*="menu-entry"] input')
+                if (proxyToggle.checked != config.proxyAPIenabled) // Proxy state out-of-sync (from using toolbar menu)
+                        modals.settings.toggle.switch(proxyToggle)
+                if (streamingToggle.checked && !config.proxyAPIenabled // Streaming checked but OpenAI mode
+                    || !streamingToggle.checked && config.proxyAPIenabled && !config.streamingDisabled) // or Streaming unchecked but enabled in Proxy mode
+                        modals.settings.toggle.switch(streamingToggle)
             }
             if (appDiv.querySelector('#ddgpt-alert')) location.reload() // re-send query if user alerted 
         },
@@ -2166,8 +2173,7 @@
         },
 
         streaming() {
-            const streamingToggle = document.querySelector('[id*="streaming"][id*="menu-entry"] input'),
-                  scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
+            const scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
                                 : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
                                             : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!/Tampermonkey|ScriptCat/.test(getUserscriptManager())) { // alert userscript manager unsupported, suggest TM/SC
@@ -2181,8 +2187,6 @@
                 )
                 const suggestAlert = document.getElementById(suggestAlertID).firstChild
                 modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
-                if (streamingToggle && streamingToggle.checked == config.streamingDisabled) // revert Settings auto-toggle
-                    modals.settings.toggle.switch(streamingToggle)
             } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) { // alert TM/browser unsupported, suggest SC
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
@@ -2192,8 +2196,6 @@
                 )
                 const suggestAlert = document.getElementById(suggestAlertID).firstChild
                 modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
-                if (streamingToggle && streamingToggle.checked == config.streamingDisabled) // revert Settings auto-toggle
-                    modals.settings.toggle.switch(streamingToggle)
             } else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
                 let msg = `${settingsProps.streamingDisabled.label} `
                         + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
@@ -2205,8 +2207,6 @@
                       alert = document.getElementById(alertID).firstChild
                 modals.init(alert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggle.proxyMode() }
-                if (streamingToggle && streamingToggle.checked == config.streamingDisabled) // revert Settings auto-toggle
-                    modals.settings.toggle.switch(streamingToggle)
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
                 notify(settingsProps.streamingDisabled.label + ' ' + menuState.word[+!config.streamingDisabled])
