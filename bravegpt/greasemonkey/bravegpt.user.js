@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.16.10
+// @version               2024.8.17
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1922,10 +1922,11 @@ setTimeout(async () => {
                       .filter(type => { // exclude invisible ones                                                
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
+            const chatbarBtnTypes = ['send', 'shuffle']
             const [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [9, 25] : [5, 28],
-                  iniRoffset = spreadFactor * ( btnType == 'send' ? 1.35
-                                              : btnType == 'shuffle' ? 2.35
-                                              : cornerBtnTypes.indexOf(btnType) +1 ) + ctrAddend
+                  iniRoffset = ctrAddend + spreadFactor * (
+                      cornerBtnTypes.includes(btnType) ? cornerBtnTypes.indexOf(btnType) +1
+                                                       : chatbarBtnTypes.indexOf(btnType) +1.35 )
             // Update text
             tooltipDiv.innerText = (
                 btnType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
@@ -1942,7 +1943,7 @@ setTimeout(async () => {
               : btnType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
 
             // Update position
-            tooltipDiv.style.top = `${ !/send|shuffle/.test(btnType) ? -6
+            tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -6
               : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 34 }px`
             tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
         },

@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16.9
+// @version                2024.8.17
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1828,10 +1828,11 @@
                       .filter(type => { // exclude invisible ones                                                
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
+            const chatbarBtnTypes = ['send', 'shuffle']
             const [ctrAddend, spreadFactor] = [7, 29],
-                  iniRoffset = spreadFactor * ( btnType == 'send' ? 1.48
-                                              : btnType == 'shuffle' ? 2.48
-                                              : cornerBtnTypes.indexOf(btnType) +1 ) + ctrAddend
+                  iniRoffset = ctrAddend + spreadFactor * (
+                      cornerBtnTypes.includes(btnType) ? cornerBtnTypes.indexOf(btnType) +1
+                                                       : chatbarBtnTypes.indexOf(btnType) +1.38 )
             // Update text
             tooltipDiv.innerText = (
                 btnType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
@@ -1848,7 +1849,7 @@
               : btnType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
     
             // Update position
-            tooltipDiv.style.top = `${ !/send|shuffle/.test(btnType) ? -15
+            tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -15
               : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
             tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
         },

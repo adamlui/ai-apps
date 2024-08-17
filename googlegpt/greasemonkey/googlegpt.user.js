@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.16.9
+// @version                  2024.8.17
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2129,10 +2129,11 @@
                       .filter(type => { // exclude invisible ones                                                
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
+            const chatbarBtnTypes = ['send', 'shuffle']
             const [ctrAddend, spreadFactor] = [8, 28],
-                  iniRoffset = spreadFactor * ( btnType == 'send' ? 1.35
-                                              : btnType == 'shuffle' ? 2.25
-                                              : cornerBtnTypes.indexOf(btnType) +1 ) + ctrAddend
+                  iniRoffset = ctrAddend + spreadFactor * (
+                      cornerBtnTypes.includes(btnType) ? cornerBtnTypes.indexOf(btnType) +1
+                                                       : chatbarBtnTypes.indexOf(btnType) +1.35 )
             // Update text
             tooltipDiv.innerText = (
                 btnType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
@@ -2149,7 +2150,7 @@
               : btnType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
 
             // Update position
-            tooltipDiv.style.top = `${ !/send|shuffle/.test(btnType) ? -13
+            tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -13
               : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
             tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
         },
