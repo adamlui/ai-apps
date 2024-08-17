@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16.8
+// @version                2024.8.16.9
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -146,7 +146,9 @@
                 url: 'https://e10.frechat.xyz',
                 headers: { 'Accept': '*/*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
             method: 'PUT', streamable: true, accumulatesText: false,
-            failFlags: ['invalid_request_error', 'literal_error', 'me@promplate.dev', '^Not Found$', 'your free credit'],
+            failFlags: [
+                'invalid_request_error', 'literal_error', 'me@promplate.dev', '^Not Found$',
+                'Sorry, your account balance is insufficient', 'your free credit'],
             availModels: [
                 'deepseek-ai/deepseek-llm-67b-chat', 'gemma2-9b-it', 'THUDM/glm-4-9b-chat', 'gpt-4o-mini-2024-07-18',
                 'llama3-70b-8192', 'mixtral-8x7b-32768', 'nous-hermes-2-mixtral-8x7b-dpo', 'Qwen/Qwen2-57B-A14B-Instruct',
