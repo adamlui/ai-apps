@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16.9
+// @version                2024.8.16.10
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1455,28 +1455,28 @@
             ))
         },
 
-        tooltip(buttonType) { // text & position
+        tooltip(btnType) { // text & position
             const cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'font-size', 'arrows']
                       .filter(type => { // exclude invisible ones
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
             const [ctrAddend, spreadFactor] = [8, 29],
-                  iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.48
-                                              : cornerBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
+                  iniRoffset = spreadFactor * ( btnType == 'send' ? 1.48
+                                              : cornerBtnTypes.indexOf(btnType) +1 ) + ctrAddend
             // Update text
             tooltipDiv.innerText = (
-                buttonType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
-                                                             : `${ msgs.tooltip_minimize || 'Minimize' }` )
-              : buttonType == 'about' ? msgs.menuLabel_about || 'About'
-              : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
-              : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
-              : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
-              : buttonType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
-                                                           : `${ msgs.tooltip_expand || 'Expand' }` )
-              : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
+                btnType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
+                                                          : `${ msgs.tooltip_minimize || 'Minimize' }` )
+              : btnType == 'about' ? msgs.menuLabel_about || 'About'
+              : btnType == 'settings' ? msgs.menuLabel_settings || 'Settings'
+              : btnType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
+              : btnType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
+              : btnType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
+                                                        : `${ msgs.tooltip_expand || 'Expand' }` )
+              : btnType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
 
             // Update position
-            tooltipDiv.style.top = `${ !/send/.test(buttonType) ? -21
+            tooltipDiv.style.top = `${ !/send/.test(btnType) ? -21
               : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top -36 }px`
             tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
         },

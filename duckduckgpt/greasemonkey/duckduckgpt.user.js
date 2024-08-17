@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.16.8
+// @version                2024.8.16.9
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1823,32 +1823,32 @@
             ))
         },
 
-        tooltip(buttonType) { // text & position
+        tooltip(btnType) { // text & position
             const cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'font-size', 'pin', 'wsb', 'arrows']
                       .filter(type => { // exclude invisible ones                                                
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
             const [ctrAddend, spreadFactor] = [7, 29],
-                  iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.48
-                                              : buttonType == 'shuffle' ? 2.48
-                                              : cornerBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
+                  iniRoffset = spreadFactor * ( btnType == 'send' ? 1.48
+                                              : btnType == 'shuffle' ? 2.48
+                                              : cornerBtnTypes.indexOf(btnType) +1 ) + ctrAddend
             // Update text
             tooltipDiv.innerText = (
-                buttonType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
-                                                             : `${ msgs.tooltip_minimize || 'Minimize' }` )
-              : buttonType == 'about' ? msgs.menuLabel_about || 'About'
-              : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
-              : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
-              : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
-              : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                       + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
-              : buttonType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
-                                                           : `${ msgs.tooltip_expand || 'Expand' }` )
-              : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
-              : buttonType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
+                btnType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
+                                                          : `${ msgs.tooltip_minimize || 'Minimize' }` )
+              : btnType == 'about' ? msgs.menuLabel_about || 'About'
+              : btnType == 'settings' ? msgs.menuLabel_settings || 'Settings'
+              : btnType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
+              : btnType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
+              : btnType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
+                                 + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
+              : btnType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
+                                                        : `${ msgs.tooltip_expand || 'Expand' }` )
+              : btnType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
+              : btnType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
     
             // Update position
-            tooltipDiv.style.top = `${ !/send|shuffle/.test(buttonType) ? -15
+            tooltipDiv.style.top = `${ !/send|shuffle/.test(btnType) ? -15
               : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
             tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
         },
