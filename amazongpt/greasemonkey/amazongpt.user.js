@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.17.1
+// @version                2024.8.17.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -109,7 +109,7 @@
         appURL: 'https://amazongpt.kudoai.com', gitHubURL: 'https://github.com/KudoAI/amazongpt',
         greasyForkURL: 'https://greasyfork.org/scripts/500663-amazongpt',
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.28,
-        latestAssetCommitHash: 'ce7caf6' } // for cached messages.json
+        latestAssetCommitHash: '80a2e87' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -945,6 +945,16 @@
             }
         },
 
+        arrowsTwistedRight: {
+            create() {
+                const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      arrowsSVGattrs = [['width', 21], ['height', 21], ['viewBox', '-1 -1 32 32']]
+                arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
+                arrowsSVG.append(createSVGelem('path', { stroke: '', d: 'M23.707,16.293L28.414,21l-4.707,4.707l-1.414-1.414L24.586,22H23c-2.345,0-4.496-1.702-6.702-3.753c0.498-0.458,0.984-0.92,1.46-1.374C19.624,18.6,21.393,20,23,20h1.586l-2.293-2.293L23.707,16.293zM23,11h1.586l-2.293,2.293l1.414,1.414L28.414,10l-4.707-4.707l-1.414,1.414L24.586,9H23c-2.787,0-5.299,2.397-7.957,4.936C12.434,16.425,9.736,19,7,19H4v2h3c3.537,0,6.529-2.856,9.424-5.618C18.784,13.129,21.015,11,23,11zM11.843,14.186c0.5-0.449,0.995-0.914,1.481-1.377C11.364,11.208,9.297,10,7,10H4v2h3C8.632,12,10.25,12.919,11.843,14.186z' }))
+                return arrowsSVG
+            }
+        },
+
         arrowUp: {
             create() {
                 const arrowUpSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -1296,7 +1306,7 @@
               + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
               + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
               + '.chatbar-btn { z-index: 560 ;'
-                  + `border: none ; float: right ; position: relative ; bottom: ${ isFirefox ? 50 : 55 }px ; background: none ; cursor: pointer ;`
+                  + 'border: none ; float: right ; position: relative ; bottom: 50px ; background: none ; cursor: pointer ;'
                   + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
               + '.chatbar-btn:hover {'
                   + `${ scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
@@ -1460,7 +1470,7 @@
                       .filter(type => { // exclude invisible ones
                           const btn = appDiv.querySelector(`#${type}-btn`)
                           return btn && getComputedStyle(btn).display != 'none' })
-            const chatbarBtnTypes = ['send']
+            const chatbarBtnTypes = ['send', 'shuffle']
             const [ctrAddend, spreadFactor] = [8, 29],
                   iniRoffset = ctrAddend + spreadFactor * (
                       cornerBtnTypes.includes(btnType) ? cornerBtnTypes.indexOf(btnType) +1
@@ -1475,7 +1485,8 @@
               : btnType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
               : btnType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
                                                         : `${ msgs.tooltip_expand || 'Expand' }` )
-              : btnType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
+              : btnType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
+              : btnType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
 
             // Update position
             tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -21
@@ -2304,19 +2315,29 @@
                 appDiv.append(replySection);
 
                 // Create/append chatbar buttons
-                ['send'].forEach(btnType => {
+                ['send', 'shuffle'].forEach(btnType => {
 
                     // Create/ID/classify/pos button
-                    const btnElem = document.createElement('button')
+                    const btnElem = document.createElement(btnType === 'send' ? 'button' : 'div')
                     btnElem.id = `${btnType}-btn` ; btnElem.className = 'chatbar-btn'
-                    btnElem.style.right = `${ isFirefox ? 8 : 7 }px`
+                    btnElem.style.right = `${ btnType == 'send' ? ( isFirefox ? 12 : 9 ) : ( isFirefox ? 17 : 14 )}px`
 
                     // Append icon
-                    btnElem.append(icons.arrowUp.create())
+                    btnElem.append(icons[btnType == 'send' ? 'arrowUp' : 'arrowsTwistedRight'].create())
 
                     // Add listeners
                     if (!isMobile) // add hover listener for tooltips
                         btnElem.onmouseover = btnElem.onmouseout = toggle.tooltip
+                    if (btnType == 'shuffle') btnElem.onclick = () => {
+                        const randQAprompt = 'Generate a single random question on any topic then answer it.'
+                                           + `${ !config.proxyAPIenabled ? 'Don\'t talk about Canberra, Tokyo, blue whales, photosynthesis,'
+                                                                         + ' deserts, mindfulness meditation, the Fibonacci sequence,'
+                                                                         + ' Jupiter, the Great Wall of China, Sheakespeare or da Vinci.' : '' }`
+                                           + 'Try to give an answer that is 25-50 words.'
+                                           + 'Do not type anything but the question and answer. Reply in markdown.'
+                        chatTextarea.value = augmentQuery(randQAprompt)
+                        chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
+                    }
 
                     // Append button
                     continueChatDiv.append(btnElem)
