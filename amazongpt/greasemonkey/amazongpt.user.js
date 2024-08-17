@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.17.3
+// @version                2024.8.17.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1936,7 +1936,7 @@
                 headers: api.createHeaders(get.reply.api), data: api.createPayload(get.reply.api, msgChain),
                 onload: resp => dataProcess.text(get.reply, resp),
                 onloadstart: resp => dataProcess.stream(get.reply, resp),
-                onerror: err => { consoleErr(err.message)
+                onerror: err => { consoleErr(err)
                     if (!config.proxyAPIenabled) appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
                     else if (get.reply.status != 'done') api.tryNew(get.reply)
                 }

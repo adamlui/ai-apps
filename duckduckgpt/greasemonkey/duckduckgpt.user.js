@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.17.1
+// @version                2024.8.17.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2407,7 +2407,7 @@
                 headers: api.createHeaders(get.reply.api), data: api.createPayload(get.reply.api, msgChain),
                 onload: resp => dataProcess.text(get.reply, resp),
                 onloadstart: resp => dataProcess.stream(get.reply, resp),
-                onerror: err => { consoleErr(err.message)
+                onerror: err => { consoleErr(err)
                     if (!config.proxyAPIenabled) appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
                     else if (get.reply.status != 'done') api.tryNew(get.reply)
                 }
@@ -2476,7 +2476,7 @@
                 responseType: 'text', headers: api.createHeaders(get.related.api),
                 data: api.createPayload(get.related.api, [{ role: 'user', content: rqPrompt }]),
                 onload: resp => dataProcess.text(get.related, resp).then(resolve),
-                onerror: err => { consoleErr(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) }
+                onerror: err => { consoleErr(err) ; if (get.related.status != 'done') api.tryNew(get.related) }
             }))
         }
     }
