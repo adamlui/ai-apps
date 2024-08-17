@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Tamba mhinduro" },
   "tooltip_fontSize": { "message": "Saizi yefonti" },
   "tooltip_sendReply": { "message": "Tumira mhinduro" },
+  "tooltip_askRandQuestion": { "message": "Bvunza mubvunzo usinganzwisisike" },
   "tooltip_minimize": { "message": "dzikamisa" },
   "tooltip_restore": { "message": "Dzorerazve" },
   "tooltip_expand": { "message": "Wedzera" },

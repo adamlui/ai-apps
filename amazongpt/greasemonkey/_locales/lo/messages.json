@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "ຫຼິ້ນຄໍາຕອບ" },
   "tooltip_fontSize": { "message": "ຂະໜາດຕົວອັກສອນ" },
   "tooltip_sendReply": { "message": "ຕອບ ຕອບ" },
+  "tooltip_askRandQuestion": { "message": "ຖາມຄຳຖາມແບບສຸ່ມ" },
   "tooltip_minimize": { "message": "ຫຍໍ້ນ້ອຍລົງສຸດ" },
   "tooltip_restore": { "message": "ຟື້ນຟູ" },
   "tooltip_expand": { "message": "ຂະຫຍາຍ" },

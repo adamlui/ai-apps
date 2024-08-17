@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Atskaņot atbildi" },
   "tooltip_fontSize": { "message": "Rakstzīmju izmērs" },
   "tooltip_sendReply": { "message": "Sūtīt atbildi" },
+  "tooltip_askRandQuestion": { "message": "Uzdot nejauši izvēlētu jautājumu" },
   "tooltip_minimize": { "message": "Adreses rÄ«kjosla" },
   "tooltip_restore": { "message": "Atjaunot" },
   "tooltip_expand": { "message": "Izvērst" },

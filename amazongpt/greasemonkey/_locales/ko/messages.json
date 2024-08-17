@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "답변 재생" },
   "tooltip_fontSize": { "message": "폰트 크기" },
   "tooltip_sendReply": { "message": "답변 필요" },
+  "tooltip_askRandQuestion": { "message": "무작위로 질문하기" },
   "tooltip_minimize": { "message": "최소화" },
   "tooltip_restore": { "message": "복원 " },
   "tooltip_expand": { "message": "펼치기" },

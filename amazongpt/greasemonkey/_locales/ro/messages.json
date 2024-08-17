@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Redați răspunsul" },
   "tooltip_fontSize": { "message": "Mărime font " },
   "tooltip_sendReply": { "message": "Trimite un răspuns" },
+  "tooltip_askRandQuestion": { "message": "Puneți o întrebare aleatorie" },
   "tooltip_minimize": { "message": "Minimizare" },
   "tooltip_restore": { "message": "Restaurare" },
   "tooltip_expand": { "message": "Extindere" },

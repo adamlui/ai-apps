@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "PLAY ANSWER" },
   "tooltip_fontSize": { "message": "Saese ya font" },
   "tooltip_sendReply": { "message": "SEND ANSWER" },
+  "tooltip_askRandQuestion": { "message": "ASK Random QUESTION" },
   "tooltip_minimize": { "message": "Fokotsa selekanyo sa yone" },
   "tooltip_restore": { "message": "RESTURE" },
   "tooltip_expand": { "message": "Atolosa" },

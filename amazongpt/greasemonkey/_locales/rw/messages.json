@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Igisubizo" },
   "tooltip_fontSize": { "message": "Imyandikire" },
   "tooltip_sendReply": { "message": "Subiza" },
+  "tooltip_askRandQuestion": { "message": "Ikibazo" },
   "tooltip_minimize": { "message": "Kugabanya ingano" },
   "tooltip_restore": { "message": "Kugarura" },
   "tooltip_expand": { "message": "Agura" },

@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Chwarae'r ateb" },
   "tooltip_fontSize": { "message": "Maint ffont" },
   "tooltip_sendReply": { "message": "Anfon Ateb" },
+  "tooltip_askRandQuestion": { "message": "Gofyn cwestiwn ar hap" },
   "tooltip_minimize": { "message": "Lleihau" },
   "tooltip_restore": { "message": "Adfer" },
   "tooltip_expand": { "message": "Dangos" },

@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Bersiva lîstin" },
   "tooltip_fontSize": { "message": "Mezinahiya cureyê tîpan" },
   "tooltip_sendReply": { "message": "Bersiv bişînin" },
+  "tooltip_askRandQuestion": { "message": "Pirsa random bipirsin" },
   "tooltip_minimize": { "message": "Piçûk bike" },
   "tooltip_restore": { "message": "Vesazkirin" },
   "tooltip_expand": { "message": "Firehtir Bike" },

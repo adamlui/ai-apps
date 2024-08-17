@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Αναπαραγωγή απάντησης" },
   "tooltip_fontSize": { "message": "Μέγεθος γραμματοσειράς" },
   "tooltip_sendReply": { "message": "Αποστολή απάντησης" },
+  "tooltip_askRandQuestion": { "message": "Κάντε τυχαία ερώτηση" },
   "tooltip_minimize": { "message": "Ελαχιστοποίηση" },
   "tooltip_restore": { "message": "Επαναφορά" },
   "tooltip_expand": { "message": "Ανάπτυξη" },

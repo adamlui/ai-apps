@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Cavabı oxut" },
   "tooltip_fontSize": { "message": "Yazı növü böyüklüyü" },
   "tooltip_sendReply": { "message": "Göndər" },
+  "tooltip_askRandQuestion": { "message": "Təsadüfi sual verin" },
   "tooltip_minimize": { "message": "Ən kiçik edin" },
   "tooltip_restore": { "message": "Bərpa et" },
   "tooltip_expand": { "message": "Genişləndir" },

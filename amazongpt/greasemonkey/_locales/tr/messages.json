@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Yanıtı oynat" },
   "tooltip_fontSize": { "message": "Yazı boyutu" },
   "tooltip_sendReply": { "message": "Yanıt Gönder" },
+  "tooltip_askRandQuestion": { "message": "Rastgele Soru :" },
   "tooltip_minimize": { "message": "Alt Düzeyde" },
   "tooltip_restore": { "message": "Geri Yükle" },
   "tooltip_expand": { "message": "Aç" },

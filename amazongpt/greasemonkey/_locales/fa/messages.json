@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "پاسخ را پخش کنید" },
   "tooltip_fontSize": { "message": "اندازه فونت" },
   "tooltip_sendReply": { "message": "ارسال پاسخ" },
+  "tooltip_askRandQuestion": { "message": "سوال تصادفی بپرسید" },
   "tooltip_minimize": { "message": "حداقل کردن" },
   "tooltip_restore": { "message": "بازیابی" },
   "tooltip_expand": { "message": "بسط دادن" },

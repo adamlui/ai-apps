@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Play answer" },
   "tooltip_fontSize": { "message": "Font size" },
   "tooltip_sendReply": { "message": "Send reply" },
+  "tooltip_askRandQuestion": { "message": "Ask random question" },
   "tooltip_minimize": { "message": "Minimize" },
   "tooltip_restore": { "message": "Restore" },
   "tooltip_expand": { "message": "Expand" },

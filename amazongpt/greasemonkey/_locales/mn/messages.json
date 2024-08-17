@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Хариултыг тоглуулах" },
   "tooltip_fontSize": { "message": "Фонтын хэмжээ" },
   "tooltip_sendReply": { "message": "Хариулт илгээх" },
+  "tooltip_askRandQuestion": { "message": "Санамсаргүй асуулт асуух" },
   "tooltip_minimize": { "message": "Багасгах" },
   "tooltip_restore": { "message": "Сэргээх" },
   "tooltip_expand": { "message": "Өргөтгөх" },

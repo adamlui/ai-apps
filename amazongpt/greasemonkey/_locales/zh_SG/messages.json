@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "播放答案" },
   "tooltip_fontSize": { "message": "字体大小" },
   "tooltip_sendReply": { "message": "回复" },
+  "tooltip_askRandQuestion": { "message": "随机抽题" },
   "tooltip_minimize": { "message": "最小化" },
   "tooltip_restore": { "message": "恢复" },
   "tooltip_expand": { "message": "展开" },

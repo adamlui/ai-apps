@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Spiel Response" },
   "tooltip_fontSize": { "message": "Tamaño di fuente" },
   "tooltip_sendReply": { "message": "Envoyer un Réponse" },
+  "tooltip_askRandQuestion": { "message": "Pregunta Casual" },
   "tooltip_minimize": { "message": "Minimisá" },
   "tooltip_restore": { "message": "Restorashon" },
   "tooltip_expand": { "message": "Ekspandé" },

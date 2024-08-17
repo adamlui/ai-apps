@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Tinikeni pa kwasuka" },
   "tooltip_fontSize": { "message": "Ubukulu bwa filembo..." },
   "tooltip_sendReply": { "message": "Tuma Mwakitwile" },
+  "tooltip_askRandQuestion": { "message": "Swali kwa Random" },
   "tooltip_minimize": { "message": "Minimise" },
   "tooltip_restore": { "message": "Bwesesha" },
   "tooltip_expand": { "message": "Ukwishibilapo nafimbi" },

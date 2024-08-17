@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "ចាក់ចម្លើយ" },
   "tooltip_fontSize": { "message": "ទំហំ​ពុម្ពអក្សរ" },
   "tooltip_sendReply": { "message": "ផ្ញើការឆ្លើយតប" },
+  "tooltip_askRandQuestion": { "message": "សួរសំណួរចៃដន្យ" },
   "tooltip_minimize": { "message": "បង្រួម​អប្បបរមា" },
   "tooltip_restore": { "message": "ស្ដារ" },
   "tooltip_expand": { "message": "ពង្រីក" },

@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "መልሲ ተጻወት" },
   "tooltip_fontSize": { "message": "መጠን ፊደላት" },
   "tooltip_sendReply": { "message": "መልሲ ልኣኽ" },
+  "tooltip_askRandQuestion": { "message": "ብሃንደበት ሕቶ ሕተቶ" },
   "tooltip_minimize": { "message": "ምጉዳል" },
   "tooltip_restore": { "message": "ናብ ዝነበሮ ምለስ" },
   "tooltip_expand": { "message": "ስፍሕፋሕ" },

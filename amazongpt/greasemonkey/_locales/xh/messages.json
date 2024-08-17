@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Dlala impendulo" },
   "tooltip_fontSize": { "message": "Iifonti" },
   "tooltip_sendReply": { "message": "Thumela impendulo" },
+  "tooltip_askRandQuestion": { "message": "Buza umbuzo ongakhethiyo" },
   "tooltip_minimize": { "message": "Yenza ibe nkulu" },
   "tooltip_restore": { "message": "& Gcina kwakhona" },
   "tooltip_expand": { "message": "Yandisa" },

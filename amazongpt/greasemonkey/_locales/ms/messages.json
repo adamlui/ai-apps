@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Mainkan jawapan" },
   "tooltip_fontSize": { "message": "Saiz huruf" },
   "tooltip_sendReply": { "message": "Balas" },
+  "tooltip_askRandQuestion": { "message": "Tanya soalan rawak" },
   "tooltip_minimize": { "message": "Minimum" },
   "tooltip_restore": { "message": "Pulihkan" },
   "tooltip_expand": { "message": "Mengembangkan" },

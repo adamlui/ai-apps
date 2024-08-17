@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Reproduciraj odgovor" },
   "tooltip_fontSize": { "message": "Veličina fonta" },
   "tooltip_sendReply": { "message": "Pošalji odgovor" },
+  "tooltip_askRandQuestion": { "message": "Postavite nasumično pitanje" },
   "tooltip_minimize": { "message": "Smanji" },
   "tooltip_restore": { "message": "Povrati" },
   "tooltip_expand": { "message": "Proširi" },

@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "ಪ್ಲೇ ಉತ್ತರ" },
   "tooltip_fontSize": { "message": "à² à²à³à²£à²²à²à³à²·à²£à²à²³à²¨à³à²¨à³ à²à³à²¨à³à²¯ à²¬à²¾à²°à²¿à²à³ à²¬à²³à²à³à²¦à²¾à²°à²¨à²¿à²à²¦ à²¬à²¦à²²à²¾à²¯à²¿à²¸à²²à²¾à²à²¿à²¦à³à²¦à³." },
   "tooltip_sendReply": { "message": "ಪ್ರತ್ಯುತ್ತರ ಕಳುಹಿಸಿ" },
+  "tooltip_askRandQuestion": { "message": "ಯಾದೃಚ್ಛಿಕ ಪ್ರಶ್ನೆಯನ್ನು ಕೇಳಿ" },
   "tooltip_minimize": { "message": "& ಕನಿಷ್ಠೀಕರಿಸು" },
   "tooltip_restore": { "message": "ಮರುಸ್ಥಾಪಿಸು" },
   "tooltip_expand": { "message": "ಹಿಗ್ಗಿಸು" },

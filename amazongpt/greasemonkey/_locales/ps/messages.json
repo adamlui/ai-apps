@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "ځواب ولوبیږئ" },
   "tooltip_fontSize": { "message": "د ليکبڼې کچه" },
   "tooltip_sendReply": { "message": "ځواب وليږه" },
+  "tooltip_askRandQuestion": { "message": "له تصادفي ډول پوښتنه وکړئ" },
   "tooltip_minimize": { "message": "ووړول" },
   "tooltip_restore": { "message": "بيا زېرمه کړئ" },
   "tooltip_expand": { "message": "پراخ کړئ" },

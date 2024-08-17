@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Jwe repons" },
   "tooltip_fontSize": { "message": "Gwosè Polis Karaktè" },
   "tooltip_sendReply": { "message": "Voye repons" },
+  "tooltip_askRandQuestion": { "message": "Poze kesyon owaza" },
   "tooltip_minimize": { "message": "réduire/misyon/pou minimize" },
   "tooltip_restore": { "message": "Restore" },
   "tooltip_expand": { "message": "agrandi" },

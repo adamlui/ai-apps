@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Taaalo Tali" },
   "tooltip_fontSize": { "message": "Font tele" },
   "tooltip_sendReply": { "message": "Auina atu se tali" },
+  "tooltip_askRandQuestion": { "message": "Fesili faafuasei" },
   "tooltip_minimize": { "message": "Minimize" },
   "tooltip_restore": { "message": "Toefuataiina" },
   "tooltip_expand": { "message": "Faalauteleina" },

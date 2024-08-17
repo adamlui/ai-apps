@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Პასუხის დაკვრა" },
   "tooltip_fontSize": { "message": "ფონტის ზომა" },
   "tooltip_sendReply": { "message": "გადაუგზავნე" },
+  "tooltip_askRandQuestion": { "message": "Შემთხვევითი შეკითხვის დასმა" },
   "tooltip_minimize": { "message": "ჩაკეცვა" },
   "tooltip_restore": { "message": "აღდგენა " },
   "tooltip_expand": { "message": "გაფართოება" },

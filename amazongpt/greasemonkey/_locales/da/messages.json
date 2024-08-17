@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Afspil svar" },
   "tooltip_fontSize": { "message": "Skriftsstørrelse" },
   "tooltip_sendReply": { "message": "Send svar" },
+  "tooltip_askRandQuestion": { "message": "Random Spørgsmål" },
   "tooltip_minimize": { "message": "Minimer" },
   "tooltip_restore": { "message": "Genskab" },
   "tooltip_expand": { "message": "Vis" },

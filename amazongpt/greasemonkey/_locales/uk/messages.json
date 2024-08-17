@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Відтворити відповідь" },
   "tooltip_fontSize": { "message": "Розмір шрифту" },
   "tooltip_sendReply": { "message": "Надіслати відповідь" },
+  "tooltip_askRandQuestion": { "message": "Задайте випадкове запитання" },
   "tooltip_minimize": { "message": "Згорнути" },
   "tooltip_restore": { "message": "Відновити" },
   "tooltip_expand": { "message": "Розгорнути" },

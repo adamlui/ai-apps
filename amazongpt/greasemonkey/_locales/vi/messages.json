@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Phát câu trả lời" },
   "tooltip_fontSize": { "message": "Kích thước phông" },
   "tooltip_sendReply": { "message": "Trả lời" },
+  "tooltip_askRandQuestion": { "message": "Đặt câu hỏi ngẫu nhiên" },
   "tooltip_minimize": { "message": "Thu nhỏ" },
   "tooltip_restore": { "message": "Khôi phục" },
   "tooltip_expand": { "message": "Mở rộng" },

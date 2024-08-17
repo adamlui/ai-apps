@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Paleisti atsakymą" },
   "tooltip_fontSize": { "message": "Šrifto dydis" },
   "tooltip_sendReply": { "message": "Siųsti atsakymą" },
+  "tooltip_askRandQuestion": { "message": "Užduoti atsitiktinį klausimą" },
   "tooltip_minimize": { "message": "Suskleisti" },
   "tooltip_restore": { "message": "Atkurti" },
   "tooltip_expand": { "message": "Išskleisti" },

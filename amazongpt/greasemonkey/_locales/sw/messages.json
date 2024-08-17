@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Jibu la mchezo" },
   "tooltip_fontSize": { "message": "Ukubwa wa fonti:" },
   "tooltip_sendReply": { "message": "Tuma jibu" },
+  "tooltip_askRandQuestion": { "message": "Uliza swali la kiholela" },
   "tooltip_minimize": { "message": "Kadilio la chini" },
   "tooltip_restore": { "message": "Rejesha" },
   "tooltip_expand": { "message": "Panua" },

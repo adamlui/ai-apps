@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Reperire" },
   "tooltip_fontSize": { "message": "Dimensio typi:" },
   "tooltip_sendReply": { "message": "Opportuna" },
+  "tooltip_askRandQuestion": { "message": "QUOS RECTUM QUANTUM" },
   "tooltip_minimize": { "message": "Deminuere" },
   "tooltip_restore": { "message": "RECTRIUS" },
   "tooltip_expand": { "message": "Expandum" },

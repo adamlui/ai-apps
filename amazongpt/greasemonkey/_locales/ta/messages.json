@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "பதிலை இயக்கவும்" },
   "tooltip_fontSize": { "message": "எறும்பு அளவு" },
   "tooltip_sendReply": { "message": "பதில் அனுப்பு" },
+  "tooltip_askRandQuestion": { "message": "சீரற்ற கேள்வியைக் கேளுங்கள்" },
   "tooltip_minimize": { "message": "சிறிதாக்கு" },
   "tooltip_restore": { "message": "மீட்டமை" },
   "tooltip_expand": { "message": "விரிக்கவும்" },

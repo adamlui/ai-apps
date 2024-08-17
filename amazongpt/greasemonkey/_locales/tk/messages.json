@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Jawap oýna" },
   "tooltip_fontSize": { "message": "Şriftiň ululygy..." },
   "tooltip_sendReply": { "message": "Jawap iber" },
+  "tooltip_askRandQuestion": { "message": "Galyberse - de, bu soragyň jog" },
   "tooltip_minimize": { "message": "Gysgaldyryň" },
   "tooltip_restore": { "message": "Gaýd Et" },
   "tooltip_expand": { "message": "Gaýd et" },

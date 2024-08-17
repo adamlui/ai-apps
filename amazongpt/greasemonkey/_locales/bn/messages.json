@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "উত্তর খেলুন" },
   "tooltip_fontSize": { "message": "ফন্ট মাপ@ label Font style" },
   "tooltip_sendReply": { "message": "উত্তর পাঠান" },
+  "tooltip_askRandQuestion": { "message": "এলোমেলো প্রশ্ন জিজ্ঞাসা করুন" },
   "tooltip_minimize": { "message": "ছোট কর" },
   "tooltip_restore": { "message": "পুনঃস্থাপন করুন" },
   "tooltip_expand": { "message": "সম্প্রসারিত করুন" },

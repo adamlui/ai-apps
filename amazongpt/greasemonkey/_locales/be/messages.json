@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Прайграць адказ" },
   "tooltip_fontSize": { "message": "Памер мурашкі" },
   "tooltip_sendReply": { "message": "Даслаць адказ" },
+  "tooltip_askRandQuestion": { "message": "Задаць выпадковае пытанне" },
   "tooltip_minimize": { "message": "Згарнуць" },
   "tooltip_restore": { "message": "Аднавіць" },
   "tooltip_expand": { "message": "Разгарнуць" },

@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Жауапты ойнату" },
   "tooltip_fontSize": { "message": "Қаріп өлшемі" },
   "tooltip_sendReply": { "message": "Жауап жіберу" },
+  "tooltip_askRandQuestion": { "message": "Кездейсоқ сұрақ қою" },
   "tooltip_minimize": { "message": "& Түю" },
   "tooltip_restore": { "message": "Қалпына келтіру" },
   "tooltip_expand": { "message": "Тарқату" },

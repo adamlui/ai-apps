@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Jawaabta ciyaar" },
   "tooltip_fontSize": { "message": "Cabbirka font" },
   "tooltip_sendReply": { "message": "Jawaab u dir" },
+  "tooltip_askRandQuestion": { "message": "Weydii su 'aal lama filaan ah" },
   "tooltip_minimize": { "message": "Ugu yaree" },
   "tooltip_restore": { "message": "Soo celinta" },
   "tooltip_expand": { "message": "Ballaarinta" },

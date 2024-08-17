@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Antwort abspielen" },
   "tooltip_fontSize": { "message": "Schrëftgréisst" },
   "tooltip_sendReply": { "message": "Äntwert schécken" },
+  "tooltip_askRandQuestion": { "message": "Stellt zoufälleg Fro" },
   "tooltip_minimize": { "message": "& Kleng maachen" },
   "tooltip_restore": { "message": "Zerécksetzen" },
   "tooltip_expand": { "message": "Erweideren" },

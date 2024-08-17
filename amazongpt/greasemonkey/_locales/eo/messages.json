@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Ludi respondon" },
   "tooltip_fontSize": { "message": "grando de tiparo" },
   "tooltip_sendReply": { "message": "Sendi  La Respondo" },
+  "tooltip_askRandQuestion": { "message": "Hazarda demando" },
   "tooltip_minimize": { "message": "& Minimumigu" },
   "tooltip_restore": { "message": "Restaŭri" },
   "tooltip_expand": { "message": "Etendi" },

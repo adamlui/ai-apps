@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Prehrať odpoveď" },
   "tooltip_fontSize": { "message": "Veľkosť písma" },
   "tooltip_sendReply": { "message": "Odpovedať" },
+  "tooltip_askRandQuestion": { "message": "Opýtajte sa náhodnú otázku" },
   "tooltip_minimize": { "message": "Minimalizovať" },
   "tooltip_restore": { "message": "Obnoviť" },
   "tooltip_expand": { "message": "Rozbaliť" },

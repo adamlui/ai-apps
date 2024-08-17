@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "പ്ലേ ഉത്തരം" },
   "tooltip_fontSize": { "message": "ചിഹ്ന വലിപ്പം" },
   "tooltip_sendReply": { "message": "മറുപടി അയയ്ക്കുക" },
+  "tooltip_askRandQuestion": { "message": "ക്രമരഹിതമായ ചോദ്യം ചോദിക്കുക" },
   "tooltip_minimize": { "message": "ചുരുക്കുക" },
   "tooltip_restore": { "message": "പടിഞ്ഞാറന്‌" },
   "tooltip_expand": { "message": "വലുതാക്കുക" },

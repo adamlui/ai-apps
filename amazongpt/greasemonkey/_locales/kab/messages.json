@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Urar tiririt" },
   "tooltip_fontSize": { "message": "&Teɣzi n tsefsit" },
   "tooltip_sendReply": { "message": "Azen tiririt" },
+  "tooltip_askRandQuestion": { "message": "Asteqsi n usteqsi" },
   "tooltip_minimize": { "message": "Semẓi" },
   "tooltip_restore": { "message": "Err-it-id" },
   "tooltip_expand": { "message": "Snefli" },

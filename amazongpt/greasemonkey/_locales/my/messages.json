@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "အဖြေကို ဖွင့်ပါ" },
   "tooltip_fontSize": { "message": "ဖောင့်အရွယ်အစား" },
   "tooltip_sendReply": { "message": "ပြန်စာပို့ရန်" },
+  "tooltip_askRandQuestion": { "message": "ကျပန်းမေးခွန်းမေးပါ" },
   "tooltip_minimize": { "message": "အနည်းဆုံး" },
   "tooltip_restore": { "message": "ပြန်သွင်းမည်" },
   "tooltip_expand": { "message": "ချဲ့ထွင်ပါ" },

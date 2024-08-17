@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Spæl svar" },
   "tooltip_fontSize": { "message": "Skriftstødd..." },
   "tooltip_sendReply": { "message": "Sende svar" },
+  "tooltip_askRandQuestion": { "message": "Spurningurin er tilvildarligur" },
   "tooltip_minimize": { "message": "Minimalisera" },
   "tooltip_restore": { "message": "Endurstovna" },
   "tooltip_expand": { "message": "Útbyggja" },

@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Mängi / Vasta" },
   "tooltip_fontSize": { "message": "Kirjasuurus" },
   "tooltip_sendReply": { "message": "Saada vastus" },
+  "tooltip_askRandQuestion": { "message": "Esita juhuslik küsimus" },
   "tooltip_minimize": { "message": "Vähenda" },
   "tooltip_restore": { "message": "Taasta" },
   "tooltip_expand": { "message": "Laienda" },

@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Жооп ойнотуу" },
   "tooltip_fontSize": { "message": "Шрифттин кегли" },
   "tooltip_sendReply": { "message": "Жооп жөнөтүү" },
+  "tooltip_askRandQuestion": { "message": "Кокус суроо берүү" },
   "tooltip_minimize": { "message": "Кыскартуу" },
   "tooltip_restore": { "message": "Калыбына келтирүү" },
   "tooltip_expand": { "message": "Кеңейтүү" },

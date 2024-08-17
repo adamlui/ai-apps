@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "जवाफ प्ले गर्नुहोस्" },
   "tooltip_fontSize": { "message": "फन्ट" },
   "tooltip_sendReply": { "message": "जवाफ पठाउनुहोस्" },
+  "tooltip_askRandQuestion": { "message": "अनियमित प्रश्न सोध्नुहोस्" },
   "tooltip_minimize": { "message": "सानो पार्नुहोस्" },
   "tooltip_restore": { "message": "पूर्वावस्थामा ल्याउनुहोस्" },
   "tooltip_expand": { "message": "ठूलो बनाउनु" },

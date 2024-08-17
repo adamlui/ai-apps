@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Пахш кардани ҷавоб" },
   "tooltip_fontSize": { "message": "Андозаи мӯрча" },
   "tooltip_sendReply": { "message": "Фиристодани ҷавоб" },
+  "tooltip_askRandQuestion": { "message": "Саволҳои тасодуфӣ" },
   "tooltip_minimize": { "message": "& Печонидан" },
   "tooltip_restore": { "message": "Барқарор кардан" },
   "tooltip_expand": { "message": "Густариш додан" },

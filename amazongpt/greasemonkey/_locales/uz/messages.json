@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Javobni o'ynang" },
   "tooltip_fontSize": { "message": "Shriftning oʻlchami" },
   "tooltip_sendReply": { "message": "Javob yuboring" },
+  "tooltip_askRandQuestion": { "message": "Tasodifiy savol bering" },
   "tooltip_minimize": { "message": "Yigʻish" },
   "tooltip_restore": { "message": "Qayta tiklash" },
   "tooltip_expand": { "message": "Kengaytirish" },

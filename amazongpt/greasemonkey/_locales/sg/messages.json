@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Répondre PLAY Répondre" },
   "tooltip_fontSize": { "message": "Font size ti" },
   "tooltip_sendReply": { "message": "Répondre Répondre" },
+  "tooltip_askRandQuestion": { "message": "Ask random question na" },
   "tooltip_minimize": { "message": "Mbi Minimize" },
   "tooltip_restore": { "message": "Ngbâ ti kiri na fini" },
   "tooltip_expand": { "message": "Kangbi ni Kangbi ni" },

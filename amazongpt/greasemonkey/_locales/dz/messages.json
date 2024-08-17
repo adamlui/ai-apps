@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "ལན་འདེབས་འབད།" },
   "tooltip_fontSize": { "message": "ཡིག་སྣོད་སྦོམ་ཆུང་།" },
   "tooltip_sendReply": { "message": "ང་བཅས་ཀྱིས་ལན་རྐྱབ་ཨིན། ང་བཅས་ཀྱིས་ལན་རྐྱབ་ཨིན།" },
+  "tooltip_askRandQuestion": { "message": "དྲི་བ་ཚུ་" },
   "tooltip_minimize": { "message": "དམའ་ཕབ་རྐྱབས།" },
   "tooltip_restore": { "message": "བསྐྱར་གསོ་འབད་ (_R)" },
   "tooltip_expand": { "message": "རྒྱ་སྐྱེད་འབད་" },

@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "جواب پلے کریں" },
   "tooltip_fontSize": { "message": "فونٹ سائز" },
   "tooltip_sendReply": { "message": "جواب بھیجیں" },
+  "tooltip_askRandQuestion": { "message": "بے ترتیب سوال پوچھیں" },
   "tooltip_minimize": { "message": "ونڈو چھوٹی کریں" },
   "tooltip_restore": { "message": "واپس بحال کریں" },
   "tooltip_expand": { "message": "توسیع" },

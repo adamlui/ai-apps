@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Válasz lejátszása" },
   "tooltip_fontSize": { "message": "Betűméret" },
   "tooltip_sendReply": { "message": "Válasz elküldése" },
+  "tooltip_askRandQuestion": { "message": "Véletlenszerű kérdés feltevése" },
   "tooltip_minimize": { "message": "A karbantartási költségek" },
   "tooltip_restore": { "message": "Helyreállítás" },
   "tooltip_expand": { "message": "Nyújt" },

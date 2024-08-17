@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Spila svar" },
   "tooltip_fontSize": { "message": "Letursstærð" },
   "tooltip_sendReply": { "message": "Senda svar" },
+  "tooltip_askRandQuestion": { "message": "Spyrja slembispurningar" },
   "tooltip_minimize": { "message": "& Lágmarka" },
   "tooltip_restore": { "message": "Endurheimta" },
   "tooltip_expand": { "message": "Stækka" },

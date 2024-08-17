@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Mamaky valiny" },
   "tooltip_fontSize": { "message": "Haben'ilay endritsoratra" },
   "tooltip_sendReply": { "message": "Alefaso ny valiny" },
+  "tooltip_askRandQuestion": { "message": "Mametraha fanontaniana kisendrasendra" },
   "tooltip_minimize": { "message": "Hanakely" },
   "tooltip_restore": { "message": "Avereno" },
   "tooltip_expand": { "message": "Manitatra" },

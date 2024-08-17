@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Speel antwoord" },
   "tooltip_fontSize": { "message": "Lettertipe Grootte" },
   "tooltip_sendReply": { "message": "Stuur antwoord" },
+  "tooltip_askRandQuestion": { "message": "Stel ewekansige vraag" },
   "tooltip_minimize": { "message": "Minimeer" },
   "tooltip_restore": { "message": "Herstel" },
   "tooltip_expand": { "message": "Uitbrei" },

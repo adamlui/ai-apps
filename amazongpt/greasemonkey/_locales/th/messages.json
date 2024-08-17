@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "เล่นคำตอบ" },
   "tooltip_fontSize": { "message": "ขนาดฟอนต์" },
   "tooltip_sendReply": { "message": "ส่งข้อความ" },
+  "tooltip_askRandQuestion": { "message": "ถามคำถามแบบสุ่ม" },
   "tooltip_minimize": { "message": "% 1 à¸à¸´à¹à¸¥à¹à¸à¸à¹/ à¸§à¸´à¸à¸²à¸à¸µ" },
   "tooltip_restore": { "message": "กู้คืน" },
   "tooltip_expand": { "message": "ขยาย" },

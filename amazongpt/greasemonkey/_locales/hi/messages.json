@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "जवाब खेलें" },
   "tooltip_fontSize": { "message": "चींटी आकार" },
   "tooltip_sendReply": { "message": "जवाब भेजें" },
+  "tooltip_askRandQuestion": { "message": "बेतरतीब सवाल पूछें" },
   "tooltip_minimize": { "message": "न्यूनतम" },
   "tooltip_restore": { "message": "रीस्टोर करें" },
   "tooltip_expand": { "message": "विस्तार" },

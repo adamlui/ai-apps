@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "שפּיל ענטפער" },
   "tooltip_fontSize": { "message": "פּונקטן" },
   "tooltip_sendReply": { "message": "שיקן ענטפער" },
+  "tooltip_askRandQuestion": { "message": "פרעגן טראַפ - קשיא" },
   "tooltip_minimize": { "message": "מינאַמייז" },
   "tooltip_restore": { "message": "ריסטאָר" },
   "tooltip_expand": { "message": "פֿאַרגרעסער" },

@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "ප් ‍ රතිචාරය වාදනය කරන්න" },
   "tooltip_fontSize": { "message": "අකුරු ප්‍රමාණය" },
   "tooltip_sendReply": { "message": "ඊ-මේල් මගින් පිලිතුරු දෙන්න" },
+  "tooltip_askRandQuestion": { "message": "අහඹු ප් ‍ රශ්නයක් අසන්න" },
   "tooltip_minimize": { "message": "කුඩා කරන්න" },
   "tooltip_restore": { "message": "ප්‍රථිපිහිටුවන්නHelp button label, one character" },
   "tooltip_expand": { "message": "පුළුල් කරන්න" },

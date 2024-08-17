@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Възпроизвеждане на отговор" },
   "tooltip_fontSize": { "message": "Размер на мравка" },
   "tooltip_sendReply": { "message": "За отговор" },
+  "tooltip_askRandQuestion": { "message": "Задайте произволен въпрос" },
   "tooltip_minimize": { "message": "?њ???????????·???Ђ?°???µ" },
   "tooltip_restore": { "message": "?’?Љ?·?Ѓ?‚?°???????Џ???°???µ" },
   "tooltip_expand": { "message": "Разгъване" },

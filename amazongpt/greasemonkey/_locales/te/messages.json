@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "సమాధానం ప్లే చేయండి" },
   "tooltip_fontSize": { "message": "ఫాంటు పరిమాణము@ label Font style" },
   "tooltip_sendReply": { "message": "ప్రత్యుత్తరం పంపండి" },
+  "tooltip_askRandQuestion": { "message": "యాదృచ్ఛిక ప్రశ్న అడగండి" },
   "tooltip_minimize": { "message": "(n) చిన్న గా చేయండి" },
   "tooltip_restore": { "message": "పునరుద్ధరించండి" },
   "tooltip_expand": { "message": "విస్తరించు" },

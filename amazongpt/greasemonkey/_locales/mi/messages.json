@@ -23,6 +23,7 @@
   "tooltip_playAnswer": { "message": "Whakautu Play" },
   "tooltip_fontSize": { "message": "Momotuhi" },
   "tooltip_sendReply": { "message": "Tukua mai he whakautu" },
+  "tooltip_askRandQuestion": { "message": "Pātai pātai tūponotanga" },
   "tooltip_minimize": { "message": "Minimize" },
   "tooltip_restore": { "message": "Whakahoutia" },
   "tooltip_expand": { "message": "Whakanuia" },
