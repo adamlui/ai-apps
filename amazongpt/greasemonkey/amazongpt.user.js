@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.18.1
+// @version                2024.8.18.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1962,11 +1962,12 @@
 
         stream(caller, stream) {
             if (config.streamingDisabled || !config.proxyAPIenabled) return
-            const { failFlags = [], endpoint = apis[caller.api].endpoints.completions, expectedOrigin } = apis[caller.api],
+            const logPrefix = `get.${caller.name}() » dataProcess.stream() » `,
+                  { failFlags = [], endpoint = apis[caller.api].endpoints.completions, expectedOrigin } = apis[caller.api],
                   escapedAPIurls = [endpoint, expectedOrigin.url].map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
                   failFlagsURLs = new RegExp([...failFlags, ...escapedAPIurls].join('|')),
                   reader = stream.response.getReader() ; let accumulatedChunks = ''
-            reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream', err.message))
+            reader.read().then(processStreamText).catch(err => consoleErr(logPrefix + 'Error processing stream', err.message))
 
             function processStreamText({ done, value }) {
                 if (done) {
@@ -1974,7 +1975,7 @@
                     api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                     return
                 } else if (failFlagsURLs.test(accumulatedChunks)) {
-                    consoleErr('Response', accumulatedChunks)
+                    consoleErr(logPrefix + 'Response', accumulatedChunks)
                     if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return
                 }
@@ -1998,11 +1999,11 @@
                         if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
                         if (caller.sender == caller.api) show.reply(textToShow)
                     }
-                } catch (err) { consoleErr('Error showing stream', err.message) }
+                } catch (err) { consoleErr(logPrefix + 'Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
                     if (caller.sender == caller.api) // am designated sender, recurse
                         processStreamText({ done, value })
-                }).catch(err => consoleErr('Error reading stream', err.message))
+                }).catch(err => consoleErr(logPrefix + 'Error reading stream', err.message))
             }
         },
 
