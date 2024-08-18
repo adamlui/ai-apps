@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.18
+// @version               2024.8.18.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2613,6 +2613,7 @@ setTimeout(async () => {
                         .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                     chunk = extractedChunks.join('')
                 }
+                accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
                 try { // to show stream text
                     let textToShow
                     if (caller.api == 'GPTforLove') { // extract parentID + latest chunk text

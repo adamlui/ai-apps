@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.18
+// @version                  2024.8.18.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2830,6 +2830,7 @@
                         .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                     chunk = extractedChunks.join('')
                 }
+                accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
                 try { // to show stream text
                     let textToShow
                     if (caller.api == 'GPTforLove') { // extract parentID + latest chunk text

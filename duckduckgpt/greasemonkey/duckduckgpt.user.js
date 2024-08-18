@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.18
+// @version                2024.8.18.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2513,6 +2513,7 @@
                         .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                     chunk = extractedChunks.join('')
                 }
+                accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
                 try { // to show stream text
                     let textToShow
                     if (caller.api == 'GPTforLove') { // extract parentID + latest chunk text
