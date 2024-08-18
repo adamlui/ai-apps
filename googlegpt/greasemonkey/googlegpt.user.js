@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.17.3
+// @version                  2024.8.18
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2807,12 +2807,20 @@
 
         stream(caller, stream) {
             if (config.streamingDisabled || !config.proxyAPIenabled) return
-            const reader = stream.response.getReader() ; let accumulatedChunks = ''
+            const { failFlags = [], endpoint = apis[caller.api].endpoints.completions, expectedOrigin } = apis[caller.api],
+                  escapedAPIurls = [endpoint, expectedOrigin.url].map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+                  failFlagsURLs = new RegExp([...failFlags, ...escapedAPIurls].join('|')),
+                  reader = stream.response.getReader() ; let accumulatedChunks = ''
             reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream', err.message))
+
             function processStreamText({ done, value }) {
                 if (done) {
                     show.copyBtns() ; caller.status = 'done' ; caller.sender = null
                     api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                    return
+                } else if (failFlagsURLs.test(accumulatedChunks)) {
+                    consoleErr('Response', accumulatedChunks)
+                    if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return
                 }
                 let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
@@ -2821,12 +2829,6 @@
                         .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                         .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                     chunk = extractedChunks.join('')
-                }
-                accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
-                if (apis[caller.api].failFlags && new RegExp(apis[caller.api].failFlags.join('|')).test(accumulatedChunks)) {
-                    consoleErr('Response', accumulatedChunks)
-                    if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
-                    return
                 }
                 try { // to show stream text
                     let textToShow
@@ -2850,10 +2852,11 @@
 
         text(caller, resp) {
             return new Promise(resolve => {
-                let respText = ''
-                const logPrefix = `get.${caller.name}() » dataProcess.text() » `
-                if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done')
-                    return
+                if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done') return
+                const logPrefix = `get.${caller.name}() » dataProcess.text() » `,
+                      { failFlags = [], endpoint = apis[caller.api].endpoints.completions, expectedOrigin } = apis[caller.api],
+                      escapedAPIurls = [endpoint, expectedOrigin.url].map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+                      failFlagsURLs = new RegExp([...failFlags, ...escapedAPIurls].join('|')) ; let respText = ''
                 if (resp.status != 200) {
                     consoleErr(logPrefix + 'Response status', resp.status)
                     consoleErr(logPrefix + 'Response', JSON.stringify(resp))
@@ -2862,10 +2865,9 @@
                                : resp.status == 403 ? 'checkCloudflare'
                                : resp.status == 429 ? ['tooManyRequests', 'suggestProxy']
                                                     : ['openAInotWorking', 'suggestProxy'] )
-                    else if (caller.status != 'done')
-                        api.tryNew(caller)
+                    else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'OpenAI') {
-                    if (resp.response) {
+                    if (resp.response && !failFlagsURLs.test(resp.response)) {
                         try { // to show response or return related queries
                             respText = JSON.parse(resp.response).choices[0].message.content
                             handleProcessCompletion()
@@ -2874,47 +2876,37 @@
                         if (caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                         else if (caller.status != 'done') api.tryNew(caller)
                     }
-                } else if (caller.api == 'AIchatOS') {
-                    if (resp.responseText
-                        && !new RegExp([apis[caller.api].expectedOrigin.url, ...apis[caller.api].failFlags]
-                            .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
-                            .join('|')).test(resp.responseText)) {
+                } else if (resp.responseText && !failFlagsURLs.test(resp.responseText)) {
+                    if (caller.api == 'AIchatOS') {
                         try { // to show response or return related queries
                             const text = resp.responseText, chunkSize = 1024
                             let currentIdx = 0
                             while (currentIdx < text.length) {
                                 const chunk = text.substring(currentIdx, currentIdx + chunkSize)
-                                currentIdx += chunkSize ; respText += chunk
+                                respText += chunk ; currentIdx += chunkSize
                             }
-                            if (!respText) throw new Error()
                             handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
-                    } else if (caller.status != 'done') api.tryNew(caller)
-                } else if (caller.api == 'Free Chat') {
-                    if (resp.responseText && !new RegExp(apis[caller.api].failFlags.join('|')).test(resp.responseText)) {
+                    } else if (caller.api == 'Free Chat') {
                         try { // to show response or return related queries
                             respText = resp.responseText ; handleProcessCompletion()
-                        } catch (err) { handleProcessError(err) }
-                    } else if (caller.status != 'done') api.tryNew(caller)             
-                } else if (caller.api == 'GPTforLove') {
-                    if (resp.responseText && !new RegExp(apis[caller.api].failFlags.join('|')).test(resp.responseText)) {
+                        } catch (err) { handleProcessError(err) }          
+                    } else if (caller.api == 'GPTforLove') {
                         try { // to show response or return related queries
                             let chunks = resp.responseText.trim().split('\n'),
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
                             if (lastObj.id) apis.GPTforLove.parentID = lastObj.id
                             respText = lastObj.text ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
-                    } else if (caller.status != 'done') api.tryNew(caller)
-                } else if (caller.api == 'MixerBox AI') {
-                    if (resp.responseText) {
+                    } else if (caller.api == 'MixerBox AI') {
                         try { // to show response or return related queries
                             const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
                                 .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                                 .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                             respText = extractedData.join('') ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
-                    } else if (caller.status != 'done') api.tryNew(caller)
-                }
+                    }
+                } else if (caller.status != 'done') api.tryNew(caller)
 
                 function handleProcessCompletion() {
                     show.copyBtns() ; caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null

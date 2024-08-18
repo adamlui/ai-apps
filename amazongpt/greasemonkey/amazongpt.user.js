@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.17.5
+// @version                2024.8.18
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1962,12 +1962,20 @@
 
         stream(caller, stream) {
             if (config.streamingDisabled || !config.proxyAPIenabled) return
-            const reader = stream.response.getReader() ; let accumulatedChunks = ''
+            const { failFlags = [], endpoint = apis[caller.api].endpoints.completions, expectedOrigin } = apis[caller.api],
+                  escapedAPIurls = [endpoint, expectedOrigin.url].map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+                  failFlagsURLs = new RegExp([...failFlags, ...escapedAPIurls].join('|')),
+                  reader = stream.response.getReader() ; let accumulatedChunks = ''
             reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream', err.message))
+
             function processStreamText({ done, value }) {
                 if (done) {
                     show.copyBtns() ; caller.status = 'done' ; caller.sender = null
                     api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                    return
+                } else if (failFlagsURLs.test(accumulatedChunks)) {
+                    consoleErr('Response', accumulatedChunks)
+                    if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return
                 }
                 let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
@@ -1976,12 +1984,6 @@
                         .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                         .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                     chunk = extractedChunks.join('')
-                }
-                accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
-                if (apis[caller.api].failFlags && new RegExp(apis[caller.api].failFlags.join('|')).test(accumulatedChunks)) {
-                    consoleErr('Response', accumulatedChunks)
-                    if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
-                    return
                 }
                 try { // to show stream text
                     let textToShow
@@ -2004,11 +2006,12 @@
         },
 
         text(caller, resp) {
-            return new Promise(() => {
-                let respText = ''
-                const logPrefix = `get.${caller.name}() » dataProcess.text() » `
-                if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done')
-                    return
+            return new Promise(resolve => {
+                if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done') return
+                const logPrefix = `get.${caller.name}() » dataProcess.text() » `,
+                      { failFlags = [], endpoint = apis[caller.api].endpoints.completions, expectedOrigin } = apis[caller.api],
+                      escapedAPIurls = [endpoint, expectedOrigin.url].map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+                      failFlagsURLs = new RegExp([...failFlags, ...escapedAPIurls].join('|')) ; let respText = ''
                 if (resp.status != 200) {
                     consoleErr(logPrefix + 'Response status', resp.status)
                     consoleErr(logPrefix + 'Response', JSON.stringify(resp))
@@ -2017,11 +2020,10 @@
                                : resp.status == 403 ? 'checkCloudflare'
                                : resp.status == 429 ? ['tooManyRequests', 'suggestProxy']
                                                     : ['openAInotWorking', 'suggestProxy'] )
-                    else if (caller.status != 'done')
-                        api.tryNew(caller)
+                    else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'OpenAI') {
-                    if (resp.response) {
-                        try { // to show response
+                    if (resp.response && !failFlagsURLs.test(resp.response)) {
+                        try { // to show response or return related queries
                             respText = JSON.parse(resp.response).choices[0].message.content
                             handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
@@ -2029,58 +2031,54 @@
                         if (caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                         else if (caller.status != 'done') api.tryNew(caller)
                     }
-                } else if (caller.api == 'AIchatOS') {
-                    if (resp.responseText
-                        && !new RegExp([apis[caller.api].expectedOrigin.url, ...apis[caller.api].failFlags]
-                            .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
-                            .join('|')).test(resp.responseText)) {
-                        try { // to show response
+                } else if (resp.responseText && !failFlagsURLs.test(resp.responseText)) {
+                    if (caller.api == 'AIchatOS') {
+                        try { // to show response or return related queries
                             const text = resp.responseText, chunkSize = 1024
                             let currentIdx = 0
                             while (currentIdx < text.length) {
                                 const chunk = text.substring(currentIdx, currentIdx + chunkSize)
-                                currentIdx += chunkSize ; respText += chunk
+                                respText += chunk ; currentIdx += chunkSize
                             }
-                            if (!respText) throw new Error()
                             handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
-                    } else if (caller.status != 'done') api.tryNew(caller)
-                } else if (caller.api == 'Free Chat') {
-                    if (resp.responseText && !new RegExp(apis[caller.api].failFlags.join('|')).test(resp.responseText)) {
-                        try { // to show response
+                    } else if (caller.api == 'Free Chat') {
+                        try { // to show response or return related queries
                             respText = resp.responseText ; handleProcessCompletion()
-                        } catch (err) { handleProcessError(err) }
-                    } else if (caller.status != 'done') api.tryNew(caller)             
-                } else if (caller.api == 'GPTforLove') {
-                    if (resp.responseText && !new RegExp(apis[caller.api].failFlags.join('|')).test(resp.responseText)) {
-                        try { // to show response
+                        } catch (err) { handleProcessError(err) }          
+                    } else if (caller.api == 'GPTforLove') {
+                        try { // to show response or return related queries
                             let chunks = resp.responseText.trim().split('\n'),
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
                             if (lastObj.id) apis.GPTforLove.parentID = lastObj.id
                             respText = lastObj.text ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
-                    } else if (caller.status != 'done') api.tryNew(caller)
-                } else if (caller.api == 'MixerBox AI') {
-                    if (resp.responseText) {
-                        try { // to show response
+                    } else if (caller.api == 'MixerBox AI') {
+                        try { // to show response or return related queries
                             const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
                                 .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                                 .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                             respText = extractedData.join('') ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
-                    } else if (caller.status != 'done') api.tryNew(caller)
-                }
+                    }
+                } else if (caller.status != 'done') api.tryNew(caller)
 
                 function handleProcessCompletion() {
-                    show.copyBtns() ; caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs)
-                    caller.attemptCnt = null ; show.reply(respText)
+                    show.copyBtns() ; caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                    if (caller == get.reply) show.reply(respText) ; else resolve(arrayify(respText))
                 }
 
                 function handleProcessError(err) { // suggest proxy or try diff API
                     consoleInfo(logPrefix + 'Response text: ' + resp.response)
                     consoleErr(logPrefix + appAlerts.parseFailed, err)
-                    if (caller.api == 'OpenAI') appAlert('openAInotWorking', 'suggestProxy')
+                    if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                     else if (caller.status != 'done') api.tryNew(caller)
+                }
+
+                function arrayify(strList) { // for get.related() calls
+                    return (strList.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
+                        .slice(0, 5) // limit to 1st 5
+                        .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
                 }
         })}
     }
