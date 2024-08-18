@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.18.3
+// @version                2024.8.18.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2067,7 +2067,7 @@
 
                 function handleProcessCompletion() {
                     caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                    if (caller == get.reply) { show.reply(respText, footerContent) ; show.copyBtns() }
+                    if (caller == get.reply) { show.reply(respText) ; show.copyBtns() }
                     else resolve(arrayify(respText))
                 }
 
