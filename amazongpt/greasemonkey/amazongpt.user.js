@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.18.6
+// @version                2024.8.18.7
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1289,6 +1289,9 @@
                   + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
                   + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
                       + ( scheme == 'dark' ? '##0000' : '#eaeaeacf' ) + '}'
+              + '.copy-icon { float: right ; cursor: pointer }'
+              + `pre > .copy-icon { height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}` // reply copy btn
+              + 'code .copy-icon { height: 13px ; width: 13px ; fill: white ; position: relative ; right: -9px ; top: -6px }' // code copy btn
               + '#app-chatbar {'
                   + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
                   + 'font-size: 14.5px ; height: 46px ; width: 100% ; max-height: 200px ; resize: none ; '
@@ -2093,22 +2096,11 @@
 
         copyBtns() {
             if (appDiv.querySelector('#amzgpt > pre > svg, code > svg')) return
-
-            const iconStyles = 'float: right ; cursor: pointer',
-                  codeIconStyles = 'position: relative ; right: -9px ; top: -6px',
-                  replyIconSize = '15px', codeIconSize = '13px'
-
-            // Show icons
             appDiv.querySelectorAll('#amzgpt > pre, code').forEach(parentElem => {
-                const copySVG = icons.copy.create(parentElem) ; copySVG.className = 'copy-icon'
+                const copySVG = icons.copy.create(parentElem) ; copySVG.classList.add('copy-icon')
                 let elemToPrepend = copySVG
                 copySVG.onclick = () => handleCopyClick(event, parentElem)
-                copySVG.style.cssText = iconStyles
-                copySVG.style.height = copySVG.style.width = replyIconSize
-                copySVG.style.fill = scheme == 'dark' || parentElem.tagName == 'CODE' ? 'white' : ''
-                if (parentElem.tagName == 'CODE') { // re-style icon + wrap in div for v-offset
-                    copySVG.style.cssText += ';' + codeIconStyles
-                    copySVG.style.height = copySVG.style.width = codeIconSize
+                if (parentElem.tagName == 'CODE') { // wrap in div for v-offset
                     elemToPrepend = document.createElement('div')
                     elemToPrepend.style.height = '11px'
                     elemToPrepend.append(copySVG)
@@ -2120,20 +2112,12 @@
                 const reCopyCTA = new RegExp(
                     `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')
                 const textToCopy = parentElem.textContent.replace(reCopyCTA, ''),
-                      copySVG = event.target, checkmarksSVG = icons.checkmarkDouble.create(), iconParent = copySVG.parentNode
+                      copySVG = event.target, iconParent = copySVG.parentNode,
+                      checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-icon')
 
-                // Style icon
-                checkmarksSVG.style.cssText = iconStyles
-                checkmarksSVG.style.height = checkmarksSVG.style.width = replyIconSize
-                checkmarksSVG.style.fill = scheme == 'dark' || parentElem.tagName == 'CODE' ? 'white' : ''
-                if (parentElem.tagName == 'CODE') { // re-style checkmarks icon
-                    checkmarksSVG.style.cssText += ';' + codeIconStyles
-                    checkmarksSVG.style.height = checkmarksSVG.style.width = codeIconSize
-                }
-
-                // Update icon
+                // Flicker icon
                 iconParent.replaceChild(checkmarksSVG, copySVG)
-                setTimeout(() => { iconParent.replaceChild(copySVG, checkmarksSVG) }, 1355)
+                setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355)
 
                 // Copy text
                 navigator.clipboard.writeText(textToCopy).then(() => notify(
