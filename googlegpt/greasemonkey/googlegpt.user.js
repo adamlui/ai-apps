@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.18.3
+// @version                  2024.8.18.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2809,7 +2809,7 @@
             if (config.streamingDisabled || !config.proxyAPIenabled) return
             const logPrefix = `get.${caller.name}() » dataProcess.stream() » `,
                   { failFlags = [], endpoint = apis[caller.api].endpoints.completions, expectedOrigin } = apis[caller.api],
-                  escapedAPIurls = [endpoint, expectedOrigin.url].map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+                  escapedAPIurls = [endpoint, expectedOrigin.url].map(url => url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
                   failFlagsURLs = new RegExp([...failFlags, ...escapedAPIurls].join('|')),
                   reader = stream.response.getReader() ; let accumulatedChunks = ''
             reader.read().then(processStreamText).catch(err => consoleErr(logPrefix + 'Error processing stream', err.message))
@@ -2857,7 +2857,7 @@
                 if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done') return
                 const logPrefix = `get.${caller.name}() » dataProcess.text() » `,
                       { failFlags = [], endpoint = apis[caller.api].endpoints.completions, expectedOrigin } = apis[caller.api],
-                      escapedAPIurls = [endpoint, expectedOrigin.url].map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+                      escapedAPIurls = [endpoint, expectedOrigin.url].map(url => url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
                       failFlagsURLs = new RegExp([...failFlags, ...escapedAPIurls].join('|')) ; let respText = ''
                 if (resp.status != 200) {
                     consoleErr(logPrefix + 'Response status', resp.status)
