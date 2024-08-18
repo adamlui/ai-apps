@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.18.2
+// @version                2024.8.18.3
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2594,8 +2594,9 @@
                 } else if (caller.status != 'done') api.tryNew(caller)
 
                 function handleProcessCompletion() {
-                    show.copyBtns() ; caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                    if (caller == get.reply) show.reply(respText) ; else resolve(arrayify(respText))
+                    caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                    if (caller == get.reply) { show.reply(respText, footerContent) ; show.copyBtns() }
+                    else resolve(arrayify(respText))
                 }
 
                 function handleProcessError(err) { // suggest proxy or try diff API
