@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.18.5
+// @version                2024.8.18.6
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1960,12 +1960,15 @@
 
     const dataProcess = {
 
+        initFailFlags(api) { // escape/merge URLs w/ fail flags
+            const { failFlags = [], endpoint = apis[api].endpoints.completions, expectedOrigin } = apis[api],
+                  escapedAPIurls = [endpoint, expectedOrigin.url].map(url => url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+            return new RegExp([...failFlags, ...escapedAPIurls].join('|'))
+        },
+
         stream(caller, stream) {
             if (config.streamingDisabled || !config.proxyAPIenabled) return
             const logPrefix = `get.${caller.name}() » dataProcess.stream() » `,
-                  { failFlags = [], endpoint = apis[caller.api].endpoints.completions, expectedOrigin } = apis[caller.api],
-                  escapedAPIurls = [endpoint, expectedOrigin.url].map(url => url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
-                  failFlagsURLs = new RegExp([...failFlags, ...escapedAPIurls].join('|')),
                   reader = stream.response.getReader() ; let accumulatedChunks = ''
             reader.read().then(processStreamText).catch(err => consoleErr(logPrefix + 'Error processing stream', err.message))
 
@@ -1974,7 +1977,7 @@
                     show.copyBtns() ; caller.status = 'done' ; caller.sender = null
                     api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                     return
-                } else if (failFlagsURLs.test(accumulatedChunks)) {
+                } else if (dataProcess.initFailFlags(caller.api).test(accumulatedChunks)) {
                     consoleErr(logPrefix + 'Response', accumulatedChunks)
                     if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return
@@ -2011,9 +2014,7 @@
             return new Promise(resolve => {
                 if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done') return
                 const logPrefix = `get.${caller.name}() » dataProcess.text() » `,
-                      { failFlags = [], endpoint = apis[caller.api].endpoints.completions, expectedOrigin } = apis[caller.api],
-                      escapedAPIurls = [endpoint, expectedOrigin.url].map(url => url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
-                      failFlagsURLs = new RegExp([...failFlags, ...escapedAPIurls].join('|')) ; let respText = ''
+                      failFlagsAndURLs = dataProcess.initFailFlags(caller.api) ; let respText = ''
                 if (resp.status != 200) {
                     consoleErr(logPrefix + 'Response status', resp.status)
                     consoleErr(logPrefix + 'Response', JSON.stringify(resp))
@@ -2024,7 +2025,7 @@
                                                     : ['openAInotWorking', 'suggestProxy'] )
                     else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'OpenAI') {
-                    if (resp.response && !failFlagsURLs.test(resp.response)) {
+                    if (resp.response && !failFlagsAndURLs.test(resp.response)) {
                         try { // to show response or return related queries
                             respText = JSON.parse(resp.response).choices[0].message.content
                             handleProcessCompletion()
@@ -2033,7 +2034,7 @@
                         if (caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                         else if (caller.status != 'done') api.tryNew(caller)
                     }
-                } else if (resp.responseText && !failFlagsURLs.test(resp.responseText)) {
+                } else if (resp.responseText && !failFlagsAndURLs.test(resp.responseText)) {
                     if (caller.api == 'AIchatOS') {
                         try { // to show response or return related queries
                             const text = resp.responseText, chunkSize = 1024
