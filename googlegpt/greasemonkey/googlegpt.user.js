@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.19.2
+// @version                  2024.8.19.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -772,10 +772,8 @@
 
     const log = {
         info(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ log.prefix || '' }${ msg }`) },
-        err(label, msg) {
-            console.error( `${config.appSymbol} ${config.appName} » ${
-                typeof label == 'object' ? JSON.stringify(label) : label }${ log.prefix || '' }${ msg ? `: ${msg}` : ''}`)
-        }
+        err(label, msg) { console.error( `${config.appSymbol} ${config.appName} » ${
+            typeof label == 'object' ? JSON.stringify(label) : label }${ log.prefix || '' }${ msg ? `: ${msg}` : ''}`)}
     }
 
     // Define MODAL functions

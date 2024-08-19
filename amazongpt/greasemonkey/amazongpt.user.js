@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.19.2
+// @version                2024.8.19.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -433,10 +433,8 @@
 
     const log = {
         info(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ log.prefix || '' }${ msg }`) },
-        err(label, msg) {
-            console.error( `${config.appSymbol} ${config.appName} » ${
-                typeof label == 'object' ? JSON.stringify(label) : label }${ log.prefix || '' }${ msg ? `: ${msg}` : ''}`)
-        }
+        err(label, msg) { console.error( `${config.appSymbol} ${config.appName} » ${
+            typeof label == 'object' ? JSON.stringify(label) : label }${ log.prefix || '' }${ msg ? `: ${msg}` : ''}`)}
     }
 
     // Define MODAL functions
@@ -2340,7 +2338,7 @@
             const answerPre = appDiv.querySelector('pre')
             answerPre.innerHTML = marked.parse(answer) // render markdown
             hljs.highlightAll() // highlight code
-                if (scheme == 'dark' && answerPre.firstChild?.tagName == 'P')
+            if (scheme == 'dark' && answerPre.firstChild?.tagName == 'P')
                 answerPre.firstChild.prepend('>> ') // since speech balloon tip missing
 
             // Typeset math
