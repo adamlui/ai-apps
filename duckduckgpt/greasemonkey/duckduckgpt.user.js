@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.19.1
+// @version                2024.8.19.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2909,7 +2909,7 @@
                 const answerPre = appDiv.querySelector('pre')
                 answerPre.innerHTML = marked.parse(answer) // render markdown
                 hljs.highlightAll() // highlight code
-                if (scheme == 'dark' && answerPre.firstChild.tagName == 'P')
+                if (scheme == 'dark' && answerPre.firstChild?.tagName == 'P')
                     answerPre.firstChild.prepend('>> ') // since speech balloon tip missing
 
                 // Typeset math
