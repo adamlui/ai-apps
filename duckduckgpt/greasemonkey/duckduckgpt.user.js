@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.18.14
+// @version                2024.8.19
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -581,10 +581,12 @@
         appDiv.append(alertP)
     }
 
-    function consoleInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ msg }`) }
-    function consoleErr(label, msg) {
-        console.error( `${config.appSymbol} ${config.appName} » ${
-            typeof label == 'object' ? JSON.stringify(label) : label }${ msg ? `: ${msg}` : ''}`)
+    const log = {
+        info(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ msg }`) },
+        err(label, msg) {
+            console.error( `${config.appSymbol} ${config.appName} » ${
+                typeof label == 'object' ? JSON.stringify(label) : label }${ msg ? `: ${msg}` : ''}`)
+        }
     }
 
     // Define MODAL functions
@@ -2157,7 +2159,7 @@
             if (!config.rqDisabled && !appDiv.querySelector('.related-queries')) { // get related queries for 1st time
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
                 get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { consoleErr(err.message)
+                    .catch(err => { log.err(err.message)
                         if (get.related.status != 'done') api.tryNew(get.related) })
             }
             update.tweaksStyle() // toggle <pre> max-height
@@ -2250,7 +2252,7 @@
     function getOpenAItoken() {
         return new Promise(resolve => {
             const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
-            consoleInfo('OpenAI access token: ' + accessToken)
+            log.info('OpenAI access token: ' + accessToken)
             if (!accessToken) {
                 xhr({ url: apis.OpenAI.endpoints.session, onload: resp => {
                     if (isBlockedbyCloudflare(resp.responseText)) {
@@ -2288,23 +2290,23 @@
                 && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if !config.streamingDisabled
             const chosenAPI = untriedAPIs[ // pick random array entry
                 Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
-            if (!chosenAPI) { consoleErr('No proxy APIs left untried') ; return null }
+            if (!chosenAPI) { log.err('No proxy APIs left untried') ; return null }
 
             // Log chosen API endpoint
-            consoleInfo(`${logPrefix} Endpoint used: ${ apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint }`)
+            log.info(`${logPrefix} Endpoint used: ${ apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint }`)
             return chosenAPI
         },
 
         tryNew(caller, reason = 'err') {
-            consoleErr(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
+            log.err(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
             caller.triedAPIs.push({ [caller.api]: reason })
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
-                consoleInfo('Trying another endpoint...')
+                log.info('Trying another endpoint...')
                 caller.attemptCnt++
                 caller(caller == get.reply ? msgChain : stripQueryAugments(msgChain)[msgChain.length - 1].content)
                     .then(result => { if (caller == get.related) show.related(result) ; else return })
             } else {
-                consoleInfo('No remaining untried endpoints')
+                log.info('No remaining untried endpoints')
                 if (caller == get.reply) appAlert('proxyNotWorking', 'suggestOpenAI')
             }
         },
@@ -2413,7 +2415,7 @@
                 headers: api.createHeaders(get.reply.api), data: api.createPayload(get.reply.api, msgChain),
                 onload: resp => dataProcess.text(get.reply, resp),
                 onloadstart: resp => dataProcess.stream(get.reply, resp),
-                onerror: err => { consoleErr(err)
+                onerror: err => { log.err(err)
                     if (!config.proxyAPIenabled) appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
                     else if (get.reply.status != 'done') api.tryNew(get.reply)
                 }
@@ -2423,7 +2425,7 @@
             if (!config.rqDisabled && get.reply.attemptCnt == 1) {
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
                 get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { consoleErr(err.message)
+                    .catch(err => { log.err(err.message)
                         if (get.related.status != 'done') api.tryNew(get.related) })
             }
         },
@@ -2482,7 +2484,7 @@
                 responseType: 'text', headers: api.createHeaders(get.related.api),
                 data: api.createPayload(get.related.api, [{ role: 'user', content: rqPrompt }]),
                 onload: resp => dataProcess.text(get.related, resp).then(resolve),
-                onerror: err => { consoleErr(err) ; if (get.related.status != 'done') api.tryNew(get.related) }
+                onerror: err => { log.err(err) ; if (get.related.status != 'done') api.tryNew(get.related) }
             }))
         }
     }
@@ -2502,7 +2504,7 @@
             const logPrefix = `get.${caller.name}() » dataProcess.stream() » `,
                   failFlagsAndURLs = dataProcess.initFailFlags(caller.api),
                   reader = stream.response.getReader() ; let accumulatedChunks = ''
-            reader.read().then(processStreamText).catch(err => consoleErr(logPrefix + 'Error processing stream', err.message))
+            reader.read().then(processStreamText).catch(err => log.err(logPrefix + 'Error processing stream', err.message))
 
             function processStreamText({ done, value }) {
                 if (done) {
@@ -2527,18 +2529,18 @@
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
                     if (failFlagsAndURLs.test(textToShow)) {
-                        consoleErr(logPrefix + 'Response', accumulatedChunks)
+                        log.err(logPrefix + 'Response', accumulatedChunks)
                         if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                         return
                     } else if (caller.status != 'done') { // app waiting or sending
                         if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
                         if (caller.sender == caller.api) show.reply(textToShow)
                     }
-                } catch (err) { consoleErr(logPrefix + 'Error showing stream', err.message) }
+                } catch (err) { log.err(logPrefix + 'Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
                     if (caller.sender == caller.api) // am designated sender, recurse
                         processStreamText({ done, value })
-                }).catch(err => consoleErr(logPrefix + 'Error reading stream', err.message))
+                }).catch(err => log.err(logPrefix + 'Error reading stream', err.message))
             }
         },
 
@@ -2548,8 +2550,8 @@
                 const logPrefix = `get.${caller.name}() » dataProcess.text() » `,
                       failFlagsAndURLs = dataProcess.initFailFlags(caller.api) ; let respText = ''
                 if (resp.status != 200) {
-                    consoleErr(logPrefix + 'Response status', resp.status)
-                    consoleErr(logPrefix + 'Response', JSON.stringify(resp))
+                    log.err(logPrefix + 'Response status', resp.status)
+                    log.err(logPrefix + 'Response', JSON.stringify(resp))
                     if (caller == get.reply && caller.api == 'OpenAI')
                         appAlert(resp.status == 401 ? 'login'
                                : resp.status == 403 ? 'checkCloudflare'
@@ -2605,8 +2607,8 @@
                 }
 
                 function handleProcessError(err) { // suggest proxy or try diff API
-                    consoleInfo(logPrefix + 'Response text: ' + resp.response)
-                    consoleErr(logPrefix + appAlerts.parseFailed, err)
+                    log.info(logPrefix + 'Response text: ' + resp.response)
+                    log.err(logPrefix + appAlerts.parseFailed, err)
                     if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                     else if (caller.status != 'done') api.tryNew(caller)
                 }
@@ -3261,7 +3263,7 @@
             if (!config.rqDisabled) {
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
                 get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { consoleErr(err.message)
+                    .catch(err => { log.err(err.message)
                         if (get.related.status != 'done') api.tryNew(get.related) })
             }
     } else { appAlert('waitingResponse') ; get.reply(msgChain) }
