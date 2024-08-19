@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.18.10
+// @version                2024.8.18.11
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1972,6 +1972,7 @@
         stream(caller, stream) {
             if (config.streamingDisabled || !config.proxyAPIenabled) return
             const logPrefix = `get.${caller.name}() » dataProcess.stream() » `,
+                  failFlagsAndURLs = dataProcess.initFailFlags(caller.api),
                   reader = stream.response.getReader() ; let accumulatedChunks = ''
             reader.read().then(processStreamText).catch(err => consoleErr(logPrefix + 'Error processing stream', err.message))
 
@@ -1979,10 +1980,6 @@
                 if (done) {
                     show.copyBtns() ; caller.status = 'done' ; caller.sender = null
                     api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                    return
-                } else if (dataProcess.initFailFlags(caller.api).test(accumulatedChunks)) {
-                    consoleErr(logPrefix + 'Response', accumulatedChunks)
-                    if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return
                 }
                 let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
@@ -2001,7 +1998,11 @@
                         if (nowResult.id) apis.GPTforLove.parentID = nowResult.id // for contextual replies
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
-                    if (caller.status != 'done') { // app waiting or sending
+                    if (failFlagsAndURLs.test(textToShow)) {
+                        consoleErr(logPrefix + 'Response', accumulatedChunks)
+                        if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
+                        return
+                    } else if (caller.status != 'done') { // app waiting or sending
                         if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
                         if (caller.sender == caller.api) show.reply(textToShow)
                     }

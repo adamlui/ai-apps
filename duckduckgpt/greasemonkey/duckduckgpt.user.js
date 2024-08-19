@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.18.10
+// @version                2024.8.18.11
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2500,6 +2500,7 @@
         stream(caller, stream) {
             if (config.streamingDisabled || !config.proxyAPIenabled) return
             const logPrefix = `get.${caller.name}() » dataProcess.stream() » `,
+                  failFlagsAndURLs = dataProcess.initFailFlags(caller.api),
                   reader = stream.response.getReader() ; let accumulatedChunks = ''
             reader.read().then(processStreamText).catch(err => consoleErr(logPrefix + 'Error processing stream', err.message))
 
@@ -2507,10 +2508,6 @@
                 if (done) {
                     show.copyBtns() ; caller.status = 'done' ; caller.sender = null
                     api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                    return
-                } else if (dataProcess.initFailFlags(caller.api).test(accumulatedChunks)) {
-                    consoleErr(logPrefix + 'Response', accumulatedChunks)
-                    if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return
                 }
                 let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
@@ -2529,7 +2526,11 @@
                         if (nowResult.id) apis.GPTforLove.parentID = nowResult.id // for contextual replies
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
-                    if (caller.status != 'done') { // app waiting or sending
+                    if (failFlagsAndURLs.test(textToShow)) {
+                        consoleErr(logPrefix + 'Response', accumulatedChunks)
+                        if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
+                        return
+                    } else if (caller.status != 'done') { // app waiting or sending
                         if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
                         if (caller.sender == caller.api) show.reply(textToShow)
                     }
