@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.19
+// @version               2024.8.19.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -576,10 +576,10 @@ setTimeout(async () => {
     }
 
     const log = {
-        info(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ msg }`) },
+        info(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ log.prefix || '' }${ msg }`) },
         err(label, msg) {
             console.error( `${config.appSymbol} ${config.appName} » ${
-                typeof label == 'object' ? JSON.stringify(label) : label }${ msg ? `: ${msg}` : ''}`)
+                typeof label == 'object' ? JSON.stringify(label) : label }${ log.prefix || '' }${ msg ? `: ${msg}` : ''}`)
         }
     }
 
@@ -2381,7 +2381,7 @@ setTimeout(async () => {
     const api = {
 
         pick(caller) {
-            const logPrefix = `get.${caller.name}() » `
+            log.prefix = `get.${caller.name}() » `
             const untriedAPIs = Object.keys(apis).filter(api =>
                    api != ( caller == get.reply ? 'OpenAI' : '' ) // exclude OpenAI for get.reply() since Proxy Mode
                 && !caller.triedAPIs.some(entry => Object.prototype.hasOwnProperty.call(entry, api)) // exclude tried APIs
@@ -2391,7 +2391,7 @@ setTimeout(async () => {
             if (!chosenAPI) { log.err('No proxy APIs left untried') ; return null }
 
             // Log chosen API endpoint
-            log.info(`${logPrefix} Endpoint used: ${ apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint }`)
+            log.info(`Endpoint used: ${ apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint }`)
             return chosenAPI
         },
 
@@ -2601,10 +2601,10 @@ setTimeout(async () => {
 
         stream(caller, stream) {
             if (config.streamingDisabled || !config.proxyAPIenabled) return
-            const logPrefix = `get.${caller.name}() » dataProcess.stream() » `,
-                  failFlagsAndURLs = dataProcess.initFailFlags(caller.api),
+            log.prefix = `get.${caller.name}() » dataProcess.stream() » `
+            const failFlagsAndURLs = dataProcess.initFailFlags(caller.api),
                   reader = stream.response.getReader() ; let accumulatedChunks = ''
-            reader.read().then(processStreamText).catch(err => log.err(logPrefix + 'Error processing stream', err.message))
+            reader.read().then(processStreamText).catch(err => log.err('Error processing stream', err.message))
 
             function processStreamText({ done, value }) {
                 if (done) {
@@ -2629,29 +2629,29 @@ setTimeout(async () => {
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
                     if (failFlagsAndURLs.test(textToShow)) {
-                        log.err(logPrefix + 'Response', accumulatedChunks)
+                        log.err('Response', accumulatedChunks)
                         if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                         return
                     } else if (caller.status != 'done') { // app waiting or sending
                         if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
                         if (caller.sender == caller.api) show.reply(textToShow, footerContent)
                     }
-                } catch (err) { log.err(logPrefix + 'Error showing stream', err.message) }
+                } catch (err) { log.err('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
                     if (caller.sender == caller.api) // am designated sender, recurse
                         processStreamText({ done, value })
-                }).catch(err => log.err(logPrefix + 'Error reading stream', err.message))
+                }).catch(err => log.err('Error reading stream', err.message))
             }
         },
 
         text(caller, resp) {
             return new Promise(resolve => {
                 if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done') return
-                const logPrefix = `get.${caller.name}() » dataProcess.text() » `,
-                      failFlagsAndURLs = dataProcess.initFailFlags(caller.api) ; let respText = ''
+                log.prefix = `get.${caller.name}() » dataProcess.text() » `
+                const failFlagsAndURLs = dataProcess.initFailFlags(caller.api) ; let respText = ''
                 if (resp.status != 200) {
-                    log.err(logPrefix + 'Response status', resp.status)
-                    log.err(logPrefix + 'Response', JSON.stringify(resp))
+                    log.err('Response status', resp.status)
+                    log.err('Response', JSON.stringify(resp))
                     if (caller == get.reply && caller.api == 'OpenAI')
                         appAlert(resp.status == 401 ? 'login'
                                : resp.status == 403 ? 'checkCloudflare'
@@ -2707,8 +2707,8 @@ setTimeout(async () => {
                 }
 
                 function handleProcessError(err) { // suggest proxy or try diff API
-                    log.info(logPrefix + 'Response text: ' + resp.response)
-                    log.err(logPrefix + appAlerts.parseFailed, err)
+                    log.info('Response text: ' + resp.response)
+                    log.err(appAlerts.parseFailed, err)
                     if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                     else if (caller.status != 'done') api.tryNew(caller)
                 }
