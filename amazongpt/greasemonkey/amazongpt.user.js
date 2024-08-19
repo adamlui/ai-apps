@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.18.9
+// @version                2024.8.18.10
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2099,7 +2099,7 @@
             appDiv.querySelectorAll('#amzgpt > pre, code').forEach(parentElem => {
                 const copySVG = icons.copy.create(parentElem) ; copySVG.classList.add('copy-btn')
                 let elemToPrepend = copySVG
-                copySVG.onclick = () => handleCopyClick(event, parentElem)
+                copySVG.onclick = event => handleCopyClick(event, parentElem)
                 if (parentElem.tagName == 'CODE') { // wrap in div for v-offset
                     elemToPrepend = document.createElement('div')
                     elemToPrepend.style.height = '11px'
