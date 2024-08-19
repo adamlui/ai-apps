@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.18.13
+// @version                2024.8.18.14
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1811,7 +1811,7 @@
             const relatedQueriesDiv = appDiv.querySelector('.related-queries')
             if (relatedQueriesDiv) { // update visibility based on latest setting
                 relatedQueriesDiv.style.display = config.rqDisabled || config.anchored ? 'none' : 'flex'
-                appFooter.style.right = ( // counteract right-offset bug from chatbar padding
+                if (!isMobile) appFooter.style.right = ( // counteract right-offset bug from chatbar padding
                     relatedQueriesDiv.style.display == 'flex' ? 0 : '-72px' )
             }
         },
@@ -2822,7 +2822,7 @@
                     appDiv.append(standbyBtn)
                     show.reply.standbyBtnClickHandler = function() {
                         appAlert('waitingResponse')
-                        appFooter.style.right = 0 // reset counteract right-offset bug from chatbar padding
+                        if (!isMobile) appFooter.style.right = 0 // reset counteract right-offset bug from chatbar padding
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
                         show.reply.userInteracted = true ; show.reply.chatbarFocused = false
                         menus.pin.topPos = menus.pin.rightPos = null
@@ -2859,7 +2859,7 @@
                                                                  : msgs.tooltip_sendReply || 'Send reply' ) + '...'
                 continueChatDiv.append(chatTextarea)
                 replyForm.append(continueChatDiv) ; replySection.append(replyForm)
-                appFooter.style.right = '-72px' // counteract right-offset bug from chatbar padding
+                if (!isMobile) appFooter.style.right = '-72px' // counteract right-offset bug from chatbar padding
                 appDiv.append(replySection);
 
                 // Create/append chatbar buttons
@@ -2990,7 +2990,7 @@
                     // Hide/remove elems
                     appDiv.querySelector('.related-queries')?.remove() // remove related queries
                     if (!isMobile) tooltipDiv.style.opacity = 0 // hide 'Send reply' tooltip post-send btn click
-                    appFooter.style.right = 0 // reset show.reply()'s counteract right-offset bug from chatbar padding
+                    if (!isMobile) appFooter.style.right = 0 // reset show.reply()'s counteract right-offset bug from chatbar padding
 
                     // Show loading status
                     const replySection = appDiv.querySelector('section')
@@ -3067,7 +3067,7 @@
                     })
 
                     update.tweaksStyle() // to shorten <pre> max-height
-                    appFooter.style.right = 0 // reset show.reply()'s counteract right-offset bug from chatbar padding
+                    if (!isMobile) appFooter.style.right = 0 // reset show.reply()'s counteract right-offset bug from chatbar padding
         }}}
     }
 
