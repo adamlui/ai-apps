@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.18.7
+// @version               2024.8.18.8
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1640,9 +1640,9 @@ setTimeout(async () => {
               + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem }'
               + '.chatgpt-js > a { color: inherit ; top: .054rem }'
               + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px }'
-              + '.copy-icon { float: right ; cursor: pointer }'
-              + `pre > .copy-icon { height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}` // reply copy btn
-              + 'code .copy-icon { height: 13px ; width: 13px ; fill: white ; position: relative ; right: -9px ; top: -6px }' // code copy btn
+              + '.copy-btn { float: right ; cursor: pointer }'
+              + `pre > .copy-btn { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
+              + 'code .copy-btn { height: 13px ; width: 13px ; fill: white ; position: relative ; right: -9px ; top: -6px }'
               + '#app-chatbar {'
                   + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
                   + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 -7px 0 ;  padding: 12px 51px 12px 10px ;'
@@ -2725,7 +2725,7 @@ setTimeout(async () => {
         copyBtns() {
             if (appDiv.querySelector('#bravegpt > pre > svg, code > svg')) return
             appDiv.querySelectorAll('#bravegpt > pre, code').forEach(parentElem => {
-                const copySVG = icons.copy.create(parentElem) ; copySVG.classList.add('copy-icon')
+                const copySVG = icons.copy.create(parentElem) ; copySVG.classList.add('copy-btn')
                 let elemToPrepend = copySVG
                 copySVG.onclick = () => handleCopyClick(event, parentElem)
                 if (parentElem.tagName == 'CODE') { // wrap in div for v-offset
@@ -2741,7 +2741,7 @@ setTimeout(async () => {
                     `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')
                 const textToCopy = parentElem.textContent.replace(reCopyCTA, ''),
                       copySVG = event.target.closest('svg'), iconParent = copySVG.parentNode,
-                      checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-icon')
+                      checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-btn')
 
                 // Flicker icon
                 iconParent.replaceChild(checkmarksSVG, copySVG)
