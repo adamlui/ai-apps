@@ -3,7 +3,7 @@
     "@adamlui/scss-to-css": "^1.10.3",
     "eslint": "^9.9.0",
     "eslint-plugin-json": "^4.0.1",
-    "husky": "^9.1.4"
+    "husky": "^9.1.5"
   },
   "scripts": {
     "build:css": "scss-to-css",
