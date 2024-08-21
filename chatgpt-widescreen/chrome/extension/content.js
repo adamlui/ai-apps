@@ -25,7 +25,7 @@
     })
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(title, msg, btns, checkbox, width )}
 
     // Selectively DISABLE content or user script
     if (!/chatgpt|openai|poe/.test(site)) return
