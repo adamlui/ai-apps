@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.20.2
+// @version                  2024.8.20.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2156,8 +2156,7 @@
               : btnType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
 
             // Update position
-            tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -13
-              : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
+            tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -15 : tooltipDiv.topOffset }px`
             tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
         },
 
@@ -2538,7 +2537,7 @@
         },
 
         tooltip(event) { // visibility
-            tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for update.tooltip() y-pos calc
+            tooltipDiv.topOffset = event.currentTarget.getBoundingClientRect().top - appDiv.getBoundingClientRect().top -36
             update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
             tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
         }

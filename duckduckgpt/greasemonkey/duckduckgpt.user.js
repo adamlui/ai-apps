@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.20.3
+// @version                2024.8.20.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1856,8 +1856,7 @@
               : btnType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
     
             // Update position
-            tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -15
-              : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
+            tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -15 : tooltipDiv.topOffset }px`
             tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
         },
     
@@ -2224,7 +2223,7 @@
         },
 
         tooltip(event) { // visibility
-            tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for update.tooltip() y-pos calc
+            tooltipDiv.topOffset = event.currentTarget.getBoundingClientRect().top - appDiv.getBoundingClientRect().top -36
             update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
             tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
         }

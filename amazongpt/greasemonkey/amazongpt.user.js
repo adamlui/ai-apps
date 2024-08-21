@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.20.2
+// @version                2024.8.20.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1485,8 +1485,7 @@
               : btnType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
 
             // Update position
-            tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -21
-              : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top -36 }px`
+            tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -15 : tooltipDiv.topOffset }px`
             tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
         },
 
@@ -1753,7 +1752,7 @@
         },
 
         tooltip(event) { // visibility
-            tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for update.tooltip() y-pos calc
+            tooltipDiv.topOffset = event.currentTarget.getBoundingClientRect().top - appDiv.getBoundingClientRect().top -36
             update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
             tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
         }
