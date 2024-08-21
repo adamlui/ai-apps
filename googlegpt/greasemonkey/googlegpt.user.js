@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.21.3
+// @version                  2024.8.21.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2955,7 +2955,7 @@
                 }
 
                 // Add listeners
-                copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
+                if (!isMobile) copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
                 copySVG.onclick = event => {
                     const reCopyTooltip = new RegExp(
                         `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')

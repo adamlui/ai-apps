@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.21.3
+// @version                2024.8.21.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2639,7 +2639,7 @@
                 }
 
                 // Add listeners
-                copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
+                if (!isMobile) copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
                 copySVG.onclick = event => {
                     const reCopyTooltip = new RegExp(
                         `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')

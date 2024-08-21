@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.21.3
+// @version               2024.8.21.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2738,7 +2738,7 @@ setTimeout(async () => {
                 }
 
                 // Add listeners
-                copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
+                if (!isMobile) copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
                 copySVG.onclick = event => {
                     const reCopyTooltip = new RegExp(
                         `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')
