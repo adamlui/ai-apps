@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.21.1
+// @version                2024.8.21.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2628,36 +2628,34 @@
             appDiv.querySelectorAll('#ddgpt > pre, code').forEach(parentElem => {
                 const copySVG = icons.copy.create(parentElem) ; copySVG.classList.add('copy-btn')
                 let elemToPrepend = copySVG
-                copySVG.onclick = handleCopyClick
                 if (parentElem.tagName == 'CODE') { // wrap in div for v-offset
                     elemToPrepend = document.createElement('div')
                     elemToPrepend.style.height = '11px'
                     elemToPrepend.append(copySVG)
                 }
+                copySVG.onclick = event => {
+                    const reCopyTooltip = new RegExp(
+                        `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')
+                    const copySVG = event.target.closest('svg'), iconParent = copySVG.parentNode,
+                          textContainer = iconParent.tagName == 'PRE' ? iconParent : iconParent.parentNode, // whole reply or code container
+                          textToCopy = textContainer.textContent.replace(reCopyTooltip, '').replace(/^>> /, '').trim(),
+                          checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-btn')
+
+                    // Flicker icon
+                    iconParent.replaceChild(checkmarksSVG, copySVG)
+                    setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355)
+
+                    // Copy text
+                    navigator.clipboard.writeText(textToCopy).then(() => notify(
+                        `${ // msg
+                            textContainer.tagName == 'PRE' ? ( msgs.tooltip_reply || 'Reply' ) : ( msgs.tooltip_code || 'Code' )} ${
+                            msgs.notif_copiedToClipboard || 'copied to clipboard' }`,
+                        `${ // v-pos
+                            event.clientY < window.innerHeight /2 ? 'top' : 'bottom' }-right`
+                    ))
+                }
                 parentElem.prepend(elemToPrepend)
             })
-
-            function handleCopyClick(event) {
-                const reCopyTooltip = new RegExp(
-                    `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')
-                const copySVG = event.target.closest('svg'), iconParent = copySVG.parentNode,
-                      textContainer = iconParent.tagName == 'PRE' ? iconParent : iconParent.parentNode, // whole reply or code container
-                      textToCopy = textContainer.textContent.replace(reCopyTooltip, '').replace(/^>> /, '').trim(),
-                      checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-btn')
-
-                // Flicker icon
-                iconParent.replaceChild(checkmarksSVG, copySVG)
-                setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355)
-
-                // Copy text
-                navigator.clipboard.writeText(textToCopy).then(() => notify(
-                    `${ // msg
-                        textContainer.tagName == 'PRE' ? ( msgs.tooltip_reply || 'Reply' ) : ( msgs.tooltip_code || 'Code' )} ${
-                        msgs.notif_copiedToClipboard || 'copied to clipboard' }`,
-                    `${ // v-pos
-                        event.clientY < window.innerHeight /2 ? 'top' : 'bottom' }-right`
-                ))
-            }
         },
 
         reply(answer) {
