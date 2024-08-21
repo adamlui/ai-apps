@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.19.3
+// @version               2024.8.20
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -271,7 +271,7 @@ setTimeout(async () => {
             method: 'PUT', streamable: true, accumulatesText: false,
             failFlags: [
                 'invalid_request_error', 'literal_error', 'me@promplate.dev', '^Not Found$',
-                'Sorry, your account balance is insufficient', 'your free credit'],
+                'Sorry, your account balance is insufficient', 'This service has been suspended', 'your free credit'],
             availModels: [
                 'deepseek-ai/deepseek-llm-67b-chat', 'gemma2-9b-it', 'THUDM/glm-4-9b-chat', 'gpt-4o-mini-2024-07-18',
                 'llama3-70b-8192', 'mixtral-8x7b-32768', 'nous-hermes-2-mixtral-8x7b-dpo', 'Qwen/Qwen2-57B-A14B-Instruct',
