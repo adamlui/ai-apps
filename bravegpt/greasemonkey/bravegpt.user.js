@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.21.5
+// @version               2024.8.21.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -593,7 +593,7 @@ setTimeout(async () => {
         dragHandlers: {
             mousedown(event) { // find modal, attach listeners, init XY offsets
                 if (getComputedStyle(event.target).cursor == 'pointer') return // don't activate drag when clicking on interactive elems
-                modals.dragHandlers.draggableElem = event.target.closest('[class$="-modal"]')
+                modals.dragHandlers.draggableElem = event.currentTarget
                 event.preventDefault(); // prevent sub-elems like icons being draggable
                 ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))
                 const draggableElemRect = modals.dragHandlers.draggableElem.getBoundingClientRect()
@@ -2740,7 +2740,7 @@ setTimeout(async () => {
                 // Add listeners
                 if (!isMobile) copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
                 copySVG.onclick = event => {
-                    const copySVG = event.target.closest('svg'), iconParent = copySVG.parentNode,
+                    const copySVG = event.currentTarget, iconParent = copySVG.parentNode,
                           textContainer = iconParent.tagName == 'PRE' ? iconParent : iconParent.parentNode, // whole reply or code container
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
                           checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-btn')

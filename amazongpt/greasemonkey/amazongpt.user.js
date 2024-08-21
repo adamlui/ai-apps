@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.21.5
+// @version                2024.8.21.6
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -449,7 +449,7 @@
         dragHandlers: {
             mousedown(event) { // find modal, attach listeners, init XY offsets
                 if (getComputedStyle(event.target).cursor == 'pointer') return // don't activate drag when clicking on interactive elems
-                modals.dragHandlers.draggableElem = event.target.closest('[class$="-modal"]')
+                modals.dragHandlers.draggableElem = event.currentTarget
                 event.preventDefault(); // prevent sub-elems like icons being draggable
                 ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))
                 const draggableElemRect = modals.dragHandlers.draggableElem.getBoundingClientRect()
@@ -2112,7 +2112,7 @@
                 // Add listeners
                 if (!isMobile) copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
                 copySVG.onclick = event => {
-                    const copySVG = event.target.closest('svg'), iconParent = copySVG.parentNode,
+                    const copySVG = event.currentTarget, iconParent = copySVG.parentNode,
                           textContainer = iconParent.tagName == 'PRE' ? iconParent : iconParent.parentNode, // whole reply or code container
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
                           checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-btn')

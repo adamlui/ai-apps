@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.21.5
+// @version                  2024.8.21.6
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -788,7 +788,7 @@
         dragHandlers: {
             mousedown(event) { // find modal, attach listeners, init XY offsets
                 if (getComputedStyle(event.target).cursor == 'pointer') return // don't activate drag when clicking on interactive elems
-                modals.dragHandlers.draggableElem = event.target.closest('[class$="-modal"]')
+                modals.dragHandlers.draggableElem = event.currentTarget
                 event.preventDefault(); // prevent sub-elems like icons being draggable
                 ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))
                 const draggableElemRect = modals.dragHandlers.draggableElem.getBoundingClientRect()
@@ -2957,7 +2957,7 @@
                 // Add listeners
                 if (!isMobile) copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
                 copySVG.onclick = event => {
-                    const copySVG = event.target.closest('svg'), iconParent = copySVG.parentNode,
+                    const copySVG = event.currentTarget, iconParent = copySVG.parentNode,
                           textContainer = iconParent.tagName == 'PRE' ? iconParent : iconParent.parentNode, // whole reply or code container
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
                           checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-btn')
