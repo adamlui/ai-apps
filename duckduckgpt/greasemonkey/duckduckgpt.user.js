@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.20
+// @version                2024.8.20.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -583,8 +583,8 @@
 
     const log = {
         info(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ log.prefix || '' }${ msg }`) },
-        err(label, msg) { console.error( `${config.appSymbol} ${config.appName} » ${
-            typeof label == 'object' ? JSON.stringify(label) : label }${ log.prefix || '' }${ msg ? `: ${msg}` : ''}`)}
+        err(label, msg) { console.error( `${config.appSymbol} ${config.appName} » ${ log.prefix || '' }${
+            typeof label == 'object' ? JSON.stringify(label) : label }${ msg ? `: ${msg}` : ''}`)}
     }
 
     // Define MODAL functions
