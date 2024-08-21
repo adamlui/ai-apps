@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.20.1
+// @version               2024.8.20.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2738,9 +2738,9 @@ setTimeout(async () => {
             })
 
             function handleCopyClick(event, parentElem) {
-                const reCopyCTA = new RegExp(
+                const reCopyTooltip = new RegExp(
                     `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')
-                const textToCopy = parentElem.textContent.replace(reCopyCTA, '').replace(/^>> /, ''),
+                const textToCopy = parentElem.textContent.replace(reCopyTooltip, '').replace(/^>> /, ''),
                       copySVG = event.target.closest('svg'), iconParent = copySVG.parentNode,
                       checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-btn')
 
