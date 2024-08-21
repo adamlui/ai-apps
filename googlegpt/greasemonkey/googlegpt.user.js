@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.20.3
+// @version                  2024.8.20.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2130,36 +2130,6 @@
             ))
         },
 
-        tooltip(btnType) { // text & position
-            const cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'font-size', 'pin', 'wsb', 'arrows']
-                      .filter(type => { // exclude invisible ones                                                
-                          const btn = appDiv.querySelector(`#${type}-btn`)
-                          return btn && getComputedStyle(btn).display != 'none' })
-            const chatbarBtnTypes = ['send', 'shuffle']
-            const [ctrAddend, spreadFactor] = [8, 28],
-                  iniRoffset = ctrAddend + spreadFactor * (
-                      cornerBtnTypes.includes(btnType) ? cornerBtnTypes.indexOf(btnType) +1
-                                                       : chatbarBtnTypes.indexOf(btnType) +1.35 )
-            // Update text
-            tooltipDiv.innerText = (
-                btnType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
-                                                          : `${ msgs.tooltip_minimize || 'Minimize' }` )
-              : btnType == 'about' ? msgs.menuLabel_about || 'About'
-              : btnType == 'settings' ? msgs.menuLabel_settings || 'Settings'
-              : btnType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
-              : btnType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
-              : btnType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                 + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
-              : btnType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
-                                                        : `${ msgs.tooltip_expand || 'Expand' }` )
-              : btnType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
-              : btnType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
-
-            // Update position
-            tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -15 : tooltipDiv.topOffset }px`
-            tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
-        },
-
         tweaksStyle() {
 
             // Update tweaks style based on settings
@@ -2536,9 +2506,39 @@
             }
         },
 
-        tooltip(event) { // visibility
-            tooltipDiv.topOffset = event.currentTarget.getBoundingClientRect().top - appDiv.getBoundingClientRect().top -36
-            update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
+        tooltip(event) {
+            const currentBtnType = event.currentTarget.id.replace(/-btn$/, ''),
+                  cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'font-size', 'pin', 'wsb', 'arrows']
+                      .filter(type => { // exclude invisible ones                                                
+                          const btn = appDiv.querySelector(`#${type}-btn`)
+                          return btn && getComputedStyle(btn).display != 'none' }),
+                  chatbarBtnTypes = ['send', 'shuffle']
+
+            // Update text
+            tooltipDiv.innerText = (
+                currentBtnType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
+                                                                 : `${ msgs.tooltip_minimize || 'Minimize' }` )
+              : currentBtnType == 'about' ? msgs.menuLabel_about || 'About'
+              : currentBtnType == 'settings' ? msgs.menuLabel_settings || 'Settings'
+              : currentBtnType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
+              : currentBtnType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
+              : currentBtnType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
+                                        + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
+              : currentBtnType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
+                                                               : `${ msgs.tooltip_expand || 'Expand' }` )
+              : currentBtnType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
+              : currentBtnType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
+
+            // Update position
+            const topOffset = event.currentTarget.getBoundingClientRect().top - appDiv.getBoundingClientRect().top -36,
+                  [ctrAddend, spreadFactor] = [8, 28],
+                  iniRoffset = ctrAddend + spreadFactor * (
+                      cornerBtnTypes.includes(currentBtnType) ? cornerBtnTypes.indexOf(currentBtnType) +1
+                                                              : chatbarBtnTypes.indexOf(currentBtnType) +1.35 )
+            tooltipDiv.style.top = `${ cornerBtnTypes.includes(currentBtnType) ? -15 : topOffset }px`
+            tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
+
+            // Toggle visibility
             tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
         }
     }
