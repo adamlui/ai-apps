@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.21.10
+// @version                  2024.8.21.11
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2505,31 +2505,31 @@
         },
 
         tooltip(event) {
-            const currentBtnType = event.currentTarget.id.replace(/-btn$/, ''),
+            const btnElem = event.currentTarget, btnType = btnElem.id.replace(/-btn$/, ''),
                   cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'font-size', 'pin', 'wsb', 'arrows']
 
             // Update text
             tooltipDiv.innerText = (
-                currentBtnType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
-                                                                 : `${ msgs.tooltip_minimize || 'Minimize' }` )
-              : currentBtnType == 'about' ? msgs.menuLabel_about || 'About'
-              : currentBtnType == 'settings' ? msgs.menuLabel_settings || 'Settings'
-              : currentBtnType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
-              : currentBtnType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
-              : currentBtnType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                        + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
-              : currentBtnType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
-                                                               : `${ msgs.tooltip_expand || 'Expand' }` )
-              : currentBtnType == 'copy' ? `${ msgs.tooltip_copy || 'Copy' } ${( event.currentTarget.parentNode.tagName == 'PRE' ?
-                                               msgs.tooltip_reply || 'Reply' : msgs.tooltip_code || 'Code' ).toLowerCase() }`
-              : currentBtnType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
-              : currentBtnType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
+                btnType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
+                                                          : `${ msgs.tooltip_minimize || 'Minimize' }` )
+              : btnType == 'about' ? msgs.menuLabel_about || 'About'
+              : btnType == 'settings' ? msgs.menuLabel_settings || 'Settings'
+              : btnType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
+              : btnType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
+              : btnType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
+                               + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
+              : btnType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
+                                                        : `${ msgs.tooltip_expand || 'Expand' }` )
+              : btnType == 'copy' ? `${ msgs.tooltip_copy || 'Copy' } ${( event.currentTarget.parentNode.tagName == 'PRE' ?
+                                        msgs.tooltip_reply || 'Reply' : msgs.tooltip_code || 'Code' ).toLowerCase() }`
+              : btnType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
+              : btnType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
 
             // Update position
-            const tooltipRect = tooltipDiv.getBoundingClientRect(), svgRect = event.currentTarget.getBoundingClientRect()
-            tooltipDiv.style.top = `${ cornerBtnTypes.includes(currentBtnType) ? -15
-                : event.currentTarget.getBoundingClientRect().top - appDiv.getBoundingClientRect().top -36 }px`
-            tooltipDiv.style.right = `${ appDiv.getBoundingClientRect().right - ( svgRect.left + svgRect.right )/2 - tooltipRect.width/2 }px`
+            const elems = { appDiv, btnElem, tooltipDiv },
+                  rects = {} ; Object.keys(elems).forEach(key => rects[key] = elems[key].getBoundingClientRect())
+            tooltipDiv.style.top = `${ cornerBtnTypes.includes(btnType) ? -15 : rects.btnElem.top - rects.appDiv.top -36 }px`
+            tooltipDiv.style.right = `${ rects.appDiv.right - ( rects.btnElem.left + rects.btnElem.right )/2 - rects.tooltipDiv.width/2 }px`
 
             // Toggle visibility
             tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
