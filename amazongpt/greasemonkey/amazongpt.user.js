@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.21.7
+// @version                2024.8.21.8
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -375,7 +375,7 @@
             notif.append(modeIcon)
         } else if (msg.includes(msgs.notif_copiedToClipboard || 'copied to clipboard')) {
             const copyIcon = icons.copy.create()
-            copyIcon.style.cssText = iconStyles + 'width: 23px ; height: 23px'
+            copyIcon.style.cssText = iconStyles + 'width: 20px ; height: 28px'
             notif.append(copyIcon)
         }
 
