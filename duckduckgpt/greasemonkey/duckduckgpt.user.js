@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.21.2
+// @version                2024.8.21.3
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1264,12 +1264,10 @@
         },
 
         copy: {
-            create(parentElem) {
+            create() {
                 const copySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       copySVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 0 1024 1024']],
                       copySVGtitle = document.createElementNS('http://www.w3.org/2000/svg', 'title')
-                if (parentElem) copySVGtitle.textContent = `${ msgs.tooltip_copy || 'Copy' } ${(
-                    parentElem.tagName == 'CODE' ? msgs.tooltip_code || 'Code' : msgs.tooltip_reply || 'Reply' ).toLowerCase() }`
                 copySVGattrs.forEach(([attr, value]) => copySVG.setAttribute(attr, value))
                 copySVG.append(
                     copySVGtitle,
@@ -2212,17 +2210,21 @@
                                         + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
               : currentBtnType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
                                                                : `${ msgs.tooltip_expand || 'Expand' }` )
+              : currentBtnType == 'copy' ? `${ msgs.tooltip_copy || 'Copy' } ${( event.currentTarget.parentNode.tagName == 'PRE' ?
+                                               msgs.tooltip_reply || 'Reply' : msgs.tooltip_code || 'Code' ).toLowerCase() }`
               : currentBtnType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
               : currentBtnType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
     
             // Update position
-            const topOffset = event.currentTarget.getBoundingClientRect().top - appDiv.getBoundingClientRect().top -36,
+            const tooltipRect = tooltipDiv.getBoundingClientRect(), svgRect = event.currentTarget.getBoundingClientRect(),
+                  topOffset = event.currentTarget.getBoundingClientRect().top - appDiv.getBoundingClientRect().top -36,
+                  rightOffset = appDiv.getBoundingClientRect().right - ( svgRect.left + svgRect.right )/2 - tooltipRect.width/2,
                   [ctrAddend, spreadFactor] = [7, 29],
                   iniRoffset = ctrAddend + spreadFactor * (
                       cornerBtnTypes.includes(currentBtnType) ? cornerBtnTypes.indexOf(currentBtnType) +1
                                                               : chatbarBtnTypes.indexOf(currentBtnType) +1.38 )
             tooltipDiv.style.top = `${ cornerBtnTypes.includes(currentBtnType) ? -15 : topOffset }px`
-            tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
+            tooltipDiv.style.right = `${ currentBtnType == 'copy' ? rightOffset : iniRoffset - tooltipRect.width/2 }px`
 
             // Toggle visibility
             tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
@@ -2626,13 +2628,18 @@
         copyBtns() {
             if (appDiv.querySelector('#ddgpt > pre > svg, code > svg')) return
             appDiv.querySelectorAll('#ddgpt > pre, code').forEach(parentElem => {
-                const copySVG = icons.copy.create(parentElem) ; copySVG.classList.add('copy-btn')
-                let elemToPrepend = copySVG
-                if (parentElem.tagName == 'CODE') { // wrap in div for v-offset
+                const copySVG = icons.copy.create(parentElem) ; let elemToPrepend = copySVG
+                copySVG.id = 'copy-btn' ; copySVG.classList.add('copy-btn')
+
+                // Wrap code button in div for v-offset
+                if (parentElem.tagName == 'CODE') {
                     elemToPrepend = document.createElement('div')
                     elemToPrepend.style.height = '11px'
                     elemToPrepend.append(copySVG)
                 }
+
+                // Add listeners
+                copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
                 copySVG.onclick = event => {
                     const reCopyTooltip = new RegExp(
                         `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')
@@ -2653,7 +2660,12 @@
                         `${ // v-pos
                             event.clientY < window.innerHeight /2 ? 'top' : 'bottom' }-right`
                     ))
+
+                    // Hide tooltip
+                    if (!isMobile) tooltipDiv.style.opacity = 0
                 }
+
+                // Prepend button
                 parentElem.prepend(elemToPrepend)
             })
         },
