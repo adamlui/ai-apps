@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.21
+// @version                2024.8.21.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2642,7 +2642,7 @@
                     `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')
                 const copySVG = event.target.closest('svg'), iconParent = copySVG.parentNode,
                       textContainer = iconParent.tagName == 'PRE' ? iconParent : iconParent.parentNode, // whole reply or code container
-                      textToCopy = textContainer.textContent.replace(reCopyTooltip, '').replace(/^>> /, ''),
+                      textToCopy = textContainer.textContent.replace(reCopyTooltip, '').replace(/^>> /, '').trim(),
                       checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-btn')
 
                 // Flicker icon

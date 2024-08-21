@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.21
+// @version                  2024.8.21.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2958,7 +2958,7 @@
                     `${ msgs.tooltip_copy || 'Copy' } (?:${ msgs.tooltip_reply || 'Reply' }|${ msgs.tooltip_code || 'Code' })`, 'gi')
                 const copySVG = event.target.closest('svg'), iconParent = copySVG.parentNode,
                       textContainer = iconParent.tagName == 'PRE' ? iconParent : iconParent.parentNode, // whole reply or code container
-                      textToCopy = textContainer.textContent.replace(reCopyTooltip, '').replace(/^>> /, ''),
+                      textToCopy = textContainer.textContent.replace(reCopyTooltip, '').replace(/^>> /, '').trim(),
                       checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-btn')
 
                 // Flicker icon
