@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.21.6
+// @version                  2024.8.21.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2509,8 +2509,7 @@
                   cornerBtnTypes = ['chevron', 'about', 'settings', 'speak', 'font-size', 'pin', 'wsb', 'arrows']
                       .filter(type => { // exclude invisible ones                                                
                           const btn = appDiv.querySelector(`#${type}-btn`)
-                          return btn && getComputedStyle(btn).display != 'none' }),
-                  chatbarBtnTypes = ['send', 'shuffle']
+                          return btn && getComputedStyle(btn).display != 'none' })
 
             // Update text
             tooltipDiv.innerText = (
@@ -2530,15 +2529,10 @@
               : currentBtnType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
 
             // Update position
-            const tooltipRect = tooltipDiv.getBoundingClientRect(), svgRect = event.currentTarget.getBoundingClientRect(),
-                  topOffset = event.currentTarget.getBoundingClientRect().top - appDiv.getBoundingClientRect().top -36,
-                  rightOffset = appDiv.getBoundingClientRect().right - ( svgRect.left + svgRect.right )/2 - tooltipRect.width/2,
-                  [ctrAddend, spreadFactor] = [8, 28],
-                  iniRoffset = ctrAddend + spreadFactor * (
-                      cornerBtnTypes.includes(currentBtnType) ? cornerBtnTypes.indexOf(currentBtnType) +1
-                                                              : chatbarBtnTypes.indexOf(currentBtnType) +1.35 )
-            tooltipDiv.style.top = `${ cornerBtnTypes.includes(currentBtnType) ? -15 : topOffset }px`
-            tooltipDiv.style.right = `${ currentBtnType == 'copy' ? rightOffset : iniRoffset - tooltipRect.width/2 }px`
+            const tooltipRect = tooltipDiv.getBoundingClientRect(), svgRect = event.currentTarget.getBoundingClientRect()
+            tooltipDiv.style.top = `${ cornerBtnTypes.includes(currentBtnType) ? -15
+                : event.currentTarget.getBoundingClientRect().top - appDiv.getBoundingClientRect().top -36 }px`
+            tooltipDiv.style.right = `${ appDiv.getBoundingClientRect().right - ( svgRect.left + svgRect.right )/2 - tooltipRect.width/2 }px`
 
             // Toggle visibility
             tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
