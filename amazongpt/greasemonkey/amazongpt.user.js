@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.21.12
+// @version                2024.8.21.13
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2308,11 +2308,11 @@
                     if (!isMobile) // add hover listener for tooltips
                         btnElem.onmouseover = btnElem.onmouseout = toggle.tooltip
                     if (btnType == 'shuffle') btnElem.onclick = () => {
-                        const randQAprompt = 'Generate a single random question on any topic then answer it.'
-                                           + `${ !config.proxyAPIenabled ? 'Don\'t talk about Canberra, Tokyo, blue whales, photosynthesis,'
-                                                                         + ' deserts, mindfulness meditation, the Fibonacci sequence,'
-                                                                         + ' Jupiter, the Great Wall of China, Sheakespeare or da Vinci.' : '' }`
-                                           + 'Try to give an answer that is 25-50 words.'
+                        const randQAprompt = 'Generate a single random question on any topic then answer it. '
+                                           + 'Don\'t talk about Canberra, Tokyo, blue whales, photosynthesis, oceans, '
+                                               + 'deserts, mindfulness meditation, the Fibonacci sequence, the liver, '
+                                               + 'Jupiter, the Great Wall of China, Sheakespeare or da Vinci. '
+                                           + 'Try to give an answer that is 25-50 words. '
                                            + 'Do not type anything but the question and answer. Reply in markdown.'
                         chatTextarea.value = augmentQuery(randQAprompt)
                         chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
