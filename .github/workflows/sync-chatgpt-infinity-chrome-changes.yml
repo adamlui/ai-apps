@@ -112,7 +112,7 @@ jobs:
           cd ${{ github.workspace }}/adamlui/chatgpt-infinity
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m $ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-infinity/chrome\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-infinity/chrome\`]" || true
           git push
 
       - name: Push changes to adamlui/userscripts
