@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.21.14
+// @version                2024.8.22
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1589,7 +1589,6 @@
                       sliderTip = document.getElementById('font-size-slider-tip'),
                       elems = { appDiv, btnSpan, sliderTip },
                       rects = {} ; Object.keys(elems).forEach(key => rects[key] = elems[key].getBoundingClientRect())
-                console.log(rects)
                 sliderTip.style.right = `${ rects.appDiv.right - ( rects.btnSpan.left + rects.btnSpan.right )/2 -35 }px`
 
                 // Show slider, hide reply tip

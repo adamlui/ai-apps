@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.21.13
+// @version                  2024.8.22
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2284,7 +2284,6 @@
                       sliderTip = document.getElementById('font-size-slider-tip'),
                       elems = { appDiv, btnSpan, sliderTip },
                       rects = {} ; Object.keys(elems).forEach(key => rects[key] = elems[key].getBoundingClientRect())
-                console.log(rects)
                 sliderTip.style.right = `${ rects.appDiv.right - ( rects.btnSpan.left + rects.btnSpan.right )/2 -35.5 }px`
 
                 // Show slider, hide reply tip

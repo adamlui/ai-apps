@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.21.14
+// @version                2024.8.22
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1969,8 +1969,7 @@
                       sliderTip = document.getElementById('font-size-slider-tip'),
                       elems = { appDiv, btnSpan, sliderTip },
                       rects = {} ; Object.keys(elems).forEach(key => rects[key] = elems[key].getBoundingClientRect())
-                console.log(rects)
-                sliderTip.style.right = `${ rects.appDiv.right - ( rects.btnSpan.left + rects.btnSpan.right )/2 -34 }px`
+                sliderTip.style.right = `${ rects.appDiv.right - ( rects.btnSpan.left + rects.btnSpan.right )/2 -35.5 }px`
 
                 // Show slider, hide reply tip
                 slider.style.display = '' ; replyTip.style.display = 'none'
