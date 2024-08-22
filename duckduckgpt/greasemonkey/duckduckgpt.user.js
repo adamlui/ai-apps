@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.22
+// @version                2024.8.22.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1890,7 +1890,7 @@
             const slider = document.createElement('div') ; slider.id = 'font-size-slider-track'
             slider.className = 'fade-in-less' ; slider.style.display = 'none'
             const sliderThumb = document.createElement('div') ; sliderThumb.id = 'font-size-slider-thumb'
-            sliderThumb.title = Math.floor(config.fontSize *10) /10 + 'px'
+            sliderThumb.title = Math.floor(config.fontSize *10) /10 + 'px' // font size tooltip
             const sliderTip = document.createElement('div') ; sliderTip.id = 'font-size-slider-tip'
 
             // Assemble/insert elems
@@ -1967,8 +1967,7 @@
                 // Position slider tip
                 const btnSpan = document.getElementById('font-size-btn'),
                       sliderTip = document.getElementById('font-size-slider-tip'),
-                      elems = { appDiv, btnSpan, sliderTip },
-                      rects = {} ; Object.keys(elems).forEach(key => rects[key] = elems[key].getBoundingClientRect())
+                      rects = { appDiv: appDiv.getBoundingClientRect(), btnSpan: btnSpan.getBoundingClientRect() }
                 sliderTip.style.right = `${ rects.appDiv.right - ( rects.btnSpan.left + rects.btnSpan.right )/2 -35.5 }px`
 
                 // Show slider, hide reply tip
