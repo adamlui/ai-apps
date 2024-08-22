@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.21.13
+// @version                2024.8.21.14
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1267,7 +1267,9 @@
                   + 'background-color: #ccc ; box-sizing: content-box; background-clip: content-box ; -webkit-background-clip: content-box }'
               + '#font-size-slider-track::before {' // to add finger cursor to unpadded core only
                   + 'content: "" ; position: absolute ; top: 10px ; left: 0 ; right: 0 ; height: calc(100% - 20px) ; cursor: pointer }'
-              + '#font-size-slider-thumb { width: 10px ; height: 25px ; border-radius: 30% ; position: relative ; top: -7.65px ;'
+              + '#font-size-slider-tip { z-index: 1 ; position: absolute ; bottom: 20px ;'
+                  + 'border-left: 4.5px solid transparent ; border-right: 4.5px solid transparent ; border-bottom: 16px solid #ccc }'
+              + '#font-size-slider-thumb { z-index: 2 ; width: 10px ; height: 25px ; border-radius: 30% ; position: relative ; top: -7.65px ;'
                   + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                   + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
               + ( config.fgAnimationsDisabled ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
@@ -1502,14 +1504,17 @@
 
         createAppend() {
 
-            // Create/append slider elems
+            // Create/ID/classify slider elems
             fontSizeSlider.cursorOverlay = document.createElement('div')
             fontSizeSlider.cursorOverlay.classList.add('cursor-overlay') // for resize cursor
             const slider = document.createElement('div') ; slider.id = 'font-size-slider-track'
             slider.className = 'fade-in-less' ; slider.style.display = 'none'
             const sliderThumb = document.createElement('div') ; sliderThumb.id = 'font-size-slider-thumb'
             sliderThumb.title = Math.floor(config.fontSize *10) /10 + 'px'
-            slider.append(sliderThumb)
+            const sliderTip = document.createElement('div') ; sliderTip.id = 'font-size-slider-tip'
+
+            // Assemble/insert elems
+            slider.append(sliderThumb, sliderTip)
             appDiv.insertBefore(slider, appDiv.querySelector('.btn-tooltip,' // desktop
                                                            + 'pre')) // mobile
             // Init thumb pos
@@ -1573,15 +1578,27 @@
         },
 
         toggle(state = '') {
-            const slider = document.getElementById('font-size-slider-track') || fontSizeSlider.createAppend()
+            const slider = document.getElementById('font-size-slider-track') || fontSizeSlider.createAppend(),
+                  replyTip = appDiv.querySelector('.balloon-tip')
 
-            // Toggle visibility
-            const balloonTip = appDiv.querySelector('.balloon-tip')
+            // Show slider
             if (state == 'on' || (!state && slider.style.display == 'none')) {
-                slider.style.display = '' ; balloonTip.style.display = 'none'
+
+                // Position slider tip
+                const btnSpan = document.getElementById('font-size-btn'),
+                      sliderTip = document.getElementById('font-size-slider-tip'),
+                      elems = { appDiv, btnSpan, sliderTip },
+                      rects = {} ; Object.keys(elems).forEach(key => rects[key] = elems[key].getBoundingClientRect())
+                console.log(rects)
+                sliderTip.style.right = `${ rects.appDiv.right - ( rects.btnSpan.left + rects.btnSpan.right )/2 -35 }px`
+
+                // Show slider, hide reply tip
+                slider.style.display = '' ; replyTip.style.display = 'none'
                 setTimeout(() => slider.classList.add('active'), fontSizeSlider.fadeInDelay)
+
+            // Hide slider
             } else if (state == 'off' || (!state && slider.style.display != 'none')) {
-                slider.classList.remove('active') ; balloonTip.style.display = ''
+                slider.classList.remove('active') ; replyTip.style.display = ''
                 setTimeout(() => slider.style.display = 'none', 55)
             }
         }
