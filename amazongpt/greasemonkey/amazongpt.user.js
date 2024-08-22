@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.22.2
+// @version                2024.8.22.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2478,10 +2478,10 @@
     // Create/ID/classify/listenerize amzgpt container
     const appDiv = document.createElement('div') ; appDiv.id = 'amzgpt' ; appDiv.classList.add('fade-in')
     appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
-        let elem = event.target
-        while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
-            elem = elem.parentNode
-        if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
+        if (event.button != 0) return // prevent non-left-click dismissal
+        if (!event.target.closest('[id*="font-size"]') // not clicking Font Size slider elem
+            && document.getElementById('font-size-slider-track')) // slider is visible
+                fontSizeSlider.toggle('off')
     })
 
     // Stylize APP elems
