@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.21.12
+// @version                2024.8.21.13
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1613,6 +1613,7 @@
               + '.standby-btn:hover { border-radius: 4px ;'
                   + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
                   + `${ config.fgAnimationsDisabled ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
+              + '#ddgpt pre { background-color: inherit }' // override DDG's unattractive thicc light border
               + '#ddgpt > pre {'
                   + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
                   + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
@@ -1621,7 +1622,6 @@
                         'transition: max-height 0.167s cubic-bezier(0, 0, 0.2, 1) ;' : '' )
                   + `${ scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
                                          : 'background: #eaeaeacf ; color: #202124 ; border: none' }}`
-              + '#ddgpt pre { background-color: inherit }' // override DDG's unattractive thicc light border
               + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
               + '#ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
               + '#ddgpt + footer { margin: 2px 0 25px ; position: relative }'
