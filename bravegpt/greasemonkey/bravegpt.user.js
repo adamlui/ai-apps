@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.22.1
+// @version               2024.8.22.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -592,7 +592,8 @@ setTimeout(async () => {
 
         dragHandlers: {
             mousedown(event) { // find modal, attach listeners, init XY offsets
-                if (getComputedStyle(event.target).cursor == 'pointer') return // don't activate drag when clicking on interactive elems
+                if (event.button != 0) return // prevent non-left-click drag
+                if (getComputedStyle(event.target).cursor == 'pointer') return // prevent drag when clicking on interactive elems
                 modals.dragHandlers.draggableElem = event.currentTarget
                 event.preventDefault(); // prevent sub-elems like icons being draggable
                 ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))
@@ -2004,6 +2005,7 @@ setTimeout(async () => {
             // Add event listeners for dragging thumb
             let isDragging = false, startX, startLeft
             sliderThumb.addEventListener(inputEvents.down, event => {
+                if (event.button != 0) return // prevent non-left-click drag
                 event.preventDefault() // prevent text selection
                 isDragging = true ; startX = event.clientX ; startLeft = sliderThumb.offsetLeft     
                 document.body.appendChild(fontSizeSlider.cursorOverlay)
@@ -2024,6 +2026,7 @@ setTimeout(async () => {
 
             // Add event listener for seek/dragging by inputEvents.down on track
             slider.addEventListener(inputEvents.down, event => {
+                if (event.button != 0) return // prevent non-left-click drag
                 event.preventDefault() // prevent text selection
                 const clientX = event.clientX || event.touches?.[0]?.clientX
                 moveThumb(clientX - slider.getBoundingClientRect().left - sliderThumb.offsetWidth / 2)
