@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.24.3
+// @version                  2024.8.24.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2774,8 +2774,12 @@
                 config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
 
             // Init prompt
-            const rqPrompt = `Reply w/ a numbered list of queries related to this one:\n\n${query}\n\n`
-                + ( get.related.api == 'Free Chat' ? '' : ( // to evade long query automated detection
+            const queryIsQuestion = /[?？]/.test(query)
+            const rqPrompt = 'Reply w/ a numbered list of '
+                + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n\"${query}\"\n\n`
+                + ( get.related.api == 'Free Chat' ? '' // to evade long query automated detection
+                  : queryIsQuestion ? 'Do not use placeholders/brackets for products, services, topics, etc.' 
+                  : ( // extended instructions for non-question queries
                        'Make sure to suggest a variety that can even greatly deviate from the original topic.'
                     + ' For example, if the original query asked about someone\'s wife,'
                         + ' a good related query could involve a different relative and using their name.'
@@ -3364,48 +3368,59 @@
         },
 
         related(queries) {
-            if (get.reply.status == 'waiting') // wait for get.reply() to finish showing answer
-                setTimeout(() => show.related(queries), 500, queries)
-            else { // show queries
-                if (queries && !appDiv.querySelector('.related-queries')) {
+            if (get.reply.status == 'waiting') { // recurse until get.reply() finishes showing answer
+                setTimeout(() => show.related(queries), 500, queries) ; return }
 
-                    // Create/classify/append parent div
-                    const relatedQueriesDiv = document.createElement('div') ; relatedQueriesDiv.className = 'related-queries'
-                    appDiv.append(relatedQueriesDiv)
+            // Re-get.related() if current reply is question to suggest answers to AI question
+            const currentReply = appDiv.querySelector('#googlegpt > pre')?.textContent.trim()
+            if (!get.related.replyIsQuestion && /[?？]/.test(currentReply)) {
+                get.related.replyIsQuestion = true
+                get.related(currentReply).then(queries => show.related(queries))
+                    .catch(err => { log.err(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) })
+            }
 
-                    // Fill each child div, add attributes + icon + listener
-                    queries.forEach((query, idx) => {
-                        const relatedQueryDiv = document.createElement('div'),
-                              relatedQuerySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                              relatedQuerySVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
+            // Show the queries
+            else if (queries && !appDiv.querySelector('.related-queries')) {
 
-                        // Add attributes
-                        relatedQueryDiv.title = msgs.tooltip_sendRelatedQuery || 'Send related query'
-                        relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select')
-                        relatedQueryDiv.setAttribute('tabindex', 0)
-                        relatedQueryDiv.textContent = query
+                // Create/classify/append parent div
+                const relatedQueriesDiv = document.createElement('div') ; relatedQueriesDiv.className = 'related-queries'
+                appDiv.append(relatedQueriesDiv)
 
-                        // Create icon
-                        for (const [attr, value] of [
-                            ['viewBox', '0 0 24 24'], ['width', 18], ['height', 18], ['fill', 'currentColor']
-                        ]) relatedQuerySVG.setAttribute(attr, value)
-                        relatedQuerySVGpath.setAttribute('d',
-                            'M16 10H6.83L9 7.83l1.41-1.41L9 5l-6 6 6 6 1.41-1.41L9 14.17 6.83 12H16c1.65 0 3 1.35 3 3v4h2v-4c0-2.76-2.24-5-5-5z')
-                        relatedQuerySVG.style.transform = 'rotate(180deg)' // flip arrow upside down
+                // Fill each child div, add attributes + icon + listener
+                queries.forEach((query, idx) => {
+                    const relatedQueryDiv = document.createElement('div'),
+                          relatedQuerySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                          relatedQuerySVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
 
-                        // Assemble/insert elems
-                        relatedQuerySVG.append(relatedQuerySVGpath) ; relatedQueryDiv.prepend(relatedQuerySVG)
-                        relatedQueriesDiv.append(relatedQueryDiv)
+                    // Add attributes
+                    relatedQueryDiv.title = msgs.tooltip_sendRelatedQuery || 'Send related query'
+                    relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select')
+                    relatedQueryDiv.setAttribute('tabindex', 0)
+                    relatedQueryDiv.textContent = query
 
-                        // Add fade + listeners
-                        setTimeout(() => {
-                            relatedQueryDiv.classList.add('active')
-                            relatedQueryDiv.onclick = relatedQueryDiv.onkeydown = handleRQevent
-                        }, idx * 100)
-                    })
+                    // Create icon
+                    for (const [attr, value] of [
+                        ['viewBox', '0 0 24 24'], ['width', 18], ['height', 18], ['fill', 'currentColor']
+                    ]) relatedQuerySVG.setAttribute(attr, value)
+                    relatedQuerySVGpath.setAttribute('d',
+                        'M16 10H6.83L9 7.83l1.41-1.41L9 5l-6 6 6 6 1.41-1.41L9 14.17 6.83 12H16c1.65 0 3 1.35 3 3v4h2v-4c0-2.76-2.24-5-5-5z')
+                    relatedQuerySVG.style.transform = 'rotate(180deg)' // flip arrow upside down
 
-                    update.tweaksStyle() // to shorten <pre> max-height
-        }}}
+                    // Assemble/insert elems
+                    relatedQuerySVG.append(relatedQuerySVGpath) ; relatedQueryDiv.prepend(relatedQuerySVG)
+                    relatedQueriesDiv.append(relatedQueryDiv)
+
+                    // Add fade + listeners
+                    setTimeout(() => {
+                        relatedQueryDiv.classList.add('active')
+                        relatedQueryDiv.onclick = relatedQueryDiv.onkeydown = handleRQevent
+                    }, idx * 100)
+                })
+
+                get.related.replyIsQuestion = null
+                update.tweaksStyle() // to shorten <pre> max-height
+            }
+        }
     }
 
     // Run MAIN routine
