@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.22.13
+// @version                2024.8.22.14
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1591,25 +1591,25 @@
 
         toggle(state = '') {
             const slider = document.getElementById('font-size-slider-track') || fontSizeSlider.createAppend(),
-                  replyTip = appDiv.querySelector('.balloon-tip')
+                  replyTip = appDiv.querySelector('.balloon-tip'),
+                  sliderTip = document.getElementById('font-size-slider-tip')
 
             // Show slider
             if (state == 'on' || (!state && slider.style.display == 'none')) {
 
                 // Position slider tip
                 const btnSpan = document.getElementById('font-size-btn'),
-                      sliderTip = document.getElementById('font-size-slider-tip'),
                       rects = { appDiv: appDiv.getBoundingClientRect(), btnSpan: btnSpan.getBoundingClientRect() }
                 sliderTip.style.right = `${ rects.appDiv.right - ( rects.btnSpan.left + rects.btnSpan.right )/2 -35 }px`
 
                 // Show slider, hide reply tip
-                slider.style.display = '' ; if (replyTip) replyTip.style.display = 'none'
+                slider.style.display = sliderTip.style.display = '' ; if (replyTip) replyTip.style.display = 'none'
                 setTimeout(() => slider.classList.add('active'), fontSizeSlider.fadeInDelay)
 
             // Hide slider
             } else if (state == 'off' || (!state && slider.style.display != 'none')) {
                 slider.classList.remove('active') ; if (replyTip) replyTip.style.display = ''
-                setTimeout(() => slider.style.display = 'none', 55)
+                sliderTip.style.display = 'none' ; setTimeout(() => slider.style.display = 'none', 55)
             }
         }
     }
