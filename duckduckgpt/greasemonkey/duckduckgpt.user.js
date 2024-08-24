@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.24
+// @version                2024.8.24.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -3032,15 +3032,9 @@
         },
 
         related(queries) {
-            if (!show.related.greenlit) { // wait for get.reply() to finish showing answer
-                show.related.statusChecker = setInterval(() => {
-                    if (get.reply.status != 'waiting') {
-                        show.related.greenlit = true
-                        show.related(queries)
-                        clearInterval(show.related.statusChecker)
-                }}, 500, queries)
-            } else { // show queries from latest statusChecker call
-                show.related.greenlit = false
+            if (get.reply.status == 'waiting') // wait for get.reply() to finish showing answer
+                setTimeout(() => show.related(queries), 500, queries)
+            else { // show queries
                 if (queries && !appDiv.querySelector('.related-queries')) {
 
                     // Create/classify/append parent div
