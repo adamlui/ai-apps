@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.24.12
+// @version                2024.8.24.13
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2469,7 +2469,7 @@
 
             // Init prompt
             const queryIsQuestion = /[?？]/.test(query)
-            const rqPrompt = 'Reply w/ a numbered list of '
+            const rqPrompt = 'Show me a numbered list of '
                 + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n\"${query}\"\n\n`
                 + ( get.related.api == 'Free Chat' ? '' // to evade long query automated detection
                   : queryIsQuestion ? 'Do not use placeholders/brackets for products, services, topics, etc.' 

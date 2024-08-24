@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.24.13
+// @version               2024.8.24.14
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2569,7 +2569,7 @@ setTimeout(async () => {
 
             // Init prompt
             const queryIsQuestion = /[?？]/.test(query)
-            const rqPrompt = 'Reply w/ a numbered list of '
+            const rqPrompt = 'Show me a numbered list of '
                 + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n\"${query}\"\n\n`
                 + ( get.related.api == 'Free Chat' ? '' // to evade long query automated detection
                   : queryIsQuestion ? 'Do not use placeholders/brackets for products, services, topics, etc.' 
