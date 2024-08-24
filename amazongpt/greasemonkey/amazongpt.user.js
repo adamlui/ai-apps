@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.22.3
+// @version                2024.8.22.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -432,7 +432,8 @@
     }
 
     const log = {
-        info(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ log.prefix || '' }${ msg }`) },
+        info(msg) {console.info(`${ config.appSymbol } ${ config.appName } » ${ log.prefix || '' }${
+            typeof label == 'msg' ? JSON.stringify(msg) : msg }`) },
         err(label, msg) { console.error( `${config.appSymbol} ${config.appName} » ${ log.prefix || '' }${
             typeof label == 'object' ? JSON.stringify(label) : label }${ msg ? `: ${msg}` : ''}`)}
     }
