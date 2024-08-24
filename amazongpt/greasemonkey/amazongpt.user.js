@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.22.15
+// @version                2024.8.22.16
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2053,7 +2053,7 @@
                     else if (caller.status != 'done') api.tryNew(caller)
                 } else if (caller.api == 'OpenAI') {
                     if (resp.response && !failFlagsAndURLs.test(resp.response)) {
-                        try { // to show response or return related queries
+                        try { // to show response
                             respText = JSON.parse(resp.response).choices[0].message.content
                             handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
@@ -2063,7 +2063,7 @@
                     }
                 } else if (resp.responseText && !failFlagsAndURLs.test(resp.responseText)) {
                     if (caller.api == 'AIchatOS') {
-                        try { // to show response or return related queries
+                        try { // to show response
                             const text = resp.responseText, chunkSize = 1024
                             let currentIdx = 0
                             while (currentIdx < text.length) {
@@ -2073,18 +2073,18 @@
                             handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
                     } else if (caller.api == 'Free Chat') {
-                        try { // to show response or return related queries
+                        try { // to show response
                             respText = resp.responseText ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }          
                     } else if (caller.api == 'GPTforLove') {
-                        try { // to show response or return related queries
+                        try { // to show response
                             let chunks = resp.responseText.trim().split('\n'),
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
                             if (lastObj.id) apis.GPTforLove.parentID = lastObj.id
                             respText = lastObj.text ; handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
                     } else if (caller.api == 'MixerBox AI') {
-                        try { // to show response or return related queries
+                        try { // to show response
                             const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
                                 .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                                 .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
@@ -2096,8 +2096,7 @@
 
                 function handleProcessCompletion() {
                     caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                    if (caller == get.reply) { show.reply(respText) ; show.copyBtns() }
-                    else resolve(arrayify(respText))
+                    show.reply(respText) ; show.copyBtns()
                 }
 
                 function handleProcessError(err) { // suggest proxy or try diff API
@@ -2105,12 +2104,6 @@
                     log.err(appAlerts.parseFailed, err)
                     if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                     else if (caller.status != 'done') api.tryNew(caller)
-                }
-
-                function arrayify(strList) { // for get.related() calls
-                    return (strList.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
-                        .slice(0, 5) // limit to 1st 5
-                        .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
                 }
         })}
     }
