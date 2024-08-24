@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.23
+// @version               2024.8.24
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2237,12 +2237,9 @@ setTimeout(async () => {
         relatedQueries() {
             saveSetting('rqDisabled', !config.rqDisabled)
             update.rqVisibility()
-            if (!config.rqDisabled && !appDiv.querySelector('.related-queries')) { // get related queries for 1st time
-                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { log.err(err.message)
-                        if (get.related.status != 'done') api.tryNew(get.related) })
-            }
+            if (!config.rqDisabled && !appDiv.querySelector('.related-queries')) // get related queries for 1st time
+                get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
+                    .catch(err => { log.err(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) })
             update.tweaksStyle() // toggle <pre> max-height
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
         },
@@ -2528,12 +2525,9 @@ setTimeout(async () => {
             })
 
             // Get/show related queries if enabled on 1st get.reply()
-            if (!config.rqDisabled && get.reply.attemptCnt == 1) {
-                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { log.err(err.message)
-                        if (get.related.status != 'done') api.tryNew(get.related) })
-            }
+            if (!config.rqDisabled && get.reply.attemptCnt == 1)
+                get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
+                    .catch(err => { log.err(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) })
 
             update.footerContent()
         },
@@ -3275,12 +3269,9 @@ setTimeout(async () => {
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
             show.reply('standby', footerContent)
-            if (!config.rqDisabled) {
-                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { log.err(err.message)
-                        if (get.related.status != 'done') api.tryNew(get.related) })
-            }
+            if (!config.rqDisabled)
+                get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
+                    .catch(err => { log.err(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) })
     } else { appAlert('waitingResponse') ; get.reply(msgChain) }
 
     // Add key listener to DISMISS modals
