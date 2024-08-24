@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.24.1
+// @version               2024.8.24.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -3131,7 +3131,6 @@ setTimeout(async () => {
             if (get.reply.status == 'waiting') // wait for get.reply() to finish showing answer
                 setTimeout(() => show.related(queries), 500, queries)
             else { // show queries
-                show.related.greenlit = false
                 if (queries && !appDiv.querySelector('.related-queries')) {
 
                     // Create/classify/append parent div
