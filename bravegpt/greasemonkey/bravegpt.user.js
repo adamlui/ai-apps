@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.24.15
+// @version               2024.8.24.16
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -3221,8 +3221,9 @@ setTimeout(async () => {
                          'snippet') // Brave class
     appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
         if (event.button != 0) return // prevent non-left-click dismissal
-        if (!event.target.closest('[id*="font-size"]') // not clicking Font Size slider elem
-            && document.getElementById('font-size-slider-track')) // slider is visible
+        if (document.getElementById('font-size-slider-track') // slider is visible
+            && !event.target.closest('[id*="font-size"]') // not clicking slider elem
+            && getComputedStyle(event.target).cursor != 'pointer') // ...or other interactive elem
                 fontSizeSlider.toggle('off')
     })
 
