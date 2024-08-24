@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.24.8
+// @version                2024.8.24.9
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -582,8 +582,12 @@
     }
 
     const log = {
-        info(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ log.prefix || '' }${
-            typeof label == 'object' ? JSON.stringify(msg) : msg }`) },
+
+        info(label, msg) { // eslint-disable-line
+            const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
+            console.info(`${config.appSymbol} ${config.appName} » ${ log.prefix || '' }${
+                args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
+        },
 
         err(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
@@ -2263,7 +2267,7 @@
     function getOpenAItoken() {
         return new Promise(resolve => {
             const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
-            log.info('OpenAI access token: ' + accessToken)
+            log.info('OpenAI access token', accessToken)
             if (!accessToken) {
                 xhr({ url: apis.OpenAI.endpoints.session, onload: resp => {
                     if (isBlockedbyCloudflare(resp.responseText)) {
@@ -2304,7 +2308,7 @@
             if (!chosenAPI) { log.err('No proxy APIs left untried') ; return null }
 
             // Log chosen API endpoint
-            log.info(`Endpoint used: ${ apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint }`)
+            log.info('Endpoint used', apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint)
             return chosenAPI
         },
 
@@ -2541,7 +2545,7 @@
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
                     if (failFlagsAndURLs.test(textToShow)) {
-                        log.info('Response: ' + accumulatedChunks)
+                        log.info('Response', accumulatedChunks)
                         if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                         return
                     } else if (caller.status != 'done') { // app waiting or sending
@@ -2562,7 +2566,7 @@
                 log.prefix = `get.${caller.name}() » dataProcess.text() » `
                 const failFlagsAndURLs = dataProcess.initFailFlags(caller.api) ; let respText = ''
                 if (resp.status != 200) {
-                    log.err('Response status', resp.status) ; log.info('Response: ' + resp)
+                    log.err('Response status', resp.status) ; log.info('Response', resp)
                     if (caller == get.reply && caller.api == 'OpenAI')
                         appAlert(resp.status == 401 ? 'login'
                                : resp.status == 403 ? 'checkCloudflare'
@@ -2610,7 +2614,7 @@
                         } catch (err) { handleProcessError(err) }
                     }
                 } else if (caller.status != 'done') { // proxy 200 response failure
-                    log.info('Response: ' + resp.responseText) ; api.tryNew(caller) }
+                    log.info('Response', resp.responseText) ; api.tryNew(caller) }
 
                 function handleProcessCompletion() {
                     caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
@@ -2619,7 +2623,7 @@
                 }
 
                 function handleProcessError(err) { // suggest proxy or try diff API
-                    log.info('Response text: ' + resp.response)
+                    log.info('Response text', resp.response)
                     log.err(appAlerts.parseFailed, err)
                     if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                     else if (caller.status != 'done') api.tryNew(caller)
