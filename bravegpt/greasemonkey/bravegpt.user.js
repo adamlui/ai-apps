@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.24.14
+// @version               2024.8.24.15
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -3144,7 +3144,7 @@ setTimeout(async () => {
                 setTimeout(() => show.related(queries), 500, queries) ; return }
 
             // Re-get.related() if current reply is question to suggest answers
-            const currentReply = appDiv.querySelector('#googlegpt > pre')?.textContent.trim()
+            const currentReply = appDiv.querySelector('#bravegpt > pre')?.textContent.trim()
             if (!get.related.replyIsQuestion && /[?？]/.test(currentReply)) {
                 get.related.replyIsQuestion = true
                 get.related(currentReply).then(queries => show.related(queries))

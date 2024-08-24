@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.24.13
+// @version                2024.8.24.14
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -3047,7 +3047,7 @@
                 setTimeout(() => show.related(queries), 500, queries) ; return }
 
             // Re-get.related() if current reply is question to suggest answers
-            const currentReply = appDiv.querySelector('#googlegpt > pre')?.textContent.trim()
+            const currentReply = appDiv.querySelector('#ddgpt > pre')?.textContent.trim()
             if (!get.related.replyIsQuestion && /[?？]/.test(currentReply)) {
                 get.related.replyIsQuestion = true
                 get.related(currentReply).then(queries => show.related(queries))
