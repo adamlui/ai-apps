@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.24.17
+// @version               2024.8.24.18
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -973,12 +973,7 @@ setTimeout(async () => {
                 // Create close button
                 const closeBtn = document.createElement('div') ; closeBtn.id = 'bravegpt-settings-close-btn'
                 closeBtn.title = msgs.tooltip_close || 'Close'
-                const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-                const closeSVGattrs = [['height', '8px'], ['viewBox', '0 0 14 14'], 'fill', 'none']
-                closeSVGattrs.forEach(([attr, val]) => closeSVG.setAttribute(attr, val))
-                const closeSVGpath = createSVGelem('path', {
-                    d: 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z' })
-                closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
+                const closeSVG = icons.x.create() ; closeBtn.append(closeSVG)
 
                 // Assemble/append elems
                 settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsListContainer)
@@ -1541,6 +1536,16 @@ setTimeout(async () => {
                     icon.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
                 })
             }
+        },
+
+        x: {
+            create() {
+                const xSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      xSVGattrs = [['height', '10px'], ['viewBox', '0 0 14 14'], 'fill', 'none']
+                xSVGattrs.forEach(([attr, value]) => xSVG.setAttribute(attr, value))
+                xSVG.append(createSVGelem('path', { d: 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z' }))
+                return xSVG
+            }
         }
     }
 
@@ -1777,10 +1782,10 @@ setTimeout(async () => {
               + `#bravegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 ${ isMobile ? -31 : -6 }px -3px 0 }`
               + `#bravegpt-settings-title h4 { font-size: ${ isPortrait ? 26 : 30 }px ; font-weight: bold ; margin: -31px 17px 7px 0 }`
               + '#bravegpt-settings-close-btn {'
-                  + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
-                  + 'position: absolute ; top: 10px ; right: 13px }'
+                  + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px ; float: right ;'
+                  + 'position: absolute ; top: 14px ; right: 16px }'
               + `#bravegpt-settings-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
-              + '#bravegpt-settings-close-btn svg { margin: 6.5px }' // center SVG for hover underlay
+              + '#bravegpt-settings-close-btn svg { margin: 11.5px }' // center SVG for hover underlay
               + `#bravegpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
               + '#bravegpt-settings ul { list-style: none ; padding: 0 ; margin: 0 ;' // hide bullets, override Brave ul margins
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt

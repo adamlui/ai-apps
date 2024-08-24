@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.22.14
+// @version                2024.8.22.15
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -812,12 +812,7 @@
                 // Create close button
                 const closeBtn = document.createElement('div') ; closeBtn.id = 'amzgpt-settings-close-btn'
                 closeBtn.title = msgs.tooltip_close || 'Close'
-                const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-                const closeSVGattrs = [['height', '8px'], ['viewBox', '0 0 14 14'], 'fill', 'none']
-                closeSVGattrs.forEach(([attr, val]) => closeSVG.setAttribute(attr, val))
-                const closeSVGpath = createSVGelem('path', {
-                    d: 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z' })
-                closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
+                const closeSVG = icons.x.create() ; closeBtn.append(closeSVG)
 
                 // Assemble/append elems
                 settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsListContainer)
@@ -1211,6 +1206,16 @@
                 sunglassesSVG.append(createSVGelem('path', { stroke: 'none', d: 'M507.44,185.327c-4.029-5.124-10.185-8.112-16.704-8.112c0,0-48.021,0-156.827,0h-65.774H243.87h-65.774c-108.806,0-156.827,0-156.827,0c-6.519,0-12.675,2.988-16.714,8.112c-4.028,5.125-5.486,11.815-3.965,18.152c0,0,12.421,56.269,19.927,82.534c7.506,26.265,26.265,48.772,86.29,48.772s59.827,0,74.828,0c21.258,0,46.256-19.99,55.028-45.023c4.97-14.16,12.756-32.738,19.338-47.876c6.582,15.138,14.368,33.716,19.338,47.876c8.773,25.033,33.77,45.023,55.028,45.023c15.001,0,14.803,0,74.828,0s78.784-22.507,86.29-48.772c7.496-26.264,19.918-82.534,19.918-82.534C512.935,197.142,511.478,190.452,507.44,185.327z M90.339,278.734C45.314,263.732,40.318,198.7,40.318,198.7s22.507,0,55.028,0L90.339,278.734z M340.464,278.734c-45.015-15.001-50.022-80.034-50.022-80.034s22.508,0,55.029,0L340.464,278.734z' }))
                 return sunglassesSVG
             }
+        },
+
+        x: {
+            create() {
+                const xSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      xSVGattrs = [['height', '10px'], ['viewBox', '0 0 14 14'], 'fill', 'none']
+                xSVGattrs.forEach(([attr, value]) => xSVG.setAttribute(attr, value))
+                xSVG.append(createSVGelem('path', { d: 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z' }))
+                return xSVG
+            }
         }
     }
 
@@ -1415,10 +1420,10 @@
                   + `margin: 0 ${ isMobile ? 6 : 24 }px 8px 0 }`
               + `#amzgpt-settings-title h4 { font-size: ${ isPortrait ? 26 : 31 }px ; font-weight: bold ; margin-top: -39px }`
               + '#amzgpt-settings-close-btn {'
-                  + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
-                  + 'position: absolute ; top: 10px ; right: 13px }'
+                  + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px ; float: right ;'
+                  + 'position: absolute ; top: 14px ; right: 16px }'
               + `#amzgpt-settings-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
-              + '#amzgpt-settings-close-btn svg { margin: 6.5px }' // center SVG for hover underlay
+              + '#amzgpt-settings-close-btn svg { margin: 11.5px }' // center SVG for hover underlay
               + `#amzgpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
               + '#amzgpt-settings ul { list-style: none ; padding: 0 ; margin: 0 0 2px -3px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
