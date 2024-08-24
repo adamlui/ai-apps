@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.24.10
+// @version                2024.8.24.11
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2685,9 +2685,6 @@
         },
 
         reply(answer) {
-
-            // Hide font size slider if visible
-            if (appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
 
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
