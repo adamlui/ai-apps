@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.24.12
+// @version               2024.8.24.13
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1659,10 +1659,12 @@ setTimeout(async () => {
                   + 'height: 43px ; line-height: 17px ; width: 100% ; max-height: 200px ; resize: none ;'
                   + `background: ${ scheme == 'dark' ? '#5151519e' : '#eeeeee9e' };`
                   + `position: relative ; z-index: 555 ; color: ${ scheme == 'dark' ? '#eee' : '#222' }}`
-              + '.related-queries { display: flex ; flex-wrap: wrap ; box-sizing: border-box ; width: 100% ; margin-bottom: -18px ;'
+              + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
                   + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
                   + `${ isFirefox ? '' : 'margin-top: -31px' }}`
-              + '.related-query { margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
+              + '.related-query {'
+                  + 'box-sizing: border-box ; width: 100% ;' // confine to .related-queries bounds
+                  + 'margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
                   + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
                   + `background: ${ scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
                   + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ;`
@@ -3141,7 +3143,7 @@ setTimeout(async () => {
             if (get.reply.status == 'waiting') { // recurse until get.reply() finishes showing answer
                 setTimeout(() => show.related(queries), 500, queries) ; return }
 
-            // Re-get.related() if current reply is question to suggest answers to AI question
+            // Re-get.related() if current reply is question to suggest answers
             const currentReply = appDiv.querySelector('#googlegpt > pre')?.textContent.trim()
             if (!get.related.replyIsQuestion && /[?？]/.test(currentReply)) {
                 get.related.replyIsQuestion = true
