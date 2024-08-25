@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.25.1
+// @version                  2024.8.25.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2170,7 +2170,7 @@
             const kudoAIspan = appDiv.querySelector('.kudoai')
             if (kudoAIspan) {
                 const visibleBtnCnt = [...appDiv.querySelectorAll('.corner-btn')]
-                    .filter(btn => btn.style.display != 'none').length
+                    .filter(btn => getComputedStyle(btn).display != 'none').length
                 kudoAIspan.style.display = visibleBtnCnt <= (
                     config.anchored && config.expanded ? 10
                  : !config.anchored && config.widerSidebar ? 8

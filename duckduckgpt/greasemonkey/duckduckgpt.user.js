@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.25.1
+// @version                2024.8.25.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1870,7 +1870,7 @@
             const kudoAIspan = appDiv.querySelector('.kudoai')
             if (kudoAIspan) {
                 const visibleBtnCnt = [...appDiv.querySelectorAll('.corner-btn')]
-                    .filter(btn => btn.style.display != 'none').length
+                    .filter(btn => getComputedStyle(btn).display != 'none').length
                 kudoAIspan.style.display = visibleBtnCnt <= (
                     config.anchored && config.expanded ? 10
                  : !config.anchored && config.widerSidebar ? 7
