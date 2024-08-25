@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.25.13
+// @version               2024.8.25.14
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2590,7 +2590,7 @@ setTimeout(async () => {
                 config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
 
             // Init prompt
-            const queryIsQuestion = /[?？]/.test(query)
+            const queryIsQuestion = /[?？]/.test(query) && show.reply.src != 'shuffle'
             const rqPrompt = 'Show me a numbered list of '
                 + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
                 + ( get.related.api == 'Free Chat' ? '' // to evade long query automated detection
@@ -2609,7 +2609,7 @@ setTimeout(async () => {
 
             // Try diff API after 7s of no response
             const iniAPI = get.related.api
-            get.related.query = query // expose to `api.tryNew()` in case modded
+            get.related.query = query // expose to api.tryNew() in case modded
             setTimeout(() => {
                 if (get.related.status != 'done' // still no queries received
                     && get.related.api == iniAPI // not already trying diff API from err
@@ -3034,6 +3034,7 @@ setTimeout(async () => {
                                            + 'Do not type anything but the question and answer. Reply in markdown.'
                         chatTextarea.value = augmentQuery(randQAprompt)
                         chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
+                        show.reply.src = 'shuffle'
                     }
 
                     // Append button
@@ -3152,7 +3153,7 @@ setTimeout(async () => {
                     replySection.innerText = appAlerts.waitingResponse
 
                     // Set flags
-                    show.reply.chatbarFocused = false ; show.reply.userInteracted = true
+                    show.reply.src = null ; show.reply.chatbarFocused = false ; show.reply.userInteracted = true
                 }
             }
 
