@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.25.2
+// @version                  2024.8.25.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2804,7 +2804,7 @@
             // Init prompt
             const queryIsQuestion = /[?？]/.test(query)
             const rqPrompt = 'Show me a numbered list of '
-                + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n\"${query}\"\n\n`
+                + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
                 + ( get.related.api == 'Free Chat' ? '' // to evade long query automated detection
                   : queryIsQuestion ? 'Do not use placeholders/brackets for products, services, topics, etc.' 
                   : ( // extended instructions for non-question queries
