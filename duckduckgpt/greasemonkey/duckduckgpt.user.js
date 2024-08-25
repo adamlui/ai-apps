@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.25.4
+// @version                2024.8.25.5
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -3030,8 +3030,8 @@
 
                     // Hide/remove elems
                     appDiv.querySelector('.related-queries')?.remove() // remove related queries
-                    if (!isMobile) tooltipDiv.style.opacity = 0 // hide 'Send reply' tooltip post-send btn click
-                    if (!isMobile) appFooter.style.right = 0 // reset show.reply()'s counteract right-offset bug from chatbar padding
+                    if (!isMobile) // hide 'Send reply' tooltip post-send btn click + reset show.reply()'s counteract right-offset bug from chatbar padding
+                        tooltipDiv.style.opacity = appFooter.style.right = 0 
 
                     // Show loading status
                     const replySection = appDiv.querySelector('section')
