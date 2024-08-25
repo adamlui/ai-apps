@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.25.11
+// @version                2024.8.25.12
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2653,10 +2653,10 @@
                 }
 
                 function arrayify(strList) { // for get.related() calls
-                    return (strList.match(/\d+\.\s*(.*?)(?=\n|\\n|$)/g) || [])
+                    return (strList.trim().match(/(?<=\n|\\n|^).+(?=\n|\\n|$)/g) || [])
                         .slice(0, 5) // limit to 1st 5
                         .map(match => match.replace(/\*\*/g, '') // strip markdown boldenings
-                            .replace(/^(?:['"]+)?(\d+\.?\s*)?(.+)(?:['"]+)?$/g, '$2')) // strip numbering + quotes
+                            .replace(/^['"]*(?:\d+\.?\s*)?(.*?)['"]*$/g, '$1')) // strip numbering + quotes
                 }
         })}
     }
