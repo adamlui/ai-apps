@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.24.20
+// @version                2024.8.25
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1623,7 +1623,7 @@
               + ( config.bgAnimationsDisabled ? '' : ( '#ddgpt-logo, .corner-btn svg, .standby-btn'
                   + `{ filter: drop-shadow(${ scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
               + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
-                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scale(1.285)' }}`
+                  + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.285)' }}`
               + '#ddgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
               + '#ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
               + '#font-size-slider-track { width: 98% ; height: 7px ; margin: -6px auto -13px ; padding: 15px 0 ;'
@@ -1635,13 +1635,13 @@
               + '#font-size-slider-thumb { z-index: 2 ; width: 10px ; height: 25px ; border-radius: 30% ; position: relative ; top: -7.65px ;'
                   + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                   + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
-              + ( config.fgAnimationsDisabled ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
+              + ( config.fgAnimationsDisabled || isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
               + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
                   + 'border-radius: 4px ; border: 1px solid #888 ;'
                   + 'transition: transform 0.15s ease !important }'
               + '.standby-btn:hover { border-radius: 4px ;'
                   + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
-                  + `${ config.fgAnimationsDisabled ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
+                  + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
               + '#ddgpt pre { background-color: inherit }' // override DDG's unattractive thicc light border
               + '#ddgpt > pre {'
                   + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
@@ -1681,7 +1681,7 @@
                   + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
                   + `${ config.fgAnimationsDisabled ? '' : 'transition: transform 0.1s ease !important' }}`
               + '.related-query:hover, .related-query:focus {'
-                  + ( config.fgAnimationsDisabled ? '' : 'transform: scale(1.055) !important ;' )
+                  + ( config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.055) !important ;' )
                   + `background: ${ scheme == 'dark' ? '#a2a2a270': '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
               + '.related-query svg { position: relative ; top: 4px ; margin-right: 6px ;' // related query icon
                   + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
@@ -1715,7 +1715,7 @@
               + `.modal-buttons { margin: 24px -5px -3px ${ isMobile ? -5 : -15 }px !important }` // pos modal buttons
               + '.chatgpt-modal button {' // modal buttons
                   + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
-                  + `padding: ${ isMobile? '7px' : '4px 10px' } !important ;`
+                  + `padding: ${ isMobile ? '7px' : '4px 10px' } !important ;`
                   + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
                   + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + '!important ;'
                   + `${ scheme == 'dark' ? 'background: none ; color: white' : '' }}`
@@ -1741,8 +1741,9 @@
                   + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                   + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                               + 'transform 0.55s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
-              + ( !config.fgAnimationsDisabled ? ( '[class$="-modal"] button { transition: transform 0.15s ease }' 
-                                                 + '[class$="-modal"] button:hover { transform: scale(1.055) }' ) : '' )
+              + ( config.fgAnimationsDisabled || isMobile ? '' : (
+                    '[class$="-modal"] button { transition: transform 0.15s ease }' 
+                  + '[class$="-modal"] button:hover { transform: scale(1.055) }' ))
               + '.ddgpt-menu { position: absolute ; z-index: 2250 ;'
                   + 'padding: 3.5px 5px !important ; font-family: "Source Sans Pro", sans-serif ; font-size: 12px }'
               + '.ddgpt-menu ul { margin: 0 ; padding: 0 ; list-style: none }'
