@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.25.5
+// @version                  2024.8.25.6
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1825,7 +1825,7 @@
               + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important }'
               + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
               + '#corner-btns { float: right }'
-              + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 6px ; transition: transform 0.15s ease ;'
+              + '.corner-btn { float: right ; cursor: pointer ; outline: none ; position: relative ; top: 6px ; transition: transform 0.15s ease ;'
                   + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
               + ( config.bgAnimationsDisabled ? '' : ( '#googlegpt-logo, .corner-btn svg, .standby-btn'
                   + `{ filter: drop-shadow(${ scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
@@ -1843,7 +1843,7 @@
                   + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                   + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
               + ( config.fgAnimationsDisabled || isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
-              + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin-top: 20px ;'
+              + '.standby-btn { width: 100% ; margin-top: 20px ; padding: 11px 0 ; cursor: pointer ; outline: none ;'
                   + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
                   + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
                   + 'transition: transform 0.15s ease }'
@@ -1864,7 +1864,7 @@
                   + `float: left ; margin: ${ isMobile ? 39 : 28 }px -15px 0 0 ; left: ${ isMobile ? 12 : 6 }px ;` // positioning
                   + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
                       + ( scheme == 'dark' ? '#0000' : '#eaeaeacf' ) + '}'
-              + '.copy-btn { float: right ; cursor: pointer }'
+              + '.copy-btn { float: right ; cursor: pointer ; outline: none }'
               + `pre > .copy-btn { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
               + 'code .copy-btn { height: 13px ; width: 13px ; fill: white ; position: relative ; right: -9px ; top: -6px }'
               + '#app-chatbar {'
@@ -1878,7 +1878,7 @@
                   + 'box-sizing: border-box ; width: 100% ;' // confine to .related-queries bounds
                   + `margin: 5px 4px ${ scheme == 'dark' ? 5 : 2 }px 0 ; padding: 8px 12px 8px 13px ;`
                   + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
-                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: ${ isMobile ? 1 : 0.81}em ; cursor: pointer ;`
+                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: ${ isMobile ? 1 : 0.81}em ; cursor: pointer ; outline: none ;`
                   + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
                   + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
                   + `${ config.fgAnimationsDisabled ? '' : 'transition: transform 0.1s ease !important' }}`
@@ -1891,7 +1891,7 @@
               + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
               + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
               + '.chatbar-btn { z-index: 560 ;'
-                  + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
+                  + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ; outline: none ;'
                   + `bottom: ${( isFirefox ? 46 : 49 ) + ( hasSidebar ? 3 : 2 )}px ;`
                   + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
               + '.chatbar-btn:hover {'

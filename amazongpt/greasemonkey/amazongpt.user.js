@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.25.1
+// @version                2024.8.25.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1263,14 +1263,14 @@
               + '#amzgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
               + '#amzgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
               + `#amzgpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
-              + ( scheme == 'dark' ? '#amzgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+              + `#amzgpt a { outline: none ${ scheme == 'dark' ? '; text-decoration: none' : '' }}`
               + '.app-name, .app-name:hover { font-size: 1.5rem ; font-weight: 700 ; text-decoration: none ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' }}`
               + '.kudoai { margin-left: 6px ; color: #aaa } '
               + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important } '
               + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
               + '#corner-btns { float: right ; margin-top: -2px }'
-              + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
+              + '.corner-btn { float: right ; cursor: pointer ; outline: none ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
                   + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
               + ( config.bgAnimationsDisabled ? '' : ( '#amzgpt-logo, .corner-btn svg'
                   + `{ filter: drop-shadow(${ scheme == 'dark' ? '#7171714d 10px' : '#84848421 7px' } 7px 3px) }` ))
@@ -1304,7 +1304,7 @@
                   + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
                   + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
                       + ( scheme == 'dark' ? '##0000' : '#eaeaeacf' ) + '}'
-              + '.copy-btn { float: right ; cursor: pointer }'
+              + '.copy-btn { float: right ; cursor: pointer ; outline: none }'
               + `pre > .copy-btn { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
               + 'code .copy-btn { height: 13px ; width: 13px ; fill: white ; position: relative ; right: -9px ; top: -6px }'
               + '#app-chatbar {'
@@ -1317,7 +1317,7 @@
               + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
               + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
               + '.chatbar-btn { z-index: 560 ;'
-                  + 'border: none ; float: right ; position: relative ; bottom: 50px ; background: none ; cursor: pointer ;'
+                  + 'border: none ; float: right ; position: relative ; bottom: 50px ; background: none ; cursor: pointer ; outline: none ;'
                   + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
               + '.chatbar-btn:hover {'
                   + `${ scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`

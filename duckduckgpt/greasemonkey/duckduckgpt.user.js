@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.25.6
+// @version                2024.8.25.7
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1611,14 +1611,14 @@
               + '#ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
               + '#ddgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
               + `#ddgpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
-              + ( scheme == 'dark' ? '#ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+              + `#ddgpt a { outline: none ${ scheme == 'dark' ? '; text-decoration: none' : '' }}`
               + '.app-name, .app-name:hover { font-size: 1.5rem ; font-weight: 700 ; text-decoration: none ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' }}`
               + '.kudoai { margin-left: 6px ; color: #aaa } '
               + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important } '
               + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
               + '#corner-btns { float: right ; margin-top: 2px }'
-              + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
+              + '.corner-btn { float: right ; cursor: pointer ; outline: none ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
                   + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
               + ( config.bgAnimationsDisabled ? '' : ( '#ddgpt-logo, .corner-btn svg, .standby-btn'
                   + `{ filter: drop-shadow(${ scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
@@ -1636,7 +1636,7 @@
                   + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                   + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
               + ( config.fgAnimationsDisabled || isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
-              + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
+              + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ; outline: none ;'
                   + 'border-radius: 4px ; border: 1px solid #888 ;'
                   + 'transition: transform 0.15s ease !important }'
               + '.standby-btn:hover { border-radius: 4px ;'
@@ -1659,7 +1659,7 @@
                   + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
                   + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
                       + ( scheme == 'dark' ? '##0000' : '#eaeaeacf' ) + '}'
-              + '.copy-btn { float: right ; cursor: pointer }'
+              + '.copy-btn { float: right ; cursor: pointer ; outline: none }'
               + `pre > .copy-btn { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
               + 'code .copy-btn { height: 13px ; width: 13px ; fill: white ; position: relative ; right: -9px ; top: -6px }'
               + '#app-chatbar {'
@@ -1676,7 +1676,7 @@
                   + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 4px 10px 5px 10px ;`
                   + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
                   + `background: ${ scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
-                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.88em ; cursor: pointer ;`
+                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.88em ; cursor: pointer ; outline: none ;`
                   + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
                   + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
                   + `${ config.fgAnimationsDisabled ? '' : 'transition: transform 0.1s ease !important' }}`
@@ -1689,7 +1689,8 @@
               + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
               + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
               + '.chatbar-btn { z-index: 560 ;'
-                  + `border: none ; float: right ; position: relative ; bottom: ${ isFirefox ? 50 : 55 }px ; background: none ; cursor: pointer ;`
+                  + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ; outline: none ;'
+                  + `bottom: ${ isFirefox ? 50 : 55 }px ;`
                   + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
               + '.chatbar-btn:hover {'
                   + `${ scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`

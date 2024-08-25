@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.25.5
+// @version               2024.8.25.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1616,7 +1616,7 @@ setTimeout(async () => {
               + '.kudoai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
               + '.kudoai a { color: #aaa ; text-decoration: none !important }'
               + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
-              + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
+              + '.corner-btn { float: right ; cursor: pointer ; outline: none ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
                   + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
               + ( config.bgAnimationsDisabled ? '' : ( '#bravegpt-logo, .corner-btn svg, .standby-btn'
                   + `{ filter: drop-shadow(${ scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
@@ -1637,7 +1637,7 @@ setTimeout(async () => {
                   + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                   + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
               + ( config.fgAnimationsDisabled || isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
-              + '.standby-btn { width: 100% ; padding: 13px 0 ; cursor: pointer ; margin: 14px 0 20px ;'
+              + '.standby-btn { width: 100% ; margin: 14px 0 20px ; padding: 13px 0 ; cursor: pointer ; outline: none ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                   + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
                   + 'transition: transform 0.15s ease }'
@@ -1667,7 +1667,7 @@ setTimeout(async () => {
               + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem }'
               + '.chatgpt-js > a { color: inherit ; top: .054rem }'
               + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px }'
-              + '.copy-btn { float: right ; cursor: pointer }'
+              + '.copy-btn { float: right ; cursor: pointer ; outline: none }'
               + `pre > .copy-btn { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
               + 'code .copy-btn { height: 13px ; width: 13px ; fill: white ; position: relative ; right: -9px ; top: -6px }'
               + '#app-chatbar {'
@@ -1684,7 +1684,7 @@ setTimeout(async () => {
                   + 'margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
                   + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
                   + `background: ${ scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
-                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ;`
+                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ; outline: none ;`
                   + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
                   + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
                   + `${ config.fgAnimationsDisabled ? '' : 'transition: transform 0.1s ease !important' }}`
@@ -1697,7 +1697,8 @@ setTimeout(async () => {
               + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
               + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
               + '.chatbar-btn { z-index: 560 ;'
-                  + `border: none ; float: right ; position: relative ; bottom: ${ isFirefox ? 28 : 32 }px ; background: none ; cursor: pointer ;`
+                  + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ; outline: none ;'
+                  + `bottom: ${ isFirefox ? 28 : 32 }px ; `
                   + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
               + '.chatbar-btn:hover {'
                   + `${ scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
