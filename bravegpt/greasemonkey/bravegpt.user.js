@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.25.6
+// @version               2024.8.25.7
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -971,7 +971,8 @@ setTimeout(async () => {
                 settingsListContainer.append(...settingsLists)
 
                 // Create close button
-                const closeBtn = document.createElement('div') ; closeBtn.id = 'bravegpt-settings-close-btn'
+                const closeBtn = document.createElement('div')
+                closeBtn.id = 'bravegpt-settings-close-btn' ; closeBtn.className = 'no-mobile-tap-outline'
                 closeBtn.title = msgs.tooltip_close || 'Close'
                 const closeSVG = icons.x.create() ; closeBtn.append(closeSVG)
 
@@ -1567,7 +1568,8 @@ setTimeout(async () => {
         braveGPT: {
 
             create() {
-                const braveGPTlogo = document.createElement('img') ; braveGPTlogo.id = 'bravegpt-logo'
+                const braveGPTlogo = document.createElement('img')
+                braveGPTlogo.id = 'bravegpt-logo' ; braveGPTlogo.className = 'no-mobile-tap-outline'
                 logos.braveGPT.update(braveGPTlogo)
                 return braveGPTlogo
             },
@@ -1589,6 +1591,7 @@ setTimeout(async () => {
         appStyle() {
             appStyle.innerText = (
                 '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+              + '.no-mobile-tap-outline { bacckground: none ; outline: none ; -webkit-tap-highlight-color: transparent }'
               + ( // stylize scrollbars in Chromium/Safari
                     '#bravegpt *::-webkit-scrollbar { width: 7px }'
                   + '#bravegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
@@ -1616,7 +1619,7 @@ setTimeout(async () => {
               + '.kudoai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
               + '.kudoai a { color: #aaa ; text-decoration: none !important }'
               + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
-              + '.corner-btn { float: right ; cursor: pointer ; outline: none ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
+              + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
                   + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
               + ( config.bgAnimationsDisabled ? '' : ( '#bravegpt-logo, .corner-btn svg, .standby-btn'
                   + `{ filter: drop-shadow(${ scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
@@ -1637,7 +1640,7 @@ setTimeout(async () => {
                   + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                   + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
               + ( config.fgAnimationsDisabled || isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
-              + '.standby-btn { width: 100% ; margin: 14px 0 20px ; padding: 13px 0 ; cursor: pointer ; outline: none ;'
+              + '.standby-btn { width: 100% ; margin: 14px 0 20px ; padding: 13px 0 ; cursor: pointer ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                   + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
                   + 'transition: transform 0.15s ease }'
@@ -1667,7 +1670,7 @@ setTimeout(async () => {
               + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem }'
               + '.chatgpt-js > a { color: inherit ; top: .054rem }'
               + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px }'
-              + '.copy-btn { float: right ; cursor: pointer ; outline: none }'
+              + '.copy-btn { float: right ; cursor: pointer }'
               + `pre > .copy-btn { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
               + 'code .copy-btn { height: 13px ; width: 13px ; fill: white ; position: relative ; right: -9px ; top: -6px }'
               + '#app-chatbar {'
@@ -1684,7 +1687,7 @@ setTimeout(async () => {
                   + 'margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
                   + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
                   + `background: ${ scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
-                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ; outline: none ;`
+                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ;`
                   + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
                   + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
                   + `${ config.fgAnimationsDisabled ? '' : 'transition: transform 0.1s ease !important' }}`
@@ -1697,7 +1700,7 @@ setTimeout(async () => {
               + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
               + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
               + '.chatbar-btn { z-index: 560 ;'
-                  + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ; outline: none ;'
+                  + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
                   + `bottom: ${ isFirefox ? 28 : 32 }px ; `
                   + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
               + '.chatbar-btn:hover {'
@@ -2822,7 +2825,8 @@ setTimeout(async () => {
                     var chevronSpan = document.createElement('span'),
                         chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
                     chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
-                    chevronSpan.className = 'corner-btn' ; chevronSpan.style.margin = '0.5px 1px 0 11px'
+                    chevronSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                    chevronSpan.style.margin = '0.5px 1px 0 11px'
                     chevronSpan.style.display = 'none' // to activate from anchorStyles only
                     chevronSpan.append(chevronSVG) ; appDiv.append(chevronSpan)
                 }
@@ -2831,14 +2835,16 @@ setTimeout(async () => {
                 const aboutSpan = document.createElement('span'),
                       aboutSVG = icons.questionMarkCircle.create()
                 aboutSpan.id = 'about-btn' // for toggle.tooltip()
-                aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = '0.8px'
+                aboutSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                aboutSpan.style.marginTop = '0.8px'
                 aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
 
                 // Create/append Settings button
                 const settingsSpan = document.createElement('span'),
                       settingsSVG = icons.sliders.create()
                 settingsSpan.id = 'settings-btn' // for toggle.tooltip()
-                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = '2px 9px 0 1px'
+                settingsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                settingsSpan.style.margin = '2px 9px 0 1px'
                 settingsSpan.append(settingsSVG) ; appDiv.append(settingsSpan)
 
                 // Create/append Speak button
@@ -2846,6 +2852,7 @@ setTimeout(async () => {
                     var speakerSpan = document.createElement('span'),
                         speakerSVG = icons.speaker.create()
                     speakerSpan.id = 'speak-btn' // for toggle.tooltip()
+                    settingsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
                     speakerSpan.className = 'corner-btn' ; speakerSpan.style.marginRight = '7px'
                     speakerSpan.append(speakerSVG) ; appDiv.append(speakerSpan)
                 }
@@ -2855,7 +2862,8 @@ setTimeout(async () => {
                     var fontSizeSpan = document.createElement('span'),
                         fontSizeSVG = icons.fontSize.create()
                     fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
-                    fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = '1px 10px 0 2px'
+                    fontSizeSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                    fontSizeSpan.style.margin = '1px 10px 0 2px'
                     fontSizeSpan.append(fontSizeSVG) ; appDiv.append(fontSizeSpan)
                 }
 
@@ -2864,14 +2872,16 @@ setTimeout(async () => {
                     var pinSpan = document.createElement('span'),
                         pinSVG = icons.pin.create()
                     pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
-                    pinSpan.className = 'corner-btn' ; pinSpan.style.margin = '1px 9px 0 0'
+                    pinSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                    pinSpan.style.margin = '1px 9px 0 0'
                     pinSpan.append(pinSVG) ; appDiv.append(pinSpan)
 
                 // Create/append Wider Sidebar button         
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = icons.widescreen.create()
                     wsbSpan.id = 'wsb-btn' // for toggle.sidebar() + toggle.tooltip()
-                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.151em 11px 0 0'
+                    wsbSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                    wsbSpan.style.margin = '0.151em 11px 0 0'
                     wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan)
 
                 // Create/append Expand/Shrink button
@@ -2879,7 +2889,8 @@ setTimeout(async () => {
                         arrowsSVG = icons.arrowsDiagonal.create()
                     arrowsSVG.style.transform = 'rotate(-7deg)' // tilt slightly to hint expansions are often horizontal-only
                     arrowsSpan.id = 'arrows-btn' // for toggle.tooltip()
-                    arrowsSpan.className = 'corner-btn' ; arrowsSpan.style.margin = '0.5px 12px 0 0'
+                    arrowsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                    arrowsSpan.style.margin = '0.5px 12px 0 0'
                     arrowsSpan.style.display = 'none' // to activate from anchorStyles only
                     arrowsSpan.append(arrowsSVG) ; appDiv.append(arrowsSpan)
                 }
@@ -2955,7 +2966,7 @@ setTimeout(async () => {
                 // Show standby state if prefix/suffix mode on
                 if (answer == 'standby') {
                     const standbyBtn = document.createElement('button')
-                    standbyBtn.className = 'standby-btn'
+                    standbyBtn.classList.add('standby-btn', 'no-mobile-tap-outline')
                     standbyBtn.textContent = msgs.btnLabel_sendQueryToApp || `Send search query to ${config.appName}`
                     appDiv.append(standbyBtn)
                     show.reply.standbyBtnClickHandler = function() {
@@ -3003,7 +3014,7 @@ setTimeout(async () => {
 
                     // Create/ID/classify/pos button
                     const btnElem = document.createElement(btnType === 'send' ? 'button' : 'div')
-                    btnElem.id = `${btnType}-btn` ; btnElem.className = 'chatbar-btn'
+                    btnElem.id = `${btnType}-btn` ; btnElem.classList.add('chatbar-btn', 'no-mobile-tap-outline')
                     btnElem.style.right = `${ btnType == 'send' ? 12 : 20 }px`
 
                     // Append icon
@@ -3184,7 +3195,7 @@ setTimeout(async () => {
 
                     // Add attributes
                     relatedQueryDiv.title = msgs.tooltip_sendRelatedQuery || 'Send related query'
-                    relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select')
+                    relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select', 'no-mobile-tap-outline')
                     relatedQueryDiv.setAttribute('tabindex', 0)
                     relatedQueryDiv.textContent = query
 

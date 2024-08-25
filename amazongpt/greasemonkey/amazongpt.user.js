@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.25.2
+// @version                2024.8.25.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -810,7 +810,8 @@
                 settingsListContainer.append(...settingsLists)
 
                 // Create close button
-                const closeBtn = document.createElement('div') ; closeBtn.id = 'amzgpt-settings-close-btn'
+                const closeBtn = document.createElement('div')
+                closeBtn.id = 'amzgpt-settings-close-btn' ; closeBtn.className = 'no-mobile-tap-outline'
                 closeBtn.title = msgs.tooltip_close || 'Close'
                 const closeSVG = icons.x.create() ; closeBtn.append(closeSVG)
 
@@ -1225,7 +1226,8 @@
         amzgpt: {
 
             create() {
-                const amzgptLogo = document.createElement('img') ; amzgptLogo.id = 'amzgpt-logo'
+                const amzgptLogo = document.createElement('img')
+                amzgptLogo.id = 'amzgpt-logo' ; amzgptLogo.className = 'no-mobile-tap-outline'
                 logos.amzgpt.update(amzgptLogo)
                 return amzgptLogo
             },
@@ -1247,6 +1249,7 @@
         appStyle() {
             appStyle.innerText = (
                 '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+              + '.no-mobile-tap-outline { background: none ; outline: none ; -webkit-tap-highlight-color: transparent }'
               + '#amzgpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
               + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
@@ -1263,14 +1266,14 @@
               + '#amzgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
               + '#amzgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
               + `#amzgpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
-              + `#amzgpt a { outline: none ${ scheme == 'dark' ? '; text-decoration: none' : '' }}`
+              + ( scheme == 'dark' ? '#amzgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
               + '.app-name, .app-name:hover { font-size: 1.5rem ; font-weight: 700 ; text-decoration: none ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' }}`
               + '.kudoai { margin-left: 6px ; color: #aaa } '
               + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important } '
               + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
               + '#corner-btns { float: right ; margin-top: -2px }'
-              + '.corner-btn { float: right ; cursor: pointer ; outline: none ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
+              + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
                   + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
               + ( config.bgAnimationsDisabled ? '' : ( '#amzgpt-logo, .corner-btn svg'
                   + `{ filter: drop-shadow(${ scheme == 'dark' ? '#7171714d 10px' : '#84848421 7px' } 7px 3px) }` ))
@@ -1304,7 +1307,7 @@
                   + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
                   + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
                       + ( scheme == 'dark' ? '##0000' : '#eaeaeacf' ) + '}'
-              + '.copy-btn { float: right ; cursor: pointer ; outline: none }'
+              + '.copy-btn { float: right ; cursor: pointer }'
               + `pre > .copy-btn { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
               + 'code .copy-btn { height: 13px ; width: 13px ; fill: white ; position: relative ; right: -9px ; top: -6px }'
               + '#app-chatbar {'
@@ -1317,7 +1320,7 @@
               + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
               + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
               + '.chatbar-btn { z-index: 560 ;'
-                  + 'border: none ; float: right ; position: relative ; bottom: 50px ; background: none ; cursor: pointer ; outline: none ;'
+                  + 'border: none ; float: right ; position: relative ; bottom: 50px ; background: none ; cursor: pointer ;'
                   + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
               + '.chatbar-btn:hover {'
                   + `${ scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
@@ -2177,7 +2180,8 @@
                 const chevronSpan = document.createElement('span'),
                       chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
                 chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
-                chevronSpan.className = 'corner-btn' ; chevronSpan.style.margin = '-1.5px 1px 0 11px'
+                chevronSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                chevronSpan.style.margin = '-1.5px 1px 0 11px'
                 chevronSpan.style.display = 'none' // to activate from anchorStyles only
                 chevronSpan.append(chevronSVG) ; cornerBtnsDiv.append(chevronSpan)
 
@@ -2185,28 +2189,31 @@
                 const aboutSpan = document.createElement('span'),
                       aboutSVG = icons.questionMarkCircle.create()
                 aboutSpan.id = 'about-btn' // for toggle.tooltip()
-                aboutSpan.className = 'corner-btn'
+                aboutSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
                 aboutSpan.append(aboutSVG) ; cornerBtnsDiv.append(aboutSpan)
 
                 // Create/append Settings button
                 const settingsSpan = document.createElement('span'),
                       settingsSVG = icons.sliders.create()
                 settingsSpan.id = 'settings-btn' // for toggle.tooltip()
-                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = '0 10.5px 0 0.5px'
+                settingsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                settingsSpan.style.margin = '0 10.5px 0 0.5px'
                 settingsSpan.append(settingsSVG) ; cornerBtnsDiv.append(settingsSpan)
 
                 // Create/append Speak button
                 const speakerSpan = document.createElement('span'),
                       speakerSVG = icons.speaker.create()
                 speakerSpan.id = 'speak-btn' // for toggle.tooltip()
-                speakerSpan.className = 'corner-btn' ; speakerSpan.style.margin = '-2px 8px 0 0'
+                speakerSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                speakerSpan.style.margin = '-2px 8px 0 0'
                 speakerSpan.append(speakerSVG) ; cornerBtnsDiv.append(speakerSpan)
 
                 // Create/append Font Size button
                 const fontSizeSpan = document.createElement('span'),
                       fontSizeSVG = icons.fontSize.create()
                 fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
-                fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.marginRight = '10px'
+                fontSizeSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                fontSizeSpan.style.marginRight = '10px'
                 fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
 
                 
@@ -2217,7 +2224,8 @@
                         arrowsSVG = icons.arrowsDiagonal.create()
                     arrowsSVG.style.transform = 'rotate(-7deg)' // tilt slightly to hint expansions are often horizontal-only
                     arrowsSpan.id = 'arrows-btn' // for toggle.tooltip()
-                    arrowsSpan.className = 'corner-btn' ; arrowsSpan.style.margin = '0.5px 12px 0 0'
+                    arrowsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                    arrowsSpan.style.margin = '0.5px 12px 0 0'
                     arrowsSpan.style.display = 'none' // to activate from anchorStyles only
                     arrowsSpan.append(arrowsSVG) ; cornerBtnsDiv.append(arrowsSpan)
 
@@ -2321,7 +2329,7 @@
 
                     // Create/ID/classify/pos button
                     const btnElem = document.createElement(btnType === 'send' ? 'button' : 'div')
-                    btnElem.id = `${btnType}-btn` ; btnElem.className = 'chatbar-btn'
+                    btnElem.id = `${btnType}-btn` ; btnElem.classList.add('chatbar-btn', 'no-mobile-tap-outline')
                     btnElem.style.right = `${ btnType == 'send' ? ( isFirefox ? 12 : 9 ) : ( isFirefox ? 17 : 14 )}px`
 
                     // Append icon
