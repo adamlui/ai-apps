@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.25.12
+// @version                  2024.8.25.13
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2654,7 +2654,7 @@
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
                 log.info('Trying another endpoint...')
                 caller.attemptCnt++
-                caller(caller == get.reply ? msgChain : stripQueryAugments(msgChain)[msgChain.length - 1].content)
+                caller(caller == get.reply ? msgChain : get.related.query)
                     .then(result => { if (caller == get.related) show.related(result) ; else return })
             } else {
                 log.info('No remaining untried endpoints')
@@ -2824,6 +2824,7 @@
 
             // Try diff API after 7s of no response
             const iniAPI = get.related.api
+            get.related.query = query // expose to `api.tryNew()` in case modded
             setTimeout(() => {
                 if (get.related.status != 'done' // still no queries received
                     && get.related.api == iniAPI // not already trying diff API from err

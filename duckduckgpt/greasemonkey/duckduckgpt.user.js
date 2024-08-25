@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.25.13
+// @version                2024.8.25.14
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2341,7 +2341,7 @@
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
                 log.info('Trying another endpoint...')
                 caller.attemptCnt++
-                caller(caller == get.reply ? msgChain : stripQueryAugments(msgChain)[msgChain.length - 1].content)
+                caller(caller == get.reply ? msgChain : get.related.query)
                     .then(result => { if (caller == get.related) show.related(result) ; else return })
             } else {
                 log.info('No remaining untried endpoints')
@@ -2509,6 +2509,7 @@
 
             // Try diff API after 7s of no response
             const iniAPI = get.related.api
+            get.related.query = query // expose to api.tryNew() in case modded
             setTimeout(() => {
                 if (get.related.status != 'done' // still no queries received
                     && get.related.api == iniAPI // not already trying diff API from err
