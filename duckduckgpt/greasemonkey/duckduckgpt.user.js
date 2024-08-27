@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.25.15
+// @version                2024.8.26
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -262,47 +262,12 @@
 
     // Init API props
     const apis = {
-        'AIchatOS': {
-            endpoint: 'https://api.binjie.fun/api/generateStream',
-            expectedOrigin: {
-                url: 'https://chat18.aichatos8.com',
-                headers: { 'Accept': 'application/json, text/plain, */*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
-            method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
-            userID: '#/chat/' + Date.now() },
-        'Free Chat': {
-            endpoint: 'https://promplate-api.free-chat.asia/single/chat_messages',
-            expectedOrigin: {
-                url: 'https://e10.frechat.xyz',
-                headers: { 'Accept': '*/*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
-            method: 'PUT', streamable: true, accumulatesText: false,
-            failFlags: [
-                'invalid_request_error', 'literal_error', 'me@promplate.dev', '^Not Found$',
-                'Sorry, your account balance is insufficient', 'This service has been suspended', 'your free credit'],
-            availModels: [
-                'deepseek-ai/deepseek-llm-67b-chat', 'gemma2-9b-it', 'THUDM/glm-4-9b-chat', 'gpt-4o-mini-2024-07-18',
-                'llama3-70b-8192', 'mixtral-8x7b-32768', 'nous-hermes-2-mixtral-8x7b-dpo', 'Qwen/Qwen2-57B-A14B-Instruct',
-                '01-ai/Yi-1.5-34B-Chat-16K' ]},
         'GPTforLove': {
             endpoint: 'https://api11.gptforlove.com/chat-process',
             expectedOrigin: {
                 url: 'https://ai27.gptforlove.com',
                 headers: { 'Accept': 'application/json, text/plain, */*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'same-site' }},
             method: 'POST', streamable: true, accumulatesText: true, failFlags: ['[\'"]?status[\'"]?:\\s*[\'"]Fail[\'"]'] },
-        'MixerBox AI': {
-            endpoint: 'https://chatai.mixerbox.com/api/chat/stream',
-            expectedOrigin: {
-                url: 'https://chatai.mixerbox.com',
-                headers: { 'Accept': '*/*', 'Alt-Used': 'chatai.mixerbox.com', 'Sec-Fetch-Site': 'same-origin' }},
-            method: 'POST', streamable: true, accumulatesText: false },
-        'OpenAI': {
-            endpoints: {
-                auth: 'https://auth0.openai.com',
-                completions: 'https://api.openai.com/v1/chat/completions',
-                session: 'https://chatgpt.com/api/auth/session' },
-            expectedOrigin: {
-                url: 'https://chatgpt.com',
-                headers: { 'Accept': '*/*', 'Priority': 'u=4', 'Sec-Fetch-Site': 'same-site' }},
-            method: 'POST', streamable: true }
     }
 
     // Init INPUT EVENTS
@@ -523,10 +488,6 @@
                                    + ( /autoget|focus|scroll/i.test(mode) ? 'top: -3px' : '' ) // raise some icons
                                    + ( /animation/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink sparkles icon
             notif.append(modeIcon)
-        } else if (msg.includes(msgs.notif_copiedToClipboard || 'copied to clipboard')) {
-            const copyIcon = icons.copy.create()
-            copyIcon.style.cssText = iconStyles + 'width: 23px ; height: 23px'
-            notif.append(copyIcon)
         }
 
         // Append styled state word
@@ -2692,13 +2653,7 @@
                     setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355)
 
                     // Copy text
-                    navigator.clipboard.writeText(textToCopy).then(() => notify(
-                        `${ // msg
-                            textContainer.tagName == 'PRE' ? ( msgs.tooltip_reply || 'Reply' ) : ( msgs.tooltip_code || 'Code' )} ${
-                            msgs.notif_copiedToClipboard || 'copied to clipboard' }`,
-                        `${ // v-pos
-                            event.clientY < window.innerHeight /2 ? 'top' : 'bottom' }-right`
-                    ))
+                    navigator.clipboard.writeText(textToCopy)
 
                     // Hide tooltip
                     if (!isMobile) tooltipDiv.style.opacity = 0
@@ -2960,7 +2915,8 @@
             // Render/show answer if query sent
             if (answer != 'standby') {
                 const answerPre = appDiv.querySelector('pre')
-                answerPre.innerHTML = marked.parse(answer) // render markdown
+                try { // to render markdown
+                    answerPre.innerHTML = marked.parse(answer) } catch (err) { log.err(err.message) }
                 hljs.highlightAll() // highlight code
                 if (scheme == 'dark' && answerPre.firstChild?.tagName == 'P')
                     answerPre.firstChild.prepend('>> ') // since speech balloon tip missing

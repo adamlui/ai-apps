@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.25.16
+// @version               2024.8.26
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -517,10 +517,6 @@ setTimeout(async () => {
                                    + ( /autoget|focus|scroll/i.test(mode) ? 'top: 0.5px' : '' ) // raise some icons
                                    + ( /animation/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink sparkles icon
             notif.append(modeIcon)
-        } else if (msg.includes(msgs.notif_copiedToClipboard || 'copied to clipboard')) {
-            const copyIcon = icons.copy.create()
-            copyIcon.style.cssText = iconStyles + 'width: 23px ; height: 23px'
-            notif.append(copyIcon)
         }
 
         // Append styled state word
@@ -2792,13 +2788,7 @@ setTimeout(async () => {
                     setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355)
 
                     // Copy text
-                    navigator.clipboard.writeText(textToCopy).then(() => notify(
-                        `${ // msg
-                            textContainer.tagName == 'PRE' ? ( msgs.tooltip_reply || 'Reply' ) : ( msgs.tooltip_code || 'Code' )} ${
-                            msgs.notif_copiedToClipboard || 'copied to clipboard' }`,
-                        `${ // v-pos
-                            event.clientY < window.innerHeight /2 ? 'top' : 'bottom' }-right`
-                    ))
+                    navigator.clipboard.writeText(textToCopy)
 
                     // Hide tooltip
                     if (!isMobile) tooltipDiv.style.opacity = 0

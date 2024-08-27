@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.25.4
+// @version                2024.8.26
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -373,10 +373,6 @@
                                    + ( /focus|scroll/i.test(mode) ? 'top: 4px' : '' ) // raise some icons
                                    + ( /animation/i.test(mode) ? 'width: 25px ; height: 25px ; margin-top: 3px' : '' ) // shrink sparkles icon
             notif.append(modeIcon)
-        } else if (msg.includes(msgs.notif_copiedToClipboard || 'copied to clipboard')) {
-            const copyIcon = icons.copy.create()
-            copyIcon.style.cssText = iconStyles + 'width: 20px ; height: 28px'
-            notif.append(copyIcon)
         }
 
         // Append styled state word
@@ -2142,13 +2138,7 @@
                     setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355)
 
                     // Copy text
-                    navigator.clipboard.writeText(textToCopy).then(() => notify(
-                        `${ // msg
-                            textContainer.tagName == 'PRE' ? ( msgs.tooltip_reply || 'Reply' ) : ( msgs.tooltip_code || 'Code' )} ${
-                            msgs.notif_copiedToClipboard || 'copied to clipboard' }`,
-                        `${ // v-pos
-                            event.clientY < window.innerHeight /2 ? 'top' : 'bottom' }-right`
-                    ))
+                    navigator.clipboard.writeText(textToCopy)
 
                     // Hide tooltip
                     if (!isMobile) tooltipDiv.style.opacity = 0
