@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.27.3
+// @version               2024.8.27.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2591,19 +2591,21 @@ setTimeout(async () => {
             const queryIsQuestion = /[?？]/.test(query) && show.reply.src != 'shuffle'
             const rqPrompt = 'Present to me a numbered list of '
                 + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
-                + ( get.related.api == 'Free Chat' ? '' // to evade long query automated detection
-                  : queryIsQuestion ? ( 'Do not use placeholders/brackets for products, services, topics, etc. in the answers. '
-                                      + 'The question is being asked by a chatbot on a search engine page, craft possible answers accordingly.' )
-                  : ( // extended instructions for non-question queries
-                       'Make sure to suggest a variety that can even greatly deviate from the original topic.'
-                    + ' For example, if the original query asked about someone\'s wife,'
-                        + ' a good related query could involve a different relative and using their name.'
-                    + ' Another example, if the query asked about a game/movie/show,'
-                        + ' good related queries could involve pertinent characters.'
-                    + ' Another example, if the original query asked how to learn JavaScript,'
-                        + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
-                    + ' But the key is variety. Do not be repetitive.'
-                        + ' You must entice user to want to ask one of your related queries.' ))
+                +   ( queryIsQuestion ? ( 'Do not use placeholders/brackets for products, services, topics, etc. in the answers. '
+                                        + 'The question is being asked by a chatbot on a search engine page, craft possible answers accordingly.' )
+
+                  // Extended instructions for non-question queries
+                  : get.related.api == 'Free Chat' ? '' // to evade long query detection
+                  : ( 'Make sure to suggest a variety that can even greatly deviate from the original topic. '
+                    + 'For example, if the original query asked about someone\'s wife, '
+                        + ' a good related query could involve a different relative and using their name. '
+                    + 'Another example, if the query asked about a game/movie/show, '
+                        + ' good related queries could involve pertinent characters. '
+                    + 'Another example, if the original query asked how to learn JavaScript, '
+                       + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages. '
+                    + 'But the key is variety. Do not be repetitive. '
+                       + ' You must entice user to want to ask one of your related queries.' ))
+
                 + ` Reply in ${config.replyLanguage}`
 
             // Try diff API after 7s of no response
