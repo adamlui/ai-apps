@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.27
+// @version                2024.8.27.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2135,13 +2135,12 @@
                 copySpan.onclick = event => { // copy text, update icon + tooltip status
                     const copySVG = copySpan.querySelector('#copy-icon')
                     if (!copySVG) return // since clicking on copied icon
-                    const iconParent = copySVG.parentNode,
-                          textContainer = iconParent.parentNode.tagName == 'PRE' ? iconParent.parentNode // reply container
-                                                                                 : iconParent.parentNode.parentNode, // code container
+                    const textContainer = copySpan.parentNode.tagName == 'PRE' ? copySpan.parentNode // reply container
+                                                                               : copySpan.parentNode.parentNode, // code container
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
                           checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.id = 'copied-icon'
-                    iconParent.replaceChild(checkmarksSVG, copySVG) // change to copied icon
-                    setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
+                    copySpan.replaceChild(checkmarksSVG, copySVG) // change to copied icon
+                    setTimeout(() => copySpan.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
                     navigator.clipboard.writeText(textToCopy) // copy text to clipboard
                     if (!isMobile) toggle.tooltip(event) // show copied status in tooltip
                 }

@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.27
+// @version                2024.8.27.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2685,13 +2685,12 @@
                 copySpan.onclick = event => { // copy text, update icon + tooltip status
                     const copySVG = copySpan.querySelector('#copy-icon')
                     if (!copySVG) return // since clicking on copied icon
-                    const iconParent = copySVG.parentNode,
-                          textContainer = iconParent.parentNode.tagName == 'PRE' ? iconParent.parentNode // reply container
-                                                                                 : iconParent.parentNode.parentNode, // code container
+                    const textContainer = copySpan.parentNode.tagName == 'PRE' ? copySpan.parentNode // reply container
+                                                                               : copySpan.parentNode.parentNode, // code container
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
                           checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.id = 'copied-icon'
-                    iconParent.replaceChild(checkmarksSVG, copySVG) // change to copied icon
-                    setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
+                    copySpan.replaceChild(checkmarksSVG, copySVG) // change to copied icon
+                    setTimeout(() => copySpan.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
                     navigator.clipboard.writeText(textToCopy) // copy text to clipboard
                     if (!isMobile) toggle.tooltip(event) // show copied status in tooltip
                 }
