@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.26.1
+// @version               2024.8.27
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1666,9 +1666,10 @@ setTimeout(async () => {
               + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem }'
               + '.chatgpt-js > a { color: inherit ; top: .054rem }'
               + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px }'
-              + '.copy-btn { float: right ; cursor: pointer }'
-              + `pre > .copy-btn { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
-              + 'code .copy-btn { height: 13px ; width: 13px ; fill: white ; position: relative ; right: -9px ; top: -6px }'
+              + '#copy-btn { float: right ; cursor: pointer }'
+              + `pre > #copy-btn > svg { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
+              + 'code #copy-btn { position: relative ; top: -6px ; right: -9px }'
+              + 'code #copy-btn > svg { height: 13px ; width: 13px ; fill: white }'
               + '#app-chatbar {'
                   + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
                   + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 -7px 0 ;  padding: 12px 51px 12px 10px ;'
@@ -2347,8 +2348,9 @@ setTimeout(async () => {
                                + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
               : btnType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
                                                         : `${ msgs.tooltip_expand || 'Expand' }` )
-              : btnType == 'copy' ? `${ msgs.tooltip_copy || 'Copy' } ${( event.currentTarget.parentNode.tagName == 'PRE' ?
-                                        msgs.tooltip_reply || 'Reply' : msgs.tooltip_code || 'Code' ).toLowerCase() }`
+              : btnType == 'copy' ? ( btnElem.firstChild.id == 'copy-icon' ? `${ msgs.tooltip_copy || 'Copy' } ${
+                  ( btnElem.parentNode.tagName == 'PRE' ? msgs.tooltip_reply || 'Reply' : msgs.tooltip_code || 'Code' ).toLowerCase() }`
+                      : msgs.notif_copiedToClipboard || 'Copied to clipboard' )
               : btnType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
               : btnType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
 
@@ -2763,35 +2765,35 @@ setTimeout(async () => {
     const show = {
 
         copyBtns() {
-            if (appDiv.querySelector('#bravegpt > pre > svg, code > svg')) return
+            if (document.getElementById('copy-btn')) return
             appDiv.querySelectorAll('#bravegpt > pre, code').forEach(parentElem => {
-                const copySVG = icons.copy.create(parentElem) ; let elemToPrepend = copySVG
-                copySVG.id = 'copy-btn' ; copySVG.classList.add('copy-btn')
+                const copySpan = document.createElement('span'),
+                      copySVG = icons.copy.create(parentElem)
+                copySpan.id = 'copy-btn' ; copySVG.id = 'copy-icon'
+                copySpan.className = 'no-mobile-tap-outline'
+                copySpan.append(copySVG) ; let elemToPrepend = copySpan
 
                 // Wrap code button in div for v-offset
                 if (parentElem.tagName == 'CODE') {
                     elemToPrepend = document.createElement('div')
                     elemToPrepend.style.height = '11px'
-                    elemToPrepend.append(copySVG)
+                    elemToPrepend.append(copySpan)
                 }
 
                 // Add listeners
-                if (!isMobile) copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
-                copySVG.onclick = event => {
-                    const copySVG = event.currentTarget, iconParent = copySVG.parentNode,
-                          textContainer = iconParent.tagName == 'PRE' ? iconParent : iconParent.parentNode, // whole reply or code container
+                if (!isMobile) copySpan.onmouseover = copySpan.onmouseout = toggle.tooltip
+                copySpan.onclick = event => { // copy text, update icon + tooltip status
+                    const copySVG = copySpan.querySelector('#copy-icon')
+                    if (!copySVG) return // since clicking on copied icon
+                    const iconParent = copySVG.parentNode,
+                          textContainer = iconParent.parentNode.tagName == 'PRE' ? iconParent.parentNode // reply container
+                                                                                 : iconParent.parentNode.parentNode, // code container
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
-                          checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-btn')
-
-                    // Flicker icon
-                    iconParent.replaceChild(checkmarksSVG, copySVG)
-                    setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355)
-
-                    // Copy text
-                    navigator.clipboard.writeText(textToCopy)
-
-                    // Hide tooltip
-                    if (!isMobile) tooltipDiv.style.opacity = 0
+                          checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.id = 'copied-icon'
+                    iconParent.replaceChild(checkmarksSVG, copySVG) // change to copied icon
+                    setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
+                    navigator.clipboard.writeText(textToCopy) // copy text to clipboard
+                    if (!isMobile) toggle.tooltip(event) // show copied status in tooltip
                 }
 
                 // Prepend button

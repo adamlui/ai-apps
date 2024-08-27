@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.26.1
+// @version                2024.8.27
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1303,9 +1303,10 @@
                   + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
                   + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
                       + ( scheme == 'dark' ? '##0000' : '#eaeaeacf' ) + '}'
-              + '.copy-btn { float: right ; cursor: pointer }'
-              + `pre > .copy-btn { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
-              + 'code .copy-btn { height: 13px ; width: 13px ; fill: white ; position: relative ; right: -9px ; top: -6px }'
+              + '#copy-btn { float: right ; cursor: pointer }'
+              + `pre > #copy-btn > svg { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
+              + 'code #copy-btn { position: relative ; top: -6px ; right: -9px }'
+              + 'code #copy-btn > svg { height: 13px ; width: 13px ; fill: white }'
               + '#app-chatbar {'
                   + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
                   + 'font-size: 14.5px ; height: 46px ; width: 100% ; max-height: 200px ; resize: none ; '
@@ -1767,8 +1768,9 @@
               : btnType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
               : btnType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
                                                         : `${ msgs.tooltip_expand || 'Expand' }` )
-              : btnType == 'copy' ? `${ msgs.tooltip_copy || 'Copy' } ${( event.currentTarget.parentNode.tagName == 'PRE' ?
-                                        msgs.tooltip_reply || 'Reply' : msgs.tooltip_code || 'Code' ).toLowerCase() }`
+              : btnType == 'copy' ? ( btnElem.firstChild.id == 'copy-icon' ? `${ msgs.tooltip_copy || 'Copy' } ${
+                  ( btnElem.parentNode.tagName == 'PRE' ? msgs.tooltip_reply || 'Reply' : msgs.tooltip_code || 'Code' ).toLowerCase() }`
+                      : msgs.notif_copiedToClipboard || 'Copied to clipboard' )
               : btnType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
               : btnType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
 
@@ -2113,35 +2115,35 @@
     const show = {
 
         copyBtns() {
-            if (appDiv.querySelector('#amzgpt > pre > svg, code > svg')) return
+            if (document.getElementById('copy-btn')) return
             appDiv.querySelectorAll('#amzgpt > pre, code').forEach(parentElem => {
-                const copySVG = icons.copy.create(parentElem) ; let elemToPrepend = copySVG
-                copySVG.id = 'copy-btn' ; copySVG.classList.add('copy-btn')
+                const copySpan = document.createElement('span'),
+                      copySVG = icons.copy.create(parentElem)
+                copySpan.id = 'copy-btn' ; copySVG.id = 'copy-icon'
+                copySpan.className = 'no-mobile-tap-outline'
+                copySpan.append(copySVG) ; let elemToPrepend = copySpan
 
                 // Wrap code button in div for v-offset
                 if (parentElem.tagName == 'CODE') {
                     elemToPrepend = document.createElement('div')
                     elemToPrepend.style.height = '11px'
-                    elemToPrepend.append(copySVG)
+                    elemToPrepend.append(copySpan)
                 }
 
                 // Add listeners
-                if (!isMobile) copySVG.onmouseover = copySVG.onmouseout = toggle.tooltip
-                copySVG.onclick = event => {
-                    const copySVG = event.currentTarget, iconParent = copySVG.parentNode,
-                          textContainer = iconParent.tagName == 'PRE' ? iconParent : iconParent.parentNode, // whole reply or code container
+                if (!isMobile) copySpan.onmouseover = copySpan.onmouseout = toggle.tooltip
+                copySpan.onclick = event => { // copy text, update icon + tooltip status
+                    const copySVG = copySpan.querySelector('#copy-icon')
+                    if (!copySVG) return // since clicking on copied icon
+                    const iconParent = copySVG.parentNode,
+                          textContainer = iconParent.parentNode.tagName == 'PRE' ? iconParent.parentNode // reply container
+                                                                                 : iconParent.parentNode.parentNode, // code container
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
-                          checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.classList.add('copy-btn')
-
-                    // Flicker icon
-                    iconParent.replaceChild(checkmarksSVG, copySVG)
-                    setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355)
-
-                    // Copy text
-                    navigator.clipboard.writeText(textToCopy)
-
-                    // Hide tooltip
-                    if (!isMobile) tooltipDiv.style.opacity = 0
+                          checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.id = 'copied-icon'
+                    iconParent.replaceChild(checkmarksSVG, copySVG) // change to copied icon
+                    setTimeout(() => iconParent.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
+                    navigator.clipboard.writeText(textToCopy) // copy text to clipboard
+                    if (!isMobile) toggle.tooltip(event) // show copied status in tooltip
                 }
 
                 // Prepend button
