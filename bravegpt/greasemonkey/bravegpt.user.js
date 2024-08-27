@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.27.2
+// @version               2024.8.27.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2592,7 +2592,8 @@ setTimeout(async () => {
             const rqPrompt = 'Present to me a numbered list of '
                 + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
                 + ( get.related.api == 'Free Chat' ? '' // to evade long query automated detection
-                  : queryIsQuestion ? 'Do not use placeholders/brackets for products, services, topics, etc.' 
+                  : queryIsQuestion ? ( 'Do not use placeholders/brackets for products, services, topics, etc. in the answers. '
+                                      + 'The question is being asked by a chatbot on a search engine page, craft possible answers accordingly.' )
                   : ( // extended instructions for non-question queries
                        'Make sure to suggest a variety that can even greatly deviate from the original topic.'
                     + ' For example, if the original query asked about someone\'s wife,'
