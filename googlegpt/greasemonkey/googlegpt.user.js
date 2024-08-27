@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.26
+// @version                  2024.8.26.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -3278,7 +3278,8 @@
             // Render/show answer if query sent
             if (answer != 'standby') {
                 const answerPre = appDiv.querySelector('pre')
-                answerPre.innerHTML = marked.parse(answer) // render markdown
+                try { // to render markdown
+                    answerPre.innerHTML = marked.parse(answer) } catch (err) { log.err(err.message) }
                 hljs.highlightAll() // highlight code
                 if (scheme == 'dark' && answerPre.firstChild?.tagName == 'P')
                     answerPre.firstChild.prepend('>> ') // since speech balloon tip missing
