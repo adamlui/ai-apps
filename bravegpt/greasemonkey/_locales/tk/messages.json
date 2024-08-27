@@ -97,7 +97,7 @@
   "alert_try": { "message": "Synap gör" },
   "alert_switchingOn": { "message": "üýtgeşik" },
   "alert_switchingOff": { "message": "çykyş" },
-  "notif_copiedToClipboard": { "message": "klipbordda nusga alynýar" },
+  "notif_copiedToClipboard": { "message": "Klipbordda nusga alynýar" },
   "btnLabel_sendQueryToApp": { "message": "BraveGPT-de gözleg soragyny iber" },
   "btnLabel_moreApps": { "message": "ÇatGPT Ulymalary" },
   "btnLabel_leaveReview": { "message": "Seretmek" },

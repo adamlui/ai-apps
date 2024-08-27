@@ -97,7 +97,7 @@
   "alert_try": { "message": "Andramo" },
   "alert_switchingOn": { "message": "mandeha" },
   "alert_switchingOff": { "message": "miala" },
-  "notif_copiedToClipboard": { "message": "adika mba anaty fanindri-taratasy" },
+  "notif_copiedToClipboard": { "message": "Dika mitovy mankany anaty fanindri-taratasy" },
   "btnLabel_sendQueryToApp": { "message": "Alefaso ny fanontaniana fitadiavana amin'ny GoogleGPT" },
   "btnLabel_moreApps": { "message": "Fampiharana ChatGPT maro kokoa" },
   "btnLabel_leaveReview": { "message": "Fandaozana ny famerenana" },

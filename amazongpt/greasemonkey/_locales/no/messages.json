@@ -73,7 +73,7 @@
   "alert_try": { "message": "Prøv " },
   "alert_switchingOn": { "message": "SLÅ PÅ" },
   "alert_switchingOff": { "message": "SL\\xC5 AV" },
-  "notif_copiedToClipboard": { "message": "kopiert til utklippstavlen" },
+  "notif_copiedToClipboard": { "message": "Kopiert til utklippstavlen" },
   "btnLabel_moreApps": { "message": "Flere ChatGPT-apper" },
   "btnLabel_leaveReview": { "message": "Skriv en omtale" },
   "btnLabel_getSupport": { "message": "Brukerstøtte" },

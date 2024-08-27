@@ -97,7 +97,7 @@
   "alert_try": { "message": "Скачать" },
   "alert_switchingOn": { "message": "Включение" },
   "alert_switchingOff": { "message": "Выключение" },
-  "notif_copiedToClipboard": { "message": "скопированы в буфер обмена" },
+  "notif_copiedToClipboard": { "message": "Скопировано в буфер обмена" },
   "btnLabel_sendQueryToApp": { "message": "Отправить поисковый запрос в GoogleGPT" },
   "btnLabel_moreApps": { "message": "Другие приложения ChatGPT" },
   "btnLabel_leaveReview": { "message": "Оставить Отзыв" },

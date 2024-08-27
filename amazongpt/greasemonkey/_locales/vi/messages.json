@@ -73,7 +73,7 @@
   "alert_try": { "message": "Thử" },
   "alert_switchingOn": { "message": "Mở máy" },
   "alert_switchingOff": { "message": "Tắt" },
-  "notif_copiedToClipboard": { "message": "Sao chép vào clipboard" },
+  "notif_copiedToClipboard": { "message": "Đã sao chép vào bộ nhớ đệm" },
   "btnLabel_moreApps": { "message": "Các ứng dụng ChatGPT khác" },
   "btnLabel_leaveReview": { "message": "Gửi phản hồi" },
   "btnLabel_getSupport": { "message": "Đề nghị hỗ trợ" },

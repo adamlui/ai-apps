@@ -97,7 +97,7 @@
   "alert_try": { "message": "དཔྱད་རྩོམ།" },
   "alert_switchingOn": { "message": "བསྒྱུར་བཅོས་འབད་" },
   "alert_switchingOff": { "message": "ཕྱིར་འབུད་འབད་" },
-  "notif_copiedToClipboard": { "message": "གློག་ཐག་ར་བ་ལུ་འདྲ་བཤུས་འབད་" },
+  "notif_copiedToClipboard": { "message": "གློག་ཐག་ར་བ་ལུ་འདྲ་བཤུས་འབད།" },
   "btnLabel_sendQueryToApp": { "message": "DuckDuckGPT ལུ་དྲི་བ་དྲིས་ལན།" },
   "btnLabel_moreApps": { "message": "ཁ་གསལ་གྱི་ཁ་གསལ་གྱི་ཁ་གསལ་ཚུ་" },
   "btnLabel_leaveReview": { "message": "བསྐྱར་ཞིབ་བཀོག་བཞག་" },

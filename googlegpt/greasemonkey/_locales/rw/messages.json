@@ -97,7 +97,7 @@
   "alert_try": { "message": "Gerageza" },
   "alert_switchingOn": { "message": "kugenda kuri" },
   "alert_switchingOff": { "message": "guhindura kuri" },
-  "notif_copiedToClipboard": { "message": "kuri Ububikokoporora" },
+  "notif_copiedToClipboard": { "message": "Kuri Ububikokoporora" },
   "btnLabel_sendQueryToApp": { "message": "Ohereza ikibazo cyo gushakisha kuri GoogleGPT" },
   "btnLabel_moreApps": { "message": "Ibyinshi kuri ChatGPT" },
   "btnLabel_leaveReview": { "message": "Isubiramo" },

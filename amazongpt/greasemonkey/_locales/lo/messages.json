@@ -73,7 +73,7 @@
   "alert_try": { "message": "ພະ ຍາ ຍາມ" },
   "alert_switchingOn": { "message": "ການເປີດໃຊ້ງານ" },
   "alert_switchingOff": { "message": "ການປິດການໃຊ້ງານ" },
-  "notif_copiedToClipboard": { "message": "ສໍາເນົາໄປທີ່ຄລິບບອດ" },
+  "notif_copiedToClipboard": { "message": "ສຳເນົາໄປທີ່ຄລິບບອດ" },
   "btnLabel_moreApps": { "message": "ແອັບພລິເຄຊັນ ChatGPT ຫຼາຍຂຶ້ນ" },
   "btnLabel_leaveReview": { "message": "ໃຫ້ການທົບທວນຄືນ" },
   "btnLabel_getSupport": { "message": "ໄດ້ຮັບການສະໜັບສະໜູນ" },

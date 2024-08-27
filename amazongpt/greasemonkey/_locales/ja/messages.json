@@ -73,7 +73,7 @@
   "alert_try": { "message": "試行" },
   "alert_switchingOn": { "message": "スイッチを入れる" },
   "alert_switchingOff": { "message": "スイッチをオフにする" },
-  "notif_copiedToClipboard": { "message": "クリップボードにコピー済み" },
+  "notif_copiedToClipboard": { "message": "クリップボードにコピー" },
   "btnLabel_moreApps": { "message": "その他のChatGPTアプリ" },
   "btnLabel_leaveReview": { "message": "レビューを残す" },
   "btnLabel_getSupport": { "message": "サポートを受ける" },

@@ -73,7 +73,7 @@
   "alert_try": { "message": "& Probéieren" },
   "alert_switchingOn": { "message": "wiesselen un" },
   "alert_switchingOff": { "message": "auszeschalten" },
-  "notif_copiedToClipboard": { "message": "kopéiert op Clipboard" },
+  "notif_copiedToClipboard": { "message": "Op Clipboard kopéieren" },
   "btnLabel_moreApps": { "message": "Méi ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Ik ben heel benieuwd naar jouw mening laat het me" },
   "btnLabel_getSupport": { "message": "Kréien Support" },

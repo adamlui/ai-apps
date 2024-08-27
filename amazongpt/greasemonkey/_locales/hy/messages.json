@@ -73,7 +73,7 @@
   "alert_try": { "message": "Փորձել" },
   "alert_switchingOn": { "message": "միացնել" },
   "alert_switchingOff": { "message": "անջատում" },
-  "notif_copiedToClipboard": { "message": "պատճենված է շապիկի մեջ" },
+  "notif_copiedToClipboard": { "message": "Պատճենված է շապիկի մեջ" },
   "btnLabel_moreApps": { "message": "Այլ ChatGPT հավելվածներ" },
   "btnLabel_leaveReview": { "message": "Թողնել ակնարկ" },
   "btnLabel_getSupport": { "message": "Ստանալ աջակցում" },

@@ -73,7 +73,7 @@
   "alert_try": { "message": "Sulayi" },
   "alert_switchingOn": { "message": "sa switching on" },
   "alert_switchingOff": { "message": "nag-turn off" },
-  "notif_copiedToClipboard": { "message": "kinopya sa clipboard" },
+  "notif_copiedToClipboard": { "message": "Kopyahin sa clipboard" },
   "btnLabel_moreApps": { "message": "Dugang nga ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Biyai ang Review" },
   "btnLabel_getSupport": { "message": "Kuhaa ang Suporta" },

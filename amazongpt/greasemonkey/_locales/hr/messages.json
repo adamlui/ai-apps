@@ -73,7 +73,7 @@
   "alert_try": { "message": "﻿Pokušaj" },
   "alert_switchingOn": { "message": "uključuje." },
   "alert_switchingOff": { "message": "Isključivanje" },
-  "notif_copiedToClipboard": { "message": "Kopirano u međuspremnik" },
+  "notif_copiedToClipboard": { "message": "Kopirano" },
   "btnLabel_moreApps": { "message": "Još aplikacija za ChatGPT" },
   "btnLabel_leaveReview": { "message": "Ostavite recenziju" },
   "btnLabel_getSupport": { "message": "Podrška" },

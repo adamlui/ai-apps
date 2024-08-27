@@ -73,7 +73,7 @@
   "alert_try": { "message": "Taumafai" },
   "alert_switchingOn": { "message": "suia i luga" },
   "alert_switchingOff": { "message": "faʻamutaina o le Faʻamutaina" },
-  "notif_copiedToClipboard": { "message": "kopiina i le clipboard" },
+  "notif_copiedToClipboard": { "message": "Lolomiina i le clipboard" },
   "btnLabel_moreApps": { "message": "Sili ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Tuua Iloiloga" },
   "btnLabel_getSupport": { "message": "Maua Lagolago" },

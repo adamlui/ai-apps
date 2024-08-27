@@ -73,7 +73,7 @@
   "alert_try": { "message": "চেষ্টা করা" },
   "alert_switchingOn": { "message": "স্যুইচ করা হচ্ছে" },
   "alert_switchingOff": { "message": "স্যুইচ অফ করা" },
-  "notif_copiedToClipboard": { "message": "ক্লিপবোর্ডে অনুলিপি করা হয়েছে" },
+  "notif_copiedToClipboard": { "message": "ক্লিপবোর্ড-এ কপি করা হয়েছে" },
   "btnLabel_moreApps": { "message": "আরও চ্যাটজিপিটি অ্যাপস" },
   "btnLabel_leaveReview": { "message": "একটি রিভিউ লিখুন" },
   "btnLabel_getSupport": { "message": "সহায়তা পান" },

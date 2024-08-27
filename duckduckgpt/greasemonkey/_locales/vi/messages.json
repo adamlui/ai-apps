@@ -97,7 +97,7 @@
   "alert_try": { "message": "Thử" },
   "alert_switchingOn": { "message": "Mở máy" },
   "alert_switchingOff": { "message": "Tắt" },
-  "notif_copiedToClipboard": { "message": "Sao chép vào clipboard" },
+  "notif_copiedToClipboard": { "message": "Đã sao chép vào bộ nhớ đệm" },
   "btnLabel_sendQueryToApp": { "message": "Gửi truy vấn tìm kiếm đến DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Các ứng dụng ChatGPT khác" },
   "btnLabel_leaveReview": { "message": "Gửi phản hồi" },

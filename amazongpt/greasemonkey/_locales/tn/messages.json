@@ -73,7 +73,7 @@
   "alert_try": { "message": "Leka" },
   "alert_switchingOn": { "message": "go tshuba" },
   "alert_switchingOff": { "message": "go tima" },
-  "notif_copiedToClipboard": { "message": "o e kopololetse go clipboard" },
+  "notif_copiedToClipboard": { "message": "E kopolotswe go clipboard" },
   "btnLabel_moreApps": { "message": "Di-app tse Dintsi tsa ChatGPT" },
   "btnLabel_leaveReview": { "message": "Leave Review" },
   "btnLabel_getSupport": { "message": "Bona Kemonokeng" },

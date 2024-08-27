@@ -73,7 +73,7 @@
   "alert_try": { "message": "Versuchen, versuch, versuche, versucht, versuchen Sie" },
   "alert_switchingOn": { "message": "Einschalten" },
   "alert_switchingOff": { "message": "Abschaltung" },
-  "notif_copiedToClipboard": { "message": "In die Zwischenablage kopiert." },
+  "notif_copiedToClipboard": { "message": "In Zwischenablage kopiert" },
   "btnLabel_moreApps": { "message": "Weitere ChatGPT-Apps" },
   "btnLabel_leaveReview": { "message": "Hinterlasse eine Bewertung" },
   "btnLabel_getSupport": { "message": "Support erhalten" },

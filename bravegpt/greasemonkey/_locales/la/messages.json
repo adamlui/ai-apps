@@ -97,7 +97,7 @@
   "alert_try": { "message": "Conare" },
   "alert_switchingOn": { "message": "commutans on" },
   "alert_switchingOff": { "message": "commutans off" },
-  "notif_copiedToClipboard": { "message": "ad clipboard" },
+  "notif_copiedToClipboard": { "message": "Clipboard" },
   "btnLabel_sendQueryToApp": { "message": "Mitte quaestionem quaerendi ad BraveGPT" },
   "btnLabel_moreApps": { "message": "Plura ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "REVISORUM EXAMINATIS" },

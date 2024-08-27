@@ -73,7 +73,7 @@
   "alert_try": { "message": "Traim" },
   "alert_switchingOn": { "message": "wok bilong senisim" },
   "alert_switchingOff": { "message": "kisim bek" },
-  "notif_copiedToClipboard": { "message": "kopiim long Clipboard" },
+  "notif_copiedToClipboard": { "message": "Kopiim long Clipboard" },
   "btnLabel_moreApps": { "message": "Ol app bilong ChatGPT" },
   "btnLabel_leaveReview": { "message": "Lusim toksave" },
   "btnLabel_getSupport": { "message": "Kisim helpim" },

@@ -73,7 +73,7 @@
   "alert_try": { "message": "conatus" },
   "alert_switchingOn": { "message": "sine salutatione" },
   "alert_switchingOff": { "message": "commutilio" },
-  "notif_copiedToClipboard": { "message": "ad clipboard" },
+  "notif_copiedToClipboard": { "message": "Clipboard" },
   "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "REVISORUM EXAMINATIS" },
   "btnLabel_getSupport": { "message": "Supportum" },

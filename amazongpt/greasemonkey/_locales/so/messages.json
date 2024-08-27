@@ -73,7 +73,7 @@
   "alert_try": { "message": "Isku day" },
   "alert_switchingOn": { "message": "badiyadka to badiyadka to" },
   "alert_switchingOff": { "message": "badiyadka to badar" },
-  "notif_copiedToClipboard": { "message": "nuqul ka mid ah clipboard" },
+  "notif_copiedToClipboard": { "message": "Nuqul ka mid ah clipboard" },
   "btnLabel_moreApps": { "message": "Codsiyada ChatGPT dheeraad ah" },
   "btnLabel_leaveReview": { "message": "Dib u eegista Ka tag" },
   "btnLabel_getSupport": { "message": "Hel Tageero" },

@@ -73,7 +73,7 @@
   "alert_try": { "message": "ʻAhiʻahi" },
   "alert_switchingOn": { "message": "liliu ʻi he" },
   "alert_switchingOff": { "message": "liliu" },
-  "notif_copiedToClipboard": { "message": "hiki tatau ki he papa fakamaʻú" },
+  "notif_copiedToClipboard": { "message": "Hiki tatau ki he Papafakamaʻú" },
   "btnLabel_moreApps": { "message": "Ngaahi polokalama ChatGPT lahi ange" },
   "btnLabel_leaveReview": { "message": "Tuku Hono Toe Vakaiʻí" },
   "btnLabel_getSupport": { "message": "Maʻu ha Tokoni" },

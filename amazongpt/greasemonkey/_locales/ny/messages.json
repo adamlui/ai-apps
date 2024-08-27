@@ -73,7 +73,7 @@
   "alert_try": { "message": "Lumikizanani nafe" },
   "alert_switchingOn": { "message": "kusinthanitsa" },
   "alert_switchingOff": { "message": "kuzimitsa" },
-  "notif_copiedToClipboard": { "message": "kukopera kuti clipboard" },
+  "notif_copiedToClipboard": { "message": "Anakopera kuti clipboard" },
   "btnLabel_moreApps": { "message": "Zambiri Mapulogalamu a ChatGPT" },
   "btnLabel_leaveReview": { "message": "Kusiya Review" },
   "btnLabel_getSupport": { "message": "Pezani Thandizo" },

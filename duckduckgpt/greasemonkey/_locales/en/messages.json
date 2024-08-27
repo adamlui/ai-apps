@@ -97,7 +97,7 @@
   "alert_try": { "message": "Try" },
   "alert_switchingOn": { "message": "switching on" },
   "alert_switchingOff": { "message": "switching off" },
-  "notif_copiedToClipboard": { "message": "copied to clipboard" },
+  "notif_copiedToClipboard": { "message": "Copied to clipboard" },
   "btnLabel_sendQueryToApp": { "message": "Send search query to DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Leave Review" },

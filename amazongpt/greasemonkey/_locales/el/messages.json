@@ -73,7 +73,7 @@
   "alert_try": { "message": "Δοκιμή" },
   "alert_switchingOn": { "message": "Ενεργοποίηση:" },
   "alert_switchingOff": { "message": "Απενεργοποιήση:" },
-  "notif_copiedToClipboard": { "message": "αντιγραμμένα στο πρόχειρο" },
+  "notif_copiedToClipboard": { "message": "Αντιγράφηκε στο πρόχειρο" },
   "btnLabel_moreApps": { "message": "Περισσότερες εφαρμογές ChatGPT" },
   "btnLabel_leaveReview": { "message": "Αφήστε μια Kριτική" },
   "btnLabel_getSupport": { "message": "Λάβετε υποστήριξη" },

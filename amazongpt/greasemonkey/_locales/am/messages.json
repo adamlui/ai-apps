@@ -73,7 +73,7 @@
   "alert_try": { "message": "abyssinia" },
   "alert_switchingOn": { "message": "ላይ መቀየር" },
   "alert_switchingOff": { "message": "ማጥፋት" },
-  "notif_copiedToClipboard": { "message": "ወደ ክሊፕቦርድ ተገለበጠ" },
+  "notif_copiedToClipboard": { "message": "ወደ ክሊፕቦርድ ይቀዳጃል" },
   "btnLabel_moreApps": { "message": "ተጨማሪ ChatGPT መተግበሪያዎች" },
   "btnLabel_leaveReview": { "message": "ግምገማ ይተው" },
   "btnLabel_getSupport": { "message": "ድጋፍ ያግኙ" },

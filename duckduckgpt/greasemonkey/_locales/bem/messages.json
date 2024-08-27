@@ -97,7 +97,7 @@
   "alert_try": { "message": "Tontonkanyapo" },
   "alert_switchingOn": { "message": "ukucinja" },
   "alert_switchingOff": { "message": "ukuleka" },
-  "notif_copiedToClipboard": { "message": "yalili Yalila clipboard" },
+  "notif_copiedToClipboard": { "message": "Yalili Yalila clipboard" },
   "btnLabel_sendQueryToApp": { "message": "Tumineni ifipusho fya kufwaya pa DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Ukulele ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Lekeni ukupituluka" },

@@ -97,7 +97,7 @@
   "alert_try": { "message": "Try ti try" },
   "alert_switchingOn": { "message": "change thinga" },
   "alert_switchingOff": { "message": "ti zia lege ti sarango ye ti lo" },
-  "notif_copiedToClipboard": { "message": "gbu li ti mo na ndo ti clipboard" },
+  "notif_copiedToClipboard": { "message": "Gbu li ti mo na ndo ti clipboard" },
   "btnLabel_sendQueryToApp": { "message": "Bâ tënë ti gingo nda ti ye na DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Ambeni application ti ChatGPT" },
   "btnLabel_leaveReview": { "message": "A kiri a bâ ni" },

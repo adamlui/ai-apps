@@ -73,7 +73,7 @@
   "alert_try": { "message": "Gerageza" },
   "alert_switchingOn": { "message": "ku" },
   "alert_switchingOff": { "message": "bidakora" },
-  "notif_copiedToClipboard": { "message": "kuri Ububikokoporora" },
+  "notif_copiedToClipboard": { "message": "Kuri Ububikokoporora" },
   "btnLabel_moreApps": { "message": "Porogaramu" },
   "btnLabel_leaveReview": { "message": "Isubiramo" },
   "btnLabel_getSupport": { "message": "Gushigikira" },

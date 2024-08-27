@@ -73,7 +73,7 @@
   "alert_try": { "message": "Whakamātauria" },
   "alert_switchingOn": { "message": "whakawhiti i runga i" },
   "alert_switchingOff": { "message": "whakawhiti" },
-  "notif_copiedToClipboard": { "message": "tārua ki te papapātuhi" },
+  "notif_copiedToClipboard": { "message": "Tārua ki te papapātuhi" },
   "btnLabel_moreApps": { "message": "Ētahi atu ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Waiho i te arotake" },
   "btnLabel_getSupport": { "message": "Tautoko" },

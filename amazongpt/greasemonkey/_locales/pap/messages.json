@@ -73,7 +73,7 @@
   "alert_try": { "message": "Purba" },
   "alert_switchingOn": { "message": "kambio riba" },
   "alert_switchingOff": { "message": "kaká Kaká" },
-  "notif_copiedToClipboard": { "message": "copiando a Clipboard" },
+  "notif_copiedToClipboard": { "message": "Copiando a Clipboard" },
   "btnLabel_moreApps": { "message": "Mas informacion de ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Laga revision" },
   "btnLabel_getSupport": { "message": "Recibí Apoyo" },

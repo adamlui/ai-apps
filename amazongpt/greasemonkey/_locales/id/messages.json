@@ -73,7 +73,7 @@
   "alert_try": { "message": "Try" },
   "alert_switchingOn": { "message": "menyalakan" },
   "alert_switchingOff": { "message": "mematikan" },
-  "notif_copiedToClipboard": { "message": "Disalin ke Papan Klip" },
+  "notif_copiedToClipboard": { "message": "Disalin ke papan klip" },
   "btnLabel_moreApps": { "message": "Aplikasi ChatGPT Lainnya" },
   "btnLabel_leaveReview": { "message": "Buat Ulasan" },
   "btnLabel_getSupport": { "message": "Mendapat dukungan" },

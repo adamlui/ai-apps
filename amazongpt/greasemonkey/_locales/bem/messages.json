@@ -73,7 +73,7 @@
   "alert_try": { "message": "Tontonkanyapo" },
   "alert_switchingOn": { "message": "ukucinja" },
   "alert_switchingOff": { "message": "ukuleka" },
-  "notif_copiedToClipboard": { "message": "yalili Yalila clipboard" },
+  "notif_copiedToClipboard": { "message": "Yalili Yalila clipboard" },
   "btnLabel_moreApps": { "message": "Ukulele ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Lekeni ukupituluka" },
   "btnLabel_getSupport": { "message": "Peeleniko bambi Peeleni" },

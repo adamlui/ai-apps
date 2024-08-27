@@ -73,7 +73,7 @@
   "alert_try": { "message": "Andramo" },
   "alert_switchingOn": { "message": "eo am-pamindrana" },
   "alert_switchingOff": { "message": "fa-instagram" },
-  "notif_copiedToClipboard": { "message": "adika mba anaty fanindri-taratasy" },
+  "notif_copiedToClipboard": { "message": "Dika mitovy mankany anaty fanindri-taratasy" },
   "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Fandaozana ny famerenana" },
   "btnLabel_getSupport": { "message": "Mitadiava fanampiana" },

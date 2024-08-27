@@ -73,7 +73,7 @@
   "alert_try": { "message": "嘗試" },
   "alert_switchingOn": { "message": "正在開啓" },
   "alert_switchingOff": { "message": "正在關閉" },
-  "notif_copiedToClipboard": { "message": "複製到剪貼板" },
+  "notif_copiedToClipboard": { "message": "複製到剪貼簿" },
   "btnLabel_moreApps": { "message": "更多 ChatGPT 應用程式" },
   "btnLabel_leaveReview": { "message": "離開評論" },
   "btnLabel_getSupport": { "message": "取得支援" },

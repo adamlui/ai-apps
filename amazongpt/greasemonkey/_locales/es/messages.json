@@ -73,7 +73,7 @@
   "alert_try": { "message": "ha probado" },
   "alert_switchingOn": { "message": "ENCENDIDO" },
   "alert_switchingOff": { "message": "Apagado" },
-  "notif_copiedToClipboard": { "message": "copiado al portapapeles" },
+  "notif_copiedToClipboard": { "message": "Copiado al portapapeles" },
   "btnLabel_moreApps": { "message": "Más aplicaciones de ChatGPT" },
   "btnLabel_leaveReview": { "message": "Deje opinión" },
   "btnLabel_getSupport": { "message": "Obtener asistencia" },

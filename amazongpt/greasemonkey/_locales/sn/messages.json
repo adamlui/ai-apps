@@ -73,7 +73,7 @@
   "alert_try": { "message": "Edza" },
   "alert_switchingOn": { "message": "kushandura pamusoro" },
   "alert_switchingOff": { "message": "kudzima" },
-  "notif_copiedToClipboard": { "message": "yakakopwa kuti clipboard" },
+  "notif_copiedToClipboard": { "message": "Yakakopwa kune clipboard" },
   "btnLabel_moreApps": { "message": "Zvakawanda ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Taura nesu" },
   "btnLabel_getSupport": { "message": "Kuwana Rutsigiro" },

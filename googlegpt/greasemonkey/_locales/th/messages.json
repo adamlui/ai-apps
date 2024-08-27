@@ -97,7 +97,7 @@
   "alert_try": { "message": "ลอง" },
   "alert_switchingOn": { "message": "การเปิดเครื่อง" },
   "alert_switchingOff": { "message": "การปิดสวิตช์" },
-  "notif_copiedToClipboard": { "message": "คัดลอกไปที่คลิปบอร์ดแล้ว" },
+  "notif_copiedToClipboard": { "message": "คัดลอกไปที่คลิปบอร์ด" },
   "btnLabel_sendQueryToApp": { "message": "ส่งคำค้นหาไปยัง GoogleGPT" },
   "btnLabel_moreApps": { "message": "แอป ChatGPT เพิ่มเติม" },
   "btnLabel_leaveReview": { "message": "ให้รีวิว" },

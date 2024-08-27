@@ -73,7 +73,7 @@
   "alert_try": { "message": "Feuch" },
   "alert_switchingOn": { "message": "a 'tionndadh air" },
   "alert_switchingOff": { "message": "a 'cur dheth" },
-  "notif_copiedToClipboard": { "message": "chaidh a chopaigeadh dhan stòr - bhòrd" },
+  "notif_copiedToClipboard": { "message": "Chaidh a chopaigeadh dhan stòr - bhòrd" },
   "btnLabel_moreApps": { "message": "Barrachd Apps ChatGPT" },
   "btnLabel_leaveReview": { "message": "Leave Review" },
   "btnLabel_getSupport": { "message": "Faigh Taic" },

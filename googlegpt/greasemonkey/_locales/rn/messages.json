@@ -97,7 +97,7 @@
   "alert_try": { "message": "Gerageza" },
   "alert_switchingOn": { "message": "guhinduranya" },
   "alert_switchingOff": { "message": "numa Numa" },
-  "notif_copiedToClipboard": { "message": "ikebukuro clipboard" },
+  "notif_copiedToClipboard": { "message": "Ikebukuro clipboard" },
   "btnLabel_sendQueryToApp": { "message": "Rungika Rungika Kurondera ibibazo kuri GoogleGPT" },
   "btnLabel_moreApps": { "message": "Izindi porogaramu za ChatGPT" },
   "btnLabel_leaveReview": { "message": "Subira usuzume" },

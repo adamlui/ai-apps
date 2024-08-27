@@ -73,7 +73,7 @@
   "alert_try": { "message": "Eseye" },
   "alert_switchingOn": { "message": "chanje sou/changer sur" },
   "alert_switchingOff": { "message": "etenn/échanger/é" },
-  "notif_copiedToClipboard": { "message": "kopye nan tablo/copié au clipboard" },
+  "notif_copiedToClipboard": { "message": "Kopi nan clipboard" },
   "btnLabel_moreApps": { "message": "Plis Apps ChatGPT" },
   "btnLabel_leaveReview": { "message": "Kite Revizyon" },
   "btnLabel_getSupport": { "message": "Jwenn Sipò" },

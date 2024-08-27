@@ -97,7 +97,7 @@
   "alert_try": { "message": "Proberen" },
   "alert_switchingOn": { "message": "het inschakelen" },
   "alert_switchingOff": { "message": "Uitschakelen" },
-  "notif_copiedToClipboard": { "message": "gekopieerd naar clipboard" },
+  "notif_copiedToClipboard": { "message": "Gekopieerd naar klembord" },
   "btnLabel_sendQueryToApp": { "message": "Stuur zoekopdracht naar DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Meer ChatGPT-apps" },
   "btnLabel_leaveReview": { "message": "Beoordeling Plaatsen" },
