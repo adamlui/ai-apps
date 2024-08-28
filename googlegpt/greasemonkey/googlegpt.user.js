@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.27.6
+// @version                  2024.8.27.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2565,7 +2565,7 @@
                                                         : `${ msgs.tooltip_expand || 'Expand' }` )
               : btnType == 'copy' ? ( btnElem.firstChild.id == 'copy-icon' ? `${ msgs.tooltip_copy || 'Copy' } ${
                   ( btnElem.parentNode.tagName == 'PRE' ? msgs.tooltip_reply || 'Reply' : msgs.tooltip_code || 'Code' ).toLowerCase() }`
-                      : msgs.notif_copiedToClipboard || 'Copied to clipboard' )
+                      : `${ msgs.notif_copiedToClipboard || 'Copied to clipboard' }!` )
               : btnType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
               : btnType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
 
