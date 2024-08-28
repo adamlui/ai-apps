@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v3.0.0
+// This library is a condensed version of chatgpt.js v3.0.2
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -10,7 +10,7 @@ localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: 
 
 const chatgpt = {
 
-    alert: function(title, msg, btns, checkbox, width) {
+    alert(title, msg, btns, checkbox, width) {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
     // * Spaces are inserted into button labels by parsing function names in camel/kebab/snake case
 
@@ -233,48 +233,48 @@ const chatgpt = {
     },
 
     browser: {
-        isMobile: function() {
+        isMobile() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
 
-    getNewChatButton: function() {
+    getNewChatButton() {
         for (const navBtnSVG of document.querySelectorAll('nav button svg'))
             if (navBtnSVG.querySelector('path[d*="M15.673 3.913a3.121"], ' // pencil-on-pad icon
                                       + 'path[d*="M3.07 10.876C3.623"]'))  // refresh icon if temp chat
                 return navBtnSVG.parentNode;
     },
 
-    getNewChatLink: function() { return document.querySelector('nav a[href="/"]'); },
+    getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
 
-    getRegenerateButton: function() {   
+    getRegenerateButton() {   
         for (const mainSVG of document.querySelectorAll('main svg')) {
             if (mainSVG.querySelector('path[d*="M3.07 10.876C3.623"]')) // regen icon found
                 return mainSVG.parentNode;
     }},
 
-    getScrollToBottomButton: function() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
+    getScrollToBottomButton() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
 
-    getSendButton: function() {
+    getSendButton() {
         return document.querySelector('[data-testid="send-button"]') // pre-GPT-4o
             || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
     },
 
-    getStopGeneratingButton: function() {
+    getStopGeneratingButton() {
         for (const svg of document.querySelectorAll('form button svg')) {
             if (svg.querySelector('path[d*="2 0 0 1 2"], rect'))
                 return svg.parentNode;
     }},
 
-    isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
+    isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
 
-    isIdle: function() {
+    isIdle() {
         return new Promise(resolve => {
             (function checkIsIdle() {
                 chatgpt.getRegenerateButton() ? resolve(true) : setTimeout(checkIsIdle, 200);
             })();
     });},
 
-    isLoaded: function() {
+    isLoaded() {
         return new Promise(resolve => {
             (function checkIsLoaded() {
                 chatgpt.getNewChatButton() ? resolve(true) : setTimeout(checkIsLoaded, 200);
@@ -391,13 +391,13 @@ const chatgpt = {
         }, { once: true });
     },
 
-    randomFloat: function() {
+    randomFloat() {
     // * Generates a random, cryptographically secure value between 0 (inclusive) & 1 (exclusive)
         const crypto = window.crypto || window.msCrypto;
         return crypto?.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF || Math.random();
     },
 
-    renderHTML: function(node) {
+    renderHTML(node) {
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
               reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g,
               nodeContent = node.childNodes;
@@ -448,10 +448,10 @@ const chatgpt = {
         return node; // if assignment used
     },
 
-    response: { stopGenerating: function() { try { chatgpt.getStopBtn().click(); } catch (err) { console.error(err.message); }}},
-    scrollToBottom: function() { try { chatgpt.getScrollBtn().click(); } catch (err) { console.error(err.message); }},
+    response: { stopGenerating() { try { chatgpt.getStopBtn().click(); } catch (err) { console.error(err.message); }}},
+    scrollToBottom() { try { chatgpt.getScrollBtn().click(); } catch (err) { console.error(err.message); }},
 
-    send: function(msg, method='') {
+    send(msg, method='') {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string!`);
         const textArea = document.querySelector('form textarea'),
@@ -468,21 +468,21 @@ const chatgpt = {
     },
 
     sidebar: {
-        hide: function() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
-        show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
-        isOff: function() { return !this.isOn(); },
-        isOn: function() {
-            const sidebar = document.querySelector('#__next > div > div');
+        hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
+        show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
+        isOff() { return !this.isOn(); },
+        isOn() {
+            const sidebar = document.querySelector('body script + div > div');
             return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
               : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
         },
 
-        toggle: function() {
+        toggle() {
             const isMobileDevice = chatgpt.browser.isMobile(),
-                  navBtnSelector = isMobileDevice ? '#__next button' : 'nav button',
+                  navBtnSelector = isMobileDevice ? 'button' : 'nav button',
                   isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : btn => btn.querySelectorAll('svg path[d*="M8.857 3h6.286c1.084"]').length > 0;
+                              : btn => btn.querySelector('svg path[d*="M8.857 3h6.286c1.084"]');
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         },
@@ -500,8 +500,8 @@ const chatgpt = {
         }
     },
 
-    startNewChat: function() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
-    stop: function() { chatgpt.response.stopGenerating(); }
+    startNewChat() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
+    stop() { chatgpt.response.stopGenerating(); }
 
 };
 
