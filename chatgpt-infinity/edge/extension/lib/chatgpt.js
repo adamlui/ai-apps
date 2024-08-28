@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v3.0.2
+// This library is a condensed version of chatgpt.js v3.0.3
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -281,7 +281,7 @@ const chatgpt = {
             })();
     });},
 
-    notify: async function(msg, position, notifDuration, shadow) {
+    async notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.35, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
@@ -454,17 +454,16 @@ const chatgpt = {
     send(msg, method='') {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string!`);
-        const textArea = document.querySelector('form textarea'),
-              sendBtn = chatgpt.getSendButton();
+        const textArea = document.querySelector('form textarea');
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
-
         setTimeout(function delaySend() {
+            const sendBtn = chatgpt.getSendButton();
             if (!sendBtn?.hasAttribute('disabled')) { // send msg
                 method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendBtn.click()
-                    : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
-            } else setTimeout(delaySend, 25);
-        }, 25);
+                    : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+            } else setTimeout(delaySend, 222);
+        }, 222);
     },
 
     sidebar: {
@@ -487,7 +486,7 @@ const chatgpt = {
                 if (isToggleBtn(btn)) { btn.click(); return; }
         },
 
-        isLoaded: async function() {
+        async isLoaded() {
             await chatgpt.isLoaded();
             return Promise.race([
                 new Promise(resolve => {
