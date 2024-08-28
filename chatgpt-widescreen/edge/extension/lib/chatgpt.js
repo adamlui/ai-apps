@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v3.0.0
+// This library is a condensed version of chatgpt.js v3.0.3
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -10,7 +10,7 @@ localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: 
 
 const chatgpt = {
 
-    alert: function(title, msg, btns, checkbox, width) {
+    alert(title, msg, btns, checkbox, width) {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
     // * Spaces are inserted into button labels by parsing function names in camel/kebab/snake case
 
@@ -233,30 +233,30 @@ const chatgpt = {
     },
 
     browser: {
-        isFullScreen: function() {
+        isFullScreen() {
             const userAgentStr = navigator.userAgent;
             return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
                  : userAgentStr.includes('Firefox') ? window.fullScreen
                  : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
         },
 
-        isMobile: function() {
+        isMobile() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
 
-    getFooterDiv: function() { return document.querySelector('main form').parentNode.parentNode.nextElementSibling; },
+    getFooterDiv() { return document.querySelector('main form').parentNode.parentNode.nextElementSibling; },
 
-    getNewChatButton: function() {
+    getNewChatButton() {
         for (const navBtnSVG of document.querySelectorAll('nav button svg'))
             if (navBtnSVG.querySelector('path[d*="M15.673 3.913a3.121"], ' // pencil-on-pad icon
                                       + 'path[d*="M3.07 10.876C3.623"]'))  // refresh icon if temp chat
                 return navBtnSVG.parentNode;
     },
 
-    isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
-    isFullScreen: function() { return chatgpt.browser.isFullScreen(); },
+    isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
+    isFullScreen() { return chatgpt.browser.isFullScreen(); },
 
-    notify: async function(msg, position, notifDuration, shadow) {
+    async notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.35, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
@@ -366,13 +366,13 @@ const chatgpt = {
         }, { once: true });
     },
 
-    randomFloat: function() {
+    randomFloat() {
     // * Generates a random, cryptographically secure value between 0 (inclusive) & 1 (exclusive)
         const crypto = window.crypto || window.msCrypto;
         return crypto?.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF || Math.random();
     },
 
-    renderHTML: function(node) {
+    renderHTML(node) {
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
               reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g,
               nodeContent = node.childNodes;
@@ -424,27 +424,27 @@ const chatgpt = {
     },
 
     sidebar: {
-        hide: function() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
-        show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
-        isOff: function() { return !this.isOn(); },
-        isOn: function() {
-            const sidebar = document.querySelector('#__next > div > div');
+        hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
+        show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
+        isOff() { return !this.isOn(); },
+        isOn() {
+            const sidebar = document.querySelector('body script + div > div');
             return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
               : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
         },
 
-        toggle: function() {
+        toggle() {
             const isMobileDevice = chatgpt.browser.isMobile(),
-                  navBtnSelector = isMobileDevice ? '#__next button' : 'nav button',
+                  navBtnSelector = isMobileDevice ? 'button' : 'nav button',
                   isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : btn => btn.querySelectorAll('svg path[d*="M8.857 3h6.286c1.084"]').length > 0;
+                              : btn => btn.querySelector('svg path[d*="M8.857 3h6.286c1.084"]');
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         }
     },
 
-    startNewChat: function() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }}
+    startNewChat() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }}
 };
 
 // Create alias functions
