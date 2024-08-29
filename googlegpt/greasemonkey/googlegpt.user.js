@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.28
+// @version                  2024.8.29
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -3040,7 +3040,8 @@
                 appDiv.append(appTitleAnchor)
 
                 // Create/append corner buttons div
-                const cornerBtnsDiv = document.createElement('div') ; cornerBtnsDiv.id = 'corner-btns'
+                const cornerBtnsDiv = document.createElement('div')
+                cornerBtnsDiv.id = 'corner-btns' ; cornerBtnsDiv.className = 'no-mobile-tap-outline'
                 appDiv.append(cornerBtnsDiv)
 
                 // Create/append Chevron button
@@ -3048,8 +3049,7 @@
                     var chevronSpan = document.createElement('span'),
                         chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
                     chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
-                    chevronSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                    chevronSpan.style.margin = '-3.5px 1px 0 11px'
+                    chevronSpan.className = 'corner-btn' ; chevronSpan.style.margin = '-3.5px 1px 0 11px'
                     chevronSpan.style.display = 'none' // to activate from anchorStyles only
                     chevronSpan.append(chevronSVG) ; cornerBtnsDiv.append(chevronSpan)
                 }
@@ -3058,16 +3058,14 @@
                 const aboutSpan = document.createElement('span'),
                       aboutSVG = icons.questionMarkCircle.create()
                 aboutSpan.id = 'about-btn' // for toggle.tooltip()
-                aboutSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                aboutSpan.style.marginTop = `${ isMobile ? 0.25 : -0.15 }rem`
+                aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = `${ isMobile ? 0.25 : -0.15 }rem`
                 aboutSpan.append(aboutSVG) ; cornerBtnsDiv.append(aboutSpan)
 
                 // Create/append Settings button
                 const settingsSpan = document.createElement('span'),
                       settingsSVG = icons.sliders.create()
                 settingsSpan.id = 'settings-btn' // for toggle.tooltip()
-                settingsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                settingsSpan.style.margin = `${ isMobile ? 3 : -3 }px 10px 0 2.5px`
+                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = `${ isMobile ? 3 : -3 }px 10px 0 2.5px`
                 settingsSpan.append(settingsSVG) ; cornerBtnsDiv.append(settingsSpan)
 
                 // Create/append Speak button
@@ -3075,8 +3073,7 @@
                     var speakerSpan = document.createElement('span'),
                         speakerSVG = icons.speaker.create()
                     speakerSpan.id = 'speak-btn' // for toggle.tooltip()
-                    speakerSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                    speakerSpan.style.margin = `${ isMobile ? '0.11rem 10px' : '-4.5px 8px' } 0 0`
+                    speakerSpan.className = 'corner-btn' ; speakerSpan.style.margin = `${ isMobile ? '0.11rem 10px' : '-4.5px 8px' } 0 0`
                     speakerSpan.append(speakerSVG) ; cornerBtnsDiv.append(speakerSpan)
                 }
 
@@ -3085,8 +3082,7 @@
                     var fontSizeSpan = document.createElement('span'),
                         fontSizeSVG = icons.fontSize.create()
                     fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
-                    fontSizeSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                    fontSizeSpan.style.margin = `${ isMobile ? 5 : -2 }px 9px 0 0`
+                    fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = `${ isMobile ? 5 : -2 }px 9px 0 0`
                     fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
                 }
 
@@ -3095,16 +3091,14 @@
                     var pinSpan = document.createElement('span'),
                         pinSVG = icons.pin.create()
                     pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
-                    pinSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                    pinSpan.style.margin = '-1.55px 7.5px 0 0'
+                    pinSpan.className = 'corner-btn' ; pinSpan.style.margin = '-1.55px 7.5px 0 0'
                     pinSpan.append(pinSVG) ; cornerBtnsDiv.append(pinSpan)
 
                 // Create/append Wider Sidebar button
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = icons.widescreen.create()
                     wsbSpan.id = 'wsb-btn' // for toggle.sidebar() + toggle.tooltip()
-                    wsbSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                    wsbSpan.style.margin = '-2px 12px 0 0'
+                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-2px 12px 0 0'
                     wsbSpan.append(wsbSVG) ; cornerBtnsDiv.append(wsbSpan)
 
                 // Create/append Expand/Shrink button
@@ -3112,8 +3106,7 @@
                         arrowsSVG = icons.arrowsDiagonal.create()
                     arrowsSVG.style.transform = 'rotate(-7deg)' // tilt slightly to hint expansions are often horizontal-only
                     arrowsSpan.id = 'arrows-btn' // for toggle.tooltip()
-                    arrowsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                    arrowsSpan.style.margin = '-1.5px 12px 0 0'
+                    arrowsSpan.className = 'corner-btn' ; arrowsSpan.style.margin = '-1.5px 12px 0 0'
                     arrowsSpan.style.display = 'none' // to activate from anchorStyles only
                     arrowsSpan.append(arrowsSVG) ; cornerBtnsDiv.append(arrowsSpan)
                 }

@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.28
+// @version                2024.8.29
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2164,15 +2164,15 @@
                 appDiv.append(appTitleAnchor)
 
                 // Create/append corner buttons div
-                const cornerBtnsDiv = document.createElement('div') ; cornerBtnsDiv.id = 'corner-btns'
+                const cornerBtnsDiv = document.createElement('div')
+                cornerBtnsDiv.id = 'corner-btns' ; cornerBtnsDiv.className = 'no-mobile-tap-outline'
                 appDiv.append(cornerBtnsDiv)
 
                 // Create/append Chevron button
                 const chevronSpan = document.createElement('span'),
                       chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
                 chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
-                chevronSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                chevronSpan.style.margin = '-1.5px 1px 0 11px'
+                chevronSpan.className = 'corner-btn' ; chevronSpan.style.margin = '-1.5px 1px 0 11px'
                 chevronSpan.style.display = 'none' // to activate from anchorStyles only
                 chevronSpan.append(chevronSVG) ; cornerBtnsDiv.append(chevronSpan)
 
@@ -2180,31 +2180,28 @@
                 const aboutSpan = document.createElement('span'),
                       aboutSVG = icons.questionMarkCircle.create()
                 aboutSpan.id = 'about-btn' // for toggle.tooltip()
-                aboutSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
+                aboutSpan.className = 'corner-btn'
                 aboutSpan.append(aboutSVG) ; cornerBtnsDiv.append(aboutSpan)
 
                 // Create/append Settings button
                 const settingsSpan = document.createElement('span'),
                       settingsSVG = icons.sliders.create()
                 settingsSpan.id = 'settings-btn' // for toggle.tooltip()
-                settingsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                settingsSpan.style.margin = '0 10.5px 0 0.5px'
+                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = '0 10.5px 0 0.5px'
                 settingsSpan.append(settingsSVG) ; cornerBtnsDiv.append(settingsSpan)
 
                 // Create/append Speak button
                 const speakerSpan = document.createElement('span'),
                       speakerSVG = icons.speaker.create()
                 speakerSpan.id = 'speak-btn' // for toggle.tooltip()
-                speakerSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                speakerSpan.style.margin = '-2px 8px 0 0'
+                speakerSpan.className = 'corner-btn' ; speakerSpan.style.margin = '-2px 8px 0 0'
                 speakerSpan.append(speakerSVG) ; cornerBtnsDiv.append(speakerSpan)
 
                 // Create/append Font Size button
                 const fontSizeSpan = document.createElement('span'),
                       fontSizeSVG = icons.fontSize.create()
                 fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
-                fontSizeSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                fontSizeSpan.style.marginRight = '10px'
+                fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.marginRight = '10px'
                 fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
 
                 
@@ -2215,8 +2212,7 @@
                         arrowsSVG = icons.arrowsDiagonal.create()
                     arrowsSVG.style.transform = 'rotate(-7deg)' // tilt slightly to hint expansions are often horizontal-only
                     arrowsSpan.id = 'arrows-btn' // for toggle.tooltip()
-                    arrowsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
-                    arrowsSpan.style.margin = '0.5px 12px 0 0'
+                    arrowsSpan.className = 'corner-btn' ; arrowsSpan.style.margin = '0.5px 12px 0 0'
                     arrowsSpan.style.display = 'none' // to activate from anchorStyles only
                     arrowsSpan.append(arrowsSVG) ; cornerBtnsDiv.append(arrowsSpan)
 
