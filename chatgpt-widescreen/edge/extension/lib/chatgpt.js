@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v3.0.3
+// This library is a condensed version of chatgpt.js v3.1.0
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -35,9 +35,10 @@ const chatgpt = {
                 document.head.append(modalStyle);
             }
             modalStyle.innerText = ( // update prev/new style contents
+                '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
 
                 // Background styles
-                '.chatgpt-modal {' 
+                + '.chatgpt-modal {' 
                     + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
                     + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
                     + 'transition: background-color 0.05s ease ;' // speed to transition in show alert routine
@@ -98,7 +99,7 @@ const chatgpt = {
 
         // Create/append buttons (if provided) to buttons div
         const modalButtons = document.createElement('div');
-        modalButtons.classList.add('modal-buttons');
+        modalButtons.classList.add('modal-buttons', 'no-mobile-tap-outline');
         if (btns) { // are supplied
             if (!Array.isArray(btns)) btns = [btns]; // convert single button to array if necessary
             btns.forEach((buttonFn) => { // create title-cased labels + attach listeners
@@ -107,7 +108,7 @@ const chatgpt = {
                     .replace(/[_-]\w/g, match => match.slice(1).toUpperCase()) // convert snake/kebab to camel case
                     .replace(/([A-Z])/g, ' $1') // insert spaces
                     .replace(/^\w/, firstChar => firstChar.toUpperCase()); // capitalize first letter
-                button.addEventListener('click', () => { dismissAlert(); buttonFn(); });
+                button.onclick = () => { dismissAlert(); buttonFn(); };
                 modalButtons.insertBefore(button, modalButtons.firstChild); // insert button to left
             });
         }
@@ -127,12 +128,11 @@ const chatgpt = {
             const checkboxFn = checkbox, // assign the named function to checkboxFn
                   checkboxInput = document.createElement('input');
             checkboxInput.type = 'checkbox';
-            checkboxInput.addEventListener('change', checkboxFn);
+            checkboxInput.onchange = checkboxFn;
 
             // Create/show label
             const checkboxLabel = document.createElement('label');
-            checkboxLabel.addEventListener('click', () => {
-                checkboxInput.checked = !checkboxInput.checked; checkboxFn(); });
+            checkboxLabel.onclick = () => { checkboxInput.checked = !checkboxInput.checked; checkboxFn(); };
             checkboxLabel.textContent = checkboxFn.name.charAt(0).toUpperCase() // capitalize first char
                 + checkboxFn.name.slice(1) // format remaining chars
                     .replace(/([A-Z])/g, (match, letter) => ' ' + letter.toLowerCase()) // insert spaces, convert to lowercase
@@ -144,7 +144,7 @@ const chatgpt = {
 
         // Create close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn');
+        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn', 'no-mobile-tap-outline');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '10px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
@@ -197,8 +197,7 @@ const chatgpt = {
 
         // Add listeners to dismiss alert
         const dismissElems = [modalContainer, closeBtn, closeSVG, dismissBtn];
-        dismissElems.forEach(elem => {
-            elem.addEventListener('click', clickHandler); });
+        dismissElems.forEach(elem => elem.onclick = clickHandler);
         document.addEventListener('keydown', keyHandler);
 
         // Define alert dismisser
@@ -212,10 +211,7 @@ const chatgpt = {
                 alertQueue = JSON.parse(localStorage.alertQueue);
                 alertQueue.shift(); // + memory
                 localStorage.alertQueue = JSON.stringify(alertQueue); // + storage
-
-                // Remove all listeners to prevent memory leaks
-                dismissElems.forEach(elem => { elem.removeEventListener('click', clickHandler); });
-                document.removeEventListener('keydown', keyHandler);
+                document.removeEventListener('keydown', keyHandler); // prevent memory leaks
 
                 // Check for pending alerts in queue
                 if (alertQueue.length > 0) {
@@ -244,12 +240,12 @@ const chatgpt = {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
 
-    getFooterDiv() { return document.querySelector('main form').parentNode.parentNode.nextElementSibling; },
+    getFooterDiv() { return document.querySelector('main form')?.parentNode.parentNode.nextElementSibling; },
 
     getNewChatButton() {
         for (const navBtnSVG of document.querySelectorAll('nav button svg'))
-            if (navBtnSVG.querySelector('path[d*="M15.673 3.913a3.121"], ' // pencil-on-pad icon
-                                      + 'path[d*="M3.07 10.876C3.623"]'))  // refresh icon if temp chat
+            if (navBtnSVG.querySelector('path[d^="M15.6729"], '  // pencil-on-pad icon
+                                      + 'path[d^="M3.06957"]'))  // refresh icon if temp chat
                 return navBtnSVG.parentNode;
     },
 
@@ -274,7 +270,7 @@ const chatgpt = {
             })();
     });},
 
-    async notify(msg, position, notifDuration, shadow) {
+    notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.35, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
@@ -288,7 +284,7 @@ const chatgpt = {
 
         // Create/append close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn');
+        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn', 'no-mobile-tap-outline');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '8px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
@@ -318,6 +314,7 @@ const chatgpt = {
             }
             notifStyle.innerText = ( // update prev/new style contents
                 '.chatgpt-notif {'
+                    + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
                     + 'background-color: black ; padding: 10px 13px 10px 18px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
                     + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
                     + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;'
@@ -373,15 +370,17 @@ const chatgpt = {
             clearTimeout(dismissFuncTID);
         };
         const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000); // maintain visibility for `hideDelay` secs, then dismiss     
-        closeSVG.addEventListener('click', dismissNotif, { once: true }); // add to close button clicks
+        closeSVG.onclick = dismissNotif; // add to close button clicks
 
         // Destroy notification
-        notificationDiv.addEventListener('animationend', () => {
+        notificationDiv.onanimationend = () => {
             notificationDiv.remove(); // remove from DOM
             notifyProps = JSON.parse(localStorage.notifyProps);
             notifyProps.queue[notificationDiv.quadrant].shift(); // + memory
             localStorage.notifyProps = JSON.stringify(notifyProps); // + storage
-        }, { once: true });
+        };
+
+        return notificationDiv;
     },
 
     randomFloat() {
@@ -447,6 +446,7 @@ const chatgpt = {
         isOff() { return !this.isOn(); },
         isOn() {
             const sidebar = document.querySelector('body script + div > div');
+            if (!sidebar) return console.error('Sidebar element not found!');
             return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
               : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
@@ -456,7 +456,7 @@ const chatgpt = {
             const isMobileDevice = chatgpt.browser.isMobile(),
                   navBtnSelector = isMobileDevice ? 'button' : 'nav button',
                   isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : btn => btn.querySelector('svg path[d*="M8.857 3h6.286c1.084"]');
+                              : btn => btn.querySelector('svg path[d^="M8.857"]');
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         }
