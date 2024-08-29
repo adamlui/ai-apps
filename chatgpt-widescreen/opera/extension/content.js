@@ -53,7 +53,7 @@
                 new Promise(resolve => {
                     (function checkSecondChatbarBtn() { // since it causes de-focus
                         const chatbarBtns = document.querySelector(inputSelector)?.parentNode.parentNode.getElementsByTagName('button')
-                        chatbarBtns.length >= 2 ? resolve(true) : setTimeout(checkSecondChatbarBtn, 200)
+                        chatbarBtns?.length >= 2 ? resolve(true) : setTimeout(checkSecondChatbarBtn, 200)
                     })();
                 }), new Promise(resolve => setTimeout(resolve, 3000)) // timeout after 3s
             ])
