@@ -245,14 +245,8 @@
     )}
 
     function insertBtns() {
-
-        // ID chatbar
-        let chatbar
-        if (/chatgpt|openai/.test(site)) {
-            chatbar = document.querySelector('div[class*="textarea:focus"]') // pre-5/2024
-                   || document.getElementById('prompt-textarea').parentNode.parentNode // post-5/2024
-        } else if (site == 'poe') chatbar = document.querySelector('div[class*="ChatMessageInputContainer"]')
-
+        const chatbar = document.querySelector(inputSelector)
+        if (!chatbar) return console.error(config.appSymbol + ' » Chatbar element not found!')
         if (chatbar.contains(wideScreenBtn)) return // if buttons aren't missing, exit
 
         // Tweak chatbar
