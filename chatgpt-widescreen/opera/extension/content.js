@@ -256,7 +256,7 @@
             chatbar.classList.remove('overflow-hidden')
         else if (site == 'poe') { // left-align attach file button
             const attachFileBtn = chatbar.querySelector('button[class*="File"]')
-            if (attachFileBtn)
+            if (attachFileBtn) {
                 attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
                 document.querySelector(inputSelector).style.padding = '0 13px 0 40px' // accommodate new btn pos
             }
