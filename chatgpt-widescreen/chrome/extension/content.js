@@ -245,7 +245,10 @@
     )}
 
     function insertBtns() {
-        const chatbar = document.querySelector(inputSelector)
+
+        // Init chatbar
+        let chatbar = document.querySelector(inputSelector)
+        if (/chatgpt|openai/.test(site)) chatbar = chatbar?.parentNode.parentNode // select outer container
         if (!chatbar) return console.error(config.appSymbol + ' » Chatbar element not found!')
         if (chatbar.contains(wideScreenBtn)) return // if buttons aren't missing, exit
 
