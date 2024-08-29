@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.28
+// @version               2024.8.29
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1615,6 +1615,7 @@ setTimeout(async () => {
               + '.kudoai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
               + '.kudoai a { color: #aaa ; text-decoration: none !important }'
               + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
+              + '#corner-btns { float: right }'
               + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
                   + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
               + ( config.bgAnimationsDisabled ? '' : ( '#bravegpt-logo, .corner-btn svg, .standby-btn'
@@ -2816,6 +2817,10 @@ setTimeout(async () => {
                 appTitleAnchor.classList.add('app-name', 'no-user-select')
                 appDiv.append(appTitleAnchor)
 
+                // Create/append corner buttons div
+                const cornerBtnsDiv = document.createElement('div') ; cornerBtnsDiv.id = 'corner-btns'
+                appDiv.append(cornerBtnsDiv)
+
                 // Create/append Chevron button
                 if (!isMobile) {
                     var chevronSpan = document.createElement('span'),
@@ -2824,7 +2829,7 @@ setTimeout(async () => {
                     chevronSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
                     chevronSpan.style.margin = '0.5px 1px 0 11px'
                     chevronSpan.style.display = 'none' // to activate from anchorStyles only
-                    chevronSpan.append(chevronSVG) ; appDiv.append(chevronSpan)
+                    chevronSpan.append(chevronSVG) ; cornerBtnsDiv.append(chevronSpan)
                 }
 
                 // Create/append About button
@@ -2833,7 +2838,7 @@ setTimeout(async () => {
                 aboutSpan.id = 'about-btn' // for toggle.tooltip()
                 aboutSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
                 aboutSpan.style.marginTop = '0.8px'
-                aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
+                aboutSpan.append(aboutSVG) ; cornerBtnsDiv.append(aboutSpan)
 
                 // Create/append Settings button
                 const settingsSpan = document.createElement('span'),
@@ -2841,7 +2846,7 @@ setTimeout(async () => {
                 settingsSpan.id = 'settings-btn' // for toggle.tooltip()
                 settingsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
                 settingsSpan.style.margin = '2px 9px 0 1px'
-                settingsSpan.append(settingsSVG) ; appDiv.append(settingsSpan)
+                settingsSpan.append(settingsSVG) ; cornerBtnsDiv.append(settingsSpan)
 
                 // Create/append Speak button
                 if (answer != 'standby') {
@@ -2850,7 +2855,7 @@ setTimeout(async () => {
                     speakerSpan.id = 'speak-btn' // for toggle.tooltip()
                     settingsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
                     speakerSpan.className = 'corner-btn' ; speakerSpan.style.marginRight = '7px'
-                    speakerSpan.append(speakerSVG) ; appDiv.append(speakerSpan)
+                    speakerSpan.append(speakerSVG) ; cornerBtnsDiv.append(speakerSpan)
                 }
 
                 // Create/append Font Size button
@@ -2860,7 +2865,7 @@ setTimeout(async () => {
                     fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
                     fontSizeSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
                     fontSizeSpan.style.margin = '1px 10px 0 2px'
-                    fontSizeSpan.append(fontSizeSVG) ; appDiv.append(fontSizeSpan)
+                    fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
                 }
 
                 // Create/append Pin button
@@ -2870,7 +2875,7 @@ setTimeout(async () => {
                     pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
                     pinSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
                     pinSpan.style.margin = '1px 9px 0 0'
-                    pinSpan.append(pinSVG) ; appDiv.append(pinSpan)
+                    pinSpan.append(pinSVG) ; cornerBtnsDiv.append(pinSpan)
 
                 // Create/append Wider Sidebar button         
                     var wsbSpan = document.createElement('span'),
@@ -2878,7 +2883,7 @@ setTimeout(async () => {
                     wsbSpan.id = 'wsb-btn' // for toggle.sidebar() + toggle.tooltip()
                     wsbSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
                     wsbSpan.style.margin = '0.151em 11px 0 0'
-                    wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan)
+                    wsbSpan.append(wsbSVG) ; cornerBtnsDiv.append(wsbSpan)
 
                 // Create/append Expand/Shrink button
                     var arrowsSpan = document.createElement('span'),
@@ -2888,7 +2893,7 @@ setTimeout(async () => {
                     arrowsSpan.classList.add('corner-btn', 'no-mobile-tap-outline')
                     arrowsSpan.style.margin = '0.5px 12px 0 0'
                     arrowsSpan.style.display = 'none' // to activate from anchorStyles only
-                    arrowsSpan.append(arrowsSVG) ; appDiv.append(arrowsSpan)
+                    arrowsSpan.append(arrowsSVG) ; cornerBtnsDiv.append(arrowsSpan)
                 }
 
                 // Add tooltips
