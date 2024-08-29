@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.29.2
+// @version               2024.8.29.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1596,8 +1596,8 @@ setTimeout(async () => {
               + '#bravegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
               + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
-              + `#bravegpt { word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: ${ isMobile ? -10 : 20}px ;`
-                  + 'z-index: 5555 ; padding: 24px 23px 45px 23px ;'
+              + '#bravegpt { z-index: 5555 ; word-wrap: break-word ; white-space: pre-wrap ;'
+                  + `margin: ${ isMobile ? '0 8px 16px' : '0 0 20px' } ; padding: 24px 23px 45px 23px ;`
                   + `background-image: linear-gradient(180deg, ${
                         scheme == 'dark' ? '#99a8a6 -215px, black 185px'
                                          : `${ config.bgAnimationsDisabled ? 'white' : '#b6ebff' } -193px, white 65px` }) ;`
@@ -1605,7 +1605,7 @@ setTimeout(async () => {
                         'transition: bottom 0.1s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor vertical minimize/restore
                                   + 'width 0.167s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor horizontal expand/shrink
                                   + 'opacity 0.5s ease, transform 0.5s ease ;' : '' ) // smoothen 1st app fade-in
-                  + `border: ${ isMobile || scheme == 'dark' ? 'none' : '1px solid var(--color-divider-subtle)' } ; border-radius: 18px }`
+                  + `border: ${ scheme == 'dark' ? 'none' : '1px solid var(--color-divider-subtle)' } ; border-radius: 18px }`
               + '#bravegpt:hover { box-shadow: 0 9px 28px rgba(0, 0, 0, 0.09) }'
               + `#bravegpt p { margin: 0 ${ scheme == 'dark' ? '; color: #ccc' : '' }}`
               + `#bravegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
