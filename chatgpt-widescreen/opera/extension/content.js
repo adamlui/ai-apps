@@ -271,16 +271,8 @@
     }
 
     function removeBtns() {
-
-        // ID chatbar
-        let chatbar
-        if (/chatgpt|openai/.test(site)) {
-            chatbar = document.querySelector('div[class*="textarea:focus"]') // pre-GPT-4o UI
-                   || document.getElementById('prompt-textarea').parentNode.parentNode // post-GPT-4o UI
-        } else if (site == 'poe') chatbar = document.querySelector('div[class*="ChatMessageInputContainer"]')
-
-        // Remove buttons
-        if (chatbar.contains(fullWindowBtn)) {
+        const chatbar = document.querySelector(inputSelector)?.parentNode.parentNode
+        if (chatbar?.contains(fullWindowBtn)) { // remove all buttons
             const nodesToRemove = [newChatBtn, fullWindowBtn, wideScreenBtn, fullScreenBtn, tooltipDiv]
             for (const node of nodesToRemove) chatbar.removeChild(node)
         }
