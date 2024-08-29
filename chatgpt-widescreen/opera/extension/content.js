@@ -65,9 +65,8 @@
     config.fullScreen = chatgpt.isFullScreen()
 
     // Collect SEND BUTTON classes
-    const sendBtn = document.querySelector('[data-testid="send-button"]') // pre-GPT-4o
-                 || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
-    const sendBtnClasses = sendBtn?.classList || [],
+    const sendBtn = chatgpt.getSendBtn(),
+          sendBtnClasses = sendBtn?.classList || [],
           sendSVGclasses = sendBtn?.querySelector('svg')?.classList || []
 
     // Create/stylize TOOLTIP div

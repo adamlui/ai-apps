@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.28
+// @version             2024.8.29
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -822,9 +822,8 @@
     }
 
     // Collect SEND BUTTON classes
-    const sendBtn = document.querySelector('[data-testid="send-button"]') // pre-GPT-4o
-                 || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
-    const sendBtnClasses = sendBtn?.classList || [],
+    const sendBtn = chatgpt.getSendBtn(),
+          sendBtnClasses = sendBtn?.classList || [],
           sendSVGclasses = sendBtn?.querySelector('svg')?.classList || []
 
     // Create/stylize TOOLTIP div
