@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.29
+// @version             2024.8.29.1
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -375,7 +375,7 @@
         if (config.autoTalkDisabled) return
         for (const mutation of mutationsList) { if (mutation.type === 'childList')
             mutation.addedNodes.forEach(node => { if (node?.tagName == 'DIV') {
-                const playIcon = node.querySelector('path[d*="M11 4.91a.5.5"]')
+                const playIcon = node.querySelector('path[d^="M8 3C8.55228"]')
                 if (playIcon) setTimeout(() => {
                     if (!chatgpt.getStopGeneratingButton())
                         playIcon.closest('button').click()
