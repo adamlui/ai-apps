@@ -253,8 +253,21 @@ const chatgpt = {
                 return navBtnSVG.parentNode;
     },
 
+    getRegenerateButton() {   
+        for (const mainSVG of document.querySelectorAll('main svg')) {
+            if (mainSVG.querySelector('path[d*="M3.07 10.876C3.623"]')) // regen icon found
+                return mainSVG.parentNode;
+    }},
+
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
     isFullScreen() { return chatgpt.browser.isFullScreen(); },
+
+    isIdle() {
+        return new Promise(resolve => {
+            (function checkIsIdle() {
+                chatgpt.getRegenerateButton() ? resolve(true) : setTimeout(checkIsIdle, 200);
+            })();
+    });},
 
     async notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
