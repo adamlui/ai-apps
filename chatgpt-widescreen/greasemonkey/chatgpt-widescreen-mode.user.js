@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.29.4
+// @version             2024.8.29.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -563,8 +563,10 @@
             chatbar.classList.remove('overflow-hidden')
         else if (site == 'poe') { // left-align attach file button
             const attachFileBtn = chatbar.querySelector('button[class*="File"]')
-            attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
-            document.querySelector(inputSelector).style.padding = '0 13px 0 40px' // accommodate new btn pos
+            if (attachFileBtn)
+                attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
+                document.querySelector(inputSelector).style.padding = '0 13px 0 40px' // accommodate new btn pos
+            }
         }
 
         // Insert buttons
