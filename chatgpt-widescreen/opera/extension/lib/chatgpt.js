@@ -259,6 +259,11 @@ const chatgpt = {
                 return mainSVG.parentNode;
     }},
 
+    getSendButton() {
+        return document.querySelector('[data-testid="send-button"]') // pre-GPT-4o
+            || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
+    },
+
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
     isFullScreen() { return chatgpt.browser.isFullScreen(); },
 
