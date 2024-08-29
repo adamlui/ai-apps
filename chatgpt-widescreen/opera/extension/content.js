@@ -65,9 +65,15 @@
     config.fullScreen = chatgpt.isFullScreen()
 
     // Collect SEND BUTTON classes
-    const sendBtn = chatgpt.getSendBtn(),
-          sendBtnClasses = sendBtn?.classList || [],
-          sendSVGclasses = sendBtn?.querySelector('svg')?.classList || []
+    let sendBtnClasses, sendSVGclasses
+    if (/chatgpt|openai/.test(site)) new MutationObserver((mutations, observer) => {
+        const sendBtn = chatgpt.getSendBtn()
+        if (sendBtn) {
+            sendBtnClasses = sendBtn.classList
+            sendSVGclasses = sendBtn.querySelector('svg')?.classList
+            observer.disconnect()
+        }
+    }).observe(document.body, { childList: true, subtree: true })
 
     // Create/stylize TOOLTIP div
     const tooltipDiv = document.createElement('div')
@@ -122,9 +128,13 @@
             window[buttonName].style.cursor = 'pointer' // add finger cursor
             if (isGPT4oUI || site == 'poe') window[buttonName].style.position = 'relative' // override static pos
             if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
-                window[buttonName].setAttribute('class', sendBtnClasses)
-                window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
-                window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
+                (function checkSendBtn() {
+                    if (sendBtnClasses?.length > 0) {
+                        window[buttonName].setAttribute('class', sendBtnClasses)
+                        window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
+                        window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
+                    } else setTimeout(checkSendBtn, 222)
+                })()
             } else if (site == 'poe') // lift buttons slightly
                 window[buttonName].style.marginBottom = ( buttonType == 'newChat' ? '0.45' : '0.2' ) + 'rem'
 
