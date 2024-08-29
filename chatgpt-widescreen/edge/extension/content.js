@@ -35,7 +35,7 @@
     const isGPT4oUI = document.documentElement.className.includes(' ')
 
     // Define UI element SELECTORS
-    const inputSelector = /chatgpt|openai/.test(site) ? 'form textarea[id*="prompt"]'
+    const inputSelector = /chatgpt|openai/.test(site) ? '#prompt-textarea'
                         : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
           sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
                           : site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]' : '',

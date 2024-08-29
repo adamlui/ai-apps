@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.29.1
+// @version             2024.8.29.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -755,7 +755,7 @@
     }
 
     // Define UI element SELECTORS
-    const inputSelector = /chatgpt|openai/.test(site) ? 'form textarea[id*="prompt"]'
+    const inputSelector = /chatgpt|openai/.test(site) ? '#prompt-textarea'
                         : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
           sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
                           : site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]' : '',
