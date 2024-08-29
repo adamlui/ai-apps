@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.29.8
+// @version             2024.8.29.9
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -620,7 +620,6 @@
             buttonSVG.setAttribute('height', site == 'poe' ? '2em' : 17)
             buttonSVG.setAttribute('width', site == 'poe' ? '2em' : 17)
         }
-        buttonSVG.setAttribute('class', sendSVGclasses) // assign borrowed classes
         buttonSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
         buttonSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
         if (/chatgpt|openai/.test(site)) // override button resizing
@@ -819,14 +818,10 @@
     }
 
     // Collect SEND BUTTON classes
-    let sendBtnClasses, sendSVGclasses
+    let sendBtnClasses = []
     if (/chatgpt|openai/.test(site)) new MutationObserver((mutations, observer) => {
         const sendBtn = chatgpt.getSendBtn()
-        if (sendBtn) {
-            sendBtnClasses = sendBtn.classList
-            sendSVGclasses = sendBtn.querySelector('svg')?.classList
-            observer.disconnect()
-        }
+        if (sendBtn) { sendBtnClasses = sendBtn.classList ; observer.disconnect() }
     }).observe(document.body, { childList: true, subtree: true })
 
     // Create/stylize TOOLTIP div
@@ -882,7 +877,7 @@
             if (isGPT4oUI || site == 'poe') window[buttonName].style.position = 'relative' // override static pos
             if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
                 (function checkSendBtn() {
-                    if (sendBtnClasses?.length > 0) {
+                    if (sendBtnClasses.length > 0) {
                         window[buttonName].setAttribute('class', sendBtnClasses)
                         window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
                         window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
