@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.29.9
+// @version             2024.8.29.10
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -634,6 +634,14 @@
         if (!button.contains(buttonSVG)) button.append(buttonSVG)
     }
 
+    function sendBtnIsLoaded() { // for borrowing classes
+        return new Promise(resolve => {
+            new MutationObserver((mutations, obs) => {
+                if (chatgpt.getSendBtn()) { obs.disconnect() ; resolve(true) }}
+            ).observe(document.body, { childList: true, subtree: true })
+        })
+    }
+
     function createSVGelem(tagName, attributes) {
         const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
         for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])
@@ -817,13 +825,6 @@
         document.head.append(chatgptAlertStyle)
     }
 
-    // Collect SEND BUTTON classes
-    let sendBtnClasses = []
-    if (/chatgpt|openai/.test(site)) new MutationObserver((mutations, observer) => {
-        const sendBtn = chatgpt.getSendBtn()
-        if (sendBtn) { sendBtnClasses = sendBtn.classList ; observer.disconnect() }
-    }).observe(document.body, { childList: true, subtree: true })
-
     // Create/stylize TOOLTIP div
     const tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('toggle-tooltip')
@@ -876,13 +877,11 @@
             window[buttonName].style.cursor = 'pointer' // add finger cursor
             if (isGPT4oUI || site == 'poe') window[buttonName].style.position = 'relative' // override static pos
             if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
-                (function checkSendBtn() {
-                    if (sendBtnClasses.length > 0) {
-                        window[buttonName].setAttribute('class', sendBtnClasses)
-                        window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
-                        window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
-                    } else setTimeout(checkSendBtn, 222)
-                })()
+                sendBtnIsLoaded().then(() => {
+                    window[buttonName].setAttribute('class', chatgpt.getSendBtn().classList)
+                    window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
+                    window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
+                })
             } else if (site == 'poe') // lift buttons slightly
                 window[buttonName].style.marginBottom = ( buttonType == 'newChat' ? '0.45' : '0.2' ) + 'rem'
 
