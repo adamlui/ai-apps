@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.8.29.11
+// @version             2024.8.30
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -776,19 +776,6 @@
               chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') : ''
     } catch (err) {}
 
-    // AUTO-FOCUS ChatGPT chatbar if enabled
-    if (/chatgpt|openai/.test(site) && !config.autoFocusChatbarDisabled) {
-        await Promise.race([
-            new Promise(resolve => {
-                (function checkSecondChatbarBtn() { // since it causes de-focus
-                    const chatbarBtns = document.querySelector(inputSelector)?.parentNode.parentNode.getElementsByTagName('button')
-                    chatbarBtns?.length >= 2 ? resolve(true) : setTimeout(checkSecondChatbarBtn, 200)
-                })();
-            }), new Promise(resolve => setTimeout(resolve, 3000)) // timeout after 3s
-        ])
-        document.querySelector(inputSelector)?.focus()
-    }
-
     // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
     const extensionInstalled = await Promise.race([
         new Promise(resolve => {
@@ -802,6 +789,19 @@
             () => { return }) // disable menu
         return // exit script
     } else registerMenu() // create functional menu
+
+    // AUTO-FOCUS ChatGPT chatbar if enabled
+    if (/chatgpt|openai/.test(site) && !config.autoFocusChatbarDisabled) {
+        await Promise.race([
+            new Promise(resolve => {
+                (function checkSecondChatbarBtn() { // since it causes de-focus
+                    const chatbarBtns = document.querySelector('inputSelector')?.parentNode.parentNode.getElementsByTagName('button')
+                    chatbarBtns?.length >= 2 ? resolve(true) : setTimeout(checkSecondChatbarBtn, 200)
+                })();
+            }), new Promise(resolve => setTimeout(resolve, 3000)) // timeout after 3s
+        ])
+        document.querySelector(inputSelector)?.focus()
+    }
 
     // Init UI flag
     const isGPT4oUI = document.documentElement.className.includes(' ')
