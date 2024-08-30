@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.29.1
+// @version                2024.8.30
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2453,7 +2453,7 @@
                 onloadstart: resp => dataProcess.stream(get.reply, resp),
                 onerror: err => { log.err(err)
                     if (!config.proxyAPIenabled) appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
-                    else if (get.reply.status != 'done') api.tryNew(get.reply)
+                    else api.tryNew(get.reply)
                 }
             })
 

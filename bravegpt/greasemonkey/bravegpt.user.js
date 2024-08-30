@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.29.4
+// @version               2024.8.30
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2552,7 +2552,7 @@ setTimeout(async () => {
                 onloadstart: resp => dataProcess.stream(get.reply, resp),
                 onerror: err => { log.err(err)
                     if (!config.proxyAPIenabled) appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
-                    else if (get.reply.status != 'done') api.tryNew(get.reply)
+                    else api.tryNew(get.reply)
                 }
             })
 
