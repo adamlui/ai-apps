@@ -49,7 +49,7 @@
 
 <div align="center">
 
-![](https://user-images.githubusercontent.com/10906554/227480635-2ab5270e-d3f1-4857-8d6c-c4abd5eb6956.gif)
+![](https://media.bravegpt.com/images/screenshots/desktop/lion-vs-gorilla-query.gif)
 
 </div>
 
