@@ -49,12 +49,11 @@
 
 <h6>
 <div align="center">
-<br>
 
 <a href="https://chatgpt.js.org">
     <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/white/logo600x62.png?main">
-        <img width=546 src="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/black/logo600x62.png?main">
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode.png">
+        <img width=546 src="https://media.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode.png">
     </picture>
 </a>
 <br><br>

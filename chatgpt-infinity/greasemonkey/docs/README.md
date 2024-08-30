@@ -69,14 +69,14 @@
 
 <h6>
 <div align="center">
-<br />
 
 <a href="https://chatgpt.js.org">
-<picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/white/logo600x62.png?main">
-    <img width=546 src="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/black/logo600x62.png?main">
-</picture></a>
-<br /><br />
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode.png">
+        <img width=546 src="https://media.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode.png">
+    </picture>
+</a>
+<br><br>
 
 ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.com/KudoAI/chatgpt.js) library
 <br>© 2023–2024 KudoAI & contributors under the MIT license.
