@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.30.1
+// @version                  2024.8.30.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1506,7 +1506,7 @@
                                                           || ( scheme == 'dark' ? 'White' : 'Black' )}`)
                     icon.style.filter = icon.style.webkitFilter = ( 
                         'drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))' // drop shadow
-                      + 'drop-shadow(2px 1px 0px #ff5b5b) drop-shadow(-1px -1px 0px #49d749)' // RGB shift
+                      + 'drop-shadow(2px 1px 0 #ff5b5b) drop-shadow(-1px -1px 0 #49d749)' // RGB shift
                           + ( scheme == 'light' ? 'drop-shadow(white 1px 1px)' : '' ))
                 })
             }
@@ -1840,7 +1840,7 @@
                   + 'border-left: 4.5px solid transparent ; border-right: 4.5px solid transparent ; border-bottom: 16px solid #ccc }'
               + '#font-size-slider-thumb { z-index: 2 ; width: 10px ; height: 26px ; border-radius: 30% ; position: relative ; top: -8.25px ;'
                   + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
-                  + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
+                  + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0 ; cursor: ew-resize }'
               + ( config.fgAnimationsDisabled || isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
               + '.standby-btn { width: 100% ; margin-top: 20px ; padding: 11px 0 ; cursor: pointer ;'
                   + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
@@ -1960,9 +1960,9 @@
               // Glowing modal btns
               + ':root { --glow-color: hsl(186 100% 69%); }'
               + '.glowing-btn { perspective: 2em ; font-weight: 900 ; animation: border-flicker 2s linear infinite ;'
-                  + '-webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) ;' 
-                  + 'box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) ;' 
-                  + '-moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) }' 
+                  + '-webkit-box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) ;' 
+                  + 'box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) ;' 
+                  + '-moz-box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) }' 
               + '.glowing-txt { animation: text-flicker 3s linear infinite ;'
                   + '-webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
                   + '-moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
@@ -3504,7 +3504,7 @@
             + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
             + 'font-size: 0.75rem ; color: white ; fill: white ; stroke: white ;' // font/icon style
             + 'position: absolute ;' // for update.tooltip() calcs
-            + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
+            + 'box-shadow: 3px 5px 16px 0 rgb(0 0 0 / 21%) ;' // drop shadow
             + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 1250 }' // visibility
         ))
     }

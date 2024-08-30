@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.30
+// @version               2024.8.30.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1635,7 +1635,7 @@ setTimeout(async () => {
                   + 'border-left: 4.5px solid transparent ; border-right: 4.5px solid transparent ; border-bottom: 16px solid #ccc }'
               + '#font-size-slider-thumb { z-index: 2 ; width: 10px ; height: 27px ; border-radius: 30% ; position: relative ; top: -9px ;'
                   + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
-                  + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
+                  + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0 ; cursor: ew-resize }'
               + ( config.fgAnimationsDisabled || isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
               + '.standby-btn { width: 100% ; margin: 14px 0 20px ; padding: 13px 0 ; cursor: pointer ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
@@ -1761,9 +1761,9 @@ setTimeout(async () => {
               // Glowing modal btns
               + ':root { --glow-color: hsl(186 100% 69%); }'
               + '.glowing-btn { perspective: 2em ; font-weight: 900 ; animation: border-flicker 2s linear infinite ;'
-                  + '-webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) ;' 
-                  + 'box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) ;' 
-                  + '-moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color) }' 
+                  + '-webkit-box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) ;' 
+                  + 'box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) ;' 
+                  + '-moz-box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) }' 
               + '.glowing-txt { animation: text-flicker 3s linear infinite ;'
                   + '-webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
                   + '-moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
@@ -3268,7 +3268,7 @@ setTimeout(async () => {
             + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 5px 6px 3px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
             + 'font-size: 0.58rem ; color: white ; fill: white ; stroke: white ;' // font/icon style
             + 'position: absolute ;' // for update.tooltip() calcs
-            + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
+            + 'box-shadow: 3px 5px 16px 0 rgb(0 0 0 / 21%) ;' // drop shadow
             + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 1250 }' // visibility
         ))
     }
