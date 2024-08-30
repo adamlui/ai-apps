@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.29.1
+// @version                2024.8.30
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -673,9 +673,8 @@
 
                 // Init logo
                 const settingsIcon = icons.amzgpt.create()
-                settingsIcon.style.cssText = 'width: 65px ; position: relative ; top: -39px ;'
-                                           + `margin: 0 ${ isPortrait ? '39% 0' : '45% 9px' } ;`
-                                           + 'filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))'
+                settingsIcon.style.cssText += `width: 65px ; position: relative ; top: -39px ; margin: 0 ${ isPortrait ? '39% 0' : '45% 9px' }`
+
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'amzgpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
@@ -883,9 +882,9 @@
                 if (targetIcons.length == 0) targetIcons = document.querySelectorAll('#amzgpt-icon')
                 targetIcons.forEach(icon => {
                     icon.src = GM_getResourceText(`amzgpt${ color == 'white' || !color && scheme == 'dark' ? 'DS' : 'LS' }icon`)
-                    icon.style.filter = icon.style.webkitFilter = ( // add RGB shift effect
-                        'drop-shadow(2px 1px 0px #ff5b5b) drop-shadow(-1px -1px 0px #49d749)'
-                      + ( scheme == 'light' ? 'drop-shadow(white 1px 1px)' : '' ))
+                    icon.style.filter = icon.style.webkitFilter = (
+                        'drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))' // drop shadow
+                      + ( scheme == 'dark' ? 'drop-shadow(2px 1px 0px #ff5b5b) drop-shadow(-1px -1px 0px #49d749)' : '' )) // RGB shift
                 })
             }
         },
