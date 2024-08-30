@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.29.1
+// @version                  2024.8.30
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1016,9 +1016,8 @@
 
                 // Init logo
                 const settingsIcon = icons.googleGPT.create()
-                settingsIcon.style.cssText = `width: ${ isPortrait ? 64 : 65 }px ; position: relative ; top: -49px ;`
-                                           + `margin: 13px ${ isPortrait ? '40.6% -46px' : '45.7% -41px' } ;`
-                                           + 'filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))'
+                settingsIcon.style.cssText += `width: ${ isPortrait ? 64 : 65 }px ; position: relative ; top: -49px ;`
+                                            + `margin: 13px ${ isPortrait ? '40.6% -46px' : '45.7% -41px' } ;`
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
@@ -1505,9 +1504,10 @@
                 targetIcons.forEach(icon => {
                     icon.src = GM_getResourceText(`ggptIcon${( color.charAt(0).toUpperCase() + color.slice(1) )
                                                           || ( scheme == 'dark' ? 'White' : 'Black' )}`)
-                    icon.style.filter = icon.style.webkitFilter = ( // add RGB shift effect
-                        'drop-shadow(2px 1px 0px #ff5b5b) drop-shadow(-1px -1px 0px #49d749)'
-                      + ( scheme == 'light' ? 'drop-shadow(white 1px 1px)' : '' ))
+                    icon.style.filter = icon.style.webkitFilter = ( 
+                        'drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))' // drop shadow
+                      + 'drop-shadow(2px 1px 0px #ff5b5b) drop-shadow(-1px -1px 0px #49d749)' // RGB shift
+                          + ( scheme == 'light' ? 'drop-shadow(white 1px 1px)' : '' ))
                 })
             }
         },
