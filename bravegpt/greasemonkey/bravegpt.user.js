@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.30.1
+// @version               2024.8.30.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -172,12 +172,12 @@
 // @include               https://auth0.openai.com
 // @connect               binjie.fun
 // @connect               chatgpt.com
-// @connect                free-chat.asia
 // @connect               gptforlove.com
 // @connect               greasyfork.org
 // @connect               jsdelivr.net
 // @connect               mixerbox.com
 // @connect               openai.com
+// @connect               promplate.dev
 // @connect               sogou.com
 // @require               https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.1.0/dist/chatgpt.min.js#sha256-7NZavwKnOeU+AC6WBVJP9kl6BNFlT7go8qSKat7Ey4Y=
 // @require               https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha256-dppVXeVTurw1ozOPNE3XqhYmDJPOosfbKQcHyQSE58w=
@@ -264,7 +264,7 @@ setTimeout(async () => {
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
             userID: '#/chat/' + Date.now() },
         'Free Chat': {
-            endpoint: 'https://promplate-api.free-chat.asia/single/chat_messages',
+            endpoint: 'https://demo-railway.promplate.dev/single/chat_messages',
             expectedOrigin: {
                 url: 'https://e10.frechat.xyz',
                 headers: { 'Accept': '*/*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
