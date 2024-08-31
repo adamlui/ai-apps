@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.30.3
+// @version                  2024.8.30.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2807,7 +2807,7 @@
             const rqPrompt = 'Present to me a numbered list of '
                 + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
                 +   ( queryIsQuestion ? ( 'Do not use placeholders/brackets for products, services, topics, etc. in the answers. '
-                                        + 'The question is being asked by a chatbot on a search engine page, craft possible answers accordingly.' )
+                                        + 'Treat the answers as if I am answering a chatbot on a search engine.' )
 
                   // Extended instructions for non-question queries
                   : get.related.api == 'Free Chat' ? '' // to evade long query detection
