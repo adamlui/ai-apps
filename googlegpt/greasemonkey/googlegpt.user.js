@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.8.31.1
+// @version                  2024.9.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2863,10 +2863,13 @@
             reader.read().then(processStreamText).catch(err => log.err('Error processing stream', err.message))
 
             function processStreamText({ done, value }) {
-                if (done) {
-                    show.copyBtns() ; caller.status = 'done' ; caller.sender = null
-                    api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                    return
+                if (done) { caller.sender = null
+                    if (!appDiv.querySelector('pre').textContent) // no text shown
+                        api.tryNew(caller)
+                    else { // text was shown
+                        caller.status = 'done' ; caller.attemptCnt = null
+                        show.copyBtns() ; api.clearTimedOut(caller.triedAPIs)
+                    } return
                 }
                 let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
                 if (caller.api == 'MixerBox AI') { // pre-process chunks
