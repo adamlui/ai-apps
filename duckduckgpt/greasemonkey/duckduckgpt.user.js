@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.30.3
+// @version                2024.8.31
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -638,7 +638,7 @@
         init(modal) {
 
             // Add classes
-            modal.classList.add('.ddgpt-modal')
+            modal.classList.add('ddgpt-modal')
             modal.parentNode.classList.add('ddgpt-modal-bg', 'no-user-select')
 
             // Add listeners

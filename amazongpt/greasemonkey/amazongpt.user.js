@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.30.3
+// @version                2024.8.31
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -488,7 +488,7 @@
         init(modal) {
 
             // Add classes
-            modal.classList.add('.amzgpt-modal')
+            modal.classList.add('amzgpt-modal')
             modal.parentNode.classList.add('amzgpt-modal-bg', 'no-user-select')
 
             // Add listeners

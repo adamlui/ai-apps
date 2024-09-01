@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.30.3
+// @version               2024.8.31
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -632,7 +632,7 @@ setTimeout(async () => {
         init(modal) {
 
             // Add classes
-            modal.classList.add('.bravegpt-modal')
+            modal.classList.add('bravegpt-modal')
             modal.parentNode.classList.add('bravegpt-modal-bg', 'no-user-select')
 
             // Add listeners
