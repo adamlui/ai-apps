@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.1
+// @version                  2024.9.1.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2864,7 +2864,7 @@
 
             function processStreamText({ done, value }) {
                 if (done) { caller.sender = null
-                    if (!appDiv.querySelector('pre').textContent) // no text shown
+                    if (appDiv.querySelector('.loading')) // no text shown
                         api.tryNew(caller)
                     else { // text was shown
                         caller.status = 'done' ; caller.attemptCnt = null
@@ -2880,7 +2880,7 @@
                 }
                 accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
                 try { // to show stream text
-                    let textToShow
+                    let textToShow = ''
                     if (caller.api == 'GPTforLove') { // extract parentID + latest chunk text
                         const jsonLines = accumulatedChunks.split('\n'),
                               nowResult = JSON.parse(jsonLines[jsonLines.length - 1])
@@ -2893,7 +2893,9 @@
                         return
                     } else if (caller.status != 'done') { // app waiting or sending
                         if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
-                        if (caller.sender == caller.api) show.reply(textToShow, footerContent)
+                        if (caller.sender == caller.api // app is sending from this API
+                            && textToShow.trim() != '' // empty chunk not read
+                        ) show.reply(textToShow, footerContent)
                     }
                 } catch (err) { log.err('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
