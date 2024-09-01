@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.8.31
+// @version                2024.8.31.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -536,7 +536,7 @@
 
                 // Add logo
                 const aboutHeaderLogo = logos.amzgpt.create() ; aboutHeaderLogo.width = 420
-                aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: -5px ${ isMobile ? 'auto' : '15.5%' } 17px`
+                aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: 15px ${ isMobile ? 'auto' : '15.5%' } 17px`
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
@@ -806,7 +806,7 @@
 
                 // Create close button
                 const closeBtn = document.createElement('div')
-                closeBtn.id = 'amzgpt-settings-close-btn' ; closeBtn.className = 'no-mobile-tap-outline'
+                closeBtn.classList.add('amzgpt-modal-close-btn', 'no-mobile-tap-outline')
                 closeBtn.title = msgs.tooltip_close || 'Close'
                 const closeSVG = icons.x.create() ; closeBtn.append(closeSVG)
 
@@ -1335,9 +1335,6 @@
               + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important ;' // increase alert padding
                   + 'background-color: white !important ; color: black }'
               + '.chatgpt-modal h2 { margin-bottom: 18px !important ; padding: 0 ; font-size: 27px ; font-weight: bold }'
-              + '.modal-close-btn { top: px !important ; right: -11px !important }' // re-pos modal close button
-              + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
-              + `.modal-close-btn:hover { background-color: #${ scheme == 'dark' ? '666464' : 'f2f2f2' } !important }`
               + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 22px ; line-height: 31px }' // pos/size/space modal msg
               + `.chatgpt-modal a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
               + `.modal-buttons { margin: 35px -5px 2px ${ isMobile ? -5 : -15 }px !important }` // pos modal buttons
@@ -1408,6 +1405,15 @@
               + '@keyframes border-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
                   + '70% { opacity: 0.7 } 100% { opacity: 1 }}'
 
+              // Modal close button
+              + '[class*="modal-close-btn"] {'
+                  + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
+                  + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
+              + `[class*="modal-close-btn"] path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
+              + '[class*="modal-close-btn"]:hover { background-color: #f2f2f2 }' // hover underlay
+              + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
+              + ( scheme == 'dark' ? '[class*="modal-close-btn"]:hover path { stroke: black ; fill: black }' : '' ) // invert dark mode hover paths
+
               // Settings modal
               + '#amzgpt-settings {'
                   + `min-width: ${ isPortrait ? 288 : 755 }px ; max-width: 75vw ; word-wrap: break-word ;`
@@ -1419,12 +1425,6 @@
               + '#amzgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ;'
                   + `margin: 0 ${ isMobile ? 6 : 24 }px 8px 0 }`
               + `#amzgpt-settings-title h4 { font-size: ${ isPortrait ? 26 : 31 }px ; font-weight: bold ; margin-top: -39px }`
-              + '#amzgpt-settings-close-btn {'
-                  + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px ; float: right ;'
-                  + 'position: absolute ; top: 14px ; right: 16px }'
-              + `#amzgpt-settings-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
-              + '#amzgpt-settings-close-btn svg { margin: 11.5px }' // center SVG for hover underlay
-              + `#amzgpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
               + '#amzgpt-settings ul { list-style: none ; padding: 0 ; margin: 0 0 2px -3px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#amzgpt-settings li {'

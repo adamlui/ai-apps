@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.8.31
+// @version               2024.8.31.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -680,7 +680,7 @@ setTimeout(async () => {
 
                 // Add logo
                 const aboutHeaderLogo = logos.braveGPT.create() ; aboutHeaderLogo.width = 375
-                aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: -19px ${ isMobile ? 'auto' : '16%' } 0`
+                aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: 1px ${ isMobile ? 'auto' : '16%' } 0`
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
@@ -968,7 +968,7 @@ setTimeout(async () => {
 
                 // Create close button
                 const closeBtn = document.createElement('div')
-                closeBtn.id = 'bravegpt-settings-close-btn' ; closeBtn.className = 'no-mobile-tap-outline'
+                closeBtn.classList.add('bravegpt-modal-close-btn', 'no-mobile-tap-outline')
                 closeBtn.title = msgs.tooltip_close || 'Close'
                 const closeSVG = icons.x.create() ; closeBtn.append(closeSVG)
 
@@ -1714,9 +1714,6 @@ setTimeout(async () => {
               + '.chatgpt-modal > div { padding: 24px 20px 14px 20px !important ;' // increase modal padding
                   + 'background-color: white !important ; color: #202124 }'
               + '.chatgpt-modal h2 { font-size: 26px ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + shrink it
-              + '.modal-close-btn { top: -7px !important ; right: -7px !important }' // re-pos modal close button
-              + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
-              + `.modal-close-btn:hover { background-color: #${ scheme == 'dark' ? '666464' : 'f2f2f2' } !important }`
               + '.chatgpt-modal p { margin: 14px 0 -20px 4px ; font-size: 18px }' // pos/size modal msg
               + `.chatgpt-modal a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
               + `.modal-buttons { margin: 38px 0 1px ${ isMobile ? 0 : -7 }px !important }` // pos modal buttons
@@ -1786,6 +1783,15 @@ setTimeout(async () => {
               + '@keyframes border-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
                   + '70% { opacity: 0.7 } 100% { opacity: 1 }}'
 
+              // Modal close button
+              + '[class*="modal-close-btn"] {'
+                  + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
+                  + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
+              + `[class*="modal-close-btn"] path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
+              + '[class*="modal-close-btn"]:hover { background-color: #f2f2f2 }' // hover underlay
+              + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
+              + ( scheme == 'dark' ? '[class*="modal-close-btn"]:hover path { stroke: black ; fill: black }' : '' ) // invert dark mode hover paths
+
               // Settings modal
               + '#bravegpt-settings { font-family: var(--brand-font) ;'
                   + `min-width: ${ isPortrait ? 288 : 758 }px ; max-width: 75vw ; word-wrap: break-word ;`
@@ -1796,12 +1802,6 @@ setTimeout(async () => {
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
               + `#bravegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 ${ isMobile ? -31 : -6 }px -3px 0 }`
               + `#bravegpt-settings-title h4 { font-size: ${ isPortrait ? 26 : 30 }px ; font-weight: bold ; margin: -31px 17px 7px 0 }`
-              + '#bravegpt-settings-close-btn {'
-                  + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px ; float: right ;'
-                  + 'position: absolute ; top: 14px ; right: 16px }'
-              + `#bravegpt-settings-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
-              + '#bravegpt-settings-close-btn svg { margin: 11.5px }' // center SVG for hover underlay
-              + `#bravegpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
               + '#bravegpt-settings ul { list-style: none ; padding: 0 ; margin: 0 ;' // hide bullets, override Brave ul margins
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#bravegpt-settings li {'
