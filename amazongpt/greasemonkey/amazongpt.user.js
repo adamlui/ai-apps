@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.1.1
+// @version                2024.9.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1410,9 +1410,9 @@
                   + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
                   + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
               + `[class*="modal-close-btn"] path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
+              + ( scheme == 'dark' ? '[class*="modal-close-btn"]:hover path { stroke: black ; fill: black }' : '' ) // invert dark mode hover paths
               + '[class*="modal-close-btn"]:hover { background-color: #f2f2f2 }' // hover underlay
               + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
-              + ( scheme == 'dark' ? '[class*="modal-close-btn"]:hover path { stroke: black ; fill: black }' : '' ) // invert dark mode hover paths
 
               // Settings modal
               + '#amzgpt-settings {'
@@ -2032,7 +2032,7 @@
                         return
                     } else if (caller.status != 'done') { // app waiting or sending
                         if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
-                        if (caller.sender == caller.api // app is sending from this API
+                        if (caller.sender == caller.api // app is sending from this caller.api
                             && textToShow.trim() != '' // empty chunk not read
                         ) show.reply(textToShow)
                     }
