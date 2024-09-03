@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.2.3
+// @version               2024.9.2.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2088,28 +2088,10 @@
         },
 
         replySection() {
-            const replyForm = appDiv.querySelector('form'),
-                  chatTextarea = appDiv.querySelector('#app-chatbar')
-            replyForm.onkeydown = handleEnter ; replyForm.onsubmit = handleSubmit
-            chatTextarea.oninput = autosizeChatbar
 
-            appDiv.querySelectorAll('.chatbar-btn').forEach(btn => {
-                if (btn.id == 'shuffle-btn') btn.onclick = () => {
-                    const randQAprompt = 'Generate a single random question on any topic then answer it. '
-                                       + 'Don\'t talk about Canberra, Tokyo, blue whales, photosynthesis, oceans, '
-                                           + 'deserts, mindfulness meditation, the Fibonacci sequence, the liver, '
-                                           + 'Jupiter, the Great Wall of China, Sheakespeare or da Vinci. '
-                                       + 'Try to give an answer that is 25-50 words. '
-                                       + 'Do not type anything but the question and answer. Reply in markdown.'
-                    chatTextarea.value = augmentQuery(randQAprompt)
-                    chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
-                    show.reply.src = 'shuffle'
-                }
-                if (!isMobile) // add hover listener for tooltips
-                    btn.onmouseover = btn.onmouseout = toggle.tooltip
-            })
-
-            function handleEnter(event) {
+            // Add form key listener
+            const replyForm = appDiv.querySelector('form')
+            replyForm.onkeydown = event => {
                 if (event.key == 'Enter' || event.keyCode == 13) {
                     if (event.ctrlKey) { // add newline
                         const chatTextarea = appDiv.querySelector('#app-chatbar'),
@@ -2118,11 +2100,12 @@
                               textAfter = chatTextarea.value.substring(caretPos)
                         chatTextarea.value = textBefore + '\n' + textAfter // add newline
                         chatTextarea.selectionStart = chatTextarea.selectionEnd = caretPos + 1 // preserve caret pos
-                        autosizeChatbar()
-                    } else if (!event.shiftKey) handleSubmit(event)
+                        listenerize.replySection.chatbarAutoSizer()
+                    } else if (!event.shiftKey) listenerize.replySection.submitHandler(event)
             }}
 
-            function handleSubmit(event) {
+            // Add form submit listener
+            listenerize.replySection.submitHandler = event => {
                 event.preventDefault()
                 const chatTextarea = appDiv.querySelector('#app-chatbar')
 
@@ -2157,10 +2140,12 @@
                     show.reply.src = null ; show.reply.chatbarFocused = false ; show.reply.userInteracted = true
                 }
             }
+            replyForm.onsubmit = listenerize.replySection.submitHandler
 
-            // Autosize chatbar function
+            // Add chatbar autosizer
+            const chatTextarea = appDiv.querySelector('#app-chatbar')
             let prevLength = chatTextarea.value.length
-            function autosizeChatbar() {
+            listenerize.replySection.chatbarAutoSizer = () => {
                 const newLength = chatTextarea.value.length
                 if (newLength < prevLength) { // if deleting txt
                     chatTextarea.style.height = 'auto' // ...auto-fit height
@@ -2170,6 +2155,24 @@
                 chatTextarea.style.height = `${ chatTextarea.scrollHeight > 60 ? ( chatTextarea.scrollHeight +2 ) : 43 }px`
                 prevLength = newLength
             }
+            chatTextarea.oninput = listenerize.replySection.chatbarAutoSizer
+
+            // Add button listeners
+            appDiv.querySelectorAll('.chatbar-btn').forEach(btn => {
+                if (btn.id == 'shuffle-btn') btn.onclick = () => {
+                    const randQAprompt = 'Generate a single random question on any topic then answer it. '
+                                       + 'Don\'t talk about Canberra, Tokyo, blue whales, photosynthesis, oceans, '
+                                           + 'deserts, mindfulness meditation, the Fibonacci sequence, the liver, '
+                                           + 'Jupiter, the Great Wall of China, Sheakespeare or da Vinci. '
+                                       + 'Try to give an answer that is 25-50 words. '
+                                       + 'Do not type anything but the question and answer. Reply in markdown.'
+                    chatTextarea.value = augmentQuery(randQAprompt)
+                    chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
+                    show.reply.src = 'shuffle'
+                }
+                if (!isMobile) // add hover listener for tooltips
+                    btn.onmouseover = btn.onmouseout = toggle.tooltip
+            })
         }
     }
 
