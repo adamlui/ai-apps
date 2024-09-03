@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.2
+// @version                2024.9.2.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1513,6 +1513,148 @@
         targetNode.prepend(starsDivsContainer)
     }
 
+    const listenerize = {
+
+        cornerBtns() {
+            appDiv.querySelectorAll('.corner-btn').forEach(btn => { // from right to left
+                if (btn.id == 'chevron-btn') btn.onclick = () => toggle.minimized()
+                else if (btn.id == 'about-btn') btn.onclick = modals.about.show
+                else if (btn.id == 'settings-btn') btn.onclick = modals.settings.show
+                else if (btn.id == 'speak-btn') btn.onclick = () => {
+                    const wholeAnswer = appDiv.querySelector('pre').textContent
+                    const cjsSpeakOptions = { voice: 2, pitch: 1, speed: 1.5 }
+                    const sgtDialectMap = [
+                        { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
+                        { code: 'ar', regex: /^(ara?(bic)?|اللغة العربية)$/i, rate: 1.5 },
+                        { code: 'cs', regex: /^(cze(ch)?|[cč]e[sš].*|cs)$/i, rate: 1.4 },
+                        { code: 'da', regex: /^dan?(ish|sk)?$/i, rate: 1.3 },
+                        { code: 'de', regex: /^(german|deu?(tsch)?)$/i, rate: 1.5 },
+                        { code: 'es', regex: /^(spa(nish)?|espa.*|es(-\w\w)?)$/i, rate: 1.5 },
+                        { code: 'fi', regex: /^(fin?(nish)?|suom.*)$/i, rate: 1.4 },
+                        { code: 'fr', regex: /^fr/i, rate: 1.2 },
+                        { code: 'hu', regex: /^(hun?(garian)?|magyar)$/i, rate: 1.5 },
+                        { code: 'it', regex: /^ita?(lian[ao]?)?$/i, rate: 1.4 },
+                        { code: 'ja', regex: /^(ja?pa?n(ese)?|日本語|ja)$/i, rate: 1.5 },
+                        { code: 'nl', regex: /^(dut(ch)?|flemish|nederlandse?|vlaamse?|nld?)$/i, rate: 1.3 },
+                        { code: 'pl', regex: /^po?l(ish|ski)?$/i, rate: 1.4 },
+                        { code: 'pt', regex: /^(por(tugu[eê]se?)?|pt(-\w\w)?)$/i, rate: 1.5 },
+                        { code: 'ru', regex: /^(rus?(sian)?|русский)$/i, rate: 1.3 },
+                        { code: 'sv', regex: /^(swe?(dish)?|sv(enska)?)$/i, rate: 1.4 },
+                        { code: 'tr', regex: /^t[uü]?r(k.*)?$/i, rate: 1.6 },
+                        { code: 'vi', regex: /^vi[eệ]?t?(namese)?$/i, rate: 1.5 },
+                        { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
+                    ]
+                    const sgtReplyDialect = sgtDialectMap.find(entry => entry.regex.test(config.replyLanguage)) || sgtDialectMap[0],
+                          payload = { text: wholeAnswer, curTime: Date.now(), spokenDialect: sgtReplyDialect.code, rate: sgtReplyDialect.rate.toString() },
+                          key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
+                          iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
+                    const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
+                        iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
+                    xhr({ // audio from Sogou TTS
+                        url: 'https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
+                            + encodeURIComponent(securePayload),
+                        method: 'GET', responseType: 'arraybuffer',
+                        onload: async resp => {
+                            if (resp.status != 200) chatgpt.speak(wholeAnswer, cjsSpeakOptions)
+                            else {
+                                const audioContext = new (window.AudioContext || window.webkitAudioContext)()
+                                audioContext.decodeAudioData(resp.response, buffer => {
+                                    const audioSrc = audioContext.createBufferSource()
+                                    audioSrc.buffer = buffer
+                                    audioSrc.connect(audioContext.destination) // connect source to speakers
+                                    audioSrc.start(0) // play audio
+                                }).catch(() => chatgpt.speak(wholeAnswer, cjsSpeakOptions))
+                    }}})
+                }
+                else if (btn.id == 'font-size-btn') btn.onclick = () => fontSizeSlider.toggle()
+                else if (btn.id == 'arrows-btn') btn.onclick = () => toggle.expandedMode()
+                if (!isMobile) // add hover listeners for tooltips
+                    btn.onmouseover = btn.onmouseout = toggle.tooltip
+            })            
+        },
+
+        replySection() {
+            const replyForm = appDiv.querySelector('form'),
+                  chatTextarea = appDiv.querySelector('#app-chatbar')
+            replyForm.onkeydown = handleEnter ; replyForm.onsubmit = handleSubmit
+            chatTextarea.oninput = autosizeChatbar
+
+            appDiv.querySelectorAll('.chatbar-btn').forEach(btn => {
+                if (btn.id == 'shuffle-btn') btn.onclick = () => {
+                    const randQAprompt = 'Generate a single random question on any topic then answer it. '
+                                       + 'Don\'t talk about Canberra, Tokyo, blue whales, photosynthesis, oceans, '
+                                           + 'deserts, mindfulness meditation, the Fibonacci sequence, the liver, '
+                                           + 'Jupiter, the Great Wall of China, Sheakespeare or da Vinci. '
+                                       + 'Try to give an answer that is 25-50 words. '
+                                       + 'Do not type anything but the question and answer. Reply in markdown.'
+                    chatTextarea.value = augmentQuery(randQAprompt)
+                    chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
+                }
+                if (!isMobile) // add hover listener for tooltips
+                    btn.onmouseover = btn.onmouseout = toggle.tooltip
+            })
+
+            function handleEnter(event) {
+                if (event.key == 'Enter' || event.keyCode == 13) {
+                    if (event.ctrlKey) { // add newline
+                        const chatTextarea = appDiv.querySelector('#app-chatbar'),
+                              caretPos = chatTextarea.selectionStart,
+                              textBefore = chatTextarea.value.substring(0, caretPos),
+                              textAfter = chatTextarea.value.substring(caretPos)
+                        chatTextarea.value = textBefore + '\n' + textAfter // add newline
+                        chatTextarea.selectionStart = chatTextarea.selectionEnd = caretPos + 1 // preserve ibeam pos
+                        autosizeChatbar()
+                    } else if (!event.shiftKey) handleSubmit(event)
+            }}
+
+            function handleSubmit(event) {
+                event.preventDefault()
+                const chatTextarea = appDiv.querySelector('#app-chatbar')
+
+                // No reply, change placeholder + focus chatbar
+                if (chatTextarea.value.trim() == '') {
+                    chatTextarea.placeholder = `${ msgs.placeholder_typeSomething || 'Type something' }...`
+                    chatTextarea.focus()
+
+                // Yes reply, submit it + transform to loading UI
+                } else {
+
+                    // Modify/submit msg chain
+                    if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
+                    msgChain = stripQueryAugments(msgChain)
+                    const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || ''
+                    msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
+                    msgChain.push({ role: 'user', content: augmentQuery(chatTextarea.value) })
+                    get.reply(msgChain)
+
+                    // Hide/remove elems
+                    if (!isMobile) tooltipDiv.style.opacity = 0 // hide 'Send reply' tooltip post-send btn click
+
+                    // Show loading status
+                    const replySection = appDiv.querySelector('section')
+                    replySection.classList.add('loading', 'no-user-select')
+                    replySection.innerText = appAlerts.waitingResponse
+
+                    // Set flags
+                    show.reply.chatbarFocused = false ; show.reply.userInteracted = true
+                }
+            }
+
+            // Autosize chatbar function
+            let prevLength = chatTextarea.value.length
+            function autosizeChatbar() {
+                const newLength = chatTextarea.value.length
+                if (newLength < prevLength) { // if deleting txt
+                    chatTextarea.style.height = 'auto' // ...auto-fit height
+                    if (parseInt(getComputedStyle(chatTextarea).height, 10) < 55) { // if down to one line
+                        chatTextarea.style.height = '46px' } // ...reset to original height
+                }
+                chatTextarea.style.height = `${ chatTextarea.scrollHeight > 60 ? ( chatTextarea.scrollHeight +2 ) : 46 }px`
+                prevLength = newLength
+            }
+        }
+    }
+
     const fontSizeSlider = {
         fadeInDelay: 5, // ms
         hWheelDistance: 10, // px
@@ -1689,8 +1831,8 @@
             const chevronBtn = appDiv.querySelector('#chevron-btn')
             if (chevronBtn) { // update icon
                 const chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
-                chevronSVG.onclick = () => toggle.minimized()
                 chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
+                chevronBtn.onclick = () => toggle.minimized()
             }
             update.appBottomPos() // toggle visual minimization
             if (!isMobile) tooltipDiv.style.opacity = 0 // remove lingering tooltip
@@ -2225,67 +2367,13 @@
                 }
 
                 // Add corner button listeners
-                if (chevronSVG) chevronSVG.onclick = () => toggle.minimized()
-                aboutSVG.onclick = modals.about.show
-                settingsSVG.onclick = modals.settings.show
-                if (speakerSVG) speakerSVG.onclick = () => {
-                    const wholeAnswer = appDiv.querySelector('pre').textContent
-                    const cjsSpeakOptions = { voice: 2, pitch: 1, speed: 1.5 }
-                    const sgtDialectMap = [
-                        { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
-                        { code: 'ar', regex: /^(ara?(bic)?|اللغة العربية)$/i, rate: 1.5 },
-                        { code: 'cs', regex: /^(cze(ch)?|[cč]e[sš].*|cs)$/i, rate: 1.4 },
-                        { code: 'da', regex: /^dan?(ish|sk)?$/i, rate: 1.3 },
-                        { code: 'de', regex: /^(german|deu?(tsch)?)$/i, rate: 1.5 },
-                        { code: 'es', regex: /^(spa(nish)?|espa.*|es(-\w\w)?)$/i, rate: 1.5 },
-                        { code: 'fi', regex: /^(fin?(nish)?|suom.*)$/i, rate: 1.4 },
-                        { code: 'fr', regex: /^fr/i, rate: 1.2 },
-                        { code: 'hu', regex: /^(hun?(garian)?|magyar)$/i, rate: 1.5 },
-                        { code: 'it', regex: /^ita?(lian[ao]?)?$/i, rate: 1.4 },
-                        { code: 'ja', regex: /^(ja?pa?n(ese)?|日本語|ja)$/i, rate: 1.5 },
-                        { code: 'nl', regex: /^(dut(ch)?|flemish|nederlandse?|vlaamse?|nld?)$/i, rate: 1.3 },
-                        { code: 'pl', regex: /^po?l(ish|ski)?$/i, rate: 1.4 },
-                        { code: 'pt', regex: /^(por(tugu[eê]se?)?|pt(-\w\w)?)$/i, rate: 1.5 },
-                        { code: 'ru', regex: /^(rus?(sian)?|русский)$/i, rate: 1.3 },
-                        { code: 'sv', regex: /^(swe?(dish)?|sv(enska)?)$/i, rate: 1.4 },
-                        { code: 'tr', regex: /^t[uü]?r(k.*)?$/i, rate: 1.6 },
-                        { code: 'vi', regex: /^vi[eệ]?t?(namese)?$/i, rate: 1.5 },
-                        { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
-                    ]
-                    const sgtReplyDialect = sgtDialectMap.find(entry => entry.regex.test(config.replyLanguage)) || sgtDialectMap[0],
-                          payload = { text: wholeAnswer, curTime: Date.now(), spokenDialect: sgtReplyDialect.code, rate: sgtReplyDialect.rate.toString() },
-                          key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
-                          iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
-                    const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
-                        iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
-                    xhr({ // audio from Sogou TTS
-                        url: 'https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
-                            + encodeURIComponent(securePayload),
-                        method: 'GET', responseType: 'arraybuffer',
-                        onload: async resp => {
-                            if (resp.status != 200) chatgpt.speak(wholeAnswer, cjsSpeakOptions)
-                            else {
-                                const audioContext = new (window.AudioContext || window.webkitAudioContext)()
-                                audioContext.decodeAudioData(resp.response, buffer => {
-                                    const audioSrc = audioContext.createBufferSource()
-                                    audioSrc.buffer = buffer
-                                    audioSrc.connect(audioContext.destination) // connect source to speakers
-                                    audioSrc.start(0) // play audio
-                                }).catch(() => chatgpt.speak(wholeAnswer, cjsSpeakOptions))
-                    }}})
-                }
-                if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
-                if (arrowsSVG) arrowsSVG.onclick = () => toggle.expandedMode()
-                if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, settingsSpan, chevronSpan, speakerSpan, fontSizeSpan, arrowsSpan].forEach(span => {
-                        if (span) span.onmouseover = span.onmouseout = toggle.tooltip })
+                listenerize.cornerBtns()
 
                 // Create/append 'by KudoAI'
                 const kudoAIspan = document.createElement('span')
                 kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
                 kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
                 appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
-
 
                 // Create/append answer bubble
                 const answerPre = document.createElement('pre'),
@@ -2317,36 +2405,15 @@
 
                 // Create/append chatbar buttons
                 ['send', 'shuffle'].forEach(btnType => {
-
-                    // Create/ID/classify/pos button
                     const btnElem = document.createElement(btnType === 'send' ? 'button' : 'div')
                     btnElem.id = `${btnType}-btn` ; btnElem.classList.add('chatbar-btn', 'no-mobile-tap-outline')
                     btnElem.style.right = `${ btnType == 'send' ? ( isFirefox ? 12 : 9 ) : ( isFirefox ? 17 : 14 )}px`
-
-                    // Append icon
                     btnElem.append(icons[btnType == 'send' ? 'arrowUp' : 'arrowsTwistedRight'].create())
-
-                    // Add listeners
-                    if (!isMobile) // add hover listener for tooltips
-                        btnElem.onmouseover = btnElem.onmouseout = toggle.tooltip
-                    if (btnType == 'shuffle') btnElem.onclick = () => {
-                        const randQAprompt = 'Generate a single random question on any topic then answer it. '
-                                           + 'Don\'t talk about Canberra, Tokyo, blue whales, photosynthesis, oceans, '
-                                               + 'deserts, mindfulness meditation, the Fibonacci sequence, the liver, '
-                                               + 'Jupiter, the Great Wall of China, Sheakespeare or da Vinci. '
-                                           + 'Try to give an answer that is 25-50 words. '
-                                           + 'Do not type anything but the question and answer. Reply in markdown.'
-                        chatTextarea.value = augmentQuery(randQAprompt)
-                        chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
-                    }
-
-                    // Append button
                     continueChatDiv.append(btnElem)
                 })
 
-                // Add reply section listeners
-                replyForm.onkeydown = handleEnter ; replyForm.onsubmit = handleSubmit
-                chatTextarea.oninput = autosizeChatbar
+                // Add listeners
+                listenerize.replySection()
 
                 // Scroll to top on mobile if user interacted
                 if (isMobile && show.reply.userInteracted) {
@@ -2398,66 +2465,6 @@
             update.appBottomPos() // restore minimized/restored state
 
             show.reply.userInteracted = false
-
-            function handleEnter(event) {
-                if (event.key == 'Enter' || event.keyCode == 13) {
-                    if (event.ctrlKey) { // add newline
-                        const chatTextarea = appDiv.querySelector('#app-chatbar'),
-                              caretPos = chatTextarea.selectionStart,
-                              textBefore = chatTextarea.value.substring(0, caretPos),
-                              textAfter = chatTextarea.value.substring(caretPos)
-                        chatTextarea.value = textBefore + '\n' + textAfter // add newline
-                        chatTextarea.selectionStart = chatTextarea.selectionEnd = caretPos + 1 // preserve ibeam pos
-                        autosizeChatbar()
-                    } else if (!event.shiftKey) handleSubmit(event)
-            }}
-
-            function handleSubmit(event) {
-                event.preventDefault()
-                const chatTextarea = appDiv.querySelector('#app-chatbar')
-
-                // No reply, change placeholder + focus chatbar
-                if (chatTextarea.value.trim() == '') {
-                    chatTextarea.placeholder = `${ msgs.placeholder_typeSomething || 'Type something' }...`
-                    chatTextarea.focus()
-
-                // Yes reply, submit it + transform to loading UI
-                } else {
-
-                    // Modify/submit msg chain
-                    if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
-                    msgChain = stripQueryAugments(msgChain)
-                    const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || ''
-                    msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
-                    msgChain.push({ role: 'user', content: augmentQuery(chatTextarea.value) })
-                    get.reply(msgChain)
-
-                    // Hide/remove elems
-                    if (!isMobile) tooltipDiv.style.opacity = 0 // hide 'Send reply' tooltip post-send btn click
-
-                    // Show loading status
-                    const replySection = appDiv.querySelector('section')
-                    replySection.classList.add('loading', 'no-user-select')
-                    replySection.innerText = appAlerts.waitingResponse
-
-                    // Set flags
-                    show.reply.chatbarFocused = false ; show.reply.userInteracted = true
-                }
-            }
-
-            // Autosize chatbar function
-            const chatTextarea = appDiv.querySelector('#app-chatbar')
-            let prevLength = chatTextarea.value.length
-            function autosizeChatbar() {
-                const newLength = chatTextarea.value.length
-                if (newLength < prevLength) { // if deleting txt
-                    chatTextarea.style.height = 'auto' // ...auto-fit height
-                    if (parseInt(getComputedStyle(chatTextarea).height, 10) < 55) { // if down to one line
-                        chatTextarea.style.height = '46px' } // ...reset to original height
-                }
-                chatTextarea.style.height = `${ chatTextarea.scrollHeight > 60 ? ( chatTextarea.scrollHeight +2 ) : 46 }px`
-                prevLength = newLength
-            }
         }
     }
 
