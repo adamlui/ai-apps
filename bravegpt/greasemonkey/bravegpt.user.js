@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.2.4
+// @version               2024.9.2.5
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2283,19 +2283,8 @@
     }
 
     function handleRQevent(event) { // for attachment/removal in `get.reply()` + `show.reply().handleSubmit()`
-        const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]    
-        if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
-            event.preventDefault() // prevent scroll on space taps
-            appDiv.querySelector('.related-queries').remove() // remove related queries
 
-            // Send related query
-            const chatbar = appDiv.querySelector('textarea')
-            if (chatbar) {
-                chatbar.value = event.target.textContent
-                chatbar.dispatchEvent(new KeyboardEvent('keydown', {
-                    key: 'Enter', bubbles: true, cancelable: true }))
-            }
-    }}
+    }
 
     // Define FACTORY functions
 
@@ -3239,7 +3228,17 @@
                     // Add fade + listeners
                     setTimeout(() => {
                         relatedQueryDiv.classList.add('active')
-                        relatedQueryDiv.onclick = relatedQueryDiv.onkeydown = handleRQevent
+                        relatedQueryDiv.onclick = relatedQueryDiv.onkeydown = event => {
+                            const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]    
+                            if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
+                                event.preventDefault() // prevent scroll on space taps
+                                appDiv.querySelector('.related-queries').remove() // remove related queries
+                                const chatbar = appDiv.querySelector('textarea')
+                                if (chatbar) { // send related query
+                                    chatbar.value = event.target.textContent
+                                    chatbar.dispatchEvent(new KeyboardEvent('keydown', {
+                                        key: 'Enter', bubbles: true, cancelable: true }))
+                        }}}
                     }, idx * 100)
                 })
 
