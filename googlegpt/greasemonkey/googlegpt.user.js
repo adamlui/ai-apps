@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.2.1
+// @version                  2024.9.2.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2224,6 +2224,16 @@
 
     const listenerize = {
 
+        appDiv() {
+            appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
+                if (event.button != 0) return // prevent non-left-click dismissal
+                if (document.getElementById('font-size-slider-track') // slider is visible
+                    && !event.target.closest('[id*="font-size"]') // not clicking slider elem
+                    && getComputedStyle(event.target).cursor != 'pointer') // ...or other interactive elem
+                        fontSizeSlider.toggle('off')
+            })
+        },
+
         cornerBtns() {
             appDiv.querySelectorAll('.corner-btn').forEach(btn => { // from right to left
                 if (btn.id == 'chevron-btn') btn.onclick = () => toggle.minimized()
@@ -3483,14 +3493,8 @@
     const hasSidebar = !!document.querySelector('[class*="kp-"]')
 
     // Create/ID/classify/listenerize GOOGLEGPT container
-    const appDiv = document.createElement('div') ; appDiv.id = 'googlegpt' ;  appDiv.classList.add('fade-in')
-    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
-        if (event.button != 0) return // prevent non-left-click dismissal
-        if (document.getElementById('font-size-slider-track') // slider is visible
-            && !event.target.closest('[id*="font-size"]') // not clicking slider elem
-            && getComputedStyle(event.target).cursor != 'pointer') // ...or other interactive elem
-                fontSizeSlider.toggle('off')
-    })
+    const appDiv = document.createElement('div') ; appDiv.id = 'googlegpt'
+    appDiv.classList.add('fade-in') ; listenerize.appDiv()
 
     // Stylize APP elems
     const appStyle = createStyle() ; update.appStyle() ; document.head.append(appStyle);

@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.2.1
+// @version                2024.9.2.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1910,6 +1910,16 @@
 
     const listenerize = {
 
+        appDiv() {
+            appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
+                if (event.button != 0) return // prevent non-left-click dismissal
+                if (document.getElementById('font-size-slider-track') // slider is visible
+                    && !event.target.closest('[id*="font-size"]') // not clicking slider elem
+                    && getComputedStyle(event.target).cursor != 'pointer') // ...or other interactive elem
+                        fontSizeSlider.toggle('off')
+            })
+        },
+
         cornerBtns() {
             appDiv.querySelectorAll('.corner-btn').forEach(btn => { // from right to left
                 if (btn.id == 'chevron-btn') btn.onclick = () => toggle.minimized()
@@ -3141,14 +3151,8 @@
     }
 
     // Create/ID/classify/listenerize DDGPT container
-    const appDiv = document.createElement('div') ; appDiv.id = 'ddgpt' ; appDiv.classList.add('fade-in')
-    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
-        if (event.button != 0) return // prevent non-left-click dismissal
-        if (document.getElementById('font-size-slider-track') // slider is visible
-            && !event.target.closest('[id*="font-size"]') // not clicking slider elem
-            && getComputedStyle(event.target).cursor != 'pointer') // ...or other interactive elem
-                fontSizeSlider.toggle('off')
-    })
+    const appDiv = document.createElement('div') ; appDiv.id = 'ddgpt'
+    appDiv.classList.add('fade-in') ; listenerize.appDiv()
 
     // Stylize APP elems
     const appStyle = createStyle() ; update.appStyle() ; document.head.append(appStyle);
