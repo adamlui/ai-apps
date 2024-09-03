@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.2.7
+// @version               2024.9.2.8
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -3346,11 +3346,11 @@
     new MutationObserver((mutations, obs) => {
         if (!document.getElementById('bravegpt')) { restoreAppDiv() ; obs.disconnect() }
     }).observe(document.body, { subtree: true, childList: true })   
-    function saveAppDiv() { if (restoreAppDiv.restored) return ; saveAppDiv.content = appDiv.innerHTML }
+    function saveAppDiv() { if (restoreAppDiv.restored) return ; saveAppDiv.html = appDiv.innerHTML }
     function restoreAppDiv() {
         appDiv = document.createElement('div') ; appDiv.id = 'bravegpt'
         appDiv.classList.add('fade-in', 'active', 'snippet') ; listenerize.appDiv()
-        appDiv.innerHTML = saveAppDiv.content
+        appDiv.innerHTML = saveAppDiv.html
         const standbyBtn = appDiv.querySelector('.standby-btn')
         if (standbyBtn) standbyBtn.onclick = show.reply.standbyBtnClickHandler
         if (!isMobile) appDiv.append(tooltipDiv)
