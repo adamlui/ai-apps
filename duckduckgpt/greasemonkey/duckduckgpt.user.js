@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.3
+// @version                2024.9.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -3192,16 +3192,19 @@
     appFooter.append(footerContent)
 
     // APPEND DDGPT + footer to DDG
-    const appElems = [appFooter, appDiv],
-          hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
-                                                                        : '[class*="sidebar"]')
+    const appElems = [appFooter, appDiv]
+    const hostContainer = await new Promise(resolve => {
+        new MutationObserver((mutations, obs) => {
+            const container = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]' : '[class*="sidebar"]')
+            if (container) { obs.disconnect() ; resolve(container) }
+        }).observe(document.body, { childList: true, subtree: true })
+    })
     appElems.forEach(elem => hostContainer.prepend(elem))
     appElems.reverse().forEach((elem, idx) => // fade in staggered
         setTimeout(() => elem.classList.add('active'), idx * 550 - 200))
 
     // REPLACE hostContainer max-width w/ min-width for better UI
     if (!isMobile) { hostContainer.style.maxWidth = '' ; hostContainer.style.minWidth = '448px' }
-
     // Check for active TEXT CAMPAIGNS to replace footer CTA
     get.json('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
         (err, advertisersData) => { if (err) return

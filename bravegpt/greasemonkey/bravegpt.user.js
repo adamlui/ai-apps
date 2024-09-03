@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.3.1
+// @version               2024.9.3.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -3298,12 +3298,14 @@
     }
 
     // APPEND to Brave
-    const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
-    setTimeout(() => {
-        hostContainer.prepend(appDiv)
-        setTimeout(() => appDiv.classList.add('active'), 100) // fade in
-    }, isMobile ? 500 : 100)
-    visibilizeOverflow()
+    const hostContainer = await new Promise(resolve => {
+        new MutationObserver((mutations, obs) => {
+            const container = document.querySelector(isMobile ? '#results' : '.sidebar')
+            if (container) { obs.disconnect() ; resolve(container) }
+        }).observe(document.body, { childList: true, subtree: true })
+    })
+    hostContainer.prepend(appDiv) ; visibilizeOverflow()
+    setTimeout(() => appDiv.classList.add('active'), 100) // fade in    
 
     // Init footer CTA to share feedback
     let footerContent = createAnchor('#', msgs.link_shareFeedback || 'Share feedback', { target: '_self' })
