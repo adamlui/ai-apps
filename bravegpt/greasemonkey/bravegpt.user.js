@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.2.1
+// @version               2024.9.2.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2017,6 +2017,16 @@
 
     const listenerize = {
 
+        appDiv() {
+            appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
+                if (event.button != 0) return // prevent non-left-click dismissal
+                if (document.getElementById('font-size-slider-track') // slider is visible
+                    && !event.target.closest('[id*="font-size"]') // not clicking slider elem
+                    && getComputedStyle(event.target).cursor != 'pointer') // ...or other interactive elem
+                        fontSizeSlider.toggle('off')
+            })
+        },
+
         cornerBtns() {
             appDiv.querySelectorAll('.corner-btn').forEach(btn => { // from right to left
                 if (btn.id == 'chevron-btn') btn.onclick = () => toggle.minimized()
@@ -3258,15 +3268,7 @@
 
     // Create/ID/classify/listenerize BRAVEGPT container
     let appDiv = document.createElement('div') ; appDiv.id = 'bravegpt'
-    appDiv.classList.add('fade-in', // BraveGPT class
-                         'snippet') // Brave class
-    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
-        if (event.button != 0) return // prevent non-left-click dismissal
-        if (document.getElementById('font-size-slider-track') // slider is visible
-            && !event.target.closest('[id*="font-size"]') // not clicking slider elem
-            && getComputedStyle(event.target).cursor != 'pointer') // ...or other interactive elem
-                fontSizeSlider.toggle('off')
-    })
+    appDiv.classList.add('fade-in',  'snippet') ; listenerize.appDiv()
 
     // Stylize APP elems
     const appStyle = createStyle() ; update.appStyle() ; document.head.append(appStyle);
@@ -3349,7 +3351,7 @@
     function saveAppDiv() { if (restoreAppDiv.restored) return ; saveAppDiv.content = appDiv.innerHTML }
     function restoreAppDiv() {
         appDiv = document.createElement('div') ; appDiv.id = 'bravegpt'
-        appDiv.classList.add('fade-in', 'active', 'snippet')
+        appDiv.classList.add('fade-in', 'active', 'snippet') ; listenerize.appDiv()
         appDiv.innerHTML = saveAppDiv.content
         if (!isMobile) appDiv.append(tooltipDiv)
         if (appDiv.querySelector('pre')) show.copyBtns()
