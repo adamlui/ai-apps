@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.2.4
+// @version                2024.9.2.5
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -3106,6 +3106,7 @@
 
                     // Assemble/insert elems
                     relatedQueryDiv.prepend(relatedQuerySVG) ; relatedQueriesDiv.append(relatedQueryDiv)
+
                     // Add fade + listeners
                     setTimeout(() => {
                         relatedQueryDiv.classList.add('active')
