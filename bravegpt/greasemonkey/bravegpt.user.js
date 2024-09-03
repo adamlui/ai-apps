@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.2.9
+// @version               2024.9.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -3351,11 +3351,11 @@
         appDiv = document.createElement('div') ; appDiv.id = 'bravegpt'
         appDiv.classList.add('fade-in', 'active', 'snippet') ; listenerize.appDiv()
         appDiv.innerHTML = saveAppDiv.html
+        if (!isMobile) appDiv.append(tooltipDiv)
+        if (appDiv.querySelector('.corner-btn')) listenerize.cornerBtns()
         const standbyBtn = appDiv.querySelector('.standby-btn')
         if (standbyBtn) standbyBtn.onclick = show.reply.standbyBtnClickHandler
-        if (!isMobile) appDiv.append(tooltipDiv)
-        if (appDiv.querySelector('pre')) show.copyBtns()
-        if (appDiv.querySelector('.corner-btn')) listenerize.cornerBtns()
+        else if (appDiv.querySelector('pre')) show.copyBtns()
         if (appDiv.querySelector('.chatbar-btn')) listenerize.replySection()
         hostContainer.prepend(appDiv) ; visibilizeOverflow() ; restoreAppDiv.restored = true
     }
