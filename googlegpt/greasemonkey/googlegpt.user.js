@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.3.1
+// @version                  2024.9.3.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -3540,13 +3540,11 @@
 
     // Strip Google TRACKING
     document.addEventListener(inputEvents.down, event => {
-        let a = event.target
-        while (a && !a.href) a = a.parentElement
-        if (!a) return
-        a.removeAttribute('ping')
+        let a = event.target ; while (a && !a.href) a = a.parentElement ; if (!a) return // find closest ancestor href
+        a.removeAttribute('ping') // prevent pingback on link click
         const inlineMousedown = a.getAttribute('onmousedown')
         if (inlineMousedown && /\ba?rwt\(/.test(inlineMousedown)) {
-            a.removeAttribute('onmousedown') ; a.removeAttribute('ping')
+            a.removeAttribute('onmousedown')
             if (isChrome) event.stopImmediatePropagation() // since inline listener still runs
         }
         let realURL = getRealURL(a)
@@ -3562,22 +3560,14 @@
                ['/url', // mobile: /url?q=<url>
                 '/local_url', // Maps/Dito: /local_url?q=<url>
                 '/searchurl/rr.html', '/linkredirect'].includes(a.pathname)) {
-
-                    // HTTP/FTP URLs
-                    url = /[?&](?:q|url|dest)=((?:https?|ftp)[%:][^&]+)/.exec(a.search)
+                    url = /[?&](?:q|url|dest)=((?:https?|ftp)[%:][^&]+)/.exec(a.search) // HTTP/FTP URLs
                     if (url) return decodeURIComponent(url[1])
-
-                    // Help pages, e.g. safe browsing (/url?...&q=%2Fsupport%2Fanswer...)
-                    url = /[?&](?:q|url)=((?:%2[Ff]|\/)[^&]+)/.exec(a.search)
+                    url = /[?&](?:q|url)=((?:%2[Ff]|\/)[^&]+)/.exec(a.search) // help pages, e.g. safe browsing (/url?...&q=%2Fsupport%2Fanswer...)
                     if (url) return a.origin + decodeURIComponent(url[1])
-
-                    // Android intents (/searchurl/rr.html#...&url=...)
-                    url = /[#&]url=(https?[:%][^&]+)/.exec(a.hash)
+                    url = /[#&]url=(https?[:%][^&]+)/.exec(a.hash) // Android intents (/searchurl/rr.html#...&url=...)
                     if (url) return decodeURIComponent(url[1])
             }
-
-            // Google Search w/ old mobile UA (e.g. Firefox 41)
-            if (a.hostname == 'googleweblight.com' && a.pathname == '/fp') {
+            if (a.hostname == 'googleweblight.com' && a.pathname == '/fp') { // Google Search w/ old mobile UA (e.g. Firefox 41)
                 url = /[?&]u=((?:https?|ftp)[%:][^&]+)/.exec(a.search)
                 if (url) return decodeURIComponent(url[1])
             }
