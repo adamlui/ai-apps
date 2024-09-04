@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.3.2
+// @version               2024.9.3.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2008,7 +2008,7 @@
     }
 
     function visibilizeOverflow() { // for boundless hover fx
-        let appAncestor = hostContainer
+        let appAncestor = appDivContainer
         while (appAncestor) {
             if (getComputedStyle(appAncestor).overflow != 'visible') appAncestor.style.overflow = 'visible'
             appAncestor = appAncestor.parentElement
@@ -3298,13 +3298,13 @@
     }
 
     // APPEND to Brave
-    const hostContainer = await new Promise(resolve => {
+    const appDivContainer = await new Promise(resolve => {
         new MutationObserver((mutations, obs) => {
             const container = document.querySelector(isMobile ? '#results' : '.sidebar')
             if (container) { obs.disconnect() ; resolve(container) }
         }).observe(document.body, { childList: true, subtree: true })
     })
-    hostContainer.prepend(appDiv) ; visibilizeOverflow()
+    appDivContainer.prepend(appDiv) ; visibilizeOverflow()
     setTimeout(() => appDiv.classList.add('active'), 100) // fade in    
 
     // Init footer CTA to share feedback
@@ -3359,7 +3359,7 @@
         if (standbyBtn) standbyBtn.onclick = show.reply.standbyBtnClickHandler
         else if (appDiv.querySelector('pre')) show.copyBtns()
         if (appDiv.querySelector('.chatbar-btn')) listenerize.replySection()
-        hostContainer.prepend(appDiv) ; visibilizeOverflow() ; restoreAppDiv.restored = true
+        appDivContainer.prepend(appDiv) ; visibilizeOverflow() ; restoreAppDiv.restored = true
     }
 
 })()
