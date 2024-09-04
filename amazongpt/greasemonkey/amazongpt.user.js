@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.3
+// @version                2024.9.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -539,6 +539,9 @@
                 aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: 15px ${ isMobile ? 'auto' : '15.5%' } 17px`
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
+                // Center text
+                aboutModal.querySelector('p').style.cssText = 'text-align: center ; margin: -14px 0 -16px'
+
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 aboutModal.querySelectorAll('button').forEach(btn => {
                     btn.style.cssText = 'height: 52px ; min-width: 136px'
@@ -605,7 +608,7 @@
                 const schemeModal = document.getElementById(schemeModalID).firstChild
 
                 // Center button cluster
-                schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
+                schemeModal.querySelector('.modal-buttons').style.cssText = 'justify-content: center ; margin-top: 10px !important'
 
                 // Re-format each button
                 const buttons = schemeModal.querySelectorAll('button'),
@@ -673,7 +676,7 @@
 
                 // Init logo
                 const settingsIcon = icons.amzgpt.create()
-                settingsIcon.style.cssText += `width: 65px ; position: relative ; top: -39px ; margin: 0 ${ isPortrait ? '39% 0' : '45% 9px' }`
+                settingsIcon.style.cssText += `width: 65px ; position: relative ; top: -30px ; margin-bottom: ${ isPortrait ? -4 : 4 }px`
 
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'amzgpt-settings-title'
@@ -688,9 +691,10 @@
                       settingsListCnt = ( isMobile && ( isPortrait || settingsKeys.length < 8 )) ? 1 : 2,
                       settingItemCap = Math.floor(settingsKeys.length /2)
                 for (let i = 0 ; i < settingsListCnt ; i++) settingsLists.push(document.createElement('ul'))
+                settingsListContainer.style.width = '95%' // pad vs. parent
                 if (settingsListCnt > 1) { // style multi-list landscape mode
-                    settingsListContainer.style.cssText = ( // make/pad flexbox, add middle gap
-                        `display: flex ; padding: 11px 12px 13px ; gap: ${ middleGap /2 }px` )
+                    settingsListContainer.style.cssText += ( // make/pad flexbox, add middle gap
+                        `display: flex ; padding: 11px 0 13px ; width: 95% ; gap: ${ middleGap /2 }px` )
                     settingsLists[0].style.cssText = ( // add vertical separator
                         `padding-right: ${ middleGap /2 }px ; border-right: 1px dotted ${ scheme == 'dark' ? 'white' : 'black '}` )
                 }
@@ -1337,7 +1341,7 @@
               + '.chatgpt-modal h2 { margin-bottom: 18px !important ; padding: 0 ; font-size: 27px ; font-weight: bold }'
               + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 22px ; line-height: 31px }' // pos/size/space modal msg
               + `.chatgpt-modal a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
-              + `.modal-buttons { margin: 35px -5px 2px ${ isMobile ? -5 : -15 }px !important }` // pos modal buttons
+              + `.modal-buttons { margin: 35px -5px 2px ${ isMobile ? -5 : -15 }px !important ; width: 100% }` // pos/size modal buttons
               + '.chatgpt-modal button {' // modal buttons
                   + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
                   + `padding: ${ isMobile ? '7px' : '4px 10px' } !important ;`
@@ -1405,7 +1409,8 @@
               + '@keyframes border-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
                   + '70% { opacity: 0.7 } 100% { opacity: 1 }}'
 
-              // Modal close button
+              // chatgpt.alert() + AmazonGPT modals
+              + '.amzgpt-modal { display: grid ; place-items: center }' // for centered icon/logo
               + '[class*="modal-close-btn"] {'
                   + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
                   + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
@@ -1417,14 +1422,14 @@
               // Settings modal
               + '#amzgpt-settings {'
                   + `min-width: ${ isPortrait ? 288 : 755 }px ; max-width: 75vw ; word-wrap: break-word ;`
-                  + 'padding: 9px 6px 1px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
+                  + 'margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
               + '#amzgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ;'
                   + `margin: 0 ${ isMobile ? 6 : 24 }px 8px 0 }`
-              + `#amzgpt-settings-title h4 { font-size: ${ isPortrait ? 26 : 31 }px ; font-weight: bold ; margin-top: -39px }`
+              + `#amzgpt-settings-title h4 { font-size: ${ isPortrait ? 26 : 31 }px ; font-weight: bold ; margin-top: -25px }`
               + '#amzgpt-settings ul { list-style: none ; padding: 0 ; margin: 0 0 2px -3px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#amzgpt-settings li {'
@@ -1452,7 +1457,7 @@
               + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
               + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
               + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
-              + `#about-menu-entry > span { width: ${ isMobile ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
+              + `#about-menu-entry > span { width: ${ isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
                   + `${ config.fgAnimationsDisabled ? '' : ( // fade edges
                             'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
                   + '-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' )}}`

@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.3.2
+// @version                  2024.9.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -878,6 +878,9 @@
                 aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: 15px ${ isMobile ? 'auto' : '14.5%' } -1px`
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
+                // Center text
+                aboutModal.querySelector('p').style.cssText = 'text-align: center ; margin-bottom: -16px'
+
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 aboutModal.querySelectorAll('button').forEach(btn => {
                     btn.style.cssText = 'height: 50px ; min-width: 136px'
@@ -948,7 +951,7 @@
                 const schemeModal = document.getElementById(schemeModalID).firstChild
 
                 // Center button cluster
-                schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
+                schemeModal.querySelector('.modal-buttons').style.cssText = 'justify-content: center ; margin-top: 10px !important'
 
                 // Re-format each button
                 const buttons = schemeModal.querySelectorAll('button'),
@@ -1016,8 +1019,9 @@
 
                 // Init logo
                 const settingsIcon = icons.googleGPT.create()
-                settingsIcon.style.cssText += `width: ${ isPortrait ? 64 : 65 }px ; position: relative ; top: -49px ;`
-                                            + `margin: 13px ${ isPortrait ? '40.6% -46px' : '45.7% -41px' } ;`
+                settingsIcon.style.cssText += `width: ${ isPortrait ? 64 : 65 }px ;`
+                                            + `margin: 13px 0 ${ isPortrait ? '-35' : '-27' }px ;`
+                                            + `position: relative ; top: -42px ; ${ isPortrait ? 'left: 6px' : '' }`
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
@@ -1031,9 +1035,10 @@
                       settingsListCnt = ( isMobile && ( isPortrait || settingsKeys.length < 8 )) ? 1 : 2,
                       settingItemCap = Math.floor(settingsKeys.length /2)
                 for (let i = 0 ; i < settingsListCnt ; i++) settingsLists.push(document.createElement('ul'))
+                settingsListContainer.style.width = '95%' // pad vs. parent
                 if (settingsListCnt > 1) { // style multi-list landscape mode
-                    settingsListContainer.style.cssText = ( // make/pad flexbox, add middle gap
-                        `display: flex ; padding: 11px 12px 13px ; gap: ${ middleGap /2 }px` )
+                    settingsListContainer.style.cssText += ( // make/pad flexbox, add middle gap
+                        `display: flex ; padding: 11px 0 13px ; gap: ${ middleGap /2 }px` )
                     settingsLists[0].style.cssText = ( // add vertical separator
                         `padding-right: ${ middleGap /2 }px ; border-right: 1px dotted ${ scheme == 'dark' ? 'white' : 'black '}` )
                 }
@@ -1910,7 +1915,7 @@
                   + 'background-color: white ; color: #202124 }'
               + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
               + '.chatgpt-modal p { margin: 14px 0 -29px 4px ; font-size: 1.28em ; line-height: 1.57 }' // pos/size modal msg
-              + `.modal-buttons { margin: 42px 4px ${ isMobile ? '2px 4px' : '-3px -4px' } !important }` // pos modal buttons
+              + `.modal-buttons { margin: 42px 4px ${ isMobile ? '2px 4px' : '-3px -4px' } !important ; width: 100% }` // pos/size modal buttons
               + '.chatgpt-modal button {' // alert buttons
                   + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ;'
                   + `padding: ${ isMobile ? '5px' : '4px 10px' } !important ;`
@@ -1982,7 +1987,8 @@
               + '@keyframes border-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
                   + '70% { opacity: 0.7 } 100% { opacity: 1 }}'
 
-              // Modal close button
+              // chatgpt.alert() + GoogleGPT modals
+              + '.googlegpt-modal { display: grid ; place-items: center }' // for centered icon/logo
               + '[class*="modal-close-btn"] {'
                   + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
                   + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
@@ -1993,14 +1999,14 @@
 
               // Settings modal
               + '#googlegpt-settings {'
-                  + `min-width: ${ isPortrait ? 288 : 688 }px ; max-width: 75vw ; word-wrap: break-word ;`
-                  + 'padding: 11px 5px 1px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
+                  + `min-width: ${ isPortrait ? 288 : 698 }px ; max-width: 75vw ; word-wrap: break-word ;`
+                  + 'margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
               + '#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px -15px 0 }'
-              + `#googlegpt-settings-title h4 { font-size: ${ isPortrait ? 22 : 29 }px ; font-weight: bold ; margin: 0 0 27px }`
+              + `#googlegpt-settings-title h4 { font-size: ${ isPortrait ? 22 : 29 }px ; font-weight: bold ; margin: 0 0 ${ isPortrait ? 9 : 27 }px }`
               + '#googlegpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#googlegpt-settings li {'
@@ -2026,7 +2032,8 @@
               + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
               + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
               + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
-              + '#about-menu-entry > span { width: 92px ; height: 20px ; overflow: hidden ;' // outer About status span
+              + `#about-menu-entry > span { width: ${ isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
+                  + `${ isPortrait ? 'position: relative ; bottom: 3px ;' : '' }` // v-align
                   + `${ config.fgAnimationsDisabled ? '' : ( // fade edges
                             'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
                   + '-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' )}}`

@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.4.1
+// @version                2024.9.4.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -689,6 +689,9 @@
                 aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: -1px ${ isMobile ? 'auto' : '13.5%' } 1px`
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
+                // Center text
+                aboutModal.querySelector('p').style.cssText = 'text-align: center ; margin: 0'
+
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 aboutModal.querySelectorAll('button').forEach(btn => {
                     btn.style.cssText = 'height: 52px ; min-width: 136px'
@@ -761,7 +764,7 @@
                 const schemeModal = document.getElementById(schemeModalID).firstChild
 
                 // Center button cluster
-                schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
+                schemeModal.querySelector('.modal-buttons').style.cssText = 'justify-content: center ; margin-top: 10px !important'
 
                 // Re-format each button
                 const buttons = schemeModal.querySelectorAll('button'),
@@ -829,8 +832,7 @@
                                                                            && !(isCentered && settingsProps[key].centered == false))
                 // Init logo
                 const settingsIcon = icons.ddgpt.create()
-                settingsIcon.style.cssText = 'width: 65px ; position: relative ; top: -41px ;'
-                                           + `margin: 0 ${ isPortrait ? 40.6 : 45.5 }% -12px ;`
+                settingsIcon.style.cssText = 'width: 65px ; position: relative ; top: -32px ; margin-bottom: 4px ;'
                                            + 'filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))'
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'ddgpt-settings-title'
@@ -845,9 +847,10 @@
                       settingsListCnt = ( isMobile && ( isPortrait || settingsKeys.length < 8 )) ? 1 : 2,
                       settingItemCap = Math.floor(settingsKeys.length /2)
                 for (let i = 0 ; i < settingsListCnt ; i++) settingsLists.push(document.createElement('ul'))
+                settingsListContainer.style.width = '95%' // pad vs. parent
                 if (settingsListCnt > 1) { // style multi-list landscape mode
-                    settingsListContainer.style.cssText = ( // make/pad flexbox, add middle gap
-                        `display: flex ; padding: 11px 12px 13px ; gap: ${ middleGap /2 }px` )
+                    settingsListContainer.style.cssText += ( // make/pad flexbox, add middle gap
+                        `display: flex ; padding: 11px 0 13px ; gap: ${ middleGap /2 }px` )
                     settingsLists[0].style.cssText = ( // add vertical separator
                         `padding-right: ${ middleGap /2 }px ; border-right: 1px dotted ${ scheme == 'dark' ? 'white' : 'black '}` )
                 }
@@ -1710,7 +1713,7 @@
               + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
               + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 1.55rem }' // pos/size modal msg
               + `.chatgpt-modal a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
-              + `.modal-buttons { margin: 24px -5px -3px ${ isMobile ? -5 : -15 }px !important }` // pos modal buttons
+              + `.modal-buttons { margin: 24px -5px -3px ${ isMobile ? -5 : -15 }px !important ; width: 100% }` // pos/size modal buttons
               + '.chatgpt-modal button {' // modal buttons
                   + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
                   + `padding: ${ isMobile ? '7px' : '4px 10px' } !important ;`
@@ -1777,7 +1780,8 @@
               + '@keyframes border-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
                   + '70% { opacity: 0.7 } 100% { opacity: 1 }}'
 
-              // Modal close button
+              // chatgpt.alert() + DDGPT modals
+              + '.ddgpt-modal { display: grid ; place-items: center }' // for centered icon/logo
               + '[class*="modal-close-btn"] {'
                   + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
                   + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
@@ -1788,8 +1792,8 @@
 
               // Settings modal
               + '#ddgpt-settings {'
-                  + `min-width: ${ isPortrait ? 288 : 688 }px ; max-width: 75vw ; word-wrap: break-word ;`
-                  + 'padding: 9px 5px 1px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
+                  + `min-width: ${ isPortrait ? 288 : 698 }px ; max-width: 75vw ; word-wrap: break-word ;`
+                  + 'border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
@@ -1821,7 +1825,7 @@
               + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
               + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
               + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
-              + '#about-menu-entry > span { width: 92px ; height: 20px ; overflow: hidden ;' // outer About status span
+              + `#about-menu-entry > span { width: ${ isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
                   + `${ config.fgAnimationsDisabled ? '' : ( // fade edges
                             'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
                   + '-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' )}}`

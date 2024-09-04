@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.3.3
+// @version               2024.9.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -683,6 +683,9 @@
                 aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: 1px ${ isMobile ? 'auto' : '16%' } 0`
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
+                // Center text
+                aboutModal.querySelector('p').style.cssText = 'text-align: center ; margin: 5px 0 -16px'
+
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 aboutModal.querySelectorAll('button').forEach(btn => {
                     btn.style.cssText = 'height: 53px ; min-width: 136px'
@@ -755,7 +758,7 @@
                 const schemeModal = document.getElementById(schemeModalID).firstChild
 
                 // Center button cluster
-                schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
+                schemeModal.querySelector('.modal-buttons').style.cssText = 'justify-content: center ; margin-top: 10px !important'
 
                 // Re-format each button
                 const buttons = schemeModal.querySelectorAll('button'),
@@ -823,8 +826,8 @@
 
                 // Init logo
                 const settingsIcon = icons.braveGPT.create()
-                settingsIcon.style.cssText = `width: ${ isPortrait ? 63 : 67 }px ; position: relative ; top: -39px ;`
-                                           + `margin: 0 ${ isPortrait ? 40.2 : 44.6 }% -8px ;`
+                settingsIcon.style.cssText = `width: ${ isPortrait ? 63 : 67 }px ; margin-bottom: 10px ;`
+                                           + `position: relative ; top: -29px ; right: ${ isPortrait ? -5 : 7 }px ;`
                                            + 'filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))'
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'bravegpt-settings-title'
@@ -839,9 +842,10 @@
                       settingsListCnt = ( isMobile && ( isPortrait || settingsKeys.length < 8 )) ? 1 : 2,
                       settingItemCap = Math.floor(settingsKeys.length /2)
                 for (let i = 0 ; i < settingsListCnt ; i++) settingsLists.push(document.createElement('ul'))
+                settingsListContainer.style.width = '95%' // pad vs. parent
                 if (settingsListCnt > 1) { // style multi-list landscape mode
-                    settingsListContainer.style.cssText = ( // make/pad flexbox, add middle gap
-                        `display: flex ; padding: 11px 12px 13px ; gap: ${ middleGap /2 }px` )
+                    settingsListContainer.style.cssText += ( // make/pad flexbox, add middle gap
+                        `display: flex ; padding: 11px 0 13px ; gap: ${ middleGap /2 }px` )
                     settingsLists[0].style.cssText = ( // add vertical separator
                         `padding-right: ${ middleGap /2 }px ; border-right: 1px dotted ${ scheme == 'dark' ? 'white' : 'black '}` )
                 }
@@ -1716,7 +1720,7 @@
               + '.chatgpt-modal h2 { font-size: 26px ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + shrink it
               + '.chatgpt-modal p { margin: 14px 0 -20px 4px ; font-size: 18px }' // pos/size modal msg
               + `.chatgpt-modal a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
-              + `.modal-buttons { margin: 38px 0 1px ${ isMobile ? 0 : -7 }px !important }` // pos modal buttons
+              + `.modal-buttons { margin: 38px 0 1px ${ isMobile ? 0 : -7 }px !important ; width: 100% }` // pos/size modal buttons
               + '.chatgpt-modal button {' // alert buttons
                   + 'font-size: 14px ; text-transform: uppercase ; min-width: 123px ; '
                   + `padding: ${ isMobile ? '5px' : '4px 3px' } !important ;`
@@ -1783,7 +1787,8 @@
               + '@keyframes border-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
                   + '70% { opacity: 0.7 } 100% { opacity: 1 }}'
 
-              // Modal close button
+              // chatgpt.alert() + BraveGPT modals
+              + '.bravegpt-modal { display: grid ; place-items: center }' // for centered icon/logo
               + '[class*="modal-close-btn"] {'
                   + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
                   + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
@@ -1795,7 +1800,7 @@
               // Settings modal
               + '#bravegpt-settings { font-family: var(--brand-font) ;'
                   + `min-width: ${ isPortrait ? 288 : 758 }px ; max-width: 75vw ; word-wrap: break-word ;`
-                  + 'padding: 11px 8px 3px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
+                  + 'margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
@@ -1827,7 +1832,7 @@
               + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
               + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
               + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
-              + '#about-menu-entry > span { width: 92px ; height: 20px ; overflow: hidden ;' // outer About status span
+              + `#about-menu-entry > span { width: ${ isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
                   + `${ config.fgAnimationsDisabled ? '' : ( // fade edges
                             'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
                   + '-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' )}}`
