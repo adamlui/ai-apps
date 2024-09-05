@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.5.10
+// @version                2024.9.5.11
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2655,11 +2655,10 @@
                 config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
 
             // Init prompt
-            const queryIsQuestion = /[?？]/.test(query) && show.reply.src != 'shuffle'
             const rqPrompt = 'Give me a numbered list of '
-                + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
-                +   ( queryIsQuestion ? ( 'Do not use placeholders/brackets for products, services, topics, etc. in the answers. '
-                                        + 'Treat the answers as if I am answering a chatbot on a search engine.' )
+                + `${ get.related.replyIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
+                +   ( get.related.replyIsQuestion ? ( 'Do not use placeholders/brackets for products, services, topics, etc. in the answers. '
+                                                    + 'Treat the answers as if I am answering a chatbot on a search engine.' )
 
                   // Extended instructions for non-question queries
                   : get.related.api == 'Free Chat' ? '' // to evade long query detection
@@ -3100,7 +3099,7 @@
 
             // Re-get.related() if current reply is question to suggest answers
             const currentReply = appDiv.querySelector('#ddgpt > pre')?.textContent.trim()
-            if (!get.related.replyIsQuestion && /[?？]/.test(currentReply)) {
+            if (show.reply.src != 'shuffle' && !get.related.replyIsQuestion && /[?？]/.test(currentReply)) {
                 get.related.replyIsQuestion = true
                 get.related(currentReply).then(queries => show.related(queries))
                     .catch(err => { log.err(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) })
