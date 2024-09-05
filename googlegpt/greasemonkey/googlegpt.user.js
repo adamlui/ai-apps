@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.5.1
+// @version                  2024.9.5.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1119,8 +1119,10 @@
 
                         // Add click listener
                         settingItem.onclick = () => {
-                            if (!(key == 'streamingDisabled' && !config.proxyAPIenabled)) // visually switch toggle if not Streaminng in OpenAI mode
-                                modals.settings.toggle.switch(settingToggle)
+                            if (!(key == 'streamingDisabled' // visually switch toggle if not Streaminng...
+                                && (isChrome || isEdge || isBrave // ...in unsupported browser...
+                                || !config.proxyAPIenabled) // ...or in OpenAI mode
+                            )) modals.settings.toggle.switch(settingToggle)
 
                             // Call specialized toggle funcs
                             const manualGetMatch = /(?:suf|pre)fix/.exec(key)

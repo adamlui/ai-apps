@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.5.1
+// @version               2024.9.5.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -926,8 +926,10 @@
 
                         // Add click listener
                         settingItem.onclick = () => {
-                            if (!(key == 'streamingDisabled' && !config.proxyAPIenabled)) // visually switch toggle if not Streaminng in OpenAI mode
-                                modals.settings.toggle.switch(settingToggle)
+                            if (!(key == 'streamingDisabled' // visually switch toggle if not Streaminng...
+                                && (isChrome || isEdge || isBrave // ...in unsupported browser...
+                                || !config.proxyAPIenabled) // ...or in OpenAI mode
+                            )) modals.settings.toggle.switch(settingToggle)
 
                             // Call specialized toggle funcs
                             const manualGetMatch = /(?:suf|pre)fix/.exec(key)

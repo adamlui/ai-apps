@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.5.3
+// @version                2024.9.5.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -770,8 +770,10 @@
 
                         // Add click listener
                         settingItem.onclick = () => {
-                            if (!(key == 'streamingDisabled' && !config.proxyAPIenabled)) // visually switch toggle if not Streaminng in OpenAI mode
-                                modals.settings.toggle.switch(settingToggle)
+                            if (!(key == 'streamingDisabled' // visually switch toggle if not Streaminng...
+                                && (isChrome || isEdge || isBrave // ...in unsupported browser...
+                                || !config.proxyAPIenabled) // ...or in OpenAI mode
+                            )) modals.settings.toggle.switch(settingToggle)
 
                             // Call specialized toggle funcs
                             if (key.includes('proxy')) toggle.proxyMode()

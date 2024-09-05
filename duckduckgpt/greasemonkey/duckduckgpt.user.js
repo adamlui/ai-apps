@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.5.3
+// @version                2024.9.5.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -930,8 +930,10 @@
 
                         // Add click listener
                         settingItem.onclick = () => {
-                            if (!(key == 'streamingDisabled' && !config.proxyAPIenabled)) // visually switch toggle if not Streaminng in OpenAI mode
-                                modals.settings.toggle.switch(settingToggle)
+                            if (!(key == 'streamingDisabled' // visually switch toggle if not Streaminng...
+                                && (isChrome || isEdge || isBrave // ...in unsupported browser...
+                                || !config.proxyAPIenabled) // ...or in OpenAI mode
+                            )) modals.settings.toggle.switch(settingToggle)
 
                             // Call specialized toggle funcs
                             const manualGetMatch = /(?:suf|pre)fix/.exec(key)
