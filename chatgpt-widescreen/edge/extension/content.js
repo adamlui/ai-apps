@@ -334,7 +334,7 @@
 
     function sendBtnIsLoaded() { // for borrowing classes
         return new Promise(resolve => {
-            new MutationObserver((mutations, obs) => {
+            new MutationObserver((_, obs) => {
                 if (chatgpt.getSendBtn()) { obs.disconnect() ; resolve(true) }}
             ).observe(document.body, { childList: true, subtree: true })
         })

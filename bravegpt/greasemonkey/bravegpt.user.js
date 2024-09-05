@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.5.3
+// @version               2024.9.5.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -3313,7 +3313,7 @@
 
     // APPEND to Brave
     const appDivContainer = await new Promise(resolve => {
-        new MutationObserver((mutations, obs) => {
+        new MutationObserver((_, obs) => {
             const container = document.querySelector(isMobile ? '#results' : '.sidebar')
             if (container) { obs.disconnect() ; resolve(container) }
         }).observe(document.body, { childList: true, subtree: true })
@@ -3359,7 +3359,7 @@
     }
 
     // Observe DOM for need to re-insert BraveGPT
-    new MutationObserver((mutations, obs) => {
+    new MutationObserver((_, obs) => {
         if (!document.getElementById('bravegpt')) { restoreAppDiv() ; obs.disconnect() }
     }).observe(document.body, { subtree: true, childList: true })   
     function saveAppDiv() { if (restoreAppDiv.restored) return ; saveAppDiv.html = appDiv.innerHTML }
