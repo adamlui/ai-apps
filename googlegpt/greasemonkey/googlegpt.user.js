@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.5.7
+// @version                  2024.9.5.8
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2977,7 +2977,7 @@
 
             // Init prompt
             const queryIsQuestion = /[?？]/.test(query) && show.reply.src != 'shuffle'
-            const rqPrompt = 'Present to me a numbered list of '
+            const rqPrompt = 'Give me a numbered list of '
                 + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
                 +   ( queryIsQuestion ? ( 'Do not use placeholders/brackets for products, services, topics, etc. in the answers. '
                                         + 'Treat the answers as if I am answering a chatbot on a search engine.' )

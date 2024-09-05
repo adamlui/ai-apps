@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.5.7
+// @version               2024.9.5.8
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2765,7 +2765,7 @@
 
             // Init prompt
             const queryIsQuestion = /[?？]/.test(query) && show.reply.src != 'shuffle'
-            const rqPrompt = 'Present to me a numbered list of '
+            const rqPrompt = 'Give me a numbered list of '
                 + `${ queryIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
                 +   ( queryIsQuestion ? ( 'Do not use placeholders/brackets for products, services, topics, etc. in the answers. '
                                         + 'Treat the answers as if I am answering a chatbot on a search engine.' )
