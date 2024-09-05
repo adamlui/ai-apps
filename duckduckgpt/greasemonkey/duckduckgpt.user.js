@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.5.1
+// @version                2024.9.5.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -690,7 +690,8 @@
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Center text
-                aboutModal.querySelector('p').style.cssText = `text-align: center ; margin: 0 0 ${ isPortrait ? -14 : 0 }px ; overflow-wrap: anywhere`
+                aboutModal.querySelector('p').style.cssText = 'text-align: center ; overflow-wrap: anywhere ;'
+                                                            + `margin: ${ isPortrait ? '2px 0 -16px' : '0' }`
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 aboutModal.querySelectorAll('button').forEach(btn => {
