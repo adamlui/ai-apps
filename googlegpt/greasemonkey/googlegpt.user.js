@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.5
+// @version                  2024.9.5.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -879,7 +879,9 @@
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Center text
-                aboutModal.querySelector('p').style.cssText = 'text-align: center ; margin-bottom: -16px ; overflow-wrap: anywhere'
+                aboutModal.removeChild(aboutModal.querySelector('h2')) // remove empty title h2
+                aboutModal.querySelector('p').style.cssText = 'justify-self: center ; text-align: center ; overflow-wrap: anywhere ;'
+                                                            + `margin: ${ isPortrait ? '9px 0 -16px' : '15px 0 -19px' }`
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 aboutModal.querySelectorAll('button').forEach(btn => {
@@ -924,9 +926,13 @@
                     msgs.alert_choosePlatform || 'Choose a platform' }:`, '', btns, '', 333)
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
 
+                // Center CTA
+                feedbackModal.querySelector('h2').style.justifySelf = 'center'
+
                 // Re-style button cluster
                 const btnsDiv = feedbackModal.querySelector('.modal-buttons')
                 btnsDiv.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
+                                       + 'margin: 16px 0 5px !important' // close gap between title/btns
 
                 // Format button labels + add v-padding
                 btns = btnsDiv.querySelectorAll('button')
@@ -950,8 +956,9 @@
                     [ function auto() {}, function light() {}, function dark() {} ]) // buttons
                 const schemeModal = document.getElementById(schemeModalID).firstChild
 
-                // Center button cluster
-                schemeModal.querySelector('.modal-buttons').style.cssText = 'justify-content: center ; margin-top: 10px !important'
+                // Center title/button cluster
+                schemeModal.querySelector('h2').style.justifySelf = 'center'
+                schemeModal.querySelector('.modal-buttons').style.cssText = 'justify-content: center ; margin: 20px 0 9px !important'
 
                 // Re-format each button
                 const buttons = schemeModal.querySelectorAll('button'),
@@ -1913,7 +1920,6 @@
               + '.notif-close-btn { display: none !important }' // hide notif close btn
               + '.chatgpt-modal > div { 17px 20px 24px 20px !important ;' // increase alert padding
                   + 'background-color: white ; color: #202124 }'
-              + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
               + '.chatgpt-modal p { margin: 14px 0 -29px 4px ; font-size: 1.28em ; line-height: 1.57 }' // pos/size modal msg
               + `.modal-buttons { margin: 42px 4px ${ isMobile ? '2px 4px' : '-3px -4px' } !important ; width: 100% }` // pos/size modal buttons
               + '.chatgpt-modal button {' // alert buttons
@@ -1996,6 +2002,9 @@
               + ( scheme == 'dark' ? '[class*="modal-close-btn"]:hover path { stroke: black ; fill: black }' : '' ) // invert dark mode hover paths
               + '[class*="modal-close-btn"]:hover { background-color: #f2f2f2 }' // hover underlay
               + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
+              + '[class*="-modal"] h2 { font-size: 1.65rem ; line-height: 32px ; padding: 0 ; margin: 9px 0 -3px !important ;'
+                  + `${ isMobile ? 'text-align: center' : 'justify-self: start' }}` // left-align on desktop, center on mobile
+              + '[class*="-modal"] p { justify-self: start }'
 
               // Settings modal
               + '#googlegpt-settings {'
@@ -2005,7 +2014,7 @@
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
-              + '#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px -15px 0 }'
+              + `#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px ${ isPortrait ? 2 : -15 }px 0 }`
               + `#googlegpt-settings-title h4 { font-size: ${ isPortrait ? 22 : 29 }px ; font-weight: bold ; margin: 0 0 ${ isPortrait ? 9 : 27 }px }`
               + '#googlegpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
                   + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt

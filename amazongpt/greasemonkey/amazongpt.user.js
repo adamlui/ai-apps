@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.5.1
+// @version                2024.9.5.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -540,7 +540,9 @@
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Center text
-                aboutModal.querySelector('p').style.cssText = 'text-align: center ; margin: -14px 0 -16px ; overflow-wrap: anywhere'
+                aboutModal.removeChild(aboutModal.querySelector('h2')) // remove empty title h2
+                aboutModal.querySelector('p').style.cssText = 'text-align: center ; overflow-wrap: anywhere ;'
+                                                            + `margin: ${ isPortrait ? '6px 0 -16px' : '3px 0 -6px' }`
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 aboutModal.querySelectorAll('button').forEach(btn => {
@@ -579,10 +581,13 @@
                     msgs.alert_choosePlatform || 'Choose a platform' }:`, '', btns, '', 408)
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
 
+                // Center CTA
+                feedbackModal.querySelector('h2').style.justifySelf = 'center'
+
                 // Re-style button cluster
                 const btnsDiv = feedbackModal.querySelector('.modal-buttons')
                 btnsDiv.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
-                                       + 'margin: 25px 0 -3px !important' // close gap between title/btns
+                                       + 'margin-top: -2px !important' // close gap between title/btns
 
                 // Format button labels + add v-padding
                 btns = btnsDiv.querySelectorAll('button')
@@ -607,8 +612,9 @@
                     [ function auto() {}, function light() {}, function dark() {} ]) // buttons
                 const schemeModal = document.getElementById(schemeModalID).firstChild
 
-                // Center button cluster
-                schemeModal.querySelector('.modal-buttons').style.cssText = 'justify-content: center ; margin-top: 10px !important'
+                // Center title/button cluster
+                schemeModal.querySelector('h2').style.justifySelf = 'center'
+                schemeModal.querySelector('.modal-buttons').style.cssText = 'justify-content: center ; margin-top: -2px !important'
 
                 // Re-format each button
                 const buttons = schemeModal.querySelectorAll('button'),
@@ -1338,7 +1344,6 @@
               + '.notif-close-btn { display: none !important }' // hide notif close btn
               + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important ;' // increase alert padding
                   + 'background-color: white !important ; color: black }'
-              + '.chatgpt-modal h2 { margin-bottom: 18px !important ; padding: 0 ; font-size: 27px ; font-weight: bold }'
               + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 22px ; line-height: 31px }' // pos/size/space modal msg
               + `.chatgpt-modal a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
               + `.modal-buttons { margin: 35px -5px 2px ${ isMobile ? -5 : -15 }px !important ; width: 100% }` // pos/size modal buttons
@@ -1418,6 +1423,8 @@
               + ( scheme == 'dark' ? '[class*="modal-close-btn"]:hover path { stroke: black ; fill: black }' : '' ) // invert dark mode hover paths
               + '[class*="modal-close-btn"]:hover { background-color: #f2f2f2 }' // hover underlay
               + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
+              + '[class*="-modal"] h2 { font-size: 27px ; font-weight: bold ; line-height: 32px ; padding: 0 ; margin: 9px 0 22px !important ;'
+                  + `${ isMobile ? 'text-align: center' : 'justify-self: start' }}` // left-align on desktop, center on mobile
 
               // Settings modal
               + '#amzgpt-settings {'
