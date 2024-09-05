@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.4
+// @version                2024.9.5
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -694,7 +694,7 @@
                 settingsListContainer.style.width = '95%' // pad vs. parent
                 if (settingsListCnt > 1) { // style multi-list landscape mode
                     settingsListContainer.style.cssText += ( // make/pad flexbox, add middle gap
-                        `display: flex ; padding: 11px 0 13px ; width: 95% ; gap: ${ middleGap /2 }px` )
+                        `display: flex ; padding: 11px 0 13px ; gap: ${ middleGap /2 }px` )
                     settingsLists[0].style.cssText = ( // add vertical separator
                         `padding-right: ${ middleGap /2 }px ; border-right: 1px dotted ${ scheme == 'dark' ? 'white' : 'black '}` )
                 }
