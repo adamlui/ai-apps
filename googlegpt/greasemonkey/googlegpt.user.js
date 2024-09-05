@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.5.3
+// @version                  2024.9.5.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -880,7 +880,7 @@
                 // Center text
                 aboutModal.removeChild(aboutModal.querySelector('h2')) // remove empty title h2
                 aboutModal.querySelector('p').style.cssText = 'justify-self: center ; text-align: center ; overflow-wrap: anywhere ;'
-                                                            + `margin: ${ isPortrait ? '9px 0 -16px' : '15px 0 -19px' }`
+                                                            + `margin: ${ isPortrait ? '21px 0 -20px' : '15px 0 -19px' }`
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 aboutModal.querySelectorAll('button').forEach(btn => {
@@ -2005,7 +2005,8 @@
               + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
               + '[class*="-modal"] h2 { font-size: 1.65rem ; line-height: 32px ; padding: 0 ; margin: 9px 0 -3px !important ;'
                   + `${ isMobile ? 'text-align: center' : 'justify-self: start' }}` // left-align on desktop, center on mobile
-              + '[class*="-modal"] p { justify-self: start }'
+              + '[class*="-modal"] p { justify-self: start ; font-size: 20px }'
+              + '[class*="-modal"] button { font-size: 12px }'
 
               // Settings modal
               + '#googlegpt-settings {'

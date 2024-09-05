@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.5.5
+// @version                2024.9.5.6
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -540,7 +540,7 @@
 
                 // Center text
                 aboutModal.removeChild(aboutModal.querySelector('h2')) // remove empty title h2
-                aboutModal.querySelector('p').style.cssText = 'text-align: center ; overflow-wrap: anywhere ;'
+                aboutModal.querySelector('p').style.cssText = 'justify-self: center ; text-align: center ; overflow-wrap: anywhere ;'
                                                             + `margin: ${ isPortrait ? '6px 0 -16px' : '3px 0 -6px' }`
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
@@ -1427,6 +1427,8 @@
               + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
               + '[class*="-modal"] h2 { font-size: 27px ; font-weight: bold ; line-height: 32px ; padding: 0 ; margin: 9px 0 22px !important ;'
                   + `${ isMobile ? 'text-align: center' : 'justify-self: start' }}` // left-align on desktop, center on mobile
+              + '[class*="-modal"] p { justify-self: start ; font-size: 20px }'
+              + '[class*="-modal"] button { font-size: 14px }'
 
               // Settings modal
               + '#amzgpt-settings {'

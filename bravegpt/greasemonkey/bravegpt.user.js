@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.5.4
+// @version               2024.9.5.5
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1804,7 +1804,8 @@
               + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
               + '[class*="-modal"] h2 { font-size: 26px ; line-height: 32px ; padding: 0 ; margin: 4px 0 -1px !important ;'
                   + `${ isMobile ? 'text-align: center' : 'justify-self: start' }}` // left-align on desktop, center on mobile
-              + '[class*="-modal"] p { justify-self: start }'
+              + '[class*="-modal"] p { justify-self: start ; font-size: 20px }'
+              + '[class*="-modal"] button { font-size: 14px }'
 
               // Settings modal
               + '#bravegpt-settings { font-family: var(--brand-font) ;'
