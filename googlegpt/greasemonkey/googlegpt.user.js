@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.5.2
+// @version                  2024.9.5.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -412,13 +412,15 @@
 
 (async () => {
 
-    // Init BROWSER FLAGS
+    // Init browser/compatibility FLAGS
     const isChrome = chatgpt.browser.isChrome(),
           isFirefox = chatgpt.browser.isFirefox(),
           isEdge = chatgpt.browser.isEdge(),
           isBrave = chatgpt.browser.isBrave(),
           isMobile = chatgpt.browser.isMobile(),
-          isPortrait = isMobile && (window.innerWidth < window.innerHeight)
+          isPortrait = isMobile && (window.innerWidth < window.innerHeight),
+          streamingSupported = { browser: !(getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)),
+                                 userscriptManager: /Tampermonkey|ScriptCat/.test(getUserscriptManager()) }
 
     // Init CONFIG
     const config = {
@@ -439,10 +441,7 @@
                 'replyLanguage', 'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', isMobile ? 14 : 16.55) // init reply font size if unset
-    if ( // disable streaming in unspported envs
-        !/Tampermonkey|ScriptCat/.test(getUserscriptManager()) // unsupported userscript manager
-        || getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave) // TM in browser that triggers STATUS_ACCESS_VIOLATION
-    ) saveSetting('streamingDisabled', true)
+    if (!streamingSupported.browser || !streamingSupported.userscriptManager) saveSetting('streamingDisabled', true) // disable Streaming in unspported env
     if (!config.notFirstRun && isMobile) saveSetting('autoGet', true) // reverse default auto-get disabled if mobile
     saveSetting('notFirstRun', true)
 
@@ -1120,7 +1119,7 @@
                         // Add click listener
                         settingItem.onclick = () => {
                             if (!(key == 'streamingDisabled' // visually switch toggle if not Streaminng...
-                                && (isChrome || isEdge || isBrave // ...in unsupported browser...
+                                && (!streamingSupported.browser || !streamingSupported.userscriptManager // ...in unsupported env...
                                 || !config.proxyAPIenabled) // ...or in OpenAI mode
                             )) modals.settings.toggle.switch(settingToggle)
 
@@ -2677,7 +2676,7 @@
             const scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
                                 : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
                                             : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
-            if (!/Tampermonkey|ScriptCat/.test(getUserscriptManager())) { // alert userscript manager unsupported, suggest TM/SC
+            if (!streamingSupported.userscriptManager) { // alert userscript manager unsupported, suggest TM/SC
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
                         + ( !isEdge && !isBrave ? // suggest TM for supported browsers
@@ -2688,7 +2687,7 @@
                 )
                 const suggestAlert = document.getElementById(suggestAlertID).firstChild
                 modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
-            } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) { // alert TM/browser unsupported, suggest SC
+            } else if (!streamingSupported.browser) { // alert TM/browser unsupported, suggest SC
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
                         + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
