@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.5.6
+// @version                  2024.9.5.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2254,7 +2254,10 @@
 
         cornerBtns() {
             appDiv.querySelectorAll('.corner-btn').forEach(btn => { // from right to left
-                if (btn.id == 'chevron-btn') btn.onclick = () => toggle.minimized()
+                if (btn.id == 'chevron-btn') btn.onclick = () => {
+                    if (appDiv.querySelector('#font-size-slider-track')?.classList.contains('active')) fontSizeSlider.toggle('off')
+                    toggle.minimized()
+                }
                 else if (btn.id == 'about-btn') btn.onclick = modals.about.show
                 else if (btn.id == 'settings-btn') btn.onclick = modals.settings.show
                 else if (btn.id == 'speak-btn') btn.onclick = () => {
@@ -2624,7 +2627,10 @@
             if (chevronBtn) { // update icon
                 const chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
                 chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
-                chevronBtn.onclick = () => toggle.minimized()
+                chevronBtn.onclick = () => {
+                    if (appDiv.querySelector('#font-size-slider-track')?.classList.contains('active')) fontSizeSlider.toggle('off')
+                    toggle.minimized()
+                }
             }
             update.appBottomPos() // toggle visual minimization
             if (!isMobile) setTimeout(() => tooltipDiv.style.opacity = 0, 1) // remove lingering tooltip

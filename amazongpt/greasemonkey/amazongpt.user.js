@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.5.8
+// @version                2024.9.5.9
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1543,7 +1543,10 @@
 
         cornerBtns() {
             appDiv.querySelectorAll('.corner-btn').forEach(btn => { // from right to left
-                if (btn.id == 'chevron-btn') btn.onclick = () => toggle.minimized()
+                if (btn.id == 'chevron-btn') btn.onclick = () => {
+                    if (appDiv.querySelector('#font-size-slider-track')?.classList.contains('active')) fontSizeSlider.toggle('off')
+                    toggle.minimized()
+                }
                 else if (btn.id == 'about-btn') btn.onclick = modals.about.show
                 else if (btn.id == 'settings-btn') btn.onclick = modals.settings.show
                 else if (btn.id == 'speak-btn') btn.onclick = () => {
@@ -1861,7 +1864,10 @@
             if (chevronBtn) { // update icon
                 const chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
                 chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
-                chevronBtn.onclick = () => toggle.minimized()
+                chevronBtn.onclick = () => {
+                    if (appDiv.querySelector('#font-size-slider-track')?.classList.contains('active')) fontSizeSlider.toggle('off')
+                    toggle.minimized()
+                }
             }
             update.appBottomPos() // toggle visual minimization
             if (!isMobile) setTimeout(() => tooltipDiv.style.opacity = 0, 1) // remove lingering tooltip
