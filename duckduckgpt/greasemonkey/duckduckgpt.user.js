@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.5.11
+// @version                2024.9.5.12
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2657,8 +2657,7 @@
             // Init prompt
             const rqPrompt = 'Give me a numbered list of '
                 + `${ get.related.replyIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
-                +   ( get.related.replyIsQuestion ? ( 'Do not use placeholders/brackets for products, services, topics, etc. in the answers. '
-                                                    + 'Treat the answers as if I am answering a chatbot on a search engine.' )
+                +   ( get.related.replyIsQuestion ? 'Generate answers as if in reply to a search engine chatbot asking the question.'
 
                   // Extended instructions for non-question queries
                   : get.related.api == 'Free Chat' ? '' // to evade long query detection
@@ -3126,19 +3125,22 @@
                     // Assemble/insert elems
                     relatedQueryDiv.prepend(relatedQuerySVG) ; relatedQueriesDiv.append(relatedQueryDiv)
 
-                    // Add fade + listeners
+                    // Add fade + listener
                     setTimeout(() => {
                         relatedQueryDiv.classList.add('active')
                         relatedQueryDiv.onclick = relatedQueryDiv.onkeydown = event => {
                             const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]    
                             if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
                                 event.preventDefault() // prevent scroll on space taps
-                                appDiv.querySelector('.related-queries').remove() // remove related queries
-                                const chatbar = appDiv.querySelector('textarea')
-                                if (chatbar) { // send related query
-                                    chatbar.value = event.target.textContent
-                                    chatbar.dispatchEvent(new KeyboardEvent('keydown', {
-                                        key: 'Enter', bubbles: true, cancelable: true }))
+                                const relatedQuery = event.target.textContent, chatbar = appDiv.querySelector('textarea')
+                                if (chatbar) {
+                                    chatbar.value = relatedQuery
+                                    if (/\[[^[\]]+\]/.test(relatedQuery)) { // highlight 1st bracket-enclosed placeholder
+                                        chatbar.focus()
+                                        listenerize.replySection.chatbarAutoSizer() // since query not auto-sent
+                                        chatbar.setSelectionRange(relatedQuery.indexOf('['), relatedQuery.indexOf(']') +1)
+                                    } else // send related query w/ no placeholders
+                                        chatbar.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
                         }}}
                     }, idx * 100)
                 })
