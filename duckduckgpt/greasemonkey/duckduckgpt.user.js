@@ -505,8 +505,7 @@
 
         // Show notification
         chatgpt.notify(msg, position, notifDuration, shadow)
-        const notifs = document.querySelectorAll('.chatgpt-notif'),
-              notif = notifs[notifs.length -1]
+        const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Prepend app icon
         const notifIcon = icons.ddgpt.create()

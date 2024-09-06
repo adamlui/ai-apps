@@ -219,8 +219,7 @@
 
         // Show notification
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
-        const notifs = document.querySelectorAll('.chatgpt-notif'),
-              notif = notifs[notifs.length -1]
+        const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Append styled state word
         if (foundState) {
