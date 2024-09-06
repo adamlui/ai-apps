@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.6
+// @version               2024.9.6.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2445,7 +2445,7 @@
             update.rqVisibility()
             if (!config.rqDisabled && !appDiv.querySelector('.related-queries')) // get related queries for 1st time
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
-                    .catch(err => { log.err(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) })
+                    .catch(err => { log.err(err.message) ; api.tryNew(get.related) })
             update.tweaksStyle() // toggle <pre> max-height
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
         },
@@ -2608,6 +2608,7 @@
         },
 
         tryNew(caller, reason = 'err') {
+            if (caller.status == 'done') return
             log.err(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
             caller.triedAPIs.push({ [caller.api]: reason })
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
@@ -2734,7 +2735,7 @@
             // Get/show related queries if enabled on 1st get.reply()
             if (!config.rqDisabled && get.reply.attemptCnt == 1)
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
-                    .catch(err => { log.err(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) })
+                    .catch(err => { log.err(err.message) ; api.tryNew(get.related) })
 
             update.footerContent()
         },
@@ -2799,7 +2800,7 @@
                 responseType: 'text', headers: api.createHeaders(get.related.api),
                 data: api.createPayload(get.related.api, [{ role: 'user', content: rqPrompt }]),
                 onload: resp => dataProcess.text(get.related, resp).then(resolve),
-                onerror: err => { log.err(err) ; if (get.related.status != 'done') api.tryNew(get.related) }
+                onerror: err => { log.err(err) ; api.tryNew(get.related) }
             }))
         }
     }
@@ -2876,7 +2877,7 @@
                                : resp.status == 403 ? 'checkCloudflare'
                                : resp.status == 429 ? ['tooManyRequests', 'suggestProxy']
                                                     : ['openAInotWorking', 'suggestProxy'] )
-                    else if (caller.status != 'done') api.tryNew(caller)
+                    else api.tryNew(caller)
                 } else if (caller.api == 'OpenAI') {
                     if (resp.response && !failFlagsAndURLs.test(resp.response)) {
                         try { // to show response or return related queries
@@ -2885,7 +2886,7 @@
                         } catch (err) { handleProcessError(err) }
                     } else { // suggest proxy or try diff API
                         if (caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
-                        else if (caller.status != 'done') api.tryNew(caller)
+                        else api.tryNew(caller)
                     }
                 } else if (resp.responseText) {
                     if (caller.api == 'AIchatOS') {
@@ -2934,7 +2935,7 @@
                     log.info('Response text', resp.response)
                     log.err(appAlerts.parseFailed, err)
                     if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
-                    else if (caller.status != 'done') api.tryNew(caller)
+                    else api.tryNew(caller)
                 }
 
                 function arrayify(strList) { // for get.related() calls
@@ -3220,7 +3221,7 @@
             if (show.reply.src != 'shuffle' && !get.related.replyIsQuestion && /[?？]/.test(currentReply)) {
                 get.related.replyIsQuestion = true
                 get.related(currentReply).then(queries => show.related(queries))
-                    .catch(err => { log.err(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) })
+                    .catch(err => { log.err(err.message) ; api.tryNew(get.related) })
             }
 
             // Show the queries
@@ -3351,7 +3352,7 @@
             show.reply('standby', footerContent)
             if (!config.rqDisabled)
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
-                    .catch(err => { log.err(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) })
+                    .catch(err => { log.err(err.message) ; api.tryNew(get.related) })
     } else { appAlert('waitingResponse') ; get.reply(msgChain) }
     saveAppDiv() // to fight Brave mutations
 

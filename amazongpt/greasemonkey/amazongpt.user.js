@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.5.9
+// @version                2024.9.6
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2028,6 +2028,7 @@
         },
 
         tryNew(caller, reason = 'err') {
+            if (caller.status == 'done') return
             log.err(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
             caller.triedAPIs.push({ [caller.api]: reason })
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
@@ -2233,7 +2234,7 @@
                                : resp.status == 403 ? 'checkCloudflare'
                                : resp.status == 429 ? ['tooManyRequests', 'suggestProxy']
                                                     : ['openAInotWorking', 'suggestProxy'] )
-                    else if (caller.status != 'done') api.tryNew(caller)
+                    else api.tryNew(caller)
                 } else if (caller.api == 'OpenAI') {
                     if (resp.response && !failFlagsAndURLs.test(resp.response)) {
                         try { // to show response
@@ -2242,7 +2243,7 @@
                         } catch (err) { handleProcessError(err) }
                     } else { // suggest proxy or try diff API
                         if (caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
-                        else if (caller.status != 'done') api.tryNew(caller)
+                        else api.tryNew(caller)
                     }
                 } else if (resp.responseText && !failFlagsAndURLs.test(resp.responseText)) {
                     if (caller.api == 'AIchatOS') {
@@ -2286,7 +2287,7 @@
                     log.info('Response text', resp.response)
                     log.err(appAlerts.parseFailed, err)
                     if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
-                    else if (caller.status != 'done') api.tryNew(caller)
+                    else api.tryNew(caller)
                 }
         })}
     }
