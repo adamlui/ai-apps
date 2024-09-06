@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.5.12
+// @version                2024.9.5.13
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2778,7 +2778,7 @@
                         if (caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                         else if (caller.status != 'done') api.tryNew(caller)
                     }
-                } else if (resp.responseText && !failFlagsAndURLs.test(resp.responseText)) {
+                } else if (resp.responseText) {
                     if (caller.api == 'AIchatOS') {
                         try { // to show response or return related queries
                             const text = resp.responseText, chunkSize = 1024
@@ -2812,10 +2812,14 @@
                     log.info('Response', resp.responseText) ; api.tryNew(caller) }
 
                 function handleProcessCompletion() {
-                    caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                    if (caller == get.reply) { show.reply(respText) ; show.copyBtns() }
-                    else resolve(arrayify(respText))
-                }
+                    if (caller.status != 'done') {
+                        if (failFlagsAndURLs.test(respText)) {
+                            log.info('Response', respText) ; api.tryNew(caller)
+                        } else {
+                            caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                            if (caller == get.reply) { show.reply(respText) ; show.copyBtns() }
+                            else resolve(arrayify(respText))
+                }}}
 
                 function handleProcessError(err) { // suggest proxy or try diff API
                     log.info('Response text', resp.response)
@@ -3125,7 +3129,7 @@
                     // Assemble/insert elems
                     relatedQueryDiv.prepend(relatedQuerySVG) ; relatedQueriesDiv.append(relatedQueryDiv)
 
-                    // Add fade + listener
+                    // Add fade + listeners
                     setTimeout(() => {
                         relatedQueryDiv.classList.add('active')
                         relatedQueryDiv.onclick = relatedQueryDiv.onkeydown = event => {
@@ -3139,10 +3143,9 @@
                                         chatbar.focus()
                                         listenerize.replySection.chatbarAutoSizer() // since query not auto-sent
                                         chatbar.setSelectionRange(relatedQuery.indexOf('['), relatedQuery.indexOf(']') +1)
-                                    } else // send related query w/ no placeholders
+                                    } else // send placeholder-free related query
                                         chatbar.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
-                        }}}
-                    }, idx * 100)
+                    }}}}, idx * 100)
                 })
 
                 get.related.replyIsQuestion = null
