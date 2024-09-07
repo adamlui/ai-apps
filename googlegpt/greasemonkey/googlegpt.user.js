@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.7
+// @version                  2024.9.7.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -426,17 +426,19 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
     // Init browser/compatibility FLAGS
-    const isChrome = chatgpt.browser.isChrome(),
-          isFirefox = chatgpt.browser.isFirefox(),
-          isEdge = chatgpt.browser.isEdge(),
-          isBrave = chatgpt.browser.isBrave(),
-          isMobile = chatgpt.browser.isMobile(),
-          isPortrait = isMobile && (window.innerWidth < window.innerHeight),
-          streamingSupported = { browser: !(getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)),
-                                 userscriptManager: /Tampermonkey|ScriptCat/.test(getUserscriptManager()) }
+    const browser = {
+        isChrome: chatgpt.browser.isChrome(),
+        isFirefox: chatgpt.browser.isFirefox(),
+        isEdge: chatgpt.browser.isEdge(),
+        isBrave: chatgpt.browser.isBrave(),
+        isMobile: chatgpt.browser.isMobile() }
+    browser.isPortrait = browser.isMobile && (window.innerWidth < window.innerHeight)
+    const streamingSupported = {
+        browser: !(getUserscriptManager() == 'Tampermonkey' && (browser.isChrome || browser.isEdge || browser.isBrave)),
+        userscriptManager: /Tampermonkey|ScriptCat/.test(getUserscriptManager()) }
 
     // Init CONFIG
-    const config = { minFontSize: 11, maxFontSize: 24, lineHeightRatio: isMobile ? 1.357 : 1.375 }
+    const config = { minFontSize: 11, maxFontSize: 24, lineHeightRatio: browser.isMobile ? 1.357 : 1.375 }
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
@@ -444,9 +446,9 @@
                 'fgAnimationsDisabled', 'fontSize', 'minimized', 'notFirstRun', 'prefixEnabled', 'proxyAPIenabled',
                 'replyLanguage', 'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    if (!config.fontSize) saveSetting('fontSize', isMobile ? 14 : 16.55) // init reply font size if unset
+    if (!config.fontSize) saveSetting('fontSize', browser.isMobile ? 14 : 16.55) // init reply font size if unset
     if (!streamingSupported.browser || !streamingSupported.userscriptManager) saveSetting('streamingDisabled', true) // disable Streaming in unspported env
-    if (!config.notFirstRun && isMobile) saveSetting('autoGet', true) // reverse default auto-get disabled if mobile
+    if (!config.notFirstRun && browser.isMobile) saveSetting('autoGet', true) // reverse default auto-get disabled if mobile
     saveSetting('notFirstRun', true)
 
     // Init fetcher
@@ -499,7 +501,7 @@
 
     // Init INPUT EVENTS
     const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
-          inputEvents[action] = ( window.PointerEvent ? 'pointer' : isMobile ? 'touch' : 'mouse' ) + action)
+          inputEvents[action] = ( window.PointerEvent ? 'pointer' : browser.isMobile ? 'touch' : 'mouse' ) + action)
 
     // Init MESSAGES
     let msgs = {}
@@ -877,13 +879,13 @@
 
                 // Add logo
                 const aboutHeaderLogo = logos.googleGPT.create() ; aboutHeaderLogo.width = 405
-                aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: 15px ${ isMobile ? 'auto' : '14.5%' } -1px`
+                aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: 15px ${ browser.isMobile ? 'auto' : '14.5%' } -1px`
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Center text
                 aboutModal.removeChild(aboutModal.querySelector('h2')) // remove empty title h2
                 aboutModal.querySelector('p').style.cssText = 'justify-self: center ; text-align: center ; overflow-wrap: anywhere ;'
-                                                            + `margin: ${ isPortrait ? '21px 0 -20px' : '15px 0 -19px' }`
+                                                            + `margin: ${ browser.isPortrait ? '21px 0 -20px' : '15px 0 -19px' }`
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 aboutModal.querySelectorAll('button').forEach(btn => {
@@ -1024,13 +1026,13 @@
                 modals.init(settingsModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Init settings keys
-                const settingsKeys = Object.keys(settingsProps).filter(key => !(isMobile && settingsProps[key].mobile == false))
+                const settingsKeys = Object.keys(settingsProps).filter(key => !(browser.isMobile && settingsProps[key].mobile == false))
 
                 // Init logo
                 const settingsIcon = icons.googleGPT.create()
-                settingsIcon.style.cssText += `width: ${ isPortrait ? 64 : 65 }px ;`
-                                            + `margin: 13px 0 ${ isPortrait ? '-35' : '-27' }px ;`
-                                            + `position: relative ; top: -42px ; ${ isPortrait ? 'left: 6px' : '' }`
+                settingsIcon.style.cssText += `width: ${ browser.isPortrait ? 64 : 65 }px ;`
+                                            + `margin: 13px 0 ${ browser.isPortrait ? '-35' : '-27' }px ;`
+                                            + `position: relative ; top: -42px ; ${ browser.isPortrait ? 'left: 6px' : '' }`
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
                 const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
@@ -1041,7 +1043,7 @@
                 // Init settings lists
                 const settingsLists = [], middleGap = 30, // px
                       settingsListContainer = document.createElement('div'),
-                      settingsListCnt = ( isMobile && ( isPortrait || settingsKeys.length < 8 )) ? 1 : 2,
+                      settingsListCnt = ( browser.isMobile && ( browser.isPortrait || settingsKeys.length < 8 )) ? 1 : 2,
                       settingItemCap = Math.floor(settingsKeys.length /2)
                 for (let i = 0 ; i < settingsListCnt ; i++) settingsLists.push(document.createElement('ul'))
                 settingsListContainer.style.width = '95%' // pad vs. parent
@@ -1060,7 +1062,7 @@
                     const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
                     settingItem.title = setting.helptip || '' // for hover assistance
                     const settingLabel = document.createElement('label') ; settingLabel.textContent = setting.label
-                    settingItem.append(settingLabel) ; (settingsLists[isPortrait ? 0 : +(idx >= settingItemCap)]).append(settingItem)
+                    settingItem.append(settingLabel) ; (settingsLists[browser.isPortrait ? 0 : +(idx >= settingItemCap)]).append(settingItem)
 
                     // Create/prepend icons
                     const settingIcon = icons[setting.icon].create(/bg|fg/.exec(key)?.[0] ?? '')
@@ -1196,7 +1198,7 @@
             show() {
                 const settingsContainer = modals.settings.get()?.parentNode || modals.settings.createAppend()
                 settingsContainer.style.display = '' // show modal
-                if (isMobile) { // scale 93% to viewport sides
+                if (browser.isMobile) { // scale 93% to viewport sides
                     const settingsModal = settingsContainer.querySelector('#googlegpt-settings'),
                           scaleRatio = 0.93 * window.innerWidth / settingsModal.offsetWidth
                     settingsModal.style.transform = `scale(${scaleRatio})`
@@ -1818,9 +1820,9 @@
               + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
                   + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
               + '#googlegpt { border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
-                  + `z-index: 5555 ; padding: ${ isFirefox ? 20 : 22 }px 26px 6px 26px ;`
-                  + `width: ${ isMobile ? 'auto' : '319px' } ;` // hard-width to prevent Google's flex-wrap moving app to bottom
-                  + ( isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
+                  + `z-index: 5555 ; padding: ${ browser.isFirefox ? 20 : 22 }px 26px 6px 26px ;`
+                  + `width: ${ browser.isMobile ? 'auto' : '319px' } ;` // hard-width to prevent Google's flex-wrap moving app to bottom
+                  + ( browser.isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
                   + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
                   + `background-image: linear-gradient(180deg, ${
                         scheme == 'dark' ? '#99a8a6 -215px, black 185px'
@@ -1836,7 +1838,7 @@
               + ( scheme == 'dark' ? '#googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
               + '.app-name { font-size: 1.35rem ; font-weight: 700 ; text-decoration: none ;'
                   + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important }`
-              + `.kudoai { font-size: ${ isMobile ? 0.85 : 0.75 }rem ; position: relative ; left: ${ isMobile ? 8 : 6 }px ; color: #aaa }`
+              + `.kudoai { font-size: ${ browser.isMobile ? 0.85 : 0.75 }rem ; position: relative ; left: ${ browser.isMobile ? 8 : 6 }px ; color: #aaa }`
               + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important }'
               + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
               + '#corner-btns { float: right }'
@@ -1845,7 +1847,7 @@
               + ( config.bgAnimationsDisabled ? '' : ( '#googlegpt-logo, .corner-btn svg, .standby-btn'
                   + `{ filter: drop-shadow(${ scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
               + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
-                  + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.285)' }}`
+                  + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.285)' }}`
               + '#googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
               + '#googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
               + '#font-size-slider-track { width: 98% ; height: 7px ; margin: 0 auto -15px ; padding: 15px 0 ;'
@@ -1857,14 +1859,14 @@
               + '#font-size-slider-thumb { z-index: 2 ; width: 10px ; height: 26px ; border-radius: 30% ; position: relative ; top: -8.25px ;'
                   + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                   + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0 ; cursor: ew-resize }'
-              + ( config.fgAnimationsDisabled || isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
+              + ( config.fgAnimationsDisabled || browser.isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
               + '.standby-btn { width: 100% ; margin-top: 20px ; padding: 11px 0 ; cursor: pointer ;'
                   + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
                   + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
                   + 'transition: transform 0.15s ease }'
               + '.standby-btn:hover { border-radius: 6px ;'
                   + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
-                  + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
+                  + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
               + '#googlegpt > pre {'
                   + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
                   + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
@@ -1876,7 +1878,7 @@
               + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
               + '#googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
               + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-                  + `float: left ; margin: ${ isMobile ? 39 : 28 }px -15px 0 0 ; left: ${ isMobile ? 12 : 6 }px ;` // positioning
+                  + `float: left ; margin: ${ browser.isMobile ? 39 : 28 }px -15px 0 0 ; left: ${ browser.isMobile ? 12 : 6 }px ;` // positioning
                   + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
                       + ( scheme == 'dark' ? '#0000' : '#eaeaeacf' ) + '}'
               + '#copy-btn { float: right ; cursor: pointer }'
@@ -1894,12 +1896,12 @@
                   + 'box-sizing: border-box ; width: fit-content ; max-width: 100% ;' // confine to .related-queries bounds
                   + `margin: 5px 4px ${ scheme == 'dark' ? 5 : 2 }px 0 ; padding: 8px 12px 8px 13px ;`
                   + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
-                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: ${ isMobile ? 1 : 0.81}em ; cursor: pointer ; `
+                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: ${ browser.isMobile ? 1 : 0.81}em ; cursor: pointer ; `
                   + 'border-radius: 0 13px 12px 13px ; flex: 0 0 auto ;'
                   + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
                   + `${ config.fgAnimationsDisabled ? '' : 'transition: transform 0.1s ease !important' }}`
               + '.related-query:hover, .related-query:focus {'
-                  + ( config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.055) !important ;' )
+                  + ( config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.055) !important ;' )
                   + `background: ${ scheme == 'dark' ? '#a2a2a270' : '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
               + '.related-query svg { float: left ; margin: -0.09em 6px 0 0 ;' // related query icon
                   + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
@@ -1908,7 +1910,7 @@
               + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
               + '.chatbar-btn { z-index: 560 ;'
                   + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
-                  + `bottom: ${( isFirefox ? 46 : 49 ) + ( hasSidebar ? 3 : 2 )}px ;`
+                  + `bottom: ${( browser.isFirefox ? 46 : 49 ) + ( hasSidebar ? 3 : 2 )}px ;`
                   + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
               + '.chatbar-btn:hover {'
                   + `${ scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
@@ -1925,10 +1927,10 @@
               + '.chatgpt-modal > div { 17px 20px 24px 20px !important ;' // increase alert padding
                   + 'background-color: white ; color: #202124 }'
               + '.chatgpt-modal p { margin: 14px 0 -29px 4px ; font-size: 1.28em ; line-height: 1.57 }' // pos/size modal msg
-              + `.modal-buttons { margin: 42px 4px ${ isMobile ? '2px 4px' : '-3px -4px' } !important ; width: 100% }` // pos/size modal buttons
+              + `.modal-buttons { margin: 42px 4px ${ browser.isMobile ? '2px 4px' : '-3px -4px' } !important ; width: 100% }` // pos/size modal buttons
               + '.chatgpt-modal button {' // alert buttons
                   + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ;'
-                  + `padding: ${ isMobile ? '5px' : '4px 10px' } !important ;`
+                  + `padding: ${ browser.isMobile ? '5px' : '4px 10px' } !important ;`
                   + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
                   + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
               + '.primary-modal-btn { background: black !important ; color: white !important }'
@@ -1953,7 +1955,7 @@
                   + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                   + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                               + 'transform 0.55s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
-              + ( config.fgAnimationsDisabled || isMobile ? '' : (
+              + ( config.fgAnimationsDisabled || browser.isMobile ? '' : (
                     '[class$="-modal"] button { transition: transform 0.15s ease }' 
                   + '[class$="-modal"] button:hover { transform: scale(1.055) }' ))
               + '.googlegpt-menu { position: absolute ; z-index: 12250 ;'
@@ -1965,7 +1967,7 @@
               + '#checkmark-icon { fill: #b3f96d } .googlegpt-menu-item:hover #checkmark-icon { fill: green }'
               + '#googlegpt footer {'
                   + 'position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ; line-height: 1.43em ;'
-                  + `margin: ${ isFirefox ? 1 : -2 }px -32px 12px }`
+                  + `margin: ${ browser.isFirefox ? 1 : -2 }px -32px 12px }`
               + '#googlegpt footer * { color: #aaa ; text-decoration: none }'
               + `#googlegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
 
@@ -1980,7 +1982,7 @@
                   + '-moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
                   + 'text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) }'
               + '.faulty-letter { opacity: 0.5 ; animation: faulty-flicker 2s linear infinite }'
-                  + ( !isMobile ? 'background: var(--glow-color) ; transform: translateY(120%) rotateX(95deg) scale(1, 0.35)' : '' ) + '}'
+                  + ( !browser.isMobile ? 'background: var(--glow-color) ; transform: translateY(120%) rotateX(95deg) scale(1, 0.35)' : '' ) + '}'
               + '.glowing-btn::after { content: "" ; position: absolute ; top: 0 ; bottom: 0 ; left: 0 ; right: 0 ;'
                   + 'opacity: 0 ; z-index: -1 ; box-shadow: 0 0 2em 0.2em var(--glow-color) ;'
                   + 'background-color: var(--glow-color) ; transition: opacity 100ms linear }'
@@ -2007,22 +2009,22 @@
               + '[class*="modal-close-btn"]:hover { background-color: #f2f2f2 }' // hover underlay
               + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
               + '[class*="-modal"] h2 { font-size: 1.65rem ; line-height: 32px ; padding: 0 ; margin: 9px 0 -3px !important ;'
-                  + `${ isMobile ? 'text-align: center' : 'justify-self: start' }}` // left-align on desktop, center on mobile
+                  + `${ browser.isMobile ? 'text-align: center' : 'justify-self: start' }}` // left-align on desktop, center on mobile
               + '[class*="-modal"] p { justify-self: start ; font-size: 20px }'
               + '[class*="-modal"] button { font-size: 12px }'
 
               // Settings modal
               + '#googlegpt-settings {'
-                  + `min-width: ${ isPortrait ? 288 : 698 }px ; max-width: 75vw ; word-wrap: break-word ;`
+                  + `min-width: ${ browser.isPortrait ? 288 : 698 }px ; max-width: 75vw ; word-wrap: break-word ;`
                   + 'margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
                   + '50% { opacity: 0.25 ; transform: scale(1.05) }'
                   + '100% { opacity: 0 ; transform: scale(1.35) }}'
-              + `#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px ${ isPortrait ? 2 : -15 }px 0 }`
-              + `#googlegpt-settings-title h4 { font-size: ${ isPortrait ? 22 : 29 }px ; font-weight: bold ; margin: 0 0 ${ isPortrait ? 9 : 27 }px }`
+              + `#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px ${ browser.isPortrait ? 2 : -15 }px 0 }`
+              + `#googlegpt-settings-title h4 { font-size: ${ browser.isPortrait ? 22 : 29 }px ; font-weight: bold ; margin: 0 0 ${ browser.isPortrait ? 9 : 27 }px }`
               + '#googlegpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
-                  + `width: ${ isPortrait ? 100 : 50 }% }` // set width based on column cnt
+                  + `width: ${ browser.isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#googlegpt-settings li {'
                   + `color: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for text
                   + `fill: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
@@ -2039,15 +2041,15 @@
               + '#googlegpt-settings li, #googlegpt-settings li label { cursor: pointer }' // add finger on hover
               + '#googlegpt-settings li:hover { opacity: 1 ;'
                   + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
-                  + `${ config.fgAnimationsDisabled || isMobile ? '' : 'transform: scale(1.22)' }}` // add zoom
+                  + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.22)' }}` // add zoom
               + '#googlegpt-settings li > input { float: right }' // pos toggles
               + '#scheme-menu-entry > span { margin: 0 -2px !important }' // align Scheme status
               + '#scheme-menu-entry > span > svg { position: relative ; top: 3px ; margin-left: 4px }' // v-align/left-pad Scheme status icon
               + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
               + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
               + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
-              + `#about-menu-entry > span { width: ${ isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
-                  + `${ isPortrait ? 'position: relative ; bottom: 3px ;' : '' }` // v-align
+              + `#about-menu-entry > span { width: ${ browser.isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
+                  + `${ browser.isPortrait ? 'position: relative ; bottom: 3px ;' : '' }` // v-align
                   + `${ config.fgAnimationsDisabled ? '' : ( // fade edges
                             'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
                   + '-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' )}}`
@@ -2061,7 +2063,7 @@
         chatbarWidth() {
             const chatbar = appDiv.querySelector('#app-chatbar')
             if (chatbar) chatbar.style.width = `${
-                isMobile ? 81.4
+                browser.isMobile ? 81.4
               : config.anchored ? ( config.expanded ? 87.4 : 83.3 )
               : config.widerSidebar ? ( hasSidebar ? 85.4 : 85.9 ) : ( hasSidebar ? 79.3 : 80.1 )}%`
         },
@@ -2313,7 +2315,7 @@
                 else if (btn.id == 'pin-btn') btn.onclick = btn.onmouseover = btn.onmouseout = menus.pin.toggle
                 else if (btn.id == 'wsb-btn') btn.onclick = () => toggle.sidebar('wider')
                 else if (btn.id == 'arrows-btn') btn.onclick = () => toggle.expandedMode()
-                if (!isMobile && btn.id != 'pin-btn') // add hover listeners for tooltips
+                if (!browser.isMobile && btn.id != 'pin-btn') // add hover listeners for tooltips
                     btn.onmouseover = btn.onmouseout = toggle.tooltip
             })            
         },
@@ -2358,7 +2360,7 @@
 
                     // Hide/remove elems
                     appDiv.querySelector('.related-queries')?.remove() // remove related queries
-                    if (!isMobile) tooltipDiv.style.opacity = 0 // hide 'Send reply' tooltip post-send btn click
+                    if (!browser.isMobile) tooltipDiv.style.opacity = 0 // hide 'Send reply' tooltip post-send btn click
                     const appFooter = appDiv.querySelector('footer')
                     while (appFooter.firstChild) appFooter.removeChild(appFooter.firstChild)
 
@@ -2404,7 +2406,7 @@
                     chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
                     show.reply.src = 'shuffle'
                 }
-                if (!isMobile) // add hover listener for tooltips
+                if (!browser.isMobile) // add hover listener for tooltips
                     btn.onmouseover = btn.onmouseout = toggle.tooltip
             })
         }
@@ -2453,7 +2455,7 @@
             })
 
             // Add event listener for wheel-scrolling thumb
-            if (!isMobile) slider.onwheel = event => {
+            if (!browser.isMobile) slider.onwheel = event => {
                 event.preventDefault()
                 moveThumb(sliderThumb.offsetLeft - Math.sign(event.deltaY) * fontSizeSlider.hWheelDistance)
             }
@@ -2636,7 +2638,7 @@
                 }
             }
             update.appBottomPos() // toggle visual minimization
-            if (!isMobile) setTimeout(() => tooltipDiv.style.opacity = 0, 1) // remove lingering tooltip
+            if (!browser.isMobile) setTimeout(() => tooltipDiv.style.opacity = 0, 1) // remove lingering tooltip
         },
 
         proxyMode() {
@@ -2683,13 +2685,13 @@
         },
 
         streaming() {
-            const scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
-                                : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
+            const scriptCatLink = browser.isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
+                                : browser.isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
                                             : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!streamingSupported.userscriptManager) { // alert userscript manager unsupported, suggest TM/SC
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
-                        + ( !isEdge && !isBrave ? // suggest TM for supported browsers
+                        + ( !browser.isEdge && !browser.isBrave ? // suggest TM for supported browsers
                             ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
                                 : '' )
                         + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
@@ -2700,7 +2702,7 @@
             } else if (!streamingSupported.browser) { // alert TM/browser unsupported, suggest SC
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
-                        + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
+                        + `${ browser.isChrome ? 'Chrome' : browser.isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
                         + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
                             + `${ msgs.alert_instead || 'instead' }.`
                 )
@@ -3183,7 +3185,7 @@
                 }
 
                 // Add listeners
-                if (!isMobile) copySpan.onmouseover = copySpan.onmouseout = toggle.tooltip
+                if (!browser.isMobile) copySpan.onmouseover = copySpan.onmouseout = toggle.tooltip
                 copySpan.onclick = event => { // copy text, update icon + tooltip status
                     const copySVG = copySpan.querySelector('#copy-icon')
                     if (!copySVG) return // since clicking on copied icon
@@ -3194,7 +3196,7 @@
                     copySpan.replaceChild(checkmarksSVG, copySVG) // change to copied icon
                     setTimeout(() => copySpan.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
                     navigator.clipboard.writeText(textToCopy) // copy text to clipboard
-                    if (!isMobile) toggle.tooltip(event) // show copied status in tooltip
+                    if (!browser.isMobile) toggle.tooltip(event) // show copied status in tooltip
                 }
 
                 // Prepend button
@@ -3213,12 +3215,12 @@
                 const appPrefixSpan = document.createElement('span') ; appPrefixSpan.id = 'app-prefix'
                 appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.className = 'no-user-select'
                 appPrefixSpan.style.marginRight = '-2px'
-                appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
+                appPrefixSpan.style.fontSize = browser.isMobile ? '1.7rem' : '1.1rem'
                 appDiv.append(appPrefixSpan)
                 const appHeaderLogo = logos.googleGPT.create()
-                appHeaderLogo.width = isMobile ? 177 : isFirefox ? 124 : 122
-                appHeaderLogo.style.cssText = `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
-                                            + ( isMobile ? '; margin-left: 1px' : '' )
+                appHeaderLogo.width = browser.isMobile ? 177 : browser.isFirefox ? 124 : 122
+                appHeaderLogo.style.cssText = `position: relative ; top: ${ browser.isMobile ? 4 : browser.isFirefox ? 3 : 2 }px`
+                                            + ( browser.isMobile ? '; margin-left: 1px' : '' )
                 const appTitleAnchor = createAnchor(app.urls.app, appHeaderLogo)
                 appTitleAnchor.classList.add('app-name', 'no-user-select')
                 appDiv.append(appTitleAnchor)
@@ -3229,7 +3231,7 @@
                 appDiv.append(cornerBtnsDiv)
 
                 // Create/append Chevron button
-                if (!isMobile) {
+                if (!browser.isMobile) {
                     var chevronSpan = document.createElement('span'),
                         chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
                     chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
@@ -3242,14 +3244,14 @@
                 const aboutSpan = document.createElement('span'),
                       aboutSVG = icons.questionMarkCircle.create()
                 aboutSpan.id = 'about-btn' // for toggle.tooltip()
-                aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = `${ isMobile ? 0.25 : -0.15 }rem`
+                aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = `${ browser.isMobile ? 0.25 : -0.15 }rem`
                 aboutSpan.append(aboutSVG) ; cornerBtnsDiv.append(aboutSpan)
 
                 // Create/append Settings button
                 const settingsSpan = document.createElement('span'),
                       settingsSVG = icons.sliders.create()
                 settingsSpan.id = 'settings-btn' // for toggle.tooltip()
-                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = `${ isMobile ? 3 : -3 }px 10px 0 2.5px`
+                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = `${ browser.isMobile ? 3 : -3 }px 10px 0 2.5px`
                 settingsSpan.append(settingsSVG) ; cornerBtnsDiv.append(settingsSpan)
 
                 // Create/append Speak button
@@ -3257,7 +3259,7 @@
                     var speakerSpan = document.createElement('span'),
                         speakerSVG = icons.speaker.create()
                     speakerSpan.id = 'speak-btn' // for toggle.tooltip()
-                    speakerSpan.className = 'corner-btn' ; speakerSpan.style.margin = `${ isMobile ? '0.11rem 10px' : '-4.5px 8px' } 0 0`
+                    speakerSpan.className = 'corner-btn' ; speakerSpan.style.margin = `${ browser.isMobile ? '0.11rem 10px' : '-4.5px 8px' } 0 0`
                     speakerSpan.append(speakerSVG) ; cornerBtnsDiv.append(speakerSpan)
                 }
 
@@ -3266,12 +3268,12 @@
                     var fontSizeSpan = document.createElement('span'),
                         fontSizeSVG = icons.fontSize.create()
                     fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
-                    fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = `${ isMobile ? 5 : -2 }px 9px 0 0`
+                    fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = `${ browser.isMobile ? 5 : -2 }px 9px 0 0`
                     fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
                 }
 
                 // Create/append Pin button
-                if (!isMobile) {
+                if (!browser.isMobile) {
                     var pinSpan = document.createElement('span'),
                         pinSVG = icons.pin.create()
                     pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
@@ -3296,13 +3298,13 @@
                 }
 
                 // Add tooltips
-                if (!isMobile) appDiv.append(tooltipDiv)
+                if (!browser.isMobile) appDiv.append(tooltipDiv)
 
                 // Add corner button listeners
                 listenerize.cornerBtns()
 
                 // Create/append 'by KudoAI' if it fits
-                if (!isMobile) {
+                if (!browser.isMobile) {
                     const kudoAIspan = document.createElement('span')
                     kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
                     kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
@@ -3359,7 +3361,7 @@
                 ['send', 'shuffle'].forEach(btnType => {
                     const btnElem = document.createElement(btnType === 'send' ? 'button' : 'div')
                     btnElem.id = `${btnType}-btn` ; btnElem.classList.add('chatbar-btn', 'no-mobile-tap-outline')
-                    btnElem.style.right = `${ btnType == 'send' ? ( isFirefox ? 7 : 5 ) : ( isFirefox ? 9 : 7 )}px`
+                    btnElem.style.right = `${ btnType == 'send' ? ( browser.isFirefox ? 7 : 5 ) : ( browser.isFirefox ? 9 : 7 )}px`
                     btnElem.append(icons[btnType == 'send' ? 'arrowUp' : 'arrowsTwistedRight'].create())
                     continueChatDiv.append(btnElem)
                 })
@@ -3373,7 +3375,7 @@
                 listenerize.replySection()
 
                 // Scroll to top on mobile if user interacted
-                if (isMobile && show.reply.userInteracted) {
+                if (browser.isMobile && show.reply.userInteracted) {
                     document.body.scrollTop = 0 // Safari
                     document.documentElement.scrollTop = 0 // Chromium/FF/IE
                 }
@@ -3412,7 +3414,7 @@
                 if (config.stickySidebar) update.tweaksStyle() // to reset answerPre height
 
                 // Auto-scroll if active
-                if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
+                if (config.autoScroll && !browser.isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
                     if (config.stickySidebar || config.anchored) answerPre.scrollTop = answerPre.scrollHeight
                     else window.scrollBy({ top: appDiv.querySelector('#app-chatbar').getBoundingClientRect().bottom - window.innerHeight +13 })
                 }
@@ -3420,7 +3422,7 @@
 
             // Focus chatbar conditionally
             if (!show.reply.chatbarFocused // do only once
-                && !isMobile // exclude mobile devices to not auto-popup OSD keyboard
+                && !browser.isMobile // exclude mobile devices to not auto-popup OSD keyboard
                 && ((!config.autoFocusChatbarDisabled && ( config.anchored // include Anchored mode if AF enabled
                         || ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top ))) // ...or un-Anchored if fully above fold
                     || (config.autoFocusChatbarDisabled && config.anchored && show.reply.userInteracted)) // ...or Anchored if AF disabled & user interacted
@@ -3545,7 +3547,7 @@
     update.tweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize TOOLTIPs
-    if (!isMobile) {
+    if (!browser.isMobile) {
         var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
         document.head.append(createStyle('.btn-tooltip {'
             + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
@@ -3558,7 +3560,7 @@
 
     // APPEND to Google
     const centerCol = document.querySelector('#center_col') || document.querySelector('#main')
-    const appDivContainer = isMobile ? centerCol
+    const appDivContainer = browser.isMobile ? centerCol
         : document.getElementById('rhs') // sidebar container if side snippets exist
         || (() => { // create new one if no side snippets exist
                const newHostContainer = document.createElement('div')
@@ -3577,7 +3579,7 @@
         const inlineMousedown = a.getAttribute('onmousedown')
         if (inlineMousedown && /\ba?rwt\(/.test(inlineMousedown)) {
             a.removeAttribute('onmousedown')
-            if (isChrome) event.stopImmediatePropagation() // since inline listener still runs
+            if (browser.isChrome) event.stopImmediatePropagation() // since inline listener still runs
         }
         let realURL = getRealURL(a)
         if (realURL) {
