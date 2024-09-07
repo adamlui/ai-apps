@@ -9,7 +9,7 @@
     const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
 
     // Import LIBS
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
+    const { app, config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Add CHROME MSG listener
@@ -218,7 +218,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
+        chatgpt.notify(`${app.symbol} ${msg}`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Append styled state word
@@ -384,7 +384,7 @@
         } else if (mode == 'fullScreen') {
             if (config.f11)
                 siteAlert(chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
-            document.exitFullscreen().catch(err => console.error(config.appSymbol + ' » Failed to exit fullscreen', err))
+            document.exitFullscreen().catch(err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
         }
     }
 

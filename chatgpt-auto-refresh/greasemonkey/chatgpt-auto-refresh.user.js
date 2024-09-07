@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.6
+// @version             2024.9.7
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -259,18 +259,21 @@
 
 (async () => {
 
+    // Init APP INFO
+    const app = {
+        name: 'ChatGPT Auto Refresh', symbol: '↻', configKeyPrefix: 'chatGPTautoRefresh',
+        urls: {
+            gitHub: 'https://github.com/adamlui/chatgpt-auto-refresh',
+            greasyFork: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh',
+            mediaHost: 'https://media.chatgptautorefresh.com/', support: 'https://support.chatgptautorefresh.com' },
+        latestAssetCommitHash: '0e54b0c' // for cached messages.json + navicon
+    }
+    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
+    app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
+
     // Init CONFIG
-    const config = {
-        appName: 'ChatGPT Auto Refresh', appSymbol: '↻', keyPrefix: 'chatGPTautoRefresh',
-        gitHubURL: 'https://github.com/adamlui/chatgpt-auto-refresh',
-        greasyForkURL: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh',
-        mediaHostURL: 'https://media.chatgptautorefresh.com/',
-        latestAssetCommitHash: '0e54b0c' } // for cached messages.json + navicon
-    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
-    config.supportURL = 'https://support.chatgptautorefresh.com'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
-    config.userLanguage = chatgpt.getUserLanguage()
+    const config = { userLanguage: chatgpt.getUserLanguage() }
     loadSetting('arDisabled', 'notifDisabled', 'refreshInterval', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
 
@@ -296,7 +299,7 @@
     // Init MESSAGES
     let msgs = {}
     if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+        const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         xhr({ method: 'GET', url: msgHref, onload: onLoad })
@@ -399,8 +402,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.keyPrefix + '_' + key, false) })}
-    function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false) })}
+    function saveSetting(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
@@ -463,7 +466,7 @@
         }}}))
 
         // Add command to launch About modal
-        const amLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || config.appName }`
+        const amLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
         menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
     }
 
@@ -483,19 +486,19 @@
 
         // Show modal
         const aboutModalID = siteAlert(
-            msgs.appName || config.appName, // title
+            msgs.appName || app.name, // title
             `<span style="${ headingStyle }"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
             + `<span style="${ headingStyle }"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
                 + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                 + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
             + `<span style="${ headingStyle }"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
-                + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
-                + config.gitHubURL + '</a></span>',
+                + `<span style="${ pBrStyle }"><a href="${ app.urls.gitHub }" target="_blank" rel="nopener">`
+                + app.urls.gitHub + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
-                function getSupport() { safeWindowOpen(config.supportURL) },
-                function leaveAReview() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
+                function getSupport() { safeWindowOpen(app.urls.support) },
+                function leaveAReview() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
                 function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
             ], '', 478 // set width
         )
@@ -519,7 +522,7 @@
         // Fetch latest meta
         const currentVer = GM_info.script.version
         xhr({
-            method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+            method: 'GET', url: app.urls.update + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
             onload: response => { const updateAlertWidth = 377
 
@@ -533,15 +536,15 @@
 
                         // Alert to update
                         const updateModalID = siteAlert(`🚀 ${ msgs.alert_updateAvail || 'Update available' }!`, // title
-                            `${ msgs.alert_newerVer || 'An update to' } ${ config.appName } `
-                                + ( msgs.appName || config.appName ) + ' '
+                            `${ msgs.alert_newerVer || 'An update to' } ${ app.name } `
+                                + ( msgs.appName || app.name ) + ' '
                                 + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
-                                    + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
-                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
+                                    + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
+                                    + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                safeWindowOpen(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                                safeWindowOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
                         )
 
@@ -558,7 +561,7 @@
 
                 // Alert to no update, return to About modal
                 siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ msgs.appName || config.appName } (v${ currentVer }) ` // msg
+                    `${ msgs.appName || app.name } (v${ currentVer }) ` // msg
                         + ( msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
                 )
@@ -574,7 +577,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
+        chatgpt.notify(`${app.symbol} ${msg}`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Append styled state word
@@ -605,8 +608,8 @@
         document.getElementById('auto-refresh-toggle-knob-span').style.boxShadow = (
             'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
         document.getElementById('auto-refresh-toggle-navicon').src = `${ // update navicon color in case scheme changed
-            config.mediaHostURL}images/icons/auto-refresh/`
-          + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${config.latestAssetCommitHash}`
+            app.urls.mediaHost}images/icons/auto-refresh/`
+          + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${app.latestAssetCommitHash}`
     }
 
     function updateToggleHTML() {

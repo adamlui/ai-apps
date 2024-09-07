@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.6
+// @version             2024.9.7
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -239,18 +239,21 @@
 
 (async () => {
 
+    // Init APP INFO
+    const app = {
+        name: 'ChatGPT Infinity', symbol: '∞', configKeyPrefix: 'chatGPTinfinity',
+        urls: {
+            gitHub: 'https://github.com/adamlui/chatgpt-infinity',
+            greasyFork: 'https://greasyfork.org/scripts/465051-chatgpt-infinity',
+            mediaHost: 'https://media.chatgptinfinity.com/', support: 'https://support.chatgptinfinity.com' },
+        latestAssetCommitHash: '7bbe0b5' // for cached messages.json + navicon
+    }
+    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
+    app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
+
     // Init CONFIG
-    const config = {
-        appName: 'ChatGPT Infinity', appSymbol: '∞', keyPrefix: 'chatGPTinfinity',
-        gitHubURL: 'https://github.com/adamlui/chatgpt-infinity',
-        greasyForkURL: 'https://greasyfork.org/scripts/465051-chatgpt-infinity',
-        mediaHostURL: 'https://media.chatgptinfinity.com/',
-        latestAssetCommitHash: '7bbe0b5' } // for cached messages.json + navicon
-    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
-    config.supportURL = 'https://support.chatgptinfinity.com'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
-    config.userLanguage = chatgpt.getUserLanguage()
+    const config = { userLanguage: chatgpt.getUserLanguage() }
     loadSetting('autoScrollDisabled', 'autoStart', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.replyTopic) saveSetting('replyTopic', 'ALL') // init reply topic if unset
@@ -262,7 +265,7 @@
     // Init MESSAGES
     let msgs = {}
     if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+        const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         xhr({ method: 'GET', url: msgHref, onload: onLoad })
@@ -306,8 +309,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.keyPrefix + '_' + key, false) })}
-    function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false) })}
+    function saveSetting(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch(err) { return 'other' }}
 
@@ -366,7 +369,7 @@
                         : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
                     siteAlert(( msgs.alert_replyLangUpdated || 'Language updated' ) + '!', // title
-                        ( msgs.appName || config.appName ) + ' ' // msg
+                        ( msgs.appName || app.name ) + ' ' // msg
                             + ( msgs.alert_willReplyIn || 'will reply in' ) + ' '
                             + ( replyLanguage || msgs.alert_yourSysLang || 'your system language') + '.')
                     if (config.infinityMode) restartInNewChat() // using new reply language                        
@@ -385,7 +388,7 @@
                 const str_replyTopic = replyTopic.toString()
                 saveSetting('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
                 siteAlert(( msgs.alert_replyTopicUpdated || 'Topic updated' ) + '!',
-                    ( msgs.appName || config.appName ) + ' '
+                    ( msgs.appName || app.name ) + ' '
                         + ( msgs.alert_willAnswer || 'will answer questions' ) + ' '
                         + ( !replyTopic || re_all.test(str_replyTopic)
                               ? msgs.alert_onAllTopics || 'on ALL topics'
@@ -409,7 +412,7 @@
                 else if (!isNaN(parseInt(replyInterval, 10)) && parseInt(replyInterval, 10) > 4) { // valid int set
                     saveSetting('replyInterval', parseInt(replyInterval, 10))
                     siteAlert(( msgs.alert_replyIntUpdated || 'Interval updated' ) + '!', // title
-                        ( msgs.appName || config.appName ) + ' ' // msg
+                        ( msgs.appName || app.name ) + ' ' // msg
                             + ( msgs.alert_willReplyEvery || 'will reply every' ) + ' '
                             + replyInterval + ' ' + ( msgs.unit_seconds || 'seconds' ) + '.')
                     if (config.infinityMode) resetInSameChat() // using new reply interval                    
@@ -417,7 +420,7 @@
         }}}))
 
         // Add command to launch About modal
-        const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || config.appName }`
+        const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
 
@@ -435,21 +438,21 @@
               pBrStyle = 'position: relative ; left: 4px ',
               aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
         const aboutModalID = siteAlert(
-            msgs.appName || config.appName, // title
+            msgs.appName || app.name, // title
             `<span style="${ headingStyle }"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
             + `<span style="${ headingStyle }"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
                 + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                 + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
             + `<span style="${ headingStyle }"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
-                + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
-                + config.gitHubURL + '</a></span>',
+                + `<span style="${ pBrStyle }"><a href="${ app.urls.gitHub }" target="_blank" rel="nopener">`
+                + app.urls.gitHub + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
-                function getSupport() { safeWindowOpen(config.supportURL) },
+                function getSupport() { safeWindowOpen(app.urls.support) },
                 function leaveAReview() { // show new modal
                     const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
-                        [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
+                        [ function greasyFork() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
                           function productHunt() { safeWindowOpen(
                               'https://www.producthunt.com/products/chatgpt-infinity/reviews/new') },
                           function alternativeTo() { safeWindowOpen(
@@ -481,7 +484,7 @@
         // Fetch latest meta
         const currentVer = GM_info.script.version
         xhr({
-            method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+            method: 'GET', url: app.urls.update + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
             onload: response => { const updateAlertWidth = 377
 
@@ -495,15 +498,15 @@
 
                         // Alert to update
                         const updateModalID = siteAlert(`🚀 ${ msgs.alert_updateAvail || 'Update available' }!`, // title
-                            `${ msgs.alert_newerVer || 'An update to' } ${ config.appName } `
-                                + ( msgs.appName || config.appName ) + ' '
+                            `${ msgs.alert_newerVer || 'An update to' } ${ app.name } `
+                                + ( msgs.appName || app.name ) + ' '
                                 + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
-                                    + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
-                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
+                                    + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
+                                    + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                safeWindowOpen(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                                safeWindowOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
                         )
 
@@ -520,7 +523,7 @@
 
                 // Alert to no update, return to About modal
                 siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ msgs.appName || config.appName } (v${ currentVer }) ` // msg
+                    `${ msgs.appName || app.name } (v${ currentVer }) ` // msg
                         + ( msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
                 )
@@ -543,7 +546,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
+        chatgpt.notify(`${app.symbol} ${msg}`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Append styled state word
@@ -575,8 +578,8 @@
             'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
         const navicon = document.getElementById('infinity-toggle-navicon')
         if (navicon) navicon.src = `${ // update navicon color in case scheme changed
-            config.mediaHostURL}images/icons/infinity-symbol/`
-          + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${config.latestAssetCommitHash}`
+            app.urls.mediaHost}images/icons/infinity-symbol/`
+          + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${app.latestAssetCommitHash}`
     }
 
     function updateToggleHTML() {

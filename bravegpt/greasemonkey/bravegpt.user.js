@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.6.2
+// @version               2024.9.7
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -220,6 +220,19 @@
 
 (async () => {
 
+    // Init APP INFO
+    const app = {
+        name: 'BraveGPT', symbol: '🤖', configKeyPrefix: 'braveGPT',
+        urls: {
+            app: 'https://www.bravegpt.com', support: 'https://support.bravegpt.com',
+            gitHub: 'https://github.com/KudoAI/bravegpt',
+            greasyFork: 'https://greasyfork.org/scripts/462440-bravegpt' },
+        latestAssetCommitHash: 'd7392b6' // for cached messages.json
+    }
+    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
+    app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
+
     // Init browser/compatibility FLAGS
     const isChrome = chatgpt.browser.isChrome(),
           isFirefox = chatgpt.browser.isFirefox(),
@@ -230,16 +243,7 @@
           streamingSupported = { browser: !(getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)),
                                  userscriptManager: /Tampermonkey|ScriptCat/.test(getUserscriptManager()) }    
     // Init CONFIG
-    const config = {
-        appName: 'BraveGPT', appSymbol: '🤖', keyPrefix: 'braveGPT',
-        appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
-        greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt',
-        minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.313,
-        latestAssetCommitHash: 'd7392b6' } // for cached messages.json
-    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
-    config.supportURL = config.gitHubURL + '/issues/new'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
+    const config = { minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.313 }
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('anchored', 'autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'expanded',
@@ -304,7 +308,7 @@
     // Init MESSAGES
     let msgs = {}
     if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+        const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         xhr({ method: 'GET', url: msgHref, onload: onLoad })
@@ -373,7 +377,7 @@
             label: msgs.menuLabel_colorScheme || 'Color Scheme',
             helptip: msgs.helptip_colorScheme || 'Scheme to display BraveGPT UI components in' },
         about: { type: 'modal', icon: 'questionMarkCircle',
-            label: `${ msgs.menuLabel_about || 'About' } ${config.appName}...` }
+            label: `${ msgs.menuLabel_about || 'About' } ${app.name}...` }
     }
 
     // Init MENU objs
@@ -385,8 +389,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(config.keyPrefix + '_' + key, false)) }
-    function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
+    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) }
+    function saveSetting(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
@@ -420,7 +424,7 @@
                       : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                 saveSetting('replyLanguage', replyLanguage || config.userLanguage)
                 const langUpdatedAlertID = siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
-                    `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
+                    `${ app.name } ${ msgs.alert_willReplyIn || 'will reply in' } `
                         + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
                     '', '', 447) // confirmation width
                 const langUpdatedAlert = document.getElementById(langUpdatedAlertID).firstChild
@@ -440,7 +444,7 @@
         // Fetch latest meta
         const currentVer = GM_info.script.version
         xhr({
-            method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+            method: 'GET', url: app.urls.update + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
             onload: resp => { const updateAlertWidth = 489
 
@@ -454,14 +458,14 @@
 
                         // Alert to update
                         const updateModalID = siteAlert(`🚀 ${ msgs.alert_updateAvail || 'Update available' }!`, // title
-                            `${ msgs.alert_newerVer || 'An update to' } ${ config.appName } `
+                            `${ msgs.alert_newerVer || 'An update to' } ${ app.name } `
                                 + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.93rem" '
-                                    + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
-                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
+                                    + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
+                                    + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `>${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                safeWindowOpen(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                                safeWindowOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
                         )
                         const updateModal = document.getElementById(updateModalID).firstChild
@@ -481,7 +485,7 @@
 
                 // Alert to no update found, nav back
                 const noUpdateModalID = siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ config.appName } (v${ currentVer }) ${ msgs.alert_isUpToDate || 'is up-to-date' }!`, // msg
+                    `${ app.name } (v${ currentVer }) ${ msgs.alert_isUpToDate || 'is up-to-date' }!`, // msg
                         '', '', updateAlertWidth)
                 const noUpdateModal = document.getElementById(noUpdateModalID).firstChild
                 modals.init(noUpdateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
@@ -572,13 +576,13 @@
 
         info(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.info(`${config.appSymbol} ${config.appName} » ${ log.prefix || '' }${
+            console.info(`${app.symbol} ${app.name} » ${ log.prefix || '' }${
                 args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
         },
 
         err(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.error(`${config.appSymbol} ${config.appName} » ${ log.prefix || '' }${
+            console.error(`${app.symbol} ${app.name} » ${ log.prefix || '' }${
                 args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
         }
     }
@@ -665,11 +669,11 @@
                             + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
                         + '📜 ' + ( msgs.about_sourceCode || 'Source code' )
-                            + `: <a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
-                                + config.gitHubURL + '</a>',
+                            + `: <a href="${ app.urls.gitHub }" target="_blank" rel="nopener">`
+                                + app.urls.gitHub + '</a>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
-                        function getSupport() { safeWindowOpen(config.supportURL) },
+                        function getSupport() { safeWindowOpen(app.urls.support) },
                         function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 617) // modal width
@@ -711,7 +715,7 @@
                 // Init buttons
                 let btns = [
                     function greasyFork() { safeWindowOpen(
-                        config.greasyForkURL + '/feedback#post-discussion') },
+                        app.urls.greasyFork + '/feedback#post-discussion') },
                     function productHunt() { safeWindowOpen(
                         'https://www.producthunt.com/products/bravegpt/reviews/new') },
                     function futurepedia() { safeWindowOpen(
@@ -721,7 +725,7 @@
                 ]
                 if (options.sites == 'feedback') btns.splice(1, 0,
                     function github() { safeWindowOpen(
-                        config.gitHubURL + '/discussions/new/choose') })
+                        app.urls.gitHub + '/discussions/new/choose') })
 
                 // Create/show modal
                 const feedbackModalID = siteAlert(`${
@@ -755,7 +759,7 @@
 
                 // Create/init modal
                 const schemeModalID = siteAlert(`${
-                    config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
+                    app.name } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
                     [ function auto() {}, function light() {}, function dark() {} ], // buttons
                     '', 503) // px width
                 const schemeModal = document.getElementById(schemeModalID).firstChild
@@ -1858,7 +1862,7 @@
 
                     // Init vars
                     let chosenAdvertiser, adSelected
-                    const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+                    const re_appName = new RegExp(app.name.toLowerCase(), 'i')
                     const currentDate = (() => { // in YYYYMMDD format
                         const today = new Date(), year = today.getFullYear(),
                               month = String(today.getMonth() + 1).padStart(2, '0'),
@@ -1907,7 +1911,7 @@
                                     if (destinationURL.includes('http')) { // insert UTM tags
                                         const [baseURL, queryString] = destinationURL.split('?'),
                                               queryParams = new URLSearchParams(queryString || '')
-                                        queryParams.set('utm_source', config.appName.toLowerCase())
+                                        queryParams.set('utm_source', app.name.toLowerCase())
                                         queryParams.set('utm_content', 'app_footer_link')
                                         destinationURL = baseURL + '?' + queryParams.toString()
                                     }
@@ -2551,7 +2555,7 @@
     }
 
     function deleteOpenAIcookies() {
-        GM_deleteValue(config.keyPrefix + '_openAItoken')
+        GM_deleteValue(app.configKeyPrefix + '_openAItoken')
         if (getUserscriptManager() != 'Tampermonkey') return
         GM_cookie.list({ url: apis.OpenAI.endpoints.auth }, (cookies, error) => {
             if (!error) { for (const cookie of cookies) {
@@ -2560,7 +2564,7 @@
 
     function getOpenAItoken() {
         return new Promise(resolve => {
-            const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
+            const accessToken = GM_getValue(app.configKeyPrefix + '_openAItoken')
             log.info('OpenAI access token', accessToken)
             if (!accessToken) {
                 xhr({ url: apis.OpenAI.endpoints.session, onload: resp => {
@@ -2568,7 +2572,7 @@
                         appAlert('checkCloudflare') ; return }
                     try {
                         const newAccessToken = JSON.parse(resp.responseText).accessToken
-                        GM_setValue(config.keyPrefix + '_openAItoken', newAccessToken)
+                        GM_setValue(app.configKeyPrefix + '_openAItoken', newAccessToken)
                         resolve(newAccessToken)
                     } catch { if (get.reply.api == 'OpenAI') appAlert('login') ; return }
                 }})
@@ -2995,7 +2999,7 @@
 
                 // Create/append title
                 const appHeaderLogo = logos.braveGPT.create() ; appHeaderLogo.width = 143
-                const appTitleAnchor = createAnchor(config.appURL, appHeaderLogo)
+                const appTitleAnchor = createAnchor(app.urls.app, appHeaderLogo)
                 appTitleAnchor.classList.add('app-name', 'no-user-select')
                 appDiv.append(appTitleAnchor)
 
@@ -3089,7 +3093,7 @@
                 if (answer == 'standby') {
                     const standbyBtn = document.createElement('button')
                     standbyBtn.classList.add('standby-btn', 'no-mobile-tap-outline')
-                    standbyBtn.textContent = msgs.btnLabel_sendQueryToApp || `Send search query to ${config.appName}`
+                    standbyBtn.textContent = msgs.btnLabel_sendQueryToApp || `Send search query to ${app.name}`
                     appDiv.append(standbyBtn)
                     show.reply.standbyBtnClickHandler = function() {
                         appAlert('waitingResponse')
@@ -3275,7 +3279,7 @@
 
     // Init ALERTS
     const appAlerts = {
-        waitingResponse:  `${ msgs.alert_waitingFor || 'Waiting for' } ${config.appName} ${ msgs.alert_response || 'response' }...`,
+        waitingResponse:  `${ msgs.alert_waitingFor || 'Waiting for' } ${app.name} ${ msgs.alert_response || 'response' }...`,
         login:            `${ msgs.alert_login || 'Please login' } @ `,
         checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
         tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,

@@ -6,7 +6,7 @@
 (async () => {
 
     // Import LIBS
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
+    const { app, config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Add CHROME MSG listener
@@ -47,7 +47,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
+        chatgpt.notify(`${app.symbol} ${msg}`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Append styled state word
@@ -79,7 +79,7 @@
             'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
         const navicon = document.getElementById('infinity-toggle-navicon')
         if (navicon) navicon.src = `${ // update navicon color in case scheme changed
-            config.assetHostURL }media/images/icons/infinity-symbol/${
+            app.urls.assetHost }media/images/icons/infinity-symbol/${
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
 

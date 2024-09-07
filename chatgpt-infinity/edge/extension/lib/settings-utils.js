@@ -1,7 +1,9 @@
-const config = {
-    appSymbol: '∞', keyPrefix: 'chatGPTinfinity',
-    gitHubURL: 'https://github.com/adamlui/chatgpt-infinity' }
-config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@5153489/'
+const app = {
+    symbol: '∞', configKeyPrefix: 'chatGPTinfinity',
+    urls: { gitHub: 'https://github.com/adamlui/chatgpt-infinity' }}
+app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + '@5153489/'
+
+const config = {}
 
 const settings = {
 
@@ -10,15 +12,15 @@ const settings = {
             Array.isArray(arguments[0]) ? arguments[0] : Array.from(arguments))
         return Promise.all(keys.map(key => { // resolve promise when all keys load
             return new Promise(resolve => { // resolve promise when single key value loads
-                chrome.storage.local.get(`${ config.keyPrefix }_${ key }`, result => { // load from Chrome
-                    config[key] = result[`${ config.keyPrefix }_${ key }`] || false ; resolve()
+                chrome.storage.local.get(`${ app.configKeyPrefix }_${ key }`, result => { // load from Chrome
+                    config[key] = result[`${ app.configKeyPrefix }_${ key }`] || false ; resolve()
     })})}))},
 
     save: function(key, value) {
-        const obj = {} ; obj[`${ config.keyPrefix }_${ key }`] = value
+        const obj = {} ; obj[`${ app.configKeyPrefix }_${ key }`] = value
         chrome.storage.local.set(obj) // save to Chrome
         config[key] = value // save to memory
     }
 }
 
-export { config, settings }
+export { app, config, settings }
