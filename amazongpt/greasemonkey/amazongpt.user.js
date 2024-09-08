@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.7.6
+// @version                2024.9.7.7
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -433,11 +433,11 @@
     }
 
     const log = { prefixStyles: 'background-color: #f08804 ; color: white ; padding: 2px 4px ; border-radius: 2px' };
-    ['info', 'error'].forEach(logType => { log[logType] = function(label, msg) {
+    ['info', 'error'].forEach(logType => { log[logType] = function(label, msg) { // eslint-disable-line
         const args = Array.from(arguments).map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg)
         console[logType](`%c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }${
             args[0]}${ args[1] ? `: ${args[1]}` : ''}`, log.prefixStyles, '')
-        log.caller = null // reset caller after logging
+        log.caller = null // for unprefixed logs
     }})
 
     // Define MODAL functions

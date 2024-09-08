@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.7.6
+// @version               2024.9.7.7
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -576,11 +576,11 @@
     }
 
     const log = { prefixStyles: 'background-color: #ff4900 ; color: white ; padding: 2px 4px ; border-radius: 2px' };
-    ['info', 'error'].forEach(logType => { log[logType] = function(label, msg) {
+    ['info', 'error'].forEach(logType => { log[logType] = function(label, msg) { // eslint-disable-line
         const args = Array.from(arguments).map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg)
         console[logType](`%c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }${
             args[0]}${ args[1] ? `: ${args[1]}` : ''}`, log.prefixStyles, '')
-        log.caller = null // reset caller after logging
+        log.caller = null // for unprefixed logs
     }})
 
     // Define MODAL functions
