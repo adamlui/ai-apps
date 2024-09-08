@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.7.5
+// @version               2024.9.7.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -575,23 +575,13 @@
         appDiv.append(alertP)
     }
 
-    const log = {
-        prefixStyles: 'background-color: #ff4900 ; color: white ; padding: 2px 4px ; border-radius: 2px',
-
-        info(label, msg) { // eslint-disable-line
-            const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.info(`%c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`, log.prefixStyles, '')
-            log.caller = null // for unprefixed logs
-        },
-
-        err(label, msg) { // eslint-disable-line
-            const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.error(`%c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`, log.prefixStyles, '')
-            log.caller = null // for unprefixed logs
-        }
-    }
+    const log = { prefixStyles: 'background-color: #ff4900 ; color: white ; padding: 2px 4px ; border-radius: 2px' };
+    ['info', 'error'].forEach(logType => { log[logType] = function(label, msg) {
+        const args = Array.from(arguments).map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg)
+        console[logType](`%c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }${
+            args[0]}${ args[1] ? `: ${args[1]}` : ''}`, log.prefixStyles, '')
+        log.caller = null // reset caller after logging
+    }})
 
     // Define MODAL functions
 
@@ -2454,7 +2444,7 @@
             update.rqVisibility()
             if (!config.rqDisabled && !appDiv.querySelector('.related-queries')) // get related queries for 1st time
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
-                    .catch(err => { log.err(err.message) ; api.tryNew(get.related) })
+                    .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
             update.tweaksStyle() // toggle <pre> max-height
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
         },
@@ -2609,7 +2599,7 @@
                 && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if !config.streamingDisabled
             const chosenAPI = untriedAPIs[ // pick random array entry
                 Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
-            if (!chosenAPI) { log.err('No proxy APIs left untried') ; return null }
+            if (!chosenAPI) { log.error('No proxy APIs left untried') ; return null }
 
             // Log chosen API endpoint
             log.info('Endpoint used', apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint)
@@ -2618,7 +2608,7 @@
 
         tryNew(caller, reason = 'err') {
             if (caller.status == 'done') return
-            log.err(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
+            log.error(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
             caller.triedAPIs.push({ [caller.api]: reason })
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
                 log.info('Trying another endpoint...')
@@ -2735,7 +2725,7 @@
                 headers: api.createHeaders(get.reply.api), data: api.createPayload(get.reply.api, msgChain),
                 onload: resp => dataProcess.text(get.reply, resp),
                 onloadstart: resp => dataProcess.stream(get.reply, resp),
-                onerror: err => { log.err(err)
+                onerror: err => { log.error(err)
                     if (!config.proxyAPIenabled) appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
                     else api.tryNew(get.reply)
                 }
@@ -2744,7 +2734,7 @@
             // Get/show related queries if enabled on 1st get.reply()
             if (!config.rqDisabled && get.reply.attemptCnt == 1)
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
-                    .catch(err => { log.err(err.message) ; api.tryNew(get.related) })
+                    .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
 
             update.footerContent()
         },
@@ -2809,7 +2799,7 @@
                 responseType: 'text', headers: api.createHeaders(get.related.api),
                 data: api.createPayload(get.related.api, [{ role: 'user', content: rqPrompt }]),
                 onload: resp => dataProcess.text(get.related, resp).then(resolve),
-                onerror: err => { log.err(err) ; api.tryNew(get.related) }
+                onerror: err => { log.error(err) ; api.tryNew(get.related) }
             }))
         }
     }
@@ -2829,7 +2819,7 @@
             log.caller = `get.${caller.name}() » dataProcess.stream()`
             const failFlagsAndURLs = dataProcess.initFailFlags(caller.api),
                   reader = stream.response.getReader() ; let accumulatedChunks = ''
-            reader.read().then(processStreamText).catch(err => log.err('Error processing stream', err.message))
+            reader.read().then(processStreamText).catch(err => log.error('Error processing stream', err.message))
 
             function processStreamText({ done, value }) {
                 if (done) { caller.sender = null
@@ -2866,11 +2856,11 @@
                             && textToShow.trim() != '' // empty chunk not read
                         ) show.reply(textToShow, footerContent)
                     }
-                } catch (err) { log.err('Error showing stream', err.message) }
+                } catch (err) { log.error('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
                     if (caller.sender == caller.api) // am designated sender, recurse
                         processStreamText({ done, value })
-                }).catch(err => log.err('Error reading stream', err.message))
+                }).catch(err => log.error('Error reading stream', err.message))
             }
         },
 
@@ -2880,7 +2870,7 @@
                 log.caller = `get.${caller.name}() » dataProcess.text()`
                 const failFlagsAndURLs = dataProcess.initFailFlags(caller.api) ; let respText = ''
                 if (resp.status != 200) {
-                    log.err('Response status', resp.status) ; log.info('Response', resp)
+                    log.error('Response status', resp.status) ; log.info('Response', resp)
                     if (caller == get.reply && caller.api == 'OpenAI')
                         appAlert(resp.status == 401 ? 'login'
                                : resp.status == 403 ? 'checkCloudflare'
@@ -2942,7 +2932,7 @@
 
                 function handleProcessError(err) { // suggest proxy or try diff API
                     log.info('Response text', resp.response)
-                    log.err(appAlerts.parseFailed, err)
+                    log.error(appAlerts.parseFailed, err)
                     if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                     else api.tryNew(caller)
                 }
@@ -3171,7 +3161,7 @@
             if (answer != 'standby') {
                 const answerPre = appDiv.querySelector('pre')
                 try { // to render markdown
-                    answerPre.innerHTML = marked.parse(answer) } catch (err) { log.err(err.message) }
+                    answerPre.innerHTML = marked.parse(answer) } catch (err) { log.error(err.message) }
                 hljs.highlightAll() // highlight code
                 if (scheme == 'dark' && answerPre.firstChild?.tagName == 'P')
                     answerPre.firstChild.prepend('>> ') // since speech balloon tip missing
@@ -3230,7 +3220,7 @@
             if (show.reply.src != 'shuffle' && !get.related.replyIsQuestion && /[?？]/.test(currentReply)) {
                 get.related.replyIsQuestion = true
                 get.related(currentReply).then(queries => show.related(queries))
-                    .catch(err => { log.err(err.message) ; api.tryNew(get.related) })
+                    .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
             }
 
             // Show the queries
@@ -3361,7 +3351,7 @@
             show.reply('standby', footerContent)
             if (!config.rqDisabled)
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
-                    .catch(err => { log.err(err.message) ; api.tryNew(get.related) })
+                    .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
     } else { appAlert('waitingResponse') ; get.reply(msgChain) }
     saveAppDiv() // to fight Brave mutations
 

@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.7.5
+// @version                2024.9.7.6
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -432,23 +432,13 @@
         appDiv.append(alertP)
     }
 
-    const log = {
-        prefixStyles: 'background-color: #f08804 ; color: white ; padding: 2px 4px ; border-radius: 2px',
-
-        info(label, msg) { // eslint-disable-line
-            const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.info(`%c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`, log.prefixStyles, '')
-            log.caller = null // for unprefixed logs
-        },
-
-        err(label, msg) { // eslint-disable-line
-            const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.error(`%c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`, log.prefixStyles, '')
-            log.caller = null // for unprefixed logs
-        }
-    }
+    const log = { prefixStyles: 'background-color: #f08804 ; color: white ; padding: 2px 4px ; border-radius: 2px' };
+    ['info', 'error'].forEach(logType => { log[logType] = function(label, msg) {
+        const args = Array.from(arguments).map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg)
+        console[logType](`%c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }${
+            args[0]}${ args[1] ? `: ${args[1]}` : ''}`, log.prefixStyles, '')
+        log.caller = null // reset caller after logging
+    }})
 
     // Define MODAL functions
 
@@ -2029,7 +2019,7 @@
                 && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if !config.streamingDisabled
             const chosenAPI = untriedAPIs[ // pick random array entry
                 Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
-            if (!chosenAPI) { log.err('No proxy APIs left untried') ; return null }
+            if (!chosenAPI) { log.error('No proxy APIs left untried') ; return null }
 
             // Log chosen API endpoint
             log.info('Endpoint used', apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint)
@@ -2038,7 +2028,7 @@
 
         tryNew(caller, reason = 'err') {
             if (caller.status == 'done') return
-            log.err(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
+            log.error(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
             caller.triedAPIs.push({ [caller.api]: reason })
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
                 log.info('Trying another endpoint...')
@@ -2154,7 +2144,7 @@
                 headers: api.createHeaders(get.reply.api), data: api.createPayload(get.reply.api, msgChain),
                 onload: resp => dataProcess.text(get.reply, resp),
                 onloadstart: resp => dataProcess.stream(get.reply, resp),
-                onerror: err => { log.err(err)
+                onerror: err => { log.error(err)
                     if (!config.proxyAPIenabled) appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
                     else api.tryNew(get.reply)
                 }
@@ -2186,7 +2176,7 @@
             log.caller = `get.${caller.name}() » dataProcess.stream()`
             const failFlagsAndURLs = dataProcess.initFailFlags(caller.api),
                   reader = stream.response.getReader() ; let accumulatedChunks = ''
-            reader.read().then(processStreamText).catch(err => log.err('Error processing stream', err.message))
+            reader.read().then(processStreamText).catch(err => log.error('Error processing stream', err.message))
 
             function processStreamText({ done, value }) {
                 if (done) { caller.sender = null
@@ -2223,11 +2213,11 @@
                             && textToShow.trim() != '' // empty chunk not read
                         ) show.reply(textToShow)
                     }
-                } catch (err) { log.err('Error showing stream', err.message) }
+                } catch (err) { log.error('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
                     if (caller.sender == caller.api) // am designated sender, recurse
                         processStreamText({ done, value })
-                }).catch(err => log.err('Error reading stream', err.message))
+                }).catch(err => log.error('Error reading stream', err.message))
             }
         },
 
@@ -2237,7 +2227,7 @@
                 log.caller = `get.${caller.name}() » dataProcess.text()`
                 const failFlagsAndURLs = dataProcess.initFailFlags(caller.api) ; let respText = ''
                 if (resp.status != 200) {
-                    log.err('Response status', resp.status) ; log.info('Response', resp)
+                    log.error('Response status', resp.status) ; log.info('Response', resp)
                     if (caller == get.reply && caller.api == 'OpenAI')
                         appAlert(resp.status == 401 ? 'login'
                                : resp.status == 403 ? 'checkCloudflare'
@@ -2294,7 +2284,7 @@
 
                 function handleProcessError(err) { // suggest proxy or try diff API
                     log.info('Response text', resp.response)
-                    log.err(appAlerts.parseFailed, err)
+                    log.error(appAlerts.parseFailed, err)
                     if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                     else api.tryNew(caller)
                 }
@@ -2470,7 +2460,7 @@
             // Render/show answer
             const answerPre = appDiv.querySelector('pre')
             try { // to render markdown
-                answerPre.innerHTML = marked.parse(answer) } catch (err) { log.err(err.message) }
+                answerPre.innerHTML = marked.parse(answer) } catch (err) { log.error(err.message) }
             hljs.highlightAll() // highlight code
             if (scheme == 'dark' && answerPre.firstChild?.tagName == 'P')
                 answerPre.firstChild.prepend('>> ') // since speech balloon tip missing
