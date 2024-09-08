@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.7.2
+// @version                2024.9.7.3
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -222,7 +222,7 @@
 
     // Init APP INFO
     const app = {
-        name: 'DuckDuckGPT', symbol: '🤖', configKeyPrefix: 'duckDuckGPT',
+        name: 'DuckDuckGPT', configKeyPrefix: 'duckDuckGPT',
         urls: {
             app: 'https://www.duckduckgpt.com', support: 'https://support.ddgpt.com',
             gitHub: 'https://github.com/KudoAI/duckduckgpt',
@@ -582,17 +582,18 @@
     }
 
     const log = {
+        prefixStyles: 'background-color: #de5833 ; color: white ; padding: 2px 4px ; border-radius: 2px',
 
         info(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.info(`${app.symbol} ${app.name} » ${ log.caller || '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
+            console.info(`%c${app.name}%c ${ log.caller || '' }${ args[0]}${ args[1] ? `: ${args[1]}` : ''}`,
+                log.prefixStyles, '')
         },
 
         err(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.error(`${app.symbol} ${app.name} » ${ log.caller || '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
+            console.error(`%c${app.name}%c ${ log.caller || '' }${ args[0]}${ args[1] ? `: ${args[1]}` : ''}`,
+                log.prefixStyles, '')
         }
     }
 

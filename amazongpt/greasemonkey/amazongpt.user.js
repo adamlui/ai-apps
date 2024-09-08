@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.7.2
+// @version                2024.9.7.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -97,7 +97,7 @@
 
     // Init APP INFO
     const app = {
-        name: 'AmazonGPT', symbol: '🤖', configKeyPrefix: 'amazonGPT',
+        name: 'AmazonGPT', configKeyPrefix: 'amazonGPT',
         urls: {
             app: 'https://amazongpt.kudoai.com',
             gitHub: 'https://github.com/KudoAI/amazongpt',
@@ -433,17 +433,18 @@
     }
 
     const log = {
+        prefixStyles: 'background-color: #f08804 ; color: white ; padding: 2px 4px ; border-radius: 2px',
 
         info(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.info(`${app.symbol} ${app.name} » ${ log.caller || '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
+            console.info(`%c${app.name}%c ${ log.caller || '' }${ args[0]}${ args[1] ? `: ${args[1]}` : ''}`,
+                log.prefixStyles, '')
         },
 
         err(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.error(`${app.symbol} ${app.name} » ${ log.caller || '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
+            console.error(`%c${app.name}%c ${ log.caller || '' }${ args[0]}${ args[1] ? `: ${args[1]}` : ''}`,
+                log.prefixStyles, '')
         }
     }
 

@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.7.2
+// @version                  2024.9.7.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -414,7 +414,7 @@
 
     // Init APP INFO
     const app = {
-        name: 'GoogleGPT', symbol: '🤖', configKeyPrefix: 'googleGPT',
+        name: 'GoogleGPT', configKeyPrefix: 'googleGPT',
         urls: {
             app: 'https://www.googlegpt.io', support: 'https://support.googlegpt.io',
             gitHub: 'https://github.com/KudoAI/googlegpt',
@@ -771,17 +771,18 @@
     }
 
     const log = {
+        prefixStyles: 'background-color: green ; color: white ; padding: 2px 4px ; border-radius: 2px',
 
         info(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.info(`${app.symbol} ${app.name} » ${ log.caller || '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
+            console.info(`%c${app.name}%c ${ log.caller || '' }${ args[0]}${ args[1] ? `: ${args[1]}` : ''}`,
+                log.prefixStyles, '')
         },
 
         err(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.error(`${app.symbol} ${app.name} » ${ log.caller || '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
+            console.error(`%c${app.name}%c ${ log.caller || '' }${ args[0]}${ args[1] ? `: ${args[1]}` : ''}`,
+                log.prefixStyles, '')
         }
     }
 

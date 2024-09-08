@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.7.2
+// @version               2024.9.7.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -222,7 +222,7 @@
 
     // Init APP INFO
     const app = {
-        name: 'BraveGPT', symbol: '🤖', configKeyPrefix: 'braveGPT',
+        name: 'BraveGPT', configKeyPrefix: 'braveGPT',
         urls: {
             app: 'https://www.bravegpt.com', support: 'https://support.bravegpt.com',
             gitHub: 'https://github.com/KudoAI/bravegpt',
@@ -576,17 +576,18 @@
     }
 
     const log = {
+        prefixStyles: 'background-color: #ff4900 ; color: white ; padding: 2px 4px ; border-radius: 2px',
 
         info(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.info(`${app.symbol} ${app.name} » ${ log.caller || '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
+            console.info(`%c${app.name}%c ${ log.caller || '' }${ args[0]}${ args[1] ? `: ${args[1]}` : ''}`,
+                log.prefixStyles, '')
         },
 
         err(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.error(`${app.symbol} ${app.name} » ${ log.caller || '' }${
-                args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
+            console.error(`%c${app.name}%c ${ log.caller || '' }${ args[0]}${ args[1] ? `: ${args[1]}` : ''}`,
+                log.prefixStyles, '')
         }
     }
 
