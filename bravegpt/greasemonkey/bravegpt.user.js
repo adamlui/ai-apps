@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.7.3
+// @version               2024.9.7.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -580,14 +580,14 @@
 
         info(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.info(`%c${app.name}%c ${ log.caller || '' }${ args[0]}${ args[1] ? `: ${args[1]}` : ''}`,
-                log.prefixStyles, '')
+            console.info(`%c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }${
+                args[0]}${ args[1] ? `: ${args[1]}` : ''}`, log.prefixStyles, '')
         },
 
         err(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.error(`%c${app.name}%c ${ log.caller || '' }${ args[0]}${ args[1] ? `: ${args[1]}` : ''}`,
-                log.prefixStyles, '')
+            console.error(`%c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }${
+                args[0]}${ args[1] ? `: ${args[1]}` : ''}`, log.prefixStyles, '')
         }
     }
 
@@ -2600,7 +2600,7 @@
     const api = {
 
         pick(caller) {
-            log.caller = `get.${caller.name}() » `
+            log.caller = `get.${caller.name}()`
             const untriedAPIs = Object.keys(apis).filter(api =>
                    api != ( caller == get.reply ? 'OpenAI' : '' ) // exclude OpenAI for get.reply() since Proxy Mode
                 && !caller.triedAPIs.some(entry => Object.prototype.hasOwnProperty.call(entry, api)) // exclude tried APIs
@@ -2824,7 +2824,7 @@
 
         stream(caller, stream) {
             if (config.streamingDisabled || !config.proxyAPIenabled) return
-            log.caller = `get.${caller.name}() » dataProcess.stream() » `
+            log.caller = `get.${caller.name}() » dataProcess.stream()`
             const failFlagsAndURLs = dataProcess.initFailFlags(caller.api),
                   reader = stream.response.getReader() ; let accumulatedChunks = ''
             reader.read().then(processStreamText).catch(err => log.err('Error processing stream', err.message))
@@ -2875,7 +2875,7 @@
         text(caller, resp) {
             return new Promise(resolve => {
                 if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done') return
-                log.caller = `get.${caller.name}() » dataProcess.text() » `
+                log.caller = `get.${caller.name}() » dataProcess.text()`
                 const failFlagsAndURLs = dataProcess.initFailFlags(caller.api) ; let respText = ''
                 if (resp.status != 200) {
                     log.err('Response status', resp.status) ; log.info('Response', resp)
