@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.7.1
+// @version                2024.9.7.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -436,13 +436,13 @@
 
         info(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.info(`${app.symbol} ${app.name} » ${ log.prefix || '' }${
+            console.info(`${app.symbol} ${app.name} » ${ log.caller || '' }${
                 args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
         },
 
         err(label, msg) { // eslint-disable-line
             const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg)
-            console.error(`${app.symbol} ${app.name} » ${ log.prefix || '' }${
+            console.error(`${app.symbol} ${app.name} » ${ log.caller || '' }${
                 args[0]}${ args[1] ? `: ${args[1]}` : ''}`)
         }
     }
@@ -2019,7 +2019,7 @@
     const api = {
 
         pick(caller) {
-            log.prefix = `get.${caller.name}() » `
+            log.caller = `get.${caller.name}() » `
             const untriedAPIs = Object.keys(apis).filter(api =>
                    api != ( caller == get.reply ? 'OpenAI' : '' ) // exclude OpenAI for get.reply() since Proxy Mode
                 && !caller.triedAPIs.some(entry => Object.prototype.hasOwnProperty.call(entry, api)) // exclude tried APIs
@@ -2180,7 +2180,7 @@
 
         stream(caller, stream) {
             if (config.streamingDisabled || !config.proxyAPIenabled) return
-            log.prefix = `get.${caller.name}() » dataProcess.stream() » `
+            log.caller = `get.${caller.name}() » dataProcess.stream() » `
             const failFlagsAndURLs = dataProcess.initFailFlags(caller.api),
                   reader = stream.response.getReader() ; let accumulatedChunks = ''
             reader.read().then(processStreamText).catch(err => log.err('Error processing stream', err.message))
@@ -2231,7 +2231,7 @@
         text(caller, resp) {
             return new Promise(() => {
                 if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done') return
-                log.prefix = `get.${caller.name}() » dataProcess.text() » `
+                log.caller = `get.${caller.name}() » dataProcess.text() » `
                 const failFlagsAndURLs = dataProcess.initFailFlags(caller.api) ; let respText = ''
                 if (resp.status != 200) {
                     log.err('Response status', resp.status) ; log.info('Response', resp)
