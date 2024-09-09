@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.7
+// @version             2024.9.8
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -258,7 +258,7 @@
         urls: {
             gitHub: 'https://github.com/adamlui/chatgpt-auto-talk',
             greasyFork: 'https://greasyfork.org/en/scripts/500940-chatgpt-auto-talk' },
-        latestAssetCommitHash: '040cd9b' // for cached messages.json + navicon
+        latestAssetCommitHash: '6c3eccf' // for cached messages.json + navicon
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
     app.urls.support = app.urls.gitHub + '/issues/new'
