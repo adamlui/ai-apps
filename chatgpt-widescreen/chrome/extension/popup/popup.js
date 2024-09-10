@@ -49,7 +49,7 @@
         if (event.target === moreAddOnsSpan) moreAddOnsLink.click() } // to avoid double-toggle
 
     // Add Powered by chatgpt.js hover-listener
-    const chatGPTjsHostPath = 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/badges/',
+    const chatGPTjsHostPath = 'https://media.chatgptjs.org/images/badges/',
           chatGPTjsImg = document.querySelector('.chatgpt-js img')
     chatGPTjsImg.onmouseover = () => chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png'
     chatGPTjsImg.onmouseout = () => chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png'
