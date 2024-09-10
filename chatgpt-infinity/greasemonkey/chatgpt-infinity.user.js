@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.10
+// @version             2024.9.10.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -249,7 +249,7 @@
             gitHub: 'https://github.com/adamlui/chatgpt-infinity',
             greasyFork: 'https://greasyfork.org/scripts/465051-chatgpt-infinity',
             productHunt: 'https://www.producthunt.com/products/chatgpt-infinity' },
-        latestAssetCommitHash: '2d5ed0f' // for cached messages.json + navicon
+        latestAssetCommitHash: '5c77b4b' // for cached messages.json + navicon
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
