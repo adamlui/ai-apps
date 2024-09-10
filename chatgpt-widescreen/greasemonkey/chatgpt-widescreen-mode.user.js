@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.10.3
+// @version             2024.9.10.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -769,6 +769,7 @@
     }
 
     // Define UI element SELECTORS
+    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
     const inputSelector = /chatgpt|openai/.test(site) ? '#prompt-textarea'
                         : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
           sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
@@ -834,8 +835,9 @@
           tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
           hhStyle = headerSelector + '{ display: none !important }' // hide header
                   + ( /chatgpt|openai/.test(site) ? 'main { padding-top: 12px }' : '' ), // increase top-padding
-          hfStyle = footerSelector + '{ color: transparent !important ;' // hide footer text
-                                   + '  padding: .1rem 0 0 !important }' // reduce v-padding
+          hfStyle = footerSelector + '{ visibility: hidden ;' // hide footer text
+                                   + '  height: 3px }' // reduce v-padding
+
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create WIDESCREEN style
