@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.10.6
+// @version               2024.9.10.7
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -224,9 +224,13 @@
     const app = {
         name: 'BraveGPT', symbol: '🦁', configKeyPrefix: 'braveGPT',
         urls: {
-            app: 'https://www.bravegpt.com', support: 'https://support.bravegpt.com',
+            app: 'https://www.bravegpt.com', publisher: 'https://www.kudoai.com', support: 'https://support.bravegpt.com',
+            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            alternativeTo: 'https://alternativeto.net/software/bravegpt',
+            futurepedia: 'https://www.futurepedia.io/tool/bravegpt',
             gitHub: 'https://github.com/KudoAI/bravegpt',
-            greasyFork: 'https://greasyfork.org/scripts/462440-bravegpt' },
+            greasyFork: 'https://greasyfork.org/scripts/462440-bravegpt',
+            productHunt: 'https://www.producthunt.com/products/bravegpt' },
         latestAssetCommitHash: '908ab8b' // for cached messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
@@ -771,16 +775,16 @@
                 const aboutModalID = chatgpt.alert('',
                     '🏷️ ' + ( msgs.about_version || 'Version' ) + ': <span class="about-em">' + GM_info.script.version + '</span>\n'
                         + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
-                            + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
+                            + `<a href="${app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>`
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
                         + '📜 ' + ( msgs.about_sourceCode || 'Source code' )
-                            + `: <a href="${ app.urls.gitHub }" target="_blank" rel="nopener">`
+                            + `: <a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                                 + app.urls.gitHub + '</a>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(app.urls.support) },
                         function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
-                        function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                        function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
                     ], '', 617) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
 
@@ -822,18 +826,13 @@
 
                 // Init buttons
                 let btns = [
-                    function greasyFork() { safeWindowOpen(
-                        app.urls.greasyFork + '/feedback#post-discussion') },
-                    function productHunt() { safeWindowOpen(
-                        'https://www.producthunt.com/products/bravegpt/reviews/new') },
-                    function futurepedia() { safeWindowOpen(
-                        'https://www.futurepedia.io/tool/bravegpt#tool-reviews') },
-                    function alternativeTo() { safeWindowOpen(
-                        'https://alternativeto.net/software/bravegpt/about/') }
+                    function greasyFork() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                    function productHunt() { safeWindowOpen(app.urls.productHunt + '/reviews/new') },
+                    function futurepedia() { safeWindowOpen(app.urls.futurepedia + '#tool-reviews') },
+                    function alternativeTo() { safeWindowOpen(app.urls.alternativeTo + '/about/') }
                 ]
                 if (options.sites == 'feedback') btns.splice(1, 0,
-                    function github() { safeWindowOpen(
-                        app.urls.gitHub + '/discussions/new/choose') })
+                    function github() { safeWindowOpen(app.urls.gitHub + '/discussions/new/choose') })
 
                 // Create/init modal
                 const feedbackModalID = siteAlert(`${
@@ -3313,7 +3312,7 @@
                 const kudoAIspan = document.createElement('span')
                 kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
                 kudoAIspan.style.cssText = 'position: relative ; bottom: 8px ; font-size: 12px'
-                kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
+                kudoAIspan.append(createAnchor(app.urls.publisher, 'KudoAI'))
                 appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
 
                 // Show standby state if prefix/suffix mode on

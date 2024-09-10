@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.10.5
+// @version                2024.9.10.6
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -99,7 +99,8 @@
     const app = {
         name: 'AmazonGPT', symbol: '🤖', configKeyPrefix: 'amazonGPT',
         urls: {
-            app: 'https://amazongpt.kudoai.com',
+            app: 'https://amazongpt.kudoai.com', publisher: 'https://www.kudoai.com',
+            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             gitHub: 'https://github.com/KudoAI/amazongpt',
             greasyFork: 'https://greasyfork.org/scripts/500663-amazongpt' },
         latestAssetCommitHash: 'da1a6a8' // for cached messages.json
@@ -630,16 +631,16 @@
                 const aboutModalID = chatgpt.alert('',
                     '🏷️ ' + ( msgs.about_version || 'Version' ) + ': <span class="about-em">' + GM_info.script.version + '</span>\n'
                         + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
-                            + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
+                            + `<a href="${app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>`
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
                         + '📜 ' + ( msgs.about_sourceCode || 'Source code' )
-                            + `: <a href="${ app.urls.gitHub }" target="_blank" rel="nopener">`
+                            + `: <a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                                 + app.urls.gitHub + '</a>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(app.urls.support) },
                         function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
-                        function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                        function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
                     ], '', 656) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
 
@@ -681,12 +682,9 @@
 
                 // Init buttons
                 let btns = [
-                    function greasyFork() { safeWindowOpen(
-                        app.urls.greasyFork + '/feedback#post-discussion') }
-                ]
+                    function greasyFork() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') }]
                 if (options.sites == 'feedback') btns.push(
-                    function github() { safeWindowOpen(
-                        app.urls.gitHub + '/discussions/new/choose') })
+                    function github() { safeWindowOpen(app.urls.gitHub + '/discussions/new/choose') })
 
                 // Create/init modal
                 const feedbackModalID = siteAlert(`${
@@ -2619,7 +2617,7 @@
                 // Create/append 'by KudoAI'
                 const kudoAIspan = document.createElement('span')
                 kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-                kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
+                kudoAIspan.append(createAnchor(app.urls.publisher, 'KudoAI'))
                 appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
 
                 // Create/append answer bubble

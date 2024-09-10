@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.10.7
+// @version                  2024.9.10.8
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -416,7 +416,8 @@
     const app = {
         name: 'GoogleGPT', symbol: '🤖', configKeyPrefix: 'googleGPT',
         urls: {
-            app: 'https://www.googlegpt.io', support: 'https://support.googlegpt.io',
+            app: 'https://www.googlegpt.io', publisher: 'https://www.kudoai.com', support: 'https://support.googlegpt.io',
+            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             gitHub: 'https://github.com/KudoAI/googlegpt',
             greasyFork: 'https://greasyfork.org/scripts/478597-googlegpt' },
         latestAssetCommitHash: 'be83da1' // for cached messages.json
@@ -967,16 +968,16 @@
                 const aboutModalID = chatgpt.alert('',
                     '🏷️ ' + ( msgs.about_version || 'Version' ) + ': <span class="about-em">' + GM_info.script.version + '</span>\n'
                         + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
-                            + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
+                            + `<a href="${app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>`
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
                         + '📜 ' + ( msgs.about_sourceCode || 'Source code' )
-                            + `: <a href="${ app.urls.gitHub }" target="_blank" rel="nopener">`
+                            + `: <a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                                 + app.urls.gitHub + '</a>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(app.urls.support) },
                         function leaveAReview() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                        function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                        function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
                     ], '', 585) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
 
@@ -1018,12 +1019,9 @@
 
                 // Init buttons
                 let btns = [
-                    function greasyFork() { safeWindowOpen(
-                        app.urls.greasyFork + '/feedback#post-discussion') }
-                ]
+                    function greasyFork() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') }]
                 if (options.sites == 'feedback') btns.splice(1, 0,
-                    function github() { safeWindowOpen(
-                        app.urls.gitHub + '/discussions/new/choose') })
+                    function github() { safeWindowOpen(app.urls.gitHub + '/discussions/new/choose') })
 
                 // Create/init modal
                 const feedbackModalID = siteAlert(`${
@@ -3525,7 +3523,7 @@
                 if (!browser.isMobile) {
                     const kudoAIspan = document.createElement('span')
                     kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-                    kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
+                    kudoAIspan.append(createAnchor(app.urls.publisher, 'KudoAI'))
                     appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
                 }
 

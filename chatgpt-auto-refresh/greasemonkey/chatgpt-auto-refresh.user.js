@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.8
+// @version             2024.9.10
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -263,9 +263,10 @@
     const app = {
         name: 'ChatGPT Auto Refresh', symbol: '↻', configKeyPrefix: 'chatGPTautoRefresh',
         urls: {
+            support: 'https://support.chatgptautorefresh.com', mediaHost: 'https://media.chatgptautorefresh.com/',
+            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             gitHub: 'https://github.com/adamlui/chatgpt-auto-refresh',
-            greasyFork: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh',
-            mediaHost: 'https://media.chatgptautorefresh.com/', support: 'https://support.chatgptautorefresh.com' },
+            greasyFork: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh' },
         latestAssetCommitHash: '11a69be' // for cached messages.json + navicon
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
@@ -487,19 +488,19 @@
         // Show modal
         const aboutModalID = siteAlert(
             msgs.appName || app.name, // title
-            `<span style="${ headingStyle }"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
-                + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-            + `<span style="${ headingStyle }"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
-                + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+            `<span style="${headingStyle}"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
+                + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
+            + `<span style="${headingStyle}"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
+                + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
                 + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-            + `<span style="${ headingStyle }"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
-                + `<span style="${ pBrStyle }"><a href="${ app.urls.gitHub }" target="_blank" rel="nopener">`
+            + `<span style="${headingStyle}"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+                + `<span style="${pBrStyle}"><a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                 + app.urls.gitHub + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
                 function getSupport() { safeWindowOpen(app.urls.support) },
                 function leaveAReview() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
             ], '', 478 // set width
         )
 

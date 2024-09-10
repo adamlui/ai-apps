@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.8
+// @version             2024.9.10
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -243,9 +243,12 @@
     const app = {
         name: 'ChatGPT Infinity', symbol: '∞', configKeyPrefix: 'chatGPTinfinity',
         urls: {
+            support: 'https://support.chatgptinfinity.com', mediaHost: 'https://media.chatgptinfinity.com/',
+            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            alternativeTo: 'https://alternativeto.net/software/chatgpt-infinity',
             gitHub: 'https://github.com/adamlui/chatgpt-infinity',
             greasyFork: 'https://greasyfork.org/scripts/465051-chatgpt-infinity',
-            mediaHost: 'https://media.chatgptinfinity.com/', support: 'https://support.chatgptinfinity.com' },
+            productHunt: 'https://www.producthunt.com/products/chatgpt-infinity' },
         latestAssetCommitHash: '2d5ed0f' // for cached messages.json + navicon
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
@@ -439,13 +442,13 @@
               aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
         const aboutModalID = siteAlert(
             msgs.appName || app.name, // title
-            `<span style="${ headingStyle }"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
-                + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-            + `<span style="${ headingStyle }"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
-                + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+            `<span style="${headingStyle}"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
+                + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
+            + `<span style="${headingStyle}"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
+                + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
                 + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-            + `<span style="${ headingStyle }"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
-                + `<span style="${ pBrStyle }"><a href="${ app.urls.gitHub }" target="_blank" rel="nopener">`
+            + `<span style="${headingStyle}"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+                + `<span style="${pBrStyle}"><a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                 + app.urls.gitHub + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
@@ -453,15 +456,13 @@
                 function leaveAReview() { // show new modal
                     const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                          function productHunt() { safeWindowOpen(
-                              'https://www.producthunt.com/products/chatgpt-infinity/reviews/new') },
-                          function alternativeTo() { safeWindowOpen(
-                              'https://alternativeto.net/software/chatgpt-infinity/about/') }])
+                          function productHunt() { safeWindowOpen(app.urls.productHunt + '/reviews/new') },
+                          function alternativeTo() { safeWindowOpen(app.urls.alternativeTo + '/about/') }])
                     const reviewBtns = document.getElementById(reviewModalID).querySelectorAll('button')
                     reviewBtns[0].style.display = 'none' // hide dismiss button
                     reviewBtns[1].textContent = ( // remove spaces from AlternativeTo label
                         reviewBtns[1].textContent.replace(/\s/g, '')) },
-                function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
             ], '', 478 // set width
         )
 

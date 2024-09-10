@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.10.6
+// @version                2014.9.10.7
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -224,9 +224,13 @@
     const app = {
         name: 'DuckDuckGPT', symbol: '🐤', configKeyPrefix: 'duckDuckGPT',
         urls: {
-            app: 'https://www.duckduckgpt.com', support: 'https://support.ddgpt.com',
+            app: 'https://www.duckduckgpt.com', publisher: 'https://www.kudoai.com', support: 'https://support.ddgpt.com',
+            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            alternativeTo: 'https://alternativeto.net/software/duckduckgpt',
+            futurepedia: 'https://www.futurepedia.io/tool/duckduckgpt',
             gitHub: 'https://github.com/KudoAI/duckduckgpt',
-            greasyFork: 'https://greasyfork.org/scripts/459849-duckduckgpt' },
+            greasyFork: 'https://greasyfork.org/scripts/459849-duckduckgpt',
+            productHunt: 'https://www.producthunt.com/products/duckduckgpt' },
         latestAssetCommitHash: '0b230e3' // for cached messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
@@ -780,16 +784,16 @@
                 const aboutModalID = chatgpt.alert('',
                     '🏷️ ' + ( msgs.about_version || 'Version' ) + ': <span class="about-em">' + GM_info.script.version + '</span>\n'
                         + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
-                            + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
+                            + `<a href="${app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>`
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
                         + '📜 ' + ( msgs.about_sourceCode || 'Source code' )
-                            + `: <a href="${ app.urls.gitHub }" target="_blank" rel="nopener">`
+                            + `: <a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                                 + app.urls.gitHub + '</a>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(app.urls.support) },
                         function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
-                        function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                        function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
                     ], '', 577) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
 
@@ -830,20 +834,14 @@
                 log.debug('Showing Feedback modal...')
 
                 // Init buttons
-                log.debug('Initializing buttons...')
                 let btns = [
-                    function greasyFork() { safeWindowOpen(
-                        app.urls.greasyFork + '/feedback#post-discussion') },
-                    function productHunt() { safeWindowOpen(
-                        'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
-                    function futurepedia() { safeWindowOpen(
-                        'https://www.futurepedia.io/tool/duckduckgpt#tool-reviews') },
-                    function alternativeTo() { safeWindowOpen(
-                        'https://alternativeto.net/software/duckduckgpt/about/') }
+                    function greasyFork() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                    function productHunt() { safeWindowOpen(app.urls.productHunt + '/reviews/new') },
+                    function futurepedia() { safeWindowOpen(app.urls.futurepedia + '#tool-reviews') },
+                    function alternativeTo() { safeWindowOpen(app.urls.alternativeTo + '/about/') }
                 ]
                 if (options.sites == 'feedback') btns.splice(1, 0,
-                    function github() { safeWindowOpen(
-                        app.urls.gitHub + '/discussions/new/choose') })
+                    function github() { safeWindowOpen(app.urls.gitHub + '/discussions/new/choose') })
 
                 // Create/init modal
                 const feedbackModalID = siteAlert(`${
@@ -3206,7 +3204,7 @@
                 // Create/append 'by KudoAI'
                 const kudoAIspan = document.createElement('span')
                 kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-                kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
+                kudoAIspan.append(createAnchor(app.urls.publisher, 'KudoAI'))
                 appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
 
                 // Show standby state if prefix/suffix mode on

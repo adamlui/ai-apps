@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.8
+// @version             2024.9.10
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -266,9 +266,11 @@
     const app = {
         name: 'Autoclear ChatGPT History', symbol: '🕶️', configKeyPrefix: 'autoclearChatGPThistory',
         urls: {
+            support: 'https://support.autoclearchatgpt.com', mediaHost: 'https://media.autoclearchatgpt.com/',
+            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            futurepedia: 'https://www.futurepedia.io/tool/autoclear-chatgpt-history',
             gitHub: 'https://github.com/adamlui/autoclear-chatgpt-history',
-            greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history',
-            mediaHost: 'https://media.autoclearchatgpt.com/', support: 'https://support.autoclearchatgpt.com' },
+            greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history' },
         latestAssetCommitHash: 'e772928' // for cached messages.json + navicon
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
@@ -446,13 +448,13 @@
         // Show alert
         const aboutModalID = siteAlert(
             msgs.appName || app.name, // title
-            `<span style="${ headingStyle }"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
-                + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-            + `<span style="${ headingStyle }"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
-                + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+            `<span style="${headingStyle}"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
+                + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
+            + `<span style="${headingStyle}"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
+                + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
                 + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-            + `<span style="${ headingStyle }"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
-                + `<span style="${ pBrStyle }"><a href="${ app.urls.gitHub }" target="_blank" rel="nopener">`
+            + `<span style="${headingStyle}"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+                + `<span style="${pBrStyle}"><a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                 + app.urls.gitHub + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
@@ -460,11 +462,10 @@
                 function leaveAReview() { // show review modal
                     const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                          function futurepedia() { safeWindowOpen(
-                              'https://www.futurepedia.io/tool/autoclear-chatgpt-history#tool-reviews') }])
+                          function futurepedia() { safeWindowOpen(app.urls.futurepedia + '#tool-reviews') }])
                     document.getElementById(reviewModalID).querySelector('button')
                         .style.display = 'none' }, // hide dismiss button
-                function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
             ], '', 478 // set width
         )
 
