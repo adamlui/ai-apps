@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.10.9
+// @version                  2024.9.10.10
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -426,6 +426,15 @@
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
+    // Init BROWSER flags
+    const browser = {
+        isChrome: chatgpt.browser.isChrome(),
+        isFirefox: chatgpt.browser.isFirefox(),
+        isEdge: chatgpt.browser.isEdge(),
+        isBrave: chatgpt.browser.isBrave(),
+        isMobile: chatgpt.browser.isMobile() }
+    browser.isPortrait = browser.isMobile && (window.innerWidth < window.innerHeight)
+
     // Init DEBUG mode
     const config = {} ; loadSetting('debugMode')
 
@@ -434,7 +443,7 @@
 
         styles: {
             prefix: {
-                base: 'color: white ; padding: 2px 3px 2px 5px ; border-radius: 2px ;',
+                base: `color: white ; padding: 2px 3px 2px 5px ; border-radius: 2px ; ${ browser.isFirefox ? 'font-size: 13px ;' : '' }`,
                 info: 'background: linear-gradient(344deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 39%, rgba(30,29,43,0.6026611328125) 93%)',
                 working: 'background: linear-gradient(342deg, rgba(255,128,0,1) 0%, rgba(255,128,0,0.9612045501794468) 57%, rgba(255,128,0,0.7539216370141807) 93%)' ,
                 success: 'background: linear-gradient(344deg, rgba(0,107,41,1) 0%, rgba(3,147,58,1) 39%, rgba(24,126,42,0.7735294801514356) 93%)',
@@ -484,19 +493,12 @@
         }
     )
 
-    // Init browser/compatibility FLAGS
-    log.debug('Initializing browser/compatibility flags...')
-    const browser = {
-        isChrome: chatgpt.browser.isChrome(),
-        isFirefox: chatgpt.browser.isFirefox(),
-        isEdge: chatgpt.browser.isEdge(),
-        isBrave: chatgpt.browser.isBrave(),
-        isMobile: chatgpt.browser.isMobile() }
-    browser.isPortrait = browser.isMobile && (window.innerWidth < window.innerHeight)
+    // Init COMPATIBILITY flags
+    log.debug('Initializing compatibility flags...')
     const streamingSupported = {
         browser: !(getUserscriptManager() == 'Tampermonkey' && (browser.isChrome || browser.isEdge || browser.isBrave)),
         userscriptManager: /Tampermonkey|ScriptCat/.test(getUserscriptManager()) }
-    log.debug(`Success!\nbrowser = ${log.prettifyObj(browser)}\nstreamingSupported = ${log.prettifyObj(streamingSupported)}`)
+    log.debug(`Success! streamingSupported = ${log.prettifyObj(streamingSupported)}`)
 
     // Init CONFIG
     log.debug('Initializing config...')
