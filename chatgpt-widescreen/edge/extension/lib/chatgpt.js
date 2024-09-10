@@ -272,6 +272,15 @@ const chatgpt = {
         });
     },
 
+    isLoaded() {
+        return new Promise(resolve => {
+            if (chatgpt.getNewChatBtn()) resolve(true);
+            else new MutationObserver((_, obs) => {
+                if (chatgpt.getNewChatBtn()) { obs.disconnect(); resolve(true); }
+            }).observe(document.body, { childList: true, subtree: true });
+        });
+    },
+
     notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.35, // sec duration of fade-out
