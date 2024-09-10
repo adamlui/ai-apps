@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.10.4
+// @version             2024.9.10.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -769,7 +769,7 @@
     }
 
     // Define UI element SELECTORS
-    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
+    await Promise.race([sendBtnIsLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
     const inputSelector = /chatgpt|openai/.test(site) ? '#prompt-textarea'
                         : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
           sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
@@ -870,11 +870,9 @@
             window[buttonName].style.cursor = 'pointer' // add finger cursor
             if (isGPT4oUI || site == 'poe') window[buttonName].style.position = 'relative' // override static pos
             if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
-                sendBtnIsLoaded().then(() => {
-                    window[buttonName].setAttribute('class', chatgpt.getSendBtn().classList)
-                    window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
-                    window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
-                })
+                window[buttonName].setAttribute('class', chatgpt.getSendBtn().classList)
+                window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
+                window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
             } else if (site == 'poe') // lift buttons slightly
                 window[buttonName].style.marginBottom = ( buttonType == 'newChat' ? '0.45' : '0.2' ) + 'rem'
 
