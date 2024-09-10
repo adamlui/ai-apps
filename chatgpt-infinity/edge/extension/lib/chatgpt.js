@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v3.2.0
+// This library is a condensed version of chatgpt.js v3.2.1
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -267,17 +267,21 @@ const chatgpt = {
 
     isIdle() {
         return new Promise(resolve => {
-            (function checkIsIdle() {
-                chatgpt.getRegenerateButton() ? resolve(true) : setTimeout(checkIsIdle, 200);
-            })();
-    });},
+            if (chatgpt.getRegenerateBtn()) resolve(true);
+            else new MutationObserver((_, obs) => {
+                if (chatgpt.getRegenerateBtn()) { obs.disconnect(); resolve(true); }
+            }).observe(document.body, { childList: true, subtree: true });
+        });
+    },
 
     isLoaded() {
         return new Promise(resolve => {
-            (function checkIsLoaded() {
-                chatgpt.getNewChatButton() ? resolve(true) : setTimeout(checkIsLoaded, 200);
-            })();
-    });},
+            if (chatgpt.getNewChatBtn()) resolve(true);
+            else new MutationObserver((_, obs) => {
+                if (chatgpt.getNewChatBtn()) { obs.disconnect(); resolve(true); }
+            }).observe(document.body, { childList: true, subtree: true });
+        });
+    },
 
     notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
@@ -493,9 +497,10 @@ const chatgpt = {
             await chatgpt.isLoaded();
             return Promise.race([
                 new Promise(resolve => {
-                    (function checkNewChatLink() {
-                        chatgpt.getNewChatLink() ? resolve(true) : setTimeout(checkNewChatLink, 200);
-                    })();
+                    if (chatgpt.getNewChatLink()) resolve(true);
+                    else new MutationObserver((_, obs) => {
+                        if (chatgpt.getNewChatLink()) { obs.disconnect(); resolve(true); }
+                    }).observe(document.body, { childList: true, subtree: true });
                 }),
                 new Promise(resolve => setTimeout(resolve, 5000)) // since New Chat link not always present
             ]);
@@ -508,7 +513,7 @@ const chatgpt = {
 };
 
 // Create alias functions
-const funcAliases = [
+const cjsFuncAliases = [
     ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
@@ -523,7 +528,7 @@ const funcAliases = [
     ['getContinueGeneratingButton', 'getContinueButton'],
     ['getScrollToBottomButton', 'getScrollButton'],
     ['getStopGeneratingButton', 'getStopButton'],
-    ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
+    ['getTextarea', 'getTextArea', 'getChatbar', 'getChatBar', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen', 'isfullscreen'],
     ['isLoaded', 'isloaded'],
     ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
@@ -548,7 +553,7 @@ const funcAliases = [
     ['unminify', 'unminifyCode', 'codeUnminify'],
     ['writeCode', 'codeWrite']
 ];
-const synonyms = [
+const cjsFuncSynonyms = [
     ['account', 'acct'],
     ['activate', 'turnOn'],
     ['analyze', 'check', 'evaluate', 'review'],
@@ -561,6 +566,7 @@ const synonyms = [
     ['data', 'details'],
     ['deactivate', 'deActivate', 'turnOff'],
     ['execute', 'interpret', 'interpreter', 'run'],
+    ['firefox', 'ff'],
     ['generating', 'generation'],
     ['minify', 'uglify'],
     ['refactor', 'rewrite'],
@@ -577,7 +583,7 @@ const camelCaser = (words) => {
 for (const prop in chatgpt) {
 
     // Create new function for each alias
-    for (const subAliases of funcAliases) {
+    for (const subAliases of cjsFuncAliases) {
         if (subAliases.includes(prop)) {
             if (subAliases.some(element => element.includes('.'))) {
                 const nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
@@ -597,7 +603,7 @@ for (const prop in chatgpt) {
             if (typeof chatgpt[funcName] == 'function') {
                 const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
                 for (const funcWord of funcWords) {
-                    const synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
+                    const synonymValues = [].concat(...cjsFuncSynonyms // flatten into single array w/ word's cjsFuncSynonyms
                         .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
                         .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
                     for (const synonym of synonymValues) { // create function per synonym

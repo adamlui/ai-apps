@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v3.1.0
+// This library is a condensed version of chatgpt.js v3.2.1
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -251,7 +251,7 @@ const chatgpt = {
 
     getRegenerateButton() {   
         for (const mainSVG of document.querySelectorAll('main svg')) {
-            if (mainSVG.querySelector('path[d*="M3.07 10.876C3.623"]')) // regen icon found
+            if (mainSVG.querySelector('path[d^="M3.06957"]')) // regen icon found
                 return mainSVG.parentNode;
     }},
 
@@ -265,10 +265,12 @@ const chatgpt = {
 
     isIdle() {
         return new Promise(resolve => {
-            (function checkIsIdle() {
-                chatgpt.getRegenerateButton() ? resolve(true) : setTimeout(checkIsIdle, 200);
-            })();
-    });},
+            if (chatgpt.getRegenerateBtn()) resolve(true);
+            else new MutationObserver((_, obs) => {
+                if (chatgpt.getRegenerateBtn()) { obs.disconnect(); resolve(true); }
+            }).observe(document.body, { childList: true, subtree: true });
+        });
+    },
 
     notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
@@ -466,7 +468,7 @@ const chatgpt = {
 };
 
 // Create alias functions
-const synonyms = [['button', 'btn']];
+const cjsFuncSynonyms = [['button', 'btn']];
 const camelCaser = (words) => {
     return words.map((word, index) => index === 0 || word == 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); };
 do { // create new function per synonym per word per function
@@ -475,7 +477,7 @@ do { // create new function per synonym per word per function
         if (typeof chatgpt[funcName] == 'function') {
             const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
             for (const funcWord of funcWords) {
-                const synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
+                const synonymValues = [].concat(...cjsFuncSynonyms // flatten into single array w/ word's synonyms
                     .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
                     .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
                 for (const synonym of synonymValues) { // create function per synonym
