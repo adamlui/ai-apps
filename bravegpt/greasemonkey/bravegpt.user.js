@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.10.4
+// @version               2024.9.10.5
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -3066,9 +3066,11 @@
                         if (nowResult.id) apis.GPTforLove.parentID = nowResult.id // for contextual replies
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
-                    if (failFlagsAndURLs.test(textToShow)) {
-                        log.info('Response', accumulatedChunks)
-                        if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
+                    const failMatch = failFlagsAndURLs.match(textToShow)
+                    if (failMatch) {
+                        log.debug('Response text', textToShow)
+                        log.error('Fail flag detected', failMatch[0])
+                        if (caller.status !== 'done' && !caller.sender) api.tryNew(caller)
                         return
                     } else if (caller.status != 'done') { // app waiting or sending
                         if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
@@ -3097,15 +3099,18 @@
                                : resp.status == 429 ? ['tooManyRequests', 'suggestProxy']
                                                     : ['openAInotWorking', 'suggestProxy'] )
                     else api.tryNew(caller)
-                } else if (caller.api == 'OpenAI') {
-                    if (resp.response && !failFlagsAndURLs.test(resp.response)) {
+                } else if (caller.api == 'OpenAI' && resp.response) {
+                    const failMatch = failFlagsAndURLs.match(resp.response)
+                    if (failMatch) { // suggest proxy or try diff API
+                        log.debug('Response text', resp.response)
+                        log.error('Fail flag detected', failMatch[0])
+                        if (caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
+                        else api.tryNew(caller)
+                    } else {
                         try { // to show response or return related queries
                             respText = JSON.parse(resp.response).choices[0].message.content
                             handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
-                    } else { // suggest proxy or try diff API
-                        if (caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
-                        else api.tryNew(caller)
                     }
                 } else if (resp.responseText) {
                     if (caller.api == 'AIchatOS') {
@@ -3142,9 +3147,10 @@
 
                 function handleProcessCompletion() {
                     if (caller.status != 'done') {
-                        if (failFlagsAndURLs.test(respText)) {
-                            log.debug('Response', respText)
-                            log.error('Fail flag detected')
+                        const failMatch = failFlagsAndURLs.match(respText)
+                        if (failMatch) {
+                            log.debug('Response text', respText)
+                            log.error('Fail flag detected', failMatch[0])
                             api.tryNew(caller)
                         } else {
                             log.debug('Response text', respText)
