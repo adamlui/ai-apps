@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.10.2
+// @version                  2024.9.10.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -832,7 +832,7 @@
         alerts.forEach((alert, idx) => { // process each alert for display
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
             if (idx > 0) msg = ' ' + msg // left-pad 2nd+ alerts
-            if (msg.includes(appAlerts.login)) deleteOpenAIcookies()
+            if (msg.includes(appAlerts.login)) session.deleteOpenAIcookies()
             if (msg.includes(appAlerts.waitingResponse)) alertP.classList.add('loading')
 
             // Add login link to login msgs
@@ -2956,62 +2956,65 @@
 
     // Define SESSION functions
 
-    function isBlockedbyCloudflare(resp) {
-        try {
-            const html = new DOMParser().parseFromString(resp, 'text/html'),
-                  title = html.querySelector('title')
-            if (title.innerText == 'Just a moment...') {
-                log.caller = 'isBlockedbyCloudflare'
-                log.debug('Blocked by CloudFlare')
-                return true
-            }             
-        } catch (err) { return false }
-    }
+    const session = {
 
-    function deleteOpenAIcookies() {
-        log.caller = 'deleteOpenAIcookies()'
-        log.debug('Deleting OpenAI cookies...')
-        GM_deleteValue(app.configKeyPrefix + '_openAItoken')
-        if (get.userscriptManager() != 'Tampermonkey') return
-        GM_cookie.list({ url: apis.OpenAI.endpoints.auth }, (cookies, error) => {
-            if (!error) { for (const cookie of cookies) {
-                GM_cookie.delete({ url: apis.OpenAI.endpoints.auth, name: cookie.name })
-    }}})}
+        deleteOpenAIcookies() {
+            log.caller = 'session.deleteOpenAIcookies()'
+            log.debug('Deleting OpenAI cookies...')
+            GM_deleteValue(app.configKeyPrefix + '_openAItoken')
+            if (get.userscriptManager() != 'Tampermonkey') return
+            GM_cookie.list({ url: apis.OpenAI.endpoints.auth }, (cookies, error) => {
+                if (!error) { for (const cookie of cookies) {
+                    GM_cookie.delete({ url: apis.OpenAI.endpoints.auth, name: cookie.name })
+            }}})
+        },
 
-    function getOpenAItoken() {
-        log.caller = 'getOpenAItoken()'
-        log.debug('Getting OpenAI token...')
-        return new Promise(resolve => {
-            const accessToken = GM_getValue(app.configKeyPrefix + '_openAItoken')
-            if (accessToken) { log.debug(accessToken) ; resolve(accessToken) }
-            else {
-                log.debug(`No token found. Fetching from ${apis.OpenAI.endpoints.session}...`)
-                xhr({ url: apis.OpenAI.endpoints.session, onload: resp => {
-                    if (isBlockedbyCloudflare(resp.responseText)) {
-                        appAlert('checkCloudflare') ; return }
-                    try {
-                        const newAccessToken = JSON.parse(resp.responseText).accessToken
-                        GM_setValue(app.configKeyPrefix + '_openAItoken', newAccessToken)
-                        log.debug(`Success! newAccessToken = ${newAccessToken}`)
-                        resolve(newAccessToken)
-                    } catch { if (get.reply.api == 'OpenAI') appAlert('login') ; return }
-                }})
+        generateGPTFLkey() {
+            log.caller = 'session.generateGPTFLkey()'
+            log.debug('Generating GPTforLove key...')
+            let nn = Math.floor(new Date().getTime() / 1e3)
+            const fD = e => {
+                let t = CryptoJS.enc.Utf8.parse(e),
+                    o = CryptoJS.AES.encrypt(t, 'vrewbhjvbrejhbevwjh156645', {
+                        mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7
+                })
+                return o.toString()
             }
-    })}
+            const gptflKey = fD(nn)
+            log.debug(gptflKey) ; return gptflKey
+        },
 
-    function generateGPTforLoveKey() {
-        log.caller = 'generateGPTforLoveKey()'
-        log.debug('Generating GPTforLove key...')
-        let nn = Math.floor(new Date().getTime() / 1e3)
-        const fD = e => {
-            let t = CryptoJS.enc.Utf8.parse(e),
-                o = CryptoJS.AES.encrypt(t, 'vrewbhjvbrejhbevwjh156645', {
-                    mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7
-            })
-            return o.toString()
+        getOAItoken() {
+            log.caller = 'session.getOAItoken()'
+            log.debug('Getting OpenAI token...')
+            return new Promise(resolve => {
+                const accessToken = GM_getValue(app.configKeyPrefix + '_openAItoken')
+                if (accessToken) { log.debug(accessToken) ; resolve(accessToken) }
+                else {
+                    log.debug(`No token found. Fetching from ${apis.OpenAI.endpoints.session}...`)
+                    xhr({ url: apis.OpenAI.endpoints.session, onload: resp => {
+                        if (session.isBlockedByCF(resp.responseText)) {
+                            appAlert('checkCloudflare') ; return }
+                        try {
+                            const newAccessToken = JSON.parse(resp.responseText).accessToken
+                            GM_setValue(app.configKeyPrefix + '_openAItoken', newAccessToken)
+                            log.debug(`Success! newAccessToken = ${newAccessToken}`)
+                            resolve(newAccessToken)
+                        } catch { if (get.reply.api == 'OpenAI') appAlert('login') ; return }
+            }})}})
+        },
+
+        isBlockedByCF(resp) {
+            try {
+                const html = new DOMParser().parseFromString(resp, 'text/html'),
+                      title = html.querySelector('title')
+                if (title.innerText == 'Just a moment...') {
+                    log.caller = 'session.isBlockedByCF'
+                    log.debug('Blocked by CloudFlare')
+                    return true
+                }             
+            } catch (err) { return false }
         }
-        const gptflKey = fD(nn)
-        log.debug(gptflKey) ; return gptflKey
     }
 
     // Define API functions
@@ -3083,7 +3086,7 @@
             } else if (api == 'GPTforLove') {
                 payload = {
                     prompt: msgs[msgs.length - 1].content,
-                    secret: generateGPTforLoveKey(), top_p: 1, temperature: 0.8,
+                    secret: session.generateGPTFLkey(), top_p: 1, temperature: 0.8,
                     systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI.'
                                  + 'Follow the user\'s instructions carefully.'
                 }
@@ -3138,7 +3141,7 @@
 
             // Init OpenAI key
             if (!config.proxyAPIenabled)
-                config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
+                config.openAIkey = await Promise.race([session.getOAItoken(), new Promise(reject => setTimeout(reject, 3000))])
 
             // Try diff API after 6-9s of no response
             else {
@@ -3187,7 +3190,7 @@
 
             // Init OpenAI key
             if (get.related.api == 'OpenAI')
-                config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
+                config.openAIkey = await Promise.race([session.getOAItoken(), new Promise(reject => setTimeout(reject, 3000))])
 
             // Init prompt
             const rqPrompt = 'Give me a numbered list of '
