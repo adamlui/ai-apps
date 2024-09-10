@@ -46,20 +46,6 @@
               chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') : ''
     } catch (err) {}
 
-    // AUTO-FOCUS ChatGPT chatbar if enabled
-    if (/chatgpt|openai/.test(site)) {
-        settings.load('autoFocusChatbarDisabled').then(async () => { if (!config.autoFocusChatbarDisabled) {
-            await Promise.race([
-                new Promise(resolve => {
-                    (function checkSecondChatbarBtn() { // since it causes de-focus
-                        const chatbarBtns = document.querySelector(inputSelector)?.parentNode.parentNode.getElementsByTagName('button')
-                        chatbarBtns?.length >= 2 ? resolve(true) : setTimeout(checkSecondChatbarBtn, 200)
-                    })();
-                }), new Promise(resolve => setTimeout(resolve, 3000)) // timeout after 3s
-            ])
-            document.querySelector(inputSelector)?.focus()
-    }})}
-
     // Save FULL-WINDOW + FULL SCREEN states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : settings.load('fullWindow')
     config.fullScreen = chatgpt.isFullScreen()
