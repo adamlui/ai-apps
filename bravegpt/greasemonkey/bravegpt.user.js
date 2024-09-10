@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.10
+// @version               2024.9.10.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -301,8 +301,8 @@
         isMobile: chatgpt.browser.isMobile() }
     browser.isPortrait = browser.isMobile && (window.innerWidth < window.innerHeight)
     const streamingSupported = {
-        browser: !(getUserscriptManager() == 'Tampermonkey' && (browser.isChrome || browser.isEdge || browser.isBrave)),
-        userscriptManager: /Tampermonkey|ScriptCat/.test(getUserscriptManager()) }
+        browser: !(get.userscriptManager() == 'Tampermonkey' && (browser.isChrome || browser.isEdge || browser.isBrave)),
+        userscriptManager: /Tampermonkey|ScriptCat/.test(get.userscriptManager()) }
     log.debug(`Success!\nbrowser = ${log.prettifyObj(browser)}\nstreamingSupported = ${log.prettifyObj(streamingSupported)}`)
 
     // Init CONFIG
@@ -320,8 +320,8 @@
 
     // Init XHR fetcher
     log.debug('Initializing XHR fetcher...')
-    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
-    log.debug(`Success! xhr = ${ getUserscriptManager() == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
+    const xhr = get.userscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    log.debug(`Success! xhr = ${ get.userscriptManager() == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
 
     // Init API props
     log.debug('Initializing API properties...')
@@ -462,7 +462,7 @@
     log.debug('Initializing menu objects...')
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
-        symbol: ['❌', '✔️'], separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ',
+        symbol: ['❌', '✔️'], separator: get.userscriptManager() == 'Tampermonkey' ? ' — ' : ': ',
         word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
     }
     log.debug(`Success! menuState = ${log.prettifyObj(menuState)}`)
@@ -472,7 +472,6 @@
     function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) }
     function saveSetting(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
     // Define MENU functions
 
@@ -520,7 +519,7 @@
     function refreshMenu() {
         log.caller = 'refreshMenu()'
         log.debug('Refreshing toolbar menu...')
-        if (getUserscriptManager() == 'OrangeMonkey') { log.debug('OrangeMonkey userscript manager unsupported.') ; return }
+        if (get.userscriptManager() == 'OrangeMonkey') { log.debug('OrangeMonkey userscript manager unsupported.') ; return }
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
         log.debug('Success! Menu refreshed')
     }
@@ -2672,7 +2671,7 @@
                                 : browser.isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
                                             : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!streamingSupported.userscriptManager) { // alert userscript manager unsupported, suggest TM/SC
-                log.debug(`Streaming Mode unsupported in ${getUserscriptManager()}`)
+                log.debug(`Streaming Mode unsupported in ${get.userscriptManager()}`)
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
                         + ( !browser.isEdge && !browser.isBrave ? // suggest TM for supported browsers
@@ -2764,7 +2763,7 @@
         log.caller = 'deleteOpenAIcookies()'
         log.debug('Deleting OpenAI cookies...')
         GM_deleteValue(app.configKeyPrefix + '_openAItoken')
-        if (getUserscriptManager() != 'Tampermonkey') return
+        if (get.userscriptManager() != 'Tampermonkey') return
         GM_cookie.list({ url: apis.OpenAI.endpoints.auth }, (cookies, error) => {
             if (!error) { for (const cookie of cookies) {
                 GM_cookie.delete({ url: apis.OpenAI.endpoints.auth, name: cookie.name })
@@ -2907,6 +2906,15 @@
 
     const get = {
 
+        json(url, callback) { // for dynamic footer
+            xhr({ method: 'GET', url: url, onload: resp => {
+                if (resp.status >= 200 && resp.status < 300) {
+                    try { const data = JSON.parse(resp.responseText) ; callback(null, data) }
+                    catch (err) { callback(err, null) }
+                } else callback(new Error('Failed to load data: ' + resp.statusText), null)
+            }})
+        },
+
         async reply(msgChain) {
 
             // Init API attempt props
@@ -2955,15 +2963,6 @@
                     .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
 
             update.footerContent()
-        },
-
-        json(url, callback) { // for dynamic footer
-            xhr({ method: 'GET', url: url, onload: resp => {
-                if (resp.status >= 200 && resp.status < 300) {
-                    try { const data = JSON.parse(resp.responseText) ; callback(null, data) }
-                    catch (err) { callback(err, null) }
-                } else callback(new Error('Failed to load data: ' + resp.statusText), null)
-            }})
         },
 
         async related(query) {
@@ -3019,7 +3018,9 @@
                 onload: resp => dataProcess.text(get.related, resp).then(resolve),
                 onerror: err => { log.error(err) ; api.tryNew(get.related) }
             }))
-        }
+        },
+
+        userscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
     }
 
     // Define PROCESS functions
