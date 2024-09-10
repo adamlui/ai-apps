@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT ఇన్ఫినిటీ" },
-  "appDesc": { "message": "అన్ని తెలిసిన చాట్పిటి నుండి అంతులేని సమాధానాలను సృష్టించండి (ఏ భాషలోనైనా!" },
+  "appDesc": { "message": "అన్ని తెలిసిన చాట్పిటి నుండి అంతులేని సమాధానాలను సృష్టించండి (ఏ భాషలోనైనా" },
   "menuLabel_infinityMode": { "message": "ఇన్ఫినిటీ మోడ్" },
   "menuLabel_autoStart": { "message": "ఆటో-స్టార్ట్" },
   "menuLabel_toggleVis": { "message": "దృశ్యమానతను టోగుల్ చెయ్యి" },

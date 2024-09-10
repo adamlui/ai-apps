@@ -48,7 +48,7 @@
   "alert_willReplyIn": { "message": "respondrà en" },
   "alert_yourSysLang": { "message": "l'idioma del sistema" },
   "alert_choosePlatform": { "message": "Tria una plataforma" },
-  "alert_updateAvail": { "message": "Nova versió disponible!" },
+  "alert_updateAvail": { "message": "Nova versió disponible" },
   "alert_newerVer": { "message": "Una actualització a" },
   "alert_isAvail": { "message": "està disponible" },
   "alert_upToDate": { "message": "Actualitzat" },

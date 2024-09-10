@@ -25,5 +25,5 @@
   "state_enabled": { "message": "faatagaina" },
   "state_disabled": { "message": "faaletonu" },
   "state_on": { "message": "i luga o" },
-  "state_off": { "message": "ALU!" }
+  "state_off": { "message": "ALU" }
 }

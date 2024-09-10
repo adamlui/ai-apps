@@ -7,7 +7,7 @@
   "about_poweredBy": { "message": "የተጎለበተው በ" },
   "about_sourceCode": { "message": "የምንጭ ኮድ" },
   "mode_autoTalk": { "message": "Auto-Talk" },
-  "alert_updateAvail": { "message": "ዝመና ይገኛል!" },
+  "alert_updateAvail": { "message": "ዝመና ይገኛል" },
   "alert_newerVer": { "message": "አንድ ዝማኔ ወደ" },
   "alert_isAvail": { "message": "ይገኛል" },
   "alert_upToDate": { "message": "ወቅታዊ" },

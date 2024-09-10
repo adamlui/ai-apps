@@ -65,7 +65,7 @@
   "alert_openAIsupportSoon": { "message": "Поддршката за OpenAI API ќе биде додадена наскоро" },
   "alert_waitingFor": { "message": "ве чека" },
   "alert_response": { "message": "Одговор" },
-  "alert_login": { "message": "Ве молиме најавете се!" },
+  "alert_login": { "message": "Ве молиме најавете се" },
   "alert_thenRefreshPage": { "message": "потоа освежете ја страницава" },
   "alert_tooManyRequests": { "message": "ChatGPT е преплавен со премногу барања" },
   "alert_parseFailed": { "message": "Не успеа да се анализира одговорот JSON" },

@@ -111,5 +111,5 @@
   "link_shareFeedback": { "message": "Manatu Fa‘afautuaga" },
   "prefix_exit": { "message": "Alu'ese" },
   "state_on": { "message": "I luga o" },
-  "state_off": { "message": "ALU!" }
+  "state_off": { "message": "ALU" }
 }

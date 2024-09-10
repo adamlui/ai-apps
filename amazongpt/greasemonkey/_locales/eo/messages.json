@@ -72,7 +72,7 @@
   "alert_checkCloudflare": { "message": "Bonvolu pasi Cloudflare sekureco ĉeko" },
   "alert_notWorking": { "message": "ne funkcias" },
   "alert_ifIssuePersists": { "message": "Se la afero daŭras" },
-  "alert_try": { "message": "Nu, provu!" },
+  "alert_try": { "message": "Nu, provu" },
   "alert_switchingOn": { "message": "ŝalti" },
   "alert_switchingOff": { "message": "malŝalti" },
   "notif_copiedToClipboard": { "message": "URL kopiita al interdeponejo" },

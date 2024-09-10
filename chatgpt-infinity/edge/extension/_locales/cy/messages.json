@@ -21,7 +21,7 @@
   "alert_replyLangUpdated": { "message": "Diweddarwyd yr iaith" },
   "alert_willReplyIn": { "message": "bydd yn ateb i mewn" },
   "alert_yourSysLang": { "message": "Iaith y System" },
-  "alert_replyTopicUpdated": { "message": "Diweddarwyd y pwnc!" },
+  "alert_replyTopicUpdated": { "message": "Diweddarwyd y pwnc" },
   "alert_willAnswer": { "message": "bydd yn ateb cwestiynau" },
   "alert_onTopicOf": { "message": "ar y pwnc o" },
   "alert_onAllTopics": { "message": "Pob Pwnc" },

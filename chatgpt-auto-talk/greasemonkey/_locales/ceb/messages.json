@@ -3,7 +3,7 @@
   "appDesc": { "message": "Awtomatikong i-play ang mga tugon sa ChatGPT" },
   "menuLabel_toggleVis": { "message": "I-toggle ang Visibility" },
   "menuLabel_about": { "message": "Mahitungod" },
-  "about_version": { "message": "Bersyon:" },
+  "about_version": { "message": "Bersyon" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Gigikana sa kodigo" },
   "mode_autoTalk": { "message": "Auto-Talk" },

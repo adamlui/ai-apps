@@ -10,7 +10,7 @@
   "about_sourceCode": { "message": "Codi font" },
   "mode_autoClear": { "message": "Esborra automàticament" },
   "alert_choosePlatform": { "message": "Tria una plataforma" },
-  "alert_updateAvail": { "message": "Nova versió disponible!" },
+  "alert_updateAvail": { "message": "Nova versió disponible" },
   "alert_newerVer": { "message": "Una actualització a" },
   "alert_isAvail": { "message": "està disponible" },
   "alert_upToDate": { "message": "Actualitzat" },

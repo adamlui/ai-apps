@@ -55,7 +55,7 @@
   "alert_isUpToDate": { "message": "är uppdaterad" },
   "alert_isUnsupportedIn": { "message": "stöds inte i" },
   "alert_whenUsing": { "message": "När NovoMix 30 används en gång" },
-  "alert_pleaseUse": { "message": "Vänligen använd:" },
+  "alert_pleaseUse": { "message": "Vänligen använd" },
   "alert_instead": { "message": "istället" },
   "alert_unavailable": { "message": "otillgänglig" },
   "alert_isOnlyAvailFor": { "message": "är endast tillgängligt för" },

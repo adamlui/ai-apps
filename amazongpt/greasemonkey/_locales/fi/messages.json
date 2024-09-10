@@ -58,7 +58,7 @@
   "alert_pleaseUse": { "message": "Käytä" },
   "alert_instead": { "message": "jasta" },
   "alert_unavailable": { "message": "ei käytettävissä" },
-  "alert_isOnlyAvailFor": { "message": "on käytettävissä vain seuraaville:" },
+  "alert_isOnlyAvailFor": { "message": "on käytettävissä vain seuraaville" },
   "alert_and": { "message": "ja" },
   "alert_userscriptMgrNoStream": { "message": "Usercript Manager ei tue palaavia suoratoistovastauksia" },
   "alert_isCurrentlyOnlyAvailBy": { "message": "on tällä hetkellä saatavilla vain" },

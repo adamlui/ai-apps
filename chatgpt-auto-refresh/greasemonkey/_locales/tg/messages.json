@@ -5,7 +5,7 @@
   "menuLabel_toggleVis": { "message": "Гузаронидани Намоиш" },
   "menuLabel_modeNotifs": { "message": "Огоҳинома дар бораи ҳолат" },
   "menuLabel_refreshInt": { "message": "Фосилаи бозсозӣ" },
-  "menuLabel_about": { "message": "_Дар бораи" },
+  "menuLabel_about": { "message": "Дар бораи" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },
   "about_sourceCode": { "message": "Рамзи манбаъ" },
@@ -25,7 +25,7 @@
   "btnLabel_update": { "message": "Навсозӣ кардан" },
   "btnLabel_dismiss": { "message": "Рад кардан" },
   "link_viewChanges": { "message": "Tingnan ang mga pagbabago" },
-  "unit_secs": { "message": "_: дуюм дюмsecond" },
+  "unit_secs": { "message": ": дуюм дюмsecond" },
   "state_enabled": { "message": "фаъол шуд" },
   "state_disabled": { "message": "маъюб" }
 }

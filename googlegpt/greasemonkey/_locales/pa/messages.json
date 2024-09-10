@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Google ਖੋਜ ਵਿੱਚ AI ਜਵਾਬ ਜੋੜਦਾ ਹੈ (Google Gemma + GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ!" },
+  "appDesc": { "message": "Google ਖੋਜ ਵਿੱਚ AI ਜਵਾਬ ਜੋੜਦਾ ਹੈ (Google Gemma + GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
   "menuLabel_autoGetAnswers": { "message": "ਆਟੋ-ਗੇਟ ਜਵਾਬ" },
   "menuLabel_autoFocusChatbar": { "message": "ਆਟੋ-ਫੋਕਸ ਚੈਟਬਾਰ" },
   "menuLabel_whenStreaming": { "message": "ਜਦੋਂ ਸਟ੍ਰੀਮਿੰਗ ਹੋਵੇ" },
@@ -88,7 +88,7 @@
   "alert_isCurrentlyOnlyAvailBy": { "message": "ਇਸ ਸਮੇਂ ਸਿਰਫ ਦੁਆਰਾ ਉਪਲਬਧ ਹੈ" },
   "alert_openAIsupportSoon": { "message": "ਓਪਨਏਆਈ ਏਪੀਆਈ ਲਈ ਸਹਾਇਤਾ ਜਲਦੀ ਹੀ ਸ਼ਾਮਲ ਕੀਤੀ ਜਾਏਗੀ" },
   "alert_waitingFor": { "message": "ਡਿਸਕ ਦੀ ਉਡੀਕ ਜਾਰੀ ਹੈ" },
-  "alert_response": { "message": "HTTP ਜਵਾਬ:" },
+  "alert_response": { "message": "HTTP ਜਵਾਬ" },
   "alert_login": { "message": "ਕਿਰਪਾ ਕਰਕੇ ਲੌਗਇਨ ਕਰੋ" },
   "alert_thenRefreshPage": { "message": "ਫਿਰ ਇਹ ਸਫ਼ਾ ਤਾਜ਼ਾ ਕਰੋ" },
   "alert_tooManyRequests": { "message": "ChatGPT ਬਹੁਤ ਸਾਰੀਆਂ ਬੇਨਤੀਆਂ ਨਾਲ ਭਰਿਆ ਹੋਇਆ ਹੈ" },

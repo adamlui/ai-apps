@@ -72,7 +72,7 @@
   "alert_checkCloudflare": { "message": "Prođite bezbednosnu proveru Cloudflare-a" },
   "alert_notWorking": { "message": "- не ради." },
   "alert_ifIssuePersists": { "message": "Ako se problem nastavi" },
-  "alert_try": { "message": "Pokušavam!" },
+  "alert_try": { "message": "Pokušavam" },
   "alert_switchingOn": { "message": "Uključivanje..." },
   "alert_switchingOff": { "message": "Isključivanje" },
   "notif_copiedToClipboard": { "message": "Kopirano u clipboard" },

@@ -25,7 +25,7 @@
   "tooltip_fullScreenOFF": { "message": "Surt de la pantalla completa" },
   "tooltip_newChat": { "message": "Nou xat" },
   "alert_choosePlatform": { "message": "Tria una plataforma" },
-  "alert_updateAvail": { "message": "Nova versió disponible!" },
+  "alert_updateAvail": { "message": "Nova versió disponible" },
   "alert_newerVer": { "message": "Una actualització a" },
   "alert_isAvail": { "message": "està disponible" },
   "alert_upToDate": { "message": "Actualitzat" },

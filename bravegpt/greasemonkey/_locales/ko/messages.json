@@ -12,7 +12,7 @@
   "menuLabel_afterQuery": { "message": "질의 후" },
   "menuLabel_widerSidebar": { "message": "더 넓은 사이드바" },
   "menuLabel_stickySidebar": { "message": "고정 사이드바" },
-  "menuLabel_pinTo": { "message": "고정 위치:" },
+  "menuLabel_pinTo": { "message": "고정 위치" },
   "menuLabel_top": { "message": "상의" },
   "menuLabel_sidebar": { "message": "사이드바" },
   "menuLabel_bottom": { "message": "하위" },

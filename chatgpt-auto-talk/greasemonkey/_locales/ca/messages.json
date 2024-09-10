@@ -7,7 +7,7 @@
   "about_poweredBy": { "message": "Desenvolupat per" },
   "about_sourceCode": { "message": "Codi font" },
   "mode_autoTalk": { "message": "Conversació automàtica" },
-  "alert_updateAvail": { "message": "Nova versió disponible!" },
+  "alert_updateAvail": { "message": "Nova versió disponible" },
   "alert_newerVer": { "message": "Una actualització a" },
   "alert_isAvail": { "message": "està disponible" },
   "alert_upToDate": { "message": "Actualitzat" },

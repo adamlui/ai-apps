@@ -13,7 +13,7 @@
   "alert_intUpdated": { "message": "S'ha actualitzat l'interval" },
   "alert_willRefresh": { "message": "La sessió del XatGPT s'actualitzarà automàticament cada" },
   "alert_choosePlatform": { "message": "Tria una plataforma" },
-  "alert_updateAvail": { "message": "Nova versió disponible!" },
+  "alert_updateAvail": { "message": "Nova versió disponible" },
   "alert_newerVer": { "message": "Una actualització a" },
   "alert_isAvail": { "message": "està disponible" },
   "alert_upToDate": { "message": "Actualitzat" },

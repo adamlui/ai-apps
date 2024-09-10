@@ -10,7 +10,7 @@
   "about_sourceCode": { "message": "የምንጭ ኮድ" },
   "mode_autoClear": { "message": "ራስ-ግልጽ" },
   "alert_choosePlatform": { "message": "መድረክ ይምረጡ" },
-  "alert_updateAvail": { "message": "ዝመና ይገኛል!" },
+  "alert_updateAvail": { "message": "ዝመና ይገኛል" },
   "alert_newerVer": { "message": "አንድ ዝማኔ ወደ" },
   "alert_isAvail": { "message": "ይገኛል" },
   "alert_upToDate": { "message": "ወቅታዊ" },

@@ -79,7 +79,7 @@
   "btnLabel_moreApps": { "message": "ChatGPT aplikazio gehiago" },
   "btnLabel_leaveReview": { "message": "Utzi Iritzia" },
   "btnLabel_getSupport": { "message": "Laguntza lortu" },
-  "btnLabel_updateCheck": { "message": "Begiratu _eguneraketak:" },
+  "btnLabel_updateCheck": { "message": "Begiratu _eguneraketak" },
   "btnLabel_update": { "message": "Eguneratu" },
   "btnLabel_dismiss": { "message": "Bistatik kendu" },
   "link_viewChanges": { "message": "Ikusi aldaketak" },

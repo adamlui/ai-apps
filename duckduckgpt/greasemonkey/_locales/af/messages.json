@@ -17,7 +17,7 @@
   "menuLabel_sidebar": { "message": "Sybalk" },
   "menuLabel_bottom": { "message": "Onder" },
   "menuLabel_background": { "message": "Agtergrond" },
-  "menuLabel_foreground": { "message": "Voorgrond:" },
+  "menuLabel_foreground": { "message": "Voorgrond" },
   "menuLabel_animations": { "message": "Animasies" },
   "menuLabel_replyLanguage": { "message": "Beantwoord Taal" },
   "menuLabel_colorScheme": { "message": "Kleurskema" },

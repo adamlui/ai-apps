@@ -22,7 +22,7 @@
   "mode_autoScroll": { "message": "Auto-Scroll" },
   "mode_debug": { "message": "Mchitidwe wa Debug" },
   "tooltip_playAnswer": { "message": "Lumikizanani nafe" },
-  "tooltip_fontSize": { "message": "Kakulidwe ka fonti:" },
+  "tooltip_fontSize": { "message": "Kakulidwe ka fonti" },
   "tooltip_sendReply": { "message": "Tumizani yankho" },
   "tooltip_askRandQuestion": { "message": "Funsani mwachisawawa" },
   "tooltip_minimize": { "message": "Lumikizanani nafe" },

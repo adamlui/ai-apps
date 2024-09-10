@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT Auto Tukwila" },
-  "appDesc": { "message": "**Ikalama ya ChatGPT, imisango ipya, ikafumya ifilubo fya pa Intaneti + Cloudflare (fyonse)!" },
+  "appDesc": { "message": "**Ikalama ya ChatGPT, imisango ipya, ikafumya ifilubo fya pa Intaneti + Cloudflare (fyonse)" },
   "menuLabel_autoRefresh": { "message": "Auto Impilabile" },
   "menuLabel_toggleVis": { "message": "Toggle Visibilya" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications Tukwila" },

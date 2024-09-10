@@ -47,7 +47,7 @@
   "tooltip_close": { "message": "Dùin" },
   "tooltip_copy": { "message": "Dèan lethbhreac" },
   "tooltip_reply": { "message": "Freagairt" },
-  "tooltip_code": { "message": "Còd:" },
+  "tooltip_code": { "message": "Còd" },
   "tooltip_sendRelatedQuery": { "message": "Cuir ceist co-cheangailte" },
   "helptip_proxyAPImode": { "message": "A' cleachdadh API Proxy airson faighinn gu AI gun logadh a-steach" },
   "helptip_streamingMode": { "message": "Faighinn freagairtean ann an sruth leantainneach de teacsa" },

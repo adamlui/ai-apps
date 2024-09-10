@@ -12,7 +12,7 @@
   "menuLabel_afterQuery": { "message": "sorgudan sonra" },
   "menuLabel_widerSidebar": { "message": "Daha Geniş Kenar Çubuğu" },
   "menuLabel_stickySidebar": { "message": "Yapışkan Kenar Çubuğu" },
-  "menuLabel_pinTo": { "message": "Şuna sabitle:" },
+  "menuLabel_pinTo": { "message": "Şuna sabitle" },
   "menuLabel_top": { "message": "Üst" },
   "menuLabel_sidebar": { "message": "Kenar Çubuğu" },
   "menuLabel_bottom": { "message": "Alt" },

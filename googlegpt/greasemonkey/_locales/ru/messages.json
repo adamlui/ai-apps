@@ -76,7 +76,7 @@
   "alert_newerVer": { "message": "Обновление для" },
   "alert_isAvail": { "message": "доступно" },
   "alert_upToDate": { "message": "Up-to-date" },
-  "alert_isUpToDate": { "message": "<PROG_NAME> в актуальном состоянии!" },
+  "alert_isUpToDate": { "message": "<PROG_NAME> в актуальном состоянии" },
   "alert_isUnsupportedIn": { "message": "не поддерживается в" },
   "alert_whenUsing": { "message": "Использование" },
   "alert_pleaseUse": { "message": "Пожалуйста, используйте" },

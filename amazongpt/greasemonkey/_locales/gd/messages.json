@@ -32,7 +32,7 @@
   "tooltip_close": { "message": "Dùin" },
   "tooltip_copy": { "message": "Dèan lethbhreac" },
   "tooltip_reply": { "message": "Freagairt" },
-  "tooltip_code": { "message": "Còd:" },
+  "tooltip_code": { "message": "Còd" },
   "helptip_proxyAPImode": { "message": "A 'cleachdadh API Proxy airson ruigsinneachd neo - login gu AI" },
   "helptip_streamingMode": { "message": "Faigh freagairtean ann an sruthadh teacsa leantainneach" },
   "helptip_autoFocusChatbar": { "message": "Fòcas fèin - obrachail chatbar uair sam bith a nochdas e" },

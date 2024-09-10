@@ -2,7 +2,7 @@
   "appName": { "message": "ЧатGPT Auto-Continue" },
   "appDesc": { "message": "Awtomatikong magpatuloy ng maramihang mga tugon sa ChatGPT" },
   "menuLabel_modeNotifs": { "message": "Огоҳинома дар бораи ҳолат" },
-  "menuLabel_about": { "message": "_Дар бораи" },
+  "menuLabel_about": { "message": "Дар бораи" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },
   "about_sourceCode": { "message": "Рамзи манбаъ" },

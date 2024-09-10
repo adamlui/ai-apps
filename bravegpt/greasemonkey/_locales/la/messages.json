@@ -16,7 +16,7 @@
   "menuLabel_top": { "message": "Orientation" },
   "menuLabel_sidebar": { "message": "Sidebar" },
   "menuLabel_bottom": { "message": "Orientation" },
-  "menuLabel_background": { "message": "Fundus:" },
+  "menuLabel_background": { "message": "Fundus" },
   "menuLabel_foreground": { "message": "Imperium" },
   "menuLabel_animations": { "message": "Animationes" },
   "menuLabel_replyLanguage": { "message": "Lingua Responsionis" },

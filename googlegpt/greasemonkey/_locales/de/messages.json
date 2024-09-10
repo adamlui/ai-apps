@@ -39,7 +39,7 @@
   "tooltip_playAnswer": { "message": "Antwortnote abspielen" },
   "tooltip_fontSize": { "message": "Schriftgröße" },
   "tooltip_sendReply": { "message": "Antwort senden" },
-  "tooltip_feelingLucky": { "message": "Auf gut Glück!" },
+  "tooltip_feelingLucky": { "message": "Auf gut Glück" },
   "tooltip_minimize": { "message": "Minimieren" },
   "tooltip_restore": { "message": "Wiederherstellen" },
   "tooltip_expand": { "message": "Ausklappen" },

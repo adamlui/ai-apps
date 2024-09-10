@@ -4,7 +4,7 @@
   "menuLabel_autoClear": { "message": "Сӯҳбатҳои худкор" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_modeNotifs": { "message": "Огоҳинома дар бораи ҳолат" },
-  "menuLabel_about": { "message": "_Дар бораи" },
+  "menuLabel_about": { "message": "Дар бораи" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },
   "about_sourceCode": { "message": "Рамзи манбаъ" },

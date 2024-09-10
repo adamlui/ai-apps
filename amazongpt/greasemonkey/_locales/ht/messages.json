@@ -30,7 +30,7 @@
   "tooltip_expand": { "message": "agrandi" },
   "tooltip_shrink": { "message": "retresi/rakornir/vini pi piti/rétrécir" },
   "tooltip_close": { "message": "Fèmen" },
-  "tooltip_copy": { "message": "Copy:" },
+  "tooltip_copy": { "message": "Copy" },
   "tooltip_reply": { "message": "reponn/repons /la réplique /réponse/réponses" },
   "tooltip_code": { "message": "Sèvis" },
   "helptip_proxyAPImode": { "message": "Sèvi ak yon API Proxy pou pa gen aksè login nan AI" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "சாட்ஜிபிடி இன்பினிடி" },
-  "appDesc": { "message": "எந்த மொழியிலும் அனைத்துக் கேள்விகளுக்கும் பதிலளிக்கப்படும் அனைத்து அறிமுக சாட்ஜிபிடி இன்பினிடி இத்தளத்தில்!" },
+  "appDesc": { "message": "எந்த மொழியிலும் அனைத்துக் கேள்விகளுக்கும் பதிலளிக்கப்படும் அனைத்து அறிமுக சாட்ஜிபிடி இன்பினிடி இத்தளத்தில்" },
   "menuLabel_infinityMode": { "message": "முடிவிலிட்ட முறை" },
   "menuLabel_autoStart": { "message": "தானியங்கித் துவக்கம்" },
   "menuLabel_toggleVis": { "message": "காண்பிப்பு மாற்று" },
@@ -28,7 +28,7 @@
   "alert_replyIntUpdated": { "message": "இடைக்காலம் புதுப்பிக்கப்பட்டது" },
   "alert_willReplyEvery": { "message": "ஒவ்வொரு" },
   "alert_choosePlatform": { "message": "ஒரு தளத்தைத் தேர்வுசெய்க" },
-  "alert_updateAvail": { "message": "புதிய புதுப்பிப்பு கிடைக்கிறது!" },
+  "alert_updateAvail": { "message": "புதிய புதுப்பிப்பு கிடைக்கிறது" },
   "alert_newerVer": { "message": "-க்கு ஒரு புதுப்பிப்பு" },
   "alert_isAvail": { "message": "கிடைக்கிறது" },
   "alert_upToDate": { "message": "அதனை இன் று வரை" },

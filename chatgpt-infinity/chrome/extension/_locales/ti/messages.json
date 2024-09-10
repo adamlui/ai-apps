@@ -1,6 +1,6 @@
 {
   "appName": { "message": "መወዳእታ ዘይብሉ ቻትGPT" },
-  "appDesc": { "message": "ካብ ኲሉ ዝፈልጦ ቻትGPT (ብቛንቋ ዅሉ) መወዳእታ ዘይብሉ መልስታት ኣመንጩ!" },
+  "appDesc": { "message": "ካብ ኲሉ ዝፈልጦ ቻትGPT (ብቛንቋ ዅሉ) መወዳእታ ዘይብሉ መልስታት ኣመንጩ" },
   "menuLabel_infinityMode": { "message": "ኣገባብ መወዳእታ ዘይብሉ" },
   "menuLabel_autoStart": { "message": "Auto-Start" },
   "menuLabel_toggleVis": { "message": "ርኡይነት ምቕያር" },

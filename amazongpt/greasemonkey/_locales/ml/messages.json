@@ -13,7 +13,7 @@
   "menuLabel_about": { "message": "സംബന്ധിച്ച്" },
   "menuLabel_settings": { "message": "ക്രമീകരണം" },
   "about_version": { "message": "പതിപ്പ്" },
-  "about_poweredBy": { "message": "പിന്തുണയ്ക്കുന്നത്:" },
+  "about_poweredBy": { "message": "പിന്തുണയ്ക്കുന്നത്" },
   "about_sourceCode": { "message": "സോഴ്സ് കോഡ്" },
   "scheme_light": { "message": "പ്രകാശം" },
   "scheme_dark": { "message": "ഇരുട്ട്" },

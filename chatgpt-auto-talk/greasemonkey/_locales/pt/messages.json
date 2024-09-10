@@ -3,7 +3,7 @@
   "appDesc": { "message": "Reproduzir respostas do ChatGPT automaticamente" },
   "menuLabel_toggleVis": { "message": "Alternar Visibilidade" },
   "menuLabel_about": { "message": "Sobre" },
-  "about_version": { "message": "Versão:" },
+  "about_version": { "message": "Versão" },
   "about_poweredBy": { "message": "Distribuído pela" },
   "about_sourceCode": { "message": "Código-fonte" },
   "mode_autoTalk": { "message": "Auto-Talk" },

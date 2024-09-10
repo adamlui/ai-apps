@@ -9,7 +9,7 @@
   "menuLabel_hiddenHeader": { "message": "Сарлавҳаи пинҳоншуда" },
   "menuLabel_hiddenFooter": { "message": "Пинҳонии Пойгоҳи Пинҳон" },
   "menuLabel_modeNotifs": { "message": "Огоҳиномаҳо" },
-  "menuLabel_about": { "message": "_Дар бораи" },
+  "menuLabel_about": { "message": "Дар бораи" },
   "menuLabel_disabled": { "message": "Ғайрифаъол (тавсеаи насбшуда)" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },

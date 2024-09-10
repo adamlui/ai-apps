@@ -4,7 +4,7 @@
   "menuLabel_autoClear": { "message": "Autoclear Чат" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_modeNotifs": { "message": "Режим билдирүүлөрү" },
-  "menuLabel_about": { "message": "_Апплет жөнүндө" },
+  "menuLabel_about": { "message": "Апплет жөнүндө" },
   "about_version": { "message": "Версиясы" },
   "about_poweredBy": { "message": "Тарабынан иштелип чыккан" },
   "about_sourceCode": { "message": "Баштапкы код" },

@@ -71,7 +71,7 @@
   "alert_parseFailed": { "message": "Error al analizar la respuesta JSON" },
   "alert_checkCloudflare": { "message": "Por favor, pase el control de seguridad de Cloudflare" },
   "alert_notWorking": { "message": "No funcionar." },
-  "alert_ifIssuePersists": { "message": "Si el problema persiste:" },
+  "alert_ifIssuePersists": { "message": "Si el problema persiste" },
   "alert_try": { "message": "ha probado" },
   "alert_switchingOn": { "message": "ENCENDIDO" },
   "alert_switchingOff": { "message": "Apagado" },

@@ -3,7 +3,7 @@
   "appDesc": { "message": "Spæl sjálvvirkandi ChatGPT svar" },
   "menuLabel_toggleVis": { "message": "Skift sjónleika" },
   "menuLabel_about": { "message": "Um" },
-  "about_version": { "message": "Útgáva:" },
+  "about_version": { "message": "Útgáva" },
   "about_poweredBy": { "message": "Powered by SFX" },
   "about_sourceCode": { "message": "Ada keldukota" },
   "mode_autoTalk": { "message": "Sjálvstýrisrøða" },

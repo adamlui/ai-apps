@@ -16,7 +16,7 @@
   "menuLabel_top": { "message": "Toppur" },
   "menuLabel_sidebar": { "message": "Sidebar" },
   "menuLabel_bottom": { "message": "Undir" },
-  "menuLabel_background": { "message": "Bakgrund:" },
+  "menuLabel_background": { "message": "Bakgrund" },
   "menuLabel_foreground": { "message": "Á forgrundini" },
   "menuLabel_animations": { "message": "Animatiónir" },
   "menuLabel_replyLanguage": { "message": "Svar á mál" },

@@ -8,7 +8,7 @@
   "about_sourceCode": { "message": "საწყისი კოდი" },
   "mode_autoTalk": { "message": "Ავტომატური საუბარი" },
   "alert_updateAvail": { "message": "ხელმისაწვდომია განახლება" },
-  "alert_newerVer": { "message": "Განახლება:" },
+  "alert_newerVer": { "message": "Განახლება" },
   "alert_isAvail": { "message": "თავისუფალია" },
   "alert_upToDate": { "message": "განახლებულია" },
   "alert_isUpToDate": { "message": "განახლებულია" },

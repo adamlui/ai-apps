@@ -5,7 +5,7 @@
   "menuLabel_autoFocusChatbar": { "message": "Bar Sgwrs Awtomatig - Ffocws" },
   "menuLabel_whenStreaming": { "message": "wrth ffrydio" },
   "menuLabel_background": { "message": "Cefndir" },
-  "menuLabel_foreground": { "message": "Wedi canfod:" },
+  "menuLabel_foreground": { "message": "Wedi canfod" },
   "menuLabel_animations": { "message": "Animeiddiadau" },
   "menuLabel_replyLanguage": { "message": "Iaith Ateb" },
   "menuLabel_colorScheme": { "message": "Cynlluniau ysgrifenadwy VFS" },

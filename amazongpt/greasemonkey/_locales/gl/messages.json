@@ -75,7 +75,7 @@
   "alert_try": { "message": "Ensaio" },
   "alert_switchingOn": { "message": "encendido encendido" },
   "alert_switchingOff": { "message": "apagón de conmutación" },
-  "notif_copiedToClipboard": { "message": "Copiado ao  portapapeis!" },
+  "notif_copiedToClipboard": { "message": "Copiado ao  portapapeis" },
   "btnLabel_moreApps": { "message": "Máis aplicacións de ChatGPT" },
   "btnLabel_leaveReview": { "message": "Deixa unha opinión" },
   "btnLabel_getSupport": { "message": "Asistencia" },

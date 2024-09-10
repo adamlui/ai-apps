@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT Infinity" },
-  "appDesc": { "message": "Ҷавобҳои беохирро аз ChatGPT (дар ҳама забонҳо) ба даст оред!" },
+  "appDesc": { "message": "Ҷавобҳои беохирро аз ChatGPT (дар ҳама забонҳо) ба даст оред" },
   "menuLabel_infinityMode": { "message": "Ҳолати беохир" },
   "menuLabel_autoStart": { "message": "Худоғозёбӣ" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
@@ -9,7 +9,7 @@
   "menuLabel_replyTopic": { "message": "Масъалаи ҷавоб" },
   "menuLabel_all": { "message": "Ҳамаbookmarks" },
   "menuLabel_replyInt": { "message": "Фосилаи ҷавоб" },
-  "menuLabel_about": { "message": "_Дар бораи" },
+  "menuLabel_about": { "message": "Дар бораи" },
   "menuLabel_disabled": { "message": "Ғайрифаъол (тавсеаи насбшуда)" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },

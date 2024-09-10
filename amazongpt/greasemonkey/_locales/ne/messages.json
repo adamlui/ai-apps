@@ -9,7 +9,7 @@
   "menuLabel_animations": { "message": "एनिमेसन" },
   "menuLabel_replyLanguage": { "message": "जवाफ भाषा" },
   "menuLabel_colorScheme": { "message": "रङ योजना" },
-  "menuLabel_auto": { "message": "लेखक:" },
+  "menuLabel_auto": { "message": "लेखक" },
   "menuLabel_about": { "message": "बारेमा" },
   "menuLabel_settings": { "message": "सेटिङहरू" },
   "about_version": { "message": "संस्करण " },

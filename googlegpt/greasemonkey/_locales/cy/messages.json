@@ -17,7 +17,7 @@
   "menuLabel_sidebar": { "message": "Bar ochr" },
   "menuLabel_bottom": { "message": "Gwaelod" },
   "menuLabel_background": { "message": "Cefndir" },
-  "menuLabel_foreground": { "message": "Wedi canfod:" },
+  "menuLabel_foreground": { "message": "Wedi canfod" },
   "menuLabel_animations": { "message": "Animeiddiadau" },
   "menuLabel_replyLanguage": { "message": "Iaith Ateb" },
   "menuLabel_colorScheme": { "message": "Cynlluniau ysgrifenadwy VFS" },

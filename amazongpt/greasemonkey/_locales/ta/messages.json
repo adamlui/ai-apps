@@ -48,7 +48,7 @@
   "alert_willReplyIn": { "message": "இல் பதிலளிப்பார்" },
   "alert_yourSysLang": { "message": "உங்கள் கணினி மொழி" },
   "alert_choosePlatform": { "message": "ஒரு தளத்தைத் தேர்வுசெய்க" },
-  "alert_updateAvail": { "message": "புதிய புதுப்பிப்பு கிடைக்கிறது!" },
+  "alert_updateAvail": { "message": "புதிய புதுப்பிப்பு கிடைக்கிறது" },
   "alert_newerVer": { "message": "இதற்கான ஒரு புதுப்பிப்பு" },
   "alert_isAvail": { "message": "கிடைக்கிறது" },
   "alert_upToDate": { "message": "அதனை இன் று வரை" },

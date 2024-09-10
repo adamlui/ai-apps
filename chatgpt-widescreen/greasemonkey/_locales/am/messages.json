@@ -25,7 +25,7 @@
   "tooltip_fullScreenOFF": { "message": "ከሙሉ ማያ ገጽ ውጣ" },
   "tooltip_newChat": { "message": "አዲስ ውይይት" },
   "alert_choosePlatform": { "message": "መድረክ ይምረጡ" },
-  "alert_updateAvail": { "message": "ዝመና ይገኛል!" },
+  "alert_updateAvail": { "message": "ዝመና ይገኛል" },
   "alert_newerVer": { "message": "ዝመና ለ" },
   "alert_isAvail": { "message": "ሊገኝ ይችላል" },
   "alert_upToDate": { "message": "ወቅታዊ" },

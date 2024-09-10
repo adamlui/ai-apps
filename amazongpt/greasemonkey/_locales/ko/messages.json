@@ -55,7 +55,7 @@
   "alert_isUpToDate": { "message": "최신판입니다." },
   "alert_isUnsupportedIn": { "message": "이 (가) 지원되지 않음" },
   "alert_whenUsing": { "message": "사용할때" },
-  "alert_pleaseUse": { "message": "사용 하세오:" },
+  "alert_pleaseUse": { "message": "사용 하세오" },
   "alert_instead": { "message": "instead." },
   "alert_unavailable": { "message": "불가능" },
   "alert_isOnlyAvailFor": { "message": "은 (는) 다음에 대해서만 사용할 수" },

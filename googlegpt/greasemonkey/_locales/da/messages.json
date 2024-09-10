@@ -108,7 +108,7 @@
   "btnLabel_update": { "message": "Opdatér" },
   "btnLabel_dismiss": { "message": "Afvis" },
   "link_viewChanges": { "message": "Se ændringer" },
-  "link_shareFeedback": { "message": "Del din feedback!" },
+  "link_shareFeedback": { "message": "Del din feedback" },
   "prefix_exit": { "message": "Afslut" },
   "state_on": { "message": "Til" },
   "state_off": { "message": "Fra" }

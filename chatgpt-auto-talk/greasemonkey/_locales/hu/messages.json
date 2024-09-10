@@ -4,7 +4,7 @@
   "menuLabel_toggleVis": { "message": "Láthatóság váltása" },
   "menuLabel_about": { "message": "További információk" },
   "about_version": { "message": "Verió" },
-  "about_poweredBy": { "message": "Kiszolgálja:" },
+  "about_poweredBy": { "message": "Kiszolgálja" },
   "about_sourceCode": { "message": "Forráskód" },
   "mode_autoTalk": { "message": "Auto-Talk" },
   "alert_updateAvail": { "message": "Frissítés érhető el" },

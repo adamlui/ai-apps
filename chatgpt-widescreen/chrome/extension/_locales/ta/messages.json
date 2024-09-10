@@ -25,7 +25,7 @@
   "tooltip_fullScreenOFF": { "message": "முழுத்திரை" },
   "tooltip_newChat": { "message": "புதிய அரட்டை" },
   "alert_choosePlatform": { "message": "ஒரு தளத்தைத் தேர்வுசெய்க" },
-  "alert_updateAvail": { "message": "புதிய புதுப்பிப்பு கிடைக்கிறது!" },
+  "alert_updateAvail": { "message": "புதிய புதுப்பிப்பு கிடைக்கிறது" },
   "alert_newerVer": { "message": "-க்கு ஒரு புதுப்பிப்பு" },
   "alert_isAvail": { "message": "கிடைக்கிறது" },
   "alert_upToDate": { "message": "அதனை இன் று வரை" },

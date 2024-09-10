@@ -84,5 +84,5 @@
   "btnLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "Vaʻai suiga" },
   "state_on": { "message": "I luga o" },
-  "state_off": { "message": "ALU!" }
+  "state_off": { "message": "ALU" }
 }

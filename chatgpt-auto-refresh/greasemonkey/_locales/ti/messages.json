@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT Auto Refresh" },
-  "appDesc": { "message": "*ብደሓን* ChatGPT ክፍለ-ጊዜታት ሓዱሽ ኮይኑ ፡ ቀጻሊ ናይ መርበብ ጌጋታት + Cloudflare ቼክታት (ኩሉ ካብ ድሕረ ባይታ!" },
+  "appDesc": { "message": "*ብደሓን* ChatGPT ክፍለ-ጊዜታት ሓዱሽ ኮይኑ ፡ ቀጻሊ ናይ መርበብ ጌጋታት + Cloudflare ቼክታት (ኩሉ ካብ ድሕረ ባይታ" },
   "menuLabel_autoRefresh": { "message": "Auto-Refresh" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_modeNotifs": { "message": "ናይ ሞድ ኣፍልጦታት" },

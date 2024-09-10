@@ -46,7 +46,7 @@
   "prompt_updateReplyLang": { "message": "Aktualizovat jazyk odpovědi" },
   "alert_langUpdated": { "message": "Jazyk aktualizován." },
   "alert_willReplyIn": { "message": "odpoví za" },
-  "alert_yourSysLang": { "message": "Jazyk prostředí:" },
+  "alert_yourSysLang": { "message": "Jazyk prostředí" },
   "alert_choosePlatform": { "message": "Vyberte platformu" },
   "alert_updateAvail": { "message": "Aktualizace k dispozici" },
   "alert_newerVer": { "message": "Aktualizace na" },

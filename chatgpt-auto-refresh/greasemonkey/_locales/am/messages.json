@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GTTT AutoTracker" },
-  "appDesc": { "message": "* ሁሉም የGoogle ዜናዎች ከደንበኝነት ምዝገባዎች ነፃ ናቸው (የጀርባ አገናኞች ፣ የጀርባ አገናኞች ከደንበኝነት ምዝገባዎች ነፃ ናቸው!" },
+  "appDesc": { "message": "* ሁሉም የGoogle ዜናዎች ከደንበኝነት ምዝገባዎች ነፃ ናቸው (የጀርባ አገናኞች ፣ የጀርባ አገናኞች ከደንበኝነት ምዝገባዎች ነፃ ናቸው" },
   "menuLabel_autoRefresh": { "message": "አዲስ አውቶሞቲቭ" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_modeNotifs": { "message": "የቃለ መጠይቂያ" },
@@ -13,7 +13,7 @@
   "alert_intUpdated": { "message": "ጊዜያዊ ተዘምኗል" },
   "alert_willRefresh": { "message": "SiteGroundTrans በየዕለቱ ይዘጋል" },
   "alert_choosePlatform": { "message": "መድረክ ይምረጡ" },
-  "alert_updateAvail": { "message": "ዝመና ይገኛል!" },
+  "alert_updateAvail": { "message": "ዝመና ይገኛል" },
   "alert_newerVer": { "message": "አንድ ዝማኔ ወደ" },
   "alert_isAvail": { "message": "ሊገኝ ይችላል" },
   "alert_upToDate": { "message": "ወቅታዊ" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ЧатGPT Infinity" },
-  "appDesc": { "message": "Бардык билүү ChatGPT (ар кандай тилде) чексиз жооп түзүү!" },
+  "appDesc": { "message": "Бардык билүү ChatGPT (ар кандай тилде) чексиз жооп түзүү" },
   "menuLabel_infinityMode": { "message": "Чексиздик режими" },
   "menuLabel_autoStart": { "message": "Автоматтык түрдө баштоо" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
@@ -9,7 +9,7 @@
   "menuLabel_replyTopic": { "message": "Жооп темасы" },
   "menuLabel_all": { "message": "Баары" },
   "menuLabel_replyInt": { "message": "Жооп берүү аралыгы" },
-  "menuLabel_about": { "message": "_Апплет жөнүндө" },
+  "menuLabel_about": { "message": "Апплет жөнүндө" },
   "menuLabel_disabled": { "message": "Өчүрүлгөн (кеңейтилген орнотулган)" },
   "about_version": { "message": "Версиясы" },
   "about_poweredBy": { "message": "Тарабынан иштелип чыккан" },

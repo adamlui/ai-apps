@@ -5,7 +5,7 @@
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "wann streamen" },
   "menuLabel_background": { "message": "Hannergrond" },
-  "menuLabel_foreground": { "message": "Virdergrond:" },
+  "menuLabel_foreground": { "message": "Virdergrond" },
   "menuLabel_animations": { "message": "Animatiounen" },
   "menuLabel_replyLanguage": { "message": "Äntwert Sprooch" },
   "menuLabel_colorScheme": { "message": "Faarfschema" },
