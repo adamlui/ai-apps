@@ -477,7 +477,7 @@ do { // create new function per synonym per word per function
         if (typeof chatgpt[funcName] == 'function') {
             const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
             for (const funcWord of funcWords) {
-                const synonymValues = [].concat(...cjsFuncSynonyms // flatten into single array w/ word's synonyms
+                const synonymValues = [].concat(...cjsFuncSynonyms // flatten into single array w/ word's cjsFuncSynonyms
                     .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
                     .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
                 for (const synonym of synonymValues) { // create function per synonym
