@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.10.5
+// @version                2014.9.10.6
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2960,7 +2960,7 @@
                         if (nowResult.id) apis.GPTforLove.parentID = nowResult.id // for contextual replies
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
-                    const failMatch = failFlagsAndURLs.match(textToShow)
+                    const failMatch = textToShow.match(failFlagsAndURLs)
                     if (failMatch) {
                         log.debug('Response text', textToShow)
                         log.error('Fail flag detected', failMatch[0])
@@ -2994,7 +2994,7 @@
                                                     : ['openAInotWorking', 'suggestProxy'] )
                     else api.tryNew(caller)
                 } else if (caller.api == 'OpenAI' && resp.response) {
-                    const failMatch = failFlagsAndURLs.match(resp.response)
+                    const failMatch = resp.response.match(failFlagsAndURLs)
                     if (failMatch) { // suggest proxy or try diff API
                         log.debug('Response text', resp.response)
                         log.error('Fail flag detected', failMatch[0])
@@ -3041,7 +3041,7 @@
 
                 function handleProcessCompletion() {
                     if (caller.status != 'done') {
-                        const failMatch = failFlagsAndURLs.match(respText)
+                        const failMatch = respText.match(failFlagsAndURLs)
                         if (failMatch) {
                             log.debug('Response text', respText)
                             log.error('Fail flag detected', failMatch[0])

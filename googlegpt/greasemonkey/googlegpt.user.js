@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.10.6
+// @version                  2024.9.10.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -3271,7 +3271,7 @@
                         if (nowResult.id) apis.GPTforLove.parentID = nowResult.id // for contextual replies
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
-                    const failMatch = failFlagsAndURLs.match(textToShow)
+                    const failMatch = textToShow.match(failFlagsAndURLs)
                     if (failMatch) {
                         log.debug('Response text', textToShow)
                         log.error('Fail flag detected', failMatch[0])
@@ -3305,7 +3305,7 @@
                                                     : ['openAInotWorking', 'suggestProxy'] )
                     else api.tryNew(caller)
                 } else if (caller.api == 'OpenAI' && resp.response) {
-                    const failMatch = failFlagsAndURLs.match(resp.response)
+                    const failMatch = resp.response.match(failFlagsAndURLs)
                     if (failMatch) { // suggest proxy or try diff API
                         log.debug('Response text', resp.response)
                         log.error('Fail flag detected', failMatch[0])
@@ -3352,7 +3352,7 @@
 
                 function handleProcessCompletion() {
                     if (caller.status != 'done') {
-                        const failMatch = failFlagsAndURLs.match(respText)
+                        const failMatch = respText.match(failFlagsAndURLs)
                         if (failMatch) {
                             log.debug('Response text', respText)
                             log.error('Fail flag detected', failMatch[0])
