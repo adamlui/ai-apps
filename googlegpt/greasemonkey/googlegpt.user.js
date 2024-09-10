@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.10.5
+// @version                  2024.9.10.6
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -975,7 +975,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { safeWindowOpen(app.urls.support) },
-                        function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
+                        function leaveAReview() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 585) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
@@ -1019,13 +1019,7 @@
                 // Init buttons
                 let btns = [
                     function greasyFork() { safeWindowOpen(
-                        app.urls.greasyFork + '/feedback#post-discussion') },
-                    function productHunt() { safeWindowOpen(
-                        'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
-                    function futurepedia() { safeWindowOpen(
-                        'https://www.futurepedia.io/tool/duckduckgpt#tool-reviews') },
-                    function alternativeTo() { safeWindowOpen(
-                        'https://alternativeto.net/software/duckduckgpt/about/') }
+                        app.urls.greasyFork + '/feedback#post-discussion') }
                 ]
                 if (options.sites == 'feedback') btns.splice(1, 0,
                     function github() { safeWindowOpen(
