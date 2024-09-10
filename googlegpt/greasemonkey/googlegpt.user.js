@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.7.7
+// @version                  2024.9.10
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -414,18 +414,77 @@
 
     // Init APP INFO
     const app = {
-        name: 'GoogleGPT', configKeyPrefix: 'googleGPT',
+        name: 'GoogleGPT', symbol: '🤖', configKeyPrefix: 'googleGPT',
         urls: {
             app: 'https://www.googlegpt.io', support: 'https://support.googlegpt.io',
             gitHub: 'https://github.com/KudoAI/googlegpt',
             greasyFork: 'https://greasyfork.org/scripts/478597-googlegpt' },
-        latestAssetCommitHash: '4ef557c' // for cached messages.json
+        latestAssetCommitHash: 'be83da1' // for cached messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
+    // Init DEBUG mode
+    const config = {} ; loadSetting('debugMode')
+
+    // Define LOG functions/props
+    const log = {
+
+        styles: {
+            prefix: {
+                base: 'color: white ; padding: 2px 3px 2px 5px ; border-radius: 2px ;',
+                info: 'background: linear-gradient(344deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 39%, rgba(30,29,43,0.6026611328125) 93%)',
+                working: 'background: linear-gradient(342deg, rgba(255,128,0,1) 0%, rgba(255,128,0,0.9612045501794468) 57%, rgba(255,128,0,0.7539216370141807) 93%)' ,
+                success: 'background: linear-gradient(344deg, rgba(0,107,41,1) 0%, rgba(3,147,58,1) 39%, rgba(24,126,42,0.7735294801514356) 93%)',
+                warning: 'background: linear-gradient(344deg, rgba(255,0,0,1) 0%, rgba(232,41,41,0.9079832616640406) 57%, rgba(222,49,49,0.6530813008797269) 93%)',
+                caller: 'color: blue'
+            },
+
+            msg: { working: 'color: #ff8000', warning: 'color: red' }
+        },
+
+        regEx: { greenChars: /\b(?:true|\d+)\b|success\W?/i, redChars: /\bfalse\b|error\W?/i, purpChars: /[ '"]\w+['"]?: /i },
+
+        prettifyObj(obj) { return JSON.stringify(obj)
+            .replace(/([{,](?=")|(?:"):)/g, '$1 ') // append spaces to { and "
+            .replace(/((?<!})})/g, ' $1') // prepend spaces to }
+            .replace(/"/g, '\'') // replace " w/ '
+        },
+
+        toTitleCase(str) { return str.charAt(0).toUpperCase() + str.slice(1) }
+
+    } ; ['info', 'error', 'debug'].forEach(logType =>
+        log[logType] = function() {
+            if (logType == 'debug' && !config.debugMode) return
+
+            const args = Array.from(arguments).map(arg => typeof arg == 'object' ? JSON.stringify(arg) : arg),
+                  msgType = args.some(arg => /\.{3}$/.test(arg)) ? 'working'
+                          : args.some(arg => /\bsuccess\b|!$/i.test(arg)) ? 'success'
+                          : args.some(arg => /\b(?:error|fail)\b/i.test(arg)) || logType == 'error' ? 'warning' : 'info',
+                  prefixStyle = log.styles.prefix.base + log.styles.prefix[msgType],
+                  baseMsgStyle = log.styles.msg[msgType], msgStyles = []
+
+            // Combine args into finalMsg, color chars
+            let finalMsg = logType == 'error' && args.length == 1 ? 'ERROR: ' : ''
+            args.forEach((arg, idx) => {
+                finalMsg += idx == 1 ? ': ' : idx > 1 ? ' ' : '' // separate multi-args
+                finalMsg += arg?.toString().replace(new RegExp(Object.values(log.regEx).map(value => value.source).join('|'), 'ig'), match => {
+                    if (log.regEx.greenChars.test(match)) { msgStyles.push('color: green', baseMsgStyle) ; return `%c${match}%c` }
+                    else if (log.regEx.redChars.test(match)) { msgStyles.push('color: red', baseMsgStyle) ; return `%c${match}%c` }
+                    else if (log.regEx.purpChars.test(match)) { msgStyles.push('color: #dd29f4', baseMsgStyle) ; return `%c${match}%c` }
+                })
+            })
+
+            console[logType == 'error' ? logType : 'info'](
+                `${app.symbol} %c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }%c${finalMsg}`,
+                prefixStyle, log.styles.prefix.caller, baseMsgStyle, ...msgStyles
+            )
+        }
+    )
+
     // Init browser/compatibility FLAGS
+    log.debug('Initializing browser/compatibility flags...')
     const browser = {
         isChrome: chatgpt.browser.isChrome(),
         isFirefox: chatgpt.browser.isFirefox(),
@@ -436,9 +495,11 @@
     const streamingSupported = {
         browser: !(getUserscriptManager() == 'Tampermonkey' && (browser.isChrome || browser.isEdge || browser.isBrave)),
         userscriptManager: /Tampermonkey|ScriptCat/.test(getUserscriptManager()) }
+    log.debug(`Success!\nbrowser = ${log.prettifyObj(browser)}\nstreamingSupported = ${log.prettifyObj(streamingSupported)}`)
 
     // Init CONFIG
-    const config = { minFontSize: 11, maxFontSize: 24, lineHeightRatio: browser.isMobile ? 1.357 : 1.375 }
+    log.debug('Initializing config...')
+    Object.assign(config, { minFontSize: 11, maxFontSize: 24, lineHeightRatio: browser.isMobile ? 1.357 : 1.375 })
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
@@ -450,11 +511,15 @@
     if (!streamingSupported.browser || !streamingSupported.userscriptManager) saveSetting('streamingDisabled', true) // disable Streaming in unspported env
     if (!config.notFirstRun && browser.isMobile) saveSetting('autoGet', true) // reverse default auto-get disabled if mobile
     saveSetting('notFirstRun', true)
+    log.debug(`Success! config = ${log.prettifyObj(config)}`)
 
-    // Init fetcher
+    // Init XHR fetcher
+    log.debug('Initializing XHR fetcher...')
     const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    log.debug(`Success! xhr = ${ getUserscriptManager() == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
 
     // Init API props
+    log.debug('Initializing API properties...')
     const apis = {
         'AIchatOS': {
             endpoint: 'https://api.binjie.fun/api/generateStream',
@@ -498,12 +563,16 @@
                 headers: { 'Accept': '*/*', 'Priority': 'u=4', 'Sec-Fetch-Site': 'same-site' }},
             method: 'POST', streamable: true }
     }
+    log.debug(`Success! apis = ${log.prettifyObj(apis)}`)
 
     // Init INPUT EVENTS
+    log.debug('Initializing input events...')
     const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
           inputEvents[action] = ( window.PointerEvent ? 'pointer' : browser.isMobile ? 'touch' : 'mouse' ) + action)
+    log.debug(`Success! inputEvents = ${log.prettifyObj(inputEvents)}`)
 
-    // Init MESSAGES
+    // Init localized MESSAGES
+    log.debug('Initializing localized messages...')
     let msgs = {}
     if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
         const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
@@ -526,8 +595,10 @@
             }
         }
     })
+    log.debug(Object.keys(msgs).length > 0 ? `Success! msgs = ${log.prettifyObj(msgs)}` : 'Skipped due to English locale')
 
     // Init SETTINGS props
+    log.debug('Initializing settings properties...')
     const settingsProps = {
         proxyAPIenabled: { type: 'toggle', icon: 'sunglasses',
             label: msgs.menuLabel_proxyAPImode || 'Proxy API Mode',
@@ -574,16 +645,22 @@
         scheme: { type: 'modal', icon: 'scheme',
             label: msgs.menuLabel_colorScheme || 'Color Scheme',
             helptip: msgs.helptip_colorScheme || 'Scheme to display GoogleGPT UI components in' },
+        debugMode: { type: 'toggle', icon: 'bug',
+            label: msgs.mode_debug || 'Debug Mode',
+            helptip: msgs.helptip_debugMode || 'Show detailed logging in browser console' },
         about: { type: 'modal', icon: 'questionMarkCircle',
             label: `${ msgs.menuLabel_about || 'About' } ${app.name}...` }
     }
+    log.debug(`Success! settingsProps = ${log.prettifyObj(settingsProps)}`)
 
     // Init MENU objs
+    log.debug('Initializing menu objects...')
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
         symbol: ['❌', '✔️'], separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ',
         word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
     }
+    log.debug(`Success! menuState = ${log.prettifyObj(menuState)}`)
 
     // Define SCRIPT functions
 
@@ -612,6 +689,7 @@
     }
 
     function promptReplyLang() {
+        log.caller = 'promptReplyLang()'
         while (true) {
             let replyLanguage = prompt(
                 ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
@@ -620,7 +698,9 @@
                 replyLanguage = ( // auto-case for menu/alert aesthetics
                     [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
                       : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
+                log.debug('Saving reply language...')
                 saveSetting('replyLanguage', replyLanguage || config.userLanguage)
+                log.debug(`Success! config.replyLanguage = ${config.replyLanguage}`)
                 const langUpdatedAlertID = siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
                     `${ app.name } ${ msgs.alert_willReplyIn || 'will reply in' } `
                         + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
@@ -633,20 +713,29 @@
     }}}
 
     function refreshMenu() {
-        if (getUserscriptManager() == 'OrangeMonkey') return
+        log.caller = 'refreshMenu()'
+        log.debug('Refreshing toolbar menu...')
+        if (getUserscriptManager() == 'OrangeMonkey') { log.debug('OrangeMonkey userscript manager unsupported.') ; return }
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
+        log.debug('Success! Menu refreshed')
     }
 
     function updateCheck() {
+        log.caller = 'updateCheck()'
+        const currentVer = GM_info.script.version
+        log.debug(`currentVer = ${currentVer}`)
 
         // Fetch latest meta
-        const currentVer = GM_info.script.version
+        log.debug('Fetching latest userscript meta...')
         xhr({
             method: 'GET', url: app.urls.update + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: resp => { const updateAlertWidth = 377
+            onload: resp => {
+                log.debug('Success! Response received')
+                const updateAlertWidth = 377
 
                 // Compare versions
+                log.debug('Comparing versions...')
                 const latestVer = /@version +(.*)/.exec(resp.responseText)[1]
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
                     const currentSubVer = parseInt(currentVer.split('.')[i], 10) || 0,
@@ -655,9 +744,10 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
+                        log.debug(`Update v${latestVer} found!`)
                         const updateModalID = siteAlert(`🚀 ${ msgs.alert_updateAvail || 'Update available' }!`, // title
                             `${ msgs.alert_newerVer || 'An update to' } ${ app.name } `
-                                + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
+                                + `(v${latestVer}) ${ msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.97rem" '
                                     + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
@@ -670,6 +760,7 @@
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
+                            log.debug('Localizing button labels in non-English alert...')
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
                             updateBtns[1].textContent = msgs.btnLabel_update || 'Update'
@@ -682,6 +773,7 @@
                 }}
 
                 // Alert to no update found, nav back
+                log.debug('No update found.')
                 const noUpdateModalID = siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
                     `${ app.name } (v${ currentVer }) ${ msgs.alert_isUpToDate || 'is up-to-date' }!`, // msg
                         '', '', updateAlertWidth)
@@ -714,7 +806,7 @@
             const modeIcon = icons[settingsProps[mode].icon].create()
             modeIcon.style.cssText = iconStyles
                                    + ( /autoget|focus|scroll/i.test(mode) ? 'top: 0.5px' : '' ) // raise some icons
-                                   + ( /animation/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink sparkles icon
+                                   + ( /animation|debug/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink some icon
             notif.append(modeIcon)
         }
 
@@ -732,10 +824,11 @@
         return chatgpt.alert(title, msg, btns, checkbox, width )}
 
     function appAlert(...alerts) {
+        log.caller = 'appAlert()'
         alerts = alerts.flat() // flatten array args nested by spread operator
         while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear appDiv content
-        const alertP = document.createElement('p') ; alertP.id = 'googlegpt-alert'
-        alertP.className = 'no-user-select' ; alertP.style.paddingBottom = '15px'
+        const alertP = document.createElement('p')
+        alertP.id = 'ddgpt-alert' ; alertP.className = 'no-user-select'
 
         alerts.forEach((alert, idx) => { // process each alert for display
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
@@ -744,18 +837,21 @@
             if (msg.includes(appAlerts.waitingResponse)) alertP.classList.add('loading')
 
             // Add login link to login msgs
-            if (msg.includes('@'))
+            if (msg.includes('@')) {
+                log.debug('Adding login link...')
                 msg += '<a class="alert-link" target="_blank" rel="noopener" href="https://chatgpt.com">chatgpt.com</a>,'
                      + ` ${ msgs.alert_thenRefreshPage || 'then refresh this page' }.`
                      + ` (${ msgs.alert_ifIssuePersists || 'If issue persists' },`
                      + ` ${( msgs.alert_try || 'Try' ).toLowerCase() }`
                      + ` ${ msgs.alert_switchingOn || 'switching on' }`
                      + ` ${ msgs.mode_proxy || 'Proxy Mode' })`
+            }
 
             // Hyperlink msgs.alert_switching<On|Off>
             const foundState = ['On', 'Off'].find(state =>
                 msg.includes(msgs['alert_switching' + state]) || new RegExp(`\\b${state}\\b`, 'i').test(msg))
             if (foundState) { // hyperlink switch phrase for click listener to toggle.proxyMode()
+                log.debug('Hyperlinking on/off state in alert...')
                 const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState.toLowerCase()
                 msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
             }
@@ -770,28 +866,26 @@
         appDiv.append(alertP)
     }
 
-    const log = { prefixStyles: 'background-color: green ; color: white ; padding: 2px 4px ; border-radius: 2px' };
-    ['info', 'error'].forEach(logType => { log[logType] = function(label, msg) { // eslint-disable-line
-        const args = Array.from(arguments).map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg)
-        console[logType](`%c${app.name}%c ${ log.caller ? `${log.caller} » ` : '' }${
-            args[0]}${ args[1] ? `: ${args[1]}` : ''}`, log.prefixStyles, '')
-        log.caller = null // for unprefixed logs
-    }})
-
     // Define MODAL functions
 
     const modals = {
 
         clickHandler(event) { // to dismiss modals
-            if (event.target == event.currentTarget || event.target instanceof SVGPathElement)
-                modals.hide(document.querySelector('[class$="-modal"]'))
+            log.caller = 'modals.clickHandler()'
+            if (event.target == event.currentTarget || event.target instanceof SVGPathElement) {
+                const targetModal = document.querySelector('[class$="-modal"]')
+                log.debug(`Dismiss element of div#${targetModal?.id} clicked`)
+                modals.hide(targetModal)
+            }
         },
 
         dragHandlers: {
             mousedown(event) { // find modal, attach listeners, init XY offsets
                 if (event.button != 0) return // prevent non-left-click drag
                 if (getComputedStyle(event.target).cursor == 'pointer') return // prevent drag when clicking on interactive elems
+                log.caller = 'modals.dragHandlers.mousedown()'
                 modals.dragHandlers.draggableElem = event.currentTarget
+                log.debug(`Mouse down on div#${modals.dragHandlers.draggableElem?.id}`)
                 event.preventDefault(); // prevent sub-elems like icons being draggable
                 ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))
                 const draggableElemRect = modals.dragHandlers.draggableElem.getBoundingClientRect()
@@ -809,16 +903,21 @@
             },
 
             mouseup() { // remove listeners, reset modals.dragHandlerss.draggableElem
+                log.caller = 'modals.dragHandlers.mouseup()'
+                log.debug(`Mouse up on div#${modals.dragHandlers.draggableElem?.id}`);
                 ['mousemove', 'mouseup'].forEach(event => document.removeEventListener(event, modals.dragHandlers[event]))
                 modals.dragHandlers.draggableElem = null
             }
         },
 
         hide(modal) {
+            log.caller = 'modals.hide()'
+            log.debug(`Dismissing div#${modal?.id}...`)
             const modalContainer = modal?.parentNode
             if (!modalContainer) return
             modalContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
-            setTimeout(() => modalContainer.remove(), 105) // delay for fade-out
+            setTimeout(() => { modalContainer.remove() ; log.debug(`Success! div#${modal?.id} dismissed`)
+                }, 105) // delay for fade-out
         },
 
         init(modal) {
@@ -841,7 +940,9 @@
         },
 
         keyHandler(event) { // to dismiss modals
+            log.caller = 'modals.keyHandler()'
             if (['Escape', 'Esc'].includes(event.key) || event.keyCode == 27) {
+                log.debug('Escape pressed')
                 const modal = document.querySelector('[class$="-modal"]')
                 if (modal) modals.hide(modal)
             }
@@ -849,8 +950,16 @@
 
         about: {
             show() {
+                log.caller = 'modals.about.show()'
+
+                // Hide Settings modal if visible
                 const settingsModal = modals.settings.get()
-                if (settingsModal) modals.hide(settingsModal)
+                if (settingsModal) {
+                    log.debug('Hiding visible Settings modal...')
+                    modals.hide(settingsModal) ; log.caller = 'modals.about.show()'
+                }
+
+                log.debug('Showing About modal...')
 
                 // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
@@ -897,11 +1006,14 @@
                 })
 
                 modals.init(aboutModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
+                log.debug('Success! About Modal shown')
             }
         },
 
         feedback: {
             show(options) {
+                log.caller = `modals.feedback.show(${ options ? `'${options}'` : '' })`
+                log.debug('Showing Feedback modal...')
 
                 // Init buttons
                 let btns = [
@@ -918,7 +1030,7 @@
                     function github() { safeWindowOpen(
                         app.urls.gitHub + '/discussions/new/choose') })
 
-                // Create/show modal
+                // Create/init modal
                 const feedbackModalID = siteAlert(`${
                     msgs.alert_choosePlatform || 'Choose a platform' }:`, '', btns, '', 333)
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
@@ -941,11 +1053,14 @@
                 })
 
                 modals.init(feedbackModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
+                log.debug('Success! Feedback modal shown')
             }
         },
 
         scheme: {
             show() {
+                log.caller = 'modals.scheme.show()'
+                log.debug('Showing Scheme modal...')
 
                 // Create/init modal
                 const schemeModalID = siteAlert(`${
@@ -989,6 +1104,7 @@
                 }
 
                 modals.init(schemeModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
+                log.debug('Success! Scheme modal shown')
 
                 function schemeNotify(scheme) {
 
@@ -1011,6 +1127,7 @@
         settings: {
 
             createAppend() {
+                log.caller = 'modals.settings.createAppend()'
 
                 // Init master elems
                 const settingsContainer = document.createElement('div'),
@@ -1019,7 +1136,9 @@
                 modals.init(settingsModal) // add classes/stars, disable wheel-scrolling, dim bg
 
                 // Init settings keys
+                log.debug('Initializing settings keys...')
                 const settingsKeys = Object.keys(settingsProps).filter(key => !(browser.isMobile && settingsProps[key].mobile == false))
+                log.debug(`Success! settingsKeys = ${log.prettifyObj(settingsKeys)}`)
 
                 // Init logo
                 const settingsIcon = icons.googleGPT.create()
@@ -1034,6 +1153,7 @@
                 settingsTitleH4.prepend(settingsTitleIcon) ; settingsTitleDiv.append(settingsTitleH4)
 
                 // Init settings lists
+                log.debug('Initializing settings lists...')
                 const settingsLists = [], middleGap = 30, // px
                       settingsListContainer = document.createElement('div'),
                       settingsListCnt = ( browser.isMobile && ( browser.isPortrait || settingsKeys.length < 8 )) ? 1 : 2,
@@ -1046,6 +1166,7 @@
                     settingsLists[0].style.cssText = ( // add vertical separator
                         `padding-right: ${ middleGap /2 }px ; border-right: 1px dotted ${ scheme == 'dark' ? 'white' : 'black '}` )
                 }
+                log.debug(`Success! settingsListCnt = ${settingsListCnt}`)
 
                 // Create/append setting icons/labels/toggles
                 settingsKeys.forEach((key, idx) => {
@@ -1072,6 +1193,7 @@
                       : /animation/i.test(key) ? 'top: 3px ; left: -1.5px ; margin-right: 6.5px'
                       : /replylang/i.test(key) ? 'top: 3px ; left: -1.5px ; margin-right: 9px'
                       : /scheme/i.test(key) ? 'top: 2.5px ; left: -1.5px ; margin-right: 8px'
+                      : /debug/i.test(key) ? 'top: 3.5px ; left: -1.5px ; margin-right: 8px'
                       : /about/i.test(key) ? 'top: 3px ; left: -3px ; margin-right: 5.5px' : ''
                     )
                     settingItem.prepend(settingIcon)
@@ -1135,8 +1257,11 @@
 
                             // ...or generically toggle/notify
                             else {
+                                log.caller = 'settings.createAppend()'
+                                log.debug(`Toggling ${settingItem.textContent} ${ key.includes('Disabled') ^ config[key] ? 'OFF' : 'ON' }...`)
                                 saveSetting(key, !config[key]) // update config
                                 notify(`${settingsProps[key].label} ${menuState.word[+key.includes('Disabled') ^ +config[key]]}`)
+                                log[key.includes('debug') ? 'info' : 'debug'](`Success! config.${key} = ${config[key]}`)
                             }
                         }
 
@@ -1189,19 +1314,24 @@
             get() { return document.getElementById('googlegpt-settings') },
 
             show() {
+                log.caller = 'modals.settings.show()'
+                log.debug('Showing Settings modal...')
                 const settingsContainer = modals.settings.get()?.parentNode || modals.settings.createAppend()
                 settingsContainer.style.display = '' // show modal
+                log.caller = 'modals.settings.show()'
                 if (browser.isMobile) { // scale 93% to viewport sides
+                    log.debug('Scaling 93% to viewport sides...')
                     const settingsModal = settingsContainer.querySelector('#googlegpt-settings'),
                           scaleRatio = 0.93 * window.innerWidth / settingsModal.offsetWidth
                     settingsModal.style.transform = `scale(${scaleRatio})`
                 }
+                log.debug('Success! Settings modal shown')
             },
 
             toggle: {
                 switch(settingToggle) {
                     settingToggle.checked = !settingToggle.checked
-                    modals.settings.toggle.updateStyles(settingToggle)        
+                    modals.settings.toggle.updateStyles(settingToggle)
                 },
 
                 updateStyles(settingToggle) { // for .toggle.show() + staggered switch animations in .createAppend()
@@ -1418,6 +1548,21 @@
                 arrowUpSVG.append(createSVGelem('path', { stroke: '', fill: 'none', 'stroke-width': '2', linecap: 'round', 'stroke-linejoin': 'round',
                     d: 'M7 11L12 6L17 11M12 18V7' }))
                 return arrowUpSVG
+            }
+        },
+
+        bug: {
+            create() {
+                const bugSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      bugSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 0 16 16']]
+                bugSVGattrs.forEach(([attr, value]) => bugSVG.setAttribute(attr, value))
+                bugSVG.append(
+                    createSVGelem('path', {
+                        d: 'M7 0V1.60002C7.32311 1.53443 7.65753 1.5 8 1.5C8.34247 1.5 8.67689 1.53443 9 1.60002V0H11V2.49963C11.8265 3.12041 12.4543 3.99134 12.7711 5H3.2289C3.5457 3.99134 4.17354 3.12041 5 2.49963V0H7Z' }),
+                    createSVGelem('path', {
+                        d: 'M0 7V9H3V10.4957L0.225279 11.2885L0.774721 13.2115L3.23189 12.5095C3.87194 14.5331 5.76467 16 8 16C10.2353 16 12.1281 14.5331 12.7681 12.5095L15.2253 13.2115L15.7747 11.2885L13 10.4957V9H16V7H9V12H7V7H0Z' })
+                )
+                return bugSVG
             }
         },
 
@@ -2163,8 +2308,11 @@
         },
 
         scheme(newScheme) {
+            log.caller = `update.scheme('${newScheme}')`
+            log.debug(`Updating ${app.name} scheme to ${log.toTitleCase(newScheme)}...`)
             scheme = newScheme ; logos.googleGPT.update() ; icons.googleGPT.update()
             update.appStyle() ; update.stars() ; toggle.btnGlow() ; modals.settings.updateSchemeStatus()
+            log.debug(`Success! ${app.name} updated to ${log.toTitleCase(newScheme)} scheme`)
         },
 
         stars() {
@@ -2410,6 +2558,8 @@
         hWheelDistance: 10, // px
 
         createAppend() {
+            log.caller = 'fontSizeSlider.createAppend()'
+            log.debug('Creating/appending Font Size slider...')
 
             // Create/ID/classify slider elems
             fontSizeSlider.cursorOverlay = document.createElement('div')
@@ -2483,16 +2633,18 @@
                 sliderThumb.title = Math.floor(config.fontSize *10) /10 + 'px'
             }
 
-            return slider            
+            return slider
         },
 
         toggle(state = '') {
+            log.caller = `fontSizeSlider.toggle(${ state ? `'${state}'` : '' })`
             const slider = document.getElementById('font-size-slider-track') || fontSizeSlider.createAppend(),
                   replyTip = appDiv.querySelector('.balloon-tip'),
                   sliderTip = document.getElementById('font-size-slider-tip')
 
             // Show slider
             if (state == 'on' || (!state && slider.style.display == 'none')) {
+                log.debug('Showing Font Size slider...')
 
                 // Position slider tip
                 const btnSpan = document.getElementById('font-size-btn'),
@@ -2503,10 +2655,14 @@
                 slider.style.display = sliderTip.style.display = '' ; if (replyTip) replyTip.style.display = 'none'
                 setTimeout(() => slider.classList.add('active'), fontSizeSlider.fadeInDelay)
 
+                log.debug('Success! Font Size slider shown')
+
             // Hide slider
             } else if (state == 'off' || (!state && slider.style.display != 'none')) {
+                log.debug('Hiding Font Size slider...')
                 slider.classList.remove('active') ; if (replyTip) replyTip.style.display = ''
                 sliderTip.style.display = slider.style.display = 'none'
+                log.debug('Success! Font Size slider hidden')
             }
         }
     }
@@ -2538,11 +2694,14 @@
     const toggle = {
 
         anchorMode(state = '') {
+            log.caller = `toggle.anchorMode(${ state ? `'${state}'` : '' })`
             const prevState = config.anchored // for restraining notif if no change from #pin-menu 'Sidebar' click
-            if (state == 'on' || !state && !config.anchored) { // toggle on
+            if (state == 'on' || !state && !config.anchored) {
+                log.debug('Toggling Anchor Mode on...')
                 saveSetting('anchored', true)
                 if (config.stickySidebar) toggle.sidebar('sticky') // off
             } else {
+                log.debug('Toggling Anchor Mode off...')
                 saveSetting('anchored', false)
                 if (config.expanded) toggle.expandedMode('off')
             }
@@ -2554,11 +2713,15 @@
             if (prevState != config.anchored) {
                 menus.pin.topPos = menus.pin.rightPos = null
                 notify(( msgs.mode_anchor || 'Anchor Mode' ) + ' ' + menuState.word[+config.anchored])
+                log.debug(`Success! Anchor Mode toggled ${ config.anchored ? 'ON' : 'OFF' }`)
             }
         },
 
         animations(layer) {
-            saveSetting(layer + 'AnimationsDisabled', !config[layer + 'AnimationsDisabled'])
+            log.caller = `toggle.animations('${layer}')`
+            const configKey = layer + 'AnimationsDisabled'
+            log.debug(`Toggling ${layer.toUpperCase()} animations ${ config[configKey] ? 'ON' : 'OFF' }...`)
+            saveSetting(configKey, !config[configKey])
             update.appStyle() ; if (layer == 'bg') update.stars()
             if (layer == 'fg' && modals.settings.get()) {
 
@@ -2570,10 +2733,14 @@
                 // Toggle button glow
                 if (scheme == 'dark') toggle.btnGlow()
             }
+            log.caller = `toggle.animations('${layer}')`
+            log.debug(`Success! ${layer.toUpperCase()} animations toggled ${ config[configKey] ? 'OFF' : 'ON' }`)
             notify(`${settingsProps[layer + 'AnimationsDisabled'].label} ${menuState.word[+!config[layer + 'AnimationsDisabled']]}`)
         },
 
         autoGet() {
+            log.caller = 'toggle.autoGet()'
+            log.debug(`Toggling Auto-Get ${ config.autoGet ?  'OFF' : 'ON' }...`)
             saveSetting('autoGet', !config.autoGet)
             if (appDiv.querySelector('.standby-btn')) show.reply.standbyBtnClickHandler()
             if (config.autoGet) // disable Prefix/Suffix mode if enabled
@@ -2584,6 +2751,8 @@
                 const autoGetToggle = document.querySelector('[id*="autoGet"][id*="menu-entry"] input')
                 if (autoGetToggle.checked != config.autoGet) modals.settings.toggle.switch(autoGetToggle)
             }
+            log.caller = 'toggle.autoGet()'
+            log.debug(`Success! config.autoget = ${config.autoGet}`)
         },
 
         btnGlow(state = '') {
@@ -2602,14 +2771,21 @@
         },
 
         expandedMode(state = '') {
-            saveSetting('expanded', state == 'on' || !state && !config.expanded)
+            log.caller = `toggle.expandedMode(${ state ? `'${state}'` : '' })`
+            const toExpand = state == 'on' || !state && !config.expanded
+            log.debug(`${ toExpand ? 'Expanding' : 'Shrinking' } ${app.name}...`)
+            saveSetting('expanded', toExpand)
             if (config.minimized) toggle.minimized('off') // since user wants to see stuff
             update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
             icons.arrowsDiagonal.update() ; tooltipDiv.style.opacity = 0 // update icon/tooltip
+            log.caller = `toggle.expandedMode(${ state ? `'${state}'` : '' })`
+            log.debug(`Success! ${app.name} ${ toExpand ? 'expanded' : 'shrunk' }`)
         },
 
         manualGet(mode) { // Prefix/Suffix modes
+            log.caller = `toggle.manualGet('${mode}')`
             const modeKey = mode + 'Enabled'
+            log.debug(`Toggling ${log.toTitleCase(mode)} Mode ${ config[modeKey] ? 'OFF' : 'ON' }...`)
             saveSetting(modeKey, !config[modeKey])
             if (config[modeKey] && config.autoGet) toggle.autoGet() // disable Auto-Get mode if enabled
             notify(`${settingsProps[modeKey].label} ${menuState.word[+config[modeKey]]}`)
@@ -2617,10 +2793,15 @@
                 const modeToggle = document.querySelector(`[id*="${modeKey}"][id*="menu-entry"] input`)
                 if (modeToggle.checked != config[modeKey]) modals.settings.toggle.switch(modeToggle)
             }
+            log.caller = `toggle.manualGet('${mode}')`
+            log.debug(`Success! config.${modeKey} = ${config[modeKey]}`)
         },
 
         minimized(state = '') {
-            saveSetting('minimized', state == 'on' || !state && !config.minimized)
+            log.caller = `toggle.minimized(${ state ? `'${state}'` : '' })`
+            const toMinimize = state == 'on' || !state && !config.minimized
+            log.debug(`${ toMinimize ? 'Mimizing' : 'Restoring' } ${app.name}...`)
+            saveSetting('minimized', toMinimize)
             const chevronBtn = appDiv.querySelector('#chevron-btn')
             if (chevronBtn) { // update icon
                 const chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
@@ -2632,9 +2813,12 @@
             }
             update.appBottomPos() // toggle visual minimization
             if (!browser.isMobile) setTimeout(() => tooltipDiv.style.opacity = 0, 1) // remove lingering tooltip
+            log.caller = `toggle.minimized(${ state ? `'${state}'` : '' })`
+            log.debug(`Success! ${app.name} ${ toMinimize ? 'minimized' : 'restored' }`)
         },
 
         proxyMode() {
+            log.caller = 'toggle.proxyMode()'
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
             refreshMenu()
@@ -2647,10 +2831,16 @@
                     || !streamingToggle.checked && config.proxyAPIenabled && !config.streamingDisabled) // or Streaming unchecked but enabled in Proxy mode
                         modals.settings.toggle.switch(streamingToggle)
             }
-            if (appDiv.querySelector('#googlegpt-alert')) location.reload() // re-send query if user alerted 
+            if (appDiv.querySelector('#googlegpt-alert')) location.reload() // re-send query if user alerted
+            else {
+                log.caller = 'toggle.proxyMode()'
+                log.debug(`Success! config.proxyAPIenabled = ${config.proxyAPIenabled}`)
+            }
         },
 
         relatedQueries() {
+            log.caller = 'toggle.relatedQueries()'
+            log.debug(`Toggling Related Queries ${ config.rqDisabled ? 'ON' : 'OFF' }...`)
             saveSetting('rqDisabled', !config.rqDisabled)
             update.rqVisibility()
             if (!config.rqDisabled && !appDiv.querySelector('.related-queries')) // get related queries for 1st time
@@ -2658,30 +2848,40 @@
                     .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
             update.tweaksStyle() // toggle <pre> max-height
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
+            log.debug(`Success! config.rqDisabled = ${config.rqDisabled}`)
         },
 
         sidebar(mode, state = '') {
-            const prevStickyState = config.stickySidebar // for restraining notif if no change from #pin-menu Nothing-click
-            if (state == 'on' || !state && !config[mode + 'Sidebar']) { // toggle on
+            log.caller = `toggle.sidebar('${mode}'${ state ? `, '${state}'` : '' })`
+            const configKeyName = mode + 'Sidebar',
+                  toToggleOn = state == 'on' || !state && !config[configKeyName],
+                  prevStickyState = config.stickySidebar // for restraining notif if no change from #pin-menu Sidebar-click
+            log.debug(`Toggling ${log.toTitleCase(mode)} Sidebar ${ toToggleOn ? 'ON' : 'OFF' }`)
+            if (state == 'on' || !state && !config[configKeyName]) { // toggle on
                 if (mode == 'sticky' && config.anchored) toggle.anchorMode()
-                saveSetting(mode + 'Sidebar', true)
-            } else saveSetting(mode + 'Sidebar', false)
+                saveSetting(configKeyName, true)
+            } else saveSetting(configKeyName, false)
             update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
             if (mode == 'wider') icons.widescreen.update() // toggle icons everywhere
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const stickySidebarToggle = document.querySelector('[id*="sticky"][id*="menu-entry"] input')
                 if (stickySidebarToggle.checked != config.stickySidebar) modals.settings.toggle.switch(stickySidebarToggle)
             }
-            if (mode == 'sticky' && prevStickyState == config.stickySidebar) return
+            if (mode == 'sticky' && prevStickyState == config.stickySidebar)
+                return log.debug(`No change to ${log.toTitleCase(mode)} Sidebar`)
             notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
-                + ' ' + menuState.word[+config[mode + 'Sidebar']])
+                + ' ' + menuState.word[+config[configKeyName]])
+            log.debug(`Success! ${log.toTitleCase(mode)} Sidebar toggled ${ toToggleOn ? 'ON' : 'OFF' }`)
         },
 
+
         streaming() {
+            log.caller = 'toggle.streaming()'
             const scriptCatLink = browser.isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
                                 : browser.isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
                                             : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!streamingSupported.userscriptManager) { // alert userscript manager unsupported, suggest TM/SC
+                log.debug(`Streaming Mode unsupported in ${getUserscriptManager()}`)
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
                         + ( !browser.isEdge && !browser.isBrave ? // suggest TM for supported browsers
@@ -2693,6 +2893,7 @@
                 const suggestAlert = document.getElementById(suggestAlertID).firstChild
                 modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
             } else if (!streamingSupported.browser) { // alert TM/browser unsupported, suggest SC
+                log.debug('Streaming Mode unsupported in browser')
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
                         + `${ browser.isChrome ? 'Chrome' : browser.isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
@@ -2702,6 +2903,7 @@
                 const suggestAlert = document.getElementById(suggestAlertID).firstChild
                 modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
             } else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
+                log.debug('Streaming Mode unsupported in OpenAI mode')
                 let msg = `${settingsProps.streamingDisabled.label} `
                         + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
                         + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
@@ -2713,8 +2915,10 @@
                 modals.init(alert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggle.proxyMode() }
             } else { // functional toggle
+                log.debug(`Toggling Streaming Mode ${ config.streamingDisabled ? 'ON' : 'OFF' }`)
                 saveSetting('streamingDisabled', !config.streamingDisabled)
                 notify(settingsProps.streamingDisabled.label + ' ' + menuState.word[+!config.streamingDisabled])
+                log.debug(`Success! config.streamingDisabled = ${config.streamingDisabled}`)
             }
         },
 
@@ -2757,11 +2961,17 @@
         try {
             const html = new DOMParser().parseFromString(resp, 'text/html'),
                   title = html.querySelector('title')
-            return title.innerText == 'Just a moment...'
+            if (title.innerText == 'Just a moment...') {
+                log.caller = 'isBlockedbyCloudflare'
+                log.debug('Blocked by CloudFlare')
+                return true
+            }             
         } catch (err) { return false }
     }
 
     function deleteOpenAIcookies() {
+        log.caller = 'deleteOpenAIcookies()'
+        log.debug('Deleting OpenAI cookies...')
         GM_deleteValue(app.configKeyPrefix + '_openAItoken')
         if (getUserscriptManager() != 'Tampermonkey') return
         GM_cookie.list({ url: apis.OpenAI.endpoints.auth }, (cookies, error) => {
@@ -2770,23 +2980,29 @@
     }}})}
 
     function getOpenAItoken() {
+        log.caller = 'getOpenAItoken()'
+        log.debug('Getting OpenAI token...')
         return new Promise(resolve => {
             const accessToken = GM_getValue(app.configKeyPrefix + '_openAItoken')
-            log.info('OpenAI access token', accessToken)
-            if (!accessToken) {
+            if (accessToken) { log.debug(accessToken) ; resolve(accessToken) }
+            else {
+                log.debug(`No token found. Fetching from ${apis.OpenAI.endpoints.session}...`)
                 xhr({ url: apis.OpenAI.endpoints.session, onload: resp => {
                     if (isBlockedbyCloudflare(resp.responseText)) {
                         appAlert('checkCloudflare') ; return }
                     try {
                         const newAccessToken = JSON.parse(resp.responseText).accessToken
                         GM_setValue(app.configKeyPrefix + '_openAItoken', newAccessToken)
+                        log.debug(`Success! newAccessToken = ${newAccessToken}`)
                         resolve(newAccessToken)
                     } catch { if (get.reply.api == 'OpenAI') appAlert('login') ; return }
                 }})
-            } else resolve(accessToken)
+            }
     })}
 
     function generateGPTforLoveKey() {
+        log.caller = 'generateGPTforLoveKey()'
+        log.debug('Generating GPTforLove key...')
         let nn = Math.floor(new Date().getTime() / 1e3)
         const fD = e => {
             let t = CryptoJS.enc.Utf8.parse(e),
@@ -2795,7 +3011,8 @@
             })
             return o.toString()
         }
-        return fD(nn)
+        const gptflKey = fD(nn)
+        log.debug(gptflKey) ; return gptflKey
     }
 
     // Define API functions
@@ -2803,7 +3020,7 @@
     const api = {
 
         pick(caller) {
-            log.caller = `get.${caller.name}()`
+            log.caller = `get.${caller.name}() » api.pick()`
             const untriedAPIs = Object.keys(apis).filter(api =>
                    api != ( caller == get.reply ? 'OpenAI' : '' ) // exclude OpenAI for get.reply() since Proxy Mode
                 && !caller.triedAPIs.some(entry => Object.prototype.hasOwnProperty.call(entry, api)) // exclude tried APIs
@@ -2811,23 +3028,22 @@
             const chosenAPI = untriedAPIs[ // pick random array entry
                 Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
             if (!chosenAPI) { log.error('No proxy APIs left untried') ; return null }
-
-            // Log chosen API endpoint
-            log.info('Endpoint used', apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint)
+            log.debug('Endpoint chosen', apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint)
             return chosenAPI
         },
 
         tryNew(caller, reason = 'err') {
+            log.caller = `get.${caller.name}() » api.tryNew()`
             if (caller.status == 'done') return
             log.error(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
             caller.triedAPIs.push({ [caller.api]: reason })
             if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
-                log.info('Trying another endpoint...')
+                log.debug('Trying another endpoint...')
                 caller.attemptCnt++
                 caller(caller == get.reply ? msgChain : get.related.query)
                     .then(result => { if (caller == get.related) show.related(result) ; else return })
             } else {
-                log.info('No remaining untried endpoints')
+                log.debug('No remaining untried endpoints')
                 if (caller == get.reply) appAlert('proxyNotWorking', 'suggestOpenAI')
             }
         },
@@ -3134,21 +3350,26 @@
                 function handleProcessCompletion() {
                     if (caller.status != 'done') {
                         if (failFlagsAndURLs.test(respText)) {
-                            log.info('Response', respText) ; api.tryNew(caller)
+                            log.debug('Response', respText)
+                            log.error('Fail flag detected')
+                            api.tryNew(caller)
                         } else {
+                            log.debug('Response text', respText)
                             caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                             if (caller == get.reply) { show.reply(respText, footerContent) ; show.copyBtns() }
                             else resolve(arrayify(respText))
                 }}}
 
                 function handleProcessError(err) { // suggest proxy or try diff API
-                    log.info('Response text', resp.response)
+                    log.debug('Response text', resp.response)
                     log.error(appAlerts.parseFailed, err)
                     if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                     else api.tryNew(caller)
                 }
 
                 function arrayify(strList) { // for get.related() calls
+                    log.caller = 'dataProcess.text » arrayify()'
+                    log.debug('Arrayifying related queries...')
                     return (strList.trim().match(/\d+\.?\s*(.+?)(?=\n|\\n|$)/g) || [])
                         .slice(0, 5) // limit to 1st 5
                         .map(match => match.replace(/\*\*/g, '') // strip markdown boldenings
@@ -3429,12 +3650,14 @@
         },
 
         related(queries) {
+            log.caller = 'show.related()'
             if (get.reply.status == 'waiting') { // recurse until get.reply() finishes showing answer
                 setTimeout(() => show.related(queries), 500, queries) ; return }
 
             // Re-get.related() if current reply is question to suggest answers
             const currentReply = appDiv.querySelector('#googlegpt > pre')?.textContent.trim()
             if (show.reply.src != 'shuffle' && !get.related.replyIsQuestion && /[?？]/.test(currentReply)) {
+                log.debug('Re-getting related queries to answer reply question...')
                 get.related.replyIsQuestion = true
                 get.related(currentReply).then(queries => show.related(queries))
                     .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
@@ -3488,9 +3711,9 @@
 
     // Run MAIN routine
 
-    registerMenu() // create browser toolbar menu
+    log.debug('Registering toolbar menu...') ; registerMenu() ; log.debug('Success! Menu registered')
 
-    if (window.location.search.includes('&udm=2')) return // exit if on Google Images
+    if (window.location.search.includes('&udm=2')) return log.debug('Exited from Google Images')
 
     // Init ALERTS
     const appAlerts = {
