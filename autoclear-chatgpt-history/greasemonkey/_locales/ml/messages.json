@@ -2,7 +2,7 @@
   "appName": { "message": "Autoclear ChatGPT ചരിത്രം" },
   "appDesc": { "message": "chatgpt.com സന്ദർശിക്കുമ്പോൾ ഓട്ടോ-ക്ലിക്കറുകൾ ചാറ്റ് ചരിത്രം" },
   "menuLabel_autoClear": { "message": "Autoclear ചാറ്റുകൾ" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_toggleVis": { "message": "ദൃശ്യപരത ടോഗിൾ ചെയ്യുക" },
   "menuLabel_modeNotifs": { "message": "മോഡ് അറിയിപ്പുകൾ" },
   "menuLabel_about": { "message": "സംബന്ധിച്ച്" },
   "about_version": { "message": "പതിപ്പ്" },

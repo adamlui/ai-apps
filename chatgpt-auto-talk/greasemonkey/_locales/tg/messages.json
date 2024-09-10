@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ЧатGPT худкор- гуфтугӯ" },
   "appDesc": { "message": "Awtomatikong maglagay ng mga tugon sa ChatGPT" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_toggleVis": { "message": "Гузаронидани Намоиш" },
   "menuLabel_about": { "message": "Дар бораи" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },

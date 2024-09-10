@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Talk" },
   "appDesc": { "message": "Automatically play ChatGPT responses" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_toggleVis": { "message": "දෘශ්‍යතාව ටොගල් කරන්න" },
   "menuLabel_about": { "message": "About" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Powered by" },

@@ -2,7 +2,7 @@
   "appName": { "message": "ЧатGPT Авто жаңыртуу" },
   "appDesc": { "message": "*Коопсуз* ChatGPT сессияларын жаңы кармап, туруктуу тармактык каталарды жок кылат + Cloudflare текшерүүлөрү (бардыгы фонунан!)" },
   "menuLabel_autoRefresh": { "message": "Auto-Refresh" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_toggleVis": { "message": "Көрүнүүнү которуштуруу" },
   "menuLabel_modeNotifs": { "message": "Режим билдирүүлөрү" },
   "menuLabel_refreshInt": { "message": "Аралыкты жаңыртуу" },
   "menuLabel_about": { "message": "Апплет жөнүндө" },

@@ -2,7 +2,7 @@
   "appName": { "message": "Таърихи Autoclear ChatGPT" },
   "appDesc": { "message": "Auto-clears таърихи чат ҳангоми боздид аз chatgpt.com" },
   "menuLabel_autoClear": { "message": "Сӯҳбатҳои худкор" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_toggleVis": { "message": "Гузаронидани Намоиш" },
   "menuLabel_modeNotifs": { "message": "Огоҳинома дар бораи ҳолат" },
   "menuLabel_about": { "message": "Дар бораи" },
   "about_version": { "message": "Версия" },

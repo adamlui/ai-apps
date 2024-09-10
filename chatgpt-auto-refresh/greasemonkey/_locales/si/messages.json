@@ -2,7 +2,7 @@
   "appName": { "message": "ChatGPT ස්වයංක් ‍ රීය නැවුම් කිරීම" },
   "appDesc": { "message": "*ආරක්ෂිතව* ChatGPT සැසි නැවුම් තබා, නිරන්තර ජාල දෝෂ ඉවත් + Cloudflare චෙක්පත් (පසුබිම සිට සියලු!)" },
   "menuLabel_autoRefresh": { "message": "ස්වයංක් ‍ රීය නැවුම් කිරීම" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_toggleVis": { "message": "දෘශ්‍යතාව ටොගල් කරන්න" },
   "menuLabel_modeNotifs": { "message": "ප් ‍ රකාර දැනුම්දීම්" },
   "menuLabel_refreshInt": { "message": "කාලසීමාව නැවුම් කරන්න" },
   "menuLabel_about": { "message": "සම්බන්ධව" },

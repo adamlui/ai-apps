@@ -1,7 +1,7 @@
 {
   "appName": { "message": "چیټGPT آټو- خبرې کول" },
   "appDesc": { "message": "په اوتومات ډول د ChatGPT ځوابونه وغږوئ" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_toggleVis": { "message": "د لید لید بدل کړئ" },
   "menuLabel_about": { "message": "په هکله" },
   "about_version": { "message": ":نسخه" },
   "about_poweredBy": { "message": "طراحی شده توسط" },

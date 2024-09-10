@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT אַוטאָ-רעדן" },
   "appDesc": { "message": "אָטאַמאַטיק שפּיל ChatGPT רעספּאָנסעס" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_toggleVis": { "message": "באַשטימען וויזאַביליטי" },
   "menuLabel_about": { "message": "וועגן" },
   "about_version": { "message": "ווערסיע" },
   "about_poweredBy": { "message": "פּאַוערד דורך" },

@@ -2,7 +2,7 @@
   "appName": { "message": "ChatGPT Auto Refresh" },
   "appDesc": { "message": "* זיכער * האלט טשאַטגפּט סעשאַנז פריש, ילימאַנייטינג קעסיידערדיק נעץ ערראָרס + קלאָודפלאַרע טשעקס (אַלע פֿון דער הינטערגרונט!)" },
   "menuLabel_autoRefresh": { "message": "אַוטאָ-דערפרישן" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_toggleVis": { "message": "באַשטימען וויזאַביליטי" },
   "menuLabel_modeNotifs": { "message": "מאָדע נאָטיפיקאַטיאָנס" },
   "menuLabel_refreshInt": { "message": "דערפרישן ינטערוואַל" },
   "menuLabel_about": { "message": "וועגן" },

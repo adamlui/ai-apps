@@ -2,7 +2,7 @@
   "appName": { "message": "Autoclear ChatGPT History" },
   "appDesc": { "message": "Auto-clears chat history when visiting chatgpt.com" },
   "menuLabel_autoClear": { "message": "Comment" },
-  "menuLabel_toggleVis": { "message": "(Diw)Gweredekaat an hewelderdrawable-action" },
+  "menuLabel_toggleVis": { "message": "Dilec'hiañ ar gweledva" },
   "menuLabel_modeNotifs": { "message": "Kemennoù" },
   "menuLabel_about": { "message": "A-zivout" },
   "about_version": { "message": "Handelv" },

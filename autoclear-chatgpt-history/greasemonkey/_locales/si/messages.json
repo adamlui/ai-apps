@@ -2,7 +2,7 @@
   "appName": { "message": "Autoclear ChatGPT ඉතිහාසය" },
   "appDesc": { "message": "chatgpt.com වෙත පිවිසෙන විට ස්වයංක්රීය පැහැදිලි චැට් ඉතිහාසය" },
   "menuLabel_autoClear": { "message": "ස්වයංක් ‍ රීය කතාබස්" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_toggleVis": { "message": "දෘශ්‍යතාව ටොගල් කරන්න" },
   "menuLabel_modeNotifs": { "message": "ප් ‍ රකාර දැනුම්දීම්" },
   "menuLabel_about": { "message": "සම්බන්ධව" },
   "about_version": { "message": "වෙළුම" },

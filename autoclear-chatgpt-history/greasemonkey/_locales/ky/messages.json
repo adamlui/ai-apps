@@ -2,7 +2,7 @@
   "appName": { "message": "Autoclear ChatGPT тарыхы" },
   "appDesc": { "message": "Auto тазалагычтар чат келгенде тарыхын чат.openai.com" },
   "menuLabel_autoClear": { "message": "Autoclear Чат" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_toggleVis": { "message": "Көрүнүүнү которуштуруу" },
   "menuLabel_modeNotifs": { "message": "Режим билдирүүлөрү" },
   "menuLabel_about": { "message": "Апплет жөнүндө" },
   "about_version": { "message": "Версиясы" },
