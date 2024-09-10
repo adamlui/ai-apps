@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.10.3
+// @version                2014.9.10.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -301,8 +301,8 @@
         isMobile: chatgpt.browser.isMobile() }
     browser.isPortrait = browser.isMobile && (window.innerWidth < window.innerHeight)
     const streamingSupported = {
-        browser: !(get.userscriptManager() == 'Tampermonkey' && (browser.isChrome || browser.isEdge || browser.isBrave)),
-        userscriptManager: /Tampermonkey|ScriptCat/.test(get.userscriptManager()) }
+        browser: !(getUserscriptManager() == 'Tampermonkey' && (browser.isChrome || browser.isEdge || browser.isBrave)),
+        userscriptManager: /Tampermonkey|ScriptCat/.test(getUserscriptManager()) }
     log.debug(`Success!\nbrowser = ${log.prettifyObj(browser)}\nstreamingSupported = ${log.prettifyObj(streamingSupported)}`)
 
     // Init CONFIG
@@ -328,8 +328,8 @@
 
     // Init XHR fetcher
     log.debug('Initializing XHR fetcher...')
-    const xhr = get.userscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
-    log.debug(`Success! xhr = ${ get.userscriptManager() == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
+    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    log.debug(`Success! xhr = ${ getUserscriptManager() == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
 
     // Init API props
     log.debug('Initializing API properties...')
@@ -470,7 +470,7 @@
     log.debug('Initializing menu objects...')
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
-        symbol: ['❌', '✔️'], separator: get.userscriptManager() == 'Tampermonkey' ? ' — ' : ': ',
+        symbol: ['❌', '✔️'], separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ',
         word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
     }
     log.debug(`Success! menuState = ${log.prettifyObj(menuState)}`)
@@ -480,6 +480,7 @@
     function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) }
     function saveSetting(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
     // Define MENU functions
 
@@ -527,7 +528,7 @@
     function refreshMenu() {
         log.caller = `refreshMenu()`
         log.debug('Refreshing toolbar menu...')
-        if (get.userscriptManager() == 'OrangeMonkey') { log.debug('OrangeMonkey userscript manager unsupported.') ; return }
+        if (getUserscriptManager() == 'OrangeMonkey') { log.debug('OrangeMonkey userscript manager unsupported.') ; return }
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
         log.debug('Success! Menu refreshed')
     }
@@ -2566,7 +2567,7 @@
                                 : browser.isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
                                             : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!streamingSupported.userscriptManager) { // alert userscript manager unsupported, suggest TM/SC
-                log.debug(`Streaming Mode unsupported in ${get.userscriptManager()}`)
+                log.debug(`Streaming Mode unsupported in ${getUserscriptManager()}`)
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
                         + ( !browser.isEdge && !browser.isBrave ? // suggest TM for supported browsers
@@ -2648,7 +2649,7 @@
             log.caller = 'session.deleteOpenAIcookies()'
             log.debug('Deleting OpenAI cookies...')
             GM_deleteValue(app.configKeyPrefix + '_openAItoken')
-            if (get.userscriptManager() != 'Tampermonkey') return
+            if (getUserscriptManager() != 'Tampermonkey') return
             GM_cookie.list({ url: apis.OpenAI.endpoints.auth }, (cookies, error) => {
                 if (!error) { for (const cookie of cookies) {
                     GM_cookie.delete({ url: apis.OpenAI.endpoints.auth, name: cookie.name })
@@ -2914,9 +2915,7 @@
                 onload: resp => dataProcess.text(get.related, resp).then(resolve),
                 onerror: err => { log.error(err) ; api.tryNew(get.related) }
             }))
-        },
-
-        userscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
+        }
     }
 
     // Define PROCESS functions
