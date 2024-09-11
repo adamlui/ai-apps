@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.11.3
+// @version                  2024.9.11.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2452,9 +2452,10 @@
                 else if (btn.id == 'arrows-btn') btn.onclick = () => toggle.expandedMode()
                 if (!browser.isMobile && btn.id != 'pin-btn') // add hover listeners for tooltips
                     btn.onmouseover = btn.onmouseout = toggle.tooltip
-                if (!/wsb|pin/.test(btn.id)) btn.onmouseup = () => { // add zoom/fade-out
+                if (!/wsb|pin/.test(btn.id)) btn.onmouseup = () => { // add zoom/fade-out except to WSB/pin btns
+                    if (config.fgAnimationsDisabled) return
                     if (!(btn.id == 'font-size-btn' && appDiv.querySelector('#font-size-slider-track')?.classList.contains('active')))
-                        btn.style.animation = 'btn-zoom-fade-out .220s ease-out'
+                        btn.style.animation = 'btn-zoom-fade-out .220s ease-out' // animate except when dismissing Font Size slider
                     setTimeout(() => { // hide btn after animation nears completion
                         Object.assign(btn.style, { opacity: '0', visibility: 'hidden', animation: '' })
                         setTimeout(() => // show btn after short delay
@@ -3431,6 +3432,7 @@
                     if (!browser.isMobile) toggle.tooltip(event) // show copied status in tooltip
                 }
                 copySpan.onmouseup = () => { // zoom/fade-out
+                    if (config.fgAnimationsDisabled) return
                     const copySVG = copySpan.querySelector('#copy-icon')
                     if (!copySVG) return // since clicking on copied icon
                     copySpan.style.animation = `btn-zoom-fade-out .${fadeDuration}s ease-out`
