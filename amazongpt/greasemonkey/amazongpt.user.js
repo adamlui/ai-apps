@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.11.2
+// @version                2024.9.11.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2518,9 +2518,9 @@
         copyBtns() {
             if (document.getElementById('copy-btn')) return
 
-            show.copyBtns.fadeDuration = 220 // ms
-            show.copyBtns.reappearDelay = 200 // ms
-            show.copyBtns.fadeDurationOffset = 150 // ms — for early hide to not trigger overflow scrollbar
+            const fadeDuration = 220, // ms
+                  reappearDelay = 200, // ms
+                  fadeDurationOffset = 150 // ms — for early hide to not trigger overflow scrollbar
 
             appDiv.querySelectorAll('#amzgpt > pre, code').forEach(parentElem => {
                 const copySpan = document.createElement('span'),
@@ -2546,7 +2546,7 @@
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
                           checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.id = 'copied-icon'
                     setTimeout(() => copySpan.replaceChild(checkmarksSVG, copySVG), // change to copied icon
-                        show.copyBtns.fadeDuration + show.copyBtns.reappearDelay - show.copyBtns.fadeDurationOffset) // ...after copySpan reappears
+                        fadeDuration + reappearDelay - fadeDurationOffset) // ...after copySpan reappears
                     setTimeout(() => copySpan.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
                     navigator.clipboard.writeText(textToCopy) // copy text to clipboard
                     if (!browser.isMobile) toggle.tooltip(event) // show copied status in tooltip
@@ -2554,12 +2554,12 @@
                 copySpan.onmouseup = () => { // zoom/fade-out
                     const copySVG = copySpan.querySelector('#copy-icon')
                     if (!copySVG) return // since clicking on copied icon
-                    copySpan.style.animation = `btn-zoom-fade-out .${show.copyBtns.fadeDuration}s ease-out`
+                    copySpan.style.animation = `btn-zoom-fade-out .${fadeDuration}s ease-out`
                     setTimeout(() => { // hide copySpan after animation nears completion
                         Object.assign(copySpan.style, { opacity: '0', visibility: 'hidden', animation: '' })
-                        setTimeout(() => // show copySpan after show.copyBtns.reappearDelay
-                            Object.assign(copySpan.style, { visibility: 'visible', opacity: '1' }), show.copyBtns.reappearDelay)
-                    }, show.copyBtns.fadeDuration - show.copyBtns.fadeDurationOffset)
+                        setTimeout(() => // show copySpan after reappearDelay
+                            Object.assign(copySpan.style, { visibility: 'visible', opacity: '1' }), reappearDelay)
+                    }, fadeDuration - fadeDurationOffset)
                 }
 
                 // Prepend button

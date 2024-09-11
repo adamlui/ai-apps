@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.11.1
+// @version                2014.9.11.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -3086,9 +3086,9 @@
         copyBtns() {
             if (document.getElementById('copy-btn')) return
 
-            show.copyBtns.fadeDuration = 220 // ms
-            show.copyBtns.reappearDelay = 200 // ms
-            show.copyBtns.fadeDurationOffset = 150 // ms — for early hide to not trigger overflow scrollbar
+            const fadeDuration = 220, // ms
+                  reappearDelay = 200, // ms
+                  fadeDurationOffset = 150 // ms — for early hide to not trigger overflow scrollbar
 
             appDiv.querySelectorAll('#ddgpt > pre, code').forEach(parentElem => {
                 const copySpan = document.createElement('span'),
@@ -3114,7 +3114,7 @@
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
                           checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.id = 'copied-icon'
                     setTimeout(() => copySpan.replaceChild(checkmarksSVG, copySVG), // change to copied icon
-                        show.copyBtns.fadeDuration + show.copyBtns.reappearDelay - show.copyBtns.fadeDurationOffset) // ...after copySpan reappears
+                        fadeDuration + reappearDelay - fadeDurationOffset) // ...after copySpan reappears
                     setTimeout(() => copySpan.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
                     navigator.clipboard.writeText(textToCopy) // copy text to clipboard
                     if (!browser.isMobile) toggle.tooltip(event) // show copied status in tooltip
@@ -3122,12 +3122,12 @@
                 copySpan.onmouseup = () => { // zoom/fade-out
                     const copySVG = copySpan.querySelector('#copy-icon')
                     if (!copySVG) return // since clicking on copied icon
-                    copySpan.style.animation = `btn-zoom-fade-out .${show.copyBtns.fadeDuration}s ease-out`
+                    copySpan.style.animation = `btn-zoom-fade-out .${fadeDuration}s ease-out`
                     setTimeout(() => { // hide copySpan after animation nears completion
                         Object.assign(copySpan.style, { opacity: '0', visibility: 'hidden', animation: '' })
-                        setTimeout(() => // show copySpan after show.copyBtns.reappearDelay
-                            Object.assign(copySpan.style, { visibility: 'visible', opacity: '1' }), show.copyBtns.reappearDelay)
-                    }, show.copyBtns.fadeDuration - show.copyBtns.fadeDurationOffset)
+                        setTimeout(() => // show copySpan after reappearDelay
+                            Object.assign(copySpan.style, { visibility: 'visible', opacity: '1' }), reappearDelay)
+                    }, fadeDuration - fadeDurationOffset)
                 }
 
                 // Prepend button
