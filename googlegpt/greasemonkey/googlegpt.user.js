@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.11.1
+// @version                  2024.9.11.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -427,12 +427,8 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
     // Init BROWSER flags
-    const browser = {
-        isChrome: chatgpt.browser.isChrome(),
-        isFirefox: chatgpt.browser.isFirefox(),
-        isEdge: chatgpt.browser.isEdge(),
-        isBrave: chatgpt.browser.isBrave(),
-        isMobile: chatgpt.browser.isMobile() }
+    const browser = {} ; ['Chrome', 'Firefox', 'Edge', 'Brave', 'Mobile'].forEach(platform =>
+          browser['is' + platform] = chatgpt.browser['is' + platform]())
     browser.isPortrait = browser.isMobile && (window.innerWidth < window.innerHeight)
 
     // Init DEBUG mode

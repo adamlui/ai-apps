@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.11.1
+// @version               2024.9.11.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -238,12 +238,8 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
     // Init BROWSER flags
-    const browser = {
-        isChrome: chatgpt.browser.isChrome(),
-        isFirefox: chatgpt.browser.isFirefox(),
-        isEdge: chatgpt.browser.isEdge(),
-        isBrave: chatgpt.browser.isBrave(),
-        isMobile: chatgpt.browser.isMobile() }
+    const browser = {} ; ['Chrome', 'Firefox', 'Edge', 'Brave', 'Mobile'].forEach(platform =>
+          browser['is' + platform] = chatgpt.browser['is' + platform]())
     browser.isPortrait = browser.isMobile && (window.innerWidth < window.innerHeight)
 
     // Init DEBUG mode

@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.11
+// @version                2014.9.11.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -238,12 +238,8 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
     // Init BROWSER flags
-    const browser = {
-        isChrome: chatgpt.browser.isChrome(),
-        isFirefox: chatgpt.browser.isFirefox(),
-        isEdge: chatgpt.browser.isEdge(),
-        isBrave: chatgpt.browser.isBrave(),
-        isMobile: chatgpt.browser.isMobile() }
+    const browser = {} ; ['Chrome', 'Firefox', 'Edge', 'Brave', 'Mobile'].forEach(platform =>
+          browser['is' + platform] = chatgpt.browser['is' + platform]())
     browser.isPortrait = browser.isMobile && (window.innerWidth < window.innerHeight)
 
     // Init DEBUG mode
