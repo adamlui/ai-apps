@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.10.9
+// @version                2024.9.11
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -582,7 +582,7 @@
             log.debug(`Dismissing div#${modal?.id}...`)
             const modalContainer = modal?.parentNode
             if (!modalContainer) return
-            modalContainer.style.animation = 'alert-zoom-fade-out .135s ease-out'
+            modalContainer.style.animation = 'modal-zoom-fade-out .135s ease-out'
             setTimeout(() => { modalContainer.remove() ; log.debug(`Success! div#${modal?.id} dismissed`)
                 }, 105) // delay for fade-out
         },
@@ -1402,7 +1402,11 @@
 
         appStyle() {
             appStyle.innerText = (
-                '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+                '@keyframes modal-zoom-fade-out { 0% { opacity: 1 } 50% { opacity: 0.25 ; transform: scale(1.05) }'
+                  + '100% { opacity: 0 ; transform: scale(1.35) }}'
+              + '@keyframes btn-zoom-fade-out { 0% { opacity: 1 } 50% { opacity: 0.65 ; transform: scale(1.85) }'
+                  + '75% { opacity: 0.05 ; transform: scale(3.15) } 100% { opacity: 0 ; transform: scale(5.85) }}'
+              + '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
               + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
               + '#amzgpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
               + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
@@ -1428,11 +1432,13 @@
               + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
               + '#corner-btns { float: right ; margin-top: -2px }'
               + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
-                  + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
-              + ( config.bgAnimationsDisabled ? '' : ( '#amzgpt-logo, .corner-btn svg'
-                  + `{ filter: drop-shadow(${ scheme == 'dark' ? '#7171714d 10px' : '#84848421 7px' } 7px 3px) }` ))
+                  + `${ scheme == 'dark' ? 'fill: white ; stroke: white' : 'fill: #adadad ; stroke: #adadad' };` // color
+                  + 'transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out }' // for re-appearances from btn-zoom-fade-out ends
               + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
                   + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.285)' }}`
+              + `.corner-btn:active { ${ scheme == 'dark' ? 'fill: #999999 ; stroke: #999999' : 'fill: #638ed4 ; stroke: #638ed4' } }`
+              + ( config.bgAnimationsDisabled ? '' : ( '#amzgpt-logo, .corner-btn svg'
+                  + `{ filter: drop-shadow(${ scheme == 'dark' ? '#7171714d 10px' : '#84848421 7px' } 7px 3px) }` ))
               + '#amzgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
               + '#amzgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
               + '#font-size-slider-track { width: 98% ; height: 7px ; margin: -6px auto -13px ; padding: 15px 0 ;'
@@ -1582,9 +1588,6 @@
                   + `min-width: ${ browser.isPortrait ? 288 : 755 }px ; max-width: 75vw ; word-wrap: break-word ;`
                   + 'margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                   + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
-              + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 }'
-                  + '50% { opacity: 0.25 ; transform: scale(1.05) }'
-                  + '100% { opacity: 0 ; transform: scale(1.35) }}'
               + '#amzgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ;'
                   + `margin: 0 ${ browser.isMobile ? 6 : 24 }px 8px 0 }`
               + `#amzgpt-settings-title h4 { font-size: ${ browser.isPortrait ? 26 : 31 }px ; font-weight: bold ; margin-top: -25px }`
@@ -1749,6 +1752,15 @@
                 else if (btn.id == 'arrows-btn') btn.onclick = () => toggle.expandedMode()
                 if (!browser.isMobile) // add hover listeners for tooltips
                     btn.onmouseover = btn.onmouseout = toggle.tooltip
+                if (!/wsb|pin/.test(btn.id)) btn.onmouseup = () => { // add zoom/fade-out
+                    if (!(btn.id == 'font-size-btn' && appDiv.querySelector('#font-size-slider-track')?.classList.contains('active')))
+                        btn.style.animation = 'btn-zoom-fade-out .220s ease-out'
+                    setTimeout(() => { // hide btn after animation nears completion
+                        Object.assign(btn.style, { opacity: '0', visibility: 'hidden', animation: '' })
+                        setTimeout(() => // show btn after short delay
+                            Object.assign(btn.style, { visibility: 'visible', opacity: '1' }), 200)
+                    }, 170)
+                }
             })            
         },
 
@@ -2509,6 +2521,11 @@
 
         copyBtns() {
             if (document.getElementById('copy-btn')) return
+
+            show.copyBtns.fadeDuration = 220 // ms
+            show.copyBtns.reappearDelay = 200 // ms
+            show.copyBtns.fadeDurationOffset = 150 // ms — for early hide to not trigger overflow scrollbar
+
             appDiv.querySelectorAll('#amzgpt > pre, code').forEach(parentElem => {
                 const copySpan = document.createElement('span'),
                       copySVG = icons.copy.create(parentElem)
@@ -2532,10 +2549,21 @@
                                                                                : copySpan.parentNode.parentNode, // code container
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
                           checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.id = 'copied-icon'
-                    copySpan.replaceChild(checkmarksSVG, copySVG) // change to copied icon
+                    setTimeout(() => copySpan.replaceChild(checkmarksSVG, copySVG), // change to copied icon
+                        show.copyBtns.fadeDuration + show.copyBtns.reappearDelay - show.copyBtns.fadeDurationOffset) // ...after copySpan reappears
                     setTimeout(() => copySpan.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
                     navigator.clipboard.writeText(textToCopy) // copy text to clipboard
                     if (!browser.isMobile) toggle.tooltip(event) // show copied status in tooltip
+                }
+                copySpan.onmouseup = () => { // zoom/fade-out
+                    const copySVG = copySpan.querySelector('#copy-icon')
+                    if (!copySVG) return // since clicking on copied icon
+                    copySpan.style.animation = `btn-zoom-fade-out .${show.copyBtns.fadeDuration}s ease-out`
+                    setTimeout(() => { // hide copySpan after animation nears completion
+                        Object.assign(copySpan.style, { opacity: '0', visibility: 'hidden', animation: '' })
+                        setTimeout(() => // show copySpan after show.copyBtns.reappearDelay
+                            Object.assign(copySpan.style, { visibility: 'visible', opacity: '1' }), show.copyBtns.reappearDelay)
+                    }, show.copyBtns.fadeDuration - show.copyBtns.fadeDurationOffset)
                 }
 
                 // Prepend button
