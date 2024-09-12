@@ -234,7 +234,7 @@
         // Tweak chatbar
         if (/chatgpt|openai/.test(site)) { // allow tooltips to overflow
             chatbar.classList.remove('overflow-hidden')
-            chatbar.querySelector(inputSelector).style.width = 'fit-content' // rid h-scrollbar
+            chatbar.querySelector(inputSelector).style.width = '100%' // rid h-scrollbar
         } else if (site == 'poe') { // left-align attach file button
             const attachFileBtn = chatbar.querySelector('button[class*="File"]')
             if (attachFileBtn) {
