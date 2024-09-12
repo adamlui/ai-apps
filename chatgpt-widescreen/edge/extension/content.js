@@ -83,9 +83,9 @@
         remove() {
             const chatbar = document.querySelector(inputSelector)?.parentNode.parentNode.parentNode
             if (chatbar?.contains(btns.wideScreen)) { // remove all buttons
-                const nodesToRemove = [btns.newChat, btns.wideScreen, btns.fullScreen, tooltipDiv]
-                if (typeof btns.fullWindow != 'undefined') nodesToRemove.push(btns.fullWindow)
-                for (const node of nodesToRemove) chatbar.removeChild(node)
+                const btnsToRemove = [btns.newChat, btns.wideScreen, btns.fullScreen, tooltipDiv]
+                if (typeof btns.fullWindow != 'undefined') btnsToRemove.push(btns.fullWindow)
+                for (const node of btnsToRemove) chatbar.removeChild(node)
             }
         },
 
