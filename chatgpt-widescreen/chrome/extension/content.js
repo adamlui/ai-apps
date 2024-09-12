@@ -282,11 +282,11 @@
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
             /chatgpt|openai/.test(site) ? (
-                  ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
+                  ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbor btns on hover
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
-                + ( config.hiddenFooter ? hfStyle : '' )) // hide footer
-          : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' // h-pad mic btn for even spread
-          : '' )
+                + ( config.hiddenFooter ? hfStyle : '' ) // hide footer
+                + 'div:has(+ main) { display: none !important }' // hide ugly double temp chat header
+            ) : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' )// h-pad mic btn for even spread
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
         + `#newChat-btn { display: ${ config.ncbDisabled ? 'none' : 'flex' }}`
     }
