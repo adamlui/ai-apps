@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.12.10
+// @version             2024.9.12.11
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -864,7 +864,7 @@
 
     // Create/apply general style TWEAKS
     const tweaksStyle = create.style(),
-          tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
+          tcbStyle = `${ site == 'poe' ? inputSelector : 'div[class*="prose"]'} { max-height: 68vh }`, // heighten chatbox
           hhStyle = headerSelector + '{ display: none !important }' // hide header
                   + ( /chatgpt|openai/.test(site) ? 'main { padding-top: 12px }' : '' ), // increase top-padding
           hfStyle = footerSelector + '{ visibility: hidden ;' // hide footer text
