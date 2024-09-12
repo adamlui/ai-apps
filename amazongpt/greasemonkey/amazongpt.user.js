@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.12
+// @version                2024.9.12.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -444,6 +444,32 @@
                 modals.init(noUpdateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 modals.about.show()
     }})}
+
+    // Define FACTORY functions
+
+    const create = {
+
+        anchor(linkHref, displayContent, attrs = {}) {
+            const anchor = document.createElement('a'),
+                  defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
+                  finalAttrs = { ...defaultAttrs, ...attrs }
+            Object.entries(finalAttrs).forEach(([attr, value]) => anchor.setAttribute(attr, value))
+            if (displayContent) anchor.append(displayContent)
+            return anchor
+        },
+
+        style(content) {
+            const style = document.createElement('style')
+            if (content) style.innerText = content
+            return style
+        },
+
+        svgElem(type, attrs) {
+            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
+            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
+            return elem
+        }
+    }
 
     // Define FEEDBACK functions
 
@@ -1957,32 +1983,6 @@
                 sliderTip.style.display = slider.style.display = 'none'
                 log.debug('Success! Font Size slider hidden')
             }
-        }
-    }
-
-    // Define FACTORY functions
-
-    const create = {
-
-        anchor(linkHref, displayContent, attrs = {}) {
-            const anchor = document.createElement('a'),
-                  defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
-                  finalAttrs = { ...defaultAttrs, ...attrs }
-            Object.entries(finalAttrs).forEach(([attr, value]) => anchor.setAttribute(attr, value))
-            if (displayContent) anchor.append(displayContent)
-            return anchor
-        },
-
-        style(content) {
-            const style = document.createElement('style')
-            if (content) style.innerText = content
-            return style
-        },
-
-        svgElem(type, attrs) {
-            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
-            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
-            return elem
         }
     }
 

@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.12.6
+// @version             2024.9.12.7
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -521,6 +521,23 @@
                 launchAboutModal()
     }})}
 
+    // Define FACTORY functions
+
+    const create = {
+
+        style(content) {
+            const style = document.createElement('style')
+            if (content) style.innerText = content
+            return style
+        },
+
+        svgElem(type, attrs) {
+            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
+            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
+            return elem
+        }
+    }
+
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
@@ -657,23 +674,6 @@
     
             // Update SVG
             if (!btn.contains(btnSVG)) btn.append(btnSVG)
-        }
-    }
-
-    // Define FACTORY functions
-
-    const create = {
-
-        style(content) {
-            const style = document.createElement('style')
-            if (content) style.innerText = content
-            return style
-        },
-
-        svgElem(type, attrs) {
-            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
-            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
-            return elem
         }
     }
 

@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.12
+// @version                2014.9.12.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -596,6 +596,32 @@
                 modals.init(noUpdateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 modals.about.show()
     }})}
+
+    // Define FACTORY functions
+
+    const create = {
+
+        anchor(linkHref, displayContent, attrs = {}) {
+            const anchor = document.createElement('a'),
+                  defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
+                  finalAttrs = { ...defaultAttrs, ...attrs }
+            Object.entries(finalAttrs).forEach(([attr, value]) => anchor.setAttribute(attr, value))
+            if (displayContent) anchor.append(displayContent)
+            return anchor
+        },
+
+        style(content) {
+            const style = document.createElement('style')
+            if (content) style.innerText = content
+            return style
+        },
+
+        svgElem(type, attrs) {
+            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
+            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
+            return elem
+        }
+    }
 
     // Define FEEDBACK functions
 
@@ -2358,32 +2384,6 @@
                 sliderTip.style.display = slider.style.display = 'none'
                 log.debug('Success! Font Size slider hidden')
             }
-        }
-    }
-
-    // Define FACTORY functions
-
-    const create = {
-
-        anchor(linkHref, displayContent, attrs = {}) {
-            const anchor = document.createElement('a'),
-                  defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
-                  finalAttrs = { ...defaultAttrs, ...attrs }
-            Object.entries(finalAttrs).forEach(([attr, value]) => anchor.setAttribute(attr, value))
-            if (displayContent) anchor.append(displayContent)
-            return anchor
-        },
-
-        style(content) {
-            const style = document.createElement('style')
-            if (content) style.innerText = content
-            return style
-        },
-
-        svgElem(type, attrs) {
-            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
-            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
-            return elem
         }
     }
 
