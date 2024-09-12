@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.12
+// @version             2024.9.12.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -665,8 +665,8 @@
 
         async continue() {
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(err) {}
-            await chatgpt.isIdle() // before starting delay till next iteration
             chatgpt.send('Do it again.')
+            await chatgpt.isIdle() // before starting delay till next iteration
             if (infinityMode.isActive) // replace timer
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
         },

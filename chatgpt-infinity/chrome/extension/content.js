@@ -170,8 +170,8 @@
 
         async continue() {
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(err) {}
-            await chatgpt.isIdle() // before starting delay till next iteration
             chatgpt.send('Do it again.')
+            await chatgpt.isIdle() // before starting delay till next iteration
             if (infinityMode.isActive) // replace timer
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
         },
