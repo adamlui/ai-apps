@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.11.3
+// @version             2024.9.11.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -573,7 +573,10 @@
         }
 
         // Insert buttons
-        const elemsToInsert = [newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn, tooltipDiv]
+        const elemsToInsert = [ newChatBtn, wideScreenBtn,
+            (() => { try { return fullWindowBtn } catch (err) { return null }})(),
+            fullScreenBtn, tooltipDiv
+        ].filter(btn => btn) // filter out null fullWindowBtn if not initted as guest on chatgpt.com
         const elemToInsertBefore = (
             /chatgpt|openai/.test(site) ? chatbar.querySelector('button[class*="right"]') // ChatGPT pre-5/2024
                                        || chatbar.lastChild // ChatGPT post-5/2024 + Poe
@@ -660,13 +663,13 @@
     }
 
     function updateTooltip(buttonType) { // text & position
-        tooltipDiv.innerText = msgs['tooltip_' + buttonType + (
-            !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON'))]
+        const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
+            .filter(type => !(type == 'fullWindow' && isNoSidebar))
         const ctrAddend = 25 + ( site == 'poe' ? 45 : 12 ),
               spreadFactor = site == 'poe' ? 35 : 30.5,
-              iniRoffset = spreadFactor * ( buttonType.includes('fullScreen') ? 1
-                                          : buttonType.includes('fullWindow') ? 2
-                                          : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
+              iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
+        tooltipDiv.innerText = msgs['tooltip_' + buttonType + (
+            !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON'))]
         tooltipDiv.style.right = `${ // horizontal position
             iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
     }
@@ -709,7 +712,7 @@
 
     function isFullWindow() {
         return site == 'poe' ? !!document.getElementById('fullWindow-mode')
-                             : chatgpt.sidebar.isOff()
+                             : isNoSidebar || chatgpt.sidebar.isOff()
     }
 
     function syncMode(mode) { // setting + icon + tooltip
@@ -795,8 +798,9 @@
         return // exit script
     } else registerMenu() // create functional menu
 
-    // Init UI flag
-    const isGPT4oUI = document.documentElement.className.includes(' ')
+    // Init UI flags
+    const isGPT4oUI = document.documentElement.className.includes(' '),
+          isNoSidebar = /chatgpt|openai/.test(site) && !chatgpt.getNewChatLink()
 
     // Save FULL-WINDOW + FULL SCREEN states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : config.fullWindow
@@ -856,8 +860,9 @@
         + sidepadSelector + '{ padding-left: 0 }' ) // remove side padding
 
     // Create/insert chatbar BUTTONS
-    const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
-          bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
+    const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
+        .filter(type => !(type == 'fullWindow' && isNoSidebar))
+    const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
     let btnColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
@@ -917,15 +922,16 @@
                      || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)) { // temp chat toggled
                             btnColor = setBtnColor() // init new color
                             chatbarBGdiv.style.overflow = 'visible' // allow tooltips to overflow pre-GPT4o UI
-                            const buttons = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-                            buttons.forEach(btn => updateBtnSVG(btn)) ; isTempChat = !isTempChat
+                            const buttons = ['fullScreen', 'wideScreen', 'newChat']
+                            if (typeof fullWindowBtn != 'undefined') buttons.push('fullWindow')
+                            buttons.forEach(type => updateBtnSVG(type)) ; isTempChat = !isTempChat
         }}}
     })
     nodeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
     nodeObserver.observe(document.querySelector('main'), { attributes: true, subtree: true }); // <main> for chatbar changes
 
     // Monitor SIDEBAR to update full-window setting
-    if (/chatgpt|openai/.test(site)) {
+    if (/chatgpt|openai/.test(site) && !isNoSidebar) {
         const sidebarObserver = new MutationObserver(() => {
             const fullWindowState = isFullWindow()
             if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))

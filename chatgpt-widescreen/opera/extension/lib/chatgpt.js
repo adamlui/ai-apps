@@ -249,6 +249,8 @@ const chatgpt = {
                 return navBtnSVG.parentNode;
     },
 
+    getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
+
     getRegenerateButton() {   
         for (const mainSVG of document.querySelectorAll('main svg')) {
             if (mainSVG.querySelector('path[d^="M3.06957"]')) // regen icon found
