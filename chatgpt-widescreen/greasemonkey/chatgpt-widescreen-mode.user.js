@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.10.5
+// @version             2024.9.11
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -558,13 +558,14 @@
     function insertBtns() {
 
         // Init chatbar
-        const chatbar = document.querySelector(inputSelector)?.parentNode.parentNode
+        const chatbar = document.querySelector(inputSelector)?.parentNode.parentNode.parentNode
         if (!chatbar || chatbar.contains(wideScreenBtn)) return // if chatbar missing or buttons aren't missing, exit
 
         // Tweak chatbar
-        if (/chatgpt|openai/.test(site)) // allow tooltips to overflow
+        if (/chatgpt|openai/.test(site)) { // allow tooltips to overflow
             chatbar.classList.remove('overflow-hidden')
-        else if (site == 'poe') { // left-align attach file button
+            chatbar.querySelector(inputSelector).style.width = 'fit-content' // rid h-scrollbar
+        } else if (site == 'poe') { // left-align attach file button
             const attachFileBtn = chatbar.querySelector('button[class*="File"]')
             if (attachFileBtn) {
                 attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
@@ -909,8 +910,8 @@
 
         // Update button colors on ChatGPT scheme or temp chat toggle
         if (/chatgpt|openai/.test(site)) {
-            let chatbarBGdiv = document.querySelector('textarea')
-            for (let i = 0 ; i < ( isGPT4oUI ? 3 : 1 ) ; i++) { chatbarBGdiv = chatbarBGdiv.parentNode }
+            let chatbarBGdiv = document.querySelector(inputSelector)
+            for (let i = 0 ; i < ( isGPT4oUI ? 3 : 1 ) ; i++) { chatbarBGdiv = chatbarBGdiv?.parentNode }
             if (chatbarBGdiv) {
                 const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
                 if ((mutation.type === 'attributes' && mutation.attributeName === 'class') // potential scheme toggled
