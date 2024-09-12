@@ -176,6 +176,12 @@
  
     // Define FACTORY functions
 
+    function createStyle(content) {
+        const style = document.createElement('style')
+        if (content) style.innerText = content
+        return style
+    }
+
     function createSVGelem(tagName, attributes) {
         const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
         for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])       
@@ -336,25 +342,22 @@
     config.fullScreen = chatgpt.isFullScreen()
 
     // Create/apply BUTTON style
-    const btnStyle = document.createElement('style')
-    btnStyle.innerText = `div[id$="-btn"] svg { fill: ${btns.setColor()} }`
-    document.head.append(btnStyle)
+    const btnStyle = createStyle() ; updateBtnStyle() ; document.head.append(btnStyle)
 
     // Create/stylize TOOLTIP div
     const tooltipDiv = document.createElement('div')
-    tooltipDiv.classList.add('toggle-tooltip')
-    const tooltipStyle = document.createElement('style')
-    tooltipStyle.innerText = '.toggle-tooltip {'
+    tooltipDiv.classList.add('cwm-tooltip')
+    document.head.append(createStyle('.cwm-tooltip {'
         + 'background-color: rgba(0, 0, 0, 0.71) ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.85rem ; color: white ;' // font style
         + 'position: absolute ; bottom: 50px ;' // v-position
         + 'box-shadow: 4px 6px 16px 0 rgb(0 0 0 / 38%) ;' // drop shadow
         + 'opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 ;' // visibility
-        + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-    document.head.append(tooltipStyle)
+        + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }' // disable select
+    ))
 
     // Create/apply general style TWEAKS
-    const tweaksStyle = document.createElement('style'),
+    const tweaksStyle = createStyle(),
           tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
           hhStyle = headerSelector + '{ display: none !important }' // hide header
                   + ( /chatgpt|openai/.test(site) ? 'main { padding-top: 12px }' : '' ), // increase top-padding
@@ -364,7 +367,7 @@
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create WIDESCREEN style
-    const wideScreenStyle = document.createElement('style')
+    const wideScreenStyle = createStyle()
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
         /chatgpt|openai/.test(site) ? 'main form { max-width: 96% !important }'
@@ -372,7 +375,7 @@
     updateWidescreenStyle()
 
     // Create FULL-WINDOW style
-    const fullWindowStyle = document.createElement('style')
+    const fullWindowStyle = createStyle()
     fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
     fullWindowStyle.innerText = (
           sidebarSelector + ' { display: none } ' // hide sidebar
