@@ -73,7 +73,10 @@
         insert() {
 
             // Init chatbar
-            const chatbar = document.querySelector(inputSelector)?.parentNode.parentNode.parentNode
+            let chatbar = document.querySelector(inputSelector)
+            const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
+            for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
+
             if (!chatbar || chatbar.contains(btns.wideScreen)) return // if chatbar missing or buttons aren't missing, exit
     
             // Tweak chatbar
@@ -98,7 +101,9 @@
         },
     
         remove() {
-            const chatbar = document.querySelector(inputSelector)?.parentNode.parentNode.parentNode
+            let chatbar = document.querySelector(inputSelector)
+            const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
+            for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
             if (chatbar?.contains(btns.wideScreen)) { // remove all buttons
                 const btnsToRemove = [btns.newChat, btns.wideScreen, btns.fullScreen, tooltipDiv]
                 if (typeof btns.fullWindow != 'undefined') btnsToRemove.push(btns.fullWindow)
