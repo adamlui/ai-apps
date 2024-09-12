@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.12.5
+// @version             2024.9.12.6
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -662,16 +662,19 @@
 
     // Define FACTORY functions
 
-    function create.style(content) {
-        const style = document.createElement('style')
-        if (content) style.innerText = content
-        return style
-    }
+    const create = {
 
-    function create.svgElem(tagName, attributes) {
-        const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
-        for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])
-        return elem
+        style(content) {
+            const style = document.createElement('style')
+            if (content) style.innerText = content
+            return style
+        },
+
+        svgElem(type, attrs) {
+            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
+            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
+            return elem
+        }
     }
 
     // Define TOOLTIP functions
