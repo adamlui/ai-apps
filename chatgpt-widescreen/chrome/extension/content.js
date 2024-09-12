@@ -460,6 +460,7 @@
                     if (config.fullWindow && !isFullWindow()) toggleMode('fullWindow', 'ON')
                     updateTweaksStyle() // sync taller chatbox + hidden header/footer
                     updateWidescreenStyle() // sync wider chatbox
+                    insertBtns()
     }})}
 
 })()
