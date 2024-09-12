@@ -6,6 +6,7 @@
 (async () => {
 
     const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
+    if (!/chatgpt|openai|poe/.test(site)) return
 
     // Import LIBS
     const { app, config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
@@ -309,8 +310,6 @@
     
     // Run MAIN routine
 
-    // Selectively DISABLE content or user script
-    if (!/chatgpt|openai|poe/.test(site)) return
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
     // Define UI element SELECTORS
