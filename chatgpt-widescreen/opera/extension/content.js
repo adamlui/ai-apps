@@ -161,7 +161,6 @@
                 if ((mutation.type === 'attributes' && mutation.attributeName === 'class') // potential scheme toggled
                      || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)) { // temp chat toggled
                             btnColor = setBtnColor() // init new color
-                            chatbarBGdiv.style.overflow = 'visible' // allow tooltips to overflow pre-GPT4o UI
                             const visibleBtnTypes = ['fullScreen', 'wideScreen', 'newChat']
                             if (typeof fullWindowBtn != 'undefined') visibleBtnTypes.push('fullWindow')
                             visibleBtnTypes.forEach(type => updateBtnSVG(type)) ; isTempChat = !isTempChat
