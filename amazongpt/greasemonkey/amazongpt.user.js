@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.12.1
+// @version                2024.9.12.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2415,7 +2415,7 @@
                         if (nowResult.id) apis.GPTforLove.parentID = nowResult.id // for contextual replies
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
-                    const failMatch = textToShow.match(failFlagsAndURLs)
+                    const failMatch = failFlagsAndURLs.exec(textToShow)
                     if (failMatch) {
                         log.debug('Response text', textToShow)
                         log.error('Fail flag detected', failMatch[0])
@@ -2449,7 +2449,7 @@
                                                     : ['openAInotWorking', 'suggestProxy'] )
                     else api.tryNew(caller)
                 } else if (caller.api == 'OpenAI' && resp.response) {
-                    const failMatch = resp.response.match(failFlagsAndURLs)
+                    const failMatch = failFlagsAndURLs.exec(resp.response)
                     if (failMatch) { // suggest proxy
                         log.debug('Response text', resp.response)
                         log.error('Fail flag detected', failMatch[0])
@@ -2495,7 +2495,7 @@
 
                 function handleProcessCompletion() {
                     if (caller.status != 'done') {
-                        const failMatch = respText.match(failFlagsAndURLs)
+                        const failMatch = failFlagsAndURLs.exec(respText)
                         if (failMatch) {
                             log.debug('Response text', respText)
                             log.error('Fail flag detected', failMatch[0])
