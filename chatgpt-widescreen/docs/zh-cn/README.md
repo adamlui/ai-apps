@@ -179,12 +179,12 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 
 <div align="center"><br>
 
-[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.07&h=46&w=46&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
-[![@XiaoYingYo](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?first-contrib=2023.03.06-original-script&h=46&w=46&mask=circle&maxage=7d "@XiaoYingYo")](https://github.com/XiaoYingYo)
-[![@mefengl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.12-new-chat-button&h=46&w=46&mask=circle&maxage=7d "@mefengl")](https://github.com/mefengl)
-[![@nhan000](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/85216095?first-contrib=2023.04.11-paginator-bug-report&h=46&w=46&mask=circle&maxage=7d "@nhan000")](https://github.com/nhan000)
-[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27-doc-translations&h=46&w=46&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
-[![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23-css-readability&h=46&w=46&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.07&h=46&w=46&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?first-contrib=2023.03.06-original-script&h=46&w=46&mask=circle&maxage=7d "@XiaoYingYo")](https://github.com/XiaoYingYo)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.12-new-chat-button&h=46&w=46&mask=circle&maxage=7d "@mefengl")](https://github.com/mefengl)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/85216095?first-contrib=2023.04.11-paginator-bug-report&h=46&w=46&mask=circle&maxage=7d "@nhan000")](https://github.com/nhan000)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27-doc-translations&h=46&w=46&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23-css-readability&h=46&w=46&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/8948329?first-contrib=2023.6.6-buttons-invisible-alert&h=46&w=46&mask=circle&maxage=7d "@RdJNL")](https://github.com/RdJNL)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/42227673?first-contrib=2023.06.26-poe-support-idea&h=46&w=46&mask=circle&maxage=7d "@wheregone")](https://github.com/wheregone)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58298118?first-contrib=2023.09.23-wider-chatbox-idea&h=46&w=46&mask=circle&maxage=7d "@Aubermean")](https://github.com/Aubermean)
