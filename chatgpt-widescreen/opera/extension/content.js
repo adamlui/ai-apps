@@ -33,7 +33,7 @@
 
     // Init UI flags
     const isGPT4oUI = document.documentElement.className.includes(' '),
-          isNoSidebar = /chatgpt|openai/.test(site) && !chatgpt.getNewChatLink()
+          hasNoSidebar = /chatgpt|openai/.test(site) && !chatgpt.getNewChatLink()
 
     // Define UI element SELECTORS
     await Promise.race([sendBtnIsLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
@@ -92,7 +92,7 @@
 
     // Create/insert chatbar BUTTONS
     const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-        .filter(type => !(type == 'fullWindow' && isNoSidebar))
+        .filter(type => !(type == 'fullWindow' && hasNoSidebar))
     const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
     let btnColor = setBtnColor()
     for (let i = 0 ; i < validBtnTypes.length ; i++) {
@@ -171,7 +171,7 @@
     nodeObserver.observe(document.querySelector('main'), { attributes: true, subtree: true }); // <main> for chatbar changes
 
     // Monitor SIDEBAR to update full-window setting
-    if (/chatgpt|openai/.test(site) && !isNoSidebar) {
+    if (/chatgpt|openai/.test(site) && !hasNoSidebar) {
         const sidebarObserver = new MutationObserver(() => {
             settings.load(['extensionDisabled']).then(() => {
                 if (!config.extensionDisabled) {
@@ -346,7 +346,7 @@
 
     function updateTooltip(btnType) { // text & position
         const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-            .filter(type => !(type == 'fullWindow' && isNoSidebar))
+            .filter(type => !(type == 'fullWindow' && hasNoSidebar))
         const ctrAddend = 25 + ( site == 'poe' ? 45 : 12 ),
               spreadFactor = site == 'poe' ? 35 : 30.5,
               iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
@@ -392,7 +392,7 @@
 
     function isFullWindow() {
         return site == 'poe' ? !!document.getElementById('fullWindow-mode')
-                             : isNoSidebar || chatgpt.sidebar.isOff()
+                             : hasNoSidebar || chatgpt.sidebar.isOff()
     }
 
     function syncMode(mode) { // setting + icon + tooltip
