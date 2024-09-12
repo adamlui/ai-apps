@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.12.8
+// @version             2024.9.12.9
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -575,9 +575,11 @@
             for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
     
             // Tweak chatbar
-            if (/chatgpt|openai/.test(site)) // rid h-scrollbar
-                chatbar.querySelector(inputSelector).style.width = '100%'
-            else if (site == 'poe') { // left-align attach file button
+            if (/chatgpt|openai/.test(site)) {
+                const inputArea = chatbar.querySelector(inputSelector)
+                inputArea.style.width = '100%' // rid h-scrollbar
+                inputArea.parentNode.style.width = `${ hasNoSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
+            } else if (site == 'poe') { // left-align attach file button
                 const attachFileBtn = chatbar.querySelector('button[class*="File"]')
                 if (attachFileBtn) {
                     attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
@@ -764,8 +766,7 @@
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
             /chatgpt|openai/.test(site) ? (
-                  ( inputSelector + '{ margin-right: -43px }' ) // widen/narrow input to be flush w/ btns
-                + ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbor btns on hover
+                  ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbor btns on hover
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) // hide footer
           : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' // h-pad mic btn for even spread
