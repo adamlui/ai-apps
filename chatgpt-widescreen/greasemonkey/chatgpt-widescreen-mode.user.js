@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.12.1
+// @version             2024.9.12.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -546,106 +546,123 @@
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(title, msg, btns, checkbox, width )}
 
-    // Define BUTTON functions
+    // Define BUTTON functions/props
 
-    function setBtnColor() { return (
-        /chatgpt|openai/.test(site) ? (
-            document.querySelector('.dark.bg-black, [class*="dark:bg-gray"]') // temp chat post-GPT4-o, pre-GPT-4o
-         || chatgpt.isDarkMode() ? 'white' : '#202123' )
-      : site == 'poe' ? 'currentColor' : ''
-    )}
+    const btns = {
 
-    function insertBtns() {
+        insert() {
 
-        // Init chatbar
-        const chatbar = document.querySelector(inputSelector)?.parentNode.parentNode.parentNode
-        if (!chatbar || chatbar.contains(btns.wideScreen)) return // if chatbar missing or buttons aren't missing, exit
-
-        // Tweak chatbar
-        if (/chatgpt|openai/.test(site)) // rid h-scrollbar
-            chatbar.querySelector(inputSelector).style.width = '100%'
-        else if (site == 'poe') { // left-align attach file button
-            const attachFileBtn = chatbar.querySelector('button[class*="File"]')
-            if (attachFileBtn) {
-                attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
-                document.querySelector(inputSelector).style.padding = '0 13px 0 40px' // accommodate new btn pos
+            // Init chatbar
+            const chatbar = document.querySelector(inputSelector)?.parentNode.parentNode.parentNode
+            if (!chatbar || chatbar.contains(btns.wideScreen)) return // if chatbar missing or buttons aren't missing, exit
+    
+            // Tweak chatbar
+            if (/chatgpt|openai/.test(site)) // rid h-scrollbar
+                chatbar.querySelector(inputSelector).style.width = '100%'
+            else if (site == 'poe') { // left-align attach file button
+                const attachFileBtn = chatbar.querySelector('button[class*="File"]')
+                if (attachFileBtn) {
+                    attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
+                    document.querySelector(inputSelector).style.padding = '0 13px 0 40px' // accommodate new btn pos
+                }
             }
+    
+            // Insert buttons
+            const btnsToInsert = [ btns.newChat, btns.wideScreen, btns.fullWindow, btns.fullScreen, tooltipDiv]
+                .filter(btn => btn) // filter out undefined btns.fullWindow if not initted as guest on chatgpt.com
+            const elemToInsertBefore = (
+                /chatgpt|openai/.test(site) ? chatbar.querySelector('button[class*="right"]') // ChatGPT pre-5/2024
+                                           || chatbar.lastChild // ChatGPT post-5/2024 + Poe
+                                            : chatbar.children[1] ) // Poe
+            btnsToInsert.forEach(elem => chatbar.insertBefore(elem, elemToInsertBefore))
+        },
+
+        sendIsLoaded() { // for borrowing classes
+            return new Promise(resolve => {
+                new MutationObserver((_, obs) => {
+                    if (chatgpt.getSendBtn()) { obs.disconnect() ; resolve(true) }}
+                ).observe(document.body, { childList: true, subtree: true })
+            })
+        },
+
+        setColor() {
+            return ( /chatgpt|openai/.test(site) ? (
+                  document.querySelector('.dark.bg-black, [class*="dark:bg-gray"]') // temp chat post-GPT4-o, pre-GPT-4o
+               || chatgpt.isDarkMode() ? 'white' : '#202123' )
+            : site == 'poe' ? 'currentColor' : ''
+        )},
+
+        svgElems: {
+
+            fullScreen: {
+                off: [
+                    createSVGelem('path', { d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
+                    createSVGelem('path', { d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
+                    createSVGelem('path', { d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
+                    createSVGelem('path', { d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
+                on: [
+                    createSVGelem('path', { d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
+                    createSVGelem('path', { d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
+                    createSVGelem('path', { d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
+                    createSVGelem('path', { d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
+            },
+
+            fullWindow: [
+                createSVGelem('rect', { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
+                createSVGelem('line', { fill: 'none', x1: '9', y1: '3', x2: '9', y2: '21' })
+            ],
+
+            newChat: [ createSVGelem('path', { d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ],
+
+            wideScreen: {
+                off: [
+                    createSVGelem('path', { 'fill-rule': 'evenodd',
+                        d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ],
+                on: [
+                    createSVGelem('path', { 'fill-rule': 'evenodd',
+                        d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
+            }
+        },
+
+        updateSVG(mode, state = '') {
+
+            // Define SVG viewbox + elems
+            const svgViewBox = ( mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '-2 -0.5 ' : '8 8 ' ) // move to XY coords to crop whitespace
+                             + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' ) // shrink to fit size
+    
+            // Pick appropriate button/elements
+            const [btn, ONelems, OFFelems] = (
+                mode == 'fullScreen' ? [btns.fullScreen, btns.svgElems.fullScreen.on, btns.svgElems.fullScreen.off]
+              : mode == 'fullWindow' ? [btns.fullWindow, btns.svgElems.fullWindow, btns.svgElems.fullWindow]
+              : mode == 'wideScreen' ? [btns.wideScreen, btns.svgElems.wideScreen.on, btns.svgElems.wideScreen.off]
+                                     : [btns.newChat, btns.svgElems.newChat, btns.svgElems.newChat])
+    
+            // Set SVG attributes
+            const btnSVG = btn.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            btnSVG.setAttribute('height', 18) // prevent shrinking
+            if (mode == 'fullWindow') { // stylize full-window button
+                btnSVG.setAttribute('stroke', btnColor)
+                btnSVG.setAttribute('fill', 'none')
+                btnSVG.setAttribute('stroke-width', '2')
+                btnSVG.setAttribute('height', site == 'poe' ? '2em' : 17)
+                btnSVG.setAttribute('width', site == 'poe' ? '2em' : 17)
+            }
+            btnSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
+            btnSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
+            if (/chatgpt|openai/.test(site)) // override button resizing
+                btnSVG.style.height = btnSVG.style.width = `${ isGPT4oUI ? 1.25 : 1.3 }rem`
+    
+            // Update SVG elements
+            while (btnSVG.firstChild) { btnSVG.removeChild(btnSVG.firstChild) }
+            const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
+            svgElems.forEach(elem => btnSVG.append(elem))
+    
+            // Update SVG
+            if (!btn.contains(btnSVG)) btn.append(btnSVG)
         }
-
-        // Insert buttons
-        const btnsToInsert = [ btns.newChat, btns.wideScreen, btns.fullWindow, btns.fullScreen, tooltipDiv]
-            .filter(btn => btn) // filter out undefined btns.fullWindow if not initted as guest on chatgpt.com
-        const elemToInsertBefore = (
-            /chatgpt|openai/.test(site) ? chatbar.querySelector('button[class*="right"]') // ChatGPT pre-5/2024
-                                       || chatbar.lastChild // ChatGPT post-5/2024 + Poe
-                                        : chatbar.children[1] ) // Poe
-        btnsToInsert.forEach(elem => chatbar.insertBefore(elem, elemToInsertBefore))
     }
 
-    function updateBtnSVG(mode, state = '') {
-
-        // Define SVG viewbox + elems
-        const svgViewBox = ( mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '-2 -0.5 ' : '8 8 ' ) // move to XY coords to crop whitespace
-                         + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' ) // shrink to fit size
-        const fullScreenONelems = [
-            createSVGelem('path', { fill: btnColor, d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
-            createSVGelem('path', { fill: btnColor, d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
-            createSVGelem('path', { fill: btnColor, d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
-            createSVGelem('path', { fill: btnColor, d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
-        const fullScreenOFFelems = [
-            createSVGelem('path', { fill: btnColor, d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
-            createSVGelem('path', { fill: btnColor, d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
-            createSVGelem('path', { fill: btnColor, d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
-            createSVGelem('path', { fill: btnColor, d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ]
-        const fullWindowElems = [
-            createSVGelem('rect', { x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
-            createSVGelem('line', { x1: '9', y1: '3', x2: '9', y2: '21' }) ]
-        const wideScreenONelems = [
-            createSVGelem('path', { fill: btnColor, 'fill-rule': 'evenodd',
-                d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
-        const wideScreenOFFelems = [
-            createSVGelem('path', { fill: btnColor, 'fill-rule': 'evenodd',
-                d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ]
-        const newChatElems = [ createSVGelem('path', { fill: btnColor, d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ]
-
-        // Pick appropriate button/elements
-        const [btn, ONelems, OFFelems] = (
-            mode == 'fullScreen' ? [btns.fullScreen, fullScreenONelems, fullScreenOFFelems]
-          : mode == 'fullWindow' ? [btns.fullWindow, fullWindowElems, fullWindowElems]
-          : mode == 'wideScreen' ? [btns.wideScreen, wideScreenONelems, wideScreenOFFelems]
-                                 : [btns.newChat, newChatElems, newChatElems])
-
-        // Set SVG attributes
-        const btnSVG = btn.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        btnSVG.setAttribute('height', 18) // prevent shrinking
-        if (mode == 'fullWindow') { // stylize full-window button
-            btnSVG.setAttribute('stroke', btnColor)
-            btnSVG.setAttribute('fill', 'none')
-            btnSVG.setAttribute('stroke-width', '2')
-            btnSVG.setAttribute('height', site == 'poe' ? '2em' : 17)
-            btnSVG.setAttribute('width', site == 'poe' ? '2em' : 17)
-        }
-        btnSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
-        btnSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
-        if (/chatgpt|openai/.test(site)) // override button resizing
-            btnSVG.style.height = btnSVG.style.width = `${ isGPT4oUI ? 1.25 : 1.3 }rem`
-
-        // Update SVG elements
-        while (btnSVG.firstChild) { btnSVG.removeChild(btnSVG.firstChild) }
-        const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
-        svgElems.forEach(elem => btnSVG.append(elem))
-
-        // Update SVG
-        if (!btn.contains(btnSVG)) btn.append(btnSVG)
-    }
-
-    function sendBtnIsLoaded() { // for borrowing classes
-        return new Promise(resolve => {
-            new MutationObserver((_, obs) => {
-                if (chatgpt.getSendBtn()) { obs.disconnect() ; resolve(true) }}
-            ).observe(document.body, { childList: true, subtree: true })
-        })
-    }
+    // Define FACTORY functions
 
     function createSVGelem(tagName, attributes) {
         const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
@@ -717,7 +734,7 @@
         const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
                       : mode == 'fullWindow' ? isFullWindow()
                                              : chatgpt.isFullScreen() )
-        saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
+        saveSetting(mode, state) ; btns.updateSVG(mode) ; updateTooltip(mode)
         if (mode == 'fullWindow') syncFullerWindows(state)
         if (!config.notifDisabled) // notify synced state
             notify(`${ msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
@@ -726,12 +743,12 @@
 
     function syncFullerWindows(fullWindowState) {
         if (fullWindowState && config.fullerWindows && !config.wideScreen) { // activate fuller windows
-            document.head.append(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
+            document.head.append(wideScreenStyle) ; btns.updateSVG('wideScreen', 'on')
         } else if (!fullWindowState) { // de-activate fuller windows
             try { document.head.removeChild(fullWindowStyle) } catch (err) {} // to remove style too so sidebar shows
             if (!config.wideScreen) { // disable widescreen if result of fuller window
                 try { document.head.removeChild(wideScreenStyle) } catch (err) {}
-                updateBtnSVG('wideScreen', 'off')
+                btns.updateSVG('wideScreen', 'off')
     }}}
 
     function updateTweaksStyle() {
@@ -770,7 +787,7 @@
     }
 
     // Define UI element SELECTORS
-    await Promise.race([sendBtnIsLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
+    await Promise.race([btns.sendIsLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
     const inputSelector = /chatgpt|openai/.test(site) ? '#prompt-textarea'
                         : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
           sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
@@ -803,6 +820,11 @@
     // Save FULL-WINDOW + FULL SCREEN states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : config.fullWindow
     config.fullScreen = chatgpt.isFullScreen()
+
+    // Create/apply BUTTON style
+    const btnStyle = document.createElement('style')
+    btnStyle.innerText = `div[id$="-btn"] svg { fill: ${btns.setColor()} }`
+    document.head.append(btnStyle)
 
     // Stylize ALERTS
     if (!document.getElementById('chatgpt-alert-override-style')) {
@@ -858,15 +880,14 @@
         + sidepadSelector + '{ padding-left: 0 }' ) // remove side padding
 
     // Create/insert chatbar BUTTONS
-    const btns = {}
     const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
         .filter(type => !(type == 'fullWindow' && hasNoSidebar))
     const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
-    let btnColor = setBtnColor()
+    let btnColor = btns.setColor()
     validBtnTypes.forEach((btnType, idx) => {
         btns[btnType] = document.createElement('div') // create button
         btns[btnType].id = btnType + '-btn' // for toggleTooltip()
-        updateBtnSVG(btnType) // insert icon
+        btns.updateSVG(btnType) // insert icon
         btns[btnType].style.cssText = 'position: relative ; top: 0 ;'
                                     + `right: ${ rOffset + idx * bOffset }px` // position left of prev button
         btns[btnType].style.cursor = 'pointer' // add finger cursor
@@ -887,7 +908,7 @@
             } else toggleMode(btnType)
         }
     })
-    insertBtns()
+    btns.insert()
 
     // Monitor NODE CHANGES to auto-toggle once + maintain button visibility + update colors
     let isTempChat = false, prevSessionChecked = false
@@ -905,7 +926,7 @@
             if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true
         }
 
-        insertBtns() // again or they constantly disappear
+        btns.insert() // again or they constantly disappear
 
         // Update button colors on ChatGPT scheme or temp chat toggle
         if (/chatgpt|openai/.test(site)) {
@@ -915,10 +936,10 @@
                 const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
                 if ((mutation.type === 'attributes' && mutation.attributeName === 'class') // potential scheme toggled
                      || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)) { // temp chat toggled
-                            btnColor = setBtnColor() // init new color
+                            btnColor = btns.setColor() // init new color
                             const visibleBtnTypes = ['fullScreen', 'wideScreen', 'newChat']
                             if (typeof btns.fullWindow != 'undefined') visibleBtnTypes.push('fullWindow')
-                            visibleBtnTypes.forEach(type => updateBtnSVG(type)) ; isTempChat = !isTempChat
+                            visibleBtnTypes.forEach(type => btns.updateSVG(type)) ; isTempChat = !isTempChat
         }}}
     })
     nodeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
