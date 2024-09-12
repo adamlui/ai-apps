@@ -108,30 +108,30 @@
 
             fullScreen: {
                 off: [
-                    createSVGelem('path', { stroke: 'none', d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
-                    createSVGelem('path', { stroke: 'none', d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
-                    createSVGelem('path', { stroke: 'none', d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
-                    createSVGelem('path', { stroke: 'none', d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
+                    create.svgElem('path', { stroke: 'none', d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
                 on: [
-                    createSVGelem('path', { stroke: 'none', d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
-                    createSVGelem('path', { stroke: 'none', d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
-                    createSVGelem('path', { stroke: 'none', d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
-                    createSVGelem('path', { stroke: 'none', d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
+                    create.svgElem('path', { stroke: 'none', d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
             },
 
             fullWindow: [
-                createSVGelem('rect', { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
-                createSVGelem('line', { x1: '9', y1: '3', x2: '9', y2: '21' })
+                create.svgElem('rect', { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
+                create.svgElem('line', { x1: '9', y1: '3', x2: '9', y2: '21' })
             ],
 
-            newChat: [ createSVGelem('path', { stroke: 'none', d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ],
+            newChat: [ create.svgElem('path', { stroke: 'none', d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ],
 
             wideScreen: {
                 off: [
-                    createSVGelem('path', { stroke: 'none', 'fill-rule': 'evenodd',
+                    create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
                         d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ],
                 on: [
-                    createSVGelem('path', { stroke: 'none', 'fill-rule': 'evenodd',
+                    create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
                         d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
             }
         },
@@ -174,16 +174,19 @@
  
     // Define FACTORY functions
 
-    function createStyle(content) {
-        const style = document.createElement('style')
-        if (content) style.innerText = content
-        return style
-    }
+    const create = {
 
-    function createSVGelem(tagName, attributes) {
-        const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
-        for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])       
-        return elem
+        style(content) {
+            const style = document.createElement('style')
+            if (content) style.innerText = content
+            return style
+        },
+
+        svgElem(type, attrs) {
+            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
+            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
+            return elem
+        }
     }
 
     // Define TOOLTIP functions
@@ -340,12 +343,12 @@
     config.fullScreen = chatgpt.isFullScreen()
 
     // Create/apply BUTTON style
-    const btnStyle = createStyle() ; updateBtnStyle() ; document.head.append(btnStyle)
+    const btnStyle = create.style() ; updateBtnStyle() ; document.head.append(btnStyle)
 
     // Create/stylize TOOLTIP div
     const tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('cwm-tooltip')
-    document.head.append(createStyle('.cwm-tooltip {'
+    document.head.append(create.style('.cwm-tooltip {'
         + 'background-color: rgba(0, 0, 0, 0.71) ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.85rem ; color: white ;' // font style
         + 'position: absolute ; bottom: 50px ;' // v-position
@@ -355,7 +358,7 @@
     ))
 
     // Create/apply general style TWEAKS
-    const tweaksStyle = createStyle(),
+    const tweaksStyle = create.style(),
           tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
           hhStyle = headerSelector + '{ display: none !important }' // hide header
                   + ( /chatgpt|openai/.test(site) ? 'main { padding-top: 12px }' : '' ), // increase top-padding
@@ -365,7 +368,7 @@
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create WIDESCREEN style
-    const wideScreenStyle = createStyle()
+    const wideScreenStyle = create.style()
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
         /chatgpt|openai/.test(site) ? 'main form { max-width: 96% !important }'
@@ -373,7 +376,7 @@
     updateWidescreenStyle()
 
     // Create FULL-WINDOW style
-    const fullWindowStyle = createStyle()
+    const fullWindowStyle = create.style()
     fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
     fullWindowStyle.innerText = (
           sidebarSelector + ' { display: none } ' // hide sidebar
