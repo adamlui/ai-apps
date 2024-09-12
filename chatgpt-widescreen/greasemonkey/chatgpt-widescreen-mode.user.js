@@ -596,30 +596,30 @@
 
             fullScreen: {
                 off: [
-                    createSVGelem('path', { d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
-                    createSVGelem('path', { d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
-                    createSVGelem('path', { d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
-                    createSVGelem('path', { d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
+                    createSVGelem('path', { stroke: 'none', d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
+                    createSVGelem('path', { stroke: 'none', d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
+                    createSVGelem('path', { stroke: 'none', d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
+                    createSVGelem('path', { stroke: 'none', d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
                 on: [
-                    createSVGelem('path', { d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
-                    createSVGelem('path', { d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
-                    createSVGelem('path', { d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
-                    createSVGelem('path', { d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
+                    createSVGelem('path', { stroke: 'none', d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
+                    createSVGelem('path', { stroke: 'none', d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
+                    createSVGelem('path', { stroke: 'none', d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
+                    createSVGelem('path', { stroke: 'none', d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
             },
 
             fullWindow: [
                 createSVGelem('rect', { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
-                createSVGelem('line', { fill: 'none', x1: '9', y1: '3', x2: '9', y2: '21' })
+                createSVGelem('line', { x1: '9', y1: '3', x2: '9', y2: '21' })
             ],
 
-            newChat: [ createSVGelem('path', { d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ],
+            newChat: [ createSVGelem('path', { stroke: 'none', d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ],
 
             wideScreen: {
                 off: [
-                    createSVGelem('path', { 'fill-rule': 'evenodd',
+                    createSVGelem('path', { stroke: 'none', 'fill-rule': 'evenodd',
                         d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ],
                 on: [
-                    createSVGelem('path', { 'fill-rule': 'evenodd',
+                    createSVGelem('path', { stroke: 'none', 'fill-rule': 'evenodd',
                         d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
             }
         },
@@ -751,6 +751,8 @@
                 btns.updateSVG('wideScreen', 'off')
     }}}
 
+    function updateBtnStyle() { btnStyle.innerText = `div[id$="-btn"] svg { fill: ${btns.setColor()} ; stroke: ${btns.setColor()} }` }
+
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
             /chatgpt|openai/.test(site) ? (
@@ -823,8 +825,7 @@
 
     // Create/apply BUTTON style
     const btnStyle = document.createElement('style')
-    btnStyle.innerText = `div[id$="-btn"] svg { fill: ${btns.setColor()} }`
-    document.head.append(btnStyle)
+    updateBtnStyle() ; document.head.append(btnStyle)
 
     // Stylize ALERTS
     if (!document.getElementById('chatgpt-alert-override-style')) {
@@ -936,10 +937,7 @@
                 const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
                 if ((mutation.type === 'attributes' && mutation.attributeName === 'class') // potential scheme toggled
                      || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)) { // temp chat toggled
-                            btnColor = btns.setColor() // init new color
-                            const visibleBtnTypes = ['fullScreen', 'wideScreen', 'newChat']
-                            if (typeof btns.fullWindow != 'undefined') visibleBtnTypes.push('fullWindow')
-                            visibleBtnTypes.forEach(type => btns.updateSVG(type)) ; isTempChat = !isTempChat
+                            updateBtnStyle() ; isTempChat = !isTempChat
         }}}
     })
     nodeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
