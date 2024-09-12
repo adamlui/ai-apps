@@ -137,10 +137,6 @@
         },
 
         updateSVG(mode, state = '') {
-
-            // Define SVG viewbox + elems
-            const svgViewBox = ( mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '-2 -0.5 ' : '8 8 ' ) // move to XY coords to crop whitespace
-                             + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' ) // shrink to fit size
     
             // Pick appropriate button/elements
             const [btn, ONelems, OFFelems] = (
@@ -148,7 +144,6 @@
               : mode == 'fullWindow' ? [btns.fullWindow, btns.svgElems.fullWindow, btns.svgElems.fullWindow]
               : mode == 'wideScreen' ? [btns.wideScreen, btns.svgElems.wideScreen.on, btns.svgElems.wideScreen.off]
                                      : [btns.newChat, btns.svgElems.newChat, btns.svgElems.newChat])
-    
             // Set SVG attributes
             const btnSVG = btn.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             btnSVG.setAttribute('height', 18) // prevent shrinking
@@ -159,7 +154,10 @@
                 btnSVG.setAttribute('height', site == 'poe' ? '2em' : 17)
                 btnSVG.setAttribute('width', site == 'poe' ? '2em' : 17)
             }
-            btnSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
+            btnSVG.setAttribute('viewBox', (
+                mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '-2 -0.5 ' : '8 8 ' ) // move to XY coords to crop whitespace
+            + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' ) // shrink to fit size) // set pre-tweaked viewbox
+            )
             btnSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
             if (/chatgpt|openai/.test(site)) // override button resizing
                 btnSVG.style.height = btnSVG.style.width = `${ isGPT4oUI ? 1.25 : 1.3 }rem`
