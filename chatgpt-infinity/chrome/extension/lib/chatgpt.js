@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v3.2.1
+// This library is a condensed version of chatgpt.js v3.3.0
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -236,10 +236,8 @@ const chatgpt = {
     getChatBox() { return document.getElementById('prompt-textarea'); },
 
     getNewChatButton() {
-        for (const navBtnSVG of document.querySelectorAll('nav button svg'))
-            if (navBtnSVG.querySelector('path[d^="M15.6729"], '  // pencil-on-pad icon
-                                      + 'path[d^="M3.06957"]'))  // refresh icon if temp chat
-                return navBtnSVG.parentNode;
+        return document.querySelector('button:has([d*="M15.6729"],' // pencil-on-pad icon
+                                    + '[d^="M3.06957"])'); // refresh icon if temp chat
     },
 
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
@@ -265,22 +263,43 @@ const chatgpt = {
 
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
 
-    isIdle() {
-        return new Promise(resolve => {
-            if (chatgpt.getRegenerateBtn()) resolve(true);
-            else new MutationObserver((_, obs) => {
-                if (chatgpt.getRegenerateBtn()) { obs.disconnect(); resolve(true); }
-            }).observe(document.body, { childList: true, subtree: true });
-        });
+    async isIdle(timeout = null) {
+        const obsConfig = { childList: true, subtree: true },
+              msgDivSelector = 'div[data-message-author-role]';
+
+        // Create promises
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+        const isIdlePromise = (async () => {
+            await new Promise(resolve => { // when on convo page
+                if (document.querySelector(msgDivSelector)) resolve();
+                else new MutationObserver((_, obs) => {
+                    if (document.querySelector(msgDivSelector)) { obs.disconnect(); resolve(); }
+                }).observe(document.body, obsConfig);
+            });
+            await new Promise(resolve => { // when reply starts generating
+                new MutationObserver((_, obs) => {
+                    if (chatgpt.getStopBtn()) { obs.disconnect(); resolve(); }
+                }).observe(document.body, obsConfig);
+            });
+            return new Promise(resolve => { // when reply stops generating
+                new MutationObserver((_, obs) => {
+                    if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve(true); }
+                }).observe(document.body, obsConfig);
+            });
+        })();
+
+        return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise);
     },
 
-    isLoaded() {
-        return new Promise(resolve => {
+    async isLoaded(timeout = null) {
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+        const isLoadedPromise = new Promise(resolve => {
             if (chatgpt.getNewChatBtn()) resolve(true);
             else new MutationObserver((_, obs) => {
                 if (chatgpt.getNewChatBtn()) { obs.disconnect(); resolve(true); }
             }).observe(document.body, { childList: true, subtree: true });
         });
+        return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise );
     },
 
     notify(msg, position, notifDuration, shadow) {
@@ -461,7 +480,8 @@ const chatgpt = {
             return console.error(`Argument ${ i + 1 } must be a string!`);
         const textArea = chatgpt.getChatBox();
         if (!textArea) return console.error('Chatbar element not found!');
-        textArea.value = msg;
+        const msgP = document.createElement('p'); msgP.textContent = msg;
+        textArea.replaceChild(msgP, textArea.querySelector('p'));
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
         setTimeout(function delaySend() {
             const sendBtn = chatgpt.getSendButton();
@@ -473,13 +493,15 @@ const chatgpt = {
     },
 
     sidebar: {
+        exists() { return !!chatgpt.getNewChatLink(); },
         hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
         show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
         isOff() { return !this.isOn(); },
         isOn() {
-            const sidebar = document.querySelector('body script + div > div');
-            if (!sidebar) return console.error('Sidebar element not found!');
-            return chatgpt.browser.isMobile() ?
+            const sidebar = (() => {
+                return chatgpt.sidebar.exists() ? document.querySelector('body script + div > div') : null; })();
+            if (!sidebar) { console.error('Sidebar element not found!'); return false; }
+            else return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
               : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
         },
@@ -491,19 +513,19 @@ const chatgpt = {
                               : btn => btn.querySelector('svg path[d^="M8.857"]');
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
+            console.error('Sidebar toggle not found!');
         },
 
-        async isLoaded() {
+        async isLoaded(timeout = 5000) {
             await chatgpt.isLoaded();
-            return Promise.race([
-                new Promise(resolve => {
-                    if (chatgpt.getNewChatLink()) resolve(true);
-                    else new MutationObserver((_, obs) => {
-                        if (chatgpt.getNewChatLink()) { obs.disconnect(); resolve(true); }
-                    }).observe(document.body, { childList: true, subtree: true });
-                }),
-                new Promise(resolve => setTimeout(resolve, 5000)) // since New Chat link not always present
-            ]);
+            const timeoutPromise = new Promise(resolve => setTimeout(() => { resolve(false); }, timeout));
+            const isLoadedPromise = new Promise(resolve => {
+                if (chatgpt.getNewChatLink()) resolve(true);
+                else new MutationObserver((_, obs) => {
+                    if (chatgpt.getNewChatLink()) { obs.disconnect(); resolve(true); }
+                }).observe(document.body, { childList: true, subtree: true });
+            });
+            return await Promise.race([isLoadedPromise, timeoutPromise]);
         }
     },
 
@@ -521,6 +543,7 @@ const cjsFuncAliases = [
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
     ['detectLanguage', 'getLanguage'],
     ['executeCode', 'codeExecute'],
+    ['exists', 'isAvailable', 'isExistent', 'isPresent'],
     ['exportChat', 'chatExport', 'export'],
     ['getFooterDiv', 'getFooter'],
     ['getHeaderDiv', 'getHeader'],
