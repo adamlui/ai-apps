@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.13.4
+// @version               2024.9.13.5
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -594,7 +594,6 @@
     // Define FEEDBACK functions
 
     function appAlert(...alerts) {
-        log.caller = 'appAlert()'
         alerts = alerts.flat() // flatten array args nested by spread operator
         while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear appDiv content
         const alertP = document.createElement('p')
@@ -608,7 +607,6 @@
 
             // Add login link to login msgs
             if (msg.includes('@')) {
-                log.debug('Adding login link...')
                 msg += '<a class="alert-link" target="_blank" rel="noopener" href="https://chatgpt.com">chatgpt.com</a>,'
                      + ` ${ msgs.alert_thenRefreshPage || 'then refresh this page' }.`
                      + ` (${ msgs.alert_ifIssuePersists || 'If issue persists' },`
@@ -621,7 +619,6 @@
             const foundState = ['On', 'Off'].find(state =>
                 msg.includes(msgs['alert_switching' + state]) || new RegExp(`\\b${state}\\b`, 'i').test(msg))
             if (foundState) { // hyperlink switch phrase for click listener to toggle.proxyMode()
-                log.debug('Hyperlinking on/off state in alert...')
                 const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState.toLowerCase()
                 msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
             }
