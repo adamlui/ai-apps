@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.13.1
+// @version                2024.9.13.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -134,7 +134,7 @@
             msg: { working: 'color: #ff8000', warning: 'color: red' }
         },
 
-        regEx: { greenChars: /\b(?:true|\d+)\b|success\W?/i, redChars: /\bfalse\b|error\W?/i, purpChars: /[ '"]\w+['"]?: /i },
+        regEx: { greenVals: /\b(?:true|ON|\d+)\b|success\W?/i, redVals: /\b(?:false|OFF)\b|error\W?/i, purpVals: /[ '"]\w+['"]?: /i },
 
         prettifyObj(obj) { return JSON.stringify(obj)
             .replace(/([{,](?=")|(?:"):)/g, '$1 ') // append spaces to { and "

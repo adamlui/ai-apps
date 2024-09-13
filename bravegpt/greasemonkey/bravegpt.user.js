@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.13
+// @version               2024.9.13.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -261,7 +261,7 @@
             msg: { working: 'color: #ff8000', warning: 'color: red' }
         },
 
-        regEx: { greenChars: /\b(?:true|\d+)\b|success\W?/i, redChars: /\bfalse\b|error\W?/i, purpChars: /[ '"]\w+['"]?: /i },
+        regEx: { greenVals: /\b(?:true|ON|\d+)\b|success\W?/i, redVals: /\b(?:false|OFF)\b|error\W?/i, purpVals: /[ '"]\w+['"]?: /i },
 
         prettifyObj(obj) { return JSON.stringify(obj)
             .replace(/([{,](?=")|(?:"):)/g, '$1 ') // append spaces to { and "
@@ -481,9 +481,9 @@
     function registerMenu() {
 
         // Add command to toggle proxy API mode
-        const pmLabel  = menuState.symbol[+config.proxyAPIenabled] + ' '
-                       + settingsProps.proxyAPIenabled.label + ' '
-                       + menuState.separator + menuState.word[+config.proxyAPIenabled]
+        const pmLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
+                      + settingsProps.proxyAPIenabled.label + ' '
+                      + menuState.separator + menuState.word[+config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pmLabel, toggle.proxyMode))
 
         // Add command to launch About modal

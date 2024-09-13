@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.13
+// @version                  2024.9.13.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -450,7 +450,7 @@
             msg: { working: 'color: #ff8000', warning: 'color: red' }
         },
 
-        regEx: { greenChars: /\b(?:true|\d+)\b|success\W?/i, redChars: /\bfalse\b|error\W?/i, purpChars: /[ '"]\w+['"]?: /i },
+        regEx: { greenVals: /\b(?:true|ON|\d+)\b|success\W?/i, redVals: /\b(?:false|OFF)\b|error\W?/i, purpVals: /[ '"]\w+['"]?: /i },
 
         prettifyObj(obj) { return JSON.stringify(obj)
             .replace(/([{,](?=")|(?:"):)/g, '$1 ') // append spaces to { and "

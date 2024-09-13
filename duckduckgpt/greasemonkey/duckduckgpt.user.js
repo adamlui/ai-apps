@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.13
+// @version                2014.9.13.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -261,7 +261,7 @@
             msg: { working: 'color: #ff8000', warning: 'color: red' }
         },
 
-        regEx: { greenChars: /\b(?:true|\d+)\b|success\W?/i, redChars: /\bfalse\b|error\W?/i, purpChars: /[ '"]\w+['"]?: /i },
+        regEx: { greenVals: /\b(?:true|ON|\d+)\b|success\W?/i, redVals: /\b(?:false|OFF)\b|error\W?/i, purpVals: /[ '"]\w+['"]?: /i },
 
         prettifyObj(obj) { return JSON.stringify(obj)
             .replace(/([{,](?=")|(?:"):)/g, '$1 ') // append spaces to { and "
@@ -489,9 +489,9 @@
     function registerMenu() {
 
         // Add command to toggle proxy API mode
-        const pmLabel  = menuState.symbol[+config.proxyAPIenabled] + ' '
-                       + settingsProps.proxyAPIenabled.label + ' '
-                       + menuState.separator + menuState.word[+config.proxyAPIenabled]
+        const pmLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
+                      + settingsProps.proxyAPIenabled.label + ' '
+                      + menuState.separator + menuState.word[+config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pmLabel, toggle.proxyMode))
 
         // Add command to launch About modal
