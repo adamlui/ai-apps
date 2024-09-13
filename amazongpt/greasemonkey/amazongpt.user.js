@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.13.7
+// @version                2024.9.13.8
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -790,14 +790,14 @@
 
                     // Show notification
                     notify(` ${ msgs.menuLabel_colorScheme || 'Color Scheme' }: `
-                           + ( ui.app.scheme == 'light' ? msgs.scheme_light   || 'Light' :
-                               ui.app.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
+                           + ( scheme == 'light' ? msgs.scheme_light   || 'Light' :
+                               scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
                                                         : msgs.menuLabel_auto || 'Auto' ).toUpperCase() )
                     const notifs = document.querySelectorAll('.chatgpt-notif'),
                           notif = notifs[notifs.length -1]
 
                     // Append scheme icon
-                    const schemeIcon = icons[ui.app.scheme == 'light' ? 'sun' : ui.app.scheme == 'dark' ? 'moon' : 'arrowsCycle'].create()
+                    const schemeIcon = icons[ui.app.scheme == 'light' ? 'sun' : scheme == 'dark' ? 'moon' : 'arrowsCycle'].create()
                     schemeIcon.style.cssText = 'width: 23px ; height: 23px ; position: relative ; top: 3px ; margin: 3px 0 0 6px'
                     notif.append(schemeIcon)
                 }
