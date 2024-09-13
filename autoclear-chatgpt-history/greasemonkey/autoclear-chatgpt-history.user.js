@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.12
+// @version             2024.9.13
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -321,7 +321,6 @@
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
     await chatgpt.sidebar.isLoaded()
     const isFirefox = chatgpt.browser.isFirefox(),
-          isGPT4oUI = document.documentElement.className.includes(' '),
           firstLink = chatgpt.getNewChatLink()
 
     // Add/update TWEAKS style
@@ -595,9 +594,9 @@
         const switchSpan = document.getElementById('autoclear-switch-span') || document.createElement('span')
         switchSpan.id = 'autoclear-switch-span'
         const switchStyles = {
-            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 154 }px`,
+            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : 154 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-            bottom: `${ !firstLink ? -0.15 : isFirefox || !isGPT4oUI ? 0.05 : 0 }em`,
+            bottom: `${ !firstLink ? -0.15 : isFirefox ? 0.05 : 0 }em`,
             width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
         }
         Object.assign(switchSpan.style, switchStyles)
@@ -622,7 +621,7 @@
             toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
         toggleLabel.style.marginLeft = `-${ !firstLink ? 23 : 41 }px` // left-shift to navicon
         toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
-        toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : isGPT4oUI ? 145 : 148 }px` // to truncate overflown text
+        toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : 148 }px` // to truncate overflown text
         toggleLabel.style.overflow = 'hidden' // to truncate overflown text
         toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
         toggleLabel.innerText = ( msgs.mode_autoClear || 'Auto-clear' ) + ' '

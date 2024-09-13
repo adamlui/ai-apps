@@ -184,7 +184,7 @@
             )
             btnSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
             if (/chatgpt|openai/.test(site)) // override button resizing
-                btnSVG.style.height = btnSVG.style.width = `${ isGPT4oUI ? 1.25 : 1.3 }rem`
+                btnSVG.style.height = btnSVG.style.width = '1.3rem'
     
             // Update SVG elements
             while (btnSVG.firstChild) { btnSVG.removeChild(btnSVG.firstChild) }
@@ -341,8 +341,7 @@
     } catch (err) {}
 
     // Init UI flags
-    const isGPT4oUI = document.documentElement.className.includes(' '),
-          hasSidebar = site == 'poe' || chatgpt.sidebar.exists()
+    const hasSidebar = site == 'poe' || chatgpt.sidebar.exists()
 
     // Save FULL-WINDOW + FULL SCREEN states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : settings.load('fullWindow')
@@ -401,7 +400,7 @@
         btns[btnType].style.cssText = 'position: relative ; top: 0 ;'
                                     + `right: ${ rOffset + idx * bOffset }px` // position left of prev button
         btns[btnType].style.cursor = 'pointer' // add finger cursor
-        if (isGPT4oUI || site == 'poe') btns[btnType].style.position = 'relative' // override static pos
+        if (site == 'poe') btns[btnType].style.position = 'relative' // override static pos
         if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
             btns[btnType].setAttribute('class', chatgpt.getSendBtn().classList)
             btns[btnType].style.backgroundColor = 'transparent' // remove dark mode overlay
@@ -448,7 +447,7 @@
         // Update button colors on ChatGPT scheme or temp chat toggle
         if (/chatgpt|openai/.test(site)) {
             let chatbarBGdiv = document.querySelector(inputSelector)
-            for (let i = 0 ; i < ( isGPT4oUI ? 3 : 1 ) ; i++) { chatbarBGdiv = chatbarBGdiv?.parentNode }
+            for (let i = 0 ; i < 1 ; i++) { chatbarBGdiv = chatbarBGdiv?.parentNode }
             if (chatbarBGdiv) {
                 const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
                 if ((mutation.type === 'attributes' && mutation.attributeName === 'class') // potential scheme toggled
