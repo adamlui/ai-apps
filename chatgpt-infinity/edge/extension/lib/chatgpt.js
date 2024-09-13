@@ -229,6 +229,7 @@ const chatgpt = {
     },
 
     browser: {
+        isFirefox() { return navigator.userAgent.includes('Firefox'); },
         isMobile() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
