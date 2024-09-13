@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.13.6
+// @version                2014.9.13.7
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -325,7 +325,7 @@
     // Init UI VARS
     log.debug('Initializing UI variables...')
     let scheme = config.scheme || ( chatgpt.isDarkMode() ? 'dark' : 'light' )
-    const isCentered = isCenteredMode()
+    const isCentered = !!document.documentElement.classList.toString().includes('center')
     log.debug(`Success! scheme = '${scheme}', isCentered = ${isCentered}`)
 
     // Init XHR fetcher
@@ -2080,8 +2080,6 @@
     }
 
     // Define UI functions
-
-    function isCenteredMode() { return document.documentElement.classList.toString().includes('center') }
 
     function fillStarryBG(targetNode) {
         const starsDivsContainer = document.createElement('div')
