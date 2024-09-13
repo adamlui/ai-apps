@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.13.3
+// @version                2014.9.13.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -3052,7 +3052,7 @@
                         } catch (err) { handleProcessError(err) }
                     }
                 } else if (caller.status != 'done') { // proxy 200 response failure
-                    log.info('Response', resp.responseText) ; api.tryNew(caller) }
+                    log.info('Response text', resp.responseText) ; api.tryNew(caller) }
 
                 function handleProcessCompletion() {
                     if (caller.status != 'done') {
