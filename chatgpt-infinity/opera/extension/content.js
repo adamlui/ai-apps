@@ -107,7 +107,7 @@
                 const switchStyles = {
                     position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : 154 }px`,
                     backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-                    bottom: `${ !firstLink ? -0.15 : 0 }em`,
+                    bottom: `${ !firstLink ? -0.15 : isFirefox ? 0.05 : 0 }em`,
                     width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
                 }
                 Object.assign(switchSpan.style, switchStyles)
@@ -221,10 +221,11 @@
             .then(() => { insertToggle() ; updateToggleHTML() // hide/show sidebar toggle based on latest setting
     })}
 
-    // Init UI flags
+    // Init UI consts
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
     await chatgpt.sidebar.isLoaded()
-    const firstLink = chatgpt.getNewChatLink()
+    const isFirefox = chatgpt.browser.isFirefox(),
+          firstLink = chatgpt.getNewChatLink()
 
     // Add LISTENER to auto-disable Infinity Mode
     if (document.hidden !== undefined) // ...if Page Visibility API supported
