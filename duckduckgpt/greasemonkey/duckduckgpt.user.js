@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.12.3
+// @version                2014.9.13
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -503,30 +503,6 @@
         menuIDs.push(GM_registerMenuCommand(settingsLabel, modals.settings.show))
     }
 
-    function promptReplyLang() {
-        log.caller = 'promptReplyLang()'
-        while (true) {
-            let replyLanguage = prompt(
-                ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
-            if (replyLanguage == null) break // user cancelled so do nothing
-            else if (!/\d/.test(replyLanguage)) {
-                replyLanguage = ( // auto-case for menu/alert aesthetics
-                    [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
-                      : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
-                log.debug('Saving reply language...')
-                saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                log.debug(`Success! config.replyLanguage = ${config.replyLanguage}`)
-                const langUpdatedAlertID = siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
-                    `${ app.name } ${ msgs.alert_willReplyIn || 'will reply in' } `
-                        + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
-                    '', '', 330) // confirmation width
-                const langUpdatedAlert = document.getElementById(langUpdatedAlertID).firstChild
-                modals.init(langUpdatedAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
-                if (modals.settings.get()) // update settings menu status label
-                    document.querySelector('#replyLanguage-menu-entry span').textContent = replyLanguage
-                break
-    }}}
-
     function refreshMenu() {
         log.caller = `refreshMenu()`
         log.debug('Refreshing toolbar menu...')
@@ -625,45 +601,6 @@
 
     // Define FEEDBACK functions
 
-    function notify(msg, position = '', notifDuration = '', shadow = 'shadow') {
-
-        // Strip state word to append styled one later
-        const foundState = menuState.word.find(word => msg.includes(word))
-        if (foundState) msg = msg.replace(foundState, '')
-
-        // Show notification
-        chatgpt.notify(msg, position, notifDuration, shadow)
-        const notif = document.querySelector('.chatgpt-notif:last-child')
-
-        // Prepend app icon
-        const notifIcon = icons.ddgpt.create()
-        notifIcon.style.cssText = 'width: 31px ; position: relative ; top: 5.8px ; margin-right: 8px'
-        notif.prepend(notifIcon)
-
-        // Append notif type icon
-        const iconStyles = 'width: 28px ; height: 28px ; position: relative ; top: 3.5px ; margin-left: 11px ;',
-              mode = Object.keys(settingsProps).find(key => settingsProps[key].label.includes(msg.trim()))
-        if (mode && !/(?:pre|suf)fix/.test(mode)) {
-            const modeIcon = icons[settingsProps[mode].icon].create()
-            modeIcon.style.cssText = iconStyles
-                                   + ( /autoget|focus|scroll/i.test(mode) ? 'top: -3px' : '' ) // raise some icons
-                                   + ( /animation|debug/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink some icon
-            notif.append(modeIcon)
-        }
-
-        // Append styled state word
-        if (foundState) {
-            const styledState = document.createElement('span')
-            styledState.style.cssText = `font-weight: bold ; color: ${
-                foundState == menuState.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
-                                                : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
-            styledState.append(foundState) ; notif.insertBefore(styledState, notif.children[2])
-        }
-    }
-
-    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(title, msg, btns, checkbox, width )}
-
     function appAlert(...alerts) {
         log.caller = 'appAlert()'
         alerts = alerts.flat() // flatten array args nested by spread operator
@@ -707,9 +644,77 @@
         appDiv.append(alertP)
     }
 
+    function notify(msg, position = '', notifDuration = '', shadow = 'shadow') {
+
+        // Strip state word to append styled one later
+        const foundState = menuState.word.find(word => msg.includes(word))
+        if (foundState) msg = msg.replace(foundState, '')
+
+        // Show notification
+        chatgpt.notify(msg, position, notifDuration, shadow)
+        const notif = document.querySelector('.chatgpt-notif:last-child')
+
+        // Prepend app icon
+        const notifIcon = icons.ddgpt.create()
+        notifIcon.style.cssText = 'width: 31px ; position: relative ; top: 5.8px ; margin-right: 8px'
+        notif.prepend(notifIcon)
+
+        // Append notif type icon
+        const iconStyles = 'width: 28px ; height: 28px ; position: relative ; top: 3.5px ; margin-left: 11px ;',
+              mode = Object.keys(settingsProps).find(key => settingsProps[key].label.includes(msg.trim()))
+        if (mode && !/(?:pre|suf)fix/.test(mode)) {
+            const modeIcon = icons[settingsProps[mode].icon].create()
+            modeIcon.style.cssText = iconStyles
+                                   + ( /autoget|focus|scroll/i.test(mode) ? 'top: -3px' : '' ) // raise some icons
+                                   + ( /animation|debug/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink some icon
+            notif.append(modeIcon)
+        }
+
+        // Append styled state word
+        if (foundState) {
+            const styledState = document.createElement('span')
+            styledState.style.cssText = `font-weight: bold ; color: ${
+                foundState == menuState.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                                                : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
+            styledState.append(foundState) ; notif.insertBefore(styledState, notif.children[2])
+        }
+    }
+
+    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        return chatgpt.alert(title, msg, btns, checkbox, width )}
+
     // Define MODAL functions
 
     const modals = {
+
+        init(modal) {
+
+            // Add classes
+            modal.classList.add('ddgpt-modal')
+            modal.parentNode.classList.add('ddgpt-modal-bg', 'no-user-select')
+
+            // Add listeners
+            modal.onwheel = modal.ontouchmove = event => event.preventDefault() // disable wheel/swipe scrolling
+            modal.onmousedown = modals.dragHandlers.mousedown
+            fillStarryBG(modal) // add stars
+            setTimeout(() => { // dim bg
+                modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
+                modal.parentNode.classList.add('animated')
+            }, 100) // delay for transition fx
+
+            // Glowup btns
+            if (scheme == 'dark' && !config.fgAnimationsDisabled) toggle.btnGlow()
+        },
+
+        hide(modal) {
+            log.caller = 'modals.hide()'
+            log.debug(`Dismissing div#${modal?.id}...`)
+            const modalContainer = modal?.parentNode
+            if (!modalContainer) return
+            modalContainer.style.animation = 'modal-zoom-fade-out .135s ease-out'
+            setTimeout(() => { modalContainer.remove() ; log.debug(`Success! div#${modal?.id} dismissed`)
+                }, 105) // delay for fade-out
+        },
 
         clickHandler(event) { // to dismiss modals
             log.caller = 'modals.clickHandler()'
@@ -750,35 +755,6 @@
                 ['mousemove', 'mouseup'].forEach(event => document.removeEventListener(event, modals.dragHandlers[event]))
                 modals.dragHandlers.draggableElem = null
             }
-        },
-
-        hide(modal) {
-            log.caller = 'modals.hide()'
-            log.debug(`Dismissing div#${modal?.id}...`)
-            const modalContainer = modal?.parentNode
-            if (!modalContainer) return
-            modalContainer.style.animation = 'modal-zoom-fade-out .135s ease-out'
-            setTimeout(() => { modalContainer.remove() ; log.debug(`Success! div#${modal?.id} dismissed`)
-                }, 105) // delay for fade-out
-        },
-
-        init(modal) {
-
-            // Add classes
-            modal.classList.add('ddgpt-modal')
-            modal.parentNode.classList.add('ddgpt-modal-bg', 'no-user-select')
-
-            // Add listeners
-            modal.onwheel = modal.ontouchmove = event => event.preventDefault() // disable wheel/swipe scrolling
-            modal.onmousedown = modals.dragHandlers.mousedown
-            fillStarryBG(modal) // add stars
-            setTimeout(() => { // dim bg
-                modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
-                modal.parentNode.classList.add('animated')
-            }, 100) // delay for transition fx
-
-            // Glowup btns
-            if (scheme == 'dark' && !config.fgAnimationsDisabled) toggle.btnGlow()
         },
 
         keyHandler(event) { // to dismiss modals
@@ -893,6 +869,32 @@
                 modals.init(feedbackModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 log.debug('Success! Feedback modal shown')
             }
+        },
+
+        replyLang: {
+            show() {
+                log.caller = 'modals.replyLang.show()'
+                    while (true) {
+                        let replyLanguage = prompt(
+                            ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
+                        if (replyLanguage == null) break // user cancelled so do nothing
+                        else if (!/\d/.test(replyLanguage)) {
+                            replyLanguage = ( // auto-case for menu/alert aesthetics
+                                [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
+                                  : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
+                            log.debug('Saving reply language...')
+                            saveSetting('replyLanguage', replyLanguage || config.userLanguage)
+                            log.debug(`Success! config.replyLanguage = ${config.replyLanguage}`)
+                            const langUpdatedAlertID = siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
+                                `${ app.name } ${ msgs.alert_willReplyIn || 'will reply in' } `
+                                    + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
+                                '', '', 330) // confirmation width
+                            const langUpdatedAlert = document.getElementById(langUpdatedAlertID).firstChild
+                            modals.init(langUpdatedAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
+                            if (modals.settings.get()) // update settings menu status label
+                                document.querySelector('#replyLanguage-menu-entry span').textContent = replyLanguage
+                            break
+            }}}
         },
 
         scheme: {
@@ -1111,7 +1113,7 @@
                             + ( !key.includes('about') ? 'text-transform: uppercase !important' : '' )
                         if (key.includes('replyLang')) {
                             configStatusSpan.textContent = config.replyLanguage
-                            settingItem.onclick = promptReplyLang
+                            settingItem.onclick = modals.replyLang.show
                         } else if (key.includes('scheme')) {
                             modals.settings.updateSchemeStatus(configStatusSpan)
                             settingItem.onclick = modals.scheme.show
@@ -2720,35 +2722,6 @@
 
     const api = {
 
-        pick(caller) {
-            log.caller = `get.${caller.name}() » api.pick()`
-            const untriedAPIs = Object.keys(apis).filter(api =>
-                   api != ( caller == get.reply ? 'OpenAI' : '' ) // exclude OpenAI for get.reply() since Proxy Mode
-                && !caller.triedAPIs.some(entry => Object.prototype.hasOwnProperty.call(entry, api)) // exclude tried APIs
-                && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if !config.streamingDisabled
-            const chosenAPI = untriedAPIs[ // pick random array entry
-                Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
-            if (!chosenAPI) { log.error('No proxy APIs left untried') ; return null }
-            log.debug('Endpoint chosen', apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint)
-            return chosenAPI
-        },
-
-        tryNew(caller, reason = 'err') {
-            log.caller = `get.${caller.name}() » api.tryNew()`
-            if (caller.status == 'done') return
-            log.error(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
-            caller.triedAPIs.push({ [caller.api]: reason })
-            if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
-                log.debug('Trying another endpoint...')
-                caller.attemptCnt++
-                caller(caller == get.reply ? msgChain : get.related.query)
-                    .then(result => { if (caller == get.related) show.related(result) ; else return })
-            } else {
-                log.debug('No remaining untried endpoints')
-                if (caller == get.reply) appAlert('proxyNotWorking', 'suggestOpenAI')
-            }
-        },
-
         clearTimedOut(triedAPIs) { // to retry on new queries
             triedAPIs.splice(0, triedAPIs.length, // empty apiArray
                 ...triedAPIs.filter(entry => Object.values(entry)[0] != 'timeout')) // replace w/ err'd APIs
@@ -2793,6 +2766,35 @@
             } else if (api == 'MixerBox AI')
                 payload = { prompt: msgs, model: 'gpt-3.5-turbo' }
             return JSON.stringify(payload)
+        },
+
+        pick(caller) {
+            log.caller = `get.${caller.name}() » api.pick()`
+            const untriedAPIs = Object.keys(apis).filter(api =>
+                   api != ( caller == get.reply ? 'OpenAI' : '' ) // exclude OpenAI for get.reply() since Proxy Mode
+                && !caller.triedAPIs.some(entry => Object.prototype.hasOwnProperty.call(entry, api)) // exclude tried APIs
+                && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if !config.streamingDisabled
+            const chosenAPI = untriedAPIs[ // pick random array entry
+                Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
+            if (!chosenAPI) { log.error('No proxy APIs left untried') ; return null }
+            log.debug('Endpoint chosen', apis[chosenAPI].endpoints?.completions || apis[chosenAPI].endpoint)
+            return chosenAPI
+        },
+
+        tryNew(caller, reason = 'err') {
+            log.caller = `get.${caller.name}() » api.tryNew()`
+            if (caller.status == 'done') return
+            log.error(`Error using ${ apis[caller.api].endpoints?.completions || apis[caller.api].endpoint } due to ${reason}`)
+            caller.triedAPIs.push({ [caller.api]: reason })
+            if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
+                log.debug('Trying another endpoint...')
+                caller.attemptCnt++
+                caller(caller == get.reply ? msgChain : get.related.query)
+                    .then(result => { if (caller == get.related) show.related(result) ; else return })
+            } else {
+                log.debug('No remaining untried endpoints')
+                if (caller == get.reply) appAlert('proxyNotWorking', 'suggestOpenAI')
+            }
         }
     }
 
