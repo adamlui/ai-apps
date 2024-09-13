@@ -152,20 +152,32 @@
     const infinityMode = {
 
         async activate() {
+            const activatePrompt = 'Generate a single random question'
+                + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
+                + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
+                + ' then answer it. Don\'t type anything else.'
             if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
             fromMsg = false
             if (chatgpt.browser.isMobile() && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             if (!new URL(document.location).pathname.startsWith('/g/')) // not on GPT page
                 try { chatgpt.startNewChat() } catch (err) { return } // start new chat
-            settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(() => setTimeout(() => {
-                chatgpt.send('Generate a single random question'
-                    + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
-                    + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
-                    + ' then answer it. Don\'t type anything else.')
-            }, 500))
-            await chatgpt.isIdle()
-            if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
-                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+            await new Promise(resolve => setTimeout(resolve, 500)) // sleep 500ms
+            settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(async () => {
+                chatgpt.send(activatePrompt)
+                await new Promise(resolve => setTimeout(resolve, 3000)) // sleep 3s
+                if (!document.querySelector('[data-message-author-role]') // new chat reset due to OpenAI bug
+                    && config.infinityMode) // ...and toggle still active
+                        chatgpt.send(activatePrompt) // ...so prompt again
+                await new Promise(resolve => { // when stop btn missing
+                    // ...instead of await chatgpt.isIdle() since method waits for chat to start
+                    // but prev 3s sleep to fight OpenAI reset bug can be longer than start/stop
+                    new MutationObserver((_, obs) => {
+                        if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve() }
+                    }).observe(document.body, { childList: true, subtree: true })
+                })
+                if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
+                    infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+            })
         },
 
         async continue() {
