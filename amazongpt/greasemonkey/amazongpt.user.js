@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.13
+// @version                2024.9.13.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -325,7 +325,7 @@
     }
     log.debug(`Success! menuState = ${log.prettifyObj(menuState)}`)
 
-    //  
+    // Define SCRIPT functions
 
     function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) }
     function saveSetting(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
@@ -337,9 +337,9 @@
     function registerMenu() {
 
         // Add command to toggle proxy API mode
-        const pmLabel  = menuState.symbol[+config.proxyAPIenabled] + ' '
-                       + settingsProps.proxyAPIenabled.label + ' '
-                       + menuState.separator + menuState.word[+config.proxyAPIenabled]
+        const pmLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
+                      + settingsProps.proxyAPIenabled.label + ' '
+                      + menuState.separator + menuState.word[+config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pmLabel, toggle.proxyMode))
 
         // Add command to launch About modal
