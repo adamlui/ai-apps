@@ -83,7 +83,7 @@
             if (/chatgpt|openai/.test(site)) {
                 const inputArea = chatbar.querySelector(inputSelector)
                 inputArea.style.width = '100%' // rid h-scrollbar
-                inputArea.parentNode.style.width = `${ !hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
+                inputArea.parentNode.style.width = `${ !ui.hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
             } else if (site == 'poe') { // left-align attach file button
                 const attachFileBtn = chatbar.querySelector('button[class*="File"]')
                 if (attachFileBtn) {
@@ -205,7 +205,7 @@
 
     function updateTooltip(btnType) { // text & position
         const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-            .filter(type => !(type == 'fullWindow' && !hasSidebar))
+            .filter(type => !(type == 'fullWindow' && !ui.hasSidebar))
         const ctrAddend = 25 + ( site == 'poe' ? 45 : 12 ),
               spreadFactor = site == 'poe' ? 35 : 30.5,
               iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
@@ -251,7 +251,7 @@
 
     function isFullWindow() {
         return site == 'poe' ? !!document.getElementById('fullWindow-mode')
-                             : !hasSidebar || chatgpt.sidebar.isOff()
+                             : !ui.hasSidebar || chatgpt.sidebar.isOff()
     }
 
     function syncMode(mode) { // setting + icon + tooltip
@@ -340,8 +340,8 @@
               chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') : ''
     } catch (err) {}
 
-    // Init UI flags
-    const hasSidebar = site == 'poe' || chatgpt.sidebar.exists()
+    // Init UI props
+    const ui = { hasSidebar: site == 'poe' || chatgpt.sidebar.exists() }
 
     // Save FULL-WINDOW + FULL SCREEN states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : settings.load('fullWindow')
@@ -390,7 +390,7 @@
 
     // Create/insert chatbar BUTTONS
     const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-        .filter(type => !(type == 'fullWindow' && !hasSidebar))
+        .filter(type => !(type == 'fullWindow' && !ui.hasSidebar))
     const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
     let btnColor = btns.setColor()
     validBtnTypes.forEach((btnType, idx) => {
@@ -459,7 +459,7 @@
     nodeObserver.observe(document.querySelector('main'), { attributes: true, subtree: true }); // <main> for chatbar changes
 
     // Monitor SIDEBAR to update full-window setting
-    if (/chatgpt|openai/.test(site) && !!hasSidebar) {
+    if (/chatgpt|openai/.test(site) && !!ui.hasSidebar) {
         const sidebarObserver = new MutationObserver(() => {
             settings.load(['extensionDisabled']).then(() => {
                 if (!config.extensionDisabled) {

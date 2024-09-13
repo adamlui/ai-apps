@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.13
+// @version             2024.9.13.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -330,11 +330,11 @@
 
     registerMenu() // create browser toolbar menu
 
-    // Init UI flags
+    // Init BROWSER/UI props
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
     await chatgpt.sidebar.isLoaded()
-    const isFirefox = chatgpt.browser.isFirefox(),
-          firstLink = chatgpt.getNewChatLink()
+    const browser = { isFirefox: chatgpt.browser.browser.isFirefox() },
+          ui = { firstLink: chatgpt.getNewChatLink() }
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 20240724 // datestamp of last edit for this file's `tweaksStyle`
@@ -366,10 +366,10 @@
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
     updateToggleHTML() // create children
 
-    if (firstLink) { // borrow/assign CLASSES from sidebar div
-        const firstIcon = firstLink.querySelector('div:first-child'),
-              firstLabel = firstLink.querySelector('div:nth-child(2)')
-        navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
+    if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
+        const firstIcon = ui.firstLink.querySelector('div:first-child'),
+              firstLabel = ui.firstLink.querySelector('div:nth-child(2)')
+        navToggleDiv.classList.add(...ui.firstLink.classList, ...firstLabel.classList)
         navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
     }
 
@@ -629,9 +629,9 @@
         const switchSpan = document.getElementById('auto-refresh-switch-span') || document.createElement('span')
         switchSpan.id = 'auto-refresh-switch-span'
         const switchStyles = {
-            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : 154 }px`,
+            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !ui.firstLink ? 160 : 154 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-            bottom: `${ !firstLink ? -0.15 : isFirefox ? 0.05 : 0 }em`,
+            bottom: `${ !ui.firstLink ? -0.15 : browser.isFirefox ? 0.05 : 0 }em`,
             width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
         }
         Object.assign(switchSpan.style, switchStyles)
@@ -652,9 +652,9 @@
         // Create/stylize/fill label
         const toggleLabel = document.getElementById('auto-refresh-toggle-label') || document.createElement('label')
         toggleLabel.id = 'auto-refresh-toggle-label'
-        if (!firstLink) { // add font size/weight since no firstLink to borrow from
+        if (!ui.firstLink) { // add font size/weight since no ui.firstLink to borrow from
             toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
-        toggleLabel.style.marginLeft = `-${ !firstLink ? 23 : 41 }px` // left-shift to navicon
+        toggleLabel.style.marginLeft = `-${ !ui.firstLink ? 23 : 41 }px` // left-shift to navicon
         toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
         toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : 148 }px` // to truncate overflown text
         toggleLabel.style.overflow = 'hidden' // to truncate overflown text

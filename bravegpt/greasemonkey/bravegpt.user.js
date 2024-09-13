@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.13.5
+// @version               2024.9.13.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -687,12 +687,12 @@
             modal.onmousedown = modals.dragHandlers.mousedown
             fillStarryBG(modal) // add stars
             setTimeout(() => { // dim bg
-                modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`
+                modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ ui.app.scheme == 'dark' ? 0.62 : 0.33 })`
                 modal.parentNode.classList.add('animated')
             }, 100) // delay for transition fx
 
             // Glowup btns
-            if (scheme == 'dark' && !config.fgAnimationsDisabled) toggle.btnGlow()
+            if (ui.app.scheme == 'dark' && !config.fgAnimationsDisabled) toggle.btnGlow()
         },
 
         hide(modal) {
@@ -939,14 +939,14 @@
 
                     // Show notification
                     notify(` ${ msgs.menuLabel_colorScheme || 'Color Scheme' }: `
-                           + ( scheme == 'light' ? msgs.scheme_light   || 'Light' :
-                               scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
+                           + ( ui.app.scheme == 'light' ? msgs.scheme_light   || 'Light' :
+                               ui.app.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
                                                  : msgs.menuLabel_auto || 'Auto' ).toUpperCase() )
                     const notifs = document.querySelectorAll('.chatgpt-notif'),
                           notif = notifs[notifs.length -1]
 
                     // Append scheme icon
-                    const schemeIcon = icons[scheme == 'light' ? 'sun' : scheme == 'dark' ? 'moon' : 'arrowsCycle'].create()
+                    const schemeIcon = icons[scheme == 'light' ? 'sun' : ui.app.scheme == 'dark' ? 'moon' : 'arrowsCycle'].create()
                     schemeIcon.style.cssText = 'width: 23px ; height: 23px ; position: relative ; top: 3px ; margin-left: 6px'
                     notif.append(schemeIcon)
                 }
@@ -993,7 +993,7 @@
                     settingsListContainer.style.cssText += ( // make/pad flexbox, add middle gap
                         `display: flex ; padding: 11px 0 13px ; gap: ${ middleGap /2 }px` )
                     settingsLists[0].style.cssText = ( // add vertical separator
-                        `padding-right: ${ middleGap /2 }px ; border-right: 1px dotted ${ scheme == 'dark' ? 'white' : 'black '}` )
+                        `padding-right: ${ middleGap /2 }px ; border-right: 1px dotted ${ ui.app.scheme == 'dark' ? 'white' : 'black '}` )
                 }
                 log.debug(`Success! settingsListCnt = ${settingsListCnt}`)
 
@@ -1751,7 +1751,7 @@
             update(...targetLogos) {
                 targetLogos = targetLogos.flat() // flatten array args nested by spread operator
                 if (targetLogos.length == 0) targetLogos = document.querySelectorAll('#bravegpt-logo')
-                targetLogos.forEach(logo => logo.src = GM_getResourceText(`bgpt${ scheme == 'dark' ? 'DS' : 'LS' }logo`))
+                targetLogos.forEach(logo => logo.src = GM_getResourceText(`bgpt${ ui.app.scheme == 'dark' ? 'DS' : 'LS' }logo`))
             }
         }
     }
@@ -1781,31 +1781,31 @@
               + '#bravegpt { z-index: 5555 ; word-wrap: break-word ; white-space: pre-wrap ;'
                   + `margin: ${ browser.isMobile ? '0 8px 16px' : '0 0 20px' } ; padding: 24px 23px 45px 23px ;`
                   + `background-image: linear-gradient(180deg, ${
-                        scheme == 'dark' ? '#99a8a6 -215px, black 185px'
-                                         : `${ config.bgAnimationsDisabled ? 'white' : '#b6ebff' } -193px, white 65px` }) ;`
+                        ui.app.scheme == 'dark' ? '#99a8a6 -215px, black 185px'
+                                                : `${ config.bgAnimationsDisabled ? 'white' : '#b6ebff' } -193px, white 65px` }) ;`
                   + ( !config.fgAnimationsDisabled ?
                         'transition: bottom 0.1s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor vertical minimize/restore
                                   + 'width 0.167s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor horizontal expand/shrink
                                   + 'opacity 0.5s ease, transform 0.5s ease ;' : '' ) // smoothen 1st app fade-in
-                  + `border: ${ scheme == 'dark' ? 'none' : '1px solid var(--color-divider-subtle)' } ; border-radius: 18px }`
+                  + `border: ${ ui.app.scheme == 'dark' ? 'none' : '1px solid var(--color-divider-subtle)' } ; border-radius: 18px }`
               + '#bravegpt:hover { box-shadow: 0 9px 28px rgba(0, 0, 0, 0.09) }'
-              + `#bravegpt p { margin: 0 ${ scheme == 'dark' ? '; color: #ccc' : '' }}`
-              + `#bravegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
-              + ( scheme == 'dark' ? '#bravegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+              + `#bravegpt p { margin: 0 ${ ui.app.scheme == 'dark' ? '; color: #ccc' : '' }}`
+              + `#bravegpt .alert-link { color: ${ ui.app.scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
+              + ( ui.app.scheme == 'dark' ? '#bravegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
               + '.app-name { font-size: 20px ; font-family: var(--brand-font) ; text-decoration: none ;'
-                  + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important }`
+                  + `color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' } !important }`
               + '.kudoai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
               + '.kudoai a { color: #aaa ; text-decoration: none !important }'
-              + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
+              + `.kudoai a:hover { color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' }}`
               + '#corner-btns { float: right }'
               + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
-                  + `${ scheme == 'dark' ? 'fill: white ; stroke: white' : 'fill: #adadad ; stroke: #adadad' };` // color
+                  + `${ ui.app.scheme == 'dark' ? 'fill: white ; stroke: white' : 'fill: #adadad ; stroke: #adadad' };` // color
                   + 'transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out }' // for re-appearances from btn-zoom-fade-out ends
-              + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
+              + `.corner-btn:hover { ${ ui.app.scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
                   + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.285)' }}`
-              + `.corner-btn:active { ${ scheme == 'dark' ? 'fill: #999999 ; stroke: #999999' : 'fill: #638ed4 ; stroke: #638ed4' } }`
+              + `.corner-btn:active { ${ ui.app.scheme == 'dark' ? 'fill: #999999 ; stroke: #999999' : 'fill: #638ed4 ; stroke: #638ed4' } }`
               + ( config.bgAnimationsDisabled ? '' : ( '#bravegpt-logo, .corner-btn svg, .standby-btn'
-                  + `{ filter: drop-shadow(${ scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
+                  + `{ filter: drop-shadow(${ ui.app.scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
               + '#bravegpt .loading {'
                   + 'margin-bottom: -55px ;' // offset vs. #bravegpt bottom-padding footer accomodation
                   + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
@@ -1818,15 +1818,15 @@
               + '#font-size-slider-tip { z-index: 1 ; position: absolute ; bottom: 20px ;'
                   + 'border-left: 4.5px solid transparent ; border-right: 4.5px solid transparent ; border-bottom: 16px solid #ccc }'
               + '#font-size-slider-thumb { z-index: 2 ; width: 10px ; height: 27px ; border-radius: 30% ; position: relative ; top: -9px ;'
-                  + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
+                  + `transition: transform 0.05s ease ; background-color: ${ ui.app.scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                   + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0 ; cursor: ew-resize }'
               + ( config.fgAnimationsDisabled || browser.isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
               + '.standby-btn { width: 100% ; margin: 14px 0 20px ; padding: 13px 0 ; cursor: pointer ;'
-                  + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                  + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
+                  + `color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' } ;`
+                  + `border-radius: 4px ; border: 1px solid ${ ui.app.scheme == 'dark' ? '#fff' : '#000' } ;`
                   + 'transition: transform 0.15s ease }'
               + '.standby-btn:hover { border-radius: 4px ;'
-                  + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
+                  + `${ ui.app.scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
                   + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
               + '#bravegpt > pre {'
                   + `font-size: ${config.fontSize}px ; font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ;`
@@ -1834,59 +1834,59 @@
                   + 'margin-top: 12px ; padding: 1.2em 1.2em 0 1.2em ; border-radius: 13px ; overflow: auto ;'
                   + ( !config.fgAnimationsDisabled ? // smoothen Anchor mode vertical expand/shrink
                         'transition: max-height 0.167s cubic-bezier(0, 0, 0.2, 1) ;' : '' )
-                  + `${ scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
-                                         : 'background: #eaeaeacf ; color: #282828 ; border: none' }}`
+                  + `${ ui.app.scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
+                                                : 'background: #eaeaeacf ; color: #282828 ; border: none' }}`
               + `#bravegpt footer { margin: ${ browser.isFirefox ? 32 : 27 }px 18px -26px 0 ; border-top: none !important }`
               + '#bravegpt .feedback {'
                   + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem; color: #aaa ;'
                   + 'letter-spacing: .02em ; position: relative ; right: -18px ; bottom: 15px }'
               + '#bravegpt .feedback .icon {'
                   + ' fill: currentColor ; color: currentColor ; --size: 12px ; position: relative ; top: 0.19em ; right: 2px }'
-              + `#bravegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
+              + `#bravegpt footer a:hover { color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
               + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
               + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
                   + 'float: left ; left: 7px ; margin: 36px -13px 0 0 ;' // positioning
                   + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color:'
-                      + ( scheme == 'dark' ? '#0000' : '#eaeaeacf' ) + '}'
+                      + ( ui.app.scheme == 'dark' ? '#0000' : '#eaeaeacf' ) + '}'
               + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem }'
               + '.chatgpt-js > a { color: inherit ; top: .054rem }'
               + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px }'
               + '#copy-btn { float: right ; cursor: pointer }'
-              + `pre > #copy-btn > svg { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ scheme == 'dark' ? 'fill: white' : '' }}`
+              + `pre > #copy-btn > svg { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ ui.app.scheme == 'dark' ? 'fill: white' : '' }}`
               + 'code #copy-btn { position: relative ; top: -6px ; right: -9px }'
               + 'code #copy-btn > svg { height: 13px ; width: 13px ; fill: white }'
               + '#app-chatbar {'
-                  + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
+                  + `border: solid 1px ${ ui.app.scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
                   + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 -7px 0 ;  padding: 12px 51px 12px 10px ;'
                   + 'height: 43px ; line-height: 17px ; width: 100% ; max-height: 200px ; resize: none ;'
-                  + `background: ${ scheme == 'dark' ? '#5151519e' : '#eeeeee9e' };`
-                  + `position: relative ; z-index: 555 ; color: ${ scheme == 'dark' ? '#eee' : '#222' }}`
+                  + `background: ${ ui.app.scheme == 'dark' ? '#5151519e' : '#eeeeee9e' };`
+                  + `position: relative ; z-index: 555 ; color: ${ ui.app.scheme == 'dark' ? '#eee' : '#222' }}`
               + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
                   + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
                   + `${ browser.isFirefox ? '' : 'margin-top: -31px' }}`
               + '.related-query {'
                   + 'box-sizing: border-box ; width: fit-content ; max-width: 100% ;' // confine to .related-queries bounds
                   + 'margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
-                  + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
-                  + `background: ${ scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
-                  + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ;`
+                  + `color: ${ ui.app.scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
+                  + `background: ${ ui.app.scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
+                  + `border: 1px solid ${ ui.app.scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ;`
                   + 'border-radius: 0 13px 12px 13px ; flex: 0 0 auto ;'
-                  + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
+                  + `box-shadow: 1px 3px ${ ui.app.scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
                   + `${ config.fgAnimationsDisabled ? '' : 'transition: transform 0.1s ease !important' }}`
               + '.related-query:hover, .related-query:focus {'
                   + ( config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.055) !important ;' )
-                  + `background: ${ scheme == 'dark' ? '#a2a2a270': '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
+                  + `background: ${ ui.app.scheme == 'dark' ? '#a2a2a270': '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
               + '.related-query svg { float: left ; margin: 0.09em 6px 0 0 ;' // related query icon
-                  + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
+                  + `color: ${ ui.app.scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
               + '.fade-in { opacity: 0 ; transform: translateY(10px) }'
               + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
               + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
               + '.chatbar-btn { z-index: 560 ;'
                   + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
                   + `bottom: ${ browser.isFirefox ? 28 : 32 }px ; `
-                  + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
+                  + `${ ui.app.scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
               + '.chatbar-btn:hover {'
-                  + `${ scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
+                  + `${ ui.app.scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
               + ( // markdown styles
                     '#bravegpt > pre h1 { font-size: 1.25em } #bravegpt > pre h2 { font-size: 1.1em }' // size headings
                   + '#bravegpt > pre ul { margin: -10px 0 -6px ; }' // reduce v-spacing
@@ -1898,16 +1898,16 @@
               + '.chatgpt-modal > div { padding: 24px 20px 14px 20px !important ;' // increase modal padding
                   + 'background-color: white !important ; color: #202124 }'
               + '.chatgpt-modal p { margin: 14px 0 -20px 4px ; font-size: 18px }' // pos/size modal msg
-              + `.chatgpt-modal a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
+              + `.chatgpt-modal a { color: #${ ui.app.scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
               + `.modal-buttons { margin: 38px 0 1px ${ browser.isMobile ? 0 : -7 }px !important ; width: 100% }` // pos/size modal buttons
               + '.chatgpt-modal button {' // alert buttons
                   + 'font-size: 14px ; text-transform: uppercase ; min-width: 123px ; '
                   + `padding: ${ browser.isMobile ? '5px' : '4px 3px' } !important ;`
                   + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
-                  + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
+                  + 'border: 1px solid ' + ( ui.app.scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
               + '.primary-modal-btn { background: black !important ; color: white !important }'
               + '.chatgpt-modal button:hover { background-color: #9cdaff !important ; color: black !important }'
-              + ( scheme == 'dark' ? // darkmode chatgpt.alert() styles
+              + ( ui.app.scheme == 'dark' ? // darkmode chatgpt.alert() styles
                   ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                       + 'background-color: black !important ; color: white }'
                   + '.primary-modal-btn { background: hsl(186 100% 69%) !important ; color: black !important }'
@@ -1921,9 +1921,9 @@
               + '[class$="-modal"] {' // native modals + chatgpt.alert()s
                   + 'z-index: 13456 ; position: absolute ;' // to be click-draggable
                   + 'opacity: 0 ;' // to fade-in
-                  + `background-image: linear-gradient(180deg, ${ scheme == 'dark' ? '#99a8a6 -200px, black 200px' : '#b6ebff -296px, white 171px' }) ;`
-                  + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
-                  + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                  + `background-image: linear-gradient(180deg, ${ ui.app.scheme == 'dark' ? '#99a8a6 -200px, black 200px' : '#b6ebff -296px, white 171px' }) ;`
+                  + `border: 1px solid ${ ui.app.scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
+                  + `color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' } ;`
                   + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                   + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                               + 'transform 0.55s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
@@ -1971,8 +1971,8 @@
               + '[class*="modal-close-btn"] {'
                   + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
                   + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
-              + `[class*="modal-close-btn"] path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
-              + ( scheme == 'dark' ? '[class*="modal-close-btn"]:hover path { stroke: black ; fill: black }' : '' ) // invert dark mode hover paths
+              + `[class*="modal-close-btn"] path {${ ui.app.scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
+              + ( ui.app.scheme == 'dark' ? '[class*="modal-close-btn"]:hover path { stroke: black ; fill: black }' : '' ) // invert dark mode hover paths
               + '[class*="modal-close-btn"]:hover { background-color: #f2f2f2 }' // hover underlay
               + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
               + '[class*="-modal"] h2 { font-size: 26px ; line-height: 32px ; padding: 0 ; margin: 4px 0 -1px !important ;'
@@ -1984,22 +1984,22 @@
               + '#bravegpt-settings { font-family: var(--brand-font) ;'
                   + `min-width: ${ browser.isPortrait ? 288 : 758 }px ; max-width: 75vw ; word-wrap: break-word ;`
                   + 'margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
-                  + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
+                  + `${ ui.app.scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
               + `#bravegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 ${ browser.isMobile ? -31 : -6 }px -3px 0 }`
               + `#bravegpt-settings-title h4 { font-size: ${ browser.isPortrait ? 26 : 30 }px ; font-weight: bold ; margin: -31px 17px 7px 0 }`
               + '#bravegpt-settings ul { list-style: none ; padding: 0 ; margin: 0 ;' // hide bullets, override Brave ul margins
                   + `width: ${ browser.isPortrait ? 100 : 50 }% }` // set width based on column cnt
               + '#bravegpt-settings li {'
-                  + `color: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for text
-                  + `fill: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
-                  + `stroke: ${ scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
+                  + `color: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for text
+                  + `fill: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
+                  + `stroke: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
                   + 'height: 37px ; font-size: 14.5px ; transition: transform 0.1s ease ;'
-                  + `padding: 7px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
+                  + `padding: 7px 10px ; border-bottom: 1px dotted ${ ui.app.scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
                   + 'border-radius: 3px }' // make highlight strips slightly rounded
               + '#bravegpt-settings li.active {'
-                  + `color: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for text
-                  + `fill: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for icons
-                  + `stroke: ${ scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' }}` // for icons
+                  + `color: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for text
+                  + `fill: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for icons
+                  + `stroke: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' }}` // for icons
               + '#bravegpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
               + '#bravegpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
               + '#bravegpt-settings li, #bravegpt-settings li label { cursor: pointer }' // add finger on hover
@@ -2011,7 +2011,7 @@
               + '#scheme-menu-entry > span > svg { position: relative ; top: 3px ; margin-left: 4px }' // v-align/left-pad Scheme status icon
               + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
               + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
-              + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
+              + `#about-menu-entry span { color: ${ ui.app.scheme == 'dark' ? '#28ee28' : 'green' }}`
               + `#about-menu-entry > span { width: ${ browser.isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
                   + `${ config.fgAnimationsDisabled ? '' : ( // fade edges
                             'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
@@ -2019,7 +2019,7 @@
               + '#about-menu-entry > span > div { text-wrap: nowrap ;'
                   + `${ config.fgAnimationsDisabled ? '' : 'animation: ticker linear 60s infinite' }}`
               + '@keyframes ticker { 0% { transform: translateX(100%) } 100% { transform: translateX(-2000%) }}'
-              + `.about-em { color: ${ scheme == 'dark' ? 'white' : 'green' } !important }`
+              + `.about-em { color: ${ ui.app.scheme == 'dark' ? 'white' : 'green' } !important }`
             )
         },
 
@@ -2130,7 +2130,7 @@
         scheme(newScheme) {
             log.caller = `update.scheme('${newScheme}')`
             log.debug(`Updating ${app.name} scheme to ${log.toTitleCase(newScheme)}...`)
-            scheme = newScheme ; logos.braveGPT.update()
+            ui.app.scheme = newScheme ; logos.braveGPT.update()
             update.appStyle() ; update.stars() ; toggle.btnGlow() ; modals.settings.updateSchemeStatus()
             log.debug(`Success! ${app.name} updated to ${log.toTitleCase(newScheme)} scheme`)
         },
@@ -2139,7 +2139,7 @@
             ['sm', 'med', 'lg'].forEach(size =>
                 document.querySelectorAll(`[id*="stars-${size}"]`).forEach(starsDiv =>
                     starsDiv.id = config.bgAnimationsDisabled ? `stars-${size}-off`
-                    : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
+                    : `${ ui.app.scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
             ))
         },
 
@@ -2189,7 +2189,7 @@
         ['sm', 'med', 'lg'].forEach(starSize => {
             const starsDiv = document.createElement('div')
             starsDiv.id = config.bgAnimationsDisabled ? `stars-${starSize}-off`
-                : `${ scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
+                : `${ ui.app.scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
             starsDivsContainer.append(starsDiv)
         })
         targetNode.prepend(starsDivsContainer)
@@ -2533,7 +2533,7 @@
                 aboutStatusLabel.style.float = config.fgAnimationsDisabled ? 'right' : ''
 
                 // Toggle button glow
-                if (scheme == 'dark') toggle.btnGlow()
+                if (ui.app.scheme == 'dark') toggle.btnGlow()
             }
             log.caller = `toggle.animations('${layer}')`
             log.debug(`Success! ${layer.toUpperCase()} animations toggled ${ config[configKey] ? 'OFF' : 'ON' }`)
@@ -2559,7 +2559,7 @@
 
         btnGlow(state = '') {
             log.caller = `toggle.btnGlow(${ state ? `'${state}'` : '' })`
-            const removeCondition = state == 'off' || scheme != 'dark' || config.fgAnimationsDisabled
+            const removeCondition = state == 'off' || ui.app.scheme != 'dark' || config.fgAnimationsDisabled
             document.querySelectorAll('[class*="-modal"] button').forEach((btn, idx) => {
                 setTimeout(() => btn.classList[removeCondition ? 'remove' : 'add']('glowing-btn'),
                     (idx +1) *50 *chatgpt.randomFloat()) // to unsync flickers                
@@ -3424,7 +3424,7 @@
                 try { // to render markdown
                     answerPre.innerHTML = marked.parse(answer) } catch (err) { log.error(err.message) }
                 hljs.highlightAll() // highlight code
-                if (scheme == 'dark' && answerPre.firstChild?.tagName == 'P')
+                if (ui.app.scheme == 'dark' && answerPre.firstChild?.tagName == 'P')
                     answerPre.firstChild.prepend('>> ') // since speech balloon tip missing
 
                 // Typeset math
@@ -3549,8 +3549,10 @@
         suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
     }
 
-    // Init scheme var
-    let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
+    // Init UI props
+    log.debug('Initializing UI properties...')
+    const ui = { app: { scheme: config.scheme || ( isDarkMode() ? 'dark' : 'light' )}}
+    log.debug(`Success! ui = '${log.prettifyObj(ui)}`)
 
     // Create/ID/classify/listenerize BRAVEGPT container
     let appDiv = document.createElement('div') ; appDiv.id = 'bravegpt'
