@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.13.8
+// @version                2014.9.13.9
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -949,14 +949,14 @@
 
                     // Show notification
                     notify(` ${ msgs.menuLabel_colorScheme || 'Color Scheme' }: `
-                           + ( ui.app.scheme == 'light' ? msgs.scheme_light   || 'Light' :
-                               ui.app.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
-                                                        : msgs.menuLabel_auto || 'Auto' ).toUpperCase() )
+                           + ( scheme == 'light' ? msgs.scheme_light   || 'Light' :
+                               scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
+                                                 : msgs.menuLabel_auto || 'Auto' ).toUpperCase() )
                     const notifs = document.querySelectorAll('.chatgpt-notif'),
                           notif = notifs[notifs.length -1]
 
                     // Append scheme icon
-                    const schemeIcon = icons[ui.app.scheme == 'light' ? 'sun' : ui.app.scheme == 'dark' ? 'moon' : 'arrowsCycle'].create()
+                    const schemeIcon = icons[ui.app.scheme == 'light' ? 'sun' : scheme == 'dark' ? 'moon' : 'arrowsCycle'].create()
                     schemeIcon.style.cssText = 'width: 23px ; height: 23px ; position: relative ; top: 3px ; margin-left: 6px'
                     notif.append(schemeIcon)
                 }
@@ -3620,7 +3620,7 @@
     function handleSchemeChange() {
         if (config.scheme) return // since light/dark hard-set
         const newScheme = chatgpt.isDarkMode() ? 'dark' : 'light'
-        if (newScheme != scheme) update.scheme(newScheme)
+        if (newScheme != ui.app.scheme) update.scheme(newScheme)
     }
 
 })()
