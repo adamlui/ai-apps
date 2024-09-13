@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.13.1
+// @version               2024.9.13.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -287,9 +287,9 @@
             args.forEach((arg, idx) => {
                 finalMsg += idx == 1 ? ': ' : idx > 1 ? ' ' : '' // separate multi-args
                 finalMsg += arg?.toString().replace(new RegExp(Object.values(log.regEx).map(value => value.source).join('|'), 'ig'), match => {
-                    if (log.regEx.greenChars.test(match)) { msgStyles.push('color: green', baseMsgStyle) ; return `%c${match}%c` }
-                    else if (log.regEx.redChars.test(match)) { msgStyles.push('color: red', baseMsgStyle) ; return `%c${match}%c` }
-                    else if (log.regEx.purpChars.test(match)) { msgStyles.push('color: #dd29f4', baseMsgStyle) ; return `%c${match}%c` }
+                    if (log.regEx.greenVals.test(match)) { msgStyles.push('color: green', baseMsgStyle) ; return `%c${match}%c` }
+                    else if (log.regEx.redVals.test(match)) { msgStyles.push('color: red', baseMsgStyle) ; return `%c${match}%c` }
+                    else if (log.regEx.purpVals.test(match)) { msgStyles.push('color: #dd29f4', baseMsgStyle) ; return `%c${match}%c` }
                 })
             })
 

@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.13.2
+// @version                2024.9.13.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -160,9 +160,9 @@
             args.forEach((arg, idx) => {
                 finalMsg += idx == 1 ? ': ' : idx > 1 ? ' ' : '' // separate multi-args
                 finalMsg += arg?.toString().replace(new RegExp(Object.values(log.regEx).map(value => value.source).join('|'), 'ig'), match => {
-                    if (log.regEx.greenChars.test(match)) { msgStyles.push('color: green', baseMsgStyle) ; return `%c${match}%c` }
-                    else if (log.regEx.redChars.test(match)) { msgStyles.push('color: red', baseMsgStyle) ; return `%c${match}%c` }
-                    else if (log.regEx.purpChars.test(match)) { msgStyles.push('color: #dd29f4', baseMsgStyle) ; return `%c${match}%c` }
+                    if (log.regEx.greenVals.test(match)) { msgStyles.push('color: green', baseMsgStyle) ; return `%c${match}%c` }
+                    else if (log.regEx.redVals.test(match)) { msgStyles.push('color: red', baseMsgStyle) ; return `%c${match}%c` }
+                    else if (log.regEx.purpVals.test(match)) { msgStyles.push('color: #dd29f4', baseMsgStyle) ; return `%c${match}%c` }
                 })
             })
 
