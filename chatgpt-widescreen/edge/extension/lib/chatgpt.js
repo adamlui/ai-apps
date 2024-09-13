@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v3.2.1
+// This library is a condensed version of chatgpt.js v3.3.0
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -240,13 +240,12 @@ const chatgpt = {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
 
-    getFooterDiv() { return document.querySelector('main form')?.parentNode.parentNode.nextElementSibling; },
+    footer: { get() { return document.querySelector('main form')?.parentNode.parentNode.nextElementSibling; }},
+    getFooterDiv() { return chatgpt.footer.get(); },
 
     getNewChatButton() {
-        for (const navBtnSVG of document.querySelectorAll('nav button svg'))
-            if (navBtnSVG.querySelector('path[d^="M15.6729"], '  // pencil-on-pad icon
-                                      + 'path[d^="M3.06957"]'))  // refresh icon if temp chat
-                return navBtnSVG.parentNode;
+        return document.querySelector('button:has([d*="M15.6729"],' // pencil-on-pad icon
+                                    + '[d^="M3.06957"])'); // refresh icon if temp chat
     },
 
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
@@ -265,13 +264,32 @@ const chatgpt = {
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
     isFullScreen() { return chatgpt.browser.isFullScreen(); },
 
-    isIdle() {
-        return new Promise(resolve => {
-            if (chatgpt.getRegenerateBtn()) resolve(true);
-            else new MutationObserver((_, obs) => {
-                if (chatgpt.getRegenerateBtn()) { obs.disconnect(); resolve(true); }
-            }).observe(document.body, { childList: true, subtree: true });
-        });
+    async isIdle(timeout = null) {
+        const obsConfig = { childList: true, subtree: true },
+              msgDivSelector = 'div[data-message-author-role]';
+
+        // Create promises
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+        const isIdlePromise = (async () => {
+            await new Promise(resolve => { // when on convo page
+                if (document.querySelector(msgDivSelector)) resolve();
+                else new MutationObserver((_, obs) => {
+                    if (document.querySelector(msgDivSelector)) { obs.disconnect(); resolve(); }
+                }).observe(document.body, obsConfig);
+            });
+            await new Promise(resolve => { // when reply starts generating
+                new MutationObserver((_, obs) => {
+                    if (chatgpt.getStopBtn()) { obs.disconnect(); resolve(); }
+                }).observe(document.body, obsConfig);
+            });
+            return new Promise(resolve => { // when reply stops generating
+                new MutationObserver((_, obs) => {
+                    if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve(true); }
+                }).observe(document.body, obsConfig);
+            });
+        })();
+
+        return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise);
     },
 
     notify(msg, position, notifDuration, shadow) {
@@ -445,13 +463,15 @@ const chatgpt = {
     },
 
     sidebar: {
+        exists() { return !!chatgpt.getNewChatLink(); },
         hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
         show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
         isOff() { return !this.isOn(); },
         isOn() {
-            const sidebar = document.querySelector('body script + div > div');
-            if (!sidebar) return console.error('Sidebar element not found!');
-            return chatgpt.browser.isMobile() ?
+            const sidebar = (() => {
+                return chatgpt.sidebar.exists() ? document.querySelector('body script + div > div') : null; })();
+            if (!sidebar) { console.error('Sidebar element not found!'); return false; }
+            else return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
               : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
         },
@@ -463,6 +483,7 @@ const chatgpt = {
                               : btn => btn.querySelector('svg path[d^="M8.857"]');
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
+            console.error('Sidebar toggle not found!');
         }
     },
 
@@ -470,24 +491,107 @@ const chatgpt = {
 };
 
 // Create alias functions
-const cjsFuncSynonyms = [['button', 'btn']];
+const cjsFuncAliases = [
+    ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
+    ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
+        'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
+    ['continue', 'continueChat', 'continueGenerating', 'continueResponse'],
+    ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
+    ['detectLanguage', 'getLanguage'],
+    ['executeCode', 'codeExecute'],
+    ['exists', 'isAvailable', 'isExistent', 'isPresent'],
+    ['exportChat', 'chatExport', 'export'],
+    ['getFooterDiv', 'getFooter'],
+    ['getHeaderDiv', 'getHeader'],
+    ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
+    ['getContinueGeneratingButton', 'getContinueButton'],
+    ['getScrollToBottomButton', 'getScrollButton'],
+    ['getStopGeneratingButton', 'getStopButton'],
+    ['getTextarea', 'getTextArea', 'getChatbar', 'getChatBar', 'getChatbox', 'getChatBox'],
+    ['isFullScreen', 'isFullscreen', 'isfullscreen'],
+    ['isLoaded', 'isloaded'],
+    ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
+    ['minify', 'codeMinify', 'minifyCode'],
+    ['new', 'newChat', 'startNewChat'],
+    ['obfuscate', 'codeObfuscate', 'obfuscateCode'],
+    ['printAllFunctions', 'showAllFunctions'],
+    ['refactor', 'codeRefactor', 'refactorCode'],
+    ['refreshReply', 'regenerate', 'regenerateReply'],
+    ['refreshSession', 'sessionRefresh'],
+    ['renderHTML', 'renderHtml', 'renderLinks', 'renderTags'],
+    ['reviewCode', 'codeReview'],
+    ['send', 'sendChat', 'sendMsg'],
+    ['sendInNewChat', 'sendNewChat'],
+    ['sentiment', 'analyzeSentiment', 'sentimentAnalysis'],
+    ['startNewChat', 'new', 'newChat'],
+    ['stop', 'stopChat', 'stopGenerating', 'stopResponse'],
+    ['suggest', 'suggestion', 'recommend'],
+    ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
+    ['toggleScheme', 'toggleMode'],
+    ['translate', 'translation', 'translator'],
+    ['unminify', 'unminifyCode', 'codeUnminify'],
+    ['writeCode', 'codeWrite']
+];
+const cjsFuncSynonyms = [
+    ['account', 'acct'],
+    ['activate', 'turnOn'],
+    ['analyze', 'check', 'evaluate', 'review'],
+    ['ask', 'send', 'submit'],
+    ['button', 'btn'],
+    ['continue', 'resume'],
+    ['chats', 'history'],
+    ['chat', 'conversation', 'convo'],
+    ['clear', 'delete', 'remove'],
+    ['data', 'details'],
+    ['deactivate', 'deActivate', 'turnOff'],
+    ['execute', 'interpret', 'interpreter', 'run'],
+    ['firefox', 'ff'],
+    ['generating', 'generation'],
+    ['minify', 'uglify'],
+    ['refactor', 'rewrite'],
+    ['regenerate', 'regen'],
+    ['render', 'parse'],
+    ['reply', 'response'],
+    ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
+    ['speak', 'say', 'speech', 'talk', 'tts'],
+    ['summarize', 'tldr'],
+    ['unminify', 'beautify', 'prettify', 'prettyPrint']
+];
 const camelCaser = (words) => {
     return words.map((word, index) => index === 0 || word == 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); };
-do { // create new function per synonym per word per function
-    var newFunctionsCreated = false;
-    for (const funcName in chatgpt) {
-        if (typeof chatgpt[funcName] == 'function') {
-            const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
-            for (const funcWord of funcWords) {
-                const synonymValues = [].concat(...cjsFuncSynonyms // flatten into single array w/ word's cjsFuncSynonyms
-                    .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
-                    .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
-                for (const synonym of synonymValues) { // create function per synonym
-                    const newFuncName = camelCaser(funcWords.map(word => (word == funcWord ? synonym : word)));
-                    if (!chatgpt[newFuncName]) { // don't alias existing functions
-                        chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
-                        newFunctionsCreated = true;
-}}}}}} while (newFunctionsCreated); // loop over new functions to encompass all variations
+for (const prop in chatgpt) {
+
+    // Create new function for each alias
+    for (const subAliases of cjsFuncAliases) {
+        if (subAliases.includes(prop)) {
+            if (subAliases.some(element => element.includes('.'))) {
+                const nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
+                for (const nestAlias of subAliases) {
+                    if (/^(\w+)/.exec(nestAlias)[1] !== prop) { // don't alias og function
+                        chatgpt[nestAlias] = chatgpt[prop][nestedFunction]; // make new function, reference og one
+            }}} else { // alias direct functions
+                for (const dirAlias of subAliases) {
+                    if (dirAlias !== prop) { // don't alias og function
+                        chatgpt[dirAlias] = chatgpt[prop]; // make new function, reference og one
+            }}}
+    }}
+
+    do { // create new function per synonym per word per function
+        var newFunctionsCreated = false;
+        for (const funcName in chatgpt) {
+            if (typeof chatgpt[funcName] == 'function') {
+                const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
+                for (const funcWord of funcWords) {
+                    const synonymValues = [].concat(...cjsFuncSynonyms // flatten into single array w/ word's cjsFuncSynonyms
+                        .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
+                        .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
+                    for (const synonym of synonymValues) { // create function per synonym
+                        const newFuncName = camelCaser(funcWords.map(word => (word == funcWord ? synonym : word)));
+                        if (!chatgpt[newFuncName]) { // don't alias existing functions
+                            chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
+                            newFunctionsCreated = true;
+    }}}}}} while (newFunctionsCreated); // loop over new functions to encompass all variations
+}
 
 // Prefix console logs w/ '🤖 chatgpt.js >> '
 const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info;
