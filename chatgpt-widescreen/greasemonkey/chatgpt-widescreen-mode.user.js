@@ -864,7 +864,8 @@
 
     // Create/apply general style TWEAKS
     const tweaksStyle = create.style(),
-          tcbStyle = `${ site == 'poe' ? inputSelector : 'div[class*="prose"]'} { max-height: 68vh }`, // heighten chatbox
+          tcbStyle = `${ // heighten chatbox
+              site == 'poe' ? inputSelector : `div[class*="prose"]:has(${inputSelector})`} { max-height: 68vh }`,
           hhStyle = headerSelector + '{ display: none !important }' // hide header
                   + ( /chatgpt|openai/.test(site) ? 'main { padding-top: 12px }' : '' ), // increase top-padding
           hfStyle = footerSelector + '{ visibility: hidden ;' // hide footer text
