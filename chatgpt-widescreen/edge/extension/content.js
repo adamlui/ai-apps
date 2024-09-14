@@ -24,6 +24,21 @@
         return true
     })
 
+    // Init SITE props
+    const sites = {
+        chatgpt: {
+            hasSidebar: chatgpt.sidebar.exists(),
+            selectors: {
+                input: '#prompt-textarea', sidebar: '#__next > div > div.dark',
+                sidepad: '#__next > div > div', header: 'main .sticky',
+                footer: chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') }},
+        poe: {
+            hasSidebar: true,
+            selectors: {
+                input: '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after',
+                sidebar: 'menu[class*="sidebar"], aside[class*="sidebar"]', header: 'header' }}
+    } ; sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
+
     // Define FACTORY functions
 
     const create = {
@@ -335,26 +350,13 @@
     // Run MAIN routine
 
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
-    if (/openai|chatgpt/.test(site))
-        await Promise.race([btns.sendIsLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
 
-    // Init browser props
+    // Init browser/UI props
     const browser = { isFirefox: chatgpt.browser.isFirefox() }
-
-    // Init SITE props
-    const sites = {
-        chatgpt: {
-            hasSidebar: chatgpt.sidebar.exists(),
-            selectors: {
-                input: '#prompt-textarea', sidebar: '#__next > div > div.dark',
-                sidepad: '#__next > div > div', header: 'main .sticky',
-                footer: chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') }},
-        poe: {
-            hasSidebar: true,
-            selectors: {
-                input: '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after',
-                sidebar: 'menu[class*="sidebar"], aside[class*="sidebar"]', header: 'header' }}
-    } ; sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
+    if (/openai|chatgpt/.test(site)) {
+        await Promise.race([btns.sendIsLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
+        sites[site].hasSidebar = chatgpt.sidebar.exists()
+    }
 
     // Save FULL-WINDOW + FULL SCREEN states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : settings.load('fullWindow')
