@@ -229,6 +229,8 @@ const chatgpt = {
     },
 
     browser: {
+        isFirefox() { return navigator.userAgent.includes('Firefox'); },
+
         isFullScreen() {
             const userAgentStr = navigator.userAgent;
             return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
