@@ -31,10 +31,9 @@
     initToggle(toggles[2], 'tcbDisabled', 'menuLabel_tallerChatbox')
     initToggle(toggles[3], 'widerChatbox', 'menuLabel_widerChatbox')
     initToggle(toggles[4], 'ncbDisabled', 'menuLabel_newChatBtn')
-    initToggle(toggles[5], 'autoFocusChatbarDisabled', 'menuLabel_autoFocusChatbar')
-    initToggle(toggles[6], 'hiddenHeader', 'menuLabel_hiddenHeader')
-    initToggle(toggles[7], 'hiddenFooter', 'menuLabel_hiddenFooter')
-    initToggle(toggles[8], 'notifDisabled', 'menuLabel_modeNotifs')
+    initToggle(toggles[5], 'hiddenHeader', 'menuLabel_hiddenHeader')
+    initToggle(toggles[6], 'hiddenFooter', 'menuLabel_hiddenFooter')
+    initToggle(toggles[7], 'notifDisabled', 'menuLabel_modeNotifs')
 
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]'),

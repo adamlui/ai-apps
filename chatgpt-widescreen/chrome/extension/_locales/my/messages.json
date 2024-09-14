@@ -5,7 +5,6 @@
   "menuLabel_tallerChatbox": { "message": "မြင့်တဲ့ စကားပြောဘုတ်" },
   "menuLabel_widerChatbox": { "message": "ကျယ်ပြန့်သော Chatbox" },
   "menuLabel_newChatBtn": { "message": "စကားပြောခလုတ်အသစ်" },
-  "menuLabel_autoFocusChatbar": { "message": "အလိုအလျောက်အာရုံစူးစိုက်မှု စကားပြောဘား" },
   "menuLabel_hiddenHeader": { "message": "ဖုံးကွယ်ထားသော ခေါင်းစီး" },
   "menuLabel_hiddenFooter": { "message": "ဖျောက်ထားသော အောက်ခြေမှတ်စု" },
   "menuLabel_modeNotifs": { "message": "မုဒ် အသိပေးချက်များ" },

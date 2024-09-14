@@ -5,7 +5,6 @@
   "menuLabel_tallerChatbox": { "message": "Uzunroq suhbat qutisi" },
   "menuLabel_widerChatbox": { "message": "Kengroq chat qutisi" },
   "menuLabel_newChatBtn": { "message": "Yangi Chat tugmasi" },
-  "menuLabel_autoFocusChatbar": { "message": "Avtofokusli suhbat paneli" },
   "menuLabel_hiddenHeader": { "message": "Yashirin sarlavha" },
   "menuLabel_hiddenFooter": { "message": "Yashirin altbilgi" },
   "menuLabel_modeNotifs": { "message": "Rejim bildirishnomalari" },

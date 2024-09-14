@@ -5,7 +5,6 @@
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Bredere chatbox" },
   "menuLabel_newChatBtn": { "message": "Knop Nieuwe chat" },
-  "menuLabel_autoFocusChatbar": { "message": "Chatbalk met automatische focus" },
   "menuLabel_hiddenHeader": { "message": "Verborgen koptekst" },
   "menuLabel_hiddenFooter": { "message": "Verborgen voettekst" },
   "menuLabel_modeNotifs": { "message": "Modusmeldingen" },

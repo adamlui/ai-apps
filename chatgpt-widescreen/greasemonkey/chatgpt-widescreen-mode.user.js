@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.4
+// @version             2024.9.14.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -279,13 +279,13 @@
 
     // Init CONFIG
     const config = { userLanguage: chatgpt.getUserLanguage() }
-    loadSetting('autoFocusChatbarDisabled', 'fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
+    loadSetting('fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
                 'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen')
 
-    // Init FETCHER
+    // Init XHR fetcher
     const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
 
-    // Define MESSAGES
+    // Init localized MESSAGES
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
@@ -388,18 +388,6 @@
         }))
 
         if (/chatgpt|openai/.test(site)) {
-
-            // Add command to toggle Auto-Focus Chatbar
-            const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
-                           + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                           + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
-            menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
-                saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
-                notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                             + menuState.word[+!config.autoFocusChatbarDisabled])
-                if (!config.autoFocusChatbarDisabled) document.querySelector(inputSelector)?.focus()
-                refreshMenu()
-            }))
 
             // Add command to toggle hidden header
             const hhLabel = menuState.symbol[+config.hiddenHeader] + ' '

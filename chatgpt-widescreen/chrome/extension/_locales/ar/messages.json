@@ -5,7 +5,6 @@
   "menuLabel_tallerChatbox": { "message": "أطول مربع الدردشة" },
   "menuLabel_widerChatbox": { "message": "صندوق دردشة أوسع" },
   "menuLabel_newChatBtn": { "message": "زر دردشة جديد" },
-  "menuLabel_autoFocusChatbar": { "message": "شريط دردشة التركيز التلقائي" },
   "menuLabel_hiddenHeader": { "message": "رأس مخفي" },
   "menuLabel_hiddenFooter": { "message": "تذييل مخفي" },
   "menuLabel_modeNotifs": { "message": "إشعارات الوضع" },

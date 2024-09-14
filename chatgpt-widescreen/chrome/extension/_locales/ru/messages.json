@@ -5,7 +5,6 @@
   "menuLabel_tallerChatbox": { "message": "Высокий Чатбокс" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
   "menuLabel_newChatBtn": { "message": "Кнопка Чата" },
-  "menuLabel_autoFocusChatbar": { "message": "Панель чата с автофокусом" },
   "menuLabel_hiddenHeader": { "message": "Скрытый заголовок страницы" },
   "menuLabel_hiddenFooter": { "message": "Скрытый подвал" },
   "menuLabel_modeNotifs": { "message": "Уведомления о Режиме" },

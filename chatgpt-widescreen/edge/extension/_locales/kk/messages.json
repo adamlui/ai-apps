@@ -5,7 +5,6 @@
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Кеңірек чат жәшігі" },
   "menuLabel_newChatBtn": { "message": "Жаңа чат түймесі" },
-  "menuLabel_autoFocusChatbar": { "message": "Автоматты фокустық чат панелі" },
   "menuLabel_hiddenHeader": { "message": "Жасырын айдар" },
   "menuLabel_hiddenFooter": { "message": "Жасырын төменгі аяқ киім" },
   "menuLabel_modeNotifs": { "message": "Режим туралы хабарландырулар" },

@@ -5,7 +5,6 @@
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Leveämpi keskusteluruutu" },
   "menuLabel_newChatBtn": { "message": "Keskustelu painike" },
-  "menuLabel_autoFocusChatbar": { "message": "Automaattitarkennuksen keskustelupalkki" },
   "menuLabel_hiddenHeader": { "message": "Piilotettu ylätunniste" },
   "menuLabel_hiddenFooter": { "message": "Piilotettu alatunniste" },
   "menuLabel_modeNotifs": { "message": "Tilailmoitukset" },

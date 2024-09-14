@@ -5,7 +5,6 @@
   "menuLabel_tallerChatbox": { "message": "Uzun Chatbox" },
   "menuLabel_widerChatbox": { "message": "Daha Geniş Sohbet Kutusu" },
   "menuLabel_newChatBtn": { "message": "Sohbet Butonu" },
-  "menuLabel_autoFocusChatbar": { "message": "Otomatik Odaklanma Sohbet Çubuğu" },
   "menuLabel_hiddenHeader": { "message": "Header Gizle" },
   "menuLabel_hiddenFooter": { "message": "Gizli Alt Bilgi" },
   "menuLabel_modeNotifs": { "message": "Mod Bildirimleri" },

@@ -5,7 +5,6 @@
   "menuLabel_tallerChatbox": { "message": "Viši Chatbox" },
   "menuLabel_widerChatbox": { "message": "Širi okvir za ćaskanje" },
   "menuLabel_newChatBtn": { "message": "Novo dugme za razgovor" },
-  "menuLabel_autoFocusChatbar": { "message": "Traka za razgovor s automatskim fokusiranjem" },
   "menuLabel_hiddenHeader": { "message": "Skriveno zaglavlje" },
   "menuLabel_hiddenFooter": { "message": "Skriveno podnožje" },
   "menuLabel_modeNotifs": { "message": "Obavještenja o režimu" },

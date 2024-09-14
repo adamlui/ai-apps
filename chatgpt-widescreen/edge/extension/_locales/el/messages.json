@@ -5,7 +5,6 @@
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Ευρύτερο πλαίσιο συνομιλίας" },
   "menuLabel_newChatBtn": { "message": "Κουμπί νέας συνομιλίας" },
-  "menuLabel_autoFocusChatbar": { "message": "Γραμμή συνομιλίας αυτόματης εστίασης" },
   "menuLabel_hiddenHeader": { "message": "Κρυφή κεφαλίδα" },
   "menuLabel_hiddenFooter": { "message": "Κρυφό υποσέλιδο" },
   "menuLabel_modeNotifs": { "message": "Ειδοποιήσεις λειτουργίας" },
