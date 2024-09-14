@@ -234,9 +234,9 @@
         tooltip(btnType) { // text & position
             const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
                 .filter(type => !(type == 'fullWindow' && !ui.hasSidebar))
-            const ctrAddend = 25 + ( site == 'poe' ? 45 : 12 ),
-                spreadFactor = site == 'poe' ? 35 : 30.5,
-                iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
+            const ctrAddend = 25 + ( site == 'poe' ? ( browser.isFirefox ? 12 : 45 ) : 12 ),
+                  spreadFactor = site == 'poe' ? 34 : 30.5,
+                  iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
             tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + btnType + (
                 !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON')))
             tooltipDiv.style.right = `${ // horizontal position
@@ -350,7 +350,8 @@
               chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') : ''
     } catch (err) {}
 
-    // Init UI props
+    // Init BROWSER/UI props
+    const browser = { isFirefox: chatgpt.browser.isFirefox() }
     const ui = { hasSidebar: site == 'poe' || chatgpt.sidebar.exists() }
 
     // Save FULL-WINDOW + FULL SCREEN states

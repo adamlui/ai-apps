@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.13.10
+// @version             2024.9.14
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -718,9 +718,9 @@
         tooltip(btnType) { // text & position
             const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
                 .filter(type => !(type == 'fullWindow' && !ui.hasSidebar))
-            const ctrAddend = 25 + ( site == 'poe' ? 45 : 12 ),
-                spreadFactor = site == 'poe' ? 35 : 30.5,
-                iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
+            const ctrAddend = 25 + ( site == 'poe' ? ( browser.isFirefox ? 12 : 45 ) : 12 ),
+                  spreadFactor = site == 'poe' ? 34 : 30.5,
+                  iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
             tooltipDiv.innerText = msgs['tooltip_' + btnType + (
                 !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON'))]
             tooltipDiv.style.right = `${ // horizontal position
@@ -835,6 +835,7 @@
     } else registerMenu() // create functional menu
 
     // Init UI props
+    const browser = { isFirefox: chatgpt.browser.isFirefox() }
     const ui = { hasSidebar: site == 'poe' || chatgpt.sidebar.exists() }
 
     // Save FULL-WINDOW + FULL SCREEN states
