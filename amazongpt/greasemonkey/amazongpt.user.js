@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.14
+// @version                2024.9.14.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -576,6 +576,7 @@
                 if (getComputedStyle(event.target).cursor == 'pointer') return // prevent drag when clicking on interactive elems
                 log.caller = 'modals.dragHandlers.mousedown()'
                 modals.dragHandlers.draggableElem = event.currentTarget
+                modals.dragHandlers.draggableElem.style.cursor = 'grabbing'
                 log.debug(`Mouse down on div#${modals.dragHandlers.draggableElem?.id}`)
                 event.preventDefault(); // prevent sub-elems like icons being draggable
                 ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, modals.dragHandlers[event]))
@@ -595,6 +596,7 @@
 
             mouseup() { // remove listeners, reset modals.dragHandlerss.draggableElem
                 log.caller = 'modals.dragHandlers.mouseup()'
+                modals.dragHandlers.draggableElem.style.cursor = 'inherit'
                 log.debug(`Mouse up on div#${modals.dragHandlers.draggableElem?.id}`);
                 ['mousemove', 'mouseup'].forEach(event => document.removeEventListener(event, modals.dragHandlers[event]))
                 modals.dragHandlers.draggableElem = null
