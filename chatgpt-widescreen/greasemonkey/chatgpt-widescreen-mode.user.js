@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.15
+// @version             2024.9.14.16
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -935,10 +935,10 @@
     let isTempChat = false, prevSessionChecked = false
     const nodeObserver = new MutationObserver(([mutation]) => {
 
-        // Check loaded keys to restore previous session's state
+        // Check loaded keys to restore prev session's state
         if (!prevSessionChecked) {
             if (config.wideScreen) toggle.mode('wideScreen', 'ON')
-            if (config.fullWindow) { toggle.mode('fullWindow', 'ON')
+            if (config.fullWindow && sites[site].hasSidebar) { toggle.mode('fullWindow', 'ON')
                 if (/chatgpt|openai/.test(site)) { // sidebar observer doesn't trigger
                     syncFullerWindows(true) // so sync Fuller Windows...
                     if (!config.notifDisabled) // ... + notify

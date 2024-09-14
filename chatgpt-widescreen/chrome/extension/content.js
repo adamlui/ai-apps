@@ -448,12 +448,12 @@
     let isTempChat = false, prevSessionChecked = false
     const nodeObserver = new MutationObserver(([mutation]) => {
 
-        // Restore previous session's state + manage toggles
+        // Load keys, check to restore prev session's state
         settings.load(['extensionDisabled', ...sites[site].availFeatures])
             .then(() => { if (!config.extensionDisabled) {
-                if (!prevSessionChecked) { // restore previous session's state
+                if (!prevSessionChecked) { // restore prev session's state
                     if (config.wideScreen) toggle.mode('wideScreen', 'ON')
-                    if (config.fullWindow) { toggle.mode('fullWindow', 'ON')
+                    if (config.fullWindow && sites[site].hasSidebar) { toggle.mode('fullWindow', 'ON')
                         if (/chatgpt|openai/.test(site)) { // sidebar observer doesn't trigger
                             syncFullerWindows(true) // so sync Fuller Windows...
                             if (!config.notifDisabled) // ... + notify
