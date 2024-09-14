@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.9
+// @version             2024.9.14.10
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -277,24 +277,27 @@
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
-    // Init CONFIG
-    const config = { userLanguage: chatgpt.getUserLanguage() }
-    loadSetting('fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
-                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen')
-
     // Init SITE props
     const sites = {
         chatgpt: {
+            availFeatures: ['fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
+                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'wideScreen'],
             selectors: {
                 input: '#prompt-textarea', sidebar: '#__next > div > div.dark',
                 sidepad: '#__next > div > div', header: 'main .sticky',
                 footer: chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') }},
         poe: {
+            availFeatures: ['fullerWindows', 'fullWindow', 'hiddenHeader',
+                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen'],
             hasSidebar: true,
             selectors: {
                 input: '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after',
                 sidebar: 'menu[class*="sidebar"], aside[class*="sidebar"]', header: 'header' }}
     } ; sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
+
+    // Init CONFIG
+    const config = { userLanguage: chatgpt.getUserLanguage() }
+    loadSetting(...sites[site].availFeatures)
 
     // Init XHR fetcher
     const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest

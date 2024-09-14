@@ -27,12 +27,16 @@
     // Init SITE props
     const sites = {
         chatgpt: {
+            availFeatures: ['fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
+                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'wideScreen'],
             hasSidebar: chatgpt.sidebar.exists(),
             selectors: {
                 input: '#prompt-textarea', sidebar: '#__next > div > div.dark',
                 sidepad: '#__next > div > div', header: 'main .sticky',
                 footer: chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') }},
         poe: {
+            availFeatures: ['fullerWindows', 'fullWindow', 'hiddenHeader',
+                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen'],
             hasSidebar: true,
             selectors: {
                 input: '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after',
@@ -260,8 +264,7 @@
     }
 
     syncExtension = () => { // sync settings
-        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
-                      'hiddenHeader', 'hiddenFooter', 'notifDisabled')
+        settings.load('extensionDisabled', ...sites[site].availFeatures)
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
                     try { document.head.removeChild(wideScreenStyle) } catch (err) {}
@@ -444,8 +447,7 @@
     const nodeObserver = new MutationObserver(([mutation]) => {
 
         // Restore previous session's state + manage toggles
-        settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
-                       'hiddenHeader', 'hiddenFooter', 'notifDisabled', 'extensionDisabled'])
+        settings.load(['extensionDisabled', ...sites[site].availFeatures])
             .then(() => { if (!config.extensionDisabled) {
                 if (!prevSessionChecked) { // restore previous session's state
                     if (config.wideScreen) toggle.mode('wideScreen', 'ON')
