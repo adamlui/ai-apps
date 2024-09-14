@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.16
+// @version             2024.9.14.17
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -357,31 +357,35 @@
 
     function registerMenu() {
 
-        // Add command to also activate wide screen in full-window
-        const fwLabel = menuState.symbol[+config.fullerWindows] + ' '
-                      + ( msgs.menuLabel_fullerWins || 'Fuller Windows' )
-                      + menuState.separator + menuState.word[+config.fullerWindows]
-        menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
-            saveSetting('fullerWindows', !config.fullerWindows)
-            syncFullerWindows(config.fullerWindows) // live update on click
-            if (!config.notifDisabled) notify(
-                `${ ( msgs.menuLabel_fullerWins || 'Fuller Windows' ) }: ${ menuState.word[+config.fullerWindows] }`)
-            refreshMenu()
-        }))
+        // Add Fuller Windows toggle if avail
+        if (sites[site].availFeatures.includes('fullerWindows')) {
+            const fwLabel = menuState.symbol[+config.fullerWindows] + ' '
+                        + ( msgs.menuLabel_fullerWins || 'Fuller Windows' )
+                        + menuState.separator + menuState.word[+config.fullerWindows]
+            menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
+                saveSetting('fullerWindows', !config.fullerWindows)
+                syncFullerWindows(config.fullerWindows) // live update on click
+                if (!config.notifDisabled) notify(
+                    `${ ( msgs.menuLabel_fullerWins || 'Fuller Windows' ) }: ${ menuState.word[+config.fullerWindows] }`)
+                refreshMenu()
+            }))
+        }
 
-        // Add command to toggle taller chatbox when typing
-        const tcbLabel = '↕️ ' + ( msgs.menuLabel_tallerChatbox || 'Taller Chatbox' )
-                       + menuState.separator + menuState.word[+!config.tcbDisabled]
-        menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
-            saveSetting('tcbDisabled', !config.tcbDisabled)
-            update.style.tweaks()
-            if (!config.notifDisabled) notify(
-                `${ msgs.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ menuState.word[+!config.tcbDisabled] }`)
-            refreshMenu()
-        }))
+        // Add Taller Chatbox toggle if avail
+        if (sites[site].availFeatures.includes('tcbDisabled')) {
+            const tcbLabel = '↕️ ' + ( msgs.menuLabel_tallerChatbox || 'Taller Chatbox' )
+                        + menuState.separator + menuState.word[+!config.tcbDisabled]
+            menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
+                saveSetting('tcbDisabled', !config.tcbDisabled)
+                update.style.tweaks()
+                if (!config.notifDisabled) notify(
+                    `${ msgs.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ menuState.word[+!config.tcbDisabled] }`)
+                refreshMenu()
+            }))
+        }
 
-        // Add command to toggle wider chatbox w/ widescreen mode in Poe
-        if (site == 'poe') {
+        // Add Wider Chatbox toggle if avail
+        if (sites[site].availFeatures.includes('widerChatbox')) {
             const wcbLabel = '↔️ ' + ( msgs.menuLabel_widerChatbox || 'Wider Chatbox' )
                            + menuState.separator + menuState.word[+config.widerChatbox]
             menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
@@ -393,20 +397,21 @@
             }))
         }
 
-        // Add command to hide New Chat button
-        const hncLabel = menuState.symbol[+!config.ncbDisabled] + ' '
-                       + ( msgs.menuLabel_newChatBtn || 'New Chat Button' )
-                       + menuState.separator + menuState.word[+!config.ncbDisabled]
-        menuIDs.push(GM_registerMenuCommand(hncLabel, () => {
-            saveSetting('ncbDisabled', !config.ncbDisabled)
-            update.style.tweaks()
-            notify(`${ msgs.menuLabel_newChatBtn || 'New Chat Button' }: ${ menuState.word[+!config.ncbDisabled] }`)
-            refreshMenu()
-        }))
+        // Add New Chat Button toggle if avail
+        if (sites[site].availFeatures.includes('ncbDisabled')) {
+            const hncLabel = menuState.symbol[+!config.ncbDisabled] + ' '
+                        + ( msgs.menuLabel_newChatBtn || 'New Chat Button' )
+                        + menuState.separator + menuState.word[+!config.ncbDisabled]
+            menuIDs.push(GM_registerMenuCommand(hncLabel, () => {
+                saveSetting('ncbDisabled', !config.ncbDisabled)
+                update.style.tweaks()
+                notify(`${ msgs.menuLabel_newChatBtn || 'New Chat Button' }: ${ menuState.word[+!config.ncbDisabled] }`)
+                refreshMenu()
+            }))
+        }
 
-        if (/chatgpt|openai/.test(site)) {
-
-            // Add command to toggle hidden header
+        // Add Hidden Header toggle if avail
+        if (sites[site].availFeatures.includes('hiddenHeader')) {
             const hhLabel = menuState.symbol[+config.hiddenHeader] + ' '
                           + ( msgs.menuLabel_hiddenHeader || 'Hidden Header' )
                           + menuState.separator + menuState.word[+config.hiddenHeader]
@@ -417,8 +422,10 @@
                     `${ msgs.menuLabel_hiddenHeader || 'Hidden Header' }: ${ menuState.word[+config.hiddenHeader] }`)
                 refreshMenu()
             }))
+        }
 
-            // Add command to toggle hidden footer
+        // Add Hidden Footer toggle if avail
+        if (sites[site].availFeatures.includes('hiddenFooter')) {
             const hfLabel = menuState.symbol[+config.hiddenFooter] + ' '
                           + ( msgs.menuLabel_hiddenFooter || 'Hidden Footer' )
                           + menuState.separator + menuState.word[+config.hiddenFooter]
@@ -431,17 +438,19 @@
             }))
         }
 
-        // Add command to show notifications when switching modes
-        const mnLabel = menuState.symbol[+!config.notifDisabled] + ' '
-                      + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
-                      + menuState.separator + menuState.word[+!config.notifDisabled]
-        menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
-            saveSetting('notifDisabled', !config.notifDisabled)
-            notify(`${ msgs.menuLabel_modeNotifs || 'Mode Notifications' }: ${ menuState.word[+!config.notifDisabled] }`)
-            refreshMenu()
-        }))
+        // Add Mode Notifications toggle if avail
+        if (sites[site].availFeatures.includes('notifDisabled')) {
+            const mnLabel = menuState.symbol[+!config.notifDisabled] + ' '
+                        + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
+                        + menuState.separator + menuState.word[+!config.notifDisabled]
+            menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
+                saveSetting('notifDisabled', !config.notifDisabled)
+                notify(`${ msgs.menuLabel_modeNotifs || 'Mode Notifications' }: ${ menuState.word[+!config.notifDisabled] }`)
+                refreshMenu()
+            }))
+        }
 
-        // Add command to launch About modal
+        // Add About entry
         const amLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
         menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
     }
