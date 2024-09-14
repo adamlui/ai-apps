@@ -30,8 +30,8 @@
             availFeatures: ['fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
                 'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'wideScreen'],
             selectors: {
-                input: '#prompt-textarea', sidebar: '#__next > div > div.dark',
-                sidepad: '#__next > div > div', header: 'main .sticky',
+                input: '#prompt-textarea', sidebar: '[class*="sidebar"]',
+                header: 'main .sticky',
                 footer: chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') }},
         poe: {
             availFeatures: ['fullerWindows', 'fullWindow', 'hiddenHeader',
@@ -407,9 +407,7 @@
     // Create FULL-WINDOW style
     const fullWindowStyle = create.style()
     fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
-    fullWindowStyle.innerText = (
-          sites[site].selectors.sidebar + ' { display: none } ' // hide sidebar
-        + sites[site].selectors.sidepad + ' { padding-left: 0 }' ) // remove side padding
+    fullWindowStyle.innerText = sites[site].selectors.sidebar + '{ display: none }'
 
     // Create/insert chatbar BUTTONS
     const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']

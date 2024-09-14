@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.14
+// @version             2024.9.14.15
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -283,8 +283,8 @@
             availFeatures: ['fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
                 'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'wideScreen'],
             selectors: {
-                input: '#prompt-textarea', sidebar: '#__next > div > div.dark',
-                sidepad: '#__next > div > div', header: 'main .sticky',
+                input: '#prompt-textarea', sidebar: '[class*="sidebar"]',
+                header: 'main .sticky',
                 footer: chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') }},
         poe: {
             availFeatures: ['fullerWindows', 'fullWindow', 'hiddenHeader',
@@ -712,7 +712,7 @@
                     /chatgpt|openai/.test(site) ? (
                         ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                         + 'div:has(+ main) { display: none !important }' // hide ugly double temp chat header
-                    ) : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' )// h-pad mic btn for even spread
+                    ) : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' ) // h-pad mic btn for even spread
                 + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
                 + ( config.hiddenHeader && sites[site].selectors.header ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter && sites[site].selectors.footer ? hfStyle : '' ) // hide footer
@@ -894,9 +894,7 @@
     // Create FULL-WINDOW style
     const fullWindowStyle = create.style()
     fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
-    fullWindowStyle.innerText = (
-          sites[site].selectors.sidebar + '{ display: none }' // hide sidebar
-        + sites[site].selectors.sidepad + '{ padding-left: 0 }' ) // remove side padding
+    fullWindowStyle.innerText = sites[site].selectors.sidebar + '{ display: none }'
 
     // Create/insert chatbar BUTTONS
     const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
