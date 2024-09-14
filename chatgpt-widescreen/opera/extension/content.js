@@ -115,12 +115,15 @@
                 const inputArea = chatbar.querySelector(inputSelector)
                 inputArea.style.width = '100%' // rid h-scrollbar
                 inputArea.parentNode.style.width = `${ !ui.hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
-            } else if (site == 'poe') { // left-align attach file button
-                const attachFileBtn = chatbar.querySelector('button[class*="File"]')
-                if (attachFileBtn) {
+            } else if (site == 'poe') {
+                const attachFileBtn = chatbar.querySelector('button[class*="File"]'),
+                      clearBtn = document.querySelector('[class*="ChatBreakButton"]')
+                if (attachFileBtn) { // left-align attach file button
                     attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
                     document.querySelector(inputSelector).style.padding = '0 13px 0 40px' // accommodate new btn pos
                 }
+                btns.newChat.style.top = clearBtn ? '-1px' : 0
+                btns.newChat.style.marginRight = clearBtn ? '2px' : '1px'
             }
     
             // Insert buttons
