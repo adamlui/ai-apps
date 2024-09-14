@@ -29,10 +29,7 @@
         chatgpt: {
             availFeatures: ['fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
                 'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'wideScreen'],
-            selectors: {
-                input: '#prompt-textarea', sidebar: '[class*="sidebar"]',
-                header: 'main .sticky',
-                footer: chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') }},
+            selectors: { input: '#prompt-textarea', sidebar: '[class*="sidebar"]', header: 'main .sticky' }},
         poe: {
             availFeatures: ['fullerWindows', 'fullWindow', 'hiddenHeader',
                 'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen'],
@@ -363,6 +360,9 @@
             new Promise(resolve =>  // null if 3s passed
                 setTimeout(() => resolve(null), 3000))
         ])
+        sites[site].selectors.footer = chatgpt.getFooterDiv()?.classList.toString()
+            .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
+            .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
     }
 
     // Save FULL-WINDOW + FULL SCREEN states
