@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.13.3
+// @version             2024.9.13.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -336,7 +336,7 @@
                        + menuState.separator + menuState.word[+!config.tcbDisabled]
         menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
             saveSetting('tcbDisabled', !config.tcbDisabled)
-            updateTweaksStyle()
+            update.style.tweaks()
             if (!config.notifDisabled) notify(
                 `${ msgs.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ menuState.word[+!config.tcbDisabled] }`)
             refreshMenu()
@@ -348,7 +348,7 @@
                            + menuState.separator + menuState.word[+config.widerChatbox]
             menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
                 saveSetting('widerChatbox', !config.widerChatbox)
-                updateWidescreenStyle()
+                update.style.wideScreen()
                 if (!config.notifDisabled) notify(
                     `${ msgs.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ menuState.word[+config.widerChatbox] }`)
                 refreshMenu()
@@ -361,7 +361,7 @@
                        + menuState.separator + menuState.word[+!config.ncbDisabled]
         menuIDs.push(GM_registerMenuCommand(hncLabel, () => {
             saveSetting('ncbDisabled', !config.ncbDisabled)
-            updateTweaksStyle()
+            update.style.tweaks()
             notify(`${ msgs.menuLabel_newChatBtn || 'New Chat Button' }: ${ menuState.word[+!config.ncbDisabled] }`)
             refreshMenu()
         }))
@@ -386,7 +386,7 @@
                           + menuState.separator + menuState.word[+config.hiddenHeader]
             menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
                 saveSetting('hiddenHeader', !config.hiddenHeader)
-                updateTweaksStyle()
+                update.style.tweaks()
                 if (!config.notifDisabled) notify(
                     `${ msgs.menuLabel_hiddenHeader || 'Hidden Header' }: ${ menuState.word[+config.hiddenHeader] }`)
                 refreshMenu()
@@ -398,7 +398,7 @@
                           + menuState.separator + menuState.word[+config.hiddenFooter]
             menuIDs.push(GM_registerMenuCommand(hfLabel, () => {
                 saveSetting('hiddenFooter', !config.hiddenFooter)
-                updateTweaksStyle()
+                update.style.tweaks()
                 if (!config.notifDisabled) notify(
                     `${ msgs.menuLabel_hiddenFooter || 'Hidden Footer' }: ${ menuState.word[+config.hiddenFooter] }`)
                 refreshMenu()
@@ -680,56 +680,90 @@
         }
     }
 
-    // Define TOOLTIP functions
+    // Define UPDATE functions
 
-    function toggleTooltip(event) {
-        updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
-        tooltipDiv.style.opacity = event.type == 'mouseover' ? '1' : '0'
-    }
+    const update = {
 
-    function updateTooltip(btnType) { // text & position
-        const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-            .filter(type => !(type == 'fullWindow' && !ui.hasSidebar))
-        const ctrAddend = 25 + ( site == 'poe' ? 45 : 12 ),
-              spreadFactor = site == 'poe' ? 35 : 30.5,
-              iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
-        tooltipDiv.innerText = msgs['tooltip_' + btnType + (
-            !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON'))]
-        tooltipDiv.style.right = `${ // horizontal position
-            iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
+        style: {
+            btn() { btnStyle.innerText = `div[id$="-btn"] svg { fill: ${btns.setColor()} ; stroke: ${btns.setColor()} }` },
+
+            tweaks() {
+                tweaksStyle.innerText = (
+                    /chatgpt|openai/.test(site) ? (
+                        ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbor btns on hover
+                        + ( config.hiddenHeader ? hhStyle : '' ) // hide header
+                        + ( config.hiddenFooter ? hfStyle : '' ) // hide footer
+                        + 'div:has(+ main) { display: none !important }' // hide ugly double temp chat header
+                    ) : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' )// h-pad mic btn for even spread
+                + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
+                + `#newChat-btn { display: ${ config.ncbDisabled ? 'none' : 'flex' }}`
+            },
+
+            wideScreen() {
+                wideScreenStyle.innerText = (
+                    /chatgpt|openai/.test(site) ? (
+                        '.text-base { max-width: 100% !important }' // widen outer container
+                    + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
+                    + '#__next > div > div.flex { width: 100px }' ) // prevent sidebar shrinking when zoomed
+                : site == 'poe' ? (
+                        '[class*="ChatMessagesView"] { width: 100% !important }' // widen outer container
+                    + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
+                : '' )
+            if (config.widerChatbox) wideScreenStyle.innerText += wcbStyle
+            }
+        },
+
+        tooltip(btnType) { // text & position
+            const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
+                .filter(type => !(type == 'fullWindow' && !ui.hasSidebar))
+            const ctrAddend = 25 + ( site == 'poe' ? 45 : 12 ),
+                spreadFactor = site == 'poe' ? 35 : 30.5,
+                iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
+            tooltipDiv.innerText = msgs['tooltip_' + btnType + (
+                !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON'))]
+            tooltipDiv.style.right = `${ // horizontal position
+                iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
+        }
     }
 
     // Define TOGGLE functions
 
-    function activateMode(mode) {
-        if (mode == 'wideScreen') { document.head.append(wideScreenStyle) ; syncMode('wideScreen') }
-        else if (mode == 'fullWindow') {
-            document.head.append(fullWindowStyle)
-            if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.hide()
-        } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
-    }
+    const toggle = {
+        mode(mode, state = '') {
+            switch (state.toUpperCase()) {
+                case 'ON' : activateMode(mode) ; break
+                case 'OFF' : deactivateMode(mode) ; break
+                default : config[mode] ? deactivateMode(mode) : activateMode(mode)
+            }
 
-    function deactivateMode(mode) {
-        if (mode == 'wideScreen')
-            try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (err) {}
-        else if (mode == 'fullWindow') {
-            try { document.head.removeChild(fullWindowStyle) } catch (err) {}
-            if (/chatgpt|openai/.test(site)) chatgpt.sidebar.show()
-            else if (site == 'poe') syncMode('fullWindow') // since not sidebarObserve()'d
-        } else if (mode == 'fullScreen') {
-            if (config.f11)
-                siteAlert(msgs.alert_pressF11 || 'Press F11 to exit full screen',
-                    ( msgs.alert_f11reason || 'F11 was used to enter full screen, and due to browser security reasons,'
-                        + 'the same key must be used to exit it' ) + '.')
-            document.exitFullscreen().catch(err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
-        }
-    }
+            function activateMode(mode) {
+                if (mode == 'wideScreen') { document.head.append(wideScreenStyle) ; syncMode('wideScreen') }
+                else if (mode == 'fullWindow') {
+                    document.head.append(fullWindowStyle)
+                    if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.hide()
+                } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
+            }
+        
+            function deactivateMode(mode) {
+                if (mode == 'wideScreen')
+                    try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (err) {}
+                else if (mode == 'fullWindow') {
+                    try { document.head.removeChild(fullWindowStyle) } catch (err) {}
+                    if (/chatgpt|openai/.test(site)) chatgpt.sidebar.show()
+                    else if (site == 'poe') syncMode('fullWindow') // since not sidebarObserve()'d
+                } else if (mode == 'fullScreen') {
+                    if (config.f11)
+                        siteAlert(msgs.alert_pressF11 || 'Press F11 to exit full screen',
+                            ( msgs.alert_f11reason || 'F11 was used to enter full screen, and due to browser security reasons,'
+                                + 'the same key must be used to exit it' ) + '.')
+                    document.exitFullscreen().catch(err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
+                }
+            }
+        },
 
-    function toggleMode(mode, state = '') {
-        switch (state.toUpperCase()) {
-            case 'ON' : activateMode(mode) ; break
-            case 'OFF' : deactivateMode(mode) ; break
-            default : config[mode] ? deactivateMode(mode) : activateMode(mode)
+        tooltip() {
+            update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
+            tooltipDiv.style.opacity = event.type == 'mouseover' ? '1' : '0'    
         }
     }
 
@@ -744,7 +778,7 @@
         const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
                       : mode == 'fullWindow' ? isFullWindow()
                                              : chatgpt.isFullScreen() )
-        saveSetting(mode, state) ; btns.updateSVG(mode) ; updateTooltip(mode)
+        saveSetting(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
         if (mode == 'fullWindow') syncFullerWindows(state)
         if (!config.notifDisabled) // notify synced state
             notify(`${ msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
@@ -760,33 +794,6 @@
                 try { document.head.removeChild(wideScreenStyle) } catch (err) {}
                 btns.updateSVG('wideScreen', 'off')
     }}}
-
-    function updateBtnStyle() { btnStyle.innerText = `div[id$="-btn"] svg { fill: ${btns.setColor()} ; stroke: ${btns.setColor()} }` }
-
-    function updateTweaksStyle() {
-        tweaksStyle.innerText = (
-            /chatgpt|openai/.test(site) ? (
-                  ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbor btns on hover
-                + ( config.hiddenHeader ? hhStyle : '' ) // hide header
-                + ( config.hiddenFooter ? hfStyle : '' ) // hide footer
-                + 'div:has(+ main) { display: none !important }' // hide ugly double temp chat header
-            ) : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' )// h-pad mic btn for even spread
-        + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
-        + `#newChat-btn { display: ${ config.ncbDisabled ? 'none' : 'flex' }}`
-    }
-
-    function updateWidescreenStyle() {
-        wideScreenStyle.innerText = (
-              /chatgpt|openai/.test(site) ? (
-                  '.text-base { max-width: 100% !important }' // widen outer container
-                + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
-                + '#__next > div > div.flex { width: 100px }' ) // prevent sidebar shrinking when zoomed
-            : site == 'poe' ? (
-                  '[class*="ChatMessagesView"] { width: 100% !important }' // widen outer container
-                + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
-            : '' )
-        if (config.widerChatbox) wideScreenStyle.innerText += wcbStyle
-    }
 
     // Run MAIN routine
 
@@ -832,7 +839,7 @@
     config.fullScreen = chatgpt.isFullScreen()
 
     // Create/apply BUTTON style
-    const btnStyle = create.style() ; updateBtnStyle() ; document.head.append(btnStyle)
+    const btnStyle = create.style() ; update.style.btn() ; document.head.append(btnStyle)
 
     // Stylize ALERTS
     if (!document.getElementById('chatgpt-alert-override-style')) {
@@ -870,15 +877,15 @@
           hfStyle = footerSelector + '{ visibility: hidden ;' // hide footer text
                                    + '  height: 3px }' // reduce v-padding
 
-    updateTweaksStyle() ; document.head.append(tweaksStyle)
+    update.style.tweaks() ; document.head.append(tweaksStyle)
 
     // Create WIDESCREEN style
     const wideScreenStyle = create.style()
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
-    const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
+    const wcbStyle = ( // Wider Chatbox for update.style.wideScreen()
         /chatgpt|openai/.test(site) ? 'main form { max-width: 96% !important }'
       : site == 'poe' ? '[class*=footerInner] { width: 100% }' : '' )
-    updateWidescreenStyle()
+    update.style.wideScreen()
 
     // Create FULL-WINDOW style
     const fullWindowStyle = create.style()
@@ -894,7 +901,7 @@
     let btnColor = btns.setColor()
     validBtnTypes.forEach((btnType, idx) => {
         btns[btnType] = document.createElement('div') // create button
-        btns[btnType].id = btnType + '-btn' // for toggleTooltip()
+        btns[btnType].id = btnType + '-btn' // for toggle.tooltip()
         btns.updateSVG(btnType) // insert icon
         btns[btnType].style.cssText = 'position: relative ; top: 0 ;'
                                     + `right: ${ rOffset + idx * bOffset }px` // position left of prev button
@@ -908,12 +915,12 @@
             btns[btnType].style.marginBottom = ( btnType == 'newChat' ? '0.45' : '0.2' ) + 'rem'
 
         // Add hover/click listeners
-        btns[btnType].onmouseover = btns[btnType].onmouseout = toggleTooltip
+        btns[btnType].onmouseover = btns[btnType].onmouseout = toggle.tooltip
         btns[btnType].onclick = () => {
             if (btnType == 'newChat') {
                 if (/chatgpt|openai/.test(site)) chatgpt.startNewChat()
                 else if (site == 'poe') document.querySelector('header a[class*="button"]')?.click()
-            } else toggleMode(btnType)
+            } else toggle.mode(btnType)
         }
     })
     btns.insert()
@@ -924,14 +931,14 @@
 
         // Check loaded keys to restore previous session's state
         if (!prevSessionChecked) {
-            if (config.wideScreen) toggleMode('wideScreen', 'ON')
-            if (config.fullWindow) { toggleMode('fullWindow', 'ON')
+            if (config.wideScreen) toggle.mode('wideScreen', 'ON')
+            if (config.fullWindow) { toggle.mode('fullWindow', 'ON')
                 if (/chatgpt|openai/.test(site)) { // sidebar observer doesn't trigger
                     syncFullerWindows(true) // so sync Fuller Windows...
                     if (!config.notifDisabled) // ... + notify
                         notify(( msgs.mode_fullWindow || 'Full-window' ) + ' ON')
             }}
-            if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true
+            if (config.tcbDisabled) update.style.tweaks() ; prevSessionChecked = true
         }
 
         btns.insert() // again or they constantly disappear
@@ -944,7 +951,7 @@
                 const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
                 if ((mutation.type === 'attributes' && mutation.attributeName === 'class') // potential scheme toggled
                      || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)) { // temp chat toggled
-                            updateBtnStyle() ; isTempChat = !isTempChat
+                            update.style.btn() ; isTempChat = !isTempChat
         }}}
     })
     nodeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
