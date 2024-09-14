@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.3
+// @version             2024.9.14.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -307,6 +307,27 @@
             }
         }
     }) ; const msgs = await msgsLoaded
+
+    // Init MENU objs
+    const menuIDs = [] // to store registered cmds for removal while preserving order
+    const menuState = {
+        symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+    }
+
+    // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
+    const extensionInstalled = await Promise.race([
+        new Promise(resolve => {
+            (function checkExtensionInstalled() {
+                if (document.querySelector('[cwm-extension-installed]')) resolve(true)
+                else setTimeout(checkExtensionInstalled, 200)
+            })()
+        }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
+    if (extensionInstalled) { // disable script/menu
+        GM_registerMenuCommand(menuState.symbol[0] + ' ' + ( msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
+            () => { return }) // disable menu
+        return // exit script
+    } else registerMenu() // create functional menu
 
     // Define SCRIPT functions
 
@@ -799,13 +820,6 @@
 
     // Run MAIN routine
 
-    // Init MENU objs
-    const menuIDs = [] // to store registered cmds for removal while preserving order
-    const menuState = {
-        symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
-        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
-    }
-
     // Define UI element SELECTORS
     if (/openai|chatgpt/.test(site))
         await Promise.race([btns.sendIsLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
@@ -819,20 +833,6 @@
     try { footerSelector = /chatgpt|openai/.test(site) ?
               chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') : ''
     } catch (err) {}
-
-    // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
-    const extensionInstalled = await Promise.race([
-        new Promise(resolve => {
-            (function checkExtensionInstalled() {
-                if (document.querySelector('[cwm-extension-installed]')) resolve(true)
-                else setTimeout(checkExtensionInstalled, 200)
-            })()
-        }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
-    if (extensionInstalled) { // disable script/menu
-        GM_registerMenuCommand(menuState.symbol[0] + ' ' + ( msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
-            () => { return }) // disable menu
-        return // exit script
-    } else registerMenu() // create functional menu
 
     // Init browser/UI props
     const browser = { isFirefox: chatgpt.browser.isFirefox() }
