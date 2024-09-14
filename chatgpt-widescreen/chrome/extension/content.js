@@ -130,7 +130,7 @@
                 /chatgpt|openai/.test(site) ? chatbar.querySelector('button[class*="right"]') // ChatGPT pre-5/2024
                                            || chatbar.lastChild // ChatGPT post-5/2024 + Poe
                                             : chatbar.children[1] ) // Poe
-            btnsToInsert.forEach(elem => chatbar.insertBefore(elem, elemToInsertBefore))
+            btnsToInsert.forEach(btn => chatbar.insertBefore(btn, elemToInsertBefore))
         },
     
         remove() {
