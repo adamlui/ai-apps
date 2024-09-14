@@ -266,7 +266,7 @@
                     btns.remove()
                 } else { // restore modes
                     if (config.wideScreen && !document.head.contains(wideScreenStyle)) toggle.mode('wideScreen', 'ON')
-                    if (config.fullWindow && !isFullWindow()) toggle.mode('fullWindow', 'ON')
+                    if (config.fullWindow && sites[site].hasSidebar && !isFullWindow()) toggle.mode('fullWindow', 'ON')
                     update.style.tweaks() // sync taller chatbox + hidden header/footer
                     update.style.wideScreen() // sync wider chatbox
                     btns.insert()
