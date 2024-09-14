@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.13.9
+// @version                2024.9.14
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -197,11 +197,6 @@
     const ui = { app: { scheme: config.scheme || ( chatgpt.isDarkMode() ? 'dark' : 'light' ) }}
     log.debug(`Success! ui = '${log.prettifyObj(ui)}`)
 
-    // Init XHR fetcher
-    log.debug('Initializing XHR fetcher...')
-    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
-    log.debug(`Success! xhr = ${ getUserscriptManager() == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
-
     // Init API props
     log.debug('Initializing API properties...')
     const apis = {
@@ -254,6 +249,11 @@
     const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
           inputEvents[action] = ( window.PointerEvent ? 'pointer' : browser.isMobile ? 'touch' : 'mouse' ) + action)
     log.debug(`Success! inputEvents = ${log.prettifyObj(inputEvents)}`)
+
+    // Init XHR fetcher
+    log.debug('Initializing XHR fetcher...')
+    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    log.debug(`Success! xhr = ${ getUserscriptManager() == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
 
     // Init localized MESSAGES
     log.debug('Initializing localized messages...')

@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.13.10
+// @version                2014.9.14
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -330,11 +330,6 @@
     }
     log.debug(`Success! ui = '${log.prettifyObj(ui)}`)
 
-    // Init XHR fetcher
-    log.debug('Initializing XHR fetcher...')
-    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
-    log.debug(`Success! xhr = ${ getUserscriptManager() == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
-
     // Init API props
     log.debug('Initializing API properties...')
     const apis = {
@@ -387,6 +382,11 @@
     const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
           inputEvents[action] = ( window.PointerEvent ? 'pointer' : browser.isMobile ? 'touch' : 'mouse' ) + action)
     log.debug(`Success! inputEvents = ${log.prettifyObj(inputEvents)}`)
+
+    // Init XHR fetcher
+    log.debug('Initializing XHR fetcher...')
+    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    log.debug(`Success! xhr = ${ getUserscriptManager() == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
 
     // Init localized MESSAGES
     log.debug('Initializing localized messages...')
