@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.13.9
+// @version                2014.9.13.10
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1771,255 +1771,6 @@
 
         appBottomPos() { appDiv.style.bottom = `${ config.minimized ? 61 - appDiv.offsetHeight : -7 }px` },
 
-        appStyle() {
-            appStyle.innerText = (
-                '@keyframes modal-zoom-fade-out { 0% { opacity: 1 } 50% { opacity: 0.25 ; transform: scale(1.05) }'
-                  + '100% { opacity: 0 ; transform: scale(1.35) }}'
-              + '@keyframes btn-zoom-fade-out { 0% { opacity: 1 } 50% { opacity: 0.65 ; transform: scale(1.85) }'
-                  + '75% { opacity: 0.05 ; transform: scale(3.15) } 100% { opacity: 0 ; transform: scale(5.85) }}'
-              + '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-              + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
-              + '#ddgpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
-              + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
-                  + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
-              + '#ddgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ; z-index: 5555 ;'
-                  + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
-                  + `background-image: linear-gradient(180deg, ${
-                        ui.app.scheme == 'dark' ? '#99a8a6 -215px, black 185px'
-                                                : `${ config.bgAnimationsDisabled ? 'white' : '#b6ebff' } -193px, white 65px` }) ;`
-                  + ( !config.fgAnimationsDisabled ?
-                        'transition: bottom 0.1s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor vertical minimize/restore
-                                  + 'width 0.167s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor horizontal expand/shrink
-                                  + 'opacity 0.5s ease, transform 0.5s ease ;' : '' ) // smoothen 1st app fade-in
-                  + `border: ${ ui.app.scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
-              + '#ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
-              + '#ddgpt p { margin: 0 ; ' + ( ui.app.scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
-              + `#ddgpt .alert-link { color: ${ ui.app.scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
-              + ( ui.app.scheme == 'dark' ? '#ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
-              + '.app-name, .app-name:hover { font-size: 1.5rem ; font-weight: 700 ; text-decoration: none ;'
-                  + `color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' }}`
-              + '.kudoai { margin-left: 6px ; color: #aaa } '
-              + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important } '
-              + `.kudoai a:hover { color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' }}`
-              + '#corner-btns { float: right ; margin-top: 2px }'
-              + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
-                  + `${ ui.app.scheme == 'dark' ? 'fill: white ; stroke: white' : 'fill: #adadad ; stroke: #adadad' };` // color
-                  + 'transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out }' // for re-appearances from btn-zoom-fade-out ends
-              + `.corner-btn:hover { ${ ui.app.scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
-                  + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.285)' }}`
-              + `.corner-btn:active { ${ ui.app.scheme == 'dark' ? 'fill: #999999 ; stroke: #999999' : 'fill: #638ed4 ; stroke: #638ed4' } }`
-              + ( config.bgAnimationsDisabled ? '' : ( '#ddgpt-logo, .corner-btn svg, .standby-btn'
-                  + `{ filter: drop-shadow(${ ui.app.scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
-              + '#ddgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
-              + '#ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
-              + '#font-size-slider-track { width: 98% ; height: 7px ; margin: -6px auto -13px ; padding: 15px 0 ;'
-                  + 'background-color: #ccc ; box-sizing: content-box; background-clip: content-box ; -webkit-background-clip: content-box }'
-              + '#font-size-slider-track::before {' // to add finger cursor to unpadded core only
-                  + 'content: "" ; position: absolute ; top: 10px ; left: 0 ; right: 0 ; height: calc(100% - 20px) ; cursor: pointer }'
-              + '#font-size-slider-tip { z-index: 1 ; position: absolute ; bottom: 20px ;'
-                  + 'border-left: 4.5px solid transparent ; border-right: 4.5px solid transparent ; border-bottom: 16px solid #ccc }'
-              + '#font-size-slider-thumb { z-index: 2 ; width: 10px ; height: 25px ; border-radius: 30% ; position: relative ; top: -7.65px ;'
-                  + `transition: transform 0.05s ease ; background-color: ${ ui.app.scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
-                  + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0 ; cursor: ew-resize }'
-              + ( config.fgAnimationsDisabled || browser.isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
-              + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
-                  + 'border-radius: 4px ; border: 1px solid #888 ;'
-                  + 'transition: transform 0.15s ease !important }'
-              + '.standby-btn:hover { border-radius: 4px ;'
-                  + `${ ui.app.scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
-                  + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
-              + '#ddgpt pre { background-color: inherit }' // override DDG's unattractive thicc light border
-              + '#ddgpt > pre {'
-                  + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
-                  + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
-                  + 'margin: .99rem 0 7px 0 ; padding: 1.25em 1.25em 0 1.25em ; border-radius: 10px ; overflow: auto ;'
-                  + ( !config.fgAnimationsDisabled ? // smoothen Anchor mode vertical expand/shrink
-                        'transition: max-height 0.167s cubic-bezier(0, 0, 0.2, 1) ;' : '' )
-                  + `${ ui.app.scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
-                                                : 'background: #eaeaeacf ; color: #202124 ; border: none' }}`
-              + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-              + '#ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
-              + '#ddgpt + footer { margin: 2px 0 25px ; position: relative }'
-              + `#ddgpt + footer * { color: ${ ui.app.scheme == 'dark' ? '#ccc' : '#666' } !important }`
-              + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-                  + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
-                  + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
-                      + ( ui.app.scheme == 'dark' ? '##0000' : '#eaeaeacf' ) + '}'
-              + '#copy-btn { float: right ; cursor: pointer }'
-              + `pre > #copy-btn > svg { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ ui.app.scheme == 'dark' ? 'fill: white' : '' }}`
-              + 'code #copy-btn { position: relative ; top: -6px ; right: -9px }'
-              + 'code #copy-btn > svg { height: 13px ; width: 13px ; fill: white }'
-              + '#app-chatbar {'
-                  + `border: solid 1px ${ ui.app.scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
-                  + 'font-size: 0.92rem ; height: 19px ; width: 82.6% ; max-height: 200px ; resize: none ; '
-                  + `position: relative ; z-index: 555 ; color: #${ ui.app.scheme == 'dark' ? 'eee' : '222' } ;`
-                  + 'margin: 3px 0 15px 0 ; padding: 13px 57px 9px 10px ;'
-                  + `background: ${ ui.app.scheme == 'dark' ? '#5151519e' : '#eeeeee9e' }}`
-              + '.related-queries {'
-                  + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ; overflow: visible ;'
-                  + `${ browser.isFirefox ? 'top: -20px ; margin: -3px 0 -10px' : 'top: -25px ; margin: -7px 0 -15px' }}`
-              + '.related-query {'
-                  + 'box-sizing: border-box ; width: fit-content ; max-width: 100% ;' // confine to .related-queries bounds
-                  + `margin: 4px 4px ${ ui.app.scheme == 'dark' ? 7 : 2 }px 0 ; padding: 4px 10px 5px 10px ;`
-                  + `color: ${ ui.app.scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
-                  + `background: ${ ui.app.scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
-                  + `border: 1px solid ${ ui.app.scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.88em ; cursor: pointer ;`
-                  + 'border-radius: 0 13px 12px 13px ; flex: 0 0 auto ;'
-                  + `box-shadow: 1px 3px ${ ui.app.scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
-                  + `${ config.fgAnimationsDisabled ? '' : 'transition: transform 0.1s ease !important' }}`
-              + '.related-query:hover, .related-query:focus {'
-                  + ( config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.055) !important ;' )
-                  + `background: ${ ui.app.scheme == 'dark' ? '#a2a2a270': '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
-              + '.related-query svg { position: relative ; top: 4px ; margin-right: 6px ;' // related query icon
-                  + `color: ${ ui.app.scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
-              + '.fade-in { opacity: 0 ; transform: translateY(10px) }'
-              + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
-              + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
-              + '.chatbar-btn { z-index: 560 ;'
-                  + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
-                  + `bottom: ${ browser.isFirefox ? 50 : 55 }px ;`
-                  + `${ ui.app.scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
-              + '.chatbar-btn:hover {'
-                  + `${ ui.app.scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
-              + ( // rendered markdown styles
-                    '#ddgpt > pre h1 { font-size: 24px } #ddgpt > pre h2 { font-size: 22px } #ddgpt > pre h3 { font-size: 20px }' // size headings
-                  + '#ddgpt > pre h1, #ddgpt > pre h2, #ddgpt > pre h3 { margin-bottom: -15px }' // reduce gap after headings
-                  + '#ddgpt > pre ol { margin: -11px 0 -20px }' // reduce v-padding
-                  + '#ddgpt > pre ol > li { margin: -10px 0 0 1.6em ; list-style: decimal }' // reduce v-padding, show number markers
-                  + '#ddgpt > pre ol > li::marker { font-size: 0.9em }' // shrink number markers
-                  + '#ddgpt > pre ul { margin: -28px 0 -21px }' // reduce v-padding
-                  + '#ddgpt > pre ul > li { margin: -10px 0 0 1.2em ; list-style: inside }' ) // reduce v-padding, show bullets
-              + '.katex-html { display: none } ' // hide unrendered math
-              + '.chatgpt-notif { fill: white ; stroke: white ; color: white ; padding: 7.5px 14px 6.5px 11.5px !important }'
-              + '.notif-close-btn { display: none !important }' // hide notif close btn
-              + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important ;' // increase alert padding
-                  + 'background-color: white !important ; color: black }'
-              + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 1.55rem }' // pos/size modal msg
-              + `.chatgpt-modal a { color: #${ ui.app.scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
-              + `.modal-buttons { margin: 24px -5px -3px ${ browser.isMobile ? -5 : -15 }px !important ; width: 100% }` // pos/size modal buttons
-              + '.chatgpt-modal button {' // modal buttons
-                  + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
-                  + `padding: ${ browser.isMobile ? '7px' : '4px 10px' } !important ;`
-                  + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
-                  + 'border: 1px solid ' + ( ui.app.scheme == 'dark' ? 'white' : 'black' ) + '!important ;'
-                  + `${ ui.app.scheme == 'dark' ? 'background: none ; color: white' : '' }}`
-              + '.primary-modal-btn { background: black !important ; color: white !important }'
-              + '.chatgpt-modal button:hover { background-color: #9cdaff !important ; color: black !important }'
-              + ( ui.app.scheme == 'dark' ? // darkmode chatgpt.alert() styles
-                  ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
-                      + 'background-color: black !important ; color: white }'
-                  + '.primary-modal-btn { background: hsl(186 100% 69%) !important ; color: black !important }'
-                  + '.chatgpt-modal a { color: #00cfff !important }'
-                  + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
-              + '[class*="-modal-bg"] {'
-                  + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-                  + 'transition: background-color .15s ease ;' // speed to show bg dim
-                  + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
-              + '[class*="-modal-bg"].animated > div { z-index: 13456 ; opacity: 0.98 ; transform: translateX(0) translateY(0) }'
-              + '[class$="-modal"] {' // native modals + chatgpt.alert()s
-                  + 'z-index: 13456 ; position: absolute ;' // to be click-draggable
-                  + 'opacity: 0 ;' // to fade-in
-                  + `background-image: linear-gradient(180deg, ${ ui.app.scheme == 'dark' ? '#99a8a6 -200px, black 200px' : '#b6ebff -296px, white 171px' }) ;`
-                  + `border: 1px solid ${ ui.app.scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
-                  + `color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' } ;`
-                  + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
-                  + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
-                              + 'transform 0.55s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
-              + ( config.fgAnimationsDisabled || browser.isMobile ? '' : (
-                    '[class$="-modal"] button { transition: transform 0.15s ease }' 
-                  + '[class$="-modal"] button:hover { transform: scale(1.055) }' ))
-              + '.ddgpt-menu { position: absolute ; z-index: 2250 ;'
-                  + 'padding: 3.5px 5px !important ; font-family: "Source Sans Pro", sans-serif ; font-size: 12px }'
-              + '.ddgpt-menu ul { margin: 0 ; padding: 0 ; list-style: none }'
-              + '.ddgpt-menu-item { padding: 0 5px ; line-height: 20.5px }'
-              + '.ddgpt-menu-item:not(.ddgpt-menu-header):hover {'
-                  + 'cursor: pointer ; background: white ; color: black ; fill: black }'
-              + '#checkmark-icon { fill: #b3f96d } .ddgpt-menu-item:hover #checkmark-icon { fill: green }'
-
-              // Glowing modal btns
-              + ':root { --glow-color: hsl(186 100% 69%); }'
-              + '.glowing-btn { perspective: 2em ; font-weight: 900 ; animation: border-flicker 2s linear infinite ;'
-                  + '-webkit-box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) ;' 
-                  + 'box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) ;' 
-                  + '-moz-box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) }' 
-              + '.glowing-txt { animation: text-flicker 3s linear infinite ;'
-                  + '-webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
-                  + '-moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
-                  + 'text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) }'
-              + '.faulty-letter { opacity: 0.5 ; animation: faulty-flicker 2s linear infinite }'
-              + '.glowing-btn::after { content: "" ; position: absolute ; top: 0 ; bottom: 0 ; left: 0 ; right: 0 ;'
-                  + 'opacity: 0 ; z-index: -1 ; box-shadow: 0 0 2em 0.2em var(--glow-color) ;'
-                  + 'background-color: var(--glow-color) ; transition: opacity 100ms linear }'
-              + '.glowing-btn:hover { color: rgba(0, 0, 0, 0.8) ; text-shadow: none ; animation: none }'
-              + '.glowing-btn:hover .glowing-txt { animation: none }'
-              + '.glowing-btn:hover .faulty-letter { animation: none ; text-shadow: none ; opacity: 1 }'
-              + '.glowing-btn:hover:before { filter: blur(1.5em) ; opacity: 1 }'
-              + '.glowing-btn:hover:after { opacity: 1 }'
-              + '@keyframes faulty-flicker { 0% { opacity: 0.1 } 2% { opacity: 0.1 } 4% { opacity: 0.5 } 19% { opacity: 0.5 }'
-                  + '21% { opacity: 0.1 } 23% { opacity: 1 } 80% { opacity: 0.5 } 83% { opacity: 0.4 } 87% { opacity: 1 }}'
-              + '@keyframes text-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 8% { opacity: 0.1 } 9% { opacity: 1 }'
-                  + '12% { opacity: 0.1 } 20% { opacity: 1 } 25% { opacity: 0.3 } 30% { opacity: 1 } 70% { opacity: 0.7 }'
-                  + '72% { opacity: 0.2 } 77% { opacity: 0.9 } 100% { opacity: 0.9 }}'
-              + '@keyframes border-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
-                  + '70% { opacity: 0.7 } 100% { opacity: 1 }}'
-
-              // chatgpt.alert() + DDGPT modals
-              + '.ddgpt-modal { display: grid ; place-items: center }' // for centered icon/logo
-              + '[class*="modal-close-btn"] {'
-                  + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
-                  + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
-              + `[class*="modal-close-btn"] path {${ ui.app.scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
-              + ( ui.app.scheme == 'dark' ? '[class*="modal-close-btn"]:hover path { stroke: black ; fill: black }' : '' ) // invert dark mode hover paths
-              + '[class*="modal-close-btn"]:hover { background-color: #f2f2f2 }' // hover underlay
-              + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
-              + '[class*="-modal"] h2 { font-weight: bold ; line-height: 32px ; padding: 0 ; margin: 9px 0 14px !important ;'
-                  + `${ browser.isMobile ? 'text-align: center' : 'justify-self: start' }}` // left-align on desktop, center on mobile
-              + '[class*="-modal"] p { justify-self: start ; font-size: 20px }'
-              + '[class*="-modal"] button { font-size: 14px }'
-
-              // Settings modal
-              + '#ddgpt-settings {'
-                  + `min-width: ${ browser.isPortrait ? 288 : 698 }px ; max-width: 75vw ; word-wrap: break-word ;`
-                  + 'border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
-                  + `${ ui.app.scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
-              + '#ddgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 3px -3px 0 }'
-              + `#ddgpt-settings-title h4 { font-size: ${ browser.isPortrait ? 26 : 31 }px ; font-weight: bold ; margin-top: -39px }`
-              + '#ddgpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
-                  + `width: ${ browser.isPortrait ? 100 : 50 }% }` // set width based on column cnt
-              + '#ddgpt-settings li {'
-                  + `color: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for text
-                  + `fill: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
-                  + `stroke: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
-                  + 'height: 25px ; font-size: 14.5px ; transition: transform 0.1s ease ;'
-                  + `padding: 4px 10px ; border-bottom: 1px dotted ${ ui.app.scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
-                  + 'border-radius: 3px }' // make highlight strips slightly rounded
-              + '#ddgpt-settings li.active {'
-                  + `color: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for text
-                  + `fill: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for icons
-                  + `stroke: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' }}` // for icons
-              + '#ddgpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
-              + '#ddgpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
-              + '#ddgpt-settings li, #ddgpt-settings li label { cursor: pointer }' // add finger on hover
-              + '#ddgpt-settings li:hover { opacity: 1 ;'
-                  + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
-                  + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.22)' }}` // add zoom
-              + '#ddgpt-settings li > input { float: right }' // pos toggles
-              + '#scheme-menu-entry > span { margin: 0 -2px }' // align Scheme status
-              + '#scheme-menu-entry > span > svg { position: relative ; top: 3px ; margin-left: 4px }' // v-align/left-pad Scheme status icon
-              + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
-              + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
-              + `#about-menu-entry span { color: ${ ui.app.scheme == 'dark' ? '#28ee28' : 'green' }}`
-              + `#about-menu-entry > span { width: ${ browser.isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
-                  + `${ config.fgAnimationsDisabled ? '' : ( // fade edges
-                            'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
-                  + '-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' )}}`
-              + '#about-menu-entry > span > div { text-wrap: nowrap ;'
-                  + `${ config.fgAnimationsDisabled ? '' : 'animation: ticker linear 60s infinite' }}`
-              + '@keyframes ticker { 0% { transform: translateX(100%) } 100% { transform: translateX(-2000%) }}'
-              + `.about-em { color: ${ ui.app.scheme == 'dark' ? 'white' : 'green' } !important }`
-            )
-        },
-
         chatbarWidth() {
             const chatbar = appDiv.querySelector('#app-chatbar')
             if (chatbar) chatbar.style.width = `${
@@ -2039,7 +1790,7 @@
             log.caller = `update.scheme('${newScheme}')`
             log.debug(`Updating ${app.name} scheme to ${log.toTitleCase(newScheme)}...`)
             ui.app.scheme = newScheme ; logos.ddgpt.update()
-            update.appStyle() ; update.stars() ; toggle.btnGlow() ; modals.settings.updateSchemeStatus()
+            update.style.app() ; update.stars() ; toggle.btnGlow() ; modals.settings.updateSchemeStatus()
             log.debug(`Success! ${app.name} updated to ${log.toTitleCase(newScheme)} scheme`)
         },
 
@@ -2050,34 +1801,285 @@
                     : `${ ui.app.scheme == 'dark' ? 'white' : 'black' }-stars-${size}`
             ))
         },
-    
-        tweaksStyle() {
 
-            // Update tweaks style based on settings
-            tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
-                                  + ( config.stickySidebar ? ssbStyles
-                                    : config.anchored ? ( anchorStyles + ( config.expanded ? expandedStyles : '' )) : '' )
-    
-            // Update 'by KudoAI' visibility based on corner space available
-            const kudoAIspan = appDiv.querySelector('.kudoai')
-            if (kudoAIspan) {
-                const visibleBtnCnt = [...appDiv.querySelectorAll('.corner-btn')]
-                    .filter(btn => getComputedStyle(btn).display != 'none').length
-                kudoAIspan.style.display = visibleBtnCnt <= (
-                    config.anchored && config.expanded ? 10
-                 : !config.anchored && config.widerSidebar ? 7
-                 : browser.isMobile ? 3 : 4 ) ? '' : 'none'
+        style: {
+            app() {
+                appStyle.innerText = (
+                    '@keyframes modal-zoom-fade-out { 0% { opacity: 1 } 50% { opacity: 0.25 ; transform: scale(1.05) }'
+                      + '100% { opacity: 0 ; transform: scale(1.35) }}'
+                  + '@keyframes btn-zoom-fade-out { 0% { opacity: 1 } 50% { opacity: 0.65 ; transform: scale(1.85) }'
+                      + '75% { opacity: 0.05 ; transform: scale(3.15) } 100% { opacity: 0 ; transform: scale(5.85) }}'
+                  + '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+                  + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
+                  + '#ddgpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
+                  + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
+                      + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
+                  + '#ddgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ; z-index: 5555 ;'
+                      + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
+                      + `background-image: linear-gradient(180deg, ${
+                            ui.app.scheme == 'dark' ? '#99a8a6 -215px, black 185px'
+                                                    : `${ config.bgAnimationsDisabled ? 'white' : '#b6ebff' } -193px, white 65px` }) ;`
+                      + ( !config.fgAnimationsDisabled ?
+                            'transition: bottom 0.1s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor vertical minimize/restore
+                                      + 'width 0.167s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor horizontal expand/shrink
+                                      + 'opacity 0.5s ease, transform 0.5s ease ;' : '' ) // smoothen 1st app fade-in
+                      + `border: ${ ui.app.scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
+                  + '#ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
+                  + '#ddgpt p { margin: 0 ; ' + ( ui.app.scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
+                  + `#ddgpt .alert-link { color: ${ ui.app.scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
+                  + ( ui.app.scheme == 'dark' ? '#ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+                  + '.app-name, .app-name:hover { font-size: 1.5rem ; font-weight: 700 ; text-decoration: none ;'
+                      + `color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' }}`
+                  + '.kudoai { margin-left: 6px ; color: #aaa } '
+                  + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important } '
+                  + `.kudoai a:hover { color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' }}`
+                  + '#corner-btns { float: right ; margin-top: 2px }'
+                  + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
+                      + `${ ui.app.scheme == 'dark' ? 'fill: white ; stroke: white' : 'fill: #adadad ; stroke: #adadad' };` // color
+                      + 'transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out }' // for re-appearances from btn-zoom-fade-out ends
+                  + `.corner-btn:hover { ${ ui.app.scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
+                      + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.285)' }}`
+                  + `.corner-btn:active { ${ ui.app.scheme == 'dark' ? 'fill: #999999 ; stroke: #999999' : 'fill: #638ed4 ; stroke: #638ed4' } }`
+                  + ( config.bgAnimationsDisabled ? '' : ( '#ddgpt-logo, .corner-btn svg, .standby-btn'
+                      + `{ filter: drop-shadow(${ ui.app.scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
+                  + '#ddgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
+                  + '#ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
+                  + '#font-size-slider-track { width: 98% ; height: 7px ; margin: -6px auto -13px ; padding: 15px 0 ;'
+                      + 'background-color: #ccc ; box-sizing: content-box; background-clip: content-box ; -webkit-background-clip: content-box }'
+                  + '#font-size-slider-track::before {' // to add finger cursor to unpadded core only
+                      + 'content: "" ; position: absolute ; top: 10px ; left: 0 ; right: 0 ; height: calc(100% - 20px) ; cursor: pointer }'
+                  + '#font-size-slider-tip { z-index: 1 ; position: absolute ; bottom: 20px ;'
+                      + 'border-left: 4.5px solid transparent ; border-right: 4.5px solid transparent ; border-bottom: 16px solid #ccc }'
+                  + '#font-size-slider-thumb { z-index: 2 ; width: 10px ; height: 25px ; border-radius: 30% ; position: relative ; top: -7.65px ;'
+                      + `transition: transform 0.05s ease ; background-color: ${ ui.app.scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
+                      + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0 ; cursor: ew-resize }'
+                  + ( config.fgAnimationsDisabled || browser.isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
+                  + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
+                      + 'border-radius: 4px ; border: 1px solid #888 ;'
+                      + 'transition: transform 0.15s ease !important }'
+                  + '.standby-btn:hover { border-radius: 4px ;'
+                      + `${ ui.app.scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
+                      + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
+                  + '#ddgpt pre { background-color: inherit }' // override DDG's unattractive thicc light border
+                  + '#ddgpt > pre {'
+                      + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
+                      + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
+                      + 'margin: .99rem 0 7px 0 ; padding: 1.25em 1.25em 0 1.25em ; border-radius: 10px ; overflow: auto ;'
+                      + ( !config.fgAnimationsDisabled ? // smoothen Anchor mode vertical expand/shrink
+                            'transition: max-height 0.167s cubic-bezier(0, 0, 0.2, 1) ;' : '' )
+                      + `${ ui.app.scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
+                                                    : 'background: #eaeaeacf ; color: #202124 ; border: none' }}`
+                  + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
+                  + '#ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
+                  + '#ddgpt + footer { margin: 2px 0 25px ; position: relative }'
+                  + `#ddgpt + footer * { color: ${ ui.app.scheme == 'dark' ? '#ccc' : '#666' } !important }`
+                  + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
+                      + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
+                      + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
+                          + ( ui.app.scheme == 'dark' ? '##0000' : '#eaeaeacf' ) + '}'
+                  + '#copy-btn { float: right ; cursor: pointer }'
+                  + `pre > #copy-btn > svg { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ ui.app.scheme == 'dark' ? 'fill: white' : '' }}`
+                  + 'code #copy-btn { position: relative ; top: -6px ; right: -9px }'
+                  + 'code #copy-btn > svg { height: 13px ; width: 13px ; fill: white }'
+                  + '#app-chatbar {'
+                      + `border: solid 1px ${ ui.app.scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
+                      + 'font-size: 0.92rem ; height: 19px ; width: 82.6% ; max-height: 200px ; resize: none ; '
+                      + `position: relative ; z-index: 555 ; color: #${ ui.app.scheme == 'dark' ? 'eee' : '222' } ;`
+                      + 'margin: 3px 0 15px 0 ; padding: 13px 57px 9px 10px ;'
+                      + `background: ${ ui.app.scheme == 'dark' ? '#5151519e' : '#eeeeee9e' }}`
+                  + '.related-queries {'
+                      + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ; overflow: visible ;'
+                      + `${ browser.isFirefox ? 'top: -20px ; margin: -3px 0 -10px' : 'top: -25px ; margin: -7px 0 -15px' }}`
+                  + '.related-query {'
+                      + 'box-sizing: border-box ; width: fit-content ; max-width: 100% ;' // confine to .related-queries bounds
+                      + `margin: 4px 4px ${ ui.app.scheme == 'dark' ? 7 : 2 }px 0 ; padding: 4px 10px 5px 10px ;`
+                      + `color: ${ ui.app.scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
+                      + `background: ${ ui.app.scheme == 'dark' ? '#595858d6' : '#fbfbfbb0' } ;`
+                      + `border: 1px solid ${ ui.app.scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.88em ; cursor: pointer ;`
+                      + 'border-radius: 0 13px 12px 13px ; flex: 0 0 auto ;'
+                      + `box-shadow: 1px 3px ${ ui.app.scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
+                      + `${ config.fgAnimationsDisabled ? '' : 'transition: transform 0.1s ease !important' }}`
+                  + '.related-query:hover, .related-query:focus {'
+                      + ( config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.055) !important ;' )
+                      + `background: ${ ui.app.scheme == 'dark' ? '#a2a2a270': '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
+                  + '.related-query svg { position: relative ; top: 4px ; margin-right: 6px ;' // related query icon
+                      + `color: ${ ui.app.scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
+                  + '.fade-in { opacity: 0 ; transform: translateY(10px) }'
+                  + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
+                  + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
+                  + '.chatbar-btn { z-index: 560 ;'
+                      + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
+                      + `bottom: ${ browser.isFirefox ? 50 : 55 }px ;`
+                      + `${ ui.app.scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
+                  + '.chatbar-btn:hover {'
+                      + `${ ui.app.scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
+                  + ( // rendered markdown styles
+                        '#ddgpt > pre h1 { font-size: 24px } #ddgpt > pre h2 { font-size: 22px } #ddgpt > pre h3 { font-size: 20px }' // size headings
+                      + '#ddgpt > pre h1, #ddgpt > pre h2, #ddgpt > pre h3 { margin-bottom: -15px }' // reduce gap after headings
+                      + '#ddgpt > pre ol { margin: -11px 0 -20px }' // reduce v-padding
+                      + '#ddgpt > pre ol > li { margin: -10px 0 0 1.6em ; list-style: decimal }' // reduce v-padding, show number markers
+                      + '#ddgpt > pre ol > li::marker { font-size: 0.9em }' // shrink number markers
+                      + '#ddgpt > pre ul { margin: -28px 0 -21px }' // reduce v-padding
+                      + '#ddgpt > pre ul > li { margin: -10px 0 0 1.2em ; list-style: inside }' ) // reduce v-padding, show bullets
+                  + '.katex-html { display: none } ' // hide unrendered math
+                  + '.chatgpt-notif { fill: white ; stroke: white ; color: white ; padding: 7.5px 14px 6.5px 11.5px !important }'
+                  + '.notif-close-btn { display: none !important }' // hide notif close btn
+                  + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important ;' // increase alert padding
+                      + 'background-color: white !important ; color: black }'
+                  + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 1.55rem }' // pos/size modal msg
+                  + `.chatgpt-modal a { color: #${ ui.app.scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
+                  + `.modal-buttons { margin: 24px -5px -3px ${ browser.isMobile ? -5 : -15 }px !important ; width: 100% }` // pos/size modal buttons
+                  + '.chatgpt-modal button {' // modal buttons
+                      + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
+                      + `padding: ${ browser.isMobile ? '7px' : '4px 10px' } !important ;`
+                      + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
+                      + 'border: 1px solid ' + ( ui.app.scheme == 'dark' ? 'white' : 'black' ) + '!important ;'
+                      + `${ ui.app.scheme == 'dark' ? 'background: none ; color: white' : '' }}`
+                  + '.primary-modal-btn { background: black !important ; color: white !important }'
+                  + '.chatgpt-modal button:hover { background-color: #9cdaff !important ; color: black !important }'
+                  + ( ui.app.scheme == 'dark' ? // darkmode chatgpt.alert() styles
+                      ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
+                          + 'background-color: black !important ; color: white }'
+                      + '.primary-modal-btn { background: hsl(186 100% 69%) !important ; color: black !important }'
+                      + '.chatgpt-modal a { color: #00cfff !important }'
+                      + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
+                  + '[class*="-modal-bg"] {'
+                      + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
+                      + 'transition: background-color .15s ease ;' // speed to show bg dim
+                      + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
+                  + '[class*="-modal-bg"].animated > div { z-index: 13456 ; opacity: 0.98 ; transform: translateX(0) translateY(0) }'
+                  + '[class$="-modal"] {' // native modals + chatgpt.alert()s
+                      + 'z-index: 13456 ; position: absolute ;' // to be click-draggable
+                      + 'opacity: 0 ;' // to fade-in
+                      + `background-image: linear-gradient(180deg, ${ ui.app.scheme == 'dark' ? '#99a8a6 -200px, black 200px' : '#b6ebff -296px, white 171px' }) ;`
+                      + `border: 1px solid ${ ui.app.scheme == 'dark' ? 'white' : '#b5b5b5' } !important ;`
+                      + `color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' } ;`
+                      + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
+                      + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
+                                  + 'transform 0.55s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
+                  + ( config.fgAnimationsDisabled || browser.isMobile ? '' : (
+                        '[class$="-modal"] button { transition: transform 0.15s ease }' 
+                      + '[class$="-modal"] button:hover { transform: scale(1.055) }' ))
+                  + '.ddgpt-menu { position: absolute ; z-index: 2250 ;'
+                      + 'padding: 3.5px 5px !important ; font-family: "Source Sans Pro", sans-serif ; font-size: 12px }'
+                  + '.ddgpt-menu ul { margin: 0 ; padding: 0 ; list-style: none }'
+                  + '.ddgpt-menu-item { padding: 0 5px ; line-height: 20.5px }'
+                  + '.ddgpt-menu-item:not(.ddgpt-menu-header):hover {'
+                      + 'cursor: pointer ; background: white ; color: black ; fill: black }'
+                  + '#checkmark-icon { fill: #b3f96d } .ddgpt-menu-item:hover #checkmark-icon { fill: green }'
+
+                  // Glowing modal btns
+                  + ':root { --glow-color: hsl(186 100% 69%); }'
+                  + '.glowing-btn { perspective: 2em ; font-weight: 900 ; animation: border-flicker 2s linear infinite ;'
+                      + '-webkit-box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) ;' 
+                      + 'box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) ;' 
+                      + '-moz-box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) }' 
+                  + '.glowing-txt { animation: text-flicker 3s linear infinite ;'
+                      + '-webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
+                      + '-moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
+                      + 'text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) }'
+                  + '.faulty-letter { opacity: 0.5 ; animation: faulty-flicker 2s linear infinite }'
+                  + '.glowing-btn::after { content: "" ; position: absolute ; top: 0 ; bottom: 0 ; left: 0 ; right: 0 ;'
+                      + 'opacity: 0 ; z-index: -1 ; box-shadow: 0 0 2em 0.2em var(--glow-color) ;'
+                      + 'background-color: var(--glow-color) ; transition: opacity 100ms linear }'
+                  + '.glowing-btn:hover { color: rgba(0, 0, 0, 0.8) ; text-shadow: none ; animation: none }'
+                  + '.glowing-btn:hover .glowing-txt { animation: none }'
+                  + '.glowing-btn:hover .faulty-letter { animation: none ; text-shadow: none ; opacity: 1 }'
+                  + '.glowing-btn:hover:before { filter: blur(1.5em) ; opacity: 1 }'
+                  + '.glowing-btn:hover:after { opacity: 1 }'
+                  + '@keyframes faulty-flicker { 0% { opacity: 0.1 } 2% { opacity: 0.1 } 4% { opacity: 0.5 } 19% { opacity: 0.5 }'
+                      + '21% { opacity: 0.1 } 23% { opacity: 1 } 80% { opacity: 0.5 } 83% { opacity: 0.4 } 87% { opacity: 1 }}'
+                  + '@keyframes text-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 8% { opacity: 0.1 } 9% { opacity: 1 }'
+                      + '12% { opacity: 0.1 } 20% { opacity: 1 } 25% { opacity: 0.3 } 30% { opacity: 1 } 70% { opacity: 0.7 }'
+                      + '72% { opacity: 0.2 } 77% { opacity: 0.9 } 100% { opacity: 0.9 }}'
+                  + '@keyframes border-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
+                      + '70% { opacity: 0.7 } 100% { opacity: 1 }}'
+
+                  // chatgpt.alert() + DDGPT modals
+                  + '.ddgpt-modal { display: grid ; place-items: center }' // for centered icon/logo
+                  + '[class*="modal-close-btn"] {'
+                      + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
+                      + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
+                  + `[class*="modal-close-btn"] path {${ ui.app.scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
+                  + ( ui.app.scheme == 'dark' ? '[class*="modal-close-btn"]:hover path { stroke: black ; fill: black }' : '' ) // invert dark mode hover paths
+                  + '[class*="modal-close-btn"]:hover { background-color: #f2f2f2 }' // hover underlay
+                  + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
+                  + '[class*="-modal"] h2 { font-weight: bold ; line-height: 32px ; padding: 0 ; margin: 9px 0 14px !important ;'
+                      + `${ browser.isMobile ? 'text-align: center' : 'justify-self: start' }}` // left-align on desktop, center on mobile
+                  + '[class*="-modal"] p { justify-self: start ; font-size: 20px }'
+                  + '[class*="-modal"] button { font-size: 14px }'
+
+                  // Settings modal
+                  + '#ddgpt-settings {'
+                      + `min-width: ${ browser.isPortrait ? 288 : 698 }px ; max-width: 75vw ; word-wrap: break-word ;`
+                      + 'border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
+                      + `${ ui.app.scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
+                  + '#ddgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 3px -3px 0 }'
+                  + `#ddgpt-settings-title h4 { font-size: ${ browser.isPortrait ? 26 : 31 }px ; font-weight: bold ; margin-top: -39px }`
+                  + '#ddgpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
+                      + `width: ${ browser.isPortrait ? 100 : 50 }% }` // set width based on column cnt
+                  + '#ddgpt-settings li {'
+                      + `color: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for text
+                      + `fill: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
+                      + `stroke: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
+                      + 'height: 25px ; font-size: 14.5px ; transition: transform 0.1s ease ;'
+                      + `padding: 4px 10px ; border-bottom: 1px dotted ${ ui.app.scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
+                      + 'border-radius: 3px }' // make highlight strips slightly rounded
+                  + '#ddgpt-settings li.active {'
+                      + `color: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for text
+                      + `fill: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' } ;` // for icons
+                      + `stroke: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0)' }}` // for icons
+                  + '#ddgpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
+                  + '#ddgpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
+                  + '#ddgpt-settings li, #ddgpt-settings li label { cursor: pointer }' // add finger on hover
+                  + '#ddgpt-settings li:hover { opacity: 1 ;'
+                      + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
+                      + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.22)' }}` // add zoom
+                  + '#ddgpt-settings li > input { float: right }' // pos toggles
+                  + '#scheme-menu-entry > span { margin: 0 -2px }' // align Scheme status
+                  + '#scheme-menu-entry > span > svg { position: relative ; top: 3px ; margin-left: 4px }' // v-align/left-pad Scheme status icon
+                  + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
+                  + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
+                  + `#about-menu-entry span { color: ${ ui.app.scheme == 'dark' ? '#28ee28' : 'green' }}`
+                  + `#about-menu-entry > span { width: ${ browser.isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
+                      + `${ config.fgAnimationsDisabled ? '' : ( // fade edges
+                                'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
+                      + '-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' )}}`
+                  + '#about-menu-entry > span > div { text-wrap: nowrap ;'
+                      + `${ config.fgAnimationsDisabled ? '' : 'animation: ticker linear 60s infinite' }}`
+                  + '@keyframes ticker { 0% { transform: translateX(100%) } 100% { transform: translateX(-2000%) }}'
+                  + `.about-em { color: ${ ui.app.scheme == 'dark' ? 'white' : 'green' } !important }`
+                )
+            },
+
+            tweaks() {
+
+                // Update tweaks style based on settings
+                tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
+                                      + ( config.stickySidebar ? ssbStyles
+                                        : config.anchored ? ( anchorStyles + ( config.expanded ? expandedStyles : '' )) : '' )
+        
+                // Update 'by KudoAI' visibility based on corner space available
+                const kudoAIspan = appDiv.querySelector('.kudoai')
+                if (kudoAIspan) {
+                    const visibleBtnCnt = [...appDiv.querySelectorAll('.corner-btn')]
+                        .filter(btn => getComputedStyle(btn).display != 'none').length
+                    kudoAIspan.style.display = visibleBtnCnt <= (
+                        config.anchored && config.expanded ? 10
+                     : !config.anchored && config.widerSidebar ? 7
+                     : browser.isMobile ? 3 : 4 ) ? '' : 'none'
+                }
+
+                // Update <pre> max-height for various mode toggles
+                const answerPre = appDiv.querySelector('pre'),
+                      relatedQueries = appDiv.querySelector('.related-queries'),
+                      shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 245,
+                      longerPreHeight = window.innerHeight - 255
+                if (answerPre) answerPre.style.maxHeight = (
+                    config.stickySidebar ? ( relatedQueries?.offsetHeight > 0 ? `${shorterPreHeight}px` : `${longerPreHeight}px` )
+                  : config.anchored ? `${ longerPreHeight - ( config.expanded ? 115 : 365 ) }px` : 'none'
+                )
             }
-
-            // Update <pre> max-height for various mode toggles
-            const answerPre = appDiv.querySelector('pre'),
-                  relatedQueries = appDiv.querySelector('.related-queries'),
-                  shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 245,
-                  longerPreHeight = window.innerHeight - 255
-            if (answerPre) answerPre.style.maxHeight = (
-                config.stickySidebar ? ( relatedQueries?.offsetHeight > 0 ? `${shorterPreHeight}px` : `${longerPreHeight}px` )
-              : config.anchored ? `${ longerPreHeight - ( config.expanded ? 115 : 365 ) }px` : 'none'
-            )
         }
     }
 
@@ -2402,7 +2404,7 @@
                 saveSetting('anchored', false)
                 if (config.expanded) toggle.expandedMode('off')
             }
-            update.tweaksStyle() ; update.chatbarWidth() ; update.rqVisibility() // apply new state to UI
+            update.style.tweaks() ; update.chatbarWidth() ; update.rqVisibility() // apply new state to UI
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const anchorToggle = document.querySelector('[id*="anchor"][id*="menu-entry"] input')
                 if (anchorToggle.checked != config.anchored) modals.settings.toggle.switch(anchorToggle)
@@ -2419,7 +2421,7 @@
             const configKey = layer + 'AnimationsDisabled'
             log.debug(`Toggling ${layer.toUpperCase()} animations ${ config[configKey] ? 'ON' : 'OFF' }...`)
             saveSetting(configKey, !config[configKey])
-            update.appStyle() ; if (layer == 'bg') update.stars()
+            update.style.app() ; if (layer == 'bg') update.stars()
             if (layer == 'fg' && modals.settings.get()) {
 
                 // Toggle ticker-scroll of About status label
@@ -2473,7 +2475,7 @@
             log.debug(`${ toExpand ? 'Expanding' : 'Shrinking' } ${app.name}...`)
             saveSetting('expanded', toExpand)
             if (config.minimized) toggle.minimized('off') // since user wants to see stuff
-            update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
+            update.style.tweaks() ; update.chatbarWidth() // apply new state to UI
             icons.arrowsDiagonal.update() ; tooltipDiv.style.opacity = 0 // update icon/tooltip
             log.caller = `toggle.expandedMode(${ state ? `'${state}'` : '' })`
             log.debug(`Success! ${app.name} ${ toExpand ? 'expanded' : 'shrunk' }`)
@@ -2544,7 +2546,7 @@
             if (!config.rqDisabled && !appDiv.querySelector('.related-queries')) // get related queries for 1st time
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
                     .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
-            update.tweaksStyle() // toggle <pre> max-height
+            update.style.tweaks() // toggle <pre> max-height
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
             log.debug(`Success! config.rqDisabled = ${config.rqDisabled}`)
         },
@@ -2559,7 +2561,7 @@
                 if (mode == 'sticky' && config.anchored) toggle.anchorMode()
                 saveSetting(configKeyName, true)
             } else saveSetting(configKeyName, false)
-            update.tweaksStyle() ; update.chatbarWidth() // apply new state to UI
+            update.style.tweaks() ; update.chatbarWidth() // apply new state to UI
             if (mode == 'wider') icons.widescreen.update() // toggle icons everywhere
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const stickySidebarToggle = document.querySelector('[id*="sticky"][id*="menu-entry"] input')
@@ -3262,7 +3264,7 @@
                     appDiv.append(balloonTipSpan, answerPre)
                 }
 
-                update.tweaksStyle() // show/hide 'by KudoAI', update pre-height based on mode
+                update.style.tweaks() // show/hide 'by KudoAI', update pre-height based on mode
             }
 
             // Build reply section if missing
@@ -3335,7 +3337,7 @@
                         throwOnError: false
                 })})
 
-                if (config.stickySidebar) update.tweaksStyle() // to reset answerPre height
+                if (config.stickySidebar) update.style.tweaks() // to reset answerPre height
 
                 // Auto-scroll if active
                 if (config.autoScroll && !browser.isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
@@ -3414,7 +3416,7 @@
                 })
 
                 get.related.replyIsQuestion = null
-                update.tweaksStyle() // to shorten <pre> max-height
+                update.style.tweaks() // to shorten <pre> max-height
                 if (!browser.isMobile) appFooter.style.right = 0 // reset show.reply()'s counteract right-offset bug from chatbar padding
             }
         }
@@ -3442,7 +3444,7 @@
     appDiv.classList.add('fade-in') ; listenerize.appDiv()
 
     // Stylize APP elems
-    const appStyle = create.style() ; update.appStyle() ; document.head.append(appStyle);
+    const appStyle = create.style() ; update.style.app() ; document.head.append(appStyle);
     ['hljs', 'wsbg', 'bsbg'].forEach(cssType => // code highlighting, white stars, black stars
         document.head.append(create.style(GM_getResourceText(`${cssType}CSS`))))
 
@@ -3457,7 +3459,7 @@
                        + '[class*="feedback"], .related-queries, #wsb-btn  { display: none }'
                        + '#chevron-btn, #arrows-btn { display: block !important }',
           expandedStyles = '#ddgpt { width: 528px }'
-    update.tweaksStyle() ; document.head.append(tweaksStyle)
+    update.style.tweaks() ; document.head.append(tweaksStyle)
 
     // Create/stylize TOOLTIPs
     if (!browser.isMobile) {
