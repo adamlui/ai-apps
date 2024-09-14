@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.19
+// @version             2024.9.14.20
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -640,8 +640,10 @@
             // Tweak chatbar
             if (/chatgpt|openai/.test(site)) {
                 const inputArea = chatbar.querySelector(sites[site].selectors.input)
-                inputArea.style.width = '100%' // rid h-scrollbar
-                inputArea.parentNode.style.width = `${ !sites[site].hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
+                if (inputArea) {
+                    inputArea.style.width = '100%' // rid h-scrollbar
+                    inputArea.parentNode.style.width = `${ !sites[site].hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
+                }
             } else if (site == 'poe') {
                 const attachFileBtn = chatbar.querySelector('button[class*="File"]'),
                       clearBtn = document.querySelector('[class*="ChatBreakButton"]')
