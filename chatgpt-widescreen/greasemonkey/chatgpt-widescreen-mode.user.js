@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.5
+// @version             2024.9.14.6
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -610,21 +610,21 @@
         insert() {
 
             // Init chatbar
-            let chatbar = document.querySelector(inputSelector)
+            let chatbar = document.querySelector(sites[site].selectors.input)
             const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
             for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
     
             // Tweak chatbar
             if (/chatgpt|openai/.test(site)) {
-                const inputArea = chatbar.querySelector(inputSelector)
+                const inputArea = chatbar.querySelector(sites[site].selectors.input)
                 inputArea.style.width = '100%' // rid h-scrollbar
-                inputArea.parentNode.style.width = `${ !ui.hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
+                inputArea.parentNode.style.width = `${ !sites[site].hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
             } else if (site == 'poe') {
                 const attachFileBtn = chatbar.querySelector('button[class*="File"]'),
                       clearBtn = document.querySelector('[class*="ChatBreakButton"]')
                 if (attachFileBtn) { // left-align attach file button
                     attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
-                    document.querySelector(inputSelector).style.padding = '0 13px 0 40px' // accommodate new btn pos
+                    document.querySelector(sites[site].selectors.input).style.padding = '0 13px 0 40px' // accommodate new btn pos
                 }
                 btns.newChat.style.top = clearBtn ? '-1px' : 0
                 btns.newChat.style.marginRight = clearBtn ? '2px' : '1px'
@@ -726,7 +726,7 @@
 
         tooltip(btnType) { // text & position
             const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-                .filter(type => !(type == 'fullWindow' && !ui.hasSidebar))
+                .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
             const ctrAddend = 25 + ( site == 'poe' ? ( browser.isFirefox ? 12 : 45 ) : 12 ),
                   spreadFactor = site == 'poe' ? 34 : 30.5,
                   iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
@@ -782,7 +782,7 @@
 
     function isFullWindow() {
         return site == 'poe' ? !!document.getElementById('fullWindow-mode')
-                             : !ui.hasSidebar || chatgpt.sidebar.isOff()
+                             : !sites[site].hasSidebar || chatgpt.sidebar.isOff()
     }
 
     function syncMode(mode) { // setting + icon + tooltip
@@ -807,24 +807,26 @@
     }}}
 
     // Run MAIN routine
-
-    // Define UI element SELECTORS
     if (/openai|chatgpt/.test(site))
         await Promise.race([btns.sendIsLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
-    const inputSelector = /chatgpt|openai/.test(site) ? '#prompt-textarea'
-                        : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
-          sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
-                          : site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]' : '',
-          sidepadSelector = '#__next > div > div',
-          headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : ''
-    let footerSelector = 'footer'
-    try { footerSelector = /chatgpt|openai/.test(site) ?
-              chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') : ''
-    } catch (err) {}
 
-    // Init browser/UI props
+    // Init browser props
     const browser = { isFirefox: chatgpt.browser.isFirefox() }
-    const ui = { hasSidebar: site == 'poe' || chatgpt.sidebar.exists() }
+
+    // Init SITE props
+    const sites = {
+        chatgpt: {
+            hasSidebar: chatgpt.sidebar.exists(),
+            selectors: {
+                input: '#prompt-textarea', sidebar: '#__next > div > div.dark',
+                sidepad: '#__next > div > div', header: 'main .sticky',
+                footer: chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') }},
+        poe: {
+            hasSidebar: true,
+            selectors: {
+                input: '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after',
+                sidebar: 'menu[class*="sidebar"], aside[class*="sidebar"]' }}
+    } ; sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
 
     // Save FULL-WINDOW + FULL SCREEN states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : config.fullWindow
@@ -862,12 +864,13 @@
 
     // Create/apply general style TWEAKS
     const tweaksStyle = create.style(),
-          tcbStyle = `${ // heighten chatbox
-              site == 'poe' ? inputSelector : `div[class*="prose"]:has(${inputSelector})`} { max-height: 68vh }`,
-          hhStyle = headerSelector + '{ display: none !important }' // hide header
+          tcbStyle = ( // heighten chatbox
+              site == 'poe' ? sites[site].selectors.input : `div[class*="prose"]:has(${sites[site].selectors.input})`)
+                            + '{ max-height: 68vh }',
+          hhStyle = sites[site].selectors.header + '{ display: none !important }' // hide header
                   + ( /chatgpt|openai/.test(site) ? 'main { padding-top: 12px }' : '' ), // increase top-padding
-          hfStyle = footerSelector + '{ visibility: hidden ;' // hide footer text
-                                   + '  height: 3px }' // reduce v-padding
+          hfStyle = sites[site].selectors.footer + '{ visibility: hidden ;' // hide footer text
+                                                 + '  height: 3px }' // reduce height
 
     update.style.tweaks() ; document.head.append(tweaksStyle)
 
@@ -883,12 +886,12 @@
     const fullWindowStyle = create.style()
     fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
     fullWindowStyle.innerText = (
-          sidebarSelector + '{ display: none }' // hide sidebar
-        + sidepadSelector + '{ padding-left: 0 }' ) // remove side padding
+          sites[site].selectors.sidebar + '{ display: none }' // hide sidebar
+        + sites[site].selectors.sidepad + '{ padding-left: 0 }' ) // remove side padding
 
     // Create/insert chatbar BUTTONS
     const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-        .filter(type => !(type == 'fullWindow' && !ui.hasSidebar))
+        .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
     const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
     let btnColor = btns.setColor()
     validBtnTypes.forEach((btnType, idx) => {
@@ -941,7 +944,7 @@
 
         // Update button colors on ChatGPT scheme or temp chat toggle
         if (/chatgpt|openai/.test(site)) {
-            let chatbarBGdiv = document.querySelector(inputSelector)
+            let chatbarBGdiv = document.querySelector(sites[site].selectors.input)
             for (let i = 0 ; i < 1 ; i++) { chatbarBGdiv = chatbarBGdiv?.parentNode }
             if (chatbarBGdiv) {
                 const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
@@ -957,9 +960,8 @@
         { attributes: true, subtree: true }
     )
 
-
     // Monitor SIDEBAR to update full-window setting
-    if (/chatgpt|openai/.test(site) && !!ui.hasSidebar) {
+    if (/chatgpt|openai/.test(site) && !!sites[site].hasSidebar) {
         const sidebarObserver = new MutationObserver(() => {
             const fullWindowState = isFullWindow()
             if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
