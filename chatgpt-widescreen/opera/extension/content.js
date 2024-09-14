@@ -425,7 +425,7 @@
         btns[btnType].style.cursor = 'pointer' // add finger cursor
         if (site == 'poe') btns[btnType].style.position = 'relative' // override static pos
         if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
-            btns[btnType].setAttribute('class', chatgpt.getSendBtn().classList)
+            btns[btnType].setAttribute('class', chatgpt.getSendBtn()?.classList.toString() || '')
             btns[btnType].style.backgroundColor = 'transparent' // remove dark mode overlay
             btns[btnType].style.borderColor = 'transparent' // remove dark mode overlay
         } else if (site == 'poe') // lift buttons slightly
