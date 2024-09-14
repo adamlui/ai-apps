@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.11
+// @version             2024.9.14.13
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -655,14 +655,6 @@
                                            || chatbar.lastChild // ChatGPT post-5/2024 + Poe
                                             : chatbar.children[1] ) // Poe
             btnsToInsert.forEach(btn => chatbar.insertBefore(btn, elemToInsertBefore))
-        },
-
-        sendIsLoaded() { // for borrowing classes
-            return new Promise(resolve => {
-                new MutationObserver((_, obs) => {
-                    if (chatgpt.getSendBtn()) { obs.disconnect() ; resolve(true) }}
-                ).observe(document.body, { childList: true, subtree: true })
-            })
         },
 
         setColor() {

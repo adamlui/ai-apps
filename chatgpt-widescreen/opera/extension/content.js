@@ -165,14 +165,6 @@
             }
         },
 
-        sendIsLoaded() { // for borrowing classes
-            return new Promise(resolve => {
-                new MutationObserver((_, obs) => {
-                    if (chatgpt.getSendBtn()) { obs.disconnect() ; resolve(true) }}
-                ).observe(document.body, { childList: true, subtree: true })
-            })
-        },
-
         setColor() {
             return ( /chatgpt|openai/.test(site) ? (
                   document.querySelector('.dark.bg-black, [class*="dark:bg-gray"]') // temp chat post-GPT4-o, pre-GPT-4o
