@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.13.5
+// @version             2024.9.13.6
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -760,7 +760,7 @@
             }
         },
 
-        tooltip() {
+        tooltip(event) {
             update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
             tooltipDiv.style.opacity = event.type == 'mouseover' ? '1' : '0'    
         }

@@ -293,7 +293,7 @@
             }
         },
 
-        tooltip() {
+        tooltip(event) {
             update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
             tooltipDiv.style.opacity = event.type == 'mouseover' ? '1' : '0'    
         }
