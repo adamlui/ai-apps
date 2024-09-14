@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.13.4
+// @version             2024.9.13.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -563,9 +563,40 @@
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(title, msg, btns, checkbox, width )}
 
-    // Define BUTTON functions/props
+    // Define BUTTON props/functions
 
     const btns = {
+
+        svgElems: {
+            fullScreen: {
+                off: [
+                    create.svgElem('path', { stroke: 'none', d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
+                on: [
+                    create.svgElem('path', { stroke: 'none', d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
+                    create.svgElem('path', { stroke: 'none', d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
+            },
+
+            fullWindow: [
+                create.svgElem('rect', { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
+                create.svgElem('line', { x1: '9', y1: '3', x2: '9', y2: '21' })
+            ],
+
+            newChat: [ create.svgElem('path', { stroke: 'none', d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ],
+
+            wideScreen: {
+                off: [
+                    create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
+                        d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ],
+                on: [
+                    create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
+                        d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
+            }
+        },
 
         insert() {
 
@@ -611,38 +642,6 @@
                || chatgpt.isDarkMode() ? 'white' : '#202123' )
             : site == 'poe' ? 'currentColor' : ''
         )},
-
-        svgElems: {
-
-            fullScreen: {
-                off: [
-                    create.svgElem('path', { stroke: 'none', d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
-                on: [
-                    create.svgElem('path', { stroke: 'none', d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
-            },
-
-            fullWindow: [
-                create.svgElem('rect', { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
-                create.svgElem('line', { x1: '9', y1: '3', x2: '9', y2: '21' })
-            ],
-
-            newChat: [ create.svgElem('path', { stroke: 'none', d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ],
-
-            wideScreen: {
-                off: [
-                    create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
-                        d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ],
-                on: [
-                    create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
-                        d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
-            }
-        },
 
         updateSVG(mode, state = '') {
     
