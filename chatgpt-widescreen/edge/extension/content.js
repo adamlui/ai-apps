@@ -348,16 +348,17 @@
     // Init browser/UI props
     const browser = { isFirefox: chatgpt.browser.isFirefox() }
     if (/openai|chatgpt/.test(site)) {
+        const obsConfig = { childList: true, subtree: true }
         sites[site].hasSidebar = await Promise.race([
             new Promise(resolve => { // true if sidebar toggle loads
                 new MutationObserver((_, obs) => {
                     if (document.querySelector('[d^="M8.85719"]')) { obs.disconnect() ; resolve(true) }
-                }).observe(document.body, { childList: true, subtree: true })
+                }).observe(document.body, obsConfig)
             }),
             new Promise(resolve => { // false if login button loads
                 new MutationObserver((_, obs) => {
                     if (document.querySelector('[data-testid*="login"]')) { obs.disconnect() ; resolve(false) }
-                }).observe(document.body, { childList: true, subtree: true })
+                }).observe(document.body, obsConfig)
             }),
             new Promise(resolve =>  // null if 3s passed
                 setTimeout(() => resolve(null), 3000))
