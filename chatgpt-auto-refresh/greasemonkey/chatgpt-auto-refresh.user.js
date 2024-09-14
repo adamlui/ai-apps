@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.13.1
+// @version             2024.9.14
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -369,8 +369,8 @@
     if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
         const firstIcon = ui.firstLink.querySelector('div:first-child'),
               firstLabel = ui.firstLink.querySelector('div:nth-child(2)')
-        navToggleDiv.classList.add(...ui.firstLink.classList, ...firstLabel.classList)
-        navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
+        navToggleDiv.classList.add(...ui.firstLink.classList, ...(firstLabel?.classList || []))
+        navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
     }
 
     insertToggle()

@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.13.1
+// @version             2024.9.14
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -356,8 +356,8 @@
     if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
         const firstIcon = ui.firstLink.querySelector('div:first-child'),
               firstLabel = ui.firstLink.querySelector('div:nth-child(2)')
-        navToggleDiv.classList.add(...ui.firstLink.classList, ...firstLabel.classList)
-        navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
+        navToggleDiv.classList.add(...ui.firstLink.classList, ...(firstLabel?.classList || []))
+        navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
     }
 
     insertToggle()
