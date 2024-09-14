@@ -337,7 +337,7 @@
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
     // Define UI element SELECTORS
-    if (/openai|chatagpt/.test(site))
+    if (/openai|chatgpt/.test(site))
         await Promise.race([btns.sendIsLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
     const inputSelector = /chatgpt|openai/.test(site) ? '#prompt-textarea'
                         : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
@@ -378,9 +378,9 @@
     tcbStyle = `${ // heighten chatbox
         site == 'poe' ? inputSelector : `div[class*="prose"]:has(${inputSelector})`} { max-height: 68vh }`,
     hhStyle = headerSelector + '{ display: none !important }' // hide header
-                  + ( /chatgpt|openai/.test(site) ? 'main { padding-top: 12px }' : '' ), // increase top-padding
-          hfStyle = footerSelector + '{ visibility: hidden ;' // hide footer text
-                  + '  height: 3px }' // reduce v-padding
+            + ( /chatgpt|openai/.test(site) ? 'main { padding-top: 12px }' : '' ), // increase top-padding
+    hfStyle = footerSelector + '{ visibility: hidden ;' // hide footer text
+                             + '  height: 3px }' // reduce v-padding
 
     update.style.tweaks() ; document.head.append(tweaksStyle)
 
