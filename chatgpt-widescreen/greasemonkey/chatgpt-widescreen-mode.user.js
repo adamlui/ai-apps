@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.2
+// @version             2024.9.14.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -692,7 +692,7 @@
             tweaks() {
                 tweaksStyle.innerText = (
                     /chatgpt|openai/.test(site) ? (
-                        ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbor btns on hover
+                        ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                         + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                         + ( config.hiddenFooter ? hfStyle : '' ) // hide footer
                         + 'div:has(+ main) { display: none !important }' // hide ugly double temp chat header
@@ -964,8 +964,11 @@
     })
     nodeObserver.observe( // <html> for page scheme toggles
         document.documentElement, { attributes: true })
-    if (/openai|chatgpt/.test(site)) nodeObserver.observe( // <main> for chatbar scheme changes
-        document.querySelector('main'), { attributes: true, subtree: true })
+    nodeObserver.observe( // for chatbar changes
+        document.querySelector(/openai|chatgpt/.test(site) ? 'main' : 'head'),
+        { attributes: true, subtree: true }
+    )
+
 
     // Monitor SIDEBAR to update full-window setting
     if (/chatgpt|openai/.test(site) && !!ui.hasSidebar) {
