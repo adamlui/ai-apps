@@ -66,7 +66,7 @@
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(title, msg, btns, checkbox, width )}
 
-    // Define BUTTON functions/props
+    // Define BUTTON props/functions
 
     const btns = {
 
@@ -337,7 +337,8 @@
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
     // Define UI element SELECTORS
-    await Promise.race([btns.sendIsLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
+    if (/openai|chatagpt/.test(site))
+        await Promise.race([btns.sendIsLoaded(), new Promise(resolve => setTimeout(resolve, 3000))])
     const inputSelector = /chatgpt|openai/.test(site) ? '#prompt-textarea'
                         : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
           sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
@@ -468,8 +469,10 @@
                         update.style.btn() ; isTempChat = !isTempChat
         }}}
     })
-    nodeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
-    nodeObserver.observe(document.querySelector('main'), { attributes: true, subtree: true }); // <main> for chatbar changes
+    nodeObserver.observe( // <html> for page scheme toggles
+        document.documentElement, { attributes: true })
+    if (/openai|chatgpt/.test(site)) nodeObserver.observe( // <main> for chatbar scheme changes
+        document.querySelector('main'), { attributes: true, subtree: true })
 
     // Monitor SIDEBAR to update full-window setting
     if (/chatgpt|openai/.test(site) && !!ui.hasSidebar) {
