@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.23
+// @version             2024.9.14.24
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -262,7 +262,7 @@
 
     const site = new URL(location.href).hostname.split('.').slice(-2, -1)[0]
 
-    // Init APP INFO
+    // Init APP info
     const app = {
         name: 'ChatGPT Widescreen Mode', symbol: '🖥️', configKeyPrefix: site + 'Widescreen',
         urls: {
@@ -276,6 +276,12 @@
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
+
+    // Init ENV info
+    const env = {
+        browser: { isFirefox: chatgpt.browser.isFirefox() },
+        userscriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
+    }
 
     // Init SITE props
     const sites = {
@@ -301,7 +307,7 @@
     settings.load(...sites[site].availFeatures)
 
     // Init XHR fetcher
-    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    const xhr = env.userscriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
 
     // Init localized MESSAGES
     const msgsLoaded = new Promise(resolve => {
@@ -330,7 +336,7 @@
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
         symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
-        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+        separator: env.userscriptManager == 'Tampermonkey' ? ' — ' : ': '
     }
 
     // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
@@ -350,7 +356,6 @@
     // Define SCRIPT functions
 
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
     // Define MENU functions
 
@@ -455,7 +460,7 @@
     }
 
     function refreshMenu() {
-        if (getUserscriptManager() == 'OrangeMonkey') return
+        if (env.userscriptManager == 'OrangeMonkey') return
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
     }
 
@@ -746,7 +751,7 @@
         tooltip(btnType) { // text & position
             const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
                 .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
-            const ctrAddend = 25 + ( site == 'poe' ? ( browser.isFirefox ? 12 : 45 ) : 12 ),
+            const ctrAddend = 25 + ( site == 'poe' ? ( env.browser.isFirefox ? 12 : 45 ) : 12 ),
                   spreadFactor = site == 'poe' ? 34 : 30.5,
                   iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
             tooltipDiv.innerText = msgs['tooltip_' + btnType + (
@@ -827,8 +832,7 @@
 
     // Run MAIN routine
 
-    // Init browser/UI props
-    const browser = { isFirefox: chatgpt.browser.isFirefox() }
+    // Init UI props
     if (/openai|chatgpt/.test(site)) {
         const obsConfig = { childList: true, subtree: true }
         sites[site].hasSidebar = await Promise.race([

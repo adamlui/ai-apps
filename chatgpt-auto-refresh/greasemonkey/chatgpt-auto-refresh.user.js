@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.1
+// @version             2024.9.14.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -259,7 +259,7 @@
 
 (async () => {
 
-    // Init APP INFO
+    // Init APP info
     const app = {
         name: 'ChatGPT Auto Refresh', symbol: '↻', configKeyPrefix: 'chatGPTautoRefresh',
         urls: {
@@ -272,6 +272,12 @@
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
+
+    // Init ENV info
+    const env = {
+        browser: { isFirefox: chatgpt.browser.isFirefox() },
+        userscriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
+    }
 
     // Init CONFIG
     const settings = {
@@ -299,7 +305,7 @@
     }
 
     // Init FETCHER
-    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    const xhr = env.userscriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
 
     // Init MESSAGES
     let msgs = {}
@@ -329,16 +335,15 @@
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
         symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
-        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+        separator: env.userscriptManager == 'Tampermonkey' ? ' — ' : ': '
     }
 
     registerMenu() // create browser toolbar menu
 
-    // Init BROWSER/UI props
+    // Init UI props
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
     await chatgpt.sidebar.isLoaded()
-    const browser = { isFirefox: chatgpt.browser.browser.isFirefox() },
-          ui = { firstLink: chatgpt.getNewChatLink() }
+    const ui = { firstLink: chatgpt.getNewChatLink() }
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 20240724 // datestamp of last edit for this file's `tweaksStyle`
@@ -407,7 +412,6 @@
     // Define SCRIPT functions
 
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
     // Define MENU functions
 
@@ -473,7 +477,7 @@
     }
 
     function refreshMenu() {
-        if (getUserscriptManager() == 'OrangeMonkey') return
+        if (env.userscriptManager == 'OrangeMonkey') return
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
     }
 
@@ -633,7 +637,7 @@
         const switchStyles = {
             position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !ui.firstLink ? 160 : 154 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-            bottom: `${ !ui.firstLink ? -0.15 : browser.isFirefox ? 0.05 : 0 }em`,
+            bottom: `${ !ui.firstLink ? -0.15 : env.browser.isFirefox ? 0.05 : 0 }em`,
             width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
         }
         Object.assign(switchSpan.style, switchStyles)

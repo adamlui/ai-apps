@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.14.2
+// @version                2014.9.14.3
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -220,7 +220,7 @@
 
 (async () => {
 
-    // Init APP INFO
+    // Init APP info
     const app = {
         name: 'DuckDuckGPT', symbol: '🐤', configKeyPrefix: 'duckDuckGPT',
         urls: {
@@ -237,10 +237,11 @@
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
-    // Init BROWSER flags
-    const browser = {} ; ['Chrome', 'Firefox', 'Edge', 'Brave', 'Mobile'].forEach(platform =>
-          browser['is' + platform] = chatgpt.browser['is' + platform]())
-    browser.isPortrait = browser.isMobile && (window.innerWidth < window.innerHeight)
+    // Init ENV info
+    const env = { browser: {}, userscriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() };
+    ['Chrome', 'Firefox', 'Edge', 'Brave', 'Mobile'].forEach(platform =>
+        env.browser['is' + platform] = chatgpt.browser['is' + platform]())
+    env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
 
     // Init DEBUG mode
     const settings = {
@@ -253,7 +254,7 @@
 
         styles: {
             prefix: {
-                base: `color: white ; padding: 2px 3px 2px 5px ; border-radius: 2px ; ${ browser.isFirefox ? 'font-size: 13px ;' : '' }`,
+                base: `color: white ; padding: 2px 3px 2px 5px ; border-radius: 2px ; ${ env.browser.isFirefox ? 'font-size: 13px ;' : '' }`,
                 info: 'background: linear-gradient(344deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 39%, rgba(30,29,43,0.6026611328125) 93%)',
                 working: 'background: linear-gradient(342deg, rgba(255,128,0,1) 0%, rgba(255,128,0,0.9612045501794468) 57%, rgba(255,128,0,0.7539216370141807) 93%)' ,
                 success: 'background: linear-gradient(344deg, rgba(0,107,41,1) 0%, rgba(3,147,58,1) 39%, rgba(24,126,42,0.7735294801514356) 93%)',
@@ -306,8 +307,8 @@
     // Init COMPATIBILITY flags
     log.debug('Initializing compatibility flags...')
     const streamingSupported = {
-        browser: !(getUserscriptManager() == 'Tampermonkey' && (browser.isChrome || browser.isEdge || browser.isBrave)),
-        userscriptManager: /Tampermonkey|ScriptCat/.test(getUserscriptManager()) }
+        browser: !(env.userscriptManager == 'Tampermonkey' && (env.browser.isChrome || env.browser.isEdge || env.browser.isBrave)),
+        userscriptManager: /Tampermonkey|ScriptCat/.test(env.userscriptManager) }
     log.debug(`Success! streamingSupported = ${log.prettifyObj(streamingSupported)}`)
 
     // Init CONFIG
@@ -321,7 +322,7 @@
     if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) settings.save('fontSize', 14) // init reply font size if unset
     if (!streamingSupported.browser || !streamingSupported.userscriptManager) settings.save('streamingDisabled', true) // disable Streaming in unspported env
-    if (!config.notFirstRun && browser.isMobile) settings.save('autoGet', true) // reverse default auto-get disabled if mobile
+    if (!config.notFirstRun && env.browser.isMobile) settings.save('autoGet', true) // reverse default auto-get disabled if mobile
     settings.save('notFirstRun', true)
     log.debug(`Success! config = ${log.prettifyObj(config)}`)
 
@@ -383,13 +384,13 @@
     // Init INPUT EVENTS
     log.debug('Initializing input events...')
     const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
-          inputEvents[action] = ( window.PointerEvent ? 'pointer' : browser.isMobile ? 'touch' : 'mouse' ) + action)
+          inputEvents[action] = ( window.PointerEvent ? 'pointer' : env.browser.isMobile ? 'touch' : 'mouse' ) + action)
     log.debug(`Success! inputEvents = ${log.prettifyObj(inputEvents)}`)
 
     // Init XHR fetcher
     log.debug('Initializing XHR fetcher...')
-    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
-    log.debug(`Success! xhr = ${ getUserscriptManager() == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
+    const xhr = env.userscriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    log.debug(`Success! xhr = ${ env.userscriptManager == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
 
     // Init localized MESSAGES
     log.debug('Initializing localized messages...')
@@ -477,7 +478,7 @@
     log.debug('Initializing menu objects...')
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
-        symbol: ['❌', '✔️'], separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ',
+        symbol: ['❌', '✔️'], separator: env.userscriptManager == 'Tampermonkey' ? ' — ' : ': ',
         word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
     }
     log.debug(`Success! menuState = ${log.prettifyObj(menuState)}`)
@@ -485,7 +486,6 @@
     // Define SCRIPT functions
 
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
     // Define MENU functions
 
@@ -509,7 +509,7 @@
     function refreshMenu() {
         log.caller = `refreshMenu()`
         log.debug('Refreshing toolbar menu...')
-        if (getUserscriptManager() == 'OrangeMonkey') { log.debug('OrangeMonkey userscript manager unsupported.') ; return }
+        if (env.userscriptManager == 'OrangeMonkey') { log.debug('OrangeMonkey userscript manager unsupported.') ; return }
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
         log.debug('Success! Menu refreshed')
     }
@@ -801,13 +801,13 @@
 
                 // Add logo
                 const aboutHeaderLogo = logos.ddgpt.create() ; aboutHeaderLogo.width = 420
-                aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: -1px ${ browser.isMobile ? 'auto' : '13.5%' } 1px`
+                aboutHeaderLogo.style.cssText = `max-width: 98% ; margin: -1px ${ env.browser.isMobile ? 'auto' : '13.5%' } 1px`
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Center text
                 aboutModal.removeChild(aboutModal.querySelector('h2')) // remove empty title h2
                 aboutModal.querySelector('p').style.cssText = 'justify-self: center ; text-align: center ; overflow-wrap: anywhere ;'
-                                                            + `margin: ${ browser.isPortrait ? '9px 0 -16px' : '3px 0 -6px' }`
+                                                            + `margin: ${ env.browser.isPortrait ? '9px 0 -16px' : '3px 0 -6px' }`
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
                 aboutModal.querySelectorAll('button').forEach(btn => {
@@ -979,7 +979,7 @@
 
                 // Init settings keys
                 log.debug('Initializing settings keys...')
-                const settingsKeys = Object.keys(settingsProps).filter(key => !(browser.isMobile && settingsProps[key].mobile == false)
+                const settingsKeys = Object.keys(settingsProps).filter(key => !(env.browser.isMobile && settingsProps[key].mobile == false)
                                                                            && !(ui.site.isCentered && settingsProps[key].centered == false))
                 log.debug(`Success! settingsKeys = ${log.prettifyObj(settingsKeys)}`)
 
@@ -998,7 +998,7 @@
                 log.debug('Initializing settings lists...')
                 const settingsLists = [], middleGap = 30, // px
                       settingsListContainer = document.createElement('div'),
-                      settingsListCnt = ( browser.isMobile && ( browser.isPortrait || settingsKeys.length < 8 )) ? 1 : 2,
+                      settingsListCnt = ( env.browser.isMobile && ( env.browser.isPortrait || settingsKeys.length < 8 )) ? 1 : 2,
                       settingItemCap = Math.floor(settingsKeys.length /2)
                 for (let i = 0 ; i < settingsListCnt ; i++) settingsLists.push(document.createElement('ul'))
                 settingsListContainer.style.width = '95%' // pad vs. parent
@@ -1018,7 +1018,7 @@
                     const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
                     settingItem.title = setting.helptip || '' // for hover assistance
                     const settingLabel = document.createElement('label') ; settingLabel.textContent = setting.label
-                    settingItem.append(settingLabel) ; (settingsLists[browser.isPortrait ? 0 : +(idx >= settingItemCap)]).append(settingItem)
+                    settingItem.append(settingLabel) ; (settingsLists[env.browser.isPortrait ? 0 : +(idx >= settingItemCap)]).append(settingItem)
 
                     // Create/prepend icons
                     const settingIcon = icons[setting.icon].create(/bg|fg/.exec(key)?.[0] ?? '')
@@ -1161,7 +1161,7 @@
                 const settingsContainer = modals.settings.get()?.parentNode || modals.settings.createAppend()
                 settingsContainer.style.display = '' // show modal
                 log.caller = 'modals.settings.show()'
-                if (browser.isMobile) { // scale 93% to viewport sides
+                if (env.browser.isMobile) { // scale 93% to viewport sides
                     log.debug('Scaling 93% to viewport sides...')
                     const settingsModal = settingsContainer.querySelector('#ddgpt-settings'),
                           scaleRatio = 0.93 * window.innerWidth / settingsModal.offsetWidth
@@ -1784,7 +1784,7 @@
             const relatedQueriesDiv = appDiv.querySelector('.related-queries')
             if (relatedQueriesDiv) { // update visibility based on latest setting
                 relatedQueriesDiv.style.display = config.rqDisabled || config.anchored ? 'none' : 'flex'
-                if (!browser.isMobile) appFooter.style.right = ( // counteract right-offset bug from chatbar padding
+                if (!env.browser.isMobile) appFooter.style.right = ( // counteract right-offset bug from chatbar padding
                     relatedQueriesDiv.style.display == 'flex' ? 0 : '-72px' )
             }
         },
@@ -1841,7 +1841,7 @@
                       + `${ ui.app.scheme == 'dark' ? 'fill: white ; stroke: white' : 'fill: #adadad ; stroke: #adadad' };` // color
                       + 'transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out }' // for re-appearances from btn-zoom-fade-out ends
                   + `.corner-btn:hover { ${ ui.app.scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
-                      + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.285)' }}`
+                      + `${ config.fgAnimationsDisabled || env.browser.isMobile ? '' : 'transform: scale(1.285)' }}`
                   + `.corner-btn:active { ${ ui.app.scheme == 'dark' ? 'fill: #999999 ; stroke: #999999' : 'fill: #638ed4 ; stroke: #638ed4' } }`
                   + ( config.bgAnimationsDisabled ? '' : ( '#ddgpt-logo, .corner-btn svg, .standby-btn'
                       + `{ filter: drop-shadow(${ ui.app.scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
@@ -1856,13 +1856,13 @@
                   + '#font-size-slider-thumb { z-index: 2 ; width: 10px ; height: 25px ; border-radius: 30% ; position: relative ; top: -7.65px ;'
                       + `transition: transform 0.05s ease ; background-color: ${ ui.app.scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                       + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0 ; cursor: ew-resize }'
-                  + ( config.fgAnimationsDisabled || browser.isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
+                  + ( config.fgAnimationsDisabled || env.browser.isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
                   + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
                       + 'border-radius: 4px ; border: 1px solid #888 ;'
                       + 'transition: transform 0.15s ease !important }'
                   + '.standby-btn:hover { border-radius: 4px ;'
                       + `${ ui.app.scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
-                      + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
+                      + `${ config.fgAnimationsDisabled || env.browser.isMobile ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
                   + '#ddgpt pre { background-color: inherit }' // override DDG's unattractive thicc light border
                   + '#ddgpt > pre {'
                       + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
@@ -1892,7 +1892,7 @@
                       + `background: ${ ui.app.scheme == 'dark' ? '#5151519e' : '#eeeeee9e' }}`
                   + '.related-queries {'
                       + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ; overflow: visible ;'
-                      + `${ browser.isFirefox ? 'top: -20px ; margin: -3px 0 -10px' : 'top: -25px ; margin: -7px 0 -15px' }}`
+                      + `${ env.browser.isFirefox ? 'top: -20px ; margin: -3px 0 -10px' : 'top: -25px ; margin: -7px 0 -15px' }}`
                   + '.related-query {'
                       + 'box-sizing: border-box ; width: fit-content ; max-width: 100% ;' // confine to .related-queries bounds
                       + `margin: 4px 4px ${ ui.app.scheme == 'dark' ? 7 : 2 }px 0 ; padding: 4px 10px 5px 10px ;`
@@ -1903,7 +1903,7 @@
                       + `box-shadow: 1px 3px ${ ui.app.scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
                       + `${ config.fgAnimationsDisabled ? '' : 'transition: transform 0.1s ease !important' }}`
                   + '.related-query:hover, .related-query:focus {'
-                      + ( config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.055) !important ;' )
+                      + ( config.fgAnimationsDisabled || env.browser.isMobile ? '' : 'transform: scale(1.055) !important ;' )
                       + `background: ${ ui.app.scheme == 'dark' ? '#a2a2a270': '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
                   + '.related-query svg { position: relative ; top: 4px ; margin-right: 6px ;' // related query icon
                       + `color: ${ ui.app.scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
@@ -1912,7 +1912,7 @@
                   + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
                   + '.chatbar-btn { z-index: 560 ;'
                       + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
-                      + `bottom: ${ browser.isFirefox ? 50 : 55 }px ;`
+                      + `bottom: ${ env.browser.isFirefox ? 50 : 55 }px ;`
                       + `${ ui.app.scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
                   + '.chatbar-btn:hover {'
                       + `${ ui.app.scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
@@ -1931,10 +1931,10 @@
                       + 'background-color: white !important ; color: black }'
                   + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 1.55rem }' // pos/size modal msg
                   + `.chatgpt-modal a { color: #${ ui.app.scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
-                  + `.modal-buttons { margin: 24px -5px -3px ${ browser.isMobile ? -5 : -15 }px !important ; width: 100% }` // pos/size modal buttons
+                  + `.modal-buttons { margin: 24px -5px -3px ${ env.browser.isMobile ? -5 : -15 }px !important ; width: 100% }` // pos/size modal buttons
                   + '.chatgpt-modal button {' // modal buttons
                       + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
-                      + `padding: ${ browser.isMobile ? '7px' : '4px 10px' } !important ;`
+                      + `padding: ${ env.browser.isMobile ? '7px' : '4px 10px' } !important ;`
                       + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
                       + 'border: 1px solid ' + ( ui.app.scheme == 'dark' ? 'white' : 'black' ) + '!important ;'
                       + `${ ui.app.scheme == 'dark' ? 'background: none ; color: white' : '' }}`
@@ -1960,7 +1960,7 @@
                       + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                       + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                                   + 'transform 0.55s cubic-bezier(.165,.84,.44,1) !important }' // for move-ins
-                  + ( config.fgAnimationsDisabled || browser.isMobile ? '' : (
+                  + ( config.fgAnimationsDisabled || env.browser.isMobile ? '' : (
                         '[class$="-modal"] button { transition: transform 0.15s ease }' 
                       + '[class$="-modal"] button:hover { transform: scale(1.055) }' ))
                   + '.ddgpt-menu { position: absolute ; z-index: 2250 ;'
@@ -2008,19 +2008,19 @@
                   + '[class*="modal-close-btn"]:hover { background-color: #f2f2f2 }' // hover underlay
                   + '[class*="modal-close-btn"] svg { margin: 11.5px }' // center SVG for hover underlay
                   + '[class*="-modal"] h2 { font-weight: bold ; line-height: 32px ; padding: 0 ; margin: 9px 0 14px !important ;'
-                      + `${ browser.isMobile ? 'text-align: center' : 'justify-self: start' }}` // left-align on desktop, center on mobile
+                      + `${ env.browser.isMobile ? 'text-align: center' : 'justify-self: start' }}` // left-align on desktop, center on mobile
                   + '[class*="-modal"] p { justify-self: start ; font-size: 20px }'
                   + '[class*="-modal"] button { font-size: 14px }'
 
                   // Settings modal
                   + '#ddgpt-settings {'
-                      + `min-width: ${ browser.isPortrait ? 288 : 698 }px ; max-width: 75vw ; word-wrap: break-word ;`
+                      + `min-width: ${ env.browser.isPortrait ? 288 : 698 }px ; max-width: 75vw ; word-wrap: break-word ;`
                       + 'border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                       + `${ ui.app.scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
                   + '#ddgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 3px -3px 0 }'
-                  + `#ddgpt-settings-title h4 { font-size: ${ browser.isPortrait ? 26 : 31 }px ; font-weight: bold ; margin-top: -39px }`
+                  + `#ddgpt-settings-title h4 { font-size: ${ env.browser.isPortrait ? 26 : 31 }px ; font-weight: bold ; margin-top: -39px }`
                   + '#ddgpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
-                      + `width: ${ browser.isPortrait ? 100 : 50 }% }` // set width based on column cnt
+                      + `width: ${ env.browser.isPortrait ? 100 : 50 }% }` // set width based on column cnt
                   + '#ddgpt-settings li {'
                       + `color: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for text
                       + `fill: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for icons
@@ -2037,14 +2037,14 @@
                   + '#ddgpt-settings li, #ddgpt-settings li label { cursor: pointer }' // add finger on hover
                   + '#ddgpt-settings li:hover { opacity: 1 ;'
                       + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
-                      + `${ config.fgAnimationsDisabled || browser.isMobile ? '' : 'transform: scale(1.22)' }}` // add zoom
+                      + `${ config.fgAnimationsDisabled || env.browser.isMobile ? '' : 'transform: scale(1.22)' }}` // add zoom
                   + '#ddgpt-settings li > input { float: right }' // pos toggles
                   + '#scheme-menu-entry > span { margin: 0 -2px }' // align Scheme status
                   + '#scheme-menu-entry > span > svg { position: relative ; top: 3px ; margin-left: 4px }' // v-align/left-pad Scheme status icon
                   + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
                   + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
                   + `#about-menu-entry span { color: ${ ui.app.scheme == 'dark' ? '#28ee28' : 'green' }}`
-                  + `#about-menu-entry > span { width: ${ browser.isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
+                  + `#about-menu-entry > span { width: ${ env.browser.isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
                       + `${ config.fgAnimationsDisabled ? '' : ( // fade edges
                                 'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
                       + '-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' )}}`
@@ -2070,7 +2070,7 @@
                     kudoAIspan.style.display = visibleBtnCnt <= (
                         config.anchored && config.expanded ? 10
                      : !config.anchored && config.widerSidebar ? 7
-                     : browser.isMobile ? 3 : 4 ) ? '' : 'none'
+                     : env.browser.isMobile ? 3 : 4 ) ? '' : 'none'
                 }
 
                 // Update <pre> max-height for various mode toggles
@@ -2172,7 +2172,7 @@
                 else if (btn.id == 'pin-btn') btn.onclick = btn.onmouseover = btn.onmouseout = menus.pin.toggle
                 else if (btn.id == 'wsb-btn') btn.onclick = () => toggle.sidebar('wider')
                 else if (btn.id == 'arrows-btn') btn.onclick = () => toggle.expandedMode()
-                if (!browser.isMobile && btn.id != 'pin-btn') // add hover listeners for tooltips
+                if (!env.browser.isMobile && btn.id != 'pin-btn') // add hover listeners for tooltips
                     btn.onmouseover = btn.onmouseout = toggle.tooltip
                 if (!/wsb|pin/.test(btn.id)) btn.onmouseup = () => { // add zoom/fade-out except to WSB/pin btns
                     if (config.fgAnimationsDisabled) return
@@ -2227,7 +2227,7 @@
 
                     // Hide/remove elems
                     appDiv.querySelector('.related-queries')?.remove() // remove related queries
-                    if (!browser.isMobile) // hide 'Send reply' tooltip post-send btn click + reset show.reply()'s counteract right-offset bug from chatbar padding
+                    if (!env.browser.isMobile) // hide 'Send reply' tooltip post-send btn click + reset show.reply()'s counteract right-offset bug from chatbar padding
                         tooltipDiv.style.opacity = appFooter.style.right = 0 
 
                     // Show loading status
@@ -2271,7 +2271,7 @@
                     chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
                     show.reply.src = 'shuffle'
                 }
-                if (!browser.isMobile) // add hover listener for tooltips
+                if (!env.browser.isMobile) // add hover listener for tooltips
                     btn.onmouseover = btn.onmouseout = toggle.tooltip
             })
         }
@@ -2322,7 +2322,7 @@
             })
 
             // Add event listener for wheel-scrolling thumb
-            if (!browser.isMobile) slider.onwheel = event => {
+            if (!env.browser.isMobile) slider.onwheel = event => {
                 event.preventDefault()
                 moveThumb(sliderThumb.offsetLeft - Math.sign(event.deltaY) * fontSizeSlider.hWheelDistance)
             }
@@ -2514,7 +2514,7 @@
                 }
             }
             update.appBottomPos() // toggle visual minimization
-            if (!browser.isMobile) setTimeout(() => tooltipDiv.style.opacity = 0, 1) // remove lingering tooltip
+            if (!env.browser.isMobile) setTimeout(() => tooltipDiv.style.opacity = 0, 1) // remove lingering tooltip
             log.caller = `toggle.minimized(${ state ? `'${state}'` : '' })`
             log.debug(`Success! ${app.name} ${ toMinimize ? 'minimized' : 'restored' }`)
         },
@@ -2579,14 +2579,14 @@
 
         streaming() {
             log.caller = 'toggle.streaming()'
-            const scriptCatLink = browser.isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
-                                : browser.isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
+            const scriptCatLink = env.browser.isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
+                                : env.browser.isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
                                             : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!streamingSupported.userscriptManager) { // alert userscript manager unsupported, suggest TM/SC
-                log.debug(`Streaming Mode unsupported in ${getUserscriptManager()}`)
+                log.debug(`Streaming Mode unsupported in ${env.userscriptManager}`)
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
-                        + ( !browser.isEdge && !browser.isBrave ? // suggest TM for supported browsers
+                        + ( !env.browser.isEdge && !env.browser.isBrave ? // suggest TM for supported browsers
                             ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
                                 : '' )
                         + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
@@ -2598,7 +2598,7 @@
                 log.debug('Streaming Mode unsupported in browser')
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
-                        + `${ browser.isChrome ? 'Chrome' : browser.isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
+                        + `${ env.browser.isChrome ? 'Chrome' : env.browser.isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
                         + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
                             + `${ msgs.alert_instead || 'instead' }.`
                 )
@@ -2665,7 +2665,7 @@
             log.caller = 'session.deleteOpenAIcookies()'
             log.debug('Deleting OpenAI cookies...')
             GM_deleteValue(app.configKeyPrefix + '_openAItoken')
-            if (getUserscriptManager() != 'Tampermonkey') return
+            if (env.userscriptManager != 'Tampermonkey') return
             GM_cookie.list({ url: apis.OpenAI.endpoints.auth }, (cookies, error) => {
                 if (!error) { for (const cookie of cookies) {
                     GM_cookie.delete({ url: apis.OpenAI.endpoints.auth, name: cookie.name })
@@ -3114,7 +3114,7 @@
                 }
 
                 // Add listeners
-                if (!browser.isMobile) copySpan.onmouseover = copySpan.onmouseout = toggle.tooltip
+                if (!env.browser.isMobile) copySpan.onmouseover = copySpan.onmouseout = toggle.tooltip
                 copySpan.onclick = event => { // copy text, update icon + tooltip status
                     const copySVG = copySpan.querySelector('#copy-icon')
                     if (!copySVG) return // since clicking on copied icon
@@ -3126,7 +3126,7 @@
                         fadeDuration + reappearDelay - fadeDurationOffset) // ...after copySpan reappears
                     setTimeout(() => copySpan.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
                     navigator.clipboard.writeText(textToCopy) // copy text to clipboard
-                    if (!browser.isMobile) toggle.tooltip(event) // show copied status in tooltip
+                    if (!env.browser.isMobile) toggle.tooltip(event) // show copied status in tooltip
                 }
                 copySpan.onmouseup = () => { // zoom/fade-out
                     if (config.fgAnimationsDisabled) return
@@ -3165,7 +3165,7 @@
                 appDiv.append(cornerBtnsDiv)
 
                 // Create/append Chevron button
-                if (!ui.site.isCentered && !browser.isMobile) {
+                if (!ui.site.isCentered && !env.browser.isMobile) {
                     var chevronSpan = document.createElement('span'),
                         chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
                     chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
@@ -3207,7 +3207,7 @@
                 }
 
                 // Create/append Pin button
-                if (!ui.site.isCentered && !browser.isMobile) {
+                if (!ui.site.isCentered && !env.browser.isMobile) {
                     var pinSpan = document.createElement('span'),
                         pinSVG = icons.pin.create()
                     pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
@@ -3218,7 +3218,7 @@
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = icons.widescreen.create()
                     wsbSpan.id = 'wsb-btn' // for toggle.sidebar() + toggle.tooltip()
-                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = `${ browser.isFirefox ? 0.5 : 0 }px 13.5px 0 0`
+                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = `${ env.browser.isFirefox ? 0.5 : 0 }px 13.5px 0 0`
                     wsbSpan.append(wsbSVG) ; cornerBtnsDiv.append(wsbSpan)
 
                 // Create/append Expand/Shrink button
@@ -3232,7 +3232,7 @@
                 }
 
                 // Add tooltips
-                if (!browser.isMobile) appDiv.append(tooltipDiv)
+                if (!env.browser.isMobile) appDiv.append(tooltipDiv)
 
                 // Add corner button listeners
                 listenerize.cornerBtns()
@@ -3251,7 +3251,7 @@
                     appDiv.append(standbyBtn)
                     show.reply.standbyBtnClickHandler = function() {
                         appAlert('waitingResponse')
-                        if (!browser.isMobile) appFooter.style.right = 0 // reset counteract right-offset bug from chatbar padding
+                        if (!env.browser.isMobile) appFooter.style.right = 0 // reset counteract right-offset bug from chatbar padding
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
                         show.reply.userInteracted = true ; show.reply.chatbarFocused = false
                         menus.pin.topPos = menus.pin.rightPos = null
@@ -3288,14 +3288,14 @@
                                                                  : msgs.tooltip_sendReply || 'Send reply' ) + '...'
                 continueChatDiv.append(chatTextarea)
                 replyForm.append(continueChatDiv) ; replySection.append(replyForm)
-                if (!browser.isMobile) appFooter.style.right = '-72px' // counteract right-offset bug from chatbar padding
+                if (!env.browser.isMobile) appFooter.style.right = '-72px' // counteract right-offset bug from chatbar padding
                 appDiv.append(replySection);
 
                 // Create/append chatbar buttons
                 ['send', 'shuffle'].forEach(btnType => {
                     const btnElem = document.createElement(btnType === 'send' ? 'button' : 'div')
                     btnElem.id = `${btnType}-btn` ; btnElem.classList.add('chatbar-btn', 'no-mobile-tap-outline')
-                    btnElem.style.right = `${ btnType == 'send' ? ( browser.isFirefox ? 8 : 7 ) : ( browser.isFirefox ? 11.5 : 9.5 )}px`
+                    btnElem.style.right = `${ btnType == 'send' ? ( env.browser.isFirefox ? 8 : 7 ) : ( env.browser.isFirefox ? 11.5 : 9.5 )}px`
                     btnElem.append(icons[btnType == 'send' ? 'arrowUp' : 'arrowsTwistedRight'].create())
                     continueChatDiv.append(btnElem)
                 })
@@ -3304,7 +3304,7 @@
                 listenerize.replySection()
 
                 // Scroll to top on mobile if user interacted
-                if (browser.isMobile && show.reply.userInteracted) {
+                if (env.browser.isMobile && show.reply.userInteracted) {
                     document.body.scrollTop = 0 // Safari
                     document.documentElement.scrollTop = 0 // Chromium/FF/IE
                 }
@@ -3343,7 +3343,7 @@
                 if (config.stickySidebar) update.style.tweaks() // to reset answerPre height
 
                 // Auto-scroll if active
-                if (config.autoScroll && !browser.isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
+                if (config.autoScroll && !env.browser.isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
                     if (config.stickySidebar || config.anchored) answerPre.scrollTop = answerPre.scrollHeight
                     else window.scrollBy({ top: appDiv.querySelector('#app-chatbar').getBoundingClientRect().bottom - window.innerHeight +12 })
                 }
@@ -3351,7 +3351,7 @@
 
             // Focus chatbar conditionally
             if (!show.reply.chatbarFocused // do only once
-                && !browser.isMobile // exclude mobile devices to not auto-popup OSD keyboard
+                && !env.browser.isMobile // exclude mobile devices to not auto-popup OSD keyboard
                 && ((!config.autoFocusChatbarDisabled && ( config.anchored // include Anchored mode if AF enabled
                         || ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top ))) // ...or un-Anchored if fully above fold
                     || (config.autoFocusChatbarDisabled && config.anchored && show.reply.userInteracted)) // ...or Anchored if AF disabled & user interacted
@@ -3420,7 +3420,7 @@
 
                 get.related.replyIsQuestion = null
                 update.style.tweaks() // to shorten <pre> max-height
-                if (!browser.isMobile) appFooter.style.right = 0 // reset show.reply()'s counteract right-offset bug from chatbar padding
+                if (!env.browser.isMobile) appFooter.style.right = 0 // reset show.reply()'s counteract right-offset bug from chatbar padding
             }
         }
     }
@@ -3465,7 +3465,7 @@
     update.style.tweaks() ; document.head.append(tweaksStyle)
 
     // Create/stylize TOOLTIPs
-    if (!browser.isMobile) {
+    if (!env.browser.isMobile) {
         var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
         document.head.append(create.style('.btn-tooltip {'
             + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 4px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
@@ -3489,7 +3489,7 @@
     const appElems = [appFooter, appDiv]
     const appDivContainer = await new Promise(resolve => {
         new MutationObserver((_, obs) => {
-            const container = document.querySelector(browser.isMobile || ui.site.isCentered ? '[data-area*="mainline"]' : '[class*="sidebar"]')
+            const container = document.querySelector(env.browser.isMobile || ui.site.isCentered ? '[data-area*="mainline"]' : '[class*="sidebar"]')
             if (container) { obs.disconnect() ; resolve(container) }
         }).observe(document.body, { childList: true, subtree: true })
     })
@@ -3498,7 +3498,7 @@
         setTimeout(() => elem.classList.add('active'), idx * 550 - 200))
 
     // REPLACE appDivContainer max-width w/ min-width for better UI
-    if (!browser.isMobile) { appDivContainer.style.maxWidth = '' ; appDivContainer.style.minWidth = '448px' }
+    if (!env.browser.isMobile) { appDivContainer.style.maxWidth = '' ; appDivContainer.style.minWidth = '448px' }
 
     // Check for active TEXT CAMPAIGNS to replace footer CTA
     get.json('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
