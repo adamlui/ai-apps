@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.22
+// @version             2024.9.14.23
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -271,7 +271,7 @@
             gitHub: 'https://github.com/adamlui/chatgpt-widescreen',
             greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
             productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode' },
-        latestAssetCommitHash: '004e6cd' // for cached messages.json
+        latestAssetCommitHash: 'b76238e' // for cached messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
