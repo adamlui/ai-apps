@@ -107,7 +107,7 @@
                 const switchStyles = {
                     position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !ui.firstLink ? 160 : 154 }px`,
                     backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-                    bottom: `${ !ui.firstLink ? -0.15 : browser.isFirefox ? 0.05 : 0 }em`,
+                    bottom: `${ !ui.firstLink ? -0.15 : 0 }em`,
                     width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
                 }
                 Object.assign(switchSpan.style, switchStyles)
@@ -224,8 +224,7 @@
     // Init BROWSER/UI props
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
     await chatgpt.sidebar.isLoaded()
-    const browser = { isFirefox: chatgpt.browser.isFirefox() },
-          ui = { firstLink: chatgpt.getNewChatLink() }
+    const ui = { firstLink: chatgpt.getNewChatLink() }
 
     // Add LISTENER to auto-disable Infinity Mode
     if (document.hidden !== undefined) // ...if Page Visibility API supported

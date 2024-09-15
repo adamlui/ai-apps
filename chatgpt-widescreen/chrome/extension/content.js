@@ -243,7 +243,7 @@
         tooltip(btnType) { // text & position
             const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
                 .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
-            const ctrAddend = 25 + ( site == 'poe' ? ( browser.isFirefox ? 12 : 45 ) : 12 ),
+            const ctrAddend = 25 + ( site == 'poe' ? 45 : 12 ),
                   spreadFactor = site == 'poe' ? 34 : 30.5,
                   iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
             tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + btnType + (
@@ -344,8 +344,7 @@
 
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
-    // Init browser/UI props
-    const browser = { isFirefox: chatgpt.browser.isFirefox() }
+    // Init UI props
     if (/openai|chatgpt/.test(site)) {
         const obsConfig = { childList: true, subtree: true }
         sites[site].hasSidebar = await Promise.race([
