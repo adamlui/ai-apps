@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.15
+// @version               2024.9.15.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -485,10 +485,6 @@
     }
     log.debug(`Success! menuState = ${log.prettifyObj(menuState)}`)
 
-    // Define SCRIPT functions
-
-    function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-
     // Define MENU functions
 
     function registerMenu() {
@@ -549,7 +545,7 @@
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `>${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                safeWindowOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                                modals.safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
                         )
                         const updateModal = document.getElementById(updateModalID).firstChild
@@ -769,6 +765,8 @@
             }
         },
 
+        safeWinOpen(url) { window.open(url, '_blank', 'noopener') }, // to prevent backdoor vulnerabilities
+
         about: {
             show() {
                 log.caller = 'modals.about.show()'
@@ -794,9 +792,9 @@
                                 + app.urls.gitHub + '</a>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
-                        function getSupport() { safeWindowOpen(app.urls.support) },
+                        function getSupport() { modals.safeWinOpen(app.urls.support) },
                         function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
-                        function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
+                        function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
                     ], '', 617) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
 
@@ -838,13 +836,13 @@
 
                 // Init buttons
                 let btns = [
-                    function greasyFork() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                    function productHunt() { safeWindowOpen(app.urls.productHunt + '/reviews/new') },
-                    function futurepedia() { safeWindowOpen(app.urls.futurepedia + '#tool-reviews') },
-                    function alternativeTo() { safeWindowOpen(app.urls.alternativeTo + '/about/') }
+                    function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                    function productHunt() { modals.safeWinOpen(app.urls.productHunt + '/reviews/new') },
+                    function futurepedia() { modals.safeWinOpen(app.urls.futurepedia + '#tool-reviews') },
+                    function alternativeTo() { modals.safeWinOpen(app.urls.alternativeTo + '/about/') }
                 ]
                 if (options.sites == 'feedback') btns.splice(1, 0,
-                    function github() { safeWindowOpen(app.urls.gitHub + '/discussions/new/choose') })
+                    function github() { modals.safeWinOpen(app.urls.gitHub + '/discussions/new/choose') })
 
                 // Create/init modal
                 const feedbackModalID = siteAlert(`${
