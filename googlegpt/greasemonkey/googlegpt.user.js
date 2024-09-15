@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.14.5
+// @version                  2024.9.14.6
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -3290,7 +3290,7 @@
                     const failMatch = failFlagsAndURLs.exec(textToShow)
                     if (failMatch) {
                         log.debug('Response text', textToShow)
-                        log.error('Fail flag detected', failMatch[0])
+                        log.error('Fail flag detected', `'${failMatch[0]}'`)
                         if (caller.status !== 'done' && !caller.sender) api.tryNew(caller)
                         return
                     } else if (caller.status != 'done') { // app waiting or sending
@@ -3325,7 +3325,7 @@
                     const failMatch = failFlagsAndURLs.exec(resp.response)
                     if (failMatch) { // suggest proxy or try diff API
                         log.debug('Response text', resp.response)
-                        log.error('Fail flag detected', failMatch[0])
+                        log.error('Fail flag detected', `'${failMatch[0]}'`)
                         if (caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                         else api.tryNew(caller)
                     } else {
@@ -3372,7 +3372,7 @@
                         const failMatch = failFlagsAndURLs.exec(respText)
                         if (failMatch) {
                             log.debug('Response text', respText)
-                            log.error('Fail flag detected', failMatch[0])
+                            log.error('Fail flag detected', `'${failMatch[0]}'`)
                             api.tryNew(caller)
                         } else {
                             log.debug('Response text', respText)
