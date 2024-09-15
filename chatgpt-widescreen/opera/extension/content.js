@@ -25,7 +25,8 @@
     })
 
     // Init SITE props
-    const sites = {
+    const sites = Object.create(null) // prevent protoype pollution
+    Object.assign(sites, {
         chatgpt: {
             availFeatures: ['fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
                 'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'wideScreen'],
@@ -37,7 +38,7 @@
             selectors: {
                 input: '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after',
                 sidebar: 'menu[class*="sidebar"], aside[class*="sidebar"]', header: 'header' }}
-    } ; sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
+    }) ; sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
 
     // Define FACTORY functions
 
