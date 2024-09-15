@@ -2,7 +2,8 @@
     "manifest_version": 3,
     "name": "__MSG_appName__",
     "description": "__MSG_appDesc__",
-    "version": "2024.9.13",    "author": "Adam Lui",
+    "version": "2024.9.15",
+    "author": "Adam Lui",
     "default_locale": "en",
     "icons": {
         "16": "icons/icon16.png",
