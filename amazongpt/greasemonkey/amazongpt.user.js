@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.14.6
+// @version                2024.9.14.7
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -138,7 +138,10 @@
             msg: { working: 'color: #ff8000', warning: 'color: red' }
         },
 
-        regEx: { greenVals: /\b(?:true|ON|\d+)\b|success\W?/i, redVals: /\b(?:false|OFF)\b|error\W?/i, purpVals: /[ '"]\w+['"]?: /i },
+        regEx: {
+            greenVals: { caseInsensitive: /\b(?:true|\d+)\b|success\W?/i, caseSensitive: /\bON\b/ },
+            redVals: { caseInsensitive: /\b(?:false)\b|error\W?/i, caseSensitive: /\BOFF\b/ },
+            purpVals: /[ '"]\w+['"]?: /i },
 
         prettifyObj(obj) { return JSON.stringify(obj)
             .replace(/([{,](?=")|(?:"):)/g, '$1 ') // append spaces to { and "
@@ -159,14 +162,23 @@
                   prefixStyle = log.styles.prefix.base + log.styles.prefix[msgType],
                   baseMsgStyle = log.styles.msg[msgType], msgStyles = []
 
+            // Combine regex
+            const allPatterns = Object.values(log.regEx).flatMap(val =>
+                val instanceof RegExp ? [val] : Object.values(val).filter(val => val instanceof RegExp))
+            const combinedPattern = new RegExp(allPatterns.map(pattern => pattern.source).join('|'), 'g')
+
             // Combine args into finalMsg, color chars
             let finalMsg = logType == 'error' && args.length == 1 ? 'ERROR: ' : ''
             args.forEach((arg, idx) => {
-                finalMsg += idx == 1 ? ': ' : idx > 1 ? ' ' : '' // separate multi-args
-                finalMsg += arg?.toString().replace(new RegExp(Object.values(log.regEx).map(value => value.source).join('|'), 'ig'), match => {
-                    if (log.regEx.greenVals.test(match)) { msgStyles.push('color: green', baseMsgStyle) ; return `%c${match}%c` }
-                    else if (log.regEx.redVals.test(match)) { msgStyles.push('color: red', baseMsgStyle) ; return `%c${match}%c` }
-                    else if (log.regEx.purpVals.test(match)) { msgStyles.push('color: #dd29f4', baseMsgStyle) ; return `%c${match}%c` }
+                finalMsg += idx > 0 ? (idx === 1 ? ': ' : ' ') : '' // separate multi-args
+                finalMsg += arg?.toString().replace(combinedPattern, match => {
+                    const matched = (
+                        Object.values(log.regEx.greenVals).some(val => {
+                            if (val.test(match)) { msgStyles.push('color: green', baseMsgStyle) ; return true }})
+                     || Object.values(log.regEx.redVals).some(val => {
+                            if (val.test(match)) { msgStyles.push('color: red', baseMsgStyle) ;  return true }}))
+                    if (!matched && log.regEx.purpVals.test(match)) { msgStyles.push('color: #dd29f4', baseMsgStyle) }
+                    return `%c${match}%c`
                 })
             })
 
