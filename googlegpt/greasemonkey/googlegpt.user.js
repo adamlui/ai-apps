@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.14.4
+// @version                  2024.9.14.5
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -429,7 +429,7 @@
     // Init ENV info
     const env = { browser: {}, scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() };
     ['Chrome', 'Firefox', 'Edge', 'Brave', 'Mobile'].forEach(platform =>
-        env.browser['is' + platform] = chatgpt.browser['is' + platform]())
+        env.browser[`is${ platform == 'Firefox' ? 'FF' : platform }`] = chatgpt.browser['is' + platform]())
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
 
     // Init DEBUG mode
@@ -443,7 +443,7 @@
 
         styles: {
             prefix: {
-                base: `color: white ; padding: 2px 3px 2px 5px ; border-radius: 2px ; ${ env.browser.isFirefox ? 'font-size: 13px ;' : '' }`,
+                base: `color: white ; padding: 2px 3px 2px 5px ; border-radius: 2px ; ${ env.browser.isFF ? 'font-size: 13px ;' : '' }`,
                 info: 'background: linear-gradient(344deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 39%, rgba(30,29,43,0.6026611328125) 93%)',
                 working: 'background: linear-gradient(342deg, rgba(255,128,0,1) 0%, rgba(255,128,0,0.9612045501794468) 57%, rgba(255,128,0,0.7539216370141807) 93%)' ,
                 success: 'background: linear-gradient(344deg, rgba(0,107,41,1) 0%, rgba(3,147,58,1) 39%, rgba(24,126,42,0.7735294801514356) 93%)',
@@ -2106,7 +2106,7 @@
                   + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
                       + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
                   + '#googlegpt { border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
-                      + `z-index: 5555 ; padding: ${ env.browser.isFirefox ? 20 : 22 }px 26px 6px 26px ;`
+                      + `z-index: 5555 ; padding: ${ env.browser.isFF ? 20 : 22 }px 26px 6px 26px ;`
                       + `width: ${ env.browser.isMobile ? 'auto' : '319px' } ;` // hard-width to prevent Google's flex-wrap moving app to bottom
                       + ( env.browser.isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
                       + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
@@ -2198,7 +2198,7 @@
                   + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
                   + '.chatbar-btn { z-index: 560 ;'
                       + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
-                      + `bottom: ${( env.browser.isFirefox ? 46 : 49 ) + ( ui.site.hasSidebar ? 3 : 2 )}px ;`
+                      + `bottom: ${( env.browser.isFF ? 46 : 49 ) + ( ui.site.hasSidebar ? 3 : 2 )}px ;`
                       + `${ ui.app.scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
                   + '.chatbar-btn:hover {'
                       + `${ ui.app.scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
@@ -2255,7 +2255,7 @@
                   + '#checkmark-icon { fill: #b3f96d } .googlegpt-menu-item:hover #checkmark-icon { fill: green }'
                   + '#googlegpt footer {'
                       + 'position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ; line-height: 1.43em ;'
-                      + `margin: ${ env.browser.isFirefox ? 1 : -2 }px -32px 12px }`
+                      + `margin: ${ env.browser.isFF ? 1 : -2 }px -32px 12px }`
                   + '#googlegpt footer * { color: #aaa ; text-decoration: none }'
                   + `#googlegpt footer a:hover { color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' }}`
 
@@ -2888,9 +2888,9 @@
 
         streaming() {
             log.caller = 'toggle.streaming()'
-            const scriptCatLink = env.browser.isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
-                                : env.browser.isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
-                                            : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
+            const scriptCatLink = env.browser.isFF   ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
+                                : env.browser.isEdge ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
+                                                     : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!streamingSupported.scriptManager) { // alert userscript manager unsupported, suggest TM/SC
                 log.debug(`Streaming Mode unsupported in ${env.scriptManager}`)
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
@@ -3470,8 +3470,8 @@
                 appPrefixSpan.style.fontSize = env.browser.isMobile ? '1.7rem' : '1.1rem'
                 appDiv.append(appPrefixSpan)
                 const appHeaderLogo = logos.googleGPT.create()
-                appHeaderLogo.width = env.browser.isMobile ? 177 : env.browser.isFirefox ? 124 : 122
-                appHeaderLogo.style.cssText = `position: relative ; top: ${ env.browser.isMobile ? 4 : env.browser.isFirefox ? 3 : 2 }px`
+                appHeaderLogo.width = env.browser.isMobile ? 177 : env.browser.isFF ? 124 : 122
+                appHeaderLogo.style.cssText = `position: relative ; top: ${ env.browser.isMobile ? 4 : env.browser.isFF ? 3 : 2 }px`
                                             + ( env.browser.isMobile ? '; margin-left: 1px' : '' )
                 const appTitleAnchor = create.anchor(app.urls.app, appHeaderLogo)
                 appTitleAnchor.classList.add('app-name', 'no-user-select')
@@ -3613,7 +3613,7 @@
                 ['send', 'shuffle'].forEach(btnType => {
                     const btnElem = document.createElement(btnType === 'send' ? 'button' : 'div')
                     btnElem.id = `${btnType}-btn` ; btnElem.classList.add('chatbar-btn', 'no-mobile-tap-outline')
-                    btnElem.style.right = `${ btnType == 'send' ? ( env.browser.isFirefox ? 7 : 5 ) : ( env.browser.isFirefox ? 9 : 7 )}px`
+                    btnElem.style.right = `${ btnType == 'send' ? ( env.browser.isFF ? 7 : 5 ) : ( env.browser.isFF ? 9 : 7 )}px`
                     btnElem.append(icons[btnType == 'send' ? 'arrowUp' : 'arrowsTwistedRight'].create())
                     continueChatDiv.append(btnElem)
                 })

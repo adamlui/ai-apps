@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.14.4
+// @version               2024.9.14.5
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -240,7 +240,7 @@
     // Init ENV info
     const env = { browser: {}, scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() };
     ['Chrome', 'Firefox', 'Edge', 'Brave', 'Mobile'].forEach(platform =>
-        env.browser['is' + platform] = chatgpt.browser['is' + platform]())
+        env.browser[`is${ platform == 'Firefox' ? 'FF' : platform }`] = chatgpt.browser['is' + platform]())
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
 
     // Init DEBUG mode
@@ -254,7 +254,7 @@
 
         styles: {
             prefix: {
-                base: `color: white ; padding: 2px 3px 2px 5px ; border-radius: 2px ; ${ env.browser.isFirefox ? 'font-size: 13px ;' : '' }`,
+                base: `color: white ; padding: 2px 3px 2px 5px ; border-radius: 2px ; ${ env.browser.isFF ? 'font-size: 13px ;' : '' }`,
                 info: 'background: linear-gradient(344deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 39%, rgba(30,29,43,0.6026611328125) 93%)',
                 working: 'background: linear-gradient(342deg, rgba(255,128,0,1) 0%, rgba(255,128,0,0.9612045501794468) 57%, rgba(255,128,0,0.7539216370141807) 93%)' ,
                 success: 'background: linear-gradient(344deg, rgba(0,107,41,1) 0%, rgba(3,147,58,1) 39%, rgba(24,126,42,0.7735294801514356) 93%)',
@@ -1960,7 +1960,7 @@
                             'transition: max-height 0.167s cubic-bezier(0, 0, 0.2, 1) ;' : '' )
                       + `${ ui.app.scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
                                                     : 'background: #eaeaeacf ; color: #282828 ; border: none' }}`
-                  + `#bravegpt footer { margin: ${ env.browser.isFirefox ? 32 : 27 }px 18px -26px 0 ; border-top: none !important }`
+                  + `#bravegpt footer { margin: ${ env.browser.isFF ? 32 : 27 }px 18px -26px 0 ; border-top: none !important }`
                   + '#bravegpt .feedback {'
                       + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem; color: #aaa ;'
                       + 'letter-spacing: .02em ; position: relative ; right: -18px ; bottom: 15px }'
@@ -1987,7 +1987,7 @@
                       + `position: relative ; z-index: 555 ; color: ${ ui.app.scheme == 'dark' ? '#eee' : '#222' }}`
                   + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
                       + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
-                      + `${ env.browser.isFirefox ? '' : 'margin-top: -31px' }}`
+                      + `${ env.browser.isFF ? '' : 'margin-top: -31px' }}`
                   + '.related-query {'
                       + 'box-sizing: border-box ; width: fit-content ; max-width: 100% ;' // confine to .related-queries bounds
                       + 'margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
@@ -2007,7 +2007,7 @@
                   + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
                   + '.chatbar-btn { z-index: 560 ;'
                       + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
-                      + `bottom: ${ env.browser.isFirefox ? 28 : 32 }px ; `
+                      + `bottom: ${ env.browser.isFF ? 28 : 32 }px ; `
                       + `${ ui.app.scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
                   + '.chatbar-btn:hover {'
                       + `${ ui.app.scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
@@ -2685,9 +2685,9 @@
 
         streaming() {
             log.caller = 'toggle.streaming()'
-            const scriptCatLink = env.browser.isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
-                                : env.browser.isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
-                                            : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
+            const scriptCatLink = env.browser.isFF   ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
+                                : env.browser.isEdge ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
+                                                     : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!streamingSupported.scriptManager) { // alert userscript manager unsupported, suggest TM/SC
                 log.debug(`Streaming Mode unsupported in ${env.scriptManager}`)
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
