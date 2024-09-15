@@ -259,7 +259,7 @@
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
 
     // Init ENV info
     const env = { scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() }

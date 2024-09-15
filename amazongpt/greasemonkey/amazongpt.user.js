@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.14.7
+// @version                2024.9.15
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -108,7 +108,7 @@
     app.urls.support = app.urls.gitHub + '/issues/new'
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
 
     // Init ENV info
     const env = { browser: {}, scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() };
@@ -122,7 +122,7 @@
         save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     }, config = {} ; settings.load('debugMode')
 
-    // Define LOG functions/props
+    // Define LOG props/functions
     const log = {
 
         styles: {

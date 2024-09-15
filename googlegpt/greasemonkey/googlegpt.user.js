@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.14.7
+// @version                  2024.9.15
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -424,7 +424,7 @@
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
 
     // Init ENV info
     const env = { browser: {}, scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() };
@@ -438,7 +438,7 @@
         save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     }, config = {} ; settings.load('debugMode')
 
-    // Define LOG functions/props
+    // Define LOG props/functions
     const log = {
 
         styles: {
