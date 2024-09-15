@@ -29,6 +29,9 @@
     if (!/chat(?:gpt|\.openai)\.com/.test(window.location.hostname)) return
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
+    // Init ENV info
+    const env = { browser: { isMobile: chatgpt.browser.isMobile() }}
+
     // Init SETTINGS
     settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
     settings.save('infinityMode', false) // to reset popup toggle
@@ -105,7 +108,7 @@
                 const switchSpan = document.getElementById('infinity-switch-span') || document.createElement('span')
                 switchSpan.id = 'infinity-switch-span'
                 const switchStyles = {
-                    position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !ui.firstLink ? 160 : 154 }px`,
+                    position: 'relative', left: `${ env.browser.isMobile ? 211 : !ui.firstLink ? 160 : 154 }px`,
                     backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
                     bottom: `${ !ui.firstLink ? -0.15 : 0 }em`,
                     width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
@@ -132,7 +135,7 @@
                     toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
                 toggleLabel.style.marginLeft = `-${ !ui.firstLink ? 23 : 41 }px` // left-shift to navicon
                 toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
-                toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : 148 }px` // to truncate overflown text
+                toggleLabel.style.width = `${ env.browser.isMobile ? 201 : 148 }px` // to truncate overflown text
                 toggleLabel.style.overflow = 'hidden' // to truncate overflown text
                 toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
                 toggleLabel.innerText = chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
@@ -158,7 +161,7 @@
                 + ' then answer it. Don\'t type anything else.'
             if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
             fromMsg = false
-            if (chatgpt.browser.isMobile() && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
+            if (env.browser.isMobile && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             if (!new URL(document.location).pathname.startsWith('/g/')) // not on GPT page
                 try { chatgpt.startNewChat() } catch (err) { return } // start new chat
             await new Promise(resolve => setTimeout(resolve, 500)) // sleep 500ms
