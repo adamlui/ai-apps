@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.3
+// @version             2024.9.14.4
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -280,7 +280,7 @@
     // Init ENV info
     const env = {
         browser: { isFirefox: chatgpt.browser.isFirefox() },
-        userscriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
+        scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
     }
 
     // Init CONFIG
@@ -292,7 +292,7 @@
     settings.load('autoclear', 'buttonHidden', 'notifDisabled', 'toggleHidden')
 
     // Init FETCHER
-    const xhr = env.userscriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
 
     // Init MESSAGES
     let msgs = {}
@@ -321,7 +321,7 @@
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
-        symbol: ['❌', '✔️'], separator: env.userscriptManager == 'Tampermonkey' ? ' — ' : ': ',
+        symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
         word: [(msgs.state_off || 'off').toUpperCase(), (msgs.state_on || 'on').toUpperCase()]
     }
 
@@ -437,7 +437,7 @@
     }
 
     function refreshMenu() {
-        if (env.userscriptManager == 'OrangeMonkey') return
+        if (env.scriptManager == 'OrangeMonkey') return
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
     }
 

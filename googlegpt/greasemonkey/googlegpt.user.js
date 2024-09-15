@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.14.3
+// @version                  2024.9.14.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -427,7 +427,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
     // Init ENV info
-    const env = { browser: {}, userscriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() };
+    const env = { browser: {}, scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() };
     ['Chrome', 'Firefox', 'Edge', 'Brave', 'Mobile'].forEach(platform =>
         env.browser['is' + platform] = chatgpt.browser['is' + platform]())
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
@@ -496,8 +496,8 @@
     // Init COMPATIBILITY flags
     log.debug('Initializing compatibility flags...')
     const streamingSupported = {
-        browser: !(env.userscriptManager == 'Tampermonkey' && (env.browser.isChrome || env.browser.isEdge || env.browser.isBrave)),
-        userscriptManager: /Tampermonkey|ScriptCat/.test(env.userscriptManager) }
+        browser: !(env.scriptManager == 'Tampermonkey' && (env.browser.isChrome || env.browser.isEdge || env.browser.isBrave)),
+        scriptManager: /Tampermonkey|ScriptCat/.test(env.scriptManager) }
     log.debug(`Success! streamingSupported = ${log.prettifyObj(streamingSupported)}`)
 
     // Init CONFIG
@@ -511,7 +511,7 @@
                   'replyLanguage', 'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) settings.save('fontSize', env.browser.isMobile ? 14 : 16.55) // init reply font size if unset
-    if (!streamingSupported.browser || !streamingSupported.userscriptManager) settings.save('streamingDisabled', true) // disable Streaming in unspported env
+    if (!streamingSupported.browser || !streamingSupported.scriptManager) settings.save('streamingDisabled', true) // disable Streaming in unspported env
     if (!config.notFirstRun && env.browser.isMobile) settings.save('autoGet', true) // reverse default auto-get disabled if mobile
     settings.save('notFirstRun', true)
     log.debug(`Success! config = ${log.prettifyObj(config)}`)
@@ -571,8 +571,8 @@
 
     // Init XHR fetcher
     log.debug('Initializing XHR fetcher...')
-    const xhr = env.userscriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
-    log.debug(`Success! xhr = ${ env.userscriptManager == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
+    const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    log.debug(`Success! xhr = ${ env.scriptManager == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
 
     // Init localized MESSAGES
     log.debug('Initializing localized messages...')
@@ -660,7 +660,7 @@
     log.debug('Initializing menu objects...')
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
-        symbol: ['❌', '✔️'], separator: env.userscriptManager == 'Tampermonkey' ? ' — ' : ': ',
+        symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
         word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
     }
     log.debug(`Success! menuState = ${log.prettifyObj(menuState)}`)
@@ -691,7 +691,7 @@
     function refreshMenu() {
         log.caller = 'refreshMenu()'
         log.debug('Refreshing toolbar menu...')
-        if (env.userscriptManager == 'OrangeMonkey') { log.debug('OrangeMonkey userscript manager unsupported.') ; return }
+        if (env.scriptManager == 'OrangeMonkey') { log.debug('OrangeMonkey userscript manager unsupported.') ; return }
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
         log.debug('Success! Menu refreshed')
     }
@@ -1257,7 +1257,7 @@
                         // Add click listener
                         settingItem.onclick = () => {
                             if (!(key == 'streamingDisabled' // visually switch toggle if not Streaminng...
-                                && (!streamingSupported.browser || !streamingSupported.userscriptManager // ...in unsupported env...
+                                && (!streamingSupported.browser || !streamingSupported.scriptManager // ...in unsupported env...
                                 || !config.proxyAPIenabled) // ...or in OpenAI mode
                             )) modals.settings.toggle.switch(settingToggle)
 
@@ -2891,8 +2891,8 @@
             const scriptCatLink = env.browser.isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
                                 : env.browser.isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
                                             : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
-            if (!streamingSupported.userscriptManager) { // alert userscript manager unsupported, suggest TM/SC
-                log.debug(`Streaming Mode unsupported in ${env.userscriptManager}`)
+            if (!streamingSupported.scriptManager) { // alert userscript manager unsupported, suggest TM/SC
+                log.debug(`Streaming Mode unsupported in ${env.scriptManager}`)
                 const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
                         + ( !env.browser.isEdge && !env.browser.isBrave ? // suggest TM for supported browsers
@@ -2974,7 +2974,7 @@
             log.caller = 'session.deleteOpenAIcookies()'
             log.debug('Deleting OpenAI cookies...')
             GM_deleteValue(app.configKeyPrefix + '_openAItoken')
-            if (env.userscriptManager != 'Tampermonkey') return
+            if (env.scriptManager != 'Tampermonkey') return
             GM_cookie.list({ url: apis.OpenAI.endpoints.auth }, (cookies, error) => {
                 if (!error) { for (const cookie of cookies) {
                     GM_cookie.delete({ url: apis.OpenAI.endpoints.auth, name: cookie.name })

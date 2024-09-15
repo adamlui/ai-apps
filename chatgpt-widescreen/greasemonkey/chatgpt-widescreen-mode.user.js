@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.24
+// @version             2024.9.14.25
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -280,7 +280,7 @@
     // Init ENV info
     const env = {
         browser: { isFirefox: chatgpt.browser.isFirefox() },
-        userscriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
+        scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
     }
 
     // Init SITE props
@@ -307,7 +307,7 @@
     settings.load(...sites[site].availFeatures)
 
     // Init XHR fetcher
-    const xhr = env.userscriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
 
     // Init localized MESSAGES
     const msgsLoaded = new Promise(resolve => {
@@ -336,7 +336,7 @@
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
         symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
-        separator: env.userscriptManager == 'Tampermonkey' ? ' — ' : ': '
+        separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
     }
 
     // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
@@ -460,7 +460,7 @@
     }
 
     function refreshMenu() {
-        if (env.userscriptManager == 'OrangeMonkey') return
+        if (env.scriptManager == 'OrangeMonkey') return
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
     }
 

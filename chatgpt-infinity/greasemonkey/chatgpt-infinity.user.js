@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.2
+// @version             2024.9.14.3
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -258,7 +258,7 @@
     // Init ENV info
     const env = {
         browser: { isFirefox: chatgpt.browser.isFirefox() },
-        userscriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
+        scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
     }
 
     // Init CONFIG
@@ -273,7 +273,7 @@
     if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
 
     // Init FETCHER
-    const xhr = env.userscriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
 
     // Init MESSAGES
     let msgs = {}
@@ -303,7 +303,7 @@
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
         symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
-        separator: env.userscriptManager == 'Tampermonkey' ? ' — ' : ': '
+        separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
     }
 
     // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
@@ -435,7 +435,7 @@
     }
 
     function refreshMenu() {
-        if (env.userscriptManager == 'OrangeMonkey') return
+        if (env.scriptManager == 'OrangeMonkey') return
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
     }
 

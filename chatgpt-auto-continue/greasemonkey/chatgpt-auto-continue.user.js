@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.1
+// @version             2024.9.14.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -262,7 +262,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
     // Init ENV info
-    const env = { userscriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() }
+    const env = { scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() }
 
     // Init CONFIG
     const settings = {
@@ -273,7 +273,7 @@
     settings.load('notifDisabled')
 
     // Init FETCHER
-    const xhr = env.userscriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
 
     // Init MESSAGES
     let msgs = {}
@@ -302,7 +302,7 @@
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
-        symbol: ['❌', '✔️'], separator: env.userscriptManager == 'Tampermonkey' ? ' — ' : ': ',
+        symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
         word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
     }
 
@@ -366,7 +366,7 @@
     }
 
     function refreshMenu() {
-        if (env.userscriptManager == 'OrangeMonkey') return
+        if (env.scriptManager == 'OrangeMonkey') return
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
     }
 
