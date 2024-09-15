@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.26
+// @version             2024.9.15
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -353,10 +353,6 @@
         return // exit script
     } else registerMenu() // create functional menu
 
-    // Define SCRIPT functions
-
-    function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-
     // Define MENU functions
 
     function registerMenu() {
@@ -484,14 +480,14 @@
                 + app.urls.gitHub + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
-                function getSupport() { safeWindowOpen(app.urls.support) },
+                function getSupport() { safeWinOpen(app.urls.support) },
                 function leaveAReview() { // show new modal
                     const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
-                        [ function greasyFork() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                          function productHunt() { safeWindowOpen(app.urls.productHunt + '/reviews/new') }])
+                        [ function greasyFork() { safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                          function productHunt() { safeWinOpen(app.urls.productHunt + '/reviews/new') }])
                     document.getElementById(reviewModalID).querySelector('button')
                         .style.display = 'none' }, // hide dismiss button
-                function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
+                function moreChatGPTapps() { safeWinOpen(app.urls.relatedApps) }
             ], '', 478 // set width
         )
 
@@ -536,7 +532,7 @@
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                safeWindowOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                                safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
                         )
 
@@ -559,6 +555,8 @@
                 )
                 launchAboutModal()
     }})}
+
+    function safeWinOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
 
     // Define FACTORY functions
 

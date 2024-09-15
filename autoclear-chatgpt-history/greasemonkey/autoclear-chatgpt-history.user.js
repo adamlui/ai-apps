@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.6
+// @version             2024.9.15
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -392,10 +392,6 @@
     // AUTO-CLEAR on first visit if enabled
     if (config.autoclear) setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
 
-    // Define SCRIPT functions
-
-    function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-
     // Define MENU functions
 
     function registerMenu() {
@@ -463,14 +459,14 @@
                 + app.urls.gitHub + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
-                function getSupport() { safeWindowOpen(app.urls.support) },
+                function getSupport() { safeWinOpen(app.urls.support) },
                 function leaveAReview() { // show review modal
                     const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
-                        [ function greasyFork() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                        function futurepedia() { safeWindowOpen(app.urls.futurepedia + '#tool-reviews') }])
+                        [ function greasyFork() { safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                        function futurepedia() { safeWinOpen(app.urls.futurepedia + '#tool-reviews') }])
                     document.getElementById(reviewModalID).querySelector('button')
                         .style.display = 'none' }, // hide dismiss button
-                function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
+                function moreChatGPTapps() { safeWinOpen(app.urls.relatedApps) }
             ], '', 478 // set width
         )
 
@@ -515,7 +511,7 @@
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                safeWindowOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                                safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
                         )
 
@@ -538,6 +534,8 @@
                 )
                 launchAboutModal()
     }})}
+
+    function safeWinOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
 
     // Define FEEDBACK functions
 

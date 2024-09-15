@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.5
+// @version             2024.9.15
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -319,10 +319,6 @@
             () => { return }) // disable menu
         return // exit script
     } else registerMenu() // create functional menu
-
-    // Define SCRIPT functions
-
-    function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
 
     // Define MENU functions
 
@@ -459,17 +455,17 @@
                 + app.urls.gitHub + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
-                function getSupport() { safeWindowOpen(app.urls.support) },
+                function getSupport() { safeWinOpen(app.urls.support) },
                 function leaveAReview() { // show new modal
                     const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
-                        [ function greasyFork() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                          function productHunt() { safeWindowOpen(app.urls.productHunt + '/reviews/new') },
-                          function alternativeTo() { safeWindowOpen(app.urls.alternativeTo + '/about/') }])
+                        [ function greasyFork() { safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                          function productHunt() { safeWinOpen(app.urls.productHunt + '/reviews/new') },
+                          function alternativeTo() { safeWinOpen(app.urls.alternativeTo + '/about/') }])
                     const reviewBtns = document.getElementById(reviewModalID).querySelectorAll('button')
                     reviewBtns[0].style.display = 'none' // hide dismiss button
                     reviewBtns[1].textContent = ( // remove spaces from AlternativeTo label
                         reviewBtns[1].textContent.replace(/\s/g, '')) },
-                function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
+                function moreChatGPTapps() { safeWinOpen(app.urls.relatedApps) }
             ], '', 478 // set width
         )
 
@@ -514,7 +510,7 @@
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                safeWindowOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                                safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
                         )
 
@@ -544,6 +540,8 @@
             words[i] = words[i][0].toUpperCase() + words[i].slice(1) // title-case it
         return words.join(' ') // join'em back together
     }
+
+    function safeWinOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
 
     // Define FEEDBACK functions
 

@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.2
+// @version             2024.9.15
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -342,10 +342,6 @@
     // NOTIFY of status on load
     if (!config.notifDisabled) notify(( msgs.mode_autoContinue || 'Auto-Continue' ) + ': ON')
 
-    // Define SCRIPT functions
-
-    function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-
     // Define MENU functions
 
     function registerMenu() {
@@ -390,9 +386,9 @@
                 + app.urls.gitHub + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
-                function getSupport() { safeWindowOpen(app.urls.support) },
-                function leaveAReview() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
+                function getSupport() { safeWinOpen(app.urls.support) },
+                function leaveAReview() { safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                function moreChatGPTapps() { safeWinOpen(app.urls.relatedApps) }
             ], '', 478 // set width
         )
 
@@ -437,7 +433,7 @@
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                safeWindowOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                                safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
                         )
 
@@ -460,6 +456,8 @@
                 )
                 launchAboutModal()
     }})}
+
+    function safeWinOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
 
     // Define FEEDBACK functions
 

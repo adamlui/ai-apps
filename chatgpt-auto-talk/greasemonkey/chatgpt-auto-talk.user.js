@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.5
+// @version             2024.9.15
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -402,10 +402,6 @@
         if (mutation.type == 'childList' && mutation.addedNodes.length) insertToggle() })})
     nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
-    // Define SCRIPT functions
-
-    function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-
     // Define MENU functions
 
     function registerMenu() {
@@ -458,9 +454,9 @@
                 + app.urls.gitHub + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
-                function getSupport() { safeWindowOpen(app.urls.support) },
-                function leaveAReview() { safeWindowOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                function moreChatGPTapps() { safeWindowOpen(app.urls.relatedApps) }
+                function getSupport() { safeWinOpen(app.urls.support) },
+                function leaveAReview() { safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                function moreChatGPTapps() { safeWinOpen(app.urls.relatedApps) }
             ], '', 478 // set width
         )
 
@@ -505,7 +501,7 @@
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                safeWindowOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                                safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
                         )
 
@@ -528,6 +524,8 @@
                 )
                 launchAboutModal()
     }})}
+
+    function safeWinOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
 
     // Define FEEDBACK functions
 
