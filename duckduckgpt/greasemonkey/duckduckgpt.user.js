@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.14.1
+// @version                2014.9.14.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -243,7 +243,10 @@
     browser.isPortrait = browser.isMobile && (window.innerWidth < window.innerHeight)
 
     // Init DEBUG mode
-    const config = {} ; loadSetting('debugMode')
+    const settings = {
+        load(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) },
+        save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
+    }, config = {} ; settings.load('debugMode')
 
     // Define LOG functions/props
     const log = {
@@ -312,14 +315,14 @@
     Object.assign(config, { minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.28 })
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('anchored', 'autoGet', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'expanded',
-                'fgAnimationsDisabled', 'fontSize', 'minimized', 'notFirstRun', 'prefixEnabled', 'proxyAPIenabled',
-                'replyLanguage', 'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
-    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    if (!config.fontSize) saveSetting('fontSize', 14) // init reply font size if unset
-    if (!streamingSupported.browser || !streamingSupported.userscriptManager) saveSetting('streamingDisabled', true) // disable Streaming in unspported env
-    if (!config.notFirstRun && browser.isMobile) saveSetting('autoGet', true) // reverse default auto-get disabled if mobile
-    saveSetting('notFirstRun', true)
+    settings.load('anchored', 'autoGet', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'expanded',
+                  'fgAnimationsDisabled', 'fontSize', 'minimized', 'notFirstRun', 'prefixEnabled', 'proxyAPIenabled',
+                  'replyLanguage', 'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+    if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
+    if (!config.fontSize) settings.save('fontSize', 14) // init reply font size if unset
+    if (!streamingSupported.browser || !streamingSupported.userscriptManager) settings.save('streamingDisabled', true) // disable Streaming in unspported env
+    if (!config.notFirstRun && browser.isMobile) settings.save('autoGet', true) // reverse default auto-get disabled if mobile
+    settings.save('notFirstRun', true)
     log.debug(`Success! config = ${log.prettifyObj(config)}`)
 
     // Init UI props
@@ -481,8 +484,6 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) }
-    function saveSetting(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
@@ -884,7 +885,7 @@
                                 [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
                                   : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                             log.debug('Saving reply language...')
-                            saveSetting('replyLanguage', replyLanguage || config.userLanguage)
+                            settings.save('replyLanguage', replyLanguage || config.userLanguage)
                             log.debug(`Success! config.replyLanguage = ${config.replyLanguage}`)
                             const langUpdatedAlertID = siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
                                 `${ app.name } ${ msgs.alert_willReplyIn || 'will reply in' } `
@@ -935,7 +936,7 @@
                     newBtn.onclick = event => {
                         event.stopPropagation() // disable chatgpt.js dismissAlert()
                         const newScheme = btnScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : btnScheme
-                        saveSetting('scheme', btnScheme == 'auto' ? false : newScheme)
+                        settings.save('scheme', btnScheme == 'auto' ? false : newScheme)
                         schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
                         newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme
                         newBtn.style.cssText = 'pointer-events: none' // disable hover fx to show emphasis
@@ -1100,7 +1101,7 @@
                             else {
                                 log.caller = 'settings.createAppend()'
                                 log.debug(`Toggling ${settingItem.textContent} ${ key.includes('Disabled') ^ config[key] ? 'OFF' : 'ON' }...`)
-                                saveSetting(key, !config[key]) // update config
+                                settings.save(key, !config[key]) // update config
                                 notify(`${settingsProps[key].label} ${menuState.word[+key.includes('Disabled') ^ +config[key]]}`)
                                 log[key.includes('debug') ? 'info' : 'debug'](`Success! config.${key} = ${config[key]}`)
                             }
@@ -2352,7 +2353,7 @@
                       fontSize = config.minFontSize + fontSizePercent * (config.maxFontSize - config.minFontSize)
                 answerPre.style.fontSize = fontSize + 'px'
                 answerPre.style.lineHeight = fontSize * config.lineHeightRatio + 'px'
-                saveSetting('fontSize', fontSize)
+                settings.save('fontSize', fontSize)
                 sliderThumb.title = Math.floor(config.fontSize *10) /10 + 'px'
             }
 
@@ -2399,11 +2400,11 @@
             const prevState = config.anchored // for restraining notif if no change from #pin-menu 'Sidebar' click
             if (state == 'on' || !state && !config.anchored) {
                 log.debug('Toggling Anchor Mode on...')
-                saveSetting('anchored', true)
+                settings.save('anchored', true)
                 if (config.stickySidebar) toggle.sidebar('sticky') // off
             } else {
                 log.debug('Toggling Anchor Mode off...')
-                saveSetting('anchored', false)
+                settings.save('anchored', false)
                 if (config.expanded) toggle.expandedMode('off')
             }
             update.style.tweaks() ; update.chatbarWidth() ; update.rqVisibility() // apply new state to UI
@@ -2422,7 +2423,7 @@
             log.caller = `toggle.animations('${layer}')`
             const configKey = layer + 'AnimationsDisabled'
             log.debug(`Toggling ${layer.toUpperCase()} animations ${ config[configKey] ? 'ON' : 'OFF' }...`)
-            saveSetting(configKey, !config[configKey])
+            settings.save(configKey, !config[configKey])
             update.style.app() ; if (layer == 'bg') update.stars()
             if (layer == 'fg' && modals.settings.get()) {
 
@@ -2442,7 +2443,7 @@
         autoGet() {
             log.caller = 'toggle.autoGet()'
             log.debug(`Toggling Auto-Get ${ config.autoGet ?  'OFF' : 'ON' }...`)
-            saveSetting('autoGet', !config.autoGet)
+            settings.save('autoGet', !config.autoGet)
             if (appDiv.querySelector('.standby-btn')) show.reply.standbyBtnClickHandler()
             if (config.autoGet) // disable Prefix/Suffix mode if enabled
                 ['prefix', 'suffix'].forEach(manualMode => {
@@ -2475,7 +2476,7 @@
             log.caller = `toggle.expandedMode(${ state ? `'${state}'` : '' })`
             const toExpand = state == 'on' || !state && !config.expanded
             log.debug(`${ toExpand ? 'Expanding' : 'Shrinking' } ${app.name}...`)
-            saveSetting('expanded', toExpand)
+            settings.save('expanded', toExpand)
             if (config.minimized) toggle.minimized('off') // since user wants to see stuff
             update.style.tweaks() ; update.chatbarWidth() // apply new state to UI
             icons.arrowsDiagonal.update() ; tooltipDiv.style.opacity = 0 // update icon/tooltip
@@ -2487,7 +2488,7 @@
             log.caller = `toggle.manualGet('${mode}')`
             const modeKey = mode + 'Enabled'
             log.debug(`Toggling ${log.toTitleCase(mode)} Mode ${ config[modeKey] ? 'OFF' : 'ON' }...`)
-            saveSetting(modeKey, !config[modeKey])
+            settings.save(modeKey, !config[modeKey])
             if (config[modeKey] && config.autoGet) toggle.autoGet() // disable Auto-Get mode if enabled
             notify(`${settingsProps[modeKey].label} ${menuState.word[+config[modeKey]]}`)
             if (modals.settings.get()) { // update visual state of Settings toggle
@@ -2502,7 +2503,7 @@
             log.caller = `toggle.minimized(${ state ? `'${state}'` : '' })`
             const toMinimize = state == 'on' || !state && !config.minimized
             log.debug(`${ toMinimize ? 'Mimizing' : 'Restoring' } ${app.name}...`)
-            saveSetting('minimized', toMinimize)
+            settings.save('minimized', toMinimize)
             const chevronBtn = appDiv.querySelector('#chevron-btn')
             if (chevronBtn) { // update icon
                 const chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
@@ -2521,7 +2522,7 @@
         proxyMode() {
             log.caller = 'toggle.proxyMode()'
             log.debug(`Toggling Proxy Mode ${ config.proxyAPIenabled ? 'OFF' : 'ON' }...`)
-            saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
+            settings.save('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
             refreshMenu()
             if (modals.settings.get()) { // update visual states of Settings toggles
@@ -2543,7 +2544,7 @@
         relatedQueries() {
             log.caller = 'toggle.relatedQueries()'
             log.debug(`Toggling Related Queries ${ config.rqDisabled ? 'ON' : 'OFF' }...`)
-            saveSetting('rqDisabled', !config.rqDisabled)
+            settings.save('rqDisabled', !config.rqDisabled)
             update.rqVisibility()
             if (!config.rqDisabled && !appDiv.querySelector('.related-queries')) // get related queries for 1st time
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
@@ -2561,8 +2562,8 @@
             log.debug(`Toggling ${log.toTitleCase(mode)} Sidebar ${ toToggleOn ? 'ON' : 'OFF' }`)
             if (state == 'on' || !state && !config[configKeyName]) { // toggle on
                 if (mode == 'sticky' && config.anchored) toggle.anchorMode()
-                saveSetting(configKeyName, true)
-            } else saveSetting(configKeyName, false)
+                settings.save(configKeyName, true)
+            } else settings.save(configKeyName, false)
             update.style.tweaks() ; update.chatbarWidth() // apply new state to UI
             if (mode == 'wider') icons.widescreen.update() // toggle icons everywhere
             if (modals.settings.get()) { // update visual state of Settings toggle
@@ -2617,7 +2618,7 @@
                 alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggle.proxyMode() }
             } else { // functional toggle
                 log.debug(`Toggling Streaming Mode ${ config.streamingDisabled ? 'ON' : 'OFF' }`)
-                saveSetting('streamingDisabled', !config.streamingDisabled)
+                settings.save('streamingDisabled', !config.streamingDisabled)
                 notify(settingsProps.streamingDisabled.label + ' ' + menuState.word[+!config.streamingDisabled])
                 log.debug(`Success! config.streamingDisabled = ${config.streamingDisabled}`)
             }

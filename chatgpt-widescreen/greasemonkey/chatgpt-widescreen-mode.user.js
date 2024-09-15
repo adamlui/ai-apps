@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14.21
+// @version             2024.9.14.22
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -293,8 +293,12 @@
     } ; sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
 
     // Init CONFIG
+    const settings = {
+        load(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) },
+        save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
+    }
     const config = { userLanguage: chatgpt.getUserLanguage() }
-    loadSetting(...sites[site].availFeatures)
+    settings.load(...sites[site].availFeatures)
 
     // Init XHR fetcher
     const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
@@ -345,8 +349,6 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(`${ app.configKeyPrefix }_${ site }_${ key }`, false)) }
-    function saveSetting(key, value) { GM_setValue(`${ app.configKeyPrefix }_${ site }_${ key }`, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
@@ -360,7 +362,7 @@
                         + ( msgs.menuLabel_fullerWins || 'Fuller Windows' )
                         + menuState.separator + menuState.word[+config.fullerWindows]
             menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
-                saveSetting('fullerWindows', !config.fullerWindows)
+                settings.save('fullerWindows', !config.fullerWindows)
                 syncFullerWindows(config.fullerWindows) // live update on click
                 if (!config.notifDisabled) notify(
                     `${ ( msgs.menuLabel_fullerWins || 'Fuller Windows' ) }: ${ menuState.word[+config.fullerWindows] }`)
@@ -373,7 +375,7 @@
             const tcbLabel = '↕️ ' + ( msgs.menuLabel_tallerChatbox || 'Taller Chatbox' )
                         + menuState.separator + menuState.word[+!config.tcbDisabled]
             menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
-                saveSetting('tcbDisabled', !config.tcbDisabled)
+                settings.save('tcbDisabled', !config.tcbDisabled)
                 update.style.tweaks()
                 if (!config.notifDisabled) notify(
                     `${ msgs.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ menuState.word[+!config.tcbDisabled] }`)
@@ -386,7 +388,7 @@
             const wcbLabel = '↔️ ' + ( msgs.menuLabel_widerChatbox || 'Wider Chatbox' )
                            + menuState.separator + menuState.word[+config.widerChatbox]
             menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
-                saveSetting('widerChatbox', !config.widerChatbox)
+                settings.save('widerChatbox', !config.widerChatbox)
                 update.style.wideScreen()
                 if (!config.notifDisabled) notify(
                     `${ msgs.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ menuState.word[+config.widerChatbox] }`)
@@ -400,7 +402,7 @@
                         + ( msgs.menuLabel_newChatBtn || 'New Chat Button' )
                         + menuState.separator + menuState.word[+!config.ncbDisabled]
             menuIDs.push(GM_registerMenuCommand(hncLabel, () => {
-                saveSetting('ncbDisabled', !config.ncbDisabled)
+                settings.save('ncbDisabled', !config.ncbDisabled)
                 update.style.tweaks()
                 notify(`${ msgs.menuLabel_newChatBtn || 'New Chat Button' }: ${ menuState.word[+!config.ncbDisabled] }`)
                 refreshMenu()
@@ -413,7 +415,7 @@
                           + ( msgs.menuLabel_hiddenHeader || 'Hidden Header' )
                           + menuState.separator + menuState.word[+config.hiddenHeader]
             menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
-                saveSetting('hiddenHeader', !config.hiddenHeader)
+                settings.save('hiddenHeader', !config.hiddenHeader)
                 update.style.tweaks()
                 if (!config.notifDisabled) notify(
                     `${ msgs.menuLabel_hiddenHeader || 'Hidden Header' }: ${ menuState.word[+config.hiddenHeader] }`)
@@ -427,7 +429,7 @@
                           + ( msgs.menuLabel_hiddenFooter || 'Hidden Footer' )
                           + menuState.separator + menuState.word[+config.hiddenFooter]
             menuIDs.push(GM_registerMenuCommand(hfLabel, () => {
-                saveSetting('hiddenFooter', !config.hiddenFooter)
+                settings.save('hiddenFooter', !config.hiddenFooter)
                 update.style.tweaks()
                 if (!config.notifDisabled) notify(
                     `${ msgs.menuLabel_hiddenFooter || 'Hidden Footer' }: ${ menuState.word[+config.hiddenFooter] }`)
@@ -441,7 +443,7 @@
                         + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
                         + menuState.separator + menuState.word[+!config.notifDisabled]
             menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
-                saveSetting('notifDisabled', !config.notifDisabled)
+                settings.save('notifDisabled', !config.notifDisabled)
                 notify(`${ msgs.menuLabel_modeNotifs || 'Mode Notifications' }: ${ menuState.word[+!config.notifDisabled] }`)
                 refreshMenu()
             }))
@@ -806,7 +808,7 @@
         const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
                       : mode == 'fullWindow' ? isFullWindow()
                                              : chatgpt.isFullScreen() )
-        saveSetting(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
+        settings.save(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
         if (mode == 'fullWindow') syncFullerWindows(state)
         if (!config.notifDisabled) // notify synced state
             notify(`${ msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)

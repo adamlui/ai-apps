@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14
+// @version             2024.9.14.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -274,9 +274,13 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
     // Init CONFIG
+    const settings = {
+        load(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) },
+        save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
+    }
     const config = { userLanguage: chatgpt.getUserLanguage() }
-    loadSetting('arDisabled', 'notifDisabled', 'refreshInterval', 'toggleHidden')
-    if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
+    settings.load('arDisabled', 'notifDisabled', 'refreshInterval', 'toggleHidden')
+    if (!config.refreshInterval) settings.save('refreshInterval', 30) // init refresh interval to 30 secs if unset
 
     // Prevent sporadic convo RESETS
     const ogAEL = EventTarget.prototype.addEventListener
@@ -386,7 +390,7 @@
         } else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.deactivate()
             if (!config.notifDisabled) notify(( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': OFF')
-        } saveSetting('arDisabled', config.arDisabled)
+        } settings.save('arDisabled', config.arDisabled)
     }
 
     // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
@@ -402,8 +406,6 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false) })}
-    function saveSetting(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
@@ -424,7 +426,7 @@
                       + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
                       + menuState.separator + menuState.word[+!config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
-            saveSetting('toggleHidden', !config.toggleHidden)
+            settings.save('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifDisabled) notify((
                 msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menuState.word[+!config.toggleHidden])
@@ -436,7 +438,7 @@
                       + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
                       + menuState.separator + menuState.word[+!config.notifDisabled]
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
-            saveSetting('notifDisabled', !config.notifDisabled)
+            settings.save('notifDisabled', !config.notifDisabled)
             notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menuState.word[+!config.notifDisabled])
             refreshMenu()
         }))
@@ -450,7 +452,7 @@
                     `${ msgs.prompt_updateInt || 'Update refresh interval (in secs)' }:`, config.refreshInterval)
                 if (refreshInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(refreshInterval, 10)) && parseInt(refreshInterval, 10) > 0) { // valid int set
-                    saveSetting('refreshInterval', parseInt(refreshInterval, 10))
+                    settings.save('refreshInterval', parseInt(refreshInterval, 10))
                     if (chatgpt.autoRefresh.isActive) { // reset running auto-refresh
                         chatgpt.autoRefresh.deactivate()
                         chatgpt.autoRefresh.activate(refreshInterval)

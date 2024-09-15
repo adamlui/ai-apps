@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14
+// @version             2024.9.14.1
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -267,9 +267,13 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
     // Init CONFIG
+    const settings = {
+        load(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) },
+        save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
+    }
     const config = { userLanguage: chatgpt.getUserLanguage() }
     config.userLanguage = chatgpt.getUserLanguage()
-    loadSetting('autoTalkDisabled', 'toggleHidden')
+    settings.load('autoTalkDisabled', 'toggleHidden')
 
     // Init FETCHER
     const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
@@ -371,7 +375,7 @@
         toggleInput.checked = !toggleInput.checked ; config.autoTalkDisabled = !toggleInput.checked
         updateToggleHTML() ; refreshMenu()
         notify(`${ msgs.mode_autoTalk || 'Auto-Talk' }: ${menuState.word[+!config.autoTalkDisabled]}`)
-        saveSetting('autoTalkDisabled', config.autoTalkDisabled)
+        settings.save('autoTalkDisabled', config.autoTalkDisabled)
     }
 
     // Observe <main> for need to AUTO-PLAY response
@@ -395,8 +399,6 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) }
-    function saveSetting(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
@@ -415,7 +417,7 @@
                       + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
                       + menuState.separator + menuState.word[+!config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
-            saveSetting('toggleHidden', !config.toggleHidden)
+            settings.save('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifDisabled) notify((
                 msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menuState.word[+!config.toggleHidden])

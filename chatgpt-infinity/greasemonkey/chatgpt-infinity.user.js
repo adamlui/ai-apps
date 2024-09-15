@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.14
+// @version             2024.9.14.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -256,11 +256,15 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ !name ? 'script' : name }.meta.js`)
 
     // Init CONFIG
+    const settings = {
+        load(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) },
+        save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
+    }
     const config = { userLanguage: chatgpt.getUserLanguage() }
-    loadSetting('autoScrollDisabled', 'autoStart', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden')
-    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    if (!config.replyTopic) saveSetting('replyTopic', 'ALL') // init reply topic if unset
-    if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
+    settings.load('autoScrollDisabled', 'autoStart', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden')
+    if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
+    if (!config.replyTopic) settings.save('replyTopic', 'ALL') // init reply topic if unset
+    if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
 
     // Init FETCHER
     const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
@@ -312,8 +316,6 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false) })}
-    function saveSetting(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch(err) { return 'other' }}
 
@@ -332,7 +334,7 @@
                        + ( msgs.menuLabel_autoStart || 'Auto-Start' )
                        + menuState.separator + menuState.word[+config.autoStart]
         menuIDs.push(GM_registerMenuCommand(astLabel, () => {
-            saveSetting('autoStart', !config.autoStart)
+            settings.save('autoStart', !config.autoStart)
             notify(( msgs.menuLabel_autoStart || 'Auto-Start' ) + ': '+ menuState.word[+config.autoStart])
             refreshMenu()
         }))
@@ -342,7 +344,7 @@
                       + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
                       + menuState.separator + menuState.word[+!config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
-            saveSetting('toggleHidden', !config.toggleHidden)
+            settings.save('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             notify(( msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menuState.word[+!config.toggleHidden])
             refreshMenu()
@@ -353,7 +355,7 @@
                        + ( msgs.menuLabel_autoScroll || 'Auto-Scroll' )
                        + menuState.separator + menuState.word[+!config.autoScrollDisabled]
         menuIDs.push(GM_registerMenuCommand(ascLabel, () => {
-            saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
+            settings.save('autoScrollDisabled', !config.autoScrollDisabled)
             notify(( msgs.menuLabel_autoScroll || 'Auto-Scroll' ) + ': '+ menuState.word[+!config.autoScrollDisabled])
             refreshMenu()
         }))
@@ -370,7 +372,7 @@
                     replyLanguage = ( // auto-case for menu/alert aesthetics
                         [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
                         : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
-                    saveSetting('replyLanguage', replyLanguage || config.userLanguage)
+                    settings.save('replyLanguage', replyLanguage || config.userLanguage)
                     siteAlert(( msgs.alert_replyLangUpdated || 'Language updated' ) + '!', // title
                         ( msgs.appName || app.name ) + ' ' // msg
                             + ( msgs.alert_willReplyIn || 'will reply in' ) + ' '
@@ -389,7 +391,7 @@
                              + ' (' + ( msgs.prompt_orEnter || 'or enter' ) + ' \'ALL\'):', config.replyTopic)
             if (replyTopic !== null) { // user didn't cancel
                 const str_replyTopic = replyTopic.toString()
-                saveSetting('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
+                settings.save('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
                 siteAlert(( msgs.alert_replyTopicUpdated || 'Topic updated' ) + '!',
                     ( msgs.appName || app.name ) + ' '
                         + ( msgs.alert_willAnswer || 'will answer questions' ) + ' '
@@ -413,7 +415,7 @@
                     `${ msgs.prompt_updateReplyInt || 'Update reply interval (minimum 5 secs)' }:`, config.replyInterval)
                 if (replyInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(replyInterval, 10)) && parseInt(replyInterval, 10) > 4) { // valid int set
-                    saveSetting('replyInterval', parseInt(replyInterval, 10))
+                    settings.save('replyInterval', parseInt(replyInterval, 10))
                     siteAlert(( msgs.alert_replyIntUpdated || 'Interval updated' ) + '!', // title
                         ( msgs.appName || app.name ) + ' ' // msg
                             + ( msgs.alert_willReplyEvery || 'will reply every' ) + ' '
