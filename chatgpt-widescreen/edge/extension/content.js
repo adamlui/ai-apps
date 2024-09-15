@@ -439,11 +439,7 @@
             if (btnType == 'newChat') {
                 if (/chatgpt|openai/.test(site)) chatgpt.startNewChat()
                 else if (site == 'poe') document.querySelector('header a[class*="button"]')?.click()
-            } else {
-                if (/openai|chatgpt/.test(site) && btnType == 'wideScreen') // remove lingering tooltip in at least FF
-                    tooltipDiv.style.opacity = 0
-                toggle.mode(btnType)
-            }
+            } else toggle.mode(btnType)
         }
     })
     settings.load('extensionDisabled').then(() => { if (!config.extensionDisabled) btns.insert() })
