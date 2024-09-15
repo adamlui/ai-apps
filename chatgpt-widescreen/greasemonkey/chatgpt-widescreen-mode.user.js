@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.15.4
+// @version             2024.9.15.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -919,7 +919,7 @@
         .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
     const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
     let btnColor = btns.setColor()
-    validBtnTypes.forEach((btnType, idx) => {
+    validBtnTypes.forEach(async (btnType, idx) => {
         btns[btnType] = document.createElement('div') // create button
         btns[btnType].id = btnType + '-btn' // for toggle.tooltip()
         btns.updateSVG(btnType) // insert icon
@@ -928,7 +928,13 @@
         btns[btnType].style.cursor = 'pointer' // add finger cursor
         if (site == 'poe') btns[btnType].style.position = 'relative' // override static pos
         if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
-            btns[btnType].setAttribute('class', chatgpt.getSendBtn()?.classList.toString() || '')
+            const sendBtn = await new Promise(resolve => {
+                const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) resolve(sendBtn)
+                else new MutationObserver((_, obs) => {
+                    const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
+                }).observe(document.body, { childList: true, subtree: true })
+            })
+            btns[btnType].setAttribute('class', sendBtn.classList.toString() || '')
             btns[btnType].style.backgroundColor = 'transparent' // remove dark mode overlay
             btns[btnType].style.borderColor = 'transparent' // remove dark mode overlay
         } else if (site == 'poe') // lift buttons slightly
