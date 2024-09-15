@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.15.1
+// @version               2024.9.15.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -325,8 +325,7 @@
 
     // Init CONFIG
     log.debug('Initializing config...')
-    Object.assign(config, { minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.313 })
-    config.userLanguage = chatgpt.getUserLanguage()
+    Object.assign(config, { userLanguage: chatgpt.getUserLanguage(), minFontSize: 11, maxFontSize: 24, lineHeightRatio: 1.313 })
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     settings.load('anchored', 'autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'expanded',
                   'fgAnimationsDisabled', 'fontSize', 'minimized', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
