@@ -500,8 +500,7 @@
                         if (!config.modeSynced) syncMode('fullWindow')
         }})})
         setTimeout(() => // delay half-sec before observing to avoid repeated toggles from nodeObserver
-            sidebarObserver.observe(document.body, {
-                subtree: true, childList: false, attributes: true }), 500)
+            sidebarObserver.observe(document.querySelector(sites[site].selectors.sidebar), { attributes: true }), 500)
     }
 
     // Add RESIZE LISTENER to update full screen setting/button + disable F11 flag

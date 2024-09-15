@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.15.2
+// @version             2024.9.15.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -993,8 +993,7 @@
                 if (!config.modeSynced) syncMode('fullWindow')
         })
         setTimeout(() => // delay half-sec before observing to avoid repeated toggles from nodeObserver
-            sidebarObserver.observe(document.body, {
-                subtree: true, childList: false, attributes: true }), 500)
+            sidebarObserver.observe(document.querySelector(sites[site].selectors.sidebar), { attributes: true }), 500)
     }
 
     // Add RESIZE LISTENER to update full screen setting/button + disable F11 flag
