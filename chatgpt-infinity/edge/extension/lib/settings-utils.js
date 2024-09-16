@@ -1,11 +1,6 @@
-const app = {
-    symbol: '∞', configKeyPrefix: 'chatGPTinfinity',
-    urls: { gitHub: 'https://github.com/adamlui/chatgpt-infinity' }}
-app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + '@5153489/'
+import { app } from '../data/app.js'
 
-const config = {}
-
-const settings = {
+const config = {}, settings = {
 
     load: function() {
         const keys = ( // original array if array, else new array from multiple args
@@ -23,4 +18,4 @@ const settings = {
     }
 }
 
-export { app, config, settings }
+export { config, settings }

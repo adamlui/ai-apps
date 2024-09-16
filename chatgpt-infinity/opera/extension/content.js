@@ -5,8 +5,9 @@
 
 (async () => {
 
-    // Import LIBS
-    const { app, config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
+    // Import DATA/LIBS
+    const { app } = await import(chrome.runtime.getURL('data/app.js')),
+          { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Add CHROME MSG listener
