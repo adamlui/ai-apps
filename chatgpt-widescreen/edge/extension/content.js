@@ -153,6 +153,7 @@
                         } else toggle.mode(btnType)
                     }
                 })
+                btns.setColor()
             }
 
             // Init chatbar
@@ -201,10 +202,14 @@
         },
 
         setColor() {
+            const prevColor = btns.color
             btns.color = (
                 /chatgpt|openai/.test(site) ? (
                     document.querySelector('.dark.bg-black') || chatgpt.isDarkMode() ? 'white' : '#202123' )
               : site == 'poe' ? 'currentColor' : '' )
+            if (btns.color != prevColor)
+                ['newChat', 'wideScreen', 'fullWindow', 'fullScreen'].forEach(btnType => {
+                    if (btns[btnType]) btns[btnType].style.fill = btns[btnType].style.stroke = btns.color })
         },
 
         updateSVG(mode, state = '') {
@@ -248,8 +253,6 @@
     const update = {
 
         style: {
-            btn() { btns.setColor() ; btnStyle.innerText = `div[id$="-btn"] svg { fill: ${btns.color} ; stroke: ${btns.color} }` },
-
             tweaks() {
                 tweaksStyle.innerText = (
                     /chatgpt|openai/.test(site) ? (
@@ -419,9 +422,6 @@
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWin() : settings.load('fullWindow')
     config.fullScreen = chatgpt.isFullScreen()
 
-    // Create/apply BUTTON style
-    const btnStyle = create.style() ; update.style.btn() ; document.head.append(btnStyle)
-
     // Create/stylize TOOLTIP div
     const tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('cwm-tooltip')
@@ -489,9 +489,9 @@
             for (let i = 0 ; i < 1 ; i++) { chatbarBGdiv = chatbarBGdiv?.parentNode }
             if (chatbarBGdiv) {
                 const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
-                if ((mutation.type === 'attributes' && mutation.attributeName === 'class') // potential scheme toggled
+                if ((mutation.type == 'attributes' && mutation.attributeName == 'class') // potential scheme toggled
                      || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)) { // temp chat toggled
-                        update.style.btn() ; isTempChat = !isTempChat
+                        btns.setColor() ; isTempChat = !isTempChat
         }}}
     })
     nodeObserver.observe( // <html> for page scheme toggles
