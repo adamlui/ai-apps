@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.15.9
+// @version             2024.9.15.10
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -973,7 +973,7 @@
                     if (!config.notifDisabled) // ... + notify
                         notify(( msgs.mode_fullWindow || 'Full-window' ) + ' ON')
             }}
-            if (config.tcbDisabled) update.style.tweaks() ; prevSessionChecked = true
+            prevSessionChecked = true
         }
 
         btns.insert() // again or they constantly disappear
