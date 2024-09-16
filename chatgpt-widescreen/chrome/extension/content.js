@@ -468,9 +468,6 @@
                             if (!config.notifDisabled) // ... + notify
                                 notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                     }}
-                    if (!config.tcbDisabled || config.ncbDisabled || config.hiddenHeader || config.hiddenFooter)
-                        update.style.tweaks()
-                    if (config.widerChatbox) update.style.wideScreen()
                     prevSessionChecked = true
                 }
                 btns.insert() // again or they constantly disappear
