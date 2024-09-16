@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.15.10
+// @version             2024.9.15.11
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -638,7 +638,7 @@
 
         insert() {
 
-            // Create buttons if not created yet
+            // Create/store buttons if not done before
             if (!btns.wideScreen) {
                 const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
                     .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
@@ -716,8 +716,7 @@
 
         setColor() {
             return ( /chatgpt|openai/.test(site) ? (
-                  document.querySelector('.dark.bg-black, [class*="dark:bg-gray"]') // temp chat post-GPT4-o, pre-GPT-4o
-               || chatgpt.isDarkMode() ? 'white' : '#202123' )
+                document.querySelector('.dark.bg-black') || chatgpt.isDarkMode() ? 'white' : '#202123' )
             : site == 'poe' ? 'currentColor' : ''
         )},
 
