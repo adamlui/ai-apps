@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.15.8
+// @version             2024.9.15.9
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -684,6 +684,7 @@
             let chatbar = document.querySelector(sites[site].selectors.input)
             const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
             for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
+            if (!chatbar || chatbar.contains(btns.wideScreen)) return // if chatbar missing or buttons aren't, exit
     
             // Tweak chatbar
             if (/chatgpt|openai/.test(site)) {
