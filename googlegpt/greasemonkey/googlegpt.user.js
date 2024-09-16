@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.15.3
+// @version                  2024.9.15.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -516,7 +516,7 @@
     log.debug('Initializing config...')
     Object.assign(config, {
         userLanguage: chatgpt.getUserLanguage(),
-        userLocale: window.location.hostname.endsWith('.com') ? 'us' : window.location.hostname.split('.').pop(),
+        userLocale: location.hostname.endsWith('.com') ? 'us' : location.hostname.split('.').pop(),
         minFontSize: 11, maxFontSize: 24, lineHeightRatio: env.browser.isMobile ? 1.357 : 1.375
     })
     settings.load('anchored', 'autoGet', 'autoFocusChatbarDisabled', 'autoScroll', 'bgAnimationsDisabled', 'expanded',
@@ -3762,7 +3762,7 @@
 
     log.debug('Registering toolbar menu...') ; registerMenu() ; log.debug('Success! Menu registered')
 
-    if (window.location.search.includes('&udm=2')) return log.debug('Exited from Google Images')
+    if (location.search.includes('&udm=2')) return log.debug('Exited from Google Images')
 
     // Init ALERTS
     const appAlerts = {
@@ -3890,8 +3890,8 @@
     // Show STANDBY mode or get/show ANSWER
     let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
     if (!config.autoGet && !/src=(?:first-run|asktip)/.test(location.href) // Auto-Get disabled and not queried from other site or 1st run
-        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
+        || config.prefixEnabled && !/.*q=%2F/.test(location) // prefix required but not present
+        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(location)) { // suffix required but not present
             show.reply('standby', footerContent)
             if (!config.rqDisabled)
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))

@@ -26,7 +26,7 @@
     })
 
     // Selectively DISABLE content or user script
-    if (!/chat(?:gpt|\.openai)\.com/.test(window.location.hostname)) return
+    if (!/chat(?:gpt|\.openai)\.com/.test(location.hostname)) return
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
     // Init ENV info
@@ -162,7 +162,7 @@
             if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
             fromMsg = false
             if (env.browser.isMobile && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
-            if (!new URL(document.location).pathname.startsWith('/g/')) // not on GPT page
+            if (!new URL(location).pathname.startsWith('/g/')) // not on GPT page
                 try { chatgpt.startNewChat() } catch (err) { return } // start new chat
             await new Promise(resolve => setTimeout(resolve, 500)) // sleep 500ms
             settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(async () => {
