@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16
+// @version             2024.9.16.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -331,79 +331,79 @@
         }
     })
 
-    // Init MENU objs
-    const menuIDs = [] // to store registered cmds for removal while preserving order
-    const menuState = {
-        symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
-        separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
-    }
-
     // Define MENU functions
 
-    function registerMenu() {
+    const menu = {
+        ids: [], state: {
+            symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
+            separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
+        },
 
-        // Add command to toggle auto-refresh
-        const arLabel = menuState.symbol[+!config.arDisabled] + ' '
-                      + ( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' ↻ '
-                      + menuState.separator + menuState.word[+!config.arDisabled]
-        menuIDs.push(GM_registerMenuCommand(arLabel, () => {
-            document.getElementById('auto-refresh-switch-span').click()
-        }))
+        register() {
 
-        // Add command to toggle visibility of toggle
-        const tvLabel = menuState.symbol[+!config.toggleHidden] + ' '
-                      + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
-                      + menuState.separator + menuState.word[+!config.toggleHidden]
-        menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
-            settings.save('toggleHidden', !config.toggleHidden)
-            navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            if (!config.notifDisabled) notify((
-                msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menuState.word[+!config.toggleHidden])
-            refreshMenu()
-        }))
+            // Add Auto-Refresh toggle
+            const arLabel = menu.state.symbol[+!config.arDisabled] + ' '
+                        + ( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' ↻ '
+                        + menu.state.separator + menu.state.word[+!config.arDisabled]
+            menu.ids.push(GM_registerMenuCommand(arLabel, () => {
+                document.getElementById('auto-refresh-switch-span').click()
+            }))
 
-        // Add command to show notifications when switching modes
-        const mnLabel = menuState.symbol[+!config.notifDisabled] + ' '
-                      + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
-                      + menuState.separator + menuState.word[+!config.notifDisabled]
-        menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
-            settings.save('notifDisabled', !config.notifDisabled)
-            notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menuState.word[+!config.notifDisabled])
-            refreshMenu()
-        }))
+            // Add Toggle Visibility toggle
+            const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
+                        + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
+                        + menu.state.separator + menu.state.word[+!config.toggleHidden]
+            menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
+                settings.save('toggleHidden', !config.toggleHidden)
+                navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
+                if (!config.notifDisabled) notify((
+                    msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menu.state.word[+!config.toggleHidden])
+                menu.refresh()
+            }))
 
-        // Add command to change refresh interval
-        const riLabel = '⌚ ' + ( msgs.menuLabel_refreshInt || 'Refresh Interval' ) + ' '
-                      + menuState.separator + config.refreshInterval + 's'
-        menuIDs.push(GM_registerMenuCommand(riLabel, () => {
-            while (true) {
-                const refreshInterval = prompt(
-                    `${ msgs.prompt_updateInt || 'Update refresh interval (in secs)' }:`, config.refreshInterval)
-                if (refreshInterval === null) break // user cancelled so do nothing
-                else if (!isNaN(parseInt(refreshInterval, 10)) && parseInt(refreshInterval, 10) > 0) { // valid int set
-                    settings.save('refreshInterval', parseInt(refreshInterval, 10))
-                    if (chatgpt.autoRefresh.isActive) { // reset running auto-refresh
-                        chatgpt.autoRefresh.deactivate()
-                        chatgpt.autoRefresh.activate(refreshInterval)
-                    }
-                    refreshMenu()
-                    const minInterval = Math.max(2, config.refreshInterval - 10),
-                          maxInterval = config.refreshInterval + 10
-                    siteAlert(( msgs.alert_intUpdated || 'Interval updated' ) + '!',
-                          ( msgs.alert_willRefresh || 'ChatGPT session will auto-refresh every ' )
-                            + `${ minInterval }–${ maxInterval } ${ msgs.unit_secs || 'secs' }`
-                    )
-                    break
-        }}}))
+            // Add Mode Notifications toggle
+            const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
+                        + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
+                        + menu.state.separator + menu.state.word[+!config.notifDisabled]
+            menu.ids.push(GM_registerMenuCommand(mnLabel, () => {
+                settings.save('notifDisabled', !config.notifDisabled)
+                notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menu.state.word[+!config.notifDisabled])
+                menu.refresh()
+            }))
 
-        // Add command to launch About modal
-        const amLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
-        menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
-    }
+            // Add Refresh Interval entry
+            const riLabel = '⌚ ' + ( msgs.menuLabel_refreshInt || 'Refresh Interval' ) + ' '
+                        + menu.state.separator + config.refreshInterval + 's'
+            menu.ids.push(GM_registerMenuCommand(riLabel, () => {
+                while (true) {
+                    const refreshInterval = prompt(
+                        `${ msgs.prompt_updateInt || 'Update refresh interval (in secs)' }:`, config.refreshInterval)
+                    if (refreshInterval === null) break // user cancelled so do nothing
+                    else if (!isNaN(parseInt(refreshInterval, 10)) && parseInt(refreshInterval, 10) > 0) { // valid int set
+                        settings.save('refreshInterval', parseInt(refreshInterval, 10))
+                        if (chatgpt.autoRefresh.isActive) { // reset running auto-refresh
+                            chatgpt.autoRefresh.deactivate()
+                            chatgpt.autoRefresh.activate(refreshInterval)
+                        }
+                        menu.refresh()
+                        const minInterval = Math.max(2, config.refreshInterval - 10),
+                            maxInterval = config.refreshInterval + 10
+                        siteAlert(( msgs.alert_intUpdated || 'Interval updated' ) + '!',
+                            ( msgs.alert_willRefresh || 'ChatGPT session will auto-refresh every ' )
+                                + `${ minInterval }–${ maxInterval } ${ msgs.unit_secs || 'secs' }`
+                        )
+                        break
+            }}}))
 
-    function refreshMenu() {
-        if (env.scriptManager == 'OrangeMonkey') return
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
+            // Add About entry
+            const amLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
+            menu.ids.push(GM_registerMenuCommand(amLabel, launchAboutModal))
+        },
+
+        refresh() {
+            if (env.scriptManager == 'OrangeMonkey') return
+            for (const id of menu.ids) { GM_unregisterMenuCommand(id) } menu.register()
+        }
     }
 
     function launchAboutModal() {
@@ -506,7 +506,7 @@
     function notify(msg, position = '', notifDuration = '', shadow = '') {
 
         // Strip state word to append colored one later
-        const foundState = menuState.word.find(word => msg.includes(word))
+        const foundState = menu.state.word.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -517,7 +517,7 @@
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `color: ${
-                foundState == menuState.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                foundState == menu.state.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                                 : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.append(styledState)
         }
@@ -609,7 +609,7 @@
 
     // Run MAIN routine
 
-    registerMenu() // create browser toolbar menu
+    menu.register() // create browser toolbar menu
 
     // Init UI props
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
@@ -659,7 +659,7 @@
     navToggleDiv.onclick = () => {
         const toggleInput = document.getElementById('auto-refresh-toggle-input')
         toggleInput.checked = !toggleInput.checked ; config.arDisabled = !toggleInput.checked
-        updateToggleHTML() ; refreshMenu()
+        updateToggleHTML() ; menu.refresh()
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.activate(config.refreshInterval)
             if (!config.notifDisabled) notify(( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': ON')

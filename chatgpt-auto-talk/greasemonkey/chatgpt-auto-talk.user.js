@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16
+// @version             2024.9.16.1
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -307,43 +307,43 @@
         }
     })
 
-    // Init MENU objs
-    const menuIDs = [] // to store registered cmds for removal while preserving order
-    const menuState = {
-        symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-        word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
-    }
-
     // Define MENU functions
+    
+    const menu = {
+        ids: [], state: {
+            symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
+            word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
+        },
 
-    function registerMenu() {
+        register() {
 
-        // Add command to toggle auto-talk
-        const atLabel = menuState.symbol[+!config.autoTalkDisabled] + ' '
-                      + ( msgs.mode_autoTalk || 'Auto-Talk' )
-                      + menuState.separator + menuState.word[+!config.autoTalkDisabled]
-        menuIDs.push(GM_registerMenuCommand(atLabel, () => document.getElementById('auto-talk-toggle-label').click()))
+            // Add Auto-Talk toggle
+            const atLabel = menu.state.symbol[+!config.autoTalkDisabled] + ' '
+                        + ( msgs.mode_autoTalk || 'Auto-Talk' )
+                        + menu.state.separator + menu.state.word[+!config.autoTalkDisabled]
+            menu.ids.push(GM_registerMenuCommand(atLabel, () => document.getElementById('auto-talk-toggle-label').click()))
 
-        // Add command to toggle visibility of toggle
-        const tvLabel = menuState.symbol[+!config.toggleHidden] + ' '
-                      + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
-                      + menuState.separator + menuState.word[+!config.toggleHidden]
-        menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
-            settings.save('toggleHidden', !config.toggleHidden)
-            navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            if (!config.notifDisabled) notify((
-                msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menuState.word[+!config.toggleHidden])
-            refreshMenu()
-        }))
+            // Add Toggle Visibility toggle
+            const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
+                        + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
+                        + menu.state.separator + menu.state.word[+!config.toggleHidden]
+            menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
+                settings.save('toggleHidden', !config.toggleHidden)
+                navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
+                if (!config.notifDisabled) notify((
+                    msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menu.state.word[+!config.toggleHidden])
+                menu.refresh()
+            }))
 
-        // Add command to launch About modal
-        const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
-        menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
-    }
+            // Add About entry
+            const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
+            menu.ids.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
+        },
 
-    function refreshMenu() {
-        if (env.scriptManager == 'OrangeMonkey') return
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
+        refresh() {
+            if (env.scriptManager == 'OrangeMonkey') return
+            for (const id of menu.ids) { GM_unregisterMenuCommand(id) } menu.register()
+        }
     }
 
     function launchAboutModal() {
@@ -444,7 +444,7 @@
     function notify(msg, position = '', notifDuration = '', shadow = '') {
 
         // Strip state word to append colored one later
-        const foundState = menuState.word.find(word => msg.includes(word))
+        const foundState = menu.state.word.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -455,7 +455,7 @@
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `color: ${
-                foundState == menuState.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                foundState == menu.state.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                                 : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.append(styledState)
         }
@@ -547,7 +547,7 @@
 
     // Run MAIN routine
 
-    registerMenu() // create browser toolbar menu
+    menu.register() // create browser toolbar menu
 
     // Init BROWSER/UI props
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
@@ -610,8 +610,8 @@
     navToggleDiv.onclick = () => {
         const toggleInput = document.getElementById('auto-talk-toggle-input')
         toggleInput.checked = !toggleInput.checked ; config.autoTalkDisabled = !toggleInput.checked
-        updateToggleHTML() ; refreshMenu()
-        notify(`${ msgs.mode_autoTalk || 'Auto-Talk' }: ${menuState.word[+!config.autoTalkDisabled]}`)
+        updateToggleHTML() ; menu.refresh()
+        notify(`${ msgs.mode_autoTalk || 'Auto-Talk' }: ${menu.state.word[+!config.autoTalkDisabled]}`)
         settings.save('autoTalkDisabled', config.autoTalkDisabled)
     }
 

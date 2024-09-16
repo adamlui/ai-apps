@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.15.5
+// @version                2014.9.16
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -485,40 +485,38 @@
     }
     log.debug(`Success! settingsProps = ${log.prettifyObj(settingsProps)}`)
 
-    // Init MENU objs
-    log.debug('Initializing menu objects...')
-    const menuIDs = [] // to store registered cmds for removal while preserving order
-    const menuState = {
-        symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-        word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
-    }
-    log.debug(`Success! menuState = ${log.prettifyObj(menuState)}`)
-
     // Define MENU functions
 
-    function registerMenu() {
+    const menu = {
+        ids: [], state: {
+            symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
+            word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
+        },
 
-        // Add command to toggle proxy API mode
-        const pmLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
-                      + settingsProps.proxyAPIenabled.label + ' '
-                      + menuState.separator + menuState.word[+config.proxyAPIenabled]
-        menuIDs.push(GM_registerMenuCommand(pmLabel, toggle.proxyMode))
+        register() {
 
-        // Add command to launch About modal
-        const aboutLabel = `💡 ${settingsProps.about.label}`
-        menuIDs.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
+            // Add Proxy API Mode toggle
+            const pmLabel = menu.state.symbol[+config.proxyAPIenabled] + ' '
+                          + settingsProps.proxyAPIenabled.label + ' '
+                          + menu.state.separator + menu.state.word[+config.proxyAPIenabled]
+            menu.ids.push(GM_registerMenuCommand(pmLabel, toggle.proxyMode))
 
-        // Add command to launch Settings modal
-        const settingsLabel = `⚙️ ${ msgs.menuLabel_settings || 'Settings' }`
-        menuIDs.push(GM_registerMenuCommand(settingsLabel, modals.settings.show))
-    }
+            // Add About entry
+            const aboutLabel = `💡 ${settingsProps.about.label}`
+            menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
 
-    function refreshMenu() {
-        log.caller = `refreshMenu()`
-        log.debug('Refreshing toolbar menu...')
-        if (env.scriptManager == 'OrangeMonkey') { log.debug('OrangeMonkey userscript manager unsupported.') ; return }
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
-        log.debug('Success! Menu refreshed')
+            // Add Settings entry
+            const settingsLabel = `⚙️ ${ msgs.menuLabel_settings || 'Settings' }`
+            menu.ids.push(GM_registerMenuCommand(settingsLabel, modals.settings.show))
+        },
+
+        refresh() {
+            log.caller = 'menu.refresh()'
+            log.debug('Refreshing toolbar menu...')
+            if (env.scriptManager == 'OrangeMonkey') { log.debug('OrangeMonkey userscript manager unsupported.') ; return }
+            for (const id of menu.ids) { GM_unregisterMenuCommand(id) } menu.register()
+            log.debug('Success! Menu refreshed')
+        }
     }
 
     function updateCheck() {
@@ -654,7 +652,7 @@
     function notify(msg, position = '', notifDuration = '', shadow = 'shadow') {
 
         // Strip state word to append styled one later
-        const foundState = menuState.word.find(word => msg.includes(word))
+        const foundState = menu.state.word.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -681,7 +679,7 @@
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `font-weight: bold ; color: ${
-                foundState == menuState.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                foundState == menu.state.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                                 : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.insertBefore(styledState, notif.children[2])
         }
@@ -1111,7 +1109,7 @@
                                 log.caller = 'settings.createAppend()'
                                 log.debug(`Toggling ${settingItem.textContent} ${ key.includes('Disabled') ^ config[key] ? 'OFF' : 'ON' }...`)
                                 settings.save(key, !config[key]) // update config
-                                notify(`${settingsProps[key].label} ${menuState.word[+key.includes('Disabled') ^ +config[key]]}`)
+                                notify(`${settingsProps[key].label} ${menu.state.word[+key.includes('Disabled') ^ +config[key]]}`)
                                 log[key.includes('debug') ? 'info' : 'debug'](`Success! config.${key} = ${config[key]}`)
                             }
                         }
@@ -2423,7 +2421,7 @@
             }
             if (prevState != config.anchored) {
                 menus.pin.topPos = menus.pin.rightPos = null
-                notify(( msgs.mode_anchor || 'Anchor Mode' ) + ' ' + menuState.word[+config.anchored])
+                notify(( msgs.mode_anchor || 'Anchor Mode' ) + ' ' + menu.state.word[+config.anchored])
                 log.debug(`Success! Anchor Mode toggled ${ config.anchored ? 'ON' : 'OFF' }`)
             }
         },
@@ -2446,7 +2444,7 @@
             }
             log.caller = `toggle.animations('${layer}')`
             log.debug(`Success! ${layer.toUpperCase()} animations toggled ${ config[configKey] ? 'OFF' : 'ON' }`)
-            notify(`${settingsProps[layer + 'AnimationsDisabled'].label} ${menuState.word[+!config[layer + 'AnimationsDisabled']]}`)
+            notify(`${settingsProps[layer + 'AnimationsDisabled'].label} ${menu.state.word[+!config[layer + 'AnimationsDisabled']]}`)
         },
 
         autoGet() {
@@ -2457,7 +2455,7 @@
             if (config.autoGet) // disable Prefix/Suffix mode if enabled
                 ['prefix', 'suffix'].forEach(manualMode => {
                     if (config[manualMode + 'Enabled']) toggle.manualGet(manualMode) })
-            notify(`${settingsProps.autoGet.label} ${menuState.word[+config.autoGet]}`)
+            notify(`${settingsProps.autoGet.label} ${menu.state.word[+config.autoGet]}`)
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const autoGetToggle = document.querySelector('[id*="autoGet"][id*="menu-entry"] input')
                 if (autoGetToggle.checked != config.autoGet) modals.settings.toggle.switch(autoGetToggle)
@@ -2499,7 +2497,7 @@
             log.debug(`Toggling ${log.toTitleCase(mode)} Mode ${ config[modeKey] ? 'OFF' : 'ON' }...`)
             settings.save(modeKey, !config[modeKey])
             if (config[modeKey] && config.autoGet) toggle.autoGet() // disable Auto-Get mode if enabled
-            notify(`${settingsProps[modeKey].label} ${menuState.word[+config[modeKey]]}`)
+            notify(`${settingsProps[modeKey].label} ${menu.state.word[+config[modeKey]]}`)
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const modeToggle = document.querySelector(`[id*="${modeKey}"][id*="menu-entry"] input`)
                 if (modeToggle.checked != config[modeKey]) modals.settings.toggle.switch(modeToggle)
@@ -2532,8 +2530,8 @@
             log.caller = 'toggle.proxyMode()'
             log.debug(`Toggling Proxy Mode ${ config.proxyAPIenabled ? 'OFF' : 'ON' }...`)
             settings.save('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
-            refreshMenu()
+            notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menu.state.word[+config.proxyAPIenabled])
+            menu.refresh()
             if (modals.settings.get()) { // update visual states of Settings toggles
                 const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input'),
                       streamingToggle = document.querySelector('[id*="streaming"][id*="menu-entry"] input')
@@ -2559,7 +2557,7 @@
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
                     .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
             update.style.tweaks() // toggle <pre> max-height
-            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
+            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menu.state.word[+!config.rqDisabled])
             log.debug(`Success! config.rqDisabled = ${config.rqDisabled}`)
         },
 
@@ -2582,7 +2580,7 @@
             if (mode == 'sticky' && prevStickyState == config.stickySidebar)
                 return log.debug(`No change to ${log.toTitleCase(mode)} Sidebar`)
             notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
-                + ' ' + menuState.word[+config[configKeyName]])
+                + ' ' + menu.state.word[+config[configKeyName]])
             log.debug(`Success! ${log.toTitleCase(mode)} Sidebar toggled ${ toToggleOn ? 'ON' : 'OFF' }`)
         },
 
@@ -2628,7 +2626,7 @@
             } else { // functional toggle
                 log.debug(`Toggling Streaming Mode ${ config.streamingDisabled ? 'ON' : 'OFF' }`)
                 settings.save('streamingDisabled', !config.streamingDisabled)
-                notify(settingsProps.streamingDisabled.label + ' ' + menuState.word[+!config.streamingDisabled])
+                notify(settingsProps.streamingDisabled.label + ' ' + menu.state.word[+!config.streamingDisabled])
                 log.debug(`Success! config.streamingDisabled = ${config.streamingDisabled}`)
             }
         },
@@ -3436,7 +3434,7 @@
 
     // Run MAIN routine
 
-    log.debug('Registering toolbar menu...') ; registerMenu() ; log.debug('Success! Menu registered')
+    log.debug('Registering toolbar menu...') ; menu.register() ; log.debug('Success! Menu registered')
 
     // Init ALERTS
     const appAlerts = {

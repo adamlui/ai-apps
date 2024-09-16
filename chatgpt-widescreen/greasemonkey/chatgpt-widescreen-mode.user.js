@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16.2
+// @version             2024.9.16.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -333,132 +333,119 @@
         }
     }) ; const msgs = await msgsLoaded
 
-    // Init MENU objs
-    const menuIDs = [] // to store registered cmds for removal while preserving order
-    const menuState = {
-        symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
-        separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
-    }
-
-    // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
-    const extensionInstalled = await Promise.race([
-        new Promise(resolve => {
-            (function checkExtensionInstalled() {
-                if (document.querySelector('[cwm-extension-installed]')) resolve(true)
-                else setTimeout(checkExtensionInstalled, 200)
-            })()
-        }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
-    if (extensionInstalled) { // disable script/menu
-        GM_registerMenuCommand(menuState.symbol[0] + ' ' + ( msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
-            () => { return }) // disable menu
-        return // exit script
-    } else registerMenu() // create functional menu
-
     // Define MENU functions
 
-    function registerMenu() {
+    const menu = {
+        ids: [], state: {
+            symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
+            separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
+        },
 
-        // Add Fuller Windows toggle if avail
-        if (sites[site].availFeatures.includes('fullerWindows')) {
-            const fwLabel = menuState.symbol[+config.fullerWindows] + ' '
-                        + ( msgs.menuLabel_fullerWins || 'Fuller Windows' )
-                        + menuState.separator + menuState.word[+config.fullerWindows]
-            menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
-                settings.save('fullerWindows', !config.fullerWindows)
-                sync.fullerWin(config.fullerWindows) // live update on click
-                if (!config.notifDisabled) notify(
-                    `${ ( msgs.menuLabel_fullerWins || 'Fuller Windows' ) }: ${ menuState.word[+config.fullerWindows] }`)
-                refreshMenu()
-            }))
+        register() {
+
+            // Add Fuller Windows toggle if avail
+            if (sites[site].availFeatures.includes('fullerWindows')) {
+                const fwLabel = menu.state.symbol[+config.fullerWindows] + ' '
+                            + ( msgs.menuLabel_fullerWins || 'Fuller Windows' )
+                            + menu.state.separator + menu.state.word[+config.fullerWindows]
+                menu.ids.push(GM_registerMenuCommand(fwLabel, () => {
+                    settings.save('fullerWindows', !config.fullerWindows)
+                    sync.fullerWin(config.fullerWindows) // live update on click
+                    if (!config.notifDisabled) notify(
+                        `${ ( msgs.menuLabel_fullerWins || 'Fuller Windows' ) }: ${ menu.state.word[+config.fullerWindows] }`)
+                    menu.refresh()
+                }))
+            }
+
+            // Add Taller Chatbox toggle if avail
+            if (sites[site].availFeatures.includes('tcbDisabled')) {
+                const tcbLabel = '↕️ ' + ( msgs.menuLabel_tallerChatbox || 'Taller Chatbox' )
+                            + menu.state.separator + menu.state.word[+!config.tcbDisabled]
+                menu.ids.push(GM_registerMenuCommand(tcbLabel, () => {
+                    settings.save('tcbDisabled', !config.tcbDisabled)
+                    update.style.tweaks()
+                    if (!config.notifDisabled) notify(
+                        `${ msgs.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ menu.state.word[+!config.tcbDisabled] }`)
+                    menu.refresh()
+                }))
+            }
+
+            // Add Wider Chatbox toggle if avail
+            if (sites[site].availFeatures.includes('widerChatbox')) {
+                const wcbLabel = '↔️ ' + ( msgs.menuLabel_widerChatbox || 'Wider Chatbox' )
+                            + menu.state.separator + menu.state.word[+config.widerChatbox]
+                menu.ids.push(GM_registerMenuCommand(wcbLabel, () => {
+                    settings.save('widerChatbox', !config.widerChatbox)
+                    update.style.wideScreen()
+                    if (!config.notifDisabled) notify(
+                        `${ msgs.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ menu.state.word[+config.widerChatbox] }`)
+                    menu.refresh()
+                }))
+            }
+
+            // Add New Chat Button toggle if avail
+            if (sites[site].availFeatures.includes('ncbDisabled')) {
+                const hncLabel = menu.state.symbol[+!config.ncbDisabled] + ' '
+                            + ( msgs.menuLabel_newChatBtn || 'New Chat Button' )
+                            + menu.state.separator + menu.state.word[+!config.ncbDisabled]
+                menu.ids.push(GM_registerMenuCommand(hncLabel, () => {
+                    settings.save('ncbDisabled', !config.ncbDisabled)
+                    update.style.tweaks()
+                    notify(`${ msgs.menuLabel_newChatBtn || 'New Chat Button' }: ${ menu.state.word[+!config.ncbDisabled] }`)
+                    menu.refresh()
+                }))
+            }
+
+            // Add Hidden Header toggle if avail
+            if (sites[site].availFeatures.includes('hiddenHeader')) {
+                const hhLabel = menu.state.symbol[+config.hiddenHeader] + ' '
+                            + ( msgs.menuLabel_hiddenHeader || 'Hidden Header' )
+                            + menu.state.separator + menu.state.word[+config.hiddenHeader]
+                menu.ids.push(GM_registerMenuCommand(hhLabel, () => {
+                    settings.save('hiddenHeader', !config.hiddenHeader)
+                    update.style.tweaks()
+                    if (!config.notifDisabled) notify(
+                        `${ msgs.menuLabel_hiddenHeader || 'Hidden Header' }: ${ menu.state.word[+config.hiddenHeader] }`)
+                    menu.refresh()
+                }))
+            }
+
+            // Add Hidden Footer toggle if avail
+            if (sites[site].availFeatures.includes('hiddenFooter')) {
+                const hfLabel = menu.state.symbol[+config.hiddenFooter] + ' '
+                            + ( msgs.menuLabel_hiddenFooter || 'Hidden Footer' )
+                            + menu.state.separator + menu.state.word[+config.hiddenFooter]
+                menu.ids.push(GM_registerMenuCommand(hfLabel, () => {
+                    settings.save('hiddenFooter', !config.hiddenFooter)
+                    update.style.tweaks()
+                    if (!config.notifDisabled) notify(
+                        `${ msgs.menuLabel_hiddenFooter || 'Hidden Footer' }: ${ menu.state.word[+config.hiddenFooter] }`)
+                    menu.refresh()
+                }))
+            }
+
+            // Add Mode Notifications toggle if avail
+            if (sites[site].availFeatures.includes('notifDisabled')) {
+                const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
+                            + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
+                            + menu.state.separator + menu.state.word[+!config.notifDisabled]
+                menu.ids.push(GM_registerMenuCommand(mnLabel, () => {
+                    settings.save('notifDisabled', !config.notifDisabled)
+                    notify(`${ msgs.menuLabel_modeNotifs || 'Mode Notifications' }: ${ menu.state.word[+!config.notifDisabled] }`)
+                    menu.refresh()
+                }))
+            }
+
+            // Add About entry
+            const amLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
+            menu.ids.push(GM_registerMenuCommand(amLabel, launchAboutModal))
+
+        },
+
+        refresh() {
+            if (env.scriptManager == 'OrangeMonkey') return
+            for (const id of menu.ids) { GM_unregisterMenuCommand(id) } menu.register()
         }
-
-        // Add Taller Chatbox toggle if avail
-        if (sites[site].availFeatures.includes('tcbDisabled')) {
-            const tcbLabel = '↕️ ' + ( msgs.menuLabel_tallerChatbox || 'Taller Chatbox' )
-                        + menuState.separator + menuState.word[+!config.tcbDisabled]
-            menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
-                settings.save('tcbDisabled', !config.tcbDisabled)
-                update.style.tweaks()
-                if (!config.notifDisabled) notify(
-                    `${ msgs.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ menuState.word[+!config.tcbDisabled] }`)
-                refreshMenu()
-            }))
-        }
-
-        // Add Wider Chatbox toggle if avail
-        if (sites[site].availFeatures.includes('widerChatbox')) {
-            const wcbLabel = '↔️ ' + ( msgs.menuLabel_widerChatbox || 'Wider Chatbox' )
-                           + menuState.separator + menuState.word[+config.widerChatbox]
-            menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
-                settings.save('widerChatbox', !config.widerChatbox)
-                update.style.wideScreen()
-                if (!config.notifDisabled) notify(
-                    `${ msgs.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ menuState.word[+config.widerChatbox] }`)
-                refreshMenu()
-            }))
-        }
-
-        // Add New Chat Button toggle if avail
-        if (sites[site].availFeatures.includes('ncbDisabled')) {
-            const hncLabel = menuState.symbol[+!config.ncbDisabled] + ' '
-                        + ( msgs.menuLabel_newChatBtn || 'New Chat Button' )
-                        + menuState.separator + menuState.word[+!config.ncbDisabled]
-            menuIDs.push(GM_registerMenuCommand(hncLabel, () => {
-                settings.save('ncbDisabled', !config.ncbDisabled)
-                update.style.tweaks()
-                notify(`${ msgs.menuLabel_newChatBtn || 'New Chat Button' }: ${ menuState.word[+!config.ncbDisabled] }`)
-                refreshMenu()
-            }))
-        }
-
-        // Add Hidden Header toggle if avail
-        if (sites[site].availFeatures.includes('hiddenHeader')) {
-            const hhLabel = menuState.symbol[+config.hiddenHeader] + ' '
-                          + ( msgs.menuLabel_hiddenHeader || 'Hidden Header' )
-                          + menuState.separator + menuState.word[+config.hiddenHeader]
-            menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
-                settings.save('hiddenHeader', !config.hiddenHeader)
-                update.style.tweaks()
-                if (!config.notifDisabled) notify(
-                    `${ msgs.menuLabel_hiddenHeader || 'Hidden Header' }: ${ menuState.word[+config.hiddenHeader] }`)
-                refreshMenu()
-            }))
-        }
-
-        // Add Hidden Footer toggle if avail
-        if (sites[site].availFeatures.includes('hiddenFooter')) {
-            const hfLabel = menuState.symbol[+config.hiddenFooter] + ' '
-                          + ( msgs.menuLabel_hiddenFooter || 'Hidden Footer' )
-                          + menuState.separator + menuState.word[+config.hiddenFooter]
-            menuIDs.push(GM_registerMenuCommand(hfLabel, () => {
-                settings.save('hiddenFooter', !config.hiddenFooter)
-                update.style.tweaks()
-                if (!config.notifDisabled) notify(
-                    `${ msgs.menuLabel_hiddenFooter || 'Hidden Footer' }: ${ menuState.word[+config.hiddenFooter] }`)
-                refreshMenu()
-            }))
-        }
-
-        // Add Mode Notifications toggle if avail
-        if (sites[site].availFeatures.includes('notifDisabled')) {
-            const mnLabel = menuState.symbol[+!config.notifDisabled] + ' '
-                        + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
-                        + menuState.separator + menuState.word[+!config.notifDisabled]
-            menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
-                settings.save('notifDisabled', !config.notifDisabled)
-                notify(`${ msgs.menuLabel_modeNotifs || 'Mode Notifications' }: ${ menuState.word[+!config.notifDisabled] }`)
-                refreshMenu()
-            }))
-        }
-
-        // Add About entry
-        const amLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
-        menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
-    }
-
-    function refreshMenu() {
-        if (env.scriptManager == 'OrangeMonkey') return
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
     }
 
     function launchAboutModal() {
@@ -581,7 +568,7 @@
     function notify(msg, position = '', notifDuration = '', shadow = '') {
 
         // Strip state word to append colored one later
-        const foundState = menuState.word.find(word => msg.includes(word))
+        const foundState = menu.state.word.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -592,7 +579,7 @@
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `color: ${
-                foundState == menuState.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                foundState == menu.state.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                                 : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.append(styledState)
         }
@@ -878,6 +865,20 @@
 
     // Run MAIN routine
 
+    // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
+    const extensionInstalled = await Promise.race([
+        new Promise(resolve => {
+            (function checkExtensionInstalled() {
+                if (document.querySelector('[cwm-extension-installed]')) resolve(true)
+                else setTimeout(checkExtensionInstalled, 200)
+            })()
+        }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
+    if (extensionInstalled) { // disable script/menu
+        GM_registerMenuCommand(menu.state.symbol[0] + ' ' + ( msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
+            () => { return }) // disable menu
+        return // exit script
+
+    } else menu.register() // create functional menu
     // Init UI props
     if (/openai|chatgpt/.test(site)) {
         const obsConfig = { childList: true, subtree: true }
