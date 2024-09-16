@@ -1,6 +1,7 @@
 import { app } from './data/app.js'
 
-const allowedHosts = ['chatgpt.com', 'chat.openai.com']
+const allowedHosts = chrome.runtime.getManifest().content_scripts[0].matches
+    .map(url => url.replace(/^https?:\/\/|\/.*$/g, ''))
 
 // Add install/update actions
 chrome.runtime.onInstalled.addListener(details => {
