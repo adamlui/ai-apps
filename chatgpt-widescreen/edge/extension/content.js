@@ -124,7 +124,6 @@
                 const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
                     .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
                 const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
-                btns.color = btns.setColor()
                 validBtnTypes.forEach(async (btnType, idx) => {
                     btns[btnType] = document.createElement('div') // create button
                     btns[btnType].id = btnType + '-btn' // for toggle.tooltip()
@@ -203,10 +202,11 @@
         },
 
         setColor() {
-            return ( /chatgpt|openai/.test(site) ? (
-                document.querySelector('.dark.bg-black') || chatgpt.isDarkMode() ? 'white' : '#202123' )
-            : site == 'poe' ? 'currentColor' : ''
-        )},
+            btns.color = (
+                /chatgpt|openai/.test(site) ? (
+                    document.querySelector('.dark.bg-black') || chatgpt.isDarkMode() ? 'white' : '#202123' )
+              : site == 'poe' ? 'currentColor' : '' )
+        },
 
         updateSVG(mode, state = '') {
     
@@ -249,7 +249,7 @@
     const update = {
 
         style: {
-            btn() { btnStyle.innerText = `div[id$="-btn"] svg { fill: ${btns.setColor()} ; stroke: ${btns.setColor()} }` },
+            btn() { btns.setColor() ; btnStyle.innerText = `div[id$="-btn"] svg { fill: ${btns.color} ; stroke: ${btns.color} }` },
 
             tweaks() {
                 tweaksStyle.innerText = (
