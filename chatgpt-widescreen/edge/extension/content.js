@@ -5,7 +5,7 @@
 
 (async () => {
 
-    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
+    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(location.href)[2]
     if (!/chatgpt|openai|poe/.test(site)) return
 
     // Import LIBS
