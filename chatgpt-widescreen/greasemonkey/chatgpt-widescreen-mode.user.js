@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16
+// @version             2024.9.16.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -997,9 +997,9 @@
             if (chatbarBGdiv) {
                 const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
                 if ((mutation.type == 'attributes' && mutation.attributeName == 'class') // potential scheme toggled
-                     || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)) { // temp chat toggled
-                        btns.setColor() ; isTempChat = !isTempChat
-        }}}
+                    || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)// temp chat toggled
+                ) { btns.setColor() ; isTempChat = !isTempChat }
+        }}
     })
     nodeObserver.observe( // <html> for page scheme toggles
         document.documentElement, { attributes: true })
