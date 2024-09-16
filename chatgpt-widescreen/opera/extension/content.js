@@ -338,14 +338,11 @@
                 if (config.extensionDisabled) { // try to disable modes
                     try { document.head.removeChild(wideScreenStyle) } catch (err) {}
                     try { document.head.removeChild(fullWinStyle) ; chatgpt.sidebar.show() } catch (err) {}
-                    tweaksStyle.innerText = tweaksStyle.innerText.replace(tcbStyle, '')
-                    tweaksStyle.innerText = tweaksStyle.innerText.replace(hhStyle, '')
-                    tweaksStyle.innerText = tweaksStyle.innerText.replace(hfStyle, '')
-                    btns.remove()
+                    tweaksStyle.innerText = '' ; btns.remove()
                 } else { // restore modes
                     if (config.wideScreen && !document.head.contains(wideScreenStyle)) toggle.mode('wideScreen', 'ON')
                     if (config.fullWindow && sites[site].hasSidebar && !isFullWin()) toggle.mode('fullWindow', 'ON')
-                    update.style.tweaks() // sync taller chatbox + hidden header/footer
+                    update.style.tweaks() // restore removed tweaks
                     update.style.wideScreen() // sync wider chatbox
                     btns.insert()
         }})},
