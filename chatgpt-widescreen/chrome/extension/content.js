@@ -36,6 +36,9 @@
                 sidebar: 'menu[class*="sidebar"], aside[class*="sidebar"]', header: 'header' }}
     }) ; sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
 
+    // Init CONFIG
+    settings.load(...sites[site].availFeatures)
+
     // Define FACTORY functions
 
     const create = {
