@@ -515,16 +515,16 @@
     }
 
     // Add RESIZE LISTENER to update full screen setting/button + disable F11 flag
-    window.onresize = () => {
+    window.addEventListener('resize', () => {
         const fullScreenState = chatgpt.isFullScreen()
         if (config.fullScreen && !fullScreenState) { sync.mode('fullScreen') ; config.f11 = false } // exiting full screen
         else if (!config.fullScreen && fullScreenState) sync.mode('fullScreen') // entering full screen
-    }
+    })
 
     // Add KEY LISTENER to enable flag on F11 + stop generating text on ESC
-    window.onkeydown = event => {
+    document.addEventListener('keydown', event => {
         if ((event.key == 'F11' || event.keyCode == 122) && !config.fullScreen) config.f11 = true
         else if ((event.key == 'Escape' || event.keyCode == 27) && !chatgpt.isIdle()) chatgpt.stop()
-    }
+    })
 
 })()
