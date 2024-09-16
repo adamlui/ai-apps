@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.15.1
+// @version             2024.9.16
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -336,77 +336,6 @@
     const menuState = {
         symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
         separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
-    }
-
-    registerMenu() // create browser toolbar menu
-
-    // Init UI props
-    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
-    await chatgpt.sidebar.isLoaded()
-    const ui = { firstLink: chatgpt.getNewChatLink() }
-
-    // Add/update TWEAKS style
-    const tweaksStyleUpdated = 20240724 // datestamp of last edit for this file's `tweaksStyle`
-    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
-    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
-        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
-            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
-            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
-            document.head.append(tweaksStyle)
-        }
-        tweaksStyle.innerText = (
-            ( chatgpt.isDarkMode() ? '.chatgpt-modal > div { border: 1px solid white }' : '' )
-          + '.chatgpt-modal button {'
-              + 'font-size: 0.77rem ; text-transform: uppercase ;'
-              + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-          + '.chatgpt-modal button:hover { transform: scale(1.055) }'
-          + '.modal-buttons { margin-left: -13px !important }'
-          + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
-          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
-              + 'transform: none !important }' // disable distracting click zoom effect
-        )
-    }
-
-    // Create NAV TOGGLE div, add styles
-    const navToggleDiv = document.createElement('div')
-    navToggleDiv.style.height = '37px'
-    navToggleDiv.style.margin = '2px 0' // add v-margins
-    navToggleDiv.style.userSelect = 'none' // prevent highlighting
-    navToggleDiv.style.cursor = 'pointer' // add finger cursor
-    updateToggleHTML() // create children
-
-    if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
-        const firstIcon = ui.firstLink.querySelector('div:first-child'),
-              firstLabel = ui.firstLink.querySelector('div:nth-child(2)')
-        navToggleDiv.classList.add(...ui.firstLink.classList, ...(firstLabel?.classList || []))
-        navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
-    }
-
-    insertToggle()
-
-    // Add LISTENER to toggle switch/label/config/menu/auto-refresh
-    navToggleDiv.onclick = () => {
-        const toggleInput = document.getElementById('auto-refresh-toggle-input')
-        toggleInput.checked = !toggleInput.checked ; config.arDisabled = !toggleInput.checked
-        updateToggleHTML() ; refreshMenu()
-        if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
-            chatgpt.autoRefresh.activate(config.refreshInterval)
-            if (!config.notifDisabled) notify(( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': ON')
-        } else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
-            chatgpt.autoRefresh.deactivate()
-            if (!config.notifDisabled) notify(( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': OFF')
-        } settings.save('arDisabled', config.arDisabled)
-    }
-
-    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
-    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
-        if (mutation.type == 'childList' && mutation.addedNodes.length) insertToggle() })})
-    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
-
-    // Activate AUTO-REFRESH on first visit if enabled
-    if (!config.arDisabled) {
-        chatgpt.autoRefresh.activate(config.refreshInterval)
-        if (!config.notifDisabled) notify(( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': ON')
     }
 
     // Define MENU functions
@@ -676,6 +605,79 @@
             switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
             knobSpan.style.transform = toggleInput.checked ? 'translateX(13px) translateY(0)' : 'translateX(0)'
         }, 1) // min delay to trigger transition fx
+    }
+
+    // Run MAIN routine
+
+    registerMenu() // create browser toolbar menu
+
+    // Init UI props
+    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
+    await chatgpt.sidebar.isLoaded()
+    const ui = { firstLink: chatgpt.getNewChatLink() }
+
+    // Add/update TWEAKS style
+    const tweaksStyleUpdated = 20240724 // datestamp of last edit for this file's `tweaksStyle`
+    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
+    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
+        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
+            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
+            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
+            document.head.append(tweaksStyle)
+        }
+        tweaksStyle.innerText = (
+            ( chatgpt.isDarkMode() ? '.chatgpt-modal > div { border: 1px solid white }' : '' )
+          + '.chatgpt-modal button {'
+              + 'font-size: 0.77rem ; text-transform: uppercase ;'
+              + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+          + '.chatgpt-modal button:hover { transform: scale(1.055) }'
+          + '.modal-buttons { margin-left: -13px !important }'
+          + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
+          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
+              + 'transform: none !important }' // disable distracting click zoom effect
+        )
+    }
+
+    // Create NAV TOGGLE div, add styles
+    const navToggleDiv = document.createElement('div')
+    navToggleDiv.style.height = '37px'
+    navToggleDiv.style.margin = '2px 0' // add v-margins
+    navToggleDiv.style.userSelect = 'none' // prevent highlighting
+    navToggleDiv.style.cursor = 'pointer' // add finger cursor
+    updateToggleHTML() // create children
+
+    if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
+        const firstIcon = ui.firstLink.querySelector('div:first-child'),
+              firstLabel = ui.firstLink.querySelector('div:nth-child(2)')
+        navToggleDiv.classList.add(...ui.firstLink.classList, ...(firstLabel?.classList || []))
+        navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
+    }
+
+    insertToggle()
+
+    // Add LISTENER to toggle switch/label/config/menu/auto-refresh
+    navToggleDiv.onclick = () => {
+        const toggleInput = document.getElementById('auto-refresh-toggle-input')
+        toggleInput.checked = !toggleInput.checked ; config.arDisabled = !toggleInput.checked
+        updateToggleHTML() ; refreshMenu()
+        if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
+            chatgpt.autoRefresh.activate(config.refreshInterval)
+            if (!config.notifDisabled) notify(( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': ON')
+        } else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
+            chatgpt.autoRefresh.deactivate()
+            if (!config.notifDisabled) notify(( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': OFF')
+        } settings.save('arDisabled', config.arDisabled)
+    }
+
+    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
+    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
+        if (mutation.type == 'childList' && mutation.addedNodes.length) insertToggle() })})
+    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+
+    // Activate AUTO-REFRESH on first visit if enabled
+    if (!config.arDisabled) {
+        chatgpt.autoRefresh.activate(config.refreshInterval)
+        if (!config.notifDisabled) notify(( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': ON')
     }
 
 })()

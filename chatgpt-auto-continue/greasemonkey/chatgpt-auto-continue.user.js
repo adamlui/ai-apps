@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.15.1
+// @version             2024.9.16
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -305,42 +305,6 @@
         symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
         word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
     }
-
-    registerMenu() // create browser toolbar menu
-
-    // Add/update TWEAKS style
-    const tweaksStyleUpdated = 20240724 // datestamp of last edit for this file's `tweaksStyle`
-    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
-    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
-        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
-            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
-            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
-            document.head.append(tweaksStyle)
-        }
-        tweaksStyle.innerText = (
-            ( chatgpt.isDarkMode() ? '.chatgpt-modal > div { border: 1px solid white }' : '' )
-          + '.chatgpt-modal button {'
-              + 'font-size: 0.77rem ; text-transform: uppercase ;'
-              + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-          + '.chatgpt-modal button:hover { transform: scale(1.055) }'
-          + '.modal-buttons { margin-left: -13px !important }'
-          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
-              + 'transform: none !important }' // disable distracting click zoom effect
-        )
-    }
-
-    // Observe DOM for need to continue generating response
-    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
-    const continueObserver = new MutationObserver(mutations => mutations.forEach(mutation => {
-        if (mutation.attributeName == 'style' && mutation.target.style.opacity == '1') {
-            const cgBtn = chatgpt.getContinueGeneratingButton()
-            if (cgBtn) { cgBtn.click()
-                notify(msgs.notif_chatAutoContinued || 'Chat Auto-Continued', 'bottom-right')
-    }}}))
-    continueObserver.observe(document.querySelector('main'), { attributes: true, subtree: true })
-
-    // NOTIFY of status on load
-    if (!config.notifDisabled) notify(( msgs.mode_autoContinue || 'Auto-Continue' ) + ': ON')
 
     // Define MENU functions
 
@@ -483,5 +447,43 @@
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(title, msg, btns, checkbox, width )}
+
+    // Run MAIN routine
+
+    registerMenu() // create browser toolbar menu
+
+    // Add/update TWEAKS style
+    const tweaksStyleUpdated = 20240724 // datestamp of last edit for this file's `tweaksStyle`
+    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
+    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
+        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
+            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
+            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
+            document.head.append(tweaksStyle)
+        }
+        tweaksStyle.innerText = (
+            ( chatgpt.isDarkMode() ? '.chatgpt-modal > div { border: 1px solid white }' : '' )
+          + '.chatgpt-modal button {'
+              + 'font-size: 0.77rem ; text-transform: uppercase ;'
+              + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+          + '.chatgpt-modal button:hover { transform: scale(1.055) }'
+          + '.modal-buttons { margin-left: -13px !important }'
+          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
+              + 'transform: none !important }' // disable distracting click zoom effect
+        )
+    }
+
+    // Observe DOM for need to continue generating response
+    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
+    const continueObserver = new MutationObserver(mutations => mutations.forEach(mutation => {
+        if (mutation.attributeName == 'style' && mutation.target.style.opacity == '1') {
+            const cgBtn = chatgpt.getContinueGeneratingButton()
+            if (cgBtn) { cgBtn.click()
+                notify(msgs.notif_chatAutoContinued || 'Chat Auto-Continued', 'bottom-right')
+    }}}))
+    continueObserver.observe(document.querySelector('main'), { attributes: true, subtree: true })
+
+    // NOTIFY of status on load
+    if (!config.notifDisabled) notify(( msgs.mode_autoContinue || 'Auto-Continue' ) + ': ON')
 
 })()

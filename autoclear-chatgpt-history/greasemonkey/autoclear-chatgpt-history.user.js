@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.15.1
+// @version             2024.9.16
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -324,73 +324,6 @@
         symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
         word: [(msgs.state_off || 'off').toUpperCase(), (msgs.state_on || 'on').toUpperCase()]
     }
-
-    registerMenu() // create browser toolbar menu
-
-    // Init UI props
-    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
-    await chatgpt.sidebar.isLoaded()
-    const ui = { firstLink: chatgpt.getNewChatLink() }
-
-    // Add/update TWEAKS style
-    const tweaksStyleUpdated = 20240724 // datestamp of last edit for this file's `tweaksStyle`
-    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
-    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
-        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
-            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
-            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
-            document.head.append(tweaksStyle)
-        }
-        tweaksStyle.innerText = (
-            ( chatgpt.isDarkMode() ? '.chatgpt-modal > div { border: 1px solid white }' : '' )
-        + '.chatgpt-modal button {'
-            + 'font-size: 0.77rem ; text-transform: uppercase ;'
-            + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-        + '.chatgpt-modal button:hover { transform: scale(1.055) }'
-        + '.modal-buttons { margin-left: -13px !important }'
-        + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
-        + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
-            + 'transform: none !important }' // disable distracting click zoom effect
-        )
-    }
-
-    // Create NAV TOGGLE div, add styles
-    const navToggleDiv = document.createElement('div')
-    navToggleDiv.style.height = '37px'
-    navToggleDiv.style.margin = '2px 0' // add v-margins
-    navToggleDiv.style.userSelect = 'none' // prevent highlighting
-    navToggleDiv.style.cursor = 'pointer' // add finger cursor
-    updateToggleHTML() // create children
-
-    if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
-        const firstIcon = ui.firstLink.querySelector('div:first-child'),
-            firstLabel = ui.firstLink.querySelector('div:nth-child(2)')
-        navToggleDiv.classList.add(...ui.firstLink.classList, ...(firstLabel?.classList || []))
-        navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
-    }
-
-    insertToggle()
-
-    // Add LISTENER to toggle switch/label/config/menu + auto-clear
-    navToggleDiv.onclick = () => {
-        const toggleInput = document.getElementById('autoclear-toggle-input')
-        toggleInput.checked = !toggleInput.checked ; config.autoclear = toggleInput.checked
-        updateToggleHTML() ; refreshMenu()
-        if (config.autoclear) {
-            setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
-            if (!config.notifDisabled) notify(`${ msgs.mode_autoClear || 'Auto-Clear' }: ${menuState.word[1]}`)
-        } else if (!config.autoclear)
-            if (!config.notifDisabled) notify(`${ msgs.mode_autoClear || 'Auto-Clear' }: ${menuState.word[0]}`)
-        settings.save('autoclear', config.autoclear)
-    }
-
-    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
-    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
-        if (mutation.type == 'childList' && mutation.addedNodes.length) insertToggle() })})
-    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
-
-    // AUTO-CLEAR on first visit if enabled
-    if (config.autoclear) setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
 
     // Define MENU functions
 
@@ -656,5 +589,74 @@
             hideHistory.observer.observe(document.querySelector('nav'), { childList: true, subtree: true })
         }
     }
+
+    // Run MAIN routine
+
+    registerMenu() // create browser toolbar menu
+
+    // Init UI props
+    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
+    await chatgpt.sidebar.isLoaded()
+    const ui = { firstLink: chatgpt.getNewChatLink() }
+
+    // Add/update TWEAKS style
+    const tweaksStyleUpdated = 20240724 // datestamp of last edit for this file's `tweaksStyle`
+    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
+    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
+        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
+            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
+            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
+            document.head.append(tweaksStyle)
+        }
+        tweaksStyle.innerText = (
+            ( chatgpt.isDarkMode() ? '.chatgpt-modal > div { border: 1px solid white }' : '' )
+        + '.chatgpt-modal button {'
+            + 'font-size: 0.77rem ; text-transform: uppercase ;'
+            + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+        + '.chatgpt-modal button:hover { transform: scale(1.055) }'
+        + '.modal-buttons { margin-left: -13px !important }'
+        + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
+        + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
+            + 'transform: none !important }' // disable distracting click zoom effect
+        )
+    }
+
+    // Create NAV TOGGLE div, add styles
+    const navToggleDiv = document.createElement('div')
+    navToggleDiv.style.height = '37px'
+    navToggleDiv.style.margin = '2px 0' // add v-margins
+    navToggleDiv.style.userSelect = 'none' // prevent highlighting
+    navToggleDiv.style.cursor = 'pointer' // add finger cursor
+    updateToggleHTML() // create children
+
+    if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
+        const firstIcon = ui.firstLink.querySelector('div:first-child'),
+            firstLabel = ui.firstLink.querySelector('div:nth-child(2)')
+        navToggleDiv.classList.add(...ui.firstLink.classList, ...(firstLabel?.classList || []))
+        navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
+    }
+
+    insertToggle()
+
+    // Add LISTENER to toggle switch/label/config/menu + auto-clear
+    navToggleDiv.onclick = () => {
+        const toggleInput = document.getElementById('autoclear-toggle-input')
+        toggleInput.checked = !toggleInput.checked ; config.autoclear = toggleInput.checked
+        updateToggleHTML() ; refreshMenu()
+        if (config.autoclear) {
+            setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
+            if (!config.notifDisabled) notify(`${ msgs.mode_autoClear || 'Auto-Clear' }: ${menuState.word[1]}`)
+        } else if (!config.autoclear)
+            if (!config.notifDisabled) notify(`${ msgs.mode_autoClear || 'Auto-Clear' }: ${menuState.word[0]}`)
+        settings.save('autoclear', config.autoclear)
+    }
+
+    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
+    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
+        if (mutation.type == 'childList' && mutation.addedNodes.length) insertToggle() })})
+    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+
+    // AUTO-CLEAR on first visit if enabled
+    if (config.autoclear) setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
 
 })()
