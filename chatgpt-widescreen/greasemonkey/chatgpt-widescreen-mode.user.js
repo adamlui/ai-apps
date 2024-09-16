@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.15.14
+// @version             2024.9.15.15
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -894,9 +894,20 @@
             new Promise(resolve =>  // null if 3s passed
                 setTimeout(() => resolve(null), 3000))
         ])
-        sites[site].selectors.footer = chatgpt.getFooterDiv()?.classList.toString()
-            .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
-            .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
+        sites[site].selectors.footer = await Promise.race([
+            new Promise(resolve => { // class of footer container
+                new MutationObserver((_, obs) => {
+                    const footerDiv = chatgpt.getFooterDiv()
+                    if (footerDiv) { obs.disconnect()
+                        resolve(footerDiv.classList.toString()
+                            .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
+                            .replace(/^| /g, '.')) // prefix w/ dot, convert spaces to dots
+                    }
+                }).observe(document.body, obsConfig)
+            }),
+            new Promise(resolve =>  // null if 500ms passed
+                setTimeout(() => resolve(null), 500))
+        ])
     }
 
     // Save FULL-WINDOW + FULL SCREEN states
