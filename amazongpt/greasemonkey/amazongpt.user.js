@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.15.2
+// @version                2024.9.15.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2813,9 +2813,9 @@
 
     // Get/show FIRST REPLY
     const firstQuery = (
-        /\/dp\//.test(location) ? ('Tell me more about this product, including benefits and the brand if possible.'
+        /\/dp\//.test(location.href) ? ('Tell me more about this product, including benefits and the brand if possible.'
                                 + ' Also talk about similar products in a markdown list. The product is: ' + document.title)
-       : /\/b\//.test(location) ? ('Tell me more about what to look for when shopping for this category: ' + document.title)
+       : /\/b\//.test(location.href) ? ('Tell me more about what to look for when shopping for this category: ' + document.title)
        : 'Wassup bot'
     )
     let msgChain = [{ role: 'user', content: augmentQuery(firstQuery) }]

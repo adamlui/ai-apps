@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.15.3
+// @version                2014.9.15.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -3617,8 +3617,8 @@
     // Show STANDBY mode or get/show ANSWER
     let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
     if (!config.autoGet && !/src=(?:first-run|asktip)/.test(location.href) // Auto-Get disabled and not queried from other site or 1st run
-        || config.prefixEnabled && !/.*q=%2F/.test(location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(location)) { // suffix required but not present
+        || config.prefixEnabled && !/.*q=%2F/.test(location.href) // prefix required but not present
+        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(location.href)) { // suffix required but not present
             show.reply('standby')
             if (!config.rqDisabled)
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
