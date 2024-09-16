@@ -119,12 +119,49 @@
 
         insert() {
 
+            // Create buttons if not created yet
+            if (!btns.wideScreen) {
+                const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
+                    .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
+                const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
+                btns.color = btns.setColor()
+                validBtnTypes.forEach(async (btnType, idx) => {
+                    btns[btnType] = document.createElement('div') // create button
+                    btns[btnType].id = btnType + '-btn' // for toggle.tooltip()
+                    btns.updateSVG(btnType) // insert icon
+                    btns[btnType].style.cssText = 'position: relative ; top: 0 ;'
+                                                + `right: ${ rOffset + idx * bOffset }px` // position left of prev button
+                    btns[btnType].style.cursor = 'pointer' // add finger cursor
+                    if (site == 'poe') btns[btnType].style.position = 'relative' // override static pos
+                    if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
+                        const sendBtn = await new Promise(resolve => {
+                            const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) resolve(sendBtn)
+                            else new MutationObserver((_, obs) => {
+                                const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
+                            }).observe(document.body, { childList: true, subtree: true })
+                        })
+                        btns[btnType].setAttribute('class', sendBtn.classList.toString() || '')
+                        btns[btnType].style.backgroundColor = 'transparent' // remove dark mode overlay
+                        btns[btnType].style.borderColor = 'transparent' // remove dark mode overlay
+                    } else if (site == 'poe') // lift buttons slightly
+                        btns[btnType].style.marginBottom = ( btnType == 'newChat' ? '0.45' : '0.2' ) + 'rem'
+
+                    // Add hover/click listeners
+                    btns[btnType].onmouseover = btns[btnType].onmouseout = toggle.tooltip
+                    btns[btnType].onclick = () => {
+                        if (btnType == 'newChat') {
+                            if (/chatgpt|openai/.test(site)) chatgpt.startNewChat()
+                            else if (site == 'poe') document.querySelector('header a[class*="button"]')?.click()
+                        } else toggle.mode(btnType)
+                    }
+                })
+            }
+
             // Init chatbar
             let chatbar = document.querySelector(sites[site].selectors.input)
             const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
             for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
-
-            if (!chatbar || chatbar.contains(btns.wideScreen)) return // if chatbar missing or buttons aren't missing, exit
+            if (!chatbar || chatbar.contains(btns.wideScreen)) return // if chatbar missing or buttons aren't, exit
     
             // Tweak chatbar
             if (/chatgpt|openai/.test(site)) {
@@ -413,41 +450,7 @@
     fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
     fullWindowStyle.innerText = sites[site].selectors.sidebar + '{ display: none }'
 
-    // Create/insert chatbar BUTTONS
-    const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-        .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
-    const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
-    btns.color = btns.setColor()
-    validBtnTypes.forEach(async (btnType, idx) => {
-        btns[btnType] = document.createElement('div') // create button
-        btns[btnType].id = btnType + '-btn' // for toggle.tooltip()
-        btns.updateSVG(btnType) // insert icon
-        btns[btnType].style.cssText = 'position: relative ; top: 0 ;'
-                                    + `right: ${ rOffset + idx * bOffset }px` // position left of prev button
-        btns[btnType].style.cursor = 'pointer' // add finger cursor
-        if (site == 'poe') btns[btnType].style.position = 'relative' // override static pos
-        if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
-            const sendBtn = await new Promise(resolve => {
-                const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) resolve(sendBtn)
-                else new MutationObserver((_, obs) => {
-                    const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
-                }).observe(document.body, { childList: true, subtree: true })
-            })
-            btns[btnType].setAttribute('class', sendBtn.classList.toString() || '')
-            btns[btnType].style.backgroundColor = 'transparent' // remove dark mode overlay
-            btns[btnType].style.borderColor = 'transparent' // remove dark mode overlay
-        } else if (site == 'poe') // lift buttons slightly
-            btns[btnType].style.marginBottom = ( btnType == 'newChat' ? '0.45' : '0.2' ) + 'rem'
-
-        // Add hover/click listeners
-        btns[btnType].onmouseover = btns[btnType].onmouseout = toggle.tooltip
-        btns[btnType].onclick = () => {
-            if (btnType == 'newChat') {
-                if (/chatgpt|openai/.test(site)) chatgpt.startNewChat()
-                else if (site == 'poe') document.querySelector('header a[class*="button"]')?.click()
-            } else toggle.mode(btnType)
-        }
-    })
+    // Insert BUTTONS
     settings.load('extensionDisabled').then(() => { if (!config.extensionDisabled) btns.insert() })
 
     // Monitor NODE CHANGES to auto-toggle once + maintain button visibility + update colors
