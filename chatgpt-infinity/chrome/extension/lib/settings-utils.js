@@ -1,8 +1,6 @@
-import { app } from '../data/app.js'
+const app = {}, config = {}, settings = {
 
-const config = {}, settings = {
-
-    load: function() {
+    load() {
         const keys = ( // original array if array, else new array from multiple args
             Array.isArray(arguments[0]) ? arguments[0] : Array.from(arguments))
         return Promise.all(keys.map(key => { // resolve promise when all keys load
@@ -11,7 +9,7 @@ const config = {}, settings = {
                     config[key] = result[`${ app.configKeyPrefix }_${ key }`] || false ; resolve()
     })})}))},
 
-    save: function(key, value) {
+    save(key, value) {
         const obj = {} ; obj[`${ app.configKeyPrefix }_${ key }`] = value
         chrome.storage.local.set(obj) // save to Chrome
         config[key] = value // save to memory

@@ -9,7 +9,7 @@
     if (!/chatgpt|openai|poe/.test(site)) return
 
     // Import DATA/LIBS
-    const { app } = await import(chrome.runtime.getURL('data/app.js')),
+    const app = await (await fetch(chrome.runtime.getURL('data/app.json'))).json(),
           { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 

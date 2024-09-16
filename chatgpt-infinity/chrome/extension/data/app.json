@@ -1,0 +1,5 @@
+{
+  "symbol": "∞",
+  "configKeyPrefix": "chatGPTinfinity",
+  "urls": { "gitHub": "https://github.com/adamlui/chatgpt-infinity"  }
+}
