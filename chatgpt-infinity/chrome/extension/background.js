@@ -1,8 +1,10 @@
+import { app } from './data/app.js'
+
 const allowedHosts = ['chatgpt.com', 'chat.openai.com']
 
 // Add install/update actions
 chrome.runtime.onInstalled.addListener(details => {
-    chrome.storage.local.set({ 'chatgptInfinity_extensionDisabled': false }) // auto-enable
+    chrome.storage.local.set({ [`${app.configKeyPrefix}_extensionDisabled`]: false }) // auto-enable
     if (details.reason == 'install') chrome.tabs.create({ url: 'https://chatgpt.com/' }) // open ChatGPT
 })
 
