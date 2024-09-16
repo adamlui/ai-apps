@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16.1
+// @version             2024.9.16.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -677,7 +677,7 @@
                         }
                     }
                 })
-                btns.setColor()
+                btns.updateColor()
             }
 
             // Init chatbar
@@ -714,7 +714,7 @@
             btnsToInsert.forEach(btn => chatbar.insertBefore(btn, elemToInsertBefore))
         },
 
-        setColor() {
+        updateColor() {
             const prevColor = btns.color
             btns.color = (
                 /chatgpt|openai/.test(site) ? (
@@ -997,8 +997,8 @@
             if (chatbarBGdiv) {
                 const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
                 if ((mutation.type == 'attributes' && mutation.attributeName == 'class') // potential scheme toggled
-                    || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)// temp chat toggled
-                ) { btns.setColor() ; isTempChat = !isTempChat }
+                    || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat) // temp chat toggled
+                ) { btns.updateColor() ; isTempChat = !isTempChat }
         }}
     })
     nodeObserver.observe( // <html> for page scheme toggles
