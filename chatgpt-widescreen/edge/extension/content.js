@@ -184,7 +184,7 @@
             const btnSVG = btn.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             btnSVG.setAttribute('height', 18) // prevent shrinking
             if (mode == 'fullWindow') { // stylize full-window button
-                btnSVG.setAttribute('stroke', btnColor)
+                btnSVG.setAttribute('stroke', btns.color)
                 btnSVG.setAttribute('fill', 'none')
                 btnSVG.setAttribute('stroke-width', '2')
                 btnSVG.setAttribute('height', site == 'poe' ? '2em' : 17)
@@ -417,7 +417,7 @@
     const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
         .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
     const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
-    let btnColor = btns.setColor()
+    btns.color = btns.setColor()
     validBtnTypes.forEach(async (btnType, idx) => {
         btns[btnType] = document.createElement('div') // create button
         btns[btnType].id = btnType + '-btn' // for toggle.tooltip()
