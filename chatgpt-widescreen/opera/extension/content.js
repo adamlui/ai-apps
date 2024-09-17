@@ -85,8 +85,16 @@
             if (/chatgpt|openai/.test(site)) {
                 const inputArea = chatbarDiv.querySelector(sites[site].selectors.input)
                 if (inputArea) {
+                    const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
+                    const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat', 'send']
+                        .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar)
+                                     && !(type == 'newChat' && config.ncbDisabled))
+                    visibleBtnTypes.forEach(btnType =>
+                        widths[btnType] = btns[btnType]?.getBoundingClientRect().width
+                                       || chatgpt.getSendBtn()?.getBoundingClientRect().width)
+                    const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
+                    inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -43 }px` // expand to close gap w/ buttons
                     inputArea.style.width = '100%' // rid h-scrollbar
-                    inputArea.parentNode.style.width = `${ !sites[site].hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
                 }
             } else if (site == 'poe') {
                 const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]'),
@@ -186,7 +194,7 @@
             const elemToInsertBefore =  /chatgpt|openai/.test(site) ? chatbarDiv.lastChild : chatbarDiv.children[1]
             btnsToInsert.forEach(btn => chatbarDiv.insertBefore(btn, elemToInsertBefore))
 
-            chatbar.tweak()
+            setTimeout(() => chatbar.tweak(), 1)
         },
     
         remove() {
@@ -345,6 +353,7 @@
                     update.style.tweaks() // restore removed tweaks
                     update.style.wideScreen() // sync wider chatbox
                     btns.insert()
+                    if (/openai|chatgpt/.test(site)) chatbar.tweak() // in case NCB visibility changed
         }})},
 
         fullerWin(fullWinState) {
@@ -362,6 +371,7 @@
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
+            if (mode == 'wideScreen' && /openai|chatgpt/.test(site)) chatbar.tweak()
             if (mode == 'fullWindow') sync.fullerWin(state)
             settings.load('notifDisabled').then(() => {
                 if (!config.notifDisabled) // notify synced state

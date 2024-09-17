@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16.7
+// @version             2024.9.17
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -603,8 +603,17 @@
             if (/chatgpt|openai/.test(site)) {
                 const inputArea = chatbarDiv.querySelector(sites[site].selectors.input)
                 if (inputArea) {
+                    const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
+                    const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat', 'send']
+                        .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar)
+                                     && !(type == 'newChat' && config.ncbDisabled))
+                    visibleBtnTypes.forEach(btnType =>
+                        widths[btnType] = btns[btnType]?.getBoundingClientRect().width
+                                       || chatgpt.getSendBtn()?.getBoundingClientRect().width)
+                    const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
+                    inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
+                        widths.chatbar - totalBtnWidths -( env.browser.isFF ? 60 : 43 )}px`
                     inputArea.style.width = '100%' // rid h-scrollbar
-                    inputArea.parentNode.style.width = `${ !sites[site].hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
                 }
             } else if (site == 'poe') {
                 const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]'),
@@ -708,7 +717,7 @@
             const elemToInsertBefore =  /chatgpt|openai/.test(site) ? chatbarDiv.lastChild : chatbarDiv.children[1]
             btnsToInsert.forEach(btn => chatbarDiv.insertBefore(btn, elemToInsertBefore))
 
-            chatbar.tweak()
+            setTimeout(() => chatbar.tweak(), 1)
         },
 
         updateColor() {
@@ -862,6 +871,7 @@
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
+            if (mode == 'wideScreen' && /openai|chatgpt/.test(site)) chatbar.tweak()
             if (mode == 'fullWindow') sync.fullerWin(state)
             if (!config.notifDisabled) // notify synced state
                 notify(`${ msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
