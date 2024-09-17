@@ -461,7 +461,9 @@
         ])
         sites[site].selectors.footer = await Promise.race([
             new Promise(resolve => { // class of footer container
-                new MutationObserver((_, obs) => {
+                const footerDiv = chatgpt.getFooterDiv()
+                if (footerDiv) resolve(cssSelectorize(footerDiv.classList))
+                else new MutationObserver((_, obs) => {
                     const footerDiv = chatgpt.getFooterDiv()
                     if (footerDiv) { obs.disconnect() ; resolve(cssSelectorize(footerDiv.classList)) }
                 }).observe(document.body, obsConfig)
