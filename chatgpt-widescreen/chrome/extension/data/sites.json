@@ -3,8 +3,8 @@
     "availFeatures": [ "fullerWindows", "fullWindow", "hiddenFooter", "hiddenHeader",
       "notifDisabled", "ncbDisabled", "tcbDisabled", "wideScreen" ],
     "selectors": {
-      "input": "#prompt-textarea", "sendBtn": "button:has([d^=\"M15.1918\"])",
-      "sidebar": "[class*=\"sidebar\"]", "header": "main .sticky"
+      "header": "main .sticky", "input": "#prompt-textarea",
+      "sendBtn": "button:has([d^=\"M15.1918\"])", "sidebar": "[class*=\"sidebar\"]"
     }
   },
   "poe": {
@@ -15,6 +15,16 @@
       "header": "header",
       "input": "[class*=\"InputContainer_textArea\"] textarea, [class*=\"InputContainer_textArea\"]::after",
       "sidebar": "menu[class*=\"sidebar\"], aside[class*=\"sidebar\"]"
+    }
+  },
+  "perplexity": {
+    "availFeatures": [ "fullerWindows", "fullWindow", "hiddenHeader",
+      "notifDisabled", "ncbDisabled", "tcbDisabled", "wideScreen" ],
+    "hasSidebar": true,
+    "selectors": {
+      "header": "div.sticky:nth-of-type(2)", "input": "textarea[placeholder]",
+      "sendBtn": "button:has([d^=\"M209.4\"], [d^=\"M80 112a32\"], [d^=\"M440.6\"])",
+      "sidebar": "div.sticky", "sidebarToggle": "button:has([d^=\"M48 88c0-13\"], [d^=\"M0 424c0\"])"
     }
   }
 }
