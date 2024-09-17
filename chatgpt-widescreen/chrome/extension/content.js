@@ -229,7 +229,7 @@
             }
         },
 
-        async updateColor() {
+        updateColor() {
             const prevColor = btns.color
             btns.color = (
                 /chatgpt|openai/.test(site) ? (
@@ -297,7 +297,7 @@
                 + `#newChat-btn { display: ${ config.ncbDisabled && sites[site].availFeatures.includes('ncbDisabled') ? 'none' : 'flex' }}`
             },
 
-            async wideScreen() {
+            wideScreen() {
                 wideScreenStyle.innerText = (
                     /chatgpt|openai/.test(site) ? (
                         '.text-base { max-width: 100% !important }' // widen outer container
