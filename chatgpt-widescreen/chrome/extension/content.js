@@ -512,7 +512,7 @@
             for (let i = 0 ; i < 1 ; i++) { chatbarBGdiv = chatbarBGdiv?.parentNode }
             if (chatbarBGdiv) {
                 const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
-                if ((mutation.type == 'attributes' && mutation.attributeName == 'class') // potential scheme toggled
+                if ((mutation.target == document.documentElement && mutation.attributeName == 'class') // scheme toggled
                     || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat) // temp chat toggled
                 ) { btns.updateColor() ; isTempChat = !isTempChat }
         }}
