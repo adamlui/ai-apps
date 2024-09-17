@@ -73,6 +73,17 @@
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(title, msg, btns, checkbox, width )}
+    
+    // Define CHATBAR functions
+    
+    const chatbar = {
+        get() {
+            let chatbar = document.querySelector(sites[site].selectors.input)
+            const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
+            for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
+            return chatbar
+        }
+    }
 
     // Define BUTTON props/functions
 
@@ -150,20 +161,18 @@
             }
 
             // Init chatbar
-            let chatbar = document.querySelector(sites[site].selectors.input)
-            const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
-            for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
-            if (!chatbar || chatbar.contains(btns.wideScreen)) return // if chatbar missing or buttons aren't, exit
+            const chatbarDiv = chatbar.get()
+            if (!chatbarDiv || chatbarDiv.contains(btns.wideScreen)) return // if chatbar missing or buttons aren't, exit
     
             // Tweak chatbar
             if (/chatgpt|openai/.test(site)) {
-                const inputArea = chatbar.querySelector(sites[site].selectors.input)
+                const inputArea = chatbarDiv.querySelector(sites[site].selectors.input)
                 if (inputArea) {
                     inputArea.style.width = '100%' // rid h-scrollbar
                     inputArea.parentNode.style.width = `${ !sites[site].hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
                 }
             } else if (site == 'poe') {
-                const attachFileBtn = chatbar.querySelector('button[class*="File"]'),
+                const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]'),
                       clearBtn = document.querySelector('[class*="ChatBreakButton"]')
                 if (attachFileBtn) { // left-align attach file button
                     attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
@@ -176,21 +185,16 @@
             // Insert buttons
             const btnsToInsert = [ btns.newChat, btns.wideScreen, btns.fullWindow, btns.fullScreen, tooltipDiv]
                 .filter(btn => btn) // filter out undefined btns.fullWindow if not initted as guest on chatgpt.com
-            const elemToInsertBefore = (
-                /chatgpt|openai/.test(site) ? chatbar.querySelector('button[class*="right"]') // ChatGPT pre-5/2024
-                                           || chatbar.lastChild // ChatGPT post-5/2024 + Poe
-                                            : chatbar.children[1] ) // Poe
-            btnsToInsert.forEach(btn => chatbar.insertBefore(btn, elemToInsertBefore))
+            const elemToInsertBefore =  /chatgpt|openai/.test(site) ? chatbarDiv.lastChild : chatbarDiv.children[1]
+            btnsToInsert.forEach(btn => chatbarDiv.insertBefore(btn, elemToInsertBefore))
         },
     
         remove() {
-            let chatbar = document.querySelector(sites[site].selectors.input)
-            const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
-            for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
-            if (chatbar?.contains(btns.wideScreen)) { // remove all buttons
+            const chatbarDiv = chatbar.get()
+            if (chatbarDiv?.contains(btns.wideScreen)) { // remove all buttons
                 const btnsToRemove = [btns.newChat, btns.wideScreen, btns.fullScreen, tooltipDiv]
                 if (typeof btns.fullWindow != 'undefined') btnsToRemove.push(btns.fullWindow)
-                for (const node of btnsToRemove) chatbar.removeChild(node)
+                for (const node of btnsToRemove) chatbarDiv.removeChild(node)
             }
         },
 
