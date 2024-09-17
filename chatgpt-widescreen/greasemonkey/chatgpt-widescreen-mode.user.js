@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16.4
+// @version             2024.9.16.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -782,7 +782,8 @@
         tooltip(btnType) { // text & position
             const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
                 .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
-            const ctrAddend = 25 + ( site == 'poe' ? ( env.browser.isFF ? 12 : 45 ) : 12 ),
+            const ctrAddend = 25 + ( site == 'poe' ? ( env.browser.isFF ? 12 : 45 )
+                                                   : ( env.browser.isFF ? 16 : 13 )),
                   spreadFactor = site == 'poe' ? 34 : 30.5,
                   iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
             tooltipDiv.innerText = msgs['tooltip_' + btnType + (

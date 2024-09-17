@@ -283,7 +283,7 @@
         tooltip(btnType) { // text & position
             const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
                 .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
-            const ctrAddend = 25 + ( site == 'poe' ? 45 : 12 ),
+            const ctrAddend = 25 + ( site == 'poe' ? 45 : 13 ),
                   spreadFactor = site == 'poe' ? 34 : 30.5,
                   iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
             tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + btnType + (
