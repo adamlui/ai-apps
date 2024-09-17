@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v3.3.0
+// This library is a condensed version of chatgpt.js v3.3.1
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -242,13 +242,7 @@ const chatgpt = {
     },
 
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
-
-    getRegenerateButton() {   
-        for (const mainSVG of document.querySelectorAll('main svg')) {
-            if (mainSVG.querySelector('path[d^="M3.06957"]')) // regen icon found
-                return mainSVG.parentNode;
-    }},
-
+    getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])'); },
     getScrollToBottomButton() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
 
     getSendButton() {
@@ -256,12 +250,7 @@ const chatgpt = {
             || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
     },
 
-    getStopGeneratingButton() {
-        for (const svg of document.querySelectorAll('form button svg')) {
-            if (svg.querySelector('path[d*="2 0 0 1 2"], rect'))
-                return svg.parentNode;
-    }},
-
+    getStopButton() { return document.querySelector('button:has([d*="2 0 0 1 2"], rect)'); },
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
 
     async isIdle(timeout = null) {
@@ -500,7 +489,7 @@ const chatgpt = {
         isOff() { return !this.isOn(); },
         isOn() {
             const sidebar = (() => {
-                return chatgpt.sidebar.exists() ? document.querySelector('body script + div > div') : null; })();
+                return chatgpt.sidebar.exists() ? document.querySelector('[class*="sidebar"]') : null; })();
             if (!sidebar) { console.error('Sidebar element not found!'); return false; }
             else return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
@@ -549,9 +538,9 @@ const cjsFuncAliases = [
     ['getFooterDiv', 'getFooter'],
     ['getHeaderDiv', 'getHeader'],
     ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
-    ['getContinueGeneratingButton', 'getContinueButton'],
+    ['getContinueButton', 'getContinueGeneratingButton'],
     ['getScrollToBottomButton', 'getScrollButton'],
-    ['getStopGeneratingButton', 'getStopButton'],
+    ['getStopButton', 'getStopGeneratingButton'],
     ['getTextarea', 'getTextArea', 'getChatbar', 'getChatBar', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen', 'isfullscreen'],
     ['isLoaded', 'isloaded'],
