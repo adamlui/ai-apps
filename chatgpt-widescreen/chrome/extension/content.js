@@ -4,7 +4,7 @@
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
 (async () => {
-    
+
     const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(location.href)[2]
 
     // Import LIBS
@@ -78,6 +78,26 @@
             const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
             for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
             return chatbar
+        },
+
+        tweak() {
+            const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
+            if (/chatgpt|openai/.test(site)) {
+                const inputArea = chatbarDiv.querySelector(sites[site].selectors.input)
+                if (inputArea) {
+                    inputArea.style.width = '100%' // rid h-scrollbar
+                    inputArea.parentNode.style.width = `${ !sites[site].hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
+                }
+            } else if (site == 'poe') {
+                const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]'),
+                      clearBtn = document.querySelector('[class*="ChatBreakButton"]')
+                if (attachFileBtn) { // left-align attach file button
+                    attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
+                    document.querySelector(sites[site].selectors.input).style.padding = '0 13px 0 40px' // accommodate new btn pos
+                }
+                btns.newChat.style.top = clearBtn ? '-1px' : 0
+                btns.newChat.style.marginRight = clearBtn ? '2px' : '1px'
+            }
         }
     }
 
@@ -160,29 +180,13 @@
             const chatbarDiv = chatbar.get()
             if (!chatbarDiv || chatbarDiv.contains(btns.wideScreen)) return // if chatbar missing or buttons aren't, exit
     
-            // Tweak chatbar
-            if (/chatgpt|openai/.test(site)) {
-                const inputArea = chatbarDiv.querySelector(sites[site].selectors.input)
-                if (inputArea) {
-                    inputArea.style.width = '100%' // rid h-scrollbar
-                    inputArea.parentNode.style.width = `${ !sites[site].hasSidebar ? 106 : 110 }%` // expand to close gap w/ buttons
-                }
-            } else if (site == 'poe') {
-                const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]'),
-                      clearBtn = document.querySelector('[class*="ChatBreakButton"]')
-                if (attachFileBtn) { // left-align attach file button
-                    attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
-                    document.querySelector(sites[site].selectors.input).style.padding = '0 13px 0 40px' // accommodate new btn pos
-                }
-                btns.newChat.style.top = clearBtn ? '-1px' : 0
-                btns.newChat.style.marginRight = clearBtn ? '2px' : '1px'
-            }
-    
             // Insert buttons
             const btnsToInsert = [ btns.newChat, btns.wideScreen, btns.fullWindow, btns.fullScreen, tooltipDiv]
                 .filter(btn => btn) // filter out undefined btns.fullWindow if not initted as guest on chatgpt.com
             const elemToInsertBefore =  /chatgpt|openai/.test(site) ? chatbarDiv.lastChild : chatbarDiv.children[1]
             btnsToInsert.forEach(btn => chatbarDiv.insertBefore(btn, elemToInsertBefore))
+
+            chatbar.tweak()
         },
     
         remove() {
