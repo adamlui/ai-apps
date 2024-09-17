@@ -73,11 +73,24 @@
     // Define CHATBAR functions
     
     const chatbar = {
+
         get() {
             let chatbar = document.querySelector(sites[site].selectors.input)
             const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
             for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
             return chatbar
+        },
+
+        async isLoaded(timeout = null) {
+            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
+            const isLoadedPromise = new Promise(resolve => {
+                if (document.querySelector(sites[site].selectors.input)) resolve(true)
+                else new MutationObserver((_, obs) => {
+                    if (document.querySelector(sites[site].selectors.input)) {
+                        obs.disconnect() ; resolve(true) }
+                }).observe(document.body, { childList: true, subtree: true })
+            })
+            return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
         },
 
         tweak() {
@@ -467,7 +480,8 @@
     fullWinStyle.innerText = sites[site].selectors.sidebar + '{ display: none }'
 
     // Insert BUTTONS
-    settings.load('extensionDisabled').then(() => { if (!config.extensionDisabled) btns.insert() })
+    settings.load('extensionDisabled').then(async () => {
+        if (!config.extensionDisabled) { await chatbar.isLoaded() ; btns.insert() }})
 
     // Monitor NODE CHANGES to auto-toggle once + maintain button visibility + update colors
     let isTempChat = false, prevSessionChecked = false

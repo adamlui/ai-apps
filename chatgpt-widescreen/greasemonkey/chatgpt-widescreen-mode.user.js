@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.17
+// @version             2024.9.17.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -591,11 +591,24 @@
     // Define CHATBAR functions
     
     const chatbar = {
+
         get() {
             let chatbar = document.querySelector(sites[site].selectors.input)
             const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
             for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
             return chatbar
+        },
+
+        async isLoaded(timeout = null) {
+            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
+            const isLoadedPromise = new Promise(resolve => {
+                if (document.querySelector(sites[site].selectors.input)) resolve(true)
+                else new MutationObserver((_, obs) => {
+                    if (document.querySelector(sites[site].selectors.input)) {
+                        obs.disconnect() ; resolve(true) }
+                }).observe(document.body, { childList: true, subtree: true })
+            })
+            return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
         },
 
         tweak() {
@@ -992,7 +1005,7 @@
     fullWinStyle.innerText = sites[site].selectors.sidebar + '{ display: none }'
 
     // Insert BUTTONS
-    btns.insert()
+    await chatbar.isLoaded() ; btns.insert()
 
     // Monitor NODE CHANGES to auto-toggle once + maintain button visibility + update colors
     let isTempChat = false, prevSessionChecked = false
