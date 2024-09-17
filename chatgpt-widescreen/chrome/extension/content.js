@@ -4,12 +4,8 @@
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
 (async () => {
-
-    // Init/validate SITE
-    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(location.href)[2],
-          allowedHosts = chrome.runtime.getManifest().content_scripts[0].matches
-                             .map(url => url.replace(/^https?:\/\/|\/.*$/g, ''))
-    if (!allowedHosts.some(host => location.href.includes(host))) return
+    
+    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(location.href)[2]
 
     // Import LIBS
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
