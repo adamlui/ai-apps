@@ -17,6 +17,9 @@
     const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}data/sites.json`)).json())
     sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
 
+    // Init CONFIG
+    await settings.load(...sites[site].availFeatures)
+
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener(request => {
         if (request.action == 'notify') notify(request.msg, request.position)
@@ -24,9 +27,6 @@
         else if (request.action == 'sync.extension') sync.extension()
         return true
     })
-
-    // Init CONFIG
-    settings.load(...sites[site].availFeatures)
 
     // Define FACTORY functions
 
