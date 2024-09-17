@@ -12,7 +12,7 @@
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Import DATA
-    const app = await (await fetch(chrome.runtime.getURL('data/app.json'))).json()
+    const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
     const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}data/sites.json`)).json())
     sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain

@@ -17,7 +17,7 @@
   "action": { "default_popup": "popup/index.html" },
   "web_accessible_resources": [{
     "matches": ["<all_urls>"],
-    "resources": ["data/app.json", "lib/settings-utils.js", "lib/chatgpt.js"]
+    "resources": ["app.json", "lib/settings-utils.js", "lib/chatgpt.js"]
   }],
   "content_scripts": [{
     "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*", "https://*.perplexity.ai/*", "https://poe.com/*"],
