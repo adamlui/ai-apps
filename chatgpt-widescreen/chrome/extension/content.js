@@ -5,7 +5,7 @@
 
 (async () => {
 
-    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(location.href)[2]
+    const site = /([^.]+)\.[^.]+$/.exec(location.hostname)[1]
 
     // Import LIBS
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
