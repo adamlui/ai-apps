@@ -494,7 +494,6 @@
                                                  + '  height: 3px }' // reduce height
 
     update.style.tweaks() ; document.head.append(tweaksStyle)
-    tweaksStyle.id = 'tweaks'
 
     // Create WIDESCREEN style
     const wideScreenStyle = create.style()
