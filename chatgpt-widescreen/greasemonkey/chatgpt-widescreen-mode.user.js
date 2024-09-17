@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.17.7
+// @version             2024.9.17.8
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -301,7 +301,19 @@
     settings.load(...sites[site].availFeatures)
 
     // Init localized MESSAGES
-    const msgsLoaded = new Promise(resolve => {
+    let msgs = { // dynamically ref'd keys w/o fallbacks
+        mode_wideScreen: 'Wide screen',
+        mode_fullWindow: 'Full-window',
+        mode_fullScreen: 'Full screen',      
+        tooltip_wideScreenON: 'Wide screen',
+        tooltip_wideScreenOFF: 'Exit wide screen',
+        tooltip_fullWindowON: 'Full-window mode',
+        tooltip_fullWindowOFF: 'Exit full window',
+        tooltip_fullScreenON: 'Full screen',
+        tooltip_fullScreenOFF: 'Exit full screen',
+        tooltip_newChat: 'New chat'
+    }
+    if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
         const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
@@ -321,7 +333,7 @@
                 xhr({ method: 'GET', url: msgHref, onload: onLoad })
             }
         }
-    }) ; const msgs = await msgsLoaded
+    })
 
     // Define MENU functions
 
