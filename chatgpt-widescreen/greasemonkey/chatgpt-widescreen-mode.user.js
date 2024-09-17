@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.17.6
+// @version             2024.9.17.7
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -907,10 +907,18 @@
         }
     }
 
+    // Define UTILITY functions
+
     function isFullWin() {
         return site == 'poe' ? !!document.getElementById('fullWindow-mode')
             : !sites[site].hasSidebar // false if sidebar non-existent
            || /\d+/.exec(getComputedStyle(document.querySelector(sites[site].selectors.sidebar)).width)[0] < 100
+    }
+
+    function cssSelectorize(classList) {
+        return classList.toString()
+            .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
+            .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
     }
 
     // Run MAIN routine
@@ -929,6 +937,7 @@
         return // exit script
 
     } else menu.register() // create functional menu
+
     // Init UI props
     if (/openai|chatgpt/.test(site)) {
         const obsConfig = { childList: true, subtree: true }
@@ -951,17 +960,10 @@
         sites[site].selectors.footer = await Promise.race([
             new Promise(resolve => { // class of footer container
                 const footerDiv = chatgpt.getFooterDiv()
-                if (footerDiv) 
-                    resolve(footerDiv.classList.toString()
-                        .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
-                        .replace(/^| /g, '.')) // prefix w/ dot, convert spaces to dots
+                if (footerDiv) resolve(cssSelectorize(footerDiv.classList))
                 else new MutationObserver((_, obs) => {
                     const footerDiv = chatgpt.getFooterDiv()
-                    if (footerDiv) { obs.disconnect()
-                        resolve(footerDiv.classList.toString()
-                            .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
-                            .replace(/^| /g, '.')) // prefix w/ dot, convert spaces to dots
-                    }
+                    if (footerDiv) { obs.disconnect() ; resolve(cssSelectorize(footerDiv.classList)) }
                 }).observe(document.body, obsConfig)
             }),
             new Promise(resolve =>  // null if 500ms passed

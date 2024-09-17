@@ -422,10 +422,18 @@
         }
     }
 
+    // Define UTILITY functions
+
     function isFullWin() {
         return site == 'poe' ? !!document.getElementById('fullWindow-mode')
             : !sites[site].hasSidebar // false if sidebar non-existent
            || /\d+/.exec(getComputedStyle(document.querySelector(sites[site].selectors.sidebar)).width)[0] < 100
+    }
+
+    function cssSelectorize(classList) {
+        return classList.toString()
+            .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
+            .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
     }
     
     // Run MAIN routine
@@ -455,11 +463,7 @@
             new Promise(resolve => { // class of footer container
                 new MutationObserver((_, obs) => {
                     const footerDiv = chatgpt.getFooterDiv()
-                    if (footerDiv) { obs.disconnect()
-                        resolve(footerDiv.classList.toString()
-                            .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
-                            .replace(/^| /g, '.')) // prefix w/ dot, convert spaces to dots
-                    }
+                    if (footerDiv) { obs.disconnect() ; resolve(cssSelectorize(footerDiv.classList)) }
                 }).observe(document.body, obsConfig)
             }),
             new Promise(resolve =>  // null if 500ms passed
