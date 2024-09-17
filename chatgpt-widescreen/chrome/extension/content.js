@@ -8,10 +8,15 @@
     const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(location.href)[2]
     if (!/chatgpt|openai|poe/.test(site)) return
 
-    // Import DATA/LIBS
-    const app = await (await fetch(chrome.runtime.getURL('data/app.json'))).json(),
-          { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
+    // Import LIBS
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+
+    // Import DATA
+    const app = await (await fetch(chrome.runtime.getURL('data/app.json'))).json(),
+          sites = Object.assign(Object.create(null), // to prevent prototype pollution
+              await (await fetch(chrome.runtime.getURL('data/sites.json'))).json())
+    sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
 
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener(request => {
@@ -20,22 +25,6 @@
         else if (request.action == 'sync.extension') sync.extension()
         return true
     })
-
-    // Init SITE props
-    const sites = Object.create(null) // prevent protoype pollution
-    Object.assign(sites, {
-        chatgpt: {
-            availFeatures: ['fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
-                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'wideScreen'],
-            selectors: { input: '#prompt-textarea', sidebar: '[class*="sidebar"]', header: 'main .sticky' }},
-        poe: {
-            availFeatures: ['fullerWindows', 'fullWindow', 'hiddenHeader',
-                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen'],
-            hasSidebar: true,
-            selectors: {
-                input: '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after',
-                sidebar: 'menu[class*="sidebar"], aside[class*="sidebar"]', header: 'header' }}
-    }) ; sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
 
     // Init CONFIG
     settings.load(...sites[site].availFeatures)
