@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.17.4
+// @version             2024.9.17.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -272,7 +272,7 @@
             gitHub: 'https://github.com/adamlui/chatgpt-widescreen',
             greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
             productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode' },
-        latestAssetCommitHash: 'b76238e' // for cached messages.json
+        latestAssetCommitHash: 'f44cdc5' // for cached sites.json + messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -285,35 +285,12 @@
     }
 
     // Init SITE props
-    const sites = Object.create(null) // prevent protoype pollution
-    Object.assign(sites, {
-        chatgpt: {
-            availFeatures: [ 'fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
-                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'wideScreen' ],
-            selectors: {
-                header: 'main .sticky', input: '#prompt-textarea',
-                sendBtn: 'button:has([d^="M15.1918"])', sidebar: '[class*="sidebar"]'}
-        },
-        poe: {
-            availFeatures: ['fullerWindows', 'fullWindow', 'hiddenHeader',
-                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen'],
-            hasSidebar: true,
-            selectors: {
-                header: 'header',
-                input: '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after',
-                sidebar: 'menu[class*="sidebar"], aside[class*="sidebar"]' }
-        },
-        perplexity: {
-            availFeatures: [ 'fullerWindows', 'fullWindow', 'hiddenHeader',
-                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'wideScreen' ],
-            hasSidebar: true,
-            selectors: {
-                header: 'div.sticky:nth-of-type(2)', input: 'textarea[placeholder]',
-                sendBtn: 'button:has([d^="M209.4"], [d^="M80 112a32"], [d^="M440.6"])',
-                sidebar: 'div.sticky', sidebarToggle: 'button:has([d^="M48 88c0-13"], [d^="M0 424c0"])'
-            }
-        }
-    }) ; sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
+    const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+    const sites = await new Promise(resolve => xhr({
+        method: 'GET', url: `${app.urls.assetHost}data/sites.json`,
+        onload: resp => resolve(JSON.parse(resp.responseText))
+    }))
+    sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
 
     // Init CONFIG
     const settings = {
@@ -322,9 +299,6 @@
     }
     const config = { userLanguage: chatgpt.getUserLanguage() }
     settings.load(...sites[site].availFeatures)
-
-    // Init XHR fetcher
-    const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
 
     // Init localized MESSAGES
     const msgsLoaded = new Promise(resolve => {
@@ -976,7 +950,12 @@
         ])
         sites[site].selectors.footer = await Promise.race([
             new Promise(resolve => { // class of footer container
-                new MutationObserver((_, obs) => {
+                const footerDiv = chatgpt.getFooterDiv()
+                if (footerDiv) 
+                    resolve(footerDiv.classList.toString()
+                        .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
+                        .replace(/^| /g, '.')) // prefix w/ dot, convert spaces to dots
+                else new MutationObserver((_, obs) => {
                     const footerDiv = chatgpt.getFooterDiv()
                     if (footerDiv) { obs.disconnect()
                         resolve(footerDiv.classList.toString()
