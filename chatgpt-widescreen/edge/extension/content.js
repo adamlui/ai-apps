@@ -5,8 +5,11 @@
 
 (async () => {
 
-    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(location.href)[2]
-    if (!/chatgpt|openai|poe/.test(site)) return
+    // Init/validate SITE
+    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(location.href)[2],
+          allowedHosts = chrome.runtime.getManifest().content_scripts[0].matches
+                             .map(url => url.replace(/^https?:\/\/|\/.*$/g, ''))
+    if (!allowedHosts.some(host => location.href.includes(host))) return
 
     // Import LIBS
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
