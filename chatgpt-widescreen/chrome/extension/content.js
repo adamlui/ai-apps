@@ -104,7 +104,7 @@
                                      && !(type == 'newChat' && config.ncbDisabled))
                     visibleBtnTypes.forEach(btnType =>
                         widths[btnType] = btns[btnType]?.getBoundingClientRect().width
-                                       || chatgpt.getSendBtn()?.getBoundingClientRect().width)
+                                       || document.querySelector(sites[site].selectors.sendBtn)?.getBoundingClientRect().width)
                     const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
                     inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -43 }px` // expand to close gap w/ buttons
                     inputArea.style.width = '100%' // rid h-scrollbar
@@ -174,9 +174,11 @@
                     if (site == 'poe') btns[btnType].style.position = 'relative' // override static pos
                     if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
                         const sendBtn = await new Promise(resolve => {
-                            const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) resolve(sendBtn)
+                            const sendBtn = document.querySelector(sites[site].selectors.sendBtn)
+                            if (sendBtn) resolve(sendBtn)
                             else new MutationObserver((_, obs) => {
-                                const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
+                                const sendBtn = document.querySelector(sites[site].selectors.sendBtn)
+                                if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
                             }).observe(document.body, { childList: true, subtree: true })
                         })
                         btns[btnType].setAttribute('class', sendBtn.classList.toString() || '')
@@ -209,7 +211,7 @@
 
             setTimeout(() => chatbar.tweak(), 1)
         },
-    
+
         remove() {
             const chatbarDiv = chatbar.get()
             if (chatbarDiv?.contains(btns.wideScreen)) { // remove all buttons

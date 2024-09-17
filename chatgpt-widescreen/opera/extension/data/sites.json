@@ -2,15 +2,19 @@
   "chatgpt": {
     "availFeatures": [ "fullerWindows", "fullWindow", "hiddenFooter", "hiddenHeader",
       "notifDisabled", "ncbDisabled", "tcbDisabled", "wideScreen" ],
-    "selectors": { "input": "#prompt-textarea", "sidebar": "[class*=\"sidebar\"]", "header": "main .sticky" }
+    "selectors": {
+      "input": "#prompt-textarea", "sendBtn": "button:has([d^=\"M15.1918\"])",
+      "sidebar": "[class*=\"sidebar\"]", "header": "main .sticky"
+    }
   },
   "poe": {
     "availFeatures": [ "fullerWindows", "fullWindow", "hiddenHeader",
       "notifDisabled", "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen" ],
     "hasSidebar": true,
     "selectors": {
+      "header": "header",
       "input": "[class*=\"InputContainer_textArea\"] textarea, [class*=\"InputContainer_textArea\"]::after",
-      "sidebar": "menu[class*=\"sidebar\"], aside[class*=\"sidebar\"]", "header": "header"
+      "sidebar": "menu[class*=\"sidebar\"], aside[class*=\"sidebar\"]"
     }
   }
 }

@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.17.1
+// @version             2024.9.17.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -287,16 +287,21 @@
     const sites = Object.create(null) // prevent protoype pollution
     Object.assign(sites, {
         chatgpt: {
-            availFeatures: ['fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
-                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'wideScreen'],
-            selectors: { input: '#prompt-textarea', sidebar: '[class*="sidebar"]', header: 'main .sticky' }},
+            availFeatures: [ 'fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
+                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'wideScreen' ],
+            selectors: {
+                header: 'main .sticky', input: '#prompt-textarea',
+                sendBtn: 'button:has([d^="M15.1918"])', sidebar: '[class*="sidebar"]'}
+        },
         poe: {
             availFeatures: ['fullerWindows', 'fullWindow', 'hiddenHeader',
                 'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen'],
             hasSidebar: true,
             selectors: {
+                header: 'header',
                 input: '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after',
-                sidebar: 'menu[class*="sidebar"], aside[class*="sidebar"]', header: 'header' }}
+                sidebar: 'menu[class*="sidebar"], aside[class*="sidebar"]' }
+        }
     }) ; sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
 
     // Init CONFIG
@@ -622,7 +627,7 @@
                                      && !(type == 'newChat' && config.ncbDisabled))
                     visibleBtnTypes.forEach(btnType =>
                         widths[btnType] = btns[btnType]?.getBoundingClientRect().width
-                                       || chatgpt.getSendBtn()?.getBoundingClientRect().width)
+                                       || document.querySelector(sites[site].selectors.sendBtn)?.getBoundingClientRect().width)
                     const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
                     inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
                         widths.chatbar - totalBtnWidths -( env.browser.isFF ? 60 : 43 )}px`
@@ -693,9 +698,11 @@
                     if (site == 'poe') btns[btnType].style.position = 'relative' // override static pos
                     if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
                         const sendBtn = await new Promise(resolve => {
-                            const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) resolve(sendBtn)
+                            const sendBtn = document.querySelector(sites[site].selectors.sendBtn)
+                            if (sendBtn) resolve(sendBtn)
                             else new MutationObserver((_, obs) => {
-                                const sendBtn = chatgpt.getSendBtn() ; if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
+                                const sendBtn = document.querySelector(sites[site].selectors.sendBtn)
+                                if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
                             }).observe(document.body, { childList: true, subtree: true })
                         })
                         btns[btnType].setAttribute('class', sendBtn.classList.toString() || '')
