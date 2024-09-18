@@ -29,8 +29,7 @@
         return true
     })
 
-    // Selectively DISABLE content or user script
-    if (!/chat(?:gpt|\.openai)\.com/.test(location.hostname)) return
+    // Add FLAG to auto-disable userscript
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
     // Init ENV info
