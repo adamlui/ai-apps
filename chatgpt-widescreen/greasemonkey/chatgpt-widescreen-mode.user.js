@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.18
+// @version             2024.9.18.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -286,10 +286,10 @@
 
     // Init SITE props
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
-    const sites = await new Promise(resolve => xhr({
+    const sites = Object.assign(Object.create(null), await new Promise(resolve => xhr({
         method: 'GET', url: `${app.urls.assetHost}/data/sites.json`,
         onload: resp => resolve(JSON.parse(resp.responseText))
-    }))
+    })))
     sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
 
     // Init CONFIG
