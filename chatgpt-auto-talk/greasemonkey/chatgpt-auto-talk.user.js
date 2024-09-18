@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16.1
+// @version             2024.9.18
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -261,7 +261,7 @@
             greasyFork: 'https://greasyfork.org/en/scripts/500940-chatgpt-auto-talk' },
         latestAssetCommitHash: '186bf00' // for cached messages.json + navicon
     }
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
+    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.support = app.urls.gitHub + '/issues/new'
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
@@ -286,7 +286,7 @@
     // Init MESSAGES
     let msgs = {}
     if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
-        const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
+        const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         xhr({ method: 'GET', url: msgHref, onload: onLoad })
@@ -479,7 +479,7 @@
         document.getElementById('auto-talk-toggle-knob-span').style.boxShadow = (
             'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
         document.getElementById('auto-talk-toggle-navicon').src = `${ // update navicon color in case scheme changed
-            app.urls.assetHost }assets/images/icons/speaker/${
+            app.urls.assetHost }/assets/images/icons/speaker/${
             chatgpt.isDarkMode() ? 'white' : 'black' }-icon.svg`
     }
 

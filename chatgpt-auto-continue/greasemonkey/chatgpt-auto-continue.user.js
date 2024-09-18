@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16.1
+// @version             2024.9.18
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -257,7 +257,7 @@
             greasyFork: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue' },
         latestAssetCommitHash: '9ffe4f9' // for cached messages.json
     }
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
+    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
 
@@ -278,7 +278,7 @@
     // Init MESSAGES
     let msgs = {}
     if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
-        const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
+        const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         xhr({ method: 'GET', url: msgHref, onload: onLoad })

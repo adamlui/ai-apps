@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.17.8
+// @version             2024.9.18
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -274,7 +274,7 @@
             productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode' },
         latestAssetCommitHash: 'f44cdc5' // for cached sites.json + messages.json
     }
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
+    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
 
@@ -287,7 +287,7 @@
     // Init SITE props
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
     const sites = await new Promise(resolve => xhr({
-        method: 'GET', url: `${app.urls.assetHost}data/sites.json`,
+        method: 'GET', url: `${app.urls.assetHost}/data/sites.json`,
         onload: resp => resolve(JSON.parse(resp.responseText))
     }))
     sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
@@ -314,7 +314,7 @@
         tooltip_newChat: 'New chat'
     }
     if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
-        const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
+        const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         xhr({ method: 'GET', url: msgHref, onload: onLoad })
