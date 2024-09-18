@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.18.3
+// @version             2024.9.18.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -272,7 +272,7 @@
             gitHub: 'https://github.com/adamlui/chatgpt-widescreen',
             greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
             productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode' },
-        latestAssetCommitHash: 'f44cdc5' // for cached sites.json + messages.json
+        latestAssetCommitHash: '4504edb' // for cached sites.json + messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -623,7 +623,7 @@
                                      && !(type == 'newChat' && config.ncbDisabled))
                     visibleBtnTypes.forEach(btnType =>
                         widths[btnType] = btns[btnType]?.getBoundingClientRect().width
-                                       || document.querySelector(sites[site].selectors.sendBtn)?.getBoundingClientRect().width)
+                                       || document.querySelector(sites[site].selectors.btns.send)?.getBoundingClientRect().width)
                     const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
                     inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
                         widths.chatbar - totalBtnWidths -( env.browser.isFF ? 60 : 43 )}px`
@@ -694,10 +694,10 @@
                     if (site == 'poe') btns[btnType].style.position = 'relative' // override static pos
                     if (/chatgpt|openai|perplexity/.test(site)) { // assign classes + tweak styles
                         const sendBtn = await new Promise(resolve => {
-                            const sendBtn = document.querySelector(sites[site].selectors.sendBtn)
+                            const sendBtn = document.querySelector(sites[site].selectors.btns.send)
                             if (sendBtn) resolve(sendBtn)
                             else new MutationObserver((_, obs) => {
-                                const sendBtn = document.querySelector(sites[site].selectors.sendBtn)
+                                const sendBtn = document.querySelector(sites[site].selectors.btns.send)
                                 if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
                             }).observe(document.body, { childList: true, subtree: true })
                         })

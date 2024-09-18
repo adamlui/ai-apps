@@ -104,7 +104,7 @@
                                      && !(type == 'newChat' && config.ncbDisabled))
                     visibleBtnTypes.forEach(btnType =>
                         widths[btnType] = btns[btnType]?.getBoundingClientRect().width
-                                       || document.querySelector(sites[site].selectors.sendBtn)?.getBoundingClientRect().width)
+                                       || document.querySelector(sites[site].selectors.btns.send)?.getBoundingClientRect().width)
                     const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
                     inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -43 }px` // expand to close gap w/ buttons
                     inputArea.style.width = '100%' // rid h-scrollbar
@@ -174,10 +174,10 @@
                     if (site == 'poe') btns[btnType].style.position = 'relative' // override static pos
                     if (/chatgpt|openai|perplexity/.test(site)) { // assign classes + tweak styles
                         const sendBtn = await new Promise(resolve => {
-                            const sendBtn = document.querySelector(sites[site].selectors.sendBtn)
+                            const sendBtn = document.querySelector(sites[site].selectors.btns.send)
                             if (sendBtn) resolve(sendBtn)
                             else new MutationObserver((_, obs) => {
-                                const sendBtn = document.querySelector(sites[site].selectors.sendBtn)
+                                const sendBtn = document.querySelector(sites[site].selectors.btns.send)
                                 if (sendBtn) { obs.disconnect() ; resolve(sendBtn) }
                             }).observe(document.body, { childList: true, subtree: true })
                         })
