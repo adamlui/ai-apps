@@ -1,5 +1,6 @@
 {
   "symbol": "∞",
   "configKeyPrefix": "chatGPTinfinity",
-  "urls": { "gitHub": "https://github.com/adamlui/chatgpt-infinity"  }
+  "urls": { "gitHub": "https://github.com/adamlui/chatgpt-infinity" },
+  "latestAssetCommitHash": "d28862b"
 }
