@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16
+// @version             2024.9.18
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -243,7 +243,7 @@
     const app = {
         name: 'ChatGPT Infinity', symbol: '∞', configKeyPrefix: 'chatGPTinfinity',
         urls: {
-            support: 'https://support.chatgptinfinity.com', mediaHost: 'https://media.chatgptinfinity.com/',
+            support: 'https://support.chatgptinfinity.com', mediaHost: 'https://media.chatgptinfinity.com',
             chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             alternativeTo: 'https://alternativeto.net/software/chatgpt-infinity',
             gitHub: 'https://github.com/adamlui/chatgpt-infinity',
@@ -251,7 +251,7 @@
             productHunt: 'https://www.producthunt.com/products/chatgpt-infinity' },
         latestAssetCommitHash: '5c77b4b' // for cached messages.json + navicon
     }
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
+    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
 
@@ -278,7 +278,7 @@
     // Init MESSAGES
     let msgs = {}
     if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
-        const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
+        const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         xhr({ method: 'GET', url: msgHref, onload: onLoad })
@@ -570,7 +570,7 @@
             'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
         const navicon = document.getElementById('infinity-toggle-navicon')
         if (navicon) navicon.src = `${ // update navicon color in case scheme changed
-            app.urls.mediaHost}images/icons/infinity-symbol/`
+            app.urls.mediaHost}/images/icons/infinity-symbol/`
           + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${app.latestAssetCommitHash}`
     }
 

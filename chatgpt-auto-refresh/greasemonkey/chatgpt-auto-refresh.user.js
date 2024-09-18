@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16.1
+// @version             2024.9.18
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -263,13 +263,13 @@
     const app = {
         name: 'ChatGPT Auto Refresh', symbol: '↻', configKeyPrefix: 'chatGPTautoRefresh',
         urls: {
-            support: 'https://support.chatgptautorefresh.com', mediaHost: 'https://media.chatgptautorefresh.com/',
+            support: 'https://support.chatgptautorefresh.com', mediaHost: 'https://media.chatgptautorefresh.com',
             chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             gitHub: 'https://github.com/adamlui/chatgpt-auto-refresh',
             greasyFork: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh' },
         latestAssetCommitHash: '716c9e9' // for cached messages.json + navicon
     }
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
+    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
 
@@ -310,7 +310,7 @@
     // Init MESSAGES
     let msgs = {}
     if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
-        const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
+        const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         xhr({ method: 'GET', url: msgHref, onload: onLoad })
@@ -541,7 +541,7 @@
         document.getElementById('auto-refresh-toggle-knob-span').style.boxShadow = (
             'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
         document.getElementById('auto-refresh-toggle-navicon').src = `${ // update navicon color in case scheme changed
-            app.urls.mediaHost}images/icons/auto-refresh/`
+            app.urls.mediaHost}/images/icons/auto-refresh/`
           + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${app.latestAssetCommitHash}`
     }
 

@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.16.1
+// @version             2024.9.18
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -266,14 +266,14 @@
     const app = {
         name: 'Autoclear ChatGPT History', symbol: '🕶️', configKeyPrefix: 'autoclearChatGPThistory',
         urls: {
-            support: 'https://support.autoclearchatgpt.com', mediaHost: 'https://media.autoclearchatgpt.com/',
+            support: 'https://support.autoclearchatgpt.com', mediaHost: 'https://media.autoclearchatgpt.com',
             chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             futurepedia: 'https://www.futurepedia.io/tool/autoclear-chatgpt-history',
             gitHub: 'https://github.com/adamlui/autoclear-chatgpt-history',
             greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history' },
         latestAssetCommitHash: 'abf62f6' // for cached messages.json + navicon
     }
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}/`
+    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
 
@@ -297,7 +297,7 @@
     // Init MESSAGES
     let msgs = {}
     if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
-        const msgHostDir = app.urls.assetHost + 'greasemonkey/_locales/',
+        const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
             msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         xhr({ method: 'GET', url: msgHref, onload: onLoad })
@@ -510,7 +510,7 @@
         document.getElementById('autoclear-toggle-knob-span').style.boxShadow = (
             'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
         document.getElementById('autoclear-toggle-navicon').src = `${ // update navicon color in case scheme changed
-            app.urls.mediaHost}images/icons/incognito/`
+            app.urls.mediaHost}/images/icons/incognito/`
         + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${app.latestAssetCommitHash}`
     }
 
