@@ -1,6 +1,6 @@
 (async () => {
 
-    const app = await (await fetch(chrome.runtime.getURL('data/app.json'))).json(),
+    const app = await (await fetch(chrome.runtime.getURL('app.json'))).json(),
           allowedHosts = chrome.runtime.getManifest().content_scripts[0].matches
                              .map(url => url.replace(/^https?:\/\/|\/.*$/g, ''))
 
