@@ -3,9 +3,11 @@
     "availFeatures": [ "fullerWindows", "fullWindow", "hiddenFooter", "hiddenHeader",
       "notifDisabled", "ncbDisabled", "tcbDisabled", "wideScreen" ],
     "selectors": {
-      "header": "main .sticky", "input": "#prompt-textarea",
-      "newChatBtn": "button:has([d*=\"M15.6729\"], [d^=\"M3.06957\"])",
-      "sendBtn": "button:has([d^=\"M15.1918\"])", "sidebar": "[class*=\"sidebar\"]"
+      "btns": {
+        "newChat": "button:has([d*=\"M15.6729\"], [d^=\"M3.06957\"])",
+        "send": "button:has([d^=\"M15.1918\"])"
+      },
+      "header": "main .sticky", "input": "#prompt-textarea", "sidebar": "[class*=\"sidebar\"]"
     }
   },
   "poe": {
@@ -13,9 +15,9 @@
       "notifDisabled", "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen" ],
     "hasSidebar": true,
     "selectors": {
+      "btns": { "newChat": "header a[class*=\"button\"]" },
       "header": "header",
       "input": "[class*=\"InputContainer_textArea\"] textarea, [class*=\"InputContainer_textArea\"]::after",
-      "newChatBtn": "header a[class*=\"button\"]",
       "sidebar": "menu[class*=\"sidebar\"], aside[class*=\"sidebar\"]"
     }
   },
@@ -24,9 +26,11 @@
       "notifDisabled", "ncbDisabled", "tcbDisabled", "wideScreen" ],
     "hasSidebar": true,
     "selectors": {
+      "btns": {
+        "newChat": "div.sticky [class*=\"ring\"]",
+        "send": "button:has([d^=\"M209.4\"], [d^=\"M80 112a32\"], [d^=\"M440.6\"])"
+      },
       "header": "div.sticky:nth-of-type(2)", "input": "textarea[placeholder]",
-      "newChatBtn": "div.sticky [class*=\"ring\"]",
-      "sendBtn": "button:has([d^=\"M209.4\"], [d^=\"M80 112a32\"], [d^=\"M440.6\"])",
       "sidebar": "div.sticky", "sidebarToggle": "button:has([d^=\"M48 88c0-13\"], [d^=\"M0 424c0\"])"
     }
   }
