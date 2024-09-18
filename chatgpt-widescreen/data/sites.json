@@ -4,6 +4,7 @@
       "notifDisabled", "ncbDisabled", "tcbDisabled", "wideScreen" ],
     "selectors": {
       "header": "main .sticky", "input": "#prompt-textarea",
+      "newChatBtn": "button:has([d*=\"M15.6729\"], [d^=\"M3.06957\"])",
       "sendBtn": "button:has([d^=\"M15.1918\"])", "sidebar": "[class*=\"sidebar\"]"
     }
   },
@@ -14,6 +15,7 @@
     "selectors": {
       "header": "header",
       "input": "[class*=\"InputContainer_textArea\"] textarea, [class*=\"InputContainer_textArea\"]::after",
+      "newChatBtn": "header a[class*=\"button\"]",
       "sidebar": "menu[class*=\"sidebar\"], aside[class*=\"sidebar\"]"
     }
   },
@@ -23,6 +25,7 @@
     "hasSidebar": true,
     "selectors": {
       "header": "div.sticky:nth-of-type(2)", "input": "textarea[placeholder]",
+      "newChatBtn": "div.sticky [class*=\"ring\"]",
       "sendBtn": "button:has([d^=\"M209.4\"], [d^=\"M80 112a32\"], [d^=\"M440.6\"])",
       "sidebar": "div.sticky", "sidebarToggle": "button:has([d^=\"M48 88c0-13\"], [d^=\"M0 424c0\"])"
     }
