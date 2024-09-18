@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.18
+// @version             2024.9.18.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -265,12 +265,11 @@
     const env = { scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() }
 
     // Init CONFIG
+    const config = { userLanguage: chatgpt.getUserLanguage() }
     const settings = {
         load(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) },
         save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
-    }
-    const config = { userLanguage: chatgpt.getUserLanguage() }
-    settings.load('notifDisabled')
+    } ; settings.load('notifDisabled')
 
     // Init FETCHER
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest

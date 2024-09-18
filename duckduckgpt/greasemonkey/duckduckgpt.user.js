@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.18
+// @version                2014.9.18.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -244,10 +244,10 @@
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
 
     // Init DEBUG mode
-    const settings = {
+    const config = {}, settings = {
         load(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) },
         save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
-    }, config = {} ; settings.load('debugMode')
+    } ; settings.load('debugMode')
 
     // Define LOG props/functions
     const log = {
