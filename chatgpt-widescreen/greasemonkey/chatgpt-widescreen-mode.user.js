@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.18.4
+// @version             2024.9.18.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -710,11 +710,9 @@
                     // Add hover/click listeners
                     btns[btnType].onmouseover = btns[btnType].onmouseout = toggle.tooltip
                     btns[btnType].onclick = () => {
-                        if (btnType == 'newChat') {
-                            if (/chatgpt|openai/.test(site)) chatgpt.startNewChat()
-                            else if (site == 'perplexity') document.querySelector('div.sticky [class*="ring"]')?.click()
-                            else if (site == 'poe') document.querySelector('header a[class*="button"]')?.click()
-                        } else {
+                        if (btnType == 'newChat')
+                            document.querySelector(sites[site].selectors.btns.newChat)?.click()
+                        else {
                             if (/openai|chatgpt/.test(site) // remove lingering tooltip in at least FF
                                 && /wideScreen|fullWindow/.test(btnType)) tooltipDiv.style.opacity = 0
                             toggle.mode(btnType)

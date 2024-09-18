@@ -190,11 +190,9 @@
                     // Add hover/click listeners
                     btns[btnType].onmouseover = btns[btnType].onmouseout = toggle.tooltip
                     btns[btnType].onclick = () => {
-                        if (btnType == 'newChat') {
-                            if (/chatgpt|openai/.test(site)) chatgpt.startNewChat()
-                            else if (site == 'perplexity') document.querySelector('div.sticky [class*="ring"]')?.click()
-                            else if (site == 'poe') document.querySelector('header a[class*="button"]')?.click()
-                        } else toggle.mode(btnType)
+                        if (btnType == 'newChat')
+                            document.querySelector(sites[site].selectors.btns.newChat)?.click()
+                        else toggle.mode(btnType)
                     }
                 })
                 btns.updateColor()
