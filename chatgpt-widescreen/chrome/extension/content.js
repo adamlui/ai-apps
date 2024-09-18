@@ -191,11 +191,8 @@
                     btns[btnType].onmouseover = btns[btnType].onmouseout = toggle.tooltip
                     btns[btnType].onclick = () => {
                         if (btnType == 'newChat') {
-                            if (site == 'perplexity') {
-                                const sidebar = document.querySelector(sites[site].selectors.sidebar)
-                                for (const sideDiv of sidebar.querySelectorAll('div'))
-                                    if (sideDiv.classList.toString().includes('ring')) sideDiv.click()
-                            } else if (/chatgpt|openai/.test(site)) chatgpt.startNewChat()
+                            if (/chatgpt|openai/.test(site)) chatgpt.startNewChat()
+                            else if (site == 'perplexity') document.querySelector('div.sticky [class*="ring"]')?.click()
                             else if (site == 'poe') document.querySelector('header a[class*="button"]')?.click()
                         } else toggle.mode(btnType)
                     }
