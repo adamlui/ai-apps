@@ -24,5 +24,5 @@
     "js": ["content.js"]
   }],
   "background": { "service_worker": "background.js" },
-  "minimum_chrome_version": "63"
+  "minimum_chrome_version": "88"
 }
