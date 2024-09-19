@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.19.3
+// @version               2024.9.19.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1286,8 +1286,7 @@
                 pinMenu.style.top = `${menus.pin.topPos}px` ; pinMenu.style.right = `${menus.pin.rightPos}px`
                 clearTimeout(menus.pin.hideTimeout)
                 if (event.type == 'mouseover') pinMenu.style.opacity = 1
-                else if (event.type == 'mouseout')
-                    menus.pin.hideTimeout = setTimeout(() => pinMenu.remove(), 55) // delay to cover gap
+                else menus.pin.hideTimeout = setTimeout(() => pinMenu.remove(), 55) // delay to cover gap
             }
         }
     }
@@ -2337,7 +2336,7 @@
                     }}})
                 }
                 else if (btn.id == 'font-size-btn') btn.onclick = () => fontSizeSlider.toggle()
-                else if (btn.id == 'pin-btn') btn.onclick = btn.onmouseover = btn.onmouseout = menus.pin.toggle
+                else if (btn.id == 'pin-btn') btn.onmouseover = btn.onmouseout = menus.pin.toggle
                 else if (btn.id == 'wsb-btn') btn.onclick = () => toggle.sidebar('wider')
                 else if (btn.id == 'arrows-btn') btn.onclick = () => toggle.expandedMode()
                 if (!env.browser.isMobile && btn.id != 'pin-btn') // add hover listeners for tooltips
