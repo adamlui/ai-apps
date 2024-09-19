@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.18.1
+// @version               2024.9.18.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2377,7 +2377,7 @@
                                        + 'Don\'t talk about Canberra, Tokyo, blue whales, photosynthesis, oceans, '
                                            + 'deserts, mindfulness meditation, the Fibonacci sequence, the liver, '
                                            + 'Jupiter, the Great Wall of China, Sheakespeare or da Vinci. '
-                                       + 'Try to give an answer that is 25-50 words. '
+                                       + 'Try to give an answer that is 50-100 words. '
                                        + 'Do not type anything but the question and answer. Reply in markdown.'
                     chatTextarea.value = augmentQuery(randQAprompt)
                     chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))

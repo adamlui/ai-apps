@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2014.9.18.1
+// @version                2014.9.18.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2272,7 +2272,7 @@
                                        + 'Don\'t talk about Canberra, Tokyo, blue whales, photosynthesis, oceans, '
                                            + 'deserts, mindfulness meditation, the Fibonacci sequence, the liver, '
                                            + 'Jupiter, the Great Wall of China, Sheakespeare or da Vinci. '
-                                       + 'Try to give an answer that is 25-50 words. '
+                                       + 'Try to give an answer that is 50-100 words. '
                                        + 'Do not type anything but the question and answer. Reply in markdown.'
                     chatTextarea.value = augmentQuery(randQAprompt)
                     chatTextarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
