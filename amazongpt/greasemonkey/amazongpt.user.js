@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.18.2
+// @version                2024.9.18.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1431,11 +1431,20 @@
 
         appBottomPos() { appDiv.style.bottom = `${ config.minimized ? 55 - appDiv.offsetHeight : -7 }px` },
 
+        replyPrefix() {
+            const firstP = appDiv.querySelector('pre p')
+            if (!firstP) return
+            const prefixNeeded = ui.app.scheme == 'dark' && !config.bgAnimationsDisabled,
+                  prefixExists = firstP.textContent.startsWith('>> ')                            
+            if (prefixNeeded && !prefixExists) firstP.prepend('>> ')
+            else if (!prefixNeeded && prefixExists) firstP.textContent = firstP.textContent.replace(/^>> /, '')
+        },
+
         scheme(newScheme) {
             log.caller = `update.scheme('${newScheme}')`
             log.debug(`Updating ${app.name} scheme to ${log.toTitleCase(newScheme)}...`)
-            ui.app.scheme = newScheme ; logos.amzgpt.update() ; icons.amzgpt.update()
-            update.style.app() ; update.stars() ; toggle.btnGlow() ; modals.settings.updateSchemeStatus()
+            ui.app.scheme = newScheme ; logos.amzgpt.update() ; icons.amzgpt.update() ; update.style.app()
+            update.stars() ; update.replyPrefix() ; toggle.btnGlow() ; modals.settings.updateSchemeStatus()
             log.debug(`Success! ${app.name} updated to ${log.toTitleCase(newScheme)} scheme`)
         },
 
@@ -1450,7 +1459,11 @@
         style: {
             app() {
                 appStyle.innerText = (
-                    '@keyframes modal-zoom-fade-out { 0% { opacity: 1 } 50% { opacity: 0.25 ; transform: scale(1.05) }'
+                    ':root {' // color vars
+                      + '--app-bg-color-light-scheme: #ffffff ; --app-bg-color-dark-scheme: #282828 ;'
+                      + '--pre-bg-color-light-scheme: #e7e7e7cf ; --pre-bg-color-dark-scheme: #3a3a3a ;'
+                      + '--font-color-light-scheme: #282828 ; --font-color-dark-scheme: #f2f2f2 }'
+                  + '@keyframes modal-zoom-fade-out { 0% { opacity: 1 } 50% { opacity: 0.25 ; transform: scale(1.05) }'
                       + '100% { opacity: 0 ; transform: scale(1.35) }}'
                   + '@keyframes btn-zoom-fade-out { 0% { opacity: 1 } 50% { opacity: 0.65 ; transform: scale(1.85) }'
                       + '75% { opacity: 0.05 ; transform: scale(3.15) } 100% { opacity: 0 ; transform: scale(5.85) }}'
@@ -1459,16 +1472,18 @@
                   + '#amzgpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
                   + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
                       + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
-                  + '#amzgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ; z-index: 5555 ;'
+                  + '#amzgpt {'
+                      + 'z-index: 5555 ; border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ;'
+                      + `border: ${ ui.app.scheme == 'dark' ? 'none' : '1px solid #dadce0' } ; border-radius: 15px ;`
                       + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
-                      + `background-image: linear-gradient(180deg, ${
-                            ui.app.scheme == 'dark' ? '#99a8a6 -215px, black 185px'
-                                                    : `${ config.bgAnimationsDisabled ? 'white' : '#b6ebff' } -193px, white 65px` }) ;`
+                      + ( config.bgAnimationsDisabled ? // classic flat bg
+                            `background: var(--app-bg-color-${ui.app.scheme}-scheme) ; color: var(--font-color-${ui.app.scheme}-scheme) ;`
+                      : `background-image: linear-gradient(180deg, ${ // gradient bg to match stars
+                              ui.app.scheme == 'dark' ? '#99a8a6 -215px, black 185px' : '#b6ebff -193px, white 65px' }) ;` )
                       + ( !config.fgAnimationsDisabled ?
                             'transition: bottom 0.1s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor vertical minimize/restore
                                       + 'width 0.167s cubic-bezier(0, 0, 0.2, 1),' // smoothen Anchor horizontal expand/shrink
-                                      + 'opacity 0.5s ease, transform 0.5s ease ;' : '' ) // smoothen 1st app fade-in
-                      + `border: ${ ui.app.scheme == 'dark' ? 'none' : '1px solid #dadce0' }}`
+                                      + 'opacity 0.5s ease, transform 0.5s ease ;' : '' ) + '}' // smoothen 1st app fade-in
                   + '#amzgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
                   + '#amzgpt p { margin: 0 ; ' + ( ui.app.scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
                   + `#amzgpt .alert-link { color: ${ ui.app.scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
@@ -1499,32 +1514,39 @@
                       + `transition: transform 0.05s ease ; background-color: ${ ui.app.scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                       + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0 ; cursor: ew-resize }'
                   + ( config.fgAnimationsDisabled || env.browser.isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
+                  + '.balloon-tip {'
+                      + 'content: "" ; position: relative ; border: 7px solid transparent ;'
+                      + 'float: left ; left: 7px ; margin: 29px -14px 0 0 ;' // positioning
+                      + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
+                          + ( ui.app.scheme == 'dark' && !config.bgAnimationsDisabled ? '#0000' // hide it for terminal aesthetic
+                              : `var(--pre-bg-color-${ui.app.scheme}-scheme)` ) + '}'
                   + '#amzgpt > pre {'
                       + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
                       + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
                       + 'margin: .99rem 0 7px 0 ; padding: 1.25em 1.25em 0 1.25em ; border-radius: 10px ; overflow: auto ;'
+                      + ( config.bgAnimationsDisabled ? // classic opaque bg
+                            `background: var(--pre-bg-color-${ui.app.scheme}-scheme) ; color: var(--font-color-${ui.app.scheme}-scheme)`
+                      : `${ // slightly tranluscent bg
+                            ui.app.scheme == 'dark' ? 'background: #2b3a40cf ; color: var(--font-color-dark-scheme) ; border: 1px solid white'
+                                                    : 'background: var(--pre-bg-color-light-scheme) ;'
+                                                         + 'color: var(--font-color-light-scheme) ; border: none' } ;` )
                       + ( !config.fgAnimationsDisabled ? // smoothen Anchor mode vertical expand/shrink
-                            'transition: max-height 0.167s cubic-bezier(0, 0, 0.2, 1) ;' : '' )
-                      + `${ ui.app.scheme == 'dark' ? 'background: #2b3a40cf ; color: #f2f2f2 ; border: 1px solid white'
-                                                    : 'background: #eaeaeacf ; color: #202124 ; border: none' }}`
+                            'transition: max-height 0.167s cubic-bezier(0, 0, 0.2, 1) ;' : '' ) + '}'
                   + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
                   + '#amzgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
                   + '#amzgpt + footer { margin: 2px 0 25px ; position: relative }'
                   + `#amzgpt + footer * { color: ${ ui.app.scheme == 'dark' ? '#ccc' : '#666' } !important }`
-                  + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-                      + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
-                      + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
-                          + ( ui.app.scheme == 'dark' ? '##0000' : '#eaeaeacf' ) + '}'
                   + '#copy-btn { float: right ; cursor: pointer }'
                   + `pre > #copy-btn > svg { margin: -5px -6px 0 0 ; height: 15px ; width: 15px ; ${ ui.app.scheme == 'dark' ? 'fill: white' : '' }}`
                   + 'code #copy-btn { position: relative ; top: -6px ; right: -9px }'
                   + 'code #copy-btn > svg { height: 13px ; width: 13px ; fill: white }'
                   + '#app-chatbar {'
-                      + `border: solid 1px ${ ui.app.scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
+                      + `border: solid 1px ${ ui.app.scheme == 'dark' ? ( config.bgAnimationsDisabled ? '#777' : '#aaa' ) : '#638ed4' } ;`
+                      + 'border-radius: 12px 13px 12px 0 ;'
                       + 'font-size: 14.5px ; height: 46px ; width: 100% ; max-height: 200px ; resize: none ; '
                       + `position: relative ; z-index: 555 ; color: #${ ui.app.scheme == 'dark' ? 'eee' : '222' } ;`
                       + 'margin: 3px 0 15px 0 ; padding: 13px 57px 9px 10px ;'
-                      + `background: ${ ui.app.scheme == 'dark' ? '#5151519e' : '#eeeeee9e' }}`
+                      + `background: ${ ui.app.scheme == 'dark' ? `#515151${ config.bgAnimationsDisabled ? '' : '9e' }` : '#eeeeee9e' }}`
                   + '.fade-in { opacity: 0 ; transform: translateY(10px) }'
                   + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
                   + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
@@ -2006,7 +2028,7 @@
             const configKey = layer + 'AnimationsDisabled'
             log.debug(`Toggling ${layer.toUpperCase()} animations ${ config[configKey] ? 'ON' : 'OFF' }...`)
             settings.save(configKey, !config[configKey])
-            update.style.app() ; if (layer == 'bg') update.stars()
+            update.style.app() ; if (layer == 'bg') { update.stars() ; update.replyPrefix() }
             if (layer == 'fg' && modals.settings.get()) {
 
                 // Toggle ticker-scroll of About status label
@@ -2715,8 +2737,7 @@
             try { // to render markdown
                 answerPre.innerHTML = marked.parse(answer) } catch (err) { log.error(err.message) }
             hljs.highlightAll() // highlight code
-            if (ui.app.scheme == 'dark' && answerPre.firstChild?.tagName == 'P')
-                answerPre.firstChild.prepend('>> ') // since speech balloon tip missing
+            update.replyPrefix() // prepend '>> ' if dark scheme w/ bg animations to emulate terminal
 
             // Typeset math
             answerPre.querySelectorAll('code').forEach(codeBlock => // add linebreaks after semicolons
