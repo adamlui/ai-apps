@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.19.2
+// @version                2024.9.19.3
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -3544,10 +3544,13 @@
     appFooter.append(footerContent)
 
     // APPEND DDGPT + footer to DDG
-    const appElems = [appFooter, appDiv]
+    const appElems = [appFooter, appDiv],
+          appDivContainerSelector = env.browser.isMobile || ui.site.isCentered ? '[data-area*="mainline"]' : '[class*="sidebar"]'
     const appDivContainer = await new Promise(resolve => {
-        new MutationObserver((_, obs) => {
-            const container = document.querySelector(env.browser.isMobile || ui.site.isCentered ? '[data-area*="mainline"]' : '[class*="sidebar"]')
+        const container = document.querySelector(appDivContainerSelector)
+        if (container) resolve(container)
+        else new MutationObserver((_, obs) => {
+            const container = document.querySelector(appDivContainerSelector)
             if (container) { obs.disconnect() ; resolve(container) }
         }).observe(document.body, { childList: true, subtree: true })
     })
