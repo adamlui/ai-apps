@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.18.6
+// @version               2024.9.19
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1273,9 +1273,8 @@
                 }
                 pinMenu.append(pinMenuUL)
 
-                // Add listeners to make visibility stick when mousing from pinSVG
-                pinMenu.onmouseover = menus.pin.toggle
-                pinMenu.onmouseout = pinMenu.remove // instead of toggle so re-mouseover doesn't show ghost
+                // Add listeners
+                pinMenu.onmouseover = pinMenu.onmouseout = menus.pin.toggle
             },
 
             toggle(event) { // visibility
@@ -1285,8 +1284,10 @@
                 if (!menus.pin.rightPos)
                      menus.pin.rightPos = appDiv.getBoundingClientRect().right - event.clientX - pinMenu.offsetWidth/2
                 pinMenu.style.top = `${menus.pin.topPos}px` ; pinMenu.style.right = `${menus.pin.rightPos}px`
-                pinMenu.style.opacity = (
-                    event.type == 'mouseover' ? 1 : event.type == 'mouseout' ? 0 : +!parseInt(pinMenu.style.opacity, 10) )
+                clearTimeout(menus.pin.hideTimeout)
+                if (event.type == 'mouseover') pinMenu.style.opacity = 1
+                else if (event.type == 'mouseout')
+                    menus.pin.hideTimeout = setTimeout(() => pinMenu.remove(), 55) // delay to cover gap
             }
         }
     }
