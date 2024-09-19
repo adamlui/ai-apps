@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.19.1
+// @version                2024.9.19.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1829,9 +1829,11 @@
                       + '--app-bg-color-light-scheme: #ffffff ; --app-bg-color-dark-scheme: #282828 ;'
                       + '--pre-bg-color-light-scheme: #e7e7e7cf ; --pre-bg-color-dark-scheme: #3a3a3a ;'
                       + '--font-color-light-scheme: #282828 ; --font-color-dark-scheme: #f2f2f2 }'
-                  + '@keyframes modal-zoom-fade-out { 0% { opacity: 1 } 50% { opacity: 0.25 ; transform: scale(1.05) }'
+                  + '@keyframes modal-zoom-fade-out {'
+                      + '0% { opacity: 1 } 50% { opacity: 0.25 ; transform: scale(1.05) }'
                       + '100% { opacity: 0 ; transform: scale(1.35) }}'
-                  + '@keyframes btn-zoom-fade-out { 0% { opacity: 1 } 50% { opacity: 0.65 ; transform: scale(1.85) }'
+                  + '@keyframes btn-zoom-fade-out {'
+                      + '0% { opacity: 1 } 50% { opacity: 0.65 ; transform: scale(1.85) }'
                       + '75% { opacity: 0.05 ; transform: scale(3.15) } 100% { opacity: 0 ; transform: scale(5.85) }}'
                   + '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
                   + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
@@ -1854,36 +1856,45 @@
                   + '#ddgpt p { margin: 0 ; ' + ( ui.app.scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
                   + `#ddgpt .alert-link { color: ${ ui.app.scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
                   + ( ui.app.scheme == 'dark' ? '#ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
-                  + '.app-name, .app-name:hover { font-size: 1.5rem ; font-weight: 700 ; text-decoration: none ;'
+                  + '.app-name, .app-name:hover {'
+                      + 'font-size: 1.5rem ; font-weight: 700 ; text-decoration: none ;'
                       + `color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' }}`
                   + '.kudoai { margin-left: 6px ; color: #aaa } '
                   + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important } '
                   + `.kudoai a:hover { color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' }}`
                   + '#corner-btns { float: right ; margin-top: 2px }'
-                  + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
+                  + '.corner-btn {'
+                      + 'float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
                       + `${ ui.app.scheme == 'dark' ? 'fill: white ; stroke: white' : 'fill: #adadad ; stroke: #adadad' };` // color
                       + 'transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out }' // for re-appearances from btn-zoom-fade-out ends
-                  + `.corner-btn:hover { ${ ui.app.scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
+                  + '.corner-btn:hover {'
+                      + `${ ui.app.scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
                       + `${ config.fgAnimationsDisabled || env.browser.isMobile ? '' : 'transform: scale(1.285)' }}`
-                  + `.corner-btn:active { ${ ui.app.scheme == 'dark' ? 'fill: #999999 ; stroke: #999999' : 'fill: #638ed4 ; stroke: #638ed4' } }`
+                  + '.corner-btn:active {'
+                      + `${ ui.app.scheme == 'dark' ? 'fill: #999999 ; stroke: #999999' : 'fill: #638ed4 ; stroke: #638ed4' } }`
                   + ( config.bgAnimationsDisabled ? '' : ( '#ddgpt-logo, .corner-btn svg, .standby-btn'
                       + `{ filter: drop-shadow(${ ui.app.scheme == 'dark' ? '#7171714d 10px' : '#aaaaaa21 7px' } 7px 3px) }` ))
                   + '#ddgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
                   + '#ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
-                  + '#font-size-slider-track { width: 98% ; height: 7px ; margin: -6px auto -13px ; padding: 15px 0 ;'
+                  + '#font-size-slider-track {'
+                      + 'width: 98% ; height: 7px ; margin: -6px auto -13px ; padding: 15px 0 ;'
                       + 'background-color: #ccc ; box-sizing: content-box; background-clip: content-box ; -webkit-background-clip: content-box }'
                   + '#font-size-slider-track::before {' // to add finger cursor to unpadded core only
                       + 'content: "" ; position: absolute ; top: 10px ; left: 0 ; right: 0 ; height: calc(100% - 20px) ; cursor: pointer }'
-                  + '#font-size-slider-tip { z-index: 1 ; position: absolute ; bottom: 20px ;'
+                  + '#font-size-slider-tip {'
+                      + 'z-index: 1 ; position: absolute ; bottom: 20px ;'
                       + 'border-left: 4.5px solid transparent ; border-right: 4.5px solid transparent ; border-bottom: 16px solid #ccc }'
-                  + '#font-size-slider-thumb { z-index: 2 ; width: 10px ; height: 25px ; border-radius: 30% ; position: relative ; top: -7.65px ;'
+                  + '#font-size-slider-thumb {'
+                      + 'z-index: 2 ; width: 10px ; height: 25px ; border-radius: 30% ; position: relative ; top: -7.65px ;'
                       + `transition: transform 0.05s ease ; background-color: ${ ui.app.scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                       + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0 ; cursor: ew-resize }'
                   + ( config.fgAnimationsDisabled || env.browser.isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
-                  + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
+                  + '.standby-btn {'
+                      + 'width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
                       + 'border-radius: 4px ; border: 1px solid #888 ;'
                       + 'transition: transform 0.15s ease !important }'
-                  + '.standby-btn:hover { border-radius: 4px ;'
+                  + '.standby-btn:hover {'
+                      + 'border-radius: 4px ;'
                       + `${ ui.app.scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
                       + `${ config.fgAnimationsDisabled || env.browser.isMobile ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
                   + '.reply-tip {'
@@ -1939,13 +1950,14 @@
                   + '.related-query:hover, .related-query:focus {'
                       + ( config.fgAnimationsDisabled || env.browser.isMobile ? '' : 'transform: scale(1.055) !important ;' )
                       + `background: ${ ui.app.scheme == 'dark' ? '#a2a2a270': '#dae5ffa3 ; color: #000000a8 ; border-color: #a3c9ff' }}`
-                  + '.related-query svg { position: relative ; top: 4px ; margin-right: 6px ;' // related query icon
+                  + '.related-query svg {' // related query icon
+                      + 'position: relative ; top: 4px ; margin-right: 6px ;'
                       + `color: ${ ui.app.scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
                   + '.fade-in { opacity: 0 ; transform: translateY(10px) }'
                   + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
                   + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
-                  + '.chatbar-btn { z-index: 560 ;'
-                      + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
+                  + '.chatbar-btn {'
+                      + 'z-index: 560 ; border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
                       + `bottom: ${ env.browser.isFF ? 50 : 55 }px ;`
                       + `${ ui.app.scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
                   + '.chatbar-btn:hover {'
@@ -1961,7 +1973,8 @@
                   + '.katex-html { display: none } ' // hide unrendered math
                   + '.chatgpt-notif { fill: white ; stroke: white ; color: white ; padding: 7.5px 14px 6.5px 11.5px !important }'
                   + '.notif-close-btn { display: none !important }' // hide notif close btn
-                  + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important ;' // increase alert padding
+                  + '.chatgpt-modal > div {'
+                      + 'padding: 20px 25px 24px 25px !important ;' // increase alert padding
                       + 'background-color: white !important ; color: black }'
                   + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 1.55rem }' // pos/size modal msg
                   + `.chatgpt-modal a { color: #${ ui.app.scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
@@ -1997,7 +2010,8 @@
                   + ( config.fgAnimationsDisabled || env.browser.isMobile ? '' : (
                         '[class$="-modal"] button { transition: transform 0.15s ease }' 
                       + '[class$="-modal"] button:hover { transform: scale(1.055) }' ))
-                  + '.ddgpt-menu { position: absolute ; z-index: 2250 ;'
+                  + '.ddgpt-menu {'
+                      + 'position: absolute ; z-index: 2250 ;'
                       + 'padding: 3.5px 5px !important ; font-family: "Source Sans Pro", sans-serif ; font-size: 12px }'
                   + '.ddgpt-menu ul { margin: 0 ; padding: 0 ; list-style: none }'
                   + '.ddgpt-menu-item { padding: 0 5px ; line-height: 20.5px }'
@@ -2007,16 +2021,21 @@
 
                   // Glowing modal btns
                   + ':root { --glow-color: hsl(186 100% 69%); }'
-                  + '.glowing-btn { perspective: 2em ; font-weight: 900 ; animation: border-flicker 2s linear infinite ;'
+                  + '.glowing-btn {'
+                      + 'perspective: 2em ; font-weight: 900 ; animation: border-flicker 2s linear infinite ;'
                       + '-webkit-box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) ;' 
                       + 'box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) ;' 
                       + '-moz-box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color) }' 
-                  + '.glowing-txt { animation: text-flicker 3s linear infinite ;'
+                  + '.glowing-txt {'
+                      + 'animation: text-flicker 3s linear infinite ;'
                       + '-webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
                       + '-moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) ;'
                       + 'text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color) }'
-                  + '.faulty-letter { opacity: 0.5 ; animation: faulty-flicker 2s linear infinite }'
-                  + '.glowing-btn::after { content: "" ; position: absolute ; top: 0 ; bottom: 0 ; left: 0 ; right: 0 ;'
+                  + '.faulty-letter {'
+                      + 'opacity: 0.5 ; animation: faulty-flicker 2s linear infinite }'
+                      + ( !env.browser.isMobile ? 'background: var(--glow-color) ; transform: translateY(120%) rotateX(95deg) scale(1, 0.35)' : '' ) + '}'
+                  + '.glowing-btn::after {'
+                      + 'content: "" ; position: absolute ; top: 0 ; bottom: 0 ; left: 0 ; right: 0 ;'
                       + 'opacity: 0 ; z-index: -1 ; box-shadow: 0 0 2em 0.2em var(--glow-color) ;'
                       + 'background-color: var(--glow-color) ; transition: opacity 100ms linear }'
                   + '.glowing-btn:hover { color: rgba(0, 0, 0, 0.8) ; text-shadow: none ; animation: none }'
@@ -2024,12 +2043,15 @@
                   + '.glowing-btn:hover .faulty-letter { animation: none ; text-shadow: none ; opacity: 1 }'
                   + '.glowing-btn:hover:before { filter: blur(1.5em) ; opacity: 1 }'
                   + '.glowing-btn:hover:after { opacity: 1 }'
-                  + '@keyframes faulty-flicker { 0% { opacity: 0.1 } 2% { opacity: 0.1 } 4% { opacity: 0.5 } 19% { opacity: 0.5 }'
+                  + '@keyframes faulty-flicker {'
+                      + '0% { opacity: 0.1 } 2% { opacity: 0.1 } 4% { opacity: 0.5 } 19% { opacity: 0.5 }'
                       + '21% { opacity: 0.1 } 23% { opacity: 1 } 80% { opacity: 0.5 } 83% { opacity: 0.4 } 87% { opacity: 1 }}'
-                  + '@keyframes text-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 8% { opacity: 0.1 } 9% { opacity: 1 }'
+                  + '@keyframes text-flicker {'
+                      + '0% { opacity: 0.1 } 2% { opacity: 1 } 8% { opacity: 0.1 } 9% { opacity: 1 }'
                       + '12% { opacity: 0.1 } 20% { opacity: 1 } 25% { opacity: 0.3 } 30% { opacity: 1 } 70% { opacity: 0.7 }'
                       + '72% { opacity: 0.2 } 77% { opacity: 0.9 } 100% { opacity: 0.9 }}'
-                  + '@keyframes border-flicker { 0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
+                  + '@keyframes border-flicker {'
+                      + '0% { opacity: 0.1 } 2% { opacity: 1 } 4% { opacity: 0.1 } 8% { opacity: 1 }'
                       + '70% { opacity: 0.7 } 100% { opacity: 1 }}'
 
                   // chatgpt.alert() + DDGPT modals
@@ -2053,7 +2075,8 @@
                       + `${ ui.app.scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
                   + '#ddgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 3px -3px 0 }'
                   + `#ddgpt-settings-title h4 { font-size: ${ env.browser.isPortrait ? 26 : 31 }px ; font-weight: bold ; margin-top: -39px }`
-                  + '#ddgpt-settings ul { list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
+                  + '#ddgpt-settings ul {'
+                      + 'list-style: none ; padding: 0 ; margin-bottom: 2px ;' // hide bullets, close bottom gap
                       + `width: ${ env.browser.isPortrait ? 100 : 50 }% }` // set width based on column cnt
                   + '#ddgpt-settings li {'
                       + `color: ${ ui.app.scheme == 'dark' ? 'rgb(255, 255, 255, 0.65)' : 'rgba(0, 0, 0, 0.45)' } ;` // for text
@@ -2069,7 +2092,8 @@
                   + '#ddgpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
                   + '#ddgpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
                   + '#ddgpt-settings li, #ddgpt-settings li label { cursor: pointer }' // add finger on hover
-                  + '#ddgpt-settings li:hover { opacity: 1 ;'
+                  + '#ddgpt-settings li:hover {'
+                      + 'opacity: 1 ;'
                       + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
                       + `${ config.fgAnimationsDisabled || env.browser.isMobile ? '' : 'transform: scale(1.22)' }}` // add zoom
                   + '#ddgpt-settings li > input { float: right }' // pos toggles
@@ -2078,12 +2102,13 @@
                   + ( config.fgAnimationsDisabled ? '' : '#arrows-cycle { animation: rotation 5s linear infinite }' )
                   + '@keyframes rotation { from { transform: rotate(0deg) } to { transform: rotate(360deg) }}'
                   + `#about-menu-entry span { color: ${ ui.app.scheme == 'dark' ? '#28ee28' : 'green' }}`
-                  + `#about-menu-entry > span { width: ${ env.browser.isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
+                  + '#about-menu-entry > span {'
+                      + `width: ${ env.browser.isPortrait ? '15vw' : '92px' } ; height: 20px ; overflow: hidden ;` // outer About status span
                       + `${ config.fgAnimationsDisabled ? '' : ( // fade edges
                                 'mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;'
                       + '-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)' )}}`
-                  + '#about-menu-entry > span > div { text-wrap: nowrap ;'
-                      + `${ config.fgAnimationsDisabled ? '' : 'animation: ticker linear 60s infinite' }}`
+                  + '#about-menu-entry > span > div {'
+                      + `text-wrap: nowrap ; ${ config.fgAnimationsDisabled ? '' : 'animation: ticker linear 60s infinite' }}`
                   + '@keyframes ticker { 0% { transform: translateX(100%) } 100% { transform: translateX(-2000%) }}'
                   + `.about-em { color: ${ ui.app.scheme == 'dark' ? 'white' : 'green' } !important }`
                 )
