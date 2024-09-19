@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.18.4
+// @version                  2024.9.18.5
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2178,7 +2178,7 @@
                   + '.standby-btn:hover { border-radius: 6px ;'
                       + `${ ui.app.scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
                       + `${ config.fgAnimationsDisabled || env.browser.isMobile ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
-                  + '.balloon-tip {'
+                  + '.reply-tip {'
                       + 'content: "" ; position: relative ; border: 7px solid transparent ;'
                       + `float: left ; margin: ${ env.browser.isMobile ? 39 : 28 }px -15px 0 0 ; left: ${ env.browser.isMobile ? 12 : 6 }px ;` // positioning
                       + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color:'
@@ -2707,7 +2707,7 @@
         toggle(state = '') {
             log.caller = `fontSizeSlider.toggle(${ state ? `'${state}'` : '' })`
             const slider = document.getElementById('font-size-slider-track') || fontSizeSlider.createAppend(),
-                  replyTip = appDiv.querySelector('.balloon-tip'),
+                  replyTip = appDiv.querySelector('.reply-tip'),
                   sliderTip = document.getElementById('font-size-slider-tip')
 
             // Show slider
@@ -3617,7 +3617,7 @@
                 } else {
                     const answerPre = document.createElement('pre'),
                           balloonTipSpan = document.createElement('span')
-                    balloonTipSpan.className = 'balloon-tip'
+                    balloonTipSpan.className = 'reply-tip'
                     appDiv.append(balloonTipSpan, answerPre)
                 }
 

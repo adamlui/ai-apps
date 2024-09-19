@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.18.3
+// @version                2024.9.18.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1514,7 +1514,7 @@
                       + `transition: transform 0.05s ease ; background-color: ${ ui.app.scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
                       + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0 ; cursor: ew-resize }'
                   + ( config.fgAnimationsDisabled || env.browser.isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
-                  + '.balloon-tip {'
+                  + '.reply-tip {'
                       + 'content: "" ; position: relative ; border: 7px solid transparent ;'
                       + 'float: left ; left: 7px ; margin: 29px -14px 0 0 ;' // positioning
                       + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
@@ -1991,7 +1991,7 @@
         toggle(state = '') {
             log.caller = `fontSizeSlider.toggle(${ state ? `'${state}'` : '' })`
             const slider = document.getElementById('font-size-slider-track') || fontSizeSlider.createAppend(),
-                  replyTip = appDiv.querySelector('.balloon-tip'),
+                  replyTip = appDiv.querySelector('.reply-tip'),
                   sliderTip = document.getElementById('font-size-slider-tip')
 
             // Show slider
@@ -2688,7 +2688,7 @@
                 // Create/append answer bubble
                 const answerPre = document.createElement('pre'),
                       balloonTipSpan = document.createElement('span')
-                balloonTipSpan.className = 'balloon-tip'
+                balloonTipSpan.className = 'reply-tip'
                 appDiv.append(balloonTipSpan, answerPre)
 
                 update.style.tweaks() // show/hide 'by KudoAI', update pre-height based on mode
