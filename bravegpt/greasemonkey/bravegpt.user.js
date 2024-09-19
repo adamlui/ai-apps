@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.18.3
+// @version               2024.9.18.4
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2678,7 +2678,7 @@
                 if (mode == 'sticky' && config.anchored) toggle.anchorMode()
                 settings.save(configKeyName, true)
             } else settings.save(configKeyName, false)
-            update.style.tweaks() ; update.chatbarWidth() // apply new state to UI
+            update.style.tweaks() // apply new state to UI
             if (mode == 'wider') icons.widescreen.update() // toggle icons everywhere
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const stickySidebarToggle = document.querySelector('[id*="sticky"][id*="menu-entry"] input')
