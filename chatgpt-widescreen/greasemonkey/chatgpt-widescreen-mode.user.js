@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.18.5
+// @version             2024.9.19
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -439,58 +439,13 @@
 
             // Add About entry
             const amLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
-            menu.ids.push(GM_registerMenuCommand(amLabel, launchAboutModal))
+            menu.ids.push(GM_registerMenuCommand(amLabel, modals.about.show))
 
         },
 
         refresh() {
             if (env.scriptManager == 'OrangeMonkey') return
             for (const id of menu.ids) { GM_unregisterMenuCommand(id) } menu.register()
-        }
-    }
-
-    function launchAboutModal() {
-
-        // Show alert
-        const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
-              headingStyle = 'font-size: 1.15rem',
-              pStyle = 'position: relative ; left: 3px',
-              pBrStyle = 'position: relative ; left: 4px ',
-              aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
-        const aboutModalID = siteAlert(
-            msgs.appName || app.name, // title
-            `<span style="${headingStyle}"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
-                + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
-            + `<span style="${headingStyle}"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
-                + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
-                + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-            + `<span style="${headingStyle}"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
-                + `<span style="${pBrStyle}"><a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
-                + app.urls.gitHub + '</a></span>',
-            [ // buttons
-                function checkForUpdates() { updateCheck() },
-                function getSupport() { safeWinOpen(app.urls.support) },
-                function leaveAReview() { // show new modal
-                    const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
-                        [ function greasyFork() { safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                          function productHunt() { safeWinOpen(app.urls.productHunt + '/reviews/new') }])
-                    document.getElementById(reviewModalID).querySelector('button')
-                        .style.display = 'none' }, // hide dismiss button
-                function moreChatGPTapps() { safeWinOpen(app.urls.relatedApps) }
-            ], '', 478 // set width
-        )
-
-        // Re-format buttons to include emoji + localized label + hide Dismiss button
-        for (const btn of document.getElementById(aboutModalID).querySelectorAll('button')) {
-            if (/updates/i.test(btn.textContent)) btn.textContent = (
-                '🚀 ' + ( msgs.btnLabel_updateCheck || 'Check for Updates' ))
-            else if (/support/i.test(btn.textContent)) btn.textContent = (
-                '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
-            else if (/review/i.test(btn.textContent)) btn.textContent = (
-                '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave Review' ))
-            else if (/apps/i.test(btn.textContent)) btn.textContent = (
-                '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
-            else btn.style.display = 'none' // hide Dismiss button
         }
     }
 
@@ -521,7 +476,7 @@
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                                modals.safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
                         )
 
@@ -542,27 +497,8 @@
                         + ( msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
                 )
-                launchAboutModal()
+                modals.about.show()
     }})}
-
-    function safeWinOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-
-    // Define FACTORY functions
-
-    const create = {
-
-        style(content) {
-            const style = document.createElement('style')
-            if (content) style.innerText = content
-            return style
-        },
-
-        svgElem(type, attrs) {
-            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
-            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
-            return elem
-        }
-    }
 
     // Define FEEDBACK functions
 
@@ -588,6 +524,76 @@
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(title, msg, btns, checkbox, width )}
+
+    // Define MODAL functions
+
+    const modals = {
+        about: {
+            show() {
+
+                // Show alert
+                const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
+                    headingStyle = 'font-size: 1.15rem',
+                    pStyle = 'position: relative ; left: 3px',
+                    pBrStyle = 'position: relative ; left: 4px ',
+                    aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
+                const aboutModalID = siteAlert(
+                    msgs.appName || app.name, // title
+                    `<span style="${headingStyle}"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
+                        + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
+                    + `<span style="${headingStyle}"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
+                        + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
+                        + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
+                    + `<span style="${headingStyle}"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+                        + `<span style="${pBrStyle}"><a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
+                        + app.urls.gitHub + '</a></span>',
+                    [ // buttons
+                        function checkForUpdates() { updateCheck() },
+                        function getSupport() { modals.safeWinOpen(app.urls.support) },
+                        function leaveAReview() { // show new modal
+                            const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
+                                [ function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                                function productHunt() { modals.safeWinOpen(app.urls.productHunt + '/reviews/new') }])
+                            document.getElementById(reviewModalID).querySelector('button')
+                                .style.display = 'none' }, // hide dismiss button
+                        function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
+                    ], '', 478 // set width
+                )
+
+                // Re-format buttons to include emoji + localized label + hide Dismiss button
+                for (const btn of document.getElementById(aboutModalID).querySelectorAll('button')) {
+                    if (/updates/i.test(btn.textContent)) btn.textContent = (
+                        '🚀 ' + ( msgs.btnLabel_updateCheck || 'Check for Updates' ))
+                    else if (/support/i.test(btn.textContent)) btn.textContent = (
+                        '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
+                    else if (/review/i.test(btn.textContent)) btn.textContent = (
+                        '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave Review' ))
+                    else if (/apps/i.test(btn.textContent)) btn.textContent = (
+                        '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
+                    else btn.style.display = 'none' // hide Dismiss button
+                }
+            }
+        },
+
+        safeWinOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
+    }
+
+    // Define FACTORY functions
+
+    const create = {
+
+        style(content) {
+            const style = document.createElement('style')
+            if (content) style.innerText = content
+            return style
+        },
+
+        svgElem(type, attrs) {
+            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
+            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
+            return elem
+        }
+    }
     
     // Define CHATBAR functions
     
