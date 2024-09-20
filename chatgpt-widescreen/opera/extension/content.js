@@ -29,7 +29,7 @@
     chrome.runtime.onMessage.addListener(request => {
         if (request.action == 'notify') notify(request.msg, request.position)
         else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
-        else if (request.action == 'sync.extension') sync.extension(request.host)
+        else if (request.action == 'sync.extension') sync.extension(request.site)
         return true
     })
 
@@ -383,7 +383,7 @@
 
     const sync = {
         
-        async extension(srcHost) {
+        async extension(srcSite) {
             const extensionWasDisabled = config.extensionDisabled
             await settings.load('extensionDisabled', ...sites[site].availFeatures)
             if (!extensionWasDisabled && config.extensionDisabled) { // popup master toggled off, disable modes/tweaks/btns
@@ -397,7 +397,7 @@
                 update.style.wideScreen() // sync wider chatbox
                 btns.insert()
                 if (/openai|chatgpt/.test(site)) chatbar.tweak() // in case NCB visibility changed
-            } else if (!config.extensionDisabled && srcHost.includes(site)) { // popup master already on, sub-toggled on same host
+            } else if (!config.extensionDisabled && srcSite.includes(site)) { // popup master already on, sub-toggled on same host
                 update.style.tweaks() // sync tweaks
                 update.style.wideScreen() // sync wider chatbox
             }

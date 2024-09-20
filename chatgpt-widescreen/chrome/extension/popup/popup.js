@@ -1,7 +1,7 @@
 (async () => {
 
-    const hostname = await new Promise(resolve =>
-        chrome.tabs.query({ active: true }, tabs => resolve(new URL(tabs[0].url).hostname)))
+    const site = /([^.]+)\.[^.]+$/.exec(await new Promise(resolve =>
+        chrome.tabs.query({ active: true }, tabs => resolve(new URL(tabs[0].url).hostname))))[1]
 
     // Import settings-utils.js
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
@@ -91,7 +91,7 @@
 
     // Define SYNC functions
 
-    function syncExtension() { chrome.runtime.sendMessage({ action: 'sync.extension', host: hostname }) }
+    function syncExtension() { chrome.runtime.sendMessage({ action: 'sync.extension', site: site }) }
 
     function updateGreyness() {
 
