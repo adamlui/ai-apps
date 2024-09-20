@@ -217,11 +217,12 @@
         },
 
         remove() {
-            const chatbarDiv = chatbar.get()
-            if (chatbarDiv?.contains(btns.wideScreen)) { // remove all buttons
+            const chatbarDiv = chatbar.get(),
+                  parentToRemoveFrom = site == 'perplexity' ? chatbarDiv?.lastChild : chatbarDiv
+            if (parentToRemoveFrom?.contains(btns.wideScreen)) { // remove all buttons
                 const btnsToRemove = [btns.newChat, btns.wideScreen, btns.fullScreen, tooltipDiv]
                 if (typeof btns.fullWindow != 'undefined') btnsToRemove.push(btns.fullWindow)
-                for (const node of btnsToRemove) chatbarDiv.removeChild(node)
+                btnsToRemove.forEach(btn => parentToRemoveFrom.removeChild(btn))
             }
         },
 
