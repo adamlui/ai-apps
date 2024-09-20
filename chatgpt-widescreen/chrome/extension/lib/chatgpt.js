@@ -229,7 +229,7 @@ const chatgpt = {
     },
 
     browser: {
-        isFirefox() { return navigator.userAgent.includes('Firefox'); },
+        isBrave() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'); },
 
         isFullScreen() {
             const userAgentStr = navigator.userAgent;
