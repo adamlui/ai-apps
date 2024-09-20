@@ -775,8 +775,8 @@
                 btnSVG.setAttribute('stroke', btns.color)
                 btnSVG.setAttribute('fill', 'none')
                 btnSVG.setAttribute('stroke-width', '2')
-                btnSVG.setAttribute('height', site == 'poe' ? '2em' : 17)
-                btnSVG.setAttribute('width', site == 'poe' ? '2em' : 17)
+                const btnSize = site == 'perplexity' ? 18 : 'poe' ? '2em' : 17
+                btnSVG.setAttribute('height', btnSize) ; btnSVG.setAttribute('width', btnSize)
             }
             btnSVG.setAttribute('viewBox', (
                 mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '-2 -0.5 ' : '8 8 ' ) // move to XY coords to crop whitespace
