@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.19.4
+// @version               2024.9.19.5
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -604,6 +604,7 @@
         while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear appDiv content
         const alertP = document.createElement('p')
         alertP.id = 'bravegpt-alert' ; alertP.className = 'no-user-select'
+        alertP.style.marginBottom = '-20px' // counteract appDiv padding
 
         alerts.forEach((alert, idx) => { // process each alert for display
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
