@@ -344,7 +344,7 @@
                 if (mode == 'wideScreen') { document.head.append(wideScreenStyle) ; sync.mode('wideScreen') }
                 else if (mode == 'fullWindow') {
                     if (site == 'perplexity')
-                        document.querySelector(sites[site].selectors.sidebarToggle)?.click()
+                        document.querySelector(sites[site].selectors.btns.sidebarToggle)?.click()
                     else {
                         document.head.append(fullWinStyle)
                         if (site == 'poe') sync.mode('fullWindow') ; else chatgpt.sidebar.hide()
@@ -358,7 +358,7 @@
                 else if (mode == 'fullWindow') {
                     try { document.head.removeChild(fullWinStyle) } catch (err) {}
                     if (/chatgpt|openai/.test(site)) chatgpt.sidebar.show()
-                    else if (site == 'perplexity') document.querySelector(sites[site].selectors.sidebarToggle)?.click()
+                    else if (site == 'perplexity') document.querySelector(sites[site].selectors.btns.sidebarToggle)?.click()
                     else if (site == 'poe') sync.mode('fullWindow') // since not sidebarObserve()'d
                 } else if (mode == 'fullScreen') {
                     if (config.f11)
