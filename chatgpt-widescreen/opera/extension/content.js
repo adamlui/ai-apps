@@ -165,7 +165,7 @@
                     .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
                 const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
                 validBtnTypes.forEach(async (btnType, idx) => {
-                    btns[btnType] = document.createElement('div') // create button
+                    btns[btnType] = document.createElement('button') // create button
                     btns[btnType].id = btnType + '-btn' // for toggle.tooltip()
                     btns.updateSVG(btnType) // insert icon
                     btns[btnType].style.cssText = 'position: relative ; top: 0 ;'

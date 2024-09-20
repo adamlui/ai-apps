@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.19.6
+// @version                  2024.9.19.7
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -3471,43 +3471,43 @@
                   fadeDurationOffset = 150 // ms — for early hide to not trigger overflow scrollbar
 
             appDiv.querySelectorAll('#googlegpt > pre, code').forEach(parentElem => {
-                const copySpan = document.createElement('span'),
+                const copyBtn = document.createElement('btn'),
                       copySVG = icons.copy.create(parentElem)
-                copySpan.id = 'copy-btn' ; copySVG.id = 'copy-icon'
-                copySpan.className = 'no-mobile-tap-outline'
-                copySpan.append(copySVG) ; let elemToPrepend = copySpan
+                copyBtn.id = 'copy-btn' ; copySVG.id = 'copy-icon'
+                copyBtn.className = 'no-mobile-tap-outline'
+                copyBtn.append(copySVG) ; let elemToPrepend = copyBtn
 
                 // Wrap code button in div for v-offset
                 if (parentElem.tagName == 'CODE') {
                     elemToPrepend = document.createElement('div')
                     elemToPrepend.style.height = '11px'
-                    elemToPrepend.append(copySpan)
+                    elemToPrepend.append(copyBtn)
                 }
 
                 // Add listeners
-                if (!env.browser.isMobile) copySpan.onmouseover = copySpan.onmouseout = toggle.tooltip
-                copySpan.onclick = event => { // copy text, update icon + tooltip status
-                    const copySVG = copySpan.querySelector('#copy-icon')
+                if (!env.browser.isMobile) copyBtn.onmouseover = copyBtn.onmouseout = toggle.tooltip
+                copyBtn.onclick = event => { // copy text, update icon + tooltip status
+                    const copySVG = copyBtn.querySelector('#copy-icon')
                     if (!copySVG) return // since clicking on copied icon
-                    const textContainer = copySpan.parentNode.tagName == 'PRE' ? copySpan.parentNode // reply container
-                                                                               : copySpan.parentNode.parentNode, // code container
+                    const textContainer = copyBtn.parentNode.tagName == 'PRE' ? copyBtn.parentNode // reply container
+                                                                               : copyBtn.parentNode.parentNode, // code container
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
                           checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.id = 'copied-icon'
-                    setTimeout(() => copySpan.replaceChild(checkmarksSVG, copySVG), // change to copied icon
-                        fadeDuration + reappearDelay - fadeDurationOffset) // ...after copySpan reappears
-                    setTimeout(() => copySpan.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
+                    setTimeout(() => copyBtn.replaceChild(checkmarksSVG, copySVG), // change to copied icon
+                        fadeDuration + reappearDelay - fadeDurationOffset) // ...after copyBtn reappears
+                    setTimeout(() => copyBtn.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
                     navigator.clipboard.writeText(textToCopy) // copy text to clipboard
                     if (!env.browser.isMobile) toggle.tooltip(event) // show copied status in tooltip
                 }
-                copySpan.onmouseup = () => { // zoom/fade-out
+                copyBtn.onmouseup = () => { // zoom/fade-out
                     if (config.fgAnimationsDisabled) return
-                    const copySVG = copySpan.querySelector('#copy-icon')
+                    const copySVG = copyBtn.querySelector('#copy-icon')
                     if (!copySVG) return // since clicking on copied icon
-                    copySpan.style.animation = `btn-zoom-fade-out .${fadeDuration}s ease-out`
-                    setTimeout(() => { // hide copySpan after animation nears completion
-                        Object.assign(copySpan.style, { opacity: '0', visibility: 'hidden', animation: '' })
-                        setTimeout(() => // show copySpan after reappearDelay
-                            Object.assign(copySpan.style, { visibility: 'visible', opacity: '1' }), reappearDelay)
+                    copyBtn.style.animation = `btn-zoom-fade-out .${fadeDuration}s ease-out`
+                    setTimeout(() => { // hide copyBtn after animation nears completion
+                        Object.assign(copyBtn.style, { opacity: '0', visibility: 'hidden', animation: '' })
+                        setTimeout(() => // show copyBtn after reappearDelay
+                            Object.assign(copyBtn.style, { visibility: 'visible', opacity: '1' }), reappearDelay)
                     }, fadeDuration - fadeDurationOffset)
                 }
 
@@ -3544,69 +3544,69 @@
 
                 // Create/append Chevron button
                 if (!env.browser.isMobile) {
-                    var chevronSpan = document.createElement('span'),
+                    var chevronBtn = document.createElement('btn'),
                         chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
-                    chevronSpan.id = 'chevron-btn' // for toggle.tooltip()
-                    chevronSpan.className = 'corner-btn' ; chevronSpan.style.margin = '-3.5px 1px 0 11px'
-                    chevronSpan.style.display = 'none' // to activate from anchorStyles only
-                    chevronSpan.append(chevronSVG) ; cornerBtnsDiv.append(chevronSpan)
+                    chevronBtn.id = 'chevron-btn' // for toggle.tooltip()
+                    chevronBtn.className = 'corner-btn' ; chevronBtn.style.margin = '-3.5px 1px 0 11px'
+                    chevronBtn.style.display = 'none' // to activate from anchorStyles only
+                    chevronBtn.append(chevronSVG) ; cornerBtnsDiv.append(chevronBtn)
                 }
 
                 // Create/append About button
-                const aboutSpan = document.createElement('span'),
+                const aboutBtn = document.createElement('btn'),
                       aboutSVG = icons.questionMarkCircle.create()
-                aboutSpan.id = 'about-btn' // for toggle.tooltip()
-                aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = `${ env.browser.isMobile ? 0.25 : -0.15 }rem`
-                aboutSpan.append(aboutSVG) ; cornerBtnsDiv.append(aboutSpan)
+                aboutBtn.id = 'about-btn' // for toggle.tooltip()
+                aboutBtn.className = 'corner-btn' ; aboutBtn.style.marginTop = `${ env.browser.isMobile ? 0.25 : -0.15 }rem`
+                aboutBtn.append(aboutSVG) ; cornerBtnsDiv.append(aboutBtn)
 
                 // Create/append Settings button
-                const settingsSpan = document.createElement('span'),
+                const settingsBtn = document.createElement('btn'),
                       settingsSVG = icons.sliders.create()
-                settingsSpan.id = 'settings-btn' // for toggle.tooltip()
-                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = `${ env.browser.isMobile ? 3 : -3 }px 10px 0 2.5px`
-                settingsSpan.append(settingsSVG) ; cornerBtnsDiv.append(settingsSpan)
+                settingsBtn.id = 'settings-btn' // for toggle.tooltip()
+                settingsBtn.className = 'corner-btn' ; settingsBtn.style.margin = `${ env.browser.isMobile ? 3 : -3 }px 10px 0 2.5px`
+                settingsBtn.append(settingsSVG) ; cornerBtnsDiv.append(settingsBtn)
 
                 // Create/append Speak button
                 if (answer != 'standby') {
-                    var speakerSpan = document.createElement('span'),
+                    var speakerBtn = document.createElement('btn'),
                         speakerSVG = icons.speaker.create()
-                    speakerSpan.id = 'speak-btn' // for toggle.tooltip()
-                    speakerSpan.className = 'corner-btn' ; speakerSpan.style.margin = `${ env.browser.isMobile ? '0.11rem 10px' : '-4.5px 8px' } 0 0`
-                    speakerSpan.append(speakerSVG) ; cornerBtnsDiv.append(speakerSpan)
+                    speakerBtn.id = 'speak-btn' // for toggle.tooltip()
+                    speakerBtn.className = 'corner-btn' ; speakerBtn.style.margin = `${ env.browser.isMobile ? '0.11rem 10px' : '-4.5px 8px' } 0 0`
+                    speakerBtn.append(speakerSVG) ; cornerBtnsDiv.append(speakerBtn)
                 }
 
                 // Create/append Font Size button
                 if (answer != 'standby') {
-                    var fontSizeSpan = document.createElement('span'),
+                    var fontSizeBtn = document.createElement('btn'),
                         fontSizeSVG = icons.fontSize.create()
-                    fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
-                    fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = `${ env.browser.isMobile ? 5 : -2 }px 9px 0 0`
-                    fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
+                    fontSizeBtn.id = 'font-size-btn' // for toggle.tooltip()
+                    fontSizeBtn.className = 'corner-btn' ; fontSizeBtn.style.margin = `${ env.browser.isMobile ? 5 : -2 }px 9px 0 0`
+                    fontSizeBtn.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeBtn)
                 }
 
                 // Create/append Pin button
                 if (!env.browser.isMobile) {
-                    var pinSpan = document.createElement('span'),
+                    var pinBtn = document.createElement('btn'),
                         pinSVG = icons.pin.create()
-                    pinSpan.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
-                    pinSpan.className = 'corner-btn' ; pinSpan.style.margin = '-1.55px 7.5px 0 0'
-                    pinSpan.append(pinSVG) ; cornerBtnsDiv.append(pinSpan)
+                    pinBtn.id = 'pin-btn' // for toggle.sidebar() + toggle.tooltip()
+                    pinBtn.className = 'corner-btn' ; pinBtn.style.margin = '-1.55px 7.5px 0 0'
+                    pinBtn.append(pinSVG) ; cornerBtnsDiv.append(pinBtn)
 
                 // Create/append Wider Sidebar button
-                    var wsbSpan = document.createElement('span'),
+                    var wsbBtn = document.createElement('btn'),
                         wsbSVG = icons.widescreen.create()
-                    wsbSpan.id = 'wsb-btn' // for toggle.sidebar() + toggle.tooltip()
-                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-2px 12px 0 0'
-                    wsbSpan.append(wsbSVG) ; cornerBtnsDiv.append(wsbSpan)
+                    wsbBtn.id = 'wsb-btn' // for toggle.sidebar() + toggle.tooltip()
+                    wsbBtn.className = 'corner-btn' ; wsbBtn.style.margin = '-2px 12px 0 0'
+                    wsbBtn.append(wsbSVG) ; cornerBtnsDiv.append(wsbBtn)
 
                 // Create/append Expand/Shrink button
-                    var arrowsSpan = document.createElement('span'),
+                    var arrowsBtn = document.createElement('btn'),
                         arrowsSVG = icons.arrowsDiagonal.create()
                     arrowsSVG.style.transform = 'rotate(-7deg)' // tilt slightly to hint expansions are often horizontal-only
-                    arrowsSpan.id = 'arrows-btn' // for toggle.tooltip()
-                    arrowsSpan.className = 'corner-btn' ; arrowsSpan.style.margin = '-1.5px 12px 0 0'
-                    arrowsSpan.style.display = 'none' // to activate from anchorStyles only
-                    arrowsSpan.append(arrowsSVG) ; cornerBtnsDiv.append(arrowsSpan)
+                    arrowsBtn.id = 'arrows-btn' // for toggle.tooltip()
+                    arrowsBtn.className = 'corner-btn' ; arrowsBtn.style.margin = '-1.5px 12px 0 0'
+                    arrowsBtn.style.display = 'none' // to activate from anchorStyles only
+                    arrowsBtn.append(arrowsSVG) ; cornerBtnsDiv.append(arrowsBtn)
                 }
 
                 // Add tooltips
@@ -3671,7 +3671,7 @@
 
                 // Create/append chatbar buttons
                 ['send', 'shuffle'].forEach(btnType => {
-                    const btnElem = document.createElement(btnType === 'send' ? 'button' : 'div')
+                    const btnElem = document.createElement('button')
                     btnElem.id = `${btnType}-btn` ; btnElem.classList.add('chatbar-btn', 'no-mobile-tap-outline')
                     btnElem.style.right = `${ btnType == 'send' ? ( env.browser.isFF ? 7 : 5 ) : ( env.browser.isFF ? 9 : 7 )}px`
                     btnElem.append(icons[btnType == 'send' ? 'arrowUp' : 'arrowsTwistedRight'].create())
