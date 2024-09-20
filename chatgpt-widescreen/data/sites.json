@@ -28,10 +28,10 @@
     "selectors": {
       "btns": {
         "newChat": "div.sticky [class*=\"ring\"]",
-        "send": "button:has([d^=\"M209.4\"], [d^=\"M80 112a32\"], [d^=\"M440.6\"])"
+        "send": "button:has([d^=\"M209.4\"], [d^=\"M80 112a32\"], [d^=\"M440.6\"])",
+        "sidebarToggle": "button:has([d^=\"M48 88c0-13\"], [d^=\"M0 424c0\"])"
       },
-      "header": "div.sticky:nth-of-type(2)", "input": "textarea[placeholder]",
-      "sidebar": "div.sticky", "sidebarToggle": "button:has([d^=\"M48 88c0-13\"], [d^=\"M0 424c0\"])"
+      "header": "div.sticky:nth-of-type(2)", "input": "textarea[placeholder]", "sidebar": "div.sticky"
     }
   }
 }
