@@ -386,20 +386,18 @@
         async extension(srcSite) {
             const extensionWasDisabled = config.extensionDisabled
             await settings.load('extensionDisabled', ...sites[site].availFeatures)
-            if (!extensionWasDisabled && config.extensionDisabled) { // popup master toggled off, disable modes/tweaks/btns
+            if (srcSite && srcSite != site) return // since popup child toggle on diff site clicked                    
+            if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
                 try { document.head.removeChild(wideScreenStyle) } catch (err) {}
                 try { document.head.removeChild(fullWinStyle) } catch (err) {}
                 tweaksStyle.innerText = '' ; btns.remove()
-            } else if (extensionWasDisabled && !config.extensionDisabled) { // popup master toggled on, restore modes/tweaks/btns
-                if (config.wideScreen && !document.head.contains(wideScreenStyle)) toggle.mode('wideScreen', 'ON')
-                if (config.fullWindow && sites[site].hasSidebar && !isFullWin()) toggle.mode('fullWindow', 'ON')
-                update.style.tweaks() // restore removed tweaks
+            } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
+                toggle.mode('wideScreen', config.wideScreen && !document.head.contains(wideScreenStyle) ? 'ON' : 'OFF')
+                toggle.mode('fullWindow', config.fullWindow && sites[site].hasSidebar && !isFullWin() ? 'ON' : 'OFF')
+                update.style.tweaks() // sync tweaks
                 update.style.wideScreen() // sync wider chatbox
                 btns.insert()
                 if (/openai|chatgpt/.test(site)) chatbar.tweak() // in case NCB visibility changed
-            } else if (!config.extensionDisabled && srcSite == site) { // popup master already on, sub-toggled on same host
-                update.style.tweaks() // sync tweaks
-                update.style.wideScreen() // sync wider chatbox
             }
         },
 
@@ -566,7 +564,7 @@
         const sidebarObserver = new MutationObserver(() => {
             settings.load(['extensionDisabled']).then(async () => {
                 if (!config.extensionDisabled) {
-                    await new Promise(resolve => setTimeout(resolve, site == 'perplexity' ? 250 : 0))
+                    await new Promise(resolve => setTimeout(resolve, site == 'perplexity' ? 500 : 0))
                     const fullWinState = isFullWin()
                     if ((config.fullWindow && !fullWinState) || (!config.fullWindow && fullWinState))
                         if (!config.modeSynced) sync.mode('fullWindow')
