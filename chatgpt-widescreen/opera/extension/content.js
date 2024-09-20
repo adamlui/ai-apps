@@ -554,7 +554,7 @@
     )
 
     // Monitor SIDEBAR to update full-window setting
-    if (/chatgpt|openai|perplexity/.test(site) && !!sites[site].hasSidebar) {
+    if (sites[site].selectors.btns.sidebarToggle && !!sites[site].hasSidebar) {
         const sidebarObserver = new MutationObserver(() => {
             settings.load(['extensionDisabled']).then(async () => {
                 if (!config.extensionDisabled) {
