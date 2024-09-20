@@ -5,7 +5,8 @@
     "selectors": {
       "btns": {
         "newChat": "button:has([d*=\"M15.6729\"], [d^=\"M3.06957\"])",
-        "send": "button:has([d^=\"M15.1918\"])"
+        "send": "button:has([d^=\"M15.1918\"])",
+        "sidebarToggle": "button:has([d^=\"M8.857\"])"
       },
       "header": "main .sticky", "input": "#prompt-textarea", "sidebar": "[class*=\"sidebar\"]"
     }
