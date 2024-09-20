@@ -61,16 +61,16 @@
     function initToggle(toggleInput, settingKey, notifMsgKey) {
 
         // Init toggle state
-        settings.load(settingKey).then(() =>
-            toggleInput.checked = /disabled/i.test(settingKey) !== config[settingKey])
+        settings.load(`${site}_${settingKey}`).then(() =>
+            toggleInput.checked = /disabled/i.test(settingKey) !== config[`${site}_${settingKey}`])
 
         // Add click-listener to toggle input
         toggleInput.onchange = () => {
-            settings.save(settingKey, !config[settingKey]) ; syncExtension(site)
-            settings.load('notifDisabled').then(() => { // show mode notification
-                if (!config.notifDisabled || /notif/i.test(settingKey) || /notif/i.test(settingKey)) // ...if enabled or notif-related setting
+            settings.save(`${site}_${settingKey}`, !config[`${site}_${settingKey}`]) ; syncExtension(site)
+            settings.load(`${site}_notifDisabled`).then(() => { // show mode notification
+                if (!config[`${site}_notifDisabled`] || /notif/i.test(settingKey)) // ...if enabled or notif-related setting
                     notify(chrome.i18n.getMessage(notifMsgKey) + ' '
-                        + (/disabled/i.test(settingKey) !== config[settingKey] ? 'ON' : 'OFF'))
+                        + (/disabled/i.test(settingKey) != config[`${site}_${settingKey}`] ? 'ON' : 'OFF'))
         })}
 
         // Add click listener to toggle input's parent label

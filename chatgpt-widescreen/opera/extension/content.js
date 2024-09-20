@@ -23,7 +23,7 @@
     const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/sites.json`)).json())
 
     // Init CONFIG
-    await settings.load(...sites[site].availFeatures)
+    await settings.load(...sites[site].availFeatures.map(feature => `${site}_${feature}`))
 
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener(request => {
@@ -106,7 +106,7 @@
                     const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
                     const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat', 'send']
                         .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar)
-                                     && !(type == 'newChat' && config.ncbDisabled))
+                                     && !(type == 'newChat' && config[`${site}_ncbDisabled`]))
                     visibleBtnTypes.forEach(btnType =>
                         widths[btnType] = btns[btnType]?.getBoundingClientRect().width
                                        || document.querySelector(sites[site].selectors.btns.send)?.getBoundingClientRect().width)
@@ -273,7 +273,7 @@
     
             // Update SVG elements
             while (btnSVG.firstChild) { btnSVG.removeChild(btnSVG.firstChild) }
-            const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
+            const svgElems = config[`${site}_${mode}`] || state.toLowerCase() == 'on' ? ONelems : OFFelems
             svgElems.forEach(elem => btnSVG.append(elem))
     
             // Update SVG
@@ -293,10 +293,10 @@
                         ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                         + 'div:has(+ main) { display: none !important }' // hide ugly double temp chat header
                     ) : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' )) // h-pad mic btn for even spread
-                + ( !config.tcbDisabled && sites[site].availFeatures.includes('tcbDisabled') ? tcbStyle : '' ) // expand text input vertically
-                + ( config.hiddenHeader && sites[site].availFeatures.includes('hiddenHeader') ? hhStyle : '' ) // hide header
-                + ( config.hiddenFooter && sites[site].availFeatures.includes('hiddenFooter') ? hfStyle : '' ) // hide footer
-                + `#newChat-btn { display: ${ config.ncbDisabled && sites[site].availFeatures.includes('ncbDisabled') ? 'none' : 'flex' }}`
+                + ( !config[`${site}_tcbDisabled`] && sites[site].availFeatures.includes('tcbDisabled') ? tcbStyle : '' ) // expand text input vertically
+                + ( config[`${site}_hiddenHeader`] && sites[site].availFeatures.includes('hiddenHeader') ? hhStyle : '' ) // hide header
+                + ( config[`${site}_hiddenFooter`] && sites[site].availFeatures.includes('hiddenFooter') ? hfStyle : '' ) // hide footer
+                + `#newChat-btn { display: ${ config[`${site}_ncbDisabled`] && sites[site].availFeatures.includes('ncbDisabled') ? 'none' : 'flex' }}`
             },
 
             wideScreen() {
@@ -315,7 +315,7 @@
                         '[class*="ChatMessagesView"] { width: 100% !important }' // widen outer container
                       + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
                   : '' )
-              if (config.widerChatbox) wideScreenStyle.innerText += wcbStyle    
+              if (config[`${site}_widerChatbox`]) wideScreenStyle.innerText += wcbStyle    
             }
         },
 
@@ -327,7 +327,7 @@
                   spreadFactor = site == 'perplexity' ? 26.85 : site == 'poe' ? 34 : 30.5,
                   iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
             tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + btnType + (
-                !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON')))
+                !/full|wide/i.test(btnType) ? '' : (config[`${site}_${btnType}`] ? 'OFF' : 'ON')))
             tooltipDiv.style.right = `${ // h-position
                 iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
             tooltipDiv.style.bottom = `${ // v-position
@@ -342,7 +342,7 @@
             switch (state.toUpperCase()) {
                 case 'ON' : activateMode(mode) ; break
                 case 'OFF' : deactivateMode(mode) ; break
-                default : config[mode] ? deactivateMode(mode) : activateMode(mode)
+                default : config[`${site}_${mode}`] ? deactivateMode(mode) : activateMode(mode)
             }
 
             function activateMode(mode) {
@@ -385,15 +385,15 @@
         
         async extension(srcSite) {
             const extensionWasDisabled = config.extensionDisabled
-            await settings.load('extensionDisabled', ...sites[site].availFeatures)
+            await settings.load('extensionDisabled', ...sites[site].availFeatures.map(feature => `${site}_${feature}`))
             if (srcSite && srcSite != site) return // since popup child toggle on diff site clicked                    
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
                 try { document.head.removeChild(wideScreenStyle) } catch (err) {}
                 try { document.head.removeChild(fullWinStyle) } catch (err) {}
                 tweaksStyle.innerText = '' ; btns.remove()
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
-                toggle.mode('wideScreen', config.wideScreen && !document.head.contains(wideScreenStyle) ? 'ON' : 'OFF')
-                toggle.mode('fullWindow', config.fullWindow && sites[site].hasSidebar && !isFullWin() ? 'ON' : 'OFF')
+                toggle.mode('wideScreen', config[`${site}_wideScreen`] && !document.head.contains(wideScreenStyle) ? 'ON' : 'OFF')
+                toggle.mode('fullWindow', config[`${site}_fullWindow`] && sites[site].hasSidebar && !isFullWin() ? 'ON' : 'OFF')
                 update.style.tweaks() // sync tweaks
                 update.style.wideScreen() // sync wider chatbox
                 btns.insert()
@@ -402,11 +402,11 @@
         },
 
         fullerWin(fullWinState) {
-            if (fullWinState && config.fullerWindows && !config.wideScreen) { // activate fuller windows
+            if (fullWinState && config[`${site}_fullerWindows`] && !config[`${site}_wideScreen`]) { // activate fuller windows
                 document.head.append(wideScreenStyle) ; btns.updateSVG('wideScreen', 'on')
             } else if (!fullWinState) { // de-activate fuller windows
                 try { document.head.removeChild(fullWinStyle) } catch (err) {} // to remove style too so sidebar shows
-                if (!config.wideScreen) { // disable widescreen if result of fuller window
+                if (!config[`${site}_wideScreen`]) { // disable widescreen if result of fuller window
                     try { document.head.removeChild(wideScreenStyle) } catch (err) {}                
                     btns.updateSVG('wideScreen', 'off')
         }}},
@@ -415,11 +415,11 @@
             const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
-            settings.save(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
+            settings.save(`${site}_${mode}`, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
             if (mode == 'wideScreen' && /openai|chatgpt/.test(site)) chatbar.tweak()
             if (mode == 'fullWindow') sync.fullerWin(state)
-            settings.load('notifDisabled').then(() => {
-                if (!config.notifDisabled) // notify synced state
+            settings.load(`${site}_notifDisabled`).then(() => {
+                if (!config[`${site}_notifDisabled`]) // notify synced state
                     notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
             })
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
@@ -478,7 +478,7 @@
     }
 
     // Save FULL-WINDOW + FULL SCREEN states
-    config.fullWindow = /chatgpt|openai/.test(site) ? isFullWin() : settings.load('fullWindow')
+    config[`${site}_fullWindow`] = /chatgpt|openai/.test(site) ? isFullWin() : settings.load(`${site}_fullWindow`)
     config.fullScreen = chatgpt.isFullScreen()
 
     // Create/stylize TOOLTIP div
@@ -528,14 +528,14 @@
     const schemeObserver = new MutationObserver(([mutation]) => {
 
         // Load keys, check to restore prev session's state
-        settings.load(['extensionDisabled', ...sites[site].availFeatures])
+        settings.load('extensionDisabled', ...sites[site].availFeatures.map(feature => `${site}_${feature}`))
             .then(() => { if (!config.extensionDisabled) {
                 if (!prevSessionChecked) { // restore prev session's state
-                    if (config.wideScreen) toggle.mode('wideScreen', 'ON')
-                    if (config.fullWindow && sites[site].hasSidebar) { toggle.mode('fullWindow', 'ON')
+                    if (config[`${site}_wideScreen`]) toggle.mode('wideScreen', 'ON')
+                    if (config[`${site}_fullWindow`] && sites[site].hasSidebar) { toggle.mode('fullWindow', 'ON')
                         if (/chatgpt|openai/.test(site)) { // sidebar observer doesn't trigger
                             sync.fullerWin(true) // so sync Fuller Windows...
-                            if (!config.notifDisabled) // ... + notify
+                            if (!config[`${site}_notifDisabled`]) // ... + notify
                                 notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                     }}
                     prevSessionChecked = true
@@ -562,11 +562,11 @@
     // Monitor SIDEBAR to update full-window setting
     if (sites[site].selectors.btns.sidebarToggle && !!sites[site].hasSidebar) {
         const sidebarObserver = new MutationObserver(() => {
-            settings.load(['extensionDisabled']).then(async () => {
+            settings.load('extensionDisabled').then(async () => {
                 if (!config.extensionDisabled) {
                     await new Promise(resolve => setTimeout(resolve, site == 'perplexity' ? 500 : 0))
                     const fullWinState = isFullWin()
-                    if ((config.fullWindow && !fullWinState) || (!config.fullWindow && fullWinState))
+                    if ((config[`${site}_fullWindow`] && !fullWinState) || (!config[`${site}_fullWindow`] && fullWinState))
                         if (!config.modeSynced) sync.mode('fullWindow')
         }})})
         setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from schemeObserver
