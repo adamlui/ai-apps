@@ -5,13 +5,13 @@ const app = {}, config = {}, settings = {
             Array.isArray(arguments[0]) ? arguments[0] : Array.from(arguments))
         return Promise.all(keys.map(key => { // resolve promise when all keys load
             return new Promise(resolve => { // resolve promise when single key value loads
-                chrome.storage.local.get(`${ app.configKeyPrefix }_${ key }`, result => { // load from Chrome
+                chrome.storage.sync.get(`${ app.configKeyPrefix }_${ key }`, result => { // load from Chrome
                     config[key] = result[`${ app.configKeyPrefix }_${ key }`] || false ; resolve()
     })})}))},
 
     save(key, value) {
         const obj = {} ; obj[`${ app.configKeyPrefix }_${ key }`] = value
-        chrome.storage.local.set(obj) // save to Chrome
+        chrome.storage.sync.set(obj) // save to Chrome
         config[key] = value // save to memory
     }
 }
