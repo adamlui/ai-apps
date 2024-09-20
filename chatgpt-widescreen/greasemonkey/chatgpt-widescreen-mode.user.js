@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.20.6
+// @version             2024.9.20.7
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -272,7 +272,7 @@
             gitHub: 'https://github.com/adamlui/chatgpt-widescreen',
             greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
             productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode' },
-        latestAssetCommitHash: 'd131618' // for cached sites.json + messages.json
+        latestAssetCommitHash: '03f2b74' // for cached sites.json + messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -287,7 +287,7 @@
     // Init SITE props
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
     const sites = Object.assign(Object.create(null), await new Promise(resolve => xhr({
-        method: 'GET', url: `${app.urls.assetHost}/data/sites.json`,
+        method: 'GET', url: `${app.urls.assetHost}/sites.json`,
         onload: resp => resolve(JSON.parse(resp.responseText))
     })))
     sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
