@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.19.2
+// @version                2024.9.19.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1497,9 +1497,10 @@
                   + `.kudoai a:hover { color: ${ ui.app.scheme == 'dark' ? 'white' : 'black' }}`
                   + '#corner-btns { float: right ; margin-top: -2px }'
                   + '.corner-btn {'
-                      + 'float: right ; cursor: pointer ; position: relative ; top: 4px ; transition: transform 0.15s ease ;'
+                      + 'float: right ; cursor: pointer ; position: relative ; top: 4px ;'
                       + `${ ui.app.scheme == 'dark' ? 'fill: white ; stroke: white' : 'fill: #adadad ; stroke: #adadad' };` // color
-                      + 'transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out }' // for re-appearances from btn-zoom-fade-out ends
+                      + 'transition: transform 0.15s ease ;' // for hover zooms
+                                  + 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out }' // for re-appearances from btn-zoom-fade-out ends
                   + '.corner-btn:hover {'
                       + `${ ui.app.scheme == 'dark' ? 'fill: #d9d9d9 ; stroke: #d9d9d9' : 'fill: black ; stroke: black' } ;`
                       + `${ config.fgAnimationsDisabled || env.browser.isMobile ? '' : 'transform: scale(1.285)' }}`
