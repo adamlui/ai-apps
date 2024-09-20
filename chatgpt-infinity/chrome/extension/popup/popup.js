@@ -196,10 +196,7 @@
 
     // Define SYNC functions
 
-    function syncExtension() {
-        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, { action: 'syncExtension' })
-    })}
+    function syncExtension() { chrome.runtime.sendMessage({ action: 'sync.extension' }) }
 
     function updateGreyness() {
 

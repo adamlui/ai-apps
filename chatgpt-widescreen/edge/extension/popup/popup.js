@@ -1,7 +1,10 @@
 (async () => {
 
+    const hostname = await new Promise(resolve =>
+        chrome.tabs.query({ active: true }, tabs => resolve(new URL(tabs[0].url).hostname)))
+
     // Import settings-utils.js
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))    
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
     // Localize labels
     let translationOccurred = false
@@ -88,10 +91,7 @@
 
     // Define SYNC functions
 
-    function syncExtension() {
-        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, { action: 'sync.extension' })
-    })}
+    function syncExtension() { chrome.runtime.sendMessage({ action: 'sync.extension', host: hostname }) }
 
     function updateGreyness() {
 

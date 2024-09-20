@@ -24,7 +24,7 @@
     chrome.runtime.onMessage.addListener(request => {
         if (request.action == 'notify') notify(request.msg, request.position)
         else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
-        else if (request.action == 'sync.extension') sync.extension()
+        else if (request.action == 'sync.extension') sync.extension(request.host)
         return true
     })
 
@@ -376,7 +376,8 @@
 
     const sync = {
         
-        extension() {
+        extension(srcHost) {
+            if (!srcHost.includes(site)) return
             settings.load('extensionDisabled', ...sites[site].availFeatures)
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
