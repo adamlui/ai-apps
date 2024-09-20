@@ -10,6 +10,12 @@
     // Import LIBS
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+    
+    // Init ENV info
+    const env = {
+        browser: { isBrave: chatgpt.browser.isBrave() },
+        scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
+    }
 
     // Import DATA
     const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
@@ -325,7 +331,7 @@
             tooltipDiv.style.right = `${ // h-position
                 iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
             tooltipDiv.style.bottom = `${ // v-position
-                site == 'perplexity' ? ( location.pathname == '/' ? 51 : 58 ) : 50 }px`
+                site == 'perplexity' ? ( location.pathname == '/' ? ( env.browser.isBrave ? 253 : 51 ) : 58 ) : 50 }px`
         }
     }
 
