@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.19.2
+// @version             2024.9.20
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -1064,14 +1064,11 @@
 
         // Update button colors on ChatGPT scheme or temp chat toggle
         if (/chatgpt|openai/.test(site)) {
-            let chatbarBGdiv = document.querySelector(sites[site].selectors.input)
-            for (let i = 0 ; i < 1 ; i++) { chatbarBGdiv = chatbarBGdiv?.parentNode }
-            if (chatbarBGdiv) {
-                const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
-                if ((mutation.target == document.documentElement && mutation.attributeName == 'class') // scheme toggled
-                    || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat) // temp chat toggled
-                ) { btns.updateColor() ; isTempChat = !isTempChat }
-        }}
+            const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]')
+            if (chatbarIsBlack != isTempChat // temp chat toggled
+                || mutation.target == document.documentElement && mutation.attributeName == 'class') { // scheme toggled
+                    btns.updateColor() ; isTempChat = chatbarIsBlack }            
+        }
     })
     nodeObserver.observe( // <html> for page scheme toggles
         document.documentElement, { attributes: true })
