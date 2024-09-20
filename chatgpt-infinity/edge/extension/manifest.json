@@ -18,7 +18,7 @@
     "resources": ["app.json", "lib/settings-utils.js", "lib/chatgpt.js"]
   }],
   "content_scripts": [{
-    "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*"],
+    "matches": ["https://chatgpt.com/*"],
     "js": ["content.js"]
   }],
   "minimum_chrome_version": "88"
