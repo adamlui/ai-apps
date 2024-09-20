@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.20.1
+// @version             2024.9.20.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -1047,7 +1047,7 @@
 
     // Monitor NODE CHANGES to auto-toggle once + maintain button visibility + update colors
     let isTempChat = false, prevSessionChecked = false
-    const nodeObserver = new MutationObserver(([mutation]) => {
+    const schemeObserver = new MutationObserver(([mutation]) => {
 
         // Check loaded keys to restore prev session's state
         if (!prevSessionChecked) {
@@ -1071,9 +1071,9 @@
                     btns.updateColor() ; isTempChat = chatbarIsBlack }            
         }
     })
-    nodeObserver.observe( // <html> for page scheme toggles
+    schemeObserver.observe( // <html> for page scheme toggles
         document.documentElement, { attributes: true })
-    nodeObserver.observe( // for chatbar changes
+    schemeObserver.observe( // for chatbar changes
         document.querySelector(/openai|chatgpt|perplexity/.test(site) ? 'main' : 'head'),
         { attributes: true, subtree: true }
     )
@@ -1086,7 +1086,7 @@
             if ((config.fullWindow && !fullWinState) || (!config.fullWindow && fullWinState))
                 if (!config.modeSynced) sync.mode('fullWindow')
         })
-        setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
+        setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from schemeObserver
             let obsTarget = document.querySelector(sites[site].selectors.sidebar)
             if (site == 'perplexity') obsTarget = obsTarget.parentNode
             sidebarObserver.observe(obsTarget, { attributes: true })
