@@ -389,7 +389,7 @@
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
                     try { document.head.removeChild(wideScreenStyle) } catch (err) {}
-                    try { document.head.removeChild(fullWinStyle) ; chatgpt.sidebar.show() } catch (err) {}
+                    try { document.head.removeChild(fullWinStyle) } catch (err) {}
                     tweaksStyle.innerText = '' ; btns.remove()
                 } else { // restore modes
                     if (config.wideScreen && !document.head.contains(wideScreenStyle)) toggle.mode('wideScreen', 'ON')
