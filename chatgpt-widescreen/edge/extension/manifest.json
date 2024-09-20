@@ -13,7 +13,7 @@
     "128": "icons/icon128.png",
     "223": "icons/icon223.png"
   },
-  "permissions": [ "storage", "tabs" ],
+  "permissions": [ "storage" ],
   "action": { "default_popup": "popup/index.html" },
   "web_accessible_resources": [{
     "matches": ["<all_urls>"],
@@ -23,6 +23,5 @@
     "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*", "https://www.perplexity.ai/*", "https://poe.com/*"],
     "js": ["content.js"]
   }],
-  "background": { "service_worker": "background.js" },
   "minimum_chrome_version": "88"
 }
