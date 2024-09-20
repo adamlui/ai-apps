@@ -383,22 +383,25 @@
 
     const sync = {
         
-        extension(srcHost) {
-            if (!srcHost.includes(site)) return
-            settings.load('extensionDisabled', ...sites[site].availFeatures)
-            .then(() => {
-                if (config.extensionDisabled) { // try to disable modes
-                    try { document.head.removeChild(wideScreenStyle) } catch (err) {}
-                    try { document.head.removeChild(fullWinStyle) } catch (err) {}
-                    tweaksStyle.innerText = '' ; btns.remove()
-                } else { // restore modes
-                    if (config.wideScreen && !document.head.contains(wideScreenStyle)) toggle.mode('wideScreen', 'ON')
-                    if (config.fullWindow && sites[site].hasSidebar && !isFullWin()) toggle.mode('fullWindow', 'ON')
-                    update.style.tweaks() // restore removed tweaks
-                    update.style.wideScreen() // sync wider chatbox
-                    btns.insert()
-                    if (/openai|chatgpt/.test(site)) chatbar.tweak() // in case NCB visibility changed
-        }})},
+        async extension(srcHost) {
+            const extensionWasDisabled = config.extensionDisabled
+            await settings.load('extensionDisabled', ...sites[site].availFeatures)
+            if (!extensionWasDisabled && config.extensionDisabled) { // popup master toggled off, disable modes/tweaks/btns
+                try { document.head.removeChild(wideScreenStyle) } catch (err) {}
+                try { document.head.removeChild(fullWinStyle) } catch (err) {}
+                tweaksStyle.innerText = '' ; btns.remove()
+            } else if (extensionWasDisabled && !config.extensionDisabled) { // popup master toggled on, restore modes/tweaks/btns
+                if (config.wideScreen && !document.head.contains(wideScreenStyle)) toggle.mode('wideScreen', 'ON')
+                if (config.fullWindow && sites[site].hasSidebar && !isFullWin()) toggle.mode('fullWindow', 'ON')
+                update.style.tweaks() // restore removed tweaks
+                update.style.wideScreen() // sync wider chatbox
+                btns.insert()
+                if (/openai|chatgpt/.test(site)) chatbar.tweak() // in case NCB visibility changed
+            } else if (!config.extensionDisabled && srcHost.includes(site)) { // popup master already on, sub-toggled on same host
+                update.style.tweaks() // sync tweaks
+                update.style.wideScreen() // sync wider chatbox
+            }
+        },
 
         fullerWin(fullWinState) {
             if (fullWinState && config.fullerWindows && !config.wideScreen) { // activate fuller windows
