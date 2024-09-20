@@ -397,7 +397,7 @@
                 update.style.wideScreen() // sync wider chatbox
                 btns.insert()
                 if (/openai|chatgpt/.test(site)) chatbar.tweak() // in case NCB visibility changed
-            } else if (!config.extensionDisabled && srcSite.includes(site)) { // popup master already on, sub-toggled on same host
+            } else if (!config.extensionDisabled && srcSite == site) { // popup master already on, sub-toggled on same host
                 update.style.tweaks() // sync tweaks
                 update.style.wideScreen() // sync wider chatbox
             }
