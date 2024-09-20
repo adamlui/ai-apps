@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.19
+// @version             2024.9.19.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -395,8 +395,8 @@
             }}}))
 
             // Add About entry
-            const amLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
-            menu.ids.push(GM_registerMenuCommand(amLabel, modals.about.show))
+            const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
+            menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
         },
 
         refresh() {
