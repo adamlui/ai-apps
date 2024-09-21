@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.21.3
+// @version                  2024.9.21.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -798,6 +798,7 @@
         while (appDiv.firstChild) appDiv.firstChild.remove() // clear appDiv content
         const alertP = document.createElement('p')
         alertP.id = 'googlegpt-alert' ; alertP.className = 'no-user-select'
+        if (!alerts.includes('waitingResponse')) alertP.style.marginBottom = '16px' // counteract #googlegpt p margins
 
         alerts.forEach((alert, idx) => { // process each alert for display
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
