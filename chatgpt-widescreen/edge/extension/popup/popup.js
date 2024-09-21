@@ -66,7 +66,7 @@
 
         // Add click-listener to toggle input
         toggleInput.onchange = () => {
-            settings.save(`${site}_${settingKey}`, !config[`${site}_${settingKey}`]) ; syncExtension(site)
+            settings.save(`${site}_${settingKey}`, !config[`${site}_${settingKey}`]) ; syncExtension()
             settings.load(`${site}_notifDisabled`).then(() => { // show mode notification
                 if (!config[`${site}_notifDisabled`] || /notif/i.test(settingKey)) // ...if enabled or notif-related setting
                     notify(chrome.i18n.getMessage(notifMsgKey) + ' '
@@ -91,8 +91,11 @@
 
     // Define SYNC functions
 
-    function syncExtension(srcSite) { chrome.runtime.sendMessage({ action: 'sync.extension', site: srcSite }) }
-
+    async function syncExtension() {
+        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.extension' })
+    }
+    
     function updateGreyness() {
 
         // Update toolbar icon

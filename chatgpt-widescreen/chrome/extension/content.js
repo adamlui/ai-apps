@@ -375,10 +375,9 @@
 
     const sync = {
         
-        async extension(srcSite) {
+        async extension() {
             const extensionWasDisabled = config.extensionDisabled
             await settings.load('extensionDisabled', ...sites[site].availFeatures.map(feature => `${site}_${feature}`))
-            if (srcSite && srcSite != site) return // since popup child toggle on diff site clicked                    
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
                 try { document.head.removeChild(wideScreenStyle) } catch (err) {}
                 try { document.head.removeChild(fullWinStyle) } catch (err) {}
@@ -585,7 +584,7 @@
     chrome.runtime.onMessage.addListener(request => {
         if (request.action == 'notify') notify(request.msg, request.position)
         else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
-        else if (request.action == 'sync.extension') sync.extension(request.site)
+        else if (request.action == 'sync.extension') sync.extension()
         return true
     })
 
