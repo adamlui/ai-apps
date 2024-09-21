@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.21.3
+// @version                2024.9.21.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -517,7 +517,7 @@
             const modeIcon = icons[settingsProps[mode].icon].create()
             modeIcon.style.cssText = iconStyles
                                    + ( /focus|scroll/i.test(mode) ? 'top: 4px' : '' ) // raise some icons
-                                   + ( /animation|debug/i.test(mode) ? 'width: 25px ; height: 25px ; margin-top: 3px' : '' ) // shrink some icons
+                                   + ( /animation|debug/i.test(mode) ? 'width: 23px ; height: 23px ; margin-top: 3px' : '' ) // shrink some icons
             notif.append(modeIcon)
         }
 
@@ -1139,7 +1139,7 @@
         bug: {
             create() {
                 const bugSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      bugSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 0 16 16']]
+                      bugSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 0 17 17']]
                 bugSVGattrs.forEach(([attr, value]) => bugSVG.setAttribute(attr, value))
                 bugSVG.append(
                     create.svgElem('path', {

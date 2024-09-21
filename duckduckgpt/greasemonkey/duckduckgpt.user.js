@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.21.3
+// @version                2024.9.21.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -670,8 +670,8 @@
         if (mode && !/(?:pre|suf)fix/.test(mode)) {
             const modeIcon = icons[settingsProps[mode].icon].create()
             modeIcon.style.cssText = iconStyles
-                                   + ( /autoget|focus|scroll/i.test(mode) ? 'top: -3px' : '' ) // raise some icons
-                                   + ( /animation|debug/i.test(mode) ? 'width: 25px ; height: 25px' : '' ) // shrink some icon
+                                   + ( /autoget|debug|focus|scroll/i.test(mode) ? 'top: 0.5px' : '' ) // raise some icons
+                                   + ( /animation|debug/i.test(mode) ? 'width: 23px ; height: 23px' : '' ) // shrink some icon
             notif.append(modeIcon)
         }
 
@@ -1403,7 +1403,7 @@
         bug: {
             create() {
                 const bugSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      bugSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 0 16 16']]
+                      bugSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 0 17 17']]
                 bugSVGattrs.forEach(([attr, value]) => bugSVG.setAttribute(attr, value))
                 bugSVG.append(
                     create.svgElem('path', {
