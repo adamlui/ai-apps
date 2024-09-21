@@ -299,6 +299,8 @@
             },
 
             wideScreen() {
+
+                // Widen screen elems
                 wideScreenStyle.innerText = (
                     site == 'chatgpt' ? (
                         '.text-base { max-width: 100% !important }' // widen outer container
@@ -314,7 +316,14 @@
                         '[class*="ChatMessagesView"] { width: 100% !important }' // widen outer container
                       + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
                   : '' )
-              if (config[`${site}_widerChatbox`]) wideScreenStyle.innerText += wcbStyle    
+
+                // Widen/narrow chatbar based on WCB state
+                wideScreenStyle.innerText += (
+                    site == 'chatgpt' ? ( config[`${site}_widerChatbox`] ? ''
+                        : `main form { width: ${chatbar.nativeWidth}px !important ; margin: auto }` )
+                  : site == 'poe' ? ( !config[`${site}_widerChatbox`] ? ''
+                        : '[class*=footerInner] { width: 100% }' )
+                  : '' )
             }
         },
 
@@ -514,9 +523,8 @@
     const wideScreenStyle = create.style()
     wideScreenStyle.id = 'wideScreen-mode' // for sync.mode()
     if (!chatbar.get()) await chatbar.isLoaded()
-    const wcbStyle = ( // Wider Chatbox for update.style.wideScreen()
-        site == 'chatgpt' ? 'main form { max-width: 96% !important }'
-      : site == 'poe' ? '[class*=footerInner] { width: 100% }' : '' )
+    if (site == 'chatgpt') // store native chatbar width for Wider Chatbox style
+        chatbar.nativeWidth = /\d+/.exec(getComputedStyle(document.querySelector('main form')).width)[0]
     update.style.wideScreen()
 
     // Create FULL-WINDOW style

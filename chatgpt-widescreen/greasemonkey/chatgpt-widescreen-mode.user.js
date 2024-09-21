@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.21.2
+// @version             2024.9.21.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -272,7 +272,7 @@
             gitHub: 'https://github.com/adamlui/chatgpt-widescreen',
             greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
             productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode' },
-        latestAssetCommitHash: '03f2b74' // for cached sites.json + messages.json
+        latestAssetCommitHash: '092110f' // for cached sites.json + messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -815,6 +815,8 @@
             },
 
             wideScreen() {
+
+                // Widen main elems
                 wideScreenStyle.innerText = (
                     /chatgpt|openai/.test(site) ? (
                         '.text-base { max-width: 100% !important }' // widen outer container
@@ -830,7 +832,14 @@
                         '[class*="ChatMessagesView"] { width: 100% !important }' // widen outer container
                       + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
                   : '' )
-              if (config.widerChatbox) wideScreenStyle.innerText += wcbStyle    
+
+                // Widen/narrow chatbar based on WCB state
+                wideScreenStyle.innerText += (
+                    /chatgpt|openai/.test(site) ? ( config[`${site}_widerChatbox`] ? ''
+                        : `main form { width: ${chatbar.nativeWidth}px !important ; margin: auto }` )
+                  : site == 'poe' ? ( !config[`${site}_widerChatbox`] ? ''
+                        : '[class*=footerInner] { width: 100% }' )
+                  : '' )
             }
         },
 
@@ -1035,9 +1044,8 @@
     const wideScreenStyle = create.style()
     wideScreenStyle.id = 'wideScreen-mode' // for sync.mode()
     if (!chatbar.get()) await chatbar.isLoaded()
-    const wcbStyle = ( // Wider Chatbox for update.style.wideScreen()
-        /chatgpt|openai/.test(site) ? 'main form { max-width: 96% !important }'
-      : site == 'poe' ? '[class*=footerInner] { width: 100% }' : '' )
+    if (/chatgpt|openai/.test(site)) // store native chatbar width for Wider Chatbox style
+        chatbar.nativeWidth = /\d+/.exec(getComputedStyle(document.querySelector('main form')).width)[0]
     update.style.wideScreen()
 
     // Create FULL-WINDOW style
