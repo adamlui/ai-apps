@@ -1,7 +1,7 @@
 {
   "chatgpt": {
     "availFeatures": [ "fullerWindows", "fullWindow", "hiddenFooter", "hiddenHeader",
-      "notifDisabled", "ncbDisabled", "tcbDisabled", "wideScreen" ],
+      "notifDisabled", "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen" ],
     "selectors": {
       "btns": {
         "newChat": "button:has([d*=\"M15.6729\"], [d^=\"M3.06957\"])",
