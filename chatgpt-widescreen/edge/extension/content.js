@@ -392,12 +392,19 @@
                 try { document.head.removeChild(fullWinStyle) } catch (err) {}
                 tweaksStyle.innerText = '' ; btns.remove()
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
-                if (config[`${site}_wideScreen`] ^ document.head.contains(wideScreenStyle)) toggle.mode('wideScreen')
-                if ((config[`${site}_fullWindow`] && sites[site].hasSidebar) ^ isFullWin()) toggle.mode('fullWindow')
+                if (config[`${site}_wideScreen`] ^ document.head.contains(wideScreenStyle)) { supressNotifs() ; toggle.mode('wideScreen') }
+                if ((config[`${site}_fullWindow`] && sites[site].hasSidebar) ^ isFullWin()) { supressNotifs() ; toggle.mode('fullWindow') }
                 update.style.tweaks() // sync tweaks
                 update.style.wideScreen() // sync wider chatbox
                 btns.insert()
                 if (site == 'chatgpt') chatbar.tweak() // in case NCB visibility changed
+            }
+
+            function supressNotifs() {
+                if (!config[`${site}_notifDisabled`]) { 
+                    settings.save([`${site}_notifDisabled`], true) // suppress notifs for cleaner UI
+                    setTimeout(() => settings.save([`${site}_notifDisabled`], false), 55) // ...temporarily
+                }
             }
         },
 
