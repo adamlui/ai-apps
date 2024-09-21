@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.20.7
+// @version             2024.9.20.8
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -858,7 +858,9 @@
             switch (state.toUpperCase()) {
                 case 'ON' : activateMode(mode) ; break
                 case 'OFF' : deactivateMode(mode) ; break
-                default : config[mode] ? deactivateMode(mode) : activateMode(mode)
+                default : ( mode == 'wideScreen' ? document.head.contains(wideScreenStyle)
+                          : mode == 'fullWindow' ? isFullWin() : chatgpt.isFullScreen() ) ? deactivateMode(mode)
+                                                                                          : activateMode(mode)
             }
 
             function activateMode(mode) {
