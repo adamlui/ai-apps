@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.21.6
+// @version             2024.9.21.7
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -377,7 +377,7 @@
                                + menu.state.separator + menu.state.word[+config.widerChatbox]
                 menu.ids.push(GM_registerMenuCommand(wcbLabel, () => {
                     settings.save('widerChatbox', !config.widerChatbox)
-                    update.style.wideScreen()
+                    update.style.wideScreen() // update WCB style
                     if (!config.notifDisabled) notify(
                         `${ msgs.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ menu.state.word[+config.widerChatbox] }`)
                     menu.refresh()
@@ -840,6 +840,7 @@
                   : site == 'poe' ? ( !config.widerChatbox ? ''
                         : '[class*=footerInner] { width: 100% }' )
                   : '' )
+                if (/chatgpt|openai/.test(site)) chatbar.tweak() // adjust inner width
             }
         },
 
@@ -925,7 +926,6 @@
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
-            if (mode == 'wideScreen' && /openai|chatgpt/.test(site)) chatbar.tweak()
             if (mode == 'fullWindow') sync.fullerWin(state)
             if (!config.notifDisabled) // notify synced state
                 notify(`${ msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
@@ -1032,7 +1032,7 @@
           tcbStyle = ( // heighten chatbox
               /openai|chatgpt/.test(site) ? `div[class*="prose"]:has(${sites[site].selectors.input})`
                                           : sites[site].selectors.input )
-              + '{ max-height: 68vh }',
+                  + '{ max-height: 68vh }',
           hhStyle = sites[site].selectors.header + '{ display: none !important }' // hide header
                   + ( /chatgpt|openai/.test(site) ? 'main { padding-top: 12px }' : '' ), // increase top-padding
           hfStyle = sites[site].selectors.footer + '{ visibility: hidden ;' // hide footer text

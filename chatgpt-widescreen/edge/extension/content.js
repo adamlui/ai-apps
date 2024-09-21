@@ -324,6 +324,7 @@
                   : site == 'poe' ? ( !config[`${site}_widerChatbox`] ? ''
                         : '[class*=footerInner] { width: 100% }' )
                   : '' )
+                if (site == 'chatgpt') chatbar.tweak() // adjust inner width
             }
         },
 
@@ -405,7 +406,6 @@
                 update.style.tweaks() // sync tweaks
                 update.style.wideScreen() // sync wider chatbox
                 btns.insert()
-                if (site == 'chatgpt') chatbar.tweak() // in case NCB visibility changed
             }
 
             function supressNotifs() {
@@ -431,7 +431,6 @@
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(`${site}_${mode}`, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
-            if (mode == 'wideScreen' && site == 'chatgpt') chatbar.tweak()
             if (mode == 'fullWindow') sync.fullerWin(state)
             await settings.load(`${site}_notifDisabled`)
             if (!config[`${site}_notifDisabled`]) // notify synced state
@@ -510,8 +509,8 @@
     const tweaksStyle = create.style(),
           tcbStyle = ( // heighten chatbox
               site == 'chatgpt' ? `div[class*="prose"]:has(${sites[site].selectors.input})`
-                                          : sites[site].selectors.input )
-              + '{ max-height: 68vh }',
+                                : sites[site].selectors.input )
+                  + '{ max-height: 68vh }',
           hhStyle = sites[site].selectors.header + '{ display: none !important }' // hide header
                   + ( site == 'chatgpt' ? 'main { padding-top: 12px }' : '' ), // increase top-padding
           hfStyle = sites[site].selectors.footer + '{ visibility: hidden ;' // hide footer text
