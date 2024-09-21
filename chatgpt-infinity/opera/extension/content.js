@@ -33,11 +33,10 @@
     // Init SETTINGS
     settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
     settings.save('infinityMode', false) // to reset popup toggle
-    settings.load(['autoScrollDisabled', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden']).then(() => {
-        if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
-        if (!config.replyTopic) settings.save('replyTopic', 'ALL') // init reply topic if unset
-        if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
-    })
+    await settings.load(['autoScrollDisabled', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden'])
+    if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
+    if (!config.replyTopic) settings.save('replyTopic', 'ALL') // init reply topic if unset
+    if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
 
     // Define FEEDBACK functions
 
@@ -84,71 +83,72 @@
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
 
-    function updateToggleHTML() {
+    async function updateToggleHTML() {
 
         // Hide toggle if set to hidden or extension disabled
-        settings.load(['toggleHidden', 'extensionDisabled']).then(() => {
-            if (config.toggleHidden || config.extensionDisabled) navToggleDiv.style.display = 'none'
-            else {
+        await settings.load(['toggleHidden', 'extensionDisabled'])
+        if (config.toggleHidden || config.extensionDisabled) navToggleDiv.style.display = 'none'
+        else {
 
-                // Create/size/position navicon
-                const navicon = document.getElementById('infinity-toggle-navicon') || document.createElement('img')
-                navicon.id = 'infinity-toggle-navicon'
-                navicon.style.width = navicon.style.height = '1.25rem'
-                navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
+            // Create/size/position navicon
+            const navicon = document.getElementById('infinity-toggle-navicon') || document.createElement('img')
+            navicon.id = 'infinity-toggle-navicon'
+            navicon.style.width = navicon.style.height = '1.25rem'
+            navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
 
-                // Create/ID/disable/hide/update checkbox
-                const toggleInput = document.getElementById('infinity-toggle-input') || document.createElement('input')
-                toggleInput.id = 'infinity-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
-                toggleInput.style.display = 'none' ; toggleInput.checked = config.infinityMode
+            // Create/ID/disable/hide/update checkbox
+            const toggleInput = document.getElementById('infinity-toggle-input') || document.createElement('input')
+            toggleInput.id = 'infinity-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
+            toggleInput.style.display = 'none' ; toggleInput.checked = config.infinityMode
 
-                // Create/ID/stylize switch
-                const switchSpan = document.getElementById('infinity-switch-span') || document.createElement('span')
-                switchSpan.id = 'infinity-switch-span'
-                const switchStyles = {
-                    position: 'relative', left: `${ env.browser.isMobile ? 211 : !ui.firstLink ? 160 : 154 }px`,
-                    backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-                    bottom: `${ !ui.firstLink ? -0.15 : 0 }em`,
-                    width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
-                }
-                Object.assign(switchSpan.style, switchStyles)
+            // Create/ID/stylize switch
+            const switchSpan = document.getElementById('infinity-switch-span') || document.createElement('span')
+            switchSpan.id = 'infinity-switch-span'
+            const switchStyles = {
+                position: 'relative', left: `${ env.browser.isMobile ? 211 : !ui.firstLink ? 160 : 154 }px`,
+                backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
+                bottom: `${ !ui.firstLink ? -0.15 : 0 }em`,
+                width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
+            }
+            Object.assign(switchSpan.style, switchStyles)
 
-                // Create/stylize knob, append to switch
-                const knobSpan = document.getElementById('infinity-toggle-knob-span') || document.createElement('span')
-                knobSpan.id = 'infinity-toggle-knob-span'
-                const knobWidth = 12
-                const knobStyles = {
-                    position: 'absolute', left: '3px', bottom: '1.25px',
-                    width: `${knobWidth}px`, height: `${knobWidth}px`, content: '""', borderRadius: '28px',
-                    transform: toggleInput.checked ? // init opposite final pos
-                        'translateX(0)' : 'translateX(13px) translateY(0)',
-                    backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
-                }
-                Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
+            // Create/stylize knob, append to switch
+            const knobSpan = document.getElementById('infinity-toggle-knob-span') || document.createElement('span')
+            knobSpan.id = 'infinity-toggle-knob-span'
+            const knobWidth = 12
+            const knobStyles = {
+                position: 'absolute', left: '3px', bottom: '1.25px',
+                width: `${knobWidth}px`, height: `${knobWidth}px`, content: '""', borderRadius: '28px',
+                transform: toggleInput.checked ? // init opposite final pos
+                    'translateX(0)' : 'translateX(13px) translateY(0)',
+                backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
+            }
+            Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
-                // Create/stylize/fill label
-                const toggleLabel = document.getElementById('infinity-toggle-label') || document.createElement('label')
-                toggleLabel.id = 'infinity-toggle-label'
-                if (!ui.firstLink) { // add font size/weight since no ui.firstLink to borrow from
-                    toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
-                toggleLabel.style.marginLeft = `-${ !ui.firstLink ? 23 : 41 }px` // left-shift to navicon
-                toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
-                toggleLabel.style.width = `${ env.browser.isMobile ? 201 : 148 }px` // to truncate overflown text
-                toggleLabel.style.overflow = 'hidden' // to truncate overflown text
-                toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
-                toggleLabel.innerText = chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
-                                      + chrome.i18n.getMessage('state_' + ( toggleInput.checked ? 'enabled' : 'disabled' ))
-                // Append elements
-                for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
+            // Create/stylize/fill label
+            const toggleLabel = document.getElementById('infinity-toggle-label') || document.createElement('label')
+            toggleLabel.id = 'infinity-toggle-label'
+            if (!ui.firstLink) { // add font size/weight since no ui.firstLink to borrow from
+                toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
+            toggleLabel.style.marginLeft = `-${ !ui.firstLink ? 23 : 41 }px` // left-shift to navicon
+            toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
+            toggleLabel.style.width = `${ env.browser.isMobile ? 201 : 148 }px` // to truncate overflown text
+            toggleLabel.style.overflow = 'hidden' // to truncate overflown text
+            toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
+            toggleLabel.innerText = chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
+                                    + chrome.i18n.getMessage('state_' + ( toggleInput.checked ? 'enabled' : 'disabled' ))
+            // Append elements
+            for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
 
-                // Update visual state
-                navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
-                setTimeout(() => {
-                    switchSpan.style.backgroundColor = toggleInput.checked ? '#ad68ff' : '#ccc'
-                    switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
-                    knobSpan.style.transform = toggleInput.checked ? 'translateX(13px) translateY(0)' : 'translateX(0)'
-                }, 1) // min delay to trigger transition fx
-    }})}
+            // Update visual state
+            navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
+            setTimeout(() => {
+                switchSpan.style.backgroundColor = toggleInput.checked ? '#ad68ff' : '#ccc'
+                switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
+                knobSpan.style.transform = toggleInput.checked ? 'translateX(13px) translateY(0)' : 'translateX(0)'
+            }, 1) // min delay to trigger transition fx
+        }
+    }
 
     const infinityMode = {
 
@@ -163,22 +163,21 @@
             if (!new URL(location).pathname.startsWith('/g/')) // not on GPT page
                 try { chatgpt.startNewChat() } catch (err) { return } // start new chat
             await new Promise(resolve => setTimeout(resolve, 500)) // sleep 500ms
-            settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(async () => {
-                chatgpt.send(activatePrompt)
-                await new Promise(resolve => setTimeout(resolve, 3000)) // sleep 3s
-                if (!document.querySelector('[data-message-author-role]') // new chat reset due to OpenAI bug
-                    && config.infinityMode) // ...and toggle still active
-                        chatgpt.send(activatePrompt) // ...so prompt again
-                await new Promise(resolve => { // when stop btn missing
-                    // ...instead of await chatgpt.isIdle() since method waits for chat to start
-                    // but prev 3s sleep to fight OpenAI reset bug can be longer than start/stop
-                    new MutationObserver((_, obs) => {
-                        if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve() }
-                    }).observe(document.body, { childList: true, subtree: true })
-                })
-                if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
-                    infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+            await settings.load('replyLanguage', 'replyTopic', 'replyInterval')
+            chatgpt.send(activatePrompt)
+            await new Promise(resolve => setTimeout(resolve, 3000)) // sleep 3s
+            if (!document.querySelector('[data-message-author-role]') // new chat reset due to OpenAI bug
+                && config.infinityMode) // ...and toggle still active
+                    chatgpt.send(activatePrompt) // ...so prompt again
+            await new Promise(resolve => { // when stop btn missing
+                // ...instead of await chatgpt.isIdle() since method waits for chat to start
+                // but prev 3s sleep to fight OpenAI reset bug can be longer than start/stop
+                new MutationObserver((_, obs) => {
+                    if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve() }
+                }).observe(document.body, { childList: true, subtree: true })
             })
+            if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
+                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
         async continue() {
@@ -210,17 +209,18 @@
     resetInSameChat = async () => { // eslint-disable-line no-undef
         clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
         if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
-            settings.load('replyInterval').then(() => {
-                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
-    })}}
+            await settings.load('replyInterval')
+            infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+        }
+    }
 
     // Define SYNC function
 
-    syncExtension = () => { // settings + sidebar toggle visibility
-        settings.load(['autoScrollDisabled', 'autoStart', 'extensionDisabled',
-                       'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden'])
-            .then(() => { insertToggle() ; updateToggleHTML() // hide/show sidebar toggle based on latest setting
-    })}
+    syncExtension = async () => { // settings + sidebar toggle visibility
+        await settings.load(['autoScrollDisabled', 'autoStart', 'extensionDisabled',
+            'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden'])
+        insertToggle() ; updateToggleHTML() // hide/show sidebar toggle based on latest setting
+    }
 
     // Init BROWSER/UI props
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
@@ -273,7 +273,7 @@
         navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
     }
 
-    settings.load(['extensionDisabled']).then(() => { if (!config.extensionDisabled) insertToggle() })
+    await settings.load(['extensionDisabled']) ; if (!config.extensionDisabled) insertToggle()
 
     // Add LISTENER to toggle switch/label/config/menu
     navToggleDiv.onclick = () => {
@@ -285,18 +285,23 @@
     }
 
     // Auto-start if enabled
-    settings.load('autoStart').then(() => { if (config.autoStart) {
+    await settings.load('autoStart')
+    if (config.autoStart) {
         const navToggle = document.getElementById('infinity-toggle-input')
         if (navToggle) navToggle.parentNode.click()
         else { // activate via infinityMode funcs obj
             infinityMode.activate()
             settings.save('infinityMode', true) // so popup.js updates toggle
-    }}})
+        }
+    }
 
     // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
-    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
-        if (mutation.type == 'childList' && mutation.addedNodes.length)
-            settings.load(['extensionDisabled']).then(() => { if (!config.extensionDisabled) insertToggle()
-    })})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })    
+    const nodeObserver = new MutationObserver(mutations => {
+        mutations.forEach(async mutation => {
+            if (mutation.type == 'childList' && mutation.addedNodes.length) {
+                await settings.load(['extensionDisabled'])
+                if (!config.extensionDisabled) insertToggle()
+    }})})
+    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })    
 
 })()

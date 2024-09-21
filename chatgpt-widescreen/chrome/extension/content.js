@@ -411,17 +411,16 @@
                     btns.updateSVG('wideScreen', 'off')
         }}},
 
-        mode(mode) { // setting + icon + tooltip
+        async mode(mode) { // setting + icon + tooltip
             const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(`${site}_${mode}`, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
             if (mode == 'wideScreen' && site == 'chatgpt') chatbar.tweak()
             if (mode == 'fullWindow') sync.fullerWin(state)
-            settings.load(`${site}_notifDisabled`).then(() => {
-                if (!config[`${site}_notifDisabled`]) // notify synced state
-                    notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
-            })
+            await settings.load(`${site}_notifDisabled`)
+            if (!config[`${site}_notifDisabled`]) // notify synced state
+                notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
         }
     }
@@ -520,29 +519,28 @@
     fullWinStyle.innerText = sites[site].selectors.sidebar + '{ display: none }'
 
     // Insert BUTTONS
-    settings.load('extensionDisabled').then(async () => {
-        if (!config.extensionDisabled) { await chatbar.isLoaded() ; btns.insert() }})
+    await settings.load('extensionDisabled')
+    if (!config.extensionDisabled) { await chatbar.isLoaded() ; btns.insert() }
 
     // Monitor NODE CHANGES to auto-toggle once + maintain button visibility + update colors
     let isTempChat = false, prevSessionChecked = false
-    const schemeObserver = new MutationObserver(([mutation]) => {
+    const schemeObserver = new MutationObserver(async ([mutation]) => {
 
         // Load keys, check to restore prev session's state
-        settings.load('extensionDisabled', ...sites[site].availFeatures.map(feature => `${site}_${feature}`))
-            .then(() => { if (!config.extensionDisabled) {
-                if (!prevSessionChecked) { // restore prev session's state
-                    if (config[`${site}_wideScreen`]) toggle.mode('wideScreen', 'ON')
-                    if (config[`${site}_fullWindow`] && sites[site].hasSidebar) { toggle.mode('fullWindow', 'ON')
-                        if (site == 'chatgpt') { // sidebar observer doesn't trigger
-                            sync.fullerWin(true) // so sync Fuller Windows...
-                            if (!config[`${site}_notifDisabled`]) // ... + notify
-                                notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
-                    }}
-                    prevSessionChecked = true
-                }
-                btns.insert() // again or they constantly disappear
-            } prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
-        })
+        await settings.load('extensionDisabled', ...sites[site].availFeatures.map(feature => `${site}_${feature}`))
+        if (!config.extensionDisabled) {
+            if (!prevSessionChecked) { // restore prev session's state
+                if (config[`${site}_wideScreen`]) toggle.mode('wideScreen', 'ON')
+                if (config[`${site}_fullWindow`] && sites[site].hasSidebar) { toggle.mode('fullWindow', 'ON')
+                    if (site == 'chatgpt') { // sidebar observer doesn't trigger
+                        sync.fullerWin(true) // so sync Fuller Windows...
+                        if (!config[`${site}_notifDisabled`]) // ... + notify
+                            notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
+                }}
+                prevSessionChecked = true
+            }
+            btns.insert() // again or they constantly disappear
+        } prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
 
         // Update button colors on ChatGPT scheme or temp chat toggle
         if (site == 'chatgpt') {
@@ -561,14 +559,15 @@
 
     // Monitor SIDEBAR to update full-window setting
     if (sites[site].selectors.btns.sidebarToggle && !!sites[site].hasSidebar) {
-        const sidebarObserver = new MutationObserver(() => {
-            settings.load('extensionDisabled').then(async () => {
-                if (!config.extensionDisabled) {
-                    await new Promise(resolve => setTimeout(resolve, site == 'perplexity' ? 500 : 0))
-                    const fullWinState = isFullWin()
-                    if ((config[`${site}_fullWindow`] && !fullWinState) || (!config[`${site}_fullWindow`] && fullWinState))
-                        if (!config.modeSynced) sync.mode('fullWindow')
-        }})})
+        const sidebarObserver = new MutationObserver(async () => {
+            await settings.load('extensionDisabled')
+            if (!config.extensionDisabled) {
+                await new Promise(resolve => setTimeout(resolve, site == 'perplexity' ? 500 : 0))
+                const fullWinState = isFullWin()
+                if ((config[`${site}_fullWindow`] && !fullWinState) || (!config[`${site}_fullWindow`] && fullWinState))
+                    if (!config.modeSynced) sync.mode('fullWindow')
+            }
+        })
         setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from schemeObserver
             let obsTarget = document.querySelector(sites[site].selectors.sidebar)
             if (site == 'perplexity') obsTarget = obsTarget.parentNode
