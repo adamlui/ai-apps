@@ -506,7 +506,7 @@
           hhStyle = sites[site].selectors.header + '{ display: none !important }' // hide header
                   + ( site == 'chatgpt' ? 'main { padding-top: 12px }' : '' ), // increase top-padding
           hfStyle = sites[site].selectors.footer + '{ visibility: hidden ;' // hide footer text
-                                                 + '  height: 3px }' // reduce height
+                                                 + '  height: 3px ; overflow: clip }' // reduce height
 
     update.style.tweaks() ; document.head.append(tweaksStyle)
 
