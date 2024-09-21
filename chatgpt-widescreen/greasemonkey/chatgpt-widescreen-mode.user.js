@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.21.8
+// @version             2024.9.21.9
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -856,7 +856,7 @@
                 iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
             tooltipDiv.style.bottom = `${ // v-position
                 site == 'perplexity' ? ( location.pathname == '/' ? ( env.browser.isFF ? 303
-                                                                    : env.browser.isBrave ? 253 : 51 ) : 58 ) : 50 }px`
+                                                                    : env.browser.isBrave ? 463 : 51 ) : 58 ) : 50 }px`
         }
     }
 

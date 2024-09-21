@@ -339,7 +339,7 @@
             tooltipDiv.style.right = `${ // h-position
                 iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
             tooltipDiv.style.bottom = `${ // v-position
-                site == 'perplexity' ? ( location.pathname == '/' ? ( env.browser.isBrave ? 253 : 51 ) : 58 ) : 50 }px`
+                site == 'perplexity' ? ( location.pathname == '/' ? ( env.browser.isBrave ? 463 : 51 ) : 58 ) : 50 }px`
         }
     }
 
