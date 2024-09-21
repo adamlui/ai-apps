@@ -334,7 +334,9 @@
             switch (state.toUpperCase()) {
                 case 'ON' : activateMode(mode) ; break
                 case 'OFF' : deactivateMode(mode) ; break
-                default : config[`${site}_${mode}`] ? deactivateMode(mode) : activateMode(mode)
+                default : ( mode == 'wideScreen' ? document.head.contains(wideScreenStyle)
+                          : mode == 'fullWindow' ? isFullWin() : chatgpt.isFullScreen() ) ? deactivateMode(mode)
+                                                                                          : activateMode(mode)
             }
 
             function activateMode(mode) {
@@ -383,8 +385,8 @@
                 try { document.head.removeChild(fullWinStyle) } catch (err) {}
                 tweaksStyle.innerText = '' ; btns.remove()
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
-                toggle.mode('wideScreen', config[`${site}_wideScreen`] && !document.head.contains(wideScreenStyle) ? 'ON' : 'OFF')
-                toggle.mode('fullWindow', config[`${site}_fullWindow`] && sites[site].hasSidebar && !isFullWin() ? 'ON' : 'OFF')
+                if (config[`${site}_wideScreen`] ^ document.head.contains(wideScreenStyle)) toggle.mode('wideScreen')
+                if ((config[`${site}_fullWindow`] && sites[site].hasSidebar) ^ isFullWin()) toggle.mode('fullWindow')
                 update.style.tweaks() // sync tweaks
                 update.style.wideScreen() // sync wider chatbox
                 btns.insert()
