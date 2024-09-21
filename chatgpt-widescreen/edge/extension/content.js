@@ -25,6 +25,14 @@
     // Init CONFIG
     await settings.load(...sites[site].availFeatures.map(feature => `${site}_${feature}`))
 
+    // Add CHROME MSG listener for background/popup requests to sync modes/settings
+    chrome.runtime.onMessage.addListener(request => {
+        if (request.action == 'notify') notify(request.msg, request.position)
+        else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
+        else if (request.action == 'sync.extension') sync.extension()
+        return true
+    })
+
     // Define FACTORY functions
 
     const create = {
@@ -580,14 +588,6 @@
     document.addEventListener('keydown', event => {
         if ((event.key == 'F11' || event.keyCode == 122) && !config.fullScreen) config.f11 = true
         else if ((event.key == 'Escape' || event.keyCode == 27) && !chatgpt.isIdle()) chatgpt.stop()
-    })
-
-    // Add CHROME MSG listener for background/popup requests to sync modes/settings
-    chrome.runtime.onMessage.addListener(request => {
-        if (request.action == 'notify') notify(request.msg, request.position)
-        else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
-        else if (request.action == 'sync.extension') sync.extension()
-        return true
     })
 
 })()
