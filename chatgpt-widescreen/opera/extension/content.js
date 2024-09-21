@@ -477,7 +477,7 @@
     }
 
     // Save FULL-WINDOW + FULL SCREEN states
-    config[`${site}_fullWindow`] = site == 'chatgpt' ? isFullWin() : settings.load(`${site}_fullWindow`)
+    config[`${site}_fullWindow`] = site == 'chatgpt' ? isFullWin() : await settings.load(`${site}_fullWindow`)
     config.fullScreen = chatgpt.isFullScreen()
 
     // Create/stylize TOOLTIP div
