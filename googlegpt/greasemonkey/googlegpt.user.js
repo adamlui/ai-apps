@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.21.2
+// @version                  2024.9.21.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2543,10 +2543,10 @@
                 else if (btn.id == 'arrows-btn') btn.onclick = () => toggle.expandedMode()
                 if (!env.browser.isMobile && btn.id != 'pin-btn') // add hover listeners for tooltips
                     btn.onmouseover = btn.onmouseout = toggle.tooltip
-                if (!/wsb|pin/.test(btn.id)) btn.onmouseup = () => { // add zoom/fade-out except to WSB/pin btns
+                if (/about|settings|speak/.test(btn.id)) btn.onmouseup = () => { // add zoom/fade-out to select buttons
                     if (config.fgAnimationsDisabled) return
                     if (!(btn.id == 'font-size-btn' && appDiv.querySelector('#font-size-slider-track')?.classList.contains('active')))
-                        btn.style.animation = 'btn-zoom-fade-out .220s ease-out' // animate except when dismissing Font Size slider
+                    btn.style.animation = 'btn-zoom-fade-out .220s ease-out'
                     setTimeout(() => { // hide btn after animation nears completion
                         Object.assign(btn.style, { opacity: '0', visibility: 'hidden', animation: '' })
                         setTimeout(() => // show btn after short delay

@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.21.2
+// @version               2024.9.21.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2344,10 +2344,9 @@
                 else if (btn.id == 'arrows-btn') btn.onclick = () => toggle.expandedMode()
                 if (!env.browser.isMobile && btn.id != 'pin-btn') // add hover listeners for tooltips
                     btn.onmouseover = btn.onmouseout = toggle.tooltip
-                if (!/wsb|pin/.test(btn.id)) btn.onmouseup = () => { // add zoom/fade-out except to WSB/pin btns
+                if (/about|settings|speak/.test(btn.id)) btn.onmouseup = () => { // add zoom/fade-out to select buttons
                     if (config.fgAnimationsDisabled) return
-                    if (!(btn.id == 'font-size-btn' && appDiv.querySelector('#font-size-slider-track')?.classList.contains('active')))
-                        btn.style.animation = 'btn-zoom-fade-out .220s ease-out' // animate except when dismissing Font Size slider
+                    btn.style.animation = 'btn-zoom-fade-out .220s ease-out'
                     setTimeout(() => { // hide btn after animation nears completion
                         Object.assign(btn.style, { opacity: '0', visibility: 'hidden', animation: '' })
                         setTimeout(() => // show btn after short delay
