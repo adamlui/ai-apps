@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.20.8
+// @version             2024.9.21
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -787,7 +787,7 @@
                 btnSVG.style.height = btnSVG.style.width = '1.3rem'
     
             // Update SVG elements
-            while (btnSVG.firstChild) { btnSVG.removeChild(btnSVG.firstChild) }
+            while (btnSVG.firstChild) btnSVG.firstChild.remove()
             const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
             svgElems.forEach(elem => btnSVG.append(elem))
     
@@ -876,10 +876,10 @@
             }
         
             function deactivateMode(mode) {
-                if (mode == 'wideScreen')
-                    try { document.head.removeChild(wideScreenStyle) ; sync.mode('wideScreen') } catch (err) {}
-                else if (mode == 'fullWindow') {
-                    try { document.head.removeChild(fullWinStyle) } catch (err) {}
+                if (mode == 'wideScreen') {
+                    wideScreenStyle.remove() ; sync.mode('wideScreen')
+                }  else if (mode == 'fullWindow') {
+                    fullWinStyle.remove()
                     if (/chatgpt|openai/.test(site)) chatgpt.sidebar.show()
                     else if (site == 'poe') sync.mode('fullWindow') // since not sidebarObserve()'d
                 } else if (mode == 'fullScreen') {
@@ -905,11 +905,11 @@
             if (fullWinState && config.fullerWindows && !config.wideScreen) { // activate fuller windows
                 document.head.append(wideScreenStyle) ; btns.updateSVG('wideScreen', 'on')
             } else if (!fullWinState) { // de-activate fuller windows
-                try { document.head.removeChild(fullWinStyle) } catch (err) {} // to remove style too so sidebar shows
+                fullWinStyle.remove() // to remove style too so sidebar shows
                 if (!config.wideScreen) { // disable widescreen if result of fuller window
-                    try { document.head.removeChild(wideScreenStyle) } catch (err) {}
-                    btns.updateSVG('wideScreen', 'off')
-        }}},
+                    wideScreenStyle.remove() ; btns.updateSVG('wideScreen', 'off')
+            }}
+        },
 
         mode(mode) { // setting + icon + tooltip
             const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')

@@ -226,7 +226,7 @@
             if (parentToRemoveFrom?.contains(btns.wideScreen)) { // remove all buttons
                 const btnsToRemove = [btns.newChat, btns.wideScreen, btns.fullScreen, tooltipDiv]
                 if (typeof btns.fullWindow != 'undefined') btnsToRemove.push(btns.fullWindow)
-                btnsToRemove.forEach(btn => parentToRemoveFrom.removeChild(btn))
+                btnsToRemove.forEach(btn => btn.remove())
             }
         },
 
@@ -271,7 +271,7 @@
                 btnSVG.style.height = btnSVG.style.width = '1.3rem'
     
             // Update SVG elements
-            while (btnSVG.firstChild) { btnSVG.removeChild(btnSVG.firstChild) }
+            while (btnSVG.firstChild) btnSVG.firstChild.remove()
             const svgElems = config[`${site}_${mode}`] || state.toLowerCase() == 'on' ? ONelems : OFFelems
             svgElems.forEach(elem => btnSVG.append(elem))
     
@@ -359,10 +359,10 @@
             }
         
             function deactivateMode(mode) {
-                if (mode == 'wideScreen')
-                    try { document.head.removeChild(wideScreenStyle) ; sync.mode('wideScreen') } catch (err) {}
-                else if (mode == 'fullWindow') {
-                    try { document.head.removeChild(fullWinStyle) } catch (err) {}
+                if (mode == 'wideScreen') {
+                    wideScreenStyle.remove() ; sync.mode('wideScreen')
+                } else if (mode == 'fullWindow') {
+                    fullWinStyle.remove()
                     if (site == 'chatgpt') chatgpt.sidebar.show()
                     else if (site == 'perplexity') document.querySelector(sites[site].selectors.btns.sidebarToggle)?.click()
                     else if (site == 'poe') sync.mode('fullWindow') // since not sidebarObserve()'d
@@ -388,8 +388,7 @@
             const extensionWasDisabled = config.extensionDisabled
             await settings.load('extensionDisabled', ...sites[site].availFeatures.map(feature => `${site}_${feature}`))
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
-                try { document.head.removeChild(wideScreenStyle) } catch (err) {}
-                try { document.head.removeChild(fullWinStyle) } catch (err) {}
+                wideScreenStyle.remove() ; fullWinStyle.remove()
                 tweaksStyle.innerText = '' ; btns.remove()
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
                 if (config[`${site}_wideScreen`] ^ document.head.contains(wideScreenStyle)) { supressNotifs() ; toggle.mode('wideScreen') }
@@ -412,11 +411,11 @@
             if (fullWinState && config[`${site}_fullerWindows`] && !config[`${site}_wideScreen`]) { // activate fuller windows
                 document.head.append(wideScreenStyle) ; btns.updateSVG('wideScreen', 'on')
             } else if (!fullWinState) { // de-activate fuller windows
-                try { document.head.removeChild(fullWinStyle) } catch (err) {} // to remove style too so sidebar shows
+                fullWinStyle.remove() // to remove style too so sidebar shows
                 if (!config[`${site}_wideScreen`]) { // disable widescreen if result of fuller window
-                    try { document.head.removeChild(wideScreenStyle) } catch (err) {}                
-                    btns.updateSVG('wideScreen', 'off')
-        }}},
+                    wideScreenStyle.remove() ; btns.updateSVG('wideScreen', 'off')
+            }}
+        },
 
         async mode(mode) { // setting + icon + tooltip
             const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')

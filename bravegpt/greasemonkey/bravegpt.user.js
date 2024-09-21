@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.19.9
+// @version               2024.9.21
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -601,7 +601,7 @@
 
     function appAlert(...alerts) {
         alerts = alerts.flat() // flatten array args nested by spread operator
-        while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear appDiv content
+        while (appDiv.firstChild) appDiv.firstChild.remove() // clear appDiv content
         const alertP = document.createElement('p')
         alertP.id = 'bravegpt-alert' ; alertP.className = 'no-user-select'
         alertP.style.marginBottom = '-20px' // counteract appDiv padding
@@ -802,7 +802,7 @@
                 aboutModal.insertBefore(aboutHeaderLogo, aboutModal.firstChild.nextSibling) // after close btn
 
                 // Center text
-                aboutModal.removeChild(aboutModal.querySelector('h2')) // remove empty title h2
+                aboutModal.querySelector('h2').remove() // remove empty title h2
                 aboutModal.querySelector('p').style.cssText = 'justify-self: center ; text-align: center ; overflow-wrap: anywhere ;'
                                                             + `margin: ${ env.browser.isPortrait ? '15px 0 -21px' : '9px 0 -12px' }`
 
@@ -1191,7 +1191,7 @@
             updateSchemeStatus(schemeStatusSpan = null) {
                 schemeStatusSpan = schemeStatusSpan || document.querySelector('#scheme-menu-entry span')
                 if (schemeStatusSpan) {
-                    while (schemeStatusSpan.firstChild) schemeStatusSpan.removeChild(schemeStatusSpan.firstChild) // clear old status
+                    while (schemeStatusSpan.firstChild) schemeStatusSpan.firstChild.remove() // clear old status
                     schemeStatusSpan.append(...( // status txt + icon
                         config.scheme == 'dark' ? [document.createTextNode(msgs.scheme_dark || 'Dark'), icons.moon.create()]
                       : config.scheme == 'light' ? [document.createTextNode(msgs.scheme_light || 'Light'), icons.sun.create()]
@@ -1237,7 +1237,7 @@
             },
 
             update(pinMenu) {
-                while (pinMenu.firstChild) pinMenu.removeChild(pinMenu.firstChild) // clear content
+                while (pinMenu.firstChild) pinMenu.firstChild.remove() // clear content
 
                 // Init core elems
                 const pinMenuUL = document.querySelector('#pin-menu ul') || document.createElement('ul'),
@@ -2397,7 +2397,7 @@
                     appDiv.querySelector('.related-queries')?.remove() // remove related queries
                     if (!env.browser.isMobile) tooltipDiv.style.opacity = 0 // hide 'Send reply' tooltip post-send btn click
                     const appFooter = appDiv.querySelector('footer')
-                    while (appFooter.firstChild) appFooter.removeChild(appFooter.firstChild)
+                    while (appFooter.firstChild) appFooter.firstChild.remove()
 
                     // Show loading status
                     const replySection = appDiv.querySelector('section')
@@ -2485,7 +2485,7 @@
             document.addEventListener(inputEvents.up, () => {
                 isDragging = false
                 if (fontSizeSlider.cursorOverlay.parentNode)
-                    fontSizeSlider.cursorOverlay.parentNode.removeChild(fontSizeSlider.cursorOverlay)
+                    fontSizeSlider.cursorOverlay.remove()
             })
 
             // Add event listener for wheel-scrolling thumb
@@ -2675,7 +2675,7 @@
             const chevronBtn = appDiv.querySelector('#chevron-btn')
             if (chevronBtn) { // update icon
                 const chevronSVG = icons[`chevron${ config.minimized ? 'Up' : 'Down' }`].create()
-                chevronBtn.removeChild(chevronBtn.firstChild) ; chevronBtn.append(chevronSVG)
+                chevronBtn.firstChild.remove() ; chevronBtn.append(chevronSVG)
                 chevronBtn.onclick = () => {
                     if (appDiv.querySelector('#font-size-slider-track')?.classList.contains('active')) fontSizeSlider.toggle('off')
                     toggle.minimized()
@@ -3318,7 +3318,7 @@
 
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
-                while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
+                while (appDiv.firstChild) appDiv.firstChild.remove() // clear app content
                 fillStarryBG(appDiv) // add stars      
 
                 // Create/append title
@@ -3444,7 +3444,7 @@
 
                 // Init/clear reply section content/classes
                 const replySection = appDiv.querySelector('section') || document.createElement('section')
-                while (replySection.firstChild) replySection.removeChild(replySection.firstChild)
+                while (replySection.firstChild) replySection.firstChild.remove()
                 replySection.classList.remove('loading', 'no-user-select')
 
                 // Create/append section elems
