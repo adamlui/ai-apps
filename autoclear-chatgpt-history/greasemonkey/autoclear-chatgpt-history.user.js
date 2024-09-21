@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.19.2
+// @version             2024.9.21
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -329,16 +329,16 @@
 
             // Add Autoclear Chats toggle
             const acLabel = menu.state.symbol[+config.autoclear] + ' '
-                        + ( msgs.menuLabel_autoClear || 'Autoclear Chats' )
-                        + menu.state.separator + menu.state.word[+config.autoclear]
+                          + ( msgs.menuLabel_autoClear || 'Autoclear Chats' )
+                          + menu.state.separator + menu.state.word[+config.autoclear]
             menu.ids.push(GM_registerMenuCommand.registerCommand(acLabel, () => {
                 document.getElementById('autoclear-toggle-label').click()
             }))
 
             // Add Toggle Visibility toggle
             const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
-                        + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
-                        + menu.state.separator + menu.state.word[+!config.toggleHidden]
+                          + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
+                          + menu.state.separator + menu.state.word[+!config.toggleHidden]
             menu.ids.push(GM_registerMenuCommand.registerCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
@@ -349,8 +349,8 @@
 
             // Add Mode Notiications toggle
             const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
-                        + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
-                        + menu.state.separator + menu.state.word[+!config.notifDisabled]
+                          + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
+                          + menu.state.separator + menu.state.word[+!config.notifDisabled]
             menu.ids.push(GM_registerMenuCommand.registerCommand(mnLabel, () => {
                 settings.save('notifDisabled', !config.notifDisabled)
                 notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menu.state.word[+!config.notifDisabled])
@@ -359,7 +359,7 @@
 
             // Add About entry
             const aboutLabel = '💡 ' + ( msgs.menuLabel_about || 'About' ) + ' '
-                          + ( msgs.appName || app.name )
+                             + ( msgs.appName || app.name )
             menu.ids.push(GM_registerMenuCommand.registerCommand(aboutLabel, modals.about.show))
         },
 

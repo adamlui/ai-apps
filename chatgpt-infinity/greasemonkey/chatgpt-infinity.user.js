@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.19
+// @version             2024.9.21
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -310,14 +310,14 @@
 
             // Add command to toggle Infinity Mode
             const imLabel = menu.state.symbol[+config.infinityMode] + ' '
-                        + ( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ' ∞ '
-                        + menu.state.separator + menu.state.word[+config.infinityMode]
+                          + ( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ' ∞ '
+                          + menu.state.separator + menu.state.word[+config.infinityMode]
             menu.ids.push(GM_registerMenuCommand(imLabel, () => { document.getElementById('infinity-toggle-label').click() }))
 
             // Add command to toggle Auto-Start
             const astLabel = menu.state.symbol[+config.autoStart] + ' '
-                        + ( msgs.menuLabel_autoStart || 'Auto-Start' )
-                        + menu.state.separator + menu.state.word[+config.autoStart]
+                           + ( msgs.menuLabel_autoStart || 'Auto-Start' )
+                           + menu.state.separator + menu.state.word[+config.autoStart]
             menu.ids.push(GM_registerMenuCommand(astLabel, () => {
                 settings.save('autoStart', !config.autoStart)
                 notify(( msgs.menuLabel_autoStart || 'Auto-Start' ) + ': '+ menu.state.word[+config.autoStart])
@@ -326,8 +326,8 @@
 
             // Add command to toggle visibility of toggle
             const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
-                        + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
-                        + menu.state.separator + menu.state.word[+!config.toggleHidden]
+                          + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
+                          + menu.state.separator + menu.state.word[+!config.toggleHidden]
             menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
@@ -337,8 +337,8 @@
 
             // Add command to toggle Auto-Scroll
             const ascLabel = menu.state.symbol[+!config.autoScrollDisabled] + ' '
-                        + ( msgs.menuLabel_autoScroll || 'Auto-Scroll' )
-                        + menu.state.separator + menu.state.word[+!config.autoScrollDisabled]
+                           + ( msgs.menuLabel_autoScroll || 'Auto-Scroll' )
+                           + menu.state.separator + menu.state.word[+!config.autoScrollDisabled]
             menu.ids.push(GM_registerMenuCommand(ascLabel, () => {
                 settings.save('autoScrollDisabled', !config.autoScrollDisabled)
                 notify(( msgs.menuLabel_autoScroll || 'Auto-Scroll' ) + ': '+ menu.state.word[+!config.autoScrollDisabled])
@@ -347,7 +347,7 @@
 
             // Add command to set reply language
             const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLang || 'Reply Language' )
-                        + menu.state.separator + config.replyLanguage
+                          + menu.state.separator + config.replyLanguage
             menu.ids.push(GM_registerMenuCommand(rlLabel, () => {
                 while (true) {
                     let replyLanguage = prompt(
@@ -368,8 +368,8 @@
 
             // Add command to set reply topic
             const re_all = new RegExp('^(' + ( msgs.menuLabel_all || 'all' ) + '|all|any|every)$', 'i'),
-                rtLabel = '🧠 ' + ( msgs.menuLabel_replyTopic || 'Reply Topic' ) + menu.state.separator
-                        + ( re_all.test(config.replyTopic) ? ( msgs.menuLabel_all || 'all' )
+                  rtLabel = '🧠 ' + ( msgs.menuLabel_replyTopic || 'Reply Topic' ) + menu.state.separator
+                          + ( re_all.test(config.replyTopic) ? ( msgs.menuLabel_all || 'all' )
                                                             : toTitleCase(config.replyTopic) )
             menu.ids.push(GM_registerMenuCommand(rtLabel, () => {
                 const replyTopic = prompt(( msgs.prompt_updateReplyTopic || 'Update reply topic' )
@@ -393,7 +393,7 @@
 
             // Add command to change reply interval
             const riLabel = '⌚ ' + ( msgs.menuLabel_replyInt || 'Reply Interval' )
-                        + menu.state.separator + config.replyInterval + 's'
+                          + menu.state.separator + config.replyInterval + 's'
             menu.ids.push(GM_registerMenuCommand(riLabel, async () => {
                 while (true) {
                     const replyInterval = prompt(

@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.19
+// @version             2024.9.21
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -318,14 +318,14 @@
 
             // Add Auto-Talk toggle
             const atLabel = menu.state.symbol[+!config.autoTalkDisabled] + ' '
-                        + ( msgs.mode_autoTalk || 'Auto-Talk' )
-                        + menu.state.separator + menu.state.word[+!config.autoTalkDisabled]
+                          + ( msgs.mode_autoTalk || 'Auto-Talk' )
+                          + menu.state.separator + menu.state.word[+!config.autoTalkDisabled]
             menu.ids.push(GM_registerMenuCommand(atLabel, () => document.getElementById('auto-talk-toggle-label').click()))
 
             // Add Toggle Visibility toggle
             const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
-                        + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
-                        + menu.state.separator + menu.state.word[+!config.toggleHidden]
+                          + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
+                          + menu.state.separator + menu.state.word[+!config.toggleHidden]
             menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility

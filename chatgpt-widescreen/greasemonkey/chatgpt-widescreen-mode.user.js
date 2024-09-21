@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.21.5
+// @version             2024.9.21.6
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -347,8 +347,8 @@
             // Add Fuller Windows toggle if avail
             if (sites[site].availFeatures.includes('fullerWindows')) {
                 const fwLabel = menu.state.symbol[+config.fullerWindows] + ' '
-                            + ( msgs.menuLabel_fullerWins || 'Fuller Windows' )
-                            + menu.state.separator + menu.state.word[+config.fullerWindows]
+                              + ( msgs.menuLabel_fullerWins || 'Fuller Windows' )
+                              + menu.state.separator + menu.state.word[+config.fullerWindows]
                 menu.ids.push(GM_registerMenuCommand(fwLabel, () => {
                     settings.save('fullerWindows', !config.fullerWindows)
                     sync.fullerWin(config.fullerWindows) // live update on click
@@ -361,7 +361,7 @@
             // Add Taller Chatbox toggle if avail
             if (sites[site].availFeatures.includes('tcbDisabled')) {
                 const tcbLabel = '↕️ ' + ( msgs.menuLabel_tallerChatbox || 'Taller Chatbox' )
-                            + menu.state.separator + menu.state.word[+!config.tcbDisabled]
+                               + menu.state.separator + menu.state.word[+!config.tcbDisabled]
                 menu.ids.push(GM_registerMenuCommand(tcbLabel, () => {
                     settings.save('tcbDisabled', !config.tcbDisabled)
                     update.style.tweaks()
@@ -374,7 +374,7 @@
             // Add Wider Chatbox toggle if avail
             if (sites[site].availFeatures.includes('widerChatbox')) {
                 const wcbLabel = '↔️ ' + ( msgs.menuLabel_widerChatbox || 'Wider Chatbox' )
-                            + menu.state.separator + menu.state.word[+config.widerChatbox]
+                               + menu.state.separator + menu.state.word[+config.widerChatbox]
                 menu.ids.push(GM_registerMenuCommand(wcbLabel, () => {
                     settings.save('widerChatbox', !config.widerChatbox)
                     update.style.wideScreen()
@@ -387,8 +387,8 @@
             // Add New Chat Button toggle if avail
             if (sites[site].availFeatures.includes('ncbDisabled')) {
                 const hncLabel = menu.state.symbol[+!config.ncbDisabled] + ' '
-                            + ( msgs.menuLabel_newChatBtn || 'New Chat Button' )
-                            + menu.state.separator + menu.state.word[+!config.ncbDisabled]
+                               + ( msgs.menuLabel_newChatBtn || 'New Chat Button' )
+                               + menu.state.separator + menu.state.word[+!config.ncbDisabled]
                 menu.ids.push(GM_registerMenuCommand(hncLabel, () => {
                     settings.save('ncbDisabled', !config.ncbDisabled)
                     update.style.tweaks()
@@ -400,8 +400,8 @@
             // Add Hidden Header toggle if avail
             if (sites[site].availFeatures.includes('hiddenHeader')) {
                 const hhLabel = menu.state.symbol[+config.hiddenHeader] + ' '
-                            + ( msgs.menuLabel_hiddenHeader || 'Hidden Header' )
-                            + menu.state.separator + menu.state.word[+config.hiddenHeader]
+                              + ( msgs.menuLabel_hiddenHeader || 'Hidden Header' )
+                              + menu.state.separator + menu.state.word[+config.hiddenHeader]
                 menu.ids.push(GM_registerMenuCommand(hhLabel, () => {
                     settings.save('hiddenHeader', !config.hiddenHeader)
                     update.style.tweaks()
@@ -414,8 +414,8 @@
             // Add Hidden Footer toggle if avail
             if (sites[site].availFeatures.includes('hiddenFooter')) {
                 const hfLabel = menu.state.symbol[+config.hiddenFooter] + ' '
-                            + ( msgs.menuLabel_hiddenFooter || 'Hidden Footer' )
-                            + menu.state.separator + menu.state.word[+config.hiddenFooter]
+                              + ( msgs.menuLabel_hiddenFooter || 'Hidden Footer' )
+                              + menu.state.separator + menu.state.word[+config.hiddenFooter]
                 menu.ids.push(GM_registerMenuCommand(hfLabel, () => {
                     settings.save('hiddenFooter', !config.hiddenFooter)
                     update.style.tweaks()
@@ -428,8 +428,8 @@
             // Add Mode Notifications toggle if avail
             if (sites[site].availFeatures.includes('notifDisabled')) {
                 const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
-                            + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
-                            + menu.state.separator + menu.state.word[+!config.notifDisabled]
+                              + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
+                              + menu.state.separator + menu.state.word[+!config.notifDisabled]
                 menu.ids.push(GM_registerMenuCommand(mnLabel, () => {
                     settings.save('notifDisabled', !config.notifDisabled)
                     notify(`${ msgs.menuLabel_modeNotifs || 'Mode Notifications' }: ${ menu.state.word[+!config.notifDisabled] }`)

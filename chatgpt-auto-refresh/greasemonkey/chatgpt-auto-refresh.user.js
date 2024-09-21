@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.19.1
+// @version             2024.9.21
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -342,16 +342,16 @@
 
             // Add Auto-Refresh toggle
             const arLabel = menu.state.symbol[+!config.arDisabled] + ' '
-                        + ( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' ↻ '
-                        + menu.state.separator + menu.state.word[+!config.arDisabled]
+                          + ( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' ↻ '
+                          + menu.state.separator + menu.state.word[+!config.arDisabled]
             menu.ids.push(GM_registerMenuCommand(arLabel, () => {
                 document.getElementById('auto-refresh-switch-span').click()
             }))
 
             // Add Toggle Visibility toggle
             const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
-                        + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
-                        + menu.state.separator + menu.state.word[+!config.toggleHidden]
+                          + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
+                          + menu.state.separator + menu.state.word[+!config.toggleHidden]
             menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
@@ -362,8 +362,8 @@
 
             // Add Mode Notifications toggle
             const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
-                        + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
-                        + menu.state.separator + menu.state.word[+!config.notifDisabled]
+                          + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
+                          + menu.state.separator + menu.state.word[+!config.notifDisabled]
             menu.ids.push(GM_registerMenuCommand(mnLabel, () => {
                 settings.save('notifDisabled', !config.notifDisabled)
                 notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menu.state.word[+!config.notifDisabled])
@@ -372,7 +372,7 @@
 
             // Add Refresh Interval entry
             const riLabel = '⌚ ' + ( msgs.menuLabel_refreshInt || 'Refresh Interval' ) + ' '
-                        + menu.state.separator + config.refreshInterval + 's'
+                          + menu.state.separator + config.refreshInterval + 's'
             menu.ids.push(GM_registerMenuCommand(riLabel, () => {
                 while (true) {
                     const refreshInterval = prompt(
