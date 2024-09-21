@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.21.1
+// @version                2024.9.21.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1564,7 +1564,7 @@
                       + 'z-index: 560 ; border: none ; float: right ; position: relative ; bottom: 50px ; background: none ; cursor: pointer ;'
                       + `${ ui.app.scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
                   + '.chatbar-btn:hover {'
-                      + `${ ui.app.scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
+                      + `${ ui.app.scheme == 'dark' ? 'color: white ; fill: white ; stroke: white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
                   + ( // rendered markdown styles
                         '#amzgpt > pre h1 { font-size: 24px } #amzgpt > pre h2 { font-size: 22px } #amzgpt > pre h3 { font-size: 20px }' // size headings
                       + '#amzgpt > pre h1, #amzgpt > pre h2, #amzgpt > pre h3 { margin-bottom: -15px }' // reduce gap after headings
