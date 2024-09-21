@@ -22,7 +22,6 @@
         else if (request.action == 'updateToggleHTML') updateToggleHTML()
         else if (request.action == 'clickToggle') document.getElementById('infinity-toggle-label').click()        
         else if (request.action == 'sync.extension') syncExtension()
-        return true
     })
 
     // Add FLAG to auto-disable userscript

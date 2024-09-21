@@ -30,7 +30,6 @@
         if (request.action == 'notify') notify(request.msg, request.position)
         else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
         else if (request.action == 'sync.extension') sync.extension()
-        return true
     })
 
     // Define FACTORY functions
