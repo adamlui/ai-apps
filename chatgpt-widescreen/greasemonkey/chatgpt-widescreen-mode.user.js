@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.8
+// @version             2024.9.22.9
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -859,10 +859,11 @@
             function deactivateMode(mode) {
                 if (mode == 'wideScreen') {
                     wideScreenStyle.remove() ; sync.mode('wideScreen')
-                }  else if (mode == 'fullWindow') {
+                } else if (mode == 'fullWindow') {
                     fullWinStyle.remove()
-                    if (/chatgpt|openai/.test(site)) chatgpt.sidebar.show()
-                    else if (site == 'poe') sync.mode('fullWindow') // since not sidebarObserve()'d
+                    const sidebarToggle = document.querySelector(sites[site].selectors.btns.sidebarToggle)
+                    if (sidebarToggle) sidebarToggle.click()
+                    else sync.mode('fullWindow') // for notif since not native sidebarObserve()'d
                 } else if (mode == 'fullScreen') {
                     if (config.f11)
                         siteAlert(app.msgs.alert_pressF11,
@@ -920,7 +921,7 @@
     function isFullWin() {
         return site == 'poe' ? !!document.getElementById('fullWindow-mode')
             : !sites[site].hasSidebar // false if sidebar non-existent
-           || /\d+/.exec(getComputedStyle(document.querySelector(sites[site].selectors.sidebar)).width)[0] < 100
+           || /\d+/.exec(getComputedStyle(document.querySelector(sites[site].selectors.sidebar))?.width || '')[0] < 100
     }
 
     function cssSelectorize(classList) {
@@ -979,9 +980,11 @@
         ])
     }
 
-    // Save FULL-WINDOW + FULL SCREEN states
-    config.fullWindow = /chatgpt|openai/.test(site) ? isFullWin() : config.fullWindow
+    // Init FULL-MODE states
     config.fullScreen = chatgpt.isFullScreen()
+    if (sites[site].selectors.btns.sidebarToggle) // site has native FW state
+         config.fullWindow = isFullWin() // ...so match it
+    else settings.load('fullWindow') // otherwise load CWM's saved state
 
     // Stylize ALERTS
     if (!document.getElementById('chatgpt-alert-override-style')) {
@@ -1042,36 +1045,28 @@
     // Insert BUTTONS
     await chatbar.isLoaded() ; btns.insert()
 
-    // Monitor NODE CHANGES to auto-toggle once + maintain button visibility + update colors
-    let isTempChat = false, prevSessionChecked = false
-    const schemeObserver = new MutationObserver(([mutation]) => {
+    // Restore PREV SESSION's state
+    if (config.wideScreen) toggle.mode('wideScreen', 'ON')
+    if (config.fullWindow && sites[site].hasSidebar) {
+        if (sites[site].selectors.btns.sidebarToggle) // site has own FW config
+             sync.mode('fullWindow') // ...so sync w/ it
+        else toggle.mode('fullWindow', 'on') // otherwise self-toggle
+    }
 
-        // Check loaded keys to restore prev session's state
-        if (!prevSessionChecked) {
-            if (config.wideScreen) toggle.mode('wideScreen', 'ON')
-            if (config.fullWindow && sites[site].hasSidebar) {
-                toggle.mode('fullWindow', 'ON')
-                if (/chatgpt|openai/.test(site)) { // sidebar observer doesn't trigger
-                    sync.fullerWin() // so sync Fuller Windows...
-                    if (!config.notifDisabled) // ... + notify
-                        notify(( app.msgs.mode_fullWindow ) + ' ON')
-            }}
-            prevSessionChecked = true
-        }
-
+    // Monitor NODE CHANGES to maintain button visibility + update colors
+    let isTempChat = false
+    const nodeObserver = new MutationObserver(([mutation]) => {
         btns.insert() // again or they constantly disappear
-
-        // Update button colors on ChatGPT scheme or temp chat toggle
-        if (/chatgpt|openai/.test(site)) {
+        if (/chatgpt|openai/.test(site)) { // Update button colors on ChatGPT scheme or temp chat toggle
             const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]')
             if (chatbarIsBlack != isTempChat // temp chat toggled
                 || mutation.target == document.documentElement && mutation.attributeName == 'class') { // scheme toggled
                     btns.updateColor() ; isTempChat = chatbarIsBlack }            
         }
     })
-    schemeObserver.observe( // <html> for page scheme toggles
+    nodeObserver.observe( // <html> for page scheme toggles
         document.documentElement, { attributes: true })
-    schemeObserver.observe( // for chatbar changes
+    nodeObserver.observe( // for chatbar changes
         document.querySelector(/openai|chatgpt|perplexity/.test(site) ? 'main' : 'head'),
         { attributes: true, subtree: true }
     )
@@ -1084,7 +1079,7 @@
             if ((config.fullWindow && !fullWinState) || (!config.fullWindow && fullWinState))
                 if (!config.modeSynced) sync.mode('fullWindow')
         })
-        setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from schemeObserver
+        setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
             let obsTarget = document.querySelector(sites[site].selectors.sidebar)
             if (site == 'perplexity') obsTarget = obsTarget.parentNode
             sidebarObserver.observe(obsTarget, { attributes: true })
