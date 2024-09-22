@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.21.1
+// @version             2024.9.21.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -280,8 +280,8 @@
         const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        xhr({ method: 'GET', url: msgHref, onload: onLoad })
-        function onLoad(resp) {
+        function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
+        function handleMsgs(resp) {
             try { // to return localized messages.json
                 const msgs = JSON.parse(resp.responseText), flatMsgs = {}
                 for (const key in msgs)  // remove need to ref nested keys
@@ -293,9 +293,10 @@
                 msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
                     msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                xhr({ method: 'GET', url: msgHref, onload: onLoad })
+                fetchMsgs()
             }
         }
+        fetchMsgs()
     })
 
     // Define MENU functions

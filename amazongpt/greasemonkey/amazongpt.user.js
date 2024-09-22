@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.21.7
+// @version                2024.9.21.8
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -277,8 +277,8 @@
         const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        xhr({ method: 'GET', url: msgHref, onload: onLoad })
-        function onLoad(resp) {
+        function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
+        function handleMsgs(resp) {
             try { // to return localized messages.json
                 const msgs = JSON.parse(resp.responseText), flatMsgs = {}
                 for (const key in msgs)  // remove need to ref nested keys
@@ -290,9 +290,10 @@
                 msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
                     msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                xhr({ method: 'GET', url: msgHref, onload: onLoad })
+                fetchMsgs()
             }
         }
+        fetchMsgs()
     })
     log.debug(Object.keys(app.msgs).length > 0 ? `Success! app.msgs = ${log.prettifyObj(app.msgs)}` : 'Skipped due to English locale')
 

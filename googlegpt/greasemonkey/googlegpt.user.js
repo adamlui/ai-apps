@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.21.10
+// @version                  2024.9.21.11
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -594,8 +594,8 @@
         const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        xhr({ method: 'GET', url: msgHref, onload: onLoad })
-        function onLoad(resp) {
+        function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
+        function handleMsgs(resp) {
             try { // to return localized messages.json
                 const msgs = JSON.parse(resp.responseText), flatMsgs = {}
                 for (const key in msgs)  // remove need to ref nested keys
@@ -607,9 +607,10 @@
                 msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
                     msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                xhr({ method: 'GET', url: msgHref, onload: onLoad })
+                fetchMsgs()
             }
         }
+        fetchMsgs()
     })
     log.debug(Object.keys(app.msgs).length > 0 ? `Success! app.msgs = ${log.prettifyObj(app.msgs)}` : 'Skipped due to English locale')
 
