@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22
+// @version             2024.9.22.1
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -391,9 +391,8 @@
 
                         // Alert to update
                         const updateModalID = siteAlert(`🚀 ${app.msgs.alert_updateAvail}!`, // title
-                            `${app.msgs.alert_newerVer} ${ app.name } `
-                                + ( app.msgs.appName ) + ' '
-                                + `(v${ latestVer }) ${app.msgs.alert_isAvail}!  `
+                            `${app.msgs.alert_newerVer} ${app.msgs.appName} `
+                                + `(v${latestVer}) ${app.msgs.alert_isAvail}!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
