@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.21.10
+// @version             2024.9.21.11
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -300,7 +300,7 @@
     } ; settings.load(...sites[site].availFeatures)
 
     // Init localized MESSAGES
-    let msgs = { // dynamically ref'd keys w/o fallbacks
+    app.msgs = { // dynamically ref'd keys w/o fallbacks
         mode_wideScreen: 'Wide screen',
         mode_fullWindow: 'Full-window',
         mode_fullScreen: 'Full screen',      
