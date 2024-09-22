@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.7
+// @version             2024.9.22.8
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -906,7 +906,9 @@
                                                  : chatgpt.isFullScreen() )
             settings.save(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
             if (mode == 'fullWindow') sync.fullerWin()
-            if (/chatgpt|openai/.test(site)) chatbar.tweak() // update inner width
+            if (/chatgpt|openai/.test(site)) setTimeout(() => chatbar.tweak(), // update inner width
+                mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
+                                     && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid inaccurate width
             if (!config.notifDisabled) // notify synced state
                 notify(`${ app.msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition

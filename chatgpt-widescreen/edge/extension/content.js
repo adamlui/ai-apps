@@ -434,7 +434,9 @@
             settings.save(`${site}_${mode}`, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
             if (mode == 'fullWindow') sync.fullerWin()
             await settings.load(`${site}_notifDisabled`)
-            if (site == 'chatgpt') chatbar.tweak() // update inner width
+            if (site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
+                mode == 'fullWindow' && ( config[`${site}_wideScreen`] || config[`${site}_fullerWindows`] )
+                                     && config[`${site}_widerChatbox`] ? 111 : 0) // delay if toggled to/from active WCB to avoid inaccurate width
             if (!config[`${site}_notifDisabled`]) // notify synced state
                 notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
