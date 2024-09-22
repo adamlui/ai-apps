@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.19
+// @version             2024.9.21
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -275,8 +275,8 @@
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
 
     // Init MESSAGES
-    let msgs = {}
-    if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
+    app.msgs = {}
+    if (!config.userLanguage.startsWith('en')) app.msgs = await new Promise(resolve => {
         const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
@@ -303,23 +303,23 @@
     const menu = {
         ids: [], state: {
             symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
+            word: [(app.msgs.state_off || 'Off').toUpperCase(), (app.msgs.state_on || 'On').toUpperCase()]
         },
 
         register() {
 
             // Add Mode Notifications toggle
             const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
-                          + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
+                          + ( app.msgs.menuLabel_modeNotifs || 'Mode Notifications' )
                           + menu.state.separator + menu.state.word[+!config.notifDisabled]
             menu.ids.push(GM_registerMenuCommand(mnLabel, function() {
                 settings.save('notifDisabled', !config.notifDisabled)
-                notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menu.state.word[+!config.notifDisabled])
+                notify(( app.msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menu.state.word[+!config.notifDisabled])
                 menu.refresh()
             }))
     
             // Add About entry
-            const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || app.name }`
+            const aboutLabel = `💡 ${ app.msgs.menuLabel_about || 'About' } ${ app.msgs.appName || app.name }`
             menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
         },
 
@@ -347,14 +347,14 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateModalID = siteAlert(`🚀 ${ msgs.alert_updateAvail || 'Update available' }!`, // title
-                            `${ msgs.alert_newerVer || 'An update to' } ${ app.name } `
-                                + ( msgs.appName || app.name ) + ' '
-                                + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
+                        const updateModalID = siteAlert(`🚀 ${ app.msgs.alert_updateAvail || 'Update available' }!`, // title
+                            `${ app.msgs.alert_newerVer || 'An update to' } ${ app.name } `
+                                + ( app.msgs.appName || app.name ) + ' '
+                                + `(v${ latestVer }) ${ app.msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
-                                    + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
+                                    + `> ${ app.msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
                                 modals.safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
@@ -364,17 +364,17 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = msgs.btnLabel_update || 'Update'
-                            updateBtns[0].textContent = msgs.btnLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = app.msgs.btnLabel_update || 'Update'
+                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss || 'Dismiss'
                         }
 
                         return
                 }}
 
                 // Alert to no update, return to About modal
-                siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ msgs.appName || 'ChatGPT Auto-Continue' } (v${ currentVer }) ` // msg
-                        + ( msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
+                siteAlert(( app.msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
+                    `${ app.msgs.appName || 'ChatGPT Auto-Continue' } (v${ currentVer }) ` // msg
+                        + ( app.msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
                 )
                 modals.about.show()
@@ -418,13 +418,13 @@
                       pBrStyle = 'position: relative ; left: 4px ',
                       aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
                 const aboutModalID = siteAlert(
-                    msgs.appName || app.name, // title
-                    `<span style="${headingStyle}"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
+                    app.msgs.appName || app.name, // title
+                    `<span style="${headingStyle}"><b>🏷️ <i>${ app.msgs.about_version || 'Version' }</i></b>: </span>`
                         + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
-                    + `<span style="${headingStyle}"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
+                    + `<span style="${headingStyle}"><b>⚡ <i>${ app.msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
                         + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
                         + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                    + `<span style="${headingStyle}"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+                    + `<span style="${headingStyle}"><b>📜 <i>${ app.msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
                         + `<span style="${pBrStyle}"><a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                         + app.urls.gitHub + '</a></span>',
                     [ // buttons
@@ -438,13 +438,13 @@
                 // Re-format buttons to include emoji + localized label + hide Dismiss button
                 for (const button of document.getElementById(aboutModalID).querySelectorAll('button')) {
                     if (/updates/i.test(button.textContent)) button.textContent = (
-                        '🚀 ' + ( msgs.btnLabel_updateCheck || 'Check for Updates' ))
+                        '🚀 ' + ( app.msgs.btnLabel_updateCheck || 'Check for Updates' ))
                     else if (/support/i.test(button.textContent)) button.textContent = (
-                        '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
+                        '🧠 ' + ( app.msgs.btnLabel_getSupport || 'Get Support' ))
                     else if (/review/i.test(button.textContent)) button.textContent = (
-                        '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave Review' ))
+                        '⭐ ' + ( app.msgs.btnLabel_leaveReview || 'Leave Review' ))
                     else if (/apps/i.test(button.textContent)) button.textContent = (
-                        '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
+                        '🤖 ' + ( app.msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
                     else button.style.display = 'none' // hide Dismiss button
                 }
             }
@@ -484,11 +484,11 @@
         if (mutation.attributeName == 'style' && mutation.target.style.opacity == '1') {
             const cgBtn = chatgpt.getContinueGeneratingButton()
             if (cgBtn) { cgBtn.click()
-                notify(msgs.notif_chatAutoContinued || 'Chat Auto-Continued', 'bottom-right')
+                notify(app.msgs.notif_chatAutoContinued || 'Chat Auto-Continued', 'bottom-right')
     }}}))
     continueObserver.observe(document.querySelector('main'), { attributes: true, subtree: true })
 
     // NOTIFY of status on load
-    if (!config.notifDisabled) notify(( msgs.mode_autoContinue || 'Auto-Continue' ) + ': ON')
+    if (!config.notifDisabled) notify(( app.msgs.mode_autoContinue || 'Auto-Continue' ) + ': ON')
 
 })()

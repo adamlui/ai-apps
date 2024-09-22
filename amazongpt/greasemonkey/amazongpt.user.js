@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.21.6
+// @version                2024.9.21.7
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -272,8 +272,8 @@
 
     // Init localized MESSAGES
     log.debug('Initializing localized messages...')
-    let msgs = {}
-    if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
+    app.msgs = {}
+    if (!config.userLanguage.startsWith('en')) app.msgs = await new Promise(resolve => {
         const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
@@ -294,54 +294,54 @@
             }
         }
     })
-    log.debug(Object.keys(msgs).length > 0 ? `Success! msgs = ${log.prettifyObj(msgs)}` : 'Skipped due to English locale')
+    log.debug(Object.keys(app.msgs).length > 0 ? `Success! app.msgs = ${log.prettifyObj(app.msgs)}` : 'Skipped due to English locale')
 
     // Init SETTINGS props
     log.debug('Initializing settings properties...')
     Object.assign(app, { settings: {
         proxyAPIenabled: { type: 'toggle', icon: 'sunglasses',
-            label: msgs.menuLabel_proxyAPImode || 'Proxy API Mode',
-            helptip: msgs.helptip_proxyAPImode || 'Uses a Proxy API for no-login access to AI' },
+            label: app.msgs.menuLabel_proxyAPImode || 'Proxy API Mode',
+            helptip: app.msgs.helptip_proxyAPImode || 'Uses a Proxy API for no-login access to AI' },
         streamingDisabled: { type: 'toggle', icon: 'signalStream',
-            label: msgs.mode_streaming || 'Streaming Mode',
-            helptip: msgs.helptip_streamingMode || 'Receive replies in a continuous text stream' },
+            label: app.msgs.mode_streaming || 'Streaming Mode',
+            helptip: app.msgs.helptip_streamingMode || 'Receive replies in a continuous text stream' },
         autoFocusChatbarDisabled: { type: 'toggle', mobile: false, icon: 'caretsInward',
-            label: msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar',
-            helptip: msgs.helptip_autoFocusChatbar || 'Auto-focus chatbar whenever it appears' },
+            label: app.msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar',
+            helptip: app.msgs.helptip_autoFocusChatbar || 'Auto-focus chatbar whenever it appears' },
         autoScroll: { type: 'toggle', mobile: false, icon: 'arrowsDown',
-            label: `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`,
-            helptip: msgs.helptip_autoScroll || 'Auto-scroll responses as they generate in Streaming Mode' },
+            label: `${ app.msgs.mode_autoScroll || 'Auto-Scroll' } (${ app.msgs.menuLabel_whenStreaming || 'when streaming' })`,
+            helptip: app.msgs.helptip_autoScroll || 'Auto-scroll responses as they generate in Streaming Mode' },
         bgAnimationsDisabled: { type: 'toggle', icon: 'sparkles',
-            label: `${ msgs.menuLabel_background || 'Background' } ${ msgs.menuLabel_animations || 'Animations' }`,
-            helptip: msgs.helptip_bgAnimations || 'Show animated backgrounds in UI components' },
+            label: `${ app.msgs.menuLabel_background || 'Background' } ${ app.msgs.menuLabel_animations || 'Animations' }`,
+            helptip: app.msgs.helptip_bgAnimations || 'Show animated backgrounds in UI components' },
         fgAnimationsDisabled: { type: 'toggle', icon: 'sparkles',
-            label: `${ msgs.menuLabel_foreground || 'Foreground' } ${ msgs.menuLabel_animations || 'Animations' }`,
-            helptip: msgs.helptip_fgAnimations || 'Show foreground animations in UI components' },
+            label: `${ app.msgs.menuLabel_foreground || 'Foreground' } ${ app.msgs.menuLabel_animations || 'Animations' }`,
+            helptip: app.msgs.helptip_fgAnimations || 'Show foreground animations in UI components' },
         replyLanguage: { type: 'prompt', icon: 'languageChars',
-            label: msgs.menuLabel_replyLanguage || 'Reply Language',
-            helptip: msgs.helptip_replyLanguage || 'Language for AmazonGPT to reply in' },
+            label: app.msgs.menuLabel_replyLanguage || 'Reply Language',
+            helptip: app.msgs.helptip_replyLanguage || 'Language for AmazonGPT to reply in' },
         scheme: { type: 'modal', icon: 'scheme',
-            label: msgs.menuLabel_colorScheme || 'Color Scheme',
-            helptip: msgs.helptip_colorScheme || 'Scheme to display AmazonGPT UI components in' },
+            label: app.msgs.menuLabel_colorScheme || 'Color Scheme',
+            helptip: app.msgs.helptip_colorScheme || 'Scheme to display AmazonGPT UI components in' },
         debugMode: { type: 'toggle', icon: 'bug',
-            label: msgs.mode_debug || 'Debug Mode',
-            helptip: msgs.helptip_debugMode || 'Show detailed logging in browser console' },
+            label: app.msgs.mode_debug || 'Debug Mode',
+            helptip: app.msgs.helptip_debugMode || 'Show detailed logging in browser console' },
         about: { type: 'modal', icon: 'questionMarkCircle',
-            label: `${ msgs.menuLabel_about || 'About' } ${app.name}...` }
+            label: `${ app.msgs.menuLabel_about || 'About' } ${app.name}...` }
     }})
     log.debug(`Success! app.settings = ${log.prettifyObj(app.settings)}`)
 
     // Init ALERTS
     Object.assign(app, { alerts: {
-        waitingResponse:  `${ msgs.alert_waitingFor || 'Waiting for' } ${app.name} ${ msgs.alert_response || 'response' }...`,
-        login:            `${ msgs.alert_login || 'Please login' } @ `,
-        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
-        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
-        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
-        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
-        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
-        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
-        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
+        waitingResponse:  `${ app.msgs.alert_waitingFor || 'Waiting for' } ${app.name} ${ app.msgs.alert_response || 'response' }...`,
+        login:            `${ app.msgs.alert_login || 'Please login' } @ `,
+        checkCloudflare:  `${ app.msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
+        tooManyRequests:  `${ app.msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
+        parseFailed:      `${ app.msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
+        proxyNotWorking:  `${ app.msgs.mode_proxy || 'Proxy Mode' } ${ app.msgs.alert_notWorking || 'is not working' }.`,
+        openAInotWorking: `OpenAI API ${ app.msgs.alert_notWorking || 'is not working' }.`,
+        suggestProxy:     `${ app.msgs.alert_try || 'Try' } ${ app.msgs.alert_switchingOn || 'switching on' } ${ app.msgs.mode_proxy || 'Proxy Mode' }`,
+        suggestOpenAI:    `${ app.msgs.alert_try || 'Try' } ${ app.msgs.alert_switchingOff || 'switching off' } ${ app.msgs.mode_proxy || 'Proxy Mode' }`
     }})
 
     // Define MENU functions
@@ -349,7 +349,7 @@
     const menu = {
         ids: [], state: {
             symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
+            word: [(app.msgs.state_off || 'Off').toUpperCase(), (app.msgs.state_on || 'On').toUpperCase()]
         },
 
         register() {
@@ -365,7 +365,7 @@
             menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
 
             // Add Settings entry
-            const settingsLabel = `⚙️ ${ msgs.menuLabel_settings || 'Settings' }`
+            const settingsLabel = `⚙️ ${ app.msgs.menuLabel_settings || 'Settings' }`
             menu.ids.push(GM_registerMenuCommand(settingsLabel, modals.settings.show))
         },
 
@@ -403,13 +403,13 @@
 
                         // Alert to update
                         log.debug(`Update v${latestVer} found!`)
-                        const updateModalID = siteAlert(`🚀 ${ msgs.alert_updateAvail || 'Update available' }!`, // title
-                            `${ msgs.alert_newerVer || 'An update to' } ${ app.name } `
-                                + `(v${latestVer}) ${ msgs.alert_isAvail || 'is available' }!  `
+                        const updateModalID = siteAlert(`🚀 ${ app.msgs.alert_updateAvail || 'Update available' }!`, // title
+                            `${ app.msgs.alert_newerVer || 'An update to' } ${ app.name } `
+                                + `(v${latestVer}) ${ app.msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 1.1rem" '
                                     + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
-                                    + `>${ msgs.link_viewChanges || 'View changes' }</a>`,
+                                    + `>${ app.msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
                                 modals.safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
@@ -421,8 +421,8 @@
                             log.debug('Localizing button labels in non-English alert...')
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = msgs.btnLabel_update || 'Update'
-                            updateBtns[0].textContent = msgs.btnLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = app.msgs.btnLabel_update || 'Update'
+                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss || 'Dismiss'
                         }
 
                         modals.init(updateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
@@ -432,8 +432,8 @@
 
                 // Alert to no update found, nav back
                 log.debug('No update found.')
-                const noUpdateModalID = siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ app.name } (v${ currentVer }) ${ msgs.alert_isUpToDate || 'is up-to-date' }!`, // msg
+                const noUpdateModalID = siteAlert(( app.msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
+                    `${ app.name } (v${ currentVer }) ${ app.msgs.alert_isUpToDate || 'is up-to-date' }!`, // msg
                         '', '', updateAlertWidth)
                 const noUpdateModal = document.getElementById(noUpdateModalID).firstChild
                 modals.init(noUpdateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
@@ -483,18 +483,18 @@
             // Add login link to login msgs
             if (msg.includes('@')) {
                 msg += '<a class="alert-link" target="_blank" rel="noopener" href="https://chatgpt.com">chatgpt.com</a>,'
-                     + ` ${ msgs.alert_thenRefreshPage || 'then refresh this page' }.`
-                     + ` (${ msgs.alert_ifIssuePersists || 'If issue persists' },`
-                     + ` ${( msgs.alert_try || 'Try' ).toLowerCase() }`
-                     + ` ${ msgs.alert_switchingOn || 'switching on' }`
-                     + ` ${ msgs.mode_proxy || 'Proxy Mode' })`
+                     + ` ${ app.msgs.alert_thenRefreshPage || 'then refresh this page' }.`
+                     + ` (${ app.msgs.alert_ifIssuePersists || 'If issue persists' },`
+                     + ` ${( app.msgs.alert_try || 'Try' ).toLowerCase() }`
+                     + ` ${ app.msgs.alert_switchingOn || 'switching on' }`
+                     + ` ${ app.msgs.mode_proxy || 'Proxy Mode' })`
             }
 
-            // Hyperlink msgs.alert_switching<On|Off>
+            // Hyperlink app.msgs.alert_switching<On|Off>
             const foundState = ['On', 'Off'].find(state =>
-                msg.includes(msgs['alert_switching' + state]) || new RegExp(`\\b${state}\\b`, 'i').test(msg))
+                msg.includes(app.msgs['alert_switching' + state]) || new RegExp(`\\b${state}\\b`, 'i').test(msg))
             if (foundState) { // hyperlink switch phrase for click listener to toggle.proxyMode()
-                const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState.toLowerCase()
+                const switchPhrase = app.msgs['alert_switching' + foundState] || 'switching ' + foundState.toLowerCase()
                 msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
             }
 
@@ -649,11 +649,11 @@
                 // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
                 const aboutModalID = chatgpt.alert('',
-                    '🏷️ ' + ( msgs.about_version || 'Version' ) + ': <span class="about-em">' + GM_info.script.version + '</span>\n'
-                        + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
+                    '🏷️ ' + ( app.msgs.about_version || 'Version' ) + ': <span class="about-em">' + GM_info.script.version + '</span>\n'
+                        + '⚡ ' + ( app.msgs.about_poweredBy || 'Powered by' ) + ': '
                             + `<a href="${app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>`
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
-                        + '📜 ' + ( msgs.about_sourceCode || 'Source code' )
+                        + '📜 ' + ( app.msgs.about_sourceCode || 'Source code' )
                             + `: <a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                                 + app.urls.gitHub + '</a>',
                     [ // buttons
@@ -680,13 +680,13 @@
 
                     // Emojize/localize label
                     if (/updates/i.test(btn.textContent)) btn.textContent = (
-                        '🚀 ' + ( msgs.btnLabel_updateCheck || 'Check for Updates' ))
+                        '🚀 ' + ( app.msgs.btnLabel_updateCheck || 'Check for Updates' ))
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
-                        '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
+                        '🧠 ' + ( app.msgs.btnLabel_getSupport || 'Get Support' ))
                     else if (/review/i.test(btn.textContent)) btn.textContent = (
-                        '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave Review' ))
+                        '⭐ ' + ( app.msgs.btnLabel_leaveReview || 'Leave Review' ))
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
-                        '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
+                        '🤖 ' + ( app.msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
                     else btn.style.display = 'none' // hide Dismiss button
                 })
 
@@ -708,7 +708,7 @@
 
                 // Create/init modal
                 const feedbackModalID = siteAlert(`${
-                    msgs.alert_choosePlatform || 'Choose a platform' }:`, '', btns, '', 408)
+                    app.msgs.alert_choosePlatform || 'Choose a platform' }:`, '', btns, '', 408)
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
 
                 // Center CTA
@@ -739,7 +739,7 @@
                 log.caller = 'modals.replyLang.show()'
                     while (true) {
                         let replyLanguage = prompt(
-                            ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
+                            ( app.msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
                         if (replyLanguage == null) break // user cancelled so do nothing
                         else if (!/\d/.test(replyLanguage)) {
                             replyLanguage = ( // auto-case for menu/alert aesthetics
@@ -748,9 +748,9 @@
                             log.debug('Saving reply language...')
                             settings.save('replyLanguage', replyLanguage || config.userLanguage)
                             log.debug(`Success! config.replyLanguage = ${config.replyLanguage}`)
-                            const langUpdatedAlertID = siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
-                                `${ app.name } ${ msgs.alert_willReplyIn || 'will reply in' } `
-                                    + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
+                            const langUpdatedAlertID = siteAlert(( app.msgs.alert_langUpdated || 'Language updated' ) + '!', // title
+                                `${ app.name } ${ app.msgs.alert_willReplyIn || 'will reply in' } `
+                                    + ( replyLanguage || app.msgs.alert_yourSysLang || 'your system language' ) + '.',
                                 '', '', 375) // confirmation width
                             const langUpdatedAlert = document.getElementById(langUpdatedAlertID).firstChild
                             modals.init(langUpdatedAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
@@ -767,7 +767,7 @@
 
                 // Create/init modal
                 const schemeModalID = siteAlert(`${
-                    app.name } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
+                    app.name } ${( app.msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
                     [ function auto() {}, function light() {}, function dark() {} ]) // buttons
                 const schemeModal = document.getElementById(schemeModalID).firstChild
 
@@ -789,7 +789,7 @@
                     // Prepend emoji + localize labels
                     if (Object.prototype.hasOwnProperty.call(schemes, btnScheme))
                         btn.textContent = `${schemes[btnScheme]} ${ // emoji
-                            msgs['scheme_' + btnScheme] || msgs['menuLabel_' + btnScheme] || btnScheme.toUpperCase() }`
+                            app.msgs['scheme_' + btnScheme] || app.msgs['menuLabel_' + btnScheme] || btnScheme.toUpperCase() }`
                     else btn.style.display = 'none' // hide Dismiss button
 
                     // Clone button to replace listener to not dismiss modal on click
@@ -812,10 +812,10 @@
                 function schemeNotify(scheme) {
 
                     // Show notification
-                    notify(` ${ msgs.menuLabel_colorScheme || 'Color Scheme' }: `
-                           + ( scheme == 'light' ? msgs.scheme_light   || 'Light' :
-                               scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
-                                                        : msgs.menuLabel_auto || 'Auto' ).toUpperCase() )
+                    notify(` ${ app.msgs.menuLabel_colorScheme || 'Color Scheme' }: `
+                           + ( scheme == 'light' ? app.msgs.scheme_light   || 'Light' :
+                               scheme == 'dark'  ? app.msgs.scheme_dark    || 'Dark'
+                                                        : app.msgs.menuLabel_auto || 'Auto' ).toUpperCase() )
                     const notifs = document.querySelectorAll('.chatgpt-notif'),
                           notif = notifs[notifs.length -1]
 
@@ -850,7 +850,7 @@
 
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'amzgpt-settings-title'
-                const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
+                const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = app.msgs.menuLabel_settings || 'Settings'
                 const settingsTitleIcon = icons.sliders.create()
                 settingsTitleIcon.style.cssText = 'width: 21px ; height: 21px ; margin-right: 3px ; position: relative ; top: 2.5px ; right: 3px'
                 settingsTitleH4.prepend(settingsTitleIcon) ; settingsTitleDiv.append(settingsTitleH4)
@@ -975,8 +975,8 @@
                             modals.settings.aboutContent = {}
                             modals.settings.aboutContent.short = `v${ GM_info.script.version}`
                             modals.settings.aboutContent.long = (
-                                  `${ msgs.about_version || 'Version' }: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
-                                + `${ msgs.about_poweredBy || 'Powered by' } <span class="about-em">chatgpt.js</span>${textGap}` )
+                                  `${ app.msgs.about_version || 'Version' }: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
+                                + `${ app.msgs.about_poweredBy || 'Powered by' } <span class="about-em">chatgpt.js</span>${textGap}` )
                             for (let i = 0; i < 7; i++) modals.settings.aboutContent.long += modals.settings.aboutContent.long // make it long af
                             innerDiv.innerHTML = modals.settings.aboutContent[config.fgAnimationsDisabled ? 'short' : 'long']
                             innerDiv.style.float = config.fgAnimationsDisabled ? 'right' : ''
@@ -990,7 +990,7 @@
                 log.debug('Creating Close button...')
                 const closeBtn = document.createElement('div')
                 closeBtn.classList.add('amzgpt-modal-close-btn', 'no-mobile-tap-outline')
-                closeBtn.title = msgs.tooltip_close || 'Close'
+                closeBtn.title = app.msgs.tooltip_close || 'Close'
                 const closeSVG = icons.x.create() ; closeBtn.append(closeSVG)
 
                 // Assemble/append elems
@@ -1045,9 +1045,9 @@
                 if (schemeStatusSpan) {
                     while (schemeStatusSpan.firstChild) schemeStatusSpan.firstChild.remove() // clear old status
                     schemeStatusSpan.append(...( // status txt + icon
-                        config.scheme == 'dark' ? [document.createTextNode(msgs.scheme_dark || 'Dark'), icons.moon.create()]
-                      : config.scheme == 'light' ? [document.createTextNode(msgs.scheme_light || 'Light'), icons.sun.create()]
-                      : [document.createTextNode(msgs.menuLabel_auto || 'Auto'), icons.arrowsCycle.create()] ))
+                        config.scheme == 'dark' ? [document.createTextNode(app.msgs.scheme_dark || 'Dark'), icons.moon.create()]
+                      : config.scheme == 'light' ? [document.createTextNode(app.msgs.scheme_light || 'Light'), icons.sun.create()]
+                      : [document.createTextNode(app.msgs.menuLabel_auto || 'Auto'), icons.arrowsCycle.create()] ))
                     schemeStatusSpan.style.cssText += `; margin-top: ${ !config.scheme ? 3 : 0 }px !important`
                 }
             }
@@ -1881,7 +1881,7 @@
 
                 // No reply, change placeholder + focus chatbar
                 if (chatTextarea.value.trim() == '') {
-                    chatTextarea.placeholder = `${ msgs.placeholder_typeSomething || 'Type something' }...`
+                    chatTextarea.placeholder = `${ app.msgs.placeholder_typeSomething || 'Type something' }...`
                     chatTextarea.focus()
 
                 // Yes reply, submit it + transform to loading UI
@@ -2131,7 +2131,7 @@
         proxyMode() {
             log.caller = 'toggle.proxyMode()'
             settings.save('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menu.state.word[+config.proxyAPIenabled])
+            notify(( app.msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menu.state.word[+config.proxyAPIenabled])
             menu.refresh()
             if (modals.settings.get()) { // update visual states of Settings toggles
                 const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input'),
@@ -2156,35 +2156,35 @@
                                                      : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!streamingSupported.scriptManager) { // alert userscript manager unsupported, suggest TM/SC
                 log.debug(`Streaming Mode unsupported in ${env.scriptManager}`)
-                const suggestAlertID = siteAlert(`${app.settings.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${app.settings.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
+                const suggestAlertID = siteAlert(`${app.settings.streamingDisabled.label} ${ app.msgs.alert_unavailable || 'unavailable' }`,
+                    `${app.settings.streamingDisabled.label} ${ app.msgs.alert_isOnlyAvailFor || 'is only available for' }`
                         + ( !env.browser.isEdge && !env.browser.isBrave ? // suggest TM for supported browsers
-                            ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
+                            ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ app.msgs.alert_and || 'and' }`
                                 : '' )
                         + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
-                        + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`
+                        + ` (${ app.msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`
                 )
                 const suggestAlert = document.getElementById(suggestAlertID).firstChild
                 modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
             } else if (!streamingSupported.browser) { // alert TM/browser unsupported, suggest SC
                 log.debug('Streaming Mode unsupported in browser')
-                const suggestAlertID = siteAlert(`${app.settings.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${app.settings.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
-                        + `${ env.browser.isChrome ? 'Chrome' : env.browser.isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
-                        + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
-                            + `${ msgs.alert_instead || 'instead' }.`
+                const suggestAlertID = siteAlert(`${app.settings.streamingDisabled.label} ${ app.msgs.alert_unavailable || 'unavailable' }`,
+                    `${app.settings.streamingDisabled.label} ${ app.msgs.alert_isUnsupportedIn || 'is unsupported in' } `
+                        + `${ env.browser.isChrome ? 'Chrome' : env.browser.isEdge ? 'Edge' : 'Brave' } ${ app.msgs.alert_whenUsing || 'when using' } Tampermonkey. `
+                        + `${ app.msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
+                            + `${ app.msgs.alert_instead || 'instead' }.`
                 )
                 const suggestAlert = document.getElementById(suggestAlertID).firstChild
                 modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
             } else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
                 log.debug('Streaming Mode unsupported in OpenAI mode')
                 let msg = `${app.settings.streamingDisabled.label} `
-                        + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
-                        + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
-                        + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
-                const switchPhrase = msgs.alert_switchingOn || 'switching on'
+                        + `${ app.msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
+                        + `${ app.msgs.alert_switchingOn || 'switching on' } ${ app.msgs.mode_proxy || 'Proxy Mode' }. `
+                        + `(${ app.msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
+                const switchPhrase = app.msgs.alert_switchingOn || 'switching on'
                 msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
-                const alertID = siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg),
+                const alertID = siteAlert(`${ app.msgs.mode_streaming || 'Streaming Mode' } ${ app.msgs.alert_unavailable || 'unavailable' }`, msg),
                       alert = document.getElementById(alertID).firstChild
                 modals.init(alert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggle.proxyMode() }
@@ -2202,19 +2202,19 @@
 
             // Update text
             tooltipDiv.innerText = (
-                btnType == 'chevron' ? ( config.minimized ? `${ msgs.tooltip_restore || 'Restore' }`
-                                                          : `${ msgs.tooltip_minimize || 'Minimize' }` )
-              : btnType == 'about' ? msgs.menuLabel_about || 'About'
-              : btnType == 'settings' ? msgs.menuLabel_settings || 'Settings'
-              : btnType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
-              : btnType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
-              : btnType == 'arrows' ? ( config.expanded ? `${ msgs.tooltip_shrink || 'Shrink' }`
-                                                        : `${ msgs.tooltip_expand || 'Expand' }` )
-              : btnType == 'copy' ? ( btnElem.firstChild.id == 'copy-icon' ? `${ msgs.tooltip_copy || 'Copy' } ${
-                  ( btnElem.parentNode.tagName == 'PRE' ? msgs.tooltip_reply || 'Reply' : msgs.tooltip_code || 'Code' ).toLowerCase() }`
-                      : `${ msgs.notif_copiedToClipboard || 'Copied to clipboard' }!` )
-              : btnType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
-              : btnType == 'shuffle' ? msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
+                btnType == 'chevron' ? ( config.minimized ? `${ app.msgs.tooltip_restore || 'Restore' }`
+                                                          : `${ app.msgs.tooltip_minimize || 'Minimize' }` )
+              : btnType == 'about' ? app.msgs.menuLabel_about || 'About'
+              : btnType == 'settings' ? app.msgs.menuLabel_settings || 'Settings'
+              : btnType == 'speak' ? app.msgs.tooltip_playAnswer || 'Play answer'
+              : btnType == 'font-size' ? app.msgs.tooltip_fontSize || 'Font size'
+              : btnType == 'arrows' ? ( config.expanded ? `${ app.msgs.tooltip_shrink || 'Shrink' }`
+                                                        : `${ app.msgs.tooltip_expand || 'Expand' }` )
+              : btnType == 'copy' ? ( btnElem.firstChild.id == 'copy-icon' ? `${ app.msgs.tooltip_copy || 'Copy' } ${
+                  ( btnElem.parentNode.tagName == 'PRE' ? app.msgs.tooltip_reply || 'Reply' : app.msgs.tooltip_code || 'Code' ).toLowerCase() }`
+                      : `${ app.msgs.notif_copiedToClipboard || 'Copied to clipboard' }!` )
+              : btnType == 'send' ? app.msgs.tooltip_sendReply || 'Send reply'
+              : btnType == 'shuffle' ? app.msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
 
             // Update position
             const elems = { appDiv, btnElem, tooltipDiv },
@@ -2744,7 +2744,7 @@
                       chatTextarea = document.createElement('textarea')
                 continueChatDiv.className = 'continue-chat'
                 chatTextarea.id = 'app-chatbar' ; chatTextarea.rows = '1'
-                chatTextarea.placeholder = `${ msgs.tooltip_sendReply || 'Send reply' }...`
+                chatTextarea.placeholder = `${ app.msgs.tooltip_sendReply || 'Send reply' }...`
                 continueChatDiv.append(chatTextarea)
                 replyForm.append(continueChatDiv) ; replySection.append(replyForm)
                 appDiv.append(replySection);

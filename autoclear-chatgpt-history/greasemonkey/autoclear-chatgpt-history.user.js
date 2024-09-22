@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.21
+// @version             2024.9.21.1
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -294,8 +294,8 @@
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
 
     // Init MESSAGES
-    let msgs = {}
-    if (!config.userLanguage.startsWith('en')) msgs = await new Promise(resolve => {
+    app.msgs = {}
+    if (!config.userLanguage.startsWith('en')) app.msgs = await new Promise(resolve => {
         const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
             msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
@@ -322,14 +322,14 @@
     const menu = {
         ids: [], state: {
             symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
+            word: [(app.msgs.state_off || 'Off').toUpperCase(), (app.msgs.state_on || 'On').toUpperCase()]
         },
 
         register() {
 
             // Add Autoclear Chats toggle
             const acLabel = menu.state.symbol[+config.autoclear] + ' '
-                          + ( msgs.menuLabel_autoClear || 'Autoclear Chats' )
+                          + ( app.msgs.menuLabel_autoClear || 'Autoclear Chats' )
                           + menu.state.separator + menu.state.word[+config.autoclear]
             menu.ids.push(GM_registerMenuCommand.registerCommand(acLabel, () => {
                 document.getElementById('autoclear-toggle-label').click()
@@ -337,29 +337,29 @@
 
             // Add Toggle Visibility toggle
             const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
-                          + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
+                          + ( app.msgs.menuLabel_toggleVis || 'Toggle Visibility' )
                           + menu.state.separator + menu.state.word[+!config.toggleHidden]
             menu.ids.push(GM_registerMenuCommand.registerCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
                 if (!config.notifDisabled) notify((
-                    msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menu.state.word[+!config.toggleHidden])
+                    app.msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menu.state.word[+!config.toggleHidden])
                 menu.refresh()
             }))
 
             // Add Mode Notiications toggle
             const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
-                          + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
+                          + ( app.msgs.menuLabel_modeNotifs || 'Mode Notifications' )
                           + menu.state.separator + menu.state.word[+!config.notifDisabled]
             menu.ids.push(GM_registerMenuCommand.registerCommand(mnLabel, () => {
                 settings.save('notifDisabled', !config.notifDisabled)
-                notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menu.state.word[+!config.notifDisabled])
+                notify(( app.msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menu.state.word[+!config.notifDisabled])
                 menu.refresh()
             }))
 
             // Add About entry
-            const aboutLabel = '💡 ' + ( msgs.menuLabel_about || 'About' ) + ' '
-                             + ( msgs.appName || app.name )
+            const aboutLabel = '💡 ' + ( app.msgs.menuLabel_about || 'About' ) + ' '
+                             + ( app.msgs.appName || app.name )
             menu.ids.push(GM_registerMenuCommand.registerCommand(aboutLabel, modals.about.show))
         },
 
@@ -387,14 +387,14 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateModalID = siteAlert(`🚀 ${ msgs.alert_updateAvail || 'Update available' }!`, // title
-                            `${ msgs.alert_newerVer || 'An update to' } ${ app.name } `
-                                + ( msgs.appName || app.name ) + ' '
-                                + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
+                        const updateModalID = siteAlert(`🚀 ${ app.msgs.alert_updateAvail || 'Update available' }!`, // title
+                            `${ app.msgs.alert_newerVer || 'An update to' } ${ app.name } `
+                                + ( app.msgs.appName || app.name ) + ' '
+                                + `(v${ latestVer }) ${ app.msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
-                                    + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
+                                    + `> ${ app.msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
                                 modals.safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
@@ -404,17 +404,17 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                 updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = msgs.btnLabel_update || 'Update'
-                            updateBtns[0].textContent = msgs.btnLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = app.msgs.btnLabel_update || 'Update'
+                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss || 'Dismiss'
                         }
 
                         return
                 }}
 
                 // Alert to no update, return to About modal
-                siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ msgs.appName || app.name } (v${ currentVer }) ` // msg
-                        + ( msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
+                siteAlert(( app.msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
+                    `${ app.msgs.appName || app.name } (v${ currentVer }) ` // msg
+                        + ( app.msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
                 )
                 modals.about.show()
@@ -460,20 +460,20 @@
 
                 // Show alert
                 const aboutModalID = siteAlert(
-                    msgs.appName || app.name, // title
-                    `<span style="${headingStyle}"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
+                    app.msgs.appName || app.name, // title
+                    `<span style="${headingStyle}"><b>🏷️ <i>${ app.msgs.about_version || 'Version' }</i></b>: </span>`
                         + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
-                    + `<span style="${headingStyle}"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
+                    + `<span style="${headingStyle}"><b>⚡ <i>${ app.msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
                         + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
                         + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                    + `<span style="${headingStyle}"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+                    + `<span style="${headingStyle}"><b>📜 <i>${ app.msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
                         + `<span style="${pBrStyle}"><a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                         + app.urls.gitHub + '</a></span>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
                         function leaveAReview() { // show review modal
-                            const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
+                            const reviewModalID = chatgpt.alert(( app.msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
                                 [ function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
                                 function futurepedia() { modals.safeWinOpen(app.urls.futurepedia + '#tool-reviews') }])
                             document.getElementById(reviewModalID).querySelector('button')
@@ -485,13 +485,13 @@
                 // Re-format buttons to include emoji + localized label + hide Dismiss button
                 for (const button of document.getElementById(aboutModalID).querySelectorAll('button')) {
                     if (/updates/i.test(button.textContent)) button.textContent = (
-                        '🚀 ' + ( msgs.btnLabel_updateCheck || 'Check for Updates' ))
+                        '🚀 ' + ( app.msgs.btnLabel_updateCheck || 'Check for Updates' ))
                     else if (/support/i.test(button.textContent)) button.textContent = (
-                        '🧠 ' + ( msgs.btnLabel_getSupport || 'Get Support' ))
+                        '🧠 ' + ( app.msgs.btnLabel_getSupport || 'Get Support' ))
                     else if (/review/i.test(button.textContent)) button.textContent = (
-                        '⭐ ' + ( msgs.btnLabel_leaveReview || 'Leave Review' ))
+                        '⭐ ' + ( app.msgs.btnLabel_leaveReview || 'Leave Review' ))
                     else if (/apps/i.test(button.textContent)) button.textContent = (
-                        '🤖 ' + ( msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
+                        '🤖 ' + ( app.msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
                     else button.style.display = 'none' // hide Dismiss button
                 }
             }
@@ -566,9 +566,9 @@
         toggleLabel.style.width = `${ env.browser.isMobile ? 201 : 148 }px` // to truncate overflown text
         toggleLabel.style.overflow = 'hidden' // to truncate overflown text
         toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
-        toggleLabel.innerText = ( msgs.mode_autoClear || 'Auto-clear' ) + ' '
-                            + ( toggleInput.checked ? ( msgs.state_enabled  || 'enabled' )
-                                                    : ( msgs.state_disabled || 'disabled' ))
+        toggleLabel.innerText = ( app.msgs.mode_autoClear || 'Auto-clear' ) + ' '
+                            + ( toggleInput.checked ? ( app.msgs.state_enabled  || 'enabled' )
+                                                    : ( app.msgs.state_disabled || 'disabled' ))
         // Append elements
         for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
 
@@ -650,9 +650,9 @@
         updateToggleHTML() ; menu.refresh()
         if (config.autoclear) {
             setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
-            if (!config.notifDisabled) notify(`${ msgs.mode_autoClear || 'Auto-Clear' }: ${menu.state.word[1]}`)
+            if (!config.notifDisabled) notify(`${ app.msgs.mode_autoClear || 'Auto-Clear' }: ${menu.state.word[1]}`)
         } else if (!config.autoclear)
-            if (!config.notifDisabled) notify(`${ msgs.mode_autoClear || 'Auto-Clear' }: ${menu.state.word[0]}`)
+            if (!config.notifDisabled) notify(`${ app.msgs.mode_autoClear || 'Auto-Clear' }: ${menu.state.word[0]}`)
         settings.save('autoclear', config.autoclear)
     }
 
