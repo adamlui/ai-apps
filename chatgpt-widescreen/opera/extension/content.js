@@ -11,12 +11,6 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js')),
           { create, cssSelectorize } = await import(chrome.runtime.getURL('lib/dom.js'))
-    
-    // Init ENV info
-    const env = {
-        browser: { isBrave: chatgpt.browser.isBrave() },
-        scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
-    }
 
     // Import DATA
     const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
@@ -322,11 +316,12 @@
                 !/full|wide/i.test(btnType) ? '' : (config[`${site}_${btnType}`] ? 'OFF' : 'ON')))
             tooltipDiv.style.right = `${ // h-position
                 iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
-            tooltipDiv.style.bottom = `${ // v-position
-                site == 'perplexity' ? ( location.pathname == '/' ? ( env.browser.isBrave ? 463 : 51 ) : 58 ) : 50 }px`
+            tooltipDiv.style.bottom = ( // v-position
+                site == 'perplexity' ? ( location.pathname != '/' ? '58px' :
+                    ( !document.querySelector(sites[site].selectors.btns.login) ? 'revert-layer' : '52.5vh' ))
+                                     : '50px' )
         }
     }
-
     // Define TOGGLE functions
 
     const toggle = {
@@ -366,7 +361,7 @@
 
         tooltip(event) {
             update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
-            tooltipDiv.style.opacity = event.type == 'mouseover' ? '1' : '0'    
+            tooltipDiv.style.opacity = event.type == 'mouseover' ? '1' : '0'
         }
     }
 

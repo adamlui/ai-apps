@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.11
+// @version             2024.9.22.12
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -272,7 +272,7 @@
             gitHub: 'https://github.com/adamlui/chatgpt-widescreen',
             greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
             productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode' },
-        latestAssetCommitHash: '092110f' // for cached sites.json + messages.json
+        latestAssetCommitHash: 'c1c5e79' // for cached sites.json + messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -280,7 +280,7 @@
 
     // Init ENV info
     const env = {
-        browser: { isFF: chatgpt.browser.isFirefox(), isBrave: chatgpt.browser.isBrave() },
+        browser: { isFF: chatgpt.browser.isFirefox() },
         scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
     }
 
@@ -826,9 +826,10 @@
                 !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON'))]
             tooltipDiv.style.right = `${ // h-position
                 iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
-            tooltipDiv.style.bottom = `${ // v-position
-                site == 'perplexity' ? ( location.pathname == '/' ? ( env.browser.isFF ? 303
-                                                                    : env.browser.isBrave ? 463 : 51 ) : 58 ) : 50 }px`
+                tooltipDiv.style.bottom = ( // v-position
+                    site == 'perplexity' ? ( location.pathname != '/' ? '58px' :
+                        ( !document.querySelector(sites[site].selectors.btns.login) ? 'revert-layer' : '52.5vh' ))
+                                         : '50px' )
         }
     }
 
@@ -873,7 +874,7 @@
 
         tooltip(event) {
             update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
-            tooltipDiv.style.opacity = event.type == 'mouseover' ? '1' : '0'    
+            tooltipDiv.style.opacity = event.type == 'mouseover' ? '1' : '0'
         }   
     }
 
