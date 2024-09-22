@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.2
+// @version             2024.9.22.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -374,6 +374,19 @@
         if (Object.keys(localizedMsgs).length > 0) app.msgs = localizedMsgs
     }
 
+    // Init SETTINGS props
+    Object.assign(app, { settings: {
+        fullerWindows: { type: 'toggle', label: app.msgs.menuLabel_fullerWins},
+        tcbDisabled: { type: 'toggle', label: app.msgs.menuLabel_tallerChatbox, symbol: '↕️' },
+        widerChatbox: { type: 'toggle', label: app.msgs.menuLabel_widerChatbox, symbol: '↔️' },
+        ncbDisabled: { type: 'toggle', label: app.msgs.menuLabel_newChatBtn },
+        hiddenHeader: { type: 'toggle', label: app.msgs.menuLabel_hiddenHeader },
+        hiddenFooter: { type: 'toggle', label: app.msgs.menuLabel_hiddenFooter },
+        notifDisabled: { type: 'toggle', label: app.msgs.menuLabel_modeNotifs }
+    }})
+    Object.keys(app.settings).forEach(key => // create helptip prop
+        app.settings[key].helptip = app.msgs[`helptip_${key}`]) 
+
     // Define MENU functions
 
     const menu = {
@@ -384,103 +397,24 @@
 
         register() {
 
-            // Add Fuller Windows toggle if avail
-            if (sites[site].availFeatures.includes('fullerWindows')) {
-                const fwLabel = menu.state.symbol[+config.fullerWindows] + ' '
-                              + ( app.msgs.menuLabel_fullerWins )
-                              + menu.state.separator + menu.state.word[+config.fullerWindows]
-                menu.ids.push(GM_registerMenuCommand(fwLabel, () => {
-                    settings.save('fullerWindows', !config.fullerWindows)
-                    sync.fullerWin(config.fullerWindows) // live update on click
-                    if (!config.notifDisabled) notify(
-                        `${ ( app.msgs.menuLabel_fullerWins ) }: ${ menu.state.word[+config.fullerWindows] }`)
-                    menu.refresh()
-                }))
-            }
-
-            // Add Taller Chatbox toggle if avail
-            if (sites[site].availFeatures.includes('tcbDisabled')) {
-                const tcbLabel = '↕️ ' + ( app.msgs.menuLabel_tallerChatbox )
-                               + menu.state.separator + menu.state.word[+!config.tcbDisabled]
-                menu.ids.push(GM_registerMenuCommand(tcbLabel, () => {
-                    settings.save('tcbDisabled', !config.tcbDisabled)
-                    update.style.tweaks()
-                    if (!config.notifDisabled) notify(
-                        `${app.msgs.menuLabel_tallerChatbox}: ${ menu.state.word[+!config.tcbDisabled] }`)
-                    menu.refresh()
-                }))
-            }
-
-            // Add Wider Chatbox toggle if avail
-            if (sites[site].availFeatures.includes('widerChatbox')) {
-                const wcbLabel = '↔️ ' + ( app.msgs.menuLabel_widerChatbox )
-                               + menu.state.separator + menu.state.word[+config.widerChatbox]
-                menu.ids.push(GM_registerMenuCommand(wcbLabel, () => {
-                    settings.save('widerChatbox', !config.widerChatbox)
-                    update.style.wideScreen() // update WCB style
-                    if (!config.notifDisabled) notify(
-                        `${app.msgs.menuLabel_widerChatbox}: ${ menu.state.word[+config.widerChatbox] }`)
-                    menu.refresh()
-                }))
-            }
-
-            // Add New Chat Button toggle if avail
-            if (sites[site].availFeatures.includes('ncbDisabled')) {
-                const hncLabel = menu.state.symbol[+!config.ncbDisabled] + ' '
-                               + ( app.msgs.menuLabel_newChatBtn )
-                               + menu.state.separator + menu.state.word[+!config.ncbDisabled]
-                menu.ids.push(GM_registerMenuCommand(hncLabel, () => {
-                    settings.save('ncbDisabled', !config.ncbDisabled)
-                    update.style.tweaks()
-                    notify(`${app.msgs.menuLabel_newChatBtn}: ${ menu.state.word[+!config.ncbDisabled] }`)
-                    menu.refresh()
-                }))
-            }
-
-            // Add Hidden Header toggle if avail
-            if (sites[site].availFeatures.includes('hiddenHeader')) {
-                const hhLabel = menu.state.symbol[+config.hiddenHeader] + ' '
-                              + ( app.msgs.menuLabel_hiddenHeader )
-                              + menu.state.separator + menu.state.word[+config.hiddenHeader]
-                menu.ids.push(GM_registerMenuCommand(hhLabel, () => {
-                    settings.save('hiddenHeader', !config.hiddenHeader)
-                    update.style.tweaks()
-                    if (!config.notifDisabled) notify(
-                        `${app.msgs.menuLabel_hiddenHeader}: ${ menu.state.word[+config.hiddenHeader] }`)
-                    menu.refresh()
-                }))
-            }
-
-            // Add Hidden Footer toggle if avail
-            if (sites[site].availFeatures.includes('hiddenFooter')) {
-                const hfLabel = menu.state.symbol[+config.hiddenFooter] + ' '
-                              + ( app.msgs.menuLabel_hiddenFooter )
-                              + menu.state.separator + menu.state.word[+config.hiddenFooter]
-                menu.ids.push(GM_registerMenuCommand(hfLabel, () => {
-                    settings.save('hiddenFooter', !config.hiddenFooter)
-                    update.style.tweaks()
-                    if (!config.notifDisabled) notify(
-                        `${app.msgs.menuLabel_hiddenFooter}: ${ menu.state.word[+config.hiddenFooter] }`)
-                    menu.refresh()
-                }))
-            }
-
-            // Add Mode Notifications toggle if avail
-            if (sites[site].availFeatures.includes('notifDisabled')) {
-                const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
-                              + ( app.msgs.menuLabel_modeNotifs )
-                              + menu.state.separator + menu.state.word[+!config.notifDisabled]
-                menu.ids.push(GM_registerMenuCommand(mnLabel, () => {
-                    settings.save('notifDisabled', !config.notifDisabled)
-                    notify(`${app.msgs.menuLabel_modeNotifs}: ${ menu.state.word[+!config.notifDisabled] }`)
-                    menu.refresh()
-                }))
-            }
+            // Add toggles
+            Object.keys(app.settings).forEach(key => {
+                if (sites[site].availFeatures.includes(key)) {
+                    const settingIsEnabled = config[key] ^ key.includes('Disabled'),
+                          menuLabel = `${ app.settings[key].symbol || menu.state.symbol[+settingIsEnabled] } `
+                                    + app.settings[key].label + menu.state.separator + menu.state.word[+settingIsEnabled]
+                    menu.ids.push(GM_registerMenuCommand(menuLabel, () => {
+                        settings.save(key, !config[key]) ; sync.config()
+                        if (!config.notifDisabled) notify(
+                            `${app.settings[key].label}: ${menu.state.word[+(key.includes('Disabled') ^ config[key])]}`)
+                        menu.refresh() // to update state symbol/suffix
+                    }))
+                }
+            })
 
             // Add About entry
             const aboutLabel = `💡 ${app.msgs.menuLabel_about} ${app.msgs.appName}`
             menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
-
         },
 
         refresh() {
@@ -948,6 +882,13 @@
     // Define SYNC functions
 
     const sync = {
+
+        config() { // from toolbar menu toggles
+            sync.fullerWin(config.fullerWindows) // for FW toggled
+            update.style.tweaks() // for TCB/NCB/HH/HF toggled
+            update.style.wideScreen() // for WCB toggled
+        },
+
         fullerWin(fullWinState) {
             if (fullWinState && config.fullerWindows && !config.wideScreen) { // activate fuller windows
                 document.head.append(wideScreenStyle) ; btns.updateSVG('wideScreen', 'on')
