@@ -229,8 +229,6 @@ const chatgpt = {
     },
 
     browser: {
-        isBrave() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'); },
-
         isFullScreen() {
             const userAgentStr = navigator.userAgent;
             return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
