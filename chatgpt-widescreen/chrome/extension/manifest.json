@@ -4,6 +4,7 @@
   "description": "__MSG_appDesc__",
   "version": "2024.9.22.1",
   "author": "Adam Lui",
+  "homepage_url": "https://www.chatgptwidescreen.com",
   "default_locale": "en",
   "icons": {
     "16": "icons/icon16.png",
