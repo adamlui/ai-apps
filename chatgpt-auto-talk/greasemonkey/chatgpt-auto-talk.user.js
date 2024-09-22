@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.4
+// @version             2024.9.22.5
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -330,7 +330,7 @@
             }
             fetchMsgs()
         })
-        if (Object.keys(localizedMsgs).length > 0) app.msgs = localizedMsgs
+        if (Object.keys(localizedMsgs).length > 0) Object.assign(app.msgs, localizedMsgs)
     }
 
     // Define MENU functions

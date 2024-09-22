@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.22.6
+// @version                2024.9.22.7
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -378,7 +378,7 @@
             }
             fetchMsgs()
         })
-        if (Object.keys(localizedMsgs).length > 0) app.msgs = localizedMsgs
+        if (Object.keys(localizedMsgs).length > 0) Object.assign(app.msgs, localizedMsgs)
     }
     log.debug(`Success! app.msgs = ${log.prettifyObj(app.msgs)}`)
 
