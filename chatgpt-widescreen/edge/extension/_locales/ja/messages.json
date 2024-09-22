@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "フルウィンドウを有効にするときにもワイドスクリーンを有効にします" },
   "helptip_tallerChatbox": { "message": "チャットボックスを垂直に展開します" },
   "helptip_widerChatbox": { "message": "ワイドスクリーンモードでチャットボックスを水平に展開する" },
-  "helptip_newChatButton": { "message": "チャットボックスに新しいチャットボタンを表示" },
+  "helptip_newChatBtn": { "message": "チャットボックスに新しいチャットボタンを表示" },
   "helptip_hiddenFooter": { "message": "サイトフッター" },
   "helptip_hiddenHeader": { "message": "サイトヘッダー" },
   "helptip_modeNotifs": { "message": "モード/設定の切り替え時に通知を表示する" },

@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Aktiveer ook Wye skerm wanneer volle venster geaktiveer word" },
   "helptip_tallerChatbox": { "message": "Brei die kletsboks vertikaal uit" },
   "helptip_widerChatbox": { "message": "Brei die kletsboks horisontaal uit in wye skermmodus" },
-  "helptip_newChatButton": { "message": "Wys nuwe kletsknoppie in kletsboks" },
+  "helptip_newChatBtn": { "message": "Wys nuwe kletsknoppie in kletsboks" },
   "helptip_hiddenFooter": { "message": "Versteek werfvoetskrif" },
   "helptip_hiddenHeader": { "message": "Versteek werfopskrif" },
   "helptip_modeNotifs": { "message": "Wys kennisgewings wanneer modusse/instellings wissel" },

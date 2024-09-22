@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "ນອກຈາກນີ້ຍັງເປີດໃຊ້ງານ Wide Screen ເມື່ອເປີດໃຊ້ງານ Full Window" },
   "helptip_tallerChatbox": { "message": "ຂະຫຍາຍກ່ອງສົນທະນາເປັນແນວຕັ້ງ" },
   "helptip_widerChatbox": { "message": "ຂະຫຍາຍກ່ອງສົນທະນາຕາມລວງນອນໃນໂໝດໜ້າຈໍກວ້າງ" },
-  "helptip_newChatButton": { "message": "ສະແດງປຸ່ມສົນທະນາໃໝ່ໃນກ່ອງສົນທະນາ" },
+  "helptip_newChatBtn": { "message": "ສະແດງປຸ່ມສົນທະນາໃໝ່ໃນກ່ອງສົນທະນາ" },
   "helptip_hiddenFooter": { "message": "ເຊື່ອງຕີນເວັບໄຊ" },
   "helptip_hiddenHeader": { "message": "ເຊື່ອງຫົວຂໍ້ເວັບໄຊ" },
   "helptip_modeNotifs": { "message": "ສະແດງການແຈ້ງເຕືອນເມື່ອປິດການໃຊ້ງານໂໝດ/ການຕັ້ງຄ່າ" },

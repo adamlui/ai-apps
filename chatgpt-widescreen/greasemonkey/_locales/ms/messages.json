@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Aktifkan juga Skrin Lebar apabila mengaktifkan Tetingkap Penuh" },
   "helptip_tallerChatbox": { "message": "Kembangkan kotak sembang secara menegak" },
   "helptip_widerChatbox": { "message": "Kembangkan kotak sembang secara mendatar dalam mod Skrin Lebar" },
-  "helptip_newChatButton": { "message": "Tunjukkan butang Sembang Baharu dalam kotak sembang" },
+  "helptip_newChatBtn": { "message": "Tunjukkan butang Sembang Baharu dalam kotak sembang" },
   "helptip_hiddenFooter": { "message": "Sembunyikan pengaki tapak" },
   "helptip_hiddenHeader": { "message": "Sembunyikan pengepala tapak" },
   "helptip_modeNotifs": { "message": "Tunjukkan pemberitahuan apabila menogol mod/tetapan" },

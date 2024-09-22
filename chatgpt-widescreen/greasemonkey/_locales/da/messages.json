@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Aktiver også Wide Screen, når du aktiverer Full-Window" },
   "helptip_tallerChatbox": { "message": "Udvid chatboksen lodret" },
   "helptip_widerChatbox": { "message": "Udvid chatboksen vandret i bredskærmstilstand" },
-  "helptip_newChatButton": { "message": "Vis knappen Ny chat i chatboksen" },
+  "helptip_newChatBtn": { "message": "Vis knappen Ny chat i chatboksen" },
   "helptip_hiddenFooter": { "message": "Skjul sidefod" },
   "helptip_hiddenHeader": { "message": "Skjul websteds sidehoved" },
   "helptip_modeNotifs": { "message": "Vis meddelelser, når du skifter tilstande/indstillinger" },

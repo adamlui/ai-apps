@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Gape o dira gore Sekerini se se Moholo se tsenngwe tirisong fa o dira gore Difensetere tse di Feletseng di ts" },
   "helptip_tallerChatbox": { "message": "Atolosa lebokoso la motlotlo ka go le emisa" },
   "helptip_widerChatbox": { "message": "Atolosa lebokoso la motlotlo ka go le tobetsa ka mokgwa wa Sekerini se se Phara" },
-  "helptip_newChatButton": { "message": "SHOW New Chat button in chatbox" },
+  "helptip_newChatBtn": { "message": "SHOW New Chat button in chatbox" },
   "helptip_hiddenFooter": { "message": "HIDE SITE FOOTER" },
   "helptip_hiddenHeader": { "message": "HIDE SITE HEADER" },
   "helptip_modeNotifs": { "message": "Bontsha dikitsiso fa o toggling modes/settings" },

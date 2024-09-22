@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "ಪೂರ್ಣ ವಿಂಡೋವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವಾಗ ವೈಡ್ ಸ್ಕ್ರೀನ್ ಅನ್ನು ಸಹ ಸಕ್ರಿಯಗೊಳಿಸಿ" },
   "helptip_tallerChatbox": { "message": "ಚಾಟ್ ‌ ಬಾಕ್ಸ್ ಅನ್ನು ಲಂಬವಾಗಿ ವಿಸ್ತರಿಸಿ" },
   "helptip_widerChatbox": { "message": "ಚಾಟ್ ‌ ಬಾಕ್ಸ್ ಅನ್ನು ಅಡ್ಡಲಾಗಿ ವೈಡ್ ಸ್ಕ್ರೀನ್ ಮೋಡ್ ‌ ನಲ್ಲಿ ವಿಸ್ತರಿಸಿ" },
-  "helptip_newChatButton": { "message": "ಚಾಟ್ ‌ ಬಾಕ್ಸ್ ‌ ನಲ್ಲಿ ಹೊಸ ಚಾಟ್ ಬಟನ್ ತೋರಿಸಿ" },
+  "helptip_newChatBtn": { "message": "ಚಾಟ್ ‌ ಬಾಕ್ಸ್ ‌ ನಲ್ಲಿ ಹೊಸ ಚಾಟ್ ಬಟನ್ ತೋರಿಸಿ" },
   "helptip_hiddenFooter": { "message": "ಸೈಟ್ ಅಡಿಟಿಪ್ಪಣಿಯನ್ನು ಮರೆಮಾಡಿ" },
   "helptip_hiddenHeader": { "message": "ಸೈಟ್ ಹೆಡರ್ ಅನ್ನು ಮರೆಮಾಡಿ" },
   "helptip_modeNotifs": { "message": "ಮೋಡ್ ‌ ಗಳು/ಸೆಟ್ಟಿಂಗ್ ‌ ಗಳನ್ನು ಟಾಗಲ್ ಮಾಡುವಾಗ ಅಧಿಸೂಚನೆಗಳನ್ನು ತೋರಿಸಿ" },

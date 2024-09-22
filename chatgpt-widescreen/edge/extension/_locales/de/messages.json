@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Aktivieren Sie auch Wide Screen, wenn Sie Full-Window aktivieren" },
   "helptip_tallerChatbox": { "message": "Erweitern Sie die Chatbox vertikal" },
   "helptip_widerChatbox": { "message": "Erweitern Sie die Chatbox horizontal im Breitbildmodus" },
-  "helptip_newChatButton": { "message": "Schaltfläche „Neuer Chat“ in der Chatbox anzeigen" },
+  "helptip_newChatBtn": { "message": "Schaltfläche „Neuer Chat“ in der Chatbox anzeigen" },
   "helptip_hiddenFooter": { "message": "Seiten-Footer" },
   "helptip_hiddenHeader": { "message": "Seiten-Header" },
   "helptip_modeNotifs": { "message": "Benachrichtigungen anzeigen, wenn Modi/Einstellungen umgeschaltet werden" },

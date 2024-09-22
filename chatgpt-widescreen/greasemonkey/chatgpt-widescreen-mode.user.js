@@ -328,7 +328,7 @@
         helptip_fullerWins: 'Also activate Wide Screen when activating Full-Window',
         helptip_tallerChatbox: 'Expand the chatbox vertically',
         helptip_widerChatbox: 'Expand the chatbox horizontally in Wide Screen mode',
-        helptip_newChatButton: 'Show New Chat button in chatbox',
+        helptip_newChatBtn: 'Show New Chat button in chatbox',
         helptip_hiddenFooter: 'Hide site footer',
         helptip_hiddenHeader: 'Hide site header',
         helptip_modeNotifs: 'Show notifications when toggling modes/settings',

@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Mampihetsika ihany koa ny Wide Screen rehefa fampahavitrihana Full-Window" },
   "helptip_tallerChatbox": { "message": "Hanitatra ny chatbox mitsangana" },
   "helptip_widerChatbox": { "message": "Velaro mitsivalana ny chatbox amin'ny fomba mivelatra" },
-  "helptip_newChatButton": { "message": "Asehoy ny bokotra chat ao amin'ny chatbox" },
+  "helptip_newChatBtn": { "message": "Asehoy ny bokotra chat ao amin'ny chatbox" },
   "helptip_hiddenFooter": { "message": "Afeno ny faram-pejy" },
   "helptip_hiddenHeader": { "message": "Afeno ny loham-pejy" },
   "helptip_modeNotifs": { "message": "Maneho ny fampahafantarana rehefa mampiova fomba/fandrindrana" },

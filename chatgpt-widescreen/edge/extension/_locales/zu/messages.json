@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Futhi vula Isikrini Esibanzi lapho uvula i-Full-Window" },
   "helptip_tallerChatbox": { "message": "Nweba ibhokisi lengxoxo ngokuqondile" },
   "helptip_widerChatbox": { "message": "Nweba ibhokisi lengxoxo ngokuvundlile ngemodi Yesikrini Esibanzi" },
-  "helptip_newChatButton": { "message": "Bonisa inkinobho Yengxoxo Entsha ebhokisini lengxoxo" },
+  "helptip_newChatBtn": { "message": "Bonisa inkinobho Yengxoxo Entsha ebhokisini lengxoxo" },
   "helptip_hiddenFooter": { "message": "Fihla i-footer yesayithi" },
   "helptip_hiddenHeader": { "message": "Fihla isihloko sesayithi" },
   "helptip_modeNotifs": { "message": "Bonisa izaziso lapho kuguqulwa izindlela/amasethingi" },

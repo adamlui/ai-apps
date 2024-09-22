@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Komanso yambitsa Wide Screen pamene yambitsa Full-Window" },
   "helptip_tallerChatbox": { "message": "Kukulitsa chatbox vertically" },
   "helptip_widerChatbox": { "message": "Kukulitsa chatbox yopingasa mu Wide Screen mode" },
-  "helptip_newChatButton": { "message": "Onetsani batani Latsopano la Chat mu chatbox" },
+  "helptip_newChatBtn": { "message": "Onetsani batani Latsopano la Chat mu chatbox" },
   "helptip_hiddenFooter": { "message": "Kubisa malo footer" },
   "helptip_hiddenHeader": { "message": "Kubisa malo header" },
   "helptip_modeNotifs": { "message": "Onetsani zidziwitso pamene toggling modes/zoikamo" },

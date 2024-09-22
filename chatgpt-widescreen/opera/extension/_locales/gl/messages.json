@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Tamén activa Wide Screen ao activar Full-Window" },
   "helptip_tallerChatbox": { "message": "Expandir o chatbox verticalmente" },
   "helptip_widerChatbox": { "message": "Expandir o chatbox horizontalmente no modo Wide Screen" },
-  "helptip_newChatButton": { "message": "Mostrar o botón de conversa novo na caixa de conversa" },
+  "helptip_newChatBtn": { "message": "Mostrar o botón de conversa novo na caixa de conversa" },
   "helptip_hiddenFooter": { "message": "Acochar o pé de páxina do sitio" },
   "helptip_hiddenHeader": { "message": "Acochar a cabeceira do sitio" },
   "helptip_modeNotifs": { "message": "Mostrar as notificacións ao axustar os modos/configuracións" },

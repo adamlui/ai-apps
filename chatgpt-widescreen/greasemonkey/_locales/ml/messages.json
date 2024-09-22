@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "ഫുൾ-വിൻഡോ സജീവമാക്കുമ്പോൾ വൈഡ് സ്ക്രീനും സജീവമാക്കുക" },
   "helptip_tallerChatbox": { "message": "ചാറ്റ്ബോക്സ് ലംബമായി വികസിപ്പിക്കുക" },
   "helptip_widerChatbox": { "message": "വൈഡ് സ്ക്രീൻ മോഡിൽ ചാറ്റ്ബോക്സ് തിരശ്ചീനമായി വിപുലീകരിക്കുക" },
-  "helptip_newChatButton": { "message": "ചാറ്റ് ബോക്സിൽ പുതിയ ചാറ്റ് ബട്ടൺ കാണിക്കുക" },
+  "helptip_newChatBtn": { "message": "ചാറ്റ് ബോക്സിൽ പുതിയ ചാറ്റ് ബട്ടൺ കാണിക്കുക" },
   "helptip_hiddenFooter": { "message": "സൈറ്റ് ഫൂട്ടർ മറയ്ക്കുക" },
   "helptip_hiddenHeader": { "message": "സൈറ്റ് തലക്കെട്ട് മറയ്ക്കുക" },
   "helptip_modeNotifs": { "message": "മോഡുകൾ/ക്രമീകരണങ്ങൾ ടോഗിൾ ചെയ്യുമ്പോൾ അറിയിപ്പുകൾ കാണിക്കുക" },

@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Бүрэн цонхыг идэвхжүүлэх үед өргөн дэлгэцийг идэвхжүүлдэг" },
   "helptip_tallerChatbox": { "message": "Чатбоксыг босоо дэлгэх" },
   "helptip_widerChatbox": { "message": "Чатбоксыг Өргөн дэлгэцийн горимд хэвтээ дэлгэх" },
-  "helptip_newChatButton": { "message": "Чатын хайрцагт шинэ чат товчлуурыг харуулах" },
+  "helptip_newChatBtn": { "message": "Чатын хайрцагт шинэ чат товчлуурыг харуулах" },
   "helptip_hiddenFooter": { "message": "Сайтын хөлийг нуух" },
   "helptip_hiddenHeader": { "message": "Сайтын толгойг нуух" },
   "helptip_modeNotifs": { "message": "Модель/тохиргоонуудыг өөрчлөх үед мэдэгдлүүдийг харуулах" },

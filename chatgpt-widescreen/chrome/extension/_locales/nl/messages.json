@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Activeer ook Wide Screen bij het activeren van Full-Window" },
   "helptip_tallerChatbox": { "message": "Breid de chatbox verticaal uit" },
   "helptip_widerChatbox": { "message": "Breid de chatbox horizontaal uit in de breedbeeldmodus" },
-  "helptip_newChatButton": { "message": "Toon nieuwe chatknop in chatbox" },
+  "helptip_newChatBtn": { "message": "Toon nieuwe chatknop in chatbox" },
   "helptip_hiddenFooter": { "message": "Site voettekst" },
   "helptip_hiddenHeader": { "message": "Site koptekst" },
   "helptip_modeNotifs": { "message": "Meldingen weergeven bij schakelen tussen modi/instellingen" },

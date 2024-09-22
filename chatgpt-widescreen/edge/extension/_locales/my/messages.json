@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "ဝင်းဒိုးအပြည့်ဖွင့်သည့်အခါ မျက်နှာပြင်ကျယ်ကိုလည်း ဖွင့်ပါ" },
   "helptip_tallerChatbox": { "message": "စကားပြောခွက်ကို ဒေါင်လိုက် တိုးချဲ့ပါ" },
   "helptip_widerChatbox": { "message": "စကားပြောခွက်ကို အလျားလိုက် ကျယ်ပြန့်သော မျက်နှာပြင်ပုံစံဖြင့် ချဲ့ပါ" },
-  "helptip_newChatButton": { "message": "စကားပြောခလုတ်အသစ်ကို စကားပြောခလုတ်တွင် ပြပါ" },
+  "helptip_newChatBtn": { "message": "စကားပြောခလုတ်အသစ်ကို စကားပြောခလုတ်တွင် ပြပါ" },
   "helptip_hiddenFooter": { "message": "ဆိုက်ဖိုင်တွဲကို ဝှက်ပါ" },
   "helptip_hiddenHeader": { "message": "လုပ်ငန်းခွင် ခေါင်းစီးကို ဝှက်ပါ" },
   "helptip_modeNotifs": { "message": "မုဒ်များ/ဆက်တင်များကို ပြောင်းလဲချိန်တွင် အသိပေးချက်များကို ပြသပါ" },

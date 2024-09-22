@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "फुल - विंडो एक्टिवेट करते समय वाइड स्क्रीन को भी एक्टिवेट करें" },
   "helptip_tallerChatbox": { "message": "चैटबॉक्स को लंबवत रूप से विस्तारित करें" },
   "helptip_widerChatbox": { "message": "वाइड स्क्रीन मोड में चैटबॉक्स को क्षैतिज रूप से विस्तारित करें" },
-  "helptip_newChatButton": { "message": "चैटबॉक्स में नया चैट बटन दिखाएँ" },
+  "helptip_newChatBtn": { "message": "चैटबॉक्स में नया चैट बटन दिखाएँ" },
   "helptip_hiddenFooter": { "message": "साइट फुटर छिपाएँ" },
   "helptip_hiddenHeader": { "message": "साइट हेडर छिपाएँ" },
   "helptip_modeNotifs": { "message": "मोड/सेटिंग टॉगल करते समय नोटिफ़िकेशन दिखाएँ" },

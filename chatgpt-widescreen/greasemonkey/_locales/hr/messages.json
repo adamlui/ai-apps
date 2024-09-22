@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Također aktivirajte Wide Screen kada aktivirate Full-Window" },
   "helptip_tallerChatbox": { "message": "Proširite chatbox okomito" },
   "helptip_widerChatbox": { "message": "Proširite chatbox vodoravno u načinu rada širokog zaslona" },
-  "helptip_newChatButton": { "message": "Prikaži gumb Novo čavrljanje u okviru za čavrljanje" },
+  "helptip_newChatBtn": { "message": "Prikaži gumb Novo čavrljanje u okviru za čavrljanje" },
   "helptip_hiddenFooter": { "message": "Sakrij podnožje web-mjesta" },
   "helptip_hiddenHeader": { "message": "Sakrij zaglavlje web-mjesta" },
   "helptip_modeNotifs": { "message": "Prikaži obavijesti prilikom prebacivanja načina/postavki" },

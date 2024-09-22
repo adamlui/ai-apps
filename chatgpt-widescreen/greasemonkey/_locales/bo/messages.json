@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "ཡང་ཆ་ཚང་སྒེའུ་ཁུང་བཀོལ་སྤྱོད་བྱེད་སྐབས་རྒྱ་ཆེར་བརྙན་རིས་བཀོལ་སྤྱོད་བྱེད་པ" },
   "helptip_tallerChatbox": { "message": "Chatbox ཕྱོགས་རིས་སུ་རྒྱ་ཆེར་གཏོང་།" },
   "helptip_widerChatbox": { "message": "གཏམ་གླེང་སྒམ་ཁ་ཐོར་ཁ་ཐོར་ཁ་ཐོར་ཁ་ཐོར་རྒྱ་ཆེར་གཏོང་བ" },
-  "helptip_newChatButton": { "message": "གླེང་མོལ་སྒམ་ནང་གླེང་མོལ་ལྡེ་མིག་གསར་པ་སྟོན་པ" },
+  "helptip_newChatBtn": { "message": "གླེང་མོལ་སྒམ་ནང་གླེང་མོལ་ལྡེ་མིག་གསར་པ་སྟོན་པ" },
   "helptip_hiddenFooter": { "message": "དྲ་བའི་ཞབས་སྟེགས་སྦས་པ" },
   "helptip_hiddenHeader": { "message": "དྲ་བའི་མགོ་ཡིག གསང་བ" },
   "helptip_modeNotifs": { "message": "Toggling Mode/Settings" },

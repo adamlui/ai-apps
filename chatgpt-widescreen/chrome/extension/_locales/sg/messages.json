@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "A yeke sara nga si mbeni kota écran ayeke sara kua na ni tongana a sara si mbeni kota fenêtre ayeke sara kua na ni" },
   "helptip_tallerChatbox": { "message": "A yeke zi yâ ti boîte ti chat ni na nduzu" },
   "helptip_widerChatbox": { "message": "A yeke kono yâ ti boîte ti lisoro ni na nduzu na yâ ti mode ti écran ti kota ndo" },
-  "helptip_newChatButton": { "message": "Fa mbeni fini bouton ti lisoro na yâ ti boîte ti lisoro" },
+  "helptip_newChatBtn": { "message": "Fa mbeni fini bouton ti lisoro na yâ ti boîte ti lisoro" },
   "helptip_hiddenFooter": { "message": "Hide site fandango" },
   "helptip_hiddenHeader": { "message": "Hide site li ti" },
   "helptip_modeNotifs": { "message": "Fa awango na ngoi so mo yeke toggling mode/settings" },

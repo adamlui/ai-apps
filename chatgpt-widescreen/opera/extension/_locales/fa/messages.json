@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "همچنین هنگام فعال کردن تمام پنجره، Wide Screen را فعال کنید" },
   "helptip_tallerChatbox": { "message": "جعبه گفتگو را به صورت عمودی گسترش دهید" },
   "helptip_widerChatbox": { "message": "جعبه گفتگو را به صورت افقی در حالت Wide Screen گسترش دهید" },
-  "helptip_newChatButton": { "message": "نمایش دکمه چت جدید در چت باکس" },
+  "helptip_newChatBtn": { "message": "نمایش دکمه چت جدید در چت باکس" },
   "helptip_hiddenFooter": { "message": "مخفی کردن پاورقی  سایت" },
   "helptip_hiddenHeader": { "message": "مخفی کردن هدر سایت" },
   "helptip_modeNotifs": { "message": "نمایش اعلان‌ها هنگام تغییر حالت‌ها/تنظیمات" },

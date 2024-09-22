@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "قم أيضًا بتنشيط الشاشة العريضة عند تنشيط النافذة الكاملة" },
   "helptip_tallerChatbox": { "message": "قم بتوسيع مربع الدردشة عموديًا" },
   "helptip_widerChatbox": { "message": "قم بتوسيع مربع الدردشة أفقيًا في وضع الشاشة العريضة" },
-  "helptip_newChatButton": { "message": "عرض زر دردشة جديد في مربع الدردشة" },
+  "helptip_newChatBtn": { "message": "عرض زر دردشة جديد في مربع الدردشة" },
   "helptip_hiddenFooter": { "message": "إخفاء تذييل الموقع" },
   "helptip_hiddenHeader": { "message": "عنوان الموقع" },
   "helptip_modeNotifs": { "message": "عرض الإشعارات عند تبديل الأوضاع/الإعدادات" },

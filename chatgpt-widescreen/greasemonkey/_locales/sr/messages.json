@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Takođe aktivirajte široki ekran kada aktivirate Full-Window" },
   "helptip_tallerChatbox": { "message": "Proširite ćaskanje vertikalno" },
   "helptip_widerChatbox": { "message": "Proširite ćaskanje horizontalno u režimu širokog ekrana" },
-  "helptip_newChatButton": { "message": "Prikaži dugme Novo ćaskanje u okviru za ćaskanje" },
+  "helptip_newChatBtn": { "message": "Prikaži dugme Novo ćaskanje u okviru za ćaskanje" },
   "helptip_hiddenFooter": { "message": "Sakrij podnožje sajta" },
   "helptip_hiddenHeader": { "message": "Sakrij zaglavlje sajta" },
   "helptip_modeNotifs": { "message": "Prikaži obaveštenja prilikom prebacivanja režima/podešavanja" },

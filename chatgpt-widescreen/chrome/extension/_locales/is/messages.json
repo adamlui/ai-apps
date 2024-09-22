@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Virkjaðu einnig breiðskjá þegar þú virkjar fulla glugga" },
   "helptip_tallerChatbox": { "message": "Stækkaðu spjallboxið lóðrétt" },
   "helptip_widerChatbox": { "message": "Stækkaðu spjallboxið lárétt í víðskjásham" },
-  "helptip_newChatButton": { "message": "Sýna nýjan spjallhnapp í spjallreit" },
+  "helptip_newChatBtn": { "message": "Sýna nýjan spjallhnapp í spjallreit" },
   "helptip_hiddenFooter": { "message": "Fela síðufót" },
   "helptip_hiddenHeader": { "message": "Fela síðuhaus" },
   "helptip_modeNotifs": { "message": "Sýna tilkynningar þegar skipt er um ham/stillingar" },

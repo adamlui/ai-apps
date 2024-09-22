@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Täze äpişge açylanda, giň ekrany hem açyň" },
   "helptip_tallerChatbox": { "message": "Çat kutusyny vertikal giňelt" },
   "helptip_widerChatbox": { "message": "Çat kutusyny uzyn ekran modunda uzynlaşdyr" },
-  "helptip_newChatButton": { "message": "Çat kutusynda Täze Çat düýşüni görkez" },
+  "helptip_newChatBtn": { "message": "Çat kutusynda Täze Çat düýşüni görkez" },
   "helptip_hiddenFooter": { "message": "Saýt aýagyny gizle" },
   "helptip_hiddenHeader": { "message": "Saýt başlygyny gizle" },
   "helptip_modeNotifs": { "message": "Modlar/düzgüni üýtgetende habar berişleri görkez" },

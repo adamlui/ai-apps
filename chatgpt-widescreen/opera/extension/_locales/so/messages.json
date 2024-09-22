@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Sidoo kale dhaqaajiso Screen Wide marka la dhaqaajinayo Full-Window" },
   "helptip_tallerChatbox": { "message": "Si toos ah u fidi sanduuqa sheekaysiga" },
   "helptip_widerChatbox": { "message": "Ballaarinta sanduuqa sheekaysiga si horizontally in hab Screen Wide" },
-  "helptip_newChatButton": { "message": "Muuji badhanka Wadahadalka Cusub ee Chatbox" },
+  "helptip_newChatBtn": { "message": "Muuji badhanka Wadahadalka Cusub ee Chatbox" },
   "helptip_hiddenFooter": { "message": "Qari footer goobta" },
   "helptip_hiddenHeader": { "message": "Qari cinwaanka goobta" },
   "helptip_modeNotifs": { "message": "Muuji ogeysiisyada marka hababka toggling/dejinta" },

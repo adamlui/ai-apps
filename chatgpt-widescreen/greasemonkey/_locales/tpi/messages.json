@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Na tu, yu ken yusim bikpela piksa taim yu yusim Full Window" },
   "helptip_tallerChatbox": { "message": "Kisim bek dispela bokis long rot bilong rot" },
   "helptip_widerChatbox": { "message": "Long hap bilong en, ol i save yusim bikpela piksa bilong soim ol samting long hap bilong en." },
-  "helptip_newChatButton": { "message": "Show new chat button long chatbox" },
+  "helptip_newChatBtn": { "message": "Show new chat button long chatbox" },
   "helptip_hiddenFooter": { "message": "Piksa bilong pes bilong pes" },
   "helptip_hiddenHeader": { "message": "Haitim het bilong pes bilong pes" },
   "helptip_modeNotifs": { "message": "Toksave taim yu senisim ol modus/sait" },

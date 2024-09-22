@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "激活全窗口时也激活宽屏幕" },
   "helptip_tallerChatbox": { "message": "垂直展开聊天框" },
   "helptip_widerChatbox": { "message": "在宽屏模式下水平展开聊天框" },
-  "helptip_newChatButton": { "message": "在聊天框中显示“新建聊天”按钮" },
+  "helptip_newChatBtn": { "message": "在聊天框中显示“新建聊天”按钮" },
   "helptip_hiddenFooter": { "message": "网站页脚" },
   "helptip_hiddenHeader": { "message": "网站页眉" },
   "helptip_modeNotifs": { "message": "切换模式/设置时显示通知" },

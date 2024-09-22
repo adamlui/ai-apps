@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Faʻagaoioia foi le Wide Screen pe a faʻagaoioia le Full-Window" },
   "helptip_tallerChatbox": { "message": "Faʻalauteleina le chatbox vertically" },
   "helptip_widerChatbox": { "message": "Faalauteleina le pusa talatalanoaga faalava i le Wide Screen mode" },
-  "helptip_newChatButton": { "message": "Faaali atu le faamau talatalanoaga fou i le pusa talatalanoaga" },
+  "helptip_newChatBtn": { "message": "Faaali atu le faamau talatalanoaga fou i le pusa talatalanoaga" },
   "helptip_hiddenFooter": { "message": "Faʻasalaga i luga o le upega tafaʻilagi" },
   "helptip_hiddenHeader": { "message": "Hide nofoaga ulutala" },
   "helptip_modeNotifs": { "message": "Faaali atu faasilasilaga pe a toggling auala/faatulagaga" },

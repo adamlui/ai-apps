@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Usab activate Wide Screen sa diha nga activate Full-Window" },
   "helptip_tallerChatbox": { "message": "Pagpalapad sa chatbox nga patindog" },
   "helptip_widerChatbox": { "message": "Pagpalapad sa chatbox horizontally sa Wide Screen mode" },
-  "helptip_newChatButton": { "message": "Ipakita ang Bag-ong Chat button sa chatbox" },
+  "helptip_newChatBtn": { "message": "Ipakita ang Bag-ong Chat button sa chatbox" },
   "helptip_hiddenFooter": { "message": "Itago ang footer sa site" },
   "helptip_hiddenHeader": { "message": "Itago ang header sa site" },
   "helptip_modeNotifs": { "message": "Ipakita ang mga pahibalo kung ang mga mode/setting sa pag-toggle" },

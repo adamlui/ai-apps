@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "पूर्ण - विन्डो सक्रिय गर्दा वाइड स्क्रिन पनि सक्रिय गर्नुहोस्" },
   "helptip_tallerChatbox": { "message": "च्याटबक्स ठाडो रूपमा विस्तार गर्नुहोस्" },
   "helptip_widerChatbox": { "message": "वाइड स्क्रिन मोडमा तेर्सो रूपमा च्याटबक्स विस्तार गर्नुहोस्" },
-  "helptip_newChatButton": { "message": "च्याटबक्समा नयाँ कुराकानी बटन देखाउनुहोस्" },
+  "helptip_newChatBtn": { "message": "च्याटबक्समा नयाँ कुराकानी बटन देखाउनुहोस्" },
   "helptip_hiddenFooter": { "message": "साइट फुटर लुकाउनुहोस्" },
   "helptip_hiddenHeader": { "message": "साइट हेडर लुकाउनुहोस्" },
   "helptip_modeNotifs": { "message": "मोडहरू/सेटिङहरू टगल गर्दा सूचनाहरू देखाउनुहोस्" },

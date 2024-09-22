@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Ankaŭ aktivigi larĝan ekranon kiam aktivigas plenfenestron" },
   "helptip_tallerChatbox": { "message": "Vastigi la babilejon vertikale" },
   "helptip_widerChatbox": { "message": "Etendi la babilejon horizontale en Larĝekrana reĝimo" },
-  "helptip_newChatButton": { "message": "Montri novan babilejbutonon en babilejujo" },
+  "helptip_newChatBtn": { "message": "Montri novan babilejbutonon en babilejujo" },
   "helptip_hiddenFooter": { "message": "Kaŝi la paĝopiedon" },
   "helptip_hiddenHeader": { "message": "Kaŝi la paĝokapon" },
   "helptip_modeNotifs": { "message": "Montri sciigojn kiam ŝanĝi reĝimojn/agordojn" },

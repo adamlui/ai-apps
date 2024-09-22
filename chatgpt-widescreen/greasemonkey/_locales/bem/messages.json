@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Na kabili, nga mwabombako imilimo ya pa kompyuta, kuti mwabombako imilimo ya pa kompyuta ilyo mwabombako imilimo ya pa kompyuta" },
   "helptip_tallerChatbox": { "message": "Fela Anikulapo Kuti Chatbox Vertically" },
   "helptip_widerChatbox": { "message": "Fela Anikulapo Kuti chatbox horizontally in Fela Anikulapo Kuti" },
-  "helptip_newChatButton": { "message": "Tambisheni akabokoshi ka chatbox akapya" },
+  "helptip_newChatBtn": { "message": "Tambisheni akabokoshi ka chatbox akapya" },
   "helptip_hiddenFooter": { "message": "Fela Anikulapo Kuti Site Footer" },
   "helptip_hiddenHeader": { "message": "Ukufisama Site Header" },
   "helptip_modeNotifs": { "message": "Ukulele Tabs/Ukulele Tabs" },

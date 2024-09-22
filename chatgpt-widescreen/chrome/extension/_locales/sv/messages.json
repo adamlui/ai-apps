@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Aktivera även bred skärm när du aktiverar Full-Window" },
   "helptip_tallerChatbox": { "message": "Expandera chattrutan vertikalt" },
   "helptip_widerChatbox": { "message": "Expandera chattrutan horisontellt i bredbildsläge" },
-  "helptip_newChatButton": { "message": "Visa knappen Ny chatt i chattrutan" },
+  "helptip_newChatBtn": { "message": "Visa knappen Ny chatt i chattrutan" },
   "helptip_hiddenFooter": { "message": "Dölj webbplatsens sidfot" },
   "helptip_hiddenHeader": { "message": "Dölj webbplats header" },
   "helptip_modeNotifs": { "message": "Visa aviseringar när du växlar lägen/inställningar" },

@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Taip pat suaktyvinkite platų ekraną, kai suaktyvinate viso lango funkciją" },
   "helptip_tallerChatbox": { "message": "Išplėskite pokalbių dėžutę vertikaliai" },
   "helptip_widerChatbox": { "message": "Išplėskite pokalbių dėžutę horizontaliai plačiaekraniu režimu" },
-  "helptip_newChatButton": { "message": "Pokalbių dėžutėje rodyti mygtuką „Naujas pokalbis“" },
+  "helptip_newChatBtn": { "message": "Pokalbių dėžutėje rodyti mygtuką „Naujas pokalbis“" },
   "helptip_hiddenFooter": { "message": "Slėpti svetainės poraštę" },
   "helptip_hiddenHeader": { "message": "Slėpti svetainės antraštę" },
   "helptip_modeNotifs": { "message": "Rodyti pranešimus, kai perjungiami režimai/nustatymai" },

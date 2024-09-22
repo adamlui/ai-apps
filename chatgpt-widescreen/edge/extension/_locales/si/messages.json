@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "සම්පූර්ණ කවුළුව සක් ‍ රීය කරන විට පුළුල් තිරය සක් ‍ රීය කරන්න" },
   "helptip_tallerChatbox": { "message": "චැට්බොක්ස් සිරස් අතට පුළුල් කරන්න" },
   "helptip_widerChatbox": { "message": "සංවාද කොටුව තිරස්ව පුළුල් තිර ප් ‍ රකාරයෙන් පුළුල් කරන්න" },
-  "helptip_newChatButton": { "message": "සංවාද කොටුවේ නව සංවාද බොත්තම පෙන්වන්න" },
+  "helptip_newChatBtn": { "message": "සංවාද කොටුවේ නව සංවාද බොත්තම පෙන්වන්න" },
   "helptip_hiddenFooter": { "message": "අඩවි පාදකය සඟවන්න" },
   "helptip_hiddenHeader": { "message": "අඩවි ශීර්ෂකය සඟවන්න" },
   "helptip_modeNotifs": { "message": "ප් ‍ රකාර/සැකසුම් ටොගල් කිරීමේදී දැනුම්දීම් පෙන්වන්න" },

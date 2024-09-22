@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Virka eisini breið skerm, tá ið Full Window verður virkt" },
   "helptip_tallerChatbox": { "message": "At víðka chatboxina vertikalt" },
   "helptip_widerChatbox": { "message": "At víðka chatboxina horisontalt í breiðum skermumynd" },
-  "helptip_newChatButton": { "message": "Vís nýggja chat-knappið í chatbox" },
+  "helptip_newChatBtn": { "message": "Vís nýggja chat-knappið í chatbox" },
   "helptip_hiddenFooter": { "message": "Fylg síðusíðu fótspor" },
   "helptip_hiddenHeader": { "message": "Fjal heimasíða yvirskriftina" },
   "helptip_modeNotifs": { "message": "Vís boð, tá ið tú skiftir stillingar/stillingar" },

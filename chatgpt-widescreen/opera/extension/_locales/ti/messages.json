@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "ምሉእ ዊንዶው ኣብ እትግበርሉ እዋን ሰፊሕ ማያ ገጽ እውን ኣበራብር" },
   "helptip_tallerChatbox": { "message": "ነቲ ናይ ቻትቦክስ ጽርግያ ኣስፋሕፍሕ" },
   "helptip_widerChatbox": { "message": "ነቲ ናይ ቻትቦክስ ጠመቓ ብሰፊሕ ኣገባብ ስክሪን ኣስፋሕፍሕ" },
-  "helptip_newChatButton": { "message": "ኣብ ቻትቦክስ ሓድሽ ቻት ጠውቑ" },
+  "helptip_newChatBtn": { "message": "ኣብ ቻትቦክስ ሓድሽ ቻት ጠውቑ" },
   "helptip_hiddenFooter": { "message": "ናይ መርበብ ሓበሬታ ገጸ-ባህርይ" },
   "helptip_hiddenHeader": { "message": "ርእሲ ናይቲ መርበብ ሓበሬታ ሕባእ" },
   "helptip_modeNotifs": { "message": "ኣብ እዋን ምትሕልላፍ ኣገባባት/ኣቀማምጣታት ኣፍልጦታት ኣርኢ" },

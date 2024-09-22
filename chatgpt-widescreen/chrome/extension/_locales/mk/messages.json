@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Исто така, активирајте широк екран при активирање на целосен прозорец" },
   "helptip_tallerChatbox": { "message": "Проширете го полето за разговор вертикално" },
   "helptip_widerChatbox": { "message": "Проширете го полето за разговор хоризонтално во режим на широк екран" },
-  "helptip_newChatButton": { "message": "Прикажи ново копче за разговор во полето за разговор" },
+  "helptip_newChatBtn": { "message": "Прикажи ново копче за разговор во полето за разговор" },
   "helptip_hiddenFooter": { "message": "Сокриј подножје на страницата" },
   "helptip_hiddenHeader": { "message": "Сокриј го заглавието на страницата" },
   "helptip_modeNotifs": { "message": "Прикажи известувања кога се префрлаат режимите/подесувањата" },

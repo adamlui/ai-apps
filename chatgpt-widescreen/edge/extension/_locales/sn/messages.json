@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Uyewo Activate Wide Screen kana Activating Full-Window" },
   "helptip_tallerChatbox": { "message": "Wedzera chatbox yakatwasuka" },
   "helptip_widerChatbox": { "message": "Kuwedzera chatbox horizontally muna Wide Chinovhara muoti" },
-  "helptip_newChatButton": { "message": "Ratidza bhatani idzva rekukurukurirana mubhokisi rekukurukurirana" },
+  "helptip_newChatBtn": { "message": "Ratidza bhatani idzva rekukurukurirana mubhokisi rekukurukurirana" },
   "helptip_hiddenFooter": { "message": "Kuvanza nzvimbo footer" },
   "helptip_hiddenHeader": { "message": "Hide site header" },
   "helptip_modeNotifs": { "message": "Ratidza zviziviso kana toggling modes/marongero" },

@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Snulfu daɣen allen n wudem ameqran mi ara tkecmeḍ s wudem awurman" },
   "helptip_tallerChatbox": { "message": "Snifel akaram n teqbaylit s uzeggaɣ" },
   "helptip_widerChatbox": { "message": "Snulfu azeggaɣ n teqbaylit deg ubrid n allen n wudem ameqran" },
-  "helptip_newChatButton": { "message": "Sken asenker amaynut n udiwenni deg chatbox" },
+  "helptip_newChatBtn": { "message": "Sken asenker amaynut n udiwenni deg chatbox" },
   "helptip_hiddenFooter": { "message": "Ffren asenfaṛ n usmel" },
   "helptip_hiddenHeader": { "message": "Ffren aqerru n usmel" },
   "helptip_modeNotifs": { "message": "Sken isallen melmi ara sbedden isenfaren/isenfaren" },

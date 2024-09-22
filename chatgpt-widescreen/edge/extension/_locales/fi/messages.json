@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Aktivoi myös laajakuva, kun aktivoit koko ikkunan" },
   "helptip_tallerChatbox": { "message": "Laajenna chatboxia pystysuunnassa" },
   "helptip_widerChatbox": { "message": "Laajenna keskusteluruutua vaakasuunnassa laajakuvatilassa" },
-  "helptip_newChatButton": { "message": "Näytä uusi chat-painike chat-laatikossa" },
+  "helptip_newChatBtn": { "message": "Näytä uusi chat-painike chat-laatikossa" },
   "helptip_hiddenFooter": { "message": "Piilota sivuston alatunniste" },
   "helptip_hiddenHeader": { "message": "Piilota sivuston otsikko" },
   "helptip_modeNotifs": { "message": "Näytä ilmoitukset, kun vaihdat tiloja/asetuksia" },

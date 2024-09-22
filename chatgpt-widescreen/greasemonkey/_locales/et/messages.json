@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Aktiveeri laiekraan ka täisakna aktiveerimisel" },
   "helptip_tallerChatbox": { "message": "Laienda vestluskasti vertikaalselt" },
   "helptip_widerChatbox": { "message": "Laiekraanirežiimis laienda vestluskasti horisontaalselt" },
-  "helptip_newChatButton": { "message": "Kuva uus vestlusnupp vestluskastis" },
+  "helptip_newChatBtn": { "message": "Kuva uus vestlusnupp vestluskastis" },
   "helptip_hiddenFooter": { "message": "Peida saidi jalus" },
   "helptip_hiddenHeader": { "message": "Peida saidi päis" },
   "helptip_modeNotifs": { "message": "Kuva teated režiimide/seadete vahetamisel" },

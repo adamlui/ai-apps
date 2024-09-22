@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Activa també la pantalla ampla quan activis la finestra completa" },
   "helptip_tallerChatbox": { "message": "Expandeix el quadre de xat verticalment" },
   "helptip_widerChatbox": { "message": "Expandeix el quadre de xat horitzontalment en mode de pantalla ampla" },
-  "helptip_newChatButton": { "message": "Mostra el botó Nou xat al quadre de xat" },
+  "helptip_newChatBtn": { "message": "Mostra el botó Nou xat al quadre de xat" },
   "helptip_hiddenFooter": { "message": "Amaga el peu de pàgina" },
   "helptip_hiddenHeader": { "message": "Amaga la capçalera del lloc" },
   "helptip_modeNotifs": { "message": "Mostra les notificacions quan es canvien els modes o la configuració" },

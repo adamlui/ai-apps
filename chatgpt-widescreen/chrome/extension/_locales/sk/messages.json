@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Aktivujte tiež širokú obrazovku pri aktivácii celého okna" },
   "helptip_tallerChatbox": { "message": "Rozbaľte chatovacie pole vertikálne" },
   "helptip_widerChatbox": { "message": "Rozbaľte chatovacie pole vodorovne v režime širokej obrazovky" },
-  "helptip_newChatButton": { "message": "Zobraziť tlačidlo Nový rozhovor v chatboxe" },
+  "helptip_newChatBtn": { "message": "Zobraziť tlačidlo Nový rozhovor v chatboxe" },
   "helptip_hiddenFooter": { "message": "Pätička webstránky" },
   "helptip_hiddenHeader": { "message": "Hlavička webstránky" },
   "helptip_modeNotifs": { "message": "Zobraziť upozornenia pri prepínaní režimov/nastavení" },

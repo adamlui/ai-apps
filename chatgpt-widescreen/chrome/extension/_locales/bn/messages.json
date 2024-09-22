@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "ফুল-উইন্ডো সক্রিয় করার সময় ওয়াইড স্ক্রিন সক্রিয় করুন" },
   "helptip_tallerChatbox": { "message": "চ্যাটবক্সটি উল্লম্বভাবে প্রসারিত করুন" },
   "helptip_widerChatbox": { "message": "ওয়াইড স্ক্রিন মোডে চ্যাটবক্সটি অনুভূমিকভাবে প্রসারিত করুন" },
-  "helptip_newChatButton": { "message": "চ্যাটবক্সে নতুন চ্যাট বোতাম দেখান" },
+  "helptip_newChatBtn": { "message": "চ্যাটবক্সে নতুন চ্যাট বোতাম দেখান" },
   "helptip_hiddenFooter": { "message": "সাইটের ফুটার লুকান" },
   "helptip_hiddenHeader": { "message": "সাইটের হেডার লুকান" },
   "helptip_modeNotifs": { "message": "মোড/সেটিংস টগল করার সময় বিজ্ঞপ্তিগুলি দেখান" },

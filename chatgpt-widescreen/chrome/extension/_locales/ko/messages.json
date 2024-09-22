@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "전체 창을 활성화할 때도 와이드 스크린 활성화" },
   "helptip_tallerChatbox": { "message": "채팅창을 세로로 펼치세요." },
   "helptip_widerChatbox": { "message": "와이드 스크린 모드에서 채팅 상자를 수평으로 확장합니다." },
-  "helptip_newChatButton": { "message": "채팅창에 새 채팅 버튼 표시" },
+  "helptip_newChatBtn": { "message": "채팅창에 새 채팅 버튼 표시" },
   "helptip_hiddenFooter": { "message": "사이트 푸터" },
   "helptip_hiddenHeader": { "message": "사이트 헤더" },
   "helptip_modeNotifs": { "message": "모드/설정을 전환할 때 알림 표시" },

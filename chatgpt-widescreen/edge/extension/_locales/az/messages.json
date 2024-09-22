@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Tam Pəncərəni aktivləşdirərkən Geniş Ekranı da aktivləşdirin" },
   "helptip_tallerChatbox": { "message": "Söhbət qutusunu şaquli istiqamətdə genişləndirin" },
   "helptip_widerChatbox": { "message": "Geniş Ekran rejimində söhbət qutusunu üfüqi istiqamətdə genişləndirin" },
-  "helptip_newChatButton": { "message": "Yeni söhbət düyməsini söhbət qutusunda göstər" },
+  "helptip_newChatBtn": { "message": "Yeni söhbət düyməsini söhbət qutusunda göstər" },
   "helptip_hiddenFooter": { "message": "Saytın altbiletini gizlədin" },
   "helptip_hiddenHeader": { "message": "Saytın başlığını gizlət" },
   "helptip_modeNotifs": { "message": "Rejimləri/parametrləri dəyişdikdə bildirişləri göstər" },

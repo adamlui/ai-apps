@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "እንዲሁም Full-Window ን በሚያንቀሳቅሱበት ጊዜ ሰፋ ያለ ማያ ገጽን ያንቁ" },
   "helptip_tallerChatbox": { "message": "የውይይት ሳጥኑን በአቀባዊ ያሰፉ" },
   "helptip_widerChatbox": { "message": "ሰፊ ማያ ሁነታ ውስጥ የውይይት ሳጥን አግድም ማራዘም" },
-  "helptip_newChatButton": { "message": "በቻትቦክስ ውስጥ አዲስ የውይይት አዝራር አሳይ" },
+  "helptip_newChatBtn": { "message": "በቻትቦክስ ውስጥ አዲስ የውይይት አዝራር አሳይ" },
   "helptip_hiddenFooter": { "message": "የጣቢያ footer ደብቅ" },
   "helptip_hiddenHeader": { "message": "የጣቢያ ራስጌን ደብቅ" },
   "helptip_modeNotifs": { "message": "ሁነቶችን/ቅንብሮችን በሚገፉበት ጊዜ ማሳወቂያዎችን ያሳዩ" },

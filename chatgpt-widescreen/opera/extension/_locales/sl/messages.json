@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Prav tako aktivirajte Wide Screen, ko aktivirate Full-Window" },
   "helptip_tallerChatbox": { "message": "Razširi klepetalnico navpično" },
   "helptip_widerChatbox": { "message": "Razširite klepetalnico vodoravno v načinu širokega zaslona" },
-  "helptip_newChatButton": { "message": "Pokaži gumb Nov klepet v polju za klepet" },
+  "helptip_newChatBtn": { "message": "Pokaži gumb Nov klepet v polju za klepet" },
   "helptip_hiddenFooter": { "message": "Skrij nogo mesta" },
   "helptip_hiddenHeader": { "message": "Glava strani" },
   "helptip_modeNotifs": { "message": "Prikaži obvestila pri preklopu načinov/nastavitev" },

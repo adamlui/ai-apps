@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Ҳамчунин фаъолсозии Экрани васеъ ҳангоми фаъолсозии Тирезаи Пурра" },
   "helptip_tallerChatbox": { "message": "Ð  Ð ° Ð ¼ Ð ¾ Ð ¸ Ñ  Ð" },
   "helptip_widerChatbox": { "message": "Кушодани қуттии чат ба таври уфуқӣ дар ҳолати экрани васеъ" },
-  "helptip_newChatButton": { "message": "Намоиши тугмаи нави чат дар қуттии чат" },
+  "helptip_newChatBtn": { "message": "Намоиши тугмаи нави чат дар қуттии чат" },
   "helptip_hiddenFooter": { "message": "Itago ang footer ng site" },
   "helptip_hiddenHeader": { "message": "Пинҳон кардани сарлавҳаи сайт" },
   "helptip_modeNotifs": { "message": "Намоиши огоҳиҳо ҳангоми гузаштан аз режимҳо/танзимотҳо" },

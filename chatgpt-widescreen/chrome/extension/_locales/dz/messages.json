@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "སྐར་ཁུང་ཕུལཝ་ཅིག་ རྩ་སྒྲིག་འབད་པའི་སྐབས་ སྐར་ཁུང་ཕུལཝ་ཅིག་ རྩ་སྒྲིག་འབད་" },
   "helptip_tallerChatbox": { "message": "སྒྲིག་འཇུག་བྱས་ཚད། ཐེངས་ 3 ལས་ཉུང་བ། ཐོན་རིམ་ 5.7.1 ནང་" },
   "helptip_widerChatbox": { "message": "སྒྲིག་འཇུག་བྱས་ཚད། ཐེངས་ 3 ལས་ཉུང་བ། ཐོན་རིམ་ 5.7.1 ནང་དུ་ཚོད་ལྟ་བྱས་ཟིན། ལོ" },
-  "helptip_newChatButton": { "message": "Chatboxནང་ལུ་ chat བལྡེ་མིག་གསརཔ་སྟོན་འབད།" },
+  "helptip_newChatBtn": { "message": "Chatboxནང་ལུ་ chat བལྡེ་མིག་གསརཔ་སྟོན་འབད།" },
   "helptip_hiddenFooter": { "message": "ས་སྒོ་གི་རྐང་པ་སྦ་བཞག" },
   "helptip_hiddenHeader": { "message": "ས་སྒོ་གི་མགུ་ཏོ་སྦ་བཞག" },
   "helptip_modeNotifs": { "message": "གོ་རིམ་/སྒྲིག་གཞི་ཚུ་སེལ་འཐུ་འབད་བའི་སྐབས་བརྡ་སྟོན་ཚུ་སྟོན་འབད།" },

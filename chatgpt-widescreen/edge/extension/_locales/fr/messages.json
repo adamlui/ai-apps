@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Activez également l'écran large lors de l'activation de la fenêtre complète" },
   "helptip_tallerChatbox": { "message": "Développez la boîte de discussion verticalement" },
   "helptip_widerChatbox": { "message": "Développez la boîte de discussion horizontalement en mode grand écran" },
-  "helptip_newChatButton": { "message": "Afficher le bouton Nouveau chat dans la boîte de discussion" },
+  "helptip_newChatBtn": { "message": "Afficher le bouton Nouveau chat dans la boîte de discussion" },
   "helptip_hiddenFooter": { "message": "Masquer le Pied de page du site" },
   "helptip_hiddenHeader": { "message": "Masquer l'en-tête du site" },
   "helptip_modeNotifs": { "message": "Afficher les notifications lors du basculement des modes/paramètres" },

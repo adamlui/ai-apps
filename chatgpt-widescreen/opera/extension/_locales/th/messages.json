@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "เปิดใช้งานหน้าจอกว้างเมื่อเปิดใช้งาน Full-Window" },
   "helptip_tallerChatbox": { "message": "ขยายแชทบ็อกซ์ในแนวตั้ง" },
   "helptip_widerChatbox": { "message": "ขยายแชทบ็อกซ์ในแนวนอนในโหมดหน้าจอกว้าง" },
-  "helptip_newChatButton": { "message": "แสดงปุ่มแชทใหม่ในกล่องแชท" },
+  "helptip_newChatBtn": { "message": "แสดงปุ่มแชทใหม่ในกล่องแชท" },
   "helptip_hiddenFooter": { "message": "ส่วนท้ายของเว็บไซต์" },
   "helptip_hiddenHeader": { "message": "ส่วนหัวของไซต์" },
   "helptip_modeNotifs": { "message": "แสดงการแจ้งเตือนเมื่อสลับโหมด/การตั้งค่า" },

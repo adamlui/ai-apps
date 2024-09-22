@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "אויך אַקטאַווייט ווידע סקרין ווען אַקטאַווייטינג גאַנץ-פֿענצטער" },
   "helptip_tallerChatbox": { "message": "יקספּאַנד די טשאַטבאָקס ווערטיקלי" },
   "helptip_widerChatbox": { "message": "יקספּאַנד די טשאַטבאָקס כאָריזאַנטאַלי אין ווידע סקרין מאָדע" },
-  "helptip_newChatButton": { "message": "ווייַזן ניו טשאַט קנעפּל אין טשאַטבאָקס" },
+  "helptip_newChatBtn": { "message": "ווייַזן ניו טשאַט קנעפּל אין טשאַטבאָקס" },
   "helptip_hiddenFooter": { "message": "באַהאַלטן פּלאַץ פוטער" },
   "helptip_hiddenHeader": { "message": "באַהאַלטן פּלאַץ כעדער" },
   "helptip_modeNotifs": { "message": "ווייַזן נאָוטאַפאַקיישאַנז ווען טאַגאַלינג מאָדעס / סעטטינגס" },

@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Toe fakaʻata foki ʻa e screen falahi ʻi he taimi ʻoku fakaʻata ai ʻa e window kakato" },
   "helptip_tallerChatbox": { "message": "Fakalahi ʻa e chatbox hake" },
   "helptip_widerChatbox": { "message": "Fakalahi ʻa e chatbox horizontally ʻi he monitoa falahi" },
-  "helptip_newChatButton": { "message": "Fakaʻasi ʻa e chat foʻou ʻi he chatbox" },
+  "helptip_newChatBtn": { "message": "Fakaʻasi ʻa e chat foʻou ʻi he chatbox" },
   "helptip_hiddenFooter": { "message": "Fufuuʻi ʻa e saiti footer" },
   "helptip_hiddenHeader": { "message": "Fufuuʻi e ʻuluʻi saiti" },
   "helptip_modeNotifs": { "message": "Fakaʻasi ʻa e fanongonongo ʻi he taimi ʻoku toggling ai ʻa e ngaahi founga/fokotuʻutuʻu" },

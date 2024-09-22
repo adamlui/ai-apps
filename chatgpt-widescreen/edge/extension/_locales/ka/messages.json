@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Ასევე გაააქტიურეთ ფართო ეკრანი სრულფართობიანი ფანჯრის გააქტიურებისას" },
   "helptip_tallerChatbox": { "message": "Ვერტიკალურად გაშალეთ ჩატბოქსი" },
   "helptip_widerChatbox": { "message": "Ჰორიზონტალურად გაშალეთ ჩატბოქსი ფართო ეკრანის რეჟიმში" },
-  "helptip_newChatButton": { "message": "Ჩატბოქსში ახალი ჩატის ღილაკის ჩვენება" },
+  "helptip_newChatBtn": { "message": "Ჩატბოქსში ახალი ჩატის ღილაკის ჩვენება" },
   "helptip_hiddenFooter": { "message": "Საიტის ქვესართის დამალვა" },
   "helptip_hiddenHeader": { "message": "Საიტის თავსართის დამალვა" },
   "helptip_modeNotifs": { "message": "Გაფრთხილებების ჩვენება რეჟიმების/პარამეტრების გადართვისას" },

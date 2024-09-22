@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Epitou aktive ekran lajè lè aktive fenèt konplè" },
   "helptip_tallerChatbox": { "message": "Elaji bwat chat la vètikalman" },
   "helptip_widerChatbox": { "message": "Elaji bwat chat la orizontalman nan mòd Wide Screen" },
-  "helptip_newChatButton": { "message": "Montre Nouvo bouton Chat nan chatbox" },
+  "helptip_newChatBtn": { "message": "Montre Nouvo bouton Chat nan chatbox" },
   "helptip_hiddenFooter": { "message": "Kache pye sit la" },
   "helptip_hiddenHeader": { "message": "Kache header sit la" },
   "helptip_modeNotifs": { "message": "Montre notifikasyon lè toggling mòd/anviwònman" },

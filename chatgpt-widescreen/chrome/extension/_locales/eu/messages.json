@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Era berean, aktibatu Pantaila zabala Leiho osoa aktibatzen duzunean" },
   "helptip_tallerChatbox": { "message": "Zabaldu txat-koadroa bertikalki" },
   "helptip_widerChatbox": { "message": "Zabaldu txat-koadroa horizontalki Pantaila zabaleko moduan" },
-  "helptip_newChatButton": { "message": "Erakutsi txat berria botoia txat-koadroan" },
+  "helptip_newChatBtn": { "message": "Erakutsi txat berria botoia txat-koadroan" },
   "helptip_hiddenFooter": { "message": "Ezkutatu gune-oina" },
   "helptip_hiddenHeader": { "message": "Ezkutatu gunearen goiburua" },
   "helptip_modeNotifs": { "message": "Erakutsi jakinarazpenak moduak/ezarpenak aldatzean" },

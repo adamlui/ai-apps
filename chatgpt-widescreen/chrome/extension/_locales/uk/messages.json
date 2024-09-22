@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Також активуйте Wide Screen при активації Full-Window" },
   "helptip_tallerChatbox": { "message": "Розгорнути чат-бокс вертикально" },
   "helptip_widerChatbox": { "message": "Розгорніть вікно чату по горизонталі в режимі широкого екрана" },
-  "helptip_newChatButton": { "message": "Показати нову кнопку чату в вікні чату" },
+  "helptip_newChatBtn": { "message": "Показати нову кнопку чату в вікні чату" },
   "helptip_hiddenFooter": { "message": "Приховати нижній колонтитул сайту" },
   "helptip_hiddenHeader": { "message": "Заголовок сайту" },
   "helptip_modeNotifs": { "message": "Показувати сповіщення при перемиканні режимів/налаштувань" },

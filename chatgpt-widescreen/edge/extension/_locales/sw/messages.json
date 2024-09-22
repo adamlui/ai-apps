@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Pia amilisha Skrini pana wakati wa kuamilisha Dirisha Kamili" },
   "helptip_tallerChatbox": { "message": "Panua kisanduku cha gumzo wima" },
   "helptip_widerChatbox": { "message": "Panua sanduku la gumzo mlalo katika hali ya Skrini pana" },
-  "helptip_newChatButton": { "message": "Onyesha kitufe kipya cha Gumzo kwenye kisanduku cha g" },
+  "helptip_newChatBtn": { "message": "Onyesha kitufe kipya cha Gumzo kwenye kisanduku cha g" },
   "helptip_hiddenFooter": { "message": "Ficha kidokezi cha tovuti" },
   "helptip_hiddenHeader": { "message": "Ficha kichwa cha tovuti" },
   "helptip_modeNotifs": { "message": "Onyesha arifa wakati wa kugeuza modi/mipangilio" },

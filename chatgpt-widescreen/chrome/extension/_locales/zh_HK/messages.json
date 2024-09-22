@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "啟動全視窗時同時啟動寬螢幕" },
   "helptip_tallerChatbox": { "message": "垂直展開聊天框" },
   "helptip_widerChatbox": { "message": "在寬螢幕模式下水平展開聊天框" },
-  "helptip_newChatButton": { "message": "在聊天室中顯示「新增聊天」按鈕" },
+  "helptip_newChatBtn": { "message": "在聊天室中顯示「新增聊天」按鈕" },
   "helptip_hiddenFooter": { "message": "隱藏網站頁尾" },
   "helptip_hiddenHeader": { "message": "隱藏網站標題" },
   "helptip_modeNotifs": { "message": "切換模式/設定時顯示通知" },

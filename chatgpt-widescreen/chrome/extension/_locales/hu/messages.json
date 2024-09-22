@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "A teljes ablak aktiválásakor aktiválja a széles képernyőt is" },
   "helptip_tallerChatbox": { "message": "A csevegődoboz függőleges kibontása" },
   "helptip_widerChatbox": { "message": "Bontsa ki a csevegődobozt vízszintesen szélesvásznú módban" },
-  "helptip_newChatButton": { "message": "Új csevegés gomb megjelenítése a csevegőmezőben" },
+  "helptip_newChatBtn": { "message": "Új csevegés gomb megjelenítése a csevegőmezőben" },
   "helptip_hiddenFooter": { "message": "Oldal lábléc" },
   "helptip_hiddenHeader": { "message": "Oldal fejléce" },
   "helptip_modeNotifs": { "message": "Értesítések megjelenítése üzemmódok/beállítások közötti váltáskor" },

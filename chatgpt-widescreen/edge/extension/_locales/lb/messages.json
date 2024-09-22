@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Aktivéiert och Breetbildschierm wann Dir Full-Window aktivéiert" },
   "helptip_tallerChatbox": { "message": "D'Chatbox vertikal ausbauen" },
   "helptip_widerChatbox": { "message": "D'Chatbox horizontal am Wide Screen Modus ausbauen" },
-  "helptip_newChatButton": { "message": "Weis en neie Chat Knäppchen an der Chatbox" },
+  "helptip_newChatBtn": { "message": "Weis en neie Chat Knäppchen an der Chatbox" },
   "helptip_hiddenFooter": { "message": "Site-Footer verstoppen" },
   "helptip_hiddenHeader": { "message": "Site-Header verstoppen" },
   "helptip_modeNotifs": { "message": "Notifikatiounen uweisen wann Dir Modi/Astellunge wiesselt" },

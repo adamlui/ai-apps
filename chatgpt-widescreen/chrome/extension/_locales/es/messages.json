@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Active también Pantalla ancha al activar Ventana completa" },
   "helptip_tallerChatbox": { "message": "Expanda el cuadro de chat verticalmente" },
   "helptip_widerChatbox": { "message": "Expanda el cuadro de chat horizontalmente en el modo de pantalla ancha" },
-  "helptip_newChatButton": { "message": "Mostrar nuevo botón de chat en el cuadro de chat" },
+  "helptip_newChatBtn": { "message": "Mostrar nuevo botón de chat en el cuadro de chat" },
   "helptip_hiddenFooter": { "message": "Ocultar pie de página del sitio" },
   "helptip_hiddenHeader": { "message": "Ocultar el Encabezado del sitio" },
   "helptip_modeNotifs": { "message": "Mostrar notificaciones al alternar modos/configuraciones" },

@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Gnìomhaich cuideachd an sgrìn fharsaing nuair a bhios tu a 'gnìomhachadh Full - Window" },
   "helptip_tallerChatbox": { "message": "Leudaich am bogsa - cabadaich gu h - inghearach" },
   "helptip_widerChatbox": { "message": "Leudaich am bogsa - cabadaich gu còmhnard sa mhodh sgrìn fharsaing" },
-  "helptip_newChatButton": { "message": "Seall putan cabadaich ùr ann am bogsa cabadaich" },
+  "helptip_newChatBtn": { "message": "Seall putan cabadaich ùr ann am bogsa cabadaich" },
   "helptip_hiddenFooter": { "message": "Falaich bann - coise na làraich" },
   "helptip_hiddenHeader": { "message": "Falaich bann - cinn na làraich" },
   "helptip_modeNotifs": { "message": "Seall brathan nuair a thogras tu modhan/roghainnean" },

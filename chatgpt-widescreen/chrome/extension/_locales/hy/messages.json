@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Լայն պատուհանն ակտիվացնելիս ակտիվացրեք նաև լայն էկրանը" },
   "helptip_tallerChatbox": { "message": "Ուղղահայաց ընդլայնեք չաթ - արկղը" },
   "helptip_widerChatbox": { "message": "Ընդլայնեք զրույցի տուփը հորիզոնական լայն էկրանով" },
-  "helptip_newChatButton": { "message": "Ցույց տալ նոր զրույցի կոճակը չաթ - արկղում" },
+  "helptip_newChatBtn": { "message": "Ցույց տալ նոր զրույցի կոճակը չաթ - արկղում" },
   "helptip_hiddenFooter": { "message": "Թաքցնել կայքի ստորագիր" },
   "helptip_hiddenHeader": { "message": "Թաքցնել կայքի վերնագիրը" },
   "helptip_modeNotifs": { "message": "Ցույց տալ ծանուցումները, երբ փոխվում են ռեժիմները/կարգավորումները" },

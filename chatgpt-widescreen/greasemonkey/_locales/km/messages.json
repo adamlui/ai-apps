@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "ធ្វើ ឲ្យ អេក្រង់ ទូលាយ សកម្ម ផង ដែរ នៅ ពេល ធ្វើ ឲ្យ បង្អួច ពេញ សកម្ម" },
   "helptip_tallerChatbox": { "message": "ពង្រីក ប្រអប់ ជជែក កំសាន្ត បញ្ឈរ" },
   "helptip_widerChatbox": { "message": "ពង្រីក ប្រអប់ ជជែក កំសាន្ត ផ្ដេក ក្នុង របៀប អេក្រង់ ធំ" },
-  "helptip_newChatButton": { "message": "បង្ហាញប៊ូតុងជជែកថ្មីនៅក្នុងប្រអប់ជជែក" },
+  "helptip_newChatBtn": { "message": "បង្ហាញប៊ូតុងជជែកថ្មីនៅក្នុងប្រអប់ជជែក" },
   "helptip_hiddenFooter": { "message": "លាក់បាតកថាគេហទំព័រ" },
   "helptip_hiddenHeader": { "message": "លាក់បឋមកថាគេហទំព័រ" },
   "helptip_modeNotifs": { "message": "បង្ហាញការជូនដំណឹងនៅពេលបិទបើកម៉ូដ/ការកំណត់" },

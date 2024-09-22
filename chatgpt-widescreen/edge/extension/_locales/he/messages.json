@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "הפעל גם מסך רחב בעת הפעלת חלון מלא" },
   "helptip_tallerChatbox": { "message": "הרחב את תיבת הצ'אט אנכית" },
   "helptip_widerChatbox": { "message": "הרחב את תיבת הצ'אט אופקית במצב מסך רחב" },
-  "helptip_newChatButton": { "message": "הצג לחצן צ'אט חדש בתיבת הצ'אט" },
+  "helptip_newChatBtn": { "message": "הצג לחצן צ'אט חדש בתיבת הצ'אט" },
   "helptip_hiddenFooter": { "message": "ערוך את תחתית האתר" },
   "helptip_hiddenHeader": { "message": "כותרת האתר" },
   "helptip_modeNotifs": { "message": "הצג התראות בעת החלפת מצבים/הגדרות" },

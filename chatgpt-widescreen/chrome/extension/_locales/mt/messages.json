@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Attiva wkoll Wide Screen meta tattiva Full-Window" },
   "helptip_tallerChatbox": { "message": "Espandi ċ-chatbox vertikalment" },
   "helptip_widerChatbox": { "message": "Espandi ċ-chatbox orizzontalment fil-modalità ta' Wide Screen" },
-  "helptip_newChatButton": { "message": "Uri l-buttuna taċ-chat Ġdida fiċ-chatbox" },
+  "helptip_newChatBtn": { "message": "Uri l-buttuna taċ-chat Ġdida fiċ-chatbox" },
   "helptip_hiddenFooter": { "message": "Aħbi l-paġna tal-post" },
   "helptip_hiddenHeader": { "message": "Aħbi l-intestatura tas-sit" },
   "helptip_modeNotifs": { "message": "Uri n-notifiki meta tibdel il-modi/settings" },

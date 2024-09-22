@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Aktifkan juga Layar Lebar saat mengaktifkan Jendela Penuh" },
   "helptip_tallerChatbox": { "message": "Perluas kotak obrolan secara vertikal" },
   "helptip_widerChatbox": { "message": "Perluas kotak obrolan secara horizontal dalam mode Layar Lebar" },
-  "helptip_newChatButton": { "message": "Tampilkan tombol Obrolan Baru di kotak obrolan" },
+  "helptip_newChatBtn": { "message": "Tampilkan tombol Obrolan Baru di kotak obrolan" },
   "helptip_hiddenFooter": { "message": "Sembunyikan footer situs" },
   "helptip_hiddenHeader": { "message": "Sembunyikan header situs" },
   "helptip_modeNotifs": { "message": "Tampilkan pemberitahuan saat mengaktifkan mode/pengaturan" },

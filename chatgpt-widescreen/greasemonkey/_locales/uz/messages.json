@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "To'liq oynani faollashtirganda Keng ekranni ham faollashtiring" },
   "helptip_tallerChatbox": { "message": "Chat qutisini vertikal ravishda kengaytiring" },
   "helptip_widerChatbox": { "message": "Keng ekran rejimida chat qutisini gorizontal ravishda kengaytiring" },
-  "helptip_newChatButton": { "message": "Chat qutisida yangi chat tugmasini ko'rsatish" },
+  "helptip_newChatBtn": { "message": "Chat qutisida yangi chat tugmasini ko'rsatish" },
   "helptip_hiddenFooter": { "message": "Sayt altbilgisini yashirish" },
   "helptip_hiddenHeader": { "message": "Sayt sarlavhasini yashirish" },
   "helptip_modeNotifs": { "message": "Rejimlar/sozlamalarni almashtirishda bildirishnomalarni ko'rsatish" },

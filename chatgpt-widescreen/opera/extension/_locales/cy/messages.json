@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Gweithredu'r Sgrin Lydan hefyd wrth actifadu'r Ffenestr Lawn" },
   "helptip_tallerChatbox": { "message": "Ehangu'r blwch sgwrsio yn fertigol" },
   "helptip_widerChatbox": { "message": "Ehangu'r blwch sgwrsio yn llorweddol yn y modd Sgrin Lydan" },
-  "helptip_newChatButton": { "message": "Dangos botwm Sgwrs Newydd yn y blwch sgwrsio" },
+  "helptip_newChatBtn": { "message": "Dangos botwm Sgwrs Newydd yn y blwch sgwrsio" },
   "helptip_hiddenFooter": { "message": "Cuddio troedyn y safle" },
   "helptip_hiddenHeader": { "message": "Cuddio pennawd y wefan" },
   "helptip_modeNotifs": { "message": "Dangos hysbysiadau wrth toglo moddau/gosodiadau" },

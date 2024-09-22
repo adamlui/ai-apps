@@ -26,7 +26,7 @@
   "helptip_fullerWins": { "message": "Ошондой эле Full-Window жандандырууда Wide Screen жандандыруу" },
   "helptip_tallerChatbox": { "message": "Undo-type" },
   "helptip_widerChatbox": { "message": "Чат кутучасын горизонталдуу түрдө кең экран режиминде кеңейтүү" },
-  "helptip_newChatButton": { "message": "Чат кутучасында жаңы баарлашуу баскычын көрсөтүү" },
+  "helptip_newChatBtn": { "message": "Чат кутучасында жаңы баарлашуу баскычын көрсөтүү" },
   "helptip_hiddenFooter": { "message": "Сайттын бут кийимин жашыруу" },
   "helptip_hiddenHeader": { "message": "Сайттын аталышын жашыруу" },
   "helptip_modeNotifs": { "message": "Режимдерди/параметрлерди алмаштырганда эскертүүлөрдү көрсөтүү" },
