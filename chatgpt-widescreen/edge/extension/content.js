@@ -284,6 +284,17 @@
     const update = {
 
         style: {
+
+            chatbar() {
+                chatbarStyle.innerText = (
+                    site == 'chatgpt' ? ( config[`${site}_widerChatbox`] ? ''
+                        : `main form { width: ${chatbar.nativeWidth}px !important ; margin: auto }` )
+                  : site == 'poe' ? ( !config[`${site}_widerChatbox`] ? ''
+                        : '[class*=footerInner] { width: 100% }' )
+                  : '' )
+                if (site == 'chatgpt') chatbar.tweak() // adjust inner width
+            },
+
             tweaks() {
                 tweaksStyle.innerText = (
                     '.chatgpt-notif { font-family: system-ui !important }' // chatgpt.alert()'s
@@ -298,8 +309,6 @@
             },
 
             wideScreen() {
-
-                // Widen screen elems
                 wideScreenStyle.innerText = (
                     site == 'chatgpt' ? (
                         '.text-base { max-width: 100% !important }' // widen outer container
@@ -315,15 +324,6 @@
                         '[class*="ChatMessagesView"] { width: 100% !important }' // widen outer container
                       + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
                   : '' )
-
-                // Widen/narrow chatbar based on WCB state
-                wideScreenStyle.innerText += (
-                    site == 'chatgpt' ? ( config[`${site}_widerChatbox`] ? ''
-                        : `main form { width: ${chatbar.nativeWidth}px !important ; margin: auto }` )
-                  : site == 'poe' ? ( !config[`${site}_widerChatbox`] ? ''
-                        : '[class*=footerInner] { width: 100% }' )
-                  : '' )
-                if (site == 'chatgpt') chatbar.tweak() // adjust inner width
             }
         },
 
@@ -404,7 +404,7 @@
                 if ((config[`${site}_fullWindow`] && sites[site].hasSidebar) ^ isFullWin()) { supressNotifs() ; toggle.mode('fullWindow') }
                 sync.fullerWin() // sync Fuller Windows
                 update.style.tweaks() // sync TCB/NCB/HH/HF
-                update.style.wideScreen() // sync WCB
+                update.style.chatbar() // sync WCB
                 btns.insert()
             }
 
@@ -530,6 +530,10 @@
     const fullWinStyle = create.style()
     fullWinStyle.id = 'fullWindow-mode' // for sync.mode()
     fullWinStyle.innerText = sites[site].selectors.sidebar + '{ display: none }'
+
+    // Create/append CHATBAR style
+    const chatbarStyle = create.style()
+    update.style.chatbar() ; document.head.append(chatbarStyle)
 
     // Insert BUTTONS
     await settings.load('extensionDisabled')
