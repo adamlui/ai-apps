@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.21.4
+// @version                2024.9.21.5
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -298,7 +298,7 @@
 
     // Init SETTINGS props
     log.debug('Initializing settings properties...')
-    const settingsProps = {
+    Object.assign(app, { settings: {
         proxyAPIenabled: { type: 'toggle', icon: 'sunglasses',
             label: msgs.menuLabel_proxyAPImode || 'Proxy API Mode',
             helptip: msgs.helptip_proxyAPImode || 'Uses a Proxy API for no-login access to AI' },
@@ -328,8 +328,8 @@
             helptip: msgs.helptip_debugMode || 'Show detailed logging in browser console' },
         about: { type: 'modal', icon: 'questionMarkCircle',
             label: `${ msgs.menuLabel_about || 'About' } ${app.name}...` }
-    }
-    log.debug(`Success! settingsProps = ${log.prettifyObj(settingsProps)}`)
+    }})
+    log.debug(`Success! app.settings = ${log.prettifyObj(app.settings)}`)
 
     // Define MENU functions
 
@@ -343,12 +343,12 @@
 
             // Add Proxy API Mode toggle
             const pmLabel = menu.state.symbol[+config.proxyAPIenabled] + ' '
-                          + settingsProps.proxyAPIenabled.label + ' '
+                          + app.settings.proxyAPIenabled.label + ' '
                           + menu.state.separator + menu.state.word[+config.proxyAPIenabled]
             menu.ids.push(GM_registerMenuCommand(pmLabel, toggle.proxyMode))
 
             // Add About entry
-            const aboutLabel = `💡 ${settingsProps.about.label}`
+            const aboutLabel = `💡 ${app.settings.about.label}`
             menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
 
             // Add Settings entry
@@ -512,9 +512,9 @@
 
         // Append notif type icon
         const iconStyles = 'width: 28px ; height: 28px ; position: relative ; top: 3.5px ; margin-left: 11px ;',
-              mode = Object.keys(settingsProps).find(key => settingsProps[key].label.includes(msg.trim()))
+              mode = Object.keys(app.settings).find(key => app.settings[key].label.includes(msg.trim()))
         if (mode && !/(?:pre|suf)fix/.test(mode)) {
-            const modeIcon = icons[settingsProps[mode].icon].create()
+            const modeIcon = icons[app.settings[mode].icon].create()
             modeIcon.style.cssText = iconStyles
                                    + ( /focus|scroll/i.test(mode) ? 'top: 4px' : '' ) // raise some icons
                                    + ( /animation|debug/i.test(mode) ? 'width: 23px ; height: 23px ; margin-top: 3px' : '' ) // shrink some icons
@@ -827,7 +827,7 @@
 
                 // Init settings keys
                 log.debug('Initializing settings keys...')
-                const settingsKeys = Object.keys(settingsProps).filter(key => !(env.browser.isMobile && settingsProps[key].mobile == false))
+                const settingsKeys = Object.keys(app.settings).filter(key => !(env.browser.isMobile && app.settings[key].mobile == false))
                 log.debug(`Success! settingsKeys = ${log.prettifyObj(settingsKeys)}`)
 
                 // Init logo
@@ -860,7 +860,7 @@
 
                 // Create/append setting icons/labels/toggles
                 settingsKeys.forEach((key, idx) => {
-                    const setting = settingsProps[key]
+                    const setting = app.settings[key]
 
                     // Create/append item/label elems
                     const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
@@ -939,7 +939,7 @@
                                 log.caller = 'settings.createAppend()'
                                 log.debug(`Toggling ${settingItem.textContent} ${ key.includes('Disabled') ^ config[key] ? 'OFF' : 'ON' }...`)
                                 settings.save(key, !config[key]) // update config
-                                notify(`${settingsProps[key].label} ${menu.state.word[+key.includes('Disabled') ^ +config[key]]}`)
+                                notify(`${app.settings[key].label} ${menu.state.word[+key.includes('Disabled') ^ +config[key]]}`)
                                 log[key.includes('debug') ? 'info' : 'debug'](`Success! config.${key} = ${config[key]}`)
                             }
                         }
@@ -2065,7 +2065,7 @@
             }
             log.caller = `toggle.animations('${layer}')`
             log.debug(`Success! ${layer.toUpperCase()} animations toggled ${ config[configKey] ? 'OFF' : 'ON' }`)
-            notify(`${settingsProps[layer + 'AnimationsDisabled'].label} ${menu.state.word[+!config[layer + 'AnimationsDisabled']]}`)
+            notify(`${app.settings[layer + 'AnimationsDisabled'].label} ${menu.state.word[+!config[layer + 'AnimationsDisabled']]}`)
         },
 
         btnGlow(state = '') {
@@ -2143,8 +2143,8 @@
                                                      : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!streamingSupported.scriptManager) { // alert userscript manager unsupported, suggest TM/SC
                 log.debug(`Streaming Mode unsupported in ${env.scriptManager}`)
-                const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${settingsProps.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
+                const suggestAlertID = siteAlert(`${app.settings.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${app.settings.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
                         + ( !env.browser.isEdge && !env.browser.isBrave ? // suggest TM for supported browsers
                             ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
                                 : '' )
@@ -2155,8 +2155,8 @@
                 modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
             } else if (!streamingSupported.browser) { // alert TM/browser unsupported, suggest SC
                 log.debug('Streaming Mode unsupported in browser')
-                const suggestAlertID = siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${settingsProps.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
+                const suggestAlertID = siteAlert(`${app.settings.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${app.settings.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
                         + `${ env.browser.isChrome ? 'Chrome' : env.browser.isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
                         + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
                             + `${ msgs.alert_instead || 'instead' }.`
@@ -2165,7 +2165,7 @@
                 modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
             } else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
                 log.debug('Streaming Mode unsupported in OpenAI mode')
-                let msg = `${settingsProps.streamingDisabled.label} `
+                let msg = `${app.settings.streamingDisabled.label} `
                         + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
                         + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
                         + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
@@ -2178,7 +2178,7 @@
             } else { // functional toggle
                 log.debug(`Toggling Streaming Mode ${ config.streamingDisabled ? 'ON' : 'OFF' }`)
                 settings.save('streamingDisabled', !config.streamingDisabled)
-                notify(settingsProps.streamingDisabled.label + ' ' + menu.state.word[+!config.streamingDisabled])
+                notify(app.settings.streamingDisabled.label + ' ' + menu.state.word[+!config.streamingDisabled])
                 log.debug(`Success! config.streamingDisabled = ${config.streamingDisabled}`)
             }
         },
