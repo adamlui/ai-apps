@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.22
+// @version                2024.9.22.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -519,9 +519,9 @@
 
                 // Alert to no update found, nav back
                 log.debug('No update found.')
-                const noUpdateModalID = siteAlert(( app.msgs.alert_upToDate ) + '!', // title
-                    `${ app.name } (v${ currentVer }) ${app.msgs.alert_isUpToDate}!`, // msg
-                        '', '', updateAlertWidth)
+                const noUpdateModalID = siteAlert(`${app.msgs.alert_upToDate} !`, // title
+                    `${app.name} (v${currentVer}) ${app.msgs.alert_isUpToDate}!`, // msg
+                    '', '', updateAlertWidth)
                 const noUpdateModal = document.getElementById(noUpdateModalID).firstChild
                 modals.init(noUpdateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 modals.about.show()
