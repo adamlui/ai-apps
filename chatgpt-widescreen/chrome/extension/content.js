@@ -292,7 +292,6 @@
                   : site == 'poe' ? ( !config[`${site}_widerChatbox`] ? ''
                         : '[class*=footerInner] { width: 100% }' )
                   : '' )
-                if (site == 'chatgpt') chatbar.tweak() // adjust inner width
             },
 
             tweaks() {
@@ -346,6 +345,7 @@
     // Define TOGGLE functions
 
     const toggle = {
+
         mode(mode, state = '') {
             switch (state.toUpperCase()) {
                 case 'ON' : activateMode(mode) ; break
@@ -405,6 +405,7 @@
                 sync.fullerWin() // sync Fuller Windows
                 update.style.tweaks() // sync TCB/NCB/HH/HF
                 update.style.chatbar() // sync WCB
+                if (site == 'chatgpt') chatbar.tweak() // update inner width
                 btns.insert()
             }
 
@@ -426,13 +427,14 @@
             }}
         },
 
-        async mode(mode) { // setting + icon + tooltip
+        async mode(mode) { // setting + icon + tooltip + chatbar
             const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(`${site}_${mode}`, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
             if (mode == 'fullWindow') sync.fullerWin()
             await settings.load(`${site}_notifDisabled`)
+            if (site == 'chatgpt') chatbar.tweak() // update inner width
             if (!config[`${site}_notifDisabled`]) // notify synced state
                 notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition

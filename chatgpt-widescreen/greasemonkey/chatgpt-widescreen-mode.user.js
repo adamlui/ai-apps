@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.6
+// @version             2024.9.22.7
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -780,7 +780,6 @@
                   : site == 'poe' ? ( !config.widerChatbox ? ''
                         : '[class*=footerInner] { width: 100% }' )
                   : '' )
-                if (/chatgpt|openai/.test(site)) chatbar.tweak() // adjust inner width
             },
 
             tweaks() {
@@ -835,6 +834,7 @@
     // Define TOGGLE functions
 
     const toggle = {
+
         mode(mode, state = '') {
             switch (state.toUpperCase()) {
                 case 'ON' : activateMode(mode) ; break
@@ -887,6 +887,7 @@
             sync.fullerWin() // sync FW
             update.style.tweaks() // sync TCB/NCB/HH/HF
             update.style.chatbar() // sync WCB
+            if (/chatgpt|openai/.test(site)) chatbar.tweak() // update inner width
         },
 
         fullerWin() {
@@ -899,12 +900,13 @@
             }}
         },
 
-        mode(mode) { // setting + icon + tooltip
+        mode(mode) { // setting + icon + tooltip + chatbar
             const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
             if (mode == 'fullWindow') sync.fullerWin()
+            if (/chatgpt|openai/.test(site)) chatbar.tweak() // update inner width
             if (!config.notifDisabled) // notify synced state
                 notify(`${ app.msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
