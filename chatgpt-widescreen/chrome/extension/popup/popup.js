@@ -26,7 +26,7 @@
         masterToggle.checked = !config.extensionDisabled ; updateGreyness() })
     masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
-        syncExtension() ; updateGreyness()
+        syncConfig() ; updateGreyness()
     }
 
     // Init sub-toggles
@@ -66,7 +66,7 @@
 
         // Add click-listener to toggle input
         toggleInput.onchange = () => {
-            settings.save(`${site}_${settingKey}`, !config[`${site}_${settingKey}`]) ; syncExtension()
+            settings.save(`${site}_${settingKey}`, !config[`${site}_${settingKey}`]) ; syncConfig()
             settings.load(`${site}_notifDisabled`).then(() => { // show mode notification
                 if (!config[`${site}_notifDisabled`] || /notif/i.test(settingKey)) // ...if enabled or notif-related setting
                     notify(chrome.i18n.getMessage(notifMsgKey) + ' '
@@ -91,9 +91,9 @@
 
     // Define SYNC functions
 
-    async function syncExtension() {
+    async function syncConfig() {
         const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.extension' })
+        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.config' })
     }
     
     function updateGreyness() {

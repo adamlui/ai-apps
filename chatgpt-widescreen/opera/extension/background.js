@@ -6,4 +6,4 @@ chrome.runtime.onInstalled.addListener(details => {
 
 // Sync modes to activated tabs
 chrome.tabs.onActivated.addListener(activeInfo =>
-    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'sync.extension' }))
+    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'sync.config' }))
