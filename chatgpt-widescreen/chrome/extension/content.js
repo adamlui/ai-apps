@@ -8,7 +8,7 @@
     const site = /([^.]+)\.[^.]+$/.exec(location.hostname)[1]
 
     // Import LIBS
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js')),
           { create, cssSelectorize } = await import(chrome.runtime.getURL('lib/dom.js'))
     

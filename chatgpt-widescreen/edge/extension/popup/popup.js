@@ -3,8 +3,8 @@
     const site = /([^.]+)\.[^.]+$/.exec(await new Promise(resolve =>
         chrome.tabs.query({ active: true }, tabs => resolve(new URL(tabs[0].url).hostname))))[1]
 
-    // Import settings-utils.js
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
+    // Import settings.js
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
 
     // Localize labels
     let translationOccurred = false
