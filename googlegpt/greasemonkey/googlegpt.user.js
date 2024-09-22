@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.22.5
+// @version                  2024.9.22.6
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1414,7 +1414,7 @@
                                 log.caller = 'settings.createAppend()'
                                 log.debug(`Toggling ${settingItem.textContent} ${ key.includes('Disabled') ^ config[key] ? 'OFF' : 'ON' }...`)
                                 settings.save(key, !config[key]) // update config
-                                notify(`${app.settings[key].label} ${menu.state.words[+key.includes('Disabled') ^ +config[key]]}`)
+                                notify(`${app.settings[key].label} ${menu.state.words[+(key.includes('Disabled') ^ config[key])]}`)
                                 log[key.includes('debug') ? 'info' : 'debug'](`Success! config.${key} = ${config[key]}`)
                             }
                         }

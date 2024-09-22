@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.22.5
+// @version                2024.9.22.6
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1038,7 +1038,7 @@
                                 log.caller = 'settings.createAppend()'
                                 log.debug(`Toggling ${settingItem.textContent} ${ key.includes('Disabled') ^ config[key] ? 'OFF' : 'ON' }...`)
                                 settings.save(key, !config[key]) // update config
-                                notify(`${app.settings[key].label} ${menu.state.words[+key.includes('Disabled') ^ +config[key]]}`)
+                                notify(`${app.settings[key].label} ${menu.state.words[+(key.includes('Disabled') ^ config[key])]}`)
                                 log[key.includes('debug') ? 'info' : 'debug'](`Success! config.${key} = ${config[key]}`)
                             }
                         }

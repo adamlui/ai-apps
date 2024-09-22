@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.22.5
+// @version               2024.9.22.6
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1226,7 +1226,7 @@
                                 log.caller = 'settings.createAppend()'
                                 log.debug(`Toggling ${settingItem.textContent} ${ key.includes('Disabled') ^ config[key] ? 'OFF' : 'ON' }...`)
                                 settings.save(key, !config[key]) // update config
-                                notify(`${app.settings[key].label} ${menu.state.words[+key.includes('Disabled') ^ +config[key]]}`)
+                                notify(`${app.settings[key].label} ${menu.state.words[+(key.includes('Disabled') ^ config[key])]}`)
                                 log[key.includes('debug') ? 'info' : 'debug'](`Success! config.${key} = ${config[key]}`)
                             }
                         }
