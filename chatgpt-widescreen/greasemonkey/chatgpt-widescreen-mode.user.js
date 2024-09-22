@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.1
+// @version             2024.9.22.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -530,10 +530,9 @@
                         return
                 }}
 
-                // Alert to no update, return to About modal
-                siteAlert(( app.msgs.alert_upToDate ) + '!', // title
-                    `${app.msgs.appName} (v${ currentVer }) ` // msg
-                        + ( app.msgs.alert_isUpToDate ) + '!',
+                // Alert to no update found, nav back
+                siteAlert(`${app.msgs.alert_upToDate}!`, // title
+                    `${app.msgs.appName} (v${currentVer}) ${app.msgs.alert_isUpToDate}!`, // msg
                     '', '', updateAlertWidth
                 )
                 modals.about.show()
