@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.12
+// @version             2024.9.22.13
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -824,12 +824,12 @@
                   iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
             tooltipDiv.innerText = app.msgs['tooltip_' + btnType + (
                 !/full|wide/i.test(btnType) ? '' : (config[btnType] ? 'OFF' : 'ON'))]
-            tooltipDiv.style.right = `${ // h-position
+            tooltipDiv.style.right = `${ // x-pos
                 iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
-                tooltipDiv.style.bottom = ( // v-position
-                    site == 'perplexity' ? ( location.pathname != '/' ? '58px' :
-                        ( !document.querySelector(sites[site].selectors.btns.login) ? 'revert-layer' : '52.5vh' ))
-                                         : '50px' )
+            tooltipDiv.style.bottom = ( // y-pos
+                site == 'perplexity' ? ( location.pathname != '/' ? '58px' :
+                    ( !document.querySelector(sites[site].selectors.btns.login) ? 'revert-layer' : '52.5vh' ))
+                                     : '50px' )
         }
     }
 
@@ -874,7 +874,7 @@
 
         tooltip(event) {
             update.tooltip(event.currentTarget.id.replace(/-btn$/, ''))
-            tooltipDiv.style.opacity = event.type == 'mouseover' ? '1' : '0'
+            tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
         }   
     }
 
