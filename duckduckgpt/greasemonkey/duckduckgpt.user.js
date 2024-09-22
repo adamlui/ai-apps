@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.21.6
+// @version                2024.9.21.7
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -485,6 +485,19 @@
     }})
     log.debug(`Success! app.settings = ${log.prettifyObj(app.settings)}`)
 
+    // Init ALERTS
+    Object.assign(app, { alerts: {
+        waitingResponse:  `${ msgs.alert_waitingFor || 'Waiting for' } ${app.name} ${ msgs.alert_response || 'response' }...`,
+        login:            `${ msgs.alert_login || 'Please login' } @ `,
+        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
+        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
+        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
+        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
+        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
+        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
+        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
+    }})
+
     // Define MENU functions
 
     const menu = {
@@ -616,10 +629,10 @@
         alertP.id = 'ddgpt-alert' ; alertP.className = 'no-user-select'
 
         alerts.forEach((alert, idx) => { // process each alert for display
-            let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
+            let msg = app.alerts[alert] || alert // use string verbatim if not found in app.alerts
             if (idx > 0) msg = ' ' + msg // left-pad 2nd+ alerts
-            if (msg.includes(appAlerts.login)) session.deleteOpenAIcookies()
-            if (msg.includes(appAlerts.waitingResponse)) alertP.classList.add('loading')
+            if (msg.includes(app.alerts.login)) session.deleteOpenAIcookies()
+            if (msg.includes(app.alerts.waitingResponse)) alertP.classList.add('loading')
 
             // Add login link to login msgs
             if (msg.includes('@')) {
@@ -2292,7 +2305,7 @@
                     // Show loading status
                     const replySection = appDiv.querySelector('section')
                     replySection.classList.add('loading', 'no-user-select')
-                    replySection.innerText = appAlerts.waitingResponse
+                    replySection.innerText = app.alerts.waitingResponse
 
                     // Set flags
                     show.reply.src = null ; show.reply.chatbarFocused = false ; show.reply.userInteracted = true
@@ -3131,7 +3144,7 @@
 
                 function handleProcessError(err) { // suggest proxy or try diff API
                     log.debug('Response text', resp.response)
-                    log.error(appAlerts.parseFailed, err)
+                    log.error(app.alerts.parseFailed, err)
                     if (caller.api == 'OpenAI' && caller == get.reply) appAlert('openAInotWorking', 'suggestProxy')
                     else api.tryNew(caller)
                 }
@@ -3486,19 +3499,6 @@
     // Run MAIN routine
 
     log.debug('Registering toolbar menu...') ; menu.register() ; log.debug('Success! Menu registered')
-
-    // Init ALERTS
-    const appAlerts = {
-        waitingResponse:  `${ msgs.alert_waitingFor || 'Waiting for' } ${app.name} ${ msgs.alert_response || 'response' }...`,
-        login:            `${ msgs.alert_login || 'Please login' } @ `,
-        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
-        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
-        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
-        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
-        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
-        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
-        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
-    }
 
     // Create/ID/classify/listenerize DDGPT container
     const appDiv = document.createElement('div') ; appDiv.id = 'ddgpt'
