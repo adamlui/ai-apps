@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Pridáva umelú inteligenciu do nakupovania na Amazone" },
   "menuLabel_proxyAPImode": { "message": "Režim proxy API" },
   "menuLabel_autoFocusChatbar": { "message": "Chatbar s automatickým zaostrovaním" },

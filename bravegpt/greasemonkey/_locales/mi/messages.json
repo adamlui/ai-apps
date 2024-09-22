@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Tāpiri ChatGPT whakautu ki Brave Search sidebar (e whakahaerehia ana e GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Aratau API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Whakautu Auto-Get" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "A' cur freagairtean ChatGPT ris a' bhàr-taobh Brave Search (air a chumail le GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Modh API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Freagairtean fèin-ghnìomhach" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Įtraukia DI į „Amazon“ apsipirkimą" },
   "menuLabel_proxyAPImode": { "message": "Tarpinio serverio API režimas" },
   "menuLabel_autoFocusChatbar": { "message": "Automatinio fokusavimo pokalbių juosta" },

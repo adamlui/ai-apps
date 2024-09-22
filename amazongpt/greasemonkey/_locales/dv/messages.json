@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "އެމެޒޯން ޝޮޕިންގ އަށް އެއައި އިތުރުކުރެއެވެ" },
   "menuLabel_proxyAPImode": { "message": "ޕްރޮކްސީ އެޕީއައި މޯޑް" },
   "menuLabel_autoFocusChatbar": { "message": "އޮޓޯ ފޯކަސް ޗެޓްބާރ އެވެ" },

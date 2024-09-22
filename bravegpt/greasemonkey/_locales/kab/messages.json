@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Isefru d yidles n ChatGPT deg yiched n Brave Search (aql s GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Tanmirt n API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Iderwa d yidles" },

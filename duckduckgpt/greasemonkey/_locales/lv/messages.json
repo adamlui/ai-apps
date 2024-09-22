@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Pievieno ChatGPT atbildes DuckDuckGo sānjoslai (nodrošina GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Starpniekservera API režīms" },
   "menuLabel_autoGetAnswers": { "message": "Automātiski saņemt atbildes" },

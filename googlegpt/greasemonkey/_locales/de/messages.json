@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Fügt KI-Antworten zur Google-Suche hinzu (unterstützt von Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Antworten automatisch abrufen" },
   "menuLabel_autoFocusChatbar": { "message": "Autofokus-Chatbar" },

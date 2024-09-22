@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Ifaka i-AI ekuthengeni kwe-Amazon" },
   "menuLabel_proxyAPImode": { "message": "Imodi ye-API Yombambeli" },
   "menuLabel_autoFocusChatbar": { "message": "I-Auto-Focus Chatbar" },

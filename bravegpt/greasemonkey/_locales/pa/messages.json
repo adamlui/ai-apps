@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Brave Search ਬਾਹੀ ਵਿੱਚ ChatGPT ਜਵਾਬ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ (GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ!)" },
   "menuLabel_proxyAPImode": { "message": "ਪਰਾਕਸੀ API ਮੋਡ" },
   "menuLabel_autoGetAnswers": { "message": "ਆਟੋ-ਗੇਟ ਜਵਾਬ" },

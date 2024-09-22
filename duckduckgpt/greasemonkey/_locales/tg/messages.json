@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Ба панели паҳлӯии DuckDuckGo ҷавобҳои ChatGPT-ро илова мекунад (бо GPT-4o кор мекунад!)" },
   "menuLabel_proxyAPImode": { "message": "Усули API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Ҷавоби худкор" },

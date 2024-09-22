@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Menambah AI untuk membeli-belah di Amazon" },
   "menuLabel_proxyAPImode": { "message": "Mod api Proksi" },
   "menuLabel_autoFocusChatbar": { "message": "Bar Sembang Fokus Automatik" },

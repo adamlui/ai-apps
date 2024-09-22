@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Yn ychwanegu atebion AI at Google Search (wedi'i bweru gan Google Gemma + GPT -4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Atebion Auto - GET" },
   "menuLabel_autoFocusChatbar": { "message": "Bar Sgwrs Awtomatig - Ffocws" },

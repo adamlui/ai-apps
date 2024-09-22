@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Προσθέτει τεχνητή νοημοσύνη στις αγορές του Amazon" },
   "menuLabel_proxyAPImode": { "message": "Λειτουργία API διακομιστή μεσολάβησης" },
   "menuLabel_autoFocusChatbar": { "message": "Γραμμή συνομιλίας αυτόματης εστίασης" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Addatum a Amazonium shopping" },
   "menuLabel_proxyAPImode": { "message": "Mode API Proxy" },
   "menuLabel_autoFocusChatbar": { "message": "Autocus Chatbar" },

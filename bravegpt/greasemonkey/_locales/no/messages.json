@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Legger ChatGPT-svar til Brave Search-sidefeltet (drevet av GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API-modus" },
   "menuLabel_autoGetAnswers": { "message": "Få svar automatisk" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "అమెజాన్ షాపింగ్ ‌ కు AIని జోడిస్తుంది" },
   "menuLabel_proxyAPImode": { "message": "ప్రాక్సీ API మోడ్" },
   "menuLabel_autoFocusChatbar": { "message": "ఆటో-ఫోకస్ చాట్ ‌ బార్" },

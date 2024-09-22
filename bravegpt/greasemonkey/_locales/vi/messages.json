@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Thêm câu trả lời của ChatGPT vào thanh bên Brave Search (được cung cấp bởi GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Chế độ API proxy" },
   "menuLabel_autoGetAnswers": { "message": "Tự động nhận câu trả lời" },

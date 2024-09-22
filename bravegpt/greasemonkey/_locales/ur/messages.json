@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "ChatGPT جوابات کو Brave Search کی سائیڈبار میں شامل کرتا ہے (GPT-4o! کی طاقت سے)" },
   "menuLabel_proxyAPImode": { "message": "پراکسی API موڈ" },
   "menuLabel_autoGetAnswers": { "message": "خودکار جوابات حاصل کریں" },

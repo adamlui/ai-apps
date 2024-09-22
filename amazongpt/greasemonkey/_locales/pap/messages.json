@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Agregá una foto_Promocioná Amazon Shop" },
   "menuLabel_proxyAPImode": { "message": "Propiedad Api Moda" },
   "menuLabel_autoFocusChatbar": { "message": "Auto Trader Chatbar" },

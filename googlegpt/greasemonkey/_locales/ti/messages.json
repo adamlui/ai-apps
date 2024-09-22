@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "መልሲ AI ንGoogle Search (ብGoogle Gemma + GPT-4o ዝተሰርሐ!)" },
   "menuLabel_autoGetAnswers": { "message": "ናይ ኣውቶ-ጀት መልሲ" },
   "menuLabel_autoFocusChatbar": { "message": "ናይ ኣውቶ-ፎኩስ ቻትባር" },

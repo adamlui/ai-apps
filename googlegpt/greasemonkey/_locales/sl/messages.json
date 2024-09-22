@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Dodaja odgovore umetne inteligence v Google Iskanje (poganja Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Samodejno pridobi odgovore" },
   "menuLabel_autoFocusChatbar": { "message": "Vrstica za klepet s samodejnim ostrenjem" },

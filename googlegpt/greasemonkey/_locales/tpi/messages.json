@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Add AI answers to Google Search (powered by Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Ol bekim bilong ol askim" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },

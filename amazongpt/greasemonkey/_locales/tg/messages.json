@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "ADD AI ба хариди Amazon" },
   "menuLabel_proxyAPImode": { "message": "Усули API- и прокси" },
   "menuLabel_autoFocusChatbar": { "message": "Пайраҳаи чат бо фокуси худкор" },

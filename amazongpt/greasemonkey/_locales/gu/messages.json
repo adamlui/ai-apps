@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "એમેઝોન શોપિંગમાં AI ઉમેરે છે" },
   "menuLabel_proxyAPImode": { "message": "પ્રોક્સી API મોડ" },
   "menuLabel_autoFocusChatbar": { "message": "આપમેળે ફોકસ ચેટબાર" },

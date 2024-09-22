@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "ایمیزون شاپنگ میں AI کا اضافہ کرتا ہے" },
   "menuLabel_proxyAPImode": { "message": "پراکسی API موڈ" },
   "menuLabel_autoFocusChatbar": { "message": "آٹو فوکس چیٹ بار" },

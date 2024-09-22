@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "将 ChatGPT 答案添加到 DuckDuckGo 侧边栏 (由 GPT-4o 提供支持!)" },
   "menuLabel_proxyAPImode": { "message": "代理 API 模式" },
   "menuLabel_autoGetAnswers": { "message": "自动获取答案" },

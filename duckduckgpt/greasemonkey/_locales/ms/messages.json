@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Menambah jawapan ChatGPT ke bar sisi DuckDuckGo (dikuasakan oleh GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Mod api Proksi" },
   "menuLabel_autoGetAnswers": { "message": "Dapatkan Jawapan Secara Automatik" },

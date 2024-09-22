@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Add ChatGPT answers to Brave Search sidebar (so GPT-4o ayeke sara kua na ni!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mode na na na" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Réponses" },

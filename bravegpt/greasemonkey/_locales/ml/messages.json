@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "ധൈര്യമുള്ള തിരയൽ സൈഡ്‌ബാറിലേക്ക് ChatGPT ഉത്തരങ്ങൾ ചേർക്കുന്നു (GPT-4o നാൽ നയിക്കപ്പെടുന്നു!)" },
   "menuLabel_proxyAPImode": { "message": "പ്രോക്സി API മോഡ്" },
   "menuLabel_autoGetAnswers": { "message": "യാന്ത്രികമായി ലഭിക്കുന്ന ഉത്തരങ്ങൾ" },

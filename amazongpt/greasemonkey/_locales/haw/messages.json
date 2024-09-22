@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Hoʻohui AI i ka kūʻai ʻana ma Amazon" },
   "menuLabel_proxyAPImode": { "message": "Kūlana API Kūlana" },
   "menuLabel_autoFocusChatbar": { "message": "Kūkākūkā Kūkākūkā-Aunoa" },

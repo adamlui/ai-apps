@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Pievieno ChatGPT atbildes Brave Search sānjoslai (nodrošina GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Starpniekservera API režīms" },
   "menuLabel_autoGetAnswers": { "message": "Automātiski saņemt atbildes" },

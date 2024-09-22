@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Thêm câu trả lời AI vào Tìm kiếm của Google (được hỗ trợ bởi Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Tự động nhận câu trả lời" },
   "menuLabel_autoFocusChatbar": { "message": "Tự động lấy nét Chatbar" },

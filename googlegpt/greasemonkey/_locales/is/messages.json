@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Bætir svörum gervigreindar við Google leit (keyrð af Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Sjálfvirk svör" },
   "menuLabel_autoFocusChatbar": { "message": "Spjallslá með sjálfvirkum fókus" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "DuckDuckGo سائڈبار میں ChatGPT جوابات شامل کرتا ہے (GPT-4o کے ذریعہ تقویت یافتہ!)" },
   "menuLabel_proxyAPImode": { "message": "پراکسی API موڈ" },
   "menuLabel_autoGetAnswers": { "message": "خودکار جوابات حاصل کریں" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Iżżid tweġibiet tal-IA ma' Google Search (imħaddma minn Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Ikseb Tweġibiet Awtomatiċi" },
   "menuLabel_autoFocusChatbar": { "message": "Fokus Awtomatiku fuq iċ-chatbar" },

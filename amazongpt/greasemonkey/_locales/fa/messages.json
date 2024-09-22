@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "هوش مصنوعی را به خرید آمازون اضافه می کند" },
   "menuLabel_proxyAPImode": { "message": "حالت API پروکسی" },
   "menuLabel_autoFocusChatbar": { "message": "نوار چت فوکوس خودکار" },

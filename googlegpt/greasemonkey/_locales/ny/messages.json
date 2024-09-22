@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Imawonjezera mayankho a AI ku Google Search (yoyendetsedwa ndi Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Mayankho" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },

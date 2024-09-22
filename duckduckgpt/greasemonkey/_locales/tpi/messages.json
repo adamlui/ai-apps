@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Ol i save putim ol bekim bilong ChatGPT long DuckDuckGo sidebar (GPT-4o i save mekim wok long en!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mode" },
   "menuLabel_autoGetAnswers": { "message": "Ol bekim bilong ol askim" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Anowedzera ChatGPT mhinduro DuckDuckGo sidebar (dzinofambiswa ne GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Kuwana Mhinduro" },

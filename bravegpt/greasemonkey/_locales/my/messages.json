@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "ChatGPT အဖြေနဲ့ Brave Search ဘေးဘားတွင် ပေါင်းထည့်ပါ (GPT-4o မှ အားဖြည့်ထားသည်!)" },
   "menuLabel_proxyAPImode": { "message": "ပရောက်စီ API မုဒ်" },
   "menuLabel_autoGetAnswers": { "message": "အလိုအလျောက်-အဖြေများရယူပါ" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Ավելացնում է ChatGPT պատասխանները Brave Search կողմից աջ կողմանց (GPT-4o! զինվորված)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API ռեժիմ" },
   "menuLabel_autoGetAnswers": { "message": "Ավտոմատ պատասխաններ" },

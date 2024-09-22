@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Adaugă răspunsuri ChatGPT la bara laterală DuckDuckGo (alimentat de GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Mod API proxy" },
   "menuLabel_autoGetAnswers": { "message": "Obținere automată răspunsuri" },

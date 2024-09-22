@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Amazon 쇼핑에 AI 추가" },
   "menuLabel_proxyAPImode": { "message": "프록시 API 모드" },
   "menuLabel_autoFocusChatbar": { "message": "자동 초점 채팅창" },

@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.22.1
+// @version               2024.9.22.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -392,7 +392,6 @@
     log.debug('Initializing app messages...')
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
     app.msgs = {
-        appName: app.name,
         appDesc: 'Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4o!)',
         menuLabel_proxyAPImode: 'Proxy API Mode',
         menuLabel_autoGetAnswers: 'Auto-Get Answers',

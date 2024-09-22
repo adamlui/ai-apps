@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Brave Search sidebar-д ChatGPT-ийн хариултыг нэмнэ (GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API горим" },
   "menuLabel_autoGetAnswers": { "message": "Авто-Орлогийн хариултууд" },

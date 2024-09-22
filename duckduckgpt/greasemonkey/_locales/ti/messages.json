@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "መልሲ ChatGPT ናብ DuckDuckGo sidebar (ብ GPT-4o ዝተሰርሐ) ኣክሎ" },
   "menuLabel_proxyAPImode": { "message": "ፕሮክሲ ኤፒአይ ሞድ" },
   "menuLabel_autoGetAnswers": { "message": "ናይ ኣውቶ-ጀት መልሲ" },

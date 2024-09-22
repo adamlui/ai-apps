@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Lägger till AI-svar i Google Sök (drivs av Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Få svar automatiskt" },
   "menuLabel_autoFocusChatbar": { "message": "Chatbar med autofokus" },

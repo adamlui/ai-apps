@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Axtarışa AI cavabları əlavə edir (Google Gemma + GPT-4o tərəfindən dəstəklənir!)" },
   "menuLabel_autoGetAnswers": { "message": "Avtomatik verilən cavablar" },
   "menuLabel_autoFocusChatbar": { "message": "Avtomatik Fokus Çatbarı" },

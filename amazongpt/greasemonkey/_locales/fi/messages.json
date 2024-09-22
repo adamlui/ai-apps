@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Lisää tekoälyä Amazon-ostoksiin" },
   "menuLabel_proxyAPImode": { "message": "Välityspalvelimen API-tila" },
   "menuLabel_autoFocusChatbar": { "message": "Automaattitarkennuksen keskustelupalkki" },

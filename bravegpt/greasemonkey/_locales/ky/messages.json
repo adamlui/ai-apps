@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Кошуу ChatGPT Brave Издөө капталында жооп (GPT-4o менен иштейт!)" },
   "menuLabel_proxyAPImode": { "message": "Прокси API режими" },
   "menuLabel_autoGetAnswers": { "message": "Жоопторду автоматтык түрдө алуу" },

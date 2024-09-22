@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Προσθέτει απαντήσεις ChatGPT στην πλαϊνή μπάρα Γενναίας Αναζήτησης (τροφοδοτείται από GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Λειτουργία API διακομιστή μεσολάβησης" },
   "menuLabel_autoGetAnswers": { "message": "Αυτόματη λήψη απαντήσεων" },

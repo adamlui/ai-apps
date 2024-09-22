@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "အမေဇုံစျေးဝယ်ရန် AI ကိုထည့်သွင်းသည်" },
   "menuLabel_proxyAPImode": { "message": "Proxy API ကို Mode ကို" },
   "menuLabel_autoFocusChatbar": { "message": "အလိုအလျောက်အာရုံစူးစိုက်မှု စကားပြောဘား" },

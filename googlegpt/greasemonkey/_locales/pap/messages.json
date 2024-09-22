@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Agregá una foto_Promocioná Google Gemma + GPT-4o" },
   "menuLabel_autoGetAnswers": { "message": "Solucion Auto-Get" },
   "menuLabel_autoFocusChatbar": { "message": "Auto Trader Chatbar" },

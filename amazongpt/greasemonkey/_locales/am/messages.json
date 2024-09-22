@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "በአማዞን ግዢ ላይ AI ን ያክሉ" },
   "menuLabel_proxyAPImode": { "message": "Proxy ኤፒአይ ሁነታ" },
   "menuLabel_autoFocusChatbar": { "message": "ራስ-ፎኩስ ቻትባር" },

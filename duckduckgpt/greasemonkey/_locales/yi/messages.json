@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "לייגט ChatGPT ענטפֿערס צו DuckDuckGo סיידבאַר (פּאַוערד דורך GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "פּראָקסי אַפּי מאָדע" },
   "menuLabel_autoGetAnswers": { "message": "אַוטאָ-באַקומען ענטפֿערס" },

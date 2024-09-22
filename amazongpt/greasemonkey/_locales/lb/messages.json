@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Füügt AI op Amazon Shopping bäi" },
   "menuLabel_proxyAPImode": { "message": "Proxy-API-Modus" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },

@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.22.1
+// @version                  2024.9.22.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -586,7 +586,6 @@
     log.debug('Initializing app messages...')
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
     app.msgs = {
-        appName: app.name,
         appDesc: 'Adds AI answers to Google Search (powered by Google Gemma + GPT-4o!)',
         menuLabel_autoGetAnswers: 'Auto-Get Answers',
         menuLabel_autoFocusChatbar: 'Auto-Focus Chatbar',

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Inowedzera AI mhinduro kuGoogle Search (inofambiswa neGoogle Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Kuwana Mhinduro" },
   "menuLabel_autoFocusChatbar": { "message": "Taura nesu" },

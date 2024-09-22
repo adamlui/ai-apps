@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "ChatGPT އަށްނަންވެސް Brave Search ގެ ސައިޒްފުޅުމުގެ ކެކު (ގަބައި GPT-4o! އަށް)" },
   "menuLabel_proxyAPImode": { "message": "ޕްރޮކްސީ އެޕީއައި މޯޑެވެ" },
   "menuLabel_autoGetAnswers": { "message": "އޮޓޯ-ގެޓް ޖަވާބު" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "ཨ་མ་སཱོན་གི་ཚོང་ཁང་" },
   "menuLabel_proxyAPImode": { "message": "པོརསི་ཨེཔི་གི་རྣམ་ཐར།" },
   "menuLabel_autoFocusChatbar": { "message": "རང་མགོ་རང་འདྲོངས་ chatbar" },

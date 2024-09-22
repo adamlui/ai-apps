@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "DuckDuckGo பக்கப்பட்டியில் ChatGPT பதில்களைச் சேர்க்கிறது (GPT-4o ஆல் இயக்கப்படுகிறது!)" },
   "menuLabel_proxyAPImode": { "message": "ப்ராக்ஸி API பயன்முறை" },
   "menuLabel_autoGetAnswers": { "message": "தானாகப் பெறப்பட்ட பதில்கள்" },

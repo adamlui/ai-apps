@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Menambahkan jawaban ChatGPT ke bilah sisi Brave Search (didukung oleh GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Mode api Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Dapatkan Jawaban Otomatis" },

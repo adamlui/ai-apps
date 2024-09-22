@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Awkwafina Awkwafina Amazon Shop" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },

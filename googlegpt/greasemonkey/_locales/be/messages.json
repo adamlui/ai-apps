@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Дадае адказы на штучны інтэлект у пошук Google (на базе Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Аўтаматычнае атрыманне адказаў" },
   "menuLabel_autoFocusChatbar": { "message": "Аўтаматычная фокусная панель чата" },

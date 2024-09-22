@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Lisab ChatGPT vastused Brave Searchi külgribale (toetab GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Puhverserveri API-režiim" },
   "menuLabel_autoGetAnswers": { "message": "Automaatne vastuste hankimine" },

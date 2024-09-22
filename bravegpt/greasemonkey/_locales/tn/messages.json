@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "E tsenya dikarabo tsa ChatGPT go Brave Search sidebar (e tsamaisiwa ke GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_autoGetAnswers": { "message": "Go Bona Dikarabo ka Tsela e e Itshwarang" },

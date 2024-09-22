@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Yuzuru Hanyu Amazon Buy" },
   "menuLabel_proxyAPImode": { "message": "Ubwoko" },
   "menuLabel_autoFocusChatbar": { "message": "Umwanyabikoresho" },

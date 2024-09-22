@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Ამაზონის საყიდლებზე AI ‑ ს დამატება" },
   "menuLabel_proxyAPImode": { "message": "Პროქსი API რეჟიმი" },
   "menuLabel_autoFocusChatbar": { "message": "Ავტომატურად ფოკუსირებული ჩატების ზოლი" },

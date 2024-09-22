@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Amazon alışverişine yapay zeka ekler" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Modu" },
   "menuLabel_autoFocusChatbar": { "message": "Otomatik Odaklanma Sohbet Çubuğu" },

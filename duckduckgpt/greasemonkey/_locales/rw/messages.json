@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Yongeraho ibisubizo bya ChatGPT ku ruhande rwa DuckDuckGo (bikoresha GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Uburyo bwa Proxy API" },
   "menuLabel_autoGetAnswers": { "message": "Kubona Ibisubizo byikora" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "ChatGPT جوابونه اضافه کول Brave Search په پهړه کې (GPT-4o! لخوا)" },
   "menuLabel_proxyAPImode": { "message": "د پراکسي API حالت" },
   "menuLabel_autoGetAnswers": { "message": "په اوتومات ډول ځوابونه ورکړئ" },

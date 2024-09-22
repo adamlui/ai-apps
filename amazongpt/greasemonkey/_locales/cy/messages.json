@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Add a Store to Amazon Store" },
   "menuLabel_proxyAPImode": { "message": "Modd API Dirprwy" },
   "menuLabel_autoFocusChatbar": { "message": "Bar Sgwrs Awtomatig - Ffocws" },

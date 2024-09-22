@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Faaopoopo ChatGPT tali i DuckDuckGo sidebar (faagaoioia e GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_autoGetAnswers": { "message": "Tali Auto-Get" },

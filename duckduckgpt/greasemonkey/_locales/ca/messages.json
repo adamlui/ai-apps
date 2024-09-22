@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Afegeix les respostes de ChatGPT a la barra lateral de DuckDuckGo (amb tecnologia GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Mode API de servidor intermediari" },
   "menuLabel_autoGetAnswers": { "message": "Obtenir respostes automàticament" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Ol i save putim ol bekim bilong ChatGPT long Brave Search sidebar (GPT-4o i save mekim wok long en!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modus" },
   "menuLabel_autoGetAnswers": { "message": "Ol bekim bilong ol askim" },

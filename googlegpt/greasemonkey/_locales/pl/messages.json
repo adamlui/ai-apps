@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Dodaje odpowiedzi sztucznej inteligencji do wyszukiwarki Google (obsługiwanej przez Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Automatyczne uzyskiwanie odpowiedzi" },
   "menuLabel_autoFocusChatbar": { "message": "Automatycznie ustawiaj ostrość na czacie" },

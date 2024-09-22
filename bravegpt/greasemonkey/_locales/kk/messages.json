@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Батыл іздеу бүйірлік тақтасына ChatGPT жауаптарын қосады (GPT-4o арқылы жұмыс істейді!)" },
   "menuLabel_proxyAPImode": { "message": "Прокси API режимі" },
   "menuLabel_autoGetAnswers": { "message": "Автоматты түрде орнату жауаптары" },

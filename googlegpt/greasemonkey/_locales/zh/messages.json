@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "将 AI 答案添加到 Google 搜索（由 Google Gemma + GPT-4o 提供支持！）" },
   "menuLabel_autoGetAnswers": { "message": "自动获取答案" },
   "menuLabel_autoFocusChatbar": { "message": "自动对焦聊天栏" },

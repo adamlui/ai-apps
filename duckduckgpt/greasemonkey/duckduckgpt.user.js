@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.22.1
+// @version                2024.9.22.2
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -402,7 +402,6 @@
     log.debug('Initializing app messages...')
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
     app.msgs = {
-        appName: app.name,
         appDesc: 'Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4o!)',
         menuLabel_proxyAPImode: 'Proxy API Mode',
         menuLabel_autoGetAnswers: 'Auto-Get Answers',

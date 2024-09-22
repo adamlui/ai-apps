@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Lisab ChatGPT vastused DuckDuckGo külgribale (powered by GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Puhverserveri API-režiim" },
   "menuLabel_autoGetAnswers": { "message": "Automaatne vastuste hankimine" },

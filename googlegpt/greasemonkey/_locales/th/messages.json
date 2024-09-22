@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "เพิ่มคำตอบ AI ใน Google Search (ขับเคลื่อนโดย Google Gemma + GPT -4o!)" },
   "menuLabel_autoGetAnswers": { "message": "รับคำตอบอัตโนมัติ" },
   "menuLabel_autoFocusChatbar": { "message": "แถบสนทนาโฟกัสอัตโนมัติ" },

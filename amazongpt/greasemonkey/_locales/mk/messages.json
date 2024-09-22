@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Додава вештачка интелигенција во купувањето на Амазон" },
   "menuLabel_proxyAPImode": { "message": "Режим на прокси API" },
   "menuLabel_autoFocusChatbar": { "message": "Лента за разговор за автоматско фокусирање" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "ເພີ່ມຄໍາຕອບ ChatGPT ກັບແຖບຂ້າງ DuckDuckGo (ຂັບເຄື່ອນໂດຍ GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "ໂໝດໂປຣແກຣມ API" },
   "menuLabel_autoGetAnswers": { "message": "ຄໍາຕອບອັດຕະໂນມັດ" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Ajoute repons ChatGPT nan bar bò DuckDuckGo (patrone pa GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Mòd API proxy" },
   "menuLabel_autoGetAnswers": { "message": "Repons Auto-Get" },

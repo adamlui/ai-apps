@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Żid l-AI max-xiri ta' Amazon" },
   "menuLabel_proxyAPImode": { "message": "Modalità API Proxy" },
   "menuLabel_autoFocusChatbar": { "message": "Fokus Awtomatiku fuq iċ-chatbar" },

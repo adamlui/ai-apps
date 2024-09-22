@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Lisää ChatGPT-vastaukset Brave Search -sivupalkkiin (powered by GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Välityspalvelimen API-tila" },
   "menuLabel_autoGetAnswers": { "message": "Automaattinen vastausten haku" },

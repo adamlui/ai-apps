@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Menambahkan jawaban AI ke Google Penelusuran (didukung oleh Google Gemma + GPT -4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Dapatkan Jawaban Otomatis" },
   "menuLabel_autoFocusChatbar": { "message": "Bilah Obrolan Fokus Otomatis" },

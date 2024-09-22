@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Įtraukia DI atsakymus į Google paiešką (sukurta Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Automatiškai gauti atsakymus" },
   "menuLabel_autoFocusChatbar": { "message": "Automatinio fokusavimo pokalbių juosta" },

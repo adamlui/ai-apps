@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "يضيف إجابات الذكاء الاصطناعي إلى بحث Google (مدعوم من Google Gemma + GPT -4o!)" },
   "menuLabel_autoGetAnswers": { "message": "الحصول على الإجابات تلقائيًا" },
   "menuLabel_autoFocusChatbar": { "message": "شريط دردشة التركيز التلقائي" },

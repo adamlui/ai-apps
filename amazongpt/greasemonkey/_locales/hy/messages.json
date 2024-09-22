@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Ավելացնում է AI - ն Amazon - ի գնումներին" },
   "menuLabel_proxyAPImode": { "message": "Proxy API ռեժիմ" },
   "menuLabel_autoFocusChatbar": { "message": "Ավտոմատ կենտրոնացման զրույցի վահանակ" },

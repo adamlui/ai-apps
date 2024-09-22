@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Bætir gervigreind við Amazon innkaup" },
   "menuLabel_proxyAPImode": { "message": "Proxy API hamur" },
   "menuLabel_autoFocusChatbar": { "message": "Spjallslá með sjálfvirkum fókus" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Doda odgovore ChatGPT v stransko vrstico DuckDuckGo (poganja GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API način" },
   "menuLabel_autoGetAnswers": { "message": "Samodejno pridobi odgovore" },

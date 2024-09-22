@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Tāpirihia nga whakautu AI ki a Google Search (e whakahaerehia ana e Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Whakautu Auto-Get" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },

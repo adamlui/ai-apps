@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google തിരയലിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു (Google Gemma + GPT-4o നാൽ നയിക്കപ്പെടുന്നു!)" },
   "menuLabel_autoGetAnswers": { "message": "യാന്ത്രികമായി ലഭിക്കുന്ന ഉത്തരങ്ങൾ" },
   "menuLabel_autoFocusChatbar": { "message": "ഓട്ടോ-ഫോക്കസ് ചാറ്റ്ബാർ" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Додава AI одговори на Google Search (овозможено од Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Автоматско добивање одговори" },
   "menuLabel_autoFocusChatbar": { "message": "Лента за разговор за автоматско фокусирање" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Nagdugang mga tubag sa AI sa Google Search (gipadagan sa Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Mga Tubag sa Auto-Get" },
   "menuLabel_autoFocusChatbar": { "message": "Awtomatikong Pag-focus sa Chatbar" },

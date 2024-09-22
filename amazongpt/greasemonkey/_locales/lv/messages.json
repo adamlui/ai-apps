@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Pievieno AI Amazon iepirkšanās vietnei" },
   "menuLabel_proxyAPImode": { "message": "Starpniekservera API režīms" },
   "menuLabel_autoFocusChatbar": { "message": "Automātiskās fokusēšanas tērzēšanas josla" },

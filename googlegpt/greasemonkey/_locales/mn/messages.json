@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google-ийн хайлтанд AI-ийг нэмнэ (Google Gemma + GPT-4o зайтай!)" },
   "menuLabel_autoGetAnswers": { "message": "Авто-Орлогийн хариултууд" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },

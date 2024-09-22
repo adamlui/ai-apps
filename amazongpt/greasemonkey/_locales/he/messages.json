@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "מוסיף בינה מלאכותית לקניות באמזון" },
   "menuLabel_proxyAPImode": { "message": "מצב API של שרת Proxy" },
   "menuLabel_autoFocusChatbar": { "message": "פוקוס אוטומטי של סרגל הצ'אט" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Żid it-tweġibiet taċ-ChatGPT mal-ġenb tat-tiftix kuraġġuż (imħaddem minn GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Modalità API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Ikseb Tweġibiet Awtomatiċi" },

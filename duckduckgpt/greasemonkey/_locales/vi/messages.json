@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Thêm câu trả lời ChatGPT vào thanh bên DuckDuckGo (được cung cấp bởi GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Chế độ API proxy" },
   "menuLabel_autoGetAnswers": { "message": "Tự động nhận câu trả lời" },

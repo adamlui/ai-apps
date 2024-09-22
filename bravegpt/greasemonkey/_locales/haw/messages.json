@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Hoʻohui i nā pane ChatGPT i ka ʻaoʻao ʻaoʻao Brave Search (hoʻohana ʻia e GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Kūlana API Kūlana" },
   "menuLabel_autoGetAnswers": { "message": "Loaʻa i nā pane" },

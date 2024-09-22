@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Додава ChatGPT одговори на страничната лента на DuckDuckGo (напојува со GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Режим на прокси API" },
   "menuLabel_autoGetAnswers": { "message": "Автоматско добивање одговори" },

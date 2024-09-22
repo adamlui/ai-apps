@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "AI erantzunak gehitzen ditu Google Bilaketa-n (Google Gemma + GPT-4o-k bultzatuta!)" },
   "menuLabel_autoGetAnswers": { "message": "Lortu erantzunak automatikoki" },
   "menuLabel_autoFocusChatbar": { "message": "Foku automatikoko txat-barra" },

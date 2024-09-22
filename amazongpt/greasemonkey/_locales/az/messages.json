@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Amazon alış-verişinə AI əlavə edir" },
   "menuLabel_proxyAPImode": { "message": "Proksi API Rejimi" },
   "menuLabel_autoFocusChatbar": { "message": "Avtomatik Fokus Çatbarı" },

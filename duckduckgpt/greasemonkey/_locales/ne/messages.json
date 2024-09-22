@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "DuckDuckGo साइडबारमा ChatGPT उत्तरहरू थप्दछ (GPT-4o द्वारा संचालित!)" },
   "menuLabel_proxyAPImode": { "message": "प्रोक्सी API मोड" },
   "menuLabel_autoGetAnswers": { "message": "स्वतः - उत्तरहरू प्राप्त गर्नुहोस्" },

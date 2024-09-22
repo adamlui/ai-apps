@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Ajoute repons ChatGPT nan ankadre rechèch brav (patrone pa GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Mòd API proxy" },
   "menuLabel_autoGetAnswers": { "message": "Repons Auto-Get" },

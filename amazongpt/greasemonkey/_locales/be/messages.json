@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Дадае штучны інтэлект у пакупкі Amazon" },
   "menuLabel_proxyAPImode": { "message": "Рэжым API-проксі" },
   "menuLabel_autoFocusChatbar": { "message": "Аўтаматычная фокусная панель чата" },

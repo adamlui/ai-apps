@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "ເພີ່ມ AI ເຂົ້າໃນການຊື້ເຄື່ອງ Amazon" },
   "menuLabel_proxyAPImode": { "message": "ໂໝດໂປຣແກຣມ API" },
   "menuLabel_autoFocusChatbar": { "message": "ແຖບສົນທະນາໂຟກັສອັດຕະໂນມັດ" },

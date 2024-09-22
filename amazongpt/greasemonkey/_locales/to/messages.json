@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Tanaki atu ʻa e ʻi ai ki he fakatau ʻAmasoni" },
   "menuLabel_proxyAPImode": { "message": "API Mode fakafofonga" },
   "menuLabel_autoFocusChatbar": { "message": "Tokanga taha ki he meʻalele Chatbar" },

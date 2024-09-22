@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Dodaje veštačku inteligenciju u kupovinu na Ama" },
   "menuLabel_proxyAPImode": { "message": "API režim proksija" },
   "menuLabel_autoFocusChatbar": { "message": "Traka za ćaskanje sa automatskim fokusiranjem" },

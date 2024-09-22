@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Amazon дүкөнгө AI кошот" },
   "menuLabel_proxyAPImode": { "message": "Прокси API режими" },
   "menuLabel_autoFocusChatbar": { "message": "Undo-type" },

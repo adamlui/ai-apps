@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Ychwanegu atebion ChatGPT i bar ochr Brave Search (powered by GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Modd API Dirprwy" },
   "menuLabel_autoGetAnswers": { "message": "Atebion Auto - GET" },

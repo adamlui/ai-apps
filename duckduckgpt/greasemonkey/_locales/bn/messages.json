@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "DuckDuckGo সাইডবারে ChatGPT উত্তর যোগ করে (GPT-4o দ্বারা চালিত!)" },
   "menuLabel_proxyAPImode": { "message": "প্রক্সি API মোড" },
   "menuLabel_autoGetAnswers": { "message": "স্বয়ংক্রিয়ভাবে উত্তর পান" },

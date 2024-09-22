@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "AI gehitzen du Amazon erosketetan" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modua" },
   "menuLabel_autoFocusChatbar": { "message": "Foku automatikoko txat-barra" },

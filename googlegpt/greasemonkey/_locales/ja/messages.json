@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google 検索に AI の回答を追加（ Google Gemma + GPT-4o 搭載！）" },
   "menuLabel_autoGetAnswers": { "message": "回答を自動取得" },
   "menuLabel_autoFocusChatbar": { "message": "オートフォーカスチャットバー" },

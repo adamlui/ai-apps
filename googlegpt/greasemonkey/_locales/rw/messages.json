@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Yongeraho ibisubizo bya AI ku ruhande rwa Google Search (bikoresha Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Kubona Ibisubizo byikora" },
   "menuLabel_autoFocusChatbar": { "message": "Kwitaho Chatbar byikora" },

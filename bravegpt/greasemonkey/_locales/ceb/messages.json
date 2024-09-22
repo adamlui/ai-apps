@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Nagdugang mga tubag sa ChatGPT sa Brave Search sidebar (gipadagan sa GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Modo sa Proxy API" },
   "menuLabel_autoGetAnswers": { "message": "Mga Tubag sa Auto-Get" },

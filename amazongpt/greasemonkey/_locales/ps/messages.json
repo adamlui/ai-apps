@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "د ایمیزون پیرود ته AI اضافه کوي" },
   "menuLabel_proxyAPImode": { "message": "د پراکسي API حالت" },
   "menuLabel_autoFocusChatbar": { "message": "اتومات فوکس چیټبار" },

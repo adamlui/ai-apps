@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ގޫގުލް ސަރޗަށް އެއައި ޖަވާބުތައް އިތުރުކުރެއެވެ (ގޫގުލް ޖެމާ + ޖީޕީޓީ-4އޯ އިން ޕަވަރޑް!)" },
   "menuLabel_autoGetAnswers": { "message": "އޮޓޯ-ގެޓް ޖަވާބު" },
   "menuLabel_autoFocusChatbar": { "message": "އޮޓޯ ފޯކަސް ޗެޓްބާރ އެވެ" },

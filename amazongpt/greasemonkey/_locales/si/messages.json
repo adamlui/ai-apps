@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "ඇමසන් සාප්පු සවාරි සඳහා AI එක් කරයි" },
   "menuLabel_proxyAPImode": { "message": "ප් ‍ රොක්සි API ප් ‍ රකාරය" },
   "menuLabel_autoFocusChatbar": { "message": "ස්වයංක් ‍ රීය නාභිගත සංවාද තීරුව" },

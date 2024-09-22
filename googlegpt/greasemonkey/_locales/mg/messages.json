@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Manampy ny valin-tenin'i AI amin'ny sisin'ny Google Search (azo avy amin'ny Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Mahazo Valiny ho azy" },
   "menuLabel_autoFocusChatbar": { "message": "Mifantoka ho azy amin'ny Chatbar" },

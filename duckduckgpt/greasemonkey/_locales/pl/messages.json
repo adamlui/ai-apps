@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Dodaje odpowiedzi ChatGPT do paska bocznego DuckDuckGo (obsługiwanego przez GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Tryb proxy API" },
   "menuLabel_autoGetAnswers": { "message": "Automatyczne uzyskiwanie odpowiedzi" },

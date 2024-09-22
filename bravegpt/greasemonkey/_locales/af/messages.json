@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Voeg ChatGPT antwoorde op Dapper Soek sidebar (aangedryf deur GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Volmag-API-modus" },
   "menuLabel_autoGetAnswers": { "message": "Outo- Kry Antwoorde" },

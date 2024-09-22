@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "يضيف الذكاء الاصطناعي إلى التسوق في أمازون" },
   "menuLabel_proxyAPImode": { "message": "وضع واجهة برمجة تطبيقات الوكيل" },
   "menuLabel_autoFocusChatbar": { "message": "شريط دردشة التركيز التلقائي" },

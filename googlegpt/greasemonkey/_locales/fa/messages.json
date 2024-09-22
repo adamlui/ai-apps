@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "پاسخ‌های هوش مصنوعی را به جستجوی Google اضافه می‌کند (با Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "دریافت خودکار پاسخ" },
   "menuLabel_autoFocusChatbar": { "message": "نوار چت فوکوس خودکار" },

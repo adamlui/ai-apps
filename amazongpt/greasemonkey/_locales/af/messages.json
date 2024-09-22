@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Voeg AI by Amazon-aankope" },
   "menuLabel_proxyAPImode": { "message": "Volmag-API-modus" },
   "menuLabel_autoFocusChatbar": { "message": "Outo-fokus kletsbalk" },

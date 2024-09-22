@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "מוסיף אַי צו אַמאַזאָן שאַפּינג" },
   "menuLabel_proxyAPImode": { "message": "פּראָקסי אַפּי מאָדע" },
   "menuLabel_autoFocusChatbar": { "message": "אַוטאָ-פאָקוס טשאַטבאַר" },

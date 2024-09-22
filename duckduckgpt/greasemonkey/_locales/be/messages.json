@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Дадае адказы ChatGPT на бакавую панэль DuckDuckGo (харчаванне ад GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Рэжым API-проксі" },
   "menuLabel_autoGetAnswers": { "message": "Аўтаматычнае атрыманне адказаў" },

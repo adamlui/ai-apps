@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search میں AI جوابات شامل کرتا ہے (Google Gemma + GPT -4o کے ذریعے تقویت یافتہ!)" },
   "menuLabel_autoGetAnswers": { "message": "خودکار جوابات حاصل کریں" },
   "menuLabel_autoFocusChatbar": { "message": "آٹو فوکس چیٹ بار" },

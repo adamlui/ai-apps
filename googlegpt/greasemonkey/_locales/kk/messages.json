@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google іздеуіне AI жауаптарын қосады (Google Gemma + GPT-4o арқылы жұмыс істейді!)" },
   "menuLabel_autoGetAnswers": { "message": "Автоматты түрде орнату жауаптары" },
   "menuLabel_autoFocusChatbar": { "message": "Автоматты фокустық чат панелі" },

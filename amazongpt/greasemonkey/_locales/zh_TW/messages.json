@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "將人工智慧加入 Amazon 購物中" },
   "menuLabel_proxyAPImode": { "message": "代理 API 模式" },
   "menuLabel_autoFocusChatbar": { "message": "自動對焦聊天列" },

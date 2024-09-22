@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Qidiruvga AI javoblarini qo'shadi (Google Gemma + GPT-4o tomonidan quvvatlanadi!)" },
   "menuLabel_autoGetAnswers": { "message": "Javoblarni avtomatik olish" },
   "menuLabel_autoFocusChatbar": { "message": "Avtofokusli suhbat paneli" },

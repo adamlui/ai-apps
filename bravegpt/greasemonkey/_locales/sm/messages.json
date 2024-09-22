@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Faʻaopopo ChatGPT tali i Brave Search sidebar (faʻamalosia e GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_autoGetAnswers": { "message": "Tali Auto-Get" },

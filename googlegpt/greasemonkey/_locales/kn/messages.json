@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google ಹುಡುಕಾಟಕ್ಕೆ AI ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ (Google Gemma + GPT-4o ನಿಂದ ನಡೆಸಲ್ಪಡುತ್ತದೆ!)" },
   "menuLabel_autoGetAnswers": { "message": "ಸ್ವಯಂ-ಗೆಟ್ ಉತ್ತರಗಳು" },
   "menuLabel_autoFocusChatbar": { "message": "ಆಟೋ-ಫೋಕಸ್ ಚಾಟ್ ‌ ಬಾರ್" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Aldonas ChatGPT-respondojn al DuckDuckGo-flankmenuo (funkciigita de GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Prokura API-Reĝimo" },
   "menuLabel_autoGetAnswers": { "message": "Aŭtomate ricevi respondojn" },

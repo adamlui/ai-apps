@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Adaugă răspunsuri AI la Căutarea Google (susținut de Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Obținere automată răspunsuri" },
   "menuLabel_autoFocusChatbar": { "message": "Bară de chat cu focalizare automată" },

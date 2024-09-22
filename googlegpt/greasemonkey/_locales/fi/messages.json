@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Lisää tekoälyvastaukset Google-hakuun (tarjoaa Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Automaattinen vastausten haku" },
   "menuLabel_autoFocusChatbar": { "message": "Automaattitarkennuksen keskustelupalkki" },

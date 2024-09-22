@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "DuckDuckGo サイドバーに ChatGPT 回答を追加 (GPT-4o 搭載!)" },
   "menuLabel_proxyAPImode": { "message": "プロキシ API モード" },
   "menuLabel_autoGetAnswers": { "message": "回答を自動取得" },

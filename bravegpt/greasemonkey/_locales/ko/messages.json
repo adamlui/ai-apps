@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Brave Search 사이드바에 ChatGPT 답변 추가 (GPT-4o 제공!)" },
   "menuLabel_proxyAPImode": { "message": "프록시 API 모드" },
   "menuLabel_autoGetAnswers": { "message": "답변 자동 가져오기" },

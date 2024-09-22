@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Thêm AI vào mua sắm trên Amazon" },
   "menuLabel_proxyAPImode": { "message": "Chế độ API proxy" },
   "menuLabel_autoFocusChatbar": { "message": "Tự động lấy nét Chatbar" },

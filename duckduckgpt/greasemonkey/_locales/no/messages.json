@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Legger ChatGPT-svar til DuckDuckGo-sidefeltet (drevet av GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API-modus" },
   "menuLabel_autoGetAnswers": { "message": "Få svar automatisk" },

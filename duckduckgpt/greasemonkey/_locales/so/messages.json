@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Ku dar ChatGPT jawaabaha DuckDuckGo sidebar (waxaa ku shaqeeya GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Qaabka API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Jawaabaha Auto-Get" },

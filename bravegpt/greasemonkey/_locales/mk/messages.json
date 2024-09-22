@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Додава одговори на ChatGPT на страничната лента за храбро пребарување (напојува со GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Режим на прокси API" },
   "menuLabel_autoGetAnswers": { "message": "Автоматско добивање одговори" },

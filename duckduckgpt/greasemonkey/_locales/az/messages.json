@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "DuckDuckGo sidebarına ChatGPT cavabları əlavə edir (GPT-4o ilə təchiz edilmişdir!)" },
   "menuLabel_proxyAPImode": { "message": "Proksi API Rejimi" },
   "menuLabel_autoGetAnswers": { "message": "Avtomatik verilən cavablar" },

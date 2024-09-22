@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Manampy ny valin-tenin'i ChatGPT amin'ny sisin'ny DuckDuckGo (azo avy amin'ny GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Fomba Proxy API" },
   "menuLabel_autoGetAnswers": { "message": "Mahazo Valiny ho azy" },

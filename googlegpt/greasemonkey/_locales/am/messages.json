@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ለGoogle ፍለጋ (በGoogle Gemma + GPT-4o የተጎላበተው" },
   "menuLabel_autoGetAnswers": { "message": "ራስ-ጌ መልሶች" },
   "menuLabel_autoFocusChatbar": { "message": "ራስ-ፎኩስ ቻትባር" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "E tsenya dikarabo tsa AI mo Patlisisong ya Google (e e dirisiwang ke Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Go Bona Dikarabo ka Tsela e e Itshwarang" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "AI འཚོལ་ལེགས། Google Search ལུ་བསྒྲིགས། (Google Gemma + GPT-4o! ཡུ་ཡུ་རྒྱུ་ནོང་ལགས།)" },
   "menuLabel_autoGetAnswers": { "message": "ལན་ཚུ་རང་བཞིན་ཐོབ།" },
   "menuLabel_autoFocusChatbar": { "message": "རང་བཞིན་ཆེད་དམིགས་ཁ་སླབ་ཕྲ་རིང་།" },

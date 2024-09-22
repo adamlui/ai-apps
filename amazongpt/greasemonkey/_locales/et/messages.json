@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "Lisab Amazoni ostudele tehisintellekti" },
   "menuLabel_proxyAPImode": { "message": "Puhverserveri API-režiim" },
   "menuLabel_autoFocusChatbar": { "message": "Automaatse teravustamise vestlusriba" },

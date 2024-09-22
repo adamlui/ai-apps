@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "เพิ่มคำตอบ ChatGPT ในแถบด้านข้าง DuckDuckGo (ขับเคลื่อนโดย GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "โหมด API พร็อกซี" },
   "menuLabel_autoGetAnswers": { "message": "รับคำตอบอัตโนมัติ" },

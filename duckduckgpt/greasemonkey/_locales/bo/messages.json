@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "ChatGPT ལན་འདེབས་DuckDuckGo sidebar (GPT-4o ཀྱིས་དབང་བསྒྱུར་!)" },
   "menuLabel_proxyAPImode": { "message": "པརོགསི ཨུ་ཕཱཡི མོདེ" },
   "menuLabel_autoGetAnswers": { "message": "རང་འགུལ་གྱི་ལན་ཐོ །" },

@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Додає відповіді ChatGPT до бічної панелі Brave Search (працює на GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Режим API проксі-сервера" },
   "menuLabel_autoGetAnswers": { "message": "Автоматичне отримання відповідей" },

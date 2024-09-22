@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google శోధనకు AI సమాధానాలను జోడిస్తుంది (Google Gemma + GPT-4o ద్వారా ఆధారితం!)" },
   "menuLabel_autoGetAnswers": { "message": "ఆటో-గెట్ సమాధానాలు" },
   "menuLabel_autoFocusChatbar": { "message": "ఆటో-ఫోకస్ చాట్ ‌ బార్" },

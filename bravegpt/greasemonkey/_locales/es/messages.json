@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Añade respuestas de ChatGPT a la barra lateral de Brave Search (¡con tecnología GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Modo API de proxy" },
   "menuLabel_autoGetAnswers": { "message": "Obtener respuestas automáticamente" },

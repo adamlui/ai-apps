@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Добавя ChatGPT отговори към страничната лента на Brave Search (захранва се от GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Режим на прокси API" },
   "menuLabel_autoGetAnswers": { "message": "Автоматично получаване на отговори" },

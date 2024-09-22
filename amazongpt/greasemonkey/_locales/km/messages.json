@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "AmazonGPT" },
   "appDesc": { "message": "បន្ថែម AI ទៅការទិញទំនិញ Amazon" },
   "menuLabel_proxyAPImode": { "message": "ម៉ូដប្រូកស៊ី API" },
   "menuLabel_autoFocusChatbar": { "message": "របារជជែកផ្តោតអារម្មណ៍ដោយស្វ័យប្រវត្តិ" },

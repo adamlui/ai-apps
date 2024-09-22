@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Přidává odpovědi AI do Vyhledávání Google (s podporou Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Automatické získávání odpovědí" },
   "menuLabel_autoFocusChatbar": { "message": "Chatovací panel s automatickým zaostřováním" },

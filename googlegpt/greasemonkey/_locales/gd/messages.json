@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "A' cur freagairtean AI ris a' bhàr-taobh Google Search (air a chumail le Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Freagairtean fèin-ghnìomhach" },
   "menuLabel_autoFocusChatbar": { "message": "Fèin-ghnìomhach Fòcas Chatbar" },

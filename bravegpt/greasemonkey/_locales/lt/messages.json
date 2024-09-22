@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Prideda ChatGPT atsakymus į Drąsios paieškos šoninę juostą (sukurta GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Tarpinio serverio API režimas" },
   "menuLabel_autoGetAnswers": { "message": "Automatiškai gauti atsakymus" },

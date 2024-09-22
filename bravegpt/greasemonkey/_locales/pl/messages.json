@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Dodaje odpowiedzi ChatGPT do paska bocznego Brave Search (obsługiwanego przez GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Tryb proxy API" },
   "menuLabel_autoGetAnswers": { "message": "Automatyczne uzyskiwanie odpowiedzi" },

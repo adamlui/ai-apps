@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Inaongeza majibu ya ChatGPT kwenye upau wa kando wa Utafutaji wa Ujasiri (unaendeshwa na GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Hali Mbadala ya API" },
   "menuLabel_autoGetAnswers": { "message": "Pata Majibu Kiotomatiki" },

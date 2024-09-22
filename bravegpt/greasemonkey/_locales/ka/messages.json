@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Დაამატეთ ChatGPT-ის პასუხები Brave Search-ის გვერდით ზოლში (GPT-4o-ის მეშვეობით!)" },
   "menuLabel_proxyAPImode": { "message": "Პროქსი API რეჟიმი" },
   "menuLabel_autoGetAnswers": { "message": "Პასუხების ავტომატური მიღება" },

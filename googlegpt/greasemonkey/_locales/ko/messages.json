@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google 검색에 AI 답변을 추가합니다 (Google Gemma + GPT-4o 제공!)" },
   "menuLabel_autoGetAnswers": { "message": "답변 자동 가져오기" },
   "menuLabel_autoFocusChatbar": { "message": "자동 초점 채팅창" },

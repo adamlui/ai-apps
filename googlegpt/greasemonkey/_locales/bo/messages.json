@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search སྒྲིག་འཇུག་བྱས་ཚད ། ཐེངས་10 ལས་ཉུང་བ ། ཐོན་རིམ་5.7.1 ནང་དུ་ཚོད་ལྟ་བྱས་ཟིན ། ཟླ 4 སྔོན་ལ་གསར་བཅོས་བྱས །" },
   "menuLabel_autoGetAnswers": { "message": "རང་འགུལ་གྱི་ལན་ཐོ །" },
   "menuLabel_autoFocusChatbar": { "message": "རང་མོས་རང་མོས་རང་མོས་ཀྱི་གླེང་མོལ །" },

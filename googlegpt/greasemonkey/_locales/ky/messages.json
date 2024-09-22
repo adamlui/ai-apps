@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google издөөгө AI жоопторун кошот (Google Gemma + GPT-4o менен иштейт!)" },
   "menuLabel_autoGetAnswers": { "message": "Жоопторду автоматтык түрдө алуу" },
   "menuLabel_autoFocusChatbar": { "message": "Undo-type" },

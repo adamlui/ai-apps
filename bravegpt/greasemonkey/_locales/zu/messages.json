@@ -1,5 +1,4 @@
 {
-  "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Ifaka izimpendulo ze-ChatGPT kubha eseceleni Yosesho Olunesibindi (inikwe amandla yi-GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Imodi ye-API Yombambeli" },
   "menuLabel_autoGetAnswers": { "message": "Thola Izimpendulo Ngokuzenzakalelayo" },
