@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.21.2
+// @version             2024.9.22
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -271,33 +271,79 @@
     if (!config.replyTopic) settings.save('replyTopic', 'ALL') // init reply topic if unset
     if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
 
-    // Init FETCHER
+    // Init app MESSAGES
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
-
-    // Init MESSAGES
-    app.msgs = {}
-    if (!config.userLanguage.startsWith('en')) app.msgs = await new Promise(resolve => {
-        const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
-              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
-        function handleMsgs(resp) {
-            try { // to return localized messages.json
-                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
-                for (const key in msgs)  // remove need to ref nested keys
-                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
-                        flatMsgs[key] = msgs[key].message
-                resolve(flatMsgs)
-            } catch (err) { // if bad response
-                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
-                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                fetchMsgs()
+    app.msgs = {
+        appName: app.name,
+        appDesc: 'Generate endless answers from all-knowing ChatGPT (in any language!)',
+        menuLabel_infinityMode: 'Infinity Mode',
+        menuLabel_autoStart: 'Auto-Start',
+        menuLabel_toggleVis: 'Toggle Visibility',
+        menuLabel_autoScroll: 'Auto-Scroll',
+        menuLabel_replyLang: 'Reply Language',
+        menuLabel_replyTopic: 'Reply Topic',
+        menuLabel_all: 'ALL',
+        menuLabel_replyInt: 'Reply Interval',
+        menuLabel_about: 'About',
+        menuLabel_disabled: 'Disabled (extension installed)',
+        about_version: 'Version',
+        about_poweredBy: 'Powered by',
+        about_sourceCode: 'Source code',
+        prompt_updateReplyLang: 'Update reply language',
+        prompt_updateReplyTopic: 'Update reply topic',
+        prompt_orEnter: 'or enter',
+        prompt_updateReplyInt: 'Update reply interval (minimum 5 secs)',
+        alert_replyLangUpdated: 'Language updated',
+        alert_willReplyIn: 'will reply in',
+        alert_yourSysLang: 'your system language',
+        alert_replyTopicUpdated: 'Topic updated',
+        alert_willAnswer: 'will answer questions',
+        alert_onTopicOf: 'on the topic of',
+        alert_onAllTopics: 'on ALL topics',
+        alert_replyIntUpdated: 'Interval updated',
+        alert_willReplyEvery: 'will reply every',
+        alert_choosePlatform: 'Choose a platform',
+        alert_updateAvail: 'Update available',
+        alert_newerVer: 'An update to',
+        alert_isAvail: 'is available',
+        alert_upToDate: 'Up-to-date',
+        alert_isUpToDate: 'is up-to-date',
+        btnLabel_moreApps: 'More ChatGPT Apps',
+        btnLabel_leaveReview: 'Leave Review',
+        btnLabel_getSupport: 'Get Support',
+        btnLabel_updateCheck: 'Check for Updates',
+        btnLabel_update: 'Update',
+        btnLabel_dismiss: 'Dismiss',
+        link_viewChanges: 'View changes',
+        unit_seconds: 'seconds',
+        state_enabled: 'enabled',
+        state_disabled: 'disabled'
+    }
+    if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
+        const localizedMsgs = await new Promise(resolve => {
+            const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
+                  msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+            let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+            function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
+            function handleMsgs(resp) {
+                try { // to return localized messages.json
+                    const msgs = JSON.parse(resp.responseText), flatMsgs = {}
+                    for (const key in msgs)  // remove need to ref nested keys
+                        if (typeof msgs[key] == 'object' && 'message' in msgs[key])
+                            flatMsgs[key] = msgs[key].message
+                    resolve(flatMsgs)
+                } catch (err) { // if bad response
+                    msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
+                    msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                        msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
+                            : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                    fetchMsgs()
+                }
             }
-        }
-        fetchMsgs()
-    })
+            fetchMsgs()
+        })
+        if (Object.keys(localizedMsgs).length > 0) app.msgs = localizedMsgs
+    }
 
     // Define MENU functions
 
@@ -311,79 +357,79 @@
 
             // Add command to toggle Infinity Mode
             const imLabel = menu.state.symbol[+config.infinityMode] + ' '
-                          + ( app.msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ' ∞ '
+                          + ( app.msgs.menuLabel_infinityMode ) + ' ∞ '
                           + menu.state.separator + menu.state.word[+config.infinityMode]
             menu.ids.push(GM_registerMenuCommand(imLabel, () => { document.getElementById('infinity-toggle-label').click() }))
 
             // Add command to toggle Auto-Start
             const astLabel = menu.state.symbol[+config.autoStart] + ' '
-                           + ( app.msgs.menuLabel_autoStart || 'Auto-Start' )
+                           + ( app.msgs.menuLabel_autoStart )
                            + menu.state.separator + menu.state.word[+config.autoStart]
             menu.ids.push(GM_registerMenuCommand(astLabel, () => {
                 settings.save('autoStart', !config.autoStart)
-                notify(( app.msgs.menuLabel_autoStart || 'Auto-Start' ) + ': '+ menu.state.word[+config.autoStart])
+                notify(( app.msgs.menuLabel_autoStart ) + ': '+ menu.state.word[+config.autoStart])
                 menu.refresh()
             }))
 
             // Add command to toggle visibility of toggle
             const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
-                          + ( app.msgs.menuLabel_toggleVis || 'Toggle Visibility' )
+                          + ( app.msgs.menuLabel_toggleVis )
                           + menu.state.separator + menu.state.word[+!config.toggleHidden]
             menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-                notify(( app.msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menu.state.word[+!config.toggleHidden])
+                notify(( app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.word[+!config.toggleHidden])
                 menu.refresh()
             }))
 
             // Add command to toggle Auto-Scroll
             const ascLabel = menu.state.symbol[+!config.autoScrollDisabled] + ' '
-                           + ( app.msgs.menuLabel_autoScroll || 'Auto-Scroll' )
+                           + ( app.msgs.menuLabel_autoScroll )
                            + menu.state.separator + menu.state.word[+!config.autoScrollDisabled]
             menu.ids.push(GM_registerMenuCommand(ascLabel, () => {
                 settings.save('autoScrollDisabled', !config.autoScrollDisabled)
-                notify(( app.msgs.menuLabel_autoScroll || 'Auto-Scroll' ) + ': '+ menu.state.word[+!config.autoScrollDisabled])
+                notify(( app.msgs.menuLabel_autoScroll ) + ': '+ menu.state.word[+!config.autoScrollDisabled])
                 menu.refresh()
             }))
 
             // Add command to set reply language
-            const rlLabel = '🌐 ' + ( app.msgs.menuLabel_replyLang || 'Reply Language' )
+            const rlLabel = '🌐 ' + ( app.msgs.menuLabel_replyLang )
                           + menu.state.separator + config.replyLanguage
             menu.ids.push(GM_registerMenuCommand(rlLabel, () => {
                 while (true) {
                     let replyLanguage = prompt(
-                        `${ app.msgs.prompt_updateReplyLang || 'Update reply language' }:`, config.replyLanguage)
+                        `${app.msgs.prompt_updateReplyLang}:`, config.replyLanguage)
                     if (replyLanguage === null) break // user cancelled so do nothing
                     else if (!/\d/.test(replyLanguage)) {
                         replyLanguage = ( // auto-case for menu/alert aesthetics
                             [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
                             : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                         settings.save('replyLanguage', replyLanguage || config.userLanguage)
-                        siteAlert(( app.msgs.alert_replyLangUpdated || 'Language updated' ) + '!', // title
-                            ( app.msgs.appName || app.name ) + ' ' // msg
-                                + ( app.msgs.alert_willReplyIn || 'will reply in' ) + ' '
-                                + ( replyLanguage || app.msgs.alert_yourSysLang || 'your system language') + '.')
+                        siteAlert(( app.msgs.alert_replyLangUpdated ) + '!', // title
+                            ( app.msgs.appName ) + ' ' // msg
+                                + ( app.msgs.alert_willReplyIn ) + ' '
+                                + ( replyLanguage || app.msgs.alert_yourSysLang) + '.')
                         if (config.infinityMode) restartInNewChat() // using new reply language                        
                         menu.refresh() ; break
             }}}))
 
             // Add command to set reply topic
-            const re_all = new RegExp('^(' + ( app.msgs.menuLabel_all || 'all' ) + '|all|any|every)$', 'i'),
-                  rtLabel = '🧠 ' + ( app.msgs.menuLabel_replyTopic || 'Reply Topic' ) + menu.state.separator
-                          + ( re_all.test(config.replyTopic) ? ( app.msgs.menuLabel_all || 'all' )
+            const re_all = new RegExp('^(' + ( app.msgs.menuLabel_all ) + '|all|any|every)$', 'i'),
+                  rtLabel = '🧠 ' + ( app.msgs.menuLabel_replyTopic ) + menu.state.separator
+                          + ( re_all.test(config.replyTopic) ? ( app.msgs.menuLabel_all )
                                                             : toTitleCase(config.replyTopic) )
             menu.ids.push(GM_registerMenuCommand(rtLabel, () => {
-                const replyTopic = prompt(( app.msgs.prompt_updateReplyTopic || 'Update reply topic' )
-                                + ' (' + ( app.msgs.prompt_orEnter || 'or enter' ) + ' \'ALL\'):', config.replyTopic)
+                const replyTopic = prompt(( app.msgs.prompt_updateReplyTopic )
+                                + ' (' + ( app.msgs.prompt_orEnter ) + ' \'ALL\'):', config.replyTopic)
                 if (replyTopic !== null) { // user didn't cancel
                     const str_replyTopic = replyTopic.toString()
                     settings.save('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
-                    siteAlert(( app.msgs.alert_replyTopicUpdated || 'Topic updated' ) + '!',
-                        ( app.msgs.appName || app.name ) + ' '
-                            + ( app.msgs.alert_willAnswer || 'will answer questions' ) + ' '
+                    siteAlert(( app.msgs.alert_replyTopicUpdated ) + '!',
+                        ( app.msgs.appName ) + ' '
+                            + ( app.msgs.alert_willAnswer ) + ' '
                             + ( !replyTopic || re_all.test(str_replyTopic)
-                                ? app.msgs.alert_onAllTopics || 'on ALL topics'
-                                : (( app.msgs.alert_onTopicOf || 'on the topic of' ) + ' ' + str_replyTopic ))
+                                ? app.msgs.alert_onAllTopics
+                                : (( app.msgs.alert_onTopicOf ) + ' ' + str_replyTopic ))
                             + '!'
                     )
                     if (config.infinityMode) { // restart session using new reply topic
@@ -393,25 +439,25 @@
             }}))
 
             // Add command to change reply interval
-            const riLabel = '⌚ ' + ( app.msgs.menuLabel_replyInt || 'Reply Interval' )
+            const riLabel = '⌚ ' + ( app.msgs.menuLabel_replyInt )
                           + menu.state.separator + config.replyInterval + 's'
             menu.ids.push(GM_registerMenuCommand(riLabel, async () => {
                 while (true) {
                     const replyInterval = prompt(
-                        `${ app.msgs.prompt_updateReplyInt || 'Update reply interval (minimum 5 secs)' }:`, config.replyInterval)
+                        `${app.msgs.prompt_updateReplyInt}:`, config.replyInterval)
                     if (replyInterval === null) break // user cancelled so do nothing
                     else if (!isNaN(parseInt(replyInterval, 10)) && parseInt(replyInterval, 10) > 4) { // valid int set
                         settings.save('replyInterval', parseInt(replyInterval, 10))
-                        siteAlert(( app.msgs.alert_replyIntUpdated || 'Interval updated' ) + '!', // title
-                            ( app.msgs.appName || app.name ) + ' ' // msg
-                                + ( app.msgs.alert_willReplyEvery || 'will reply every' ) + ' '
-                                + replyInterval + ' ' + ( app.msgs.unit_seconds || 'seconds' ) + '.')
+                        siteAlert(( app.msgs.alert_replyIntUpdated ) + '!', // title
+                            ( app.msgs.appName ) + ' ' // msg
+                                + ( app.msgs.alert_willReplyEvery ) + ' '
+                                + replyInterval + ' ' + ( app.msgs.unit_seconds ) + '.')
                         if (config.infinityMode) resetInSameChat() // using new reply interval                    
                         menu.refresh() ; break
             }}}))
 
             // Add command to launch About modal
-            const aboutLabel = `💡 ${ app.msgs.menuLabel_about || 'About' } ${ app.msgs.appName || app.name }`
+            const aboutLabel = `💡 ${app.msgs.menuLabel_about} ${app.msgs.appName}`
             menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
         },
 
@@ -439,14 +485,14 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateModalID = siteAlert(`🚀 ${ app.msgs.alert_updateAvail || 'Update available' }!`, // title
-                            `${ app.msgs.alert_newerVer || 'An update to' } ${ app.name } `
-                                + ( app.msgs.appName || app.name ) + ' '
-                                + `(v${ latestVer }) ${ app.msgs.alert_isAvail || 'is available' }!  `
+                        const updateModalID = siteAlert(`🚀 ${app.msgs.alert_updateAvail}!`, // title
+                            `${app.msgs.alert_newerVer} ${ app.name } `
+                                + ( app.msgs.appName ) + ' '
+                                + `(v${ latestVer }) ${app.msgs.alert_isAvail}!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
-                                    + `> ${ app.msgs.link_viewChanges || 'View changes' }</a>`,
+                                    + `> ${app.msgs.link_viewChanges}</a>`,
                             function update() { // button
                                 modals.safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
@@ -456,17 +502,17 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = app.msgs.btnLabel_update || 'Update'
-                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = app.msgs.btnLabel_update
+                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss
                         }
 
                         return
                 }}
 
                 // Alert to no update, return to About modal
-                siteAlert(( app.msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ app.msgs.appName || app.name } (v${ currentVer }) ` // msg
-                        + ( app.msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
+                siteAlert(( app.msgs.alert_upToDate ) + '!', // title
+                    `${app.msgs.appName} (v${ currentVer }) ` // msg
+                        + ( app.msgs.alert_isUpToDate ) + '!',
                     '', '', updateAlertWidth
                 )
                 modals.about.show()
@@ -517,20 +563,20 @@
                       pBrStyle = 'position: relative ; left: 4px ',
                       aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
                 const aboutModalID = siteAlert(
-                    app.msgs.appName || app.name, // title
-                    `<span style="${headingStyle}"><b>🏷️ <i>${ app.msgs.about_version || 'Version' }</i></b>: </span>`
+                    app.msgs.appName, // title
+                    `<span style="${headingStyle}"><b>🏷️ <i>${app.msgs.about_version}</i></b>: </span>`
                         + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
-                    + `<span style="${headingStyle}"><b>⚡ <i>${ app.msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
+                    + `<span style="${headingStyle}"><b>⚡ <i>${app.msgs.about_poweredBy}</i></b>: </span>`
                         + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
                         + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                    + `<span style="${headingStyle}"><b>📜 <i>${ app.msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+                    + `<span style="${headingStyle}"><b>📜 <i>${app.msgs.about_sourceCode}</i></b>:</span>\n`
                         + `<span style="${pBrStyle}"><a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                         + app.urls.gitHub + '</a></span>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
                         function leaveAReview() { // show new modal
-                            const reviewModalID = chatgpt.alert(( app.msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
+                            const reviewModalID = chatgpt.alert(( app.msgs.alert_choosePlatform ) + ':', '',
                                 [ function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
                                   function productHunt() { modals.safeWinOpen(app.urls.productHunt + '/reviews/new') },
                                   function alternativeTo() { modals.safeWinOpen(app.urls.alternativeTo + '/about/') }])
@@ -545,13 +591,13 @@
                 // Re-format buttons to include emoji + localized label + hide Dismiss button
                 for (const button of document.getElementById(aboutModalID).querySelectorAll('button')) {
                     if (/updates/i.test(button.textContent)) button.textContent = (
-                        '🚀 ' + ( app.msgs.btnLabel_updateCheck || 'Check for Updates' ))
+                        '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(button.textContent)) button.textContent = (
-                        '🧠 ' + ( app.msgs.btnLabel_getSupport || 'Get Support' ))
+                        '🧠 ' + ( app.msgs.btnLabel_getSupport ))
                     else if (/review/i.test(button.textContent)) button.textContent = (
-                        '⭐ ' + ( app.msgs.btnLabel_leaveReview || 'Leave Review' ))
+                        '⭐ ' + ( app.msgs.btnLabel_leaveReview ))
                     else if (/apps/i.test(button.textContent)) button.textContent = (
-                        '🤖 ' + ( app.msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
+                        '🤖 ' + ( app.msgs.btnLabel_moreApps ))
                     else button.style.display = 'none' // hide Dismiss button
                 }
             }        
@@ -627,9 +673,9 @@
         toggleLabel.style.width = `${ env.browser.isMobile ? 201 : 148 }px` // to truncate overflown text
         toggleLabel.style.overflow = 'hidden' // to truncate overflown text
         toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
-        toggleLabel.innerText = ( app.msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ' '
+        toggleLabel.innerText = ( app.msgs.menuLabel_infinityMode ) + ' '
                               + ( toggleInput.checked ? ( app.msgs.state_enabled  || 'enabled' )
-                                                      : ( app.msgs.state_disabled || 'disabled' ))
+                                                      : ( app.msgs.state_disabled ))
         // Append elements
         for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
 
@@ -649,7 +695,7 @@
                 + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                 + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                 + ' then answer it. Don\'t type anything else.'
-            notify(( app.msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ': ON')
+            notify(( app.msgs.menuLabel_infinityMode ) + ': ON')
             if (env.browser.isMobile && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             if (!new URL(location).pathname.startsWith('/g/')) // not on GPT page
                 try { chatgpt.startNewChat() } catch (err) { return } // start new chat
@@ -681,7 +727,7 @@
         deactivate() {
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener
-            notify(( app.msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ': OFF')
+            notify(( app.msgs.menuLabel_infinityMode ) + ': OFF')
             config.infinityMode = false // in case toggled by PV listener
         },
 
@@ -712,7 +758,7 @@
             })()
         }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
     if (extensionInstalled) { // disable script/menu
-        GM_registerMenuCommand(menu.state.symbol[0] + ' ' + ( app.msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
+        GM_registerMenuCommand(menu.state.symbol[0] + ' ' + ( app.msgs.menuLabel_disabled ),
             () => { return }) // disable menu
         return // exit script
     } else menu.register() // create functional menu

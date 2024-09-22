@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.21.12
+// @version             2024.9.22
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -299,41 +299,80 @@
         save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     } ; settings.load(...sites[site].availFeatures)
 
-    // Init localized MESSAGES
-    app.msgs = { // dynamically ref'd keys w/o fallbacks
+    // Init app MESSAGES
+    app.msgs = {
+        appName: app.name,
+        appDesc: 'Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling',
+        menuLabel_fullerWins: 'Fuller Windows',
+        menuLabel_tallerChatbox: 'Taller Chatbox',
+        menuLabel_widerChatbox: 'Wider Chatbox',
+        menuLabel_newChatBtn: 'New Chat Button',
+        menuLabel_hiddenHeader: 'Hidden Header',
+        menuLabel_hiddenFooter: 'Hidden Footer',
+        menuLabel_modeNotifs: 'Mode Notifications',
+        menuLabel_about: 'About',
+        menuLabel_disabled: 'Disabled (extension installed)',
+        about_version: 'Version',
+        about_poweredBy: 'Powered by',
+        about_sourceCode: 'Source code',
         mode_wideScreen: 'Wide screen',
         mode_fullWindow: 'Full-window',
-        mode_fullScreen: 'Full screen',      
+        mode_fullScreen: 'Full screen',
         tooltip_wideScreenON: 'Wide screen',
         tooltip_wideScreenOFF: 'Exit wide screen',
         tooltip_fullWindowON: 'Full-window mode',
         tooltip_fullWindowOFF: 'Exit full window',
         tooltip_fullScreenON: 'Full screen',
         tooltip_fullScreenOFF: 'Exit full screen',
-        tooltip_newChat: 'New chat'
+        tooltip_newChat: 'New chat',
+        helptip_fullerWins: 'Also activate Wide Screen when activating Full-Window',
+        helptip_tallerChatbox: 'Expand the chatbox vertically',
+        helptip_widerChatbox: 'Expand the chatbox horizontally in Wide Screen mode',
+        helptip_newChatButton: 'Show New Chat button in chatbox',
+        helptip_hiddenFooter: 'Hide site footer',
+        helptip_hiddenHeader: 'Hide site header',
+        helptip_modeNotifs: 'Show notifications when toggling modes/settings',
+        alert_choosePlatform: 'Choose a platform',
+        alert_updateAvail: 'Update available',
+        alert_newerVer: 'An update to',
+        alert_isAvail: 'is available',
+        alert_upToDate: 'Up-to-date',
+        alert_isUpToDate: 'is up-to-date',
+        alert_pressF11: 'Press F11 to exit full screen',
+        alert_f11reason: 'F11 was used to enter full screen, and due to browser security reasons, the same key must be used to exit it',
+        btnLabel_moreApps: 'More ChatGPT Apps',
+        btnLabel_leaveReview: 'Leave Review',
+        btnLabel_getSupport: 'Get Support',
+        btnLabel_updateCheck: 'Check for Updates',
+        btnLabel_update: 'Update',
+        btnLabel_dismiss: 'Dismiss',
+        link_viewChanges: 'View changes'
     }
-    if (!config.userLanguage.startsWith('en')) app.msgs = await new Promise(resolve => {
-        const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
-              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
-        function handleMsgs(resp) {
-            try { // to return localized messages.json
-                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
-                for (const key in msgs)  // remove need to ref nested keys
-                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
-                        flatMsgs[key] = msgs[key].message
-                resolve(flatMsgs)
-            } catch (err) { // if bad response
-                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
-                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                fetchMsgs()
+    if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
+        const localizedMsgs = await new Promise(resolve => {
+            const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
+                  msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+            let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+            function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
+            function handleMsgs(resp) {
+                try { // to return localized messages.json
+                    const msgs = JSON.parse(resp.responseText), flatMsgs = {}
+                    for (const key in msgs)  // remove need to ref nested keys
+                        if (typeof msgs[key] == 'object' && 'message' in msgs[key])
+                            flatMsgs[key] = msgs[key].message
+                    resolve(flatMsgs)
+                } catch (err) { // if bad response
+                    msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
+                    msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                        msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
+                            : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                    fetchMsgs()
+                }
             }
-        }
-        fetchMsgs()
-    })
+            fetchMsgs()
+        })
+        if (Object.keys(localizedMsgs).length > 0) app.msgs = localizedMsgs
+    }
 
     // Define MENU functions
 
@@ -348,39 +387,39 @@
             // Add Fuller Windows toggle if avail
             if (sites[site].availFeatures.includes('fullerWindows')) {
                 const fwLabel = menu.state.symbol[+config.fullerWindows] + ' '
-                              + ( app.msgs.menuLabel_fullerWins || 'Fuller Windows' )
+                              + ( app.msgs.menuLabel_fullerWins )
                               + menu.state.separator + menu.state.word[+config.fullerWindows]
                 menu.ids.push(GM_registerMenuCommand(fwLabel, () => {
                     settings.save('fullerWindows', !config.fullerWindows)
                     sync.fullerWin(config.fullerWindows) // live update on click
                     if (!config.notifDisabled) notify(
-                        `${ ( app.msgs.menuLabel_fullerWins || 'Fuller Windows' ) }: ${ menu.state.word[+config.fullerWindows] }`)
+                        `${ ( app.msgs.menuLabel_fullerWins ) }: ${ menu.state.word[+config.fullerWindows] }`)
                     menu.refresh()
                 }))
             }
 
             // Add Taller Chatbox toggle if avail
             if (sites[site].availFeatures.includes('tcbDisabled')) {
-                const tcbLabel = '↕️ ' + ( app.msgs.menuLabel_tallerChatbox || 'Taller Chatbox' )
+                const tcbLabel = '↕️ ' + ( app.msgs.menuLabel_tallerChatbox )
                                + menu.state.separator + menu.state.word[+!config.tcbDisabled]
                 menu.ids.push(GM_registerMenuCommand(tcbLabel, () => {
                     settings.save('tcbDisabled', !config.tcbDisabled)
                     update.style.tweaks()
                     if (!config.notifDisabled) notify(
-                        `${ app.msgs.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ menu.state.word[+!config.tcbDisabled] }`)
+                        `${app.msgs.menuLabel_tallerChatbox}: ${ menu.state.word[+!config.tcbDisabled] }`)
                     menu.refresh()
                 }))
             }
 
             // Add Wider Chatbox toggle if avail
             if (sites[site].availFeatures.includes('widerChatbox')) {
-                const wcbLabel = '↔️ ' + ( app.msgs.menuLabel_widerChatbox || 'Wider Chatbox' )
+                const wcbLabel = '↔️ ' + ( app.msgs.menuLabel_widerChatbox )
                                + menu.state.separator + menu.state.word[+config.widerChatbox]
                 menu.ids.push(GM_registerMenuCommand(wcbLabel, () => {
                     settings.save('widerChatbox', !config.widerChatbox)
                     update.style.wideScreen() // update WCB style
                     if (!config.notifDisabled) notify(
-                        `${ app.msgs.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ menu.state.word[+config.widerChatbox] }`)
+                        `${app.msgs.menuLabel_widerChatbox}: ${ menu.state.word[+config.widerChatbox] }`)
                     menu.refresh()
                 }))
             }
@@ -388,12 +427,12 @@
             // Add New Chat Button toggle if avail
             if (sites[site].availFeatures.includes('ncbDisabled')) {
                 const hncLabel = menu.state.symbol[+!config.ncbDisabled] + ' '
-                               + ( app.msgs.menuLabel_newChatBtn || 'New Chat Button' )
+                               + ( app.msgs.menuLabel_newChatBtn )
                                + menu.state.separator + menu.state.word[+!config.ncbDisabled]
                 menu.ids.push(GM_registerMenuCommand(hncLabel, () => {
                     settings.save('ncbDisabled', !config.ncbDisabled)
                     update.style.tweaks()
-                    notify(`${ app.msgs.menuLabel_newChatBtn || 'New Chat Button' }: ${ menu.state.word[+!config.ncbDisabled] }`)
+                    notify(`${app.msgs.menuLabel_newChatBtn}: ${ menu.state.word[+!config.ncbDisabled] }`)
                     menu.refresh()
                 }))
             }
@@ -401,13 +440,13 @@
             // Add Hidden Header toggle if avail
             if (sites[site].availFeatures.includes('hiddenHeader')) {
                 const hhLabel = menu.state.symbol[+config.hiddenHeader] + ' '
-                              + ( app.msgs.menuLabel_hiddenHeader || 'Hidden Header' )
+                              + ( app.msgs.menuLabel_hiddenHeader )
                               + menu.state.separator + menu.state.word[+config.hiddenHeader]
                 menu.ids.push(GM_registerMenuCommand(hhLabel, () => {
                     settings.save('hiddenHeader', !config.hiddenHeader)
                     update.style.tweaks()
                     if (!config.notifDisabled) notify(
-                        `${ app.msgs.menuLabel_hiddenHeader || 'Hidden Header' }: ${ menu.state.word[+config.hiddenHeader] }`)
+                        `${app.msgs.menuLabel_hiddenHeader}: ${ menu.state.word[+config.hiddenHeader] }`)
                     menu.refresh()
                 }))
             }
@@ -415,13 +454,13 @@
             // Add Hidden Footer toggle if avail
             if (sites[site].availFeatures.includes('hiddenFooter')) {
                 const hfLabel = menu.state.symbol[+config.hiddenFooter] + ' '
-                              + ( app.msgs.menuLabel_hiddenFooter || 'Hidden Footer' )
+                              + ( app.msgs.menuLabel_hiddenFooter )
                               + menu.state.separator + menu.state.word[+config.hiddenFooter]
                 menu.ids.push(GM_registerMenuCommand(hfLabel, () => {
                     settings.save('hiddenFooter', !config.hiddenFooter)
                     update.style.tweaks()
                     if (!config.notifDisabled) notify(
-                        `${ app.msgs.menuLabel_hiddenFooter || 'Hidden Footer' }: ${ menu.state.word[+config.hiddenFooter] }`)
+                        `${app.msgs.menuLabel_hiddenFooter}: ${ menu.state.word[+config.hiddenFooter] }`)
                     menu.refresh()
                 }))
             }
@@ -429,17 +468,17 @@
             // Add Mode Notifications toggle if avail
             if (sites[site].availFeatures.includes('notifDisabled')) {
                 const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
-                              + ( app.msgs.menuLabel_modeNotifs || 'Mode Notifications' )
+                              + ( app.msgs.menuLabel_modeNotifs )
                               + menu.state.separator + menu.state.word[+!config.notifDisabled]
                 menu.ids.push(GM_registerMenuCommand(mnLabel, () => {
                     settings.save('notifDisabled', !config.notifDisabled)
-                    notify(`${ app.msgs.menuLabel_modeNotifs || 'Mode Notifications' }: ${ menu.state.word[+!config.notifDisabled] }`)
+                    notify(`${app.msgs.menuLabel_modeNotifs}: ${ menu.state.word[+!config.notifDisabled] }`)
                     menu.refresh()
                 }))
             }
 
             // Add About entry
-            const aboutLabel = `💡 ${ app.msgs.menuLabel_about || 'About' } ${ app.msgs.appName || app.name }`
+            const aboutLabel = `💡 ${app.msgs.menuLabel_about} ${app.msgs.appName}`
             menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
 
         },
@@ -468,14 +507,14 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateModalID = siteAlert(`🚀 ${ app.msgs.alert_updateAvail || 'Update available' }!`, // title
-                            `${ app.msgs.alert_newerVer || 'An update to' } ${ app.name } `
-                                + ( app.msgs.appName || app.name ) + ' '
-                                + `(v${ latestVer }) ${ app.msgs.alert_isAvail || 'is available' }!  `
+                        const updateModalID = siteAlert(`🚀 ${app.msgs.alert_updateAvail}!`, // title
+                            `${app.msgs.alert_newerVer} ${ app.name } `
+                                + ( app.msgs.appName ) + ' '
+                                + `(v${ latestVer }) ${app.msgs.alert_isAvail}!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
-                                    + `> ${ app.msgs.link_viewChanges || 'View changes' }</a>`,
+                                    + `> ${app.msgs.link_viewChanges}</a>`,
                             function update() { // button
                                 modals.safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
@@ -485,17 +524,17 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = app.msgs.btnLabel_update || 'Update'
-                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = app.msgs.btnLabel_update
+                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss
                         }
 
                         return
                 }}
 
                 // Alert to no update, return to About modal
-                siteAlert(( app.msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ app.msgs.appName || app.name } (v${ currentVer }) ` // msg
-                        + ( app.msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
+                siteAlert(( app.msgs.alert_upToDate ) + '!', // title
+                    `${app.msgs.appName} (v${ currentVer }) ` // msg
+                        + ( app.msgs.alert_isUpToDate ) + '!',
                     '', '', updateAlertWidth
                 )
                 modals.about.show()
@@ -539,20 +578,20 @@
                     pBrStyle = 'position: relative ; left: 4px ',
                     aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
                 const aboutModalID = siteAlert(
-                    app.msgs.appName || app.name, // title
-                    `<span style="${headingStyle}"><b>🏷️ <i>${ app.msgs.about_version || 'Version' }</i></b>: </span>`
+                    app.msgs.appName, // title
+                    `<span style="${headingStyle}"><b>🏷️ <i>${app.msgs.about_version}</i></b>: </span>`
                         + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
-                    + `<span style="${headingStyle}"><b>⚡ <i>${ app.msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
+                    + `<span style="${headingStyle}"><b>⚡ <i>${app.msgs.about_poweredBy}</i></b>: </span>`
                         + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
                         + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                    + `<span style="${headingStyle}"><b>📜 <i>${ app.msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+                    + `<span style="${headingStyle}"><b>📜 <i>${app.msgs.about_sourceCode}</i></b>:</span>\n`
                         + `<span style="${pBrStyle}"><a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                         + app.urls.gitHub + '</a></span>',
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
                         function leaveAReview() { // show new modal
-                            const reviewModalID = chatgpt.alert(( app.msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
+                            const reviewModalID = chatgpt.alert(( app.msgs.alert_choosePlatform ) + ':', '',
                                 [ function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
                                 function productHunt() { modals.safeWinOpen(app.urls.productHunt + '/reviews/new') }])
                             document.getElementById(reviewModalID).querySelector('button')
@@ -564,13 +603,13 @@
                 // Re-format buttons to include emoji + localized label + hide Dismiss button
                 for (const btn of document.getElementById(aboutModalID).querySelectorAll('button')) {
                     if (/updates/i.test(btn.textContent)) btn.textContent = (
-                        '🚀 ' + ( app.msgs.btnLabel_updateCheck || 'Check for Updates' ))
+                        '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
-                        '🧠 ' + ( app.msgs.btnLabel_getSupport || 'Get Support' ))
+                        '🧠 ' + ( app.msgs.btnLabel_getSupport ))
                     else if (/review/i.test(btn.textContent)) btn.textContent = (
-                        '⭐ ' + ( app.msgs.btnLabel_leaveReview || 'Leave Review' ))
+                        '⭐ ' + ( app.msgs.btnLabel_leaveReview ))
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
-                        '🤖 ' + ( app.msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
+                        '🤖 ' + ( app.msgs.btnLabel_moreApps ))
                     else btn.style.display = 'none' // hide Dismiss button
                 }
             }
@@ -894,8 +933,8 @@
                     else if (site == 'poe') sync.mode('fullWindow') // since not sidebarObserve()'d
                 } else if (mode == 'fullScreen') {
                     if (config.f11)
-                        siteAlert(app.msgs.alert_pressF11 || 'Press F11 to exit full screen',
-                            ( app.msgs.alert_f11reason || 'F11 was used to enter full screen, and due to browser security reasons,'
+                        siteAlert(app.msgs.alert_pressF11,
+                            ( app.msgs.alert_f11reason
                                 + 'the same key must be used to exit it' ) + '.')
                     document.exitFullscreen().catch(err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
                 }
@@ -958,7 +997,7 @@
             })()
         }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
     if (extensionInstalled) { // disable script/menu
-        GM_registerMenuCommand(menu.state.symbol[0] + ' ' + ( app.msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
+        GM_registerMenuCommand(menu.state.symbol[0] + ' ' + ( app.msgs.menuLabel_disabled ),
             () => { return }) // disable menu
         return // exit script
 
@@ -1067,7 +1106,7 @@
                 if (/chatgpt|openai/.test(site)) { // sidebar observer doesn't trigger
                     sync.fullerWin(true) // so sync Fuller Windows...
                     if (!config.notifDisabled) // ... + notify
-                        notify(( app.msgs.mode_fullWindow || 'Full-window' ) + ' ON')
+                        notify(( app.msgs.mode_fullWindow ) + ' ON')
             }}
             prevSessionChecked = true
         }

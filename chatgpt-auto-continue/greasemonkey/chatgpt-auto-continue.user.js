@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.21.1
+// @version             2024.9.22
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -271,56 +271,81 @@
         save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     } ; settings.load('notifDisabled')
 
-    // Init FETCHER
+    // Init app MESSAGES
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
-
-    // Init MESSAGES
-    app.msgs = {}
-    if (!config.userLanguage.startsWith('en')) app.msgs = await new Promise(resolve => {
-        const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
-              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
-        function handleMsgs(resp) {
-            try { // to return localized messages.json
-                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
-                for (const key in msgs)  // remove need to ref nested keys
-                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
-                        flatMsgs[key] = msgs[key].message
-                resolve(flatMsgs)
-            } catch (err) { // if bad response
-                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
-                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                fetchMsgs()
+    app.msgs = {
+        appName: app.name,
+        appDesc: 'Automatically continue generating multiple ChatGPT responses',
+        menuLabel_modeNotifs: 'Mode Notifications',
+        menuLabel_about: 'About',
+        about_version: 'Version',
+        about_poweredBy: 'Powered by',
+        about_sourceCode: 'Source code',
+        mode_autoContinue: 'Auto-Continue',
+        alert_updateAvail: 'Update available',
+        alert_newerVer: 'An update to',
+        alert_isAvail: 'is available',
+        alert_upToDate: 'Up-to-date',
+        alert_isUpToDate: 'is up-to-date',
+        notif_chatAutoContinued: 'Chat Auto-Continued',
+        btnLabel_moreApps: 'More ChatGPT Apps',
+        btnLabel_leaveReview: 'Leave Review',
+        btnLabel_getSupport: 'Get Support',
+        btnLabel_updateCheck: 'Check for Updates',
+        btnLabel_update: 'Update',
+        btnLabel_dismiss: 'Dismiss',
+        link_viewChanges: 'View changes',
+        state_on: 'on',
+        state_off: 'off'
+    }
+    if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
+        const localizedMsgs = await new Promise(resolve => {
+            const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
+                  msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+            let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+            function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
+            function handleMsgs(resp) {
+                try { // to return localized messages.json
+                    const msgs = JSON.parse(resp.responseText), flatMsgs = {}
+                    for (const key in msgs)  // remove need to ref nested keys
+                        if (typeof msgs[key] == 'object' && 'message' in msgs[key])
+                            flatMsgs[key] = msgs[key].message
+                    resolve(flatMsgs)
+                } catch (err) { // if bad response
+                    msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
+                    msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                        msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
+                            : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                    fetchMsgs()
+                }
             }
-        }
-        fetchMsgs()
-    })
+            fetchMsgs()
+        })
+        if (Object.keys(localizedMsgs).length > 0) app.msgs = localizedMsgs
+    }
 
     // Define MENU functions
 
     const menu = {
         ids: [], state: {
             symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            word: [(app.msgs.state_off || 'Off').toUpperCase(), (app.msgs.state_on || 'On').toUpperCase()]
+            word: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
         },
 
         register() {
 
             // Add Mode Notifications toggle
             const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
-                          + ( app.msgs.menuLabel_modeNotifs || 'Mode Notifications' )
+                          + ( app.msgs.menuLabel_modeNotifs )
                           + menu.state.separator + menu.state.word[+!config.notifDisabled]
             menu.ids.push(GM_registerMenuCommand(mnLabel, function() {
                 settings.save('notifDisabled', !config.notifDisabled)
-                notify(( app.msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menu.state.word[+!config.notifDisabled])
+                notify(( app.msgs.menuLabel_modeNotifs ) + ': ' + menu.state.word[+!config.notifDisabled])
                 menu.refresh()
             }))
     
             // Add About entry
-            const aboutLabel = `💡 ${ app.msgs.menuLabel_about || 'About' } ${ app.msgs.appName || app.name }`
+            const aboutLabel = `💡 ${app.msgs.menuLabel_about} ${app.msgs.appName}`
             menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
         },
 
@@ -348,14 +373,14 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateModalID = siteAlert(`🚀 ${ app.msgs.alert_updateAvail || 'Update available' }!`, // title
-                            `${ app.msgs.alert_newerVer || 'An update to' } ${ app.name } `
-                                + ( app.msgs.appName || app.name ) + ' '
-                                + `(v${ latestVer }) ${ app.msgs.alert_isAvail || 'is available' }!  `
+                        const updateModalID = siteAlert(`🚀 ${app.msgs.alert_updateAvail}!`, // title
+                            `${app.msgs.alert_newerVer} ${ app.name } `
+                                + ( app.msgs.appName ) + ' '
+                                + `(v${ latestVer }) ${app.msgs.alert_isAvail}!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
-                                    + `> ${ app.msgs.link_viewChanges || 'View changes' }</a>`,
+                                    + `> ${app.msgs.link_viewChanges}</a>`,
                             function update() { // button
                                 modals.safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
@@ -365,17 +390,17 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = app.msgs.btnLabel_update || 'Update'
-                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = app.msgs.btnLabel_update
+                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss
                         }
 
                         return
                 }}
 
                 // Alert to no update, return to About modal
-                siteAlert(( app.msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ app.msgs.appName || 'ChatGPT Auto-Continue' } (v${ currentVer }) ` // msg
-                        + ( app.msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
+                siteAlert(( app.msgs.alert_upToDate ) + '!', // title
+                    `${app.msgs.appName} (v${ currentVer }) ` // msg
+                        + ( app.msgs.alert_isUpToDate ) + '!',
                     '', '', updateAlertWidth
                 )
                 modals.about.show()
@@ -419,13 +444,13 @@
                       pBrStyle = 'position: relative ; left: 4px ',
                       aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
                 const aboutModalID = siteAlert(
-                    app.msgs.appName || app.name, // title
-                    `<span style="${headingStyle}"><b>🏷️ <i>${ app.msgs.about_version || 'Version' }</i></b>: </span>`
+                    app.msgs.appName, // title
+                    `<span style="${headingStyle}"><b>🏷️ <i>${app.msgs.about_version}</i></b>: </span>`
                         + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
-                    + `<span style="${headingStyle}"><b>⚡ <i>${ app.msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
+                    + `<span style="${headingStyle}"><b>⚡ <i>${app.msgs.about_poweredBy}</i></b>: </span>`
                         + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
                         + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                    + `<span style="${headingStyle}"><b>📜 <i>${ app.msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+                    + `<span style="${headingStyle}"><b>📜 <i>${app.msgs.about_sourceCode}</i></b>:</span>\n`
                         + `<span style="${pBrStyle}"><a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                         + app.urls.gitHub + '</a></span>',
                     [ // buttons
@@ -439,13 +464,13 @@
                 // Re-format buttons to include emoji + localized label + hide Dismiss button
                 for (const button of document.getElementById(aboutModalID).querySelectorAll('button')) {
                     if (/updates/i.test(button.textContent)) button.textContent = (
-                        '🚀 ' + ( app.msgs.btnLabel_updateCheck || 'Check for Updates' ))
+                        '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(button.textContent)) button.textContent = (
-                        '🧠 ' + ( app.msgs.btnLabel_getSupport || 'Get Support' ))
+                        '🧠 ' + ( app.msgs.btnLabel_getSupport ))
                     else if (/review/i.test(button.textContent)) button.textContent = (
-                        '⭐ ' + ( app.msgs.btnLabel_leaveReview || 'Leave Review' ))
+                        '⭐ ' + ( app.msgs.btnLabel_leaveReview ))
                     else if (/apps/i.test(button.textContent)) button.textContent = (
-                        '🤖 ' + ( app.msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
+                        '🤖 ' + ( app.msgs.btnLabel_moreApps ))
                     else button.style.display = 'none' // hide Dismiss button
                 }
             }
@@ -485,11 +510,11 @@
         if (mutation.attributeName == 'style' && mutation.target.style.opacity == '1') {
             const cgBtn = chatgpt.getContinueGeneratingButton()
             if (cgBtn) { cgBtn.click()
-                notify(app.msgs.notif_chatAutoContinued || 'Chat Auto-Continued', 'bottom-right')
+                notify(app.msgs.notif_chatAutoContinued, 'bottom-right')
     }}}))
     continueObserver.observe(document.querySelector('main'), { attributes: true, subtree: true })
 
     // NOTIFY of status on load
-    if (!config.notifDisabled) notify(( app.msgs.mode_autoContinue || 'Auto-Continue' ) + ': ON')
+    if (!config.notifDisabled) notify(( app.msgs.mode_autoContinue ) + ': ON')
 
 })()

@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.21.8
+// @version               2024.9.22
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -388,105 +388,218 @@
           inputEvents[action] = ( window.PointerEvent ? 'pointer' : env.browser.isMobile ? 'touch' : 'mouse' ) + action)
     log.debug(`Success! inputEvents = ${log.prettifyObj(inputEvents)}`)
 
-    // Init XHR fetcher
-    log.debug('Initializing XHR fetcher...')
+    // Init app MESSAGES
+    log.debug('Initializing app messages...')
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
-    log.debug(`Success! xhr = ${ env.scriptManager == 'OrangeMonkey' ? 'GM_xmlhttpRequest' : 'GM.xmlHttpRequest' }`)
-
-    // Init localized MESSAGES
-    log.debug('Initializing localized messages...')
-    app.msgs = {}
-    if (!config.userLanguage.startsWith('en')) app.msgs = await new Promise(resolve => {
-        const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
-              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
-        function handleMsgs(resp) {
-            try { // to return localized messages.json
-                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
-                for (const key in msgs)  // remove need to ref nested keys
-                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
-                        flatMsgs[key] = msgs[key].message
-                resolve(flatMsgs)
-            } catch (err) { // if bad response
-                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
-                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                fetchMsgs()
+    app.msgs = {
+        appName: app.name,
+        appDesc: 'Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4o!)',
+        menuLabel_proxyAPImode: 'Proxy API Mode',
+        menuLabel_autoGetAnswers: 'Auto-Get Answers',
+        menuLabel_autoFocusChatbar: 'Auto-Focus Chatbar',
+        menuLabel_whenStreaming: 'when streaming',
+        menuLabel_show: 'Show',
+        menuLabel_relatedQueries: 'Related Queries',
+        menuLabel_require: 'Require',
+        menuLabel_beforeQuery: 'before query',
+        menuLabel_afterQuery: 'after query',
+        menuLabel_widerSidebar: 'Wider Sidebar',
+        menuLabel_stickySidebar: 'Sticky Sidebar',
+        menuLabel_pinTo: 'Pin to',
+        menuLabel_top: 'Top',
+        menuLabel_sidebar: 'Sidebar',
+        menuLabel_bottom: 'Bottom',
+        menuLabel_background: 'Background',
+        menuLabel_foreground: 'Foreground',
+        menuLabel_animations: 'Animations',
+        menuLabel_replyLanguage: 'Reply Language',
+        menuLabel_colorScheme: 'Color Scheme',
+        menuLabel_auto: 'Auto',
+        menuLabel_about: 'About',
+        menuLabel_settings: 'Settings',
+        about_version: 'Version',
+        about_poweredBy: 'Powered by',
+        about_sourceCode: 'Source code',
+        scheme_light: 'Light',
+        scheme_dark: 'Dark',
+        mode_proxy: 'Proxy Mode',
+        mode_streaming: 'Streaming Mode',
+        mode_autoScroll: 'Auto-Scroll',
+        mode_prefix: 'Prefix Mode',
+        mode_suffix: 'Suffix Mode',
+        mode_anchor: 'Anchor Mode',
+        mode_debug: 'Debug Mode',
+        tooltip_playAnswer: 'Play answer',
+        tooltip_fontSize: 'Font size',
+        tooltip_sendReply: 'Send reply',
+        tooltip_askRandQuestion: 'Ask random question',
+        tooltip_minimize: 'Minimize',
+        tooltip_restore: 'Restore',
+        tooltip_expand: 'Expand',
+        tooltip_shrink: 'Shrink',
+        tooltip_close: 'Close',
+        tooltip_copy: 'Copy',
+        tooltip_reply: 'Reply',
+        tooltip_code: 'Code',
+        tooltip_sendRelatedQuery: 'Send related query',
+        helptip_proxyAPImode: 'Uses a Proxy API for no-login access to AI',
+        helptip_streamingMode: 'Receive replies in a continuous text stream',
+        helptip_autoGetAnswers: 'Auto-send queries to BraveGPT when using search engine',
+        helptip_autoFocusChatbar: 'Auto-focus chatbar whenever it appears',
+        helptip_autoScroll: 'Auto-scroll responses as they generate in Streaming Mode',
+        helptip_showRelatedQueries: 'Show related queries below chatbar',
+        helptip_prefixMode: 'Require "/" before queries for answers to show',
+        helptip_suffixMode: 'Require "?" after queries for answers to show',
+        helptip_widerSidebar: 'Horizontally expand search page sidebar',
+        helptip_stickySidebar: 'Makes BraveGPT visible in sidebar even as you scroll',
+        helptip_anchorMode: 'Anchor BraveGPT to bottom of window',
+        helptip_bgAnimations: 'Show animated backgrounds in UI components',
+        helptip_fgAnimations: 'Show foreground animations in UI components',
+        helptip_replyLanguage: 'Language for BraveGPT to reply in',
+        helptip_colorScheme: 'Scheme to display BraveGPT UI components in',
+        helptip_debugMode: 'Show detailed logging in browser console',
+        placeholder_askSomethingElse: 'Ask something else',
+        placeholder_typeSomething: 'Type something',
+        prompt_updateReplyLang: 'Update reply language',
+        alert_langUpdated: 'Language updated',
+        alert_willReplyIn: 'will reply in',
+        alert_yourSysLang: 'your system language',
+        alert_choosePlatform: 'Choose a platform',
+        alert_updateAvail: 'Update available',
+        alert_newerVer: 'An update to',
+        alert_isAvail: 'is available',
+        alert_upToDate: 'Up-to-date',
+        alert_isUpToDate: 'is up-to-date',
+        alert_isUnsupportedIn: 'is unsupported in',
+        alert_whenUsing: 'when using',
+        alert_pleaseUse: 'Please use',
+        alert_instead: 'instead',
+        alert_unavailable: 'unavailable',
+        alert_isOnlyAvailFor: 'is only available for',
+        alert_and: 'and',
+        alert_userscriptMgrNoStream: 'Your userscript manager does not support returning stream responses',
+        alert_isCurrentlyOnlyAvailBy: 'is currently only available by',
+        alert_openAIsupportSoon: 'Support for OpenAI API will be added shortly',
+        alert_waitingFor: 'Waiting for',
+        alert_response: 'response',
+        alert_login: 'Please login',
+        alert_thenRefreshPage: 'then refresh this page',
+        alert_tooManyRequests: 'ChatGPT is flooded with too many requests',
+        alert_parseFailed: 'Failed to parse response JSON',
+        alert_checkCloudflare: 'Please pass Cloudflare security check',
+        alert_notWorking: 'is not working',
+        alert_ifIssuePersists: 'If issue persists',
+        alert_try: 'Try',
+        alert_switchingOn: 'switching on',
+        alert_switchingOff: 'switching off',
+        notif_copiedToClipboard: 'Copied to clipboard',
+        btnLabel_sendQueryToApp: 'Send search query to BraveGPT',
+        btnLabel_moreApps: 'More ChatGPT Apps',
+        btnLabel_leaveReview: 'Leave Review',
+        btnLabel_getSupport: 'Get Support',
+        btnLabel_updateCheck: 'Check for Updates',
+        btnLabel_update: 'Update',
+        btnLabel_dismiss: 'Dismiss',
+        link_viewChanges: 'View changes',
+        link_shareFeedback: 'Feedback',
+        prefix_exit: 'Exit',
+        state_on: 'On',
+        state_off: 'Off'
+    }
+    if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
+        const localizedMsgs = await new Promise(resolve => {
+            const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
+                  msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+            let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+            function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
+            function handleMsgs(resp) {
+                try { // to return localized messages.json
+                    const msgs = JSON.parse(resp.responseText), flatMsgs = {}
+                    for (const key in msgs)  // remove need to ref nested keys
+                        if (typeof msgs[key] == 'object' && 'message' in msgs[key])
+                            flatMsgs[key] = msgs[key].message
+                    resolve(flatMsgs)
+                } catch (err) { // if bad response
+                    msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
+                    msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                        msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
+                            : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                    fetchMsgs()
+                }
             }
-        }
-        fetchMsgs()
-    })
-    log.debug(Object.keys(app.msgs).length > 0 ? `Success! app.msgs = ${log.prettifyObj(app.msgs)}` : 'Skipped due to English locale')
+            fetchMsgs()
+        })
+        if (Object.keys(localizedMsgs).length > 0) app.msgs = localizedMsgs
+    }
+    log.debug(`Success! app.msgs = ${log.prettifyObj(app.msgs)}`)
 
     // Init SETTINGS props
     log.debug('Initializing settings properties...')
     Object.assign(app, { settings: {
         proxyAPIenabled: { type: 'toggle', icon: 'sunglasses',
-            label: app.msgs.menuLabel_proxyAPImode || 'Proxy API Mode',
-            helptip: app.msgs.helptip_proxyAPImode || 'Uses a Proxy API for no-login access to AI' },
+            label: app.msgs.menuLabel_proxyAPImode,
+            helptip: app.msgs.helptip_proxyAPImode },
         streamingDisabled: { type: 'toggle', icon: 'signalStream',
-            label: app.msgs.mode_streaming || 'Streaming Mode',
-            helptip: app.msgs.helptip_streamingMode || 'Receive replies in a continuous text stream' },
+            label: app.msgs.mode_streaming,
+            helptip: app.msgs.helptip_streamingMode },
         autoGetDisabled: { type: 'toggle', icon: 'speechBalloonLasso',
-            label: app.msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers',
-            helptip: app.msgs.helptip_autoGetAnswers || 'Auto-send queries to BraveGPT when using search engine' },
+            label: app.msgs.menuLabel_autoGetAnswers,
+            helptip: app.msgs.helptip_autoGetAnswers },
         autoFocusChatbarDisabled: { type: 'toggle', mobile: false, icon: 'caretsInward',
-            label: app.msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar',
-            helptip: app.msgs.helptip_autoFocusChatbar || 'Auto-focus chatbar whenever it appears' },
+            label: app.msgs.menuLabel_autoFocusChatbar,
+            helptip: app.msgs.helptip_autoFocusChatbar },
         autoScroll: { type: 'toggle', mobile: false, icon: 'arrowsDown',
-            label: `${ app.msgs.mode_autoScroll || 'Auto-Scroll' } (${ app.msgs.menuLabel_whenStreaming || 'when streaming' })`,
-            helptip: app.msgs.helptip_autoScroll || 'Auto-scroll responses as they generate in Streaming Mode' },
+            label: `${app.msgs.mode_autoScroll} (${app.msgs.menuLabel_whenStreaming})`,
+            helptip: app.msgs.helptip_autoScroll },
         rqDisabled: { type: 'toggle', icon: 'speechBalloons',
-            label: `${ app.msgs.menuLabel_show || 'Show' } ${ app.msgs.menuLabel_relatedQueries || 'Related Queries' }`,
-            helptip: app.msgs.helptip_showRelatedQueries || 'Show related queries below chatbar' },
+            label: `${app.msgs.menuLabel_show} ${app.msgs.menuLabel_relatedQueries}`,
+            helptip: app.msgs.helptip_showRelatedQueries },
         prefixEnabled: { type: 'toggle', icon: 'slash',
-            label: `${ app.msgs.menuLabel_require || 'Require' } "/" ${ app.msgs.menuLabel_beforeQuery || 'before query' }`,
-            helptip: app.msgs.helptip_prefixMode || 'Require "/" before queries for answers to show' },
+            label: `${app.msgs.menuLabel_require} "/" ${app.msgs.menuLabel_beforeQuery}`,
+            helptip: app.msgs.helptip_prefixMode },
         suffixEnabled: { type: 'toggle', icon: 'questionMark',
-            label: `${ app.msgs.menuLabel_require || 'Require' } "?" ${ app.msgs.menuLabel_afterQuery || 'after query' }`,
-            helptip: app.msgs.helptip_suffixMode || 'Require "?" after queries for answers to show' },
+            label: `${app.msgs.menuLabel_require} "?" ${app.msgs.menuLabel_afterQuery}`,
+            helptip: app.msgs.helptip_suffixMode },
         widerSidebar: { type: 'toggle', mobile: false, icon: 'widescreen',
-            label: app.msgs.menuLabel_widerSidebar || 'Wider Sidebar',
-            helptip: app.msgs.helptip_widerSidebar || 'Horizontally expand search page sidebar' },
+            label: app.msgs.menuLabel_widerSidebar,
+            helptip: app.msgs.helptip_widerSidebar },
         stickySidebar: { type: 'toggle', mobile: false, icon: 'webCorner',
-            label: app.msgs.menuLabel_stickySidebar || 'Sticky Sidebar',
-            helptip: app.msgs.helptip_stickySidebar || 'Makes BraveGPT visible in sidebar even as you scroll' },
+            label: app.msgs.menuLabel_stickySidebar,
+            helptip: app.msgs.helptip_stickySidebar },
         anchored: { type: 'toggle', mobile: false, icon: 'anchor',
-            label: app.msgs.mode_anchor || 'Anchor Mode',
-            helptip: app.msgs.helptip_anchorMode || 'Anchor BraveGPT to bottom of window' },
+            label: app.msgs.mode_anchor,
+            helptip: app.msgs.helptip_anchorMode },
         bgAnimationsDisabled: { type: 'toggle', icon: 'sparkles',
-            label: `${ app.msgs.menuLabel_background || 'Background' } ${ app.msgs.menuLabel_animations || 'Animations' }`,
-            helptip: app.msgs.helptip_bgAnimations || 'Show animated backgrounds in UI components' },
+            label: `${app.msgs.menuLabel_background} ${app.msgs.menuLabel_animations}`,
+            helptip: app.msgs.helptip_bgAnimations },
         fgAnimationsDisabled: { type: 'toggle', icon: 'sparkles',
-            label: `${ app.msgs.menuLabel_foreground || 'Foreground' } ${ app.msgs.menuLabel_animations || 'Animations' }`,
-            helptip: app.msgs.helptip_fgAnimations || 'Show foreground animations in UI components' },
+            label: `${app.msgs.menuLabel_foreground} ${app.msgs.menuLabel_animations}`,
+            helptip: app.msgs.helptip_fgAnimations },
         replyLanguage: { type: 'prompt', icon: 'languageChars',
-            label: app.msgs.menuLabel_replyLanguage || 'Reply Language',
-            helptip: app.msgs.helptip_replyLanguage || 'Language for BraveGPT to reply in' },
+            label: app.msgs.menuLabel_replyLanguage,
+            helptip: app.msgs.helptip_replyLanguage },
         scheme: { type: 'modal', icon: 'scheme',
-            label: app.msgs.menuLabel_colorScheme || 'Color Scheme',
-            helptip: app.msgs.helptip_colorScheme || 'Scheme to display BraveGPT UI components in' },
+            label: app.msgs.menuLabel_colorScheme,
+            helptip: app.msgs.helptip_colorScheme },
         debugMode: { type: 'toggle', icon: 'bug',
-            label: app.msgs.mode_debug || 'Debug Mode',
-            helptip: app.msgs.helptip_debugMode || 'Show detailed logging in browser console' },
+            label: app.msgs.mode_debug,
+            helptip: app.msgs.helptip_debugMode },
         about: { type: 'modal', icon: 'questionMarkCircle',
-            label: `${ app.msgs.menuLabel_about || 'About' } ${app.name}...` }
+            label: `${app.msgs.menuLabel_about} ${app.name}...` }
     }})
     log.debug(`Success! app.settings = ${log.prettifyObj(app.settings)}`)
 
     // Init ALERTS
     Object.assign(app, { alerts: {
-        waitingResponse:  `${ app.msgs.alert_waitingFor || 'Waiting for' } ${app.name} ${ app.msgs.alert_response || 'response' }...`,
-        login:            `${ app.msgs.alert_login || 'Please login' } @ `,
-        checkCloudflare:  `${ app.msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
-        tooManyRequests:  `${ app.msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
-        parseFailed:      `${ app.msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
-        proxyNotWorking:  `${ app.msgs.mode_proxy || 'Proxy Mode' } ${ app.msgs.alert_notWorking || 'is not working' }.`,
-        openAInotWorking: `OpenAI API ${ app.msgs.alert_notWorking || 'is not working' }.`,
-        suggestProxy:     `${ app.msgs.alert_try || 'Try' } ${ app.msgs.alert_switchingOn || 'switching on' } ${ app.msgs.mode_proxy || 'Proxy Mode' }`,
-        suggestOpenAI:    `${ app.msgs.alert_try || 'Try' } ${ app.msgs.alert_switchingOff || 'switching off' } ${ app.msgs.mode_proxy || 'Proxy Mode' }`
+        waitingResponse:  `${app.msgs.alert_waitingFor} ${app.name} ${app.msgs.alert_response}...`,
+        login:            `${app.msgs.alert_login} @ `,
+        checkCloudflare:  `${app.msgs.alert_checkCloudflare} @ `,
+        tooManyRequests:  `${app.msgs.alert_tooManyRequests}.`,
+        parseFailed:      `${app.msgs.alert_parseFailed}.`,
+        proxyNotWorking:  `${app.msgs.mode_proxy} ${app.msgs.alert_notWorking}.`,
+        openAInotWorking: `OpenAI API ${app.msgs.alert_notWorking}.`,
+        suggestProxy:     `${app.msgs.alert_try} ${app.msgs.alert_switchingOn} ${app.msgs.mode_proxy}`,
+        suggestOpenAI:    `${app.msgs.alert_try} ${app.msgs.alert_switchingOff} ${app.msgs.mode_proxy}`
     }})
 
     // Define MENU functions
@@ -494,7 +607,7 @@
     const menu = {
         ids: [], state: {
             symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            word: [(app.msgs.state_off || 'Off').toUpperCase(), (app.msgs.state_on || 'On').toUpperCase()]
+            word: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
         },
 
         register() {
@@ -510,7 +623,7 @@
             menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
 
             // Add Settings entry
-            const settingsLabel = `⚙️ ${ app.msgs.menuLabel_settings || 'Settings' }`
+            const settingsLabel = `⚙️ ${app.msgs.menuLabel_settings}`
             menu.ids.push(GM_registerMenuCommand(settingsLabel, modals.settings.show))
         },
 
@@ -548,13 +661,13 @@
 
                         // Alert to update
                         log.debug(`Update v${latestVer} found!`)
-                        const updateModalID = siteAlert(`🚀 ${ app.msgs.alert_updateAvail || 'Update available' }!`, // title
-                            `${ app.msgs.alert_newerVer || 'An update to' } ${ app.name } `
-                                + `(v${latestVer}) ${ app.msgs.alert_isAvail || 'is available' }!  `
+                        const updateModalID = siteAlert(`🚀 ${app.msgs.alert_updateAvail}!`, // title
+                            `${app.msgs.alert_newerVer} ${ app.name } `
+                                + `(v${latestVer}) ${app.msgs.alert_isAvail}!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.93rem" '
                                     + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
-                                    + `>${ app.msgs.link_viewChanges || 'View changes' }</a>`,
+                                    + `>${app.msgs.link_viewChanges}</a>`,
                             function update() { // button
                                 modals.safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
@@ -566,8 +679,8 @@
                             log.debug('Localizing button labels in non-English alert...')
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = app.msgs.btnLabel_update || 'Update'
-                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = app.msgs.btnLabel_update
+                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss
                         }
 
                         modals.init(updateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
@@ -577,8 +690,8 @@
 
                 // Alert to no update found, nav back
                 log.debug('No update found.')
-                const noUpdateModalID = siteAlert(( app.msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ app.name } (v${ currentVer }) ${ app.msgs.alert_isUpToDate || 'is up-to-date' }!`, // msg
+                const noUpdateModalID = siteAlert(( app.msgs.alert_upToDate ) + '!', // title
+                    `${ app.name } (v${ currentVer }) ${app.msgs.alert_isUpToDate}!`, // msg
                         '', '', updateAlertWidth)
                 const noUpdateModal = document.getElementById(noUpdateModalID).firstChild
                 modals.init(noUpdateModal) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
@@ -629,11 +742,11 @@
             // Add login link to login msgs
             if (msg.includes('@')) {
                 msg += '<a class="alert-link" target="_blank" rel="noopener" href="https://chatgpt.com">chatgpt.com</a>,'
-                     + ` ${ app.msgs.alert_thenRefreshPage || 'then refresh this page' }.`
-                     + ` (${ app.msgs.alert_ifIssuePersists || 'If issue persists' },`
-                     + ` ${( app.msgs.alert_try || 'Try' ).toLowerCase() }`
-                     + ` ${ app.msgs.alert_switchingOn || 'switching on' }`
-                     + ` ${ app.msgs.mode_proxy || 'Proxy Mode' })`
+                     + ` ${app.msgs.alert_thenRefreshPage}.`
+                     + ` (${app.msgs.alert_ifIssuePersists},`
+                     + ` ${( app.msgs.alert_try ).toLowerCase() }`
+                     + ` ${app.msgs.alert_switchingOn}`
+                     + ` ${app.msgs.mode_proxy})`
             }
 
             // Hyperlink app.msgs.alert_switching<On|Off>
@@ -795,11 +908,11 @@
                 // Create/init modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
                 const aboutModalID = chatgpt.alert('',
-                    '🏷️ ' + ( app.msgs.about_version || 'Version' ) + ': <span class="about-em">' + GM_info.script.version + '</span>\n'
-                        + '⚡ ' + ( app.msgs.about_poweredBy || 'Powered by' ) + ': '
+                    '🏷️ ' + ( app.msgs.about_version ) + ': <span class="about-em">' + GM_info.script.version + '</span>\n'
+                        + '⚡ ' + ( app.msgs.about_poweredBy ) + ': '
                             + `<a href="${app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>`
                             + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
-                        + '📜 ' + ( app.msgs.about_sourceCode || 'Source code' )
+                        + '📜 ' + ( app.msgs.about_sourceCode )
                             + `: <a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                                 + app.urls.gitHub + '</a>',
                     [ // buttons
@@ -826,13 +939,13 @@
 
                     // Emojize/localize label
                     if (/updates/i.test(btn.textContent)) btn.textContent = (
-                        '🚀 ' + ( app.msgs.btnLabel_updateCheck || 'Check for Updates' ))
+                        '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
-                        '🧠 ' + ( app.msgs.btnLabel_getSupport || 'Get Support' ))
+                        '🧠 ' + ( app.msgs.btnLabel_getSupport ))
                     else if (/review/i.test(btn.textContent)) btn.textContent = (
-                        '⭐ ' + ( app.msgs.btnLabel_leaveReview || 'Leave Review' ))
+                        '⭐ ' + ( app.msgs.btnLabel_leaveReview ))
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
-                        '🤖 ' + ( app.msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
+                        '🤖 ' + ( app.msgs.btnLabel_moreApps ))
                     else btn.style.display = 'none' // hide Dismiss button
                 })
 
@@ -858,7 +971,7 @@
 
                 // Create/init modal
                 const feedbackModalID = siteAlert(`${
-                    app.msgs.alert_choosePlatform || 'Choose a platform' }:`, '', btns, '', 456)
+                    app.msgs.alert_choosePlatform }:`, '', btns, '', 456)
                 const feedbackModal = document.getElementById(feedbackModalID).firstChild
 
                 // Center CTA
@@ -889,7 +1002,7 @@
                 log.caller = 'modals.replyLang.show()'
                     while (true) {
                         let replyLanguage = prompt(
-                            ( app.msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
+                            ( app.msgs.prompt_updateReplyLang ) + ':', config.replyLanguage)
                         if (replyLanguage == null) break // user cancelled so do nothing
                         else if (!/\d/.test(replyLanguage)) {
                             replyLanguage = ( // auto-case for menu/alert aesthetics
@@ -898,9 +1011,9 @@
                             log.debug('Saving reply language...')
                             settings.save('replyLanguage', replyLanguage || config.userLanguage)
                             log.debug(`Success! config.replyLanguage = ${config.replyLanguage}`)
-                            const langUpdatedAlertID = siteAlert(( app.msgs.alert_langUpdated || 'Language updated' ) + '!', // title
-                                `${ app.name } ${ app.msgs.alert_willReplyIn || 'will reply in' } `
-                                    + ( replyLanguage || app.msgs.alert_yourSysLang || 'your system language' ) + '.',
+                            const langUpdatedAlertID = siteAlert(( app.msgs.alert_langUpdated ) + '!', // title
+                                `${ app.name } ${app.msgs.alert_willReplyIn} `
+                                    + ( replyLanguage || app.msgs.alert_yourSysLang ) + '.',
                                 '', '', 447) // confirmation width
                             const langUpdatedAlert = document.getElementById(langUpdatedAlertID).firstChild
                             modals.init(langUpdatedAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
@@ -917,7 +1030,7 @@
 
                 // Create/init modal
                 const schemeModalID = siteAlert(`${
-                    app.name } ${( app.msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
+                    app.name } ${( app.msgs.menuLabel_colorScheme ).toLowerCase() }:`, '',
                     [ function auto() {}, function light() {}, function dark() {} ], // buttons
                     '', 503) // px width
                 const schemeModal = document.getElementById(schemeModalID).firstChild
@@ -963,10 +1076,10 @@
                 function schemeNotify(scheme) {
 
                     // Show notification
-                    notify(` ${ app.msgs.menuLabel_colorScheme || 'Color Scheme' }: `
+                    notify(` ${app.msgs.menuLabel_colorScheme}: `
                            + ( scheme == 'light' ? app.msgs.scheme_light   || 'Light' :
                                scheme == 'dark'  ? app.msgs.scheme_dark    || 'Dark'
-                                                 : app.msgs.menuLabel_auto || 'Auto' ).toUpperCase() )
+                                                 : app.msgs.menuLabel_auto ).toUpperCase() )
                     const notifs = document.querySelectorAll('.chatgpt-notif'),
                           notif = notifs[notifs.length -1]
 
@@ -1001,7 +1114,7 @@
                                            + 'filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3))'
                 // Init title
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'bravegpt-settings-title'
-                const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = app.msgs.menuLabel_settings || 'Settings'
+                const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = app.msgs.menuLabel_settings
                 const settingsTitleIcon = icons.sliders.create()
                 settingsTitleIcon.style.cssText = 'width: 21px ; height: 21px ; margin-right: -4px ; position: relative ; top: 2px ; right: 10px'
                 settingsTitleH4.prepend(settingsTitleIcon) ; settingsTitleDiv.append(settingsTitleH4)
@@ -1137,8 +1250,8 @@
                             modals.settings.aboutContent = {}
                             modals.settings.aboutContent.short = `v${ GM_info.script.version}`
                             modals.settings.aboutContent.long = (
-                                  `${ app.msgs.about_version || 'Version' }: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
-                                + `${ app.msgs.about_poweredBy || 'Powered by' } <span class="about-em">chatgpt.js</span>${textGap}` )
+                                  `${app.msgs.about_version}: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
+                                + `${app.msgs.about_poweredBy} <span class="about-em">chatgpt.js</span>${textGap}` )
                             for (let i = 0; i < 7; i++) modals.settings.aboutContent.long += modals.settings.aboutContent.long // make it long af
                             innerDiv.innerHTML = modals.settings.aboutContent[config.fgAnimationsDisabled ? 'short' : 'long']
                             innerDiv.style.float = config.fgAnimationsDisabled ? 'right' : ''
@@ -1152,7 +1265,7 @@
                 log.debug('Creating Close button...')
                 const closeBtn = document.createElement('div')
                 closeBtn.classList.add('bravegpt-modal-close-btn', 'no-mobile-tap-outline')
-                closeBtn.title = app.msgs.tooltip_close || 'Close'
+                closeBtn.title = app.msgs.tooltip_close
                 const closeSVG = icons.x.create() ; closeBtn.append(closeSVG)
 
                 // Assemble/append elems
@@ -1207,9 +1320,9 @@
                 if (schemeStatusSpan) {
                     while (schemeStatusSpan.firstChild) schemeStatusSpan.firstChild.remove() // clear old status
                     schemeStatusSpan.append(...( // status txt + icon
-                        config.scheme == 'dark' ? [document.createTextNode(app.msgs.scheme_dark || 'Dark'), icons.moon.create()]
-                      : config.scheme == 'light' ? [document.createTextNode(app.msgs.scheme_light || 'Light'), icons.sun.create()]
-                      : [document.createTextNode(app.msgs.menuLabel_auto || 'Auto'), icons.arrowsCycle.create()] ))
+                        config.scheme == 'dark' ? [document.createTextNode(app.msgs.scheme_dark), icons.moon.create()]
+                      : config.scheme == 'light' ? [document.createTextNode(app.msgs.scheme_light), icons.sun.create()]
+                      : [document.createTextNode(app.msgs.menuLabel_auto), icons.arrowsCycle.create()] ))
                     schemeStatusSpan.style.cssText += `; margin-top: ${ !config.scheme ? 3 : 0 }px !important`
                 }
             }
@@ -1257,8 +1370,8 @@
                 const pinMenuUL = document.querySelector('#pin-menu ul') || document.createElement('ul'),
                       pinMenuItems = []
                 const pinMenulabels = [
-                    `${ app.msgs.tooltip_pinTo || 'Pin to' }...`, app.msgs.menuLabel_top || 'Top',
-                    app.msgs.menuLabel_sidebar || 'Sidebar', app.msgs.menuLabel_bottom || 'Bottom' ]
+                    `${app.msgs.tooltip_pinTo}...`, app.msgs.menuLabel_top,
+                    app.msgs.menuLabel_sidebar, app.msgs.menuLabel_bottom ]
                 const pinMenuIcons = [icons.webCorner.create(), icons.sidebar.create(), icons.anchor.create(), icons.checkmark.create()]
 
                 // Style icons
@@ -2394,7 +2507,7 @@
 
                 // No reply, change placeholder + focus chatbar
                 if (chatTextarea.value.trim() == '') {
-                    chatTextarea.placeholder = `${ app.msgs.placeholder_typeSomething || 'Type something' }...`
+                    chatTextarea.placeholder = `${app.msgs.placeholder_typeSomething}...`
                     chatTextarea.focus()
 
                 // Yes reply, submit it + transform to loading UI
@@ -2596,7 +2709,7 @@
             }
             if (prevState != config.anchored) {
                 menus.pin.topPos = menus.pin.rightPos = null
-                notify(( app.msgs.mode_anchor || 'Anchor Mode' ) + ' ' + menu.state.word[+config.anchored])
+                notify(( app.msgs.mode_anchor ) + ' ' + menu.state.word[+config.anchored])
                 log.debug(`Success! Anchor Mode toggled ${ config.anchored ? 'ON' : 'OFF' }`)
             }
         },
@@ -2705,7 +2818,7 @@
         proxyMode() {
             log.caller = 'toggle.proxyMode()'
             settings.save('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(( app.msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menu.state.word[+config.proxyAPIenabled])
+            notify(( app.msgs.menuLabel_proxyAPImode ) + ' ' + menu.state.word[+config.proxyAPIenabled])
             menu.refresh()
             if (modals.settings.get()) { // update visual states of Settings toggles
                 const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input'),
@@ -2732,7 +2845,7 @@
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
                     .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
             update.style.tweaks() // toggle <pre> max-height
-            notify(( app.msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menu.state.word[+!config.rqDisabled])
+            notify(( app.msgs.menuLabel_relatedQueries ) + ' ' + menu.state.word[+!config.rqDisabled])
             log.debug(`Success! config.rqDisabled = ${config.rqDisabled}`)
         },
 
@@ -2767,35 +2880,35 @@
                                                      : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!streamingSupported.scriptManager) { // alert userscript manager unsupported, suggest TM/SC
                 log.debug(`Streaming Mode unsupported in ${env.scriptManager}`)
-                const suggestAlertID = siteAlert(`${app.settings.streamingDisabled.label} ${ app.msgs.alert_unavailable || 'unavailable' }`,
-                    `${app.settings.streamingDisabled.label} ${ app.msgs.alert_isOnlyAvailFor || 'is only available for' }`
+                const suggestAlertID = siteAlert(`${app.settings.streamingDisabled.label} ${app.msgs.alert_unavailable}`,
+                    `${app.settings.streamingDisabled.label} ${app.msgs.alert_isOnlyAvailFor}`
                         + ( !env.browser.isEdge && !env.browser.isBrave ? // suggest TM for supported browsers
-                            ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ app.msgs.alert_and || 'and' }`
+                            ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${app.msgs.alert_and}`
                                 : '' )
                         + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
-                        + ` (${ app.msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`
+                        + ` (${app.msgs.alert_userscriptMgrNoStream}.)`
                 )
                 const suggestAlert = document.getElementById(suggestAlertID).firstChild
                 modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
             } else if (!streamingSupported.browser) { // alert TM/browser unsupported, suggest SC
                 log.debug('Streaming Mode unsupported in browser')
-                const suggestAlertID = siteAlert(`${app.settings.streamingDisabled.label} ${ app.msgs.alert_unavailable || 'unavailable' }`,
-                    `${app.settings.streamingDisabled.label} ${ app.msgs.alert_isUnsupportedIn || 'is unsupported in' } `
-                        + `${ env.browser.isChrome ? 'Chrome' : env.browser.isEdge ? 'Edge' : 'Brave' } ${ app.msgs.alert_whenUsing || 'when using' } Tampermonkey. `
-                        + `${ app.msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
-                            + `${ app.msgs.alert_instead || 'instead' }.`
+                const suggestAlertID = siteAlert(`${app.settings.streamingDisabled.label} ${app.msgs.alert_unavailable}`,
+                    `${app.settings.streamingDisabled.label} ${app.msgs.alert_isUnsupportedIn} `
+                        + `${ env.browser.isChrome ? 'Chrome' : env.browser.isEdge ? 'Edge' : 'Brave' } ${app.msgs.alert_whenUsing} Tampermonkey. `
+                        + `${app.msgs.alert_pleaseUse} <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
+                            + `${app.msgs.alert_instead}.`
                 )
                 const suggestAlert = document.getElementById(suggestAlertID).firstChild
                 modals.init(suggestAlert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
             } else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
                 log.debug('Streaming Mode unsupported in OpenAI mode')
                 let msg = `${app.settings.streamingDisabled.label} `
-                        + `${ app.msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
-                        + `${ app.msgs.alert_switchingOn || 'switching on' } ${ app.msgs.mode_proxy || 'Proxy Mode' }. `
-                        + `(${ app.msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
-                const switchPhrase = app.msgs.alert_switchingOn || 'switching on'
+                        + `${app.msgs.alert_isCurrentlyOnlyAvailBy} `
+                        + `${app.msgs.alert_switchingOn} ${app.msgs.mode_proxy}. `
+                        + `(${app.msgs.alert_openAIsupportSoon}!)`
+                const switchPhrase = app.msgs.alert_switchingOn
                 msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
-                const alertID = siteAlert(`${ app.msgs.mode_streaming || 'Streaming Mode' } ${ app.msgs.alert_unavailable || 'unavailable' }`, msg),
+                const alertID = siteAlert(`${app.msgs.mode_streaming} ${app.msgs.alert_unavailable}`, msg),
                       alert = document.getElementById(alertID).firstChild
                 modals.init(alert) // add classes/stars, disable wheel-scrolling, dim bg, glowup btns
                 alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggle.proxyMode() }
@@ -2813,21 +2926,21 @@
 
             // Update text
             tooltipDiv.innerText = (
-                btnType == 'chevron' ? ( config.minimized ? `${ app.msgs.tooltip_restore || 'Restore' }`
-                                                          : `${ app.msgs.tooltip_minimize || 'Minimize' }` )
-              : btnType == 'about' ? app.msgs.menuLabel_about || 'About'
-              : btnType == 'settings' ? app.msgs.menuLabel_settings || 'Settings'
-              : btnType == 'speak' ? app.msgs.tooltip_playAnswer || 'Play answer'
-              : btnType == 'font-size' ? app.msgs.tooltip_fontSize || 'Font size'
-              : btnType == 'wsb' ? (( config.widerSidebar ? `${ app.msgs.prefix_exit || 'Exit' } ` :  '' )
-                               + ( app.msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
-              : btnType == 'arrows' ? ( config.expanded ? `${ app.msgs.tooltip_shrink || 'Shrink' }`
-                                                        : `${ app.msgs.tooltip_expand || 'Expand' }` )
-              : btnType == 'copy' ? ( btnElem.firstChild.id == 'copy-icon' ? `${ app.msgs.tooltip_copy || 'Copy' } ${
-                  ( btnElem.parentNode.tagName == 'PRE' ? app.msgs.tooltip_reply || 'Reply' : app.msgs.tooltip_code || 'Code' ).toLowerCase() }`
-                      : `${ app.msgs.notif_copiedToClipboard || 'Copied to clipboard' }!` )
-              : btnType == 'send' ? app.msgs.tooltip_sendReply || 'Send reply'
-              : btnType == 'shuffle' ? app.msgs.tooltip_askRandQuestion || 'Ask random question' : '' )
+                btnType == 'chevron' ? ( config.minimized ? `${app.msgs.tooltip_restore}`
+                                                          : `${app.msgs.tooltip_minimize}` )
+              : btnType == 'about' ? app.msgs.menuLabel_about
+              : btnType == 'settings' ? app.msgs.menuLabel_settings
+              : btnType == 'speak' ? app.msgs.tooltip_playAnswer
+              : btnType == 'font-size' ? app.msgs.tooltip_fontSize
+              : btnType == 'wsb' ? (( config.widerSidebar ? `${app.msgs.prefix_exit} ` :  '' )
+                               + ( app.msgs.menuLabel_widerSidebar ))
+              : btnType == 'arrows' ? ( config.expanded ? `${app.msgs.tooltip_shrink}`
+                                                        : `${app.msgs.tooltip_expand}` )
+              : btnType == 'copy' ? ( btnElem.firstChild.id == 'copy-icon' ? `${app.msgs.tooltip_copy} ${
+                  ( btnElem.parentNode.tagName == 'PRE' ? app.msgs.tooltip_reply : app.msgs.tooltip_code ).toLowerCase() }`
+                      : `${app.msgs.notif_copiedToClipboard}!` )
+              : btnType == 'send' ? app.msgs.tooltip_sendReply
+              : btnType == 'shuffle' ? app.msgs.tooltip_askRandQuestion : '' )
 
             // Update position
             const elems = { appDiv, btnElem, tooltipDiv },
@@ -3468,8 +3581,8 @@
                       chatTextarea = document.createElement('textarea')
                 continueChatDiv.className = 'continue-chat'
                 chatTextarea.id = 'app-chatbar' ; chatTextarea.rows = '1'
-                chatTextarea.placeholder = ( answer == 'standby' ? app.msgs.placeholder_askSomethingElse || 'Ask something else'
-                                                                 : app.msgs.tooltip_sendReply || 'Send reply' ) + '...'
+                chatTextarea.placeholder = ( answer == 'standby' ? app.msgs.placeholder_askSomethingElse
+                                                                 : app.msgs.tooltip_sendReply ) + '...'
                 continueChatDiv.append(chatTextarea)
                 replyForm.append(continueChatDiv) ; replySection.append(replyForm)
                 appDiv.insertBefore(replySection, appDiv.querySelector('footer'));
@@ -3580,7 +3693,7 @@
                           relatedQuerySVG = icons.arrowDownRight.create()
 
                     // Add attributes
-                    relatedQueryDiv.title = app.msgs.tooltip_sendRelatedQuery || 'Send related query'
+                    relatedQueryDiv.title = app.msgs.tooltip_sendRelatedQuery
                     relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select', 'no-mobile-tap-outline')
                     relatedQueryDiv.setAttribute('tabindex', 0)
                     relatedQueryDiv.textContent = query
@@ -3669,7 +3782,7 @@
     setTimeout(() => appDiv.classList.add('active'), 100) // fade in    
 
     // Init footer CTA to share feedback
-    let footerContent = create.anchor('#', app.msgs.link_shareFeedback || 'Share feedback', { target: '_self' })
+    let footerContent = create.anchor('#', app.msgs.link_shareFeedback, { target: '_self' })
     footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
     footerContent.onclick = () => modals.feedback.show({ sites: 'feedback' })
 

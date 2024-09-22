@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.21.2
+// @version             2024.9.22
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -279,64 +279,90 @@
         save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     } ; settings.load('autoTalkDisabled', 'toggleHidden')
 
-    // Init FETCHER
+    // Init app MESSAGES
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
-
-    // Init MESSAGES
-    app.msgs = {}
-    if (!config.userLanguage.startsWith('en')) app.msgs = await new Promise(resolve => {
-        const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
-              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
-        function handleMsgs(resp) {
-            try { // to return localized messages.json
-                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
-                for (const key in msgs)  // remove need to ref nested keys
-                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
-                        flatMsgs[key] = msgs[key].message
-                resolve(flatMsgs)
-            } catch (err) { // if bad response
-                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
-                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                fetchMsgs()
+    app.msgs = {
+        appName: app.name,
+        appDesc: 'Automatically play ChatGPT responses',
+        menuLabel_toggleVis: 'Toggle Visibility',
+        menuLabel_about: 'About',
+        about_version: 'Version',
+        about_poweredBy: 'Powered by',
+        about_sourceCode: 'Source code',
+        mode_autoTalk: 'Auto-Talk',
+        alert_updateAvail: 'Update available',
+        alert_newerVer: 'An update to',
+        alert_isAvail: 'is available',
+        alert_upToDate: 'Up-to-date',
+        alert_isUpToDate: 'is up-to-date',
+        btnLabel_moreApps: 'More ChatGPT Apps',
+        btnLabel_leaveReview: 'Leave Review',
+        btnLabel_getSupport: 'Get Support',
+        btnLabel_updateCheck: 'Check for Updates',
+        btnLabel_update: 'Update',
+        btnLabel_dismiss: 'Dismiss',
+        link_viewChanges: 'View changes',
+        state_enabled: 'enabled',
+        state_disabled: 'disabled',
+        state_on: 'on',
+        state_off: 'off'
+    }
+    if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
+        const localizedMsgs = await new Promise(resolve => {
+            const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
+                  msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+            let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+            function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
+            function handleMsgs(resp) {
+                try { // to return localized messages.json
+                    const msgs = JSON.parse(resp.responseText), flatMsgs = {}
+                    for (const key in msgs)  // remove need to ref nested keys
+                        if (typeof msgs[key] == 'object' && 'message' in msgs[key])
+                            flatMsgs[key] = msgs[key].message
+                    resolve(flatMsgs)
+                } catch (err) { // if bad response
+                    msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
+                    msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                        msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
+                            : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                    fetchMsgs()
+                }
             }
-        }
-        fetchMsgs()
-    })
+            fetchMsgs()
+        })
+        if (Object.keys(localizedMsgs).length > 0) app.msgs = localizedMsgs
+    }
 
     // Define MENU functions
     
     const menu = {
         ids: [], state: {
             symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            word: [(app.msgs.state_off || 'Off').toUpperCase(), (app.msgs.state_on || 'On').toUpperCase()]
+            word: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
         },
 
         register() {
 
             // Add Auto-Talk toggle
             const atLabel = menu.state.symbol[+!config.autoTalkDisabled] + ' '
-                          + ( app.msgs.mode_autoTalk || 'Auto-Talk' )
+                          + ( app.msgs.mode_autoTalk )
                           + menu.state.separator + menu.state.word[+!config.autoTalkDisabled]
             menu.ids.push(GM_registerMenuCommand(atLabel, () => document.getElementById('auto-talk-toggle-label').click()))
 
             // Add Toggle Visibility toggle
             const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
-                          + ( app.msgs.menuLabel_toggleVis || 'Toggle Visibility' )
+                          + ( app.msgs.menuLabel_toggleVis )
                           + menu.state.separator + menu.state.word[+!config.toggleHidden]
             menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
                 if (!config.notifDisabled) notify((
-                    app.msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menu.state.word[+!config.toggleHidden])
+                    app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.word[+!config.toggleHidden])
                 menu.refresh()
             }))
 
             // Add About entry
-            const aboutLabel = `💡 ${ app.msgs.menuLabel_about || 'About' } ${ app.msgs.appName || app.name }`
+            const aboutLabel = `💡 ${app.msgs.menuLabel_about} ${app.msgs.appName}`
             menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
         },
 
@@ -364,14 +390,14 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateModalID = siteAlert(`🚀 ${ app.msgs.alert_updateAvail || 'Update available' }!`, // title
-                            `${ app.msgs.alert_newerVer || 'An update to' } ${ app.name } `
-                                + ( app.msgs.appName || app.name ) + ' '
-                                + `(v${ latestVer }) ${ app.msgs.alert_isAvail || 'is available' }!  `
+                        const updateModalID = siteAlert(`🚀 ${app.msgs.alert_updateAvail}!`, // title
+                            `${app.msgs.alert_newerVer} ${ app.name } `
+                                + ( app.msgs.appName ) + ' '
+                                + `(v${ latestVer }) ${app.msgs.alert_isAvail}!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
                                     + app.urls.update.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
-                                    + `> ${ app.msgs.link_viewChanges || 'View changes' }</a>`,
+                                    + `> ${app.msgs.link_viewChanges}</a>`,
                             function update() { // button
                                 modals.safeWinOpen(app.urls.update.replace('meta.js', 'user.js') + '?t=' + Date.now())
                             }, '', updateAlertWidth
@@ -381,17 +407,17 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = app.msgs.btnLabel_update || 'Update'
-                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = app.msgs.btnLabel_update
+                            updateBtns[0].textContent = app.msgs.btnLabel_dismiss
                         }
 
                         return
                 }}
 
                 // Alert to no update, return to About modal
-                siteAlert(( app.msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ app.msgs.appName || 'ChatGPT Auto-Talk' } (v${ currentVer }) ` // msg
-                        + ( app.msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
+                siteAlert(( app.msgs.alert_upToDate ) + '!', // title
+                    `${app.msgs.appName} (v${ currentVer }) ` // msg
+                        + ( app.msgs.alert_isUpToDate ) + '!',
                     '', '', updateAlertWidth
                 )
                 modals.about.show()
@@ -435,13 +461,13 @@
                       pBrStyle = 'position: relative ; left: 4px ',
                       aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
                 const aboutModalID = siteAlert(
-                    app.msgs.appName || app.name, // title
-                    `<span style="${headingStyle}"><b>🏷️ <i>${ app.msgs.about_version || 'Version' }</i></b>: </span>`
+                    app.msgs.appName, // title
+                    `<span style="${headingStyle}"><b>🏷️ <i>${app.msgs.about_version}</i></b>: </span>`
                         + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
-                    + `<span style="${headingStyle}"><b>⚡ <i>${ app.msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
+                    + `<span style="${headingStyle}"><b>⚡ <i>${app.msgs.about_poweredBy}</i></b>: </span>`
                         + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
                         + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                    + `<span style="${headingStyle}"><b>📜 <i>${ app.msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+                    + `<span style="${headingStyle}"><b>📜 <i>${app.msgs.about_sourceCode}</i></b>:</span>\n`
                         + `<span style="${pBrStyle}"><a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                         + app.urls.gitHub + '</a></span>',
                     [ // buttons
@@ -455,13 +481,13 @@
                 // Re-format buttons to include emoji + localized label + hide Dismiss button
                 for (const button of document.getElementById(aboutModalID).querySelectorAll('button')) {
                     if (/updates/i.test(button.textContent)) button.textContent = (
-                        '🚀 ' + ( app.msgs.btnLabel_updateCheck || 'Check for Updates' ))
+                        '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(button.textContent)) button.textContent = (
-                        '🧠 ' + ( app.msgs.btnLabel_getSupport || 'Get Support' ))
+                        '🧠 ' + ( app.msgs.btnLabel_getSupport ))
                     else if (/review/i.test(button.textContent)) button.textContent = (
-                        '⭐ ' + ( app.msgs.btnLabel_leaveReview || 'Leave Review' ))
+                        '⭐ ' + ( app.msgs.btnLabel_leaveReview ))
                     else if (/apps/i.test(button.textContent)) button.textContent = (
-                        '🤖 ' + ( app.msgs.btnLabel_moreApps || 'More ChatGPT Apps' ))
+                        '🤖 ' + ( app.msgs.btnLabel_moreApps ))
                     else button.style.display = 'none' // hide Dismiss button
                 }
             }
@@ -536,9 +562,9 @@
         toggleLabel.style.width = `${ env.browser.isMobile ? 201 : 148 }px` // to truncate overflown text
         toggleLabel.style.overflow = 'hidden' // to truncate overflown text
         toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
-        toggleLabel.innerText = ( app.msgs.mode_autoTalk || 'Auto-Talk' ) + ' '
+        toggleLabel.innerText = ( app.msgs.mode_autoTalk ) + ' '
                               + ( toggleInput.checked ? ( app.msgs.state_enabled  || 'enabled' )
-                                                      : ( app.msgs.state_disabled || 'disabled' ))
+                                                      : ( app.msgs.state_disabled ))
         // Append elements
         for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
 
@@ -617,7 +643,7 @@
         const toggleInput = document.getElementById('auto-talk-toggle-input')
         toggleInput.checked = !toggleInput.checked ; config.autoTalkDisabled = !toggleInput.checked
         updateToggleHTML() ; menu.refresh()
-        notify(`${ app.msgs.mode_autoTalk || 'Auto-Talk' }: ${menu.state.word[+!config.autoTalkDisabled]}`)
+        notify(`${app.msgs.mode_autoTalk}: ${menu.state.word[+!config.autoTalkDisabled]}`)
         settings.save('autoTalkDisabled', config.autoTalkDisabled)
     }
 
