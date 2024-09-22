@@ -9,7 +9,8 @@
 
     // Import LIBS
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
-          { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+          { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js')),
+          { create, cssSelectorize } = await import(chrome.runtime.getURL('lib/dom.js'))
     
     // Init ENV info
     const env = {
@@ -31,23 +32,6 @@
         else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
         else if (request.action == 'sync.config') sync.config()
     })
-
-    // Define FACTORY functions
-
-    const create = {
-
-        style(content) {
-            const style = document.createElement('style')
-            if (content) style.innerText = content
-            return style
-        },
-
-        svgElem(type, attrs) {
-            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
-            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
-            return elem
-        }
-    }
 
     // Define FEEDBACK functions
 
@@ -444,18 +428,10 @@
         }
     }
 
-    // Define UTILITY functions
-
     function isFullWin() {
         return site == 'poe' ? !!document.getElementById('fullWindow-mode')
             : !sites[site].hasSidebar // false if sidebar non-existent
            || /\d+/.exec(getComputedStyle(document.querySelector(sites[site].selectors.sidebar))?.width || '')[0] < 100
-    }
-
-    function cssSelectorize(classList) {
-        return classList.toString()
-            .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
-            .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
     }
     
     // Run MAIN routine
