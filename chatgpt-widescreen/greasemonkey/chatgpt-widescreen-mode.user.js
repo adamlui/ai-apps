@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.9
+// @version             2024.9.22.10
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -788,6 +788,7 @@
                 + ( /chatgpt|openai/.test(site) ? (
                         ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                         + 'div:has(+ main) { display: none !important }' // hide ugly double temp chat header
+                        + 'main { overflow: clip !important }' // prevent h-scrollbar on sync.mode('fullWindow) => delayed chatbar.tweak()
                     ) : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' )) // h-pad mic btn for even spread
                 + ( config.tcbDisabled == false ? tcbStyle : '' ) // expand text input vertically
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header

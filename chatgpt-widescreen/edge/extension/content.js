@@ -300,6 +300,7 @@
                 + ( site == 'chatgpt' ? (
                         ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                         + 'div:has(+ main) { display: none !important }' // hide ugly double temp chat header
+                        + 'main { overflow: clip !important }' // prevent h-scrollbar on sync.mode('fullWindow) => delayed chatbar.tweak()
                     ) : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' )) // h-pad mic btn for even spread
                 + ( config[`${site}_tcbDisabled`] == false ? tcbStyle : '' ) // expand text input vertically
                 + ( config[`${site}_hiddenHeader`] ? hhStyle : '' ) // hide header
