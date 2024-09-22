@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.3
+// @version             2024.9.22.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -391,7 +391,7 @@
 
     const menu = {
         ids: [], state: {
-            symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
+            symbols: ['❌', '✔️'], words: ['OFF', 'ON'],
             separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
         },
 
@@ -401,12 +401,12 @@
             Object.keys(app.settings).forEach(key => {
                 if (sites[site].availFeatures.includes(key)) {
                     const settingIsEnabled = config[key] ^ key.includes('Disabled'),
-                          menuLabel = `${ app.settings[key].symbol || menu.state.symbol[+settingIsEnabled] } `
-                                    + app.settings[key].label + menu.state.separator + menu.state.word[+settingIsEnabled]
+                          menuLabel = `${ app.settings[key].symbol || menu.state.symbols[+settingIsEnabled] } `
+                                    + app.settings[key].label + menu.state.separator + menu.state.words[+settingIsEnabled]
                     menu.ids.push(GM_registerMenuCommand(menuLabel, () => {
                         settings.save(key, !config[key]) ; sync.config()
                         if (!config.notifDisabled) notify(
-                            `${app.settings[key].label}: ${menu.state.word[+(key.includes('Disabled') ^ config[key])]}`)
+                            `${app.settings[key].label}: ${menu.state.words[+(key.includes('Disabled') ^ config[key])]}`)
                         menu.refresh() // to update state symbol/suffix
                     }))
                 }
@@ -477,7 +477,7 @@
     function notify(msg, position = '', notifDuration = '', shadow = '') {
 
         // Strip state word to append colored one later
-        const foundState = menu.state.word.find(word => msg.includes(word))
+        const foundState = menu.state.words.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -488,7 +488,7 @@
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `color: ${
-                foundState == menu.state.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                foundState == menu.state.words[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                                 : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.append(styledState)
         }
@@ -936,7 +936,7 @@
             })()
         }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
     if (extensionInstalled) { // disable script/menu
-        GM_registerMenuCommand(menu.state.symbol[0] + ' ' + ( app.msgs.menuLabel_disabled ),
+        GM_registerMenuCommand(menu.state.symbols[0] + ' ' + ( app.msgs.menuLabel_disabled ),
             () => { return }) // disable menu
         return // exit script
 

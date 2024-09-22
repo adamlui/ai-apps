@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.3
+// @version             2024.9.22.4
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -328,19 +328,19 @@
 
     const menu = {
         ids: [], state: {
-            symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            word: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
+            symbols: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
+            words: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
         },
 
         register() {
 
             // Add Mode Notifications toggle
-            const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
+            const mnLabel = menu.state.symbols[+!config.notifDisabled] + ' '
                           + ( app.msgs.menuLabel_modeNotifs )
-                          + menu.state.separator + menu.state.word[+!config.notifDisabled]
+                          + menu.state.separator + menu.state.words[+!config.notifDisabled]
             menu.ids.push(GM_registerMenuCommand(mnLabel, function() {
                 settings.save('notifDisabled', !config.notifDisabled)
-                notify(( app.msgs.menuLabel_modeNotifs ) + ': ' + menu.state.word[+!config.notifDisabled])
+                notify(( app.msgs.menuLabel_modeNotifs ) + ': ' + menu.state.words[+!config.notifDisabled])
                 menu.refresh()
             }))
     
@@ -409,7 +409,7 @@
     function notify(msg, position = '', notifDuration = '', shadow = '') {
 
         // Strip state word to append colored one later
-        const foundState = menu.state.word.find(word => msg.includes(word))
+        const foundState = menu.state.words.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -420,7 +420,7 @@
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `color: ${
-                foundState == menu.state.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                foundState == menu.state.words[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                                 : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.append(styledState)
         }

@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.22.4
+// @version                2024.9.22.5
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -434,16 +434,16 @@
 
     const menu = {
         ids: [], state: {
-            symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            word: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
+            symbols: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
+            words: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
         },
 
         register() {
 
             // Add Proxy API Mode toggle
-            const pmLabel = menu.state.symbol[+config.proxyAPIenabled] + ' '
+            const pmLabel = menu.state.symbols[+config.proxyAPIenabled] + ' '
                           + app.settings.proxyAPIenabled.label + ' '
-                          + menu.state.separator + menu.state.word[+config.proxyAPIenabled]
+                          + menu.state.separator + menu.state.words[+config.proxyAPIenabled]
             menu.ids.push(GM_registerMenuCommand(pmLabel, toggle.proxyMode))
 
             // Add About entry
@@ -597,7 +597,7 @@
     function notify(msg, position = '', notifDuration = '', shadow = 'shadow') {
 
         // Strip state word to append styled one later
-        const foundState = menu.state.word.find(word => msg.includes(word))
+        const foundState = menu.state.words.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -624,7 +624,7 @@
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `font-weight: bold ; color: ${
-                foundState == menu.state.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                foundState == menu.state.words[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                                 : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.insertBefore(styledState, notif.children[2])
         }
@@ -1038,7 +1038,7 @@
                                 log.caller = 'settings.createAppend()'
                                 log.debug(`Toggling ${settingItem.textContent} ${ key.includes('Disabled') ^ config[key] ? 'OFF' : 'ON' }...`)
                                 settings.save(key, !config[key]) // update config
-                                notify(`${app.settings[key].label} ${menu.state.word[+key.includes('Disabled') ^ +config[key]]}`)
+                                notify(`${app.settings[key].label} ${menu.state.words[+key.includes('Disabled') ^ +config[key]]}`)
                                 log[key.includes('debug') ? 'info' : 'debug'](`Success! config.${key} = ${config[key]}`)
                             }
                         }
@@ -2164,7 +2164,7 @@
             }
             log.caller = `toggle.animations('${layer}')`
             log.debug(`Success! ${layer.toUpperCase()} animations toggled ${ config[configKey] ? 'OFF' : 'ON' }`)
-            notify(`${app.settings[layer + 'AnimationsDisabled'].label} ${menu.state.word[+!config[layer + 'AnimationsDisabled']]}`)
+            notify(`${app.settings[layer + 'AnimationsDisabled'].label} ${menu.state.words[+!config[layer + 'AnimationsDisabled']]}`)
         },
 
         btnGlow(state = '') {
@@ -2217,7 +2217,7 @@
         proxyMode() {
             log.caller = 'toggle.proxyMode()'
             settings.save('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(( app.msgs.menuLabel_proxyAPImode ) + ' ' + menu.state.word[+config.proxyAPIenabled])
+            notify(( app.msgs.menuLabel_proxyAPImode ) + ' ' + menu.state.words[+config.proxyAPIenabled])
             menu.refresh()
             if (modals.settings.get()) { // update visual states of Settings toggles
                 const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input'),
@@ -2277,7 +2277,7 @@
             } else { // functional toggle
                 log.debug(`Toggling Streaming Mode ${ config.streamingDisabled ? 'ON' : 'OFF' }`)
                 settings.save('streamingDisabled', !config.streamingDisabled)
-                notify(app.settings.streamingDisabled.label + ' ' + menu.state.word[+!config.streamingDisabled])
+                notify(app.settings.streamingDisabled.label + ' ' + menu.state.words[+!config.streamingDisabled])
                 log.debug(`Success! config.streamingDisabled = ${config.streamingDisabled}`)
             }
         },

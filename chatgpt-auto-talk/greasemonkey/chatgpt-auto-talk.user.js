@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.3
+// @version             2024.9.22.4
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -337,27 +337,27 @@
     
     const menu = {
         ids: [], state: {
-            symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            word: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
+            symbols: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
+            words: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
         },
 
         register() {
 
             // Add Auto-Talk toggle
-            const atLabel = menu.state.symbol[+!config.autoTalkDisabled] + ' '
+            const atLabel = menu.state.symbols[+!config.autoTalkDisabled] + ' '
                           + ( app.msgs.mode_autoTalk )
-                          + menu.state.separator + menu.state.word[+!config.autoTalkDisabled]
+                          + menu.state.separator + menu.state.words[+!config.autoTalkDisabled]
             menu.ids.push(GM_registerMenuCommand(atLabel, () => document.getElementById('auto-talk-toggle-label').click()))
 
             // Add Toggle Visibility toggle
-            const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
+            const tvLabel = menu.state.symbols[+!config.toggleHidden] + ' '
                           + ( app.msgs.menuLabel_toggleVis )
-                          + menu.state.separator + menu.state.word[+!config.toggleHidden]
+                          + menu.state.separator + menu.state.words[+!config.toggleHidden]
             menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
                 if (!config.notifDisabled) notify((
-                    app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.word[+!config.toggleHidden])
+                    app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.words[+!config.toggleHidden])
                 menu.refresh()
             }))
 
@@ -426,7 +426,7 @@
     function notify(msg, position = '', notifDuration = '', shadow = '') {
 
         // Strip state word to append colored one later
-        const foundState = menu.state.word.find(word => msg.includes(word))
+        const foundState = menu.state.words.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -437,7 +437,7 @@
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `color: ${
-                foundState == menu.state.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                foundState == menu.state.words[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                                 : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.append(styledState)
         }
@@ -641,7 +641,7 @@
         const toggleInput = document.getElementById('auto-talk-toggle-input')
         toggleInput.checked = !toggleInput.checked ; config.autoTalkDisabled = !toggleInput.checked
         updateToggleHTML() ; menu.refresh()
-        notify(`${app.msgs.mode_autoTalk}: ${menu.state.word[+!config.autoTalkDisabled]}`)
+        notify(`${app.msgs.mode_autoTalk}: ${menu.state.words[+!config.autoTalkDisabled]}`)
         settings.save('autoTalkDisabled', config.autoTalkDisabled)
     }
 

@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.3
+// @version             2024.9.22.4
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -351,39 +351,39 @@
 
     const menu = {
         ids: [], state: {
-            symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            word: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
+            symbols: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
+            words: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
         },
 
         register() {
 
             // Add Autoclear Chats toggle
-            const acLabel = menu.state.symbol[+config.autoclear] + ' '
+            const acLabel = menu.state.symbols[+config.autoclear] + ' '
                           + ( app.msgs.menuLabel_autoClear )
-                          + menu.state.separator + menu.state.word[+config.autoclear]
+                          + menu.state.separator + menu.state.words[+config.autoclear]
             menu.ids.push(GM_registerMenuCommand.registerCommand(acLabel, () => {
                 document.getElementById('autoclear-toggle-label').click()
             }))
 
             // Add Toggle Visibility toggle
-            const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
+            const tvLabel = menu.state.symbols[+!config.toggleHidden] + ' '
                           + ( app.msgs.menuLabel_toggleVis )
-                          + menu.state.separator + menu.state.word[+!config.toggleHidden]
+                          + menu.state.separator + menu.state.words[+!config.toggleHidden]
             menu.ids.push(GM_registerMenuCommand.registerCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
                 if (!config.notifDisabled) notify((
-                    app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.word[+!config.toggleHidden])
+                    app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.words[+!config.toggleHidden])
                 menu.refresh()
             }))
 
             // Add Mode Notiications toggle
-            const mnLabel = menu.state.symbol[+!config.notifDisabled] + ' '
+            const mnLabel = menu.state.symbols[+!config.notifDisabled] + ' '
                           + ( app.msgs.menuLabel_modeNotifs )
-                          + menu.state.separator + menu.state.word[+!config.notifDisabled]
+                          + menu.state.separator + menu.state.words[+!config.notifDisabled]
             menu.ids.push(GM_registerMenuCommand.registerCommand(mnLabel, () => {
                 settings.save('notifDisabled', !config.notifDisabled)
-                notify(( app.msgs.menuLabel_modeNotifs ) + ': ' + menu.state.word[+!config.notifDisabled])
+                notify(( app.msgs.menuLabel_modeNotifs ) + ': ' + menu.state.words[+!config.notifDisabled])
                 menu.refresh()
             }))
 
@@ -452,7 +452,7 @@
     function notify(msg, position = '', notifDuration = '', shadow = '') {
 
         // Strip state word to append colored one later
-        const foundState = menu.state.word.find(word => msg.includes(word))
+        const foundState = menu.state.words.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -463,7 +463,7 @@
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `color: ${
-                foundState == menu.state.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                foundState == menu.state.words[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                                 : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.append(styledState)
         }
@@ -677,9 +677,9 @@
         updateToggleHTML() ; menu.refresh()
         if (config.autoclear) {
             setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
-            if (!config.notifDisabled) notify(`${app.msgs.mode_autoClear}: ${menu.state.word[1]}`)
+            if (!config.notifDisabled) notify(`${app.msgs.mode_autoClear}: ${menu.state.words[1]}`)
         } else if (!config.autoclear)
-            if (!config.notifDisabled) notify(`${app.msgs.mode_autoClear}: ${menu.state.word[0]}`)
+            if (!config.notifDisabled) notify(`${app.msgs.mode_autoClear}: ${menu.state.words[0]}`)
         settings.save('autoclear', config.autoclear)
     }
 

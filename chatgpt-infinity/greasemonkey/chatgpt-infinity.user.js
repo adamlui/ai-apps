@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.3
+// @version             2024.9.22.4
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -349,46 +349,46 @@
 
     const menu = {
         ids: [], state: {
-            symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
+            symbols: ['❌', '✔️'], words: ['OFF', 'ON'],
             separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
         },
 
         register() {
 
             // Add command to toggle Infinity Mode
-            const imLabel = menu.state.symbol[+config.infinityMode] + ' '
+            const imLabel = menu.state.symbols[+config.infinityMode] + ' '
                           + ( app.msgs.menuLabel_infinityMode ) + ' ∞ '
-                          + menu.state.separator + menu.state.word[+config.infinityMode]
+                          + menu.state.separator + menu.state.words[+config.infinityMode]
             menu.ids.push(GM_registerMenuCommand(imLabel, () => { document.getElementById('infinity-toggle-label').click() }))
 
             // Add command to toggle Auto-Start
-            const astLabel = menu.state.symbol[+config.autoStart] + ' '
+            const astLabel = menu.state.symbols[+config.autoStart] + ' '
                            + ( app.msgs.menuLabel_autoStart )
-                           + menu.state.separator + menu.state.word[+config.autoStart]
+                           + menu.state.separator + menu.state.words[+config.autoStart]
             menu.ids.push(GM_registerMenuCommand(astLabel, () => {
                 settings.save('autoStart', !config.autoStart)
-                notify(( app.msgs.menuLabel_autoStart ) + ': '+ menu.state.word[+config.autoStart])
+                notify(( app.msgs.menuLabel_autoStart ) + ': '+ menu.state.words[+config.autoStart])
                 menu.refresh()
             }))
 
             // Add command to toggle visibility of toggle
-            const tvLabel = menu.state.symbol[+!config.toggleHidden] + ' '
+            const tvLabel = menu.state.symbols[+!config.toggleHidden] + ' '
                           + ( app.msgs.menuLabel_toggleVis )
-                          + menu.state.separator + menu.state.word[+!config.toggleHidden]
+                          + menu.state.separator + menu.state.words[+!config.toggleHidden]
             menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-                notify(( app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.word[+!config.toggleHidden])
+                notify(( app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.words[+!config.toggleHidden])
                 menu.refresh()
             }))
 
             // Add command to toggle Auto-Scroll
-            const ascLabel = menu.state.symbol[+!config.autoScrollDisabled] + ' '
+            const ascLabel = menu.state.symbols[+!config.autoScrollDisabled] + ' '
                            + ( app.msgs.menuLabel_autoScroll )
-                           + menu.state.separator + menu.state.word[+!config.autoScrollDisabled]
+                           + menu.state.separator + menu.state.words[+!config.autoScrollDisabled]
             menu.ids.push(GM_registerMenuCommand(ascLabel, () => {
                 settings.save('autoScrollDisabled', !config.autoScrollDisabled)
-                notify(( app.msgs.menuLabel_autoScroll ) + ': '+ menu.state.word[+!config.autoScrollDisabled])
+                notify(( app.msgs.menuLabel_autoScroll ) + ': '+ menu.state.words[+!config.autoScrollDisabled])
                 menu.refresh()
             }))
 
@@ -528,7 +528,7 @@
     function notify(msg, position = '', notifDuration = '', shadow = '') {
 
         // Strip state word to append colored one later
-        const foundState = menu.state.word.find(word => msg.includes(word))
+        const foundState = menu.state.words.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -539,7 +539,7 @@
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `color: ${
-                foundState == menu.state.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                foundState == menu.state.words[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                                 : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.append(styledState)
         }
@@ -756,7 +756,7 @@
             })()
         }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
     if (extensionInstalled) { // disable script/menu
-        GM_registerMenuCommand(menu.state.symbol[0] + ' ' + ( app.msgs.menuLabel_disabled ),
+        GM_registerMenuCommand(menu.state.symbols[0] + ' ' + ( app.msgs.menuLabel_disabled ),
             () => { return }) // disable menu
         return // exit script
     } else menu.register() // create functional menu

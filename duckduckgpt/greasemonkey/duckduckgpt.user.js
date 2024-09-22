@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.22.4
+// @version                2024.9.22.5
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -615,16 +615,16 @@
 
     const menu = {
         ids: [], state: {
-            symbol: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            word: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
+            symbols: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
+            words: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
         },
 
         register() {
 
             // Add Proxy API Mode toggle
-            const pmLabel = menu.state.symbol[+config.proxyAPIenabled] + ' '
+            const pmLabel = menu.state.symbols[+config.proxyAPIenabled] + ' '
                           + app.settings.proxyAPIenabled.label + ' '
-                          + menu.state.separator + menu.state.word[+config.proxyAPIenabled]
+                          + menu.state.separator + menu.state.words[+config.proxyAPIenabled]
             menu.ids.push(GM_registerMenuCommand(pmLabel, toggle.proxyMode))
 
             // Add About entry
@@ -778,7 +778,7 @@
     function notify(msg, position = '', notifDuration = '', shadow = 'shadow') {
 
         // Strip state word to append styled one later
-        const foundState = menu.state.word.find(word => msg.includes(word))
+        const foundState = menu.state.words.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -805,7 +805,7 @@
         if (foundState) {
             const styledState = document.createElement('span')
             styledState.style.cssText = `font-weight: bold ; color: ${
-                foundState == menu.state.word[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
+                foundState == menu.state.words[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                                 : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.insertBefore(styledState, notif.children[2])
         }
@@ -1235,7 +1235,7 @@
                                 log.caller = 'settings.createAppend()'
                                 log.debug(`Toggling ${settingItem.textContent} ${ key.includes('Disabled') ^ config[key] ? 'OFF' : 'ON' }...`)
                                 settings.save(key, !config[key]) // update config
-                                notify(`${app.settings[key].label} ${menu.state.word[+key.includes('Disabled') ^ +config[key]]}`)
+                                notify(`${app.settings[key].label} ${menu.state.words[+key.includes('Disabled') ^ +config[key]]}`)
                                 log[key.includes('debug') ? 'info' : 'debug'](`Success! config.${key} = ${config[key]}`)
                             }
                         }
@@ -2599,7 +2599,7 @@
             }
             if (prevState != config.anchored) {
                 menus.pin.topPos = menus.pin.rightPos = null
-                notify(( app.msgs.mode_anchor ) + ' ' + menu.state.word[+config.anchored])
+                notify(( app.msgs.mode_anchor ) + ' ' + menu.state.words[+config.anchored])
                 log.debug(`Success! Anchor Mode toggled ${ config.anchored ? 'ON' : 'OFF' }`)
             }
         },
@@ -2622,7 +2622,7 @@
             }
             log.caller = `toggle.animations('${layer}')`
             log.debug(`Success! ${layer.toUpperCase()} animations toggled ${ config[configKey] ? 'OFF' : 'ON' }`)
-            notify(`${app.settings[layer + 'AnimationsDisabled'].label} ${menu.state.word[+!config[layer + 'AnimationsDisabled']]}`)
+            notify(`${app.settings[layer + 'AnimationsDisabled'].label} ${menu.state.words[+!config[layer + 'AnimationsDisabled']]}`)
         },
 
         autoGet() {
@@ -2633,7 +2633,7 @@
             if (config.autoGet) // disable Prefix/Suffix mode if enabled
                 ['prefix', 'suffix'].forEach(manualMode => {
                     if (config[manualMode + 'Enabled']) toggle.manualGet(manualMode) })
-            notify(`${app.settings.autoGet.label} ${menu.state.word[+config.autoGet]}`)
+            notify(`${app.settings.autoGet.label} ${menu.state.words[+config.autoGet]}`)
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const autoGetToggle = document.querySelector('[id*="autoGet"][id*="menu-entry"] input')
                 if (autoGetToggle.checked != config.autoGet) modals.settings.toggle.switch(autoGetToggle)
@@ -2675,7 +2675,7 @@
             log.debug(`Toggling ${log.toTitleCase(mode)} Mode ${ config[modeKey] ? 'OFF' : 'ON' }...`)
             settings.save(modeKey, !config[modeKey])
             if (config[modeKey] && config.autoGet) toggle.autoGet() // disable Auto-Get mode if enabled
-            notify(`${app.settings[modeKey].label} ${menu.state.word[+config[modeKey]]}`)
+            notify(`${app.settings[modeKey].label} ${menu.state.words[+config[modeKey]]}`)
             if (modals.settings.get()) { // update visual state of Settings toggle
                 const modeToggle = document.querySelector(`[id*="${modeKey}"][id*="menu-entry"] input`)
                 if (modeToggle.checked != config[modeKey]) modals.settings.toggle.switch(modeToggle)
@@ -2708,7 +2708,7 @@
             log.caller = 'toggle.proxyMode()'
             log.debug(`Toggling Proxy Mode ${ config.proxyAPIenabled ? 'OFF' : 'ON' }...`)
             settings.save('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(( app.msgs.menuLabel_proxyAPImode ) + ' ' + menu.state.word[+config.proxyAPIenabled])
+            notify(( app.msgs.menuLabel_proxyAPImode ) + ' ' + menu.state.words[+config.proxyAPIenabled])
             menu.refresh()
             if (modals.settings.get()) { // update visual states of Settings toggles
                 const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input'),
@@ -2735,7 +2735,7 @@
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
                     .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
             update.style.tweaks() // toggle <pre> max-height
-            notify(( app.msgs.menuLabel_relatedQueries ) + ' ' + menu.state.word[+!config.rqDisabled])
+            notify(( app.msgs.menuLabel_relatedQueries ) + ' ' + menu.state.words[+!config.rqDisabled])
             log.debug(`Success! config.rqDisabled = ${config.rqDisabled}`)
         },
 
@@ -2758,7 +2758,7 @@
             if (mode == 'sticky' && prevStickyState == config.stickySidebar)
                 return log.debug(`No change to ${log.toTitleCase(mode)} Sidebar`)
             notify(( app.msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
-                + ' ' + menu.state.word[+config[configKeyName]])
+                + ' ' + menu.state.words[+config[configKeyName]])
             log.debug(`Success! ${log.toTitleCase(mode)} Sidebar toggled ${ toToggleOn ? 'ON' : 'OFF' }`)
         },
 
@@ -2804,7 +2804,7 @@
             } else { // functional toggle
                 log.debug(`Toggling Streaming Mode ${ config.streamingDisabled ? 'ON' : 'OFF' }`)
                 settings.save('streamingDisabled', !config.streamingDisabled)
-                notify(app.settings.streamingDisabled.label + ' ' + menu.state.word[+!config.streamingDisabled])
+                notify(app.settings.streamingDisabled.label + ' ' + menu.state.words[+!config.streamingDisabled])
                 log.debug(`Success! config.streamingDisabled = ${config.streamingDisabled}`)
             }
         },
