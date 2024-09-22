@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.10
+// @version             2024.9.22.11
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -848,12 +848,9 @@
             function activateMode(mode) {
                 if (mode == 'wideScreen') { document.head.append(wideScreenStyle) ; sync.mode('wideScreen') }
                 else if (mode == 'fullWindow') {
-                    if (site == 'perplexity')
-                        document.querySelector(sites[site].selectors.btns.sidebarToggle)?.click()
-                    else {
-                        document.head.append(fullWinStyle)
-                        if (site == 'poe') sync.mode('fullWindow') ; else chatgpt.sidebar.hide()
-                    }
+                    const sidebarToggle = document.querySelector(sites[site].selectors.btns.sidebarToggle)
+                    if (sidebarToggle) sidebarToggle.click()
+                    else { document.head.append(fullWinStyle) ; sync.mode('fullWindow') }
                 } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
             }
         
@@ -861,10 +858,9 @@
                 if (mode == 'wideScreen') {
                     wideScreenStyle.remove() ; sync.mode('wideScreen')
                 } else if (mode == 'fullWindow') {
-                    fullWinStyle.remove()
                     const sidebarToggle = document.querySelector(sites[site].selectors.btns.sidebarToggle)
                     if (sidebarToggle) sidebarToggle.click()
-                    else sync.mode('fullWindow') // for notif since not native sidebarObserve()'d
+                    else { fullWinStyle.remove() ; sync.mode('fullWindow') }
                 } else if (mode == 'fullScreen') {
                     if (config.f11)
                         siteAlert(app.msgs.alert_pressF11,

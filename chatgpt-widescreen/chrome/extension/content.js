@@ -343,12 +343,9 @@
             function activateMode(mode) {
                 if (mode == 'wideScreen') { document.head.append(wideScreenStyle) ; sync.mode('wideScreen') }
                 else if (mode == 'fullWindow') {
-                    if (site == 'perplexity')
-                        document.querySelector(sites[site].selectors.btns.sidebarToggle)?.click()
-                    else {
-                        document.head.append(fullWinStyle)
-                        if (site == 'poe') sync.mode('fullWindow') ; else chatgpt.sidebar.hide()
-                    }
+                    const sidebarToggle = document.querySelector(sites[site].selectors.btns.sidebarToggle)
+                    if (sidebarToggle) sidebarToggle.click()
+                    else { document.head.append(fullWinStyle) ; sync.mode('fullWindow') }
                 } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
             }
         
@@ -356,10 +353,9 @@
                 if (mode == 'wideScreen') {
                     wideScreenStyle.remove() ; sync.mode('wideScreen')
                 } else if (mode == 'fullWindow') {
-                    fullWinStyle.remove()
                     const sidebarToggle = document.querySelector(sites[site].selectors.btns.sidebarToggle)
                     if (sidebarToggle) sidebarToggle.click()
-                    else sync.mode('fullWindow') // for notif since not native sidebarObserve()'d
+                    else { fullWinStyle.remove() ; sync.mode('fullWindow') }
                 } else if (mode == 'fullScreen') {
                     if (config.f11)
                         siteAlert(chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
