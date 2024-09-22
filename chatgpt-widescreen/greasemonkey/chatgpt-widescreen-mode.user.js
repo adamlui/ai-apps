@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.4
+// @version             2024.9.22.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -884,15 +884,15 @@
     const sync = {
 
         config() { // from toolbar menu toggles
-            sync.fullerWin(config.fullerWindows) // for FW toggled
+            sync.fullerWin() // for FW toggled
             update.style.tweaks() // for TCB/NCB/HH/HF toggled
             update.style.wideScreen() // for WCB toggled
         },
 
-        fullerWin(fullWinState) {
-            if (fullWinState && config.fullerWindows && !config.wideScreen) { // activate fuller windows
+        fullerWin() {
+            if (config.fullWindow && config.fullerWindows && !config.wideScreen) { // activate fuller windows
                 document.head.append(wideScreenStyle) ; btns.updateSVG('wideScreen', 'on')
-            } else if (!fullWinState) { // de-activate fuller windows
+            } else if (!config.fullWindow) { // de-activate fuller windows
                 fullWinStyle.remove() // to remove style too so sidebar shows
                 if (!config.wideScreen) { // disable widescreen if result of fuller window
                     wideScreenStyle.remove() ; btns.updateSVG('wideScreen', 'off')
@@ -904,7 +904,7 @@
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
-            if (mode == 'fullWindow') sync.fullerWin(state)
+            if (mode == 'fullWindow') sync.fullerWin()
             if (!config.notifDisabled) // notify synced state
                 notify(`${ app.msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
@@ -1041,9 +1041,10 @@
         // Check loaded keys to restore prev session's state
         if (!prevSessionChecked) {
             if (config.wideScreen) toggle.mode('wideScreen', 'ON')
-            if (config.fullWindow && sites[site].hasSidebar) { toggle.mode('fullWindow', 'ON')
+            if (config.fullWindow && sites[site].hasSidebar) {
+                toggle.mode('fullWindow', 'ON')
                 if (/chatgpt|openai/.test(site)) { // sidebar observer doesn't trigger
-                    sync.fullerWin(true) // so sync Fuller Windows...
+                    sync.fullerWin() // so sync Fuller Windows...
                     if (!config.notifDisabled) // ... + notify
                         notify(( app.msgs.mode_fullWindow ) + ' ON')
             }}
@@ -1069,7 +1070,7 @@
 
     // Monitor SIDEBAR to update full-window setting
     if (sites[site].selectors.btns.sidebarToggle && !!sites[site].hasSidebar) {
-            const sidebarObserver = new MutationObserver(async () => {
+        const sidebarObserver = new MutationObserver(async () => {
             await new Promise(resolve => setTimeout(resolve, site == 'perplexity' ? 250 : 0))
             const fullWinState = isFullWin()
             if ((config.fullWindow && !fullWinState) || (!config.fullWindow && fullWinState))

@@ -415,10 +415,10 @@
             }
         },
 
-        fullerWin(fullWinState) {
-            if (fullWinState && config[`${site}_fullerWindows`] && !config[`${site}_wideScreen`]) { // activate fuller windows
+        fullerWin() {
+            if (config[`${site}_fullWindow`] && config[`${site}_fullerWindows`] && !config[`${site}_wideScreen`]) { // activate fuller windows
                 document.head.append(wideScreenStyle) ; btns.updateSVG('wideScreen', 'on')
-            } else if (!fullWinState) { // de-activate fuller windows
+            } else if (!config[`${site}_fullWindows`]) { // de-activate fuller windows
                 fullWinStyle.remove() // to remove style too so sidebar shows
                 if (!config[`${site}_wideScreen`]) { // disable widescreen if result of fuller window
                     wideScreenStyle.remove() ; btns.updateSVG('wideScreen', 'off')
@@ -430,7 +430,7 @@
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(`${site}_${mode}`, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
-            if (mode == 'fullWindow') sync.fullerWin(state)
+            if (mode == 'fullWindow') sync.fullerWin()
             await settings.load(`${site}_notifDisabled`)
             if (!config[`${site}_notifDisabled`]) // notify synced state
                 notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
@@ -543,9 +543,10 @@
         if (!config.extensionDisabled) {
             if (!prevSessionChecked) { // restore prev session's state
                 if (config[`${site}_wideScreen`]) toggle.mode('wideScreen', 'ON')
-                if (config[`${site}_fullWindow`] && sites[site].hasSidebar) { toggle.mode('fullWindow', 'ON')
+                if (config[`${site}_fullWindow`] && sites[site].hasSidebar) {
+                    toggle.mode('fullWindow', 'ON')
                     if (site == 'chatgpt') { // sidebar observer doesn't trigger
-                        sync.fullerWin(true) // so sync Fuller Windows...
+                        sync.fullerWin() // so sync Fuller Windows...
                         if (!config[`${site}_notifDisabled`]) // ... + notify
                             notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                 }}
