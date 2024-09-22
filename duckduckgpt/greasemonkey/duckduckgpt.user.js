@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.22.3
+// @version                2024.9.22.4
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -699,7 +699,7 @@
 
                 // Alert to no update found, nav back
                 log.debug('No update found.')
-                const noUpdateModalID = siteAlert(`${app.msgs.alert_upToDate} !`, // title
+                const noUpdateModalID = siteAlert(`${app.msgs.alert_upToDate}!`, // title
                     `${app.name} (v${currentVer}) ${app.msgs.alert_isUpToDate}!`, // msg
                     '', '', updateAlertWidth)
                 const noUpdateModal = document.getElementById(noUpdateModalID).firstChild
