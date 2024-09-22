@@ -402,8 +402,9 @@
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
                 if (config[`${site}_wideScreen`] ^ document.head.contains(wideScreenStyle)) { supressNotifs() ; toggle.mode('wideScreen') }
                 if ((config[`${site}_fullWindow`] && sites[site].hasSidebar) ^ isFullWin()) { supressNotifs() ; toggle.mode('fullWindow') }
-                update.style.tweaks() // sync tweaks
-                update.style.wideScreen() // sync wider chatbox
+                sync.fullerWin() // sync Fuller Windows
+                update.style.tweaks() // sync TCB/NCB/HH/HF
+                update.style.wideScreen() // sync WCB
                 btns.insert()
             }
 
@@ -570,7 +571,7 @@
         { attributes: true, subtree: true }
     )
 
-    // Monitor SIDEBAR to update full-window setting
+    // Monitor SIDEBAR to update full-window setting for sites w/ native toggle
     if (sites[site].selectors.btns.sidebarToggle && !!sites[site].hasSidebar) {
         const sidebarObserver = new MutationObserver(async () => {
             await settings.load('extensionDisabled')
