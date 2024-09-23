@@ -72,7 +72,10 @@
 
 <div align="center">
 
-![](https://media.chatgptwidescreen.com/images/screenshots/widescreen-button.png)
+<picture>
+    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/screenshots/widescreen-button/en/lightmode.png">
+    <img src="https://media.chatgptwidescreen.com/images/screenshots/widescreen-button/en/darkmode.png">
+</picture>
 
 *NOTE: Since full-window mode hides the sidebar, press '+' to start new chats*
 

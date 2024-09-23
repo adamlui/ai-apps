@@ -110,7 +110,10 @@
 
 <div align="center">
 
-![](https://media.chatgptwidescreen.com/images/screenshots/zh-cn/widescreen-button.png)
+<picture>
+    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/screenshots/widescreen-button/zh-cn/lightmode.png">
+    <img src="https://media.chatgptwidescreen.com/images/screenshots/widescreen-button/zh-cn/darkmode.png">
+</picture>
 
 *注意：由于全窗口模式隐藏了侧边栏，请按“+”开始新的聊天*
 
