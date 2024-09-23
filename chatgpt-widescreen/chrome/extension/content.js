@@ -87,7 +87,8 @@
                                      && !(type == 'newChat' && config[`${site}_ncbDisabled`]))
                     visibleBtnTypes.forEach(btnType =>
                         widths[btnType] = btns[btnType]?.getBoundingClientRect().width
-                                       || document.querySelector(sites[site].selectors.btns.send)?.getBoundingClientRect().width)
+                                       || document.querySelector(`${sites[site].selectors.btns.send}, ${sites[site].selectors.btns.stop}`)
+                                              ?.getBoundingClientRect().width || 0 )
                     const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
                     inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -43 }px` // expand to close gap w/ buttons
                     inputArea.style.width = '100%' // rid h-scrollbar

@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.23.3
+// @version             2024.9.23.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -601,7 +601,8 @@
                                      && !(type == 'newChat' && config.ncbDisabled))
                     visibleBtnTypes.forEach(btnType =>
                         widths[btnType] = btns[btnType]?.getBoundingClientRect().width
-                                       || document.querySelector(sites[site].selectors.btns.send)?.getBoundingClientRect().width)
+                                       || document.querySelector(`${sites[site].selectors.btns.send}, ${sites[site].selectors.btns.stop}`)
+                                              ?.getBoundingClientRect().width || 0 )
                     const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
                     inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
                         widths.chatbar - totalBtnWidths -( env.browser.isFF ? 60 : 43 )}px`
