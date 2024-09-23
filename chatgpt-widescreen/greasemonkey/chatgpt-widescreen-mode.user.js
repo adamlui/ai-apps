@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.23.2
+// @version             2024.9.23.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -474,7 +474,7 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        if (config.notifDisabled) return
+        if (config.notifDisabled && !msg.includes(app.msgs.menuLabel_modeNotifs)) return
 
         // Strip state word to append colored one later
         const foundState = menu.state.words.find(word => msg.includes(word))
