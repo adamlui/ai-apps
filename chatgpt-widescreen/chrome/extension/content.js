@@ -397,9 +397,9 @@
         },
 
         fullerWin() {
-            if (config.fullWIWndow && config.fullerWindows && !config.wideScreen) { // activate fuller windows
+            if (config.fullWindow && config.fullerWindows && !config.wideScreen) { // activate fuller windows
                 document.head.append(wideScreenStyle) ; btns.updateSVG('wideScreen', 'on')
-            } else if (!config.fullWIWndow) { // de-activate fuller windows
+            } else if (!config.fullWindow) { // de-activate fuller windows
                 fullWinStyle.remove() // to remove style too so sidebar shows
                 if (!config.wideScreen) { // disable widescreen if result of fuller window
                     wideScreenStyle.remove() ; btns.updateSVG('wideScreen', 'off')
