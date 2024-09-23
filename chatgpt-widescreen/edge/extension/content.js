@@ -249,7 +249,7 @@
     
             // Update SVG elements
             while (btnSVG.firstChild) btnSVG.firstChild.remove()
-            const svgElems = config[`${site}_${mode}`] || state.toLowerCase() == 'on' ? ONelems : OFFelems
+            const svgElems = config[`${site}_${mode}`] || config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
             svgElems.forEach(elem => btnSVG.append(elem))
     
             // Update SVG
@@ -407,7 +407,7 @@
             const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
-            settings.save(`${site}_${mode}`, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
+            settings.save(mode == 'fullScreen' ? mode : `${site}_${mode}`, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
             if (mode == 'fullWindow') sync.fullerWin()
             await settings.load(`${site}_notifDisabled`)
             if (site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
