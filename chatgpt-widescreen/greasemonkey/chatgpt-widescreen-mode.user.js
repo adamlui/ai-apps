@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.23.6
+// @version             2024.9.23.7
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -295,7 +295,11 @@
     // Init CONFIG
     const config = { userLanguage: chatgpt.getUserLanguage() }
     const settings = {
-        load(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) },
+        load(...keys) {
+            if (Array.isArray(keys[0])) keys = keys[0] // use 1st array arg, else all comma-separated ones
+            console.log(keys)
+            keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false))
+        },
         save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     } ; settings.load(...sites[site].availFeatures)
 

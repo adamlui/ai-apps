@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.5
+// @version             2024.9.23
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -264,7 +264,10 @@
     // Init CONFIG
     const config = { userLanguage: chatgpt.getUserLanguage() }
     const settings = {
-        load(...keys) { keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false)) },
+        load(...keys) {
+            if (Array.isArray(keys[0])) keys = keys[0] // use 1st array arg, else all comma-separated ones
+            keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false))
+        },
         save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
     } ; settings.load('autoScrollDisabled', 'autoStart', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden')
     if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
