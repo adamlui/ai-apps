@@ -19,7 +19,7 @@
     const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/sites.json`)).json())
 
     // Init CONFIG
-    await settings.load(...sites[site].availFeatures)
+    await settings.load(sites[site].availFeatures)
 
     // Add CHROME MSG listener for background/popup requests to sync modes/settings
     chrome.runtime.onMessage.addListener(request => {
