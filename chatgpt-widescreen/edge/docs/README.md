@@ -74,8 +74,8 @@
 
 *NOTE: Since full-window mode hides the sidebar, press '+' to start new chats*
 
-![](https://media.chatgptwidescreen.com/images/screenshots/en/chrome/pin-instructions.png)
-![](https://media.chatgptwidescreen.com/images/screenshots/en/chrome/toolbar-menu.png)
+![](https://media.chatgptwidescreen.com/images/screenshots/chrome/pin-instructions/en.png)
+![](https://media.chatgptwidescreen.com/images/screenshots/chrome/toolbar-menu/en.png)
 
 *Pro tip: For easier access to extension toggles, (1) click <img height=12 width=12 src="https://media.chatgptwidescreen.com/images/icons/toolbar/chrome-puzzle-piece/gray.png"> in the browser's toolbar, (2) then <img height=12 width=12 src="https://media.chatgptwidescreen.com/images/icons/toolbar/push-pin/blue.png"> next to extension name.*
 
