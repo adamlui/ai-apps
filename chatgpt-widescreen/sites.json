@@ -6,7 +6,8 @@
       "btns": {
         "newChat": "button[data-testid*=\"new-chat-button\"]",
         "send": "button[data-testid=\"send-button\"]",
-        "sidebarToggle": "button[data-testid*=\"sidebar-button\"]"
+        "sidebarToggle": "button[data-testid*=\"sidebar-button\"]",
+        "stop": "button[data-testid=\"stop-button\"]"
       },
       "header": "main .sticky", "input": "#prompt-textarea", "sidebar": "[class*=\"sidebar\"]"
     }
