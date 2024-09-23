@@ -44,7 +44,7 @@
 <div align="center">
 
 <a href="https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1">
-    <img src="https://media.chatgptwidescreen.com/images/screenshots/widescreen-mode-video-thumbnail.png">
+    <img src="https://media.chatgptwidescreen.com/images/screenshots/en/demo-vid/thumbnail.png">
 </a>
 
 </div><br>
@@ -89,8 +89,8 @@
 
 <div align="center">
 
-<img width=268 src="https://media.chatgptwidescreen.com/images/screenshots/zh-cn/chrome-extension-pin-instructions.png">
-<img width=288 src="https://media.chatgptwidescreen.com/images/screenshots/zh-cn/chrome-extension-menu.png">
+<img width=268 src="https://media.chatgptwidescreen.com/images/screenshots/zh-cn/chrome/pin-instructions.png">
+<img width=288 src="https://media.chatgptwidescreen.com/images/screenshots/zh-cn/chrome/toolbar-menu.png">
 
 </div>
 

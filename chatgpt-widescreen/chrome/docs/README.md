@@ -37,7 +37,7 @@
 <div align="center">
 
 <a href="https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1">
-    <img src="https://media.chatgptwidescreen.com/images/screenshots/widescreen-mode-video-thumbnail.png">
+    <img src="https://media.chatgptwidescreen.com/images/screenshots/en/demo-vid/thumbnail.png">
 </a>
 
 </div><br>
@@ -76,8 +76,8 @@
 
 *NOTE: Since full-window mode hides the sidebar, press '+' to start new chats*
 
-![\[image\]](https://media.chatgptwidescreen.com/images/screenshots/chrome-extension-pin-instructions.png)
-![\[image\]](https://media.chatgptwidescreen.com/images/screenshots/chrome-extension-menu.png)
+![\[image\]](https://media.chatgptwidescreen.com/images/screenshots/en/chrome/pin-instructions.png)
+![\[image\]](https://media.chatgptwidescreen.com/images/screenshots/en/chrome/toolbar-menu.png)
 
 *Pro tip: For easier access to extension toggles, (1) click <img height=12 width=12 src="https://media.chatgptwidescreen.com/images/icons/toolbar/chrome-puzzle-piece/gray.png"> in the browser's toolbar, (2) then <img height=12 width=12 src="https://media.chatgptwidescreen.com/images/icons/toolbar/push-pin/blue.png"> next to extension name.*
 
