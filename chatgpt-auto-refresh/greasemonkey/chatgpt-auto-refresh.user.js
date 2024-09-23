@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.5
+// @version             2024.9.23
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -387,8 +387,7 @@
             menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-                if (!config.notifDisabled) notify((
-                    app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.words[+!config.toggleHidden])
+                notify((app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.words[+!config.toggleHidden])
                 menu.refresh()
             }))
 
@@ -489,6 +488,7 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
+        if (config.notifDisabled && !msg.includes(app.msgs.menuLabel_modeNotifs)) return
 
         // Strip state word to append colored one later
         const foundState = menu.state.words.find(word => msg.includes(word))
@@ -697,10 +697,10 @@
         updateToggleHTML() ; menu.refresh()
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.activate(config.refreshInterval)
-            if (!config.notifDisabled) notify(( app.msgs.menuLabel_autoRefresh ) + ': ON')
+            notify(( app.msgs.menuLabel_autoRefresh ) + ': ON')
         } else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.deactivate()
-            if (!config.notifDisabled) notify(( app.msgs.menuLabel_autoRefresh ) + ': OFF')
+            notify(( app.msgs.menuLabel_autoRefresh ) + ': OFF')
         } settings.save('arDisabled', config.arDisabled)
     }
 
@@ -712,7 +712,7 @@
     // Activate AUTO-REFRESH on first visit if enabled
     if (!config.arDisabled) {
         chatgpt.autoRefresh.activate(config.refreshInterval)
-        if (!config.notifDisabled) notify(( app.msgs.menuLabel_autoRefresh ) + ': ON')
+        notify(( app.msgs.menuLabel_autoRefresh ) + ': ON')
     }
 
 })()

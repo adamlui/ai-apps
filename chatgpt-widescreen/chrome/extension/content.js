@@ -30,6 +30,7 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
+        if (config[`${site}_notifDisabled`]) return
 
         // Strip state word to append colored one later
         const foundState = ['ON', 'OFF'].find(word => msg.includes(word))
@@ -413,8 +414,7 @@
             if (site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
                 mode == 'fullWindow' && ( config[`${site}_wideScreen`] || config[`${site}_fullerWindows`] )
                                      && config[`${site}_widerChatbox`] ? 111 : 0) // delay if toggled to/from active WCB to avoid inaccurate width
-            if (!config[`${site}_notifDisabled`]) // notify synced state
-                notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
+            notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
         }
     }

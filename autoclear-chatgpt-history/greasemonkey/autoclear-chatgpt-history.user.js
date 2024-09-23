@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.22.5
+// @version             2024.9.23
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -372,8 +372,7 @@
             menu.ids.push(GM_registerMenuCommand.registerCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-                if (!config.notifDisabled) notify((
-                    app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.words[+!config.toggleHidden])
+                notify((app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.words[+!config.toggleHidden])
                 menu.refresh()
             }))
 
@@ -450,6 +449,7 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
+        if (config.notifDisabled && !msg.includes(app.msgs.menuLabel_modeNotifs)) return
 
         // Strip state word to append colored one later
         const foundState = menu.state.words.find(word => msg.includes(word))
@@ -677,9 +677,9 @@
         updateToggleHTML() ; menu.refresh()
         if (config.autoclear) {
             setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
-            if (!config.notifDisabled) notify(`${app.msgs.mode_autoClear}: ${menu.state.words[1]}`)
+            notify(`${app.msgs.mode_autoClear}: ${menu.state.words[1]}`)
         } else if (!config.autoclear)
-            if (!config.notifDisabled) notify(`${app.msgs.mode_autoClear}: ${menu.state.words[0]}`)
+            notify(`${app.msgs.mode_autoClear}: ${menu.state.words[0]}`)
         settings.save('autoclear', config.autoclear)
     }
 

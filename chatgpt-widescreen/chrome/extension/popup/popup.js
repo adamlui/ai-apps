@@ -68,9 +68,8 @@
         toggleInput.onchange = () => {
             settings.save(`${site}_${settingKey}`, !config[`${site}_${settingKey}`]) ; syncConfig()
             settings.load(`${site}_notifDisabled`).then(() => { // show mode notification
-                if (!config[`${site}_notifDisabled`] || /notif/i.test(settingKey)) // ...if enabled or notif-related setting
-                    notify(chrome.i18n.getMessage(notifMsgKey) + ' '
-                        + (/disabled/i.test(settingKey) != config[`${site}_${settingKey}`] ? 'ON' : 'OFF'))
+                notify(chrome.i18n.getMessage(notifMsgKey) + ' '
+                    + (/disabled/i.test(settingKey) != config[`${site}_${settingKey}`] ? 'ON' : 'OFF'))
         })}
 
         // Add click listener to toggle input's parent label
@@ -84,6 +83,7 @@
     // Define FEEDBACK functions
 
     function notify(msg, position) {
+        if (config[`${site}_notifDisabled`] && !msg.includes(chrome.i18n.getMessage('menuLabel_modeNotifs'))) return
         chrome.tabs.query({ active: true, currentWindow: true }, tabs =>
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'notify', msg: msg, position: position || 'bottom-right' })

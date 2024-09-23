@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.23
+// @version             2024.9.23.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -405,8 +405,7 @@
                                     + app.settings[key].label + menu.state.separator + menu.state.words[+settingIsEnabled]
                     menu.ids.push(GM_registerMenuCommand(menuLabel, () => {
                         settings.save(key, !config[key]) ; sync.config()
-                        if (!config.notifDisabled) notify(
-                            `${app.settings[key].label}: ${menu.state.words[+(key.includes('Disabled') ^ config[key])]}`)
+                        notify(`${app.settings[key].label}: ${menu.state.words[+(key.includes('Disabled') ^ config[key])]}`)
                         menu.refresh() // to update state symbol/suffix
                     }))
                 }
@@ -475,6 +474,7 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
+        if (config.notifDisabled) return
 
         // Strip state word to append colored one later
         const foundState = menu.state.words.find(word => msg.includes(word))
@@ -908,8 +908,7 @@
             if (/chatgpt|openai/.test(site)) setTimeout(() => chatbar.tweak(), // update inner width
                 mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
                                      && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid inaccurate width
-            if (!config.notifDisabled) // notify synced state
-                notify(`${ app.msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
+            notify(`${ app.msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
         }
     }
