@@ -24,7 +24,7 @@
     chrome.runtime.onMessage.addListener(request => {
         if (request.action == 'notify') notify(request.msg, request.position)
         else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
-        else if (request.action == 'sync.config') sync.config()
+        else if (request.action == 'sync.configUI') sync.configUI()
     })
 
     // Define FEEDBACK functions
@@ -370,7 +370,7 @@
 
     const sync = {
         
-        async config() {
+        async configUI() {
             const extensionWasDisabled = config.extensionDisabled
             await settings.load('extensionDisabled', ...sites[site].availFeatures.map(feature => `${site}_${feature}`))
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
