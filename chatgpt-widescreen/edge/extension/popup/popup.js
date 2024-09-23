@@ -5,6 +5,7 @@
 
     // Import settings.js
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
+    settings.site = site // to load/save active tab's settings
 
     // Localize labels
     let translationOccurred = false
@@ -61,15 +62,15 @@
     function initToggle(toggleInput, settingKey, notifMsgKey) {
 
         // Init toggle state
-        settings.load(`${site}_${settingKey}`).then(() =>
-            toggleInput.checked = /disabled/i.test(settingKey) !== config[`${site}_${settingKey}`])
+        settings.load(settingKey).then(() =>
+            toggleInput.checked = /disabled/i.test(settingKey) != config[settingKey])
 
         // Add click-listener to toggle input
         toggleInput.onchange = () => {
-            settings.save(`${site}_${settingKey}`, !config[`${site}_${settingKey}`]) ; syncConfigUI()
-            settings.load(`${site}_notifDisabled`).then(() => { // show mode notification
+            settings.save(settingKey, !config[settingKey]) ; syncConfigUI()
+            settings.load('notifDisabled').then(() => { // show mode notification
                 notify(chrome.i18n.getMessage(notifMsgKey) + ' '
-                    + (/disabled/i.test(settingKey) != config[`${site}_${settingKey}`] ? 'ON' : 'OFF'))
+                    + (/disabled/i.test(settingKey) != config[settingKey] ? 'ON' : 'OFF'))
         })}
 
         // Add click listener to toggle input's parent label
@@ -83,7 +84,7 @@
     // Define FEEDBACK functions
 
     function notify(msg, position) {
-        if (config[`${site}_notifDisabled`] && !msg.includes(chrome.i18n.getMessage('menuLabel_modeNotifs'))) return
+        if (config.notifDisabled && !msg.includes(chrome.i18n.getMessage('menuLabel_modeNotifs'))) return
         chrome.tabs.query({ active: true, currentWindow: true }, tabs =>
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'notify', msg: msg, position: position || 'bottom-right' })
