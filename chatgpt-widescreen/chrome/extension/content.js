@@ -310,7 +310,7 @@
                 .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
             const ctrAddend = ( site == 'perplexity' ? ( location.pathname == '/' ? 100 : 106 )
                               : site == 'poe' ? 45 : 13 ) +25,
-                  spreadFactor = site == 'perplexity' ? 26.85 : site == 'poe' ? 34 : 30.5,
+                  spreadFactor = site == 'perplexity' ? 26.85 : site == 'poe' ? 34 : 30.55,
                   iniRoffset = spreadFactor * ( visibleBtnTypes.indexOf(btnType) +1 ) + ctrAddend
             tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + btnType + (
                 !/full|wide/i.test(btnType) ? '' : (config[`${site}_${btnType}`] ? 'OFF' : 'ON')))
