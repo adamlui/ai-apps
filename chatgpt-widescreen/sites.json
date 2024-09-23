@@ -9,7 +9,7 @@
         "sidebarToggle": "button[data-testid*=\"sidebar-button\"]",
         "stop": "button[data-testid=\"stop-button\"]"
       },
-      "header": "main .sticky", "input": "#prompt-textarea", "sidebar": "[class*=\"sidebar\"]"
+      "header": "main .sticky:first-of-type", "input": "#prompt-textarea", "sidebar": "[class*=\"sidebar\"]"
     }
   },
   "perplexity": {
