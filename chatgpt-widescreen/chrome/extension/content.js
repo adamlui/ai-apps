@@ -25,7 +25,7 @@
     chrome.runtime.onMessage.addListener(request => {
         if (request.action == 'notify') notify(request.msg, request.position)
         else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
-        else if (request.action == 'sync.configUI') sync.configUI()
+        else if (request.action == 'sync.storageToUI') sync.storageToUI()
     })
 
     // Define FEEDBACK functions
@@ -372,7 +372,7 @@
 
     const sync = {
         
-        async configUI() {
+        async storageToUI() { // from popup.js toggle + background.js actve-tab listeners
             const extensionWasDisabled = config.extensionDisabled
             await settings.load('extensionDisabled', ...sites[site].availFeatures)
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns

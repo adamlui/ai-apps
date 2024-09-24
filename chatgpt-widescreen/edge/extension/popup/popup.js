@@ -27,7 +27,7 @@
         masterToggle.checked = !config.extensionDisabled ; updateGreyness() })
     masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
-        syncConfigUI() ; updateGreyness()
+        syncStorageToUI() ; updateGreyness()
     }
 
     // Init sub-toggles
@@ -67,7 +67,7 @@
 
         // Add click-listener to toggle input
         toggleInput.onchange = () => {
-            settings.save(settingKey, !config[settingKey]) ; syncConfigUI()
+            settings.save(settingKey, !config[settingKey]) ; syncStorageToUI()
             settings.load('notifDisabled').then(() => { // show mode notification
                 notify(chrome.i18n.getMessage(notifMsgKey) + ' '
                     + (/disabled/i.test(settingKey) != config[settingKey] ? 'ON' : 'OFF'))
@@ -92,9 +92,9 @@
 
     // Define SYNC functions
 
-    async function syncConfigUI() {
+    async function syncStorageToUI() {
         const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.configUI' })
+        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
     }
     
     function updateGreyness() {

@@ -297,7 +297,6 @@
     const settings = {
         load(...keys) {
             if (Array.isArray(keys[0])) keys = keys[0] // use 1st array arg, else all comma-separated ones
-            console.log(keys)
             keys.forEach(key => config[key] = GM_getValue(app.configKeyPrefix + '_' + key, false))
         },
         save(key, value) { GM_setValue(app.configKeyPrefix + '_' + key, value) ; config[key] = value }
@@ -408,7 +407,7 @@
                           menuLabel = `${ app.settings[key].symbol || menu.state.symbols[+settingIsEnabled] } `
                                     + app.settings[key].label + menu.state.separator + menu.state.words[+settingIsEnabled]
                     menu.ids.push(GM_registerMenuCommand(menuLabel, () => {
-                        settings.save(key, !config[key]) ; sync.configUI()
+                        settings.save(key, !config[key]) ; sync.storageToUI()
                         notify(`${app.settings[key].label}: ${menu.state.words[+(key.includes('Disabled') ^ config[key])]}`)
                         menu.refresh() // to update state symbol/suffix
                     }))
@@ -887,7 +886,7 @@
 
     const sync = {
 
-        configUI() { // from toolbar menu toggles
+        storageToUI() { // from toolbar menu toggles
             sync.fullerWin() // sync FW
             update.style.tweaks() // sync TCB/NCB/HH/HF
             update.style.chatbar() // sync WCB
