@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.23.9
+// @version             2024.9.24
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -374,7 +374,7 @@
             }
             fetchMsgs()
         })
-        if (Object.keys(localizedMsgs).length > 0) Object.assign(app.msgs, localizedMsgs)
+        Object.assign(app.msgs, localizedMsgs)
     }
 
     // Init SETTINGS props

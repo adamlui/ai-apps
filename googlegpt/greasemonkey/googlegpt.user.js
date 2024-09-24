@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.23.2
+// @version                  2024.9.24
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -725,7 +725,7 @@
             }
             fetchMsgs()
         })
-        if (Object.keys(localizedMsgs).length > 0) Object.assign(app.msgs, localizedMsgs)
+        Object.assign(app.msgs, localizedMsgs)
     }
     log.debug(`Success! app.msgs = ${log.prettifyObj(app.msgs)}`)
 
