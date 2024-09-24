@@ -21,7 +21,7 @@
     const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/sites.json`)).json())
 
     // Init CONFIG
-    await settings.load(sites[site].availFeatures)
+    await settings.load('extensionDisabled', ...sites[site].availFeatures)
 
     // Add CHROME MSG listener for background/popup requests to sync modes/settings
     chrome.runtime.onMessage.addListener(request => {
@@ -515,7 +515,6 @@
     update.style.chatbar() ; document.head.append(chatbarStyle)
 
     // Insert BUTTONS
-    await settings.load('extensionDisabled')
     if (!config.extensionDisabled) { await chatbar.isLoaded() ; btns.insert() }
 
     // Restore PREV SESSION's state
