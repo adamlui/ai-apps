@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24.11
+// @version             2024.9.24.12
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -728,6 +728,7 @@
                     document.documentElement.dataset.colorScheme == 'dark' ? 'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'
                                                                            : 'oklch(var(--text-color-100)/var(--tw-text-opacity))' )
               : 'currentColor' )
+
             if (btns.wideScreen?.style.fill != btns.color)
                 btns.types.forEach(btnType => {
                     if (btns[btnType]) btns[btnType].style.fill = btns[btnType].style.stroke = btns.color })
