@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.24.1
+// @version                2024.9.24.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -902,9 +902,9 @@
 
                     // Show notification
                     notify(`${app.msgs.menuLabel_colorScheme}:`
-                           + ( scheme == 'light' ? app.msgs.scheme_light || 'Light'
-                             : scheme == 'dark'  ? app.msgs.scheme_dark  || 'Dark'
-                                                 : app.msgs.menuLabel_auto ).toUpperCase() )
+                          + ( scheme == 'light' ? app.msgs.scheme_light || 'Light'
+                            : scheme == 'dark'  ? app.msgs.scheme_dark  || 'Dark'
+                                                : app.msgs.menuLabel_auto ).toUpperCase() )
 
                     // Append scheme icon
                     const notifs = document.querySelectorAll('.chatgpt-notif'),
@@ -2221,7 +2221,7 @@
             log.caller = 'toggle.proxyMode()'
             log.debug(`Toggling Proxy Mode ${ config.proxyAPIenabled ? 'OFF' : 'ON' }...`)
             settings.save('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(( app.msgs.menuLabel_proxyAPImode ) + ' ' + menu.state.words[+config.proxyAPIenabled])
+            notify(`${app.msgs.menuLabel_proxyAPImode} ${menu.state.words[+config.proxyAPIenabled]}`)
             menu.refresh()
             if (modals.settings.get()) { // update visual states of Settings toggles
                 const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input'),
@@ -2281,7 +2281,7 @@
             } else { // functional toggle
                 log.debug(`Toggling Streaming Mode ${ config.streamingDisabled ? 'ON' : 'OFF' }`)
                 settings.save('streamingDisabled', !config.streamingDisabled)
-                notify(app.settings.streamingDisabled.label + ' ' + menu.state.words[+!config.streamingDisabled])
+                notify(`${app.settings.streamingDisabled.label} ${menu.state.words[+!config.streamingDisabled]}`)
                 log.debug(`Success! config.streamingDisabled = ${config.streamingDisabled}`)
             }
         },

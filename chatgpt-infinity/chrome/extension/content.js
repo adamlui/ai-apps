@@ -157,7 +157,7 @@
                 + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                 + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                 + ' then answer it. Don\'t type anything else.'
-            if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
+            if (!fromMsg) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: ON`)
             fromMsg = false
             if (env.browser.isMobile && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             if (!new URL(location).pathname.startsWith('/g/')) // not on GPT page
@@ -189,7 +189,7 @@
         },
 
         async deactivate() {
-            if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF')
+            if (!fromMsg) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: OFF`)
             fromMsg = false
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener

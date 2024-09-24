@@ -69,8 +69,8 @@
         toggleInput.onchange = () => {
             settings.save(settingKey, !config[settingKey]) ; syncStorageToUI()
             settings.load('notifDisabled').then(() => { // show mode notification
-                notify(chrome.i18n.getMessage(notifMsgKey) + ' '
-                    + (/disabled/i.test(settingKey) != config[settingKey] ? 'ON' : 'OFF'))
+                notify(`${chrome.i18n.getMessage(notifMsgKey)} ${
+                    /disabled/i.test(settingKey) != config[settingKey] ? 'ON' : 'OFF' }`)
         })}
 
         // Add click listener to toggle input's parent label

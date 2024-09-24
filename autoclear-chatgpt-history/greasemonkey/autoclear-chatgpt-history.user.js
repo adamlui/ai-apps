@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24
+// @version             2024.9.24.1
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -375,7 +375,7 @@
             menu.ids.push(GM_registerMenuCommand.registerCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-                notify((app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.words[+!config.toggleHidden])
+                notify(`${app.msgs.menuLabel_toggleVis}: ${menu.state.words[+!config.toggleHidden]}`)
                 menu.refresh()
             }))
 
@@ -385,7 +385,7 @@
                           + menu.state.separator + menu.state.words[+!config.notifDisabled]
             menu.ids.push(GM_registerMenuCommand.registerCommand(mnLabel, () => {
                 settings.save('notifDisabled', !config.notifDisabled)
-                notify(( app.msgs.menuLabel_modeNotifs ) + ': ' + menu.state.words[+!config.notifDisabled])
+                notify(`${app.msgs.menuLabel_modeNotifs}: ${menu.state.words[+!config.notifDisabled]}`)
                 menu.refresh()
             }))
 

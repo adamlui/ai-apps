@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24
+// @version             2024.9.24.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -370,7 +370,7 @@
                            + menu.state.separator + menu.state.words[+config.autoStart]
             menu.ids.push(GM_registerMenuCommand(astLabel, () => {
                 settings.save('autoStart', !config.autoStart)
-                notify(( app.msgs.menuLabel_autoStart ) + ': '+ menu.state.words[+config.autoStart])
+                notify(`${app.msgs.menuLabel_autoStart}: ${menu.state.words[+config.autoStart]}`)
                 menu.refresh()
             }))
 
@@ -381,7 +381,7 @@
             menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-                notify(( app.msgs.menuLabel_toggleVis ) + ': '+ menu.state.words[+!config.toggleHidden])
+                notify(`${app.msgs.menuLabel_toggleVis}: ${menu.state.words[+!config.toggleHidden]}`)
                 menu.refresh()
             }))
 
@@ -391,7 +391,7 @@
                            + menu.state.separator + menu.state.words[+!config.autoScrollDisabled]
             menu.ids.push(GM_registerMenuCommand(ascLabel, () => {
                 settings.save('autoScrollDisabled', !config.autoScrollDisabled)
-                notify(( app.msgs.menuLabel_autoScroll ) + ': '+ menu.state.words[+!config.autoScrollDisabled])
+                notify(`${app.msgs.menuLabel_autoScroll}: ${menu.state.words[+!config.autoScrollDisabled]}`)
                 menu.refresh()
             }))
 
@@ -696,7 +696,7 @@
                 + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                 + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                 + ' then answer it. Don\'t type anything else.'
-            notify(( app.msgs.menuLabel_infinityMode ) + ': ON')
+            notify(`${app.msgs.menuLabel_infinityMode}: ON`)
             if (env.browser.isMobile && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             if (!new URL(location).pathname.startsWith('/g/')) // not on GPT page
                 try { chatgpt.startNewChat() } catch (err) { return } // start new chat
@@ -728,7 +728,7 @@
         deactivate() {
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener
-            notify(( app.msgs.menuLabel_infinityMode ) + ': OFF')
+            notify(`${app.msgs.menuLabel_infinityMode}: OFF`)
             config.infinityMode = false // in case toggled by PV listener
         },
 

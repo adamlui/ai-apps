@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24
+// @version             2024.9.24.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -343,7 +343,7 @@
                           + menu.state.separator + menu.state.words[+!config.notifDisabled]
             menu.ids.push(GM_registerMenuCommand(mnLabel, function() {
                 settings.save('notifDisabled', !config.notifDisabled)
-                notify(( app.msgs.menuLabel_modeNotifs ) + ': ' + menu.state.words[+!config.notifDisabled])
+                notify(`${app.msgs.menuLabel_modeNotifs}: ${menu.state.words[+!config.notifDisabled]}`)
                 menu.refresh()
             }))
     
@@ -516,6 +516,6 @@
     continueObserver.observe(document.querySelector('main'), { attributes: true, subtree: true })
 
     // NOTIFY of status on load
-    if (!config.notifDisabled) notify(( app.msgs.mode_autoContinue ) + ': ON')
+    if (!config.notifDisabled) notify(`${app.msgs.mode_autoContinue}: ON`)
 
 })()

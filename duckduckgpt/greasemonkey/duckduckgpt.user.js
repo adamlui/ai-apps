@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.24
+// @version                2024.9.24.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1088,9 +1088,9 @@
 
                     // Show notification
                     notify(`${app.msgs.menuLabel_colorScheme}:`
-                           + ( scheme == 'light' ? app.msgs.scheme_light || 'Light'
-                             : scheme == 'dark'  ? app.msgs.scheme_dark  || 'Dark'
-                                                 : app.msgs.menuLabel_auto ).toUpperCase() )
+                          + ( scheme == 'light' ? app.msgs.scheme_light || 'Light'
+                            : scheme == 'dark'  ? app.msgs.scheme_dark  || 'Dark'
+                                                : app.msgs.menuLabel_auto ).toUpperCase() )
 
                     // Append scheme icon
                     const notifs = document.querySelectorAll('.chatgpt-notif'),
@@ -2602,7 +2602,7 @@
             }
             if (prevState != config.anchored) {
                 menus.pin.topPos = menus.pin.rightPos = null
-                notify(( app.msgs.mode_anchor ) + ' ' + menu.state.words[+config.anchored])
+                notify(`${app.msgs.mode_anchor} ${menu.state.words[+config.anchored]}`)
                 log.debug(`Success! Anchor Mode toggled ${ config.anchored ? 'ON' : 'OFF' }`)
             }
         },
@@ -2711,7 +2711,7 @@
             log.caller = 'toggle.proxyMode()'
             log.debug(`Toggling Proxy Mode ${ config.proxyAPIenabled ? 'OFF' : 'ON' }...`)
             settings.save('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(( app.msgs.menuLabel_proxyAPImode ) + ' ' + menu.state.words[+config.proxyAPIenabled])
+            notify(`${app.msgs.menuLabel_proxyAPImode} ${menu.state.words[+config.proxyAPIenabled]}`)
             menu.refresh()
             if (modals.settings.get()) { // update visual states of Settings toggles
                 const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input'),
@@ -2738,7 +2738,7 @@
                 get.related(stripQueryAugments(msgChain)[msgChain.length - 1].content).then(queries => show.related(queries))
                     .catch(err => { log.error(err.message) ; api.tryNew(get.related) })
             update.style.tweaks() // toggle <pre> max-height
-            notify(( app.msgs.menuLabel_relatedQueries ) + ' ' + menu.state.words[+!config.rqDisabled])
+            notify(`${app.msgs.menuLabel_relatedQueries} ${menu.state.words[+!config.rqDisabled]}`)
             log.debug(`Success! config.rqDisabled = ${config.rqDisabled}`)
         },
 
@@ -2760,8 +2760,8 @@
             }
             if (mode == 'sticky' && prevStickyState == config.stickySidebar)
                 return log.debug(`No change to ${log.toTitleCase(mode)} Sidebar`)
-            notify(( app.msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
-                + ' ' + menu.state.words[+config[configKeyName]])
+            notify(`${ app.msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' } ${
+                       menu.state.words[+config[configKeyName]]}`)
             log.debug(`Success! ${log.toTitleCase(mode)} Sidebar toggled ${ toToggleOn ? 'ON' : 'OFF' }`)
         },
 
@@ -2807,7 +2807,7 @@
             } else { // functional toggle
                 log.debug(`Toggling Streaming Mode ${ config.streamingDisabled ? 'ON' : 'OFF' }`)
                 settings.save('streamingDisabled', !config.streamingDisabled)
-                notify(app.settings.streamingDisabled.label + ' ' + menu.state.words[+!config.streamingDisabled])
+                notify(`${app.settings.streamingDisabled.label} ${menu.state.words[+!config.streamingDisabled]}`)
                 log.debug(`Success! config.streamingDisabled = ${config.streamingDisabled}`)
             }
         },

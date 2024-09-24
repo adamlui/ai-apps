@@ -58,7 +58,7 @@
             if (new URL(tabs[0].url).hostname != 'chatgpt.com') return // do nothing if not on ChatGPT
             chrome.tabs.sendMessage(tabs[0].id, { action: 'clickToggle' }) // else click sidebar toggle
         })
-        notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ' ' + (infinityModeToggle.checked ? 'ON' : 'OFF'))
+        notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')} ${ infinityModeToggle.checked ? 'ON' : 'OFF' }`)
     }
     infinityModeDiv.onclick = event => {
         if ([infinityModeDiv, document.querySelector('[data-locale*="infinityMode"]')].includes(event.target))
@@ -68,7 +68,7 @@
     // Add 'Auto-Start' click-listeners
     autoStartToggle.onchange = () => {
         settings.save('autoStart', !config.autoStart) ; syncExtension()        
-        notify(chrome.i18n.getMessage('menuLabel_autoStart') + ' ' + ( config.autoStart ? 'ON' : 'OFF' ))
+        notify(`${chrome.i18n.getMessage('menuLabel_autoStart')} ${ config.autoStart ? 'ON' : 'OFF' }`)
     }
     autoStartDiv.onclick = event => {
         if ([autoStartDiv, document.querySelector('[data-locale*="autoStart"]')].includes(event.target))
@@ -78,7 +78,7 @@
     // Add 'Toggle Visibility' click-listeners
     toggleVisToggle.onchange = () => {
         settings.save('toggleHidden', !config.toggleHidden) ; syncExtension()
-        notify(chrome.i18n.getMessage('menuLabel_toggleVis') + ' ' + ( !config.toggleHidden ? 'ON' : 'OFF' ))
+        notify(`${chrome.i18n.getMessage('menuLabel_toggleVis')} ${ !config.toggleHidden ? 'ON' : 'OFF' }`)
     }
     toggleVisDiv.onclick = event => {
         if ([toggleVisDiv, document.querySelector('[data-locale*="toggleVis"]')].includes(event.target))
@@ -88,7 +88,7 @@
     // Add 'Auto-Scroll' click-listeners
     autoScrollToggle.onchange = () => {
         settings.save('autoScrollDisabled', !config.autoScrollDisabled) ; syncExtension()        
-        notify(chrome.i18n.getMessage('menuLabel_autoScroll') + ' ' + ( !config.autoScrollDisabled ? 'ON' : 'OFF' ))
+        notify(`${chrome.i18n.getMessage('menuLabel_autoScroll')} ${ !config.autoScrollDisabled ? 'ON' : 'OFF' }`)
     }
     autoScrollDiv.onclick = event => {
         if ([autoScrollDiv, document.querySelector('[data-locale*="autoScroll"]')].includes(event.target))
