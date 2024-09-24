@@ -327,6 +327,7 @@
                                      : '50px' )
         }
     }
+
     // Define TOGGLE functions
 
     const toggle = {
@@ -357,9 +358,8 @@
                     if (sidebarToggle) sidebarToggle.click()
                     else { fullWinStyle.remove() ; sync.mode('fullWindow') }
                 } else if (mode == 'fullScreen') {
-                    if (config.f11)
-                        siteAlert(chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
-                    document.exitFullscreen().catch(err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
+                    if (config.f11) siteAlert(chrome.i18n.getMessage('alert_pressF11'), `${chrome.i18n.getMessage('alert_f11reason')}.`)
+                    else document.exitFullscreen().catch(err => console.error(app.symbol + ' » Failed to exit fullscreen', err))
                 }
             }
         },
@@ -447,7 +447,7 @@
                     if (document.querySelector('[data-testid*="login"]')) { obs.disconnect() ; resolve(false) }
                 }).observe(document.body, obsConfig)
             }),
-            new Promise(resolve =>  // null if 3s passed
+            new Promise(resolve => // null if 3s passed
                 setTimeout(() => resolve(null), 3000))
         ])
         sites[site].selectors.footer = await Promise.race([
@@ -459,7 +459,7 @@
                     if (footerDiv) { obs.disconnect() ; resolve(cssSelectorize(footerDiv.classList)) }
                 }).observe(document.body, obsConfig)
             }),
-            new Promise(resolve =>  // null if 500ms passed
+            new Promise(resolve => // null if 500ms passed
                 setTimeout(() => resolve(null), 500))
         ])
     }
