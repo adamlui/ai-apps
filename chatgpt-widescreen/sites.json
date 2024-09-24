@@ -4,9 +4,8 @@
       "notifDisabled", "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen" ],
     "selectors": {
       "btns": {
-        "newChat": "button[data-testid*=\"new-chat-button\"]",
-        "send": "button[data-testid=\"send-button\"]",
-        "sidebarToggle": "button[data-testid*=\"sidebar-button\"]",
+        "login": "[data-testid*=\"login\"]", "newChat": "button[data-testid*=\"new-chat-button\"]",
+        "send": "button[data-testid=\"send-button\"]", "sidebarToggle": "button[data-testid*=\"sidebar-button\"]",
         "stop": "button[data-testid=\"stop-button\"]"
       },
       "header": "main .sticky:first-of-type", "input": "#prompt-textarea", "sidebar": "[class*=\"sidebar\"]"
