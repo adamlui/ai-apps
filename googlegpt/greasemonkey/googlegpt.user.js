@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.24
+// @version                  2024.9.24.1
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -3022,6 +3022,7 @@
 
         proxyMode() {
             log.caller = 'toggle.proxyMode()'
+            log.debug(`Toggling Proxy Mode ${ config.proxyAPIenabled ? 'OFF' : 'ON' }...`)
             settings.save('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( app.msgs.menuLabel_proxyAPImode ) + ' ' + menu.state.words[+config.proxyAPIenabled])
             menu.refresh()

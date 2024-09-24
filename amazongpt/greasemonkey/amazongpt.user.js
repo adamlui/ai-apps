@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.24
+// @version                2024.9.24.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2219,6 +2219,7 @@
 
         proxyMode() {
             log.caller = 'toggle.proxyMode()'
+            log.debug(`Toggling Proxy Mode ${ config.proxyAPIenabled ? 'OFF' : 'ON' }...`)
             settings.save('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( app.msgs.menuLabel_proxyAPImode ) + ' ' + menu.state.words[+config.proxyAPIenabled])
             menu.refresh()
