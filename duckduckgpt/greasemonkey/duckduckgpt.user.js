@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.23.2
+// @version                2024.9.23.3
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1087,15 +1087,15 @@
                 function schemeNotify(scheme) {
 
                     // Show notification
-                    notify(` ${app.msgs.menuLabel_colorScheme}: `
-                           + ( scheme == 'light' ? app.msgs.scheme_light   || 'Light' :
-                               scheme == 'dark'  ? app.msgs.scheme_dark    || 'Dark'
+                    notify(`${app.msgs.menuLabel_colorScheme}:`
+                           + ( scheme == 'light' ? app.msgs.scheme_light || 'Light'
+                             : scheme == 'dark'  ? app.msgs.scheme_dark  || 'Dark'
                                                  : app.msgs.menuLabel_auto ).toUpperCase() )
-                    const notifs = document.querySelectorAll('.chatgpt-notif'),
-                          notif = notifs[notifs.length -1]
 
                     // Append scheme icon
-                    const schemeIcon = icons[scheme == 'light' ? 'sun' : scheme == 'dark' ? 'moon' : 'arrowsCycle'].create()
+                    const notifs = document.querySelectorAll('.chatgpt-notif'),
+                          notif = notifs[notifs.length -1],
+                          schemeIcon = icons[ui.app.scheme == 'light' ? 'sun' : scheme == 'dark' ? 'moon' : 'arrowsCycle'].create()
                     schemeIcon.style.cssText = 'width: 23px ; height: 23px ; position: relative ; top: 3px ; margin-left: 6px'
                     notif.append(schemeIcon)
                 }
