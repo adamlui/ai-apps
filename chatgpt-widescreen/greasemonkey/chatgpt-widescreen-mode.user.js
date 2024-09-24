@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24.5
+// @version             2024.9.24.6
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -272,7 +272,7 @@
             gitHub: 'https://github.com/adamlui/chatgpt-widescreen',
             greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
             productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode' },
-        latestAssetCommitHash: '9753f90' // for cached sites.json + messages.json
+        latestAssetCommitHash: '79813bd' // for cached sites.json + messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -954,15 +954,17 @@
         const obsConfig = { childList: true, subtree: true }
         sites[site].hasSidebar = await Promise.race([
             new Promise(resolve => { // true if sidebar toggle loads
-                if (document.querySelector('[d^="M8.85719"]')) resolve(true)
+                if (document.querySelector(sites[site].selectors.btns.sidebarToggle)) resolve(true)
                 else new MutationObserver((_, obs) => {
-                    if (document.querySelector('[d^="M8.85719"]')) { obs.disconnect() ; resolve(true) }
+                    if (document.querySelector(sites[site].selectors.btns.sidebarToggle)) {
+                        obs.disconnect() ; resolve(true) }
                 }).observe(document.body, obsConfig)
             }),
             new Promise(resolve => { // false if login button loads
-                if (document.querySelector('[data-testid*="login"]')) resolve(false)
+                if (document.querySelector(sites[site].selectors.btns.login)) resolve(false)
                 else new MutationObserver((_, obs) => {
-                    if (document.querySelector('[data-testid*="login"]')) { obs.disconnect() ; resolve(false) }
+                    if (document.querySelector(sites[site].selectors.btns.login)) {
+                        obs.disconnect() ; resolve(false) }
                 }).observe(document.body, obsConfig)
             }),
             new Promise(resolve =>  // null if 3s passed

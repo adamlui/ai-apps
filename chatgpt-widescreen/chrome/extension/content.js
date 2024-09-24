@@ -439,15 +439,17 @@
         const obsConfig = { childList: true, subtree: true }
         sites[site].hasSidebar = await Promise.race([
             new Promise(resolve => { // true if sidebar toggle loads
-                if (document.querySelector('[d^="M8.85719"]')) resolve(true)
+                if (document.querySelector(sites[site].selectors.btns.sidebarToggle)) resolve(true)
                 else new MutationObserver((_, obs) => {
-                    if (document.querySelector('[d^="M8.85719"]')) { obs.disconnect() ; resolve(true) }
+                    if (document.querySelector(sites[site].selectors.btns.sidebarToggle)) {
+                        obs.disconnect() ; resolve(true) }
                 }).observe(document.body, obsConfig)
             }),
             new Promise(resolve => { // false if login button loads
-                if (document.querySelector('[data-testid*="login"]')) resolve(false)
+                if (document.querySelector(sites[site].selectors.btns.login)) resolve(false)
                 else new MutationObserver((_, obs) => {
-                    if (document.querySelector('[data-testid*="login"]')) { obs.disconnect() ; resolve(false) }
+                    if (document.querySelector(sites[site].selectors.btns.login)) {
+                        obs.disconnect() ; resolve(false) }
                 }).observe(document.body, obsConfig)
             }),
             new Promise(resolve => // null if 3s passed
