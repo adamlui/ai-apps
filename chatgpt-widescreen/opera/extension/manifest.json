@@ -23,7 +23,7 @@
   }],
   "content_scripts": [{
     "matches": [ "https://chatgpt.com/*", "https://www.perplexity.ai/*", "https://poe.com/*" ],
-    "js": [ "content.js" ]
+    "run_at": "document_end", "js": [ "content.js" ]
   }],
   "background": { "service_worker": "background.js" },
   "minimum_chrome_version": "88"
