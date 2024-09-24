@@ -33,7 +33,7 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        if (config.notifDisabled) return
+        if (config.notifDisabled && !msg.includes(chrome.i18n.getMessage('menuLabel_modeNotifs'))) return
 
         // Strip state word to append colored one later
         const foundState = ['ON', 'OFF'].find(word => msg.includes(word))
