@@ -528,7 +528,7 @@
     const nodeObserver = new MutationObserver(([mutation]) => {
         if (!config.extensionDisabled) btns.insert() // again or they constantly disappear
         if (site == 'chatgpt') { // Update button colors on ChatGPT scheme or temp chat toggle
-            const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]')
+            const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')
             if (chatbarIsBlack != isTempChat // temp chat toggled
                 || mutation.target == document.documentElement && mutation.attributeName == 'class') { // scheme toggled
                     btns.updateColor() ; isTempChat = chatbarIsBlack }            
@@ -537,7 +537,7 @@
     nodeObserver.observe( // <html> for page scheme toggles
         document.documentElement, { attributes: true })
     nodeObserver.observe( // for chatbar changes
-        document.querySelector(/openai|chatgpt|perplexity/.test(site) ? 'main' : 'head'),
+        document.querySelector(/chatgpt|perplexity/.test(site) ? 'main' : 'head'),
         { attributes: true, subtree: true }
     )
 
