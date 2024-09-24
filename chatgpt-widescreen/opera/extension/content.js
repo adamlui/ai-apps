@@ -5,6 +5,8 @@
 
 (async () => {
 
+    document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
+
     const site = /([^.]+)\.[^.]+$/.exec(location.hostname)[1]
 
     // Import LIBS
@@ -428,8 +430,6 @@
     }
     
     // Run MAIN routine
-
-    document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
     // Init UI props
     if (site == 'chatgpt') {

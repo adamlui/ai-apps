@@ -5,6 +5,8 @@
 
 (async () => {
 
+    document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
+
     // Import LIBS
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
@@ -23,9 +25,6 @@
         else if (request.action == 'clickToggle') document.getElementById('infinity-toggle-label').click()        
         else if (request.action == 'sync.extension') syncExtension()
     })
-
-    // Add FLAG to auto-disable userscript
-    document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
     // Init ENV info
     const env = { browser: { isMobile: chatgpt.browser.isMobile() }}
