@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24.3
+// @version             2024.9.24.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -788,16 +788,21 @@
 
             tweaks() {
                 tweaksStyle.innerText = (
-                    '.chatgpt-notif { font-family: system-ui !important }' // chatgpt.alert()'s
-                + ( /chatgpt|openai/.test(site) ? (
-                        ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
-                        + 'div:has(+ main) { display: none !important }' // hide ugly double temp chat header
-                        + 'main { overflow: clip !important }' // prevent h-scrollbar on sync.mode('fullWindow) => delayed chatbar.tweak()
+                    '.chatgpt-notif, [class*="-modal"] { font-family: system-ui !important }'
+                  + `[class*="-modal"] { color: ${ chatgpt.isDarkMode() ? 'white' : 'black' }}`
+                  + '[class*="modal-close-btn"] svg { height: 10px }'
+                  + '[class*="-modal"] h2 { font-size: 24px ; font-weight: 600 }'
+                  + '[class*="-modal"] p { font-size: 16px }'
+                  + '[class*="-modal"] button { border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+                  + ( /chatgpt|openai/.test(site) ? (
+                          ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
+                          + 'div:has(+ main) { display: none !important }' // hide ugly double temp chat header
+                          + 'main { overflow: clip !important }' // prevent h-scrollbar on sync.mode('fullWindow) => delayed chatbar.tweak()
                     ) : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' )) // h-pad mic btn for even spread
-                + ( config.tcbDisabled == false ? tcbStyle : '' ) // expand text input vertically
-                + ( config.hiddenHeader ? hhStyle : '' ) // hide header
-                + ( config.hiddenFooter ? hfStyle : '' ) // hide footer
-                + `#newChat-btn { display: ${ config.ncbDisabled == true ? 'none' : 'flex' }}`
+                  + ( config.tcbDisabled == false ? tcbStyle : '' ) // expand text input vertically
+                  + ( config.hiddenHeader ? hhStyle : '' ) // hide header
+                  + ( config.hiddenFooter ? hfStyle : '' ) // hide footer
+                  + `#newChat-btn { display: ${ config.ncbDisabled == true ? 'none' : 'flex' }}`
             },
 
             wideScreen() {
