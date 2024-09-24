@@ -76,7 +76,7 @@
         // Add click listener to toggle input's parent label
         const toggleLabel = toggleInput.parentNode.parentNode
         toggleLabel.onclick = event => {
-            if ([toggleLabel, document.querySelector(`[data-locale*="${ notifMsgKey }"]`)].includes(event.target))
+            if ([toggleLabel, document.querySelector(`[data-locale*="${notifMsgKey}"]`)].includes(event.target))
                 toggleInput.click()
         }
     }

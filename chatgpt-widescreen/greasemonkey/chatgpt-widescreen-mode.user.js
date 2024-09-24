@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24
+// @version             2024.9.24.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -457,7 +457,7 @@
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
+                            const updateAlert = document.querySelector(`[id="${updateModalID}"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
                             updateBtns[1].textContent = app.msgs.btnLabel_update
                             updateBtns[0].textContent = app.msgs.btnLabel_dismiss
@@ -515,7 +515,7 @@
                 const aboutModalID = siteAlert(
                     app.msgs.appName, // title
                     `<span style="${headingStyle}"><b>🏷️ <i>${app.msgs.about_version}</i></b>: </span>`
-                        + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
+                        + `<span style="${pStyle}">${GM_info.script.version}</span>\n`
                     + `<span style="${headingStyle}"><b>⚡ <i>${app.msgs.about_poweredBy}</i></b>: </span>`
                         + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
                         + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
@@ -909,7 +909,7 @@
             if (/chatgpt|openai/.test(site)) setTimeout(() => chatbar.tweak(), // update inner width
                 mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
                                      && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid inaccurate width
-            notify(`${ app.msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
+            notify(`${app.msgs['mode_' + mode]} ${ state ? 'ON' : 'OFF' }`)
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
         }
     }

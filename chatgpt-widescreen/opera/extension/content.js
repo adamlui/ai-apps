@@ -416,7 +416,7 @@
             if (site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
                 mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
                                      && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid inaccurate width
-            notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
+            notify(`${chrome.i18n.getMessage('mode_' + mode)} ${ state ? 'ON' : 'OFF' }`)
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
         }
     }

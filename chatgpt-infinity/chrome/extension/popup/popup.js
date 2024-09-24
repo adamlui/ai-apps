@@ -45,11 +45,11 @@
             autoStartToggle.checked = config.autoStart
             toggleVisToggle.checked = !config.toggleHidden
             autoScrollToggle.checked = !config.autoScrollDisabled
-            replyLangLabel.innerText += ` — ${ config.replyLanguage }`
+            replyLangLabel.innerText += ` — ${config.replyLanguage}`
             replyTopicLabel.innerText += ' — '
                 + ( re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all')
                                                    : toTitleCase(config.replyTopic) )
-            replyIntervalLabel.innerText += ` — ${ config.replyInterval }s`
+            replyIntervalLabel.innerText += ` — ${config.replyInterval}s`
         })
 
     // Add 'Infinity Mode' click-listeners
@@ -98,7 +98,7 @@
     // Add 'Reply Language' click-listener
     replyLangDiv.onclick = () => {
         while (true) {
-            let replyLanguage = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyLang') }:`, config.replyLanguage)
+            let replyLanguage = prompt(`${chrome.i18n.getMessage('prompt_updateReplyLang')}:`, config.replyLanguage)
             if (replyLanguage === null) break // user cancelled so do nothing
             else if (!/\d/.test(replyLanguage)) {
                 replyLanguage = ( // auto-case for menu/alert aesthetics
@@ -138,7 +138,7 @@
     // Add 'Reply Interval' click-listener
     replyIntervalDiv.onclick = () => {
         while (true) {
-            const replyInterval = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyInt') }:`, config.replyInterval)
+            const replyInterval = prompt(`${chrome.i18n.getMessage('prompt_updateReplyInt')}:`, config.replyInterval)
             if (replyInterval === null) break // user cancelled so do nothing
             else if (!isNaN(parseInt(replyInterval, 10)) && parseInt(replyInterval, 10) > 4) { // valid int set
                 settings.save('replyInterval', parseInt(replyInterval, 10))

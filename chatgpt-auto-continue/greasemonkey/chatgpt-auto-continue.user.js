@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24.1
+// @version             2024.9.24.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -390,7 +390,7 @@
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
+                            const updateAlert = document.querySelector(`[id="${updateModalID}"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
                             updateBtns[1].textContent = app.msgs.btnLabel_update
                             updateBtns[0].textContent = app.msgs.btnLabel_dismiss
@@ -447,7 +447,7 @@
                 const aboutModalID = siteAlert(
                     app.msgs.appName, // title
                     `<span style="${headingStyle}"><b>🏷️ <i>${app.msgs.about_version}</i></b>: </span>`
-                        + `<span style="${pStyle}">${ GM_info.script.version }</span>\n`
+                        + `<span style="${pStyle}">${GM_info.script.version}</span>\n`
                     + `<span style="${headingStyle}"><b>⚡ <i>${app.msgs.about_poweredBy}</i></b>: </span>`
                         + `<span style="${pStyle}"><a style="${aStyle}" href="${app.urls.chatgptJS}" target="_blank" rel="noopener">`
                         + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'

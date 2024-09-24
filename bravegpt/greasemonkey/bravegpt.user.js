@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.24.2
+// @version               2024.9.24.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -664,7 +664,7 @@
                         // Alert to update
                         log.debug(`Update v${latestVer} found!`)
                         const updateModalID = siteAlert(`🚀 ${app.msgs.alert_updateAvail}!`, // title
-                            `${app.msgs.alert_newerVer} ${ app.name } `
+                            `${app.msgs.alert_newerVer} ${app.name} `
                                 + `(v${latestVer}) ${app.msgs.alert_isAvail}!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.93rem" '
                                     + 'href="' + app.urls.gitHub + '/commits/main/greasemonkey/'
@@ -679,7 +679,7 @@
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
                             log.debug('Localizing button labels in non-English alert...')
-                            const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
+                            const updateAlert = document.querySelector(`[id="${updateModalID}"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
                             updateBtns[1].textContent = app.msgs.btnLabel_update
                             updateBtns[0].textContent = app.msgs.btnLabel_dismiss
@@ -1014,7 +1014,7 @@
                             settings.save('replyLanguage', replyLanguage || config.userLanguage)
                             log.debug(`Success! config.replyLanguage = ${config.replyLanguage}`)
                             const langUpdatedAlertID = siteAlert(( app.msgs.alert_langUpdated ) + '!', // title
-                                `${ app.name } ${app.msgs.alert_willReplyIn} `
+                                `${app.name} ${app.msgs.alert_willReplyIn} `
                                     + ( replyLanguage || app.msgs.alert_yourSysLang ) + '.',
                                 '', '', 447) // confirmation width
                             const langUpdatedAlert = document.getElementById(langUpdatedAlertID).firstChild
@@ -1192,7 +1192,7 @@
                         const knobWidth = 11
                         const knobStyles = {
                             position: 'absolute', left: '1px', bottom: '1px',
-                            width: `${ knobWidth }px`, height: `${ knobWidth }px`, content: '""', borderRadius: '28px',
+                            width: `${knobWidth}px`, height: `${knobWidth}px`, content: '""', borderRadius: '28px',
                             transform: settingToggle.checked ? // init opposite final pos
                                 'translateX(0)' : 'translateX(14px) translateY(0)',
                             backgroundColor: 'white',  '-webkit-transition': '0.2s', transition: '0.2s'
@@ -1250,7 +1250,7 @@
                             const innerDiv = document.createElement('div'),
                                   textGap = '&emsp;&emsp;&emsp;&emsp;&emsp;'
                             modals.settings.aboutContent = {}
-                            modals.settings.aboutContent.short = `v${ GM_info.script.version}`
+                            modals.settings.aboutContent.short = `v${GM_info.script.version}`
                             modals.settings.aboutContent.long = (
                                   `${app.msgs.about_version}: <span class="about-em">v${ GM_info.script.version + textGap }</span>`
                                 + `${app.msgs.about_poweredBy} <span class="about-em">chatgpt.js</span>${textGap}` )
