@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24.7
+// @version             2024.9.24.8
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -599,9 +599,9 @@
                 const inputArea = chatbarDiv.querySelector(sites[site].selectors.input)
                 if (inputArea) {
                     const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
-                    const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat', 'send']
-                        .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar)
-                                     && !(type == 'newChat' && config.ncbDisabled))
+                    const visibleBtnTypes = [...btns.types, 'send'].filter(type =>
+                           !(type == 'fullWindow' && !sites[site].hasSidebar)
+                        && !(type == 'newChat' && config.ncbDisabled))
                     visibleBtnTypes.forEach(btnType =>
                         widths[btnType] = btns[btnType]?.getBoundingClientRect().width
                                        || document.querySelector(`${sites[site].selectors.btns.send}, ${sites[site].selectors.btns.stop}`)
@@ -627,6 +627,7 @@
     // Define BUTTON props/functions
 
     const btns = {
+        types: [ 'fullScreen', 'fullWindow', 'wideScreen', 'newChat' ], // right-to-left
 
         svgElems: {
             fullScreen: {
@@ -660,8 +661,7 @@
         },
 
         create() {
-            const validBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-                .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
+            const validBtnTypes = btns.types.filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
             const bOffset = site == 'poe' ? -1.5 : -13, rOffset = site == 'poe' ? -6 : -4
             validBtnTypes.forEach(async (btnType, idx) => {
                 btns[btnType] = document.createElement('div')
@@ -704,7 +704,7 @@
             if (!chatbarDiv || chatbarDiv.contains(btns.wideScreen)) return // if chatbar missing or buttons aren't, exit
     
             // Insert buttons
-            const btnTypesToInsert = [ 'newChat', 'wideScreen', 'fullWindow', 'fullScreen' ]
+            const btnTypesToInsert = btns.types.slice().reverse() // to left-to-right for insertion order
                 .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
             const parentToInsertInto = site == 'perplexity' ? chatbarDiv.lastChild // Pro spam toggle parent
                                      : chatbarDiv,
@@ -729,7 +729,7 @@
                                                                            : 'oklch(var(--text-color-100)/var(--tw-text-opacity))' )
               : 'currentColor' )
             if (btns.wideScreen.style.fill != btns.color)
-                ['newChat', 'wideScreen', 'fullWindow', 'fullScreen'].forEach(btnType => {
+                btns.types.forEach(btnType => {
                     if (btns[btnType]) btns[btnType].style.fill = btns[btnType].style.stroke = btns.color })
         },
 
@@ -821,8 +821,7 @@
         },
 
         tooltip(btnType) { // text & position
-            const visibleBtnTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-                .filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
+            const visibleBtnTypes = btns.types.filter(type => !(type == 'fullWindow' && !sites[site].hasSidebar))
             const ctrAddend = ( site == 'perplexity' ? ( location.pathname == '/' ? 100 : 106 )
                               : site == 'poe' ? 45 : 13 ) +25,
                   spreadFactor = site == 'perplexity' ? 26.85 : site == 'poe' ? 34 : 30.55,
