@@ -223,7 +223,7 @@
                     document.documentElement.dataset.colorScheme == 'dark' ? 'oklch(var(--dark-text-color-100)/var(--tw-text-opacity))'
                                                                            : 'oklch(var(--text-color-100)/var(--tw-text-opacity))' )
               : 'currentColor' )
-            if (btns.wideScreen.style.fill != btns.color)
+            if (btns.wideScreen?.style.fill != btns.color)
                 btns.types.forEach(btnType => {
                     if (btns[btnType]) btns[btnType].style.fill = btns[btnType].style.stroke = btns.color })
         },
@@ -500,15 +500,19 @@
     const chatbarStyle = create.style()
     update.style.chatbar() ; document.head.append(chatbarStyle)
 
+
+    if (!config.extensionDisabled) {
+
     // Insert BUTTONS
-    if (!config.extensionDisabled) { await chatbar.isLoaded() ; btns.insert() }
+        await chatbar.isLoaded() ; btns.insert() 
 
     // Restore PREV SESSION's state
-    if (config.wideScreen) toggle.mode('wideScreen', 'ON')
-    if (config.fullWindow && sites[site].hasSidebar) {
-        if (sites[site].selectors.btns.sidebarToggle) // site has own FW config
-             sync.mode('fullWindow') // ...so sync w/ it
-        else toggle.mode('fullWindow', 'on') // otherwise self-toggle
+        if (config.wideScreen) toggle.mode('wideScreen', 'ON')
+        if (config.fullWindow && sites[site].hasSidebar) {
+            if (sites[site].selectors.btns.sidebarToggle) // site has own FW config
+                sync.mode('fullWindow') // ...so sync w/ it
+            else toggle.mode('fullWindow', 'on') // otherwise self-toggle
+        }
     }
 
     // Monitor NODE CHANGES to maintain button visibility + update colors
