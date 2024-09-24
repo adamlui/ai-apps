@@ -83,7 +83,6 @@
     // Define FEEDBACK functions
 
     function notify(msg, position) {
-        if (config.notifDisabled && !msg.includes(chrome.i18n.getMessage('menuLabel_modeNotifs'))) return
         chrome.tabs.query({ active: true, currentWindow: true }, tabs =>
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'notify', msg: msg, position: position || 'bottom-right' })
