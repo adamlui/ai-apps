@@ -12,7 +12,7 @@
     // Import LIBS
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js')),
-          { create, cssSelectorize } = await import(chrome.runtime.getURL('lib/dom.js'))
+          { create, cssSelectorize, elemIsLoaded } = await import(chrome.runtime.getURL('lib/dom.js'))
     settings.site = site // to load/save active tab's settings
 
     // Import DATA
@@ -301,7 +301,7 @@
                     site == 'chatgpt' ? (
                         '.text-base { max-width: 100% !important }' // widen outer container
                       + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
-                      + '#__next > div > div.flex { width: 100px }'  // prevent sidebar shrinking when zoomed
+                      + '#__next > div > div.flex { width: 100px }' // prevent sidebar shrinking when zoomed
                   ) : site == 'perplexity' ? (
                         `${sites[site].selectors.header} ~ div,` // outer container
                       + `${sites[site].selectors.header} ~ div > div` // inner container
@@ -436,24 +436,10 @@
 
     // Init UI props
     if (site == 'chatgpt') {
-        const obsConfig = { childList: true, subtree: true }
         sites[site].hasSidebar = await Promise.race([
-            new Promise(resolve => { // true if sidebar toggle loads
-                if (document.querySelector(sites[site].selectors.btns.sidebarToggle)) resolve(true)
-                else new MutationObserver((_, obs) => {
-                    if (document.querySelector(sites[site].selectors.btns.sidebarToggle)) {
-                        obs.disconnect() ; resolve(true) }
-                }).observe(document.body, obsConfig)
-            }),
-            new Promise(resolve => { // false if login button loads
-                if (document.querySelector(sites[site].selectors.btns.login)) resolve(false)
-                else new MutationObserver((_, obs) => {
-                    if (document.querySelector(sites[site].selectors.btns.login)) {
-                        obs.disconnect() ; resolve(false) }
-                }).observe(document.body, obsConfig)
-            }),
-            new Promise(resolve => // null if 3s passed
-                setTimeout(() => resolve(null), 3000))
+            elemIsLoaded(sites[site].selectors.btns.sidebarToggle), // true if sidebar toggle loads
+            elemIsLoaded(sites[site].selectors.btns.login).then(() => false), // false if login button loads
+            new Promise(resolve => setTimeout(() => resolve(null), 3000)) // null if 3s passed
         ])
         sites[site].selectors.footer = await Promise.race([
             new Promise(resolve => { // class of footer container
@@ -462,10 +448,9 @@
                 else new MutationObserver((_, obs) => {
                     const footerDiv = chatgpt.getFooterDiv()
                     if (footerDiv) { obs.disconnect() ; resolve(cssSelectorize(footerDiv.classList)) }
-                }).observe(document.body, obsConfig)
+                }).observe(document.body, { childList: true, subtree: true })
             }),
-            new Promise(resolve => // null if 500ms passed
-                setTimeout(() => resolve(null), 500))
+            new Promise(resolve => setTimeout(() => resolve(null), 500)) // null if 500ms passed
         ])
     }
 

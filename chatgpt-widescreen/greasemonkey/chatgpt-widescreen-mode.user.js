@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24.8
+// @version             2024.9.24.9
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -360,7 +360,7 @@
             function handleMsgs(resp) {
                 try { // to return localized messages.json
                     const msgs = JSON.parse(resp.responseText), flatMsgs = {}
-                    for (const key in msgs)  // remove need to ref nested keys
+                    for (const key in msgs) // remove need to ref nested keys
                         if (typeof msgs[key] == 'object' && 'message' in msgs[key])
                             flatMsgs[key] = msgs[key].message
                     resolve(flatMsgs)
@@ -806,7 +806,7 @@
                     /chatgpt|openai/.test(site) ? (
                         '.text-base { max-width: 100% !important }' // widen outer container
                       + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
-                      + '#__next > div > div.flex { width: 100px }'  // prevent sidebar shrinking when zoomed
+                      + '#__next > div > div.flex { width: 100px }' // prevent sidebar shrinking when zoomed
                   ) : site == 'perplexity' ? (
                         `${sites[site].selectors.header} ~ div,` // outer container
                       + `${sites[site].selectors.header} ~ div > div` // inner container
@@ -928,6 +928,15 @@
             .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
     }
 
+    function elemIsLoaded(selector) {
+        return new Promise(resolve => {
+            if (document.querySelector(selector)) resolve(true)
+            else new MutationObserver((_, obs) => {
+                if (document.querySelector(selector)) { obs.disconnect() ; resolve(true) }
+            }).observe(document.body, { childList: true, subtree: true })
+        })
+    }
+
     // Run MAIN routine
 
     // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
@@ -947,24 +956,10 @@
 
     // Init UI props
     if (/openai|chatgpt/.test(site)) {
-        const obsConfig = { childList: true, subtree: true }
         sites[site].hasSidebar = await Promise.race([
-            new Promise(resolve => { // true if sidebar toggle loads
-                if (document.querySelector(sites[site].selectors.btns.sidebarToggle)) resolve(true)
-                else new MutationObserver((_, obs) => {
-                    if (document.querySelector(sites[site].selectors.btns.sidebarToggle)) {
-                        obs.disconnect() ; resolve(true) }
-                }).observe(document.body, obsConfig)
-            }),
-            new Promise(resolve => { // false if login button loads
-                if (document.querySelector(sites[site].selectors.btns.login)) resolve(false)
-                else new MutationObserver((_, obs) => {
-                    if (document.querySelector(sites[site].selectors.btns.login)) {
-                        obs.disconnect() ; resolve(false) }
-                }).observe(document.body, obsConfig)
-            }),
-            new Promise(resolve =>  // null if 3s passed
-                setTimeout(() => resolve(null), 3000))
+            elemIsLoaded(sites[site].selectors.btns.sidebarToggle), // true if sidebar toggle loads
+            elemIsLoaded(sites[site].selectors.btns.login).then(() => false), // false if login button loads
+            new Promise(resolve => setTimeout(() => resolve(null), 3000)) // null if 3s passed
         ])
         sites[site].selectors.footer = await Promise.race([
             new Promise(resolve => { // class of footer container
@@ -973,10 +968,9 @@
                 else new MutationObserver((_, obs) => {
                     const footerDiv = chatgpt.getFooterDiv()
                     if (footerDiv) { obs.disconnect() ; resolve(cssSelectorize(footerDiv.classList)) }
-                }).observe(document.body, obsConfig)
+                }).observe(document.body, { childList: true, subtree: true })
             }),
-            new Promise(resolve =>  // null if 500ms passed
-                setTimeout(() => resolve(null), 500))
+            new Promise(resolve => setTimeout(() => resolve(null), 500)) // null if 500ms passed
         ])
     }
 

@@ -18,4 +18,13 @@ function cssSelectorize(classList) {
         .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
 }
 
-export { create, cssSelectorize }
+function elemIsLoaded(selector) {
+    return new Promise(resolve => {
+        if (document.querySelector(selector)) resolve(true)
+        else new MutationObserver((_, obs) => {
+            if (document.querySelector(selector)) { obs.disconnect() ; resolve(true) }
+        }).observe(document.body, { childList: true, subtree: true })
+    })
+}
+
+export { create, cssSelectorize, elemIsLoaded }
