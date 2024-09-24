@@ -301,7 +301,6 @@
                     site == 'chatgpt' ? (
                         '.text-base { max-width: 100% !important }' // widen outer container
                       + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
-                      + '#__next > div > div.flex { width: 100px }' // prevent sidebar shrinking when zoomed
                   ) : site == 'perplexity' ? (
                         `${sites[site].selectors.header} ~ div,` // outer container
                       + `${sites[site].selectors.header} ~ div > div` // inner container
