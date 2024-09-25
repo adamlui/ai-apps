@@ -523,7 +523,6 @@
     // Monitor SIDEBAR to update full-window setting for sites w/ native toggle
     if (sites[site].selectors.btns.sidebarToggle && !!sites[site].hasSidebar) {
         const sidebarObserver = new MutationObserver(async () => {
-            await settings.load('extensionDisabled')
             await new Promise(resolve => setTimeout(resolve, site == 'perplexity' ? 500 : 0))
             const fullWinState = isFullWin()
             if ((config.fullWindow && !fullWinState) || (!config.fullWindow && fullWinState))
