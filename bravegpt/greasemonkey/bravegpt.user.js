@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.25
+// @version               2024.9.25.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1348,10 +1348,10 @@
                       prevOffsetTop = appDiv.offsetTop
 
                 // Switch mode
-                if ([app.msgs.menuLabel_top, 'Top'].includes(itemLabel)) toggle.sidebar('sticky')
-                else if ([app.msgs.menuLabel_sidebar, 'Sidebar'].includes(itemLabel)) {
+                if (itemLabel == app.msgs.menuLabel_top) toggle.sidebar('sticky')
+                else if (itemLabel == app.msgs.menuLabel_sidebar) {
                     toggle.sidebar('sticky', 'off') ; toggle.anchorMode('off') }
-                else if ([app.msgs.menuLabel_bottom, 'Bottom'].includes(itemLabel)) toggle.anchorMode()
+                else if (itemLabel == app.msgs.menuLabel_bottom) toggle.anchorMode()
 
                 // Close/update menu
                 if (appDiv.offsetTop != prevOffsetTop) pinMenu.remove() // since app moved
@@ -1372,7 +1372,7 @@
                 const pinMenuUL = document.querySelector('#pin-menu ul') || document.createElement('ul'),
                       pinMenuItems = []
                 const pinMenulabels = [
-                    `${app.msgs.tooltip_pinTo}...`, app.msgs.menuLabel_top,
+                    `${app.msgs.menuLabel_pinTo}...`, app.msgs.menuLabel_top,
                     app.msgs.menuLabel_sidebar, app.msgs.menuLabel_bottom ]
                 const pinMenuIcons = [icons.webCorner.create(), icons.sidebar.create(), icons.anchor.create(), icons.checkmark.create()]
 

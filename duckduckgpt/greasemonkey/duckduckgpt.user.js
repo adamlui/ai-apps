@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.25
+// @version                2024.9.25.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1356,10 +1356,10 @@
                       prevOffsetTop = appDiv.offsetTop
 
                 // Switch mode
-                if ([app.msgs.menuLabel_top, 'Top'].includes(itemLabel)) toggle.sidebar('sticky')
-                else if ([app.msgs.menuLabel_sidebar, 'Sidebar'].includes(itemLabel)) {
+                if (itemLabel == app.msgs.menuLabel_top) toggle.sidebar('sticky')
+                else if (itemLabel == app.msgs.menuLabel_sidebar) {
                     toggle.sidebar('sticky', 'off') ; toggle.anchorMode('off') }
-                else if ([app.msgs.menuLabel_bottom, 'Bottom'].includes(itemLabel)) toggle.anchorMode()
+                else if (itemLabel == app.msgs.menuLabel_bottom) toggle.anchorMode()
 
                 // Close/update menu
                 if (appDiv.offsetTop != prevOffsetTop) pinMenu.remove() // since app moved
@@ -1380,7 +1380,7 @@
                 const pinMenuUL = document.querySelector('#pin-menu ul') || document.createElement('ul'),
                       pinMenuItems = []
                 const pinMenulabels = [
-                    `${app.msgs.tooltip_pinTo}...`, app.msgs.menuLabel_top,
+                    `${app.msgs.menuLabel_pinTo}...`, app.msgs.menuLabel_top,
                     app.msgs.menuLabel_sidebar, app.msgs.menuLabel_bottom ]
                 const pinMenuIcons = [icons.webCorner.create(), icons.sidebar.create(), icons.anchor.create(), icons.checkmark.create()]
 
