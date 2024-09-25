@@ -19,13 +19,16 @@ const dom = {
             .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
     },
 
-    elemIsLoaded(selector) {
-        return new Promise(resolve => {
+    async elemIsLoaded(selector, timeout = null) {
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
+        const isLoadedPromise = new Promise(resolve => {
             if (document.querySelector(selector)) resolve(true)
             else new MutationObserver((_, obs) => {
-                if (document.querySelector(selector)) { obs.disconnect() ; resolve(true) }
+                if (document.querySelector(selector)) {
+                    obs.disconnect() ; resolve(true) }
             }).observe(document.body, { childList: true, subtree: true })
         })
+        return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
     }
 }
 
