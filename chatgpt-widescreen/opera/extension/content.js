@@ -68,7 +68,7 @@
         tweak() {
             const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
             if (site == 'chatgpt') {
-                const inputArea = chatbarDiv.querySelector(sites[site].selectors.input)
+                const inputArea = chatbarDiv.querySelector(sites.chatgpt.selectors.input)
                 if (inputArea) {
                     const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
                     const visibleBtnTypes = [...btns.types, 'send'].filter(type =>
@@ -76,8 +76,8 @@
                         && !(type == 'newChat' && config.ncbDisabled))
                     visibleBtnTypes.forEach(btnType =>
                         widths[btnType] = btns[btnType]?.getBoundingClientRect().width
-                                       || document.querySelector(`${sites[site].selectors.btns.send}, ${sites[site].selectors.btns.stop}`)
-                                              ?.getBoundingClientRect().width || 0 )
+                                       || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
+                                                                    sites.chatgpt.selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
                     const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
                     inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -43 }px` // expand to close gap w/ buttons
                     inputArea.style.width = '100%' // rid h-scrollbar
@@ -85,12 +85,23 @@
             } else if (site == 'poe') {
                 const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]'),
                       clearBtn = document.querySelector('[class*="ChatBreakButton"]')
-                if (attachFileBtn) { // left-align attach file button
+                if (attachFileBtn && !attachFileBtn.style.cssText) { // left-align attach file button
                     attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
-                    document.querySelector(sites[site].selectors.input).style.padding = '0 13px 0 40px' // accommodate new btn pos
+                    document.querySelector(sites.poe.selectors.input).style.padding = '0 13px 0 40px' // accommodate new btn pos
                 }
                 btns.newChat.style.top = clearBtn ? '-1px' : 0
                 btns.newChat.style.marginRight = clearBtn ? '2px' : '1px'
+            }
+        },
+
+        reset() { // all tweaks for popup master toggle-off
+            const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
+            if (site == 'chatgpt') {
+                const inputArea = chatbarDiv.querySelector(sites.chatgpt.selectors.input)
+                if (inputArea) inputArea.style.width = inputArea.parentNode.style.width = 'initial'
+            } else if (site == 'poe') {
+                const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]')
+                if (attachFileBtn) attachFileBtn.style.cssText = ''
             }
         }
     }
@@ -369,14 +380,14 @@
             await settings.load('extensionDisabled', ...sites[site].availFeatures)
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
                 wideScreenStyle.remove() ; fullWinStyle.remove()
-                tweaksStyle.innerText = '' ; btns.remove()
+                tweaksStyle.innerText = '' ; btns.remove() ; chatbar.reset()
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
                 if (config.wideScreen ^ document.head.contains(wideScreenStyle)) { supressNotifs() ; toggle.mode('wideScreen') }
                 if ((config.fullWindow && sites[site].hasSidebar) ^ isFullWin()) { supressNotifs() ; toggle.mode('fullWindow') }
                 sync.fullerWin() // sync Fuller Windows
                 update.style.tweaks() // sync TCB/NCB/HH/HF
                 update.style.chatbar() // sync WCB
-                if (site == 'chatgpt') chatbar.tweak() // update inner width
+                chatbar.tweak() // update chatgpt.com chatbar inner width + apply poe.com btn alignment (once)
                 btns.insert()
             }
 
