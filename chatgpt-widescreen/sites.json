@@ -29,7 +29,10 @@
       "notifDisabled", "ncbDisabled", "tcbDisabled", "widerChatbox", "wideScreen" ],
     "hasSidebar": true,
     "selectors": {
-      "btns": { "newChat": "header a[class*=\"button\"]" },
+      "btns": {
+        "attachFile": "button[class*=\"File\"]", "clear": "[class*=\"ChatBreakButton\"]",
+        "newChat": "header a[class*=\"button\"]"
+      },
       "header": "header",
       "input": "[class*=\"InputContainer_textArea\"] textarea, [class*=\"InputContainer_textArea\"]::after",
       "sidebar": "menu[class*=\"sidebar\"], aside[class*=\"sidebar\"]"
