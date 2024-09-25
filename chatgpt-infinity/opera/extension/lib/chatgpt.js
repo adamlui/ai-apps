@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v3.3.1
+// This library is a condensed version of chatgpt.js v3.3.2
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -235,22 +235,12 @@ const chatgpt = {
     },
 
     getChatBox() { return document.getElementById('prompt-textarea'); },
-
-    getNewChatButton() {
-        return document.querySelector('button:has([d*="M15.6729"],' // pencil-on-pad icon
-                                    + '[d^="M3.06957"])'); // refresh icon if temp chat
-    },
-
+    getNewChatButton() { return document.querySelector('button[data-testid*="new-chat-button"]'); },
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
     getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])'); },
-    getScrollToBottomButton() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
-
-    getSendButton() {
-        return document.querySelector('[data-testid="send-button"]') // pre-GPT-4o
-            || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
-    },
-
-    getStopButton() { return document.querySelector('button:has([d*="2 0 0 1 2"], rect)'); },
+    getScrollToBottomButton() { return document.querySelector('button:has([d^="M12 21C11.7348"])'); },
+    getSendButton() { return document.querySelector('[data-testid="send-button"]'); },
+    getStopButton() { return document.querySelector('button[data-testid="stop-button"]'); },
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
 
     async isIdle(timeout = null) {
@@ -497,13 +487,9 @@ const chatgpt = {
         },
 
         toggle() {
-            const isMobileDevice = chatgpt.browser.isMobile(),
-                  navBtnSelector = isMobileDevice ? 'button' : 'nav button',
-                  isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : btn => btn.querySelector('svg path[d^="M8.857"]');
-            for (const btn of document.querySelectorAll(navBtnSelector))
-                if (isToggleBtn(btn)) { btn.click(); return; }
-            console.error('Sidebar toggle not found!');
+            const sidebarToggle = document.querySelector('button[data-testid*="sidebar-button"]');
+            if (!sidebarToggle) console.error('Sidebar toggle not found!');
+            sidebarToggle.click();
         },
 
         async isLoaded(timeout = 5000) {
