@@ -289,8 +289,8 @@
                         '.text-base { max-width: 100% !important }' // widen outer container
                       + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
                   ) : site == 'perplexity' ? (
-                        `${sites[site].selectors.header} ~ div,` // outer container
-                      + `${sites[site].selectors.header} ~ div > div` // inner container
+                        `${sites.perplexity.selectors.header} ~ div,` // outer container
+                      + `${sites.perplexity.selectors.header} ~ div > div` // inner container
                           + '{ max-width: 100% }' // ...widen them
                       + '.col-span-8 { width: 154% }' // widen inner-left container
                       + '.col-span-4 { width: 13.5% ; position: absolute ; right: 0 }' // narrow right-bar
@@ -313,7 +313,7 @@
                 iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
             tooltipDiv.style.bottom = ( // y-pos
                 site == 'perplexity' ? ( location.pathname != '/' ? '58px' :
-                    ( !document.querySelector(sites[site].selectors.btns.login) ? 'revert-layer' : '52.5vh' ))
+                    ( !document.querySelector(sites.perplexity.selectors.btns.login) ? 'revert-layer' : '52.5vh' ))
                                      : '50px' )
         }
     }
@@ -422,12 +422,12 @@
 
     // Init UI props
     if (site == 'chatgpt') {
-        sites[site].hasSidebar = await Promise.race([
-            dom.elemIsLoaded(sites[site].selectors.btns.sidebarToggle), // true if sidebar toggle loads
-            dom.elemIsLoaded(sites[site].selectors.btns.login).then(() => false), // false if login button loads
+        sites.chatgpt.hasSidebar = await Promise.race([
+            dom.elemIsLoaded(sites.chatgpt.selectors.btns.sidebarToggle), // true if sidebar toggle loads
+            dom.elemIsLoaded(sites.chatgpt.selectors.btns.login).then(() => false), // false if login button loads
             new Promise(resolve => setTimeout(() => resolve(null), 3000)) // null if 3s passed
         ])
-        sites[site].selectors.footer = await Promise.race([
+        sites.chatgpt.selectors.footer = await Promise.race([
             new Promise(resolve => { // class of footer container
                 const footerDiv = chatgpt.getFooterDiv()
                 if (footerDiv) resolve(dom.cssSelectorize(footerDiv.classList))
@@ -460,7 +460,7 @@
     // Create/apply general style TWEAKS
     const tweaksStyle = dom.create.style(),
           tcbStyle = ( // heighten chatbox
-              site == 'chatgpt' ? `div[class*="prose"]:has(${sites[site].selectors.input})`
+              site == 'chatgpt' ? `div[class*="prose"]:has(${sites.chatgpt.selectors.input})`
                                 : sites[site].selectors.input )
                   + '{ max-height: 68vh }',
           hhStyle = sites[site].selectors.header + '{ display: none !important }' // hide header

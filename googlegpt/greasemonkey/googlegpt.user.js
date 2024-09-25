@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.24.3
+// @version                  2024.9.24.4
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -3257,7 +3257,7 @@
                     withoutContext: false, userId: apis.AIchatOS.userID, network: true
                 }
             } else if (api == 'Free Chat') {
-                const availModels = apis[api].availModels
+                const availModels = apis['Free Chat'].availModels
                 payload = { messages: msgs, model: availModels[Math.floor(chatgpt.randomFloat() * availModels.length)] }
             } else if (api == 'GPTforLove') {
                 payload = {

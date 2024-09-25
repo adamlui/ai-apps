@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24.15
+// @version             2024.9.24.16
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -780,8 +780,8 @@
                         '.text-base { max-width: 100% !important }' // widen outer container
                       + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
                   ) : site == 'perplexity' ? (
-                        `${sites[site].selectors.header} ~ div,` // outer container
-                      + `${sites[site].selectors.header} ~ div > div` // inner container
+                        `${sites.perplexity.selectors.header} ~ div,` // outer container
+                      + `${sites.perplexity.selectors.header} ~ div > div` // inner container
                           + '{ max-width: 100% }' // ...widen them
                       + '.col-span-8 { width: 154% }' // widen inner-left container
                       + '.col-span-4 { width: 13.5% ; position: absolute ; right: 0 }' // narrow right-bar
@@ -804,7 +804,7 @@
                 iniRoffset - tooltipDiv.getBoundingClientRect().width /2 }px`
             tooltipDiv.style.bottom = ( // y-pos
                 site == 'perplexity' ? ( location.pathname != '/' ? '58px' :
-                    ( !document.querySelector(sites[site].selectors.btns.login) ? 'revert-layer' : '52.5vh' ))
+                    ( !document.querySelector(sites.perplexity.selectors.btns.login) ? 'revert-layer' : '52.5vh' ))
                                      : '50px' )
         }
     }

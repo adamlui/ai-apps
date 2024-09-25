@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.24.3
+// @version                2024.9.24.4
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2415,7 +2415,7 @@
                     withoutContext: false, userId: apis.AIchatOS.userID, network: true
                 }
             } else if (api == 'Free Chat') {
-                const availModels = apis[api].availModels
+                const availModels = apis['Free Chat'].availModels
                 payload = { messages: msgs, model: availModels[Math.floor(chatgpt.randomFloat() * availModels.length)] }
             } else if (api == 'GPTforLove') {
                 payload = {
