@@ -8,9 +8,9 @@
     const site = /([^.]+)\.[^.]+$/.exec(location.hostname)[1]
 
     // Import LIBS
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js')),
-          { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js')),
-          { create, cssSelectorize, elemIsLoaded } = await import(chrome.runtime.getURL('lib/dom.js'))
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+    await import(chrome.runtime.getURL('lib/dom.js'))
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
     settings.site = site // to load/save active tab's settings
 
     // Import DATA
@@ -115,30 +115,30 @@
         svgElems: {
             fullScreen: {
                 off: [
-                    create.svgElem('path', { stroke: 'none', d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
                 on: [
-                    create.svgElem('path', { stroke: 'none', d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
             },
 
             fullWin: [
-                create.svgElem('rect', { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
-                create.svgElem('line', { x1: '9', y1: '3', x2: '9', y2: '21' })
+                dom.create.svgElem('rect', { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
+                dom.create.svgElem('line', { x1: '9', y1: '3', x2: '9', y2: '21' })
             ],
 
-            newChat: [ create.svgElem('path', { stroke: 'none', d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ],
+            newChat: [ dom.create.svgElem('path', { stroke: 'none', d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ],
 
             wideScreen: {
                 off: [
-                    create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
+                    dom.create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
                         d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ],
                 on: [
-                    create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
+                    dom.create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
                         d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
             }
         },
@@ -435,17 +435,17 @@
     // Init UI props
     if (site == 'chatgpt') {
         sites[site].hasSidebar = await Promise.race([
-            elemIsLoaded(sites[site].selectors.btns.sidebarToggle), // true if sidebar toggle loads
-            elemIsLoaded(sites[site].selectors.btns.login).then(() => false), // false if login button loads
+            dom.elemIsLoaded(sites[site].selectors.btns.sidebarToggle), // true if sidebar toggle loads
+            dom.elemIsLoaded(sites[site].selectors.btns.login).then(() => false), // false if login button loads
             new Promise(resolve => setTimeout(() => resolve(null), 3000)) // null if 3s passed
         ])
         sites[site].selectors.footer = await Promise.race([
             new Promise(resolve => { // class of footer container
                 const footerDiv = chatgpt.getFooterDiv()
-                if (footerDiv) resolve(cssSelectorize(footerDiv.classList))
+                if (footerDiv) resolve(dom.cssSelectorize(footerDiv.classList))
                 else new MutationObserver((_, obs) => {
                     const footerDiv = chatgpt.getFooterDiv()
-                    if (footerDiv) { obs.disconnect() ; resolve(cssSelectorize(footerDiv.classList)) }
+                    if (footerDiv) { obs.disconnect() ; resolve(dom.cssSelectorize(footerDiv.classList)) }
                 }).observe(document.body, { childList: true, subtree: true })
             }),
             new Promise(resolve => setTimeout(() => resolve(null), 500)) // null if 500ms passed
@@ -461,7 +461,7 @@
     // Create/stylize TOOLTIP div
     const tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('cwm-tooltip')
-    document.head.append(create.style('.cwm-tooltip {'
+    document.head.append(dom.create.style('.cwm-tooltip {'
         + 'background-color: rgba(0, 0, 0, 0.71) ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.85rem ; color: white ;' // font style
         + 'box-shadow: 4px 6px 16px 0 rgb(0 0 0 / 38%) ;' // drop shadow
@@ -470,7 +470,7 @@
     ))
 
     // Create/apply general style TWEAKS
-    const tweaksStyle = create.style(),
+    const tweaksStyle = dom.create.style(),
           tcbStyle = ( // heighten chatbox
               site == 'chatgpt' ? `div[class*="prose"]:has(${sites[site].selectors.input})`
                                 : sites[site].selectors.input )
@@ -483,7 +483,7 @@
     update.style.tweaks() ; document.head.append(tweaksStyle)
 
     // Create WIDESCREEN style
-    const wideScreenStyle = create.style()
+    const wideScreenStyle = dom.create.style()
     wideScreenStyle.id = 'wideScreen-mode' // for sync.mode()
     if (!chatbar.get()) await chatbar.isLoaded()
     if (site == 'chatgpt') // store native chatbar width for Wider Chatbox style
@@ -491,12 +491,12 @@
     update.style.wideScreen()
 
     // Create FULL-WINDOW style
-    const fullWinStyle = create.style()
+    const fullWinStyle = dom.create.style()
     fullWinStyle.id = 'fullWindow-mode' // for sync.mode()
     fullWinStyle.innerText = sites[site].selectors.sidebar + '{ display: none }'
 
     // Create/append CHATBAR style
-    const chatbarStyle = create.style()
+    const chatbarStyle = dom.create.style()
     update.style.chatbar() ; document.head.append(chatbarStyle)
 
     // Insert BUTTONS
