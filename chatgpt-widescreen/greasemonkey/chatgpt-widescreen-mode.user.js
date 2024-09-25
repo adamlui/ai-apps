@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24.12
+// @version             2024.9.24.13
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -240,6 +240,7 @@
 // @icon                https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon48.png?9a393be
 // @icon64              https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon64.png?9a393be
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.1/dist/chatgpt.min.js#sha256-3yMGAFfqogI8VpkYXtVDQvk3wy8kMdJaQRE/rkAM/+8=
+// @require             https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@d0efbd5/chrome/extension/lib/dom.js#sha256-uPLZZPoHc8IOhikZNFYVS9xPAxsv9R32D1esAJuvHJY=
 // @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -552,23 +553,6 @@
 
         safeWinOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     }
-
-    // Define FACTORY functions
-
-    const create = {
-
-        style(content) {
-            const style = document.createElement('style')
-            if (content) style.innerText = content
-            return style
-        },
-
-        svgElem(type, attrs) {
-            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
-            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
-            return elem
-        }
-    }
     
     // Define CHATBAR functions
     
@@ -632,30 +616,30 @@
         svgElems: {
             fullScreen: {
                 off: [
-                    create.svgElem('path', { stroke: 'none', d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ],
                 on: [
-                    create.svgElem('path', { stroke: 'none', d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
+                    dom.create.svgElem('path', { stroke: 'none', d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
             },
 
             fullWin: [
-                create.svgElem('rect', { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
-                create.svgElem('line', { x1: '9', y1: '3', x2: '9', y2: '21' })
+                dom.create.svgElem('rect', { fill: 'none', x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
+                dom.create.svgElem('line', { x1: '9', y1: '3', x2: '9', y2: '21' })
             ],
 
-            newChat: [ create.svgElem('path', { stroke: 'none', d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ],
+            newChat: [ dom.create.svgElem('path', { stroke: 'none', d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ],
 
             wideScreen: {
                 off: [
-                    create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
+                    dom.create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
                         d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ],
                 on: [
-                    create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
+                    dom.create.svgElem('path', { stroke: 'none', 'fill-rule': 'evenodd',
                         d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
             }
         },
@@ -914,27 +898,10 @@
         }
     }
 
-    // Define UTILITY functions
-
     function isFullWin() {
         return site == 'poe' ? !!document.getElementById('fullWindow-mode')
             : !sites[site].hasSidebar // false if sidebar non-existent
            || /\d+/.exec(getComputedStyle(document.querySelector(sites[site].selectors.sidebar))?.width || '')[0] < 100
-    }
-
-    function cssSelectorize(classList) {
-        return classList.toString()
-            .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
-            .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
-    }
-
-    function elemIsLoaded(selector) {
-        return new Promise(resolve => {
-            if (document.querySelector(selector)) resolve(true)
-            else new MutationObserver((_, obs) => {
-                if (document.querySelector(selector)) { obs.disconnect() ; resolve(true) }
-            }).observe(document.body, { childList: true, subtree: true })
-        })
     }
 
     // Run MAIN routine
@@ -957,17 +924,17 @@
     // Init UI props
     if (/openai|chatgpt/.test(site)) {
         sites[site].hasSidebar = await Promise.race([
-            elemIsLoaded(sites[site].selectors.btns.sidebarToggle), // true if sidebar toggle loads
-            elemIsLoaded(sites[site].selectors.btns.login).then(() => false), // false if login button loads
+            dom.elemIsLoaded(sites[site].selectors.btns.sidebarToggle), // true if sidebar toggle loads
+            dom.elemIsLoaded(sites[site].selectors.btns.login).then(() => false), // false if login button loads
             new Promise(resolve => setTimeout(() => resolve(null), 3000)) // null if 3s passed
         ])
         sites[site].selectors.footer = await Promise.race([
             new Promise(resolve => { // class of footer container
                 const footerDiv = chatgpt.getFooterDiv()
-                if (footerDiv) resolve(cssSelectorize(footerDiv.classList))
+                if (footerDiv) resolve(dom.cssSelectorize(footerDiv.classList))
                 else new MutationObserver((_, obs) => {
                     const footerDiv = chatgpt.getFooterDiv()
-                    if (footerDiv) { obs.disconnect() ; resolve(cssSelectorize(footerDiv.classList)) }
+                    if (footerDiv) { obs.disconnect() ; resolve(dom.cssSelectorize(footerDiv.classList)) }
                 }).observe(document.body, { childList: true, subtree: true })
             }),
             new Promise(resolve => setTimeout(() => resolve(null), 500)) // null if 500ms passed
@@ -982,7 +949,7 @@
 
     // Stylize ALERTS
     if (!document.getElementById('chatgpt-alert-override-style')) {
-        const chatgptAlertStyle = create.style()
+        const chatgptAlertStyle = dom.create.style()
         chatgptAlertStyle.id = 'chatgpt-alert-override-style'
         chatgptAlertStyle.innerText = (
             ( chatgpt.isDarkMode() ? '.chatgpt-modal > div { border: 1px solid white }' : '' )
@@ -998,7 +965,7 @@
     // Create/stylize TOOLTIP div
     const tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('cwm-tooltip')
-    document.head.append(create.style('.cwm-tooltip {'
+    document.head.append(dom.create.style('.cwm-tooltip {'
         + 'background-color: rgba(0, 0, 0, 0.71) ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.85rem ; color: white ;' // font style
         + 'box-shadow: 4px 6px 16px 0 rgb(0 0 0 / 38%) ;' // drop shadow
@@ -1007,7 +974,7 @@
     ))
 
     // Create/apply general style TWEAKS
-    const tweaksStyle = create.style(),
+    const tweaksStyle = dom.create.style(),
           tcbStyle = ( // heighten chatbox
               /openai|chatgpt/.test(site) ? `div[class*="prose"]:has(${sites[site].selectors.input})`
                                           : sites[site].selectors.input )
@@ -1020,7 +987,7 @@
     update.style.tweaks() ; document.head.append(tweaksStyle)
 
     // Create WIDESCREEN style
-    const wideScreenStyle = create.style()
+    const wideScreenStyle = dom.create.style()
     wideScreenStyle.id = 'wideScreen-mode' // for sync.mode()
     if (!chatbar.get()) await chatbar.isLoaded()
     if (/chatgpt|openai/.test(site)) // store native chatbar width for Wider Chatbox style
@@ -1028,12 +995,12 @@
     update.style.wideScreen()
 
     // Create FULL-WINDOW style
-    const fullWinStyle = create.style()
+    const fullWinStyle = dom.create.style()
     fullWinStyle.id = 'fullWindow-mode' // for sync.mode()
     fullWinStyle.innerText = sites[site].selectors.sidebar + '{ display: none }'
 
     // Create/append CHATBAR style
-    const chatbarStyle = create.style()
+    const chatbarStyle = dom.create.style()
     update.style.chatbar() ; document.head.append(chatbarStyle)
 
     // Insert BUTTONS
