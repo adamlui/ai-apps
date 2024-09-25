@@ -1,4 +1,5 @@
 const dom = {
+
     create: {
         style(content) {
             const style = document.createElement('style')
