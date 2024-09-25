@@ -403,11 +403,13 @@
                           : mode == 'fullWindow' ? isFullWin()
                                                  : chatgpt.isFullScreen() )
             settings.save(mode, state) ; btns.updateSVG(mode) ; update.tooltip(mode)
-            if (mode == 'fullWindow') sync.fullerWin()
-            if (site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
-                mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
-                                     && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid inaccurate width
-            notify(`${chrome.i18n.getMessage('mode_' + mode)} ${ state ? 'ON' : 'OFF' }`)
+            if (!config.extensionDisabled) { // tweak UI
+                if (mode == 'fullWindow') sync.fullerWin()
+                if (site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
+                    mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
+                        && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid inaccurate width
+                notify(`${chrome.i18n.getMessage('mode_' + mode)} ${ state ? 'ON' : 'OFF' }`)
+            }
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
         }
     }
@@ -522,12 +524,10 @@
     if (sites[site].selectors.btns.sidebarToggle && !!sites[site].hasSidebar) {
         const sidebarObserver = new MutationObserver(async () => {
             await settings.load('extensionDisabled')
-            if (!config.extensionDisabled) {
-                await new Promise(resolve => setTimeout(resolve, site == 'perplexity' ? 500 : 0))
-                const fullWinState = isFullWin()
-                if ((config.fullWindow && !fullWinState) || (!config.fullWindow && fullWinState))
-                    if (!config.modeSynced) sync.mode('fullWindow')
-            }
+            await new Promise(resolve => setTimeout(resolve, site == 'perplexity' ? 500 : 0))
+            const fullWinState = isFullWin()
+            if ((config.fullWindow && !fullWinState) || (!config.fullWindow && fullWinState))
+                if (!config.modeSynced) sync.mode('fullWindow')
         })
         setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
             let obsTarget = document.querySelector(sites[site].selectors.sidebar)
