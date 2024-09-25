@@ -29,4 +29,4 @@ const dom = {
     }
 }
 
-window.dom = dom
+window.dom = dom;
