@@ -1,7 +1,5 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org
 // © 2023–2024 KudoAI & contributors under the MIT license
-// Source: https://github.com/KudoAI/chatgpt.js
-// Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
 (async () => {
 
@@ -378,7 +376,7 @@
 
     const sync = {
         
-        async storageToUI() { // from popup.js toggle + background.js actve-tab listeners
+        async storageToUI() { // from popup.js toggle + service worker actve-tab listeners
             const extensionWasDisabled = config.extensionDisabled
             await settings.load('extensionDisabled', ...sites[site].availFeatures)
             if (!extensionWasDisabled && config.extensionDisabled) { // outright disable modes/tweaks/btns
@@ -386,7 +384,7 @@
                 tweaksStyle.innerText = '' ; btns.remove()
             } else if (!config.extensionDisabled) { // sync modes/tweaks/btns
                 if (config.wideScreen ^ document.head.contains(wideScreenStyle)) { supressNotifs() ; toggle.mode('wideScreen') }
-                if ((config.fullWindow && sites[site].hasSidebar) ^ isFullWin()) { supressNotifs() ;  toggle.mode('fullWindow') }
+                if ((config.fullWindow && sites[site].hasSidebar) ^ isFullWin()) { supressNotifs() ; toggle.mode('fullWindow') }
                 sync.fullerWin() // sync Fuller Windows
                 update.style.tweaks() // sync TCB/NCB/HH/HF
                 update.style.chatbar() // sync WCB
@@ -501,10 +499,8 @@
     const chatbarStyle = create.style()
     update.style.chatbar() ; document.head.append(chatbarStyle)
 
-
-    if (!config.extensionDisabled) {
-
     // Insert BUTTONS
+    if (!config.extensionDisabled) {
         await chatbar.isLoaded() ; btns.insert() 
 
     // Restore PREV SESSION's state

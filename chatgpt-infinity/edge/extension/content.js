@@ -1,7 +1,5 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org
 // © 2023–2024 KudoAI & contributors under the MIT license
-// Source: https://github.com/KudoAI/chatgpt.js
-// Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
 (async () => {
 
@@ -215,7 +213,7 @@
 
     // Define SYNC function
 
-    syncExtension = async () => { // settings + sidebar toggle visibility
+    syncExtension = async () => { // settings + sidebar toggle visibility from popup.js + service worker listeners
         await settings.load(['autoScrollDisabled', 'autoStart', 'extensionDisabled',
             'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden'])
         insertToggle() ; updateToggleHTML() // hide/show sidebar toggle based on latest setting
