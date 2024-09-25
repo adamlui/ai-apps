@@ -83,8 +83,8 @@
                     inputArea.style.width = '100%' // rid h-scrollbar
                 }
             } else if (site == 'poe') {
-                const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]'),
-                      clearBtn = document.querySelector('[class*="ChatBreakButton"]')
+                const attachFileBtn = chatbarDiv.querySelector(sites.poe.selectors.btns.attachFile),
+                      clearBtn = document.querySelector(sites.poe.selectors.btns.clear)
                 if (attachFileBtn && !attachFileBtn.style.cssText) { // left-align attach file button
                     attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
                     document.querySelector(sites.poe.selectors.input).style.padding = '0 13px 0 40px' // accommodate new btn pos
@@ -100,7 +100,7 @@
                 const inputArea = chatbarDiv.querySelector(sites.chatgpt.selectors.input)
                 if (inputArea) inputArea.style.width = inputArea.parentNode.style.width = 'initial'
             } else if (site == 'poe') {
-                const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]')
+                const attachFileBtn = chatbarDiv.querySelector(sites.poe.selectors.btns.attachFile)
                 if (attachFileBtn) attachFileBtn.style.cssText = ''
             }
         }

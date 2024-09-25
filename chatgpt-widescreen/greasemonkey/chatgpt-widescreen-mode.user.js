@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.25.2
+// @version             2024.9.25.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -273,7 +273,7 @@
             gitHub: 'https://github.com/adamlui/chatgpt-widescreen',
             greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
             productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode' },
-        latestAssetCommitHash: '79813bd' // for cached sites.json + messages.json
+        latestAssetCommitHash: 'ac4e3b1' // for cached sites.json + messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -584,8 +584,8 @@
                     inputArea.style.width = '100%' // rid h-scrollbar
                 }
             } else if (site == 'poe') {
-                const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]'),
-                      clearBtn = document.querySelector('[class*="ChatBreakButton"]')
+                const attachFileBtn = chatbarDiv.querySelector(sites.poe.selectors.btns.attachFile),
+                      clearBtn = document.querySelector(sites.poe.selectors.btns.clear)
                 if (attachFileBtn && !attachFileBtn.style.cssText) { // left-align attach file button
                     attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
                     document.querySelector(sites.poe.selectors.input).style.padding = '0 13px 0 40px' // accommodate new btn pos
