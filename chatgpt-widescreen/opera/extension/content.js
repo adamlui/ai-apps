@@ -65,18 +65,6 @@
             return chatbar
         },
 
-        async isLoaded(timeout = null) {
-            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
-            const isLoadedPromise = new Promise(resolve => {
-                if (document.querySelector(sites[site].selectors.input)) resolve(true)
-                else new MutationObserver((_, obs) => {
-                    if (document.querySelector(sites[site].selectors.input)) {
-                        obs.disconnect() ; resolve(true) }
-                }).observe(document.body, { childList: true, subtree: true })
-            })
-            return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
-        },
-
         tweak() {
             const chatbarDiv = chatbar.get() ; if (!chatbarDiv) return
             if (site == 'chatgpt') {
@@ -485,7 +473,7 @@
     // Create WIDESCREEN style
     const wideScreenStyle = dom.create.style()
     wideScreenStyle.id = 'wideScreen-mode' // for sync.mode()
-    if (!chatbar.get()) await chatbar.isLoaded()
+    if (!chatbar.get()) await dom.elemIsLoaded(sites[site].selectors.input)
     if (site == 'chatgpt') // store native chatbar width for Wider Chatbox style
         chatbar.nativeWidth = /\d+/.exec(getComputedStyle(document.querySelector('main form')).width)[0]
     update.style.wideScreen()
@@ -501,7 +489,7 @@
 
     // Insert BUTTONS
     if (!config.extensionDisabled) {
-        await chatbar.isLoaded() ; btns.insert() 
+        btns.insert() 
 
     // Restore PREV SESSION's state
         if (config.wideScreen) toggle.mode('wideScreen', 'ON')

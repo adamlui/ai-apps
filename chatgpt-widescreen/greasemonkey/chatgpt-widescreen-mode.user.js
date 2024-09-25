@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.24.14
+// @version             2024.9.24.15
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -240,7 +240,7 @@
 // @icon                https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon48.png?9a393be
 // @icon64              https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon64.png?9a393be
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.1/dist/chatgpt.min.js#sha256-3yMGAFfqogI8VpkYXtVDQvk3wy8kMdJaQRE/rkAM/+8=
-// @require             https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@74f0649da8ae974608dd2aeca116e0c55ad367d5/chrome/extension/lib/dom.js#sha256-uPLZZPoHc8IOhikZNFYVS9xPAxsv9R32D1esAJuvHJY=
+// @require             https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@a82678adb7e5cbdba1d329f816bb87574075148b/chrome/extension/lib/dom.js#sha256-EzbaSUqC4vag+zDZJE9dKsQdLLayjELn7MI3s9fFSGQ=
 // @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -563,18 +563,6 @@
             const parentLvls = /chatgpt|openai/.test(site) ? 3 : 2
             for (let i = 0 ; i < parentLvls ; i++) chatbar = chatbar?.parentNode
             return chatbar
-        },
-
-        async isLoaded(timeout = null) {
-            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
-            const isLoadedPromise = new Promise(resolve => {
-                if (document.querySelector(sites[site].selectors.input)) resolve(true)
-                else new MutationObserver((_, obs) => {
-                    if (document.querySelector(sites[site].selectors.input)) {
-                        obs.disconnect() ; resolve(true) }
-                }).observe(document.body, { childList: true, subtree: true })
-            })
-            return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
         },
 
         tweak() {
@@ -989,7 +977,7 @@
     // Create WIDESCREEN style
     const wideScreenStyle = dom.create.style()
     wideScreenStyle.id = 'wideScreen-mode' // for sync.mode()
-    if (!chatbar.get()) await chatbar.isLoaded()
+    if (!chatbar.get()) await dom.elemIsLoaded(sites[site].selectors.input)
     if (/chatgpt|openai/.test(site)) // store native chatbar width for Wider Chatbox style
         chatbar.nativeWidth = /\d+/.exec(getComputedStyle(document.querySelector('main form')).width)[0]
     update.style.wideScreen()
@@ -1004,7 +992,7 @@
     update.style.chatbar() ; document.head.append(chatbarStyle)
 
     // Insert BUTTONS
-    await chatbar.isLoaded() ; btns.insert()
+    btns.insert()
 
     // Restore PREV SESSION's state
     if (config.wideScreen) toggle.mode('wideScreen', 'ON')
