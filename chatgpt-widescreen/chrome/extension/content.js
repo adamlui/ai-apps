@@ -516,7 +516,7 @@
     nodeObserver.observe( // <html> for page scheme toggles
         document.documentElement, { attributes: true })
     nodeObserver.observe( // for chatbar changes
-        document.querySelector(/chatgpt|perplexity/.test(site) ? 'main' : 'head'),
+        document.querySelector(site == 'chatgpt' ? 'main' : site == 'perplexity' ? 'body' : 'head'),
         { attributes: true, subtree: true }
     )
 
