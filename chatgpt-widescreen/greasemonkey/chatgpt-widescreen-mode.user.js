@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.25.1
+// @version             2024.9.25.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -576,8 +576,8 @@
                         && !(type == 'newChat' && config.ncbDisabled))
                     visibleBtnTypes.forEach(btnType =>
                         widths[btnType] = btns[btnType]?.getBoundingClientRect().width
-                                       || document.querySelector(`${sites[site].selectors.btns.send}, ${sites[site].selectors.btns.stop}`)
-                                              ?.getBoundingClientRect().width || 0 )
+                                       || document.querySelector(`${sites[site].selectors.btns.send}, ${
+                                                                    sites[site].selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
                     const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
                     inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
                         widths.chatbar - totalBtnWidths -( env.browser.isFF ? 60 : 43 )}px`
@@ -586,9 +586,9 @@
             } else if (site == 'poe') {
                 const attachFileBtn = chatbarDiv.querySelector('button[class*="File"]'),
                       clearBtn = document.querySelector('[class*="ChatBreakButton"]')
-                if (attachFileBtn) { // left-align attach file button
+                if (attachFileBtn && !attachFileBtn.style.cssText) { // left-align attach file button
                     attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
-                    document.querySelector(sites[site].selectors.input).style.padding = '0 13px 0 40px' // accommodate new btn pos
+                    document.querySelector(sites.poe.selectors.input).style.padding = '0 13px 0 40px' // accommodate new btn pos
                 }
                 btns.newChat.style.top = clearBtn ? '-1px' : 0
                 btns.newChat.style.marginRight = clearBtn ? '2px' : '1px'
@@ -859,7 +859,7 @@
             sync.fullerWin() // sync FW
             update.style.tweaks() // sync TCB/NCB/HH/HF
             update.style.chatbar() // sync WCB
-            if (/chatgpt|openai/.test(site)) chatbar.tweak() // update inner width
+            chatbar.tweak() // update chatgpt.com chatbar inner width + apply poe.com btn alignment (once)
         },
 
         fullerWin() {
