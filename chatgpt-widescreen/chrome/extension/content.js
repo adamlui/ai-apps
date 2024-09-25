@@ -535,9 +535,7 @@
     if (sites[site].selectors.btns.sidebarToggle && !!sites[site].hasSidebar) {
         const sidebarObserver = new MutationObserver(async () => {
             await new Promise(resolve => setTimeout(resolve, site == 'perplexity' ? 500 : 0))
-            const fullWinState = isFullWin()
-            if ((config.fullWindow && !fullWinState) || (!config.fullWindow && fullWinState))
-                if (!config.modeSynced) sync.mode('fullWindow')
+            if ((config.fullWindow ^ isFullWin()) && !config.modeSynced) sync.mode('fullWindow')
         })
         setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
             let obsTarget = document.querySelector(sites[site].selectors.sidebar)
