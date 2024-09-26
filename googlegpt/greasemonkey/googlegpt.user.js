@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.25.1
+// @version                  2024.9.26
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2238,6 +2238,7 @@
 
         style: {
             app() {
+                const isStarryDM = ui.app.scheme == 'dark' && !config.bgAnimationsDisabled
                 appStyle.innerText = (
                     ':root {' // color vars
                       + '--app-bg-color-light-scheme: #ffffff ; --app-bg-color-dark-scheme: #282828 ;'
@@ -2311,19 +2312,16 @@
                   + ( config.fgAnimationsDisabled || env.browser.isMobile ? '' : '#font-size-slider-thumb:hover { transform: scale(1.125) }' )
                   + '.standby-btn {'
                       + 'width: 100% ; margin-top: 20px ; padding: 11px 0 ; cursor: pointer ;'
-                      + ( ui.app.scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
-                      + `border-radius: 4px ; border: 1px solid ${ ui.app.scheme == 'dark' ? '#fff' : '#000' } ;`
-                      + 'transition: transform 0.15s ease }'
+                      + `background-color: #f0f0f0${ config.bgAnimationsDisabled ? '' : '00' } ; color: ${ isStarryDM ? 'white' : 'black' } ;`
+                      + `border-radius: 4px ; border: 1px solid ${ isStarryDM ? '#fff' : '#888' } ; transition: transform 0.15s ease }`
                   + '.standby-btn:hover {'
-                      + 'border-radius: 6px ;'
                       + `${ ui.app.scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' };`
                       + `${ config.fgAnimationsDisabled || env.browser.isMobile ? '' : 'transform: scaleX(1.015) scaleY(1.03)' }}`
                   + '.reply-tip {'
                       + 'content: "" ; position: relative ; border: 7px solid transparent ;'
                       + `float: left ; margin: ${ env.browser.isMobile ? 39 : 28 }px -15px 0 0 ; left: ${ env.browser.isMobile ? 12 : 6 }px ;` // positioning
                       + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color:'
-                          + ( ui.app.scheme == 'dark' && !config.bgAnimationsDisabled ? '#0000' // hide it for terminal aesthetic
-                              : `var(--pre-bg-color-${ui.app.scheme}-scheme)` ) + '}'
+                          + `${ isStarryDM ? '#0000' : `var(--pre-bg-color-${ui.app.scheme}-scheme)` }}`// hide reply tip for terminal aesthetic
                   + '#googlegpt > pre {'
                       + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
                       + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; overscroll-behavior: contain ;`
