@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.25.5
+// @version             2024.9.26
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -388,8 +388,6 @@
         hiddenFooter: { type: 'toggle', label: app.msgs.menuLabel_hiddenFooter },
         notifDisabled: { type: 'toggle', label: app.msgs.menuLabel_modeNotifs }
     }})
-    Object.keys(app.settings).forEach(key => // create helptip prop
-        app.settings[key].helptip = app.msgs[`helptip_${key}`]) 
 
     // Define MENU functions
 
