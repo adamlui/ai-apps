@@ -64,6 +64,16 @@ ChatGPT 自动谈话 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 </div>
 </h6>
 
+## 🧠 贡献者
+
+该项目的存在得益于以下贡献者的代码、测试、问题、翻译和想法：
+
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2024.7.16&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/7270299?first-contrib=2024.9.26-play-btn-selector-changed-alert&h=50&w=50&mask=circle&maxage=7d "@MLBott")](https://github.com/MLBott)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
+<a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptautocontinue.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptautocontinue.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
+<br><br>
+
 ## 🤖 更多 ChatGPT 应用
 
 如需更多史诗般的 ChatGPT 应用程序，请访问此处: https://github.com/adamlui/chatgpt-apps
