@@ -1,4 +1,4 @@
-name: Sync LICENSE.md from chatgpt-widescreen/edge/* to <platform>/*, then chatgpt-widescreen/edge/extension/* to chatgpt-widescreen/(chrome|opera)/extension/*, then chatgpt-widescreen/edge/extension/_locales/* to chatgpt-widescreen/greasemonkey/_locales/*, then chatgpt-widescreen/* to adamlui/chatgpt-apps/chatgpt-widescreen/*, then chatgpt-widescreen/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
+name: Sync LICENSE.md from chatgpt-widescreen/edge/* to <platform>/*, then chatgpt-widescreen/edge/extension/* to chatgpt-widescreen/(chrome|opera)/extension/*, then chatgpt-widescreen/edge/extension/_locales/* to chatgpt-widescreen/<firefox/extension|greasemonkey>/_locales/*, then chatgpt-widescreen/* to adamlui/chatgpt-apps/chatgpt-widescreen/*, then chatgpt-widescreen/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
 
 on:
   push:
@@ -78,6 +78,12 @@ jobs:
           rsync -avhr --delete \
             "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/edge/extension/_locales/" \
             "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/_locales"
+
+      - name: Sync /chatgpt-widescreen/edge/extension/_locales/ to /chatgpt-widescreen/firefox/extension/_locales/
+        run: |
+          rsync -avhr --delete \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/edge/extension/_locales/" \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/firefox/extension/_locales"
 
       - name: Sync chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
         run: |
