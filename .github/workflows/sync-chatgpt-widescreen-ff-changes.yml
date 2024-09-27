@@ -1,9 +1,9 @@
-name: Sync /chatgpt-widescreen/chrome/extension/ to /chatgpt-widescreen/(edge|opera)/extension/, then /chatgpt-widescreen/chrome/extension/_locales/ to /chatgpt-widescreen/<firefox/extension|greasemonkey>/_locales/, then /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/, then /chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
+name: Sync /chatgpt-widescreen/firefox/extension/_locales/ to /chatgpt-widescreen/<(chrome|edge|opera)/extension|greasemonkey>/_locales/, then /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/, then /chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
 on:
   push:
     branches: [main]
-    paths: [chatgpt-widescreen/chrome/**]
+    paths: [chatgpt-widescreen/firefox/**]
 
 jobs:
   build:
@@ -38,25 +38,19 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync /chatgpt-widescreen/chrome/extension/ to /chatgpt-widescreen/(edge|opera)/extension/
+      - name: Sync /chatgpt-widescreen/firefox/extension/_locales/ to /chatgpt-widescreen/<chrome|edge|greasemonkey|opera>/extension/_locales/
         run: |
-          for browser in edge opera
+          for browser in chrome edge opera
           do
             rsync -avhr --delete \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/" \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/$browser/extension/"
+              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/firefox/extension/_locales/" \
+              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/$browser/extension/_locales"
           done
 
-      - name: Sync /chatgpt-widescreen/chrome/extension/_locales/ to /chatgpt-widescreen/firefox/extension/_locales/
+      - name: Sync /chatgpt-widescreen/firefox/extension/_locales/ to /chatgpt-widescreen/greasemonkey/_locales/
         run: |
           rsync -avhr --delete \
-            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/_locales/" \
-            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/firefox/extension/_locales"
-
-      - name: Sync /chatgpt-widescreen/chrome/extension/_locales/ to /chatgpt-widescreen/greasemonkey/_locales/
-        run: |
-          rsync -avhr --delete \
-            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/_locales/" \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/firefox/extension/_locales/" \
             "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/_locales"
 
       - name: Sync /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
@@ -84,7 +78,7 @@ jobs:
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`chatgpt-widescreen/chrome\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`chatgpt-widescreen/firefox\`]" || true
           git push
 
       - name: Push changes to adamlui/chatgpt-widescreen
@@ -92,7 +86,7 @@ jobs:
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-widescreen/chrome\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-widescreen/firefox\`]" || true
           git push
 
       - name: Push changes to adamlui/userscripts
@@ -100,5 +94,5 @@ jobs:
           cd ${{ github.workspace }}/adamlui/userscripts
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-widescreen/chrome\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-widescreen/firefox\`]" || true
           git push
