@@ -105,7 +105,7 @@
 
     // Create/append CHATGPT.JS footer logo
     const cjsDiv = dom.create.elem('div', { class: 'chatgpt-js' })
-    const cjsAnchor = dom.create.anchor('https://chatgpt.js.org', null, {
+    const cjsAnchor = dom.create.anchor(app.urls.chatgptJS, null, {
         title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js` })
     const cjsLogo = dom.create.elem('img', {
         src: 'https://media.chatgptjs.org/images/badges/powered-by-chatgpt.js-faded.png?main' })
@@ -115,24 +115,24 @@
     const supportSpan = dom.create.elem('span', {
         title: chrome.i18n.getMessage('btnLabel_getSupport'),
         class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px' })
-    const supportAnchor = dom.create.anchor('https://support.chatgptwidescreen.com', null, {
+    const supportAnchor = dom.create.anchor(app.urls.support, null, {
         title: chrome.i18n.getMessage('btnLabel_getSupport') })
     const supportIcon = dom.create.elem('img', {
         width: 15, height: 13, style: 'margin-bottom: 0.04rem',
         src: 'https://media.chatgptwidescreen.com/images/icons/question-mark/icon16.png?4adfbbd' })
     supportAnchor.append(supportIcon) ; supportSpan.append(supportAnchor) ; footer.append(supportSpan)
 
-    // Create/append RELATED APPS footer button
-    const moreAppsSpan = dom.create.elem('span', {
-        title:  chrome.i18n.getMessage('btnLabel_moreApps'),
+    // Create/append RELATED app footer button
+    const moreappSpan = dom.create.elem('span', {
+        title:  chrome.i18n.getMessage('btnLabel_moreapp'),
         class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
-    const moreAppsAnchor = dom.create.anchor('https://github.com/adamlui/chatgpt-userscripts', null, {
-        title:  chrome.i18n.getMessage('btnLabel_moreApps') })
-    const moreAppsIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' })
-    const moreAppsIconPath = dom.create.svgElem('path', {
+    const moreappAnchor = dom.create.anchor(app.urls.relatedApps, null, {
+        title:  chrome.i18n.getMessage('btnLabel_moreapp') })
+    const moreappIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' })
+    const moreappIconPath = dom.create.svgElem('path', {
         d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })
-    moreAppsIcon.append(moreAppsIconPath) ; moreAppsAnchor.append(moreAppsIcon) ; moreAppsSpan.append(moreAppsAnchor)
-    footer.append(moreAppsSpan)
+    moreappIcon.append(moreappIconPath) ; moreappAnchor.append(moreappIcon) ; moreappSpan.append(moreappAnchor)
+    footer.append(moreappSpan)
 
     // Update lang attr if translation occurred
     if (translationOccurred)

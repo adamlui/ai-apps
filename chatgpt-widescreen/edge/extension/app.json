@@ -1,5 +1,10 @@
 {
   "symbol": "🖥️",
-  "urls": { "gitHub": "https://github.com/adamlui/chatgpt-widescreen" },
+  "urls": {
+    "chatgptJS": "https://chatgpt.js.org",
+    "gitHub": "https://github.com/adamlui/chatgpt-widescreen",
+    "relatedApps": "https://github.com/adamlui/chatgpt-apps",
+    "support": "https://support.chatgptwidescreen.com"
+  },
   "latestAssetCommitHash": "ac4e3b1"
 }
