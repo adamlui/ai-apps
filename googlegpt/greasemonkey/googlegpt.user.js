@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.26.1
+// @version                  2024.9.26.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1752,10 +1752,8 @@
 
         copy: {
             create() {
-                const svg = create.svgElem('svg', { width: 18, height: 18, viewBox: '0 0 1024 1024' }),
-                      svgTitle = document.createElementNS('http://www.w3.org/2000/svg', 'title')
+                const svg = create.svgElem('svg', { width: 18, height: 18, viewBox: '0 0 1024 1024' })
                 svg.append(
-                    svgTitle,
                     create.svgElem('path', { stroke: 'none', d: 'M768 832a128 128 0 0 1-128 128H192A128 128 0 0 1 64 832V384a128 128 0 0 1 128-128v64a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64h64z' }),
                     create.svgElem('path', { stroke: 'none', d: 'M384 128a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64V192a64 64 0 0 0-64-64H384zm0-64h448a128 128 0 0 1 128 128v448a128 128 0 0 1-128 128H384a128 128 0 0 1-128-128V192A128 128 0 0 1 384 64z' }))
                 return svg

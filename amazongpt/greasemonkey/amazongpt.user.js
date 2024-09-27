@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.26.1
+// @version                2024.9.26.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1279,10 +1279,8 @@
 
         copy: {
             create() {
-                const svg = create.svgElem('svg', { width: 18, height: 18, viewBox: '0 0 1024 1024' }),
-                      svgTitle = document.createElementNS('http://www.w3.org/2000/svg', 'title')
+                const svg = create.svgElem('svg', { width: 18, height: 18, viewBox: '0 0 1024 1024' })
                 svg.append(
-                    svgTitle,
                     create.svgElem('path', { stroke: 'none', d: 'M768 832a128 128 0 0 1-128 128H192A128 128 0 0 1 64 832V384a128 128 0 0 1 128-128v64a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64h64z' }),
                     create.svgElem('path', { stroke: 'none', d: 'M384 128a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64V192a64 64 0 0 0-64-64H384zm0-64h448a128 128 0 0 1 128 128v448a128 128 0 0 1-128 128H384a128 128 0 0 1-128-128V192A128 128 0 0 1 384 64z' }))
                 return svg
