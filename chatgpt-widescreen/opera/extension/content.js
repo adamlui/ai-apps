@@ -236,7 +236,7 @@
               : mode == 'wideScreen' ? [btns.wideScreen, btns.svgElems.wideScreen.on, btns.svgElems.wideScreen.off]
                                      : [btns.newChat, btns.svgElems.newChat, btns.svgElems.newChat])
             // Set SVG attributes
-            const btnSVG = btn?.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            const btnSVG = btn?.querySelector('svg') || dom.create.svgElem('svg', { height: 18 })
             btnSVG.setAttribute('height', 18) // prevent shrinking
             if (mode == 'fullWindow') { // stylize full-window button
                 btnSVG.setAttribute('stroke-width', '2')
@@ -460,8 +460,7 @@
     else await settings.load('fullWindow') // otherwise load CWM's saved state
 
     // Create/stylize TOOLTIP div
-    const tooltipDiv = document.createElement('div')
-    tooltipDiv.classList.add('cwm-tooltip')
+    const tooltipDiv = dom.create.elem('div', { class: 'cwm-tooltip' })
     document.head.append(dom.create.style('.cwm-tooltip {'
         + 'background-color: rgba(0, 0, 0, 0.71) ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.85rem ; color: white ;' // font style

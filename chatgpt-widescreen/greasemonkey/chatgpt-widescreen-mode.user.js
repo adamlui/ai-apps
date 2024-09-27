@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.26.2
+// @version             2024.9.26.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -716,8 +716,7 @@
               : mode == 'wideScreen' ? [btns.wideScreen, btns.svgElems.wideScreen.on, btns.svgElems.wideScreen.off]
                                      : [btns.newChat, btns.svgElems.newChat, btns.svgElems.newChat])
             // Set SVG attributes
-            const btnSVG = btn?.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-            btnSVG.setAttribute('height', 18) // prevent shrinking
+            const btnSVG = btn?.querySelector('svg') || dom.create.svgElem('svg', { height: 18 })
             if (mode == 'fullWindow') { // stylize full-window button
                 btnSVG.setAttribute('stroke-width', '2')
                 const btnSize = site == 'perplexity' ? 18 : 'poe' ? '2em' : 17
@@ -951,8 +950,7 @@
     }
 
     // Create/stylize TOOLTIP div
-    const tooltipDiv = document.createElement('div')
-    tooltipDiv.classList.add('cwm-tooltip')
+    const tooltipDiv = dom.create.elem('div', { class: 'cwm-tooltip' })
     document.head.append(dom.create.style('.cwm-tooltip {'
         + 'background-color: rgba(0, 0, 0, 0.71) ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.85rem ; color: white ;' // font style
