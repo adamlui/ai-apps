@@ -98,6 +98,8 @@
         if (translatedText != elem.innerText) {
             elem.innerText = translatedText ; translationOccurred = true
     }})
+    if (translationOccurred) // update <html lang> attr
+        document.documentElement.lang = chrome.i18n.getUILanguage().split('-')[0]
 
     // Create/append FOOTER container
     const footer = document.createElement('footer')
@@ -109,50 +111,29 @@
         title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js` })
     const cjsLogo = dom.create.elem('img', {
         src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png?main` })
+    cjsLogo.onmouseover = () => cjsLogo.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js.png`
+    cjsLogo.onmouseout = () => cjsLogo.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png`
     cjsAnchor.append(cjsLogo) ; cjsDiv.append(cjsAnchor) ; footer.append(cjsDiv)
 
     // Create/append SUPPORT footer button
     const supportSpan = dom.create.elem('span', {
         title: chrome.i18n.getMessage('btnLabel_getSupport'),
         class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px' })
-    const supportAnchor = dom.create.anchor(app.urls.support, null, {
-        title: chrome.i18n.getMessage('btnLabel_getSupport') })
     const supportIcon = dom.create.elem('img', {
         width: 15, height: 13, style: 'margin-bottom: 0.04rem',
         src: 'https://media.chatgptwidescreen.com/images/icons/question-mark/icon16.png?4adfbbd' })
-    supportAnchor.append(supportIcon) ; supportSpan.append(supportAnchor) ; footer.append(supportSpan)
+    supportSpan.onclick = () => chrome.tabs.create({ url: app.urls.support })
+    supportSpan.append(supportIcon) ; footer.append(supportSpan)
 
-    // Create/append RELATED app footer button
+    // Create/append RELATED APPS footer button
     const moreappSpan = dom.create.elem('span', {
         title:  chrome.i18n.getMessage('btnLabel_moreApps'),
         class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
-    const moreappAnchor = dom.create.anchor(app.urls.relatedApps, null, {
-        title:  chrome.i18n.getMessage('btnLabel_moreApps') })
     const moreappIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' })
     const moreappIconPath = dom.create.svgElem('path', {
-        d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })
-    moreappIcon.append(moreappIconPath) ; moreappAnchor.append(moreappIcon) ; moreappSpan.append(moreappAnchor)
-    footer.append(moreappSpan)
-
-    // Update lang attr if translation occurred
-    if (translationOccurred)
-        document.documentElement.lang = chrome.i18n.getUILanguage().split('-')[0]
-
-    // Add Support span click-listener
-    const supportLink = document.querySelector('a[title*="support" i]')
-    supportSpan.onclick = event => {
-        if (event.target === supportSpan) supportLink.click() } // to avoid double-toggle
-
-    // Add More Add-ons span click-listener
-    const moreAddOnsLink = document.querySelector('a[title*="more" i]'),
-          moreAddOnsSpan = moreAddOnsLink.parentNode 
-    moreAddOnsSpan.onclick = event => {
-        if (event.target === moreAddOnsSpan) moreAddOnsLink.click() } // to avoid double-toggle
-
-    // Add Powered by chatgpt.js hover-listener
-    const chatGPTjsImg = document.querySelector('.chatgpt-js img')
-    chatGPTjsImg.onmouseover = () => chatGPTjsImg.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js.png`
-    chatGPTjsImg.onmouseout = () => chatGPTjsImg.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png`
+        d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })   
+    moreappSpan.onclick = () => chrome.tabs.create({ url: app.urls.relatedApps })
+    moreappIcon.append(moreappIconPath) ; moreappSpan.append(moreappIcon) ; footer.append(moreappSpan)
 
     // Define FEEDBACK functions
 
