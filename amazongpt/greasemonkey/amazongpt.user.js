@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.25
+// @version                2024.9.26
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1149,9 +1149,9 @@
 
         amzgpt: {
             create(color = '') {
-                const amzgptIcon = document.createElement('img') ; amzgptIcon.id = 'amzgpt-icon'
-                icons.amzgpt.update(amzgptIcon, color)
-                return amzgptIcon
+                const icon = document.createElement('img') ; icon.id = 'amzgpt-icon'
+                icons.amzgpt.update(icon, color)
+                return icon
             },
 
             update(targetIcons = [], color = '') {
@@ -1168,11 +1168,10 @@
 
         arrowsCycle: {
             create() {
-                const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      arrowsSVGattrs = [['id', 'arrows-cycle'], ['width', 13], ['height', 13], ['viewBox', '197 -924 573 891']]
-                arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
-                arrowsSVG.append(create.svgElem('path', { stroke: 'none', d: 'M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z' }))
-                return arrowsSVG
+                const svg = create.svgElem('svg', { id: 'arrows-cycle', width: 13, height: 13, viewBox: '197 -924 573 891' })
+                const svgPath = create.svgElem('path', { stroke: 'none',
+                    d: 'M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
@@ -1186,11 +1185,8 @@
             })},
 
             create() {
-                const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      arrowsSVGattrs = [['id', 'arrows-diagonal-icon'], ['width', 16], ['height', 16], ['viewBox', '0 0 16 16']]
-                arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
-                icons.arrowsDiagonal.update(arrowsSVG)
-                return arrowsSVG
+                const svg = create.svgElem('svg', { id: 'arrows-diagonal-icon', width: 16, height: 16, viewBox: '0 0 16 16' })
+                icons.arrowsDiagonal.update(svg) ; return svg
             },
 
             update(...targetIcons) {
@@ -1205,246 +1201,210 @@
 
         arrowsDown: {
             create() {
-                const arrowsDownSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      arrowsDownSVGattrs = [['width', 19], ['height', 19], ['viewBox', '0 0 24 24']]
-                arrowsDownSVGattrs.forEach(([attr, value]) => arrowsDownSVG.setAttribute(attr, value))
-                arrowsDownSVG.append(
+                const svg = create.svgElem('svg', { width: 19, height: 19, viewBox: '0 0 24 24' })
+                svg.append(
                     create.svgElem('path', { stroke: 'none', d: 'M18,13H6a1,1,0,0,1,0-2H18a1,1,0,0,1,0,2Z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'M14.71,18.29a1,1,0,0,1,0,1.42l-2,2a1,1,0,0,1-1.42,0l-2-2a1,1,0,0,1,1.42-1.42l.29.3V16a1,1,0,0,1,2,0v2.59l.29-.3A1,1,0,0,1,14.71,18.29ZM11.29,8.71a1,1,0,0,0,1.42,0l2-2a1,1,0,1,0-1.42-1.42l-.29.3V3a1,1,0,0,0-2,0V5.59l-.29-.3A1,1,0,0,0,9.29,6.71Z' })
-                )
-                return arrowsDownSVG
+                    create.svgElem('path', { stroke: 'none',
+                        d: 'M14.71,18.29a1,1,0,0,1,0,1.42l-2,2a1,1,0,0,1-1.42,0l-2-2a1,1,0,0,1,1.42-1.42l.29.3V16a1,1,0,0,1,2,0v2.59l.29-.3A1,1,0,0,1,14.71,18.29ZM11.29,8.71a1,1,0,0,0,1.42,0l2-2a1,1,0,1,0-1.42-1.42l-.29.3V3a1,1,0,0,0-2,0V5.59l-.29-.3A1,1,0,0,0,9.29,6.71Z' }))
+                return svg
             }
         },
 
         arrowsTwistedRight: {
             create() {
-                const arrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      arrowsSVGattrs = [['width', 21], ['height', 21], ['viewBox', '-1 -1 32 32']]
-                arrowsSVGattrs.forEach(([attr, value]) => arrowsSVG.setAttribute(attr, value))
-                arrowsSVG.append(create.svgElem('path', { stroke: '', d: 'M23.707,16.293L28.414,21l-4.707,4.707l-1.414-1.414L24.586,22H23c-2.345,0-4.496-1.702-6.702-3.753c0.498-0.458,0.984-0.92,1.46-1.374C19.624,18.6,21.393,20,23,20h1.586l-2.293-2.293L23.707,16.293zM23,11h1.586l-2.293,2.293l1.414,1.414L28.414,10l-4.707-4.707l-1.414,1.414L24.586,9H23c-2.787,0-5.299,2.397-7.957,4.936C12.434,16.425,9.736,19,7,19H4v2h3c3.537,0,6.529-2.856,9.424-5.618C18.784,13.129,21.015,11,23,11zM11.843,14.186c0.5-0.449,0.995-0.914,1.481-1.377C11.364,11.208,9.297,10,7,10H4v2h3C8.632,12,10.25,12.919,11.843,14.186z' }))
-                return arrowsSVG
+                const svg = create.svgElem('svg', { width: 21, height: 21, viewBox: '-1 -1 32 32' })
+                const svgPath = create.svgElem('path', { stroke: '',
+                    d: 'M23.707,16.293L28.414,21l-4.707,4.707l-1.414-1.414L24.586,22H23c-2.345,0-4.496-1.702-6.702-3.753c0.498-0.458,0.984-0.92,1.46-1.374C19.624,18.6,21.393,20,23,20h1.586l-2.293-2.293L23.707,16.293zM23,11h1.586l-2.293,2.293l1.414,1.414L28.414,10l-4.707-4.707l-1.414,1.414L24.586,9H23c-2.787,0-5.299,2.397-7.957,4.936C12.434,16.425,9.736,19,7,19H4v2h3c3.537,0,6.529-2.856,9.424-5.618C18.784,13.129,21.015,11,23,11zM11.843,14.186c0.5-0.449,0.995-0.914,1.481-1.377C11.364,11.208,9.297,10,7,10H4v2h3C8.632,12,10.25,12.919,11.843,14.186z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         arrowUp: {
             create() {
-                const arrowUpSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      arrowUpSVGattrs = [['width', 16], ['height', 16], ['viewBox', '4 2 16 16'],
-                                         ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']]
-                arrowUpSVGattrs.forEach(([attr, value]) => arrowUpSVG.setAttribute(attr, value))
-                arrowUpSVG.append(create.svgElem('path', { stroke: '', fill: 'none', 'stroke-width': '2', linecap: 'round', 'stroke-linejoin': 'round',
-                    d: 'M7 11L12 6L17 11M12 18V7' }))
-                return arrowUpSVG
+                const svg = create.svgElem('svg', {
+                    width: 16, height: 16, viewBox: '4 2 16 16', 'stroke-width': '2', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' })
+                const svgPath = create.svgElem('path', {
+                    stroke: '', fill: 'none', 'stroke-width': '2', linecap: 'round', 'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         bug: {
             create() {
-                const bugSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      bugSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 0 17 17']]
-                bugSVGattrs.forEach(([attr, value]) => bugSVG.setAttribute(attr, value))
-                bugSVG.append(
+                const svg = create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 17 17' })
+                svg.append(
                     create.svgElem('path', {
                         d: 'M7 0V1.60002C7.32311 1.53443 7.65753 1.5 8 1.5C8.34247 1.5 8.67689 1.53443 9 1.60002V0H11V2.49963C11.8265 3.12041 12.4543 3.99134 12.7711 5H3.2289C3.5457 3.99134 4.17354 3.12041 5 2.49963V0H7Z' }),
                     create.svgElem('path', {
-                        d: 'M0 7V9H3V10.4957L0.225279 11.2885L0.774721 13.2115L3.23189 12.5095C3.87194 14.5331 5.76467 16 8 16C10.2353 16 12.1281 14.5331 12.7681 12.5095L15.2253 13.2115L15.7747 11.2885L13 10.4957V9H16V7H9V12H7V7H0Z' })
-                )
-                return bugSVG
+                        d: 'M0 7V9H3V10.4957L0.225279 11.2885L0.774721 13.2115L3.23189 12.5095C3.87194 14.5331 5.76467 16 8 16C10.2353 16 12.1281 14.5331 12.7681 12.5095L15.2253 13.2115L15.7747 11.2885L13 10.4957V9H16V7H9V12H7V7H0Z' }))
+                return svg
             }
         },
 
         caretsInward: {
             create() {
-                const caretsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      caretsSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 24 24']]
-                caretsSVGattrs.forEach(([attr, value]) => caretsSVG.setAttribute(attr, value))
-                caretsSVG.append(create.svgElem('path', { stroke: '', d: 'M11.29,9.71a1,1,0,0,0,1.42,0l5-5a1,1,0,1,0-1.42-1.42L12,7.59,7.71,3.29A1,1,0,0,0,6.29,4.71Zm1.42,4.58a1,1,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L12,16.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z' }))
-                return caretsSVG
+                const svg = create.svgElem('svg', { width: 17, height: 17, viewBox: '0 0 24 24' })
+                const svgPath = create.svgElem('path', { stroke: '',
+                    d: 'M11.29,9.71a1,1,0,0,0,1.42,0l5-5a1,1,0,1,0-1.42-1.42L12,7.59,7.71,3.29A1,1,0,0,0,6.29,4.71Zm1.42,4.58a1,1,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L12,16.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         checkmark: {
             create() {
-                const checkmarkSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      checkmarkSVGattrs = [['id', 'checkmark-icon'], ['width', 10], ['height', 10], ['viewBox', '0 0 20 20']]
-                checkmarkSVGattrs.forEach(([attr, value]) => checkmarkSVG.setAttribute(attr, value))
-                checkmarkSVG.append(create.svgElem('path', { stroke: 'none', d: 'M0 11l2-2 5 5L18 3l2 2L7 18z' }))
-                return checkmarkSVG
+                const svg = create.svgElem('svg', { id: 'checkmark-icon', width: 10, height: 10, viewBox: '0 0 20 20' }),
+                      svgPath = create.svgElem('path', { stroke: 'none', d: 'M0 11l2-2 5 5L18 3l2 2L7 18z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         checkmarkDouble: {
             create() {
-                const checkmarksSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      checkmarksSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 24 24']]
-                checkmarksSVGattrs.forEach(([attr, value]) => checkmarksSVG.setAttribute(attr, value))
-                checkmarksSVG.append(
+                const svg = create.svgElem('svg', { width: 17, height: 17, viewBox: '0 0 24 24' })
+                svg.append(
                     create.svgElem('path', { stroke: 'none', d: 'M23.228 8.01785C23.6186 7.62741 23.6187 6.99424 23.2283 6.60363L22.5213 5.89638C22.1309 5.50577 21.4977 5.50563 21.1071 5.89607L10.0862 16.9122C9.69563 17.3027 9.6955 17.9359 10.0859 18.3265L10.7929 19.0337C11.1833 19.4243 11.8165 19.4245 12.2071 19.034L23.228 8.01785Z' }),
                     create.svgElem('path', { stroke: 'none', d: 'M17.2285 8.01777C17.619 7.62724 17.619 6.99408 17.2285 6.60356L16.5214 5.89645C16.1309 5.50592 15.4977 5.50592 15.1072 5.89645L5.54542 15.4582L2.76773 12.6805C2.37721 12.29 1.74404 12.29 1.35352 12.6805L0.646409 13.3876C0.255884 13.7782 0.255885 14.4113 0.646409 14.8019L4.83831 18.9938C5.22883 19.3843 5.862 19.3843 6.25252 18.9938L17.2285 8.01777Z' })
                 )
-                return checkmarksSVG
+                return svg
             }
         },
 
         chevronDown: {
             create() {
-                const chevronSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      chevronSVGattrs = [['width', 20], ['height', 20], ['viewBox', '0 0 16 16']]
-                chevronSVGattrs.forEach(([attr, value]) => chevronSVG.setAttribute(attr, value))
-                chevronSVG.append(create.svgElem('path', { stroke: 'none', d: 'M1 5l7 4.61L15 5v2.39L8 12 1 7.39z' }))
-                return chevronSVG
+                const svg = create.svgElem('svg', { width: 20, height: 20, viewBox: '0 0 16 16' }),
+                      svgPath = create.svgElem('path', { stroke: 'none', d: 'M1 5l7 4.61L15 5v2.39L8 12 1 7.39z' })
+                svg.append(svgPath) ; return svg         
             }
         },
 
         chevronUp: {
             create() {
-                const chevronSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      chevronSVGattrs = [['width', 20], ['height', 20], ['viewBox', '0 0 16 16']]
-                chevronSVGattrs.forEach(([attr, value]) => chevronSVG.setAttribute(attr, value))
-                chevronSVG.append(create.svgElem('path', { stroke: 'none', d: 'M15 11L8 6.39 1 11V8.61L8 4l7 4.61z' }))
-                return chevronSVG
+                const svg = create.svgElem('svg', { width: 20, height: 20, viewBox: '0 0 16 16' }), 
+                      svgPath = create.svgElem('path', { stroke: 'none', d: 'M15 11L8 6.39 1 11V8.61L8 4l7 4.61z' })
+                svg.append(svgPath) ; return svg         
             }
         },
 
         copy: {
             create() {
-                const copySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      copySVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 0 1024 1024']],
-                      copySVGtitle = document.createElementNS('http://www.w3.org/2000/svg', 'title')
-                copySVGattrs.forEach(([attr, value]) => copySVG.setAttribute(attr, value))
-                copySVG.append(
-                    copySVGtitle,
+                const svg = create.svgElem('svg', { width: 18, height: 18, viewBox: '0 0 1024 1024' }),
+                      svgTitle = document.createElementNS('http://www.w3.org/2000/svg', 'title')
+                svg.append(
+                    svgTitle,
                     create.svgElem('path', { stroke: 'none', d: 'M768 832a128 128 0 0 1-128 128H192A128 128 0 0 1 64 832V384a128 128 0 0 1 128-128v64a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64h64z' }),
-                    create.svgElem('path', { stroke: 'none', d: 'M384 128a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64V192a64 64 0 0 0-64-64H384zm0-64h448a128 128 0 0 1 128 128v448a128 128 0 0 1-128 128H384a128 128 0 0 1-128-128V192A128 128 0 0 1 384 64z' })
-                )
-                return copySVG
+                    create.svgElem('path', { stroke: 'none', d: 'M384 128a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64V192a64 64 0 0 0-64-64H384zm0-64h448a128 128 0 0 1 128 128v448a128 128 0 0 1-128 128H384a128 128 0 0 1-128-128V192A128 128 0 0 1 384 64z' }))
+                return svg
             }
         },
 
         fontSize: {
             create() {
-                const fontSizeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      fontSizeSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 512 512']]
-                fontSizeSVGattrs.forEach(([attr, value]) => fontSizeSVG.setAttribute(attr, value))
-                fontSizeSVG.append(
+                const svg = create.svgElem('svg', { width: 17, height: 17, viewBox: '0 0 512 512' })
+                svg.append(
                     create.svgElem('path', { stroke: 'none', d: 'M234.997 448.199h-55.373a6.734 6.734 0 0 1-6.556-5.194l-11.435-48.682a6.734 6.734 0 0 0-6.556-5.194H86.063a6.734 6.734 0 0 0-6.556 5.194l-11.435 48.682a6.734 6.734 0 0 1-6.556 5.194H7.74c-4.519 0-7.755-4.363-6.445-8.687l79.173-261.269a6.734 6.734 0 0 1 6.445-4.781h69.29c2.97 0 5.59 1.946 6.447 4.79l78.795 261.269c1.303 4.322-1.933 8.678-6.448 8.678zm-88.044-114.93l-19.983-84.371c-1.639-6.921-11.493-6.905-13.111.02l-19.705 84.371c-.987 4.224 2.22 8.266 6.558 8.266H140.4c4.346 0 7.555-4.056 6.553-8.286z' }),
                     create.svgElem('path', { stroke: 'none', d: 'M502.572 448.199h-77.475a9.423 9.423 0 0 1-9.173-7.268l-16-68.114a9.423 9.423 0 0 0-9.173-7.268H294.19a9.423 9.423 0 0 0-9.173 7.268l-16 68.114a9.423 9.423 0 0 1-9.173 7.268h-75.241c-6.322 0-10.851-6.104-9.017-12.155L286.362 70.491a9.422 9.422 0 0 1 9.017-6.69h96.947a9.422 9.422 0 0 1 9.021 6.702l110.245 365.554c1.825 6.047-2.703 12.142-9.02 12.142zM379.385 287.395l-27.959-118.047c-2.293-9.683-16.081-9.661-18.344.029l-27.57 118.047c-1.38 5.91 3.106 11.565 9.175 11.565h55.529c6.082-.001 10.571-5.676 9.169-11.594z' })
                 )
-                return fontSizeSVG
+                return svg
             }
         },
 
         languageChars: {
             create() {
-                const languageCharsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      languageCharsSVGattrs = [['width', 15], ['height', 15], ['viewBox', '0 -960 960 960']]
-                languageCharsSVGattrs.forEach(([attr, value]) => languageCharsSVG.setAttribute(attr, value))
-                languageCharsSVG.append(create.svgElem('path', { stroke: 'none', d: 'm459-48 188-526h125L960-48H847l-35-100H603L568-48H459ZM130-169l-75-75 196-196q-42-45-78-101t-55-105h117q17 32 40.5 67.5T325-514q35-37 70-93t64-119H0v-106h290v-80h106v80h290v106H572q-23 74-70 152T399-438l82 85-39 111-118-121-194 194Zm508-79h139l-69-197-70 197Z' })                )
-                return languageCharsSVG
+                const svg = create.svgElem('svg', { width: 15, height: 15, viewBox: '0 -960 960 960' })
+                const svgPath = create.svgElem('path', { stroke: 'none',
+                    d: 'm459-48 188-526h125L960-48H847l-35-100H603L568-48H459ZM130-169l-75-75 196-196q-42-45-78-101t-55-105h117q17 32 40.5 67.5T325-514q35-37 70-93t64-119H0v-106h290v-80h106v80h290v106H572q-23 74-70 152T399-438l82 85-39 111-118-121-194 194Zm508-79h139l-69-197-70 197Z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         moon: {
             create() {
-                const moonSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      moonSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 24 24']]
-                moonSVGattrs.forEach(([attr, value]) => moonSVG.setAttribute(attr, value))
-                moonSVG.append(create.svgElem('path', { fill: 'none', stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round',
-                    d: 'M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z' }))
-                return moonSVG
+                const svg = create.svgElem('svg', { width: 17, height: 17, viewBox: '0 0 24 24' })
+                const svgPath = create.svgElem('path', { fill: 'none', stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round',
+                    d: 'M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         questionMarkCircle: {
             create() {
-                const questionMarkSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      questionMarkSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
-                questionMarkSVGattrs.forEach(([attr, value]) => questionMarkSVG.setAttribute(attr, value))
-                questionMarkSVG.append(create.svgElem('path', { stroke: 'none',
-                    d: 'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z' }
-                ))
-                return questionMarkSVG
+                const svg = create.svgElem('svg', { width: 17, height: 17, viewBox: '0 0 56.693 56.693' })
+                const svgPath = create.svgElem('path', { stroke: 'none',
+                    d: 'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         scheme: {
             create() {
-                const schemeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      schemeSVGattrs = [['width', 15], ['height', 15], ['viewBox', '0 -960 960 960']]
-                schemeSVGattrs.forEach(([attr, value]) => schemeSVG.setAttribute(attr, value))
-                schemeSVG.append(create.svgElem('path', { stroke: 'none', d: 'M479.92-34q-91.56 0-173.4-35.02t-142.16-95.34q-60.32-60.32-95.34-142.24Q34-388.53 34-480.08q0-91.56 35.02-173.4t95.34-142.16q60.32-60.32 142.24-95.34Q388.53-926 480.08-926q91.56 0 173.4 35.02t142.16 95.34q60.32 60.32 95.34 142.24Q926-571.47 926-479.92q0 91.56-35.02 173.4t-95.34 142.16q-60.32 60.32-142.24 95.34Q571.47-34 479.92-34ZM530-174q113-19 186.5-102.78T790-480q0-116.71-73.5-201.35Q643-766 530-785v611Z' }))
-                return schemeSVG
+                const svg = create.svgElem('svg', { width: 15, height: 15, viewBox: '0 -960 960 960' })
+                const svgPath = create.svgElem('path', { stroke: 'none',
+                    d: 'M479.92-34q-91.56 0-173.4-35.02t-142.16-95.34q-60.32-60.32-95.34-142.24Q34-388.53 34-480.08q0-91.56 35.02-173.4t95.34-142.16q60.32-60.32 142.24-95.34Q388.53-926 480.08-926q91.56 0 173.4 35.02t142.16 95.34q60.32 60.32 95.34 142.24Q926-571.47 926-479.92q0 91.56-35.02 173.4t-95.34 142.16q-60.32 60.32-142.24 95.34Q571.47-34 479.92-34ZM530-174q113-19 186.5-102.78T790-480q0-116.71-73.5-201.35Q643-766 530-785v611Z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         signalStream: {
             create() {
-                const signalStreamSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      signalStreamSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 0 32 32']]
-                signalStreamSVGattrs.forEach(([attr, value]) => signalStreamSVG.setAttribute(attr, value))
-                signalStreamSVG.append(create.svgElem('path', { stroke: '', 'stroke-width': 0.5, d: 'M16 11.75c-2.347 0-4.25 1.903-4.25 4.25s1.903 4.25 4.25 4.25c2.347 0 4.25-1.903 4.25-4.25v0c-0.003-2.346-1.904-4.247-4.25-4.25h-0zM16 17.75c-0.966 0-1.75-0.784-1.75-1.75s0.784-1.75 1.75-1.75c0.966 0 1.75 0.784 1.75 1.75v0c-0.001 0.966-0.784 1.749-1.75 1.75h-0zM3.25 16c0.211-3.416 1.61-6.471 3.784-8.789l-0.007 0.008c0.223-0.226 0.361-0.536 0.361-0.879 0-0.69-0.56-1.25-1.25-1.25-0.344 0-0.655 0.139-0.881 0.363l0-0c-2.629 2.757-4.31 6.438-4.506 10.509l-0.001 0.038c0.198 4.109 1.879 7.79 4.514 10.553l-0.006-0.006c0.226 0.228 0.54 0.369 0.886 0.369 0.69 0 1.249-0.559 1.249-1.249 0-0.346-0.141-0.659-0.368-0.885l-0-0c-2.173-2.307-3.573-5.363-3.774-8.743l-0.002-0.038zM9.363 16c0.149-2.342 1.109-4.436 2.6-6.026l-0.005 0.005c0.224-0.226 0.363-0.537 0.363-0.88 0-0.69-0.56-1.25-1.25-1.25-0.345 0-0.657 0.139-0.883 0.365l0-0c-1.94 2.035-3.179 4.753-3.323 7.759l-0.001 0.028c0.145 3.032 1.384 5.75 3.329 7.79l-0.005-0.005c0.226 0.228 0.54 0.369 0.886 0.369 0.69 0 1.249-0.559 1.249-1.249 0-0.346-0.141-0.659-0.368-0.885l-0-0c-1.49-1.581-2.451-3.676-2.591-5.993l-0.001-0.027zM26.744 5.453c-0.226-0.227-0.54-0.368-0.886-0.368-0.691 0-1.251 0.56-1.251 1.251 0 0.345 0.139 0.657 0.365 0.883l-0-0c2.168 2.31 3.567 5.365 3.775 8.741l0.002 0.040c-0.21 3.417-1.609 6.471-3.784 8.789l0.007-0.008c-0.224 0.226-0.362 0.537-0.362 0.88 0 0.691 0.56 1.251 1.251 1.251 0.345 0 0.657-0.14 0.883-0.365l-0 0c2.628-2.757 4.308-6.439 4.504-10.509l0.001-0.038c-0.198-4.108-1.878-7.79-4.512-10.553l0.006 0.007zM21.811 8.214c-0.226-0.224-0.537-0.363-0.881-0.363-0.69 0-1.25 0.56-1.25 1.25 0 0.343 0.138 0.653 0.361 0.879l-0-0c1.486 1.585 2.447 3.678 2.594 5.992l0.001 0.028c-0.151 2.343-1.111 4.436-2.601 6.027l0.005-0.005c-0.224 0.226-0.362 0.537-0.362 0.88 0 0.691 0.56 1.251 1.251 1.251 0.345 0 0.657-0.14 0.883-0.365l-0 0c1.939-2.036 3.178-4.754 3.323-7.759l0.001-0.028c-0.145-3.033-1.385-5.751-3.331-7.791l0.005 0.005z' }))
-                return signalStreamSVG
+                const svg = create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 32 32' })
+                const svgPath = create.svgElem('path', { stroke: '', 'stroke-width': 0.5,
+                    d: 'M16 11.75c-2.347 0-4.25 1.903-4.25 4.25s1.903 4.25 4.25 4.25c2.347 0 4.25-1.903 4.25-4.25v0c-0.003-2.346-1.904-4.247-4.25-4.25h-0zM16 17.75c-0.966 0-1.75-0.784-1.75-1.75s0.784-1.75 1.75-1.75c0.966 0 1.75 0.784 1.75 1.75v0c-0.001 0.966-0.784 1.749-1.75 1.75h-0zM3.25 16c0.211-3.416 1.61-6.471 3.784-8.789l-0.007 0.008c0.223-0.226 0.361-0.536 0.361-0.879 0-0.69-0.56-1.25-1.25-1.25-0.344 0-0.655 0.139-0.881 0.363l0-0c-2.629 2.757-4.31 6.438-4.506 10.509l-0.001 0.038c0.198 4.109 1.879 7.79 4.514 10.553l-0.006-0.006c0.226 0.228 0.54 0.369 0.886 0.369 0.69 0 1.249-0.559 1.249-1.249 0-0.346-0.141-0.659-0.368-0.885l-0-0c-2.173-2.307-3.573-5.363-3.774-8.743l-0.002-0.038zM9.363 16c0.149-2.342 1.109-4.436 2.6-6.026l-0.005 0.005c0.224-0.226 0.363-0.537 0.363-0.88 0-0.69-0.56-1.25-1.25-1.25-0.345 0-0.657 0.139-0.883 0.365l0-0c-1.94 2.035-3.179 4.753-3.323 7.759l-0.001 0.028c0.145 3.032 1.384 5.75 3.329 7.79l-0.005-0.005c0.226 0.228 0.54 0.369 0.886 0.369 0.69 0 1.249-0.559 1.249-1.249 0-0.346-0.141-0.659-0.368-0.885l-0-0c-1.49-1.581-2.451-3.676-2.591-5.993l-0.001-0.027zM26.744 5.453c-0.226-0.227-0.54-0.368-0.886-0.368-0.691 0-1.251 0.56-1.251 1.251 0 0.345 0.139 0.657 0.365 0.883l-0-0c2.168 2.31 3.567 5.365 3.775 8.741l0.002 0.040c-0.21 3.417-1.609 6.471-3.784 8.789l0.007-0.008c-0.224 0.226-0.362 0.537-0.362 0.88 0 0.691 0.56 1.251 1.251 1.251 0.345 0 0.657-0.14 0.883-0.365l-0 0c2.628-2.757 4.308-6.439 4.504-10.509l0.001-0.038c-0.198-4.108-1.878-7.79-4.512-10.553l0.006 0.007zM21.811 8.214c-0.226-0.224-0.537-0.363-0.881-0.363-0.69 0-1.25 0.56-1.25 1.25 0 0.343 0.138 0.653 0.361 0.879l-0-0c1.486 1.585 2.447 3.678 2.594 5.992l0.001 0.028c-0.151 2.343-1.111 4.436-2.601 6.027l0.005-0.005c-0.224 0.226-0.362 0.537-0.362 0.88 0 0.691 0.56 1.251 1.251 1.251 0.345 0 0.657-0.14 0.883-0.365l-0 0c1.939-2.036 3.178-4.754 3.323-7.759l0.001-0.028c-0.145-3.033-1.385-5.751-3.331-7.791l0.005 0.005z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         sliders: {
             create() {
-                const slidersSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      slidersSVGattrs = [['width', 19], ['height', 19], ['viewBox', '0 0 25 25']]
-                slidersSVGattrs.forEach(([attr, value]) => slidersSVG.setAttribute(attr, value))
+                const svg = create.svgElem('svg', { width: 19, height: 19, viewBox: '0 0 25 25' })
 
                 // Top track
-                slidersSVG.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
+                svg.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
                     x1: 2, y1: 5.5, x2: 12, y2: 5.5 }))
-                slidersSVG.append(create.svgElem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
+                svg.append(create.svgElem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
                     cx: 18, cy: 5.5, r: 3 }))
-                slidersSVG.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
+                svg.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
                     x1: 21, y1: 5.5, x2: 23, y2: 5.5 }))
 
                 // Middle track
-                slidersSVG.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
+                svg.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
                     x1: 2, y1: 12.5, x2: 4, y2: 12.5 }))
-                slidersSVG.append(create.svgElem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
+                svg.append(create.svgElem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
                     cx: 8, cy: 12.5, r: 3 }))
-                slidersSVG.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
+                svg.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
                     x1: 14, y1: 12.5, x2: 23, y2: 12.5 }))
 
                 // Bottom track
-                slidersSVG.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
+                svg.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
                     x1: 2, y1: 19.5, x2: 8, y2: 19.5 }))
-                slidersSVG.append(create.svgElem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
+                svg.append(create.svgElem('circle', { stroke: '', fill: 'none', 'stroke-width': 1.5,
                     cx: 14.5, cy: 19.5, r: 3 }))
-                slidersSVG.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
+                svg.append(create.svgElem('line', { stroke: '', 'stroke-width': 2, 'stroke-linecap': 'round',
                     x1: 17, y1: 19.5, x2: 23, y2: 19.5 }))
 
-                return slidersSVG
+                return svg
             }
         },
 
         sparkles: {
             create(style) { // style = ( 'fg' ? filled front sparkle : 'bg' ? filled rear sparkles )
-                const sparklesSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      sparklesSVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 0 512 512']]
-                sparklesSVGattrs.forEach(([attr, value]) => sparklesSVG.setAttribute(attr, value))
-                sparklesSVG.append(create.svgElem('path', { // large front sparkle
+                const svg = create.svgElem('svg', { width: 18, height: 18, viewBox: '0 0 512 512' })
+                svg.append(create.svgElem('path', { // large front sparkle
                     fill: style == 'bg' ? 'none' : '', stroke: '', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': 32,
                     d: 'M259.92,262.91,216.4,149.77a9,9,0,0,0-16.8,0L156.08,262.91a9,9,0,0,1-5.17,5.17L37.77,311.6a9,9,0,0,0,0,16.8l113.14,43.52a9,9,0,0,1,5.17,5.17L199.6,490.23a9,9,0,0,0,16.8,0l43.52-113.14a9,9,0,0,1,5.17-5.17L378.23,328.4a9,9,0,0,0,0-16.8L265.09,268.08A9,9,0,0,1,259.92,262.91Z' }))
-                sparklesSVG.append(create.svgElem('polygon', { // small(est) rear-left sparkle
+                svg.append(create.svgElem('polygon', { // small(est) rear-left sparkle
                     fill: style == 'fg' ? 'none' : '', stroke: '', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': 24,
                     points: '108 68 88 16 68 68 16 88 68 108 88 160 108 108 160 88 108 68' }))
-                sparklesSVG.append(create.svgElem('polygon', { // small rear-right sparkle
+                svg.append(create.svgElem('polygon', { // small rear-right sparkle
                     fill: style == 'fg' ? 'none' : '', stroke: '', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': 32,
                     points: '426.67 117.33 400 48 373.33 117.33 304 144 373.33 170.67 400 240 426.67 170.67 496 144 426.67 117.33' }))
-                return sparklesSVG
+                return svg
             }
         },
 
         speaker: {
             create() {
-                const speakerSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      speakerSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
-                speakerSVGattrs.forEach(([attr, value]) => speakerSVG.setAttribute(attr, value))
-                speakerSVG.append(
+                const svg = create.svgElem('svg', { width: 22, height: 22, viewBox: '0 0 32 32' })
+                svg.append(
                     create.svgElem('path', { stroke: '', 'stroke-width': '2px', fill: 'none',
                         d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10' }),
                     create.svgElem('path', { stroke: '', 'stroke-width': '2px', fill: 'none',
@@ -1452,57 +1412,52 @@
                     create.svgElem('path', { stroke: 'none', fill: '',
                         d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
                 )
-                return speakerSVG
+                return svg
             }
         },
 
         speechBalloonLasso: {
             create() {
-                const speechBalloonLassoSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      speechBalloonLassoSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960']]
-                speechBalloonLassoSVGattrs.forEach(([attr, value]) => speechBalloonLassoSVG.setAttribute(attr, value))
-                speechBalloonLassoSVG.append(create.svgElem('path', { stroke: 'none', d: 'M323-41v-247h-10q-105 0-172.5-67T73-528q0-105 74-179t179-74h36l-44-44 69-69 162 162-162 162-69-69 44-44h-36q-64 0-109.5 45.5T171-528q0 64 45.5 109.5T326-373h95v96l96-96h117q64 0 109.5-45.5T789-528q0-64-45.5-109.5T634-683h10v-98h-10q105 0 179 74t74 179q0 105-74 179t-179 74h-77L323-41Z' }))
-                return speechBalloonLassoSVG
+                const svg = create.svgElem('svg', { width: 17, height: 17, viewBox: '0 -960 960 960' })
+                const svgPath = create.svgElem('path', { stroke: 'none',
+                    d: 'M323-41v-247h-10q-105 0-172.5-67T73-528q0-105 74-179t179-74h36l-44-44 69-69 162 162-162 162-69-69 44-44h-36q-64 0-109.5 45.5T171-528q0 64 45.5 109.5T326-373h95v96l96-96h117q64 0 109.5-45.5T789-528q0-64-45.5-109.5T634-683h10v-98h-10q105 0 179 74t74 179q0 105-74 179t-179 74h-77L323-41Z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         speechBalloons: {
             create() {
-                const speechBalloonSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      speechBalloonSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 -960 960 960']]
-                speechBalloonSVGattrs.forEach(([attr, value]) => speechBalloonSVG.setAttribute(attr, value))
-                speechBalloonSVG.append(create.svgElem('path', { stroke: 'none', d: 'M350-212q-32.55 0-55.27-22.73Q272-257.45 272-290v-64h492v-342h63.67q33.33 0 55.83 22.72Q906-650.55 906-618v576L736-212H350ZM54-256v-582.4q0-32.38 22.72-54.99Q99.45-916 132-916h482q32.55 0 55.28 22.72Q692-870.55 692-838v334q0 32.55-22.72 55.27Q646.55-426 614-426H224L54-256Zm540-268v-294H152v294h442Zm-442 0v-294 294Z' }))
-                return speechBalloonSVG
+                const svg = create.svgElem('svg', { width: 16, height: 16, viewBox: '0 -960 960 960' })
+                const svgPath = create.svgElem('path', { stroke: 'none',
+                    d: 'M350-212q-32.55 0-55.27-22.73Q272-257.45 272-290v-64h492v-342h63.67q33.33 0 55.83 22.72Q906-650.55 906-618v576L736-212H350ZM54-256v-582.4q0-32.38 22.72-54.99Q99.45-916 132-916h482q32.55 0 55.28 22.72Q692-870.55 692-838v334q0 32.55-22.72 55.27Q646.55-426 614-426H224L54-256Zm540-268v-294H152v294h442Zm-442 0v-294 294Z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         sun: {
             create() {
-                const sunSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      sunSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960']]
-                sunSVGattrs.forEach(([attr, value]) => sunSVG.setAttribute(attr, value))
-                sunSVG.append(create.svgElem('path', { stroke: 'none', d: 'M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z' }))
-                return sunSVG
+                const svg = create.svgElem('svg', { width: 17, height: 17, viewBox: '0 -960 960 960' })
+                const svgPath = create.svgElem('path', { stroke: 'none',
+                    d: 'M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         sunglasses: {
             create() {
-                const sunglassesSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      sunglassesSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 512 512']]
-                sunglassesSVGattrs.forEach(([attr, value]) => sunglassesSVG.setAttribute(attr, value))
-                sunglassesSVG.append(create.svgElem('path', { stroke: 'none', d: 'M507.44,185.327c-4.029-5.124-10.185-8.112-16.704-8.112c0,0-48.021,0-156.827,0h-65.774H243.87h-65.774c-108.806,0-156.827,0-156.827,0c-6.519,0-12.675,2.988-16.714,8.112c-4.028,5.125-5.486,11.815-3.965,18.152c0,0,12.421,56.269,19.927,82.534c7.506,26.265,26.265,48.772,86.29,48.772s59.827,0,74.828,0c21.258,0,46.256-19.99,55.028-45.023c4.97-14.16,12.756-32.738,19.338-47.876c6.582,15.138,14.368,33.716,19.338,47.876c8.773,25.033,33.77,45.023,55.028,45.023c15.001,0,14.803,0,74.828,0s78.784-22.507,86.29-48.772c7.496-26.264,19.918-82.534,19.918-82.534C512.935,197.142,511.478,190.452,507.44,185.327z M90.339,278.734C45.314,263.732,40.318,198.7,40.318,198.7s22.507,0,55.028,0L90.339,278.734z M340.464,278.734c-45.015-15.001-50.022-80.034-50.022-80.034s22.508,0,55.029,0L340.464,278.734z' }))
-                return sunglassesSVG
+                const svg = create.svgElem('svg', { width: 17, height: 17, viewBox: '0 0 512 512' })
+                const svgPath = create.svgElem('path', { stroke: 'none',
+                    d: 'M507.44,185.327c-4.029-5.124-10.185-8.112-16.704-8.112c0,0-48.021,0-156.827,0h-65.774H243.87h-65.774c-108.806,0-156.827,0-156.827,0c-6.519,0-12.675,2.988-16.714,8.112c-4.028,5.125-5.486,11.815-3.965,18.152c0,0,12.421,56.269,19.927,82.534c7.506,26.265,26.265,48.772,86.29,48.772s59.827,0,74.828,0c21.258,0,46.256-19.99,55.028-45.023c4.97-14.16,12.756-32.738,19.338-47.876c6.582,15.138,14.368,33.716,19.338,47.876c8.773,25.033,33.77,45.023,55.028,45.023c15.001,0,14.803,0,74.828,0s78.784-22.507,86.29-48.772c7.496-26.264,19.918-82.534,19.918-82.534C512.935,197.142,511.478,190.452,507.44,185.327z M90.339,278.734C45.314,263.732,40.318,198.7,40.318,198.7s22.507,0,55.028,0L90.339,278.734z M340.464,278.734c-45.015-15.001-50.022-80.034-50.022-80.034s22.508,0,55.029,0L340.464,278.734z' })
+                svg.append(svgPath) ; return svg
             }
         },
 
         x: {
             create() {
-                const xSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      xSVGattrs = [['height', '10px'], ['viewBox', '0 0 14 14'], 'fill', 'none']
-                xSVGattrs.forEach(([attr, value]) => xSVG.setAttribute(attr, value))
-                xSVG.append(create.svgElem('path', { d: 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z' }))
-                return xSVG
+                const svg = create.svgElem('svg', { height: 10, viewBox: '0 0 14 14', fill: 'none' })
+                const svgPath = create.svgElem('path', {
+                    d: 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z' })
+                svg.append(svgPath) ; return svg
             }
         }
     }
