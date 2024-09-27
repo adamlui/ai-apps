@@ -121,7 +121,7 @@
         class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px' })
     const supportIcon = dom.create.elem('img', {
         width: 15, height: 13, style: 'margin-bottom: 0.04rem',
-        src: 'https://media.chatgptwidescreen.com/images/icons/question-mark/icon16.png?4adfbbd' })
+        src: `${app.urls.mediaHost}/images/icons/question-mark/icon16.png?4adfbbd` })
     supportSpan.onclick = () => chrome.tabs.create({ url: app.urls.support })
     supportSpan.append(supportIcon) ; footer.append(supportSpan)
 
