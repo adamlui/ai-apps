@@ -1,4 +1,4 @@
-name: Sync LICENSE.md from chatgpt-widescreen/opera/* to <platform>/*, then chatgpt-widescreen/opera/extension/* to chatgpt-widescreen/(chrome|edge)/extension/*, then chatgpt-widescreen/opera/extension/_locales/* to chatgpt-widescreen/greasemonkey/_locales/*, then chatgpt-widescreen/* to adamlui/chatgpt-apps/chatgpt-widescreen/*, then chatgpt-widescreen/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
+name: Sync LICENSE.md from chatgpt-widescreen/opera/* to <platform>/*, then chatgpt-widescreen/opera/extension/* to chatgpt-widescreen/(chrome|edge)/extension/*, then chatgpt-widescreen/opera/extension/_locales/* to chatgpt-widescreen/<firefox/extension|greasemonkey>/_locales/*, then chatgpt-widescreen/* to adamlui/chatgpt-apps/chatgpt-widescreen/*, then chatgpt-widescreen/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
 
 on:
   push:
@@ -90,6 +90,12 @@ jobs:
           rsync -avhr --delete \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/ \
             ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
+
+      - name: Sync /chatgpt-widescreen/opera/extension/_locales/ to /chatgpt-widescreen/firefox/extension/_locales/
+        run: |
+          rsync -avhr --delete \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/opera/extension/_locales/" \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/firefox/extension/_locales"
 
       - name: Escape backticks in commit msg
         env:
