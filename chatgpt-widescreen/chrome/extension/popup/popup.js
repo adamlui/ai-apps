@@ -58,7 +58,7 @@
         document.querySelector('.menu-header').insertAdjacentElement('afterend', togglesDiv)
 
         // Create/inesrt individual toggles
-        Object.keys(app.settings).forEach(async key => {
+        Object.keys(app.settings).forEach(key => {
             if (sites[site].availFeatures.includes(key)) {
 
                 // Init elems
