@@ -1,4 +1,4 @@
-name: Sync /chatgpt-widescreen/chrome/extension/ to /chatgpt-widescreen/(edge|opera)/extension/, then /chatgpt-widescreen/chrome/extension/_locales/ to /chatgpt-widescreen/greasemonkey/_locales/, then /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/, then /chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
+name: Sync /chatgpt-widescreen/chrome/extension/ to /chatgpt-widescreen/(edge|opera)/extension/, then /chatgpt-widescreen/chrome/extension/_locales/ to /chatgpt-widescreen/<firefox/extension|greasemonkey>/_locales/, then /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/, then /chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
 on:
   push:
@@ -46,6 +46,12 @@ jobs:
               "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/" \
               "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/$browser/extension/"
           done
+
+      - name: Sync /chatgpt-widescreen/chrome/extension/_locales/ to /chatgpt-widescreen/firefox/extension/_locales/
+        run: |
+          rsync -avhr --delete \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/_locales/" \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/firefox/extension/_locales"
 
       - name: Sync /chatgpt-widescreen/chrome/extension/_locales/ to /chatgpt-widescreen/greasemonkey/_locales/
         run: |
