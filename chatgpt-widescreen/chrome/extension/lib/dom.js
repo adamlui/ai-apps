@@ -10,6 +10,12 @@ const dom = {
             return anchor
         },
 
+        elem(elemType, attrs = {}) {
+            const elem = document.createElement(elemType)
+            Object.entries(attrs).forEach(([attr, value]) => elem.setAttribute(attr, value))
+            return elem
+        },
+
         style(content) {
             const style = document.createElement('style')
             if (content) style.innerText = content
