@@ -1,7 +1,7 @@
 (async () => {
 
     const site = /([^.]+)\.[^.]+$/.exec(await new Promise(resolve =>
-        chrome.tabs.query({ active: true, currentWindow: true }, tabs => resolve(new URL(tabs[0].url).hostname))))[1]
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs => resolve(new URL(tabs[0].url).hostname))))?.[1]
 
     // Import settings.js
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
