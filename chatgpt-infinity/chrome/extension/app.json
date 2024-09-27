@@ -1,5 +1,8 @@
 {
   "symbol": "∞",
-  "urls": { "gitHub": "https://github.com/adamlui/chatgpt-infinity" },
+  "urls": {
+    "cjsMediaHost": "https://media.chatgptjs.org",
+    "gitHub": "https://github.com/adamlui/chatgpt-infinity"
+  },
   "latestAssetCommitHash": "d28862b"
 }
