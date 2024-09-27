@@ -3,7 +3,7 @@
     const site = /([^.]+)\.[^.]+$/.exec(await new Promise(resolve =>
         chrome.tabs.query({ active: true, currentWindow: true }, tabs => resolve(new URL(tabs[0].url).hostname))))?.[1]
 
-    // Import SETTINGS.JS
+    // Import LIBS
     await import(chrome.runtime.getURL('lib/dom.js'))
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
     settings.site = site // to load/save active tab's settings
@@ -41,10 +41,10 @@
     // Init MASTER TOGGLE
     const masterToggle = document.querySelector('.main-toggle input')
     await settings.load('extensionDisabled')
-    masterToggle.checked = !config.extensionDisabled ; updateGreyness()
+    masterToggle.checked = !config.extensionDisabled ; updateFade()
     masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
-        syncStorageToUI() ; updateGreyness()
+        syncStorageToUI() ; updateFade()
     }
     
     // Create CHILD TOGGLES for matched pages
@@ -87,7 +87,7 @@
             }
         })
 
-        updateGreyness() // in case master toggle off
+        updateFade() // in case master toggle off
     }
 
     // LOCALIZE labels
@@ -150,7 +150,7 @@
         chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
     }
     
-    function updateGreyness() {
+    function updateFade() {
 
         // Update toolbar icon
         const iconDimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}

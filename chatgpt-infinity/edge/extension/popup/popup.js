@@ -19,11 +19,11 @@
     // Init master toggle
     const masterToggle = document.querySelector('input')
     settings.load('extensionDisabled').then(() => { // init toggle state, update greyness
-        masterToggle.checked = !config.extensionDisabled ; updateGreyness() })
+        masterToggle.checked = !config.extensionDisabled ; updateFade() })
     masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
         infinityModeToggle.checked = false // always disable Infinity Mode on main toggle
-        syncExtension() ; updateGreyness()
+        syncExtension() ; updateFade()
     }
 
     // Locate settings elements
@@ -198,7 +198,7 @@
 
     function syncExtension() { chrome.runtime.sendMessage({ action: 'sync.extension' }) }
 
-    function updateGreyness() {
+    function updateFade() {
 
         // Updated toolbar icon
         const iconDimensions = [16, 32, 64, 128], iconPaths = {}
