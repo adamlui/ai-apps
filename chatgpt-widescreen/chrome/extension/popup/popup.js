@@ -108,7 +108,7 @@
     const cjsAnchor = dom.create.anchor(app.urls.chatgptJS, null, {
         title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js` })
     const cjsLogo = dom.create.elem('img', {
-        src: 'https://media.chatgptjs.org/images/badges/powered-by-chatgpt.js-faded.png?main' })
+        src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png?main` })
     cjsAnchor.append(cjsLogo) ; cjsDiv.append(cjsAnchor) ; footer.append(cjsDiv)
 
     // Create/append SUPPORT footer button
@@ -150,10 +150,9 @@
         if (event.target === moreAddOnsSpan) moreAddOnsLink.click() } // to avoid double-toggle
 
     // Add Powered by chatgpt.js hover-listener
-    const chatGPTjsHostPath = 'https://media.chatgptjs.org/images/badges/',
-          chatGPTjsImg = document.querySelector('.chatgpt-js img')
-    chatGPTjsImg.onmouseover = () => chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png'
-    chatGPTjsImg.onmouseout = () => chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png'
+    const chatGPTjsImg = document.querySelector('.chatgpt-js img')
+    chatGPTjsImg.onmouseover = () => chatGPTjsImg.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js.png`
+    chatGPTjsImg.onmouseout = () => chatGPTjsImg.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png`
 
     // Define FEEDBACK functions
 

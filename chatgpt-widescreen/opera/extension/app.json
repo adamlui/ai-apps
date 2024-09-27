@@ -2,6 +2,7 @@
   "symbol": "🖥️",
   "urls": {
     "chatgptJS": "https://chatgpt.js.org",
+    "cjsMediaHost": "https://media.chatgptjs.org",
     "gitHub": "https://github.com/adamlui/chatgpt-widescreen",
     "relatedApps": "https://github.com/adamlui/chatgpt-apps",
     "support": "https://support.chatgptwidescreen.com"
