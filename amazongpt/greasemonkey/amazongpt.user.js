@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.26
+// @version                2024.9.26.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1246,14 +1246,6 @@
                 const svg = create.svgElem('svg', { width: 17, height: 17, viewBox: '0 0 24 24' })
                 const svgPath = create.svgElem('path', { stroke: '',
                     d: 'M11.29,9.71a1,1,0,0,0,1.42,0l5-5a1,1,0,1,0-1.42-1.42L12,7.59,7.71,3.29A1,1,0,0,0,6.29,4.71Zm1.42,4.58a1,1,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L12,16.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z' })
-                svg.append(svgPath) ; return svg
-            }
-        },
-
-        checkmark: {
-            create() {
-                const svg = create.svgElem('svg', { id: 'checkmark-icon', width: 10, height: 10, viewBox: '0 0 20 20' }),
-                      svgPath = create.svgElem('path', { stroke: 'none', d: 'M0 11l2-2 5 5L18 3l2 2L7 18z' })
                 svg.append(svgPath) ; return svg
             }
         },
