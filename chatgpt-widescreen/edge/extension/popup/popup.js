@@ -126,14 +126,14 @@
     supportSpan.append(supportIcon) ; footer.append(supportSpan)
 
     // Create/append RELATED APPS footer button
-    const moreappSpan = dom.create.elem('span', {
+    const moreAppsSpan = dom.create.elem('span', {
         title:  chrome.i18n.getMessage('btnLabel_moreApps'),
         class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
-    const moreappIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' })
-    const moreappIconPath = dom.create.svgElem('path', {
+    const moreAppsIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' })
+    const moreAppsIconPath = dom.create.svgElem('path', {
         d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })   
-    moreappSpan.onclick = () => chrome.tabs.create({ url: app.urls.relatedApps })
-    moreappIcon.append(moreappIconPath) ; moreappSpan.append(moreappIcon) ; footer.append(moreappSpan)
+    moreAppsSpan.onclick = () => chrome.tabs.create({ url: app.urls.relatedApps })
+    moreAppsIcon.append(moreAppsIconPath) ; moreAppsSpan.append(moreAppsIcon) ; footer.append(moreAppsSpan)
 
     // Define FEEDBACK functions
 
