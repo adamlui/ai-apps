@@ -107,13 +107,16 @@
 
     // Create/append CHATGPT.JS footer logo
     const cjsDiv = document.createElement('div'),
-          cjsAnchor = document.createElement('anchor')
+          cjsAnchor = document.createElement('anchor'),
+          cjsLogo = document.createElement('img')
     cjsDiv.classList = 'chatgpt-js'
     Object.assign(cjsAnchor, {
         title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js`,
         href: 'https://chatgpt.js.org', target: '_blank', rel: 'noopener'
     })
-    cjsDiv.append(cjsAnchor) ; footer.append(cjsDiv)
+    cjsLogo.src='https://media.chatgptjs.org/images/badges/powered-by-chatgpt.js-faded.png?main'
+    cjsAnchor.append(cjsLogo) ; cjsDiv.append(cjsAnchor)
+    footer.append(cjsDiv)
 
     // Create/append SUPPORT footer button
     const supportSpan = document.createElement('span'),
@@ -121,7 +124,7 @@
           supportIcon = document.createElement('img')
     Object.assign(supportSpan, {
         title: chrome.i18n.getMessage('btnLabel_getSupport'),
-        class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px'
+        className: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px'
     })
     Object.assign(supportAnchor, {
         title: chrome.i18n.getMessage('btnLabel_getSupport'),
@@ -140,16 +143,18 @@
           moreAppsIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
           moreAppsIconPath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
     Object.assign(moreAppsSpan, {
-        title: chrome.i18n.getMessages('btnLabel_moreApps'),
-        class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px'
+        title:  chrome.i18n.getMessage('btnLabel_moreApps'),
+        className: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px'
     })
     Object.assign(moreAppsAnchor, {
-        title: chrome.i18n.getMessages('btnLabel_moreApps'),
+        title:  chrome.i18n.getMessage('btnLabel_moreApps'),
         href: 'https://github.com/adamlui/chatgpt-userscripts',
         target: '_blank', rel: 'noopener'
     })
-    Object.assign(moreAppsIcon, { width: 16, height: 16, viewBox: '0 0 1024 1024' }) 
-    moreAppsIconPath.d = 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z'
+    moreAppsIcon.setAttributeNS(null, 'width', 16)
+    moreAppsIcon.setAttributeNS(null, 'height', 16)
+    moreAppsIcon.setAttributeNS(null, 'viewBox', '0 0 1024 1024')
+    moreAppsIconPath.setAttributeNS(null, 'd', 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z')
     moreAppsIcon.append(moreAppsIconPath) ; moreAppsAnchor.append(moreAppsIcon) ; moreAppsSpan.append(moreAppsAnchor)
     footer.append(moreAppsSpan)
 
