@@ -1,6 +1,15 @@
 const dom = {
 
     create: {
+        anchor(linkHref, displayContent, attrs = {}) {
+            const anchor = document.createElement('a'),
+                  defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
+                  finalAttrs = { ...defaultAttrs, ...attrs }
+            Object.entries(finalAttrs).forEach(([attr, value]) => anchor.setAttribute(attr, value))
+            if (displayContent) anchor.append(displayContent)
+            return anchor
+        },
+
         style(content) {
             const style = document.createElement('style')
             if (content) style.innerText = content
