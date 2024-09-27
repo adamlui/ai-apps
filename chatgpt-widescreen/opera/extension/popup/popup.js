@@ -108,7 +108,7 @@
 
     // Create/append CHATGPT.JS footer logo
     const cjsDiv = document.createElement('div'),
-          cjsAnchor = document.createElement('anchor'),
+          cjsAnchor = document.createElement('a'),
           cjsLogo = document.createElement('img')
     cjsDiv.classList = 'chatgpt-js'
     Object.assign(cjsAnchor, {
@@ -121,7 +121,7 @@
 
     // Create/append SUPPORT footer button
     const supportSpan = document.createElement('span'),
-          supportAnchor = document.createElement('anchor'),
+          supportAnchor = document.createElement('a'),
           supportIcon = document.createElement('img')
     Object.assign(supportSpan, {
         title: chrome.i18n.getMessage('btnLabel_getSupport'),
