@@ -54,7 +54,7 @@
         settings.load(sites[site].availFeatures)
 
         // Create/insert toggles section
-        const togglesDiv = document.createElement('div') ; togglesDiv.className = 'menu'
+        const togglesDiv = dom.create.elem('div', { class: 'menu' })
         document.querySelector('.menu-header').insertAdjacentElement('afterend', togglesDiv)
 
         // Create/inesrt individual toggles
@@ -63,16 +63,13 @@
                 await settings.load(key)
 
                 // Init elems
-                const menuItemDiv = document.createElement('div')
-                menuItemDiv.classList.add('menu-item', 'menu-area')
-                const menuLabel = document.createElement('label')
-                menuLabel.classList.add('toggle-switch', 'menu-icon')
-                const menuInput = document.createElement('input')
-                menuInput.type = 'checkbox' ; menuInput.checked = /disabled/i.test(key) ^ config[key]
-                const menuSlider = document.createElement('span')
-                menuSlider.className = 'slider'
-                const menuLabelSpan = document.createElement('span')
+                const menuItemDiv = dom.create.elem('div', { class: 'menu-item menu-area' }),
+                      menuLabel = dom.create.elem('label', { class: 'toggle-switch menu-icon' }),
+                      menuInput = dom.create.elem('input', { type: 'checkbox' }),
+                      menuSlider = dom.create.elem('span', { class: 'slider' }),
+                      menuLabelSpan = document.createElement('span')
                 menuLabelSpan.textContent = app.settings[key].label
+                menuInput.checked = /disabled/i.test(key) ^ config[key]
 
                 // Assemble/append elems
                 menuLabel.append(menuInput, menuSlider)
@@ -107,52 +104,33 @@
     document.body.append(footer)
 
     // Create/append CHATGPT.JS footer logo
-    const cjsDiv = document.createElement('div'),
-          cjsAnchor = document.createElement('a'),
-          cjsLogo = document.createElement('img')
-    cjsDiv.classList = 'chatgpt-js'
-    Object.assign(cjsAnchor, {
-        title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js`,
-        href: 'https://chatgpt.js.org', target: '_blank', rel: 'noopener'
-    })
-    cjsLogo.src='https://media.chatgptjs.org/images/badges/powered-by-chatgpt.js-faded.png?main'
-    cjsAnchor.append(cjsLogo) ; cjsDiv.append(cjsAnchor)
-    footer.append(cjsDiv)
+    const cjsDiv = dom.create.elem('div', { class: 'chatgpt-js' })
+    const cjsAnchor = dom.create.anchor('https://chatgpt.js.org', null, {
+        title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js` })
+    const cjsLogo = dom.create.elem('img', {
+        src: 'https://media.chatgptjs.org/images/badges/powered-by-chatgpt.js-faded.png?main' })
+    cjsAnchor.append(cjsLogo) ; cjsDiv.append(cjsAnchor) ; footer.append(cjsDiv)
 
     // Create/append SUPPORT footer button
-    const supportSpan = document.createElement('span'),
-          supportAnchor = document.createElement('a'),
-          supportIcon = document.createElement('img')
-    Object.assign(supportSpan, {
+    const supportSpan = dom.create.elem('span', {
         title: chrome.i18n.getMessage('btnLabel_getSupport'),
-        className: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px'
-    })
-    Object.assign(supportAnchor, {
-        title: chrome.i18n.getMessage('btnLabel_getSupport'),
-        href: 'https://support.chatgptwidescreen.com', target: '_blank', rel: 'noopener'
-    })
-    Object.assign(supportIcon, {
+        class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px' })
+    const supportAnchor = dom.create.anchor('https://support.chatgptwidescreen.com', null, {
+        title: chrome.i18n.getMessage('btnLabel_getSupport') })
+    const supportIcon = dom.create.elem('img', {
         width: 15, height: 13, style: 'margin-bottom: 0.04rem',
-        src: 'https://media.chatgptwidescreen.com/images/icons/question-mark/icon16.png?4adfbbd'
-    })
-    supportAnchor.append(supportIcon) ; supportSpan.append(supportAnchor)
-    footer.append(supportSpan)
+        src: 'https://media.chatgptwidescreen.com/images/icons/question-mark/icon16.png?4adfbbd' })
+    supportAnchor.append(supportIcon) ; supportSpan.append(supportAnchor) ; footer.append(supportSpan)
 
     // Create/append RELATED APPS footer button
-    const moreAppsSpan = document.createElement('span'),
-          moreAppsAnchor = document.createElement('a'),
-          moreAppsIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' }),
-          moreAppsIconPath = dom.create.svgElem('path', {
-              d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })
-    Object.assign(moreAppsSpan, {
+    const moreAppsSpan = dom.create.elem('span', {
         title:  chrome.i18n.getMessage('btnLabel_moreApps'),
-        className: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px'
-    })
-    Object.assign(moreAppsAnchor, {
-        title:  chrome.i18n.getMessage('btnLabel_moreApps'),
-        href: 'https://github.com/adamlui/chatgpt-userscripts',
-        target: '_blank', rel: 'noopener'
-    })
+        class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
+    const moreAppsAnchor = dom.create.anchor('https://github.com/adamlui/chatgpt-userscripts', null, {
+        title:  chrome.i18n.getMessage('btnLabel_moreApps') })
+    const moreAppsIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' })
+    const moreAppsIconPath = dom.create.svgElem('path', {
+        d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })
     moreAppsIcon.append(moreAppsIconPath) ; moreAppsAnchor.append(moreAppsIcon) ; moreAppsSpan.append(moreAppsAnchor)
     footer.append(moreAppsSpan)
 
