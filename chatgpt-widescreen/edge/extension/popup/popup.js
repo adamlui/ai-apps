@@ -4,6 +4,7 @@
         chrome.tabs.query({ active: true, currentWindow: true }, tabs => resolve(new URL(tabs[0].url).hostname))))?.[1]
 
     // Import SETTINGS.JS
+    await import(chrome.runtime.getURL('lib/dom.js'))
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
     settings.site = site // to load/save active tab's settings
 
@@ -140,8 +141,9 @@
     // Create/append RELATED APPS footer button
     const moreAppsSpan = document.createElement('span'),
           moreAppsAnchor = document.createElement('a'),
-          moreAppsIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-          moreAppsIconPath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+          moreAppsIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' }),
+          moreAppsIconPath = dom.create.svgElem('path', {
+              d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })
     Object.assign(moreAppsSpan, {
         title:  chrome.i18n.getMessage('btnLabel_moreApps'),
         className: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px'
@@ -151,10 +153,6 @@
         href: 'https://github.com/adamlui/chatgpt-userscripts',
         target: '_blank', rel: 'noopener'
     })
-    moreAppsIcon.setAttributeNS(null, 'width', 16)
-    moreAppsIcon.setAttributeNS(null, 'height', 16)
-    moreAppsIcon.setAttributeNS(null, 'viewBox', '0 0 1024 1024')
-    moreAppsIconPath.setAttributeNS(null, 'd', 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z')
     moreAppsIcon.append(moreAppsIconPath) ; moreAppsAnchor.append(moreAppsIcon) ; moreAppsSpan.append(moreAppsAnchor)
     footer.append(moreAppsSpan)
 
