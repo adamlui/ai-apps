@@ -5,14 +5,14 @@ const dom = {
             const anchor = document.createElement('a'),
                   defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
                   finalAttrs = { ...defaultAttrs, ...attrs }
-            Object.entries(finalAttrs).forEach(([attr, value]) => anchor.setAttribute(attr, value))
+            Object.entries(finalAttrs).forEach(([attr, val]) => anchor.setAttribute(attr, val))
             if (displayContent) anchor.append(displayContent)
             return anchor
         },
 
         elem(elemType, attrs = {}) {
             const elem = document.createElement(elemType)
-            Object.entries(attrs).forEach(([attr, value]) => elem.setAttribute(attr, value))
+            Object.entries(attrs).forEach(([attr, val]) => elem.setAttribute(attr, val))
             return elem
         },
 
