@@ -51,7 +51,7 @@
     const matchHosts = chrome.runtime.getManifest().content_scripts[0].matches
         .map(url => url.replace(/^https?:\/\/|\/.*$/g, ''))
     if (matchHosts.some(host => host.includes(site))) {
-        settings.load(sites[site].availFeatures)
+        await settings.load(sites[site].availFeatures)
 
         // Create/insert toggles section
         const togglesDiv = dom.create.elem('div', { class: 'menu' })
@@ -60,7 +60,6 @@
         // Create/inesrt individual toggles
         Object.keys(app.settings).forEach(async key => {
             if (sites[site].availFeatures.includes(key)) {
-                await settings.load(key)
 
                 // Init elems
                 const menuItemDiv = dom.create.elem('div', {
