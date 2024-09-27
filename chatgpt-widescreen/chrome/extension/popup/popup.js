@@ -124,10 +124,10 @@
 
     // Create/append RELATED app footer button
     const moreappSpan = dom.create.elem('span', {
-        title:  chrome.i18n.getMessage('btnLabel_moreapp'),
+        title:  chrome.i18n.getMessage('btnLabel_moreApps'),
         class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
     const moreappAnchor = dom.create.anchor(app.urls.relatedApps, null, {
-        title:  chrome.i18n.getMessage('btnLabel_moreapp') })
+        title:  chrome.i18n.getMessage('btnLabel_moreApps') })
     const moreappIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' })
     const moreappIconPath = dom.create.svgElem('path', {
         d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })
