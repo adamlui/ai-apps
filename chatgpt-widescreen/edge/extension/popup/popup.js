@@ -63,8 +63,9 @@
                 await settings.load(key)
 
                 // Init elems
-                const menuItemDiv = dom.create.elem('div', { class: 'menu-item menu-area' }),
-                      menuLabel = dom.create.elem('label', { class: 'toggle-switch menu-icon' }),
+                const menuItemDiv = dom.create.elem('div', {
+                    class: 'menu-item menu-area', title: app.settings[key].helptip })
+                const menuLabel = dom.create.elem('label', { class: 'toggle-switch menu-icon' }),
                       menuInput = dom.create.elem('input', { type: 'checkbox' }),
                       menuSlider = dom.create.elem('span', { class: 'slider' }),
                       menuLabelSpan = document.createElement('span')
