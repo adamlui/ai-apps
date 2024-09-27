@@ -1,6 +1,6 @@
 /* General size */
 html { height: fit-content }
-body { width: 265px ; margin: 0 }
+body { width: 265px ; margin: 0 ; overflow: clip }
 
 /* General font */
 body, button, input, select, textarea {
