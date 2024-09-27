@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.25
+// @version             2024.9.26
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -266,11 +266,14 @@
     const app = {
         name: 'Autoclear ChatGPT History', symbol: '🕶️', configKeyPrefix: 'autoclearChatGPThistory',
         urls: {
-            support: 'https://support.autoclearchatgpt.com', mediaHost: 'https://media.autoclearchatgpt.com',
-            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            chatgptJS: 'https://chatgpt.js.org',
             futurepedia: 'https://www.futurepedia.io/tool/autoclear-chatgpt-history',
             gitHub: 'https://github.com/adamlui/autoclear-chatgpt-history',
-            greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history' },
+            greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history',
+            mediaHost: 'https://media.autoclearchatgpt.com',
+            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            support: 'https://support.autoclearchatgpt.com'
+        },
         latestAssetCommitHash: 'abf62f6' // for cached messages.json + navicon
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`

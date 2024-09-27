@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.25.1
+// @version             2024.9.26
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -251,10 +251,12 @@
     const app = {
         name: 'ChatGPT Auto-Continue', symbol: '≫', configKeyPrefix: 'chatGPTautoContinue',
         urls: {
-            support: 'https://support.chatgptautocontinue.com',
-            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            chatgptJS: 'https://chatgpt.js.org',
             gitHub: 'https://github.com/adamlui/chatgpt-auto-continue',
-            greasyFork: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue' },
+            greasyFork: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue',
+            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            support: 'https://support.chatgptautocontinue.com'
+        },
         latestAssetCommitHash: '9ffe4f9' // for cached messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`

@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.25
+// @version             2024.9.25.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -243,12 +243,15 @@
     const app = {
         name: 'ChatGPT Infinity', symbol: '∞', configKeyPrefix: 'chatGPTinfinity',
         urls: {
-            support: 'https://support.chatgptinfinity.com', mediaHost: 'https://media.chatgptinfinity.com',
-            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             alternativeTo: 'https://alternativeto.net/software/chatgpt-infinity',
+            chatgptJS: 'https://chatgpt.js.org',
             gitHub: 'https://github.com/adamlui/chatgpt-infinity',
             greasyFork: 'https://greasyfork.org/scripts/465051-chatgpt-infinity',
-            productHunt: 'https://www.producthunt.com/products/chatgpt-infinity' },
+            mediaHost: 'https://media.chatgptinfinity.com',
+            productHunt: 'https://www.producthunt.com/products/chatgpt-infinity',
+            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            support: 'https://support.chatgptinfinity.com'
+        },
         latestAssetCommitHash: '5c77b4b' // for cached messages.json + navicon
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`

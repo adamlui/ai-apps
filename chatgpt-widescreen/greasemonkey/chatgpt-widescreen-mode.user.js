@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.26
+// @version             2024.9.26.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -268,11 +268,13 @@
     const app = {
         name: 'ChatGPT Widescreen Mode', symbol: '🖥️', configKeyPrefix: site + 'Widescreen',
         urls: {
-            support: 'https://support.chatgptwidescreen.com',
-            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            chatgptJS: 'https://chatgpt.js.org',
             gitHub: 'https://github.com/adamlui/chatgpt-widescreen',
             greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
-            productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode' },
+            productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode',
+            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            support: 'https://support.chatgptwidescreen.com'
+        },
         latestAssetCommitHash: 'ac4e3b1' // for cached sites.json + messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`

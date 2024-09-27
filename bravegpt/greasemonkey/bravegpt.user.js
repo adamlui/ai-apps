@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.26.2
+// @version               2024.9.26.3
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -224,13 +224,17 @@
     const app = {
         name: 'BraveGPT', symbol: '🦁', configKeyPrefix: 'braveGPT',
         urls: {
-            app: 'https://www.bravegpt.com', publisher: 'https://www.kudoai.com', support: 'https://support.bravegpt.com',
-            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            app: 'https://www.bravegpt.com',
+            chatgptJS: 'https://chatgpt.js.org',
             alternativeTo: 'https://alternativeto.net/software/bravegpt',
             futurepedia: 'https://www.futurepedia.io/tool/bravegpt',
             gitHub: 'https://github.com/KudoAI/bravegpt',
             greasyFork: 'https://greasyfork.org/scripts/462440-bravegpt',
-            productHunt: 'https://www.producthunt.com/products/bravegpt' },
+            productHunt: 'https://www.producthunt.com/products/bravegpt',
+            publisher: 'https://www.kudoai.com',
+            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            support: 'https://support.bravegpt.com'
+        },
         latestAssetCommitHash: 'aa20329' // for cached messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`

@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.26.2
+// @version                2024.9.26.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -99,10 +99,13 @@
     const app = {
         name: 'AmazonGPT', symbol: '🤖', configKeyPrefix: 'amazonGPT',
         urls: {
-            app: 'https://amazongpt.kudoai.com', publisher: 'https://www.kudoai.com',
-            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            app: 'https://amazongpt.kudoai.com',
+            chatgptJS: 'https://chatgpt.js.org',
             gitHub: 'https://github.com/KudoAI/amazongpt',
-            greasyFork: 'https://greasyfork.org/scripts/500663-amazongpt' },
+            greasyFork: 'https://greasyfork.org/scripts/500663-amazongpt',
+            publisher: 'https://www.kudoai.com',
+            relatedApps: 'https://github.com/adamlui/chatgpt-apps'
+        },
         latestAssetCommitHash: '793b6d1' // for cached messages.json
     }
     app.urls.support = app.urls.gitHub + '/issues/new'

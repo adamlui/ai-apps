@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.26.2
+// @version                  2024.9.26.3
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -416,10 +416,14 @@
     const app = {
         name: 'GoogleGPT', symbol: '🤖', configKeyPrefix: 'googleGPT',
         urls: {
-            app: 'https://www.googlegpt.io', publisher: 'https://www.kudoai.com', support: 'https://support.googlegpt.io',
-            chatgptJS: 'https://chatgpt.js.org', relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            app: 'https://www.googlegpt.io',
+            chatgptJS: 'https://chatgpt.js.org',
             gitHub: 'https://github.com/KudoAI/googlegpt',
-            greasyFork: 'https://greasyfork.org/scripts/478597-googlegpt' },
+            greasyFork: 'https://greasyfork.org/scripts/478597-googlegpt',
+            publisher: 'https://www.kudoai.com',
+            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            support: 'https://support.googlegpt.io'
+        },
         latestAssetCommitHash: 'a73b8d8' // for cached messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
