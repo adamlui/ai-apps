@@ -92,7 +92,6 @@
         updateGreyness() // in case master toggle off
     }
 
-
     // LOCALIZE labels
     let translationOccurred = false
     document.querySelectorAll('[data-locale]').forEach(elem => {
@@ -102,13 +101,64 @@
             elem.innerText = translatedText ; translationOccurred = true
     }})
 
+    // Create/append FOOTER container
+    const footer = document.createElement('footer')
+    document.body.append(footer)
+
+    // Create/append CHATGPT.JS footer logo
+    const cjsDiv = document.createElement('div'),
+          cjsAnchor = document.createElement('anchor')
+    cjsDiv.classList = 'chatgpt-js'
+    Object.assign(cjsAnchor, {
+        title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js`,
+        href: 'https://chatgpt.js.org', target: '_blank', rel: 'noopener'
+    })
+    cjsDiv.append(cjsAnchor) ; footer.append(cjsDiv)
+
+    // Create/append SUPPORT footer button
+    const supportSpan = document.createElement('span'),
+          supportAnchor = document.createElement('anchor'),
+          supportIcon = document.createElement('img')
+    Object.assign(supportSpan, {
+        title: chrome.i18n.getMessage('btnLabel_getSupport'),
+        class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px'
+    })
+    Object.assign(supportAnchor, {
+        title: chrome.i18n.getMessage('btnLabel_getSupport'),
+        href: 'https://support.chatgptwidescreen.com', target: '_blank', rel: 'noopener'
+    })
+    Object.assign(supportIcon, {
+        width: 15, height: 13, style: 'margin-bottom: 0.04rem',
+        src: 'https://media.chatgptwidescreen.com/images/icons/question-mark/icon16.png?4adfbbd'
+    })
+    supportAnchor.append(supportIcon) ; supportSpan.append(supportAnchor)
+    footer.append(supportSpan)
+
+    // Create/append RELATED APPS footer button
+    const moreAppsSpan = document.createElement('span'),
+          moreAppsAnchor = document.createElement('a'),
+          moreAppsIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+          moreAppsIconPath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+    Object.assign(moreAppsSpan, {
+        title: chrome.i18n.getMessages('btnLabel_moreApps'),
+        class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px'
+    })
+    Object.assign(moreAppsAnchor, {
+        title: chrome.i18n.getMessages('btnLabel_moreApps'),
+        href: 'https://github.com/adamlui/chatgpt-userscripts',
+        target: '_blank', rel: 'noopener'
+    })
+    Object.assign(moreAppsIcon, { width: 16, height: 16, viewBox: '0 0 1024 1024' }) 
+    moreAppsIconPath.d = 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z'
+    moreAppsIcon.append(moreAppsIconPath) ; moreAppsAnchor.append(moreAppsIcon) ; moreAppsSpan.append(moreAppsAnchor)
+    footer.append(moreAppsSpan)
+
     // Update lang attr if translation occurred
     if (translationOccurred)
         document.documentElement.lang = chrome.i18n.getUILanguage().split('-')[0]
 
     // Add Support span click-listener
-    const supportLink = document.querySelector('a[title*="support" i]'),
-          supportSpan = supportLink.parentNode 
+    const supportLink = document.querySelector('a[title*="support" i]')
     supportSpan.onclick = event => {
         if (event.target === supportSpan) supportLink.click() } // to avoid double-toggle
 
