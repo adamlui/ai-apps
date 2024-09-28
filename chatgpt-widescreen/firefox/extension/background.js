@@ -10,7 +10,7 @@
             chrome.tabs.create({ url: 'https://chatgpt.com/' })
     })
 
-    // Sync modes to activated tabs
+    // Sync modes/settings to activated tabs
     chrome.tabs.onActivated.addListener(activeInfo =>
         chrome.tabs.sendMessage(activeInfo.tabId, { action: 'sync.storageToUI' }))
 
