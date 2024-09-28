@@ -123,8 +123,6 @@ The userscript is compatible w/ the following browsers:
 - [Ghost](https://ghostbrowser.com)
 - [QQ](https://browser.qq.com)
 
-<br>
-
 <div align="center">
 
 <a href="https://edge.chatgptwidescreen.com"><img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a><a href="https://edge.chatgptwidescreen.com">
