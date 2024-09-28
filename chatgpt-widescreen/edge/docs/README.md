@@ -125,7 +125,7 @@ The userscript is compatible w/ the following browsers:
 
 <div align="center">
 
-<a href="https://edge.chatgptwidescreen.com"><img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a><a href="https://edge.chatgptwidescreen.com">
+<a href="https://edge.chatgptwidescreen.com"><img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Review](https://edge.chatgptwidescreen.com) / 

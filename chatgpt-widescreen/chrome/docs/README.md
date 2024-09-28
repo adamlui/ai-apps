@@ -127,7 +127,7 @@ The userscript is compatible w/ the following browsers:
 
 <div align="center">
 
-<a href="https://chrome.chatgptwidescreen.com"><img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a><a href="https://edge.chatgptwidescreen.com">
+<a href="https://chrome.chatgptwidescreen.com"><img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Review](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm) / 
