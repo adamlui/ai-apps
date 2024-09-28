@@ -9,10 +9,9 @@ const config = {}, settings = {
                     config[key] = result[key] || false ; resolve()
     }))))},
 
-    save(key, value) {
-        const obj = {} ; obj[key] = value
-        chrome.storage.sync.set(obj) // save to Chrome
-        config[key] = value // save to memory
+    save(key, val) {
+        chrome.storage.sync.set({ [key]: val }) // save to Chrome
+        config[key] = val // save to memory
     }
 }
 
