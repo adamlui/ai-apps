@@ -14,7 +14,7 @@
     settings.site = site // to load/save active tab's settings
 
     // Import DATA
-    const app = await (await fetch(chrome.runtime.getURL('data/app.json'))).json()
+    const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
     const sites = Object.assign(Object.create(null), await new Promise(resolve =>
         chrome.runtime.sendMessage({ action: 'fetch.sites' }, resp => resolve(resp.json))))
 

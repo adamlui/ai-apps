@@ -1,7 +1,7 @@
 (async () => {
 
     // Import APP data
-    const app = await (await fetch(chrome.runtime.getURL('data/app.json'))).json()
+    const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
 
     // Launch ChatGPT on install
