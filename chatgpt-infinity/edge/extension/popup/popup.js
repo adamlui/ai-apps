@@ -171,8 +171,8 @@
     // Add Powered by chatgpt.js hover-listener
     const chatGPTjsHostPath = `${app.urls.cjsMediaHost}/images/badges/`,
           chatGPTjsImg = document.querySelector('.chatgpt-js img')
-    chatGPTjsImg.onmouseover = () => chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png'
-    chatGPTjsImg.onmouseout = () => chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png'
+    chatGPTjsImg.onmouseover = chatGPTjsImg.onmouseout = event => chatGPTjsImg.src = `${
+        chatGPTjsHostPath}powered-by-chatgpt.js${ event.type == 'mouseover' ? '' : '-faded' }.png`
 
     // Define FEEDBACK functions
 

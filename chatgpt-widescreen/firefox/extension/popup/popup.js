@@ -110,8 +110,8 @@
     const cjsLogo = dom.create.elem('img', {
         title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js`,
         src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png?main` })
-    cjsLogo.onmouseover = () => cjsLogo.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js.png`
-    cjsLogo.onmouseout = () => cjsLogo.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png`
+    cjsLogo.onmouseover = cjsLogo.onmouseout = event => cjsLogo.src = `${
+        app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js${ event.type == 'mouseover' ? '' : '-faded' }.png`
     cjsLogo.onclick = () => chrome.tabs.create({ url: app.urls.chatgptJS })
     cjsDiv.append(cjsLogo) ; footer.append(cjsDiv)
 
