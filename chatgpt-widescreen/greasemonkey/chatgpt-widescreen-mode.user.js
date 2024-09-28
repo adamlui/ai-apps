@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.26.3
+// @version             2024.9.28
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -240,7 +240,7 @@
 // @icon                https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon48.png?9a393be
 // @icon64              https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon64.png?9a393be
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.2/dist/chatgpt.min.js#sha256-Km9krlhXv0+GNYIkPGpWra6wVqBxlikiHuhsBIK8X0k=
-// @require             https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@19a2d60775b8b3786cf7cb5cfefce5762a567b9e/chrome/extension/lib/dom.js#sha256-iafta3AZiM49HbW/Wv6v5Qt4AKsPGo5nYtiWrmydJXM=
+// @require             https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@47779d6fbebaf40fd58e58f99df44ce2c8dd5956/chrome/extension/lib/dom.js#sha256-0bhycl7Nr7KvGksQRDWBMgooDl4os2GXpjKlHT2t+TY=
 // @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
 // @grant               GM_setValue
