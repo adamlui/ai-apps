@@ -1,11 +1,9 @@
-// Add on-install/update actions
+// Launch ChatGPT on install
 chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == 'install')
-        chrome.tabs.create({ url: 'https://chatgpt.com/' }) // open ChatGPT
+        chrome.tabs.create({ url: 'https://chatgpt.com/' })
 })
 
-// Relay popup.js msgs to all content.js
-chrome.runtime.onMessage.addListener(req =>
-    chrome.tabs.query({}, tabs =>
-        tabs.forEach(tab => chrome.tabs.sendMessage(tab.id, { ...req }))
-))
+// Sync settings to activated tabs
+chrome.tabs.onActivated.addListener(activeInfo =>
+    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'sync.storageToUI' }))
