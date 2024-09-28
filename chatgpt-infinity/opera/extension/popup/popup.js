@@ -6,6 +6,41 @@
     // Import APP data
     const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
 
+    // Define FUNCTIONS
+
+    function toTitleCase(str) {
+        const words = str.toLowerCase().split(' ')
+        for (let i = 0 ; i < words.length ; i++)
+            words[i] = words[i][0].toUpperCase() + words[i].slice(1)
+        return words.join(' ')
+    }
+
+    async function syncStorageToUI() {
+        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
+    }
+
+    function updateFade() {
+
+        // Updated toolbar icon
+        const iconDimensions = [16, 32, 64, 128], iconPaths = {}
+        iconDimensions.forEach(dimension => {
+            iconPaths[dimension] = '../icons/'
+                + (config.extensionDisabled ? 'faded/' : '')
+                + 'icon' + dimension + '.png'
+        })
+        chrome.action.setIcon({ path: iconPaths })
+
+        // Update menu contents
+        document.querySelectorAll('div.logo, div.menu-title, div.menu')
+            .forEach(elem => {
+                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
+                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
+            })
+    }
+
+    // Run MAIN routine
+
     // Localize labels
     let translationOccurred = false
     document.querySelectorAll('[data-locale]').forEach(elem => {
@@ -186,40 +221,5 @@
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width
     })})}
-
-    // Define MENU label function
-
-    function toTitleCase(str) {
-        const words = str.toLowerCase().split(' ')
-        for (let i = 0 ; i < words.length ; i++)
-            words[i] = words[i][0].toUpperCase() + words[i].slice(1)
-        return words.join(' ')
-    }
-
-    // Define SYNC functions
-
-    async function syncStorageToUI() {
-        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
-    }
-
-    function updateFade() {
-
-        // Updated toolbar icon
-        const iconDimensions = [16, 32, 64, 128], iconPaths = {}
-        iconDimensions.forEach(dimension => {
-            iconPaths[dimension] = '../icons/'
-                + (config.extensionDisabled ? 'faded/' : '')
-                + 'icon' + dimension + '.png'
-        })
-        chrome.action.setIcon({ path: iconPaths })
-
-        // Update menu contents
-        document.querySelectorAll('div.logo, div.menu-title, div.menu')
-            .forEach(elem => {
-                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
-                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
-            })
-    }
 
 })()
