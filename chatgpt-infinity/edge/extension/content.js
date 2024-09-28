@@ -20,6 +20,8 @@
         fromMsg = true
         if (req.action == 'notify') notify(req.msg, req.position)
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
+        else if (req.action == 'resetInSameChat') resetInSameChat()
+        else if (req.action == 'restartInNewChat') restartInNewChat()
         else if (req.action == 'updateToggleHTML') updateToggleHTML()
         else if (req.action == 'clickToggle') document.getElementById('infinity-toggle-label').click()        
         else if (req.action == 'sync.storageToUI') syncStorageToUI()
@@ -198,12 +200,12 @@
 
     // Define LIVE RESTART functions
 
-    restartInNewChat = () => { // eslint-disable-line no-undef
+    function restartInNewChat() {
         chatgpt.stop() ; document.getElementById('infinity-toggle-label').click() // toggle off
         setTimeout(() => { document.getElementById('infinity-toggle-label').click() }, 750) // toggle on
     }
 
-    resetInSameChat = async () => { // eslint-disable-line no-undef
+    async function resetInSameChat() {
         clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
         if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
             await settings.load('replyInterval')
