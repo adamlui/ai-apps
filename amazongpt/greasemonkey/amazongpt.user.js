@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.26.3
+// @version                2024.9.28
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -1010,10 +1010,9 @@
 
                         // Create/stylize knob
                         const knobSpan = document.createElement('span')
-                        const knobWidth = 11
                         const knobStyles = {
                             position: 'absolute', left: '1px', bottom: '1px',
-                            width: `${knobWidth}px`, height: `${knobWidth}px`, content: '""', borderRadius: '28px',
+                            width: '11px', height: '11px', content: '""', borderRadius: '28px',
                             transform: settingToggle.checked ? // init opposite final pos
                                 'translateX(0)' : 'translateX(14px) translateY(0)',
                             backgroundColor: 'white',  '-webkit-transition': '0.2s', transition: '0.2s'

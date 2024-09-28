@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.26
+// @version             2024.9.28
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -613,10 +613,9 @@
         // Create/stylize knob, append to switch
         const knobSpan = document.getElementById('auto-refresh-toggle-knob-span') || document.createElement('span')
         knobSpan.id = 'auto-refresh-toggle-knob-span'
-        const knobWidth = 12
         const knobStyles = {
             position: 'absolute', left: '3px', bottom: '1.25px',
-            width: `${knobWidth}px`, height: `${knobWidth}px`, content: '""', borderRadius: '28px',
+            width: '12px', height: '12px', content: '""', borderRadius: '28px',
             transform: toggleInput.checked ? // init opposite final pos
                 'translateX(0)' : 'translateX(13px) translateY(0)',
             backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'

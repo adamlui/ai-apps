@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.26.3
+// @version                  2024.9.28
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1381,10 +1381,9 @@
 
                         // Create/stylize knob
                         const knobSpan = document.createElement('span')
-                        const knobWidth = 11
                         const knobStyles = {
                             position: 'absolute', left: '1px', bottom: '1px',
-                            width: `${knobWidth}px`, height: `${knobWidth}px`, content: '""', borderRadius: '28px',
+                            width: '11px', height: '11px', content: '""', borderRadius: '28px',
                             transform: settingToggle.checked ? // init opposite final pos
                                 'translateX(0)' : 'translateX(14px) translateY(0)',
                             backgroundColor: 'white',  '-webkit-transition': '0.2s', transition: '0.2s'

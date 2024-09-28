@@ -113,10 +113,9 @@
             // Create/stylize knob, append to switch
             const knobSpan = document.getElementById('infinity-toggle-knob-span')
                           || dom.create.elem('span', { id: 'infinity-toggle-knob-span' })
-            const knobWidth = 12
             const knobStyles = {
                 position: 'absolute', left: '3px', bottom: '1.25px',
-                width: `${knobWidth}px`, height: `${knobWidth}px`, content: '""', borderRadius: '28px',
+                width: '12px', height: '12px', content: '""', borderRadius: '28px',
                 transform: toggleInput.checked ? // init opposite final pos
                     'translateX(0)' : 'translateX(13px) translateY(0)',
                 backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'

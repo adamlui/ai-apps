@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.27
+// @version             2024.9.28
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -579,10 +579,9 @@
         // Create/ID/stylize knob, append to switch
         const knobSpan = document.getElementById('autoclear-toggle-knob-span') || document.createElement('span')
         knobSpan.id = 'autoclear-toggle-knob-span'
-        const knobWidth = 12
         const knobStyles = {
             position: 'absolute', left: '3px', bottom: '1.25px',
-            width: `${knobWidth}px`, height: `${knobWidth}px`, content: '""', borderRadius: '28px',
+            width: '12px', height: '12px', content: '""', borderRadius: '28px',
             transform: toggleInput.checked ? // init opposite final pos
                 'translateX(0)' : 'translateX(13px) translateY(0)',
             backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'

@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.26.1
+// @version             2024.9.28
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -544,10 +544,9 @@
         // Create/ID/stylize knob, append to switch
         const knobSpan = document.getElementById('auto-talk-toggle-knob-span') || document.createElement('span')
         knobSpan.id = 'auto-talk-toggle-knob-span'
-        const knobWidth = 12
         const knobStyles = {
             position: 'absolute', left: '3px', bottom: '1.25px',
-            width: `${knobWidth}px`, height: `${knobWidth}px`, content: '""', borderRadius: '28px',
+            width: '12px', height: '12px', content: '""', borderRadius: '28px',
             transform: toggleInput.checked ? // init opposite final pos
                 'translateX(0)' : 'translateX(13px) translateY(0)',
             backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
