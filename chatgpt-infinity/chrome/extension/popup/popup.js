@@ -149,7 +149,7 @@
                     settings.save(key, !config[key]) ; sync.storageToUI()
                     notify(`${app.settings[key].label} ${/disabled/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
                 }
-            } else menuItemDiv.onclick = () => {
+            } else menuItemDiv.onclick = async () => {
                 if (key == 'replyLanguage') {
                     while (true) {
                         let replyLanguage = prompt(`${chrome.i18n.getMessage('prompt_updateReplyLang')}:`, config.replyLanguage)
@@ -163,10 +163,10 @@
                             siteAlert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!',
                                 chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyIn') + ' '
                                 + ( replyLanguage || chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
-                            chrome.tabs.query({ active: true, currentWindow: true }, tabs => { // check active tab
-                                if (new URL(tabs[0].url).hostname == 'chatgpt.com' && config.infinityMode) { // reboot active session
-                                    chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
-                            })
+                            if (config.infinityMode) { // reboot active session
+                                const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+                                chrome.tabs.sendMessage(activeTab.id, { action: 'restartInNewChat' })                    
+                            }
                             break
                         }
                     }
@@ -182,10 +182,10 @@
                                 + ( !replyTopic || re_all.test(str_replyTopic) ? chrome.i18n.getMessage('alert_onAllTopics')
                                                                             : chrome.i18n.getMessage('alert_onTopicOf')
                                                                                 + ' ' + str_replyTopic ) + '!')
-                        chrome.tabs.query({ active: true, currentWindow: true }, tabs => { // check active tab
-                            if (new URL(tabs[0].url).hostname == 'chatgpt.com' && config.infinityMode) { // reboot active session
-                                chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
-                        })
+                        if (config.infinityMode) { // reboot active session
+                            const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+                            chrome.tabs.sendMessage(activeTab.id, { action: 'restartInNewChat' })                    
+                        }
                     }
                 } else if (key == 'replyInterval') {
                     while (true) {
@@ -197,10 +197,10 @@
                             siteAlert(chrome.i18n.getMessage('alert_replyIntUpdated') + '!',
                                 chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyEvery')
                                 + ' ' + replyInterval + ' ' + chrome.i18n.getMessage('unit_seconds') + '.')
-                            chrome.tabs.query({ active: true, currentWindow: true }, tabs => { // check active tab
-                                if (new URL(tabs[0].url).hostname != 'chatgpt.com' && config.infinityMode) // reboot active session
-                                    chrome.tabs.sendMessage(tabs[0].id, { action: 'resetInSameChat' })
-                            })
+                            if (config.infinityMode) { // reboot active session
+                                const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+                                chrome.tabs.sendMessage(activeTab.id, { action: 'resetInSameChat' })                    
+                            }
                             break
                         }
                     }
