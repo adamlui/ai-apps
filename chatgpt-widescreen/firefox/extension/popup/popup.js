@@ -10,8 +10,8 @@
 
     // Import DATA
     const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
-    const sites = Object.assign(Object.create(null), await new Promise(resolve =>
-        chrome.runtime.sendMessage({ action: 'fetch.sites' }, resp => resolve(resp.json))))
+    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
+    const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/sites.json`)).json())
 
     // Init SETTINGS props
     Object.assign(app, { settings: {
@@ -107,14 +107,13 @@
 
     // Create/append CHATGPT.JS footer logo
     const cjsDiv = dom.create.elem('div', { class: 'chatgpt-js' })
-    const cjsAnchor = dom.create.anchor(app.urls.chatgptJS, null, {
-        title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js` })
     const cjsLogo = dom.create.elem('img', {
+        title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js`,
         src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png?main` })
     cjsLogo.onmouseover = () => cjsLogo.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js.png`
     cjsLogo.onmouseout = () => cjsLogo.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png`
-    cjsDiv.onclick = () => window.close()
-    cjsAnchor.append(cjsLogo) ; cjsDiv.append(cjsAnchor) ; footer.append(cjsDiv)
+    cjsLogo.onclick = () => chrome.tabs.create({ url: app.urls.chatgptJS })
+    cjsDiv.append(cjsLogo) ; footer.append(cjsDiv)
 
     // Create/append SUPPORT footer button
     const supportSpan = dom.create.elem('span', {
@@ -123,7 +122,7 @@
     const supportIcon = dom.create.elem('img', {
         width: 15, height: 13, style: 'margin-bottom: 0.04rem',
         src: `${app.urls.mediaHost}/images/icons/question-mark/icon16.png?4adfbbd` })
-    supportSpan.onclick = () => { chrome.tabs.create({ url: app.urls.support }) ; window.close() }
+    supportSpan.onclick = () => chrome.tabs.create({ url: app.urls.support })
     supportSpan.append(supportIcon) ; footer.append(supportSpan)
 
     // Create/append RELATED APPS footer button
@@ -133,7 +132,7 @@
     const moreAppsIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' })
     const moreAppsIconPath = dom.create.svgElem('path', {
         d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })   
-    moreAppsSpan.onclick = () => { chrome.tabs.create({ url: app.urls.relatedApps }) ; window.close() }
+    moreAppsSpan.onclick = () => chrome.tabs.create({ url: app.urls.relatedApps })
     moreAppsIcon.append(moreAppsIconPath) ; moreAppsSpan.append(moreAppsIcon) ; footer.append(moreAppsSpan)
 
     // Define FEEDBACK functions

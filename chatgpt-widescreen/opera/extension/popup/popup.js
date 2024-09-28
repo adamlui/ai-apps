@@ -107,13 +107,13 @@
 
     // Create/append CHATGPT.JS footer logo
     const cjsDiv = dom.create.elem('div', { class: 'chatgpt-js' })
-    const cjsAnchor = dom.create.anchor(app.urls.chatgptJS, null, {
-        title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js` })
     const cjsLogo = dom.create.elem('img', {
+        title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js`,
         src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png?main` })
     cjsLogo.onmouseover = () => cjsLogo.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js.png`
     cjsLogo.onmouseout = () => cjsLogo.src = `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png`
-    cjsAnchor.append(cjsLogo) ; cjsDiv.append(cjsAnchor) ; footer.append(cjsDiv)
+    cjsLogo.onclick = () => chrome.tabs.create({ url: app.urls.chatgptJS })
+    cjsDiv.append(cjsLogo) ; footer.append(cjsDiv)
 
     // Create/append SUPPORT footer button
     const supportSpan = dom.create.elem('span', {
