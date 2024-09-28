@@ -173,7 +173,7 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 
 <br>
 
-[讨论](https://chatgptwidescreen.com/discuss) / 
+[讨论](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
 [更多 ChatGPT 插件](https://github.com/adamlui/chatgpt-apps)
 
 </div>

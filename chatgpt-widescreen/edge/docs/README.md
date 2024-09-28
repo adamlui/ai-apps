@@ -18,7 +18,7 @@
 
 <a href="https://edge.chatgptwidescreen.com"><img height=70 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
 <br>
-[Discuss](https://chatgptwidescreen.com/discuss) / 
+[Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
 [Review](https://edge.chatgptwidescreen.com) / 
 [Contact author](https://github.com/adamlui)
   
@@ -127,7 +127,7 @@ The userscript is compatible w/ the following browsers:
 
 <a href="https://edge.chatgptwidescreen.com"><img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
 <br>
-[Discuss](https://chatgptwidescreen.com/discuss) / 
+[Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
 [Review](https://edge.chatgptwidescreen.com) / 
 [More ChatGPT add-ons](https://github.com/adamlui/chatgpt-addons)
 

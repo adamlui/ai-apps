@@ -115,7 +115,7 @@ The userscript is compatible w/ the following browsers:
 
 <a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/"><img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 <br>
-[Discuss](https://chatgptwidescreen.com/discuss) / 
+[Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
 [Review](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm) / 
 [More ChatGPT add-ons](https://github.com/adamlui/chatgpt-apps)
 
