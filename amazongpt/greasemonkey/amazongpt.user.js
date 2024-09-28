@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.28
+// @version                2024.9.28.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -600,14 +600,14 @@
         appDiv.append(alertP)
     }
 
-    function notify(msg, position = '', notifDuration = '', shadow = 'shadow') {
+    function notify(msg, pos = '', notifDuration = '', shadow = 'shadow') {
 
         // Strip state word to append styled one later
         const foundState = menu.state.words.find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(msg, position, notifDuration, shadow)
+        chatgpt.notify(msg, pos, notifDuration, shadow)
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Prepend app icon

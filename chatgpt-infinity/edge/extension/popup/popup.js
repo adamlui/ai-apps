@@ -17,8 +17,8 @@
         chrome.tabs.sendMessage(activeTab.id, req)
     }
 
-    function notify(msg, position) {
-        sendMsgToActiveTab({ action: 'notify', msg: msg, position: position || 'bottom-right' })}
+    function notify(msg) {
+        sendMsgToActiveTab({ action: 'notify', msg: msg, pos: 'bottom-right' })}
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         sendMsgToActiveTab({

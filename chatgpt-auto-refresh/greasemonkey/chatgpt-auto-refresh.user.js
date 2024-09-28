@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.28
+// @version             2024.9.28.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -493,7 +493,7 @@
 
     // Define FEEDBACK functions
 
-    function notify(msg, position = '', notifDuration = '', shadow = '') {
+    function notify(msg, pos = '', notifDuration = '', shadow = '') {
         if (config.notifDisabled && !msg.includes(app.msgs.menuLabel_modeNotifs)) return
 
         // Strip state word to append colored one later
@@ -501,7 +501,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${app.symbol} ${msg}`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
+        chatgpt.notify(`${app.symbol} ${msg}`, pos, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Append styled state word

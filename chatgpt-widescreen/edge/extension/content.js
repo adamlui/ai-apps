@@ -23,14 +23,14 @@
 
     // Add CHROME MSG listener for background/popup requests to sync modes/settings
     chrome.runtime.onMessage.addListener(req => {
-        if (req.action == 'notify') notify(req.msg, req.position)
+        if (req.action == 'notify') notify(req.msg, req.pos)
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
         else if (req.action == 'sync.storageToUI') sync.storageToUI()
     })
 
     // Define FEEDBACK functions
 
-    function notify(msg, position = '', notifDuration = '', shadow = '') {
+    function notify(msg, pos = '', notifDuration = '', shadow = '') {
         if (config.notifDisabled && !msg.includes(chrome.i18n.getMessage('menuLabel_modeNotifs'))) return
 
         // Strip state word to append colored one later
@@ -38,7 +38,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${app.symbol} ${msg}`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
+        chatgpt.notify(`${app.symbol} ${msg}`, pos, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Append styled state word

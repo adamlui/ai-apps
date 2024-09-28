@@ -18,7 +18,7 @@
     let fromMsg = false // to prevent double notifications blocked by popup
     chrome.runtime.onMessage.addListener(req => {
         fromMsg = true
-        if (req.action == 'notify') notify(req.msg, req.position)
+        if (req.action == 'notify') notify(req.msg, req.pos)
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
         else if (req.action == 'resetInSameChat') resetInSameChat()
         else if (req.action == 'restartInNewChat') restartInNewChat()
@@ -40,14 +40,14 @@
 
     // Define FEEDBACK functions
 
-    function notify(msg, position = '', notifDuration = '', shadow = '') {
+    function notify(msg, pos = '', notifDuration = '', shadow = '') {
 
         // Strip state word to append colored one later
         const foundState = ['ON', 'OFF'].find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${app.symbol} ${msg}`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
+        chatgpt.notify(`${app.symbol} ${msg}`, pos, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Append styled state word
