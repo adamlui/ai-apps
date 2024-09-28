@@ -79,7 +79,7 @@
                                        || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
                                                                     sites.chatgpt.selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
                     const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
-                    inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -43 }px` // expand to close gap w/ buttons
+                    inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -60 }px` // expand to close gap w/ buttons
                     inputArea.style.width = '100%' // rid h-scrollbar
                 }
             } else if (site == 'poe') {
