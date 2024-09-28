@@ -41,8 +41,7 @@
 
     // Sync toggle states + menu labels
     const re_all = new RegExp('^(' + chrome.i18n.getMessage('menuLabel_all') + '|all|any|every)$', 'i')
-    settings.load(['autoScrollDisabled', 'autoStart', 'infinityMode', 'replyInterval',
-                   'replyLanguage', 'replyTopic', 'toggleHidden', 'userLanguage'])
+    settings.load(['userLanguage', ...settings.availKeys])
         .then(() => { // restore toggle states
             infinityModeToggle.checked = config.infinityMode
             autoStartToggle.checked = config.autoStart

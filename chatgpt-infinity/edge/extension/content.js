@@ -30,7 +30,7 @@
     // Init SETTINGS
     settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
     settings.save('infinityMode', false) // to reset popup toggle
-    await settings.load(['autoScrollDisabled', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden'])
+    await settings.load(settings.availKeys)
     if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.replyTopic) settings.save('replyTopic', 'ALL') // init reply topic if unset
     if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
@@ -214,8 +214,7 @@
     // Define SYNC function
 
     async function syncStorageToUI() { // from popup.js toggle + service worker actve-tab listeners
-        await settings.load(['autoScrollDisabled', 'autoStart', 'extensionDisabled',
-            'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden'])
+        await settings.load(settings.availKeys)
         insertToggle() ; updateToggleHTML() // hide/show sidebar toggle based on latest setting
     }
 
