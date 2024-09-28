@@ -36,7 +36,7 @@
 <div align="center">
 
 <a href="https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1">
-    <img src="https://media.chatgptwidescreen.com/images/screenshots/en/demo-vid/thumbnail.png">
+    <img src="https://media.chatgptwidescreen.com/images/screenshots/demo-vid/thumbnail.png">
 </a>
 
 </div><br>
