@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.25.1
+// @version             2024.9.28
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -218,6 +218,7 @@
 // @compatible          whale
 // @compatible          kiwi
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.2/dist/chatgpt.min.js#sha256-Km9krlhXv0+GNYIkPGpWra6wVqBxlikiHuhsBIK8X0k=
+// @require             https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity@a0d6630c225f26ae7cd5ccd1fda39bc45177bebc/chrome/extension/lib/dom.js#sha256-pbJ15rhD5UtxxSCn+L0ybKnlrT3SNm3t8Dc99qtN4KQ=
 // @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -633,19 +634,19 @@
     function updateToggleHTML() {
 
         // Create/size/position navicon
-        const navicon = document.getElementById('infinity-toggle-navicon') || document.createElement('img')
-        navicon.id = 'infinity-toggle-navicon'
+        const navicon = document.getElementById('infinity-toggle-navicon')
+                     || dom.create.elem('img', { id: 'infinity-toggle-navicon' })
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
-        const toggleInput = document.getElementById('infinity-toggle-input') || document.createElement('input')
-        toggleInput.id = 'infinity-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
+        const toggleInput = document.getElementById('infinity-toggle-input')
+                         || dom.create.elem('input', { id: 'infinity-toggle-input', type: 'checkbox', disabled: true })
         toggleInput.style.display = 'none' ; toggleInput.checked = config.infinityMode
 
         // Create/ID/stylize switch
-        const switchSpan = document.getElementById('infinity-switch-span') || document.createElement('span')
-        switchSpan.id = 'infinity-switch-span'
+        const switchSpan = document.getElementById('infinity-switch-span')
+                        || dom.create.elem('span', { id: 'infinity-switch-span' })
         const switchStyles = {
             position: 'relative', left: `${ env.browser.isMobile ? 211 : !ui.firstLink ? 160 : 154 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
@@ -655,8 +656,8 @@
         Object.assign(switchSpan.style, switchStyles)
 
         // Create/stylize knob, append to switch
-        const knobSpan = document.getElementById('infinity-toggle-knob-span') || document.createElement('span')
-        knobSpan.id = 'infinity-toggle-knob-span'
+        const knobSpan = document.getElementById('infinity-toggle-knob-span')
+                      || dom.create.elem('span', { id: 'infinity-toggle-knob-span' })
         const knobWidth = 12
         const knobStyles = {
             position: 'absolute', left: '3px', bottom: '1.25px',
@@ -668,8 +669,8 @@
         Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
         // Create/stylize/fill label
-        const toggleLabel = document.getElementById('infinity-toggle-label') || document.createElement('label')
-        toggleLabel.id = 'infinity-toggle-label'
+        const toggleLabel = document.getElementById('infinity-toggle-label')
+                         || dom.create.elem('label', { id: 'infinity-toggle-label' })
         if (!ui.firstLink) { // add font size/weight since no ui.firstLink to borrow from
             toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
         toggleLabel.style.marginLeft = `-${ !ui.firstLink ? 23 : 41 }px` // left-shift to navicon

@@ -6,8 +6,9 @@
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
     // Import LIBS
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js')),
-          { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js')),
+          { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
+    await import(chrome.runtime.getURL('lib/dom.js'))
 
     // Import DATA
     const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
@@ -88,19 +89,19 @@
         else {
 
             // Create/size/position navicon
-            const navicon = document.getElementById('infinity-toggle-navicon') || document.createElement('img')
-            navicon.id = 'infinity-toggle-navicon'
+            const navicon = document.getElementById('infinity-toggle-navicon')
+                         || dom.create.elem('img', { id: 'infinity-toggle-navicon' })
             navicon.style.width = navicon.style.height = '1.25rem'
             navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
 
             // Create/ID/disable/hide/update checkbox
-            const toggleInput = document.getElementById('infinity-toggle-input') || document.createElement('input')
-            toggleInput.id = 'infinity-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
+            const toggleInput = document.getElementById('infinity-toggle-input')
+                             || dom.create.elem('input', { id: 'infinity-toggle-input', type: 'checkbox', disabled: true })
             toggleInput.style.display = 'none' ; toggleInput.checked = config.infinityMode
 
             // Create/ID/stylize switch
-            const switchSpan = document.getElementById('infinity-switch-span') || document.createElement('span')
-            switchSpan.id = 'infinity-switch-span'
+            const switchSpan = document.getElementById('infinity-switch-span')
+                            || dom.create.elem('span', { id: 'infinity-switch-span' })
             const switchStyles = {
                 position: 'relative', left: `${ env.browser.isMobile ? 211 : !ui.firstLink ? 160 : 154 }px`,
                 backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
@@ -110,8 +111,8 @@
             Object.assign(switchSpan.style, switchStyles)
 
             // Create/stylize knob, append to switch
-            const knobSpan = document.getElementById('infinity-toggle-knob-span') || document.createElement('span')
-            knobSpan.id = 'infinity-toggle-knob-span'
+            const knobSpan = document.getElementById('infinity-toggle-knob-span')
+                          || dom.create.elem('span', { id: 'infinity-toggle-knob-span' })
             const knobWidth = 12
             const knobStyles = {
                 position: 'absolute', left: '3px', bottom: '1.25px',
@@ -123,8 +124,8 @@
             Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
             // Create/stylize/fill label
-            const toggleLabel = document.getElementById('infinity-toggle-label') || document.createElement('label')
-            toggleLabel.id = 'infinity-toggle-label'
+            const toggleLabel = document.getElementById('infinity-toggle-label')
+                             || dom.create.elem('label', { id: 'infinity-toggle-label' })
             if (!ui.firstLink) { // add font size/weight since no ui.firstLink to borrow from
                 toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
             toggleLabel.style.marginLeft = `-${ !ui.firstLink ? 23 : 41 }px` // left-shift to navicon
@@ -237,8 +238,7 @@
     let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
     if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
         if (!tweaksStyle) { // outright missing, create/id/attr/append it first
-            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
-            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
+            tweaksStyle = dom.create.elem('style', { id: 'tweaks-style', 'last-updated': tweaksStyleUpdated.toString() })
             document.head.append(tweaksStyle)
         }
         tweaksStyle.innerText = (
