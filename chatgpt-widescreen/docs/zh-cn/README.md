@@ -83,7 +83,7 @@
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"><img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
 
-1. 安装 ChatGPT 宽屏模式扩展 ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com))
+1. 安装 ChatGPT 宽屏模式扩展 ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com), [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/))
 
 2. 访问 [chatgpt.com](https://chatgpt.com), [perplexity.ai](https://perplexity.ai), 或 [poe.com](https://poe.com)，聊天栏已添加模式切换！
 

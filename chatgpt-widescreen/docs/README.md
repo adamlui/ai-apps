@@ -83,7 +83,7 @@
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"><img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> Browser extension:
 
-1. Install ChatGPT Widescreen Mode extension ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com))
+1. Install ChatGPT Widescreen Mode extension ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com), [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/))
 
 2. Visit [chatgpt.com](https://chatgpt.com), [perplexity.ai](https://perplexity.ai), or [poe.com](https://poe.com) & mode toggles are added to chatbar!
 
