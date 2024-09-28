@@ -5,8 +5,8 @@
             <img height=14 src="https://media.chatgptwidescreen.com/images/icons/earth/black/icon32.svg">
         </picture>
         &nbsp;English |
-        <a href="docs/zh-cn/SECURITY.md">简体中文</a> |
-        <a href="docs/hi/SECURITY.md">हिंदी</a>
+        <a href="zh-cn/SECURITY.md">简体中文</a> |
+        <a href="hi/SECURITY.md">हिंदी</a>
     </h6>
 </div>
 
