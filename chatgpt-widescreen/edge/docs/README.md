@@ -107,34 +107,6 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
-## 🌐 Compatibility
-
-ChatGPT Widescreen Mode is also available as an [Chrome add-on](https://chrome.chatgptwidescreen.com), a [Firefox add-on](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/) and a [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com) (via [Tampermonkey](https://www.tampermonkey.net)).
-
-The userscript is compatible w/ the following browsers:
-
-- [Google Chrome](https://www.chrome.com)
-- [Mozilla Firefox](https://www.firefox.com)
-- [Microsoft Edge](https://www.microsoft.com/edge)
-- [Opera](https://www.opera.com)
-- [Brave](https://brave.com)
-- [Vivaldi](https://vivaldi.com)
-- [LibreWolf](https://librewolf.net)
-- [Ghost](https://ghostbrowser.com)
-- [QQ](https://browser.qq.com)
-
-<div align="center">
-
-<a href="https://edge.chatgptwidescreen.com"><img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
-<br>
-[Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
-[Review](https://edge.chatgptwidescreen.com) / 
-[More ChatGPT add-ons](https://github.com/adamlui/chatgpt-addons)
-
-</div>
-
-<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
-
 ## 🧠 Contributors
 
 This extension exists thanks to code, translations, issues & ideas from the following contributors:
