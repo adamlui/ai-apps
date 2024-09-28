@@ -149,14 +149,14 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 ChatGPT Widescreen Mode is compatible w/ the following browsers:
 
 - **[Google Chrome](https://www.chrome.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[Mozilla Firefox](https://www.firefox.com)** (via [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
+- **[Mozilla Firefox](https://www.firefox.com)** (via [Firefox add-on](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
 - **[Microsoft Edge](https://www.microsoft.com/edge)** (via [Edge add-on](https://edge.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
 - **[Opera](https://www.opera.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
 - **[Brave](https://brave.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
 - **[Vivaldi](https://vivaldi.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
 - **[LibreWolf](https://librewolf.net)** (via [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
 - **[Ghost](https://ghostbrowser.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[QQ](https://browser.qq.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
+- **[QQ](https://browser.qq.com)** (via [Firefox add-on](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/) or [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
 
 <div align="center">
 
