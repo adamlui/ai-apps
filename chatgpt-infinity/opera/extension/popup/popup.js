@@ -26,7 +26,7 @@
     masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
         infinityModeToggle.checked = false // always disable Infinity Mode on main toggle
-        syncExtension() ; updateFade()
+        syncStorageToUI() ; updateFade()
     }
 
     // Locate settings elements
@@ -70,7 +70,7 @@
 
     // Add 'Auto-Start' click-listeners
     autoStartToggle.onchange = () => {
-        settings.save('autoStart', !config.autoStart) ; syncExtension()        
+        settings.save('autoStart', !config.autoStart) ; syncStorageToUI()        
         notify(`${chrome.i18n.getMessage('menuLabel_autoStart')} ${ config.autoStart ? 'ON' : 'OFF' }`)
     }
     autoStartDiv.onclick = event => {
@@ -80,7 +80,7 @@
 
     // Add 'Toggle Visibility' click-listeners
     toggleVisToggle.onchange = () => {
-        settings.save('toggleHidden', !config.toggleHidden) ; syncExtension()
+        settings.save('toggleHidden', !config.toggleHidden) ; syncStorageToUI()
         notify(`${chrome.i18n.getMessage('menuLabel_toggleVis')} ${ !config.toggleHidden ? 'ON' : 'OFF' }`)
     }
     toggleVisDiv.onclick = event => {
@@ -90,7 +90,7 @@
 
     // Add 'Auto-Scroll' click-listeners
     autoScrollToggle.onchange = () => {
-        settings.save('autoScrollDisabled', !config.autoScrollDisabled) ; syncExtension()        
+        settings.save('autoScrollDisabled', !config.autoScrollDisabled) ; syncStorageToUI()        
         notify(`${chrome.i18n.getMessage('menuLabel_autoScroll')} ${ !config.autoScrollDisabled ? 'ON' : 'OFF' }`)
     }
     autoScrollDiv.onclick = event => {
@@ -199,7 +199,7 @@
 
     // Define SYNC functions
 
-    function syncExtension() { chrome.runtime.sendMessage({ action: 'sync.extension' }) }
+    function syncStorageToUI() { chrome.runtime.sendMessage({ action: 'sync.storageToUI' }) }
 
     function updateFade() {
 

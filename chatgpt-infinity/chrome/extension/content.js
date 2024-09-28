@@ -21,7 +21,7 @@
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
         else if (req.action == 'updateToggleHTML') updateToggleHTML()
         else if (req.action == 'clickToggle') document.getElementById('infinity-toggle-label').click()        
-        else if (req.action == 'sync.extension') syncExtension()
+        else if (req.action == 'sync.storageToUI') syncStorageToUI()
     })
 
     // Init ENV info
@@ -213,7 +213,7 @@
 
     // Define SYNC function
 
-    syncExtension = async () => { // settings + sidebar toggle visibility from popup.js + service worker listeners
+    async function syncStorageToUI() { // from popup.js toggle + service worker actve-tab listeners
         await settings.load(['autoScrollDisabled', 'autoStart', 'extensionDisabled',
             'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden'])
         insertToggle() ; updateToggleHTML() // hide/show sidebar toggle based on latest setting
