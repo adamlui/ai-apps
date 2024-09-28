@@ -46,28 +46,30 @@
                 action: 'notify', msg: msg, position: position || 'bottom-right' })
     )}
 
-    async function syncStorageToUI() {
-        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
-    }
+    const sync = {
+        fade() {
+
+            // Update toolbar icon
+            const iconDimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
+            iconDimensions.forEach(dimension =>
+                iconPaths[dimension] = '../icons/'
+                    + (config.extensionDisabled ? 'faded/' : '')
+                    + 'icon' + dimension + '.png'
+            )
+            chrome.action.setIcon({ path: iconPaths })
     
-    function updateFade() {
+            // Update menu contents
+            document.querySelectorAll('div.logo, div.menu-title, div.menu')
+                .forEach(elem => {
+                    elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
+                    elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
+                })
+        },
 
-        // Update toolbar icon
-        const iconDimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
-        iconDimensions.forEach(dimension =>
-            iconPaths[dimension] = '../icons/'
-                + (config.extensionDisabled ? 'faded/' : '')
-                + 'icon' + dimension + '.png'
-        )
-        chrome.action.setIcon({ path: iconPaths })
-
-        // Update menu contents
-        document.querySelectorAll('div.logo, div.menu-title, div.menu')
-            .forEach(elem => {
-                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
-                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
-            })
+        async storageToUI() {
+            const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+            chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
+        }
     }
 
     // Run MAIN routine
@@ -75,10 +77,10 @@
     // Init MASTER TOGGLE
     const masterToggle = document.querySelector('.main-toggle input')
     await settings.load('extensionDisabled')
-    masterToggle.checked = !config.extensionDisabled ; updateFade()
+    masterToggle.checked = !config.extensionDisabled ; sync.fade()
     masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
-        syncStorageToUI() ; updateFade()
+        sync.storageToUI() ; sync.fade()
     }
     
     // Create CHILD TOGGLES for matched pages
@@ -115,13 +117,13 @@
                 menuInput.onclick = menuSlider.onclick = event => // prevent double toggle
                     event.stopImmediatePropagation()
                 menuInput.onchange = () => {
-                    settings.save(key, !config[key]) ; syncStorageToUI()
+                    settings.save(key, !config[key]) ; sync.storageToUI()
                     notify(`${app.settings[key].label} ${/disabled/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
                 }
             }
         })
 
-        updateFade() // in case master toggle off
+        sync.fade() // in case master toggle off
     }
 
     // LOCALIZE labels

@@ -15,28 +15,30 @@
         return words.join(' ')
     }
 
-    async function syncStorageToUI() {
-        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
-    }
+    const sync = {
+        fade() {
 
-    function updateFade() {
-
-        // Updated toolbar icon
-        const iconDimensions = [16, 32, 64, 128], iconPaths = {}
-        iconDimensions.forEach(dimension => {
-            iconPaths[dimension] = '../icons/'
-                + (config.extensionDisabled ? 'faded/' : '')
-                + 'icon' + dimension + '.png'
-        })
-        chrome.action.setIcon({ path: iconPaths })
-
-        // Update menu contents
-        document.querySelectorAll('div.logo, div.menu-title, div.menu')
-            .forEach(elem => {
-                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
-                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
+            // Updated toolbar icon
+            const iconDimensions = [16, 32, 64, 128], iconPaths = {}
+            iconDimensions.forEach(dimension => {
+                iconPaths[dimension] = '../icons/'
+                    + (config.extensionDisabled ? 'faded/' : '')
+                    + 'icon' + dimension + '.png'
             })
+            chrome.action.setIcon({ path: iconPaths })
+    
+            // Update menu contents
+            document.querySelectorAll('div.logo, div.menu-title, div.menu')
+                .forEach(elem => {
+                    elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
+                    elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
+                })
+        },
+
+        async storageToUI() {
+            const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+            chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
+        }
     }
 
     // Run MAIN routine
@@ -57,11 +59,11 @@
     // Init master toggle
     const masterToggle = document.querySelector('input')
     settings.load('extensionDisabled').then(() => { // init toggle state, update greyness
-        masterToggle.checked = !config.extensionDisabled ; updateFade() })
+        masterToggle.checked = !config.extensionDisabled ; sync.fade() })
     masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
         infinityModeToggle.checked = false // always disable Infinity Mode on main toggle
-        syncStorageToUI() ; updateFade()
+        sync.storageToUI() ; sync.fade()
     }
 
     // Locate settings elements
@@ -104,7 +106,7 @@
 
     // Add 'Auto-Start' click-listeners
     autoStartToggle.onchange = () => {
-        settings.save('autoStart', !config.autoStart) ; syncStorageToUI()        
+        settings.save('autoStart', !config.autoStart) ; sync.storageToUI()        
         notify(`${chrome.i18n.getMessage('menuLabel_autoStart')} ${ config.autoStart ? 'ON' : 'OFF' }`)
     }
     autoStartDiv.onclick = event => {
@@ -114,7 +116,7 @@
 
     // Add 'Toggle Visibility' click-listeners
     toggleVisToggle.onchange = () => {
-        settings.save('toggleHidden', !config.toggleHidden) ; syncStorageToUI()
+        settings.save('toggleHidden', !config.toggleHidden) ; sync.storageToUI()
         notify(`${chrome.i18n.getMessage('menuLabel_toggleVis')} ${ !config.toggleHidden ? 'ON' : 'OFF' }`)
     }
     toggleVisDiv.onclick = event => {
@@ -124,7 +126,7 @@
 
     // Add 'Auto-Scroll' click-listeners
     autoScrollToggle.onchange = () => {
-        settings.save('autoScrollDisabled', !config.autoScrollDisabled) ; syncStorageToUI()        
+        settings.save('autoScrollDisabled', !config.autoScrollDisabled) ; sync.storageToUI()        
         notify(`${chrome.i18n.getMessage('menuLabel_autoScroll')} ${ !config.autoScrollDisabled ? 'ON' : 'OFF' }`)
     }
     autoScrollDiv.onclick = event => {
