@@ -24,13 +24,13 @@
 
 <br>
 
-<a href="https://chrome.chatgptwidescreen.com" target="_blank">
+<a href="https://chrome.chatgptwidescreen.com">
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
-<a href="https://edge.chatgptwidescreen.com" target="_blank">
+<a href="https://edge.chatgptwidescreen.com">
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/" target="_blank">
+<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/">
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
-<a href="https://greasyfork.chatgptwidescreen.com" target="_blank">
+<a href="https://greasyfork.chatgptwidescreen.com">
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>
@@ -250,7 +250,7 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 [自述文件](https://github.com/adamlui/chatgpt-auto-talk/tree/main/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-auto-talk/discussions)
 
-### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
+### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
 > 为 Brave Search 添加 AI 答案（由 GPT-4o 提供支持！）
 <br>[安装](https://docs.bravegpt.com/#-installation) /

@@ -32,11 +32,11 @@
 
 <br>
 
-<a href="https://chrome.chatgptinfinity.com" target="_blank">
+<a href="https://chrome.chatgptinfinity.com">
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
-<a href="https://edge.chatgptinfinity.com" target="_blank">
+<a href="https://edge.chatgptinfinity.com">
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
-<a href="https://greasyfork.chatgptinfinity.com" target="_blank">
+<a href="https://greasyfork.chatgptinfinity.com">
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>

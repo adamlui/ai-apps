@@ -39,7 +39,7 @@
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/autoclear-chatgpt-history/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=21> [BraveGPT](../../bravegpt) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
+### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=21> [BraveGPT](../../bravegpt) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
 > 为 Brave Search 添加 AI 答案（由 GPT-4o 提供支持！）
 <br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/bravegpt/#-installation) /
@@ -88,7 +88,7 @@
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=20> [DuckDuckGPT](../../duckduckgpt) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
+### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=20> [DuckDuckGPT](../../duckduckgpt) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
 
 > 为 DuckDuckGo 添加 AI 答案（由 GPT-4o 提供支持！）
 <br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/duckduckgpt/#-installation) /
