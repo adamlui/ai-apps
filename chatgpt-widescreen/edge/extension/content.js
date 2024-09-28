@@ -22,10 +22,10 @@
     await settings.load('extensionDisabled', ...sites[site].availFeatures)
 
     // Add CHROME MSG listener for background/popup requests to sync modes/settings
-    chrome.runtime.onMessage.addListener(request => {
-        if (request.action == 'notify') notify(request.msg, request.position)
-        else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
-        else if (request.action == 'sync.storageToUI') sync.storageToUI()
+    chrome.runtime.onMessage.addListener(req => {
+        if (req.action == 'notify') notify(req.msg, req.position)
+        else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
+        else if (req.action == 'sync.storageToUI') sync.storageToUI()
     })
 
     // Define FEEDBACK functions

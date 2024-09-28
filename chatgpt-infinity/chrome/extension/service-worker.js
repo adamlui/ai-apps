@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener(details => {
 })
 
 // Relay popup.js msgs to all content.js
-chrome.runtime.onMessage.addListener(request =>
+chrome.runtime.onMessage.addListener(req =>
     chrome.tabs.query({}, tabs =>
-        tabs.forEach(tab => chrome.tabs.sendMessage(tab.id, { ...request }))
+        tabs.forEach(tab => chrome.tabs.sendMessage(tab.id, { ...req }))
 ))

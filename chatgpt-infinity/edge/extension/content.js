@@ -15,13 +15,13 @@
 
     // Add CHROME MSG listener
     let fromMsg = false // to prevent double notifications blocked by popup
-    chrome.runtime.onMessage.addListener(request => {
+    chrome.runtime.onMessage.addListener(req => {
         fromMsg = true
-        if (request.action == 'notify') notify(request.msg, request.position)
-        else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
-        else if (request.action == 'updateToggleHTML') updateToggleHTML()
-        else if (request.action == 'clickToggle') document.getElementById('infinity-toggle-label').click()        
-        else if (request.action == 'sync.extension') syncExtension()
+        if (req.action == 'notify') notify(req.msg, req.position)
+        else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
+        else if (req.action == 'updateToggleHTML') updateToggleHTML()
+        else if (req.action == 'clickToggle') document.getElementById('infinity-toggle-label').click()        
+        else if (req.action == 'sync.extension') syncExtension()
     })
 
     // Init ENV info
