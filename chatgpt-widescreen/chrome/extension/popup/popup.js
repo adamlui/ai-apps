@@ -68,7 +68,7 @@
                 })
         },
 
-        async storageToUI() { sendMsgToActiveTab({ action: 'sync.storageToUI' })}
+        storageToUI() { sendMsgToActiveTab({ action: 'sync.storageToUI' })}
     }
 
     // Run MAIN routine

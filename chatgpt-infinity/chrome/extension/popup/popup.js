@@ -45,7 +45,7 @@
                 })
         },
 
-        async storageToUI() { sendMsgToActiveTab({ action: 'sync.storageToUI' })}
+        storageToUI() { sendMsgToActiveTab({ action: 'sync.storageToUI' })}
     }
 
     function toTitleCase(str) {
@@ -106,7 +106,7 @@
         menuItemDiv.onclick = () => menuInput.click()
         menuInput.onclick = menuSlider.onclick = event => // prevent double toggle
             event.stopImmediatePropagation()
-        menuInput.onchange = async () => {
+        menuInput.onchange = () => {
             settings.save('infinityMode', !config.infinityMode) ; sync.storageToUI()
             sendMsgToActiveTab({ action: 'clickToggle' })
             notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')} ${ config.infinityMode ? 'ON' : 'OFF' }`)
@@ -146,7 +146,7 @@
                     settings.save(key, !config[key]) ; sync.storageToUI()
                     notify(`${app.settings[key].label} ${/disabled/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
                 }
-            } else menuItemDiv.onclick = async () => {
+            } else menuItemDiv.onclick = () => {
                 if (key == 'replyLanguage') {
                     while (true) {
                         let replyLanguage = prompt(`${chrome.i18n.getMessage('prompt_updateReplyLang')}:`, config.replyLanguage)
