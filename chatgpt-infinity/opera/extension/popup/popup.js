@@ -198,7 +198,10 @@
 
     // Define SYNC functions
 
-    function syncStorageToUI() { chrome.runtime.sendMessage({ action: 'sync.storageToUI' }) }
+    async function syncStorageToUI() {
+        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
+    }
 
     function updateFade() {
 
