@@ -14,8 +14,9 @@
     settings.site = site // to load/save active tab's settings
 
     // Import DATA
-    const app = await (await fetch(chrome.runtime.getURL('data/app.json'))).json(),
-          sites = Object.assign(Object.create(null), await (await fetch(chrome.runtime.getURL('data/sites.json'))).json())
+    const app = await (await fetch(chrome.runtime.getURL('data/app.json'))).json()
+    const sites = Object.assign(Object.create(null), await new Promise(resolve =>
+        chrome.runtime.sendMessage({ action: 'fetch.sites' }, resp => resolve(resp.json))))
 
     // Init CONFIG
     await settings.load('extensionDisabled', ...sites[site].availFeatures)
@@ -78,7 +79,7 @@
                                        || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
                                                                     sites.chatgpt.selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
                     const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
-                    inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -60 }px` // expand to close gap w/ buttons
+                    inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -43 }px` // expand to close gap w/ buttons
                     inputArea.style.width = '100%' // rid h-scrollbar
                 }
             } else if (site == 'poe') {
