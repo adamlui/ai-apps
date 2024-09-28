@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.26
+// @version             2024.9.27
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -367,7 +367,7 @@
             const acLabel = menu.state.symbols[+config.autoclear] + ' '
                           + ( app.msgs.menuLabel_autoClear )
                           + menu.state.separator + menu.state.words[+config.autoclear]
-            menu.ids.push(GM_registerMenuCommand.registerCommand(acLabel, () => {
+            menu.ids.push(GM_registerMenuCommand(acLabel, () => {
                 document.getElementById('autoclear-toggle-label').click()
             }))
 
@@ -375,7 +375,7 @@
             const tvLabel = menu.state.symbols[+!config.toggleHidden] + ' '
                           + ( app.msgs.menuLabel_toggleVis )
                           + menu.state.separator + menu.state.words[+!config.toggleHidden]
-            menu.ids.push(GM_registerMenuCommand.registerCommand(tvLabel, () => {
+            menu.ids.push(GM_registerMenuCommand(tvLabel, () => {
                 settings.save('toggleHidden', !config.toggleHidden)
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
                 notify(`${app.msgs.menuLabel_toggleVis}: ${menu.state.words[+!config.toggleHidden]}`)
@@ -386,7 +386,7 @@
             const mnLabel = menu.state.symbols[+!config.notifDisabled] + ' '
                           + ( app.msgs.menuLabel_modeNotifs )
                           + menu.state.separator + menu.state.words[+!config.notifDisabled]
-            menu.ids.push(GM_registerMenuCommand.registerCommand(mnLabel, () => {
+            menu.ids.push(GM_registerMenuCommand(mnLabel, () => {
                 settings.save('notifDisabled', !config.notifDisabled)
                 notify(`${app.msgs.menuLabel_modeNotifs}: ${menu.state.words[+!config.notifDisabled]}`)
                 menu.refresh()
@@ -394,12 +394,12 @@
 
             // Add About entry
             const aboutLabel = `💡 ${app.msgs.menuLabel_about} ${app.msgs.appName}`
-            menu.ids.push(GM_registerMenuCommand.registerCommand(aboutLabel, modals.about.show))
+            menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
         },
 
         refresh() {
             if (env.scriptManager == 'OrangeMonkey') return
-            for (const id of menu.ids) { GM_unregisterMenuCommand.registerCommand(id) } menu.register()
+            for (const id of menu.ids) { GM_unregisterMenuCommand(id) } menu.register()
         }
     }
 
