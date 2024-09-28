@@ -12,17 +12,18 @@
 
     // Define FUNCTIONS
 
+    async function sendMsgToActiveTab(req) {
+        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+        chrome.tabs.sendMessage(activeTab.id, req)
+    }
+
     function notify(msg, position) {
-        chrome.tabs.query({ active: true, currentWindow: true }, tabs =>
-            chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'notify', msg: msg, position: position || 'bottom-right' })
-    )}
+        sendMsgToActiveTab({ action: 'notify', msg: msg, position: position || 'bottom-right' })}
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width
-    })})}
+        sendMsgToActiveTab({
+            action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width })
+    }
 
     const sync = {
         fade() {
@@ -44,10 +45,7 @@
                 })
         },
 
-        async storageToUI() {
-            const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-            chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
-        }
+        async storageToUI() { sendMsgToActiveTab({ action: 'sync.storageToUI' })}
     }
 
     function toTitleCase(str) {
@@ -110,8 +108,7 @@
             event.stopImmediatePropagation()
         menuInput.onchange = async () => {
             settings.save('infinityMode', !config.infinityMode) ; sync.storageToUI()
-            const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-            chrome.tabs.sendMessage(activeTab.id, { action: 'clickToggle' })
+            sendMsgToActiveTab({ action: 'clickToggle' })
             notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')} ${ config.infinityMode ? 'ON' : 'OFF' }`)
         }
 
@@ -163,10 +160,8 @@
                             siteAlert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!',
                                 chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyIn') + ' '
                                 + ( replyLanguage || chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
-                            if (config.infinityMode) { // reboot active session
-                                const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-                                chrome.tabs.sendMessage(activeTab.id, { action: 'restartInNewChat' })                    
-                            }
+                            if (config.infinityMode) // reboot active session
+                                sendMsgToActiveTab({ action: 'restartInNewChat' })
                             break
                         }
                     }
@@ -182,10 +177,8 @@
                                 + ( !replyTopic || re_all.test(str_replyTopic) ? chrome.i18n.getMessage('alert_onAllTopics')
                                                                             : chrome.i18n.getMessage('alert_onTopicOf')
                                                                                 + ' ' + str_replyTopic ) + '!')
-                        if (config.infinityMode) { // reboot active session
-                            const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-                            chrome.tabs.sendMessage(activeTab.id, { action: 'restartInNewChat' })                    
-                        }
+                        if (config.infinityMode) // reboot active session
+                            sendMsgToActiveTab({ action: 'restartInNewChat' })
                     }
                 } else if (key == 'replyInterval') {
                     while (true) {
@@ -197,10 +190,8 @@
                             siteAlert(chrome.i18n.getMessage('alert_replyIntUpdated') + '!',
                                 chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyEvery')
                                 + ' ' + replyInterval + ' ' + chrome.i18n.getMessage('unit_seconds') + '.')
-                            if (config.infinityMode) { // reboot active session
-                                const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-                                chrome.tabs.sendMessage(activeTab.id, { action: 'resetInSameChat' })                    
-                            }
+                            if (config.infinityMode) // reboot active session
+                                sendMsgToActiveTab({ action: 'resetInSameChat' })
                             break
                         }
                     }
