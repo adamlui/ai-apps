@@ -63,7 +63,8 @@
     masterToggle.checked = !config.extensionDisabled ; sync.fade()
     masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
-        //infinityModeToggle.checked = false // always disable Infinity Mode on main toggle
+        if (config.infinityMode) // always disable Infinity Mode on master toggle
+            document.querySelector('.menu-area > .toggle-switch > input').click()
         sync.storageToUI() ; sync.fade()
     }
 
@@ -113,7 +114,7 @@
             notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')} ${ config.infinityMode ? 'ON' : 'OFF' }`)
         }
 
-        // Create/inesrt individual toggles
+        // Create/insert individual toggles
         Object.keys(app.settings).forEach(key => {
 
             // Init elems
