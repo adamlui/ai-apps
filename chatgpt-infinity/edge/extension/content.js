@@ -32,7 +32,6 @@
 
     // Init SETTINGS
     settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
-    settings.save('infinityMode', false) // to reset popup toggle
     await settings.load(settings.availKeys)
     if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.replyTopic) settings.save('replyTopic', 'ALL') // init reply topic if unset
