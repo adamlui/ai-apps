@@ -1,5 +1,6 @@
 const config = {}, settings = {
-    availKeys: [ 'autoScrollDisabled', 'autoStart', 'extensionDisabled',
+    availKeys: [
+        'autoScrollDisabled', 'autoStart', 'extensionDisabled', 'infinityMode',
         'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden' ],
 
     load() {
