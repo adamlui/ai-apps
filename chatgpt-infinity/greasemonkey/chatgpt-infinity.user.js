@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.28.4
+// @version             2024.9.28.5
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -353,20 +353,13 @@
     }
 
     // Init SETTINGS props
-    const re_all = new RegExp(`^(${app.msgs.menuLabel_all}|all|any|every)$`, 'i')
     Object.assign(app, { settings: {
         autoStart: { type: 'toggle', label: app.msgs.menuLabel_autoStart },
         toggleHidden: { type: 'toggle', label: app.msgs.menuLabel_toggleVis },
         autoScrollDisabled: { type: 'toggle', label: app.msgs.menuLabel_autoScroll },
-        replyLanguage: { type: 'prompt', symbol: '🌐',
-            label: app.msgs.menuLabel_replyLang,
-            status: config.replyLanguage },
-        replyTopic: { type: 'prompt', symbol: '🧠',
-            label: app.msgs.menuLabel_replyTopic,
-            status: re_all.test(config.replyTopic) ? app.msgs.menuLabel_all : toTitleCase(config.replyTopic) },
-        replyInterval: { type: 'prompt', symbol: '⌚',
-            label: app.msgs.menuLabel_replyInt,
-            status: `${config.replyInterval}s` }
+        replyLanguage: { type: 'prompt', symbol: '🌐', label: app.msgs.menuLabel_replyLang },
+        replyTopic: { type: 'prompt', symbol: '🧠', label: app.msgs.menuLabel_replyTopic },
+        replyInterval: { type: 'prompt', symbol: '⌚', label: app.msgs.menuLabel_replyInt }
     }})
 
     // Define MENU functions
@@ -378,6 +371,12 @@
         },
 
         register() {
+
+            // Init prompt setting status labels
+            const re_all = new RegExp(`^(${app.msgs.menuLabel_all}|all|any|every)$`, 'i')
+            app.settings.replyLanguage.status = config.replyLanguage
+            app.settings.replyTopic.status = re_all.test(config.replyTopic) ? app.msgs.menuLabel_all : toTitleCase(config.replyTopic)
+            app.settings.replyInterval.status = `${config.replyInterval}s`
 
             // Add Infinity Mode toggle
             const imLabel = `${menu.state.symbols[+!!config.infinityMode]} `
@@ -744,9 +743,6 @@
 
     function syncStorageToUI() {
         updateToggleHTML() // based on Toggle Visibility
-        app.settings.replyLanguage.status = config.replyLanguage
-        app.settings.replyTopic.status = re_all.test(config.replyTopic) ? app.msgs.menuLabel_all : toTitleCase(config.replyTopic)
-        app.settings.replyInterval.status = `${config.replyInterval}s`
         menu.refresh() // update toggle symbols/suffixes + prompt setting states
     }
 
