@@ -69,10 +69,10 @@
 
     // Create CHILD toggles on chatgpt.com
     if (site == 'chatgpt') {
-        const re_all = new RegExp('^(' + chrome.i18n.getMessage('menuLabel_all') + '|all|any|every)$', 'i')
         await settings.load('userLanguage', 'infinityMode', ...settings.availKeys)
 
         // Init SETTINGS props
+        const re_all = new RegExp('^(' + chrome.i18n.getMessage('menuLabel_all') + '|all|any|every)$', 'i')
         Object.assign(app, { settings: {
             autoStart: { type: 'toggle',
                 label: chrome.i18n.getMessage('menuLabel_autoStart') },
