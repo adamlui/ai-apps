@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.28.6
+// @version             2024.9.28.7
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -405,7 +405,7 @@
 
             // Add setting entries
             Object.keys(app.settings).forEach(key => {
-                const settingIsEnabled = config[key] ^ key.includes('Disabled'),
+                const settingIsEnabled = config[key] ^ /disabled|hidden/i.test(key),
                       menuLabel = `${ app.settings[key].symbol || menu.state.symbols[+settingIsEnabled] } ${app.settings[key].label}`
                                 +   ( app.settings[key].type == 'toggle' ? ( menu.state.separator + menu.state.words[+settingIsEnabled] )
                                                                          : `— ${app.settings[key].status}` )
@@ -464,7 +464,7 @@
                         }
                     } else { // save toggled state + notify
                         settings.save(key, !config[key])
-                        notify(`${app.settings[key].label}: ${menu.state.words[+(key.includes('Disabled') ^ config[key])]}`)
+                        notify(`${app.settings[key].label}: ${menu.state.words[+(/disabled|hidden/i.test(key) ^ config[key])]}`)
                     }
                     syncStorageToUI()
                 }))

@@ -123,7 +123,7 @@
             menuLabelSpan.textContent = app.settings[key].label
             if (app.settings[key].type == 'toggle') {
                 menuInput = dom.create.elem('input', { type: 'checkbox' })
-                menuInput.checked = /disabled/i.test(key) ^ config[key]
+                menuInput.checked = /disabled|hidden/i.test(key) ^ config[key]
                 menuSlider = dom.create.elem('span', { class: 'slider' })
                 menuLabel.append(menuInput, menuSlider)
                 menuLabel.classList.add('toggle-switch')
@@ -144,7 +144,7 @@
                     event.stopImmediatePropagation()
                 menuInput.onchange = () => {
                     settings.save(key, !config[key]) ; sync.storageToUI()
-                    notify(`${app.settings[key].label} ${/disabled/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
+                    notify(`${app.settings[key].label} ${/disabled|hidden/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
                 }
             } else menuItemDiv.onclick = () => {
                 if (key == 'replyLanguage') {
