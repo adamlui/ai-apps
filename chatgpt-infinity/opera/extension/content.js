@@ -20,7 +20,7 @@
         fromMsg = true
         if (req.action == 'notify') notify(req.msg, req.pos)
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
-            else if (req.action == 'infinityMode.activate') infinityMode.activate()
+        else if (req.action == 'infinityMode.activate') infinityMode.activate()
         else if (req.action == 'infinityMode.restart') infinityMode.restart({ target: req.target })
         else if (req.action == 'sync.storageToUI') syncStorageToUI()
     })
@@ -277,8 +277,7 @@
         const toggleInput = document.getElementById('infinity-toggle-input')
         toggleInput.checked = !toggleInput.checked
         settings.save('infinityMode', toggleInput.checked)
-        sideToggle.update()
-        infinityMode.toggle()
+        syncStorageToUI() ; infinityMode.toggle()
     }
 
     // Auto-start if enabled
