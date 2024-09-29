@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29.4
+// @version             2024.9.29.6
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -425,7 +425,7 @@
                                     ( app.msgs.appName ) + ' ' // msg
                                         + ( app.msgs.alert_willReplyIn ) + ' '
                                         + ( replyLanguage || app.msgs.alert_yourSysLang) + '.')
-                                if (config.infinityMode) infinityMode.restart({ target: 'new' }) // using new reply language                        
+                                if (config.infinityMode) infinity.restart({ target: 'new' }) // using new reply language                        
                                 break
                             }
                         }
@@ -459,7 +459,7 @@
                                     ( app.msgs.appName ) + ' ' // msg
                                         + ( app.msgs.alert_willReplyEvery ) + ' '
                                         + replyInterval + ' ' + ( app.msgs.unit_seconds ) + '.')
-                                if (config.infinityMode) infinityMode.restart({ target: 'self' }) // using new reply interval                    
+                                if (config.infinityMode) infinity.restart({ target: 'self' }) // using new reply interval                    
                                 break
                             }
                         }
@@ -749,7 +749,7 @@
 
     // Define INFINITY MODE functions
 
-    const infinityMode = {
+    const infinity = {
 
         async activate() {
             const activatePrompt = 'Generate a single random question'
@@ -773,20 +773,20 @@
                     if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve() }
                 }).observe(document.body, { childList: true, subtree: true })
             })
-            if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
-                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+            if (config.infinityMode && !infinity.isActive) // double-check in case de-activated before scheduled
+                infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
         async continue() {
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(err) {}
             chatgpt.send('Do it again.')
             await chatgpt.isIdle() // before starting delay till next iteration
-            if (infinityMode.isActive) // replace timer
-                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+            if (infinity.isActive) // replace timer
+                infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
         deactivate() {
-            chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
+            chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener
             notify(`${app.msgs.menuLabel_infinityMode}: OFF`)
             config.infinityMode = false // in case toggled by PV listener
@@ -797,13 +797,13 @@
                 chatgpt.stop() ; document.getElementById('infinity-toggle-label').click() // toggle off
                 setTimeout(() => { document.getElementById('infinity-toggle-label').click() }, 500) // toggle on
             } else {
-                clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
-                if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
-                    infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+                clearTimeout(infinity.isActive) ; infinity.isActive = null ; await chatgpt.isIdle()
+                if (config.infinityMode && !infinity.isActive) // double-check in case de-activated before scheduled
+                    infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
             }
         },
 
-        toggle() { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
+        toggle() { infinity[config.infinityMode ? 'activate' : 'deactivate']() }
     }
 
     // Define SYNC functions
@@ -840,7 +840,7 @@
             if (config.infinityMode) {                
                 if (document.getElementById('infinity-toggle-label')) // ensure toggle state is accurate
                     document.getElementById('infinity-toggle-label').click()
-                else infinityMode.deactivate()
+                else infinity.deactivate()
                 menu.refresh()
         }}
 
@@ -888,7 +888,7 @@
         const toggleInput = document.getElementById('infinity-toggle-input')
         toggleInput.checked = !toggleInput.checked
         config.infinityMode = toggleInput.checked
-        syncStorageToUI() ; infinityMode.toggle()
+        syncStorageToUI() ; infinity.toggle()
     }
 
     // Auto-start if enabled
@@ -896,7 +896,7 @@
         const navToggle = document.getElementById('infinity-toggle-input')
         if (navToggle) navToggle.parentNode.click()
         else { // activate via infinityMode
-            infinityMode.activate() ; config.infinityMode = true ; menu.refresh()
+            infinity.activate() ; config.infinityMode = true ; menu.refresh()
     }}
 
 })()

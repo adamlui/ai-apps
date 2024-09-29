@@ -15,14 +15,15 @@
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
 
     // Add CHROME MSG listener
-    let fromMsg = false // to prevent double notifications blocked by popup
-    chrome.runtime.onMessage.addListener(async (req, _, sendResp) => {
-        fromMsg = true
+    chrome.runtime.onMessage.addListener(req => {
+        
         if (req.action == 'notify') notify(req.msg, req.pos)
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
-        else if (req.action == 'infinityMode.toggle') infinityMode.toggle()
-        else if (req.action == 'infinityMode.restart') infinityMode.restart({ target: req.target })
-        else if (req.action == 'sync.storageToUI') syncStorageToUI().then(() => sendResp({ status: 'done' }))
+        else if (req.action.startsWith('infinity')) {
+            infinity.muted = true // prevent top-right notif blocked by popup
+            if (req.action == 'infinity.toggle') infinity.toggle()
+            else if (req.action == 'infinity.restart') infinity.restart({ target: req.target })
+        } else if (req.action == 'sync.storageToUI') syncStorageToUI()
     })
 
     // Init ENV info
@@ -150,15 +151,15 @@
 
     // Define INFINITY MODE functions
 
-    const infinityMode = {
+    const infinity = {
 
         async activate() {
             const activatePrompt = 'Generate a single random question'
                 + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                 + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                 + ' then answer it. Don\'t type anything else.'
-            if (!fromMsg) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: ON`)
-            fromMsg = false
+            if (!infinity.muted) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: ON`)
+            infinity.muted = false
             if (env.browser.isMobile && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             if (!new URL(location).pathname.startsWith('/g/')) // not on GPT page
                 try { chatgpt.startNewChat() } catch (err) { return } // start new chat
@@ -176,22 +177,22 @@
                     if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve() }
                 }).observe(document.body, { childList: true, subtree: true })
             })
-            if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
-                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+            if (config.infinityMode && !infinity.isActive) // double-check in case de-activated before scheduled
+                infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
         async continue() {
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(err) {}
             chatgpt.send('Do it again.')
             await chatgpt.isIdle() // before starting delay till next iteration
-            if (infinityMode.isActive) // replace timer
-                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+            if (infinity.isActive) // replace timer
+                infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
         async deactivate() {
-            if (!fromMsg) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: OFF`)
-            fromMsg = false
-            chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
+            if (!infinity.muted) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: OFF`)
+            infinity.muted = false
+            chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener
             settings.save('infinityMode', false) // in case toggled by PV listener
         },
@@ -201,16 +202,16 @@
                 chatgpt.stop() ; document.getElementById('infinity-toggle-label').click() // toggle off
                 setTimeout(() => { document.getElementById('infinity-toggle-label').click() }, 750) // toggle on
             } else {
-                clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
-                if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
+                clearTimeout(infinity.isActive) ; infinity.isActive = null ; await chatgpt.isIdle()
+                if (config.infinityMode && !infinity.isActive) { // double-check in case de-activated before scheduled
                     await settings.load('replyInterval')
-                    infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+                    infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
                 }
             }
 
         },
 
-        toggle() { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
+        toggle() { infinity[config.infinityMode ? 'activate' : 'deactivate']() }
     }
 
     // Define SYNC function
@@ -231,7 +232,7 @@
             if (config.infinityMode) {                
                 if (document.getElementById('infinity-toggle-label')) // ensure toggle state is accurate
                     document.getElementById('infinity-toggle-label').click()
-                else infinityMode.deactivate()
+                else infinity.deactivate()
         }}
 
     // Add/update TWEAKS style
@@ -277,7 +278,7 @@
         const toggleInput = document.getElementById('infinity-toggle-input')
         toggleInput.checked = !toggleInput.checked
         settings.save('infinityMode', toggleInput.checked)
-        syncStorageToUI() ; infinityMode.toggle()
+        syncStorageToUI() ; infinity.toggle()
     }
 
     // Auto-start if enabled
@@ -286,7 +287,7 @@
         const navToggle = document.getElementById('infinity-toggle-input')
         if (navToggle) navToggle.parentNode.click()
         else { // activate via infinityMode funcs obj
-            infinityMode.activate()
+            infinity.activate()
             settings.save('infinityMode', true) // so popup.js updates toggle
         }
     } 
