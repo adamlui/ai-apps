@@ -3,12 +3,10 @@
     const site = /([^.]+)\.[^.]+$/.exec(await new Promise(resolve =>
         chrome.tabs.query({ active: true, currentWindow: true }, tabs => resolve(new URL(tabs[0].url).hostname))))?.[1]
 
-    // Import LIBS
+    // Import LIBS/DATA
     await import(chrome.runtime.getURL('lib/dom.js'))
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
-
-    // Import APP data
-    const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js')),
+          app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
 
     // Define FUNCTIONS
 
@@ -17,8 +15,7 @@
         chrome.tabs.sendMessage(activeTab.id, req)
     }
 
-    function notify(msg) {
-        sendMsgToActiveTab({ action: 'notify', msg: msg, pos: 'bottom-right' })}
+    function notify(msg) { sendMsgToActiveTab({ action: 'notify', msg: msg, pos: 'bottom-right' })}
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         sendMsgToActiveTab({
@@ -28,7 +25,7 @@
     const sync = {
         fade() {
 
-            // Updated toolbar icon
+            // Update toolbar icon
             const iconDimensions = [16, 32, 64, 128], iconPaths = {}
             iconDimensions.forEach(dimension => {
                 iconPaths[dimension] = '../icons/'
@@ -114,7 +111,7 @@
             notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')} ${ config.infinityMode ? 'ON' : 'OFF' }`)
         }
 
-        // Create/insert individual toggles
+        // Create/insert settings toggles
         Object.keys(app.settings).forEach(key => {
 
             // Init elems
