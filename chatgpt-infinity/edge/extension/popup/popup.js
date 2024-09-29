@@ -61,8 +61,8 @@
     masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
         if (config.infinityMode) // always disable Infinity Mode on master toggle
-            document.querySelector('.menu-area > .toggle-switch > input').click()
-        sync.storageToUI() ; sync.fade()
+            document.querySelector('.menu-area > .toggle-switch > input')?.click()
+        Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
     }
 
     // Create CHILD toggles on chatgpt.com
