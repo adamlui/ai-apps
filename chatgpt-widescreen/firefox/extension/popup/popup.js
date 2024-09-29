@@ -38,6 +38,40 @@
             helptip: chrome.i18n.getMessage('helptip_modeNotifs') }
     }})
 
+    // Define FUNCTIONS
+
+    function notify(msg) {
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs =>
+            chrome.tabs.sendMessage(tabs[0].id, { 
+                action: 'notify', msg: msg, pos: 'bottom-right' })
+    )}
+
+    async function syncStorageToUI() {
+        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
+    }
+    
+    function updateFade() {
+
+        // Update toolbar icon
+        const iconDimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
+        iconDimensions.forEach(dimension =>
+            iconPaths[dimension] = '../icons/'
+                + (config.extensionDisabled ? 'faded/' : '')
+                + 'icon' + dimension + '.png'
+        )
+        chrome.action.setIcon({ path: iconPaths })
+
+        // Update menu contents
+        document.querySelectorAll('div.logo, div.menu-title, div.menu')
+            .forEach(elem => {
+                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
+                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
+            })
+    }
+
+    // Run MAIN routine
+
     // Init MASTER TOGGLE
     const masterToggle = document.querySelector('.main-toggle input')
     await settings.load('extensionDisabled')
@@ -134,39 +168,5 @@
         d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })   
     moreAppsSpan.onclick = () => chrome.tabs.create({ url: app.urls.relatedApps })
     moreAppsIcon.append(moreAppsIconPath) ; moreAppsSpan.append(moreAppsIcon) ; footer.append(moreAppsSpan)
-
-    // Define FEEDBACK functions
-
-    function notify(msg) {
-        chrome.tabs.query({ active: true, currentWindow: true }, tabs =>
-            chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'notify', msg: msg, pos: 'bottom-right' })
-    )}
-
-    // Define SYNC functions
-
-    async function syncStorageToUI() {
-        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
-    }
-    
-    function updateFade() {
-
-        // Update toolbar icon
-        const iconDimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
-        iconDimensions.forEach(dimension =>
-            iconPaths[dimension] = '../icons/'
-                + (config.extensionDisabled ? 'faded/' : '')
-                + 'icon' + dimension + '.png'
-        )
-        chrome.action.setIcon({ path: iconPaths })
-
-        // Update menu contents
-        document.querySelectorAll('div.logo, div.menu-title, div.menu')
-            .forEach(elem => {
-                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
-                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
-            })
-    }
 
 })()
