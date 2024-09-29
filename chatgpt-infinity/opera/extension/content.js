@@ -63,7 +63,7 @@
 
     // Define UI functions
 
-    const sideToggle = {
+    const navToggle = {
         async insert() {
 
             // Insert toggle
@@ -218,7 +218,7 @@
 
     async function syncStorageToUI() { // from popup.js toggle + service worker actve-tab listeners
         await settings.load(settings.availKeys)
-        sideToggle.insert() ; sideToggle.update() // hide/show sidebar toggle based on latest setting
+        navToggle.insert() ; navToggle.update() // hide/show sidebar toggle based on latest setting
     }
 
     // Init BROWSER/UI props
@@ -262,7 +262,7 @@
     navToggleDiv.style.margin = '2px 0' // add v-margins
     navToggleDiv.style.userSelect = 'none' // prevent highlighting
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
-    sideToggle.update() // create children
+    navToggle.update() // create children
 
     if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
         const firstIcon = ui.firstLink.querySelector('div:first-child'),
@@ -271,7 +271,7 @@
         navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
     }
 
-    await settings.load(['extensionDisabled']) ; if (!config.extensionDisabled) sideToggle.insert()
+    await settings.load(['extensionDisabled']) ; if (!config.extensionDisabled) navToggle.insert()
 
     // Add LISTENER to toggle switch/label/config/menu
     navToggleDiv.onclick = () => {
@@ -284,8 +284,8 @@
     // Auto-start if enabled
     await settings.load('autoStart')
     if (config.autoStart) {
-        const navToggle = document.getElementById('infinity-toggle-input')
-        if (navToggle) navToggle.parentNode.click()
+        const navToggleInput = document.getElementById('infinity-toggle-input')
+        if (navToggleInput) navToggleInput.parentNode.click()
         else { // activate via infinityMode funcs obj
             infinity.activate()
             settings.save('infinityMode', true) // so popup.js updates toggle

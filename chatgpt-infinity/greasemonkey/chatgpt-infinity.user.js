@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29.6
+// @version             2024.9.29.7
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -666,7 +666,7 @@
 
     // Define UI functions
 
-    const sideToggle = {
+    const navToggle = {
         async insert() {
 
             // Insert toggle
@@ -809,7 +809,7 @@
     // Define SYNC functions
 
     function syncStorageToUI() {
-        sideToggle.update() // based on Toggle Visibility
+        navToggle.update() // based on Toggle Visibility
         menu.refresh() // update toggle symbols/suffixes + prompt setting states
     }
 
@@ -872,7 +872,7 @@
     navToggleDiv.style.margin = '2px 0' // add v-margins
     navToggleDiv.style.userSelect = 'none' // prevent highlighting
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
-    sideToggle.update() // create children
+    navToggle.update() // create children
 
     if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
         const firstIcon = ui.firstLink.querySelector('div:first-child'),
@@ -881,7 +881,7 @@
         navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
     }
 
-    sideToggle.insert()
+    navToggle.insert()
 
     // Add LISTENER to toggle switch/label/config/menu
     navToggleDiv.onclick = () => {
@@ -893,8 +893,8 @@
 
     // Auto-start if enabled
     if (config.autoStart) {
-        const navToggle = document.getElementById('infinity-toggle-input')
-        if (navToggle) navToggle.parentNode.click()
+        const navToggleInput = document.getElementById('infinity-toggle-input')
+        if (navToggleInput) navToggleInput.parentNode.click()
         else { // activate via infinityMode
             infinity.activate() ; config.infinityMode = true ; menu.refresh()
     }}
