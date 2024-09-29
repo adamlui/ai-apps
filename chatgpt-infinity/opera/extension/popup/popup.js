@@ -83,8 +83,7 @@
             replyLanguage: { type: 'modal', symbol: '🌐', status: config.replyLanguage,
                 label: chrome.i18n.getMessage('menuLabel_replyLang') },
             replyTopic: { type: 'modal', symbol: '🧠',
-                status: re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all')
-                                                       : toTitleCase(config.replyTopic),
+                status: re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all') : toTitleCase(config.replyTopic),
                 label: chrome.i18n.getMessage('menuLabel_replyTopic') },
             replyInterval: { type: 'modal', symbol: '⌚', status: `${config.replyInterval}s`,
                 label: chrome.i18n.getMessage('menuLabel_replyInt') }
