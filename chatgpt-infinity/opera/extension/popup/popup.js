@@ -1,7 +1,7 @@
 (async () => {
 
-    const site = /([^.]+)\.[^.]+$/.exec(await new Promise(resolve =>
-        chrome.tabs.query({ active: true, currentWindow: true }, tabs => resolve(new URL(tabs[0].url).hostname))))?.[1]
+    const site = /([^.]+)\.[^.]+$/.exec(new URL((await chrome.tabs.query(
+        { active: true, currentWindow: true }))[0].url).hostname)?.[1]
 
     // Import LIBS/DATA
     await import(chrome.runtime.getURL('lib/dom.js'))
