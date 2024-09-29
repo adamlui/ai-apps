@@ -199,12 +199,12 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29.1
+// @version             2024.9.29.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
-// @icon                https://media.chatgptinfinity.com/images/icons/infinity-symbol/black/icon48.png?fa77d27
-// @icon64              https://media.chatgptinfinity.com/images/icons/infinity-symbol/black/icon64.png?fa77d27
+// @icon                https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon48.png?65fcf31
+// @icon64              https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon64.png?65fcf31
 // @compatible          chrome
 // @compatible          firefox
 // @compatible          edge
