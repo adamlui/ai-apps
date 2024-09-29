@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.28.5
+// @version             2024.9.28.6
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -243,9 +243,15 @@
     // Init APP info
     const app = {
         name: 'ChatGPT Infinity', symbol: '∞', configKeyPrefix: 'chatGPTinfinity',
+        author: { name: 'Adam Lui', url: 'https://github.com/adamlui' },
         urls: {
             alternativeTo: 'https://alternativeto.net/software/chatgpt-infinity',
             chatgptJS: 'https://chatgpt.js.org',
+            donate: {
+                cashApp: 'https://cash.app/$adamlui',
+                gitHub: 'https://github.com/sponsors/adamlui',
+                payPal: 'https://paypal.me/adamlui'
+            },
             gitHub: 'https://github.com/adamlui/chatgpt-infinity',
             greasyFork: 'https://greasyfork.org/scripts/465051-chatgpt-infinity',
             mediaHost: 'https://media.chatgptinfinity.com',
@@ -282,6 +288,7 @@
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
     app.msgs = {
         appName: app.name,
+        appAuthor: app.author.name,
         appDesc: 'Generate endless answers from all-knowing ChatGPT (in any language!)',
         menuLabel_infinityMode: 'Infinity Mode',
         menuLabel_autoStart: 'Auto-Start',
@@ -292,6 +299,7 @@
         menuLabel_all: 'ALL',
         menuLabel_replyInt: 'Reply Interval',
         menuLabel_about: 'About',
+        menuLabel_donate: 'Please send a donation',
         menuLabel_disabled: 'Disabled (extension installed)',
         about_version: 'Version',
         about_poweredBy: 'Powered by',
@@ -315,6 +323,17 @@
         alert_isAvail: 'is available',
         alert_upToDate: 'Up-to-date',
         alert_isUpToDate: 'is up-to-date',
+        alert_showYourSupport: 'Show your support',
+        alert_isOSS: 'is open-source software built & maintained for free through 100% volunteer efforts',
+        alert_despiteAffliction: 'Despite being severely afflicted by',
+        alert_longCOVID: 'long COVID',
+        alert_since2020: 'since 2020',
+        alert_byDonatingResults: 'by donating, you help me to continue improving, fixing bugs, adding new features, and making the software even better',
+        alert_yourContrib: 'Your contribution',
+        alert_noMatterSize: 'no matter the size',
+        alert_directlySupports: 'directly supports my unpaid efforts to ensure this project remains free and open for all to use',
+        alert_growTogether: 'Together, we can keep this powerful software growing',
+        alert_tyForSupport: 'Thank you for your support',
         btnLabel_moreApps: 'More ChatGPT Apps',
         btnLabel_leaveReview: 'Leave Review',
         btnLabel_getSupport: 'Get Support',
@@ -454,6 +473,10 @@
             // Add About entry
             const aboutLabel = `💡 ${app.msgs.menuLabel_about} ${app.msgs.appName}`
             menu.ids.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
+
+            // Add Donate entry
+            const donateLabel = `💖 ${app.msgs.menuLabel_donate}`
+            menu.ids.push(GM_registerMenuCommand(donateLabel, modals.donate.show))
         },
 
         refresh() {
@@ -546,6 +569,7 @@
     // Define MODAL functions
 
     const modals = {
+
         about: {
             show() {
 
@@ -594,6 +618,46 @@
                     else button.style.display = 'none' // hide Dismiss button
                 }
             }        
+        },
+
+        donate: {
+            longCOVIDwikiLink: 'https://en.wikipedia.org/wiki/Long_COVID',
+
+            show() {
+
+                // Show alert
+                const donateModalID = siteAlert(
+                    `💖 ${app.msgs.alert_showYourSupport}`, // title
+                        `<p><b>${app.msgs.appName}</b> ${app.msgs.alert_isOSS}.</p>`
+                      + `<p>${app.msgs.alert_despiteAffliction} `
+                          + `<a href="${modals.donate.longCOVIDwikiLink}">${app.msgs.alert_longCOVID}</a> `
+                          + `${app.msgs.alert_since2020}, ${app.msgs.alert_byDonatingResults}.</p>`
+                      + `<p>${app.msgs.alert_yourContrib}, <b>${app.msgs.alert_noMatterSize}</b>, ${app.msgs.alert_directlySupports}.</p>`
+                      + `<p>${app.msgs.alert_growTogether}.</p>`
+                      + `<p>${app.msgs.alert_tyForSupport}!</p>`
+                      + `<p>—<a href="${app.author.url}"><b>${app.msgs.appAuthor}</b></a></p>`,
+                    [ // buttons
+                        function paypal() { modals.safeWinOpen(app.urls.payPal) },
+                        function github() { modals.safeWinOpen(app.urls.gitHub) },
+                        function cashApp() { modals.safeWinOpen(app.urls.cashApp) }
+                    ], '', 478 // set width
+                )
+
+                // Format text
+                const donateModal = document.getElementById(donateModalID)
+                donateModal.querySelectorAll('p').forEach(p => // v-pad text, shrink line height
+                    p.style.cssText = 'padding: 8px 0 ; line-height: 20px')
+
+                // Format buttons
+                const btns = donateModal.querySelectorAll('button')
+                btns.forEach((btn, idx) => {
+                    if (idx == 0) btn.style.display = 'none' // hide Dismiss button
+                    else {
+                        btn.style.cssText = 'padding: 8px 0 !important ; margin-top: -34px' // heighten + raise
+                        if (idx == btns.length -1) btn.classList.remove('primary-modal-btn') // de-emphasize last link
+                    }
+                })
+            }
         },
 
         safeWinOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
@@ -757,8 +821,8 @@
             })()
         }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
     if (extensionInstalled) { // disable script/menu
-        GM_registerMenuCommand(menu.state.symbols[0] + ' ' + ( app.msgs.menuLabel_disabled ),
-            () => { return }) // disable menu
+        GM_registerMenuCommand(`${menu.state.symbols[0]} ${app.msgs.menuLabel_disabled}`, () => { return })
+        GM_registerMenuCommand(`💖 ${app.msgs.menuLabel_donate}`, modals.donate.show)
         return // exit script
     } else menu.register() // create functional menu
 
