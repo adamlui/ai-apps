@@ -198,7 +198,7 @@
             }
         })
 
-        sync.fade() // in ccase master toggle off
+        sync.fade() // in case master toggle off
     }
 
     // LOCALIZE labels
@@ -220,7 +220,7 @@
     const cjsDiv = dom.create.elem('div', { class: 'chatgpt-js' })
     const cjsLogo = dom.create.elem('img', {
         title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js`,
-        src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png?main` })
+        src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png` })
     cjsLogo.onmouseover = cjsLogo.onmouseout = event => cjsLogo.src = `${
         app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js${ event.type == 'mouseover' ? '' : '-faded' }.png`
     cjsLogo.onclick = () => chrome.tabs.create({ url: app.urls.chatgptJS })
