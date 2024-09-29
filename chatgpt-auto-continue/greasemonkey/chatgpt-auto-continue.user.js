@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.28.1
+// @version             2024.9.29
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -311,6 +311,7 @@
         alert_directlySupports: 'directly supports my unpaid efforts to ensure this project remains free and open for all to use',
         alert_growTogether: 'Together, we can keep this powerful software growing',
         alert_tyForSupport: 'Thank you for your support',
+        alert_author: 'author',
         notif_chatAutoContinued: 'Chat Auto-Continued',
         btnLabel_moreApps: 'More ChatGPT Apps',
         btnLabel_leaveReview: 'Leave Review',
@@ -518,7 +519,7 @@
                       + `<p>${app.msgs.alert_yourContrib}, <b>${app.msgs.alert_noMatterSize}</b>, ${app.msgs.alert_directlySupports}.</p>`
                       + `<p>${app.msgs.alert_growTogether}.</p>`
                       + `<p>${app.msgs.alert_tyForSupport}!</p>`
-                      + `<p>—<a href="${app.author.url}"><b>${app.msgs.appAuthor}</b></a></p>`,
+                      + `<p>—<b><a href="${app.author.url}">${app.msgs.appAuthor}</a></b>, ${app.msgs.alert_author}</p>`,
                     [ // buttons
                         function paypal() { modals.safeWinOpen(app.urls.payPal) },
                         function github() { modals.safeWinOpen(app.urls.gitHub) },
@@ -536,7 +537,7 @@
                 btns.forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else {
-                        btn.style.cssText = 'padding: 8px 0 !important ; margin-top: -34px' // heighten + raise
+                        btn.style.cssText = 'padding: 8px 0 !important ; margin-top: -18px' // heighten + raise
                         if (idx == btns.length -1) btn.classList.remove('primary-modal-btn') // de-emphasize last link
                     }
                 })

@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.28.3
+// @version             2024.9.29
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -363,6 +363,7 @@
         alert_directlySupports: 'directly supports my unpaid efforts to ensure this project remains free and open for all to use',
         alert_growTogether: 'Together, we can keep this powerful software growing',
         alert_tyForSupport: 'Thank you for your support',
+        alert_author: 'author',
         alert_pressF11: 'Press F11 to exit full screen',
         alert_f11reason: 'F11 was used to enter full screen, and due to browser security reasons, the same key must be used to exit it',
         btnLabel_moreApps: 'More ChatGPT Apps',
@@ -589,7 +590,7 @@
                       + `<p>${app.msgs.alert_yourContrib}, <b>${app.msgs.alert_noMatterSize}</b>, ${app.msgs.alert_directlySupports}.</p>`
                       + `<p>${app.msgs.alert_growTogether}.</p>`
                       + `<p>${app.msgs.alert_tyForSupport}!</p>`
-                      + `<p>—<a href="${app.author.url}"><b>${app.msgs.appAuthor}</b></a></p>`,
+                      + `<p>—<b><a href="${app.author.url}">${app.msgs.appAuthor}</a></b>, ${app.msgs.alert_author}</p>`,
                     [ // buttons
                         function paypal() { modals.safeWinOpen(app.urls.payPal) },
                         function github() { modals.safeWinOpen(app.urls.gitHub) },
@@ -607,7 +608,7 @@
                 btns.forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else {
-                        btn.style.cssText = 'padding: 8px 0 !important ; margin-top: -34px' // heighten + raise
+                        btn.style.cssText = 'padding: 8px 0 !important ; margin-top: -18px' // heighten + raise
                         if (idx == btns.length -1) btn.classList.remove('primary-modal-btn') // de-emphasize last link
                     }
                 })
