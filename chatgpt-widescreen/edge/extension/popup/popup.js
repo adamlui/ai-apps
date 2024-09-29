@@ -79,7 +79,7 @@
     masterToggle.checked = !config.extensionDisabled ; sync.fade()
     masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
-        sync.storageToUI() ; sync.fade()
+        Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
     }
     
     // Create CHILD TOGGLES for matched pages
