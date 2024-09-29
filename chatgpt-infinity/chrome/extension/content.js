@@ -23,7 +23,7 @@
         else if (req.action == 'resetInSameChat') resetInSameChat()
         else if (req.action == 'restartInNewChat') restartInNewChat()
         else if (req.action == 'updateToggleHTML') updateToggleHTML()
-        else if (req.action == 'clickToggle') document.getElementById('infinity-toggle-label').click()        
+        else if (req.action == 'infinityMode.activate') infinityMode.activate()        
         else if (req.action == 'sync.storageToUI') syncStorageToUI()
     })
 

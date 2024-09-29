@@ -108,7 +108,7 @@
             event.stopImmediatePropagation()
         menuInput.onchange = () => {
             settings.save('infinityMode', !config.infinityMode) ; sync.storageToUI()
-            sendMsgToActiveTab({ action: 'clickToggle' })
+            sendMsgToActiveTab({ action: 'infinityMode.activate' })
             notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')} ${ config.infinityMode ? 'ON' : 'OFF' }`)
         }
 
