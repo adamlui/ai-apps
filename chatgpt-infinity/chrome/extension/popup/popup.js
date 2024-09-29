@@ -80,13 +80,15 @@
                 label: chrome.i18n.getMessage('menuLabel_toggleVis') },
             autoScrollDisabled: { type: 'toggle',
                 label: chrome.i18n.getMessage('menuLabel_autoScroll') },
-            replyLanguage: { type: 'modal', symbol: '🌐', status: config.replyLanguage,
-                label: chrome.i18n.getMessage('menuLabel_replyLang') },
+            replyLanguage: { type: 'modal', symbol: '🌐',
+                label: chrome.i18n.getMessage('menuLabel_replyLang'),
+                status: config.replyLanguage },
             replyTopic: { type: 'modal', symbol: '🧠',
-                status: re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all') : toTitleCase(config.replyTopic),
-                label: chrome.i18n.getMessage('menuLabel_replyTopic') },
-            replyInterval: { type: 'modal', symbol: '⌚', status: `${config.replyInterval}s`,
-                label: chrome.i18n.getMessage('menuLabel_replyInt') }
+                label: chrome.i18n.getMessage('menuLabel_replyTopic'),
+                status: re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all') : toTitleCase(config.replyTopic) },
+            replyInterval: { type: 'modal', symbol: '⌚',
+                label: chrome.i18n.getMessage('menuLabel_replyInt'),
+                status: `${config.replyInterval}s` }
         }})
 
         // Create/insert toggles section
