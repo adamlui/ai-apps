@@ -22,7 +22,6 @@
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
         else if (req.action == 'resetInSameChat') resetInSameChat()
         else if (req.action == 'restartInNewChat') restartInNewChat()
-        else if (req.action == 'updateToggleHTML') updateToggleHTML()
         else if (req.action == 'infinityMode.activate') infinityMode.activate()        
         else if (req.action == 'sync.storageToUI') syncStorageToUI()
     })
