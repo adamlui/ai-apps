@@ -67,7 +67,8 @@
 
     // Create CHILD toggles on chatgpt.com
     if (site == 'chatgpt') {
-        await settings.load('userLanguage', 'infinityMode', ...settings.availKeys)
+        settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
+        await settings.load('infinityMode', ...settings.availKeys)
 
         // Init SETTINGS props
         const re_all = new RegExp(`^(${chrome.i18n.getMessage('menuLabel_all')}|all|any|every)$`, 'i')
