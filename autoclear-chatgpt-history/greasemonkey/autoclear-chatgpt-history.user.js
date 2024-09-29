@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29
+// @version             2024.9.29.1
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -600,82 +600,84 @@
 
     // Define UI functions
 
-    async function insertToggle() {
+    const sideToggle = {
+        insert() {
 
-        // Insert toggle
-        const toggleParent = document.querySelector('nav')
-        if (!toggleParent.contains(navToggleDiv))
-            toggleParent.insertBefore(navToggleDiv, toggleParent.children[1])
+            // Insert toggle
+            const toggleParent = document.querySelector('nav')
+            if (!toggleParent.contains(navToggleDiv))
+                toggleParent.insertBefore(navToggleDiv, toggleParent.children[1])
+    
+            // Tweak styles
+            navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
+            navToggleDiv.style.paddingLeft = '8px'
+            document.getElementById('autoclear-toggle-knob-span').style.boxShadow = (
+                'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
+            document.getElementById('autoclear-toggle-navicon').src = `${ // update navicon color in case scheme changed
+                app.urls.mediaHost}/images/icons/incognito/`
+            + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${app.latestAssetCommitHash}`
+        },
 
-        // Tweak styles
-        navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
-        navToggleDiv.style.paddingLeft = '8px'
-        document.getElementById('autoclear-toggle-knob-span').style.boxShadow = (
-            'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
-        document.getElementById('autoclear-toggle-navicon').src = `${ // update navicon color in case scheme changed
-            app.urls.mediaHost}/images/icons/incognito/`
-        + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${app.latestAssetCommitHash}`
-    }
+        update() {
 
-    function updateToggleHTML() {
-
-        // Create/size/position navicon
-        const navicon = document.getElementById('autoclear-toggle-navicon') || document.createElement('img')
-        navicon.id = 'autoclear-toggle-navicon'
-        navicon.style.width = navicon.style.height = '1.25rem'
-        navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
-
-        // Create/ID/disable/hide/update checkbox
-        const toggleInput = document.getElementById('autoclear-toggle-input') || document.createElement('input')
-        toggleInput.id = 'autoclear-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
-        toggleInput.style.display = 'none' ; toggleInput.checked = config.autoclear
-
-        // Create/ID/stylize switch
-        const switchSpan = document.getElementById('autoclear-switch-span') || document.createElement('span')
-        switchSpan.id = 'autoclear-switch-span'
-        const switchStyles = {
-            position: 'relative', left: `${ env.browser.isMobile ? 211 : !ui.firstLink ? 160 : 154 }px`,
-            backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-            bottom: `${ !ui.firstLink ? -0.15 : env.browser.isFF ? 0.05 : 0 }em`,
-            width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
+            // Create/size/position navicon
+            const navicon = document.getElementById('autoclear-toggle-navicon') || document.createElement('img')
+            navicon.id = 'autoclear-toggle-navicon'
+            navicon.style.width = navicon.style.height = '1.25rem'
+            navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
+    
+            // Create/ID/disable/hide/update checkbox
+            const toggleInput = document.getElementById('autoclear-toggle-input') || document.createElement('input')
+            toggleInput.id = 'autoclear-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
+            toggleInput.style.display = 'none' ; toggleInput.checked = config.autoclear
+    
+            // Create/ID/stylize switch
+            const switchSpan = document.getElementById('autoclear-switch-span') || document.createElement('span')
+            switchSpan.id = 'autoclear-switch-span'
+            const switchStyles = {
+                position: 'relative', left: `${ env.browser.isMobile ? 211 : !ui.firstLink ? 160 : 154 }px`,
+                backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
+                bottom: `${ !ui.firstLink ? -0.15 : env.browser.isFF ? 0.05 : 0 }em`,
+                width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
+            }
+            Object.assign(switchSpan.style, switchStyles)
+    
+            // Create/ID/stylize knob, append to switch
+            const knobSpan = document.getElementById('autoclear-toggle-knob-span') || document.createElement('span')
+            knobSpan.id = 'autoclear-toggle-knob-span'
+            const knobStyles = {
+                position: 'absolute', left: '3px', bottom: '1.25px',
+                width: '12px', height: '12px', content: '""', borderRadius: '28px',
+                transform: toggleInput.checked ? // init opposite final pos
+                    'translateX(0)' : 'translateX(13px) translateY(0)',
+                backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
+            }
+            Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
+    
+            // Create/ID/stylize/fill label
+            const toggleLabel = document.getElementById('autoclear-toggle-label') || document.createElement('label')
+            toggleLabel.id = 'autoclear-toggle-label'
+            if (!ui.firstLink) { // add font size/weight since no ui.firstLink to borrow from
+                toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
+            toggleLabel.style.marginLeft = `-${ !ui.firstLink ? 23 : 41 }px` // left-shift to navicon
+            toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
+            toggleLabel.style.width = `${ env.browser.isMobile ? 201 : 148 }px` // to truncate overflown text
+            toggleLabel.style.overflow = 'hidden' // to truncate overflown text
+            toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
+            toggleLabel.innerText = ( app.msgs.mode_autoClear ) + ' '
+                                + ( toggleInput.checked ? ( app.msgs.state_enabled  || 'enabled' )
+                                                        : ( app.msgs.state_disabled ))
+            // Append elements
+            for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
+    
+            // Update visual state
+            navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
+            setTimeout(() => {
+                switchSpan.style.backgroundColor = toggleInput.checked ? '#ad68ff' : '#ccc'
+                switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
+                knobSpan.style.transform = toggleInput.checked ? 'translateX(13px) translateY(0)' : 'translateX(0)'
+            }, 1) // min delay to trigger transition fx
         }
-        Object.assign(switchSpan.style, switchStyles)
-
-        // Create/ID/stylize knob, append to switch
-        const knobSpan = document.getElementById('autoclear-toggle-knob-span') || document.createElement('span')
-        knobSpan.id = 'autoclear-toggle-knob-span'
-        const knobStyles = {
-            position: 'absolute', left: '3px', bottom: '1.25px',
-            width: '12px', height: '12px', content: '""', borderRadius: '28px',
-            transform: toggleInput.checked ? // init opposite final pos
-                'translateX(0)' : 'translateX(13px) translateY(0)',
-            backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
-        }
-        Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
-
-        // Create/ID/stylize/fill label
-        const toggleLabel = document.getElementById('autoclear-toggle-label') || document.createElement('label')
-        toggleLabel.id = 'autoclear-toggle-label'
-        if (!ui.firstLink) { // add font size/weight since no ui.firstLink to borrow from
-            toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
-        toggleLabel.style.marginLeft = `-${ !ui.firstLink ? 23 : 41 }px` // left-shift to navicon
-        toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
-        toggleLabel.style.width = `${ env.browser.isMobile ? 201 : 148 }px` // to truncate overflown text
-        toggleLabel.style.overflow = 'hidden' // to truncate overflown text
-        toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
-        toggleLabel.innerText = ( app.msgs.mode_autoClear ) + ' '
-                            + ( toggleInput.checked ? ( app.msgs.state_enabled  || 'enabled' )
-                                                    : ( app.msgs.state_disabled ))
-        // Append elements
-        for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
-
-        // Update visual state
-        navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
-        setTimeout(() => {
-            switchSpan.style.backgroundColor = toggleInput.checked ? '#ad68ff' : '#ccc'
-            switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
-            knobSpan.style.transform = toggleInput.checked ? 'translateX(13px) translateY(0)' : 'translateX(0)'
-        }, 1) // min delay to trigger transition fx
     }
 
     function hideHistory() { // from DOM since chatgpt.clearChats() works back-end only (front-end updates on refresh)
@@ -729,7 +731,7 @@
     navToggleDiv.style.margin = '2px 0' // add v-margins
     navToggleDiv.style.userSelect = 'none' // prevent highlighting
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
-    updateToggleHTML() // create children
+    sideToggle.update() // create children
 
     if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
         const firstIcon = ui.firstLink.querySelector('div:first-child'),
@@ -738,13 +740,13 @@
         navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
     }
 
-    insertToggle()
+    sideToggle.insert()
 
     // Add LISTENER to toggle switch/label/config/menu + auto-clear
     navToggleDiv.onclick = () => {
         const toggleInput = document.getElementById('autoclear-toggle-input')
         toggleInput.checked = !toggleInput.checked ; config.autoclear = toggleInput.checked
-        updateToggleHTML() ; menu.refresh()
+        sideToggle.update() ; menu.refresh()
         if (config.autoclear) {
             setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
             notify(`${app.msgs.mode_autoClear}: ${menu.state.words[1]}`)

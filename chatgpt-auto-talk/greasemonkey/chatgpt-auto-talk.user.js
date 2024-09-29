@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29
+// @version             2024.9.29.1
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -565,82 +565,84 @@
 
     // Define UI functions
 
-    async function insertToggle() {
+    const sideToggle = {
+        insert() {
 
-        // Insert toggle
-        const toggleParent = document.querySelector('nav')
-        if (!toggleParent.contains(navToggleDiv))
-            toggleParent.insertBefore(navToggleDiv, toggleParent.children[1])
+            // Insert toggle
+            const toggleParent = document.querySelector('nav')
+            if (!toggleParent.contains(navToggleDiv))
+                toggleParent.insertBefore(navToggleDiv, toggleParent.children[1])
+    
+            // Tweak styles
+            navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
+            navToggleDiv.style.paddingLeft = '8px'
+            document.getElementById('auto-talk-toggle-knob-span').style.boxShadow = (
+                'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
+            document.getElementById('auto-talk-toggle-navicon').src = `${ // update navicon color in case scheme changed
+                app.urls.assetHost }/assets/images/icons/speaker/${
+                chatgpt.isDarkMode() ? 'white' : 'black' }-icon.svg`
+        },
 
-        // Tweak styles
-        navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
-        navToggleDiv.style.paddingLeft = '8px'
-        document.getElementById('auto-talk-toggle-knob-span').style.boxShadow = (
-            'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
-        document.getElementById('auto-talk-toggle-navicon').src = `${ // update navicon color in case scheme changed
-            app.urls.assetHost }/assets/images/icons/speaker/${
-            chatgpt.isDarkMode() ? 'white' : 'black' }-icon.svg`
-    }
+        update() {
 
-    function updateToggleHTML() {
-
-        // Create/size/position navicon
-        const navicon = document.getElementById('auto-talk-toggle-navicon') || document.createElement('img')
-        navicon.id = 'auto-talk-toggle-navicon'
-        navicon.style.width = navicon.style.height = '1.25rem'
-        navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
-
-        // Create/ID/disable/hide/update checkbox
-        const toggleInput = document.getElementById('auto-talk-toggle-input') || document.createElement('input')
-        toggleInput.id = 'auto-talk-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
-        toggleInput.style.display = 'none' ; toggleInput.checked = !config.autoTalkDisabled
-
-        // Create/ID/stylize switch
-        const switchSpan = document.getElementById('atSwitchSpan') || document.createElement('span')
-        switchSpan.id = 'atSwitchSpan'
-        const switchStyles = {
-            position: 'relative', left: `${ env.browser.isMobile ? 211 : !ui.firstLink ? 160 : 154 }px`,
-            backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-            bottom: `${ !ui.firstLink ? -0.15 : env.browser.isFF ? 0.05 : 0 }em`,
-            width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
+            // Create/size/position navicon
+            const navicon = document.getElementById('auto-talk-toggle-navicon') || document.createElement('img')
+            navicon.id = 'auto-talk-toggle-navicon'
+            navicon.style.width = navicon.style.height = '1.25rem'
+            navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
+    
+            // Create/ID/disable/hide/update checkbox
+            const toggleInput = document.getElementById('auto-talk-toggle-input') || document.createElement('input')
+            toggleInput.id = 'auto-talk-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
+            toggleInput.style.display = 'none' ; toggleInput.checked = !config.autoTalkDisabled
+    
+            // Create/ID/stylize switch
+            const switchSpan = document.getElementById('atSwitchSpan') || document.createElement('span')
+            switchSpan.id = 'atSwitchSpan'
+            const switchStyles = {
+                position: 'relative', left: `${ env.browser.isMobile ? 211 : !ui.firstLink ? 160 : 154 }px`,
+                backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
+                bottom: `${ !ui.firstLink ? -0.15 : env.browser.isFF ? 0.05 : 0 }em`,
+                width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
+            }
+            Object.assign(switchSpan.style, switchStyles)
+    
+            // Create/ID/stylize knob, append to switch
+            const knobSpan = document.getElementById('auto-talk-toggle-knob-span') || document.createElement('span')
+            knobSpan.id = 'auto-talk-toggle-knob-span'
+            const knobStyles = {
+                position: 'absolute', left: '3px', bottom: '1.25px',
+                width: '12px', height: '12px', content: '""', borderRadius: '28px',
+                transform: toggleInput.checked ? // init opposite final pos
+                    'translateX(0)' : 'translateX(13px) translateY(0)',
+                backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
+            }
+            Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
+    
+            // Create/ID/stylize/fill label
+            const toggleLabel = document.getElementById('auto-talk-toggle-label') || document.createElement('label')
+            toggleLabel.id = 'auto-talk-toggle-label'
+            if (!ui.firstLink) { // add font size/weight since no ui.firstLink to borrow from
+                toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
+            toggleLabel.style.marginLeft = `-${ !ui.firstLink ? 23 : 41 }px` // left-shift to navicon
+            toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
+            toggleLabel.style.width = `${ env.browser.isMobile ? 201 : 148 }px` // to truncate overflown text
+            toggleLabel.style.overflow = 'hidden' // to truncate overflown text
+            toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
+            toggleLabel.innerText = ( app.msgs.mode_autoTalk ) + ' '
+                                  + ( toggleInput.checked ? ( app.msgs.state_enabled  || 'enabled' )
+                                                          : ( app.msgs.state_disabled ))
+            // Append elements
+            for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
+    
+            // Update visual state
+            navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
+            setTimeout(() => {
+                switchSpan.style.backgroundColor = toggleInput.checked ? '#ad68ff' : '#ccc'
+                switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
+                knobSpan.style.transform = toggleInput.checked ? 'translateX(13px) translateY(0)' : 'translateX(0)'
+            }, 1) // min delay to trigger transition fx
         }
-        Object.assign(switchSpan.style, switchStyles)
-
-        // Create/ID/stylize knob, append to switch
-        const knobSpan = document.getElementById('auto-talk-toggle-knob-span') || document.createElement('span')
-        knobSpan.id = 'auto-talk-toggle-knob-span'
-        const knobStyles = {
-            position: 'absolute', left: '3px', bottom: '1.25px',
-            width: '12px', height: '12px', content: '""', borderRadius: '28px',
-            transform: toggleInput.checked ? // init opposite final pos
-                'translateX(0)' : 'translateX(13px) translateY(0)',
-            backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
-        }
-        Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
-
-        // Create/ID/stylize/fill label
-        const toggleLabel = document.getElementById('auto-talk-toggle-label') || document.createElement('label')
-        toggleLabel.id = 'auto-talk-toggle-label'
-        if (!ui.firstLink) { // add font size/weight since no ui.firstLink to borrow from
-            toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
-        toggleLabel.style.marginLeft = `-${ !ui.firstLink ? 23 : 41 }px` // left-shift to navicon
-        toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
-        toggleLabel.style.width = `${ env.browser.isMobile ? 201 : 148 }px` // to truncate overflown text
-        toggleLabel.style.overflow = 'hidden' // to truncate overflown text
-        toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
-        toggleLabel.innerText = ( app.msgs.mode_autoTalk ) + ' '
-                              + ( toggleInput.checked ? ( app.msgs.state_enabled  || 'enabled' )
-                                                      : ( app.msgs.state_disabled ))
-        // Append elements
-        for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
-
-        // Update visual state
-        navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
-        setTimeout(() => {
-            switchSpan.style.backgroundColor = toggleInput.checked ? '#ad68ff' : '#ccc'
-            switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
-            knobSpan.style.transform = toggleInput.checked ? 'translateX(13px) translateY(0)' : 'translateX(0)'
-        }, 1) // min delay to trigger transition fx
     }
 
     // Run MAIN routine
@@ -694,7 +696,7 @@
     navToggleDiv.style.margin = '2px 0' // add v-margins
     navToggleDiv.style.userSelect = 'none' // prevent highlighting
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
-    updateToggleHTML() // create children
+    sideToggle.update() // create children
     if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
         const firstIcon = ui.firstLink.querySelector('div:first-child'),
               firstLabel = ui.firstLink.querySelector('div:nth-child(2)')
@@ -702,13 +704,13 @@
         navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
     }
 
-    insertToggle()
+    sideToggle.insert()
 
     // Add LISTENER to toggle switch/label/config/menu
     navToggleDiv.onclick = () => {
         const toggleInput = document.getElementById('auto-talk-toggle-input')
         toggleInput.checked = !toggleInput.checked ; config.autoTalkDisabled = !toggleInput.checked
-        updateToggleHTML() ; menu.refresh()
+        sideToggle.update() ; menu.refresh()
         notify(`${app.msgs.mode_autoTalk}: ${menu.state.words[+!config.autoTalkDisabled]}`)
         settings.save('autoTalkDisabled', config.autoTalkDisabled)
     }
