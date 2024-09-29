@@ -20,9 +20,8 @@
         fromMsg = true
         if (req.action == 'notify') notify(req.msg, req.pos)
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
-        else if (req.action == 'resetInSameChat') resetInSameChat()
-        else if (req.action == 'restartInNewChat') restartInNewChat()
-        else if (req.action == 'infinityMode.activate') infinityMode.activate()        
+            else if (req.action == 'infinityMode.activate') infinityMode.activate()
+        else if (req.action == 'infinityMode.restart') infinityMode.restart({ target: req.target })
         else if (req.action == 'sync.storageToUI') syncStorageToUI()
     })
 
@@ -197,22 +196,21 @@
             settings.save('infinityMode', false) // in case toggled by PV listener
         },
 
+        async restart(options = { target: 'new' }) {
+            if (options.target == 'new') {
+                chatgpt.stop() ; document.getElementById('infinity-toggle-label').click() // toggle off
+                setTimeout(() => { document.getElementById('infinity-toggle-label').click() }, 750) // toggle on
+            } else {
+                clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
+                if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
+                    await settings.load('replyInterval')
+                    infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+                }
+            }
+
+        },
+
         async toggle() { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
-    }
-
-    // Define INTERRUPT functions
-
-    function restartInNewChat() {
-        chatgpt.stop() ; document.getElementById('infinity-toggle-label').click() // toggle off
-        setTimeout(() => { document.getElementById('infinity-toggle-label').click() }, 750) // toggle on
-    }
-
-    async function resetInSameChat() {
-        clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
-        if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
-            await settings.load('replyInterval')
-            infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
-        }
     }
 
     // Define SYNC function

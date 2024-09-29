@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29.2
+// @version             2024.9.29.3
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -425,7 +425,7 @@
                                     ( app.msgs.appName ) + ' ' // msg
                                         + ( app.msgs.alert_willReplyIn ) + ' '
                                         + ( replyLanguage || app.msgs.alert_yourSysLang) + '.')
-                                if (config.infinityMode) restartInNewChat() // using new reply language                        
+                                if (config.infinityMode) infinityMode.restart({ target: 'new' }) // using new reply language                        
                                 break
                             }
                         }
@@ -459,7 +459,7 @@
                                     ( app.msgs.appName ) + ' ' // msg
                                         + ( app.msgs.alert_willReplyEvery ) + ' '
                                         + replyInterval + ' ' + ( app.msgs.unit_seconds ) + '.')
-                                if (config.infinityMode) resetInSameChat() // using new reply interval                    
+                                if (config.infinityMode) infinityMode.restart({ target: 'self' }) // using new reply interval                    
                                 break
                             }
                         }
@@ -792,20 +792,18 @@
             config.infinityMode = false // in case toggled by PV listener
         },
 
+        async restart(options = { target: 'new' }) {
+            if (options.target == 'new') {
+                chatgpt.stop() ; document.getElementById('infinity-toggle-label').click() // toggle off
+                setTimeout(() => { document.getElementById('infinity-toggle-label').click() }, 500) // toggle on
+            } else {
+                clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
+                if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
+                    infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
+            }
+        },
+
         toggle() { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
-    }
-
-    // Define INTERRUPT functions
-
-    function restartInNewChat() {
-        chatgpt.stop() ; document.getElementById('infinity-toggle-label').click() // toggle off
-        setTimeout(() => { document.getElementById('infinity-toggle-label').click() }, 500) // toggle on
-    }
-
-    async function resetInSameChat() {
-        clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
-        if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
-            infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
     }
 
     // Define SYNC functions
