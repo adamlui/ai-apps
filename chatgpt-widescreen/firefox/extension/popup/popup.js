@@ -40,16 +40,15 @@
 
     // Define FUNCTIONS
 
-    function notify(msg) {
-        chrome.tabs.query({ active: true, currentWindow: true }, tabs =>
-            chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'notify', msg: msg, pos: 'bottom-right' })
-    )}
-
-    async function syncStorageToUI() {
+    async function sendMsgToActiveTab(req) {
         const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        chrome.tabs.sendMessage(activeTab.id, { action: 'sync.storageToUI' })
+        chrome.tabs.sendMessage(activeTab.id, req)
     }
+
+    function notify(msg) {
+        sendMsgToActiveTab({ action: 'notify', msg: msg, pos: 'bottom-right' })}    
+
+    function syncStorageToUI() { sendMsgToActiveTab({ action: 'sync.storageToUI' })}
     
     function updateFade() {
 
