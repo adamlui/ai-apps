@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.28.1
+// @version             2024.9.28.2
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -661,10 +661,5 @@
                 }, 50)
     }})}})
     autoPlayObserver.observe(document.querySelector('main'), { childList: true, subtree: true })
-
-    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
-    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
-        if (mutation.type == 'childList' && mutation.addedNodes.length) insertToggle() })})
-    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
 })()

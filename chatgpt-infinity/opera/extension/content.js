@@ -290,15 +290,6 @@
             infinityMode.activate()
             settings.save('infinityMode', true) // so popup.js updates toggle
         }
-    }
-
-    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
-    const nodeObserver = new MutationObserver(mutations => {
-        mutations.forEach(async mutation => {
-            if (mutation.type == 'childList' && mutation.addedNodes.length) {
-                await settings.load(['extensionDisabled'])
-                if (!config.extensionDisabled) insertToggle()
-    }})})
-    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })    
+    } 
 
 })()
