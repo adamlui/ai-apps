@@ -12,7 +12,7 @@
 
     async function sendMsgToActiveTab(req) {
         const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        chrome.tabs.sendMessage(activeTab.id, req)
+        return await chrome.tabs.sendMessage(activeTab.id, req)
     }
 
     function notify(msg) { sendMsgToActiveTab({ action: 'notify', msg: msg, pos: 'bottom-right' })}
@@ -42,7 +42,7 @@
                 })
         },
 
-        storageToUI() { sendMsgToActiveTab({ action: 'sync.storageToUI' })}
+        storageToUI() { return sendMsgToActiveTab({ action: 'sync.storageToUI' })}
     }
 
     function toTitleCase(str) {
@@ -106,9 +106,9 @@
         menuItemDiv.onclick = () => menuInput.click()
         menuInput.onclick = menuSlider.onclick = event => // prevent double toggle
             event.stopImmediatePropagation()
-        menuInput.onchange = () => {
-            settings.save('infinityMode', !config.infinityMode) ; sync.storageToUI()
-            sendMsgToActiveTab({ action: 'infinityMode.activate' })
+        menuInput.onchange = async () => {
+            settings.save('infinityMode', !config.infinityMode) ; await sync.storageToUI()
+            sendMsgToActiveTab({ action: 'infinityMode.toggle' })
             notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')} ${ config.infinityMode ? 'ON' : 'OFF' }`)
         }
 

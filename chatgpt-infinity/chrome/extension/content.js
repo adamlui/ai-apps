@@ -16,13 +16,13 @@
 
     // Add CHROME MSG listener
     let fromMsg = false // to prevent double notifications blocked by popup
-    chrome.runtime.onMessage.addListener(req => {
+    chrome.runtime.onMessage.addListener(async (req, _, sendResp) => {
         fromMsg = true
         if (req.action == 'notify') notify(req.msg, req.pos)
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
-        else if (req.action == 'infinityMode.activate') infinityMode.activate()
+        else if (req.action == 'infinityMode.toggle') infinityMode.toggle()
         else if (req.action == 'infinityMode.restart') infinityMode.restart({ target: req.target })
-        else if (req.action == 'sync.storageToUI') syncStorageToUI()
+        else if (req.action == 'sync.storageToUI') syncStorageToUI().then(() => sendResp({ status: 'done' }))
     })
 
     // Init ENV info
@@ -210,7 +210,7 @@
 
         },
 
-        async toggle() { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
+        toggle() { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
     }
 
     // Define SYNC function
