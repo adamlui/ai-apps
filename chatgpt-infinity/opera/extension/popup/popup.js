@@ -80,13 +80,13 @@
                 label: chrome.i18n.getMessage('menuLabel_toggleVis') },
             autoScrollDisabled: { type: 'toggle',
                 label: chrome.i18n.getMessage('menuLabel_autoScroll') },
-            replyLanguage: { type: 'modal', symbol: '🌐',
+            replyLanguage: { type: 'prompt', symbol: '🌐',
                 label: chrome.i18n.getMessage('menuLabel_replyLang'),
                 status: config.replyLanguage },
-            replyTopic: { type: 'modal', symbol: '🧠',
+            replyTopic: { type: 'prompt', symbol: '🧠',
                 label: chrome.i18n.getMessage('menuLabel_replyTopic'),
                 status: re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all') : toTitleCase(config.replyTopic) },
-            replyInterval: { type: 'modal', symbol: '⌚',
+            replyInterval: { type: 'prompt', symbol: '⌚',
                 label: chrome.i18n.getMessage('menuLabel_replyInt'),
                 status: `${config.replyInterval}s` }
         }})
@@ -128,7 +128,7 @@
                 menuSlider = dom.create.elem('span', { class: 'slider' })
                 menuLabel.append(menuInput, menuSlider)
                 menuLabel.classList.add('toggle-switch')
-            } else { // modal settings
+            } else { // prompt settings
                 menuLabel.innerText = app.settings[key].symbol
                 menuLabel.classList.add('menu-prompt')
                 menuLabelSpan.innerText +=  `— ${app.settings[key].status}`
