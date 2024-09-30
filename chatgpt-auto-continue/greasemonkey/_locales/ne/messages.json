@@ -35,6 +35,6 @@
   "btnLabel_update": { "message": "अद्यावधिक" },
   "btnLabel_dismiss": { "message": "खारेज गर्नुहोस्" },
   "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" },
-  "state_on": { "message": "on" },
-  "state_off": { "message": "off" }
+  "state_on": { "message": "मा" },
+  "state_off": { "message": "बन्द" }
 }

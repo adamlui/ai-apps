@@ -35,6 +35,6 @@
   "btnLabel_update": { "message": "Uuenda" },
   "btnLabel_dismiss": { "message": "Loobu" },
   "link_viewChanges": { "message": "Vaata muudatusi" },
-  "state_on": { "message": "on" },
+  "state_on": { "message": "sisse" },
   "state_off": { "message": "väljas" }
 }

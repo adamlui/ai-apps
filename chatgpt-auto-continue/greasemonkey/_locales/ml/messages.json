@@ -35,6 +35,6 @@
   "btnLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },
   "btnLabel_dismiss": { "message": "നിരസിക്കുക" },
   "link_viewChanges": { "message": "മാറ്റങ്ങൾ കാണുക" },
-  "state_on": { "message": "on" },
+  "state_on": { "message": "ഓൺ" },
   "state_off": { "message": "ഓഫ്" }
 }

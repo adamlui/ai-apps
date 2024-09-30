@@ -110,6 +110,6 @@
   "link_viewChanges": { "message": "Εμφάνιση αλλαγών" },
   "link_shareFeedback": { "message": "Κοινοποίηση προτάσεων βελτίωσης" },
   "prefix_exit": { "message": "Έξοδος" },
-  "state_on": { "message": "On" },
-  "state_off": { "message": "Off" }
+  "state_on": { "message": "επί" },
+  "state_off": { "message": "μακριά από" }
 }

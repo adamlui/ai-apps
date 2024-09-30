@@ -36,6 +36,6 @@
   "link_viewChanges": { "message": "Vaata muudatusi" },
   "state_enabled": { "message": "lubatud" },
   "state_disabled": { "message": "välja lülitatud" },
-  "state_on": { "message": "on" },
+  "state_on": { "message": "sisse" },
   "state_off": { "message": "väljas" }
 }

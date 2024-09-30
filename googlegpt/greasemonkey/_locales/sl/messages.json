@@ -111,5 +111,5 @@
   "link_shareFeedback": { "message": "Delite povratne informacije" },
   "prefix_exit": { "message": "Izhod" },
   "state_on": { "message": "Vklopljeno" },
-  "state_off": { "message": "Off" }
+  "state_off": { "message": "izklopljeno" }
 }

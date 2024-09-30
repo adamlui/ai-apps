@@ -83,6 +83,6 @@
   "btnLabel_update": { "message": "Aggiornare" },
   "btnLabel_dismiss": { "message": "Ignora" },
   "link_viewChanges": { "message": "Visualizza modifiche" },
-  "state_on": { "message": "On" },
+  "state_on": { "message": "su" },
   "state_off": { "message": "Spento" }
 }

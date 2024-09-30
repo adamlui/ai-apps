@@ -36,6 +36,6 @@
   "link_viewChanges": { "message": "Ikusi aldaketak" },
   "state_enabled": { "message": "gaituta" },
   "state_disabled": { "message": "ezgaituta" },
-  "state_on": { "message": "on" },
-  "state_off": { "message": "off" }
+  "state_on": { "message": "sisse" },
+  "state_off": { "message": "itzali" }
 }

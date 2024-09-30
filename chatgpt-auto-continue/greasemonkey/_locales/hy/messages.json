@@ -35,6 +35,6 @@
   "btnLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },
   "btnLabel_dismiss": { "message": "Փակել" },
   "link_viewChanges": { "message": "Դիտել փոփոխությունները" },
-  "state_on": { "message": "on" },
+  "state_on": { "message": "վրա" },
   "state_off": { "message": "Անջատել" }
 }

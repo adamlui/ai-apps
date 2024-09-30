@@ -36,6 +36,6 @@
   "link_viewChanges": { "message": "മാറ്റങ്ങൾ കാണുക" },
   "state_enabled": { "message": "പ്രവര്‍ത്തന സജ്ജം" },
   "state_disabled": { "message": "പ്രവര്‍ത്തനരഹിതമാക്കി" },
-  "state_on": { "message": "on" },
+  "state_on": { "message": "ഓൺ" },
   "state_off": { "message": "ഓഫ്" }
 }

@@ -83,6 +83,6 @@
   "btnLabel_update": { "message": "Актуализация" },
   "btnLabel_dismiss": { "message": "Отхвърли" },
   "link_viewChanges": { "message": "Вижте Промените" },
-  "state_on": { "message": "On" },
+  "state_on": { "message": "на" },
   "state_off": { "message": "Изкл" }
 }

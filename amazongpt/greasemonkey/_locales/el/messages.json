@@ -83,6 +83,6 @@
   "btnLabel_update": { "message": "Ενημέρωση" },
   "btnLabel_dismiss": { "message": " Κλείσιμο" },
   "link_viewChanges": { "message": "Εμφάνιση αλλαγών" },
-  "state_on": { "message": "On" },
-  "state_off": { "message": "Off" }
+  "state_on": { "message": "επί" },
+  "state_off": { "message": "μακριά από" }
 }

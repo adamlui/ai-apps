@@ -83,6 +83,6 @@
   "btnLabel_update": { "message": "I-update" },
   "btnLabel_dismiss": { "message": "I-dismiss" },
   "link_viewChanges": { "message": "Tan-awa ang mga kausaban" },
-  "state_on": { "message": "Sa" },
-  "state_off": { "message": "Off" }
+  "state_on": { "message": "sa" },
+  "state_off": { "message": "off" }
 }

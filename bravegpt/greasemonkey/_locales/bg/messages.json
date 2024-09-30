@@ -110,6 +110,6 @@
   "link_viewChanges": { "message": "Вижте Промените" },
   "link_shareFeedback": { "message": "Обратна информация" },
   "prefix_exit": { "message": "Изход" },
-  "state_on": { "message": "On" },
+  "state_on": { "message": "на" },
   "state_off": { "message": "Изкл" }
 }

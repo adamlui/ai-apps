@@ -110,6 +110,6 @@
   "link_viewChanges": { "message": "Tan-awa ang mga kausaban" },
   "link_shareFeedback": { "message": "Ipakigbahin ang Feedback" },
   "prefix_exit": { "message": "Mogawas" },
-  "state_on": { "message": "Sa" },
-  "state_off": { "message": "Off" }
+  "state_on": { "message": "sa" },
+  "state_off": { "message": "off" }
 }

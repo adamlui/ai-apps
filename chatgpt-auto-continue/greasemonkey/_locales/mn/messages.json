@@ -35,6 +35,6 @@
   "btnLabel_update": { "message": "Шинэчлэх" },
   "btnLabel_dismiss": { "message": "Дуусах" },
   "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" },
-  "state_on": { "message": "on" },
+  "state_on": { "message": "дээр" },
   "state_off": { "message": "Унт" }
 }

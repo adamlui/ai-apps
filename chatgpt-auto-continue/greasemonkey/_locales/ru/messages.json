@@ -36,5 +36,5 @@
   "btnLabel_dismiss": { "message": "Пропустить" },
   "link_viewChanges": { "message": "Просмотреть изменения" },
   "state_on": { "message": "вкл" },
-  "state_off": { "message": "off" }
+  "state_off": { "message": "выключенный" }
 }

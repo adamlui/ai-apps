@@ -36,6 +36,6 @@
   "link_viewChanges": { "message": "Դիտել փոփոխությունները" },
   "state_enabled": { "message": "Թույլատրվա՞ծ է" },
   "state_disabled": { "message": "անջատված է" },
-  "state_on": { "message": "on" },
+  "state_on": { "message": "վրա" },
   "state_off": { "message": "Անջատել" }
 }

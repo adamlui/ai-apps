@@ -110,6 +110,6 @@
   "link_viewChanges": { "message": "Visualizza modifiche" },
   "link_shareFeedback": { "message": "Riscontro" },
   "prefix_exit": { "message": "Esci" },
-  "state_on": { "message": "On" },
+  "state_on": { "message": "su" },
   "state_off": { "message": "Spento" }
 }

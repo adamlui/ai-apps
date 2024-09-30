@@ -37,5 +37,5 @@
   "state_enabled": { "message": "เปิดการใช้งาน" },
   "state_disabled": { "message": "ปิดใช้งาน" },
   "state_on": { "message": "เมื่อ" },
-  "state_off": { "message": "off" }
+  "state_off": { "message": "ปิด" }
 }

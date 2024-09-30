@@ -110,6 +110,6 @@
   "link_viewChanges": { "message": "Leba diphetogo" },
   "link_shareFeedback": { "message": "Ditshwaelo" },
   "prefix_exit": { "message": "Tswa" },
-  "state_on": { "message": "On" },
-  "state_off": { "message": "OFF" }
+  "state_on": { "message": "mo" },
+  "state_off": { "message": "tswa go" }
 }

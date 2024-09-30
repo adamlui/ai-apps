@@ -111,5 +111,5 @@
   "link_shareFeedback": { "message": "Kaʻana Manaʻo" },
   "prefix_exit": { "message": "Puka" },
   "state_on": { "message": "Ma ka" },
-  "state_off": { "message": "OFF" }
+  "state_off": { "message": "hemo" }
 }

@@ -36,5 +36,5 @@
   "btnLabel_dismiss": { "message": "Odmietnuť" },
   "link_viewChanges": { "message": "Zobraziť zmeny" },
   "state_on": { "message": "na" },
-  "state_off": { "message": "off" }
+  "state_off": { "message": "vypnuté" }
 }

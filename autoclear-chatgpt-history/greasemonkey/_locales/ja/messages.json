@@ -39,6 +39,6 @@
   "link_viewChanges": { "message": "変更を表示" },
   "state_enabled": { "message": "有効" },
   "state_disabled": { "message": "無効" },
-  "state_on": { "message": "on" },
-  "state_off": { "message": "off" }
+  "state_on": { "message": "の上" },
+  "state_off": { "message": "オフ" }
 }

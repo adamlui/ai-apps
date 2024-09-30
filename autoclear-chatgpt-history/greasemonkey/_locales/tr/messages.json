@@ -39,6 +39,6 @@
   "link_viewChanges": { "message": "Değişen Dosyalar" },
   "state_enabled": { "message": "etkinleştirilmiş" },
   "state_disabled": { "message": "etkinleştirilmemiş" },
-  "state_on": { "message": "on" },
+  "state_on": { "message": "Açık" },
   "state_off": { "message": "işten çıkmak" }
 }

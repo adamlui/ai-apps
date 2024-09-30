@@ -37,5 +37,5 @@
   "state_enabled": { "message": "овозможено" },
   "state_disabled": { "message": "оневозможено" },
   "state_on": { "message": "на" },
-  "state_off": { "message": "off" }
+  "state_off": { "message": "исклучен" }
 }

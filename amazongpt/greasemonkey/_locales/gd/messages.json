@@ -84,5 +84,5 @@
   "btnLabel_dismiss": { "message": "Cuir air falbh" },
   "link_viewChanges": { "message": "Seall na h - atharraichean" },
   "state_on": { "message": "air" },
-  "state_off": { "message": "Off" }
+  "state_off": { "message": "dheth" }
 }

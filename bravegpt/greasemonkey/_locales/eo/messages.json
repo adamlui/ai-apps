@@ -111,5 +111,5 @@
   "link_shareFeedback": { "message": "Retrosciigo" },
   "prefix_exit": { "message": "Eliri" },
   "state_on": { "message": "Oran" },
-  "state_off": { "message": "off" }
+  "state_off": { "message": "for" }
 }
