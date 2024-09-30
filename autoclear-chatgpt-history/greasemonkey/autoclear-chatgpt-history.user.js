@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.3
+// @version             2024.9.30.4
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -572,9 +572,9 @@
                           + ' style="height: 54px ; margin: 5px 0 -2px 5px"></img>'
                       + `<p>—<b><a target="_blank" rel="noopener" href="${app.author.url}">${app.msgs.appAuthor}</a></b>, ${app.msgs.alert_author}</p>`,
                     [ // buttons
-                        function paypal() { modals.safeWinOpen(app.urls.payPal) },
-                        function githubSponsors() { modals.safeWinOpen(app.urls.gitHub) },
-                        function cashApp() { modals.safeWinOpen(app.urls.cashApp) }
+                        function paypal() { modals.safeWinOpen(app.urls.donate.payPal) },
+                        function githubSponsors() { modals.safeWinOpen(app.urls.donate.gitHub) },
+                        function cashApp() { modals.safeWinOpen(app.urls.donate.cashApp) }
                     ], '', 478 // set width
                 )
 
