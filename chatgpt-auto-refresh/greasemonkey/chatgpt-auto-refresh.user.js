@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30
+// @version             2024.9.30.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -276,7 +276,7 @@
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             support: 'https://support.chatgptautorefresh.com'
         },
-        latestAssetCommitHash: 'ea8a500' // for cached messages.json + navicon
+        latestAssetCommitHash: '7cff0be' // for cached messages.json + navicon
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -359,7 +359,9 @@
         link_viewChanges: 'View changes',
         unit_secs: 'secs',
         state_enabled: 'enabled',
-        state_disabled: 'disabled'
+        state_disabled: 'disabled',
+        state_on: 'on',
+        state_off: 'off'
     }
     if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
         const localizedMsgs = await new Promise(resolve => {
@@ -391,8 +393,8 @@
 
     const menu = {
         ids: [], state: {
-            symbols: ['❌', '✔️'], words: ['OFF', 'ON'],
-            separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
+            symbols: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
+            words: [app.msgs.state_off.toUpperCase(), app.msgs.state_on.toUpperCase()]
         },
 
         register() {

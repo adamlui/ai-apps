@@ -34,7 +34,9 @@
         if (config.notifDisabled && !msg.includes(chrome.i18n.getMessage('menuLabel_modeNotifs'))) return
 
         // Strip state word to append colored one later
-        const foundState = ['ON', 'OFF'].find(word => msg.includes(word))
+        const foundState = [ chrome.i18n.getMessage('state_on').toUpperCase(),
+                             chrome.i18n.getMessage('state_off').toUpperCase()
+              ].find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -419,7 +421,8 @@
                 if (site == 'chatgpt') setTimeout(() => chatbar.tweak(), // update inner width
                     mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
                         && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid inaccurate width
-                notify(`${chrome.i18n.getMessage('mode_' + mode)} ${ state ? 'ON' : 'OFF' }`)
+                notify(`${chrome.i18n.getMessage('mode_' + mode)} ${
+                          chrome.i18n.getMessage(`state_${ state ? 'on' : 'off' }`).toUpperCase()}`)
             }
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
         }

@@ -109,7 +109,8 @@
         menuInput.onchange = async () => {
             settings.save('infinityMode', !config.infinityMode) ; await sync.storageToUI()
             sendMsgToActiveTab({ action: 'infinity.toggle' })
-            notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')} ${ config.infinityMode ? 'ON' : 'OFF' }`)
+            notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')} ${
+                      chrome.i18n.getMessage(`state_${ config.infinityMode ? 'on' : 'off' }`).toUpperCase()}`)
         }
 
         // Create/insert settings toggles
@@ -144,7 +145,8 @@
                     event.stopImmediatePropagation()
                 menuInput.onchange = () => {
                     settings.save(key, !config[key]) ; sync.storageToUI()
-                    notify(`${app.settings[key].label} ${/disabled|hidden/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
+                    notify(`${app.settings[key].label} ${chrome.i18n.getMessage(`state_${
+                        /disabled|hidden/i.test(key) != config[key] ? 'on' : 'off'}`).toUpperCase()}`)
                 }
             } else menuItemDiv.onclick = () => {
                 if (key == 'replyLanguage') {

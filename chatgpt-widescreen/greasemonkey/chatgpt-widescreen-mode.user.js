@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30
+// @version             2024.9.30.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -281,7 +281,7 @@
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             support: 'https://support.chatgptwidescreen.com'
         },
-        latestAssetCommitHash: 'e6adb47' // for cached sites.json + messages.json
+        latestAssetCommitHash: '7ba5ac6' // for cached sites.json + messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -371,7 +371,9 @@
         btnLabel_updateCheck: 'Check for Updates',
         btnLabel_update: 'Update',
         btnLabel_dismiss: 'Dismiss',
-        link_viewChanges: 'View changes'
+        link_viewChanges: 'View changes',
+        state_on: 'on',
+        state_off: 'off'
     }
     if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
         const localizedMsgs = await new Promise(resolve => {
@@ -414,8 +416,8 @@
 
     const menu = {
         ids: [], state: {
-            symbols: ['❌', '✔️'], words: ['OFF', 'ON'],
-            separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
+            symbols: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
+            words: [app.msgs.state_off.toUpperCase(), app.msgs.state_on.toUpperCase()]
         },
 
         register() {
@@ -945,7 +947,7 @@
             if (/chatgpt|openai/.test(site)) setTimeout(() => chatbar.tweak(), // update inner width
                 mode == 'fullWindow' && ( config.wideScreen || config.fullerWindows )
                                      && config.widerChatbox ? 111 : 0) // delay if toggled to/from active WCB to avoid inaccurate width
-            notify(`${app.msgs['mode_' + mode]} ${ state ? 'ON' : 'OFF' }`)
+            notify(`${app.msgs[`mode_${mode}`]} ${app.msgs[`state_${ state ? 'on' : 'off' }`].toUpperCase()}`)
             config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
         }
     }

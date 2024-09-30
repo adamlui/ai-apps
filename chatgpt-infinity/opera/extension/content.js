@@ -40,7 +40,9 @@
     function notify(msg, pos = '', notifDuration = '', shadow = '') {
 
         // Strip state word to append colored one later
-        const foundState = ['ON', 'OFF'].find(word => msg.includes(word))
+        const foundState = [ chrome.i18n.getMessage('state_on').toUpperCase(),
+                             chrome.i18n.getMessage('state_off').toUpperCase()
+              ].find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
@@ -157,7 +159,8 @@
                 + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                 + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                 + ' then answer it. Don\'t type anything else.'
-            if (!infinity.muted) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: ON`)
+            if (!infinity.muted) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: ${
+                                           chrome.i18n.getMessage('state_on').toUpperCase()}`)
             else infinity.muted = false
             if (env.browser.isMobile && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             if (!new URL(location).pathname.startsWith('/g/')) // not on GPT page
@@ -189,7 +192,8 @@
         },
 
         async deactivate() {
-            if (!infinity.muted) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: OFF`)
+            if (!infinity.muted) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: ${
+                                           chrome.i18n.getMessage('state_off').toUpperCase()}`)
             else infinity.muted = false
             chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener

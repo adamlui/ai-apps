@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.1
+// @version             2024.9.30.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -259,7 +259,7 @@
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             support: 'https://support.chatgptinfinity.com'
         },
-        latestAssetCommitHash: '4f81ba4' // for cached messages.json + navicon
+        latestAssetCommitHash: 'bdddd20' // for cached messages.json + navicon
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -343,7 +343,9 @@
         link_viewChanges: 'View changes',
         unit_seconds: 'seconds',
         state_enabled: 'enabled',
-        state_disabled: 'disabled'
+        state_disabled: 'disabled',
+        state_on: 'on',
+        state_off: 'off'
     }
     if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
         const localizedMsgs = await new Promise(resolve => {
@@ -385,8 +387,8 @@
 
     const menu = {
         ids: [], state: {
-            symbols: ['❌', '✔️'], words: ['OFF', 'ON'],
-            separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': '
+            symbols: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
+            words: [app.msgs.state_off.toUpperCase(), app.msgs.state_on.toUpperCase()]
         },
 
         register() {
@@ -558,7 +560,7 @@
             const styledState = document.createElement('span')
             styledState.style.cssText = `color: ${
                 foundState == menu.state.words[0] ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
-                                                : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
+                                                  : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`
             styledState.append(foundState) ; notif.append(styledState)
         }
     }
@@ -756,7 +758,7 @@
                 + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                 + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                 + ' then answer it. Don\'t type anything else.'
-            notify(`${app.msgs.menuLabel_infinityMode}: ON`)
+            notify(`${app.msgs.menuLabel_infinityMode}: ${app.msgs.state_on.toUpperCase()}`)
             if (env.browser.isMobile && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             if (!new URL(location).pathname.startsWith('/g/')) // not on GPT page
                 try { chatgpt.startNewChat() } catch (err) { return } // start new chat
@@ -788,7 +790,7 @@
         deactivate() {
             chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener
-            notify(`${app.msgs.menuLabel_infinityMode}: OFF`)
+            notify(`${app.msgs.menuLabel_infinityMode}: ${app.msgs.state_off.toUpperCase()}`)
             config.infinityMode = false // in case toggled by PV listener
         },
 

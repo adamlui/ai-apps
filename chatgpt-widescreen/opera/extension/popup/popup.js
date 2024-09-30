@@ -116,7 +116,8 @@
                     event.stopImmediatePropagation()
                 menuInput.onchange = () => {
                     settings.save(key, !config[key]) ; sync.storageToUI()
-                    notify(`${app.settings[key].label} ${/disabled/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
+                    notify(`${app.settings[key].label} ${chrome.i18n.getMessage(`state_${
+                        /disabled/i.test(key) != config[key] ? 'on' : 'off' }`).toUpperCase()}`)
                 }
             }
         })
