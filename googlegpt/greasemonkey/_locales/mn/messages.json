@@ -64,7 +64,7 @@
   "helptip_replyLanguage": { "message": "GoogleGPT-д хариу өгөх хэл" },
   "helptip_colorScheme": { "message": "GoogleGPT UI хэсгүүдийг харуулах схем" },
   "helptip_debugMode": { "message": "Хөтчийн консол дахь дэлгэрэнгүй нэвтрэлтийг харуулах" },
-  "placeholder_askSomethingElse": { "message": "" },
+  "placeholder_askSomethingElse": { "message": "Өөр зүйл асуу" },
   "placeholder_typeSomething": { "message": "Ямар нэг зүйлийг бичнэ үү" },
   "prompt_updateReplyLang": { "message": "Хариултын хэлийг шинэчлэх" },
   "alert_langUpdated": { "message": "Хэл шинэчилсэн" },

@@ -65,7 +65,7 @@
   "helptip_colorScheme": { "message": "ກົນລະຍຸດທີ່ຈະສະແດງສ່ວນປະກອບ UI DuckDuckGPT ໃນ" },
   "helptip_debugMode": { "message": "ສະແດງການເຂົ້າສູ່ລະບົບລະອຽດໃນຄອນໂຊນບຣາວເຊີ" },
   "placeholder_typeSomething": { "message": "ປະເພດບາງສິ່ງບາງຢ່າງ" },
-  "placeholder_askSomethingElse": { "message": "" },
+  "placeholder_askSomethingElse": { "message": "ຖາມອັນອື່ນ" },
   "prompt_updateReplyLang": { "message": "ອັບເດດພາສາຕອບ" },
   "alert_langUpdated": { "message": "ພາສາອັບເດດ" },
   "alert_willReplyIn": { "message": "ຕອບກັບ" },

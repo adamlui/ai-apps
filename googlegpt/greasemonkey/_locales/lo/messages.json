@@ -64,7 +64,7 @@
   "helptip_replyLanguage": { "message": "ພາສາ ສໍາ ລັບ GoogleGPT ເພື່ອຕອບໃນ" },
   "helptip_colorScheme": { "message": "ກົນລະຍຸດທີ່ຈະສະແດງອົງປະກອບ UI ຂອງ GoogleGPT ໃນ" },
   "helptip_debugMode": { "message": "ສະແດງການເຂົ້າສູ່ລະບົບລະອຽດໃນຄອນໂຊນບຣາວເຊີ" },
-  "placeholder_askSomethingElse": { "message": "" },
+  "placeholder_askSomethingElse": { "message": "ຖາມອັນອື່ນ" },
   "placeholder_typeSomething": { "message": "ປະເພດບາງສິ່ງບາງຢ່າງ" },
   "prompt_updateReplyLang": { "message": "ອັບເດດພາສາຕອບ" },
   "alert_langUpdated": { "message": "ພາສາອັບເດດ" },

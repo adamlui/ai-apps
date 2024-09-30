@@ -9,7 +9,7 @@
   "menuLabel_replyLanguage": { "message": "Bahasa Balasan" },
   "menuLabel_colorScheme": { "message": "Pemilihan Warna" },
   "menuLabel_auto": { "message": "Auto" },
-  "menuLabel_about": { "message": "" },
+  "menuLabel_about": { "message": "Tentang" },
   "menuLabel_settings": { "message": "Tetapan" },
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Dijana oleh" },

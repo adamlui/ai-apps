@@ -30,7 +30,7 @@
   "alert_noMatterSize": { "message": "kungakhathaliseki ubungakanani" },
   "alert_directlySupports": { "message": "ixhasa ngokuthe ngqo iinzame zam ezingahlawulwanga zokuqinisekisa ukuba le projekthi ihlala isimahla kwaye ivulelekile ukuba wonke umntu ayisebenzise" },
   "alert_growTogether": { "message": "Sisonke, sinokugcina le software inamandla ikhula" },
-  "alert_tyForSupport": { "message": "" },
+  "alert_tyForSupport": { "message": "Enkosi ngenkxaso yakho" },
   "alert_author": { "message": "umbhali" },
   "btnLabel_moreApps": { "message": "Ii-app ezingakumbi zeChatGPT" },
   "btnLabel_leaveReview": { "message": "Shiya Uluvo" },

@@ -6,7 +6,7 @@
   "menuLabel_toggleVis": { "message": "Togol Visibiliti" },
   "menuLabel_modeNotifs": { "message": "Mod Pemberitahuan" },
   "menuLabel_refreshInt": { "message": "Interval Segar" },
-  "menuLabel_about": { "message": "" },
+  "menuLabel_about": { "message": "Tentang" },
   "menuLabel_donate": { "message": "Sila hantar derma" },
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Dijana oleh" },

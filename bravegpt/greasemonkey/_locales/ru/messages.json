@@ -93,7 +93,7 @@
   "alert_tooManyRequests": { "message": "ChatGPT переполнен слишком большим количеством запросов" },
   "alert_parseFailed": { "message": "Не удалось проанализировать ответ JSON" },
   "alert_checkCloudflare": { "message": "Пройдите проверку безопасности Cloudflare" },
-  "alert_notWorking": { "message": "" },
+  "alert_notWorking": { "message": "не работает" },
   "alert_ifIssuePersists": { "message": "Если проблема не устранена" },
   "alert_try": { "message": "Скачать" },
   "alert_switchingOn": { "message": "Включение" },

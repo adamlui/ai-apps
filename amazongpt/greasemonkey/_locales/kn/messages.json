@@ -62,7 +62,7 @@
   "alert_userscriptMgrNoStream": { "message": "ನಿಮ್ಮ ಯೂಸರ್ ‌ ಸ್ಕ್ರಿಪ್ಟ್ ಮ್ಯಾನೇಜರ್ ಸ್ಟ್ರೀಮ್ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಹಿಂದಿರುಗಿಸುವುದನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ" },
   "alert_isCurrentlyOnlyAvailBy": { "message": "ಪ್ರಸ್ತುತ ರೊಳಗೆ ಮಾತ್ರ ಲಭ್ಯವಿದೆ" },
   "alert_openAIsupportSoon": { "message": "OpenAI API ಗೆ ಬೆಂಬಲವನ್ನು ಶೀಘ್ರದಲ್ಲೇ ಸೇರಿಸಲಾಗುತ್ತದೆ" },
-  "alert_waitingFor": { "message": "" },
+  "alert_waitingFor": { "message": "ನಿರೀಕ್ಷಿಸಲಾಗುತ್ತಿದೆ" },
   "alert_response": { "message": "ಉತ್ತರ" },
   "alert_login": { "message": "ದಯವಿಟ್ಟು ಲಾಗಿನ್ ಆಗಿ" },
   "alert_thenRefreshPage": { "message": "ನಂತರ ಈ ಪುಟವನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಿ" },

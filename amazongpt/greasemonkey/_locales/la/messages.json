@@ -15,7 +15,7 @@
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Codex Originis" },
   "scheme_light": { "message": "virtus" },
-  "scheme_dark": { "message": "" },
+  "scheme_dark": { "message": "Dark" },
   "mode_proxy": { "message": "Proxy Mode" },
   "mode_streaming": { "message": "Modus streaming" },
   "mode_autoScroll": { "message": "Circus autorum" },

@@ -10,7 +10,7 @@
   "menuLabel_replyTopic": { "message": "Balas Topik" },
   "menuLabel_all": { "message": "SEMUA" },
   "menuLabel_replyInt": { "message": "Selang Balas" },
-  "menuLabel_about": { "message": "" },
+  "menuLabel_about": { "message": "Tentang" },
   "menuLabel_donate": { "message": "Sila hantar derma" },
   "menuLabel_disabled": { "message": "Dilumpuhkan (sambungan dipasang)" },
   "about_version": { "message": "Versi" },

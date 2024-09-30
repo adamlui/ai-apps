@@ -3,7 +3,7 @@
   "appAuthor": { "message": "Adam Lui" },
   "appDesc": { "message": "Main jawapan ChatGPT secara automatik" },
   "menuLabel_toggleVis": { "message": "Kejelasan Item" },
-  "menuLabel_about": { "message": "" },
+  "menuLabel_about": { "message": "Tentang" },
   "menuLabel_donate": { "message": "Sila hantar derma" },
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Dijana oleh" },

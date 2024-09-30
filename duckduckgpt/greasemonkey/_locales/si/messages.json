@@ -109,6 +109,6 @@
   "link_viewChanges": { "message": "වෙනස්කම් බලන්න" },
   "link_shareFeedback": { "message": "ප්‍රතිපෝෂණය බෙදා ගන්න" },
   "prefix_exit": { "message": "පිට වන්න" },
-  "state_on": { "message": "" },
+  "state_on": { "message": "ක්‍රියාත්මකයි" },
   "state_off": { "message": "Property_BAR_NewPrefs_App_BAR_" }
 }

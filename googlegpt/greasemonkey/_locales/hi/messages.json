@@ -93,7 +93,7 @@
   "alert_tooManyRequests": { "message": "चैटजीपीटी में बहुत सारे अनुरोधों की भरमार है" },
   "alert_parseFailed": { "message": "प्रतिक्रिया JSON को पार्स करने में विफल" },
   "alert_checkCloudflare": { "message": "कृपया Cloudflare सुरक्षा जाँच पास करें" },
-  "alert_notWorking": { "message": "" },
+  "alert_notWorking": { "message": "काम नहीं कर रहा है" },
   "alert_ifIssuePersists": { "message": "अगर समस्या बनी रहती है" },
   "alert_try": { "message": "कोशिश करें" },
   "alert_switchingOn": { "message": "स्विच ऑन किया जा रहा है" },

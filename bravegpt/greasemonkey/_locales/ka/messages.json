@@ -109,6 +109,6 @@
   "link_viewChanges": { "message": "ცვლილებების ნახვა" },
   "link_shareFeedback": { "message": "უკუკავშირი" },
   "prefix_exit": { "message": "გასვლა" },
-  "state_on": { "message": "" },
+  "state_on": { "message": "ჩართულია" },
   "state_off": { "message": "გამორთ" }
 }

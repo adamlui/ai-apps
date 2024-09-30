@@ -3,7 +3,7 @@
   "appAuthor": { "message": "Adam Lui" },
   "appDesc": { "message": "Teruskan menjana berbilang jawapan ChatGPT secara automatik" },
   "menuLabel_modeNotifs": { "message": "Pemberitahuan Mod" },
-  "menuLabel_about": { "message": "" },
+  "menuLabel_about": { "message": "Tentang" },
   "menuLabel_donate": { "message": "Sila hantar derma" },
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Dijana oleh" },

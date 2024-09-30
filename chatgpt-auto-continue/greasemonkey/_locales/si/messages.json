@@ -34,6 +34,6 @@
   "btnLabel_update": { "message": "යාවත් කාළීන" },
   "btnLabel_dismiss": { "message": "ඉවතලන්න" },
   "link_viewChanges": { "message": "වෙනස්කම් බලන්න" },
-  "state_on": { "message": "" },
+  "state_on": { "message": "ක්‍රියාත්මකයි" },
   "state_off": { "message": "ගූගල්" }
 }
