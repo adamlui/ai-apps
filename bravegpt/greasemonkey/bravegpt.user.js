@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.30.1
+// @version               2024.9.30.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -3337,10 +3337,6 @@
         copyBtns() {
             if (document.getElementById('copy-btn')) return
 
-            const fadeDuration = 220, // ms
-                  reappearDelay = 200, // ms
-                  fadeDurationOffset = 150 // ms — for early hide to not trigger overflow scrollbar
-
             appDiv.querySelectorAll('#bravegpt > pre, code').forEach(parentElem => {
                 const copyBtn = document.createElement('btn'),
                       copySVG = icons.copy.create(parentElem)
@@ -3361,25 +3357,13 @@
                     const copySVG = copyBtn.querySelector('#copy-icon')
                     if (!copySVG) return // since clicking on copied icon
                     const textContainer = copyBtn.parentNode.tagName == 'PRE' ? copyBtn.parentNode // reply container
-                                                                               : copyBtn.parentNode.parentNode, // code container
+                                                                              : copyBtn.parentNode.parentNode, // code container
                           textToCopy = textContainer.textContent.replace(/^>> /, '').trim(),
                           checkmarksSVG = icons.checkmarkDouble.create() ; checkmarksSVG.id = 'copied-icon'
-                    setTimeout(() => copyBtn.replaceChild(checkmarksSVG, copySVG), // change to copied icon
-                        fadeDuration + reappearDelay - fadeDurationOffset) // ...after copyBtn reappears
+                    copyBtn.replaceChild(checkmarksSVG, copySVG) // change to copied icon
                     setTimeout(() => copyBtn.replaceChild(copySVG, checkmarksSVG), 1355) // change back to copy icon
                     navigator.clipboard.writeText(textToCopy) // copy text to clipboard
                     if (!env.browser.isMobile) toggle.tooltip(event) // show copied status in tooltip
-                }
-                copyBtn.onmouseup = () => { // zoom/fade-out
-                    if (config.fgAnimationsDisabled) return
-                    const copySVG = copyBtn.querySelector('#copy-icon')
-                    if (!copySVG) return // since clicking on copied icon
-                    copyBtn.style.animation = `btn-zoom-fade-out .${fadeDuration}s ease-out`
-                    setTimeout(() => { // hide copyBtn after animation nears completion
-                        Object.assign(copyBtn.style, { opacity: '0', visibility: 'hidden', animation: '' })
-                        setTimeout(() => // show copyBtn after reappearDelay
-                            Object.assign(copyBtn.style, { visibility: 'visible', opacity: '1' }), reappearDelay)
-                    }, fadeDuration - fadeDurationOffset)
                 }
 
                 // Prepend button
