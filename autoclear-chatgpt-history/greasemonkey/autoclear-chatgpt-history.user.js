@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30
+// @version             2024.9.30.1
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -665,8 +665,8 @@
             toggleLabel.style.overflow = 'hidden' // to truncate overflown text
             toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
             toggleLabel.innerText = ( app.msgs.mode_autoClear ) + ' '
-                                + ( toggleInput.checked ? ( app.msgs.state_enabled  || 'enabled' )
-                                                        : ( app.msgs.state_disabled ))
+                                  + ( toggleInput.checked ? ( app.msgs.state_enabled  || 'enabled' )
+                                                          : ( app.msgs.state_disabled ))
             // Append elements
             for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
     
