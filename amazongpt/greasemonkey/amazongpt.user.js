@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.29
+// @version                2024.9.30
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -106,7 +106,7 @@
             publisher: 'https://www.kudoai.com',
             relatedApps: 'https://github.com/adamlui/chatgpt-apps'
         },
-        latestAssetCommitHash: 'a003987' // for cached messages.json
+        latestAssetCommitHash: 'ac96ded' // for cached messages.json
     }
     app.urls.support = app.urls.gitHub + '/issues/new'
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
@@ -352,7 +352,7 @@
         alert_switchingOff: 'switching off',
         notif_copiedToClipboard: 'Copied to clipboard',
         btnLabel_moreApps: 'More ChatGPT Apps',
-        btnLabel_leaveReview: 'Leave Review',
+        btnLabel_rateUs: 'Rate Us',
         btnLabel_getSupport: 'Get Support',
         btnLabel_updateCheck: 'Check for Updates',
         btnLabel_update: 'Update',
@@ -751,7 +751,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
+                        function rateUs() { modals.feedback.show({ sites: 'review' }) },
                         function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
                     ], '', 656) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
@@ -775,8 +775,8 @@
                         '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
                         '🧠 ' + ( app.msgs.btnLabel_getSupport ))
-                    else if (/review/i.test(btn.textContent)) btn.textContent = (
-                        '⭐ ' + ( app.msgs.btnLabel_leaveReview ))
+                    else if (/rate/i.test(btn.textContent)) btn.textContent = (
+                        '⭐ ' + ( app.msgs.btnLabel_rateUs ))
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
                         '🤖 ' + ( app.msgs.btnLabel_moreApps ))
                     else btn.style.display = 'none' // hide Dismiss button

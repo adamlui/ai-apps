@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.29.1
+// @version                2024.9.30
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -235,7 +235,7 @@
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             support: 'https://support.ddgpt.com'
         },
-        latestAssetCommitHash: '9b00f2c' // for cached messages.json
+        latestAssetCommitHash: '8a6690d' // for cached messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -511,7 +511,7 @@
         notif_copiedToClipboard: 'Copied to clipboard',
         btnLabel_sendQueryToApp: 'Send search query to DuckDuckGPT',
         btnLabel_moreApps: 'More ChatGPT Apps',
-        btnLabel_leaveReview: 'Leave Review',
+        btnLabel_rateUs: 'Rate Us',
         btnLabel_getSupport: 'Get Support',
         btnLabel_updateCheck: 'Check for Updates',
         btnLabel_update: 'Update',
@@ -934,7 +934,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function leaveAReview() { modals.feedback.show({ sites: 'review' }) },
+                        function rateUs() { modals.feedback.show({ sites: 'review' }) },
                         function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
                     ], '', 577) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
@@ -958,8 +958,8 @@
                         '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
                         '🧠 ' + ( app.msgs.btnLabel_getSupport ))
-                    else if (/review/i.test(btn.textContent)) btn.textContent = (
-                        '⭐ ' + ( app.msgs.btnLabel_leaveReview ))
+                    else if (/rate/i.test(btn.textContent)) btn.textContent = (
+                        '⭐ ' + ( app.msgs.btnLabel_rateUs ))
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
                         '🤖 ' + ( app.msgs.btnLabel_moreApps ))
                     else btn.style.display = 'none' // hide Dismiss button

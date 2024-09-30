@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29.3
+// @version             2024.9.30
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -280,7 +280,7 @@
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             support: 'https://support.autoclearchatgpt.com'
         },
-        latestAssetCommitHash: '6781d93' // for cached messages.json + navicon
+        latestAssetCommitHash: '6d29e13' // for cached messages.json + navicon
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -335,7 +335,7 @@
         alert_tyForSupport: 'Thank you for your support',
         alert_author: 'author',
         btnLabel_moreApps: 'More ChatGPT Apps',
-        btnLabel_leaveReview: 'Leave Review',
+        btnLabel_rateUs: 'Rate Us',
         btnLabel_getSupport: 'Get Support',
         btnLabel_updateCheck: 'Check for Updates',
         btnLabel_update: 'Update',
@@ -529,7 +529,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function leaveAReview() { // show review modal
+                        function rateUs() { // show review modal
                             const reviewModalID = chatgpt.alert(( app.msgs.alert_choosePlatform ) + ':', '',
                                 [ function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
                                 function futurepedia() { modals.safeWinOpen(app.urls.futurepedia + '#tool-reviews') }])
@@ -545,8 +545,8 @@
                         '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(button.textContent)) button.textContent = (
                         '🧠 ' + ( app.msgs.btnLabel_getSupport ))
-                    else if (/review/i.test(button.textContent)) button.textContent = (
-                        '⭐ ' + ( app.msgs.btnLabel_leaveReview ))
+                    else if (/rate/i.test(button.textContent)) button.textContent = (
+                        '⭐ ' + ( app.msgs.btnLabel_rateUs ))
                     else if (/apps/i.test(button.textContent)) button.textContent = (
                         '🤖 ' + ( app.msgs.btnLabel_moreApps ))
                     else button.style.display = 'none' // hide Dismiss button

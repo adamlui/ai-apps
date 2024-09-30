@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29.3
+// @version             2024.9.30
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -263,7 +263,7 @@
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             support: 'https://support.chatgptautocontinue.com'
         },
-        latestAssetCommitHash: '505b630' // for cached messages.json
+        latestAssetCommitHash: 'b630d63' // for cached messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -313,7 +313,7 @@
         alert_author: 'author',
         notif_chatAutoContinued: 'Chat Auto-Continued',
         btnLabel_moreApps: 'More ChatGPT Apps',
-        btnLabel_leaveReview: 'Leave Review',
+        btnLabel_rateUs: 'Rate Us',
         btnLabel_getSupport: 'Get Support',
         btnLabel_updateCheck: 'Check for Updates',
         btnLabel_update: 'Update',
@@ -483,7 +483,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function leaveAReview() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
                         function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
                     ], '', 478 // set width
                 )
@@ -494,8 +494,8 @@
                         '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(button.textContent)) button.textContent = (
                         '🧠 ' + ( app.msgs.btnLabel_getSupport ))
-                    else if (/review/i.test(button.textContent)) button.textContent = (
-                        '⭐ ' + ( app.msgs.btnLabel_leaveReview ))
+                    else if (/rate/i.test(button.textContent)) button.textContent = (
+                        '⭐ ' + ( app.msgs.btnLabel_rateUs ))
                     else if (/apps/i.test(button.textContent)) button.textContent = (
                         '🤖 ' + ( app.msgs.btnLabel_moreApps ))
                     else button.style.display = 'none' // hide Dismiss button

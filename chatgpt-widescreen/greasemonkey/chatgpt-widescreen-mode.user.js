@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29.4
+// @version             2024.9.30
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -281,7 +281,7 @@
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             support: 'https://support.chatgptwidescreen.com'
         },
-        latestAssetCommitHash: 'cc78c41' // for cached sites.json + messages.json
+        latestAssetCommitHash: 'e6adb47' // for cached sites.json + messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -366,7 +366,7 @@
         alert_pressF11: 'Press F11 to exit full screen',
         alert_f11reason: 'F11 was used to enter full screen, and due to browser security reasons, the same key must be used to exit it',
         btnLabel_moreApps: 'More ChatGPT Apps',
-        btnLabel_leaveReview: 'Leave Review',
+        btnLabel_rateUs: 'Rate Us',
         btnLabel_getSupport: 'Get Support',
         btnLabel_updateCheck: 'Check for Updates',
         btnLabel_update: 'Update',
@@ -549,7 +549,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function leaveAReview() { // show new modal
+                        function rateUs() { // show new modal
                             const reviewModalID = chatgpt.alert(( app.msgs.alert_choosePlatform ) + ':', '',
                                 [ function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
                                 function productHunt() { modals.safeWinOpen(app.urls.productHunt + '/reviews/new') }])
@@ -565,8 +565,8 @@
                         '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
                         '🧠 ' + ( app.msgs.btnLabel_getSupport ))
-                    else if (/review/i.test(btn.textContent)) btn.textContent = (
-                        '⭐ ' + ( app.msgs.btnLabel_leaveReview ))
+                    else if (/rate/i.test(btn.textContent)) btn.textContent = (
+                        '⭐ ' + ( app.msgs.btnLabel_rateUs ))
                     else if (/apps/i.test(btn.textContent)) btn.textContent = (
                         '🤖 ' + ( app.msgs.btnLabel_moreApps ))
                     else btn.style.display = 'none' // hide Dismiss button
