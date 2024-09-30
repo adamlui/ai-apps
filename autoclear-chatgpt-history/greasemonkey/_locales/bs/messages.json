@@ -1,10 +1,12 @@
 {
   "appName": { "message": "Autoclear ChatGPT History" },
+  "appAuthor": { "message": "Adam Lui" },
   "appDesc": { "message": "Automatski briše istoriju ćaskanja kada posetite chatgpt.com" },
   "menuLabel_autoClear": { "message": "Automatsko brisanje čavrljanja" },
   "menuLabel_toggleVis": { "message": "Uključi/isključi vidljivost" },
   "menuLabel_modeNotifs": { "message": "Obavještenja o režimu" },
   "menuLabel_about": { "message": "O nama" },
+  "menuLabel_donate": { "message": "Pošaljite donaciju" },
   "about_version": { "message": "Verzija" },
   "about_poweredBy": { "message": "omogućio" },
   "about_sourceCode": { "message": "Izvorni kod" },
@@ -15,6 +17,18 @@
   "alert_isAvail": { "message": "dostupno je" },
   "alert_upToDate": { "message": "Up to date" },
   "alert_isUpToDate": { "message": "je ažuran" },
+  "alert_showYourSupport": { "message": "Pokažite svoju podršku" },
+  "alert_isOSS": { "message": "je softver otvorenog koda izgrađen i održava se besplatno kroz 100% volonterske napore" },
+  "alert_despiteAffliction": { "message": "Uprkos tome što je teško pogođen" },
+  "alert_longCOVID": { "message": "long COVID" },
+  "alert_since2020": { "message": "od 2020. godine" },
+  "alert_byDonatingResults": { "message": "doniranjem mi pomažete da nastavim s poboljšanjima, ispravljanjem grešaka, dodavanjem novih funkcija i poboljšavanjem softvera" },
+  "alert_yourContrib": { "message": "Vaš doprinos" },
+  "alert_noMatterSize": { "message": "bez obzira na veličinu" },
+  "alert_directlySupports": { "message": "direktno podržava moje neplaćene napore da osiguram da ovaj projekat ostane slobodan i otvoren za sve" },
+  "alert_growTogether": { "message": "Zajedno možemo održati rast ovog moćnog softvera" },
+  "alert_tyForSupport": { "message": "Hvala vam na podršci" },
+  "alert_author": { "message": "Autor" },
   "btnLabel_moreApps": { "message": "Još ChatGPT aplikacija" },
   "btnLabel_leaveReview": { "message": "Pošalji recenziju" },
   "btnLabel_getSupport": { "message": "Zatražite podršku" },
@@ -25,5 +39,5 @@
   "state_enabled": { "message": "Omogućeno" },
   "state_disabled": { "message": "onemogućen" },
   "state_on": { "message": "na" },
-  "state_off": { "message": "ugasi." }
+  "state_off": { "message": "ugasi" }
 }

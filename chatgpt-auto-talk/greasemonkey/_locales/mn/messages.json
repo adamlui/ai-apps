@@ -1,8 +1,10 @@
 {
   "appName": { "message": "ЧатGPT Auto-Talk" },
+  "appAuthor": { "message": "Adam Lui" },
   "appDesc": { "message": "ChatGPT хариултуудыг автоматаар тоглуулах" },
   "menuLabel_toggleVis": { "message": "Харагдах байдлыг өөрчлөх" },
   "menuLabel_about": { "message": "Бидний тухай" },
+  "menuLabel_donate": { "message": "Хандив илгээнэ үү" },
   "about_version": { "message": "Хувилбар" },
   "about_poweredBy": { "message": "ИЛЧЛЭГЧ" },
   "about_sourceCode": { "message": "ᠰᠣᠷᠪᠤᠯᠵᠢ ᠺᠣᠳ᠋ " },
@@ -12,6 +14,18 @@
   "alert_isAvail": { "message": "авах боломжтой" },
   "alert_upToDate": { "message": "Шинэчлэгдсэн" },
   "alert_isUpToDate": { "message": "одоогийн байдлаар" },
+  "alert_showYourSupport": { "message": "Өөрийн дэмжлэгийг үзүүлэх" },
+  "alert_isOSS": { "message": "100% сайн дурын хүчин чармайлтаар үнэгүй бүтээгдсэн нээлттэй эх програм хангамж юм" },
+  "alert_despiteAffliction": { "message": "Хэдийгээр" },
+  "alert_longCOVID": { "message": "урт COVID" },
+  "alert_since2020": { "message": "2020 оноос хойш" },
+  "alert_byDonatingResults": { "message": "хандивласнаар та надад алдааг сайжруулах, алдааг засах, шинэ боломжуудыг нэмж, програмыг илүү сайн болгоход тусална" },
+  "alert_yourContrib": { "message": "Таны оруулсан хувь нэмэр" },
+  "alert_noMatterSize": { "message": "хэмжээ хамаагүй" },
+  "alert_directlySupports": { "message": "энэ төслийг үнэгүй, ашиглахад нээлттэй байлгахын тулд миний цалингүй хүчин чармайлтыг шууд дэмждэг" },
+  "alert_growTogether": { "message": "Бид хамтдаа энэхүү хүчирхэг программыг хөгжүүлэх боломжтой" },
+  "alert_tyForSupport": { "message": "Үргэлж дэмжиж байгаад баярлалаа," },
+  "alert_author": { "message": "Зохиогч" },
   "btnLabel_moreApps": { "message": "Илүү их чатGPT аппууд" },
   "btnLabel_leaveReview": { "message": "Сэтгэгдэл үлдээх" },
   "btnLabel_getSupport": { "message": "Тусламж авах" },
@@ -22,5 +36,5 @@
   "state_enabled": { "message": "Идэвхжүүлсэн" },
   "state_disabled": { "message": "Идэвхгүй" },
   "state_on": { "message": "on" },
-  "state_off": { "message": "Унт." }
+  "state_off": { "message": "Унт" }
 }

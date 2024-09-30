@@ -1,8 +1,10 @@
 {
   "appName": { "message": "Аўтаматычная размова ChatGPT" },
+  "appAuthor": { "message": "Adam Lui" },
   "appDesc": { "message": "Аўтаматычна прайграваць адказы на чат GPT" },
   "menuLabel_toggleVis": { "message": "Пераключыць бачнасць" },
   "menuLabel_about": { "message": "Пра нас" },
+  "menuLabel_donate": { "message": "Калі ласка, дашліце ахвяраванне" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Пры падтрымцы" },
   "about_sourceCode": { "message": "Зыходнікі" },
@@ -12,6 +14,18 @@
   "alert_isAvail": { "message": "даступны" },
   "alert_upToDate": { "message": "Аднаўленне не патрабуецца" },
   "alert_isUpToDate": { "message": "абноўлена" },
+  "alert_showYourSupport": { "message": "Паказаць вашу падтрымку" },
+  "alert_isOSS": { "message": "гэта праграмнае забеспячэнне з адкрытым зыходным кодам, пабудаванае і падтрымліваецца бясплатна за кошт 100% валанцёрскіх намаганняў" },
+  "alert_despiteAffliction": { "message": "Нягледзячы на тое, што моцна пакутаваў ад" },
+  "alert_longCOVID": { "message": "працяглы COVID" },
+  "alert_since2020": { "message": "з 2020 года" },
+  "alert_byDonatingResults": { "message": "ахвяруючы, вы дапамагаеце мне працягваць удасканальваць, выпраўляць памылкі, дадаваць новыя функцыі і рабіць праграмнае забеспячэнне яшчэ лепш" },
+  "alert_yourContrib": { "message": "Ваш уклад" },
+  "alert_noMatterSize": { "message": "незалежна ад памеру" },
+  "alert_directlySupports": { "message": "непасрэдна падтрымлівае мае неаплатныя намаганні, каб гэты праект застаўся свабодным і адкрытым для выкарыстання ўсімі" },
+  "alert_growTogether": { "message": "Разам мы можам захаваць рост гэтага магутнага праграмнага забеспячэння" },
+  "alert_tyForSupport": { "message": "Дзякуй за падтрымку" },
+  "alert_author": { "message": "аўтар" },
   "btnLabel_moreApps": { "message": "Іншыя праграмы ChatGPT" },
   "btnLabel_leaveReview": { "message": "Пакінуць водгук" },
   "btnLabel_getSupport": { "message": "Атрымаць падтрымку" },
@@ -22,5 +36,5 @@
   "state_enabled": { "message": "XYZ/ альфа- канал" },
   "state_disabled": { "message": "адключаны" },
   "state_on": { "message": "на" },
-  "state_off": { "message": "выкл." }
+  "state_off": { "message": "выкл" }
 }
