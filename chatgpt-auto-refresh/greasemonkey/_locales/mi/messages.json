@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Tirohia nga huringa" },
   "unit_secs": { "message": "hēkona" },
   "state_enabled": { "message": "whakahohea" },
-  "state_disabled": { "message": "whakakore" }
+  "state_disabled": { "message": "whakakore" },
+  "state_on": { "message": "runga" },
+  "state_off": { "message": "..e whakaweto ana." }
 }

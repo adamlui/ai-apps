@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
   "btnLabel_update": { "message": "تازه کړئ" },
   "btnLabel_dismiss": { "message": "رد کردن" },
-  "link_viewChanges": { "message": "بدلون وګورئ" }
+  "link_viewChanges": { "message": "بدلون وګورئ" },
+  "state_on": { "message": "په" },
+  "state_off": { "message": "مړ" }
 }

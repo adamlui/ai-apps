@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Verificar Atualizações" },
   "btnLabel_update": { "message": "Atualizar" },
   "btnLabel_dismiss": { "message": "Ignorar" },
-  "link_viewChanges": { "message": "Ver Alterações" }
+  "link_viewChanges": { "message": "Ver Alterações" },
+  "state_on": { "message": "a" },
+  "state_off": { "message": "desligar" }
 }

@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Դիտել փոփոխությունները" },
   "unit_secs": { "message": "վայրկյան" },
   "state_enabled": { "message": "միացված է" },
-  "state_disabled": { "message": "անաշխատունակ" }
+  "state_disabled": { "message": "անաշխատունակ" },
+  "state_on": { "message": "վրա" },
+  "state_off": { "message": "Անջատել" }
 }

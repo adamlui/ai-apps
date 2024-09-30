@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
   "btnLabel_update": { "message": "Uppdatera" },
   "btnLabel_dismiss": { "message": "Avfärda" },
-  "link_viewChanges": { "message": "Visa ändringar" }
+  "link_viewChanges": { "message": "Visa ändringar" },
+  "state_on": { "message": "på" },
+  "state_off": { "message": "av" }
 }

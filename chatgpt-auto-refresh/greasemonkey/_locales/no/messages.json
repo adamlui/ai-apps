@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Vis endringer" },
   "unit_secs": { "message": "sekunder" },
   "state_enabled": { "message": "aktivert" },
-  "state_disabled": { "message": "deaktivert" }
+  "state_disabled": { "message": "deaktivert" },
+  "state_on": { "message": "på" },
+  "state_off": { "message": "avslag" }
 }

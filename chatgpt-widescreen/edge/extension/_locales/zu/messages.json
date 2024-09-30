@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
   "btnLabel_update": { "message": "Buyekeza" },
   "btnLabel_dismiss": { "message": "Susa" },
-  "link_viewChanges": { "message": "Buka izinguquko" }
+  "link_viewChanges": { "message": "Buka izinguquko" },
+  "state_on": { "message": "ku" },
+  "state_off": { "message": "ivaliwe" }
 }

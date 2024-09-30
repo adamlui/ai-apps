@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "ପରିବର୍ତ୍ତନଗୁଡ଼ିକୁ ଦେଖନ୍ତୁ" },
   "unit_secs": { "message": "ସେକେଣ୍ଡ୍" },
   "state_enabled": { "message": "ସକ୍ଷମ" },
-  "state_disabled": { "message": "ଅକ୍ଷମ" }
+  "state_disabled": { "message": "ଅକ୍ଷମ" },
+  "state_on": { "message": "ଚାଲୁ" },
+  "state_off": { "message": "ଅଫ" }
 }

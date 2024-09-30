@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" },
   "unit_seconds": { "message": "วินาที" },
   "state_enabled": { "message": "เปิดใช้งาน" },
-  "state_disabled": { "message": "ปิดใช้งาน" }
+  "state_disabled": { "message": "ปิดใช้งาน" },
+  "state_on": { "message": "เมื่อ" },
+  "state_off": { "message": "ปิด" }
 }

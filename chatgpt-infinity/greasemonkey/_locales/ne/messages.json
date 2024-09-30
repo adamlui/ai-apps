@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" },
   "unit_seconds": { "message": "सेकेण्ड" },
   "state_enabled": { "message": "MHz" },
-  "state_disabled": { "message": "अक्षम" }
+  "state_disabled": { "message": "अक्षम" },
+  "state_on": { "message": "मा" },
+  "state_off": { "message": "बन्द" }
 }

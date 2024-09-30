@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
   "btnLabel_update": { "message": "Aye so asi na yâ ti fini dunia" },
   "btnLabel_dismiss": { "message": "Dessin ti amo" },
-  "link_viewChanges": { "message": "Bingo Bango Change" }
+  "link_viewChanges": { "message": "Bingo Bango Change" },
+  "state_on": { "message": "na ndö ti" },
+  "state_off": { "message": "ti zia lege ni" }
 }

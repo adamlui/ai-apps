@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Revisá las actualizaciones" },
   "btnLabel_update": { "message": "Update" },
   "btnLabel_dismiss": { "message": "Desaprobashon" },
-  "link_viewChanges": { "message": "Wak kambio" }
+  "link_viewChanges": { "message": "Wak kambio" },
+  "state_on": { "message": "riba" },
+  "state_off": { "message": "for di" }
 }

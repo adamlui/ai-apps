@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "ਨਵੇਂ ਐਪੀਸੋਡ ਲਈ ਚੈੱਕ ਕਰੋ" },
   "btnLabel_update": { "message": "ਅੱਪਡੇਟ ਕਰੋ" },
   "btnLabel_dismiss": { "message": "ਖਾਰਜ ਕਰੋ" },
-  "link_viewChanges": { "message": "ਤਬਦੀਲੀਆਂ ਵੇਖੋ" }
+  "link_viewChanges": { "message": "ਤਬਦੀਲੀਆਂ ਵੇਖੋ" },
+  "state_on": { "message": "ਤੇ" },
+  "state_off": { "message": "ਬੰਦ" }
 }

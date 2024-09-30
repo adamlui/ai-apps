@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Montri ŝanĝojn" },
   "unit_secs": { "message": "sekundoj" },
   "state_enabled": { "message": "kapabligita" },
-  "state_disabled": { "message": "malŝaltita" }
+  "state_disabled": { "message": "malŝaltita" },
+  "state_on": { "message": "el" },
+  "state_off": { "message": "@ info/ plain" }
 }

@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Өзгерістерді көру" },
   "unit_seconds": { "message": "секунд" },
   "state_enabled": { "message": "рұқсат етілген" },
-  "state_disabled": { "message": "рұқсат етілмеген" }
+  "state_disabled": { "message": "рұқсат етілмеген" },
+  "state_on": { "message": "қосулы" },
+  "state_off": { "message": "өшірулі" }
 }

@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Xem thay đổi" },
   "unit_secs": { "message": "giây" },
   "state_enabled": { "message": "đã bật" },
-  "state_disabled": { "message": "đã tắt" }
+  "state_disabled": { "message": "đã tắt" },
+  "state_on": { "message": "ngày" },
+  "state_off": { "message": "tắt" }
 }

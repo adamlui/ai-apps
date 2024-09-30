@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Mira kambio" },
   "unit_seconds": { "message": "sekonde" },
   "state_enabled": { "message": "habilidá" },
-  "state_disabled": { "message": "desaktiva" }
+  "state_disabled": { "message": "desaktiva" },
+  "state_on": { "message": "riba" },
+  "state_off": { "message": "for di" }
 }

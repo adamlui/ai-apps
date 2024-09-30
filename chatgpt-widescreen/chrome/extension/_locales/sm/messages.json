@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Siaki mo faʻafouga" },
   "btnLabel_update": { "message": "Fa'afouga" },
   "btnLabel_dismiss": { "message": "Faate'a" },
-  "link_viewChanges": { "message": "Vaʻai Suiga" }
+  "link_viewChanges": { "message": "Vaʻai Suiga" },
+  "state_on": { "message": "i luga o" },
+  "state_off": { "message": "ALU!" }
 }

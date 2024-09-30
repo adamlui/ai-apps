@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Votre mail pour notre newsletter" },
   "btnLabel_update": { "message": "opus" },
   "btnLabel_dismiss": { "message": "dimitto" },
-  "link_viewChanges": { "message": "Vedi anche l 'accendenza" }
+  "link_viewChanges": { "message": "Vedi anche l 'accendenza" },
+  "state_on": { "message": "super" },
+  "state_off": { "message": "finis eum" }
 }

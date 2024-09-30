@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "קוק ענדערונגען" },
   "unit_secs": { "message": "סעק" },
   "state_enabled": { "message": "ערמעגליכט" },
-  "state_disabled": { "message": "פאַרקריפּלט" }
+  "state_disabled": { "message": "פאַרקריפּלט" },
+  "state_on": { "message": "אויף" },
+  "state_off": { "message": "אַוועק" }
 }

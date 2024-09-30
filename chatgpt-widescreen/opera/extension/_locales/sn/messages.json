@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Ongorora Updates" },
   "btnLabel_update": { "message": "Gadzirisa" },
   "btnLabel_dismiss": { "message": "Bvisa" },
-  "link_viewChanges": { "message": "Ona shanduko" }
+  "link_viewChanges": { "message": "Ona shanduko" },
+  "state_on": { "message": "pamusoro" },
+  "state_off": { "message": "kure" }
 }

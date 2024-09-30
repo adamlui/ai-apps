@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
   "btnLabel_update": { "message": "Update" },
   "btnLabel_dismiss": { "message": "Opusti" },
-  "link_viewChanges": { "message": "Poglej spremembe" }
+  "link_viewChanges": { "message": "Poglej spremembe" },
+  "state_on": { "message": "vključeno" },
+  "state_off": { "message": "izključeno" }
 }

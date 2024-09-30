@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "btnLabel_update": { "message": "နောက်ဆုံးသတင်း" },
   "btnLabel_dismiss": { "message": "ပယ်ဖျက်မည်" },
-  "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ပါ" }
+  "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ပါ" },
+  "state_on": { "message": "အပေါ်တွင်" },
+  "state_off": { "message": "ပိတ်" }
 }

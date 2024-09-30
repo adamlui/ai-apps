@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Montri ŝanĝojn" },
   "unit_seconds": { "message": "sekundojn" },
   "state_enabled": { "message": "aktivigita" },
-  "state_disabled": { "message": "malaktivigita" }
+  "state_disabled": { "message": "malaktivigita" },
+  "state_on": { "message": "el" },
+  "state_off": { "message": "@ info/ plain" }
 }

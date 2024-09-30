@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Ara l-bidliet" },
   "unit_seconds": { "message": "seconds" },
   "state_enabled": { "message": "Attivat" },
-  "state_disabled": { "message": "persuni b’diżabilità" }
+  "state_disabled": { "message": "persuni b’diżabilità" },
+  "state_on": { "message": "fuq" },
+  "state_off": { "message": "mitfi" }
 }

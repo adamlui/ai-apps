@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "변경 보기" },
   "unit_secs": { "message": "초" },
   "state_enabled": { "message": "활성화됨" },
-  "state_disabled": { "message": "비활성화됨" }
+  "state_disabled": { "message": "비활성화됨" },
+  "state_on": { "message": "게시일" },
+  "state_off": { "message": "끄기" }
 }

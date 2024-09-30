@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Leita að uppfærslum" },
   "btnLabel_update": { "message": "Uppfæra" },
   "btnLabel_dismiss": { "message": "Hafna" },
-  "link_viewChanges": { "message": "Skoða breytingar" }
+  "link_viewChanges": { "message": "Skoða breytingar" },
+  "state_on": { "message": "á" },
+  "state_off": { "message": "af" }
 }

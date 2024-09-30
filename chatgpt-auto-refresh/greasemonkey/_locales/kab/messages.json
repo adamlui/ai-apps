@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Wali ibeddilen" },
   "unit_secs": { "message": "sECS" },
   "state_enabled": { "message": "yermed" },
-  "state_disabled": { "message": "ittwasens" }
+  "state_disabled": { "message": "ittwasens" },
+  "state_on": { "message": "rmed" },
+  "state_off": { "message": "yensa" }
 }

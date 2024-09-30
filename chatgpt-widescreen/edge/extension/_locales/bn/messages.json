@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
   "btnLabel_update": { "message": "আপডেট করুন" },
   "btnLabel_dismiss": { "message": "খারিজ করুন" },
-  "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" }
+  "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" },
+  "state_on": { "message": "অন" },
+  "state_off": { "message": "বন্ধ" }
 }

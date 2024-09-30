@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "अद्यावधिकका लागि जाँच गर्नुहोस्" },
   "btnLabel_update": { "message": "अद्यावधिक" },
   "btnLabel_dismiss": { "message": "खारेज गर्नुहोस्" },
-  "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" }
+  "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" },
+  "state_on": { "message": "मा" },
+  "state_off": { "message": "बन्द" }
 }

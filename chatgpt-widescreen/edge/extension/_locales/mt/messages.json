@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Iċċekkja għall-aġġornamenti" },
   "btnLabel_update": { "message": "Aġġornament" },
   "btnLabel_dismiss": { "message": "Tagħtix kas" },
-  "link_viewChanges": { "message": "Ara l-bidliet" }
+  "link_viewChanges": { "message": "Ara l-bidliet" },
+  "state_on": { "message": "fuq" },
+  "state_off": { "message": "mitfi" }
 }

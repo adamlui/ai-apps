@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Gade chanjman yo" },
   "unit_seconds": { "message": "Segonn" },
   "state_enabled": { "message": "pèmèt" },
-  "state_disabled": { "message": "andikape/enfim/antrave/antravè " }
+  "state_disabled": { "message": "andikape/enfim/antrave/antravè " },
+  "state_on": { "message": "nan dat" },
+  "state_off": { "message": "etenn/koupe " }
 }

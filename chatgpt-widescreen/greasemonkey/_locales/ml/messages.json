@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
   "btnLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },
   "btnLabel_dismiss": { "message": "ഡിസ്മിസ്" },
-  "link_viewChanges": { "message": "മാറ്റങ്ങള്‍ കാണുക" }
+  "link_viewChanges": { "message": "മാറ്റങ്ങള്‍ കാണുക" },
+  "state_on": { "message": "ഓൺ" },
+  "state_off": { "message": "ഓഫ്" }
 }

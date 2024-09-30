@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "བརྟག་ཞིབ་སྣོད་འཛིན་ཚུ་ དུས་མཐུན་བཟོ་ནི་ཨིན་ན" },
   "btnLabel_update": { "message": "གསར་བསྐྲུན་འབད་མ་ཚུགས།" },
   "btnLabel_dismiss": { "message": "ཌིསིཊི།" },
-  "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་རྩ་བསྐྲད་གཏང་།" }
+  "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་རྩ་བསྐྲད་གཏང་།" },
+  "state_on": { "message": "འདི་ནང་ལུ་" },
+  "state_off": { "message": "ཡར་ལོ།" }
 }

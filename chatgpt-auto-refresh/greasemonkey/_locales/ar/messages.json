@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "عرض سجل التغييرات" },
   "unit_secs": { "message": "ثوانٍ" },
   "state_enabled": { "message": "مُمكّن" },
-  "state_disabled": { "message": "مُعَطّل" }
+  "state_disabled": { "message": "مُعَطّل" },
+  "state_on": { "message": "على" },
+  "state_off": { "message": "إيقاف التشغيل" }
 }

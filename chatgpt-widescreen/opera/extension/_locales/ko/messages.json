@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "업데이트 확인" },
   "btnLabel_update": { "message": "업데이트" },
   "btnLabel_dismiss": { "message": "무시" },
-  "link_viewChanges": { "message": "변경 내용 보기" }
+  "link_viewChanges": { "message": "변경 내용 보기" },
+  "state_on": { "message": "게시일" },
+  "state_off": { "message": "끄기" }
 }

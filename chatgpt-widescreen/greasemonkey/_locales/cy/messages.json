@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Dango_s diweddariadau" },
   "btnLabel_update": { "message": "Diweddaru" },
   "btnLabel_dismiss": { "message": "Cau" },
-  "link_viewChanges": { "message": "Gweld newidiadau" }
+  "link_viewChanges": { "message": "Gweld newidiadau" },
+  "state_on": { "message": "ar" },
+  "state_off": { "message": "i ffwrdd" }
 }

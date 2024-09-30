@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "変更を表示" },
   "unit_secs": { "message": "秒" },
   "state_enabled": { "message": "有効化" },
-  "state_disabled": { "message": "無効化" }
+  "state_disabled": { "message": "無効化" },
+  "state_on": { "message": "の上" },
+  "state_off": { "message": "オフ" }
 }

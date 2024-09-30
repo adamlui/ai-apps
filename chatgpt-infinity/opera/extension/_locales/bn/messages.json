@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" },
   "unit_seconds": { "message": "সেকেন্ডে" },
   "state_enabled": { "message": "সক্রিয়" },
-  "state_disabled": { "message": "নিষ্ক্রিয়" }
+  "state_disabled": { "message": "নিষ্ক্রিয়" },
+  "state_on": { "message": "অন" },
+  "state_off": { "message": "বন্ধ" }
 }

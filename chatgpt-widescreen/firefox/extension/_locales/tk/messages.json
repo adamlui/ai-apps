@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Täzelenmeleri barla" },
   "btnLabel_update": { "message": "Häzirleşdir" },
   "btnLabel_dismiss": { "message": "Işden aýyrmak" },
-  "link_viewChanges": { "message": "Ýygnaýyşy görkez" }
+  "link_viewChanges": { "message": "Ýygnaýyşy görkez" },
+  "state_on": { "message": "% jeminden" },
+  "state_off": { "message": "çyk" }
 }

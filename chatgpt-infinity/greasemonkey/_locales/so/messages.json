@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Eeg isbeddelada" },
   "unit_seconds": { "message": "ilbiriqsi" },
   "state_enabled": { "message": "La daaray" },
-  "state_disabled": { "message": "La damiyay" }
+  "state_disabled": { "message": "La damiyay" },
+  "state_on": { "message": "korka" },
+  "state_off": { "message": "Dami" }
 }

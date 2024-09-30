@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "تبدیلیاں دیکھیں" },
   "unit_secs": { "message": "سیکنڈز" },
   "state_enabled": { "message": "چالو" },
-  "state_disabled": { "message": "معطل" }
+  "state_disabled": { "message": "معطل" },
+  "state_on": { "message": "پر" },
+  "state_off": { "message": "بند کریں" }
 }

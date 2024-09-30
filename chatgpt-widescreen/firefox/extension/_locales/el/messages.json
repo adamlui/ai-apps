@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
   "btnLabel_update": { "message": "Ενημέρωση" },
   "btnLabel_dismiss": { "message": "Κλείσιμο" },
-  "link_viewChanges": { "message": "Εμφάνιση αλλαγών" }
+  "link_viewChanges": { "message": "Εμφάνιση αλλαγών" },
+  "state_on": { "message": "την" },
+  "state_off": { "message": "ανενεργό" }
 }

@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "نمایش تغییرات" },
   "unit_seconds": { "message": "ثانیه" },
   "state_enabled": { "message": "فعال" },
-  "state_disabled": { "message": "غیر فعال کردن" }
+  "state_disabled": { "message": "غیر فعال کردن" },
+  "state_on": { "message": "در مورد" },
+  "state_off": { "message": "خاموش" }
 }

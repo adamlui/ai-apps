@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Hijery ireo fanovana" },
   "unit_secs": { "message": "segondra" },
   "state_enabled": { "message": "voafaritra" },
-  "state_disabled": { "message": "tsy voafaritra" }
+  "state_disabled": { "message": "tsy voafaritra" },
+  "state_on": { "message": "amin'ny" },
+  "state_off": { "message": "Ajanona" }
 }

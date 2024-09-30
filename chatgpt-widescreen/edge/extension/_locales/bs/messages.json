@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Provjeri ima li ažuriranja" },
   "btnLabel_update": { "message": "Nadogradi" },
   "btnLabel_dismiss": { "message": "Otkaži" },
-  "link_viewChanges": { "message": "Vidi promjene" }
+  "link_viewChanges": { "message": "Vidi promjene" },
+  "state_on": { "message": "na " },
+  "state_off": { "message": "ugasi." }
 }

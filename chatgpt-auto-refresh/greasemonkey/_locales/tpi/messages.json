@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Lukim ol senis" },
   "unit_secs": { "message": "ol seken" },
   "state_enabled": { "message": "em i bin mekim olsem" },
-  "state_disabled": { "message": "pasim" }
+  "state_disabled": { "message": "pasim" },
+  "state_on": { "message": "long" },
+  "state_off": { "message": "i go" }
 }

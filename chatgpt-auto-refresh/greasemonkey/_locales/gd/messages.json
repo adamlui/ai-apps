@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Seall na h - atharraichean" },
   "unit_secs": { "message": "soidhnichean" },
   "state_enabled": { "message": "An comas" },
-  "state_disabled": { "message": "Gun dòigh" }
+  "state_disabled": { "message": "Gun dòigh" },
+  "state_on": { "message": "air" },
+  "state_off": { "message": "dheth" }
 }

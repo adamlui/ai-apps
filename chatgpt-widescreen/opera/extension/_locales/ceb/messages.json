@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Susiha alang sa Mga Update" },
   "btnLabel_update": { "message": "Update" },
   "btnLabel_dismiss": { "message": "Hapit nalukop sa kaumahan ang palibot sa" },
-  "link_viewChanges": { "message": "Tan-awa ang mga kausaban" }
+  "link_viewChanges": { "message": "Tan-awa ang mga kausaban" },
+  "state_on": { "message": "sa on" },
+  "state_off": { "message": "off" }
 }

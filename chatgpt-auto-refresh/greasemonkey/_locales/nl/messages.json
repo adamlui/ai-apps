@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Wijzigingen weergeven" },
   "unit_secs": { "message": "seconden" },
   "state_enabled": { "message": "ingeschakeld" },
-  "state_disabled": { "message": "uitgeschakeld" }
+  "state_disabled": { "message": "uitgeschakeld" },
+  "state_on": { "message": "aan" },
+  "state_off": { "message": "uit" }
 }

@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Kontroleer vir bywerkings" },
   "btnLabel_update": { "message": "Opdateer" },
   "btnLabel_dismiss": { "message": "Laat vaar" },
-  "link_viewChanges": { "message": "Besigtig veranderinge" }
+  "link_viewChanges": { "message": "Besigtig veranderinge" },
+  "state_on": { "message": "op" },
+  "state_off": { "message": "af" }
 }

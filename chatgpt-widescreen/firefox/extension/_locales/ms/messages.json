@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Semak Kemaskini" },
   "btnLabel_update": { "message": "Saya ingin membuat susulan" },
   "btnLabel_dismiss": { "message": "Singkir" },
-  "link_viewChanges": { "message": "Lihat perubahan" }
+  "link_viewChanges": { "message": "Lihat perubahan" },
+  "state_on": { "message": "ke atas" },
+  "state_off": { "message": "mati" }
 }

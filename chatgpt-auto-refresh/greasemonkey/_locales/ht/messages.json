@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Gade chanjman yo" },
   "unit_secs": { "message": "segonn" },
   "state_enabled": { "message": "pèmèt" },
-  "state_disabled": { "message": "andikape" }
+  "state_disabled": { "message": "andikape" },
+  "state_on": { "message": "nan dat" },
+  "state_off": { "message": "etenn/koupe " }
 }

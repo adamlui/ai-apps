@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "זוך נייע ווערסיעס" },
   "btnLabel_update": { "message": "דערהייַנטיקן" },
   "btnLabel_dismiss": { "message": "אָפּזאָגן" },
-  "link_viewChanges": { "message": "קוק ענדערונגען" }
+  "link_viewChanges": { "message": "קוק ענדערונגען" },
+  "state_on": { "message": "אויף" },
+  "state_off": { "message": "אַוועק" }
 }

@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "ବଦଳାଇ ଦେଖନ୍ତୁ" },
   "unit_seconds": { "message": "ସେକେଣ୍ଡ" },
   "state_enabled": { "message": "ସକ୍ଷମ" },
-  "state_disabled": { "message": "ନିଷ୍କ୍ରିୟ" }
+  "state_disabled": { "message": "ନିଷ୍କ୍ରିୟ" },
+  "state_on": { "message": "ଚାଲୁ" },
+  "state_off": { "message": "ଅଫ" }
 }

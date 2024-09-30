@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Вижте Промените" },
   "unit_seconds": { "message": "секунди" },
   "state_enabled": { "message": "активиран" },
-  "state_disabled": { "message": "деактивиран" }
+  "state_disabled": { "message": "деактивиран" },
+  "state_on": { "message": "а" },
+  "state_off": { "message": "изключен@ info/ plain" }
 }

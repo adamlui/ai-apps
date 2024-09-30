@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Moneni ifyo ifintu fyayaluka" },
   "unit_secs": { "message": "ica secs" },
   "state_enabled": { "message": "Ukusuminisha Ukubomba" },
-  "state_disabled": { "message": "Ukukanya Ukubomba" }
+  "state_disabled": { "message": "Ukukanya Ukubomba" },
+  "state_on": { "message": "pa" },
+  "state_off": { "message": "ukuleka" }
 }

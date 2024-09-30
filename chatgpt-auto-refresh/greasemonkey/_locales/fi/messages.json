@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Näytä muutokset" },
   "unit_secs": { "message": "sekuntia" },
   "state_enabled": { "message": "käytössä" },
-  "state_disabled": { "message": "poistettu käytöstä" }
+  "state_disabled": { "message": "poistettu käytöstä" },
+  "state_on": { "message": "aktiivinen" },
+  "state_off": { "message": "pois" }
 }

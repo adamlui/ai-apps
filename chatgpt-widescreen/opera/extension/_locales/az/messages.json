@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
   "btnLabel_update": { "message": "Yenilə" },
   "btnLabel_dismiss": { "message": "Bağla" },
-  "link_viewChanges": { "message": "Dəyişikliklərə bax" }
+  "link_viewChanges": { "message": "Dəyişikliklərə bax" },
+  "state_on": { "message": "yandır" },
+  "state_off": { "message": "getmək" }
 }

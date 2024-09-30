@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Zobrazit změny" },
   "unit_seconds": { "message": "sekund" },
   "state_enabled": { "message": "zapnuto" },
-  "state_disabled": { "message": "vypnuto" }
+  "state_disabled": { "message": "vypnuto" },
+  "state_on": { "message": "zap" },
+  "state_off": { "message": "vypnout" }
 }

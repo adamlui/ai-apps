@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Bâ achangement" },
   "unit_secs": { "message": "secondes" },
   "state_enabled": { "message": "activé" },
-  "state_disabled": { "message": "désactivé" }
+  "state_disabled": { "message": "désactivé" },
+  "state_on": { "message": "na ndö ti" },
+  "state_off": { "message": "ti zia lege ni" }
 }

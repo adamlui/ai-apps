@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Tirohia ngā panoni" },
   "unit_seconds": { "message": "ngā hēkona" },
   "state_enabled": { "message": "Kua whakakāngia" },
-  "state_disabled": { "message": "Kua whakawetoa" }
+  "state_disabled": { "message": "Kua whakawetoa" },
+  "state_on": { "message": "runga" },
+  "state_off": { "message": "..e whakaweto ana." }
 }

@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Tjek for Opdateringer" },
   "btnLabel_update": { "message": "Opdatér" },
   "btnLabel_dismiss": { "message": "Afvis" },
-  "link_viewChanges": { "message": "Se ændringer" }
+  "link_viewChanges": { "message": "Se ændringer" },
+  "state_on": { "message": "til" },
+  "state_off": { "message": "slukket" }
 }

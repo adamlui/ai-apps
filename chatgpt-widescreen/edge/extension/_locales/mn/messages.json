@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Шинэчлэлтийг шинэчлэх" },
   "btnLabel_update": { "message": "Шинэчлэх" },
   "btnLabel_dismiss": { "message": "Дуусах" },
-  "link_viewChanges": { "message": "Хүмүүсийг харах" }
+  "link_viewChanges": { "message": "Хүмүүсийг харах" },
+  "state_on": { "message": "дээр" },
+  "state_off": { "message": "Унт." }
 }

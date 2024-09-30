@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Przegląd zmian" },
   "unit_secs": { "message": "s" },
   "state_enabled": { "message": "włączone" },
-  "state_disabled": { "message": "wyłączone" }
+  "state_disabled": { "message": "wyłączone" },
+  "state_on": { "message": "w dniu" },
+  "state_off": { "message": "OFF (wył.)" }
 }

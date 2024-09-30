@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Skatīt izmaiņas" },
   "unit_secs": { "message": "sekundes" },
   "state_enabled": { "message": "aktivizēts" },
-  "state_disabled": { "message": "izslēgts" }
+  "state_disabled": { "message": "izslēgts" },
+  "state_on": { "message": "ieslēgts" },
+  "state_off": { "message": "izslēgt" }
 }

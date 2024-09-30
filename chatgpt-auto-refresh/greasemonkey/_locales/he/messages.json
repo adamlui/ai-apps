@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "הצגת השינויים" },
   "unit_secs": { "message": "שניות" },
   "state_enabled": { "message": "מופעל" },
-  "state_disabled": { "message": "נָכֶה" }
+  "state_disabled": { "message": "נָכֶה" },
+  "state_on": { "message": "ב" },
+  "state_off": { "message": "כבוי" }
 }

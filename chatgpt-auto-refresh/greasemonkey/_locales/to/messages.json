@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" },
   "unit_secs": { "message": "THF" },
   "state_enabled": { "message": "Faka'ataa" },
-  "state_disabled": { "message": "Tapui" }
+  "state_disabled": { "message": "Tapui" },
+  "state_on": { "message": "ʻi he" },
+  "state_off": { "message": "mavahe mei he" }
 }

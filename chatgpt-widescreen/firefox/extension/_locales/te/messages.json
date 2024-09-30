@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "btnLabel_update": { "message": "అప్‌డేట్" },
   "btnLabel_dismiss": { "message": "తీసివేయండి" },
-  "link_viewChanges": { "message": "మార్పులను చూడండి" }
+  "link_viewChanges": { "message": "మార్పులను చూడండి" },
+  "state_on": { "message": "మీద" },
+  "state_off": { "message": "అచేతనం" }
 }

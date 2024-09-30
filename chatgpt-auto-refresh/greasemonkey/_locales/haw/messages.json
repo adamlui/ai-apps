@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Nānā i nā hoʻololi" },
   "unit_secs": { "message": "kekona" },
   "state_enabled": { "message": "hiki" },
-  "state_disabled": { "message": "kino kīnā" }
+  "state_disabled": { "message": "kino kīnā" },
+  "state_on": { "message": "ma" },
+  "state_off": { "message": "OFF!" }
 }

@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "گۆرانی بینینەکان" },
   "unit_seconds": { "message": "چرکەیەک" },
   "state_enabled": { "message": "چالاک" },
-  "state_disabled": { "message": "ناچالاک" }
+  "state_disabled": { "message": "ناچالاک" },
+  "state_on": { "message": "vekirî" },
+  "state_off": { "message": "girtî" }
 }

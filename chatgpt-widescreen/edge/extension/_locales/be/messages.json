@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
   "btnLabel_update": { "message": "Абноўлена" },
   "btnLabel_dismiss": { "message": "Адхіліць" },
-  "link_viewChanges": { "message": "Прагледзець змены" }
+  "link_viewChanges": { "message": "Прагледзець змены" },
+  "state_on": { "message": "на" },
+  "state_off": { "message": "выкл." }
 }

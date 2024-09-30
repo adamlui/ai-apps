@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Jereo ny vaovao momba ny famerenana" },
   "btnLabel_update": { "message": "Vaovao farany" },
   "btnLabel_dismiss": { "message": "Hiditra" },
-  "link_viewChanges": { "message": "Jereo ny fiovana" }
+  "link_viewChanges": { "message": "Jereo ny fiovana" },
+  "state_on": { "message": "amin'ny" },
+  "state_off": { "message": "Ajanona" }
 }

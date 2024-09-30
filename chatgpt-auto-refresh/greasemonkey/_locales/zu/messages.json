@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Buka ushintsho" },
   "unit_secs": { "message": "imizuzwana" },
   "state_enabled": { "message": "Inikwe amandla" },
-  "state_disabled": { "message": "Ivaliwe" }
+  "state_disabled": { "message": "Ivaliwe" },
+  "state_on": { "message": "ku" },
+  "state_off": { "message": "ivaliwe" }
 }

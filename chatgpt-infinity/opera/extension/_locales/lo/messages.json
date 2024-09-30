@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "ເບິ່ງການປ່ຽນແປງ" },
   "unit_seconds": { "message": "ວິນາທີ" },
   "state_enabled": { "message": "ເປີດໃຊ້ງານ" },
-  "state_disabled": { "message": "ຄົນພິການ" }
+  "state_disabled": { "message": "ຄົນພິການ" },
+  "state_on": { "message": "ເປີດ" },
+  "state_off": { "message": "ປິດ" }
 }

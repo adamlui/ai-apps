@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Засагдсан зүйлсийг үзэх" },
   "unit_seconds": { "message": "секунд" },
   "state_enabled": { "message": "Идэвхитэй" },
-  "state_disabled": { "message": "Идэвхигүй" }
+  "state_disabled": { "message": "Идэвхигүй" },
+  "state_on": { "message": "дээр" },
+  "state_off": { "message": "Унт." }
 }

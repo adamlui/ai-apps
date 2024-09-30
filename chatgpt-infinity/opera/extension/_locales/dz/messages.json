@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་རྩ་བསྐྲད་གཏང་།" },
   "unit_seconds": { "message": "ཟླ་ཐོ།" },
   "state_enabled": { "message": "གྲོགས་རམ་ཡོད།" },
-  "state_disabled": { "message": "སེལ་འཐུ་འབད་ཡོད་པའི་བརྡ་བཀོད་" }
+  "state_disabled": { "message": "སེལ་འཐུ་འབད་ཡོད་པའི་བརྡ་བཀོད་" },
+  "state_on": { "message": "འདི་ནང་ལུ་" },
+  "state_off": { "message": "ཡར་ལོ།" }
 }

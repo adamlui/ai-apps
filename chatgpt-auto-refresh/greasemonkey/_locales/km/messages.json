@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" },
   "unit_secs": { "message": "វិនាទី" },
   "state_enabled": { "message": "បានជ្រើស" },
-  "state_disabled": { "message": "បានបិទ" }
+  "state_disabled": { "message": "បានបិទ" },
+  "state_on": { "message": "បើក" },
+  "state_off": { "message": "បិទ" }
 }

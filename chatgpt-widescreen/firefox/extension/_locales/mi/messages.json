@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Tirohia ngā whakahōu" },
   "btnLabel_update": { "message": "Whakahou" },
   "btnLabel_dismiss": { "message": "Muku" },
-  "link_viewChanges": { "message": "Tirohia ngā panoni" }
+  "link_viewChanges": { "message": "Tirohia ngā panoni" },
+  "state_on": { "message": "runga" },
+  "state_off": { "message": "..e whakaweto ana." }
 }

@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Besigtig veranderinge" },
   "unit_seconds": { "message": "sekondes" },
   "state_enabled": { "message": "blou" },
-  "state_disabled": { "message": "gedeaktiveer" }
+  "state_disabled": { "message": "gedeaktiveer" },
+  "state_on": { "message": "op" },
+  "state_off": { "message": "af" }
 }

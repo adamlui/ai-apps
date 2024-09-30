@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Hijery ny Fomban'ny Vokatra" },
   "unit_seconds": { "message": "segondra" },
   "state_enabled": { "message": "azo antoka" },
-  "state_disabled": { "message": "tsy maintsy" }
+  "state_disabled": { "message": "tsy maintsy" },
+  "state_on": { "message": "amin'ny" },
+  "state_off": { "message": "Ajanona" }
 }

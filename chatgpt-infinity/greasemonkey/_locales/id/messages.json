@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Lihat perubahan" },
   "unit_seconds": { "message": "detik" },
   "state_enabled": { "message": "difungsikan" },
-  "state_disabled": { "message": "dinonaktifkan" }
+  "state_disabled": { "message": "dinonaktifkan" },
+  "state_on": { "message": "tentang" },
+  "state_off": { "message": "mati" }
 }

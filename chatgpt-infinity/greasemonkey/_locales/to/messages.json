@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Vakai ki he ngaahi ngaahi fehu'i" },
   "unit_seconds": { "message": "sekoni" },
   "state_enabled": { "message": "fakatu'utamai" },
-  "state_disabled": { "message": "fakangata" }
+  "state_disabled": { "message": "fakangata" },
+  "state_on": { "message": "ʻi he" },
+  "state_off": { "message": "mavahe mei he" }
 }

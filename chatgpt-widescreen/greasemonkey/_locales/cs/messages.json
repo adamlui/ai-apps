@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Zjistit novější verzi" },
   "btnLabel_update": { "message": "Aktualizovat" },
   "btnLabel_dismiss": { "message": "Zamítnout" },
-  "link_viewChanges": { "message": "Zobrazit změny" }
+  "link_viewChanges": { "message": "Zobrazit změny" },
+  "state_on": { "message": "zap" },
+  "state_off": { "message": "vypnout" }
 }

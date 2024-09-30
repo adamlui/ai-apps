@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "बदल पहा" },
   "unit_secs": { "message": "सेकंद" },
   "state_enabled": { "message": "सक्षम" },
-  "state_disabled": { "message": "अक्षम" }
+  "state_disabled": { "message": "अक्षम" },
+  "state_on": { "message": "च्यावर" },
+  "state_off": { "message": "बंद" }
 }

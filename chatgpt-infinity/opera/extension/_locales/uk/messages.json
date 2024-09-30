@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Переглянути зміни" },
   "unit_seconds": { "message": "секунд" },
   "state_enabled": { "message": "увімкнено" },
-  "state_disabled": { "message": "вимкнено" }
+  "state_disabled": { "message": "вимкнено" },
+  "state_on": { "message": "на" },
+  "state_off": { "message": "геть" }
 }

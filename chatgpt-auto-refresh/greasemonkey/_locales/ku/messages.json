@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "گۆڕانکاریەکان بینەرە" },
   "unit_secs": { "message": "چرکە" },
   "state_enabled": { "message": "چالاککراو" },
-  "state_disabled": { "message": "ناچالاککراو" }
+  "state_disabled": { "message": "ناچالاککراو" },
+  "state_on": { "message": "vekirî" },
+  "state_off": { "message": "girtî" }
 }

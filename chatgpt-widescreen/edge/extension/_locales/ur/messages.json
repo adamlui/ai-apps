@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
   "btnLabel_update": { "message": "اپ ڈیٹ" },
   "btnLabel_dismiss": { "message": "برخاست" },
-  "link_viewChanges": { "message": "تبدیلیاں دیکھیں" }
+  "link_viewChanges": { "message": "تبدیلیاں دیکھیں" },
+  "state_on": { "message": "پر" },
+  "state_off": { "message": "بند کریں" }
 }

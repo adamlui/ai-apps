@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Hygg eftir UPDATE" },
   "btnLabel_update": { "message": "Dagfør" },
   "btnLabel_dismiss": { "message": "Avrita" },
-  "link_viewChanges": { "message": "Sýn broytingar" }
+  "link_viewChanges": { "message": "Sýn broytingar" },
+  "state_on": { "message": "t" },
+  "state_off": { "message": "av" }
 }

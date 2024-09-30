@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ပါ" },
   "unit_seconds": { "message": "စက္ကန့်" },
   "state_enabled": { "message": "ဖွင့်ထားသည်" },
-  "state_disabled": { "message": "မသန်စွမ်း" }
+  "state_disabled": { "message": "မသန်စွမ်း" },
+  "state_on": { "message": "အပေါ်တွင်" },
+  "state_off": { "message": "ပိတ်" }
 }

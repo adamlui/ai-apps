@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Wali ibeddilen" },
   "unit_seconds": { "message": "tasinin" },
   "state_enabled": { "message": "yermed" },
-  "state_disabled": { "message": "ittwasens" }
+  "state_disabled": { "message": "ittwasens" },
+  "state_on": { "message": "rmed" },
+  "state_off": { "message": "yensa" }
 }

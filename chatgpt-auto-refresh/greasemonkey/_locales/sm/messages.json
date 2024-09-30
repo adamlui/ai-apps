@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Vaʻai suiga" },
   "unit_secs": { "message": "sECS" },
   "state_enabled": { "message": "faatagaina" },
-  "state_disabled": { "message": "faaletonu" }
+  "state_disabled": { "message": "faaletonu" },
+  "state_on": { "message": "i luga o" },
+  "state_off": { "message": "ALU!" }
 }

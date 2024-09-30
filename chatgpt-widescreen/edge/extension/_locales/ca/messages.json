@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
   "btnLabel_update": { "message": "Actualització" },
   "btnLabel_dismiss": { "message": "Descarta" },
-  "link_viewChanges": { "message": "Mostra els canvis" }
+  "link_viewChanges": { "message": "Mostra els canvis" },
+  "state_on": { "message": "activat" },
+  "state_off": { "message": "apagat" }
 }

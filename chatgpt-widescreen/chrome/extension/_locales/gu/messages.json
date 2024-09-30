@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
   "btnLabel_update": { "message": "અદ્યતન બનાવો" },
   "btnLabel_dismiss": { "message": "કાઢી મૂકવું" },
-  "link_viewChanges": { "message": "ફેરફારો જુઓ" }
+  "link_viewChanges": { "message": "ફેરફારો જુઓ" },
+  "state_on": { "message": "ચાલુ" },
+  "state_off": { "message": "બંધ" }
 }

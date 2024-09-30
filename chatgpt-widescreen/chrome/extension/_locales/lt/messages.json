@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
   "btnLabel_update": { "message": "Naujinti" },
   "btnLabel_dismiss": { "message": "Atšaukti" },
-  "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" }
+  "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" },
+  "state_on": { "message": "kada" },
+  "state_off": { "message": "išj" }
 }

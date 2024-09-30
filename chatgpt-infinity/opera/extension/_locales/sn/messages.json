@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Ona shanduko" },
   "unit_seconds": { "message": "maseconds" },
   "state_enabled": { "message": "zvinogoneswa" },
-  "state_disabled": { "message": "chakaremara" }
+  "state_disabled": { "message": "chakaremara" },
+  "state_on": { "message": "pamusoro" },
+  "state_off": { "message": "kure" }
 }

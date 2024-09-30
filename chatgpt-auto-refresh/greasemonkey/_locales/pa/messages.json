@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "ਤਬਦੀਲੀਆਂ ਵੇਖੋ" },
   "unit_secs": { "message": "ਸਕਿੰਟ" },
   "state_enabled": { "message": "ਸਕ੍ਰਿਆ ਕੀਤਾ ਗਿਆ" },
-  "state_disabled": { "message": "ਅਯੋਗ ਕੀਤਾ ਗਿਆ" }
+  "state_disabled": { "message": "ਅਯੋਗ ਕੀਤਾ ਗਿਆ" },
+  "state_on": { "message": "ਤੇ" },
+  "state_off": { "message": "ਬੰਦ" }
 }

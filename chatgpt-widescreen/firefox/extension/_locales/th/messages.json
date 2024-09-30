@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
   "btnLabel_update": { "message": "อัปเดต" },
   "btnLabel_dismiss": { "message": "ยกเลิก" },
-  "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" }
+  "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" },
+  "state_on": { "message": "เมื่อ" },
+  "state_off": { "message": "ปิด" }
 }

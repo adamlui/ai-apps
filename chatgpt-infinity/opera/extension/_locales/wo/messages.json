@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Yàggal noppa" },
   "unit_seconds": { "message": "yuroob" },
   "state_enabled": { "message": "laa baax" },
-  "state_disabled": { "message": "bu baax" }
+  "state_disabled": { "message": "bu baax" },
+  "state_on": { "message": "2.Boo Loo" },
+  "state_off": { "message": "2.Boo Loo" }
 }

@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Sí broytingar" },
   "unit_secs": { "message": "sek" },
   "state_enabled": { "message": "Virkið" },
-  "state_disabled": { "message": "Óvirkið" }
+  "state_disabled": { "message": "Óvirkið" },
+  "state_on": { "message": "t" },
+  "state_off": { "message": "av" }
 }

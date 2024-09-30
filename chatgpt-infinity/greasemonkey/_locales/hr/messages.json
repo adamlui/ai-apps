@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Pregledaj promjene" },
   "unit_seconds": { "message": "sekundi" },
   "state_enabled": { "message": "omogućeno" },
-  "state_disabled": { "message": "onemogućeno" }
+  "state_disabled": { "message": "onemogućeno" },
+  "state_on": { "message": "na" },
+  "state_off": { "message": "popusta" }
 }

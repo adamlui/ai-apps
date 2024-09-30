@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "മാറ്റങ്ങൾ കാണുക" },
   "unit_secs": { "message": "സെക്കൻഡ്" },
   "state_enabled": { "message": "പ്രവർത്തിക്കുന്നു" },
-  "state_disabled": { "message": "പ്രവർത്തിച്ചില്ല" }
+  "state_disabled": { "message": "പ്രവർത്തിച്ചില്ല" },
+  "state_on": { "message": "ഓൺ" },
+  "state_off": { "message": "ഓഫ്" }
 }

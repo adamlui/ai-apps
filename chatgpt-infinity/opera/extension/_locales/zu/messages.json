@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Buka izinguquko" },
   "unit_seconds": { "message": "Sekunden" },
   "state_enabled": { "message": "Inikwe amandla" },
-  "state_disabled": { "message": "Ivaliwe" }
+  "state_disabled": { "message": "Ivaliwe" },
+  "state_on": { "message": "ku" },
+  "state_off": { "message": "ivaliwe" }
 }

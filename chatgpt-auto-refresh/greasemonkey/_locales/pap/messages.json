@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Bista riba kambionan" },
   "unit_secs": { "message": "segedonan" },
   "state_enabled": { "message": "habilitá" },
-  "state_disabled": { "message": "desabilitá" }
+  "state_disabled": { "message": "desabilitá" },
+  "state_on": { "message": "riba" },
+  "state_off": { "message": "for di" }
 }

@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Periksa Pemutakhiran" },
   "btnLabel_update": { "message": "Pembaruan" },
   "btnLabel_dismiss": { "message": "Tutup" },
-  "link_viewChanges": { "message": "Lihat perubahan" }
+  "link_viewChanges": { "message": "Lihat perubahan" },
+  "state_on": { "message": "tentang" },
+  "state_off": { "message": "mati" }
 }

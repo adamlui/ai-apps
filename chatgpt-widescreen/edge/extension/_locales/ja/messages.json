@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "アップデートの確認" },
   "btnLabel_update": { "message": "アップデート" },
   "btnLabel_dismiss": { "message": "解散" },
-  "link_viewChanges": { "message": "ビューの変更" }
+  "link_viewChanges": { "message": "ビューの変更" },
+  "state_on": { "message": "の上" },
+  "state_off": { "message": "オフ" }
 }

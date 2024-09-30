@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "تغییرات وګورئ" },
   "unit_seconds": { "message": "ثانیې" },
   "state_enabled": { "message": "فعال" },
-  "state_disabled": { "message": "غیر فعال" }
+  "state_disabled": { "message": "غیر فعال" },
+  "state_on": { "message": "په" },
+  "state_off": { "message": "مړ" }
 }

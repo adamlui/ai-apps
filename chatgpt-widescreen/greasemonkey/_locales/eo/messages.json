@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
   "btnLabel_update": { "message": "Ĝisdatigi" },
   "btnLabel_dismiss": { "message": "Malakcepti" },
-  "link_viewChanges": { "message": "Montri ŝanĝojn" }
+  "link_viewChanges": { "message": "Montri ŝanĝojn" },
+  "state_on": { "message": "el" },
+  "state_off": { "message": "@ info/ plain" }
 }

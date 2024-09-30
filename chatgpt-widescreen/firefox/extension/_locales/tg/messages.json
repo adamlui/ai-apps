@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
   "btnLabel_update": { "message": "Навсозӣ кардан" },
   "btnLabel_dismiss": { "message": "Рад кардан" },
-  "link_viewChanges": { "message": "Tingnan ang mga pagbab" }
+  "link_viewChanges": { "message": "Tingnan ang mga pagbab" },
+  "state_on": { "message": "фаъол" },
+  "state_off": { "message": "ғайри фаъол" }
 }

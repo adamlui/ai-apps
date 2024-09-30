@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Mostra els canvis" },
   "unit_seconds": { "message": "segons" },
   "state_enabled": { "message": "habilitat" },
-  "state_disabled": { "message": "inhabilitat" }
+  "state_disabled": { "message": "inhabilitat" },
+  "state_on": { "message": "activat" },
+  "state_off": { "message": "apagat" }
 }

@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Просмотреть изменения" },
   "unit_secs": { "message": "секунд" },
   "state_enabled": { "message": "включено" },
-  "state_disabled": { "message": "отключено" }
+  "state_disabled": { "message": "отключено" },
+  "state_on": { "message": "вкл" },
+  "state_off": { "message": "выключенный" }
 }

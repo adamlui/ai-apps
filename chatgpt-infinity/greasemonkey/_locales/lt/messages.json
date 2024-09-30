@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" },
   "unit_seconds": { "message": "sekundės" },
   "state_enabled": { "message": "įjungtas" },
-  "state_disabled": { "message": "išjungta" }
+  "state_disabled": { "message": "išjungta" },
+  "state_on": { "message": "kada" },
+  "state_off": { "message": "išj" }
 }

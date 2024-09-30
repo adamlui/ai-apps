@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Thoir sùil airson ùrachaidhean" },
   "btnLabel_update": { "message": "Ùraich" },
   "btnLabel_dismiss": { "message": "Cuir air falbh" },
-  "link_viewChanges": { "message": "Seall na h - atharraichean" }
+  "link_viewChanges": { "message": "Seall na h - atharraichean" },
+  "state_on": { "message": "air" },
+  "state_off": { "message": "dheth" }
 }

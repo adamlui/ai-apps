@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Check for Updates" },
   "btnLabel_update": { "message": "Update" },
   "btnLabel_dismiss": { "message": "Dismiss" },
-  "link_viewChanges": { "message": "View changes" }
+  "link_viewChanges": { "message": "View changes" },
+  "state_on": { "message": "on" },
+  "state_off": { "message": "off" }
 }

@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "بررسی به روز رسانی" },
   "btnLabel_update": { "message": "به روز رسانی" },
   "btnLabel_dismiss": { "message": "رد" },
-  "link_viewChanges": { "message": "مشاهده تغییرات" }
+  "link_viewChanges": { "message": "مشاهده تغییرات" },
+  "state_on": { "message": "در مورد" },
+  "state_off": { "message": "خاموش" }
 }

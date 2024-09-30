@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "மாற்றங்களைக் காண்க" },
   "unit_secs": { "message": "நொடிக்குள்" },
   "state_enabled": { "message": "இயக்கப்பட்டது" },
-  "state_disabled": { "message": "முடக்கப்பட்டது" }
+  "state_disabled": { "message": "முடக்கப்பட்டது" },
+  "state_on": { "message": "இயக்கு" },
+  "state_off": { "message": "நீக்கு" }
 }

@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Vedi anche l 'accendenza" },
   "unit_secs": { "message": "secs" },
   "state_enabled": { "message": "Actiosus" },
-  "state_disabled": { "message": "Invaliditas" }
+  "state_disabled": { "message": "Invaliditas" },
+  "state_on": { "message": "super" },
+  "state_off": { "message": "finis eum" }
 }

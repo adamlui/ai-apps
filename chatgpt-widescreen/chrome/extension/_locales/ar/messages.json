@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "مرابة التحديثات" },
   "btnLabel_update": { "message": "تحديث" },
   "btnLabel_dismiss": { "message": "إغلاق" },
-  "link_viewChanges": { "message": "عرض سجل التغييرات" }
+  "link_viewChanges": { "message": "عرض سجل التغييرات" },
+  "state_on": { "message": "على" },
+  "state_off": { "message": "إيقاف التشغيل" }
 }

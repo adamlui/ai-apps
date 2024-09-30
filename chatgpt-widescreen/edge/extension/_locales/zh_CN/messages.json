@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "检查更新" },
   "btnLabel_update": { "message": "更新" },
   "btnLabel_dismiss": { "message": "关闭" },
-  "link_viewChanges": { "message": "查看更改" }
+  "link_viewChanges": { "message": "查看更改" },
+  "state_on": { "message": "开启" },
+  "state_off": { "message": "关闭" }
 }

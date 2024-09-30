@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "查看变更" },
   "unit_seconds": { "message": "秒钟" },
   "state_enabled": { "message": "启用" },
-  "state_disabled": { "message": "禁用" }
+  "state_disabled": { "message": "禁用" },
+  "state_on": { "message": "开启" },
+  "state_off": { "message": "关闭" }
 }

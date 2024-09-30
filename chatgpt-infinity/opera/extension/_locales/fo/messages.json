@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Síggj broytingar" },
   "unit_seconds": { "message": "sekund" },
   "state_enabled": { "message": "virkt" },
-  "state_disabled": { "message": "óvirkt" }
+  "state_disabled": { "message": "óvirkt" },
+  "state_on": { "message": "t" },
+  "state_off": { "message": "av" }
 }

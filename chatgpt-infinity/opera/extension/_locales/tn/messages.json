@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Nyaletsa boitsebiso" },
   "unit_seconds": { "message": "metsi" },
   "state_enabled": { "message": "e tlhagisang" },
-  "state_disabled": { "message": "e sa tlhagisang" }
+  "state_disabled": { "message": "e sa tlhagisang" },
+  "state_on": { "message": "mo" },
+  "state_off": { "message": "tswa go" }
 }

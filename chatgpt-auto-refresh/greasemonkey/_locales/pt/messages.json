@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Ver Alterações" },
   "unit_secs": { "message": "s" },
   "state_enabled": { "message": "ativado" },
-  "state_disabled": { "message": "desativado" }
+  "state_disabled": { "message": "desativado" },
+  "state_on": { "message": "a" },
+  "state_off": { "message": "desligar" }
 }

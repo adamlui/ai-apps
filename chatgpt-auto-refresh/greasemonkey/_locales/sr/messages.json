@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Prikaži promjene" },
   "unit_secs": { "message": "сецс" },
   "state_enabled": { "message": "енаблед" },
-  "state_disabled": { "message": "дисаблед" }
+  "state_disabled": { "message": "дисаблед" },
+  "state_on": { "message": "on (uključeno)" },
+  "state_off": { "message": "off (isključeno)" }
 }

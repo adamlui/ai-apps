@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "ለውጢ ርአ" },
   "unit_secs": { "message": "sECS" },
   "state_enabled": { "message": "ከምዝሰርሕ ዝተገብረ" },
-  "state_disabled": { "message": "ከምዘይሰርሕ ዝተገብረ" }
+  "state_disabled": { "message": "ከምዘይሰርሕ ዝተገብረ" },
+  "state_on": { "message": "o" },
+  "state_off": { "message": "ዝወጽ" }
 }

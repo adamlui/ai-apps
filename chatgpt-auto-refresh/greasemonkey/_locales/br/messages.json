@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Kemmoù" },
   "unit_secs": { "message": "secs" },
   "state_enabled": { "message": "enabled" },
-  "state_disabled": { "message": "disabled" }
+  "state_disabled": { "message": "disabled" },
+  "state_on": { "message": "deraouekaet" },
+  "state_off": { "message": "marv" }
 }

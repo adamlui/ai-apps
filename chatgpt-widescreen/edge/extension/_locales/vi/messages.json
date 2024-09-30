@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
   "btnLabel_update": { "message": "Cập nhật" },
   "btnLabel_dismiss": { "message": "Bỏ qua" },
-  "link_viewChanges": { "message": "Xem thay đổi" }
+  "link_viewChanges": { "message": "Xem thay đổi" },
+  "state_on": { "message": "ngày" },
+  "state_off": { "message": "tắt" }
 }

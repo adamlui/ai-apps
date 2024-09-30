@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "ዝማኔዎችን ይፈትሹ" },
   "btnLabel_update": { "message": "አዘምን" },
   "btnLabel_dismiss": { "message": "መደምሰሻ" },
-  "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" }
+  "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" },
+  "state_on": { "message": "በላይ" },
+  "state_off": { "message": "አጥፋ" }
 }

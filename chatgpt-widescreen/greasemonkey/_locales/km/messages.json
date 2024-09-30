@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "ពិនិត្យរកអាប់ដេត" },
   "btnLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },
   "btnLabel_dismiss": { "message": "បោះបង់" },
-  "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" }
+  "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" },
+  "state_on": { "message": "បើក" },
+  "state_off": { "message": "បិទ" }
 }

@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
   "btnLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
   "btnLabel_dismiss": { "message": "Tukuange" },
-  "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" }
+  "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" },
+  "state_on": { "message": "ʻi he" },
+  "state_off": { "message": "mavahe mei he" }
 }

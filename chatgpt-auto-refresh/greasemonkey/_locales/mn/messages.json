@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" },
   "unit_secs": { "message": "секунд" },
   "state_enabled": { "message": "Идэвхтэй" },
-  "state_disabled": { "message": "Идэвхигүй" }
+  "state_disabled": { "message": "Идэвхигүй" },
+  "state_on": { "message": "дээр" },
+  "state_off": { "message": "Унт." }
 }

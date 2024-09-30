@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Se etter oppdateringer" },
   "btnLabel_update": { "message": "Oppdater" },
   "btnLabel_dismiss": { "message": "Ignorer" },
-  "link_viewChanges": { "message": "Vis endringer" }
+  "link_viewChanges": { "message": "Vis endringer" },
+  "state_on": { "message": "på" },
+  "state_off": { "message": "avslag" }
 }

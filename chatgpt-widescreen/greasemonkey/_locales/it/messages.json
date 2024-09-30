@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Verifica aggiornamenti" },
   "btnLabel_update": { "message": "Aggiorna" },
   "btnLabel_dismiss": { "message": "Annulla" },
-  "link_viewChanges": { "message": "Visualizza le modifiche" }
+  "link_viewChanges": { "message": "Visualizza le modifiche" },
+  "state_on": { "message": "il" },
+  "state_off": { "message": "spento" }
 }

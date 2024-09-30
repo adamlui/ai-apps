@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Sprawdzanie aktualizacji" },
   "btnLabel_update": { "message": "Aktualizuj" },
   "btnLabel_dismiss": { "message": "Odrzuć" },
-  "link_viewChanges": { "message": "Przegląd zmian" }
+  "link_viewChanges": { "message": "Przegląd zmian" },
+  "state_on": { "message": "w dniu" },
+  "state_off": { "message": "OFF (wył.)" }
 }

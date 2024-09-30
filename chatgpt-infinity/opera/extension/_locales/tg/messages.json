@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Tingnan ang mga pagbab" },
   "unit_seconds": { "message": "сонияparts" },
   "state_enabled": { "message": "ÐÐ°Ð±ÑÐ´" },
-  "state_disabled": { "message": "хомӯш аст" }
+  "state_disabled": { "message": "хомӯш аст" },
+  "state_on": { "message": "фаъол" },
+  "state_off": { "message": "ғайри фаъол" }
 }

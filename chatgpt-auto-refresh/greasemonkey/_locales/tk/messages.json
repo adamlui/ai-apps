@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Özgertmeleri Gör" },
   "unit_secs": { "message": "sekunt" },
   "state_enabled": { "message": "açyk" },
-  "state_disabled": { "message": "maýyp" }
+  "state_disabled": { "message": "maýyp" },
+  "state_on": { "message": "% jeminden" },
+  "state_off": { "message": "çyk" }
 }

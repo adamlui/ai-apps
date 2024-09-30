@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" },
   "unit_secs": { "message": "ސިކުންތުކޮޅެކެވެ" },
   "state_enabled": { "message": "އެނޭބަލްކޮށްފައި" },
-  "state_disabled": { "message": "ބޭނުންނުކުރެވޭ ގޮތަށް ހަދާފައި" }
+  "state_disabled": { "message": "ބޭނުންނުކުރެވޭ ގޮތަށް ހަދާފައި" },
+  "state_on": { "message": "މަތީގައި" },
+  "state_off": { "message": "އޮފް" }
 }

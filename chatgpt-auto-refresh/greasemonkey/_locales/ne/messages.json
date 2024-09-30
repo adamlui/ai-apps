@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" },
   "unit_secs": { "message": "सेकेन्ड" },
   "state_enabled": { "message": "सक्षम गरिएको छ" },
-  "state_disabled": { "message": "निष्क्रिय गरिएको छ" }
+  "state_disabled": { "message": "निष्क्रिय गरिएको छ" },
+  "state_on": { "message": "मा" },
+  "state_off": { "message": "बन्द" }
 }

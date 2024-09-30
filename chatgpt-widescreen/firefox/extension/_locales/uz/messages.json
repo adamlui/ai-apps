@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
   "btnLabel_update": { "message": "Yangilash" },
   "btnLabel_dismiss": { "message": "Rad etish" },
-  "link_viewChanges": { "message": "O'zgarishlarni ko'rish" }
+  "link_viewChanges": { "message": "O'zgarishlarni ko'rish" },
+  "state_on": { "message": "yoqilgan" },
+  "state_off": { "message": "o'ch" }
 }

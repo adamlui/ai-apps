@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Ýygnaýyşy görkez" },
   "unit_seconds": { "message": "sanyýa" },
   "state_enabled": { "message": "Jawany Mümkin Et" },
-  "state_disabled": { "message": "Mümkin edigili" }
+  "state_disabled": { "message": "Mümkin edigili" },
+  "state_on": { "message": "% jeminden" },
+  "state_off": { "message": "çyk" }
 }

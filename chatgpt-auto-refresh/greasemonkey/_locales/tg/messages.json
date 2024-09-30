@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Tingnan ang mga pagbabago" },
   "unit_secs": { "message": ": дуюм дюмsecond" },
   "state_enabled": { "message": "фаъол шуд" },
-  "state_disabled": { "message": "маъюб" }
+  "state_disabled": { "message": "маъюб" },
+  "state_on": { "message": "фаъол" },
+  "state_off": { "message": "ғайри фаъол" }
 }

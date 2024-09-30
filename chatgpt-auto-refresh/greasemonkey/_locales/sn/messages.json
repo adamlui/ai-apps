@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Vonanyi cinjo" },
   "unit_secs": { "message": "masekondi" },
   "state_enabled": { "message": "inogadzirwa" },
-  "state_disabled": { "message": "hapana kukanganwirwa" }
+  "state_disabled": { "message": "hapana kukanganwirwa" },
+  "state_on": { "message": "pamusoro" },
+  "state_off": { "message": "kure" }
 }

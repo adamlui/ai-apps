@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Ver cambios" },
   "unit_seconds": { "message": "segundos" },
   "state_enabled": { "message": "activado" },
-  "state_disabled": { "message": "desactivado" }
+  "state_disabled": { "message": "desactivado" },
+  "state_on": { "message": "aceso" },
+  "state_off": { "message": "apagado" }
 }

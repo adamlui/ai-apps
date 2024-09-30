@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Εμφάνιση αλλαγών" },
   "unit_secs": { "message": "δευτερόλεπτα" },
   "state_enabled": { "message": "ενεργοποιημένο" },
-  "state_disabled": { "message": "απενεργοποιημένο" }
+  "state_disabled": { "message": "απενεργοποιημένο" },
+  "state_on": { "message": "την" },
+  "state_off": { "message": "ανενεργό" }
 }

@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Jonga izinto ezitshintshiweyo" },
   "unit_secs": { "message": "imizuzwanasecond" },
   "state_enabled": { "message": "yenziwe yasebenza" },
-  "state_disabled": { "message": "ikhubazekile" }
+  "state_disabled": { "message": "ikhubazekile" },
+  "state_on": { "message": "zingaphelanga" },
+  "state_off": { "message": "cima" }
 }

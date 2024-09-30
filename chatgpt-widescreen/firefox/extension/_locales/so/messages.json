@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
   "btnLabel_update": { "message": "Cusboonaysiinta" },
   "btnLabel_dismiss": { "message": "Xil ka qaad" },
-  "link_viewChanges": { "message": "Eeg isbeddelada" }
+  "link_viewChanges": { "message": "Eeg isbeddelada" },
+  "state_on": { "message": "korka" },
+  "state_off": { "message": "Dami" }
 }

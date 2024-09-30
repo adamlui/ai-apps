@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "查看變更" },
   "unit_secs": { "message": "秒" },
   "state_enabled": { "message": "已啟用" },
-  "state_disabled": { "message": "已停用" }
+  "state_disabled": { "message": "已停用" },
+  "state_on": { "message": "在" },
+  "state_off": { "message": "關" }
 }

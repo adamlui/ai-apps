@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Eeg isbeddellada" },
   "unit_secs": { "message": "sECS" },
   "state_enabled": { "message": "La daaray" },
-  "state_disabled": { "message": "La damiyay" }
+  "state_disabled": { "message": "La damiyay" },
+  "state_on": { "message": "korka" },
+  "state_off": { "message": "Dami" }
 }

@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Прикажи ги промените" },
   "unit_secs": { "message": "секунди" },
   "state_enabled": { "message": "овозможено" },
-  "state_disabled": { "message": "оневозможено" }
+  "state_disabled": { "message": "оневозможено" },
+  "state_on": { "message": "на" },
+  "state_off": { "message": "исклучен" }
 }

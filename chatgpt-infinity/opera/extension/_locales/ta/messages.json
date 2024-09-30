@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "மாற்றங்களைக் காண்க" },
   "unit_seconds": { "message": "விநாடிகள்" },
   "state_enabled": { "message": "ਸਮਰੱਥ" },
-  "state_disabled": { "message": "ਅਯੋਗ" }
+  "state_disabled": { "message": "ਅਯੋਗ" },
+  "state_on": { "message": "இயக்கு" },
+  "state_off": { "message": "நீக்கு" }
 }

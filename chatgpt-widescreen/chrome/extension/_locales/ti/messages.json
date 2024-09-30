@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "ምምሕያሻት መርምር" },
   "btnLabel_update": { "message": "ኣሐድስ" },
   "btnLabel_dismiss": { "message": "ምጥፋእ" },
-  "link_viewChanges": { "message": "ለውጢ ርአ" }
+  "link_viewChanges": { "message": "ለውጢ ርአ" },
+  "state_on": { "message": "o" },
+  "state_off": { "message": "ዝወጽ" }
 }

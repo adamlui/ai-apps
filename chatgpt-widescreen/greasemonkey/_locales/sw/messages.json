@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Angalia Masasisho" },
   "btnLabel_update": { "message": "Sasisho" },
   "btnLabel_dismiss": { "message": "Puuza" },
-  "link_viewChanges": { "message": "Angalia mabadiliko" }
+  "link_viewChanges": { "message": "Angalia mabadiliko" },
+  "state_on": { "message": "tarehe" },
+  "state_off": { "message": "chini vya kuthibitisha matumizi ya dawa za kulevya" }
 }

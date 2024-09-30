@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "మార్పులను చూడండి" },
   "unit_seconds": { "message": "సెకన్లు" },
   "state_enabled": { "message": "చేతనంచేసిన" },
-  "state_disabled": { "message": "వికలాంగులు" }
+  "state_disabled": { "message": "వికలాంగులు" },
+  "state_on": { "message": "మీద" },
+  "state_off": { "message": "అచేతనం" }
 }

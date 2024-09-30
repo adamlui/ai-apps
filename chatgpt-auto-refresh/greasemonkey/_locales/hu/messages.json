@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Módosítások megtekintése" },
   "unit_secs": { "message": "másodperc" },
   "state_enabled": { "message": "engedélyezve" },
-  "state_disabled": { "message": "letiltva" }
+  "state_disabled": { "message": "letiltva" },
+  "state_on": { "message": "be" },
+  "state_off": { "message": "Be /" }
 }

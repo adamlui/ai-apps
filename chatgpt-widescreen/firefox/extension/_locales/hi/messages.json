@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "अद्यतन की जांच करें" },
   "btnLabel_update": { "message": "अद्यतन करें" },
   "btnLabel_dismiss": { "message": "खारिज करें" },
-  "link_viewChanges": { "message": "परिवर्तन देखें" }
+  "link_viewChanges": { "message": "परिवर्तन देखें" },
+  "state_on": { "message": "ते" },
+  "state_off": { "message": "बन्द" }
 }

@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "btnLabel_update": { "message": "Жаңарту" },
   "btnLabel_dismiss": { "message": "Дисплейлер" },
-  "link_viewChanges": { "message": "Өзгерістерді көру" }
+  "link_viewChanges": { "message": "Өзгерістерді көру" },
+  "state_on": { "message": "қосулы" },
+  "state_off": { "message": "өшірулі" }
 }

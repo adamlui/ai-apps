@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Ara l-bidliet" },
   "unit_secs": { "message": "sekondi" },
   "state_enabled": { "message": "attivat" },
-  "state_disabled": { "message": "disabbiltat" }
+  "state_disabled": { "message": "disabbiltat" },
+  "state_on": { "message": "fuq" },
+  "state_off": { "message": "mitfi" }
 }

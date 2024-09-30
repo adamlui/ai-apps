@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
   "btnLabel_update": { "message": "Update" },
   "btnLabel_dismiss": { "message": "Yok say" },
-  "link_viewChanges": { "message": "Değişen Dosyalar" }
+  "link_viewChanges": { "message": "Değişen Dosyalar" },
+  "state_on": { "message": "Açık" },
+  "state_off": { "message": "işten çıkmak" }
 }

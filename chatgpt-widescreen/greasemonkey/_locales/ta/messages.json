@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "புதுப்பிப்புகளைத் தேடவும்" },
   "btnLabel_update": { "message": "புதுப்பிக்கவும்" },
   "btnLabel_dismiss": { "message": "நிராகரிக்கவும்" },
-  "link_viewChanges": { "message": "மாற்றங்களைக் காண்க" }
+  "link_viewChanges": { "message": "மாற்றங்களைக் காண்க" },
+  "state_on": { "message": "இயக்கு" },
+  "state_off": { "message": "நீக்கு" }
 }

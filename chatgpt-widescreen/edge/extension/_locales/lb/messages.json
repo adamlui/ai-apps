@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Fakten an Erënnerungen" },
   "btnLabel_update": { "message": "Aktualiséieren" },
   "btnLabel_dismiss": { "message": "Entloossen" },
-  "link_viewChanges": { "message": "Ännerungen uweisen" }
+  "link_viewChanges": { "message": "Ännerungen uweisen" },
+  "state_on": { "message": "un" },
+  "state_off": { "message": "aus" }
 }

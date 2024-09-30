@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Senqed ma llan ileqman" },
   "btnLabel_update": { "message": "Leqqem" },
   "btnLabel_dismiss": { "message": "Agi" },
-  "link_viewChanges": { "message": "Wali ibeddilen" }
+  "link_viewChanges": { "message": "Wali ibeddilen" },
+  "state_on": { "message": "rmed" },
+  "state_off": { "message": "yensa" }
 }

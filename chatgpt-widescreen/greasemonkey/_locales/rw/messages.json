@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Kugirango" },
   "btnLabel_update": { "message": "Kuvugurura" },
   "btnLabel_dismiss": { "message": "Gusiba" },
-  "link_viewChanges": { "message": "Amahinduka" }
+  "link_viewChanges": { "message": "Amahinduka" },
+  "state_on": { "message": "Agashushondanga" },
+  "state_off": { "message": "bidakora" }
 }

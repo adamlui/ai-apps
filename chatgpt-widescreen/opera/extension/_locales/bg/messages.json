@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Проверка за обновяване" },
   "btnLabel_update": { "message": "Актуализация" },
   "btnLabel_dismiss": { "message": "Отхвърли" },
-  "link_viewChanges": { "message": "Вижте Промените" }
+  "link_viewChanges": { "message": "Вижте Промените" },
+  "state_on": { "message": "а" },
+  "state_off": { "message": "изключен@ info/ plain" }
 }

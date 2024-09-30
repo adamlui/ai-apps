@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Se ændringer" },
   "unit_secs": { "message": "sekunder" },
   "state_enabled": { "message": "aktiveret" },
-  "state_disabled": { "message": "deaktiveret" }
+  "state_disabled": { "message": "deaktiveret" },
+  "state_on": { "message": "til" },
+  "state_off": { "message": "slukket" }
 }

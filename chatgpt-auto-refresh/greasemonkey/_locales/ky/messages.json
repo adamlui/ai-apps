@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" },
   "unit_secs": { "message": "СЕК" },
   "state_enabled": { "message": "Күйгүзүлдү" },
-  "state_disabled": { "message": "Өчүрүлгөн" }
+  "state_disabled": { "message": "Өчүрүлгөн" },
+  "state_on": { "message": "ичинде" },
+  "state_off": { "message": "Өчүрүү" }
 }

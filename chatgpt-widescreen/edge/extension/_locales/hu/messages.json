@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Frissítések keresése" },
   "btnLabel_update": { "message": "Frissítés" },
   "btnLabel_dismiss": { "message": "Elvetés" },
-  "link_viewChanges": { "message": "Módosítások megtekintése" }
+  "link_viewChanges": { "message": "Módosítások megtekintése" },
+  "state_on": { "message": "be" },
+  "state_off": { "message": "Be /" }
 }

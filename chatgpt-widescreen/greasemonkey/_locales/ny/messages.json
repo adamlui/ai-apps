@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Onani Zosintha" },
   "btnLabel_update": { "message": "Mfundo zazinsinsi" },
   "btnLabel_dismiss": { "message": "Mfundo zazinsinsi" },
-  "link_viewChanges": { "message": "Onani zosintha" }
+  "link_viewChanges": { "message": "Onani zosintha" },
+  "state_on": { "message": "pa" },
+  "state_off": { "message": "m 'munsi" }
 }

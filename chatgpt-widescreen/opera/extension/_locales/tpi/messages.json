@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Lukim ol eleksen" },
   "btnLabel_update": { "message": "Toksave" },
   "btnLabel_dismiss": { "message": "Rausim" },
-  "link_viewChanges": { "message": "Lukim ol senis" }
+  "link_viewChanges": { "message": "Lukim ol senis" },
+  "state_on": { "message": "long" },
+  "state_off": { "message": "i go" }
 }

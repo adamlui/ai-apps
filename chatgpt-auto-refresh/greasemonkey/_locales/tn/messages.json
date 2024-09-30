@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Leba diphetogo" },
   "unit_secs": { "message": "mefuta" },
   "state_enabled": { "message": "e kgontshiwe" },
-  "state_disabled": { "message": "golafetse" }
+  "state_disabled": { "message": "golafetse" },
+  "state_on": { "message": "mo" },
+  "state_off": { "message": "tswa go" }
 }

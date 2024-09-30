@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Amahinduka" },
   "unit_secs": { "message": "amasogonda" },
   "state_enabled": { "message": "Birafunguye" },
-  "state_disabled": { "message": "Yahagaritswe" }
+  "state_disabled": { "message": "Yahagaritswe" },
+  "state_on": { "message": "Agashushondanga" },
+  "state_off": { "message": "bidakora" }
 }

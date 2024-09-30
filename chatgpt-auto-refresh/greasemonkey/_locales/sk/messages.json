@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Zobraziť zmeny" },
   "unit_secs": { "message": "sekúnd" },
   "state_enabled": { "message": "zapnuté" },
-  "state_disabled": { "message": "vypnuté" }
+  "state_disabled": { "message": "vypnuté" },
+  "state_on": { "message": "na" },
+  "state_off": { "message": "vypnuté" }
 }

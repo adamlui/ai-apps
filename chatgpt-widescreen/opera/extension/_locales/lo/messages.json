@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "ກວດສອບການອັບເດດ" },
   "btnLabel_update": { "message": "ອັບເດດ" },
   "btnLabel_dismiss": { "message": "ຂ້າມໄປ" },
-  "link_viewChanges": { "message": "ເບິ່ງການປ່ຽນແປງ" }
+  "link_viewChanges": { "message": "ເບິ່ງການປ່ຽນແປງ" },
+  "state_on": { "message": "ເປີດ" },
+  "state_off": { "message": "ປິດ" }
 }

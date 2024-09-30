@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Tan-awa ang mga Nabag-o" },
   "unit_seconds": { "message": "ka segundo" },
   "state_enabled": { "message": "gibukas" },
-  "state_disabled": { "message": "gibalos" }
+  "state_disabled": { "message": "gibalos" },
+  "state_on": { "message": "sa on" },
+  "state_off": { "message": "off" }
 }

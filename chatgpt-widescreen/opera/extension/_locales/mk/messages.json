@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Провери за нова верзија" },
   "btnLabel_update": { "message": "Ажурирај" },
   "btnLabel_dismiss": { "message": "Отфрли" },
-  "link_viewChanges": { "message": "Прикажи ги промените" }
+  "link_viewChanges": { "message": "Прикажи ги промените" },
+  "state_on": { "message": "на" },
+  "state_off": { "message": "исклучен" }
 }

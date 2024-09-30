@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Onani zosintha" },
   "unit_seconds": { "message": "masekondi" },
   "state_enabled": { "message": "Utheketsa" },
-  "state_disabled": { "message": "Usatheketsa" }
+  "state_disabled": { "message": "Usatheketsa" },
+  "state_on": { "message": "pa" },
+  "state_off": { "message": "m 'munsi" }
 }

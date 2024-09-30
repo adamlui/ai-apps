@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
   "btnLabel_update": { "message": "Ica Update" },
   "btnLabel_dismiss": { "message": "Dismiss Fela Kuti" },
-  "link_viewChanges": { "message": "View ayaluka" }
+  "link_viewChanges": { "message": "View ayaluka" },
+  "state_on": { "message": "pa" },
+  "state_off": { "message": "ukuleka" }
 }

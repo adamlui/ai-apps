@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "වෙනස්කම් බලන්න" },
   "unit_seconds": { "message": "parts" },
   "state_enabled": { "message": "සක්‍රීය කල" },
-  "state_disabled": { "message": "අක්‍රීය කල" }
+  "state_disabled": { "message": "අක්‍රීය කල" },
+  "state_on": { "message": "" },
+  "state_off": { "message": "ගූගල්" }
 }

@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Mutationes Vide" },
   "unit_seconds": { "message": "secunda" },
   "state_enabled": { "message": "actum" },
-  "state_disabled": { "message": "inactum" }
+  "state_disabled": { "message": "inactum" },
+  "state_on": { "message": "super" },
+  "state_off": { "message": "finis eum" }
 }

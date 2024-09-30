@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "ცვლილებების ნახვა" },
   "unit_seconds": { "message": "წამი" },
   "state_enabled": { "message": "ჩართულია" },
-  "state_disabled": { "message": "ინვალიდი" }
+  "state_disabled": { "message": "ინვალიდი" },
+  "state_on": { "message": "ჩართული" },
+  "state_off": { "message": "გათიშვა" }
 }

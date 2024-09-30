@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Angalia mabadiliko" },
   "unit_seconds": { "message": "sekunde" },
   "state_enabled": { "message": "imewezeshwa" },
-  "state_disabled": { "message": "walemavu" }
+  "state_disabled": { "message": "walemavu" },
+  "state_on": { "message": "tarehe" },
+  "state_off": { "message": "chini vya kuthibitisha matumizi ya dawa za kulevya" }
 }

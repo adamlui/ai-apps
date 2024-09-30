@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Lihat perubahan" },
   "unit_secs": { "message": "saat" },
   "state_enabled": { "message": "diaktifkan" },
-  "state_disabled": { "message": "dilumpuhkan" }
+  "state_disabled": { "message": "dilumpuhkan" },
+  "state_on": { "message": "ke atas" },
+  "state_off": { "message": "mati" }
 }

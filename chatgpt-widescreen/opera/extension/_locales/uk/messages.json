@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Перевірити Оновлення" },
   "btnLabel_update": { "message": "Оновити" },
   "btnLabel_dismiss": { "message": "Відмінити" },
-  "link_viewChanges": { "message": "Переглянути зміни" }
+  "link_viewChanges": { "message": "Переглянути зміни" },
+  "state_on": { "message": "на" },
+  "state_off": { "message": "геть" }
 }

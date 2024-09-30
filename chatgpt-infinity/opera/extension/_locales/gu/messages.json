@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "ફેરફારો જુઓ" },
   "unit_seconds": { "message": "સેકંડો" },
   "state_enabled": { "message": "સક્ષમ" },
-  "state_disabled": { "message": "અક્ષમ" }
+  "state_disabled": { "message": "અક્ષમ" },
+  "state_on": { "message": "ચાલુ" },
+  "state_off": { "message": "બંધ" }
 }

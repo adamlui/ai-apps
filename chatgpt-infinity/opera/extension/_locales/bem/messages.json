@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Yangasa maboko" },
   "unit_seconds": { "message": "sekunde" },
   "state_enabled": { "message": "ili na ichilangililo" },
-  "state_disabled": { "message": "ili pakulanda" }
+  "state_disabled": { "message": "ili pakulanda" },
+  "state_on": { "message": "pa" },
+  "state_off": { "message": "ukuleka" }
 }

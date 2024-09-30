@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "ਤਬਦੀਲੀਆਂ ਵੇਖੋ" },
   "unit_seconds": { "message": "ਸਕਿੰਟ" },
   "state_enabled": { "message": "ਸਮਰੱਥ" },
-  "state_disabled": { "message": "ਬੰਦ" }
+  "state_disabled": { "message": "ਬੰਦ" },
+  "state_on": { "message": "ਤੇ" },
+  "state_off": { "message": "ਬੰਦ" }
 }

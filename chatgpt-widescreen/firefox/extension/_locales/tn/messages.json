@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Go Batla Diphetogo" },
   "btnLabel_update": { "message": "Ntshwafatso" },
   "btnLabel_dismiss": { "message": "Phimola" },
-  "link_viewChanges": { "message": "LEBA DIPHETOGO" }
+  "link_viewChanges": { "message": "LEBA DIPHETOGO" },
+  "state_on": { "message": "mo" },
+  "state_off": { "message": "tswa go" }
 }

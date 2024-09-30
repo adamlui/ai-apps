@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Skoða breytingar" },
   "unit_seconds": { "message": "sekúndur" },
   "state_enabled": { "message": "Lag" },
-  "state_disabled": { "message": "óvirkt" }
+  "state_disabled": { "message": "óvirkt" },
+  "state_on": { "message": "á" },
+  "state_off": { "message": "af" }
 }

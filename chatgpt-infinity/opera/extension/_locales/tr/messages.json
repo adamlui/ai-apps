@@ -57,5 +57,7 @@
   "link_viewChanges": { "message": "Değişen Dosyalar" },
   "unit_seconds": { "message": "saniye" },
   "state_enabled": { "message": "etkin" },
-  "state_disabled": { "message": "devre dışı" }
+  "state_disabled": { "message": "devre dışı" },
+  "state_on": { "message": "Açık" },
+  "state_off": { "message": "işten çıkmak" }
 }

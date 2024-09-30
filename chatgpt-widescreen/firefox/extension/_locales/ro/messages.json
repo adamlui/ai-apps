@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "Caută actualizări" },
   "btnLabel_update": { "message": "Actualizare" },
   "btnLabel_dismiss": { "message": "Respingeți" },
-  "link_viewChanges": { "message": "Vizualizează modificările" }
+  "link_viewChanges": { "message": "Vizualizează modificările" },
+  "state_on": { "message": "pornit" },
+  "state_off": { "message": "oprit" }
 }

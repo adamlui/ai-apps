@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "Ikusi aldaketak" },
   "unit_secs": { "message": "segsecond" },
   "state_enabled": { "message": "gaituta" },
-  "state_disabled": { "message": "ezgaituta" }
+  "state_disabled": { "message": "ezgaituta" },
+  "state_on": { "message": "sisse" },
+  "state_off": { "message": "itzali" }
 }

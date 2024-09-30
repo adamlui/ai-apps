@@ -42,5 +42,7 @@
   "link_viewChanges": { "message": "O'zgarishlarni ko'rish" },
   "unit_secs": { "message": "Секунд" },
   "state_enabled": { "message": "yoqilgan" },
-  "state_disabled": { "message": "o'chirilgan" }
+  "state_disabled": { "message": "o'chirilgan" },
+  "state_on": { "message": "yoqilgan" },
+  "state_off": { "message": "o'ch" }
 }

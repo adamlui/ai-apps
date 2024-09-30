@@ -59,5 +59,7 @@
   "btnLabel_updateCheck": { "message": "חפש עדכונים" },
   "btnLabel_update": { "message": "עדכון" },
   "btnLabel_dismiss": { "message": "שחרור" },
-  "link_viewChanges": { "message": "הצגת השינויים" }
+  "link_viewChanges": { "message": "הצגת השינויים" },
+  "state_on": { "message": "ב" },
+  "state_off": { "message": "כבוי" }
 }
