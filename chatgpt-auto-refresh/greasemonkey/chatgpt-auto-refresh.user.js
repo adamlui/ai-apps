@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.1
+// @version             2024.9.30.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -609,7 +609,7 @@
                       + `<p>—<b><a target="_blank" rel="noopener" href="${app.author.url}">${app.msgs.appAuthor}</a></b>, ${app.msgs.alert_author}</p>`,
                     [ // buttons
                         function paypal() { modals.safeWinOpen(app.urls.payPal) },
-                        function github() { modals.safeWinOpen(app.urls.gitHub) },
+                        function githubSponsors() { modals.safeWinOpen(app.urls.gitHub) },
                         function cashApp() { modals.safeWinOpen(app.urls.cashApp) }
                     ], '', 478 // set width
                 )
@@ -624,7 +624,7 @@
                 btns.forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else {
-                        btn.style.cssText = 'padding: 8px 0 !important ; margin-top: -18px' // heighten + raise
+                        btn.style.cssText = 'padding: 8px 6px !important ; margin-top: -18px ; width: 107px ; line-height: 14px'
                         if (idx == btns.length -1) btn.classList.remove('primary-modal-btn') // de-emphasize last link
                     }
                 })
