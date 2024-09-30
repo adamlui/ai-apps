@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.4
+// @version             2024.9.30.5
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -504,9 +504,11 @@
     // Define MODAL functions
 
     const modals = {
+        stack: [],
 
         about: {
             show() {
+                modals.stack.unshift('about') ; modals.stack = [...new Set(modals.stack)] // track for nav
 
                 // Init data/styles
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
@@ -529,12 +531,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function rateUs() { // show review modal
-                            const reviewModalID = chatgpt.alert(( app.msgs.alert_choosePlatform ) + ':', '',
-                                [ function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                                function futurepedia() { modals.safeWinOpen(app.urls.futurepedia + '#tool-reviews') }])
-                            document.getElementById(reviewModalID).querySelector('button')
-                                .style.display = 'none' }, // hide dismiss button
+                        function rateUs() { modals.feedback.show() },
                         function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
                     ], '', 478 // set width
                 )
@@ -558,6 +555,7 @@
             longCOVIDwikiLink: 'https://en.wikipedia.org/wiki/Long_COVID',
 
             show() {
+                modals.stack.unshift('donate') ; modals.stack = [...new Set(modals.stack)] // track for nav
 
                 // Show alert
                 const donateModalID = siteAlert(
@@ -574,7 +572,8 @@
                     [ // buttons
                         function paypal() { modals.safeWinOpen(app.urls.donate.payPal) },
                         function githubSponsors() { modals.safeWinOpen(app.urls.donate.gitHub) },
-                        function cashApp() { modals.safeWinOpen(app.urls.donate.cashApp) }
+                        function cashApp() { modals.safeWinOpen(app.urls.donate.cashApp) },
+                        function rateUs() { modals.feedback.show() }
                     ], '', 478 // set width
                 )
 
@@ -588,10 +587,28 @@
                 btns.forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else {
-                        btn.style.cssText = 'padding: 8px 6px !important ; margin-top: -18px ; width: 107px ; line-height: 14px'
-                        if (idx == btns.length -1) btn.classList.remove('primary-modal-btn') // de-emphasize last link
+                        btn.style.cssText = 'padding: 8px 6px !important ; margin-top: -14px ; width: 107px ; line-height: 14px'
+                        if (idx == btns.length -1) // de-emphasize right-most button
+                            btn.classList.remove('primary-modal-btn')
+                        else if (/rate/i.test(btn.textContent)) // localize 'Rate Us' label
+                            btn.textContent = app.msgs.btnLabel_rateUs
                     }
                 })
+            }
+        },
+
+        feedback: {
+            show() {
+                const reviewModalID = chatgpt.alert(
+                    `${app.msgs.alert_choosePlatform}:`, '', // title
+                    [ // buttons
+                        function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                        function futurepedia() { modals.safeWinOpen(app.urls.futurepedia + '#tool-reviews') }
+                    ]
+                )
+                const reviewModal = document.getElementById(reviewModalID)
+                reviewModal.querySelector('button').style.display = 'none' // hide Dismiss button
+                reviewModal.addEventListener('DOMNodeRemoved', () => modals[modals.stack[0]]?.show() ) // nav back on btn/bg clicks
             }
         },
 
