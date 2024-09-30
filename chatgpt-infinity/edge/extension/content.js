@@ -21,8 +21,7 @@
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
         else if (req.action.startsWith('infinity')) {
             infinity.muted = true // prevent top-right notif blocked by popup
-            if (req.action == 'infinity.toggle') infinity.toggle()
-            else if (req.action == 'infinity.restart') infinity.restart({ target: req.target })
+            infinity[/\.(\w+)/.exec(req.action)[1]](req.options)
         } else if (req.action == 'sync.storageToUI') syncStorageToUI()
     })
 

@@ -161,7 +161,7 @@
                                 chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyIn') + ' '
                                 + ( replyLanguage || chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
                             if (config.infinityMode) // reboot active session
-                                sendMsgToActiveTab({ action: 'infinity.restart', target: 'new' })
+                                sendMsgToActiveTab({ action: 'infinity.restart', options: { target: 'new' }})
                             break
                         }
                     }
@@ -178,7 +178,7 @@
                                                                             : chrome.i18n.getMessage('alert_onTopicOf')
                                                                                 + ' ' + str_replyTopic ) + '!')
                         if (config.infinityMode) // reboot active session
-                            sendMsgToActiveTab({ action: 'infinity.restart', target: 'new' })
+                            sendMsgToActiveTab({ action: 'infinity.restart', options: { target: 'new' }})
                     }
                 } else if (key == 'replyInterval') {
                     while (true) {
@@ -191,7 +191,7 @@
                                 chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyEvery')
                                 + ' ' + replyInterval + ' ' + chrome.i18n.getMessage('unit_seconds') + '.')
                             if (config.infinityMode) // reboot active session
-                                sendMsgToActiveTab({ action: 'infinity.restart', target: 'self' })
+                                sendMsgToActiveTab({ action: 'infinity.restart', options: { target: 'self' }})
                             break
                         }
                     }
