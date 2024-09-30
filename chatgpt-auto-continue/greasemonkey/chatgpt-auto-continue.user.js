@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.3
+// @version             2024.9.30.4
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -523,7 +523,8 @@
                     [ // buttons
                         function paypal() { modals.safeWinOpen(app.urls.donate.payPal) },
                         function githubSponsors() { modals.safeWinOpen(app.urls.donate.gitHub) },
-                        function cashApp() { modals.safeWinOpen(app.urls.donate.cashApp) }
+                        function cashApp() { modals.safeWinOpen(app.urls.donate.cashApp) },
+                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') }
                     ], '', 478 // set width
                 )
 
@@ -537,8 +538,11 @@
                 btns.forEach((btn, idx) => {
                     if (idx == 0) btn.style.display = 'none' // hide Dismiss button
                     else {
-                        btn.style.cssText = 'padding: 8px 6px !important ; margin-top: -18px ; width: 107px ; line-height: 14px'
-                        if (idx == btns.length -1) btn.classList.remove('primary-modal-btn') // de-emphasize last link
+                        btn.style.cssText = 'padding: 8px 6px !important ; margin-top: -14px ; width: 107px ; line-height: 14px'
+                        if (idx == btns.length -1) // de-emphasize right-most button
+                            btn.classList.remove('primary-modal-btn')
+                        else if (/rate/i.test(btn.textContent)) // localize 'Rate Us' label
+                            btn.textContent = app.msgs.btnLabel_rateUs
                     }
                 })
             }
