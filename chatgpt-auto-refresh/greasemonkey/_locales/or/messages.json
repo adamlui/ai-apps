@@ -34,6 +34,7 @@
   "alert_author": { "message": "ଲେଖକ" },
   "btnLabel_moreApps": { "message": "ଅଧିକ ଚାଟGPT ପ୍ରୟୋଗଗୁଡ଼ିକ" },
   "btnLabel_leaveReview": { "message": "ସମୀକ୍ଷା ଛାଡନ୍ତୁ" },
+  "btnLabel_rateUs": { "message": "ଆମକୁ ମୂଲ୍ୟାଙ୍କନ କରନ୍ତୁ" },
   "btnLabel_getSupport": { "message": "ସପୋର୍ଟ ପାଆନ୍ତୁ" },
   "btnLabel_updateCheck": { "message": "ଅଦ୍ୟତନ ପାଇଁ ଯାଞ୍ଚ କରନ୍ତୁ" },
   "btnLabel_update": { "message": "ଅଦ୍ୟତନ କରନ୍ତୁ" },

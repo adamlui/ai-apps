@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Trimiteți interogarea de căutare către BraveGPT" },
   "btnLabel_moreApps": { "message": "Mai multe aplicații ChatGPT" },
   "btnLabel_leaveReview": { "message": "Lasă o recenzie" },
+  "btnLabel_rateUs": { "message": "Evaluați-ne" },
   "btnLabel_getSupport": { "message": "Primește asistență" },
   "btnLabel_updateCheck": { "message": "Caută actualizări" },
   "btnLabel_update": { "message": "Actualizare" },

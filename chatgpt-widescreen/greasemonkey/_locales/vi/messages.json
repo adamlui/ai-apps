@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 được sử dụng để vào chế độ toàn màn hình và vì lý do bảo mật trình duyệt, khóa tương tự phải được sử dụng để thoát khỏi nó" },
   "btnLabel_moreApps": { "message": "Các ứng dụng ChatGPT khác" },
   "btnLabel_leaveReview": { "message": "Gửi phản hồi" },
+  "btnLabel_rateUs": { "message": "Đánh giá chúng tôi" },
   "btnLabel_getSupport": { "message": "Đề nghị hỗ trợ" },
   "btnLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
   "btnLabel_update": { "message": "Cập nhật" },

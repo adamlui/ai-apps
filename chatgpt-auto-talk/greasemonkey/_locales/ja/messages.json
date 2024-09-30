@@ -28,6 +28,7 @@
   "alert_author": { "message": "作成者" },
   "btnLabel_moreApps": { "message": "その他のChatGPTアプリ" },
   "btnLabel_leaveReview": { "message": "レビューを残す" },
+  "btnLabel_rateUs": { "message": "評価してください" },
   "btnLabel_getSupport": { "message": "サポートを受ける" },
   "btnLabel_updateCheck": { "message": "更新を確認" },
   "btnLabel_update": { "message": "更新情報" },

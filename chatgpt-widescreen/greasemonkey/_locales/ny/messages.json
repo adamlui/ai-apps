@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 idagwiritsidwa ntchito kulowa pazenera lonse, ndipo chifukwa cha zifukwa za chitetezo cha asakatuli, kiyi yomweyo iyenera kugwiritsidwa ntchito kuti ituluke" },
   "btnLabel_moreApps": { "message": "Zambiri Mapulogalamu a ChatGPT" },
   "btnLabel_leaveReview": { "message": "Kusiya Review" },
+  "btnLabel_rateUs": { "message": "Kuwerengetsa Ife" },
   "btnLabel_getSupport": { "message": "Pezani Thandizo" },
   "btnLabel_updateCheck": { "message": "Onani Zosintha" },
   "btnLabel_update": { "message": "Mfundo zazinsinsi" },

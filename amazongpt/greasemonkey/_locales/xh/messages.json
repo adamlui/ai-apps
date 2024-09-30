@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "URL ikhutshelwa kwibhodi eqhotyoshwayo. @ info" },
   "btnLabel_moreApps": { "message": "Ii-app ezingakumbi zeChatGPT" },
   "btnLabel_leaveReview": { "message": "Shiya Uluvo" },
+  "btnLabel_rateUs": { "message": "Silinganise" },
   "btnLabel_getSupport": { "message": "Fumana Uncedo" },
   "btnLabel_updateCheck": { "message": "Khangela Izinto Ezintsha" },
   "btnLabel_update": { "message": "Lungisa" },

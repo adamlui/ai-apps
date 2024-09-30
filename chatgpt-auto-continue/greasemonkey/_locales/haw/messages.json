@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Ua hoʻomau ʻia ke kamaʻilio ʻana" },
   "btnLabel_moreApps": { "message": "Nā polokalamu ChatGPT hou aku" },
   "btnLabel_leaveReview": { "message": "Haʻalele Nānā" },
+  "btnLabel_rateUs": { "message": "E helu iā mākou" },
   "btnLabel_getSupport": { "message": "Loaʻa Kākoʻo" },
   "btnLabel_updateCheck": { "message": "E nānā i nā mea hou" },
   "btnLabel_update": { "message": "Hōʻano hou" },

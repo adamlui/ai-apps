@@ -31,6 +31,7 @@
   "alert_author": { "message": "Ukhetho" },
   "btnLabel_moreApps": { "message": "Ama-app engeziwe e-ChatGPT" },
   "btnLabel_leaveReview": { "message": "Shiya Okushiwo Abanye" },
+  "btnLabel_rateUs": { "message": "Silinganise" },
   "btnLabel_getSupport": { "message": "Thola Usizo" },
   "btnLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
   "btnLabel_update": { "message": "Lungisa" },

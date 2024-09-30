@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Chat automatisch voortgezet" },
   "btnLabel_moreApps": { "message": "Meer ChatGPT-apps" },
   "btnLabel_leaveReview": { "message": "Beoordeling Plaatsen" },
+  "btnLabel_rateUs": { "message": "Beoordeel Ons" },
   "btnLabel_getSupport": { "message": "Neem contact op" },
   "btnLabel_updateCheck": { "message": "Controleer op updates" },
   "btnLabel_update": { "message": "Update" },

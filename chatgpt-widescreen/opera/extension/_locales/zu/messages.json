@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "I-F11 yayisetshenziselwa ukufaka isikrini esigcwele, futhi ngenxa yezizathu zokuphepha zesiphequluli, inkinombho efanayo kufanele isetshenziswe ukuyikhipha" },
   "btnLabel_moreApps": { "message": "Ama-app engeziwe e-ChatGPT" },
   "btnLabel_leaveReview": { "message": "Shiya Okushiwo Abanye" },
+  "btnLabel_rateUs": { "message": "Silinganise" },
   "btnLabel_getSupport": { "message": "Thola Usizo" },
   "btnLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
   "btnLabel_update": { "message": "Buyekeza" },

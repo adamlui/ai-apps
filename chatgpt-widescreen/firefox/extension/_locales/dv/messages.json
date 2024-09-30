@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "ފުލް ސްކްރީނަށް ވަނުމަށް އެފް11 ބޭނުންކުރި އިރު، ބްރައުޒާ ސެކިއުރިޓީ ސަބަބުތަކާ ހުރެ، އެ ތަޅުދަނޑިން ނުކުތުމަށް ބޭނުންކުރަން ޖެހެނީ ހަމަ ތަޅުދަނޑި" },
   "btnLabel_moreApps": { "message": "އިތުރު ޗެޓްޖީޕީޓީ އެޕްތައް" },
   "btnLabel_leaveReview": { "message": "ރިވިއު ދޫކޮށްލާށެވެ" },
+  "btnLabel_rateUs": { "message": "ރޭޓް އަސް" },
   "btnLabel_getSupport": { "message": "ގެޓް ސަޕޯޓް" },
   "btnLabel_updateCheck": { "message": "އަޕްޑޭޓްތައް ބަލާށެވެ" },
   "btnLabel_update": { "message": "އަޕްޑޭޓް" },

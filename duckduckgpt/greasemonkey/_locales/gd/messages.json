@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Cuir ceist rannsachaidh gu DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Barrachd Apps ChatGPT" },
   "btnLabel_leaveReview": { "message": "Leave Review" },
+  "btnLabel_rateUs": { "message": "Rèitich sinn" },
   "btnLabel_getSupport": { "message": "Faigh Taic" },
   "btnLabel_updateCheck": { "message": "Dèan sgrùdadh airson Ùrachaidhean" },
   "btnLabel_update": { "message": "Ùrachadh" },

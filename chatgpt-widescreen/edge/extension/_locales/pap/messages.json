@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 a wordo uza pa drenta pantaya completo, y pa motibo di siguridad di e navegador, mester uza e mesun yabi pa sali for di dje" },
   "btnLabel_moreApps": { "message": "Mas informacion de ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Laga revision" },
+  "btnLabel_rateUs": { "message": "Rate Nos" },
   "btnLabel_getSupport": { "message": "Recibí Apoyo" },
   "btnLabel_updateCheck": { "message": "Revisá las actualizaciones" },
   "btnLabel_update": { "message": "Update" },

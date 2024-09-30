@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "శోధన ప్రశ్నను BraveGPTకి పంపండి" },
   "btnLabel_moreApps": { "message": "మరిన్ని ChatGPT యాప్ ‌ లు" },
   "btnLabel_leaveReview": { "message": "సమీక్షను వదిలివేయండి" },
+  "btnLabel_rateUs": { "message": "మాకు రేటింగ్ ఇవ్వండి" },
   "btnLabel_getSupport": { "message": "సహకారం తీసుకోండి" },
   "btnLabel_updateCheck": { "message": "తాజాకరణలకోసం ప్రయత్నించండి" },
   "btnLabel_update": { "message": "అప్‌డేట్" },

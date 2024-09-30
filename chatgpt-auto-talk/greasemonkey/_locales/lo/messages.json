@@ -28,6 +28,7 @@
   "alert_author": { "message": "ຜູ້ຂຽນ" },
   "btnLabel_moreApps": { "message": "ແອັບພລິເຄຊັນ ChatGPT ຫຼາຍຂຶ້ນ" },
   "btnLabel_leaveReview": { "message": "ໃຫ້ການທົບທວນຄືນ" },
+  "btnLabel_rateUs": { "message": "ປະເມີນພວກເຮົາ" },
   "btnLabel_getSupport": { "message": "ໄດ້ຮັບການສະໜັບສະໜູນ" },
   "btnLabel_updateCheck": { "message": "ກວດເບິ່ງການອັບເດດ" },
   "btnLabel_update": { "message": "ອັບເດດ" },

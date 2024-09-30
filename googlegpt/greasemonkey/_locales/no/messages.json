@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Send søket til GoogleGPT" },
   "btnLabel_moreApps": { "message": "Flere ChatGPT-apper" },
   "btnLabel_leaveReview": { "message": "Skriv en omtale" },
+  "btnLabel_rateUs": { "message": "Vurder oss" },
   "btnLabel_getSupport": { "message": "Brukerstøtte" },
   "btnLabel_updateCheck": { "message": "Se etter oppdateringer" },
   "btnLabel_update": { "message": "Oppdater" },

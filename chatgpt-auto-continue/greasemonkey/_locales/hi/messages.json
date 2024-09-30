@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "चैट ऑटो - कॉन्टिन्यूड" },
   "btnLabel_moreApps": { "message": "और ChatGPT ऐप्स" },
   "btnLabel_leaveReview": { "message": "समीक्षा छोड़ें" },
+  "btnLabel_rateUs": { "message": "हमें रेटिंग दें" },
   "btnLabel_getSupport": { "message": "सपोर्ट प्राप्त करें" },
   "btnLabel_updateCheck": { "message": "अद्यतन के लिए जाँचें" },
   "btnLabel_update": { "message": "अपडेट करें" },

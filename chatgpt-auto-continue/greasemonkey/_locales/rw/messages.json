@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Komeza > >" },
   "btnLabel_moreApps": { "message": "Porogaramu" },
   "btnLabel_leaveReview": { "message": "Isubiramo" },
+  "btnLabel_rateUs": { "message": "Gupima" },
   "btnLabel_getSupport": { "message": "Gushigikira" },
   "btnLabel_updateCheck": { "message": "Kugirango" },
   "btnLabel_update": { "message": "Kuvugurura" },

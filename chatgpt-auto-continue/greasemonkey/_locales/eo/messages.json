@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Babilejo Aŭtomate Daŭrigita" },
   "btnLabel_moreApps": { "message": "Pli ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Leave Review" },
+  "btnLabel_rateUs": { "message": "Taksi nin" },
   "btnLabel_getSupport": { "message": "Akiri subtenon" },
   "btnLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
   "btnLabel_update": { "message": "Ĝisdatigi" },

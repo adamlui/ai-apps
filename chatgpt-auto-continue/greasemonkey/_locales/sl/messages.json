@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Samodejno nadaljevanje klepeta" },
   "btnLabel_moreApps": { "message": "Več aplikacij ChatGPT" },
   "btnLabel_leaveReview": { "message": "Dodajte oceno" },
+  "btnLabel_rateUs": { "message": "Ocenite nas" },
   "btnLabel_getSupport": { "message": "Podpora" },
   "btnLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
   "btnLabel_update": { "message": "Update" },

@@ -28,6 +28,7 @@
   "alert_author": { "message": "autor/ka" },
   "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Nechať recenziu" },
+  "btnLabel_rateUs": { "message": "Ohodnoťte nás" },
   "btnLabel_getSupport": { "message": "Get Support" },
   "btnLabel_updateCheck": { "message": "Check for Updates" },
   "btnLabel_update": { "message": "Update" },

@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 ကို မျက်နှာပြင်အပြည့်ထည့်ရန် အသုံးပြုထားပြီး ဘရောက်ဆာလုံခြုံရေးအကြောင်းပြချက်များကြောင့် ၎င်းကိုထွက်ရန် တူညီသောသော့ကို အသုံးပြုရမည်ဖြစ်သည်" },
   "btnLabel_moreApps": { "message": "နောက်ထပ် ChatGPT အက်ပ်များ" },
   "btnLabel_leaveReview": { "message": "ပြန်လည်သုံးသပ်မှုကိုစွန့်ခွာပါ" },
+  "btnLabel_rateUs": { "message": "ကြှနျုပျတို့ကို Rate" },
   "btnLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ" },
   "btnLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "btnLabel_update": { "message": "နောက်ဆုံးသတင်း" },

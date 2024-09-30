@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "DuckDuckGPT ထံရှာဖွေရေးမေးခွန်းကိုပို့ပါ" },
   "btnLabel_moreApps": { "message": "နောက်ထပ် ChatGPT အက်ပ်များ" },
   "btnLabel_leaveReview": { "message": "ပြန်လည်သုံးသပ်မှုကိုစွန့်ခွာပါ" },
+  "btnLabel_rateUs": { "message": "ကြှနျုပျတို့ကို Rate" },
   "btnLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ" },
   "btnLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "btnLabel_update": { "message": "နောက်ဆုံးသတင်း" },

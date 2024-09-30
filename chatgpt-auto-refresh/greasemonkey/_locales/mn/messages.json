@@ -34,6 +34,7 @@
   "alert_author": { "message": "Зохиогч" },
   "btnLabel_moreApps": { "message": "Илүү их чатGPT аппууд" },
   "btnLabel_leaveReview": { "message": "Сэтгэгдэл үлдээх" },
+  "btnLabel_rateUs": { "message": "Биднийг үнэлэх" },
   "btnLabel_getSupport": { "message": "Тусламж авах" },
   "btnLabel_updateCheck": { "message": "Шинэчлэлтүүдийг шалгана уу" },
   "btnLabel_update": { "message": "Шинэчлэх" },

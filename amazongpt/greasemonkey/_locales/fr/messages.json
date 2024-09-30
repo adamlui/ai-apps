@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "Copié dans le presse-papier" },
   "btnLabel_moreApps": { "message": "Plus d'applications ChatGPT" },
   "btnLabel_leaveReview": { "message": "Laissez Review" },
+  "btnLabel_rateUs": { "message": "Évaluez-nous" },
   "btnLabel_getSupport": { "message": "Obtenir de l’aide" },
   "btnLabel_updateCheck": { "message": "Vérifier les Mises à jour" },
   "btnLabel_update": { "message": "Update" },

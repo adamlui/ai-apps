@@ -49,6 +49,7 @@
   "alert_author": { "message": "مصنف" },
   "btnLabel_moreApps": { "message": "مزید چیٹ جی پی ٹی ایپس" },
   "btnLabel_leaveReview": { "message": "جائزہ دیں" },
+  "btnLabel_rateUs": { "message": "ہمیں درجہ دیں!" },
   "btnLabel_getSupport": { "message": "سپورٹ حاصل کریں" },
   "btnLabel_updateCheck": { "message": "اپ ڈیٹز کے لئے چیک کریں" },
   "btnLabel_update": { "message": "اپ ڈیٹ" },

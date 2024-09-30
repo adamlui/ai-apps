@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "検索クエリをBraveGPTに送信" },
   "btnLabel_moreApps": { "message": "その他の ChatGPT アプリ" },
   "btnLabel_leaveReview": { "message": "レビューを残す" },
+  "btnLabel_rateUs": { "message": "評価してください" },
   "btnLabel_getSupport": { "message": "サポートを受ける" },
   "btnLabel_updateCheck": { "message": "更新を確認" },
   "btnLabel_update": { "message": "更新情報" },

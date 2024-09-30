@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Lähetä hakukysely BraveGPT: lle" },
   "btnLabel_moreApps": { "message": "Lisää ChatGPT-sovelluksia" },
   "btnLabel_leaveReview": { "message": "Jätä arvostelu" },
+  "btnLabel_rateUs": { "message": "Anna meille arvostelu" },
   "btnLabel_getSupport": { "message": "Ota yhteyttä" },
   "btnLabel_updateCheck": { "message": "Tarkista päivitykset" },
   "btnLabel_update": { "message": "Päivitä" },

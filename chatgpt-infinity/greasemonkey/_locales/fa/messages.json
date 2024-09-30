@@ -49,6 +49,7 @@
   "alert_author": { "message": "نویسنده" },
   "btnLabel_moreApps": { "message": "برنامه های بیشتر ChatGPT" },
   "btnLabel_leaveReview": { "message": "بررسی را ترک کنید" },
+  "btnLabel_rateUs": { "message": "به طراح افشان رای دهید" },
   "btnLabel_getSupport": { "message": "پشتیبانی" },
   "btnLabel_updateCheck": { "message": "بررسی به روز رسانی" },
   "btnLabel_update": { "message": "به‌روز‌رسانی" },

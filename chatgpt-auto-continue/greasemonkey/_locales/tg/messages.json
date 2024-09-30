@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Бозгашти худкор" },
   "btnLabel_moreApps": { "message": "Бештар ChatGPT Барномаҳо" },
   "btnLabel_leaveReview": { "message": "Баромадан аз тафсир" },
+  "btnLabel_rateUs": { "message": "Баҳои мо" },
   "btnLabel_getSupport": { "message": "Гирифтани Дастгирӣ" },
   "btnLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
   "btnLabel_update": { "message": "Навсозӣ кардан" },

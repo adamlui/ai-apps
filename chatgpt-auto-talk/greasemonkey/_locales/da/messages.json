@@ -28,6 +28,7 @@
   "alert_author": { "message": "Publiceret af" },
   "btnLabel_moreApps": { "message": "Flere ChatGPT-apps" },
   "btnLabel_leaveReview": { "message": "Skriv en anmeldelse" },
+  "btnLabel_rateUs": { "message": "Bedøm os" },
   "btnLabel_getSupport": { "message": "Få hjælp" },
   "btnLabel_updateCheck": { "message": "Tjek for Opdateringer" },
   "btnLabel_update": { "message": "Opdatér" },

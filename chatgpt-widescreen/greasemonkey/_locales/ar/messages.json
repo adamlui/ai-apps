@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "تم استخدام F11 للدخول إلى وضع ملء الشاشة، وبسبب أسباب أمنية في المتصفح، يجب استخدام نفس المفتاح للخروج منه" },
   "btnLabel_moreApps": { "message": "المزيد من تطبيقات ChatGPT" },
   "btnLabel_leaveReview": { "message": "اترك مراجعة" },
+  "btnLabel_rateUs": { "message": "التقييم" },
   "btnLabel_getSupport": { "message": "احصل على الدعم" },
   "btnLabel_updateCheck": { "message": "مرابة التحديثات" },
   "btnLabel_update": { "message": "تحديث" },

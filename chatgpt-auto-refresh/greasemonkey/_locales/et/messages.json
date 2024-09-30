@@ -34,6 +34,7 @@
   "alert_author": { "message": "Autor" },
   "btnLabel_moreApps": { "message": "Veel ChatGPT rakendusi" },
   "btnLabel_leaveReview": { "message": "Jäta tagasiside" },
+  "btnLabel_rateUs": { "message": "Hinda meid" },
   "btnLabel_getSupport": { "message": "Saage tuge" },
   "btnLabel_updateCheck": { "message": "Kontrolli uuendusi" },
   "btnLabel_update": { "message": "Uuenda" },

@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 was used to enter full screen, and due to browser security reasons, the same key must be used to exit it" },
   "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Leave Review" },
+  "btnLabel_rateUs": { "message": "Rate Us" },
   "btnLabel_getSupport": { "message": "Get Support" },
   "btnLabel_updateCheck": { "message": "Check for Updates" },
   "btnLabel_update": { "message": "Update" },

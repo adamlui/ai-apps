@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Kirim permintaan pencarian ke GoogleGPT" },
   "btnLabel_moreApps": { "message": "Aplikasi ChatGPT Lainnya" },
   "btnLabel_leaveReview": { "message": "Buat Ulasan" },
+  "btnLabel_rateUs": { "message": "Beri Kami Nilai" },
   "btnLabel_getSupport": { "message": "Mendapat dukungan" },
   "btnLabel_updateCheck": { "message": "Periksa Pemutakhiran" },
   "btnLabel_update": { "message": "Pembaruan" },

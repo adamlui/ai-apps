@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11キーを使用してフルスクリーンモードに入力したため、同じキーを使用して終了する必要があります（ブラウザのセキュリティ上の理由による）" },
   "btnLabel_moreApps": { "message": "その他のChatGPTアプリ" },
   "btnLabel_leaveReview": { "message": "レビューを残す" },
+  "btnLabel_rateUs": { "message": "評価してください" },
   "btnLabel_getSupport": { "message": "サポートを受ける" },
   "btnLabel_updateCheck": { "message": "アップデートの確認" },
   "btnLabel_update": { "message": "アップデート" },

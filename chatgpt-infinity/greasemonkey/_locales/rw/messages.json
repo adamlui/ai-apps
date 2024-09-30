@@ -49,6 +49,7 @@
   "alert_author": { "message": "umwanditsi" },
   "btnLabel_moreApps": { "message": "Porogaramu" },
   "btnLabel_leaveReview": { "message": "Isubiramo" },
+  "btnLabel_rateUs": { "message": "Gupima" },
   "btnLabel_getSupport": { "message": "Gushigikira" },
   "btnLabel_updateCheck": { "message": "Emeza guhindura" },
   "btnLabel_update": { "message": "Hindura" },

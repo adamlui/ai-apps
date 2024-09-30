@@ -34,6 +34,7 @@
   "alert_author": { "message": "tác giả" },
   "btnLabel_moreApps": { "message": "Các ứng dụng ChatGPT khác" },
   "btnLabel_leaveReview": { "message": "Gửi phản hồi" },
+  "btnLabel_rateUs": { "message": "Đánh giá chúng tôi" },
   "btnLabel_getSupport": { "message": "Đề nghị hỗ trợ" },
   "btnLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
   "btnLabel_update": { "message": "Cập nhật" },

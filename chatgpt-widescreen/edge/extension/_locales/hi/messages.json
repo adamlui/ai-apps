@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "फुलस्क्रीन मोड में जाने के लिए F11 का उपयोग किया गया था, और ब्राउज़र सुरक्षा कारणों से, उसी कुंजी का उपयोग करके बाहर निकलना चाहिए" },
   "btnLabel_moreApps": { "message": "और ChatGPT ऐप्स" },
   "btnLabel_leaveReview": { "message": "समीक्षा छोड़ें" },
+  "btnLabel_rateUs": { "message": "हमें रेटिंग दें" },
   "btnLabel_getSupport": { "message": "सपोर्ट प्राप्त करें" },
   "btnLabel_updateCheck": { "message": "अद्यतन की जांच करें" },
   "btnLabel_update": { "message": "अद्यतन करें" },

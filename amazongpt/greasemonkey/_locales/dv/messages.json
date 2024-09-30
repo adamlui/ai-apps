@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "ކްލިޕްބޯޑަށް ކޮޕީކޮށްފައިވެއެވެ" },
   "btnLabel_moreApps": { "message": "އިތުރު ޗެޓްޖީޕީޓީ އެޕްސް" },
   "btnLabel_leaveReview": { "message": "ރިވިއު ދޫކޮށްލާށެވެ" },
+  "btnLabel_rateUs": { "message": "ރޭޓް އަސް" },
   "btnLabel_getSupport": { "message": "ސަޕޯޓް ހޯދުން" },
   "btnLabel_updateCheck": { "message": "އަޕްޑޭޓްސް ހުރިތޯ ބަލާށެވެ" },
   "btnLabel_update": { "message": "އަޕްޑޭޓް" },

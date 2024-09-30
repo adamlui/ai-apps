@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Pošaljite upit za pretraživanje DuckDuckGPT-u" },
   "btnLabel_moreApps": { "message": "Još aplikacija za ChatGPT" },
   "btnLabel_leaveReview": { "message": "Ostavite recenziju" },
+  "btnLabel_rateUs": { "message": "Ocijenite nas" },
   "btnLabel_getSupport": { "message": "Podrška" },
   "btnLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
   "btnLabel_update": { "message": "Ažuriraj" },

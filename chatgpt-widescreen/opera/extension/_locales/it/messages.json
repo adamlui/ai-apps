@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "È stato utilizzato F11 per entrare nella modalità schermo intero e, per motivi di sicurezza del browser, la stessa combinazione di tasti deve essere utilizzata per uscirne" },
   "btnLabel_moreApps": { "message": "Altre app ChatGPT" },
   "btnLabel_leaveReview": { "message": "Lascia la recensione" },
+  "btnLabel_rateUs": { "message": "Valutaci" },
   "btnLabel_getSupport": { "message": "Richiedi Assistenza" },
   "btnLabel_updateCheck": { "message": "Verifica aggiornamenti" },
   "btnLabel_update": { "message": "Aggiorna" },

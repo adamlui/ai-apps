@@ -49,6 +49,7 @@
   "alert_author": { "message": "umbhali" },
   "btnLabel_moreApps": { "message": "Ii-app ezingakumbi zeChatGPT" },
   "btnLabel_leaveReview": { "message": "Shiya Uluvo" },
+  "btnLabel_rateUs": { "message": "Silinganise" },
   "btnLabel_getSupport": { "message": "Fumana Uncedo" },
   "btnLabel_updateCheck": { "message": "Jonga Izinto Ezihlaziyiweyo" },
   "btnLabel_update": { "message": "Hlaziya" },

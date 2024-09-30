@@ -31,6 +31,7 @@
   "alert_author": { "message": "Autor" },
   "btnLabel_moreApps": { "message": "Još ChatGPT aplikacija" },
   "btnLabel_leaveReview": { "message": "Ostavi recenziju" },
+  "btnLabel_rateUs": { "message": "OCENITE NAS" },
   "btnLabel_getSupport": { "message": "Plaćena Podrška" },
   "btnLabel_updateCheck": { "message": "Провери допуне" },
   "btnLabel_update": { "message": "Ažuriraj" },

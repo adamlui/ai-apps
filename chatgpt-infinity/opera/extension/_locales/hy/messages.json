@@ -49,6 +49,7 @@
   "alert_author": { "message": "Հեղինակ" },
   "btnLabel_moreApps": { "message": "Այլ ChatGPT հավելվածներ" },
   "btnLabel_leaveReview": { "message": "Թողնել ակնարկ" },
+  "btnLabel_rateUs": { "message": "Գնահատեք մեզ" },
   "btnLabel_getSupport": { "message": "Ստանալ աջակցում" },
   "btnLabel_updateCheck": { "message": "Ստուգել թարմացումները" },
   "btnLabel_update": { "message": "Թարմացնել" },

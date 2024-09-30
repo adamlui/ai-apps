@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 byl použit pro vstup na celou obrazovku a z bezpečnostních důvodů prohlížeče musí být stejný klíč použit pro jeho ukončení" },
   "btnLabel_moreApps": { "message": "Další aplikace ChatGPT" },
   "btnLabel_leaveReview": { "message": "Přidat Hodnocení" },
+  "btnLabel_rateUs": { "message": "Ohodnoťte nás" },
   "btnLabel_getSupport": { "message": "Získat podporu" },
   "btnLabel_updateCheck": { "message": "Zjistit novější verzi" },
   "btnLabel_update": { "message": "Aktualizovat" },

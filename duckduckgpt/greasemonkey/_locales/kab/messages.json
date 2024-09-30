@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Sselk tazult i DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Plura Apps ChatGPT" },
   "btnLabel_leaveReview": { "message": "Aneggaru yeǧǧa-d" },
+  "btnLabel_rateUs": { "message": "Rmed-aɣ" },
   "btnLabel_getSupport": { "message": "Tadlis" },
   "btnLabel_updateCheck": { "message": "Tserkit i tazwara" },
   "btnLabel_update": { "message": "Tserkit" },

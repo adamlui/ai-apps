@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "ਪੂਰੀ ਸਕਰੀਨ ਵਿੱਚ ਦਾਖਲ ਹੋਣ ਲਈ F11 ਦੀ ਵਰਤੋਂ ਕੀਤੀ ਗਈ ਸੀ, ਅਤੇ ਬਰਾਊਜ਼ਰ ਸੁਰੱਖਿਆ ਕਾਰਨਾਂ ਕਰਕੇ, ਇਸ ਤੋਂ ਬਾਹਰ ਨਿਕਲਣ ਲਈ ਉਹੀ ਕੁੰਜੀ ਵਰਤੀ ਜਾਣੀ ਚਾਹੀਦੀ ਹੈ" },
   "btnLabel_moreApps": { "message": "ਹੋਰ ChatGPT ਐਪਸ" },
   "btnLabel_leaveReview": { "message": "ਸਮੀਖਿਆ ਛੱਡੋ" },
+  "btnLabel_rateUs": { "message": "ਸਾਡੇ ਨਾਲ ਰੇਟ ਕਰੋ" },
   "btnLabel_getSupport": { "message": "ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਕਰੋ" },
   "btnLabel_updateCheck": { "message": "ਨਵੇਂ ਐਪੀਸੋਡ ਲਈ ਚੈੱਕ ਕਰੋ" },
   "btnLabel_update": { "message": "ਅੱਪਡੇਟ ਕਰੋ" },

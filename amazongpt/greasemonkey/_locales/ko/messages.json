@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "클립보드에 복사되었습니다" },
   "btnLabel_moreApps": { "message": "더 많은 ChatGPT 앱" },
   "btnLabel_leaveReview": { "message": "리뷰를 남겨 주세요" },
+  "btnLabel_rateUs": { "message": "평가하기" },
   "btnLabel_getSupport": { "message": "지원받기" },
   "btnLabel_updateCheck": { "message": "업데이트 확인" },
   "btnLabel_update": { "message": "업데이트" },

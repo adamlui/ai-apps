@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Chat Auto-Voortgesette" },
   "btnLabel_moreApps": { "message": "Meer ChatGPT-programme" },
   "btnLabel_leaveReview": { "message": "Los Kommentaar" },
+  "btnLabel_rateUs": { "message": "Gradeer ons" },
   "btnLabel_getSupport": { "message": "Kry Ondersteuning" },
   "btnLabel_updateCheck": { "message": "Kyk vir opdaterings" },
   "btnLabel_update": { "message": "Opdateer" },

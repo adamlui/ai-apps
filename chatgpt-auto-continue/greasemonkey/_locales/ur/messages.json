@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "خودکار طور پر جاری چیٹ کریں" },
   "btnLabel_moreApps": { "message": "مزید چیٹ جی پی ٹی ایپس" },
   "btnLabel_leaveReview": { "message": "جائزہ دیں" },
+  "btnLabel_rateUs": { "message": "ہمیں درجہ دیں!" },
   "btnLabel_getSupport": { "message": "سپورٹ حاصل کریں" },
   "btnLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
   "btnLabel_update": { "message": "اپ ڈیٹ" },

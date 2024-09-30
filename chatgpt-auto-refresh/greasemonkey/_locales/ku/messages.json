@@ -34,6 +34,7 @@
   "alert_author": { "message": "بوونیار - دروستکەر - دانەر ( پیاو )" },
   "btnLabel_moreApps": { "message": "زیاتری ئاپەکانی ChatGPT" },
   "btnLabel_leaveReview": { "message": "Bihêle Review" },
+  "btnLabel_rateUs": { "message": "Me binirxînin" },
   "btnLabel_getSupport": { "message": "پشتگیری بگرە" },
   "btnLabel_updateCheck": { "message": "بچۆڕە بۆ نوێکردنەوەکان" },
   "btnLabel_update": { "message": "نوێ بکەرەوە" },

@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Alefaso ny fanontaniana fitadiavana amin'ny GoogleGPT" },
   "btnLabel_moreApps": { "message": "Fampiharana ChatGPT maro kokoa" },
   "btnLabel_leaveReview": { "message": "Fandaozana ny famerenana" },
+  "btnLabel_rateUs": { "message": "Omeo isa izahay" },
   "btnLabel_getSupport": { "message": "Mahazoa Fanohanana" },
   "btnLabel_updateCheck": { "message": "Hamarino ny fanavaozana" },
   "btnLabel_update": { "message": "Havaozy" },

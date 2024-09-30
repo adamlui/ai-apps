@@ -49,6 +49,7 @@
   "alert_author": { "message": "munyori" },
   "btnLabel_moreApps": { "message": "Zvakawanda ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Taura nesu" },
+  "btnLabel_rateUs": { "message": "Taura nesu" },
   "btnLabel_getSupport": { "message": "Kuwana Rutsigiro" },
   "btnLabel_updateCheck": { "message": "Ongorora Updates" },
   "btnLabel_update": { "message": "Gadzirisa" },

@@ -28,6 +28,7 @@
   "alert_author": { "message": "لیکونکی" },
   "btnLabel_moreApps": { "message": "نور چیټ جی پی ټي ایپونه" },
   "btnLabel_leaveReview": { "message": "د رخصتۍ بیاکتنه" },
+  "btnLabel_rateUs": { "message": "موږ ته رتبه راکړئ" },
   "btnLabel_getSupport": { "message": "مرسته ترلاسه کړئ" },
   "btnLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
   "btnLabel_update": { "message": "تازه کړئ" },

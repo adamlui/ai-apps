@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 is gebruik om volle skerm in te voer, en as gevolg van die leser sekuriteit redes, moet dieselfde sleutel gebruik word om dit te verlaat" },
   "btnLabel_moreApps": { "message": "Meer ChatGPT-programme" },
   "btnLabel_leaveReview": { "message": "Los Kommentaar" },
+  "btnLabel_rateUs": { "message": "Gradeer ons" },
   "btnLabel_getSupport": { "message": "Kry Ondersteuning" },
   "btnLabel_updateCheck": { "message": "Kontroleer vir bywerkings" },
   "btnLabel_update": { "message": "Opdateer" },

@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "Se utilizó F11 para ingresar a pantalla completa y, debido a razones de seguridad del navegador, la misma tecla debe ser utilizada para salir de ella" },
   "btnLabel_moreApps": { "message": "Más aplicaciones de ChatGPT" },
   "btnLabel_leaveReview": { "message": "Deje opinión" },
+  "btnLabel_rateUs": { "message": "Valóranos" },
   "btnLabel_getSupport": { "message": "Obtener asistencia" },
   "btnLabel_updateCheck": { "message": "Buscar actualizaciones" },
   "btnLabel_update": { "message": "Actualizar" },

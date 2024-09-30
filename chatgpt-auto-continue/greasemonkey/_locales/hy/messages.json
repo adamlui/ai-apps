@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Զրույցն ավտոմատ դադարեցվել է" },
   "btnLabel_moreApps": { "message": "Այլ ChatGPT հավելվածներ" },
   "btnLabel_leaveReview": { "message": "Թողնել ակնարկ" },
+  "btnLabel_rateUs": { "message": "Գնահատեք մեզ" },
   "btnLabel_getSupport": { "message": "Ստանալ աջակցում" },
   "btnLabel_updateCheck": { "message": "Ստուգել թարմացումները" },
   "btnLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },

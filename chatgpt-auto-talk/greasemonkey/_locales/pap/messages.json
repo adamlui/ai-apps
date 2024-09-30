@@ -28,6 +28,7 @@
   "alert_author": { "message": "outor" },
   "btnLabel_moreApps": { "message": "Mas informacion de ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Laga revision" },
+  "btnLabel_rateUs": { "message": "Rate Nos" },
   "btnLabel_getSupport": { "message": "Recibí Apoyo" },
   "btnLabel_updateCheck": { "message": "Verificá las actualizaciones" },
   "btnLabel_update": { "message": "Aktualidat" },

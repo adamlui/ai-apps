@@ -34,6 +34,7 @@
   "alert_author": { "message": "लेखक" },
   "btnLabel_moreApps": { "message": "अधिक चॅटजीपीटी अ‍ॅप्स" },
   "btnLabel_leaveReview": { "message": "पुनरावलोकन सोडा" },
+  "btnLabel_rateUs": { "message": "आम्हाला रेट करा" },
   "btnLabel_getSupport": { "message": "सहाय्य मिळवा" },
   "btnLabel_updateCheck": { "message": "अद्यतनांसाठी तपासा" },
   "btnLabel_update": { "message": "अद्यतनित करा" },

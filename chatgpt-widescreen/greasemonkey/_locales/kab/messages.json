@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 yettuseqdac i unekcum γer ugdil aččuran, s ssebba n tγellist n yiminig, yessefk ad yettuseqdec tasarut-nniḍen akken ad teffɣeḍ seg-s" },
   "btnLabel_moreApps": { "message": "Ugar n iseqdacen ChatGPT" },
   "btnLabel_leaveReview": { "message": "Aneggaru yeǧǧa-d" },
+  "btnLabel_rateUs": { "message": "Rmed-aɣ" },
   "btnLabel_getSupport": { "message": "Awi tallalt" },
   "btnLabel_updateCheck": { "message": "Senqed ma llan ileqman" },
   "btnLabel_update": { "message": "Leqqem" },

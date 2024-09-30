@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "ส่งคำค้นหาไปยัง GoogleGPT" },
   "btnLabel_moreApps": { "message": "แอป ChatGPT เพิ่มเติม" },
   "btnLabel_leaveReview": { "message": "ให้รีวิว" },
+  "btnLabel_rateUs": { "message": "ให้คะแนนเรา" },
   "btnLabel_getSupport": { "message": "รับความช่วยเหลือ" },
   "btnLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
   "btnLabel_update": { "message": "อัปเดต" },

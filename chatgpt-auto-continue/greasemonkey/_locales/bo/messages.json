@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "རང་འགུལ་གྱི་གླེང་མོལ །" },
   "btnLabel_moreApps": { "message": "འདྲ་ཕབ །" },
   "btnLabel_leaveReview": { "message": "བསྐྱར་ཞིབ་སྤར་བ" },
+  "btnLabel_rateUs": { "message": "རིན་ཆེན །" },
   "btnLabel_getSupport": { "message": "རོགས་རམ་ཐོབ་པ" },
   "btnLabel_updateCheck": { "message": "ད་ལྟའི་གནས་ཚུལ་འཚོལ་བ །" },
   "btnLabel_update": { "message": "གསར་བསྒྱུར" },

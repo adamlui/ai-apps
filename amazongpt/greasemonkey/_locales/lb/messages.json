@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "Op Clipboard kopéieren" },
   "btnLabel_moreApps": { "message": "Méi ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Ik ben heel benieuwd naar jouw mening laat het me" },
+  "btnLabel_rateUs": { "message": "Bewäert eis" },
   "btnLabel_getSupport": { "message": "Kréien Support" },
   "btnLabel_updateCheck": { "message": "Kuckt no Aktualiséierungen" },
   "btnLabel_update": { "message": "Aktualiséieren" },

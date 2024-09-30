@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "ಹುಡುಕಾಟ ಪ್ರಶ್ನೆಯನ್ನು BraveGPT ಗೆ ಕಳುಹಿಸಿ" },
   "btnLabel_moreApps": { "message": "ಇನ್ನಷ್ಟು ChatGPT ಅಪ್ಲಿಕೇಶನ್ ಗಳು" },
   "btnLabel_leaveReview": { "message": "ವಿಮರ್ಶೆಯನ್ನು ಬಿಡಿ" },
+  "btnLabel_rateUs": { "message": "ನಮಗೆ ರೇಟಿಂಗ್ ನೀಡಿ" },
   "btnLabel_getSupport": { "message": "ಬೆಂಬಲ ಪಡೆಯಿರಿ" },
   "btnLabel_updateCheck": { "message": "ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ" },
   "btnLabel_update": { "message": "ನವೀಕರಿಸಿ" },

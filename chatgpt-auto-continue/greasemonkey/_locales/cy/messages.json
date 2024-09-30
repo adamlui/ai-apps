@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Sgwrs yn Parhau'n Awtomatig" },
   "btnLabel_moreApps": { "message": "Mwy o ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Gadael Adolygiad" },
+  "btnLabel_rateUs": { "message": "Graddio Ni" },
   "btnLabel_getSupport": { "message": "Cael cymorth" },
   "btnLabel_updateCheck": { "message": "Dango_s diweddariadau" },
   "btnLabel_update": { "message": "Diweddaru" },

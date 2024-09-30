@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Wyślij zapytanie wyszukiwania do BraveGPT" },
   "btnLabel_moreApps": { "message": "Więcej aplikacji ChatGPT" },
   "btnLabel_leaveReview": { "message": "Zostaw opinię" },
+  "btnLabel_rateUs": { "message": "Wystaw nam ocenę" },
   "btnLabel_getSupport": { "message": "Uzyskać wsparcie" },
   "btnLabel_updateCheck": { "message": "Sprawdzanie aktualizacji" },
   "btnLabel_update": { "message": "Aktualizuj" },

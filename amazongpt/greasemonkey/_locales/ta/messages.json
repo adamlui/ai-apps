@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "கிளிப்போர்டுக்கு மறுபிரதி செய்யப்பட்டது" },
   "btnLabel_moreApps": { "message": "மேலும் ChatGPT பயன்பாடுகள்" },
   "btnLabel_leaveReview": { "message": "மதிப்பாய்வை விட்டுச் செல்லவும்" },
+  "btnLabel_rateUs": { "message": "எங்களுக்குத் தரமதிப்பிடுங்கள்" },
   "btnLabel_getSupport": { "message": "ஆதரவைப் பெறுக" },
   "btnLabel_updateCheck": { "message": "புதுப்பிப்புகளைத் தேடவும்" },
   "btnLabel_update": { "message": "புதுப்பிக்கவும்" },

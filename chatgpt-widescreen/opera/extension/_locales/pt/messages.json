@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 foi usado para entrar no modo de Tela Cheia e, por razões de segurança do navegador, a mesma tecla deve ser usada para sair" },
   "btnLabel_moreApps": { "message": "Mais aplicativos ChatGPT" },
   "btnLabel_leaveReview": { "message": "Deixar Avaliação" },
+  "btnLabel_rateUs": { "message": "Avalie-nos" },
   "btnLabel_getSupport": { "message": "Obter suporte" },
   "btnLabel_updateCheck": { "message": "Verificar Atualizações" },
   "btnLabel_update": { "message": "Atualizar" },

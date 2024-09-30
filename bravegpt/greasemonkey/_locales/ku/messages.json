@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "پرسیاری گەڕان بنێرە بۆ BraveGPT" },
   "btnLabel_moreApps": { "message": "زیاتری ئاپەکانی ChatGPT" },
   "btnLabel_leaveReview": { "message": "Bihêle Review" },
+  "btnLabel_rateUs": { "message": "Me binirxînin" },
   "btnLabel_getSupport": { "message": "پشتگیری بگرە" },
   "btnLabel_updateCheck": { "message": "پشکنینی نوێکردنەوەکان" },
   "btnLabel_update": { "message": "نوێ بکەرەوە" },

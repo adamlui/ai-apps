@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "Defnyddiwyd F11 i fynd i mewn i'r sgrin lawn, ac oherwydd rhesymau diogelwch porwr, rhaid defnyddio'r un allwedd i'w adael" },
   "btnLabel_moreApps": { "message": "Mwy o ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Gadael Adolygiad" },
+  "btnLabel_rateUs": { "message": "Graddio Ni" },
   "btnLabel_getSupport": { "message": "Cael cymorth" },
   "btnLabel_updateCheck": { "message": "Dango_s diweddariadau" },
   "btnLabel_update": { "message": "Diweddaru" },

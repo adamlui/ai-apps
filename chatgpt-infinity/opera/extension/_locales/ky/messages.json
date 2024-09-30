@@ -49,6 +49,7 @@
   "alert_author": { "message": "Автору: " },
   "btnLabel_moreApps": { "message": "Көбүрөөк ChatGPT колдонмолору" },
   "btnLabel_leaveReview": { "message": "Сын-пикир калтыруу" },
+  "btnLabel_rateUs": { "message": "Бизди баалоо" },
   "btnLabel_getSupport": { "message": "Колдоо алуу" },
   "btnLabel_updateCheck": { "message": "Жаңы чыгаруулар бар экендигин текшерүү" },
   "btnLabel_update": { "message": "Жаңыртуу" },

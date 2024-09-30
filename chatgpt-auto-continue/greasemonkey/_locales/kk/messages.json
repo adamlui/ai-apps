@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Чат автоматты түрде жалғасты" },
   "btnLabel_moreApps": { "message": "Қосымша ChatGPT қолданбалары" },
   "btnLabel_leaveReview": { "message": "Пікіріңіз жазыныз" },
+  "btnLabel_rateUs": { "message": "Бізге баға беріңіз" },
   "btnLabel_getSupport": { "message": "Қолдау алу" },
   "btnLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "btnLabel_update": { "message": "Жаңарту" },

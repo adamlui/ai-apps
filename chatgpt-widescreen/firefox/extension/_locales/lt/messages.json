@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 buvo naudojamas patekti į visą ekraną, ir dėl naršyklės saugumo priežasčių, tas pats raktas turi būti naudojamas jį išeiti" },
   "btnLabel_moreApps": { "message": "Daugiau ChatGPT programų" },
   "btnLabel_leaveReview": { "message": "Palikite atsiliepimą" },
+  "btnLabel_rateUs": { "message": "Įvertinkite mus" },
   "btnLabel_getSupport": { "message": "Gauti palaikymą" },
   "btnLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
   "btnLabel_update": { "message": "Naujinti" },

@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Pošaljite upit za pretraživanje GoogleGPT-u" },
   "btnLabel_moreApps": { "message": "Još ChatGPT aplikacija" },
   "btnLabel_leaveReview": { "message": "Pošalji recenziju" },
+  "btnLabel_rateUs": { "message": "Ocijenite nas" },
   "btnLabel_getSupport": { "message": "Zatražite podršku" },
   "btnLabel_updateCheck": { "message": "Potražite ažuriranja" },
   "btnLabel_update": { "message": "Nadogradi" },

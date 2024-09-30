@@ -28,6 +28,7 @@
   "alert_author": { "message": "höfundur" },
   "btnLabel_moreApps": { "message": "Fleiri ChatGPT öpp" },
   "btnLabel_leaveReview": { "message": "Skildu eftir umsögn" },
+  "btnLabel_rateUs": { "message": "Gefðu okkur einkunn" },
   "btnLabel_getSupport": { "message": "Fá stuðning" },
   "btnLabel_updateCheck": { "message": "Leita að uppfærslum" },
   "btnLabel_update": { "message": "Uppfæra" },

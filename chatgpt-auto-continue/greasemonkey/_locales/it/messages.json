@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Chat continuata automaticamente" },
   "btnLabel_moreApps": { "message": "Altre app ChatGPT" },
   "btnLabel_leaveReview": { "message": "Lascia la recensione" },
+  "btnLabel_rateUs": { "message": "Valutaci" },
   "btnLabel_getSupport": { "message": "Richiedi Assistenza" },
   "btnLabel_updateCheck": { "message": "Cerca aggiornamenti" },
   "btnLabel_update": { "message": "Aggiorna" },

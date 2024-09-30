@@ -28,6 +28,7 @@
   "alert_author": { "message": "ደራሲ" },
   "btnLabel_moreApps": { "message": "ተጨማሪ ChatGPT መተግበሪያዎች" },
   "btnLabel_leaveReview": { "message": "ግምገማ ይተው" },
+  "btnLabel_rateUs": { "message": "ደረጃ ይስጡን" },
   "btnLabel_getSupport": { "message": "ድጋፍ ያግኙ" },
   "btnLabel_updateCheck": { "message": "ዝማኔዎችን ይመልከቱ" },
   "btnLabel_update": { "message": "አዘምን" },

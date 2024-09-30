@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 wurde verwendet, um den Vollbildmodus zu aktivieren. Aus Sicherheitsgründen muss derselbe Schlüssel verwendet werden, um ihn zu beenden" },
   "btnLabel_moreApps": { "message": "Weitere ChatGPT-Apps" },
   "btnLabel_leaveReview": { "message": "Hinterlasse eine Bewertung" },
+  "btnLabel_rateUs": { "message": "Bewerten Sie uns" },
   "btnLabel_getSupport": { "message": "Support erhalten" },
   "btnLabel_updateCheck": { "message": "Nach Updates suchen" },
   "btnLabel_update": { "message": "Update" },

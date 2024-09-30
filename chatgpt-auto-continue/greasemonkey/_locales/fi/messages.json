@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Chat jatkuu automaattisesti" },
   "btnLabel_moreApps": { "message": "Lisää ChatGPT-sovelluksia" },
   "btnLabel_leaveReview": { "message": "Jätä arvostelu" },
+  "btnLabel_rateUs": { "message": "Anna meille arvostelu" },
   "btnLabel_getSupport": { "message": "Ota yhteyttä" },
   "btnLabel_updateCheck": { "message": "Tarkista päivitykset" },
   "btnLabel_update": { "message": "Päivitä" },

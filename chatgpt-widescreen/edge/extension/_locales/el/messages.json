@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "Το F11 χρησιμοποιήθηκε για την είσοδο σε πλήρη οθόνη και για λόγους ασφαλείας του προγράμματος περιήγησης, πρέπει να χρησιμοποιηθεί το ίδιο κλειδί για την έξοδο από αυτό" },
   "btnLabel_moreApps": { "message": "Περισσότερες εφαρμογές ChatGPT" },
   "btnLabel_leaveReview": { "message": "Αφήστε μια Kριτική" },
+  "btnLabel_rateUs": { "message": "Βαθμολογήστε μας" },
   "btnLabel_getSupport": { "message": "Λάβετε υποστήριξη" },
   "btnLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
   "btnLabel_update": { "message": "Ενημέρωση" },

@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Tumineni ifipusho fya kufwaya pa BraveGPT" },
   "btnLabel_moreApps": { "message": "Ukulele ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Lekeni ukupituluka" },
+  "btnLabel_rateUs": { "message": "Rate Twine" },
   "btnLabel_getSupport": { "message": "Peeleniko bambi Peeleni" },
   "btnLabel_updateCheck": { "message": "Lekeni ukuchilanda ifilayipo" },
   "btnLabel_update": { "message": "Chilanda" },

@@ -49,6 +49,7 @@
   "alert_author": { "message": "రచయిత" },
   "btnLabel_moreApps": { "message": "మరిన్ని ChatGPT యాప్ ‌ లు" },
   "btnLabel_leaveReview": { "message": "సమీక్షను వదిలివేయండి" },
+  "btnLabel_rateUs": { "message": "మాకు రేటింగ్ ఇవ్వండి" },
   "btnLabel_getSupport": { "message": "సహకారం తీసుకోండి" },
   "btnLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "btnLabel_update": { "message": "అప్‌డేట్" },

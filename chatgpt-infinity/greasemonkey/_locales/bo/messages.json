@@ -49,6 +49,7 @@
   "alert_author": { "message": "Yazar" },
   "btnLabel_moreApps": { "message": "འདྲ་ཕབ །" },
   "btnLabel_leaveReview": { "message": "བསྐྱར་ཞིབ་སྤར་བ" },
+  "btnLabel_rateUs": { "message": "རིན་ཆེན །" },
   "btnLabel_getSupport": { "message": "རོགས་རམ་ཐོབ་པ" },
   "btnLabel_updateCheck": { "message": "རེ་འབོད་དེའང་ནི་བཀོད་པ་ལེགས་ལེན་" },
   "btnLabel_update": { "message": "རེ་འབོད་དེའང་ནི་" },

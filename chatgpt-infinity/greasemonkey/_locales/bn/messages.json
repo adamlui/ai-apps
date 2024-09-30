@@ -49,6 +49,7 @@
   "alert_author": { "message": "রচয়িতা" },
   "btnLabel_moreApps": { "message": "আরও চ্যাটজিপিটি অ্যাপস" },
   "btnLabel_leaveReview": { "message": "একটি রিভিউ লিখুন" },
+  "btnLabel_rateUs": { "message": "আমাদের রেটিং দিন" },
   "btnLabel_getSupport": { "message": "সহায়তা পান" },
   "btnLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
   "btnLabel_update": { "message": "আপডেট করুন" },

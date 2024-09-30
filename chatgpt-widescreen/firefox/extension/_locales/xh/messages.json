@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "I-F11 yayisetyenziselwa ukungena kwiskrini esipheleleyo, kwaye ngenxa yezizathu zokhuseleko lwesikhangeli, iqhosha elifanayo kufuneka lisetyenziswe ukuphuma kulo" },
   "btnLabel_moreApps": { "message": "Ii-app ezingakumbi zeChatGPT" },
   "btnLabel_leaveReview": { "message": "Shiya Uluvo" },
+  "btnLabel_rateUs": { "message": "Silinganise" },
   "btnLabel_getSupport": { "message": "Fumana Uncedo" },
   "btnLabel_updateCheck": { "message": "Jonga Izinto Ezihlaziyiweyo" },
   "btnLabel_update": { "message": "Hlaziya" },

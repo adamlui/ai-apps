@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 ຖືກ ນໍາ ໃຊ້ເພື່ອໃສ່ ຫນ້າ ຈໍເຕັມ, ແລະຍ້ອນເຫດຜົນຄວາມປອດໄພຂອງຕົວທ່ອງເວັບ, ປຸ່ມດຽວກັນຕ້ອງຖືກ ນໍາ ໃຊ້ເພື່ອອອກຈາກມັນ" },
   "btnLabel_moreApps": { "message": "ແອັບພລິເຄຊັນ ChatGPT ຫຼາຍຂຶ້ນ" },
   "btnLabel_leaveReview": { "message": "ໃຫ້ການທົບທວນຄືນ" },
+  "btnLabel_rateUs": { "message": "ປະເມີນພວກເຮົາ" },
   "btnLabel_getSupport": { "message": "ໄດ້ຮັບການສະໜັບສະໜູນ" },
   "btnLabel_updateCheck": { "message": "ກວດສອບການອັບເດດ" },
   "btnLabel_update": { "message": "ອັບເດດ" },

@@ -28,6 +28,7 @@
   "alert_author": { "message": "man bilong raitim buk" },
   "btnLabel_moreApps": { "message": "Ol app bilong ChatGPT" },
   "btnLabel_leaveReview": { "message": "Lusim toksave" },
+  "btnLabel_rateUs": { "message": "Toksave long mipela" },
   "btnLabel_getSupport": { "message": "Kisim helpim" },
   "btnLabel_updateCheck": { "message": "Lukim ol nupela tok" },
   "btnLabel_update": { "message": "UPDATE" },

@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "(src) = \"10\" &gt; Ba F11 balibomfeshe pa kuti baingila mu cifulo conse, kabili pa mulandu wa kuti bacingililwe pa mulandu wa kucingililwa, e lyo ne mulandu wine mufwile ukubomfya ifyebo" },
   "btnLabel_moreApps": { "message": "Ukulele ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Lekeni ukupituluka" },
+  "btnLabel_rateUs": { "message": "Rate Twine" },
   "btnLabel_getSupport": { "message": "Peeleniko bambi Peeleni" },
   "btnLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
   "btnLabel_update": { "message": "Ica Update" },

@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "Kopeeritud lõikelauale" },
   "btnLabel_moreApps": { "message": "Veel ChatGPT rakendusi" },
   "btnLabel_leaveReview": { "message": "Jäta tagasiside" },
+  "btnLabel_rateUs": { "message": "Hinda meid" },
   "btnLabel_getSupport": { "message": "Saage tuge" },
   "btnLabel_updateCheck": { "message": "Kontrolli uuendusi" },
   "btnLabel_update": { "message": "Uuenda" },

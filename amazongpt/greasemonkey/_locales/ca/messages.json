@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "S'ha copiat al porta-retalls" },
   "btnLabel_moreApps": { "message": "Més aplicacions de ChatGPT" },
   "btnLabel_leaveReview": { "message": "Deixar valoració" },
+  "btnLabel_rateUs": { "message": "Puntua'ns" },
   "btnLabel_getSupport": { "message": "Obteniu suport" },
   "btnLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
   "btnLabel_update": { "message": "Actualització" },

@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 kutimis eniri plenan ekranon, kaj pro retumilaj sekureckialoj, la sama ŝlosilo devas esti utiligita por forlasi ĝin" },
   "btnLabel_moreApps": { "message": "Pli ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Leave Review" },
+  "btnLabel_rateUs": { "message": "Taksi nin" },
   "btnLabel_getSupport": { "message": "Akiri subtenon" },
   "btnLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
   "btnLabel_update": { "message": "Ĝisdatigi" },

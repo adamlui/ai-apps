@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Αποστολή ερωτήματος αναζήτησης στο DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Περισσότερες εφαρμογές ChatGPT" },
   "btnLabel_leaveReview": { "message": "Αφήστε μια Kριτική" },
+  "btnLabel_rateUs": { "message": "Βαθμολογήστε μας" },
   "btnLabel_getSupport": { "message": "Λάβετε υποστήριξη" },
   "btnLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
   "btnLabel_update": { "message": "Ενημέρωση" },

@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 toʻliq ekranga kirish uchun ishlatilgan va brauzer xavfsizligi sababli undan chiqish uchun xuddi shu kalitdan foydalanish kerak" },
   "btnLabel_moreApps": { "message": "Boshqa ChatGPT ilovalari" },
   "btnLabel_leaveReview": { "message": "Sharh qoldiring" },
+  "btnLabel_rateUs": { "message": "Bizni baholash" },
   "btnLabel_getSupport": { "message": "Yordam oling" },
   "btnLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
   "btnLabel_update": { "message": "Yangilash" },

@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 पूर्ण स्क्रिनमा प्रवेश गर्न प्रयोग गरिएको थियो, र ब्राउजर सुरक्षा कारणहरूले गर्दा, उही कुञ्जी यसलाई बाहिर निस्कन प्रयोग गर्नुपर्दछ ।" },
   "btnLabel_moreApps": { "message": "थप ChatGPT अनुप्रयोगहरू" },
   "btnLabel_leaveReview": { "message": "समीक्षा छोड्नुहोस्" },
+  "btnLabel_rateUs": { "message": "हामीलाई मूल्याङ्कन गर्नुहोस्" },
   "btnLabel_getSupport": { "message": "सहायता प्राप्त गर्नुहोस्" },
   "btnLabel_updateCheck": { "message": "अद्यावधिकका लागि जाँच गर्नुहोस्" },
   "btnLabel_update": { "message": "अद्यावधिक" },

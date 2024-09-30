@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 na faʻaaogaina e ulufale ai i le atoa lau, ma ona o le saogalemu o le browser, e tatau ona faʻaaogaina le ki lava e tasi e alu ese ai" },
   "btnLabel_moreApps": { "message": "Sili ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Tuua Iloiloga" },
+  "btnLabel_rateUs": { "message": "Faatusatusaina i Tatou" },
   "btnLabel_getSupport": { "message": "Maua Lagolago" },
   "btnLabel_updateCheck": { "message": "Siaki mo faʻafouga" },
   "btnLabel_update": { "message": "Fa'afouga" },

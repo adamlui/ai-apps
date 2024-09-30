@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 ಅನ್ನು ಪೂರ್ಣ ಪರದೆಯನ್ನು ನಮೂದಿಸಲು ಬಳಸಲಾಗುತ್ತಿತ್ತು, ಮತ್ತು ಬ್ರೌಸರ್ ಭದ್ರತಾ ಕಾರಣಗಳಿಂದಾಗಿ, ಅದನ್ನು ನಿರ್ಗಮಿಸಲು ಅದೇ ಕೀಲಿಯನ್ನು ಬಳಸಬೇಕು" },
   "btnLabel_moreApps": { "message": "ಇನ್ನಷ್ಟು ChatGPT ಅಪ್ಲಿಕೇಶನ್ ಗಳು" },
   "btnLabel_leaveReview": { "message": "ವಿಮರ್ಶೆಯನ್ನು ಬಿಡಿ" },
+  "btnLabel_rateUs": { "message": "ನಮಗೆ ರೇಟಿಂಗ್ ನೀಡಿ" },
   "btnLabel_getSupport": { "message": "ಬೆಂಬಲ ಪಡೆಯಿರಿ" },
   "btnLabel_updateCheck": { "message": "ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ" },
   "btnLabel_update": { "message": "ನವೀಕರಿಸಿ" },

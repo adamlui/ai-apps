@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Spjalla sjálvvirkandi" },
   "btnLabel_moreApps": { "message": "Fleiri ChatGPT apps" },
   "btnLabel_leaveReview": { "message": "Loyvi endurskoðan" },
+  "btnLabel_rateUs": { "message": "Rætta okkum" },
   "btnLabel_getSupport": { "message": "Fá stuðul" },
   "btnLabel_updateCheck": { "message": "Gev gætur eftir dagføringum" },
   "btnLabel_update": { "message": "Dagfør" },

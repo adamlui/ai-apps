@@ -28,6 +28,7 @@
   "alert_author": { "message": "කතෘ" },
   "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "සමාලෝචනයක් එක් කරන්න" },
+  "btnLabel_rateUs": { "message": "අපව අගයන්න" },
   "btnLabel_getSupport": { "message": "Get Support" },
   "btnLabel_updateCheck": { "message": "Check for Updates" },
   "btnLabel_update": { "message": "Update" },

@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Qidiruv so'rovini BraveGPT-ga yuboring" },
   "btnLabel_moreApps": { "message": "Boshqa ChatGPT ilovalari" },
   "btnLabel_leaveReview": { "message": "Sharh qoldiring" },
+  "btnLabel_rateUs": { "message": "Bizni baholash" },
   "btnLabel_getSupport": { "message": "Yordam oling" },
   "btnLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
   "btnLabel_update": { "message": "Yangilash" },

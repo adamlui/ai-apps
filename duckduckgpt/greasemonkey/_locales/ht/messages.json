@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Voye rechèch rechèch nan DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Plis Apps ChatGPT" },
   "btnLabel_leaveReview": { "message": "Kite Revizyon" },
+  "btnLabel_rateUs": { "message": "Evalye nou" },
   "btnLabel_getSupport": { "message": "Jwenn Sipò" },
   "btnLabel_updateCheck": { "message": "Tcheke pou Updates" },
   "btnLabel_update": { "message": "Update" },

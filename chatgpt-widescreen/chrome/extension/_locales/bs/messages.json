@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 je korišten za ulazak preko cijelog ekrana, a zbog sigurnosnih razloga preglednika, isti ključ mora biti korišten za izlazak iz njega" },
   "btnLabel_moreApps": { "message": "Još ChatGPT aplikacija" },
   "btnLabel_leaveReview": { "message": "Pošalji recenziju" },
+  "btnLabel_rateUs": { "message": "Ocijenite nas" },
   "btnLabel_getSupport": { "message": "Zatražite podršku" },
   "btnLabel_updateCheck": { "message": "Provjeri ima li ažuriranja" },
   "btnLabel_update": { "message": "Nadogradi" },

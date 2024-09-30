@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "పూర్తి స్క్రీన్ను ఎంటర్ చేయడానికి F11 ఉపయోగించబడింది, మరియు బ్రౌజర్ భద్రతా కారణాల వల్ల, అదే కీని దానిని నిష్క్రమించడానికి ఉపయోగించాలి" },
   "btnLabel_moreApps": { "message": "మరిన్ని ChatGPT యాప్ ‌ లు" },
   "btnLabel_leaveReview": { "message": "సమీక్షను వదిలివేయండి" },
+  "btnLabel_rateUs": { "message": "మాకు రేటింగ్ ఇవ్వండి" },
   "btnLabel_getSupport": { "message": "సహకారం తీసుకోండి" },
   "btnLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "btnLabel_update": { "message": "అప్‌డేట్" },

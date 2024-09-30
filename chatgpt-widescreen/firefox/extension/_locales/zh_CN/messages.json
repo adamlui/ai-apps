@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "使用 F11 键进入全屏模式，由于浏览器安全原因，必须使用同样的按键退出全屏模式" },
   "btnLabel_moreApps": { "message": "更多 ChatGPT 应用" },
   "btnLabel_leaveReview": { "message": "离开评论" },
+  "btnLabel_rateUs": { "message": "给我们评价" },
   "btnLabel_getSupport": { "message": "获取帮助" },
   "btnLabel_updateCheck": { "message": "检查更新" },
   "btnLabel_update": { "message": "更新" },

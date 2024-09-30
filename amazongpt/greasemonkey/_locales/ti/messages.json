@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "ናብ ክሊፕቦርድ እተቐርጸ" },
   "btnLabel_moreApps": { "message": "ዝያዳ ናይ ChatGPT መተግበሪታት" },
   "btnLabel_leaveReview": { "message": "ግምገማ ሓዲግካ" },
+  "btnLabel_rateUs": { "message": "ተመዝገብና" },
   "btnLabel_getSupport": { "message": "ደገፍ ርኸቡ" },
   "btnLabel_updateCheck": { "message": "ዝቕጽል ሓበሬታ ርአ" },
   "btnLabel_update": { "message": "ኣሐድስ" },

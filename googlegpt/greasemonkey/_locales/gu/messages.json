@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "GoogleGPT ને શોધ ક્વેરી મોકલો" },
   "btnLabel_moreApps": { "message": "વધુ ChatGPT એપ્લિકેશન્સ" },
   "btnLabel_leaveReview": { "message": "સમીક્ષા છોડો" },
+  "btnLabel_rateUs": { "message": "અમને રેટ કરો" },
   "btnLabel_getSupport": { "message": "સપોર્ટ મેળવો" },
   "btnLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
   "btnLabel_update": { "message": "અદ્યતન બનાવો" },

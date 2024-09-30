@@ -34,6 +34,7 @@
   "alert_author": { "message": "རྩོམ་པ་པོ།" },
   "btnLabel_moreApps": { "message": "ཁ་གསལ་གྱི་ཁ་གསལ་གྱི་ཁ་གསལ་ཚུ་" },
   "btnLabel_leaveReview": { "message": "བསྐྱར་ཞིབ་བཀོག་བཞག་" },
+  "btnLabel_rateUs": { "message": "ང་བཅས་ལུ་བཀག་སྡོམ་འབད་" },
   "btnLabel_getSupport": { "message": "རྒྱབ་སྐྱོར་ཐོབ་ནི་" },
   "btnLabel_updateCheck": { "message": "ད་ལྟོའི་དུས་ཚོད། བསྒྱུར་བཅོས་འབད་" },
   "btnLabel_update": { "message": "ད་ལྟོའི་དུས་ཚོད།" },

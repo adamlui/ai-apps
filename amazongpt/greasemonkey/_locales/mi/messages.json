@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "Tārua ki te papapātuhi" },
   "btnLabel_moreApps": { "message": "Ētahi atu ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Waiho i te arotake" },
+  "btnLabel_rateUs": { "message": "Te utu ki a tatou" },
   "btnLabel_getSupport": { "message": "Tautoko" },
   "btnLabel_updateCheck": { "message": "Tirohia nga whakahoutanga" },
   "btnLabel_update": { "message": "Whakahou" },

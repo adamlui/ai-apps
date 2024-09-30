@@ -49,6 +49,7 @@
   "alert_author": { "message": "Tagsulat" },
   "btnLabel_moreApps": { "message": "Dugang nga ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Biyai ang Review" },
+  "btnLabel_rateUs": { "message": "I-rate Kanato" },
   "btnLabel_getSupport": { "message": "Kuhaa ang Suporta" },
   "btnLabel_updateCheck": { "message": "Tsekahi ang mga Update" },
   "btnLabel_update": { "message": "Usbongi" },

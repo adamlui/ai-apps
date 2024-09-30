@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "הצ'אט הופסק אוטומטית" },
   "btnLabel_moreApps": { "message": "עוד אפליקציות ChatGPT" },
   "btnLabel_leaveReview": { "message": "השארת חוות דעת" },
+  "btnLabel_rateUs": { "message": "דרג אותנו" },
   "btnLabel_getSupport": { "message": "קבל תמיכה" },
   "btnLabel_updateCheck": { "message": "חפש עדכונים" },
   "btnLabel_update": { "message": "עדכון" },

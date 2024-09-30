@@ -34,6 +34,7 @@
   "alert_author": { "message": "Ùghdar" },
   "btnLabel_moreApps": { "message": "Barrachd Apps ChatGPT" },
   "btnLabel_leaveReview": { "message": "Leave Review" },
+  "btnLabel_rateUs": { "message": "Rèitich sinn" },
   "btnLabel_getSupport": { "message": "Faigh Taic" },
   "btnLabel_updateCheck": { "message": "Thoir sùil airson ùrachaidhean" },
   "btnLabel_update": { "message": "Ùraich" },

@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "Ua hoʻohana ʻia ʻo F11 e komo i ka pale piha, a ma muli o nā kumu palekana o ka polokalamu kele pūnaewele, pono e hoʻohana ʻia ke kī like e puka ai" },
   "btnLabel_moreApps": { "message": "Nā polokalamu ChatGPT hou aku" },
   "btnLabel_leaveReview": { "message": "Haʻalele Nānā" },
+  "btnLabel_rateUs": { "message": "E helu iā mākou" },
   "btnLabel_getSupport": { "message": "Loaʻa Kākoʻo" },
   "btnLabel_updateCheck": { "message": "E nānā i nā mea hou" },
   "btnLabel_update": { "message": "Hōʻano hou" },

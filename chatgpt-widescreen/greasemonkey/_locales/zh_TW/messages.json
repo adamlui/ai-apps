@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "使用 F11 進入全螢幕，由於瀏覽器安全原因，必須使用同樣的按鍵退出全螢幕" },
   "btnLabel_moreApps": { "message": "更多 ChatGPT 應用程式" },
   "btnLabel_leaveReview": { "message": "離開評論" },
+  "btnLabel_rateUs": { "message": "為我們評分" },
   "btnLabel_getSupport": { "message": "獲得支援" },
   "btnLabel_updateCheck": { "message": "檢查更新" },
   "btnLabel_update": { "message": "更新" },

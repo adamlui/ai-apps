@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "टेक्स्ट क्लिपबोर्डमा  कपि भयो" },
   "btnLabel_moreApps": { "message": "थप ChatGPT अनुप्रयोगहरू" },
   "btnLabel_leaveReview": { "message": "समीक्षा छोड्नुहोस्" },
+  "btnLabel_rateUs": { "message": "हामीलाई मूल्याङ्कन गर्नुहोस्" },
   "btnLabel_getSupport": { "message": "सहायता प्राप्त गर्नुहोस्" },
   "btnLabel_updateCheck": { "message": "अद्यावधिकहरूको लागि जाँच गर्नुहोस्" },
   "btnLabel_update": { "message": "अद्यावधिक गर्नुहोस्" },

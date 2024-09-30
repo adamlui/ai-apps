@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "Chat Auto-Pagpadayon" },
   "btnLabel_moreApps": { "message": "Dugang nga ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Biyai ang Review" },
+  "btnLabel_rateUs": { "message": "I-rate Kanato" },
   "btnLabel_getSupport": { "message": "Kuhaa ang Suporta" },
   "btnLabel_updateCheck": { "message": "Susiha ang mga Update" },
   "btnLabel_update": { "message": "I-update" },

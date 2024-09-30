@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 te itilize pou antre nan ekran plen, e akòz rezon sekirite navigatè, menm kle a dwe itilize pou sòti li" },
   "btnLabel_moreApps": { "message": "Plis Apps ChatGPT" },
   "btnLabel_leaveReview": { "message": "Kite Revizyon" },
+  "btnLabel_rateUs": { "message": "Evalye nou" },
   "btnLabel_getSupport": { "message": "Jwenn Sipò" },
   "btnLabel_updateCheck": { "message": "Tcheke pou Updates" },
   "btnLabel_update": { "message": "Update" },

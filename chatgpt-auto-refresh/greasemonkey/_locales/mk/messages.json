@@ -34,6 +34,7 @@
   "alert_author": { "message": "Март" },
   "btnLabel_moreApps": { "message": "Повеќе апликации за ChatGPT" },
   "btnLabel_leaveReview": { "message": "Остави еден преглед" },
+  "btnLabel_rateUs": { "message": "Оценете не" },
   "btnLabel_getSupport": { "message": "Добијте поддршка" },
   "btnLabel_updateCheck": { "message": "Провери за нова верзија" },
   "btnLabel_update": { "message": "Ажурирај" },

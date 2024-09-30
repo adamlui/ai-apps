@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Адправіць пошукавы запыт у GoogleGPT" },
   "btnLabel_moreApps": { "message": "Іншыя праграмы ChatGPT" },
   "btnLabel_leaveReview": { "message": "Пакінуць водгук" },
+  "btnLabel_rateUs": { "message": "Ацаніць нас" },
   "btnLabel_getSupport": { "message": "Атрымаць падтрымку" },
   "btnLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
   "btnLabel_update": { "message": "Абноўлена" },

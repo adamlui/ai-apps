@@ -49,6 +49,7 @@
   "alert_author": { "message": "tusitala" },
   "btnLabel_moreApps": { "message": "Sili ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Tuua Iloiloga" },
+  "btnLabel_rateUs": { "message": "Faatusatusaina i Tatou" },
   "btnLabel_getSupport": { "message": "Maua Lagolago" },
   "btnLabel_updateCheck": { "message": "Susi mo Afe" },
   "btnLabel_update": { "message": "Afe" },

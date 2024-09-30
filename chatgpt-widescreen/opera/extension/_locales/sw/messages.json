@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 ilitumiwa kuingia skrini kamili, na kutokana na sababu za usalama wa kivinjari, ufunguo huo lazima utumike kuiondoa" },
   "btnLabel_moreApps": { "message": "Programu Zaidi za GumzoGPT" },
   "btnLabel_leaveReview": { "message": "Acha Tathmini" },
+  "btnLabel_rateUs": { "message": "Tupe kadirio" },
   "btnLabel_getSupport": { "message": "Pata Usaidizi" },
   "btnLabel_updateCheck": { "message": "Angalia Masasisho" },
   "btnLabel_update": { "message": "Sasisho" },

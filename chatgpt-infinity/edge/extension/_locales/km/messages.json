@@ -49,6 +49,7 @@
   "alert_author": { "message": "អ្នកបញ្ចូលព័ត៌មាន" },
   "btnLabel_moreApps": { "message": "កម្មវិធី ChatGPT ច្រើនទៀត" },
   "btnLabel_leaveReview": { "message": "សូមទុកមតិ" },
+  "btnLabel_rateUs": { "message": "វាយតម្លៃយើង" },
   "btnLabel_getSupport": { "message": "ទទួលបានការគាំទ្រ" },
   "btnLabel_updateCheck": { "message": "ពិនិត្យរកអាប់ដេត" },
   "btnLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },

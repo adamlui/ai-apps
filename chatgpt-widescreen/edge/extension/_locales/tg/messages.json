@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 барои ворид кардани экрани пурра истифода мешуд ва бо сабабҳои амниятӣ браузер бояд барои баромадан аз он ҳамон калидро истифода барад" },
   "btnLabel_moreApps": { "message": "Бештар ChatGPT Барномаҳо" },
   "btnLabel_leaveReview": { "message": "Баромадан аз тафсир" },
+  "btnLabel_rateUs": { "message": "Баҳои мо" },
   "btnLabel_getSupport": { "message": "Гирифтани Дастгирӣ" },
   "btnLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
   "btnLabel_update": { "message": "Навсозӣ кардан" },

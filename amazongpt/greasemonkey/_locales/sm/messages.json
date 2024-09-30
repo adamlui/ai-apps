@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "Lolomiina i le clipboard" },
   "btnLabel_moreApps": { "message": "Sili ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Tuua Iloiloga" },
+  "btnLabel_rateUs": { "message": "Faatusatusaina i Tatou" },
   "btnLabel_getSupport": { "message": "Maua Lagolago" },
   "btnLabel_updateCheck": { "message": "Siaki mo Faʻafouga" },
   "btnLabel_update": { "message": "Fa'afouga" },

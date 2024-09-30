@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 નો ઉપયોગ સંપૂર્ણ સ્ક્રીન દાખલ કરવા માટે કરવામાં આવ્યો હતો, અને બ્રાઉઝર સુરક્ષા કારણોસર, તે જ કીનો ઉપયોગ તેમાંથી બહાર નીકળવા માટે કરવો આવશ્યક છે" },
   "btnLabel_moreApps": { "message": "વધુ ChatGPT એપ્લિકેશન્સ" },
   "btnLabel_leaveReview": { "message": "સમીક્ષા છોડો" },
+  "btnLabel_rateUs": { "message": "અમને રેટ કરો" },
   "btnLabel_getSupport": { "message": "સપોર્ટ મેળવો" },
   "btnLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
   "btnLabel_update": { "message": "અદ્યતન બનાવો" },

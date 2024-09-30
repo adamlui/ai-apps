@@ -34,6 +34,7 @@
   "alert_author": { "message": "otè" },
   "btnLabel_moreApps": { "message": "Plis Apps ChatGPT" },
   "btnLabel_leaveReview": { "message": "Kite Revizyon" },
+  "btnLabel_rateUs": { "message": "Evalye nou" },
   "btnLabel_getSupport": { "message": "Jwenn Sipò" },
   "btnLabel_updateCheck": { "message": "Tcheke pou Mizajou" },
   "btnLabel_update": { "message": "Update" },

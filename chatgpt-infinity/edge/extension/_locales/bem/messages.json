@@ -49,6 +49,7 @@
   "alert_author": { "message": "kalemba" },
   "btnLabel_moreApps": { "message": "Ukulele ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Lekeni ukupituluka" },
+  "btnLabel_rateUs": { "message": "Rate Twine" },
   "btnLabel_getSupport": { "message": "Peeleniko bambi Peeleni" },
   "btnLabel_updateCheck": { "message": "Chinsopelelako Update" },
   "btnLabel_update": { "message": "Kulanda" },

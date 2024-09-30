@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 pantaila osoan sartzeko erabili zen, eta arakatzailearen segurtasun arrazoiak direla eta, gako bera erabili behar da bertatik irteteko" },
   "btnLabel_moreApps": { "message": "ChatGPT aplikazio gehiago" },
   "btnLabel_leaveReview": { "message": "Utzi Iritzia" },
+  "btnLabel_rateUs": { "message": "Baloratu gaitzazu" },
   "btnLabel_getSupport": { "message": "Laguntza lortu" },
   "btnLabel_updateCheck": { "message": "Begiratu _eguneraketak" },
   "btnLabel_update": { "message": "Eguneratu" },

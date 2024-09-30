@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 został użyty do wejścia na pełny ekran, a ze względów bezpieczeństwa przeglądarki, ten sam klucz musi być użyty do wyjścia z niego" },
   "btnLabel_moreApps": { "message": "Więcej aplikacji ChatGPT" },
   "btnLabel_leaveReview": { "message": "Zostaw opinię" },
+  "btnLabel_rateUs": { "message": "Wystaw nam ocenę" },
   "btnLabel_getSupport": { "message": "Uzyskać wsparcie" },
   "btnLabel_updateCheck": { "message": "Sprawdzanie aktualizacji" },
   "btnLabel_update": { "message": "Aktualizuj" },

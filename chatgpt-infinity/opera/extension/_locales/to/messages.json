@@ -49,6 +49,7 @@
   "alert_author": { "message": "tokotaha naʻa ne faʻ" },
   "btnLabel_moreApps": { "message": "Ngaahi polokalama ChatGPT lahi ange" },
   "btnLabel_leaveReview": { "message": "Tuku Hono Toe Vakaiʻí" },
+  "btnLabel_rateUs": { "message": "Fakafuofuaʻi Kimautolu" },
   "btnLabel_getSupport": { "message": "Maʻu ha Tokoni" },
   "btnLabel_updateCheck": { "message": "Taki ke fakapau'i" },
   "btnLabel_update": { "message": "Fakapau'i" },

@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 გამოიყენება სრულ ეკრანზე შესასვლელად და ბრაუზერის უსაფრთხოების მიზეზების გამო, იგივე გასაღები უნდა იქნას გამოყენებული გასასვლელად" },
   "btnLabel_moreApps": { "message": "Სხვა ChatGPT აპები" },
   "btnLabel_leaveReview": { "message": "შეფასების დატოვება" },
+  "btnLabel_rateUs": { "message": "Შეფასება" },
   "btnLabel_getSupport": { "message": "მხარდაჭერის მიღება" },
   "btnLabel_updateCheck": { "message": "განახლებების შემოწმება" },
   "btnLabel_update": { "message": "განახლება" },

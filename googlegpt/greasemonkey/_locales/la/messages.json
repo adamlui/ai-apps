@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Mitte quaestionem quaerendi ad GoogleGPT" },
   "btnLabel_moreApps": { "message": "Plura ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "REVISORUM EXAMINATIS" },
+  "btnLabel_rateUs": { "message": "Próximo Us" },
   "btnLabel_getSupport": { "message": "Accipe Sustentationem" },
   "btnLabel_updateCheck": { "message": "Revidere Renovationes" },
   "btnLabel_update": { "message": "Renovatio" },

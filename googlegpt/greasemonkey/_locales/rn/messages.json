@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Rungika Rungika Kurondera ibibazo kuri GoogleGPT" },
   "btnLabel_moreApps": { "message": "Izindi porogaramu za ChatGPT" },
   "btnLabel_leaveReview": { "message": "Subira usuzume" },
+  "btnLabel_rateUs": { "message": "Rate Us None None" },
   "btnLabel_getSupport": { "message": "Nurondere imfashanyo" },
   "btnLabel_updateCheck": { "message": "Raba amakuru agezweho" },
   "btnLabel_update": { "message": "Update None None" },

@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Romela potso ya go senka go DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Di-app tse Dintsi tsa ChatGPT" },
   "btnLabel_leaveReview": { "message": "Leave Review" },
+  "btnLabel_rateUs": { "message": "Maemo a Rona" },
   "btnLabel_getSupport": { "message": "Bona Kemonokeng" },
   "btnLabel_updateCheck": { "message": "Tlhatlhoba Diphetogo" },
   "btnLabel_update": { "message": "Ntshwafatso" },

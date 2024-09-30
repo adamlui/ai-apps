@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "DuckDuckGPT'ye arama sorgusu gönder" },
   "btnLabel_moreApps": { "message": "Daha Fazla ChatGPT Uygulaması" },
   "btnLabel_leaveReview": { "message": "İncelemeyi bırak" },
+  "btnLabel_rateUs": { "message": "Bize oy verin" },
   "btnLabel_getSupport": { "message": "Destek Al" },
   "btnLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
   "btnLabel_update": { "message": "Güncelleme" },

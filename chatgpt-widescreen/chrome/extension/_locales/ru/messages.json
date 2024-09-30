@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 была использована для входа в полноэкранный режим, и по соображениям безопасности браузера для выхода из него также необходимо использовать ту же клавишу" },
   "btnLabel_moreApps": { "message": "Другие приложения ChatGPT" },
   "btnLabel_leaveReview": { "message": "Оставить Отзыв" },
+  "btnLabel_rateUs": { "message": "Оцените нас" },
   "btnLabel_getSupport": { "message": "Получить поддержку" },
   "btnLabel_updateCheck": { "message": "Проверить Обновления" },
   "btnLabel_update": { "message": "Обновить" },

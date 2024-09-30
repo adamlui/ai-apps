@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "Anakopera kuti clipboard" },
   "btnLabel_moreApps": { "message": "Zambiri Mapulogalamu a ChatGPT" },
   "btnLabel_leaveReview": { "message": "Kusiya Review" },
+  "btnLabel_rateUs": { "message": "Kuwerengetsa Ife" },
   "btnLabel_getSupport": { "message": "Pezani Thandizo" },
   "btnLabel_updateCheck": { "message": "Fufuzani Zosintha" },
   "btnLabel_update": { "message": "Sinthani" },

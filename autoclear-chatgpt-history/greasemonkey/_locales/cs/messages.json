@@ -31,6 +31,7 @@
   "alert_author": { "message": "autor" },
   "btnLabel_moreApps": { "message": "Další aplikace ChatGPT" },
   "btnLabel_leaveReview": { "message": "Přidat Hodnocení" },
+  "btnLabel_rateUs": { "message": "Ohodnoťte nás" },
   "btnLabel_getSupport": { "message": "Získat podporu" },
   "btnLabel_updateCheck": { "message": "Zjistit novější verzi" },
   "btnLabel_update": { "message": "Aktualizovat" },

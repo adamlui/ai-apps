@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "скопійовано" },
   "btnLabel_moreApps": { "message": "Більше додатків ChatGPT" },
   "btnLabel_leaveReview": { "message": "Залишити відгук" },
+  "btnLabel_rateUs": { "message": "Оцініть нас" },
   "btnLabel_getSupport": { "message": "Отримати підтримку" },
   "btnLabel_updateCheck": { "message": "Перевірка оновлень" },
   "btnLabel_update": { "message": "Оновити" },

@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "שיקן זוכן אָנפֿרעג צו BraveGPT" },
   "btnLabel_moreApps": { "message": "מער ChatGPT אַפּפּס" },
   "btnLabel_leaveReview": { "message": "לאָזן איבערבליק" },
+  "btnLabel_rateUs": { "message": "קורס אונדז" },
   "btnLabel_getSupport": { "message": "באַקומען שטיצן" },
   "btnLabel_updateCheck": { "message": "זוך נייע ווערסיעס" },
   "btnLabel_update": { "message": "דערהייַנטיקן" },

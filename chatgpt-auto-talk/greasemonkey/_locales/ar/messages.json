@@ -28,6 +28,7 @@
   "alert_author": { "message": "المؤلف" },
   "btnLabel_moreApps": { "message": "المزيد من تطبيقات ChatGPT" },
   "btnLabel_leaveReview": { "message": "اترك مراجعة" },
+  "btnLabel_rateUs": { "message": "التقييم" },
   "btnLabel_getSupport": { "message": "احصل على الدعم" },
   "btnLabel_updateCheck": { "message": "مرابة التحديثات" },
   "btnLabel_update": { "message": "التحديث" },

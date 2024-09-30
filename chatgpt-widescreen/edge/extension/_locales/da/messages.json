@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 blev brugt til at komme ind i fuld skærm, og af sikkerhedsmæssige årsager skal den samme nøgle bruges til at afslutte den" },
   "btnLabel_moreApps": { "message": "Flere ChatGPT-apps" },
   "btnLabel_leaveReview": { "message": "Skriv en anmeldelse" },
+  "btnLabel_rateUs": { "message": "Bedøm os" },
   "btnLabel_getSupport": { "message": "Få hjælp" },
   "btnLabel_updateCheck": { "message": "Tjek for Opdateringer" },
   "btnLabel_update": { "message": "Opdatér" },

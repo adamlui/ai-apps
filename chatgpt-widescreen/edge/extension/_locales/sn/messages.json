@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 yakashandiswa kupinda chidzitiro chakazara, uye nekuda kwezvikonzero zvekuchengetedza bhurawuza, kiyi imwechete inofanira kushandiswa kubuda mairi" },
   "btnLabel_moreApps": { "message": "Zvakawanda ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Taura nesu" },
+  "btnLabel_rateUs": { "message": "Taura nesu" },
   "btnLabel_getSupport": { "message": "Kuwana Rutsigiro" },
   "btnLabel_updateCheck": { "message": "Ongorora Updates" },
   "btnLabel_update": { "message": "Gadzirisa" },

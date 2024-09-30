@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Bidali bilaketa-kontsulta GoogleGPT-ra" },
   "btnLabel_moreApps": { "message": "ChatGPT aplikazio gehiago" },
   "btnLabel_leaveReview": { "message": "Utzi Iritzia" },
+  "btnLabel_rateUs": { "message": "Baloratu gaitzazu" },
   "btnLabel_getSupport": { "message": "Laguntza lortu" },
   "btnLabel_updateCheck": { "message": "Begiratu _eguneraketak" },
   "btnLabel_update": { "message": "Eguneratu" },

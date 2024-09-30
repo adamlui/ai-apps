@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "Skopírované do schránky" },
   "btnLabel_moreApps": { "message": "Ďalšie ChatGPT aplikácie" },
   "btnLabel_leaveReview": { "message": "Nechať recenziu" },
+  "btnLabel_rateUs": { "message": "Ohodnoťte nás" },
   "btnLabel_getSupport": { "message": "Získať podporu" },
   "btnLabel_updateCheck": { "message": "Zistiť novú verziu" },
   "btnLabel_update": { "message": "Aktualizovať" },

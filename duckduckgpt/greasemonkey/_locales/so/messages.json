@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "U dir su 'aalaha raadinta DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Codsiyada ChatGPT dheeraad ah" },
   "btnLabel_leaveReview": { "message": "Dib u eegista Ka tag" },
+  "btnLabel_rateUs": { "message": "Nagu Qiimee" },
   "btnLabel_getSupport": { "message": "Tageero raadso" },
   "btnLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
   "btnLabel_update": { "message": "Cusboonaysiinta" },

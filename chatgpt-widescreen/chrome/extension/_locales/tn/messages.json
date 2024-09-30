@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 e dirisitswe go tsenya sekirini ka botlalo, mme ka ntlha ya mabaka a pabalesego a browser, selo sa konokono se se tshwanang se tshwanetse go dirisiwa go tswa mo sekerining" },
   "btnLabel_moreApps": { "message": "Di-app tse Dintsi tsa ChatGPT" },
   "btnLabel_leaveReview": { "message": "Leave Review" },
+  "btnLabel_rateUs": { "message": "Maemo a Rona" },
   "btnLabel_getSupport": { "message": "Bona Kemonokeng" },
   "btnLabel_updateCheck": { "message": "Go Batla Diphetogo" },
   "btnLabel_update": { "message": "Ntshwafatso" },

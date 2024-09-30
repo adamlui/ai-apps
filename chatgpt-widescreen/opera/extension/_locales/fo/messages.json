@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 var brúkt til at koma inn í fulla skjalið, og av tí at flogfarið er tryggjað, eigur tað at verða brúkt til at fara út úr henni" },
   "btnLabel_moreApps": { "message": "Fleiri ChatGPT apps" },
   "btnLabel_leaveReview": { "message": "Loyvi endurskoðan" },
+  "btnLabel_rateUs": { "message": "Rætta okkum" },
   "btnLabel_getSupport": { "message": "Fá stuðul" },
   "btnLabel_updateCheck": { "message": "Hygg eftir UPDATE" },
   "btnLabel_update": { "message": "Dagfør" },

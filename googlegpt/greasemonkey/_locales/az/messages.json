@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Axtarış sorğusunu GoogleGPT-yə göndərin" },
   "btnLabel_moreApps": { "message": "Daha çox ChatGPT Proqramları" },
   "btnLabel_leaveReview": { "message": "Rəy bildirin" },
+  "btnLabel_rateUs": { "message": "Bizi qiymətləndirin" },
   "btnLabel_getSupport": { "message": "Dəstək Əldə Edin" },
   "btnLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
   "btnLabel_update": { "message": "Yenilə" },

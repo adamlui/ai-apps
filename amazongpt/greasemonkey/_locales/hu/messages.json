@@ -77,6 +77,7 @@
   "notif_copiedToClipboard": { "message": "Vágólapra másolva" },
   "btnLabel_moreApps": { "message": "További ChatGPT alkalmazások" },
   "btnLabel_leaveReview": { "message": "Írj értékelést" },
+  "btnLabel_rateUs": { "message": "Értékeljen minket" },
   "btnLabel_getSupport": { "message": "Kérj támogatást" },
   "btnLabel_updateCheck": { "message": "Frissítések keresése" },
   "btnLabel_update": { "message": "Frissítés" },

@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 intuża biex jidħol l-iskrin sħiħ, u minħabba raġunijiet ta 'sigurtà tal-browser, l-istess ċavetta trid tintuża biex toħroġha" },
   "btnLabel_moreApps": { "message": "Iktar Apps taċ-ChatGPT" },
   "btnLabel_leaveReview": { "message": "Ħalli r-Review" },
+  "btnLabel_rateUs": { "message": "Rata us" },
   "btnLabel_getSupport": { "message": "Ikseb l-Għajnuna" },
   "btnLabel_updateCheck": { "message": "Iċċekkja għall-aġġornamenti" },
   "btnLabel_update": { "message": "Aġġornament" },

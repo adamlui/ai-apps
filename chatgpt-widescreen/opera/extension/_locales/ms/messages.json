@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 telah digunakan untuk memasuki skrin penuh, dan atas sebab-sebab keselamatan pelayar, kunci yang sama mesti digunakan untuk keluar daripadanya" },
   "btnLabel_moreApps": { "message": "Lebih Banyak Aplikasi ChatGPT" },
   "btnLabel_leaveReview": { "message": "Tinggalkan ulasan" },
+  "btnLabel_rateUs": { "message": "Nilaikan kami" },
   "btnLabel_getSupport": { "message": "Dapatkan Sokongan" },
   "btnLabel_updateCheck": { "message": "Semak Kemaskini" },
   "btnLabel_update": { "message": "Saya ingin membuat susulan" },

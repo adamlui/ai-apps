@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Фиристодани дархости ҷустуҷӯӣ ба DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Бештар ChatGPT Барномаҳо" },
   "btnLabel_leaveReview": { "message": "Баромадан аз тафсир" },
+  "btnLabel_rateUs": { "message": "Баҳои мо" },
   "btnLabel_getSupport": { "message": "Гирифтани Дастгирӣ" },
   "btnLabel_updateCheck": { "message": "Навсозиро тафтиш кунед" },
   "btnLabel_update": { "message": "Навсозӣ кардан" },

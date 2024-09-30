@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "Az F11-et teljes képernyős belépésre használták, és a böngésző biztonsági okokból ugyanazt a kulcsot kell használni a kilépéshez" },
   "btnLabel_moreApps": { "message": "További ChatGPT alkalmazások" },
   "btnLabel_leaveReview": { "message": "Írj értékelést" },
+  "btnLabel_rateUs": { "message": "Értékeljen minket" },
   "btnLabel_getSupport": { "message": "Kérj támogatást" },
   "btnLabel_updateCheck": { "message": "Frissítések keresése" },
   "btnLabel_update": { "message": "Frissítés" },

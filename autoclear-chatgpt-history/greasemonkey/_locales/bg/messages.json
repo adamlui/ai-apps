@@ -31,6 +31,7 @@
   "alert_author": { "message": "автор" },
   "btnLabel_moreApps": { "message": "Още приложения за ChatGPT" },
   "btnLabel_leaveReview": { "message": "Оставете рецензия" },
+  "btnLabel_rateUs": { "message": "Оценете ни" },
   "btnLabel_getSupport": { "message": "Вземи поддръжка" },
   "btnLabel_updateCheck": { "message": "Проверка за обновяване" },
   "btnLabel_update": { "message": "Актуализация" },

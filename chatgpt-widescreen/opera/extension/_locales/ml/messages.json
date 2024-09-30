@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "പൂർണ്ണ സ്ക്രീനിൽ പ്രവേശിക്കാൻ F11 ഉപയോഗിച്ചു, ബ്രൌസർ സുരക്ഷാ കാരണങ്ങളാൽ, അത് പുറത്തുകടക്കാൻ അതേ കീ ഉപയോഗിക്കണം" },
   "btnLabel_moreApps": { "message": "കൂടുതൽ ChatGPT ആപ്പുകൾ" },
   "btnLabel_leaveReview": { "message": "അവലോകനം ഉപേക്ഷിക്കുക" },
+  "btnLabel_rateUs": { "message": "ഞങ്ങളെ റേറ്റുചെയ്യുക" },
   "btnLabel_getSupport": { "message": "പിന്തുണ നേടുക" },
   "btnLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
   "btnLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },

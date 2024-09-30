@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 gouf benotzt fir voll Écran ze gitt, a wéinst Browser Sécherheetsgrënn muss de selwechte Schlëssel benotzt ginn fir se auszeginn" },
   "btnLabel_moreApps": { "message": "Méi ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Ik ben heel benieuwd naar jouw mening laat het me" },
+  "btnLabel_rateUs": { "message": "Bewäert eis" },
   "btnLabel_getSupport": { "message": "Kréien Support" },
   "btnLabel_updateCheck": { "message": "Fakten an Erënnerungen" },
   "btnLabel_update": { "message": "Aktualiséieren" },

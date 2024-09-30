@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Send search query to DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "More ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Leave Review" },
+  "btnLabel_rateUs": { "message": "Rate Us" },
   "btnLabel_getSupport": { "message": "Get Support" },
   "btnLabel_updateCheck": { "message": "Check for Updates" },
   "btnLabel_update": { "message": "Update" },

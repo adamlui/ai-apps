@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Siųsti paieškos užklausą GoogleGPT" },
   "btnLabel_moreApps": { "message": "Daugiau ChatGPT programų" },
   "btnLabel_leaveReview": { "message": "Palikite atsiliepimą" },
+  "btnLabel_rateUs": { "message": "Įvertinkite mus" },
   "btnLabel_getSupport": { "message": "Gauti palaikymą" },
   "btnLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
   "btnLabel_update": { "message": "Naujinti" },

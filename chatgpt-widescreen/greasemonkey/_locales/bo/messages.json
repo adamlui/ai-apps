@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "FTP དེ་ནི་དྲ་བ་སྤྱད་ནས་དྲ་བ་སྤྱད་ནས་སྤྱོད་མཁན་ཡོངས་རྫོགས་ཀྱི་ཡོད །" },
   "btnLabel_moreApps": { "message": "འདྲ་ཕབ །" },
   "btnLabel_leaveReview": { "message": "བསྐྱར་ཞིབ་སྤར་བ" },
+  "btnLabel_rateUs": { "message": "རིན་ཆེན །" },
   "btnLabel_getSupport": { "message": "རོགས་རམ་ཐོབ་པ" },
   "btnLabel_updateCheck": { "message": "ད་ལྟ་རིམ་སྤར་བྱེད་བཞིན་པ །" },
   "btnLabel_update": { "message": "གསར་བསྒྱུར" },

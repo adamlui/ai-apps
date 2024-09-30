@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "සෙවුම් විමසුම BraveGPT වෙත යවන්න" },
   "btnLabel_moreApps": { "message": "තවත් ChatGPT යෙදුම්" },
   "btnLabel_leaveReview": { "message": "සමාලෝචනයක් එක් කරන්න" },
+  "btnLabel_rateUs": { "message": "අපව අගයන්න" },
   "btnLabel_getSupport": { "message": "සහාය ලබාගන්න" },
   "btnLabel_updateCheck": { "message": "යාවත්කාලීන සඳහා පරීක් ‍ ෂා කරන්න" },
   "btnLabel_update": { "message": "යාවත් කාළීන" },

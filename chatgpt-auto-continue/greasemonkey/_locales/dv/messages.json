@@ -29,6 +29,7 @@
   "notif_chatAutoContinued": { "message": "ޗެޓް އޮޓޯ-ކޮންޓިނިއުޑް" },
   "btnLabel_moreApps": { "message": "އިތުރު ޗެޓްޖީޕީޓީ އެޕްތައް" },
   "btnLabel_leaveReview": { "message": "ރިވިއު ދޫކޮށްލާށެވެ" },
+  "btnLabel_rateUs": { "message": "ރޭޓް އަސް" },
   "btnLabel_getSupport": { "message": "ގެޓް ސަޕޯޓް" },
   "btnLabel_updateCheck": { "message": "އަޕްޑޭޓްތައް ބަލާށެވެ" },
   "btnLabel_update": { "message": "އަޕްޑޭޓް" },

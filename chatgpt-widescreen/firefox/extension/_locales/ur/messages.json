@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 مکمل اسکرین میں داخل ہونے کے لئے استعمال کیا گیا تھا، اور براؤزر سیکورٹی وجوہات کی وجہ سے، اسی کلید کو اس سے باہر نکلنے کے لئے استعمال کیا جانا چاہئے" },
   "btnLabel_moreApps": { "message": "مزید چیٹ جی پی ٹی ایپس" },
   "btnLabel_leaveReview": { "message": "جائزہ دیں" },
+  "btnLabel_rateUs": { "message": "ہمیں درجہ دیں!" },
   "btnLabel_getSupport": { "message": "سپورٹ حاصل کریں" },
   "btnLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
   "btnLabel_update": { "message": "اپ ڈیٹ" },

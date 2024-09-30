@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Anfon ymholiad chwilio at DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Mwy o ChatGPT Apps" },
   "btnLabel_leaveReview": { "message": "Gadael Adolygiad" },
+  "btnLabel_rateUs": { "message": "Graddio Ni" },
   "btnLabel_getSupport": { "message": "Cael cymorth" },
   "btnLabel_updateCheck": { "message": "Dango_s diweddariadau" },
   "btnLabel_update": { "message": "Diweddaru" },

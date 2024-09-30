@@ -102,6 +102,7 @@
   "btnLabel_sendQueryToApp": { "message": "Tuma swali la utafutaji kwa GoogleGPT" },
   "btnLabel_moreApps": { "message": "Programu Zaidi za GumzoGPT" },
   "btnLabel_leaveReview": { "message": "Acha Tathmini" },
+  "btnLabel_rateUs": { "message": "Tupe kadirio" },
   "btnLabel_getSupport": { "message": "Pata Usaidizi" },
   "btnLabel_updateCheck": { "message": "Angalia Masasisho" },
   "btnLabel_update": { "message": "Sasisho" },

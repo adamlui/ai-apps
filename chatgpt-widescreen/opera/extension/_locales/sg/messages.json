@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "A yeke sara kua na F11 ti lï na yâ ti mbeni écran so ayeke na yâ ni kue, na ndali ti aye so asara si azo ayeke na nzoni lege ti bâ ndo, a lingbi ti sara kua na oko clé ni ti sigigi na yâ ni" },
   "btnLabel_moreApps": { "message": "Ambeni application ti ChatGPT" },
   "btnLabel_leaveReview": { "message": "A kiri a bâ ni" },
+  "btnLabel_rateUs": { "message": "Rate E ti" },
   "btnLabel_getSupport": { "message": "Gi ti wara mungo maboko" },
   "btnLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
   "btnLabel_update": { "message": "Aye so asi na yâ ti fini dunia" },

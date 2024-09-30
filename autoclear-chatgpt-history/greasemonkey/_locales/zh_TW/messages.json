@@ -31,6 +31,7 @@
   "alert_author": { "message": "作者" },
   "btnLabel_moreApps": { "message": "更多 ChatGPT 應用程式" },
   "btnLabel_leaveReview": { "message": "離開評論" },
+  "btnLabel_rateUs": { "message": "為我們評分" },
   "btnLabel_getSupport": { "message": "取得支援" },
   "btnLabel_updateCheck": { "message": "檢查更新" },
   "btnLabel_update": { "message": "更新" },

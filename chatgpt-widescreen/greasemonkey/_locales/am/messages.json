@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 ሙሉ ማያ ገጽ ለማስገባት ጥቅም ላይ ውሏል ፣ እና በአሳሽ ደህንነት ምክንያቶች ምክንያት ተመሳሳይ ቁልፍ እሱን ለመውጣት ጥቅም ላይ መዋል አለበት" },
   "btnLabel_moreApps": { "message": "ተጨማሪ ChatGPT መተግበሪያዎች" },
   "btnLabel_leaveReview": { "message": "ግምገማ ይተው" },
+  "btnLabel_rateUs": { "message": "ደረጃ ይስጡን" },
   "btnLabel_getSupport": { "message": "ድጋፍ ያግኙ" },
   "btnLabel_updateCheck": { "message": "ዝማኔዎችን ይፈትሹ" },
   "btnLabel_update": { "message": "አዘምን" },

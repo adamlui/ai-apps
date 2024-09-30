@@ -54,6 +54,7 @@
   "alert_f11reason": { "message": "F11 - ը օգտագործվել է ամբողջական էկրան մուտք գործելու համար, եւ բրաուզերի անվտանգության նկատառումներից ելնելով, նույն բանալին պետք է օգտագործվի այն դուրս գալու համար" },
   "btnLabel_moreApps": { "message": "Այլ ChatGPT հավելվածներ" },
   "btnLabel_leaveReview": { "message": "Թողնել ակնարկ" },
+  "btnLabel_rateUs": { "message": "Գնահատեք մեզ" },
   "btnLabel_getSupport": { "message": "Ստանալ աջակցում" },
   "btnLabel_updateCheck": { "message": "Ստուգել թարմացումները" },
   "btnLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },
