@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.5
+// @version             2024.9.30.6
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -625,7 +625,7 @@
                 // Show alert
                 const donateModalID = siteAlert(
                     `💖 ${app.msgs.alert_showYourSupport}`, // title
-                        `<p><b>${app.msgs.appName}</b> ${app.msgs.alert_isOSS}.</p>`
+                        `<p>${app.msgs.appName} ${app.msgs.alert_isOSS}.</p>`
                       + `<p>${app.msgs.alert_despiteAffliction} `
                           + `<a target="_blank" rel="noopener" href="${modals.donate.longCOVIDwikiLink}">${app.msgs.alert_longCOVID}</a> `
                           + `${app.msgs.alert_since2020}, ${app.msgs.alert_byDonatingResults}.</p>`
