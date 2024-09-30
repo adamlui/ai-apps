@@ -158,7 +158,7 @@
                 + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                 + ' then answer it. Don\'t type anything else.'
             if (!infinity.muted) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: ON`)
-            infinity.muted = false
+            else infinity.muted = false
             if (env.browser.isMobile && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             if (!new URL(location).pathname.startsWith('/g/')) // not on GPT page
                 try { chatgpt.startNewChat() } catch (err) { return } // start new chat
@@ -190,7 +190,7 @@
 
         async deactivate() {
             if (!infinity.muted) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: OFF`)
-            infinity.muted = false
+            else infinity.muted = false
             chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener
             settings.save('infinityMode', false) // in case toggled by PV listener
