@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.3
+// @version             2024.9.30.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -726,9 +726,10 @@
                 // Add hover/click listeners
                 btns[btnType].onmouseover = btns[btnType].onmouseout = toggle.tooltip
                 btns[btnType].onclick = () => {
-                    if (btnType == 'newChat')
+                    if (btnType == 'newChat') {
                         document.querySelector(sites[site].selectors.btns.newChat)?.click()
-                    else toggle.mode(btnType)
+                        tooltipDiv.style.opacity = 0
+                    } else toggle.mode(btnType)
                 }
             })
             btns.updateColor()

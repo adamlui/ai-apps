@@ -172,9 +172,10 @@
                 // Add hover/click listeners
                 btns[btnType].onmouseover = btns[btnType].onmouseout = toggle.tooltip
                 btns[btnType].onclick = () => {
-                    if (btnType == 'newChat')
+                    if (btnType == 'newChat') {
                         document.querySelector(sites[site].selectors.btns.newChat)?.click()
-                    else toggle.mode(btnType)
+                        tooltipDiv.style.opacity = 0
+                    } else toggle.mode(btnType)
                 }
             })
             btns.updateColor()
