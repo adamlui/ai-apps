@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29
+// @version             2024.9.29.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -281,7 +281,7 @@
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             support: 'https://support.chatgptwidescreen.com'
         },
-        latestAssetCommitHash: 'ac4e3b1' // for cached sites.json + messages.json
+        latestAssetCommitHash: 'cc78c41' // for cached sites.json + messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
