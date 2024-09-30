@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.30
+// @version                2024.9.30.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -106,7 +106,7 @@
             publisher: 'https://www.kudoai.com',
             relatedApps: 'https://github.com/adamlui/chatgpt-apps'
         },
-        latestAssetCommitHash: 'ac96ded' // for cached messages.json
+        latestAssetCommitHash: '8def87a' // for cached messages.json
     }
     app.urls.support = app.urls.gitHub + '/issues/new'
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
@@ -441,7 +441,7 @@
     const menu = {
         ids: [], state: {
             symbols: ['❌', '✔️'], separator: env.scriptManager == 'Tampermonkey' ? ' — ' : ': ',
-            words: [(app.msgs.state_off).toUpperCase(), (app.msgs.state_on).toUpperCase()]
+            words: [app.msgs.state_off.toUpperCase(), app.msgs.state_on.toUpperCase()]
         },
 
         register() {
