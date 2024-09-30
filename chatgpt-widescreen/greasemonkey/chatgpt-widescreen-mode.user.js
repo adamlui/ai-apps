@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29.1
+// @version             2024.9.29.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -361,7 +361,6 @@
         alert_yourContrib: 'Your contribution',
         alert_noMatterSize: 'no matter the size',
         alert_directlySupports: 'directly supports my unpaid efforts to ensure this project remains free and open for all to use',
-        alert_growTogether: 'Together, we can keep this powerful software growing',
         alert_tyForSupport: 'Thank you for your support',
         alert_author: 'author',
         alert_pressF11: 'Press F11 to exit full screen',
@@ -585,12 +584,14 @@
                     `💖 ${app.msgs.alert_showYourSupport}`, // title
                         `<p><b>${app.msgs.appName}</b> ${app.msgs.alert_isOSS}.</p>`
                       + `<p>${app.msgs.alert_despiteAffliction} `
-                          + `<a href="${modals.donate.longCOVIDwikiLink}">${app.msgs.alert_longCOVID}</a> `
+                          + `<a target="_blank" rel="noopener" href="${modals.donate.longCOVIDwikiLink}">${app.msgs.alert_longCOVID}</a> `
                           + `${app.msgs.alert_since2020}, ${app.msgs.alert_byDonatingResults}.</p>`
                       + `<p>${app.msgs.alert_yourContrib}, <b>${app.msgs.alert_noMatterSize}</b>, ${app.msgs.alert_directlySupports}.</p>`
                       + `<p>${app.msgs.alert_growTogether}.</p>`
                       + `<p>${app.msgs.alert_tyForSupport}!</p>`
-                      + `<p>—<b><a href="${app.author.url}">${app.msgs.appAuthor}</a></b>, ${app.msgs.alert_author}</p>`,
+                      + `<img src="https://cdn.jsdelivr.net/gh/adamlui/adamlui/images/siggie/${ chatgpt.isDarkMode() ? 'white' : 'black' }.png"`
+                          + ' style="height: 54px ; margin: 5px 0 -2px 5px"></img>'
+                      + `<p>—<b><a target="_blank" rel="noopener" href="${app.author.url}">${app.msgs.appAuthor}</a></b>, ${app.msgs.alert_author}</p>`,
                     [ // buttons
                         function paypal() { modals.safeWinOpen(app.urls.payPal) },
                         function github() { modals.safeWinOpen(app.urls.gitHub) },
