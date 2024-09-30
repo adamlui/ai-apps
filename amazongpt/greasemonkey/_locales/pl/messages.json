@@ -43,7 +43,7 @@
   "helptip_debugMode": { "message": "Pokaż szczegółowe logowanie w konsoli przeglądarki" },
   "placeholder_typeSomething": { "message": "Zacznij pisać" },
   "prompt_updateReplyLang": { "message": "Zaktualizuj język odpowiedzi" },
-  "alert_langUpdated": { "message": "Język został zaktualizowany." },
+  "alert_langUpdated": { "message": "Język został zaktualizowany" },
   "alert_willReplyIn": { "message": "odpowie za" },
   "alert_yourSysLang": { "message": "Język systemu" },
   "alert_choosePlatform": { "message": "Wybierz platformę" },
@@ -82,6 +82,6 @@
   "btnLabel_update": { "message": "Aktualizuj" },
   "btnLabel_dismiss": { "message": "Odrzuć" },
   "link_viewChanges": { "message": "Przegląd zmian" },
-  "state_on": { "message": "Wł." },
-  "state_off": { "message": "Wył." }
+  "state_on": { "message": "Wł" },
+  "state_off": { "message": "Wył" }
 }

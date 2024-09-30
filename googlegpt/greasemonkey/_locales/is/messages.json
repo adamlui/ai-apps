@@ -98,7 +98,7 @@
   "alert_try": { "message": "Prófa" },
   "alert_switchingOn": { "message": "að kveikja á" },
   "alert_switchingOff": { "message": "slökkt" },
-  "notif_copiedToClipboard": { "message": "Slóð afrituð á klemmuspjaldið." },
+  "notif_copiedToClipboard": { "message": "Slóð afrituð á klemmuspjaldið" },
   "btnLabel_sendQueryToApp": { "message": "Senda leitarfyrirspurn til GoogleGPT" },
   "btnLabel_moreApps": { "message": "Fleiri ChatGPT öpp" },
   "btnLabel_leaveReview": { "message": "Skildu eftir umsögn" },

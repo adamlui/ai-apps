@@ -86,7 +86,7 @@
   "alert_userscriptMgrNoStream": { "message": "Váš správce uživatelského skriptu nepodporuje vracející se odpovědi streamu" },
   "alert_isCurrentlyOnlyAvailBy": { "message": "je v současné době k dispozici pouze do" },
   "alert_openAIsupportSoon": { "message": "Podpora rozhraní OpenAI API bude brzy přidána" },
-  "alert_waitingFor": { "message": "Waiting For ..." },
+  "alert_waitingFor": { "message": "Waiting For " },
   "alert_response": { "message": "odpověď" },
   "alert_login": { "message": "Prosím přihlašte se" },
   "alert_thenRefreshPage": { "message": "Potom aktualizujte tuto stránku" },

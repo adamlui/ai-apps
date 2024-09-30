@@ -68,7 +68,7 @@
   "alert_thenRefreshPage": { "message": "ထို့နောက် ဤစာမျက်နှာကို လန်းဆန်းစေပါ" },
   "alert_tooManyRequests": { "message": "ChatGPT သည် တောင်းဆိုမှုများစွာဖြင့် ရေလွှမ်းနေသည်" },
   "alert_parseFailed": { "message": "တုံ့ပြန်မှု JSON ကို မအောင်မြင်ပါ" },
-  "alert_checkCloudflare": { "message": "Cloudflare လုံခြုံရေးစစ်ဆေးမှုကိုအောင် ကျေးဇူးပြု." },
+  "alert_checkCloudflare": { "message": "Cloudflare လုံခြုံရေးစစ်ဆေးမှုကိုအောင် ကျေးဇူးပြု" },
   "alert_notWorking": { "message": "အလုပ်မလုပ်ပါ" },
   "alert_ifIssuePersists": { "message": "ပြဿနာဆက်ရှိနေပါက" },
   "alert_try": { "message": "ကြိုးစားပါ" },

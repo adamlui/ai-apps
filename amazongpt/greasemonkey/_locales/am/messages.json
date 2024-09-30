@@ -21,7 +21,7 @@
   "mode_autoScroll": { "message": "ራስ-ሽያጭ" },
   "mode_debug": { "message": "Debug ሁነታ" },
   "tooltip_playAnswer": { "message": "መልስ አጫውት" },
-  "tooltip_fontSize": { "message": "የፎንት መጠን..." },
+  "tooltip_fontSize": { "message": "የፎንት መጠን" },
   "tooltip_sendReply": { "message": "መልስ ላክ" },
   "tooltip_askRandQuestion": { "message": "የዘፈቀደ ጥያቄ ይጠይቁ" },
   "tooltip_minimize": { "message": "ያሳንሱ" },

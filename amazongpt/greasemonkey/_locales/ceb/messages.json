@@ -21,7 +21,7 @@
   "mode_autoScroll": { "message": "Auto-Scroll" },
   "mode_debug": { "message": "Debug Mode" },
   "tooltip_playAnswer": { "message": "Tubag sa pagdula" },
-  "tooltip_fontSize": { "message": "Gidak-on sa font..." },
+  "tooltip_fontSize": { "message": "Gidak-on sa font" },
   "tooltip_sendReply": { "message": "Ipadala ang tubag" },
   "tooltip_askRandQuestion": { "message": "Pangutan-a ang random nga pangutana" },
   "tooltip_minimize": { "message": "I-minimize" },

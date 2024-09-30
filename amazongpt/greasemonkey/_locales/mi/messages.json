@@ -83,5 +83,5 @@
   "btnLabel_dismiss": { "message": "Te whakahawea" },
   "link_viewChanges": { "message": "Tirohia nga huringa" },
   "state_on": { "message": "runga" },
-  "state_off": { "message": "..e whakaweto ana." }
+  "state_off": { "message": "..e whakaweto ana" }
 }

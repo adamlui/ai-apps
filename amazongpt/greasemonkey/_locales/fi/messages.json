@@ -53,7 +53,7 @@
   "alert_upToDate": { "message": "Ajan tasalla" },
   "alert_isUpToDate": { "message": "Ajan tasalla" },
   "alert_isUnsupportedIn": { "message": "ei tueta kohteessa" },
-  "alert_whenUsing": { "message": "NovoMix 30 voidaan myös aloittaa 12 yksiköllä kerran vuorokaudessa päivällisen (iltaruoan) yhteydessä." },
+  "alert_whenUsing": { "message": "NovoMix 30 voidaan myös aloittaa 12 yksiköllä kerran vuorokaudessa päivällisen (iltaruoan) yhteydessä" },
   "alert_pleaseUse": { "message": "Käytä" },
   "alert_instead": { "message": "jasta" },
   "alert_unavailable": { "message": "ei käytettävissä" },

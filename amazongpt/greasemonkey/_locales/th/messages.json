@@ -50,7 +50,7 @@
   "alert_updateAvail": { "message": "มีอัพเดตให้ใช้งาน" },
   "alert_newerVer": { "message": "อัพเดทเป็น" },
   "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },
-  "alert_upToDate": { "message": "ถึงวันที่    .........................................  …………….." },
+  "alert_upToDate": { "message": "ถึงวันที่    .........................................  ……………." },
   "alert_isUpToDate": { "message": "อัพเดทแล้ว" },
   "alert_isUnsupportedIn": { "message": "ไม่ได้รับการสนับสนุนใน" },
   "alert_whenUsing": { "message": "เมื่อใช้" },

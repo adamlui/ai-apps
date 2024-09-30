@@ -43,7 +43,7 @@
   "helptip_debugMode": { "message": "Tarayıcı konsolunda ayrıntılı oturum açmayı göster" },
   "placeholder_typeSomething": { "message": "Bir şeyler yazın" },
   "prompt_updateReplyLang": { "message": "Yanıt dilini güncelleyin" },
-  "alert_langUpdated": { "message": "Dil güncelleme." },
+  "alert_langUpdated": { "message": "Dil güncelleme" },
   "alert_willReplyIn": { "message": "cevap verecek" },
   "alert_yourSysLang": { "message": "Sistem dili" },
   "alert_choosePlatform": { "message": "Bir platform seçin" },

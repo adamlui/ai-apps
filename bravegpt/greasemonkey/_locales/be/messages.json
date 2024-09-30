@@ -98,7 +98,7 @@
   "alert_try": { "message": "Паспрабаваць" },
   "alert_switchingOn": { "message": "уключэнне" },
   "alert_switchingOff": { "message": "выключэнне" },
-  "notif_copiedToClipboard": { "message": "Тэкст скапіраваны ў буфер абмену." },
+  "notif_copiedToClipboard": { "message": "Тэкст скапіраваны ў буфер абмену" },
   "btnLabel_sendQueryToApp": { "message": "Адправіць пошукавы запыт у BraveGPT" },
   "btnLabel_moreApps": { "message": "Іншыя праграмы ChatGPT" },
   "btnLabel_leaveReview": { "message": "Пакінуць водгук" },

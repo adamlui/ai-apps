@@ -81,7 +81,7 @@
   "alert_pleaseUse": { "message": "使用してください" },
   "alert_instead": { "message": "代わりに" },
   "alert_unavailable": { "message": "利用できません" },
-  "alert_isOnlyAvailFor": { "message": "利用可能期間：" },
+  "alert_isOnlyAvailFor": { "message": "利用可能期間" },
   "alert_and": { "message": "と" },
   "alert_userscriptMgrNoStream": { "message": "ユーザースクリプトマネージャーはストリーム応答の返信をサポートしていません" },
   "alert_isCurrentlyOnlyAvailBy": { "message": "現在でのみ利用可能です" },

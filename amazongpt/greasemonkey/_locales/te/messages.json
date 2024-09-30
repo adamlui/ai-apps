@@ -41,7 +41,7 @@
   "helptip_replyLanguage": { "message": "లో ప్రత్యుత్తరం ఇవ్వడానికి AmazonGPT కోసం భాష" },
   "helptip_colorScheme": { "message": "లో AmazonGPT UI భాగాలను ప్రదర్శించే పథకం" },
   "helptip_debugMode": { "message": "బ్రౌజర్ కన్సోల్ ‌ లో వివరణాత్మక లాగింగ్ చూపించు" },
-  "placeholder_typeSomething": { "message": "ఏదో టైప్ చేయండి ..." },
+  "placeholder_typeSomething": { "message": "ఏదో టైప్ చేయండి " },
   "prompt_updateReplyLang": { "message": "ప్రత్యుత్తర భాషను అప్ ‌ డేట్ చేయండి" },
   "alert_langUpdated": { "message": "భాష అప్ ‌ డేట్ చేయబడింది" },
   "alert_willReplyIn": { "message": "లో ప్రత్యుత్తరం ఇస్తారు" },

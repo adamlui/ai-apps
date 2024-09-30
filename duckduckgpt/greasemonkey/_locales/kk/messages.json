@@ -98,7 +98,7 @@
   "alert_try": { "message": "Басқа пароль" },
   "alert_switchingOn": { "message": "қосу" },
   "alert_switchingOff": { "message": "Өшіру" },
-  "notif_copiedToClipboard": { "message": "URL алмасу буферіне көшірімеленді." },
+  "notif_copiedToClipboard": { "message": "URL алмасу буферіне көшірімеленді" },
   "btnLabel_sendQueryToApp": { "message": "Іздеу сұранысын DuckDuckGPT-ге жіберу" },
   "btnLabel_moreApps": { "message": "Қосымша ChatGPT қолданбалары" },
   "btnLabel_leaveReview": { "message": "Пікіріңіз жазыныз" },

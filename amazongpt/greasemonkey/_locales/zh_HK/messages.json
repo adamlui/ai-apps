@@ -48,7 +48,7 @@
   "alert_yourSysLang": { "message": "您的系統語言" },
   "alert_choosePlatform": { "message": "選擇平臺" },
   "alert_updateAvail": { "message": "有可用更新" },
-  "alert_newerVer": { "message": "最新消息：" },
+  "alert_newerVer": { "message": "最新消息" },
   "alert_isAvail": { "message": "可用" },
   "alert_upToDate": { "message": "最新" },
   "alert_isUpToDate": { "message": "是最新的" },

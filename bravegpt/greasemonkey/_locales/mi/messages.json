@@ -110,5 +110,5 @@
   "link_shareFeedback": { "message": "Ngā kōrero" },
   "prefix_exit": { "message": "Whakawhiti" },
   "state_on": { "message": "runga" },
-  "state_off": { "message": "..e whakaweto ana." }
+  "state_off": { "message": "..e whakaweto ana" }
 }

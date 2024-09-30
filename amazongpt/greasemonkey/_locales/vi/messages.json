@@ -69,7 +69,7 @@
   "alert_tooManyRequests": { "message": "ChatGPT tràn ngập quá nhiều yêu cầu" },
   "alert_parseFailed": { "message": "Không thể phân tích cú pháp JSON phản hồi" },
   "alert_checkCloudflare": { "message": "Vui lòng vượt qua kiểm tra bảo mật Cloudflare" },
-  "alert_notWorking": { "message": "- Nó không thành đâu." },
+  "alert_notWorking": { "message": "- Nó không thành đâu" },
   "alert_ifIssuePersists": { "message": "Nếu sự cố vẫn tiếp diễn" },
   "alert_try": { "message": "Thử" },
   "alert_switchingOn": { "message": "Mở máy" },

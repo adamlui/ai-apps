@@ -110,5 +110,5 @@
   "link_shareFeedback": { "message": "უკუკავშირი" },
   "prefix_exit": { "message": "გასვლა" },
   "state_on": { "message": "" },
-  "state_off": { "message": "გამორთ." }
+  "state_off": { "message": "გამორთ" }
 }

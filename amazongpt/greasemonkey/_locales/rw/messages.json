@@ -68,7 +68,7 @@
   "alert_thenRefreshPage": { "message": "ongera usubire kuri iyi paji" },
   "alert_tooManyRequests": { "message": "Ni Na" },
   "alert_parseFailed": { "message": "Kuri JSON" },
-  "alert_checkCloudflare": { "message": "Umutekano Kugenzura..." },
+  "alert_checkCloudflare": { "message": "Umutekano Kugenzura" },
   "alert_notWorking": { "message": "oYA" },
   "alert_ifIssuePersists": { "message": "Niba ikibazo gikomeje" },
   "alert_try": { "message": "Gerageza" },

@@ -93,7 +93,7 @@
   "alert_tooManyRequests": { "message": "ChatGPT 被太多请求淹没" },
   "alert_parseFailed": { "message": "解析响应 JSON 失败" },
   "alert_checkCloudflare": { "message": "请通过 Cloudflare 安全检查" },
-  "alert_notWorking": { "message": "风扇不工作。" },
+  "alert_notWorking": { "message": "风扇不工作" },
   "alert_ifIssuePersists": { "message": "如果问题仍然存在" },
   "alert_try": { "message": "TRY" },
   "alert_switchingOn": { "message": "接通" },

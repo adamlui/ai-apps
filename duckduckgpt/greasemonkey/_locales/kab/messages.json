@@ -86,7 +86,7 @@
   "alert_userscriptMgrNoStream": { "message": "Nekkni ur d-yfka ara s-asnif n stream" },
   "alert_isCurrentlyOnlyAvailBy": { "message": "yella d-ittwafed i" },
   "alert_openAIsupportSoon": { "message": "Sustentation i OpenAI API ad tserki" },
-  "alert_waitingFor": { "message": "Araǧu n %@..." },
+  "alert_waitingFor": { "message": "Araǧu n %@" },
   "alert_response": { "message": "Tiririt" },
   "alert_login": { "message": "Spleɣ" },
   "alert_thenRefreshPage": { "message": "hakka tserkit ad ssaɣ ihi" },

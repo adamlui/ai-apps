@@ -98,7 +98,7 @@
   "alert_try": { "message": "Bandyti" },
   "alert_switchingOn": { "message": "Įjungti" },
   "alert_switchingOff": { "message": "Išjungti" },
-  "notif_copiedToClipboard": { "message": "<g x=1 id=\"13\"/> nukopijuota į iškarpinę." },
+  "notif_copiedToClipboard": { "message": "<g x=1 id=\"13\"/> nukopijuota į iškarpinę" },
   "btnLabel_sendQueryToApp": { "message": "Siųsti paieškos užklausą DuckDuckGPT" },
   "btnLabel_moreApps": { "message": "Daugiau ChatGPT programų" },
   "btnLabel_leaveReview": { "message": "Palikite atsiliepimą" },

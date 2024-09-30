@@ -86,7 +86,7 @@
   "alert_userscriptMgrNoStream": { "message": "Ihr Benutzerskript-Manager unterstützt keine Stream-Antworten" },
   "alert_isCurrentlyOnlyAvailBy": { "message": "ist derzeit nur verfügbar bis" },
   "alert_openAIsupportSoon": { "message": "Unterstützung für OpenAI-API wird in Kürze hinzugefügt" },
-  "alert_waitingFor": { "message": "Warten auf..." },
+  "alert_waitingFor": { "message": "Warten auf" },
   "alert_response": { "message": "Antwort" },
   "alert_login": { "message": "Bitte anmelden" },
   "alert_thenRefreshPage": { "message": "Dann aktualisieren Sie diese Seite" },

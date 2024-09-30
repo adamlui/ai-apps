@@ -98,7 +98,7 @@
   "alert_try": { "message": "Saiatu" },
   "alert_switchingOn": { "message": "pizten" },
   "alert_switchingOff": { "message": "itzaltzea" },
-  "notif_copiedToClipboard": { "message": "URLa arbelean kopiatuta." },
+  "notif_copiedToClipboard": { "message": "URLa arbelean kopiatuta" },
   "btnLabel_sendQueryToApp": { "message": "Bidali bilaketa-kontsulta DuckDuckGPT-ra" },
   "btnLabel_moreApps": { "message": "ChatGPT aplikazio gehiago" },
   "btnLabel_leaveReview": { "message": "Utzi Iritzia" },

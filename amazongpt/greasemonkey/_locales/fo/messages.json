@@ -21,7 +21,7 @@
   "mode_autoScroll": { "message": "Skráset teg sjálv/ur" },
   "mode_debug": { "message": "Debug mode" },
   "tooltip_playAnswer": { "message": "Spæl svar" },
-  "tooltip_fontSize": { "message": "Skriftstødd..." },
+  "tooltip_fontSize": { "message": "Skriftstødd" },
   "tooltip_sendReply": { "message": "Sende svar" },
   "tooltip_askRandQuestion": { "message": "Spurningurin er tilvildarligur" },
   "tooltip_minimize": { "message": "Minimalisera" },

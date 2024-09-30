@@ -41,7 +41,7 @@
   "helptip_replyLanguage": { "message": "שפה לתגובה של AmazonGPT בעוד" },
   "helptip_colorScheme": { "message": "ערכה להצגת רכיבי ממשק משתמש AmazonGPT ב -" },
   "helptip_debugMode": { "message": "הצג רישום מפורט בקונסולת הדפדפן" },
-  "placeholder_typeSomething": { "message": "יש להקליד משהו..." },
+  "placeholder_typeSomething": { "message": "יש להקליד משהו" },
   "prompt_updateReplyLang": { "message": "עדכון שפת התגובה" },
   "alert_langUpdated": { "message": "השפה עודכנה" },
   "alert_willReplyIn": { "message": "נשיב בעוד" },

@@ -110,5 +110,5 @@
   "link_shareFeedback": { "message": "Поделиться отзывом" },
   "prefix_exit": { "message": "Выход" },
   "state_on": { "message": "Вкл" },
-  "state_off": { "message": "Выкл." }
+  "state_off": { "message": "Выкл" }
 }

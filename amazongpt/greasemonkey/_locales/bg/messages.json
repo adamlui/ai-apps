@@ -83,5 +83,5 @@
   "btnLabel_dismiss": { "message": "Отхвърли" },
   "link_viewChanges": { "message": "Вижте Промените" },
   "state_on": { "message": "On" },
-  "state_off": { "message": "Изкл." }
+  "state_off": { "message": "Изкл" }
 }

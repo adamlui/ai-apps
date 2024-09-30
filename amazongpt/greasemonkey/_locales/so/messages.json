@@ -52,7 +52,7 @@
   "alert_isAvail": { "message": "waa la heli karaa" },
   "alert_upToDate": { "message": "Ilaa taariiqda" },
   "alert_isUpToDate": { "message": "waa up-to-date" },
-  "alert_isUnsupportedIn": { "message": "waa wax aan lagu taageerin gudaha." },
+  "alert_isUnsupportedIn": { "message": "waa wax aan lagu taageerin gudaha" },
   "alert_whenUsing": { "message": "markaad isticmaaleyso" },
   "alert_pleaseUse": { "message": "Fadlan isticmaal" },
   "alert_instead": { "message": "halkii" },

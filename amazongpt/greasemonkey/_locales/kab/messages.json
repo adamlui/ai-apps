@@ -62,7 +62,7 @@
   "alert_userscriptMgrNoStream": { "message": "Amseqdac n iseqdacen-inek ur yeṭṭif ara tiririyin n tuffɣa" },
   "alert_isCurrentlyOnlyAvailBy": { "message": "isebtaren i sɛan azday ɣer \"Ala\"" },
   "alert_openAIsupportSoon": { "message": "Affinez votre recherche pour OpenAI API will be added soon" },
-  "alert_waitingFor": { "message": "Araǧu n %@..." },
+  "alert_waitingFor": { "message": "Araǧu n %@" },
   "alert_response": { "message": "Tiririt" },
   "alert_login": { "message": "Ttxil-k · m sekcem" },
   "alert_thenRefreshPage": { "message": "snifel asebter-agi" },

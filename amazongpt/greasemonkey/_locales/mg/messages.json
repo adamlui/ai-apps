@@ -65,7 +65,7 @@
   "alert_waitingFor": { "message": "Miandry" },
   "alert_response": { "message": "valiny" },
   "alert_login": { "message": "Midira azafady" },
-  "alert_thenRefreshPage": { "message": "izany rehetra izany indrindra no ato amin'ity pejy ity." },
+  "alert_thenRefreshPage": { "message": "izany rehetra izany indrindra no ato amin'ity pejy ity" },
   "alert_tooManyRequests": { "message": "Tondraky ny fangatahana maro loatra ny ChatGPT" },
   "alert_parseFailed": { "message": "Tsy afaka nizarazara ny valinteny JSON" },
   "alert_checkCloudflare": { "message": "Azafady azafady Cloudflare fanamarinana fiarovana" },

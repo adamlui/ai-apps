@@ -51,7 +51,7 @@
   "alert_newerVer": { "message": "Ενημέρωση" },
   "alert_isAvail": { "message": "Μη διαθέσιμο" },
   "alert_upToDate": { "message": "Ενημερωμένο" },
-  "alert_isUpToDate": { "message": " είναι ενήμερο." },
+  "alert_isUpToDate": { "message": " είναι ενήμερο" },
   "alert_isUnsupportedIn": { "message": "δεν υποστηρίζεται σε" },
   "alert_whenUsing": { "message": "30 U" },
   "alert_pleaseUse": { "message": "Παρακαλούμε χρησιμοποιήστε" },

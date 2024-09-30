@@ -71,7 +71,7 @@
   "alert_checkCloudflare": { "message": "කරුණාකර Cloudflare ආරක්ෂක පරීක්ෂාව සමත් වන්න" },
   "alert_notWorking": { "message": "ක් ‍ රියා නොකරයි" },
   "alert_ifIssuePersists": { "message": "ගැටළුව දිගටම පවතින්නේ නම්" },
-  "alert_try": { "message": "උත්සහ කරන්න." },
+  "alert_try": { "message": "උත්සහ කරන්න" },
   "alert_switchingOn": { "message": "ක් ‍ රියාත්මක වෙමින්" },
   "alert_switchingOff": { "message": "ක් ‍ රියා විරහිත කරමින්" },
   "notif_copiedToClipboard": { "message": "@ info" },
