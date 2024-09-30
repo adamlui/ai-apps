@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.29.11
+// @version             2024.9.30
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -809,7 +809,7 @@
     // Define SYNC functions
 
     function syncStorageToUI() {
-        navToggle.update() // based on Toggle Visibility
+        navToggle.update() // based on Toggle Visibility + config.infinityMode
         menu.refresh() // update toggle symbols/suffixes + prompt setting states
     }
 
@@ -833,15 +833,9 @@
     await chatgpt.sidebar.isLoaded()
     const ui = { firstLink: chatgpt.getNewChatLink() }
 
-    // Add listener to auto-disable Infinity Mode
-    if (document.hidden !== undefined) // ...if Page Visibility API supported
-        document.onvisibilitychange = () => {
-            if (config.infinityMode) {                
-                if (document.getElementById('infinity-toggle-label')) // ensure toggle state is accurate
-                    document.getElementById('infinity-toggle-label').click()
-                else infinity.deactivate()
-                menu.refresh()
-        }}
+    // Add LISTENER to auto-disable Infinity Mode
+    if (document.hidden != undefined) // ...if Page Visibility API supported
+        document.onvisibilitychange = () => { if (config.infinityMode) { infinity.deactivate() ; syncStorageToUI() }}
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 20240724 // datestamp of last edit for this file's `tweaksStyle`

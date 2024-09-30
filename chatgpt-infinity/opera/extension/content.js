@@ -226,13 +226,8 @@
     const ui = { firstLink: chatgpt.getNewChatLink() }
 
     // Add LISTENER to auto-disable Infinity Mode
-    if (document.hidden !== undefined) // ...if Page Visibility API supported
-        document.onvisibilitychange = () => {
-            if (config.infinityMode) {                
-                if (document.getElementById('infinity-toggle-label')) // ensure toggle state is accurate
-                    document.getElementById('infinity-toggle-label').click()
-                else infinity.deactivate()
-        }}
+    if (document.hidden != undefined) // ...if Page Visibility API supported
+        document.onvisibilitychange = () => { if (config.infinityMode) { infinity.deactivate() ; syncStorageToUI() }}
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 20240724 // datestamp of last edit for this file's `tweaksStyle`
