@@ -1,13 +1,13 @@
-name: Sync LICENSE.md from chrome/* to <platform>/*, then chrome/extension/* to (edge|opera)/extension/*, then chrome/extension/_locales/* to <firefox/extension|greasemonkey>/_locales/*, then ./* to adamlui/chatgpt-apps/chatgpt-infinity/*, then greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*
+name: Sync /chatgpt-infinity/chrome/extension/ to /chatgpt-infinity/(edge|opera)/extension/, then /chatgpt-infinity/chrome/extension/_locales/ to /chatgpt-infinity/<firefox/extension|greasemonkey>/_locales/, then /chatgpt-infinity/ to adamlui/chatgpt-infinity/, then /chatgpt-infinity/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-infinity/
 
 on:
   push:
     branches: [main]
-    paths: [chrome/**]
+    paths: [chatgpt-infinity/chrome/**]
 
 jobs:
   build:
-    if: (github.repository == 'adamlui/chatgpt-infinity') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
+    if: (github.repository == 'adamlui/chatgpt-apps') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
     runs-on: ubuntu-latest
     env:
       GIT_AUTHOR_NAME: ${{ github.event.commits[0].author.name }}
@@ -17,20 +17,19 @@ jobs:
 
     steps:
 
-      - name: Checkout adamlui/chatgpt-infinity
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/chatgpt-infinity
-          path: adamlui/chatgpt-infinity
-          fetch-depth: 2
-
       - name: Checkout adamlui/chatgpt-apps
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
+
+      - name: Checkout adamlui/chatgpt-infinity
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-infinity
+          path: adamlui/chatgpt-infinity
 
       - name: Checkout adamlui/userscripts
         uses: actions/checkout@v4
@@ -39,62 +38,37 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync LICENSE.md from chrome/* to <platform>/*
-        run: |
-          cd ${{ github.workspace }}/adamlui/chatgpt-infinity
-          platforms=($(find . -type d -name "docs" | # paths to docs/
-            awk -F'/' '{print $(NF-1)}' | # filter to parents
-            grep -v "^chrome$")) # exclude chrome
-          echo "Platforms: ${platforms[@]}"
-          languages=($(ls docs/*/LICENSE.md | # paths to LICENSEs
-            awk -F'/' '{print $(NF-1)}') # filter to parents
-            "en") # include English
-          echo -e "Languages: ${languages[@]}\n"
-          for lang in "${languages[@]}"; do
-            chrome_license=./chrome$([[ "$lang" != "en" ]] && echo "/docs/$lang/" || echo "/")LICENSE.md
-            chrome_license_content=$(git show HEAD:"$chrome_license")
-            chrome_license_modified=$(git log -1 --format="%ct" -- "$chrome_license")
-            for platform in "${platforms[@]}"; do
-              platform_license=./$platform/$([[ "$lang" != "en" ]] && echo "docs/$lang/" || echo "")LICENSE.md
-              platform_license_content=$(git show HEAD:"$platform_license")
-              platform_license_modified=$(git log -1 --format="%ct" -- "$platform_license")
-              if [[ $chrome_license_modified -gt $platform_license_modified ]] ; then
-                if [[ "$chrome_license_content" != "$platform_license_content" ]] ; then
-                  cp -f "$chrome_license" "$platform_license"
-                  echo "Copied $chrome_license to $platform_license"
-          fi ; fi ; done; done
-
-      - name: Sync chrome/extension/* to (edge|opera)/extension/*
+      - name: Sync /chatgpt-infinity/chrome/extension/ to /chatgpt-infinity/(edge|opera)/extension/
         run: |
           for browser in edge opera
           do
             rsync -avhr --delete \
-              "${{ github.workspace }}/adamlui/chatgpt-infinity/chrome/extension/" \
-              "${{ github.workspace }}/adamlui/chatgpt-infinity/$browser/extension"
+              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/chrome/extension/" \
+              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/$browser/extension/"
           done
 
-      - name: Sync chrome/extension/_locales/* to firefox/extension/_locales/*
+      - name: Sync /chatgpt-infinity/chrome/extension/_locales/ to /chatgpt-infinity/firefox/extension/_locales/
         run: |
           rsync -avhr --delete \
-            "${{ github.workspace }}/adamlui/chatgpt-infinity/chrome/extension/_locales/" \
-            "${{ github.workspace }}/adamlui/chatgpt-infinity/firefox/extension/_locales"
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/chrome/extension/_locales/" \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/firefox/extension/_locales"
 
-      - name: Sync chrome/extension/_locales/* to greasemonkey/_locales/*
+      - name: Sync /chatgpt-infinity/chrome/extension/_locales/ to /chatgpt-infinity/greasemonkey/_locales/
         run: |
           rsync -avhr --delete \
-            "${{ github.workspace }}/adamlui/chatgpt-infinity/chrome/extension/_locales/" \
-            "${{ github.workspace }}/adamlui/chatgpt-infinity/greasemonkey/_locales"
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/chrome/extension/_locales/" \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/_locales"
 
-      - name: Sync ./* to adamlui/chatgpt-apps/chatgpt-infinity/*
+      - name: Sync /chatgpt-infinity/ to adamlui/chatgpt-infinity/
         run: |
-          rsync -avhr --delete --exclude={'.*','eslint*','package*json'} \
-            ${{ github.workspace }}/adamlui/chatgpt-infinity/ \
-            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/
+          rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/ \
+            ${{ github.workspace }}/adamlui/chatgpt-infinity/
 
-      - name: Sync greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*
+      - name: Sync /chatgpt-infinity/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-infinity/
         run: |
           rsync -avhr --delete \
-            ${{ github.workspace }}/adamlui/chatgpt-infinity/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/ \
             ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-infinity/
 
       - name: Escape backticks in commit msg
@@ -105,23 +79,26 @@ jobs:
           echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Push changes to adamlui/chatgpt-infinity
-        run: |
-          cd ${{ github.workspace }}/adamlui/chatgpt-infinity
-          git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`chrome\`]" || true
-          git push
-
       - name: Push changes to adamlui/chatgpt-apps
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
+          git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-infinity/chrome\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`chatgpt-infinity/chrome\`]" || true
+          git push
+
+      - name: Push changes to adamlui/chatgpt-infinity
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-infinity
+          git pull # again to sync w/ concurrent workflow updates
+          git add .
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-infinity/chrome\`]" || true
           git push
 
       - name: Push changes to adamlui/userscripts
         run: |
           cd ${{ github.workspace }}/adamlui/userscripts
+          git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-infinity/chrome\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-infinity/chrome\`]" || true
           git push
