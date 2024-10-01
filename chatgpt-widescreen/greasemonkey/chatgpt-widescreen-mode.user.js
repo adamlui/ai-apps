@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1
+// @version             2024.10.1.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -429,7 +429,7 @@
                           menuLabel = `${ app.settings[key].symbol || menu.state.symbols[+settingIsEnabled] } `
                                     + app.settings[key].label + menu.state.separator + menu.state.words[+settingIsEnabled]
                     menu.ids.push(GM_registerMenuCommand(menuLabel, () => {
-                        settings.save(key, !config[key]) ; sync.storageToUI()
+                        settings.save(key, !config[key]) ; sync.configToUI()
                         notify(`${app.settings[key].label}: ${menu.state.words[+(key.includes('Disabled') ^ config[key])]}`)
                     }))
                 }
@@ -946,7 +946,7 @@
 
     const sync = {
 
-        storageToUI() { // from toolbar menu toggles
+        configToUI() { // from toolbar menu toggles
             sync.fullerWin() // sync FW
             update.style.tweaks() // sync TCB/NCB/HH/HF
             update.style.chatbar() // sync WCB
