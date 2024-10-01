@@ -154,6 +154,7 @@
     const infinity = {
 
         async activate() {
+            settings.save('infinityMode', true)
             const activatePrompt = 'Generate a single random question'
                 + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                 + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
@@ -180,7 +181,6 @@
             })
             if (config.infinityMode && !infinity.isActive) // double-check in case de-activated before scheduled
                 infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
-            settings.save('infinityMode', true)
         },
 
         async continue() {
@@ -192,12 +192,12 @@
         },
 
         async deactivate() {
+            settings.save('infinityMode', false)
             if (!infinity.muted) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: ${
                                            chrome.i18n.getMessage('state_off').toUpperCase()}`)
             else infinity.muted = false
             chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener
-            settings.save('infinityMode', false)
         },
 
         async restart(options = { target: 'new' }) {

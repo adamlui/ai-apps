@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.8
+// @version             2024.10.1.9
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -773,6 +773,7 @@
     const infinity = {
 
         async activate() {
+            settings.save('infinityMode', true)
             const activatePrompt = 'Generate a single random question'
                 + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                 + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
@@ -796,7 +797,6 @@
             })
             if (config.infinityMode && !infinity.isActive) // double-check in case de-activated before scheduled
                 infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
-            settings.save('infinityMode', true)
         },
 
         async continue() {
@@ -808,10 +808,10 @@
         },
 
         deactivate() {
+            settings.save('infinityMode', false)
             chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener
             notify(`${app.msgs.menuLabel_infinityMode}: ${app.msgs.state_off.toUpperCase()}`)
-            settings.save('infinityMode', false)
         },
 
         async restart(options = { target: 'new' }) {
