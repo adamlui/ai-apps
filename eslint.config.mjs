@@ -25,6 +25,6 @@ export default [
             }
         }
     },
-    { files: ['**/*.mjs', '**/lib/*.js'], languageOptions: { sourceType: 'module' }},
+    { files: ['**/*.mjs', '**/components/*.js', '**/lib/*.js'], languageOptions: { sourceType: 'module' }},
     { files: ['**/*.json'], ...json.configs['recommended'] }
 ];
