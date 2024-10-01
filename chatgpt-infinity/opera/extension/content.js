@@ -166,7 +166,6 @@
             if (!new URL(location).pathname.startsWith('/g/')) // not on GPT page
                 try { chatgpt.startNewChat() } catch (err) { return } // start new chat
             await new Promise(resolve => setTimeout(resolve, 500)) // sleep 500ms
-            await settings.load('replyLanguage', 'replyTopic', 'replyInterval')
             chatgpt.send(activatePrompt)
             await new Promise(resolve => setTimeout(resolve, 3000)) // sleep 3s
             if (!document.querySelector('[data-message-author-role]') // new chat reset due to OpenAI bug
@@ -282,7 +281,6 @@
     }
 
     // Auto-start if enabled
-    await settings.load('autoStart')
     if (config.autoStart) { infinity.activate() ; syncStorageToUI() }
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
