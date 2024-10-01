@@ -269,7 +269,7 @@
         navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
     }
 
-    await settings.load(['extensionDisabled']) ; if (!config.extensionDisabled) navToggle.insert()
+    navToggle.insert()
 
     // Add LISTENER to toggle switch/label/config/menu
     navToggleDiv.onclick = () => {
