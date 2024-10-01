@@ -181,6 +181,7 @@
             })
             if (config.infinityMode && !infinity.isActive) // double-check in case de-activated before scheduled
                 infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
+            settings.save('infinityMode', true)
         },
 
         async continue() {
@@ -197,7 +198,7 @@
             else infinity.muted = false
             chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener
-            settings.save('infinityMode', false) // in case toggled by PV listener
+            settings.save('infinityMode', false)
         },
 
         async restart(options = { target: 'new' }) {
@@ -287,10 +288,7 @@
     if (config.autoStart) {
         const navToggleInput = document.getElementById('infinity-toggle-input')
         if (navToggleInput) navToggleInput.parentNode.click()
-        else { // activate via infinityMode funcs obj
-            infinity.activate()
-            settings.save('infinityMode', true) // so popup.js updates toggle
-        }
+        else infinity.activate()
     }
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes

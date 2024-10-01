@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1
+// @version             2024.10.1.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -792,6 +792,7 @@
             })
             if (config.infinityMode && !infinity.isActive) // double-check in case de-activated before scheduled
                 infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
+            config.infinityMode = true
         },
 
         async continue() {
@@ -806,7 +807,7 @@
             chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener
             notify(`${app.msgs.menuLabel_infinityMode}: ${app.msgs.state_off.toUpperCase()}`)
-            config.infinityMode = false // in case toggled by PV listener
+            config.infinityMode = false
         },
 
         async restart(options = { target: 'new' }) {
@@ -908,8 +909,7 @@
     if (config.autoStart) {
         const navToggleInput = document.getElementById('infinity-toggle-input')
         if (navToggleInput) navToggleInput.parentNode.click()
-        else { // activate via infinityMode
-            infinity.activate() ; config.infinityMode = true ; menu.refresh() }
+        else { infinity.activate() ; menu.refresh() }
     }
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
