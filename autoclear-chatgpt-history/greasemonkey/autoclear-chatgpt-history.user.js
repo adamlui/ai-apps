@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.9
+// @version             2024.9.30.10
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -617,7 +617,7 @@
 
     // Define UI functions
 
-    const sideToggle = {
+    const navToggle = {
         insert() {
 
             // Insert toggle
@@ -751,7 +751,7 @@
     navToggleDiv.style.margin = '2px 0' // add v-margins
     navToggleDiv.style.userSelect = 'none' // prevent highlighting
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
-    sideToggle.update() // create children
+    navToggle.update() // create children
 
     if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
         const firstIcon = ui.firstLink.querySelector('div:first-child'),
@@ -760,13 +760,13 @@
         navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
     }
 
-    sideToggle.insert()
+    navToggle.insert()
 
     // Add LISTENER to toggle switch/label/config/menu + auto-clear
     navToggleDiv.onclick = () => {
         const toggleInput = document.getElementById('autoclear-toggle-input')
         toggleInput.checked = !toggleInput.checked ; config.autoclear = toggleInput.checked
-        sideToggle.update() ; menu.refresh()
+        navToggle.update() ; menu.refresh()
         if (config.autoclear) {
             setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
             notify(`${app.msgs.mode_autoClear}: ${menu.state.words[1]}`)
@@ -780,7 +780,7 @@
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
     new MutationObserver(mutations => { mutations.forEach(mutation => {
-        if (mutation.type == 'childList' && mutation.addedNodes.length) sideToggle.insert() })}
+        if (mutation.type == 'childList' && mutation.addedNodes.length) navToggle.insert() })}
     ).observe(document.documentElement, { childList: true, subtree: true })
 
     // Disable distracting SIDEBAR CLICK-ZOOM effect

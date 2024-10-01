@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.9
+// @version             2024.9.30.10
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -569,7 +569,7 @@
 
     // Define UI functions
 
-    const sideToggle = {
+    const navToggle = {
         insert() {
 
             // Insert toggle
@@ -703,7 +703,7 @@
     navToggleDiv.style.margin = '2px 0' // add v-margins
     navToggleDiv.style.userSelect = 'none' // prevent highlighting
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
-    sideToggle.update() // create children
+    navToggle.update() // create children
     if (ui.firstLink) { // borrow/assign CLASSES from sidebar div
         const firstIcon = ui.firstLink.querySelector('div:first-child'),
               firstLabel = ui.firstLink.querySelector('div:nth-child(2)')
@@ -711,13 +711,13 @@
         navToggleDiv.querySelector('img')?.classList.add(...(firstIcon?.classList || []))
     }
 
-    sideToggle.insert()
+    navToggle.insert()
 
     // Add LISTENER to toggle switch/label/config/menu
     navToggleDiv.onclick = () => {
         const toggleInput = document.getElementById('auto-talk-toggle-input')
         toggleInput.checked = !toggleInput.checked ; config.autoTalkDisabled = !toggleInput.checked
-        sideToggle.update() ; menu.refresh()
+        navToggle.update() ; menu.refresh()
         notify(`${app.msgs.mode_autoTalk}: ${menu.state.words[+!config.autoTalkDisabled]}`)
         settings.save('autoTalkDisabled', config.autoTalkDisabled)
     }
@@ -738,7 +738,7 @@
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
     new MutationObserver(mutations => { mutations.forEach(mutation => {
-        if (mutation.type == 'childList' && mutation.addedNodes.length) sideToggle.insert() })}
+        if (mutation.type == 'childList' && mutation.addedNodes.length) navToggle.insert() })}
     ).observe(document.documentElement, { childList: true, subtree: true })
 
     // Disable distracting SIDEBAR CLICK-ZOOM effect
