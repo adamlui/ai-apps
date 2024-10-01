@@ -154,7 +154,7 @@
     const infinity = {
 
         async activate() {
-            settings.save('infinityMode', true)
+            settings.save('infinityMode', true) ; syncStorageToUI()
             const activatePrompt = 'Generate a single random question'
                 + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                 + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
@@ -190,8 +190,8 @@
                 infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
-        async deactivate() {
-            settings.save('infinityMode', false)
+        deactivate() {
+            settings.save('infinityMode', false) ; syncStorageToUI()
             if (!infinity.muted) notify(`${chrome.i18n.getMessage('menuLabel_infinityMode')}: ${
                                            chrome.i18n.getMessage('state_off').toUpperCase()}`)
             else infinity.muted = false
@@ -229,7 +229,7 @@
 
     // Add LISTENER to auto-disable Infinity Mode
     if (document.hidden != undefined) // ...if Page Visibility API supported
-        document.onvisibilitychange = () => { if (config.infinityMode) { infinity.deactivate() ; syncStorageToUI() }}
+        document.onvisibilitychange = () => { if (config.infinityMode) infinity.deactivate() }
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 20240930 // datestamp of last edit for this file's `tweaksStyle`
@@ -277,11 +277,11 @@
         const toggleInput = document.getElementById('infinity-toggle-input')
         toggleInput.checked = !toggleInput.checked
         settings.save('infinityMode', toggleInput.checked)
-        syncStorageToUI() ; infinity.toggle()
+        infinity.toggle()
     }
 
     // Auto-start if enabled
-    if (config.autoStart) { infinity.activate() ; syncStorageToUI() }
+    if (config.autoStart) infinity.activate()
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
     new MutationObserver(mutations => mutations.forEach(mutation => {

@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.10
+// @version             2024.10.1.11
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -773,7 +773,7 @@
     const infinity = {
 
         async activate() {
-            settings.save('infinityMode', true)
+            settings.save('infinityMode', true) ; syncConfigToUI()
             const activatePrompt = 'Generate a single random question'
                 + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                 + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
@@ -808,7 +808,7 @@
         },
 
         deactivate() {
-            settings.save('infinityMode', false)
+            settings.save('infinityMode', false) ; syncConfigToUI()
             chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
             notify(`${app.msgs.menuLabel_infinityMode}: ${app.msgs.state_off.toUpperCase()}`)
         },
@@ -856,7 +856,7 @@
 
     // Add LISTENER to auto-disable Infinity Mode
     if (document.hidden != undefined) // ...if Page Visibility API supported
-        document.onvisibilitychange = () => { if (config.infinityMode) { infinity.deactivate() ; syncConfigToUI() }}
+        document.onvisibilitychange = () => { if (config.infinityMode) infinity.deactivate() }
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 20240930 // datestamp of last edit for this file's `tweaksStyle`
@@ -905,11 +905,11 @@
         const toggleInput = document.getElementById('infinity-toggle-input')
         toggleInput.checked = !toggleInput.checked
         settings.save('infinityMode', toggleInput.checked)
-        syncConfigToUI() ; infinity.toggle()
+        infinity.toggle()
     }
 
     // Auto-start if enabled
-    if (config.autoStart) { infinity.activate() ; syncConfigToUI() }
+    if (config.autoStart) infinity.activate()
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
     new MutationObserver(mutations => mutations.forEach(mutation => {
