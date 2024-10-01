@@ -162,12 +162,12 @@
                                 [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
                                 : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                             settings.save('replyLanguage', replyLanguage || config.userLanguage)
-                            window.close() // popup
                             siteAlert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!',
                                 chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyIn') + ' '
                                 + ( replyLanguage || chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
                             if (config.infinityMode) // reboot active session
                                 sendMsgToActiveTab({ action: 'infinity.restart', options: { target: 'new' }})
+                            close() // popup
                             break
                         }
                     }
@@ -177,7 +177,6 @@
                     if (replyTopic !== null) { // user didn't cancel
                         const str_replyTopic = replyTopic.toString()
                         settings.save('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
-                        window.close() // popup
                         siteAlert(chrome.i18n.getMessage('alert_replyTopicUpdated') + '!',
                             chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willAnswer') + ' '
                                 + ( !replyTopic || re_all.test(str_replyTopic) ? chrome.i18n.getMessage('alert_onAllTopics')
@@ -185,6 +184,7 @@
                                                                                 + ' ' + str_replyTopic ) + '!')
                         if (config.infinityMode) // reboot active session
                             sendMsgToActiveTab({ action: 'infinity.restart', options: { target: 'new' }})
+                        close() // popup
                     }
                 } else if (key == 'replyInterval') {
                     while (true) {
@@ -192,12 +192,12 @@
                         if (replyInterval === null) break // user cancelled so do nothing
                         else if (!isNaN(parseInt(replyInterval, 10)) && parseInt(replyInterval, 10) > 4) { // valid int set
                             settings.save('replyInterval', parseInt(replyInterval, 10))
-                            window.close() // popup
                             siteAlert(chrome.i18n.getMessage('alert_replyIntUpdated') + '!',
                                 chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyEvery')
                                 + ' ' + replyInterval + ' ' + chrome.i18n.getMessage('unit_seconds') + '.')
                             if (config.infinityMode) // reboot active session
                                 sendMsgToActiveTab({ action: 'infinity.restart', options: { target: 'self' }})
+                            close() // popup
                             break
                         }
                     }
