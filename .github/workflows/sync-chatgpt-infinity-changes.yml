@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - chatgpt-infinity/*
+      - chatgpt-infinity/data/**
       - chatgpt-infinity/docs/**
       - chatgpt-infinity/media/**
 
