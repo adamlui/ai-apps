@@ -13,6 +13,10 @@
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/sites.json`)).json())
 
+    // Import ICONS
+    const { icons } = await import(chrome.runtime.getURL('components/icons.js'))
+    icons.appProps = app // for src's using urls.mediaHost
+
     // Init SETTINGS props
     Object.assign(app, { settings: {
         fullerWindows: { type: 'toggle',
@@ -154,9 +158,7 @@
     const supportSpan = dom.create.elem('span', {
         title: chrome.i18n.getMessage('btnLabel_getSupport'),
         class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px' })
-    const supportIcon = dom.create.elem('img', {
-        width: 15, height: 13, style: 'margin-bottom: 0.04rem',
-        src: `${app.urls.mediaHost}/images/icons/question-mark/icon16.png?4adfbbd` })
+    const supportIcon = icons.create({ name: 'questionMark', width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
     supportSpan.onclick = () => { chrome.tabs.create({ url: app.urls.support }) ; close() }
     supportSpan.append(supportIcon) ; footer.append(supportSpan)
 
@@ -164,10 +166,8 @@
     const moreAppsSpan = dom.create.elem('span', {
         title:  chrome.i18n.getMessage('btnLabel_moreApps'),
         class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
-    const moreAppsIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' })
-    const moreAppsIconPath = dom.create.svgElem('path', {
-        d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })   
+    const moreAppsIcon = icons.create({ name: 'plus', size: 16 })
     moreAppsSpan.onclick = () => { chrome.tabs.create({ url: app.urls.relatedApps }) ; close() }
-    moreAppsIcon.append(moreAppsIconPath) ; moreAppsSpan.append(moreAppsIcon) ; footer.append(moreAppsSpan)
+    moreAppsSpan.append(moreAppsIcon) ; footer.append(moreAppsSpan)
 
 })()
