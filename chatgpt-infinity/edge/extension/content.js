@@ -290,9 +290,10 @@
     }
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
-    new MutationObserver(mutations => { mutations.forEach(mutation => {
-        if (mutation.type == 'childList' && mutation.addedNodes.length) navToggle.insert() })}
-    ).observe(document.documentElement, { childList: true, subtree: true })
+    new MutationObserver(mutations => mutations.forEach(mutation => {
+        if (mutation.type == 'childList' && mutation.addedNodes.length && !config.toggleHidden)
+            navToggle.insert()
+    })).observe(document.documentElement, { childList: true, subtree: true })
 
     // Disable distracting SIDEBAR CLICK-ZOOM effect
     if (!document.querySelector('[sidebar-click-zoom-observed]')) {

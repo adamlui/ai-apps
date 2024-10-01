@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.1
+// @version             2024.10.1.2
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -742,9 +742,10 @@
     autoPlayObserver.observe(document.querySelector('main'), { childList: true, subtree: true })
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
-    new MutationObserver(mutations => { mutations.forEach(mutation => {
-        if (mutation.type == 'childList' && mutation.addedNodes.length) navToggle.insert() })}
-    ).observe(document.documentElement, { childList: true, subtree: true })
+    new MutationObserver(mutations => mutations.forEach(mutation => {
+        if (mutation.type == 'childList' && mutation.addedNodes.length && !config.toggleHidden)
+            navToggle.insert()
+    })).observe(document.documentElement, { childList: true, subtree: true })
 
     // Disable distracting SIDEBAR CLICK-ZOOM effect
     if (!document.querySelector('[sidebar-click-zoom-observed]')) {
