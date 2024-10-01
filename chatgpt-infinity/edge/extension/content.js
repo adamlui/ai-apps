@@ -218,7 +218,7 @@
 
     async function syncStorageToUI() { // from popup.js toggle + service worker actve-tab listeners
         await settings.load(settings.availKeys)
-        navToggle.insert() ; navToggle.update() // based on config.toggleHidden + config.infinityMode
+        navToggle.update() // based on config.toggleHidden + config.infinityMode
     }
 
     // Init BROWSER/UI props
