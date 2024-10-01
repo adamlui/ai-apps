@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@adamlui/scss-to-css": "^1.10.8",
+    "@adamlui/scss-to-css": "^1.10.9",
     "eslint": "^9.11.1",
     "eslint-plugin-json": "^4.0.1",
     "husky": "^9.1.6"
