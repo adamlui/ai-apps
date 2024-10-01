@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.6
+// @version             2024.9.30.7
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -680,8 +680,6 @@
                                        : 'background-color: #c7ff006b !important ; box-shadow: 2px 1px 30px #97ff006b !important' ) + '}'
           + '.modal-buttons { margin-left: -13px !important }'
           + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
-          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
-              + 'transform: none !important }' // disable distracting click zoom effect
         )
     }
 
@@ -737,5 +735,14 @@
                 }, 50)
     }})}})
     autoPlayObserver.observe(document.querySelector('main'), { childList: true, subtree: true })
+
+    // Disable distracting SIDEBAR CLICK-ZOOM effect
+    if (!document.querySelector('[sidebar-click-zoom-observed]')) {
+        new MutationObserver(mutations => mutations.forEach(({ target }) => {
+            if (!target.id.endsWith('-knob-span') && target.style.transform != 'none')
+                target.style.transform = 'none'
+        })).observe(document.body, { attributes: true, subtree: true, attributeFilter: [ 'style' ]})      
+        document.documentElement.setAttribute('sidebar-click-zoom-observed', true)
+    }
 
 })()

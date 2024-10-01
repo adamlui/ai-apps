@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.7
+// @version             2024.9.30.8
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -876,8 +876,6 @@
                                        : 'background-color: #c7ff006b !important ; box-shadow: 2px 1px 30px #97ff006b !important' ) + '}'
           + '.modal-buttons { margin-left: -13px !important }'
           + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
-          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
-              + 'transform: none !important }' // disable distracting click zoom effect
         )
     }
 
@@ -911,7 +909,16 @@
         const navToggleInput = document.getElementById('infinity-toggle-input')
         if (navToggleInput) navToggleInput.parentNode.click()
         else { // activate via infinityMode
-            infinity.activate() ; config.infinityMode = true ; menu.refresh()
-    }}
+            infinity.activate() ; config.infinityMode = true ; menu.refresh() }
+    }
+
+    // Disable distracting SIDEBAR CLICK-ZOOM effect
+    if (!document.querySelector('[sidebar-click-zoom-observed]')) {
+        new MutationObserver(mutations => mutations.forEach(({ target }) => {
+            if (!target.id.endsWith('-knob-span') && target.style.transform != 'none')
+                target.style.transform = 'none'
+        })).observe(document.body, { attributes: true, subtree: true, attributeFilter: [ 'style' ]})      
+        document.documentElement.setAttribute('sidebar-click-zoom-observed', true)
+    }
 
 })()
