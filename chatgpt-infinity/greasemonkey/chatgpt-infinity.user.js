@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.3
+// @version             2024.10.1.4
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -909,7 +909,7 @@
     if (config.autoStart) {
         const navToggleInput = document.getElementById('infinity-toggle-input')
         if (navToggleInput) navToggleInput.parentNode.click()
-        else { infinity.activate() ; menu.refresh() }
+        else { infinity.activate() ; syncConfigToUI() }
     }
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
