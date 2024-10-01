@@ -28,7 +28,7 @@
     // Init ENV info
     const env = { browser: { isMobile: chatgpt.browser.isMobile() }}
 
-    // Init SETTINGS
+    // Init CONFIG
     settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
     await settings.load(settings.availKeys)
     if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
@@ -83,24 +83,21 @@
                 chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
         },
 
-        async update() {
-
-            // Hide toggle if set to hidden or extension disabled
-            await settings.load(['toggleHidden', 'extensionDisabled'])
-            if (config.toggleHidden || config.extensionDisabled) navToggleDiv.style.display = 'none'
+        update() {
+            if (config.extensionDisabled || config.toggleHidden) navToggleDiv.style.display = 'none'
             else {
     
                 // Create/size/position navicon
                 const navicon = document.getElementById('infinity-toggle-navicon')
-                             || dom.create.elem('img', { id: 'infinity-toggle-navicon' })
+                            || dom.create.elem('img', { id: 'infinity-toggle-navicon' })
                 navicon.style.width = navicon.style.height = '1.25rem'
                 navicon.style.marginLeft = '2px' ; navicon.style.marginRight = '4px'
-    
+
                 // Create/ID/disable/hide/update checkbox
                 const toggleInput = document.getElementById('infinity-toggle-input')
-                                 || dom.create.elem('input', { id: 'infinity-toggle-input', type: 'checkbox', disabled: true })
+                                || dom.create.elem('input', { id: 'infinity-toggle-input', type: 'checkbox', disabled: true })
                 toggleInput.style.display = 'none' ; toggleInput.checked = config.infinityMode
-    
+
                 // Create/ID/stylize switch
                 const switchSpan = document.getElementById('infinity-switch-span')
                                 || dom.create.elem('span', { id: 'infinity-switch-span' })
@@ -111,10 +108,10 @@
                     width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
                 }
                 Object.assign(switchSpan.style, switchStyles)
-    
+
                 // Create/stylize knob, append to switch
                 const knobSpan = document.getElementById('infinity-toggle-knob-span')
-                              || dom.create.elem('span', { id: 'infinity-toggle-knob-span' })
+                                || dom.create.elem('span', { id: 'infinity-toggle-knob-span' })
                 const knobStyles = {
                     position: 'absolute', left: '3px', bottom: '1.25px',
                     width: '12px', height: '12px', content: '""', borderRadius: '28px',
@@ -123,10 +120,10 @@
                     backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
                 }
                 Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
-    
+
                 // Create/stylize/fill label
                 const toggleLabel = document.getElementById('infinity-toggle-label')
-                                 || dom.create.elem('label', { id: 'infinity-toggle-label' })
+                                    || dom.create.elem('label', { id: 'infinity-toggle-label' })
                 if (!ui.firstLink) { // add font size/weight since no ui.firstLink to borrow from
                     toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
                 toggleLabel.style.marginLeft = `-${ !ui.firstLink ? 23 : 41 }px` // left-shift to navicon
@@ -138,9 +135,9 @@
                                         + chrome.i18n.getMessage('state_' + ( toggleInput.checked ? 'enabled' : 'disabled' ))
                 // Append elements
                 for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
-    
+
                 // Update visual state
-                navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
+                navToggleDiv.style.display = 'flex'
                 setTimeout(() => {
                     switchSpan.style.backgroundColor = toggleInput.checked ? '#ad68ff' : '#ccc'
                     switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
@@ -222,7 +219,7 @@
 
     async function syncStorageToUI() { // from popup.js toggle + service worker actve-tab listeners
         await settings.load(settings.availKeys)
-        navToggle.insert() ; navToggle.update() // hide/show sidebar toggle based on latest setting
+        navToggle.insert() ; navToggle.update() // based on config.toggleHidden + config.infinityMode
     }
 
     // Init BROWSER/UI props
