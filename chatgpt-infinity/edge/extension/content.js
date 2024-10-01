@@ -5,14 +5,11 @@
 
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
-    // Import LIBS
+    // Import LIBS/DATA
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js')),
           { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
     await import(chrome.runtime.getURL('lib/dom.js'))
-
-    // Import DATA
     const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
 
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener(req => {
@@ -80,8 +77,8 @@
             if (knobSpan) knobSpan.style.boxShadow = (
                 'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
             if (navicon) navicon.src = `${ // update navicon color in case scheme changed
-                app.urls.assetHost }/media/images/icons/infinity-symbol/${
-                chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
+                app.urls.mediaHost}/images/icons/infinity-symbol/`
+              + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${app.latestAssetCommitHash}`
         },
 
         update() {
