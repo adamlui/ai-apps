@@ -222,6 +222,8 @@
         navToggle.update() // based on config.toggleHidden + config.infinityMode
     }
 
+    // Run MAIN routine
+
     // Init BROWSER/UI props
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
     await chatgpt.sidebar.isLoaded()
