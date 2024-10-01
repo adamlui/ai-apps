@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.7
+// @version             2024.9.30.8
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -790,6 +790,11 @@
         chatgpt.autoRefresh.activate(config.refreshInterval)
         notify(`${app.msgs.menuLabel_autoRefresh}: ON`)
     }
+
+    // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
+    new MutationObserver(mutations => { mutations.forEach(mutation => {
+        if (mutation.type == 'childList' && mutation.addedNodes.length) sideToggle.insert() })}
+    ).observe(document.documentElement, { childList: true, subtree: true })
 
     // Disable distracting SIDEBAR CLICK-ZOOM effect
     if (!document.querySelector('[sidebar-click-zoom-observed]')) {

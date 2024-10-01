@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.8
+// @version             2024.9.30.9
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -777,6 +777,11 @@
 
     // AUTO-CLEAR on first visit if enabled
     if (config.autoclear) setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
+
+    // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
+    new MutationObserver(mutations => { mutations.forEach(mutation => {
+        if (mutation.type == 'childList' && mutation.addedNodes.length) sideToggle.insert() })}
+    ).observe(document.documentElement, { childList: true, subtree: true })
 
     // Disable distracting SIDEBAR CLICK-ZOOM effect
     if (!document.querySelector('[sidebar-click-zoom-observed]')) {
