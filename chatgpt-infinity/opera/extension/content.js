@@ -197,13 +197,12 @@
                                            chrome.i18n.getMessage('state_off').toUpperCase()}`)
             else infinity.muted = false
             chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
-            document.getElementById('infinity-toggle-input').checked = false // for window listener
         },
 
         async restart(options = { target: 'new' }) {
             if (options.target == 'new') {
-                chatgpt.stop() ; document.getElementById('infinity-toggle-label').click() // toggle off
-                setTimeout(() => { document.getElementById('infinity-toggle-label').click() }, 750) // toggle on
+                chatgpt.stop() ; infinity.deactivate()
+                setTimeout(() => infinity.activate(), 750)
             } else {
                 clearTimeout(infinity.isActive) ; infinity.isActive = null ; await chatgpt.isIdle()
                 if (config.infinityMode && !infinity.isActive) { // double-check in case de-activated before scheduled
@@ -284,11 +283,7 @@
 
     // Auto-start if enabled
     await settings.load('autoStart')
-    if (config.autoStart) {
-        const navToggleInput = document.getElementById('infinity-toggle-input')
-        if (navToggleInput) navToggleInput.parentNode.click()
-        else infinity.activate()
-    }
+    if (config.autoStart) { infinity.activate() ; syncStorageToUI() }
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
     new MutationObserver(mutations => mutations.forEach(mutation => {

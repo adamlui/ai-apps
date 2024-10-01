@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.9
+// @version             2024.10.1.10
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -810,14 +810,13 @@
         deactivate() {
             settings.save('infinityMode', false)
             chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
-            document.getElementById('infinity-toggle-input').checked = false // for window listener
             notify(`${app.msgs.menuLabel_infinityMode}: ${app.msgs.state_off.toUpperCase()}`)
         },
 
         async restart(options = { target: 'new' }) {
             if (options.target == 'new') {
-                chatgpt.stop() ; document.getElementById('infinity-toggle-label').click() // toggle off
-                setTimeout(() => { document.getElementById('infinity-toggle-label').click() }, 500) // toggle on
+                chatgpt.stop() ; infinity.deactivate()
+                setTimeout(() => infinity.activate(), 750)
             } else {
                 clearTimeout(infinity.isActive) ; infinity.isActive = null ; await chatgpt.isIdle()
                 if (config.infinityMode && !infinity.isActive) // double-check in case de-activated before scheduled
@@ -910,11 +909,7 @@
     }
 
     // Auto-start if enabled
-    if (config.autoStart) {
-        const navToggleInput = document.getElementById('infinity-toggle-input')
-        if (navToggleInput) navToggleInput.parentNode.click()
-        else { infinity.activate() ; syncConfigToUI() }
-    }
+    if (config.autoStart) { infinity.activate() ; syncConfigToUI() }
 
     // Monitor <html> to maintain NAV TOGGLE VISIBILITY on node changes
     new MutationObserver(mutations => mutations.forEach(mutation => {
