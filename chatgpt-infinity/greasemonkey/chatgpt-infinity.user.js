@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.1
+// @version             2024.10.1.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -792,7 +792,7 @@
             })
             if (config.infinityMode && !infinity.isActive) // double-check in case de-activated before scheduled
                 infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
-            config.infinityMode = true
+            settings.save('infinityMode', true)
         },
 
         async continue() {
@@ -807,7 +807,7 @@
             chatgpt.stop() ; clearTimeout(infinity.isActive) ; infinity.isActive = null
             document.getElementById('infinity-toggle-input').checked = false // for window listener
             notify(`${app.msgs.menuLabel_infinityMode}: ${app.msgs.state_off.toUpperCase()}`)
-            config.infinityMode = false
+            settings.save('infinityMode', false)
         },
 
         async restart(options = { target: 'new' }) {
@@ -901,7 +901,7 @@
     navToggleDiv.onclick = () => {
         const toggleInput = document.getElementById('infinity-toggle-input')
         toggleInput.checked = !toggleInput.checked
-        config.infinityMode = toggleInput.checked
+        settings.save('infinityMode', toggleInput.checked)
         syncStorageToUI() ; infinity.toggle()
     }
 
