@@ -147,7 +147,7 @@
         src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png` })
     cjsLogo.onmouseover = cjsLogo.onmouseout = event => cjsLogo.src = `${
         app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js${ event.type == 'mouseover' ? '' : '-faded' }.png`
-    cjsLogo.onclick = () => chrome.tabs.create({ url: app.urls.chatgptJS })
+    cjsLogo.onclick = () => { chrome.tabs.create({ url: app.urls.chatgptJS }) ; close() }
     cjsDiv.append(cjsLogo) ; footer.append(cjsDiv)
 
     // Create/append SUPPORT footer button
@@ -157,7 +157,7 @@
     const supportIcon = dom.create.elem('img', {
         width: 15, height: 13, style: 'margin-bottom: 0.04rem',
         src: `${app.urls.mediaHost}/images/icons/question-mark/icon16.png?4adfbbd` })
-    supportSpan.onclick = () => chrome.tabs.create({ url: app.urls.support })
+    supportSpan.onclick = () => { chrome.tabs.create({ url: app.urls.support }) ; close() }
     supportSpan.append(supportIcon) ; footer.append(supportSpan)
 
     // Create/append RELATED APPS footer button
@@ -167,7 +167,7 @@
     const moreAppsIcon = dom.create.svgElem('svg', { width: 16, height: 16, viewBox: '0 0 1024 1024' })
     const moreAppsIconPath = dom.create.svgElem('path', {
         d: 'M899.901 600.38H600.728v299.173c0 74.383-179.503 74.383-179.503 0V600.38H122.051c-74.384 0-74.384-179.503 0-179.503h299.173V121.703c0-74.384 179.503-74.384 179.503 0v299.174H899.9c74.385 0 74.385 179.503.001 179.503z' })   
-    moreAppsSpan.onclick = () => chrome.tabs.create({ url: app.urls.relatedApps })
+    moreAppsSpan.onclick = () => { chrome.tabs.create({ url: app.urls.relatedApps }) ; close() }
     moreAppsIcon.append(moreAppsIconPath) ; moreAppsSpan.append(moreAppsIcon) ; footer.append(moreAppsSpan)
 
 })()
