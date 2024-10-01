@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1
+// @version             2024.10.1.1
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -623,14 +623,16 @@
             // Insert toggle
             const toggleParent = document.querySelector('nav')
             if (!toggleParent.contains(navToggleDiv))
-                toggleParent.insertBefore(navToggleDiv, toggleParent.children[1])
+                 toggleParent.insertBefore(navToggleDiv, toggleParent.children[1])
     
             // Tweak styles
+            const knobSpan = document.getElementById('autoclear-toggle-knob-span'),
+                  navicon = document.getElementById('autoclear-toggle-navicon')
             navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
             navToggleDiv.style.paddingLeft = '8px'
-            document.getElementById('autoclear-toggle-knob-span').style.boxShadow = (
+            if (knobSpan) knobSpan.style.boxShadow = (
                 'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
-            document.getElementById('autoclear-toggle-navicon').src = `${ // update navicon color in case scheme changed
+            if (navicon) navicon.src = `${ // update navicon color in case scheme changed
                 app.urls.mediaHost}/images/icons/incognito/`
             + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${app.latestAssetCommitHash}`
         },

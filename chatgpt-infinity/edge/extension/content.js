@@ -70,14 +70,16 @@
             // Insert toggle
             const toggleParent = document.querySelector('nav')
             if (!toggleParent.contains(navToggleDiv))
-                toggleParent.insertBefore(navToggleDiv, toggleParent.children[1])
+                 toggleParent.insertBefore(navToggleDiv, toggleParent.children[1])
     
             // Tweak styles
+            const knobSpan = document.getElementById('infinity-toggle-knob-span'),
+                  navicon = document.getElementById('infinity-toggle-navicon')
             navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
             navToggleDiv.style.paddingLeft = '8px'
-            document.getElementById('infinity-toggle-knob-span').style.boxShadow = (
+            if (knobSpan) knobSpan.style.boxShadow = (
                 'rgba(0, 0, 0, .3) 0 1px 2px 0' + ( chatgpt.isDarkMode() ? ', rgba(0, 0, 0, .15) 0 3px 6px 2px' : '' ))
-            document.getElementById('infinity-toggle-navicon').src = `${ // update navicon color in case scheme changed
+            if (navicon) navicon.src = `${ // update navicon color in case scheme changed
                 app.urls.assetHost }/media/images/icons/infinity-symbol/${
                 chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
         },
