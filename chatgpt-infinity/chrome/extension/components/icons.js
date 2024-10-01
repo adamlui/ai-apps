@@ -1,3 +1,5 @@
+// Requires lib/dom.js
+
 const icons = {
 
     create({ name, size = 16, width, height, ...additionalAttrs }) {
