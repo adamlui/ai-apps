@@ -12,9 +12,9 @@
 # <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> ChatGPT Auto Refresh ↻ &nbsp;<a href="https://twitter.com/intent/tweet?text=Tired%20of%20constant%20interruptions%20on%20ChatGPT%3F%20Auto-refresh%20your%20sessions%20w%2F%20this%20plug-in%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/Users-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.chatgptautorefresh.com/stargazers"><img height=31 alt="[GitHub stars]" src="https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=Stars&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/adamlui/chatgpt-auto-refresh/stargazers"><img height=31 alt="[GitHub stars]" src="https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=Stars&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="../LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.chatgptautorefresh.com/commits"><img height=31 alt="[GitHub commits]" src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
+<a href="https://github.com/adamlui/chatgpt-auto-refresh/commits"><img height=31 alt="[GitHub commits]" src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <img height=31 src="https://img.shields.io/badge/Clones-800/month-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge">
 <a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh"><img height=31 alt="[CodeFactor grade]" src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_auto_refresh&utm_content=github_shield"><img height=31 alt="[Powered by chatgpt.js]" src="https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -27,7 +27,7 @@
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img title="Install this script" height=45 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://github.chatgptautorefresh.com/discussions) /
+[Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions) /
 [Review](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
 [Contact author](https://github.com/adamlui)
 
@@ -144,7 +144,7 @@ ChatGPT Auto Refresh is compatible w/ the following browsers using [ScriptCat](h
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img title="Install this script" height=42 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=42 title="How to install" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://github.chatgptautorefresh.com/discussions) / 
+[Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
 [Leave a review](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
@@ -201,19 +201,19 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
 <br>[Install](https://docs.chatgptwidescreen.com/#-greasemonkey-userscript) /
 [Readme](https://docs.chatgptwidescreen.com/#readme) /
-[Discuss](https://github.chatgptwidescreen.com/discussions)
+[Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Auto-Continue ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 > Automatically continue generating multiple ChatGPT responses.<br>
 [Install](https://docs.chatgptautocontinue.com/#-installation) /
 [Readme](https://docs.chatgptautocontinue.com/#readme) /
-[Discuss](https://github.chatgptautocontinue.com/discussions)
+[Discuss](https://github.com/adamlui/chatgpt-auto-continue/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://docs.chatgptinfinity.com/#-greasemonkey-userscript) / 
 [Readme](https://docs.chatgptinfinity.com/#readme) / 
-[Discuss](https://github.chatgptinfinity.com/discussions)
+[Discuss](https://github.com/adamlui/chatgpt-infinity/discussions)
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">
   

@@ -13,7 +13,7 @@
 
 <a href="https://gf.chatgptautocontinue.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/%E7%94%A8%E6%88%B7-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md"><img height=31 alt="[许可证: MIT]" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.chatgptautocontinue.com/commits"><img height=31 alt="[GitHub 提交]" src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=%E6%8F%90%E4%BA%A4&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
+<a href="https://github.com/adamlui/chatgpt-auto-continue/commits"><img height=31 alt="[GitHub 提交]" src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=%E6%8F%90%E4%BA%A4&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <img height=31 src="https://img.shields.io/badge/%E5%85%8B%E9%9A%86-708/%E6%9C%88-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge">
 <a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-continue"><img height=31 alt="[CodeFactor 等级]" src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-continue?label=%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_auto_continue&utm_content=github_shield"><img height=31 alt="[由 chatgpt.js 提供支持]" src="https://img.shields.io/badge/%E4%BE%9B%E7%94%B5-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -27,7 +27,7 @@
 <a href="https://greasyfork.chatgptautocontinue.com"><img height=45 title="安装这个脚本
 " src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/zh-cn/install-button.svg?54af935"></a><a href="#-如何安装"><img height=45 title="如何安装" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[讨论](https://github.chatgptautocontinue.com/discussions) /
+[讨论](https://github.com/adamlui/chatgpt-auto-continue/discussions) /
 [审查](https://greasyfork.chatgptautocontinue.com/feedback#post-discussion) /
 [联系作者](https://github.com/adamlui)
 
@@ -122,14 +122,14 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 > 从无所不知的 ChatGPT (任何语言!) 生成无穷无尽的答案。<br>
 [安装](https://docs.chatgptinfinity.com/zh-cn/#-如何安装) / 
 [自述文件](https://docs.chatgptinfinity.com/zh-cn/#readme) / 
-[讨论](https://github.chatgptinfinity.com/discussions)
+[讨论](https://github.com/adamlui/chatgpt-infinity/discussions)
 
 ### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
 > 向 ChatGPT 添加宽屏 + 全屏模式以减少滚动。<br>
 [安装](https://docs.chatgptwidescreen.com/zh-cn/#-如何安装) / 
 [自述文件](https://docs.chatgptwidescreen.com/zh-cn/#readme) / 
-[讨论](https://github.chatgptwidescreen.com/discussions)
+[讨论](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
 <img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/gradient-aqua.png">
   

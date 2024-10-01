@@ -13,9 +13,9 @@
 # <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> ChatGPT 自动刷新 ↻ &nbsp;<a href="https://twitter.com/intent/tweet?text=厌倦了%20ChatGPT%20的不断中断？%20使用此插件自动刷新您的会话%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/%E7%94%A8%E6%88%B7-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.chatgptautorefresh.com/stargazers"><img height=31 alt="[GitHub 星星]" src="https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=%E6%98%9F%E6%98%9F&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/adamlui/chatgpt-auto-refresh/stargazers"><img height=31 alt="[GitHub 星星]" src="https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=%E6%98%9F%E6%98%9F&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md"><img height=31 alt="[许可证: MIT]" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.chatgptautorefresh.com/commits"><img height=31 alt="[GitHub 提交]" src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=%E6%8F%90%E4%BA%A4&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
+<a href="https://github.com/adamlui/chatgpt-auto-refresh/commits"><img height=31 alt="[GitHub 提交]" src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=%E6%8F%90%E4%BA%A4&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <img src="https://img.shields.io/badge/%E5%85%8B%E9%9A%86-800/%E6%9C%88-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge">
 <a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh"><img height=31 alt="[CodeFactor 等级]" src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_auto_refresh&utm_content=github_shield"><img height=31 alt="[由 chatgpt.js 提供支持]" src="https://img.shields.io/badge/%E4%BE%9B%E7%94%B5-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -28,7 +28,7 @@
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img height=45 title="安装这个脚本" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/zh-cn/install-button.svg"></a><a href="#-如何安装"><img height=45 title="如何安装" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[讨论](https://github.chatgptautorefresh.com/discussions) /
+[讨论](https://github.com/adamlui/chatgpt-auto-refresh/discussions) /
 [审查](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
 [联系作者](https://github.com/adamlui)
 
@@ -144,7 +144,7 @@ ChatGPT 自动刷新 与使用 [ScriptCat](https://docs.scriptcat.org)、[Violen
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img title="安装这个脚本" height=42 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-如何安装"><img height=42 title="如何安装" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[讨论](https://github.chatgptautorefresh.com/discussions) / 
+[讨论](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
 [发表评论](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
 [更多 ChatGPT 用户脚本](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
@@ -201,19 +201,19 @@ ChatGPT 自动刷新 与使用 [ScriptCat](https://docs.scriptcat.org)、[Violen
 > 向 ChatGPT 添加宽屏 + 全窗口模式以增强查看效果 + 减少滚动。<br>
 [安装](https://docs.chatgptwidescreen.com/zh-cn/#-如何安装) /
 [自述文件](https://docs.chatgptwidescreen.com/zh-cn/#readme) /
-[讨论](https://github.chatgptwidescreen.com/discussions)
+[讨论](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动继续 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 > 自动继续生成多个 ChatGPT 响应。<br>
 [安装](https://docs.chatgptautocontinue.com/zh-cn/#-如何安装) /
 [自述文件](https://docs.chatgptautocontinue.com/zh-cn/#readme) /
-[讨论](https://github.chatgptautocontinue.com/discussions)
+[讨论](https://github.com/adamlui/chatgpt-auto-continue/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT无限 ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
 <br>[安装](https://docs.chatgptinfinity.com/zh-cn#-greasemonkey-用户脚本) /
 [自述文件](https://docs.chatgptinfinity.com/zh-cn/#readme) /
-[讨论](https://github.chatgptinfinity.com/discussions)
+[讨论](https://github.com/adamlui/chatgpt-infinity/discussions)
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">
   

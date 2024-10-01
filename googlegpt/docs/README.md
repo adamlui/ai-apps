@@ -10,8 +10,8 @@
 <br>
 
 <a href="https://greasyfork.googlegpt.io"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/Users-50,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.googlegpt.io/blob/main/LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.googlegpt.io/commits"><img height=31 alt="[GitHub commits]" src="https://img.shields.io/github/commit-activity/m/KudoAI/googlegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/googlegpt/blob/main/LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/googlegpt/commits"><img height=31 alt="[GitHub commits]" src="https://img.shields.io/github/commit-activity/m/KudoAI/googlegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <img height=31 src="https://img.shields.io/badge/Clones-1.3K/month-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge">
 <a href="https://www.codefactor.io/repository/github/KudoAI/googlegpt"><img height=31 alt="[CodeFactor grade]" src="https://img.shields.io/codefactor/grade/github/KudoAI/googlegpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
 <a href="https://chatgpt.js.org?utm_source=googlegpt&utm_content=github_shield"><img height=31 alt="[Powered by chatgpt.js]" src="https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -27,7 +27,7 @@
 
 <a href="https://greasyfork.googlegpt.io"><img height=50 alt="Install this script" src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=50 alt="How to install" title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://github.googlegpt.io/discussions) / 
+[Discuss](https://github.com/KudoAI/googlegpt/discussions) / 
 [Review](https://greasyfork.googlegpt.io/feedback#post-discussion) / 
 [Contact author](https://github.com/adamlui)
     
@@ -138,7 +138,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 <br>
 
-If you've tested it to work in a browser not listed, create a [pull request](https://github.googlegpt.io/pulls) to become a contributor!
+If you've tested it to work in a browser not listed, create a [pull request](https://github.com/KudoAI/googlegpt/pulls) to become a contributor!
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
@@ -163,7 +163,7 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 <a href="https://greasyfork.googlegpt.io"><img height=48 alt="Install this script" src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=48 alt="How to install" title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://github.googlegpt.io/discussions) /
+[Discuss](https://github.com/KudoAI/googlegpt/discussions) /
 [Leave a review](https://greasyfork.googlegpt.io/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
@@ -245,14 +245,14 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://docs.chatgptinfinity.com/#-installation) / 
 [Readme](https://docs.chatgptinfinity.com/#readme) / 
-[Discuss](https://github.chatgptinfinity.com/discussions)
+[Discuss](https://github.com/adamlui/chatgpt-infinity/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
 > Bring the magic of ChatGPT to Brave Search (powered by GPT-4o!)
 <br>[Install](https://docs.bravegpt.com/#-installation) /
 [Readme](https://docs.bravegpt.com/#readme) /
-[Discuss](https://github.bravegpt.com/discussions)
+[Discuss](https://github.com/KudoAI/bravegpt/discussions)
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 

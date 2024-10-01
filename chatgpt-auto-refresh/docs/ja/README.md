@@ -14,9 +14,9 @@
 # <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> ChatGPT 自動更新 ↻ &nbsp;<a href="https://twitter.com/intent/tweet?text=ChatGPT%20の絶え間ない中断にうんざりしていませんか？%20このプラグインでセッションを自動更新しましょう！%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/ユーザー-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.chatgptautorefresh.com/stargazers"><img height=31 alt="[GitHub スター]" src="https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=%E5%87%BA%E6%BC%94%E8%80%85&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/adamlui/chatgpt-auto-refresh/stargazers"><img height=31 alt="[GitHub スター]" src="https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=%E5%87%BA%E6%BC%94%E8%80%85&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="../LICENSE.md"><img height=31 alt="[ライセンス: MIT]" src="https://img.shields.io/badge/%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.chatgptautorefresh.com/commits"><img height=31 alt="[GitHub コミット]" src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
+<a href="https://github.com/adamlui/chatgpt-auto-refresh/commits"><img height=31 alt="[GitHub コミット]" src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh"><img height=31 alt="[コードの品質]" src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E5%93%81%E8%B3%AA&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_auto_refresh&utm_content=github_shield"><img height=31 alt="[搭載 chatgpt.js]" src="https://img.shields.io/badge/%E6%90%AD%E8%BC%89-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-auto-refresh"><img height=31 alt="[SonarCloud 脆弱性]" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-auto-refresh%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=%E8%84%86%E5%BC%B1%E6%80%A7&color=gold"></a>
@@ -28,7 +28,7 @@
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img title="このスクリプトをインストール" height=45 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-インストール"><img height=45 title="インストール方法" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[ディスカッション](https://github.chatgptautorefresh.com/discussions) /
+[ディスカッション](https://github.com/adamlui/chatgpt-auto-refresh/discussions) /
 [レビュー](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
 [作者に連絡する](https://github.com/adamlui)
 
@@ -145,7 +145,7 @@ ChatGPT 自動更新 は、[ScriptCat](https://docs.scriptcat.org)、[Violentmon
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img title="このスクリプトをインストール" height=42 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-インストール"><img height=42 title="インストール方法" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[ディスカッション](https://github.chatgptautorefresh.com/discussions) / 
+[ディスカッション](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
 [レビューを残す](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
 [その他の ChatGPT ユーザースクリプト](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
@@ -200,19 +200,19 @@ ChatGPT 自動更新 は、[ScriptCat](https://docs.scriptcat.org)、[Violentmon
 > ChatGPT にワイドスクリーン + フルスクリーン モードを追加して、表示を強化し、スクロールを減らします。
 <br>[インストール](https://docs.chatgptwidescreen.com/#-greasemonkey-userscript) /
 [Readme](https://docs.chatgptwidescreen.com/#readme) /
-[ディスカッション](https://github.chatgptwidescreen.com/discussions)
+[ディスカッション](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自動継続 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 > 複数の ChatGPT 応答を自動的に生成します。<br>
 [インストール](https://docs.chatgptautocontinue.com/#-インストール) /
 [Readme](https://docs.chatgptautocontinue.com/#readme) /
-[ディスカッション](https://github.chatgptautocontinue.com/discussions)
+[ディスカッション](https://github.com/adamlui/chatgpt-auto-continue/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 > 全知の ChatGPT から無限の回答を生成します (どの言語でも!)
 <br>[インストール](https://docs.chatgptinfinity.com/#-greasemonkey-userscript) / 
 [Readme](https://docs.chatgptinfinity.com/#readme) / 
-[ディスカッション](https://github.chatgptinfinity.com/discussions)
+[ディスカッション](https://github.com/adamlui/chatgpt-infinity/discussions)
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">
   

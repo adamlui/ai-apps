@@ -5,9 +5,9 @@
 <div align="center">
 
 [![\[Greasy Fork\]](https://img.shields.io/badge/Users-100,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)](https://gf.chatgptinfinity.com)
-[![\[GitHub Stars\]](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=Stars&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.chatgptinfinity.com/stargazers)
+[![\[GitHub Stars\]](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=Stars&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/stargazers)
 [![\[License: MIT\]](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
-[![\[GitHub commits\]](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.chatgptinfinity.com/commits)
+[![\[GitHub commits\]](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/commits)
 [![\[CodeFactor grade\]](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
 [![\[Powered by chatgpt.js\]](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_infinity&utm_content=github_shield)
 [![\[SonarCloud vulnerabilities\]](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-infinity%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilities&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-infinity)
@@ -20,7 +20,7 @@
 
 <a href="https://greasyfork.chatgptinfinity.com"><img title="Install this script" height=45 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img title="How to install" height=45 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://github.chatgptinfinity.com/discussions) / 
+[Discuss](https://github.com/adamlui/chatgpt-infinity/discussions) / 
 [Review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) / 
 [Contact author](https://github.com/adamlui)
 
@@ -109,11 +109,11 @@ ChatGPT Infinity is compatible w/ the following browsers using [ScriptCat](https
 
 <br>
 
-If you've tested it to work in a browser not listed, simply create a [pull request](https://github.chatgptinfinity.com/pulls) (contributions of all kinds are welcome!)
+If you've tested it to work in a browser not listed, simply create a [pull request](https://github.com/adamlui/chatgpt-infinity/pulls) (contributions of all kinds are welcome!)
 
 <a href="https://greasyfork.chatgptinfinity.com"><img height=40 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img title="How to install" height=40 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://github.chatgptinfinity.com/discussions) / 
+[Discuss](https://github.com/adamlui/chatgpt-infinity/discussions) / 
 [Leave a review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) / 
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
@@ -158,14 +158,14 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 > Automatically continue generating multiple ChatGPT responses.<br>
 [Install](https://docs.chatgptautocontinue.com/#-installation) / 
 [Readme](https://docs.chatgptautocontinue.com/#readme) / 
-[Discuss](https://github.chatgptautocontinue.com/discussions)
+[Discuss](https://github.com/adamlui/chatgpt-auto-continue/discussions)
 
 ### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
 <br>[Install](https://docs.chatgptwidescreen.com/#-installation) / 
 [Readme](https://docs.chatgptwidescreen.com/#readme) / 
-[Discuss](https://github.chatgptwidescreen.com/discussions)
+[Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
 <img height=6px width="100%" src="https://media.chatgptinfinity.com/images/separators/gradient-aqua.png">
   

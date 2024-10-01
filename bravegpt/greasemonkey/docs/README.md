@@ -7,7 +7,7 @@
 
 <a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/greasyfork/dt/462440?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/bravegpt/blob/main/LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.bravegpt.com/commits"><img height=31 alt="[GitHub commits]" src="https://img.shields.io/github/commit-activity/m/KudoAI/bravegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/bravegpt/commits"><img height=31 alt="[GitHub commits]" src="https://img.shields.io/github/commit-activity/m/KudoAI/bravegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <img height=31 src="https://img.shields.io/badge/Clones-930/month-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge">
 <a href="https://www.codefactor.io/repository/github/KudoAI/bravegpt"><img height=31 alt="[CodeFactor grade]" src="https://img.shields.io/codefactor/grade/github/KudoAI/bravegpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/chatgpt.js?utm_source=bravegpt&utm_content=github_shield"><img height=31 alt="[Powered by chatgpt.js]" src="https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -21,7 +21,7 @@
 
 <a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=45 src="https://media.bravegpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img height=45 title="How to install" src="https://media.bravegpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://github.bravegpt.com/discussions) / 
+[Discuss](https://github.com/KudoAI/bravegpt/discussions) / 
 [Review](https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion) / 
 [Contact author](https://github.com/adamlui)
 
@@ -103,7 +103,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 <br>
 
-If you've tested it to work in a browser not listed, create a [pull request](https://github.bravegpt.com/pulls) to become a contributor!
+If you've tested it to work in a browser not listed, create a [pull request](https://github.com/KudoAI/bravegpt/pulls) to become a contributor!
 
 <img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
@@ -124,7 +124,7 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 <a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=42 src="https://media.bravegpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://media.bravegpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://github.bravegpt.com/discussions) /
+[Discuss](https://github.com/KudoAI/bravegpt/discussions) /
 [Leave a review](https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
@@ -224,16 +224,16 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon48.png?a45cf1e"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?a45cf1e"></picture> [ChatGPT Auto Refresh ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg?1080f44"></a>
 
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
-<br>[Install](https://github.chatgptautorefresh.com/#-installation) /
-[Readme](https://github.chatgptautorefresh.com/#readme) /
+<br>[Install](https://github.com/adamlui/chatgpt-auto-refresh/#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-auto-refresh/#readme) /
 [Discuss](https://chatgptautorefresh.com/discuss)
 
 ### <img width=17 src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
 
 > Bring the magic of ChatGPT to DuckDuckGo (powered by GPT-4o!)
-<br>[Install](https://github.ddgpt.com/#-installation) /
-[Readme](https://github.ddgpt.com/#readme) /
-[Discuss](https://github.ddgpt.com/discussions)
+<br>[Install](https://github.com/KudoAI/duckduckgpt/#-installation) /
+[Readme](https://github.com/KudoAI/duckduckgpt/#readme) /
+[Discuss](https://github.com/KudoAI/duckduckgpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg?699c63d"></a>
 

@@ -93,14 +93,14 @@ ChatGPT 自动谈话 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 > 从无所不知的 ChatGPT (任何语言!) 生成无穷无尽的答案。<br>
 [安装](https://docs.chatgptinfinity.com/zh-cn/#-如何安装) / 
 [自述文件](https://docs.chatgptinfinity.com/zh-cn/#readme) / 
-[讨论](https://github.chatgptinfinity.com/discussions)
+[讨论](https://github.com/adamlui/chatgpt-infinity/discussions)
 
 ### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
 > 向 ChatGPT 添加宽屏 + 全屏模式以减少滚动。<br>
 [安装](https://docs.chatgptwidescreen.com/zh-cn/#-如何安装) / 
 [自述文件](https://docs.chatgptwidescreen.com/zh-cn/#readme) / 
-[讨论](https://github.chatgptwidescreen.com/discussions)
+[讨论](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
 <img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/separators/gradient-aqua.png">
 
