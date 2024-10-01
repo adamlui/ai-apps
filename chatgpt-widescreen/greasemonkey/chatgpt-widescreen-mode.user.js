@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.6
+// @version             2024.9.30.7
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -846,7 +846,15 @@
                   + '[class*="modal-close-btn"] svg { height: 10px }'
                   + '[class*="-modal"] h2 { font-size: 24px ; font-weight: 600 }'
                   + '[class*="-modal"] p { font-size: 16px }'
-                  + '[class*="-modal"] button { border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+                  + '[class*="-modal"] button {'
+                      + 'font-size: 0.77rem ; text-transform: uppercase ;' // shrink/uppercase labels
+                      + `border: 2px dashed ${ chatgpt.isDarkMode() ? 'white' : 'black' } !important ; border-radius: 0 !important ;` // thiccen/square/dash borders
+                      + 'transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;' // smoothen hover fx
+                      + 'padding: 5px !important ; min-width: 102px }' // resize
+                  + '[class*="-modal"] button:hover {' // add zoom, re-scheme
+                      + 'transform: scale(1.055) ;'
+                      + ( chatgpt.isDarkMode() ? 'background-color: #2cff00 !important ; box-shadow: 2px 1px 54px #38ff00 !important ; color: black !important'
+                                               : 'background-color: #c7ff006b !important ; box-shadow: 2px 1px 30px #97ff006b !important' ) + '}'
                   + ( /chatgpt|openai/.test(site) ? (
                           ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                           + 'main { overflow: clip !important }' // prevent h-scrollbar on sync.mode('fullWindow) => delayed chatbar.tweak()
@@ -1023,10 +1031,6 @@
         chatgptAlertStyle.id = 'chatgpt-alert-override-style'
         chatgptAlertStyle.innerText = (
             ( chatgpt.isDarkMode() ? '.chatgpt-modal > div { border: 1px solid white }' : '' )
-          + '.chatgpt-modal button {'
-              + 'font-size: 0.77rem ; text-transform: uppercase ;'
-              + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-          + '.chatgpt-modal button:hover { transform: scale(1.055) }'
           + '.modal-buttons { margin-left: -13px !important }'
         )
         document.head.append(chatgptAlertStyle)

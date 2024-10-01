@@ -286,8 +286,16 @@
                   + '[class*="modal-close-btn"] svg { height: 10px }'
                   + '[class*="-modal"] h2 { font-size: 24px ; font-weight: 600 }'
                   + '[class*="-modal"] p { font-size: 16px }'
-                  + '[class*="-modal"] button { border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-                  + ( site == 'chatgpt' ? (
+                  + '[class*="-modal"] button {'
+                      + 'font-size: 0.77rem ; text-transform: uppercase ;' // shrink/uppercase labels
+                      + `border: 2px dashed ${ chatgpt.isDarkMode() ? 'white' : 'black' } !important ; border-radius: 0 !important ;` // thiccen/square/dash borders
+                      + 'transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;' // smoothen hover fx
+                      + 'padding: 5px !important ; min-width: 102px }' // resize
+                  + '[class*="-modal"] button:hover {' // add zoom, re-scheme
+                      + 'transform: scale(1.055) ;'
+                      + ( chatgpt.isDarkMode() ? 'background-color: #2cff00 !important ; box-shadow: 2px 1px 54px #38ff00 !important ; color: black !important'
+                                               : 'background-color: #c7ff006b !important ; box-shadow: 2px 1px 30px #97ff006b !important' ) + '}'
+                  + ( /chatgpt|openai/.test(site) ? (
                           ( '[id$="-btn"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                           + 'main { overflow: clip !important }' // prevent h-scrollbar on sync.mode('fullWindow) => delayed chatbar.tweak()
                     ) : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' : '' )) // h-pad mic btn for even spread

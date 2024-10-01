@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.6
+// @version             2024.9.30.7
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -721,7 +721,7 @@
     const ui = { firstLink: chatgpt.getNewChatLink() }
 
     // Add/update TWEAKS style
-    const tweaksStyleUpdated = 20240724 // datestamp of last edit for this file's `tweaksStyle`
+    const tweaksStyleUpdated = 20240930 // datestamp of last edit for this file's `tweaksStyle`
     let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
     if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
         if (!tweaksStyle) { // outright missing, create/id/attr/append it first
@@ -731,14 +731,19 @@
         }
         tweaksStyle.innerText = (
             ( chatgpt.isDarkMode() ? '.chatgpt-modal > div { border: 1px solid white }' : '' )
-        + '.chatgpt-modal button {'
-            + 'font-size: 0.77rem ; text-transform: uppercase ;'
-            + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-        + '.chatgpt-modal button:hover { transform: scale(1.055) }'
-        + '.modal-buttons { margin-left: -13px !important }'
-        + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
-        + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
-            + 'transform: none !important }' // disable distracting click zoom effect
+          + '.chatgpt-modal button {'
+              + 'font-size: 0.77rem ; text-transform: uppercase ;' // shrink/uppercase labels
+              + `border: 2px dashed ${ chatgpt.isDarkMode() ? 'white' : 'black' } !important ; border-radius: 0 !important ;` // thiccen/square/dash borders
+              + 'transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;' // smoothen hover fx
+              + 'padding: 5px !important ; min-width: 102px }' // resize
+          + '.chatgpt-modal button:hover {' // add zoom, re-scheme
+              + 'transform: scale(1.055) ;'
+              + ( chatgpt.isDarkMode() ? 'background-color: #2cff00 !important ; box-shadow: 2px 1px 54px #38ff00 !important ; color: black !important'
+                                       : 'background-color: #c7ff006b !important ; box-shadow: 2px 1px 30px #97ff006b !important' ) + '}'
+          + '.modal-buttons { margin-left: -13px !important }'
+          + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
+          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
+              + 'transform: none !important }' // disable distracting click zoom effect
         )
     }
 
