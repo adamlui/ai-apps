@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.2
+// @version             2024.10.1.3
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -468,7 +468,7 @@
                         settings.save(key, !config[key])
                         notify(`${app.settings[key].label}: ${menu.state.words[+(/disabled|hidden/i.test(key) ^ config[key])]}`)
                     }
-                    syncStorageToUI()
+                    syncConfigToUI()
                 }))
             })
 
@@ -826,9 +826,9 @@
 
     // Define SYNC functions
 
-    function syncStorageToUI() {
-        navToggle.update() // based on Toggle Visibility + config.infinityMode
-        menu.refresh() // update toggle symbols/suffixes + prompt setting states
+    function syncConfigToUI() {
+        navToggle.update() // based on config.toggleHidden + config.infinityMode
+        menu.refresh() // symbols/suffixes
     }
 
     // Run MAIN routine
@@ -853,7 +853,7 @@
 
     // Add LISTENER to auto-disable Infinity Mode
     if (document.hidden != undefined) // ...if Page Visibility API supported
-        document.onvisibilitychange = () => { if (config.infinityMode) { infinity.deactivate() ; syncStorageToUI() }}
+        document.onvisibilitychange = () => { if (config.infinityMode) { infinity.deactivate() ; syncConfigToUI() }}
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 20240930 // datestamp of last edit for this file's `tweaksStyle`
@@ -902,7 +902,7 @@
         const toggleInput = document.getElementById('infinity-toggle-input')
         toggleInput.checked = !toggleInput.checked
         settings.save('infinityMode', toggleInput.checked)
-        syncStorageToUI() ; infinity.toggle()
+        syncConfigToUI() ; infinity.toggle()
     }
 
     // Auto-start if enabled
