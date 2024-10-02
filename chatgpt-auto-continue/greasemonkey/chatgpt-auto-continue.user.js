@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.2
+// @version             2024.10.2.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -292,6 +292,7 @@
         menuLabel_modeNotifs: 'Mode Notifications',
         menuLabel_about: 'About',
         menuLabel_donate: 'Please send a donation',
+        menuLabel_disabled: 'Disabled (extension installed)',
         about_version: 'Version',
         about_poweredBy: 'Powered by',
         about_sourceCode: 'Source code',
@@ -562,7 +563,18 @@
 
     // Run MAIN routine
 
-    menu.register() // create browser toolbar menu
+    // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
+    const extensionInstalled = await Promise.race([
+        new Promise(resolve => {
+            (function checkExtensionInstalled() {
+                if (document.querySelector('[chatgpt-auto-continue-extension-installed]')) resolve(true)
+                else setTimeout(checkExtensionInstalled, 200)
+            })()
+        }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
+    if (extensionInstalled) { // disable script/menu
+        GM_registerMenuCommand(`${menu.state.symbols[0]} ${app.msgs.menuLabel_disabled}`, () => {})
+        return // exit script
+    } else menu.register() // create functional menu
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 20240930 // datestamp of last edit for this file's `tweaksStyle`
