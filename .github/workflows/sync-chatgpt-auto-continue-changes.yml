@@ -18,6 +18,13 @@ jobs:
 
     steps:
 
+      - name: Checkout adamlui/chatgpt-apps
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-apps
+          path: adamlui/chatgpt-apps
+
       - name: Checkout adamlui/chatgpt-auto-continue
         uses: actions/checkout@v4
         with:
