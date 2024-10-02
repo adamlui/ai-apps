@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Hysbysiadau Modd" },
   "menuLabel_about": { "message": "Gwybodaeth" },
   "menuLabel_donate": { "message": "Anfonwch rodd os gwelwch yn dda" },
+  "menuLabel_disabled": { "message": "Analluogwyd (estyniad wedi'i osod)" },
   "about_version": { "message": "Fersiwn" },
   "about_poweredBy": { "message": "Wedi'i gynnal gan" },
   "about_sourceCode": { "message": "Cod ffynhonnell" },

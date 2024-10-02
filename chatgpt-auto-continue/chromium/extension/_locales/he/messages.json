@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "התראות מצב" },
   "menuLabel_about": { "message": "אודות" },
   "menuLabel_donate": { "message": "יש לשלוח תרומה" },
+  "menuLabel_disabled": { "message": "מושבת (התוסף מותקן)" },
   "about_version": { "message": "גירסה" },
   "about_poweredBy": { "message": "באמצעות" },
   "about_sourceCode": { "message": "קוד מקור" },

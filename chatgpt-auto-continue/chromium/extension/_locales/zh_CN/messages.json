@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "运行提示" },
   "menuLabel_about": { "message": "关于" },
   "menuLabel_donate": { "message": "请捐款" },
+  "menuLabel_disabled": { "message": "已禁用（已安装扩展）" },
   "about_version": { "message": "版本" },
   "about_poweredBy": { "message": "技术支持方" },
   "about_sourceCode": { "message": "源代码" },

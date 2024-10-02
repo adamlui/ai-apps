@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Moduaren jakinarazpenak" },
   "menuLabel_about": { "message": "Egileari Buruz" },
   "menuLabel_donate": { "message": "Mesedez, bidali dohaintza" },
+  "menuLabel_disabled": { "message": "Desgaituta (luzapena instalatuta)" },
   "about_version": { "message": "Bertsioa" },
   "about_poweredBy": { "message": "Teknologia" },
   "about_sourceCode": { "message": "Iturburu kode" },

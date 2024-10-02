@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Powiadomienia o trybie" },
   "menuLabel_about": { "message": "Około" },
   "menuLabel_donate": { "message": "Prześlij darowiznę" },
+  "menuLabel_disabled": { "message": "Wyłączone (zainstalowano rozszerzenie)" },
   "about_version": { "message": "Wersja" },
   "about_poweredBy": { "message": "Obsługiwane przez" },
   "about_sourceCode": { "message": "Kod źródłowy" },

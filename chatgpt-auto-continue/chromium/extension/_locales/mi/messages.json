@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Ngā tohu aratau" },
   "menuLabel_about": { "message": "Mō" },
   "menuLabel_donate": { "message": "Tukua mai he takoha" },
+  "menuLabel_disabled": { "message": "Whakakorea (whakanuia tāuta)" },
   "about_version": { "message": "Whakaaturanga" },
   "about_poweredBy": { "message": "Te mana o te mana" },
   "about_sourceCode": { "message": "Waehere puna" },

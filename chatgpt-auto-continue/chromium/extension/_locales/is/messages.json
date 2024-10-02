@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Tilkynningar um ham" },
   "menuLabel_about": { "message": "Um" },
   "menuLabel_donate": { "message": "Vinsamlegast sendu styrk" },
+  "menuLabel_disabled": { "message": "Óvirkt (viðbót uppsett)" },
   "about_version": { "message": "Útgáfa" },
   "about_poweredBy": { "message": "Knúið af" },
   "about_sourceCode": { "message": "Frumkóði" },

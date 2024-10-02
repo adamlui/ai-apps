@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Dikitsiso tsa Mode" },
   "menuLabel_about": { "message": "Kaga" },
   "menuLabel_donate": { "message": "Ke kopa gore o romele moneelo" },
+  "menuLabel_disabled": { "message": "Ke golafetse (extension installed)" },
   "about_version": { "message": "VERSION" },
   "about_poweredBy": { "message": "E tsamaisiwa ke" },
   "about_sourceCode": { "message": "Source code" },

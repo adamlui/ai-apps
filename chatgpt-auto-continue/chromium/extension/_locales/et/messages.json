@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Režiimi teavitused" },
   "menuLabel_about": { "message": "Info" },
   "menuLabel_donate": { "message": "Saada annetus" },
+  "menuLabel_disabled": { "message": "Keelatud (laiend on installitud)" },
   "about_version": { "message": "Versioon" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Lähtekood" },

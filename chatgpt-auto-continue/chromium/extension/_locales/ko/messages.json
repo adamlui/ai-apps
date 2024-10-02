@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "모드 알림" },
   "menuLabel_about": { "message": "소개" },
   "menuLabel_donate": { "message": "기부금을 보내주세요" },
+  "menuLabel_disabled": { "message": "비활성화됨 (확장 프로그램 설치됨)" },
   "about_version": { "message": "버전" },
   "about_poweredBy": { "message": "제공" },
   "about_sourceCode": { "message": "원본 코드" },

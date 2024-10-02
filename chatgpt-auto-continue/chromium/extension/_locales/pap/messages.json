@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Notifikashon di Mode" },
   "menuLabel_about": { "message": "About About" },
   "menuLabel_donate": { "message": "Por fabor haci un donacion" },
+  "menuLabel_disabled": { "message": "Desabilidad (Extension Instalada)" },
   "about_version": { "message": "Vershon" },
   "about_poweredBy": { "message": "Potenciá por" },
   "about_sourceCode": { "message": "Kódigo di fuente" },

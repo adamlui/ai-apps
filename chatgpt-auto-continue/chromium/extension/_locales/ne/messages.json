@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "मोड सूचनाहरू" },
   "menuLabel_about": { "message": "बारेमा" },
   "menuLabel_donate": { "message": "कृपया दान पठाउनुहोस्" },
+  "menuLabel_disabled": { "message": "अक्षम पारिएको (विस्तार स्थापना गरिएको)" },
   "about_version": { "message": "संस्करण" },
   "about_poweredBy": { "message": "समर्थनकर्ता" },
   "about_sourceCode": { "message": "स्रोत सङ्केत" },

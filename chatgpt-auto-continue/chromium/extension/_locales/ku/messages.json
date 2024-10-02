@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "ئاگاداریە کردن لە هەرێم" },
   "menuLabel_about": { "message": "دەربارەی" },
   "menuLabel_donate": { "message": "Ji kerema xwe bexşê bişînin" },
+  "menuLabel_disabled": { "message": "Neçalakkirî (berfireh hate saz kirin)" },
   "about_version": { "message": "وەرژن" },
   "about_poweredBy": { "message": "ڕاگرتن لە لای" },
   "about_sourceCode": { "message": "کۆدی سەرچاوە" },

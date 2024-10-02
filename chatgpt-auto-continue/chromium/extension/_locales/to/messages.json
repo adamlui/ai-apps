@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Fanongonongo ki he Mode" },
   "menuLabel_about": { "message": "Fekauʻaki mo e" },
   "menuLabel_donate": { "message": "Kātaki ʻo ʻave ha foaki" },
+  "menuLabel_disabled": { "message": "Faingataʻaʻia fakaesino (fokotuʻu e extension)" },
   "about_version": { "message": "Tatau" },
   "about_poweredBy": { "message": "Fakalele ʻe he" },
   "about_sourceCode": { "message": "Maʻuʻanga fakamatala" },

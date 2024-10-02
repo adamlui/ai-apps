@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "إشعارات الوضع" },
   "menuLabel_about": { "message": "عن وزارة الثقافة" },
   "menuLabel_donate": { "message": "يرجى إرسال تبرع" },
+  "menuLabel_disabled": { "message": "تم التعطيل (تم تثبيت الامتداد)" },
   "about_version": { "message": "الإصدار" },
   "about_poweredBy": { "message": "يستخدم" },
   "about_sourceCode": { "message": "شيفرة مصدرية" },

@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Pranešimai apie režimą" },
   "menuLabel_about": { "message": "Apie" },
   "menuLabel_donate": { "message": "Siųskite auką" },
+  "menuLabel_disabled": { "message": "Išjungta (plėtinys įdiegtas)" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Įgalino Proneta" },
   "about_sourceCode": { "message": "Pradinis kodas" },

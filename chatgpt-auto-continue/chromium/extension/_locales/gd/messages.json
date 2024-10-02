@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Notifications" },
   "menuLabel_about": { "message": "Mar deidhinn" },
   "menuLabel_donate": { "message": "Cuir tabhartas" },
+  "menuLabel_disabled": { "message": "Disabled (extension installed)" },
   "about_version": { "message": "Tionndadh" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Bun-tùs a' chod" },

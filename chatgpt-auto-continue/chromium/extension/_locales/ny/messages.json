@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Mode Zidziwitso" },
   "menuLabel_about": { "message": "Zokhudza" },
   "menuLabel_donate": { "message": "Chonde tumizani zopereka" },
+  "menuLabel_disabled": { "message": "Kulemala (kuwonjezera anaika)" },
   "about_version": { "message": "Lumikizanani nafe" },
   "about_poweredBy": { "message": "Mothandizidwa ndi" },
   "about_sourceCode": { "message": "Gwero kachidindo" },

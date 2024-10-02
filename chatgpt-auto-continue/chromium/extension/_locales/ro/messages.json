@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Notificări mod" },
   "menuLabel_about": { "message": "Despre" },
   "menuLabel_donate": { "message": "Te rugăm să trimiți o donație" },
+  "menuLabel_disabled": { "message": "Dezactivat (extensie instalată)" },
   "about_version": { "message": "Versiune" },
   "about_poweredBy": { "message": "Operat de" },
   "about_sourceCode": { "message": "Codul sursă" },
