@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.9.30.2
+// @version               2024.10.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -227,7 +227,6 @@
             app: 'https://www.bravegpt.com',
             chatgptJS: 'https://chatgpt.js.org',
             alternativeTo: 'https://alternativeto.net/software/bravegpt',
-            futurepedia: 'https://www.futurepedia.io/tool/bravegpt',
             gitHub: 'https://github.com/KudoAI/bravegpt',
             greasyFork: 'https://greasyfork.org/scripts/462440-bravegpt',
             productHunt: 'https://www.producthunt.com/products/bravegpt',
@@ -969,7 +968,6 @@
                 let btns = [
                     function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
                     function productHunt() { modals.safeWinOpen(app.urls.productHunt + '/reviews/new') },
-                    function futurepedia() { modals.safeWinOpen(app.urls.futurepedia + '#tool-reviews') },
                     function alternativeTo() { modals.safeWinOpen(app.urls.alternativeTo + '/about/') }
                 ]
                 if (options.sites == 'feedback') btns.splice(1, 0,

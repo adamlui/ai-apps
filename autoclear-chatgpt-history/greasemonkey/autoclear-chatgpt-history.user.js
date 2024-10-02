@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.2
+// @version             2024.10.2
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -273,7 +273,6 @@
                 gitHub: 'https://github.com/sponsors/adamlui',
                 payPal: 'https://paypal.me/adamlui'
             },
-            futurepedia: 'https://www.futurepedia.io/tool/autoclear-chatgpt-history',
             gitHub: 'https://github.com/adamlui/autoclear-chatgpt-history',
             greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history',
             mediaHost: 'https://media.autoclearchatgpt.com',
@@ -531,7 +530,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function rateUs() { modals.feedback.show() },
+                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
                         function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
                     ], '', 478 // set width
                 )
@@ -573,7 +572,7 @@
                         function paypal() { modals.safeWinOpen(app.urls.donate.payPal) },
                         function githubSponsors() { modals.safeWinOpen(app.urls.donate.gitHub) },
                         function cashApp() { modals.safeWinOpen(app.urls.donate.cashApp) },
-                        function rateUs() { modals.feedback.show() }
+                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') }
                     ], '', 478 // set width
                 )
 
@@ -594,21 +593,6 @@
                             btn.textContent = app.msgs.btnLabel_rateUs
                     }
                 })
-            }
-        },
-
-        feedback: {
-            show() {
-                const reviewModalID = chatgpt.alert(
-                    `${app.msgs.alert_choosePlatform}:`, '', // title
-                    [ // buttons
-                        function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                        function futurepedia() { modals.safeWinOpen(app.urls.futurepedia + '#tool-reviews') }
-                    ]
-                )
-                const reviewModal = document.getElementById(reviewModalID)
-                reviewModal.querySelector('button').style.display = 'none' // hide Dismiss button
-                reviewModal.addEventListener('DOMNodeRemoved', () => modals[modals.stack[0]]?.show() ) // nav back on btn/bg clicks
             }
         },
 
