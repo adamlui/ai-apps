@@ -46,7 +46,7 @@
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/bravegpt/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT 自动继续 ⏩](../../chatgpt-auto-continue) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
+### <img width=20 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT 自动继续 ⏩](../../chatgpt-auto-continue) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 
 > 自动继续生成多个 ChatGPT 响应。
 <br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-continue/docs/zh-cn/#-如何安装) /
@@ -74,7 +74,7 @@
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-refresh/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT无限 ∞](../../chatgpt-infinity) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+### <img width=20 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT无限 ∞](../../chatgpt-infinity) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
 <br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#-如何安装) /
