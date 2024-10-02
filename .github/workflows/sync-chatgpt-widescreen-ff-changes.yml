@@ -1,4 +1,4 @@
-name: Sync chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
+name: Sync chatgpt-widescreen/firefox/extension/_locales/* to chatgpt-widescreen/chrome/extension/_locales/*, then chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
 
 on:
   push:
@@ -31,7 +31,13 @@ jobs:
           repository: adamlui/chatgpt-widescreen
           path: adamlui/chatgpt-widescreen
 
-      - name: Sync /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
+      - name: Sync chatgpt-widescreen/firefox/extension/_locales/* to chatgpt-widescreen/chrome/extension/_locales/*
+        run: |
+          rsync -avhr --delete \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/firefox/extension/_locales/" \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/_locales"
+
+      - name: Sync chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ \
@@ -44,6 +50,14 @@ jobs:
           echo "ESCAPED_MSG<<EOF" >> $GITHUB_ENV
           echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
+
+      - name: Push changes to adamlui/chatgpt-apps
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-apps
+          git pull # again to sync w/ concurrent workflow updates
+          git add .
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`chatgpt-widescreen/chrome\`]" || true
+          git push
 
       - name: Push changes to adamlui/chatgpt-widescreen
         run: |
