@@ -5,10 +5,12 @@
 
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
-    // Import LIBS/DATA
+    // Import LIBS
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js')),
           { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
     await import(chrome.runtime.getURL('lib/dom.js'))
+
+    // Import APP data
     const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
 
     // Add CHROME MSG listener

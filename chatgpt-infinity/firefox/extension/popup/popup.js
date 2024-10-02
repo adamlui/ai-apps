@@ -3,10 +3,12 @@
     const site = /([^.]+)\.[^.]+$/.exec(new URL((await chrome.tabs.query(
         { active: true, currentWindow: true }))[0].url).hostname)?.[1]
 
-    // Import LIBS/DATA
+    // Import LIBS
     await import(chrome.runtime.getURL('lib/dom.js'))
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js')),
-          app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
+
+    // Import APP data
+    const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
 
     // Import ICONS
     const { icons } = await import(chrome.runtime.getURL('components/icons.js'))
