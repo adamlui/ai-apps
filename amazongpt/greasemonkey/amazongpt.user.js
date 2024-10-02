@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.9.30.2
+// @version                2024.10.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -104,7 +104,8 @@
             gitHub: 'https://github.com/KudoAI/amazongpt',
             greasyFork: 'https://greasyfork.org/scripts/500663-amazongpt',
             publisher: 'https://www.kudoai.com',
-            relatedApps: 'https://github.com/adamlui/chatgpt-apps'
+            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            review: { greasyFork: 'https://greasyfork.org/scripts/500663-amazongpt/feedback#post-discussion' }
         },
         latestAssetCommitHash: '8def87a' // for cached messages.json
     }
@@ -794,7 +795,7 @@
 
                 // Init buttons
                 let btns = [
-                    function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') }]
+                    function greasyFork() { modals.safeWinOpen(app.urls.review.greasyFork) }]
                 if (options.sites == 'feedback') btns.push(
                     function github() { modals.safeWinOpen(app.urls.gitHub + '/discussions/new/choose') })
 

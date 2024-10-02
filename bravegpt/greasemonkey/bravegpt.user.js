@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.10.2
+// @version               2024.10.2.1
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -226,12 +226,15 @@
         urls: {
             app: 'https://www.bravegpt.com',
             chatgptJS: 'https://chatgpt.js.org',
-            alternativeTo: 'https://alternativeto.net/software/bravegpt',
             gitHub: 'https://github.com/KudoAI/bravegpt',
             greasyFork: 'https://greasyfork.org/scripts/462440-bravegpt',
-            productHunt: 'https://www.producthunt.com/products/bravegpt',
             publisher: 'https://www.kudoai.com',
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            review: {
+                alternativeTo: 'https://alternativeto.net/software/bravegpt/about/',
+                greasyFork: 'https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion',
+                productHunt: 'https://www.producthunt.com/products/bravegpt/reviews/new'
+            },
             support: 'https://support.bravegpt.com'
         },
         latestAssetCommitHash: '404359f' // for cached messages.json
@@ -966,9 +969,9 @@
 
                 // Init buttons
                 let btns = [
-                    function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                    function productHunt() { modals.safeWinOpen(app.urls.productHunt + '/reviews/new') },
-                    function alternativeTo() { modals.safeWinOpen(app.urls.alternativeTo + '/about/') }
+                    function greasyFork() { modals.safeWinOpen(app.urls.review.greasyFork) },
+                    function productHunt() { modals.safeWinOpen(app.urls.review.productHunt) },
+                    function alternativeTo() { modals.safeWinOpen(app.urls.review.alternativeTo) }
                 ]
                 if (options.sites == 'feedback') btns.splice(1, 0,
                     function github() { modals.safeWinOpen(app.urls.gitHub + '/discussions/new/choose') })

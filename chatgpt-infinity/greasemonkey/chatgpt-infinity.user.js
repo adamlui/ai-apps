@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.12
+// @version             2024.10.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -245,7 +245,6 @@
         name: 'ChatGPT Infinity', symbol: '∞', configKeyPrefix: 'chatGPTinfinity',
         author: { name: 'Adam Lui', url: 'https://github.com/adamlui' },
         urls: {
-            alternativeTo: 'https://alternativeto.net/software/chatgpt-infinity',
             chatgptJS: 'https://chatgpt.js.org',
             donate: {
                 cashApp: 'https://cash.app/$adamlui',
@@ -255,8 +254,12 @@
             gitHub: 'https://github.com/adamlui/chatgpt-infinity',
             greasyFork: 'https://greasyfork.org/scripts/465051-chatgpt-infinity',
             mediaHost: 'https://media.chatgptinfinity.com',
-            productHunt: 'https://www.producthunt.com/products/chatgpt-infinity',
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            review: {
+                alternativeTo: 'https://alternativeto.net/software/chatgpt-infinity/about/',
+                greasyFork: 'https://greasyfork.org/scripts/465051-chatgpt-infinity#post-discussion',
+                productHunt: 'https://www.producthunt.com/products/chatgpt-infinity/reviews/new'
+            },
             support: 'https://support.chatgptinfinity.com'
         },
         latestAssetCommitHash: 'ef1eca1' // for cached messages.json + navicon
@@ -667,9 +670,9 @@
                 const reviewModalID = chatgpt.alert(
                     `${app.msgs.alert_choosePlatform}:`, '', // title
                     [ // buttons
-                        function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                        function productHunt() { modals.safeWinOpen(app.urls.productHunt + '/reviews/new') },
-                        function alternativeTo() { modals.safeWinOpen(app.urls.alternativeTo + '/about/') }
+                        function greasyFork() { modals.safeWinOpen(app.urls.review.greasyFork) },
+                        function productHunt() { modals.safeWinOpen(app.urls.review.productHunt) },
+                        function alternativeTo() { modals.safeWinOpen(app.urls.review.alternativeTo) }
                     ]
                 )
                 const reviewModal = document.getElementById(reviewModalID)

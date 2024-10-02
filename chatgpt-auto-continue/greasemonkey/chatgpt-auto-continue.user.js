@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.3
+// @version             2024.10.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -261,6 +261,7 @@
             gitHub: 'https://github.com/adamlui/chatgpt-auto-continue',
             greasyFork: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue',
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            review: { greasyFork: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue/feedback#post-discussion' },
             support: 'https://support.chatgptautocontinue.com'
         },
         latestAssetCommitHash: 'e7c8d24' // for cached messages.json
@@ -487,7 +488,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                        function rateUs() { modals.safeWinOpen(app.urls.review.greasyFork) },
                         function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
                     ], '', 478 // set width
                 )
@@ -528,7 +529,7 @@
                         function paypal() { modals.safeWinOpen(app.urls.donate.payPal) },
                         function githubSponsors() { modals.safeWinOpen(app.urls.donate.gitHub) },
                         function cashApp() { modals.safeWinOpen(app.urls.donate.cashApp) },
-                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') }
+                        function rateUs() { modals.safeWinOpen(app.urls.review.greasyFork) }
                     ], '', 478 // set width
                 )
 

@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.9.30.2
+// @version                  2024.10.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -422,6 +422,7 @@
             greasyFork: 'https://greasyfork.org/scripts/478597-googlegpt',
             publisher: 'https://www.kudoai.com',
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            review: { greasyFork: 'https://greasyfork.org/scripts/478597-googlegpt/feedback#post-discussion' },
             support: 'https://support.googlegpt.io'
         },
         latestAssetCommitHash: 'b20c6e9' // for cached messages.json
@@ -1118,7 +1119,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                        function rateUs() { modals.safeWinOpen(app.urls.review.greasyFork) },
                         function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
                     ], '', 585) // modal width
                 const aboutModal = document.getElementById(aboutModalID).firstChild
@@ -1161,7 +1162,7 @@
 
                 // Init buttons
                 let btns = [
-                    function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') }]
+                    function greasyFork() { modals.safeWinOpen(app.urls.review.greasyFork) }]
                 if (options.sites == 'feedback') btns.splice(1, 0,
                     function github() { modals.safeWinOpen(app.urls.gitHub + '/discussions/new/choose') })
 

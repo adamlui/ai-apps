@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.2
+// @version             2024.10.2.1
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -277,6 +277,7 @@
             greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history',
             mediaHost: 'https://media.autoclearchatgpt.com',
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            review: { greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history/feedback#post-discussion' },
             support: 'https://support.autoclearchatgpt.com'
         },
         latestAssetCommitHash: '4b03a9d' // for cached messages.json + navicon
@@ -530,7 +531,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                        function rateUs() { modals.safeWinOpen(app.urls.review.greasyFork) },
                         function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
                     ], '', 478 // set width
                 )
@@ -572,7 +573,7 @@
                         function paypal() { modals.safeWinOpen(app.urls.donate.payPal) },
                         function githubSponsors() { modals.safeWinOpen(app.urls.donate.gitHub) },
                         function cashApp() { modals.safeWinOpen(app.urls.donate.cashApp) },
-                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') }
+                        function rateUs() { modals.safeWinOpen(app.urls.review.greasyFork) }
                     ], '', 478 // set width
                 )
 

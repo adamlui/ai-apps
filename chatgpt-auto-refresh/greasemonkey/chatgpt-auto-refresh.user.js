@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.2
+// @version             2024.10.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -274,6 +274,7 @@
             greasyFork: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh',
             mediaHost: 'https://media.chatgptautorefresh.com',
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            review: { greasyFork: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion' },
             support: 'https://support.chatgptautorefresh.com'
         },
         latestAssetCommitHash: '7cff0be' // for cached messages.json + navicon
@@ -570,7 +571,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                        function rateUs() { modals.safeWinOpen(app.urls.review.greasyFork) },
                         function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
                     ], '', 478 // set width
                 )
@@ -611,7 +612,7 @@
                         function paypal() { modals.safeWinOpen(app.urls.donate.payPal) },
                         function githubSponsors() { modals.safeWinOpen(app.urls.donate.gitHub) },
                         function cashApp() { modals.safeWinOpen(app.urls.donate.cashApp) },
-                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') }
+                        function rateUs() { modals.safeWinOpen(app.urls.review.greasyFork) }
                     ], '', 478 // set width
                 )
 

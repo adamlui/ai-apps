@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.2
+// @version             2024.10.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -277,8 +277,11 @@
             },
             gitHub: 'https://github.com/adamlui/chatgpt-widescreen',
             greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
-            productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode',
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            review: {
+                greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback#post-discussion',
+                productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode/reviews/new'
+            },
             support: 'https://support.chatgptwidescreen.com'
         },
         latestAssetCommitHash: '755a178' // for cached sites.json + messages.json
@@ -624,8 +627,8 @@
                 const reviewModalID = chatgpt.alert(
                     `${app.msgs.alert_choosePlatform}:`, '', // title
                     [ // buttons
-                        function greasyFork() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
-                        function productHunt() { modals.safeWinOpen(app.urls.productHunt + '/reviews/new') }
+                        function greasyFork() { modals.safeWinOpen(app.urls.review.greasyFork) },
+                        function productHunt() { modals.safeWinOpen(app.urls.review.productHunt) }
                     ]
                 )
                 const reviewModal = document.getElementById(reviewModalID)

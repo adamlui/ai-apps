@@ -225,7 +225,7 @@
 // @description:zu      Dlala izimpendulo ze-ChatGPT ngokuzenzakalela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.2
+// @version             2024.10.2
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@9f1ed3c/assets/images/icons/openai/black/icon64.png
@@ -265,7 +265,8 @@
             },
             gitHub: 'https://github.com/adamlui/chatgpt-auto-talk',
             greasyFork: 'https://greasyfork.org/en/scripts/500940-chatgpt-auto-talk',
-            relatedApps: 'https://github.com/adamlui/chatgpt-apps'
+            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            review: { greasyFork: 'https://greasyfork.org/en/scripts/500940-chatgpt-auto-talk/feedback#post-discussion' }
         },
         latestAssetCommitHash: 'ef90c72' // for cached messages.json + navicon
     }
@@ -499,7 +500,7 @@
                     [ // buttons
                         function checkForUpdates() { updateCheck() },
                         function getSupport() { modals.safeWinOpen(app.urls.support) },
-                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') },
+                        function rateUs() { modals.safeWinOpen(app.urls.review.greasyFork) },
                         function moreChatGPTapps() { modals.safeWinOpen(app.urls.relatedApps) }
                     ], '', 478 // set width
                 )
@@ -540,7 +541,7 @@
                         function paypal() { modals.safeWinOpen(app.urls.donate.payPal) },
                         function githubSponsors() { modals.safeWinOpen(app.urls.donate.gitHub) },
                         function cashApp() { modals.safeWinOpen(app.urls.donate.cashApp) },
-                        function rateUs() { modals.safeWinOpen(app.urls.greasyFork + '/feedback#post-discussion') }
+                        function rateUs() { modals.safeWinOpen(app.urls.review.greasyFork) }
                     ], '', 478 // set width
                 )
 
