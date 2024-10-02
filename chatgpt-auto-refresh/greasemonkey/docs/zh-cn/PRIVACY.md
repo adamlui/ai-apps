@@ -17,4 +17,4 @@ ChatGPT 自动刷新不会收集或存储任何用户数据。 不会出于个�
 
 ## 更新
 
-要查看对此政策的修订，请访问 https://github.chatgptautorefresh.com/commits/main/docs/zh-cn/PRIVACY.md
+要查看对此政策的修订，请访问 https://github.com/adamlui/chatgpt-auto-refresh/commits/main/docs/zh-cn/PRIVACY.md

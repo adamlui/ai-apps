@@ -16,4 +16,4 @@
 
 ## अपडेट
 
-इस नीति में संशोधन देखने के लिए, https://github.chatgptwidescreen.com/commits/main/greasemonkey/docs/hi/PRIVACY.md पर जाएं
+इस नीति में संशोधन देखने के लिए, https://github.com/adamlui/chatgpt-widescreen/commits/main/greasemonkey/docs/hi/PRIVACY.md पर जाएं

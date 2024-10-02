@@ -15,4 +15,4 @@ ChatGPT 自动继续 不会收集或存储任何用户数据。 不会出于个�
 
 ## 更新
 
-要查看对此政策的修订，请访问 https://github.chatgptautocontinue.com/commits/main/docs/zh-cn/PRIVACY.md
+要查看对此政策的修订，请访问 https://github.com/adamlui/chatgpt-auto-continue/commits/main/docs/zh-cn/PRIVACY.md

@@ -16,4 +16,4 @@ ChatGPT Infinity does not collect nor store any user data. No information is sha
 
 ## Updates
 
-To view revisions to this policy, visit https://github.chatgptinfinity.com/commits/main/greasemonkey/docs/PRIVACY.md
+To view revisions to this policy, visit https://github.com/adamlui/chatgpt-infinity/commits/main/greasemonkey/docs/PRIVACY.md

@@ -17,4 +17,4 @@
 
 ## अपडेट
 
-इस नीति में संशोधन देखने के लिए, https://github.chatgptautorefresh.com/commits/main/docs/hi/PRIVACY.md पर जाएं
+इस नीति में संशोधन देखने के लिए, https://github.com/adamlui/chatgpt-auto-refresh/commits/main/docs/hi/PRIVACY.md पर जाएं

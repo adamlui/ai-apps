@@ -17,4 +17,4 @@ ChatGPT Auto Refresh does not collect nor store any user data. No information is
 
 ## Updates
 
-To view revisions to this policy, visit https://github.chatgptautorefresh.com/commits/main/docs/PRIVACY.md
+To view revisions to this policy, visit https://github.com/adamlui/chatgpt-auto-refresh/commits/main/docs/PRIVACY.md

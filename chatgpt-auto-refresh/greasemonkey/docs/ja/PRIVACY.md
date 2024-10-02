@@ -17,4 +17,4 @@ ChatGPT Auto Refreshは、ユーザーデータを収集または保存しませ
 
 ## 更新
 
-このポリシーの改訂を表示するには、https://github.chatgptautorefresh.com/commits/main/docs/ja/PRIVACY.md にアクセスしてください。
+このポリシーの改訂を表示するには、https://github.com/adamlui/chatgpt-auto-refresh/commits/main/docs/ja/PRIVACY.md にアクセスしてください。
