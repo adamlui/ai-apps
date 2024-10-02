@@ -1,4 +1,4 @@
-name: Sync chatgpt-widescreen/chrome/extension/ to chatgpt-widescreen/(edge|opera)/extension/, then chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
+name: Sync chatgpt-widescreen/chrome/extension/_locales/* to chatgpt-widescreen/firefox/extension/_locales/*, then chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
 
 on:
   push:
@@ -31,16 +31,13 @@ jobs:
           repository: adamlui/chatgpt-widescreen
           path: adamlui/chatgpt-widescreen
 
-      - name: Sync /chatgpt-widescreen/chrome/extension/ to /chatgpt-widescreen/(edge|opera)/extension/
+      - name: Sync chatgpt-widescreen/chrome/extension/_locales/* to chatgpt-widescreen/firefox/extension/_locales/*
         run: |
-          for browser in edge opera
-          do
-            rsync -avhr --delete \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/" \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/$browser/extension/"
-          done
+          rsync -avhr --delete \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/_locales/" \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/firefox/extension/_locales"
 
-      - name: Sync /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
+      - name: Sync chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ \
