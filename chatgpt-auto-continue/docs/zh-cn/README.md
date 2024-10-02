@@ -9,7 +9,7 @@
     </h6>
 </div>
 
-<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/continue-symbol/white/icon32.png?46e9dc2"><img width=37 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/black/icon32.png?46e9dc2"></picture> ChatGPT 自动继续
+# <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/continue-symbol/white/icon32.png?46e9dc2"><img width=37 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/black/icon32.png?46e9dc2"></picture> ChatGPT 自动继续
 
 <a href="https://gf.chatgptautocontinue.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/%E7%94%A8%E6%88%B7-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md"><img height=31 alt="[许可证: MIT]" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
