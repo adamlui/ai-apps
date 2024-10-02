@@ -1,0 +1,12 @@
+{
+  "symbol": "≫",
+  "urls": {
+    "chatgptJS": "https://chatgpt.js.org",
+    "cjsMediaHost": "https://media.chatgptjs.org",
+    "gitHub": "https://github.com/adamlui/chatgpt-auto-continue",
+    "mediaHost": "https://media.chatgptautocontinue.com",
+    "relatedApps": "https://github.com/adamlui/chatgpt-apps",
+    "support": "https://support.chatgptautocontinue.com"
+  },
+  "latestAssetCommitHash": "0909ea8"
+}
