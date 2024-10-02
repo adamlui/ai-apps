@@ -1,4 +1,4 @@
-name: Sync chatgpt-infinity/chrome/extension/ to chatgpt-infinity/(edge|opera)/extension/, then chatgpt-infinity/ to adamlui/chatgpt-infinity/
+name: Sync chatgpt-infinity/chrome/extension/_locales/* to chatgpt-infinity/firefox/extension/_locales/*, then chatgpt-infinity/* to adamlui/chatgpt-infinity/*
 
 on:
   push:
@@ -31,16 +31,13 @@ jobs:
           repository: adamlui/chatgpt-infinity
           path: adamlui/chatgpt-infinity
 
-      - name: Sync /chatgpt-infinity/chrome/extension/ to /chatgpt-infinity/(edge|opera)/extension/
+      - name: Sync chatgpt-infinity/chrome/extension/_locales/* to chatgpt-infinity/firefox/extension/_locales/*
         run: |
-          for browser in edge opera
-          do
-            rsync -avhr --delete \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/chrome/extension/" \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/$browser/extension/"
-          done
+          rsync -avhr --delete \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/chrome/extension/_locales/" \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/firefox/extension/_locales"
 
-      - name: Sync /chatgpt-infinity/ to adamlui/chatgpt-infinity/
+      - name: Sync chatgpt-infinity/* to adamlui/chatgpt-infinity/*
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/ \
