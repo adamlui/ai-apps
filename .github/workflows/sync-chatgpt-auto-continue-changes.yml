@@ -1,4 +1,5 @@
-name: Sync (chatgpt-auto-continue/ to adamlui/chatgpt-auto-continue/) && (chatgpt-auto-continue/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-auto-continue/)
+name: Sync chatgpt-auto-continue/* to adamlui/chatgpt-auto-continue/*, then chatgpt-auto-continue/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-auto-continue/*
+
 
 on:
   push:
@@ -17,14 +18,6 @@ jobs:
 
     steps:
 
-      - name: Checkout adamlui/chatgpt-apps
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/chatgpt-apps
-          path: adamlui/chatgpt-apps
-          fetch-depth: 2
-
       - name: Checkout adamlui/chatgpt-auto-continue
         uses: actions/checkout@v4
         with:
@@ -39,50 +32,13 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync docs between root & /greasemonkey
-        id: sync_docs
-        run: |
-          shopt -s globstar
-          cd ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue
-          loc_prefixes=( "root" "gm" )
-
-          # Sync LICENSE.md
-          for prefix in "${loc_prefixes[@]}" ; do
-            eval "${prefix}_license_content=\$(git show HEAD:\"./\$([[ \$prefix == \"gm\" ]] && echo \"greasemonkey/\" || echo \"\")LICENSE.md\")"
-            eval "${prefix}_license_modified=\$(git log -1 --format=\"%ct\" -- \"\$([[ \$prefix == \"gm\" ]] && echo \"greasemonkey/\" || echo \"\")LICENSE.md\")"
-          done
-          if (( root_license_modified > gm_license_modified )) ; then
-            if [[ "$root_license_content" != "$gm_license_content" ]] ; then
-              cp -f "LICENSE.md" "greasemonkey/LICENSE.md" ; sync_src="root" ; fi
-          elif (( gm_license_modified > root_license_modified )) ; then
-            if [[ "$gm_license_content" != "$root_license_content" ]] ; then
-              cp -f "greasemonkey/LICENSE.md" "LICENSE.md" ; sync_src="greasemonkey" ; fi ; fi
-
-          # Sync other docs
-          for file in docs/**/*.md ; do
-            for prefix in "${loc_prefixes[@]}" ; do
-              eval "${prefix}_doc_path=\"./\$([[ \$prefix == \"gm\" ]] && echo \"greasemonkey/\" || echo \"\")docs/${file#"docs/"}\""
-              eval "${prefix}_doc_content=\$(git show HEAD:\"\$${prefix}_doc_path\")"
-              eval "${prefix}_doc_modified=\$(git log -1 --format=\"%ct\" -- \"\$${prefix}_doc_path\")"
-            done
-            if (( root_doc_modified > gm_doc_modified )) ; then
-              if [[ "$root_doc_content" != "$gm_doc_content" ]] ; then
-                cp -f "$root_doc_path" "$gm_doc_path" ; sync_src="root" ; fi
-            elif (( gm_doc_modified > root_doc_modified )) ; then
-              if [[ "$gm_doc_content" != "$root_doc_content" ]] ; then
-                cp -f "$gm_doc_path" "$root_doc_path" ; sync_src="greasemonkey" ; fi ; fi
-          done
-
-          # Store sync src for commit msg in self-push step
-          echo "sync_src=$sync_src" >> $GITHUB_OUTPUT
-
-      - name: Sync chatgpt-auto-continue/ to adamlui/chatgpt-auto-continue/
+      - name: Sync chatgpt-auto-continue/* to adamlui/chatgpt-auto-continue/*
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/ \
             ${{ github.workspace }}/adamlui/chatgpt-auto-continue/
 
-      - name: Sync chatgpt-auto-continue/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-auto-continue/
+      - name: Sync chatgpt-auto-continue/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-auto-continue/*
         run: |
           rsync -avhr --delete \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/greasemonkey/ \
@@ -95,14 +51,6 @@ jobs:
           echo "ESCAPED_MSG<<EOF" >> $GITHUB_ENV
           echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-
-      - name: Push changes to adamlui/chatgpt-apps
-        run: |
-          cd ${{ github.workspace }}/adamlui/chatgpt-apps
-          git pull # again to sync w/ concurrent workflow updates
-          git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`${{ steps.sync_docs.outputs.sync_src }}\`]" || true
-          git push
 
       - name: Push changes to adamlui/chatgpt-auto-continue
         run: |
