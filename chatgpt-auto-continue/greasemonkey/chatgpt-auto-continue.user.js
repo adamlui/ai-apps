@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.2.3
+// @version             2024.10.2.4
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -264,7 +264,7 @@
             review: { greasyFork: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue/feedback#post-discussion' },
             support: 'https://support.chatgptautocontinue.com'
         },
-        latestAssetCommitHash: 'e7c8d24' // for cached messages.json
+        latestAssetCommitHash: 'e125f8f' // for cached messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
