@@ -89,6 +89,7 @@
     })()
 
     // NOTIFY of status on load
-    if (!config.notifDisabled) notify(`${chrome.i18n.getMessage('mode_autoContinue')}: ON`)
+    if (!config.notifDisabled) notify(`${chrome.i18n.getMessage('mode_autoContinue')}: ${
+                                         chrome.i18n.getMessage('state_on').toUpperCase()}`)
 
 })()
