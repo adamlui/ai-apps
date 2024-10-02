@@ -1,4 +1,4 @@
-name: Sync LICENSE.md from chatgpt-infinity/* to chatgpt-infinity/<platform>/*, then chatgpt-infinity/* to adamlui/chatgpt-infinity/*, then chatgpt-infinity/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*
+name: Sync chatgpt-infinity/* to adamlui/chatgpt-infinity/*, then chatgpt-infinity/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*
 
 
 on:
@@ -27,7 +27,6 @@ jobs:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
-          fetch-depth: 2
 
       - name: Checkout adamlui/chatgpt-infinity
         uses: actions/checkout@v4
@@ -42,31 +41,6 @@ jobs:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/userscripts
           path: adamlui/userscripts
-
-      - name: Sync LICENSE.md from chatgpt-infinity/* to chatgpt-infinity/<platform>/*
-        run: |
-          cd ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity
-          platforms=($(find . -type d -name "docs" | # paths to docs/
-            awk -F'/' '{print $(NF-1)}' | # filter to parents
-            grep -v "^.$")) # exclude root
-          echo "Platforms: ${platforms[@]}"
-          languages=($(ls docs/*/LICENSE.md | # paths to LICENSEs
-            awk -F'/' '{print $(NF-1)}') # filter to parents
-            "en") # include English
-          echo -e "Languages: ${languages[@]}\n"
-          for lang in "${languages[@]}"; do
-            root_license=./$([[ "$lang" != "en" ]] && echo "docs/$lang/" || echo "")LICENSE.md
-            root_license_content=$(git show HEAD:"$root_license")
-            root_license_modified=$(git log -1 --format="%ct" -- "$root_license")
-            for platform in "${platforms[@]}"; do
-              platform_license=./$platform/$([[ "$lang" != "en" ]] && echo "docs/$lang/" || echo "")LICENSE.md
-              platform_license_content=$(git show HEAD:"$platform_license")
-              platform_license_modified=$(git log -1 --format="%ct" -- "$platform_license")
-              if [[ $root_license_modified -gt $platform_license_modified ]] ; then
-                if [[ "$root_license_content" != "$platform_license_content" ]] ; then
-                  cp -f "$root_license" "$platform_license"
-                  echo "Copied $root_license to $platform_license"
-          fi ; fi ; done; done
 
       - name: Sync chatgpt-infinity/* to adamlui/chatgpt-infinity/*
         run: |
@@ -87,14 +61,6 @@ jobs:
           echo "ESCAPED_MSG<<EOF" >> $GITHUB_ENV
           echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-
-      - name: Push changes to adamlui/chatgpt-apps
-        run: |
-          cd ${{ github.workspace }}/adamlui/chatgpt-apps
-          git pull # again to sync w/ concurrent workflow updates
-          git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`chatgpt-infinity\`]" || true
-          git push
 
       - name: Push changes to adamlui/chatgpt-infinity
         run: |

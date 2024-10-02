@@ -1,4 +1,4 @@
-name: Sync LICENSE.md from chatgpt-widescreen/greasemonkey/* to <platform>/*, then chatgpt-widescreen/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*, then chatgpt-widescreen/greasemonkey/_locales/* to chatgpt-widescreen/(chrome|edge|firefox|opera)/extension/_locales/*, then chatgpt-widescreen/* to adamlui/chatgpt-apps/chatgpt-widescreen/*
+name: Sync chatgpt-widescreen/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
 
 on:
   push:
@@ -23,14 +23,6 @@ jobs:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
-          fetch-depth: 2
-
-      - name: Checkout adamlui/chatgpt-widescreen
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/chatgpt-widescreen
-          path: adamlui/chatgpt-widescreen
 
       - name: Checkout adamlui/userscripts
         uses: actions/checkout@v4
@@ -39,51 +31,11 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync LICENSE.md from greasemonkey/* to <platform>/*
-        run: |
-          cd ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen
-          platforms=($(find . -type d -name "docs" | # paths to docs/
-            awk -F'/' '{print $(NF-1)}' | # filter to parents
-            grep -v "^greasemonkey$")) # exclude greasemonkey
-          echo "Platforms: ${platforms[@]}"
-          languages=($(ls docs/*/LICENSE.md | # paths to LICENSEs
-            awk -F'/' '{print $(NF-1)}') # filter to parents
-            "en") # include English
-          echo -e "Languages: ${languages[@]}\n"
-          for lang in "${languages[@]}"; do
-            gm_license=./greasemonkey$([[ "$lang" != "en" ]] && echo "/docs/$lang/" || echo "/")LICENSE.md
-            gm_license_content=$(git show HEAD:"$gm_license")
-            gm_license_modified=$(git log -1 --format="%ct" -- "$gm_license")
-            for platform in "${platforms[@]}"; do
-              platform_license=./$platform/$([[ "$lang" != "en" ]] && echo "docs/$lang/" || echo "")LICENSE.md
-              platform_license_content=$(git show HEAD:"$platform_license")
-              platform_license_modified=$(git log -1 --format="%ct" -- "$platform_license")
-              if [[ $gm_license_modified -gt $platform_license_modified ]] ; then
-                if [[ "$gm_license_content" != "$platform_license_content" ]] ; then
-                  cp -f "$gm_license" "$platform_license"
-                  echo "Copied $gm_license to $platform_license"
-          fi ; fi ; done; done
-
       - name: Sync chatgpt-widescreen/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-widescreen/*
         run: |
           rsync -avhr --delete \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/ \
             ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
-
-      - name: Sync chatgpt-widescreen/greasemonkey/_locales/* to chatgpt-widescreen/(chrome|edge|firefox|opera)/extension/_locales/*
-        run: |
-          for browser in chrome edge firefox opera
-          do
-            rsync -avhr --delete \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/_locales/" \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/$browser/extension/_locales/"
-          done
-
-      - name: Sync chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
-        run: |
-          rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
-            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ \
-            ${{ github.workspace }}/adamlui/chatgpt-widescreen/
 
       - name: Escape backticks in commit msg
         env:
@@ -92,22 +44,6 @@ jobs:
           echo "ESCAPED_MSG<<EOF" >> $GITHUB_ENV
           echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-
-      - name: Push changes to adamlui/chatgpt-apps
-        run: |
-          cd ${{ github.workspace }}/adamlui/chatgpt-apps
-          git pull # again to sync w/ concurrent workflow updates
-          git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`chatgpt-widescreen/greasemonkey\`]" || true
-          git push
-
-      - name: Push changes to adamlui/chatgpt-widescreen
-        run: |
-          cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
-          git pull # again to sync w/ concurrent workflow updates
-          git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey\`]" || true
-          git push
 
       - name: Push changes to adamlui/userscripts
         run: |

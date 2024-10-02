@@ -1,4 +1,4 @@
-name: Sync /chatgpt-infinity/firefox/extension/_locales/ to /chatgpt-infinity/<(chrome|edge|opera)/extension|greasemonkey>/_locales/, then /chatgpt-infinity/ to adamlui/chatgpt-infinity/, then /chatgpt-infinity/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-infinity/
+name: Sync chatgpt-infinity/ to adamlui/chatgpt-infinity/
 
 on:
   push:
@@ -31,39 +31,11 @@ jobs:
           repository: adamlui/chatgpt-infinity
           path: adamlui/chatgpt-infinity
 
-      - name: Checkout adamlui/userscripts
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/userscripts
-          path: adamlui/userscripts
-
-      - name: Sync /chatgpt-infinity/firefox/extension/_locales/ to /chatgpt-infinity/<chrome|edge|greasemonkey|opera>/extension/_locales/
-        run: |
-          for browser in chrome edge opera
-          do
-            rsync -avhr --delete \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/firefox/extension/_locales/" \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/$browser/extension/_locales"
-          done
-
-      - name: Sync /chatgpt-infinity/firefox/extension/_locales/ to /chatgpt-infinity/greasemonkey/_locales/
-        run: |
-          rsync -avhr --delete \
-            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/firefox/extension/_locales/" \
-            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/_locales"
-
       - name: Sync /chatgpt-infinity/ to adamlui/chatgpt-infinity/
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/ \
             ${{ github.workspace }}/adamlui/chatgpt-infinity/
-
-      - name: Sync /chatgpt-infinity/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-infinity/
-        run: |
-          rsync -avhr --delete \
-            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/ \
-            ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-infinity/
 
       - name: Escape backticks in commit msg
         env:
@@ -73,25 +45,9 @@ jobs:
           echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Push changes to adamlui/chatgpt-apps
-        run: |
-          cd ${{ github.workspace }}/adamlui/chatgpt-apps
-          git pull # again to sync w/ concurrent workflow updates
-          git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`chatgpt-infinity/firefox\`]" || true
-          git push
-
       - name: Push changes to adamlui/chatgpt-infinity
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-infinity
-          git pull # again to sync w/ concurrent workflow updates
-          git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-infinity/firefox\`]" || true
-          git push
-
-      - name: Push changes to adamlui/userscripts
-        run: |
-          cd ${{ github.workspace }}/adamlui/userscripts
           git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-infinity/firefox\`]" || true

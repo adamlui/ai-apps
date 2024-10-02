@@ -1,4 +1,4 @@
-name: Sync /chatgpt-widescreen/chrome/extension/ to /chatgpt-widescreen/(edge|opera)/extension/, then /chatgpt-widescreen/chrome/extension/_locales/ to /chatgpt-widescreen/<firefox/extension|greasemonkey>/_locales/, then /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/, then /chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
+name: Sync chatgpt-widescreen/chrome/extension/ to chatgpt-widescreen/(edge|opera)/extension/, then chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
 
 on:
   push:
@@ -31,13 +31,6 @@ jobs:
           repository: adamlui/chatgpt-widescreen
           path: adamlui/chatgpt-widescreen
 
-      - name: Checkout adamlui/userscripts
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/userscripts
-          path: adamlui/userscripts
-
       - name: Sync /chatgpt-widescreen/chrome/extension/ to /chatgpt-widescreen/(edge|opera)/extension/
         run: |
           for browser in edge opera
@@ -47,29 +40,11 @@ jobs:
               "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/$browser/extension/"
           done
 
-      - name: Sync /chatgpt-widescreen/chrome/extension/_locales/ to /chatgpt-widescreen/firefox/extension/_locales/
-        run: |
-          rsync -avhr --delete \
-            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/_locales/" \
-            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/firefox/extension/_locales"
-
-      - name: Sync /chatgpt-widescreen/chrome/extension/_locales/ to /chatgpt-widescreen/greasemonkey/_locales/
-        run: |
-          rsync -avhr --delete \
-            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/_locales/" \
-            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/_locales"
-
       - name: Sync /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ \
             ${{ github.workspace }}/adamlui/chatgpt-widescreen/
-
-      - name: Sync /chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
-        run: |
-          rsync -avhr --delete \
-            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/ \
-            ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
       - name: Escape backticks in commit msg
         env:
@@ -90,14 +65,6 @@ jobs:
       - name: Push changes to adamlui/chatgpt-widescreen
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
-          git pull # again to sync w/ concurrent workflow updates
-          git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-widescreen/chrome\`]" || true
-          git push
-
-      - name: Push changes to adamlui/userscripts
-        run: |
-          cd ${{ github.workspace }}/adamlui/userscripts
           git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-widescreen/chrome\`]" || true
