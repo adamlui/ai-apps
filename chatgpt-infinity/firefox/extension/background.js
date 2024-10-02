@@ -8,5 +8,5 @@ chrome.runtime.onInstalled.addListener(details => {
 chrome.tabs.onActivated.addListener(activeInfo =>
     chrome.tabs.sendMessage(activeInfo.tabId, {
         action: 'sync.storageToUI',
-        src: 'service-worker.js' // for content.js to reset config.infinityMode
+        sender: 'background.js' // for content.js to reset config.infinityMode
 }))
