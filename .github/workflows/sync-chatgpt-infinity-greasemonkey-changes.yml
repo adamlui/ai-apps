@@ -1,4 +1,4 @@
-name: Sync chatgpt-infinity/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*, then chatgpt-infinity/ to adamlui/chatgpt-infinity/
+name: Sync chatgpt-infinity/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*, then chatgpt-infinity/* to adamlui/chatgpt-infinity/*
 
 on:
   push:
