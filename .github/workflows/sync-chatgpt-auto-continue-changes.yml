@@ -1,4 +1,4 @@
-name: Sync _locales/* between chatgpt-auto-continue/<chrome|firefox>/extension/, then chatgpt-auto-continue/* to adamlui/chatgpt-auto-continue/*, then chatgpt-auto-continue/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-auto-continue/*
+name: Sync _locales/* between chatgpt-auto-continue/<chromium|firefox>/extension/, then chatgpt-auto-continue/* to adamlui/chatgpt-auto-continue/*, then chatgpt-auto-continue/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-auto-continue/*
 
 on:
   push:
@@ -39,27 +39,27 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync _locales/* between chatgpt-auto-continue/<chrome|firefox>/extension/
+      - name: Sync _locales/* between chatgpt-auto-continue/<chromium|firefox>/extension/
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue
           ff_dir="firefox/extension/_locales"
-          chrome_dir="chrome/extension/_locales"
+          chromium_dir="chromium/extension/_locales"
           
           # Loop thru all lang dirs in firefox
           for locale in $(find "$ff_dir" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;) ; do
               ff_file="$ff_dir/$locale/messages.json"
-              chrome_file="$chrome_dir/$locale/messages.json"
-              if [[ -f "$ff_file" && -f "$chrome_file" ]] ; then
+              chromium_file="$chromium_dir/$locale/messages.json"
+              if [[ -f "$ff_file" && -f "$chromium_file" ]] ; then
 
                   # Get the latest commit timestamps for both files
                   ff_timestamp=$(git log -1 --format="%ct" -- "$ff_file" 2>/dev/null || echo 0)
-                  chrome_timestamp=$(git log -1 --format="%ct" -- "$chrome_file" 2>/dev/null || echo 0)
+                  chromium_timestamp=$(git log -1 --format="%ct" -- "$chromium_file" 2>/dev/null || echo 0)
           
                   # Sync the most recently updated file to the other dir
-                  if [[ $ff_timestamp -gt $chrome_timestamp ]] ; then
-                      cp -f "$ff_file" "$chrome_file"
-                  elif [[ $chrome_timestamp -gt $ff_timestamp ]] ; then
-                      cp -f "$chrome_file" "$ff_file"
+                  if [[ $ff_timestamp -gt $chromium_timestamp ]] ; then
+                      cp -f "$ff_file" "$chromium_file"
+                  elif [[ $chromium_timestamp -gt $ff_timestamp ]] ; then
+                      cp -f "$chromium_file" "$ff_file"
                   fi
               fi
           done
