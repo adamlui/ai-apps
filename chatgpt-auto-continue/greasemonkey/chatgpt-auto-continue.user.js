@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.2.1
+// @version             2024.10.2.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -572,7 +572,7 @@
             })()
         }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
     if (extensionInstalled) { // disable script/menu
-        GM_registerMenuCommand(`${menu.state.symbols[0]} ${app.msgs.menuLabel_disabled}`, () => {})
+        GM_registerMenuCommand(`${menu.state.symbols[0]} ${app.msgs.menuLabel_disabled}`, modals.about.show)
         return // exit script
     } else menu.register() // create functional menu
 
