@@ -43,7 +43,6 @@ jobs:
           rsync -avhr --delete \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/ \
             ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
-          done
 
       - name: Sync chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
         run: |
