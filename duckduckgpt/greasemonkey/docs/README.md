@@ -15,7 +15,6 @@
 <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=31 alt="[Mentioned in Awesome]" src="https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge">
 <a href="https://www.kudoai.com?utm_source=duckduckgpt&utm_content=github_shield"><img height=31 alt="[Built by KudoAI]" src="https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge">
 <a href="https://www.jsdelivr.com/package/gh/KudoAI/duckduckgpt?tab=stats"><img height=31 alt="[jsDelivr stats]" src="https://img.shields.io/jsdelivr/gh/hm/KudoAI/duckduckgpt?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Requests&labelColor=464646&color=2bbbd8"></a>
-<a href="https://www.duckduckgpt.com?utm_source=duckduckgpt&utm_content=github_shield"><img height=31 alt="[www.duckduckgpt.com]" src="https://img.shields.io/badge/web-www.duckduckgpt.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge">
 
 <h3><b>DuckDuckGPT</b> brings the magic of ChatGPT to DDG (powered by GPT-4o!)</h3>
 
