@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Oznámení režimu" },
   "menuLabel_about": { "message": "O" },
   "menuLabel_donate": { "message": "Prosíme o zaslání daru" },
+  "menuLabel_disabled": { "message": "Zakázáno (nainstalováno rozšíření)" },
   "about_version": { "message": "Verze" },
   "about_poweredBy": { "message": "Běží na" },
   "about_sourceCode": { "message": "Zdrojový kód" },

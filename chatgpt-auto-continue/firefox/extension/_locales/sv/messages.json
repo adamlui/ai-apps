@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Lägesaviseringar" },
   "menuLabel_about": { "message": "Om" },
   "menuLabel_donate": { "message": "Vänligen skicka en donation" },
+  "menuLabel_disabled": { "message": "Inaktiverad (tillägg installerat)" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Drivs av" },
   "about_sourceCode": { "message": "Källkod" },

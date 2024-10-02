@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "བཟོ་རྣམ་བརྡ་སྤྲོད་" },
   "menuLabel_about": { "message": "མྱུར་ཨང་སྐོར།" },
   "menuLabel_donate": { "message": "ཁྱོད་ཀྱིས་སྦྱིན་པ་གཏོང་འདོད་དམ །" },
+  "menuLabel_disabled": { "message": "མ་ནུས་པ ། (ཁ་སྐོང་བཙུགས་པ །)" },
   "about_version": { "message": "པར་གཞི།" },
   "about_poweredBy": { "message": "དྲ་ཚིག་བཟོ་མཁན།" },
   "about_sourceCode": { "message": "འབྱུང་ཁུངས །" },

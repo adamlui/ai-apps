@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Modus Kennisgewings" },
   "menuLabel_about": { "message": "Omtrent" },
   "menuLabel_donate": { "message": "Stuur asseblief 'n donasie" },
+  "menuLabel_disabled": { "message": "Geaktiveer (uitbreiding geïnstalleer)" },
   "about_version": { "message": "Weergawe" },
   "about_poweredBy": { "message": "Aangedryf deur" },
   "about_sourceCode": { "message": "Oorsprong Kode" },

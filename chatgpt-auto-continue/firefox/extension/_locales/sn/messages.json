@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
   "menuLabel_about": { "message": "Nezvedu" },
   "menuLabel_donate": { "message": "Ndapota tumira mupiro" },
+  "menuLabel_disabled": { "message": "Akaremara (kuwedzerwa kwakaiswa)" },
   "about_version": { "message": "Vhezheni" },
   "about_poweredBy": { "message": "Inofambiswa ne" },
   "about_sourceCode": { "message": "Kunobva kodhi" },

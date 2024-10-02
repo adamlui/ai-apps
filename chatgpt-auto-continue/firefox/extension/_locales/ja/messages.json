@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "モード通知" },
   "menuLabel_about": { "message": "詳細" },
   "menuLabel_donate": { "message": "寄付を送ってください" },
+  "menuLabel_disabled": { "message": "無効（拡張機能がインストールされています）" },
   "about_version": { "message": "バージョン" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "ソースコード" },

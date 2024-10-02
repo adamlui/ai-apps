@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "מאָדע נאָטיפיקאַטיאָנס" },
   "menuLabel_about": { "message": "וועגן" },
   "menuLabel_donate": { "message": "ביטע שיקן אַ צושטייַער" },
+  "menuLabel_disabled": { "message": "פאַרקריפּלט (פאַרלענגערונג אינסטאַלירן)" },
   "about_version": { "message": "ווערסיע" },
   "about_poweredBy": { "message": "פּאַוערד דורך" },
   "about_sourceCode": { "message": "מקור קאָד" },

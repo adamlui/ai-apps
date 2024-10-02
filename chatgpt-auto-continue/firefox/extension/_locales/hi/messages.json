@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "मोड नोटिफ़िकेशन" },
   "menuLabel_about": { "message": "परिचय" },
   "menuLabel_donate": { "message": "कृपया दान भेजें" },
+  "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन इंस्टॉल किया गया)" },
   "about_version": { "message": "संस्करण" },
   "about_poweredBy": { "message": "...द्वारा पावरशुदा" },
   "about_sourceCode": { "message": "सोर्स कोड" },

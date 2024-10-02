@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Rejim bildirishnomalari" },
   "menuLabel_about": { "message": "Qisqacha ma'lumot" },
   "menuLabel_donate": { "message": "Iltimos, xayriya yuboring" },
+  "menuLabel_disabled": { "message": "O'chirilgan (kengaytma o'rnatilgan)" },
   "about_version": { "message": "Versiya" },
   "about_poweredBy": { "message": "Tomonidan qo'llab-quvvatlanadi" },
   "about_sourceCode": { "message": "Ochiq kod" },

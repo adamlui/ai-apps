@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Arifa za Hali" },
   "menuLabel_about": { "message": "Kuhusu" },
   "menuLabel_donate": { "message": "Tafadhali tuma mchango" },
+  "menuLabel_disabled": { "message": "Imelemazwa (kiendelezi kimewekwa)" },
   "about_version": { "message": "Toleo" },
   "about_poweredBy": { "message": "Imewezeshwa na" },
   "about_sourceCode": { "message": "Msimbo wa chanzo" },

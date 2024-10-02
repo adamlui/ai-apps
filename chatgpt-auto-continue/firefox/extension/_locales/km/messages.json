@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "ការជូនដំណឹងអំពីម៉ូដ" },
   "menuLabel_about": { "message": "អំពី" },
   "menuLabel_donate": { "message": "សូមផ្ញើការបរិច្ចាគ" },
+  "menuLabel_disabled": { "message": "បានបិទ (បានដំឡើងផ្នែកបន្ថែម)" },
   "about_version": { "message": "លេខជំនាន់កម្មវិធី" },
   "about_poweredBy": { "message": "ដំណើរការដោយ" },
   "about_sourceCode": { "message": "កូដដើម" },

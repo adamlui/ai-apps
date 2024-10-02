@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Notifiche di modalità" },
   "menuLabel_about": { "message": "Informazioni generali" },
   "menuLabel_donate": { "message": "Invia una donazione" },
+  "menuLabel_disabled": { "message": "Disabilitato (estensione installata)" },
   "about_version": { "message": "Versione" },
   "about_poweredBy": { "message": "Alimentato da" },
   "about_sourceCode": { "message": "Codice sorgente" },

@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "ප් ‍ රකාර දැනුම්දීම්" },
   "menuLabel_about": { "message": "සම්බන්ධව" },
   "menuLabel_donate": { "message": "කරුණාකර පරිත් ‍ යාගයක් යවන්න" },
+  "menuLabel_disabled": { "message": "අක් ‍ රීය කර ඇත (දිගුව ස්ථාපනය කර ඇත)" },
   "about_version": { "message": "වෙළුම" },
   "about_poweredBy": { "message": "විසින් බල ගැන්වී ඇත" },
   "about_sourceCode": { "message": "මූලාශ්‍ර කේතය" },

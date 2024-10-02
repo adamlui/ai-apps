@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Modus-Noriichten" },
   "menuLabel_about": { "message": "Iwwer Qt" },
   "menuLabel_donate": { "message": "Schéckt w.e.g. eng Donatioun" },
+  "menuLabel_disabled": { "message": "Disabled (Verlängerung installéiert)" },
   "about_version": { "message": "Versioun" },
   "about_poweredBy": { "message": "Bereetgestallt vun" },
   "about_sourceCode": { "message": "Quellcode" },

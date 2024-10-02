@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Mod Bildirimleri" },
   "menuLabel_about": { "message": "Hakkımızda" },
   "menuLabel_donate": { "message": "Lütfen bağış gönderin" },
+  "menuLabel_disabled": { "message": "Devre dışı (uzantı yüklendi)" },
   "about_version": { "message": "Versiyon" },
   "about_poweredBy": { "message": "Destek" },
   "about_sourceCode": { "message": "Kaynak Kodu" },

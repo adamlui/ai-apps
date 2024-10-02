@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "موڈ نوٹیفکیشنز" },
   "menuLabel_about": { "message": "متعلق" },
   "menuLabel_donate": { "message": "براہ کرم ایک عطیہ بھیجیں" },
+  "menuLabel_disabled": { "message": "غیر فعال (ایکسٹینشن انسٹال ہے)" },
   "about_version": { "message": "ورژن" },
   "about_poweredBy": { "message": "تقویت یافتہ از" },
   "about_sourceCode": { "message": "کۆسی سەرچاوە" },

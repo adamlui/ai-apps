@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Mga Notipikasyon sa Mode" },
   "menuLabel_about": { "message": "Mahitungod" },
   "menuLabel_donate": { "message": "Palihug ipadala ang usa ka donasyon" },
+  "menuLabel_disabled": { "message": "Disable (pag-instalar sa extension)" },
   "about_version": { "message": "Bersyon" },
   "about_poweredBy": { "message": "Gipadagan sa" },
   "about_sourceCode": { "message": "Gigikana sa kodigo" },

@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Izaziso Zendlela" },
   "menuLabel_about": { "message": "Mayelana" },
   "menuLabel_donate": { "message": "Sicela uthumele umnikelo" },
+  "menuLabel_disabled": { "message": "Ikhutshaziwe (isandiso sifakiwe)" },
   "about_version": { "message": "Uhlelo" },
   "about_poweredBy": { "message": "Ixhaswa yi-" },
   "about_sourceCode": { "message": "Ikhodi yomthombo" },

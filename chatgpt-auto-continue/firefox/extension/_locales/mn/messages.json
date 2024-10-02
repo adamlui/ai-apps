@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Горимын мэдэгдэл" },
   "menuLabel_about": { "message": "Бидний тухай" },
   "menuLabel_donate": { "message": "Хандив илгээнэ үү" },
+  "menuLabel_disabled": { "message": "Идэвхгүй (өргөтгөлийг суулгасан)" },
   "about_version": { "message": "Хувилбар" },
   "about_poweredBy": { "message": "ИЛЧЛЭГЧ" },
   "about_sourceCode": { "message": "Эх код" },

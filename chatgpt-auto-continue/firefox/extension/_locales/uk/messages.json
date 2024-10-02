@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Сповіщення про режим" },
   "menuLabel_about": { "message": "Про нас" },
   "menuLabel_donate": { "message": "Будь ласка, надішліть пожертву" },
+  "menuLabel_disabled": { "message": "Вимкнено (розширення встановлено)" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Працює на" },
   "about_sourceCode": { "message": "Джерельний код" },

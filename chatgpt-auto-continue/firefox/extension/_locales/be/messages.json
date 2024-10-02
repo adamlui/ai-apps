@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Апавяшчэнні аб рэжыме" },
   "menuLabel_about": { "message": "Пра нас" },
   "menuLabel_donate": { "message": "Калі ласка, дашліце ахвяраванне" },
+  "menuLabel_disabled": { "message": "Адключана (усталявана пашырэнне)" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Пры падтрымцы" },
   "about_sourceCode": { "message": "Зыходнікі" },

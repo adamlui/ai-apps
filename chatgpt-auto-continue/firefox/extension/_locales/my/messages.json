@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "မုဒ် အသိပေးချက်များ" },
   "menuLabel_about": { "message": "အကြောင်း" },
   "menuLabel_donate": { "message": "ကျေးဇူးပြု ၍ လှူဒါန်းမှုတစ်ခု ပေးပို့ပါ" },
+  "menuLabel_disabled": { "message": "မသန်စွမ်း (တိုးချဲ့ထည့်သွင်း)" },
   "about_version": { "message": "ဗားရှင်း" },
   "about_poweredBy": { "message": "မှပံ့ပိုးသည်" },
   "about_sourceCode": { "message": "ပင္မကုဒ္" },

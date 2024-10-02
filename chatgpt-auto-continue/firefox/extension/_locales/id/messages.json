@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Pemberitahuan Mode" },
   "menuLabel_about": { "message": "Ihwal" },
   "menuLabel_donate": { "message": "Kirimkan donasi" },
+  "menuLabel_disabled": { "message": "Dinonaktifkan (ekstensi terpasang)" },
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Didukung oleh" },
   "about_sourceCode": { "message": "Kode sumber" },

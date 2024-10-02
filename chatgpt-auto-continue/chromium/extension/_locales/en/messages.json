@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Auto-Continue" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Automatically continue generating multiple ChatGPT responses." },
+  "appDesc": { "message": "Automatically continue generating multiple ChatGPT responses" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
   "menuLabel_about": { "message": "About" },
   "menuLabel_donate": { "message": "Please send a donation" },

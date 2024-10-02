@@ -5,6 +5,7 @@
   "menuLabel_modeNotifs": { "message": "Imiyalezo Yemowudi" },
   "menuLabel_about": { "message": "Malunga" },
   "menuLabel_donate": { "message": "Nceda uthumele umnikelo" },
+  "menuLabel_disabled": { "message": "Yenziwe ingasebenzi (isandiso sifakiwe)" },
   "about_version": { "message": "Inguqulelo" },
   "about_poweredBy": { "message": "Ixhaswa ngu" },
   "about_sourceCode": { "message": "Ikhowudi engumthombo" },
