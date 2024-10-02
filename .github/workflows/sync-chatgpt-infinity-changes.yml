@@ -1,13 +1,9 @@
-name: Sync chatgpt-infinity/* to adamlui/chatgpt-infinity/*, then chatgpt-infinity/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*
-
+name: Sync _locales/* between chatgpt-infinity/<chrome|firefox>/extension/, then chatgpt-infinity/* to adamlui/chatgpt-infinity/*, then chatgpt-infinity/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*
 
 on:
   push:
     branches: [main]
-    paths:
-      - chatgpt-infinity/*
-      - chatgpt-infinity/docs/**
-      - chatgpt-infinity/media/**
+    paths: [chatgpt-infinity/**]
 
 jobs:
   build:
@@ -27,6 +23,7 @@ jobs:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
+          fetch-depth: 2
 
       - name: Checkout adamlui/chatgpt-infinity
         uses: actions/checkout@v4
@@ -41,6 +38,31 @@ jobs:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/userscripts
           path: adamlui/userscripts
+
+      - name: Sync _locales/* between chatgpt-infinity/<chrome|firefox>/extension/
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity
+          ff_dir="firefox/extension/_locales"
+          chrome_dir="chrome/extension/_locales"
+          
+          # Loop thru all lang dirs in firefox
+          for locale in $(find "$ff_dir" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;) ; do
+              ff_file="$ff_dir/$locale/messages.json"
+              chrome_file="$chrome_dir/$locale/messages.json"
+              if [[ -f "$ff_file" && -f "$chrome_file" ]] ; then
+
+                  # Get the latest commit timestamps for both files
+                  ff_timestamp=$(git log -1 --format="%ct" -- "$ff_file" 2>/dev/null || echo 0)
+                  chrome_timestamp=$(git log -1 --format="%ct" -- "$chrome_file" 2>/dev/null || echo 0)
+          
+                  # Sync the most recently updated file to the other dir
+                  if [[ $ff_timestamp -gt $chrome_timestamp ]] ; then
+                      cp -f "$ff_file" "$chrome_file"
+                  elif [[ $chrome_timestamp -gt $ff_timestamp ]] ; then
+                      cp -f "$chrome_file" "$ff_file"
+                  fi
+              fi
+          done
 
       - name: Sync chatgpt-infinity/* to adamlui/chatgpt-infinity/*
         run: |
@@ -61,6 +83,14 @@ jobs:
           echo "ESCAPED_MSG<<EOF" >> $GITHUB_ENV
           echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
+
+      - name: Push changes to adamlui/chatgpt-apps
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-apps
+          git pull # again to sync w/ concurrent workflow updates
+          git add .
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps\`]" || true
+          git push
 
       - name: Push changes to adamlui/chatgpt-infinity
         run: |
