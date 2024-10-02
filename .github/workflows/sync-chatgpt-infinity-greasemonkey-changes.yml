@@ -1,4 +1,4 @@
-name: Sync chatgpt-infinity/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*
+name: Sync chatgpt-infinity/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*, then chatgpt-infinity/ to adamlui/chatgpt-infinity/
 
 on:
   push:
@@ -31,11 +31,25 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
+      - name: Checkout adamlui/chatgpt-infinity
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-infinity
+          path: adamlui/chatgpt-infinity
+
       - name: Sync chatgpt-infinity/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*
         run: |
           rsync -avhr --delete \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/ \
             ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-infinity/
+          done
+
+      - name: Sync chatgpt-infinity/* to adamlui/chatgpt-infinity/*
+        run: |
+          rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/ \
+            ${{ github.workspace }}/adamlui/chatgpt-infinity/
 
       - name: Escape backticks in commit msg
         env:
@@ -51,4 +65,12 @@ jobs:
           git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey\`]" || true
+          git push
+
+      - name: Push changes to adamlui/chatgpt-infinity
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-infinity
+          git pull # again to sync w/ concurrent workflow updates
+          git add .
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-infinity/firgreasemonkeyefox\`]" || true
           git push
