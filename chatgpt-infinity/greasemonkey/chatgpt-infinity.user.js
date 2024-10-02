@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.2.1
+// @version             2024.10.2.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -606,6 +606,7 @@
         
                 // Re-format buttons to include emoji + localized label + hide Dismiss button
                 for (const button of document.getElementById(aboutModalID).querySelectorAll('button')) {
+                    button.style.cssText = 'cursor: pointer !important' // since tweaks won't load on auto-disable
                     if (/updates/i.test(button.textContent)) button.textContent = (
                         '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(button.textContent)) button.textContent = (
@@ -862,7 +863,7 @@
         document.onvisibilitychange = () => { if (config.infinityMode) infinity.deactivate() }
 
     // Add/update TWEAKS style
-    const tweaksStyleUpdated = 20240930 // datestamp of last edit for this file's `tweaksStyle`
+    const tweaksStyleUpdated = 20241002 // datestamp of last edit for this file's `tweaksStyle`
     let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
     if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
         if (!tweaksStyle) { // outright missing, create/id/attr/append it first
@@ -876,6 +877,7 @@
               + 'font-size: 0.77rem ; text-transform: uppercase ;' // shrink/uppercase labels
               + `border: 2px dashed ${ chatgpt.isDarkMode() ? 'white' : 'black' } !important ; border-radius: 0 !important ;` // thiccen/square/dash borders
               + 'transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;' // smoothen hover fx
+              + 'cursor: pointer !important ;' // add finger cursor
               + 'padding: 5px !important ; min-width: 102px }' // resize
           + '.chatgpt-modal button:hover {' // add zoom, re-scheme
               + 'transform: scale(1.055) ;'

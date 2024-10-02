@@ -289,6 +289,7 @@
                       + 'font-size: 0.77rem ; text-transform: uppercase ;' // shrink/uppercase labels
                       + `border: 2px dashed ${ chatgpt.isDarkMode() ? 'white' : 'black' } !important ; border-radius: 0 !important ;` // thiccen/square/dash borders
                       + 'transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;' // smoothen hover fx
+                      + 'cursor: pointer !important ;' // add finger cursor
                       + 'padding: 5px !important ; min-width: 102px }' // resize
                   + '[class*="-modal"] button:hover {' // add zoom, re-scheme
                       + 'transform: scale(1.055) ;'

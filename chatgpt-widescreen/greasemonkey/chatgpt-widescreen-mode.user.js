@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.2.1
+// @version             2024.10.2.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -563,6 +563,7 @@
 
                 // Re-format buttons to include emoji + localized label + hide Dismiss button
                 for (const btn of document.getElementById(aboutModalID).querySelectorAll('button')) {
+                    btn.style.cssText = 'cursor: pointer !important' // since tweaks won't load on auto-disable
                     if (/updates/i.test(btn.textContent)) btn.textContent = (
                         '🚀 ' + ( app.msgs.btnLabel_updateCheck ))
                     else if (/support/i.test(btn.textContent)) btn.textContent = (
@@ -853,6 +854,7 @@
                       + 'font-size: 0.77rem ; text-transform: uppercase ;' // shrink/uppercase labels
                       + `border: 2px dashed ${ chatgpt.isDarkMode() ? 'white' : 'black' } !important ; border-radius: 0 !important ;` // thiccen/square/dash borders
                       + 'transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;' // smoothen hover fx
+                      + 'cursor: pointer !important ;' // add finger cursor
                       + 'padding: 5px !important ; min-width: 102px }' // resize
                   + '[class*="-modal"] button:hover {' // add zoom, re-scheme
                       + 'transform: scale(1.055) ;'
