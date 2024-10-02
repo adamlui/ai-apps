@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.9.30.6
+// @version             2024.10.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -263,7 +263,7 @@
             relatedApps: 'https://github.com/adamlui/chatgpt-apps',
             support: 'https://support.chatgptautocontinue.com'
         },
-        latestAssetCommitHash: '8bae957' // for cached messages.json
+        latestAssetCommitHash: 'd69abc7' // for cached messages.json
     }
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
@@ -594,6 +594,6 @@
     })()
 
     // NOTIFY of status on load
-    if (!config.notifDisabled) notify(`${app.msgs.mode_autoContinue}: ON`)
+    if (!config.notifDisabled) notify(`${app.msgs.mode_autoContinue}: ${app.msgs.state_on.toUpperCase()}`)
 
 })()
