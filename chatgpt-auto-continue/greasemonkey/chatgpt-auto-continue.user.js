@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.1.1
+// @version             2024.10.1.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -348,6 +348,9 @@
         Object.assign(app.msgs, localizedMsgs)
     }
 
+    // Init SETTINGS props
+    Object.assign(app, { settings: { notifDisabled: { type: 'toggle', label: app.msgs.menuLabel_modeNotifs }}})
+
     // Define MENU functions
 
     const menu = {
@@ -358,15 +361,16 @@
 
         register() {
 
-            // Add Mode Notifications toggle
-            const mnLabel = menu.state.symbols[+!config.notifDisabled] + ' '
-                          + ( app.msgs.menuLabel_modeNotifs )
-                          + menu.state.separator + menu.state.words[+!config.notifDisabled]
-            menu.ids.push(GM_registerMenuCommand(mnLabel, function() {
-                settings.save('notifDisabled', !config.notifDisabled)
-                notify(`${app.msgs.menuLabel_modeNotifs}: ${menu.state.words[+!config.notifDisabled]}`)
-                menu.refresh()
-            }))
+            // Add toggles
+            Object.keys(app.settings).forEach(key => {
+                const settingIsEnabled = config[key] ^ /disabled|hidden/i.test(key),
+                      menuLabel = `${ app.settings[key].symbol || menu.state.symbols[+settingIsEnabled] } `
+                                + app.settings[key].label + menu.state.separator + menu.state.words[+settingIsEnabled]
+                menu.ids.push(GM_registerMenuCommand(menuLabel, () => {
+                    settings.save(key, !config[key]) ; syncConfigToUI()
+                    notify(`${app.settings[key].label}: ${menu.state.words[+(/disabled|hidden/i.test(key) ^ config[key])]}`)
+                }))
+            })
     
             // Add About entry
             const aboutLabel = `💡 ${app.msgs.menuLabel_about} ${app.msgs.appName}`
@@ -550,6 +554,10 @@
 
         safeWinOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     }
+
+    // Define SYNC functions
+
+    function syncConfigToUI() { menu.refresh() /* symbols/suffixes */ }
 
     // Run MAIN routine
 
