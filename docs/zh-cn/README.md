@@ -87,7 +87,7 @@
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <img width=19 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式 🖥️](../../chatgpt-widescreen) &nbsp;<a href="https://chrome.chatgptwidescreen.com"><img height=20 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+### <img width=19 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](../../chatgpt-widescreen) &nbsp;<a href="https://chrome.chatgptwidescreen.com"><img height=20 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 <a href="../../chatgpt-widescreen"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
