@@ -88,7 +88,7 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 <br>[Chrome](https://chrome.chatgptwidescreen.com) /
 [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/) /
 [Edge](https://edge.chatgptwidescreen.com) /
-[Greasemonkey](https://greasyfork.chatgptwidescreen.com)
+[Greasemonkey](https://greasyfork.chatgptwidescreen.com) /
 [Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
