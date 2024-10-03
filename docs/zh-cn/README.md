@@ -79,7 +79,11 @@
 <a href="../../chatgpt-infinity"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
-<br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#-如何安装) /
+<br>[Chrome](https://chrome.chatgptinfinity.com) /
+[Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) /
+[Edge](https://edge.chatgptinfinity.com) /
+[Greasemonkey](../../main/chatgpt-infinity/docs/zh-cn/#-greasemonkey-用户脚本) /
+[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#-如何安装) /
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
@@ -88,7 +92,11 @@
 <a href="../../chatgpt-widescreen"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
 > 向 ChatGPT 添加宽屏 + 全屏模式以增强查看效果 + 减少滚动。
-<br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/docs/zh-cn/#-如何安装) /
+<br>[Chrome](https://chrome.chatgptwidescreen.com) /
+[Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/) /
+[Edge](https://edge.chatgptwidescreen.com) /
+[Greasemonkey](../../main/chatgpt-widescreen/docs/zh-cn/#-greasemonkey-用户脚本) /
+[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/docs/zh-cn/#-如何安装) /
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 

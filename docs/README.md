@@ -73,7 +73,10 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 <a href="../chatgpt-infinity"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
 > Generate endless answers from all-knowing ChatGPT (in any language!)
-<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/#-installation) /
+<br>[Chrome](https://chrome.chatgptinfinity.com) /
+[Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) /
+[Edge](https://edge.chatgptinfinity.com) /
+[Greasemonkey](../chatgpt-infinity/#-greasemonkey-userscript) /
 [Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
@@ -82,7 +85,10 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 <a href="../chatgpt-widescreen"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
-<br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/#-installation) /
+<br>[Chrome](https://chrome.chatgptwidescreen.com) /
+[Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/) /
+[Edge](https://edge.chatgptwidescreen.com) /
+[Greasemonkey](../chatgpt-widescreen/#-greasemonkey-userscript) /
 [Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
