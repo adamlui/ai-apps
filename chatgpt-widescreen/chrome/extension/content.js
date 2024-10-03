@@ -536,10 +536,8 @@
                     btns.updateColor() ; isTempChat = chatbarIsBlack }            
         }
     })
-    nodeObserver.observe( // <html> for page scheme toggles
-        document.documentElement, { attributes: true })
-    nodeObserver.observe( // for chatbar changes
-        document.querySelector(site == 'chatgpt' ? 'main' : site == 'perplexity' ? 'body' : 'head'),
+    nodeObserver.observe(
+        document.querySelector(site == 'poe' ? 'head' : 'body'),
         { attributes: true, subtree: true }
     )
 
