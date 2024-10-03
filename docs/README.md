@@ -83,11 +83,11 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
 <a href="../chatgpt-widescreen"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
-> Install: [Chrome](https://chrome.chatgptwidescreen.com) /
+> [Chrome](https://chrome.chatgptwidescreen.com) /
 [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/) /
 [Edge](https://edge.chatgptwidescreen.com) /
 [Greasemonkey](https://greasyfork.chatgptwidescreen.com)
-<br>Other: [Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/#readme) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=20> [DuckDuckGPT](../duckduckgpt) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
