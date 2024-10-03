@@ -76,12 +76,16 @@
 
 ### <img width=20 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT无限](../../chatgpt-infinity) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
+<a href="../../chatgpt-infinity"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
 <br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#-如何安装) /
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <img width=19 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式 🖥️](../../chatgpt-widescreen) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
+
+<a href="../../chatgpt-widescreen"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
 > 向 ChatGPT 添加宽屏 + 全屏模式以增强查看效果 + 减少滚动。
 <br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/docs/zh-cn/#-如何安装) /
