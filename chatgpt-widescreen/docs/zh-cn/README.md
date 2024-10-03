@@ -81,7 +81,7 @@
 
 ## 🚀 如何安装
 
-### <img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"><img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
+### <img height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"><img height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
 
 1. 安装 ChatGPT 宽屏模式扩展 ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com), [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/))
 
@@ -98,7 +98,7 @@
 
 #
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey 用户脚本:
+### <img height=17 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img height=17.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey 用户脚本:
 
 1. 安装用户脚本管理器：
     - ScriptCat 为了 [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Firefox](https://addons.mozilla.org/firefox/addon/scriptcat/) 或 [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh)
