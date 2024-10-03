@@ -83,7 +83,6 @@
 [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) /
 [Edge](https://edge.chatgptinfinity.com) /
 [Greasemonkey](https://greasyfork.chatgptinfinity.com) /
-[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#-如何安装) /
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
@@ -96,7 +95,6 @@
 [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/) /
 [Edge](https://edge.chatgptwidescreen.com) /
 [Greasemonkey](https://greasyfork.chatgptwidescreen.com) /
-[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/docs/zh-cn/#-如何安装) /
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
