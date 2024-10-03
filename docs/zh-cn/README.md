@@ -82,7 +82,7 @@
 <br>[Chrome](https://chrome.chatgptinfinity.com) /
 [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) /
 [Edge](https://edge.chatgptinfinity.com) /
-[Greasemonkey](../../main/chatgpt-infinity/docs/zh-cn/#-greasemonkey-用户脚本) /
+[Greasemonkey](../../chatgpt-infinity/docs/zh-cn/#-greasemonkey-用户脚本) /
 [安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#-如何安装) /
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
@@ -95,7 +95,7 @@
 <br>[Chrome](https://chrome.chatgptwidescreen.com) /
 [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/) /
 [Edge](https://edge.chatgptwidescreen.com) /
-[Greasemonkey](../../main/chatgpt-widescreen/docs/zh-cn/#-greasemonkey-用户脚本) /
+[Greasemonkey](../../chatgpt-widescreen/docs/zh-cn/#-greasemonkey-用户脚本) /
 [安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/docs/zh-cn/#-如何安装) /
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
