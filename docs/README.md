@@ -23,7 +23,7 @@
 ### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=18> [AmazonGPT](../amazongpt) &nbsp;<img height=20 src="https://amazongpt.kudoai.com/assets/images/badges/wolfram-award/gold-badge.png">
 
 > Add AI to Amazon shopping.
-<br>[Install](https://greasyfork.org/scripts/500663-amazongpt) /
+<br>[Install](../amazongpt/#-installation) /
 [Readme](../amazongpt/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
