@@ -188,7 +188,7 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 [README](https://docs.chatgptautorefresh.com/#readme) / 
 [議論](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
-### <img width=16 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT 自動継続 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
+### <img width=16 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT 自動継続](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 
 > 複数の ChatGPT 応答を自動的に生成し続けます。<br>
 [インストール](https://docs.chatgptautocontinue.com/#-installation) / 

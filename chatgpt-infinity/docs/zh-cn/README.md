@@ -197,7 +197,7 @@ ChatGPT 无穷 与以下浏览器兼容:
 [自述文件](https://github.com/adamlui/chatgpt-auto-talk/tree/main/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-auto-talk/discussions)
 
-### <img width=16 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT 自动继续 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
+### <img width=16 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT 自动继续](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 
 > 自动继续生成多个 ChatGPT 响应。<br>
 [安装](https://docs.chatgptautocontinue.com/zh-cn/#-如何安装) / 

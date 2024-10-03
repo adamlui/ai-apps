@@ -47,7 +47,7 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 [Readme](https://github.com/adamlui/chatgpt-apps/tree/main/bravegpt/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <img width=20 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT Auto-Continue ⏩](../chatgpt-auto-continue) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
+### <img width=20 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT Auto-Continue](../chatgpt-auto-continue) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 
 > Automatically continue generating multiple ChatGPT responses.
 <br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-continue/#-installation) /

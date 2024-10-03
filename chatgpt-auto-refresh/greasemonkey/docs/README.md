@@ -202,7 +202,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://docs.chatgptwidescreen.com/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
-### <img width=16 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT Auto-Continue ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
+### <img width=16 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT Auto-Continue](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 > Automatically continue generating multiple ChatGPT responses.<br>
 [Install](https://docs.chatgptautocontinue.com/#-installation) /
 [Readme](https://docs.chatgptautocontinue.com/#readme) /

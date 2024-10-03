@@ -46,7 +46,7 @@
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/bravegpt/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <img width=20 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT 自动继续 ⏩](../../chatgpt-auto-continue) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
+### <img width=20 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT 自动继续](../../chatgpt-auto-continue) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 
 > 自动继续生成多个 ChatGPT 响应。
 <br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-continue/docs/zh-cn/#-如何安装) /
