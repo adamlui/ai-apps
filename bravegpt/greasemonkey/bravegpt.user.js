@@ -148,7 +148,7 @@
 // @description:zu        Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author                KudoAI
 // @namespace             https://kudoai.com
-// @version               2024.10.3.1
+// @version               2024.10.3.2
 // @license               MIT
 // @icon                  https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64                https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -3137,7 +3137,7 @@
                 config.openAIkey = await Promise.race([session.getOAItoken(), new Promise(reject => setTimeout(reject, 3000))])
 
             // Init prompt
-            const rqPrompt = 'Give me a numbered list of '
+            const rqPrompt = 'Shoot me a numbered list of '
                 + `${ get.related.replyIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
                 +   ( get.related.replyIsQuestion ? 'Generate answers as if in reply to a search engine chatbot asking the question.'
 

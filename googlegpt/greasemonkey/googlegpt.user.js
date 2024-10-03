@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.10.3.1
+// @version                  2024.10.3.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -3340,7 +3340,7 @@
                 config.openAIkey = await Promise.race([session.getOAItoken(), new Promise(reject => setTimeout(reject, 3000))])
 
             // Init prompt
-            const rqPrompt = 'Give me a numbered list of '
+            const rqPrompt = 'Shoot me a numbered list of '
                 + `${ get.related.replyIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
                 +   ( get.related.replyIsQuestion ? 'Generate answers as if in reply to a search engine chatbot asking the question.'
 
