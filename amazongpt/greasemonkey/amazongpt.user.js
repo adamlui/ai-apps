@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.10.3
+// @version                2024.10.3.1
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2605,9 +2605,9 @@
                 function handleProcessCompletion() {
                     if (caller.status != 'done') {
                         const failMatch = failFlagsAndURLs.exec(respText)
-                        if (failMatch) {
+                        if (failMatch || respText.startsWith('{')) {
                             log.debug('Response text', respText)
-                            log.error('Fail flag detected', `'${failMatch[0]}'`)
+                            if (failMatch) log.error('Fail flag detected', `'${failMatch[0]}'`)
                             api.tryNew(caller)
                         } else {
                             log.debug('Response text', respText)
