@@ -13,7 +13,6 @@
 [![\[Featured by Google\]](https://img.shields.io/badge/Featured_by-Google-51a557?logo=googlechrome&logoColor=white&labelColor=464646&style=for-the-badge)](https://chrome.chatgptinfinity.com)
 [![\[Mentioned in Awesome\]](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 <a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-infinity?tab=stats"><img alt="jsDelivr stats" src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-infinity?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Requests&labelColor=464646&color=2bbbd8"></a>
-[![\[www.chatgptinfinity.com\]](https://img.shields.io/badge/web-www.chatgptinfinity.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptinfinity.com?utm_source=chatgpt_infinity&utm_content=github_shield)
 
 <br>
 
