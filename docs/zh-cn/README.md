@@ -76,8 +76,6 @@
 
 ### <img width=20 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT无限](../../chatgpt-infinity) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
-<a href="../../chatgpt-infinity"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
-
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
 <br><img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chrome.chatgptinfinity.com) /
 <img height=14 src="https://media.chatgptinfinity.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) /
@@ -86,9 +84,9 @@
 <img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/paper-sheet/black.svg"> [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/docs/zh-cn/#readme) /
 <img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <img width=19 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](../../chatgpt-widescreen) &nbsp;<a href="https://chrome.chatgptwidescreen.com"><img height=20 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+<a href="../../chatgpt-infinity"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
-<a href="../../chatgpt-widescreen"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
+### <img width=19 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](../../chatgpt-widescreen) &nbsp;<a href="https://chrome.chatgptwidescreen.com"><img height=20 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 > 向 ChatGPT 添加宽屏 + 全屏模式以增强查看效果 + 减少滚动。
 <br><img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chrome.chatgptwidescreen.com) /
@@ -97,6 +95,8 @@
 <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptwidescreen.com) /
 <img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/paper-sheet/black.svg"> [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/docs/zh-cn/#readme) /
 <img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
+
+<a href="../../chatgpt-widescreen"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=20> [DuckDuckGPT](../../duckduckgpt) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
 
