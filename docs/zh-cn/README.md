@@ -52,6 +52,9 @@
 [自述文件](../../chatgpt-auto-continue/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
+<a href="../../chatgpt-auto-continue"><img height=65 src="https://media.chatgptautocontinue.com/images/screenshots/continue-button-crossed.png"></a>
+<a href="../../chatgpt-auto-continue"><img height=80 src="https://media.chatgptautocontinue.com/images/screenshots/zh-cn/auto-continue-on-notification-checked.png"></a>
+
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT 自动刷新 ↻](../../chatgpt-auto-refresh) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
 
 > 保持 ChatGPT 会话新鲜，消除聊天时间限制 + 网络错误 + Cloudflare 检查。

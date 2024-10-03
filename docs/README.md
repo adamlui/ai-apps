@@ -52,6 +52,9 @@
 [Readme](../chatgpt-auto-continue/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
+<a href="../chatgpt-auto-continue"><img height=65 src="https://media.chatgptautocontinue.com/images/screenshots/continue-button-crossed.png"></a>
+<a href="../chatgpt-auto-continue"><img height=80 src="https://media.chatgptautocontinue.com/images/screenshots/auto-continue-on-notification-checked.png"></a>
+
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT Auto Refresh ↻](../chatgpt-auto-refresh) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
 
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
