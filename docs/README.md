@@ -21,7 +21,7 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 [![\[CodeFactor grade\]](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
 [![\[SonarCloud vulnerabilities\]](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-apps%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilities&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-apps)
 [![\[Powered by chatgpt.js\]](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_apps&utm_content=github_shield)
-<img src="https://img.shields.io/badge/jsDelivr_Requests-1,500,000+/month-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge">
+<img src="https://img.shields.io/badge/jsDelivr_Requests-1,400,000+/month-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge">
 
 <img height=10px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
@@ -70,10 +70,9 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
 ### <img width=20 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT Infinity](../chatgpt-infinity) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
-<a href="../chatgpt-infinity"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+<a href="../chatgpt-infinity"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
-> Generate endless answers from all-knowing ChatGPT (in any language!)
-<br>[Chrome](https://chrome.chatgptinfinity.com) /
+> [Chrome](https://chrome.chatgptinfinity.com) /
 [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) /
 [Edge](https://edge.chatgptinfinity.com) /
 [Greasemonkey](https://greasyfork.chatgptinfinity.com) /
@@ -82,14 +81,13 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
 ### <img width=19 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](../chatgpt-widescreen) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
-<a href="../chatgpt-widescreen"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+<a href="../chatgpt-widescreen"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
-> Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
-<br>[Chrome](https://chrome.chatgptwidescreen.com) /
+> Install: [Chrome](https://chrome.chatgptwidescreen.com) /
 [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/) /
 [Edge](https://edge.chatgptwidescreen.com) /
-[Greasemonkey](https://greasyfork.chatgptwidescreen.com) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/#readme) /
+[Greasemonkey](https://greasyfork.chatgptwidescreen.com)
+<br>Other: [Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-widescreen/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=20> [DuckDuckGPT](../duckduckgpt) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
