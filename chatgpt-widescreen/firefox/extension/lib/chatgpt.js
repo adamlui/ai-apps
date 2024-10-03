@@ -584,4 +584,6 @@ console.info = (msg) => {
     else ogInfo(msg);
 };
 
-export { chatgpt }
+// Export chatgpt object
+try { window.chatgpt = chatgpt; } catch (err) {} // for Greasemonkey
+try { module.exports = chatgpt; } catch (err) {} // for CommonJS

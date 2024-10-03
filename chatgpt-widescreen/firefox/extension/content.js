@@ -8,7 +8,7 @@
     const site = /([^.]+)\.[^.]+$/.exec(location.hostname)[1]
 
     // Import LIBS
-    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+    await import(chrome.runtime.getURL('lib/chatgpt.js'))
     await import(chrome.runtime.getURL('lib/dom.js'))
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
     settings.site = site // to load/save active tab's settings
