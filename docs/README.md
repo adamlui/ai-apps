@@ -79,7 +79,7 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 [Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <img width=19 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](../chatgpt-widescreen) &nbsp;<a href="https://chrome.chatgptwidescreen.com"><img height=20 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+### <img width=19 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen](../chatgpt-widescreen) &nbsp;<a href="https://chrome.chatgptwidescreen.com"><img height=20 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 <a href="../chatgpt-widescreen"><img height=233 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
