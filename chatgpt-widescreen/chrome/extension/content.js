@@ -273,7 +273,7 @@
             chatbar() {
                 chatbarStyle.innerText = (
                     site == 'chatgpt' ? ( config.widerChatbox ? ''
-                        : `main form { width: ${chatbar.nativeWidth}px !important ; margin: auto }` )
+                        : `main form { max-width: ${chatbar.nativeWidth}px !important ; margin: auto }` )
                   : site == 'poe' ? ( !config.widerChatbox ? ''
                         : '[class*=footerInner] { width: 100% }' )
                   : '' )
