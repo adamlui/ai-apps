@@ -120,5 +120,11 @@
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
+有应用创意或请求？
+
+创建新讨论：https://github.com/adamlui/chatgpt-apps/discussions/new?category=ideas
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions) /
 <a href="#------------------------------------------------%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87---------english----">回到顶部 ↑</a>
