@@ -49,8 +49,8 @@
 
 > <img height=14 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue/) /
 <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptautocontinue.com) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/paper-sheet/black.svg"> [Readme](../../chatgpt-auto-continue/docs/zh-cn/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
+<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-auto-continue/docs/zh-cn/#readme) /
+<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
 <a href="../chatgpt-auto-continue"><img width=583 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.png"></a>
 
