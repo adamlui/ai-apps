@@ -111,7 +111,7 @@
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
-Have an app idea or request?
+### Have an app idea or request?
 
 Create a new discsusion: https://github.com/adamlui/chatgpt-apps/discussions/new?category=ideas
 

@@ -120,7 +120,7 @@
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
-有应用创意或请求？
+### 有应用创意或请求？
 
 创建新讨论：https://github.com/adamlui/chatgpt-apps/discussions/new?category=ideas
 
