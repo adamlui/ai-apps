@@ -202,13 +202,13 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://docs.chatgptwidescreen.com/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
-### <img width=16 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/with-robot/icon32.png?0615153"> [ChatGPT Auto-Continue](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
+### <img width=16 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT Auto-Continue](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 > Automatically continue generating multiple ChatGPT responses.<br>
 [Install](https://docs.chatgptautocontinue.com/#-installation) /
 [Readme](https://docs.chatgptautocontinue.com/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-auto-continue/discussions)
 
-### <img width=16 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/with-robot/icon32.png?70ca186"> [ChatGPT Infinity](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+### <img width=16 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT Infinity](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://docs.chatgptinfinity.com/#-greasemonkey-userscript) / 
 [Readme](https://docs.chatgptinfinity.com/#readme) / 
