@@ -558,6 +558,7 @@
         const fullScreenState = chatgpt.isFullScreen()
         if (config.fullScreen && !fullScreenState) { sync.mode('fullScreen') ; config.f11 = false } // exiting full screen
         else if (!config.fullScreen && fullScreenState) sync.mode('fullScreen') // entering full screen
+        if (site == 'chatgpt') chatbar.tweak() // update chatgpt.com chatbar inner width
     })
 
     // Add KEY LISTENER to enable flag on F11 + stop generating text on ESC

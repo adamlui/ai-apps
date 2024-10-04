@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.3.1
+// @version             2024.10.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -1126,6 +1126,7 @@
         const fullScreenState = chatgpt.isFullScreen()
         if (config.fullScreen && !fullScreenState) { sync.mode('fullScreen') ; config.f11 = false } // exiting full screen
         else if (!config.fullScreen && fullScreenState) sync.mode('fullScreen') // entering full screen
+        if (/chatgpt|openai/.test(site)) chatbar.tweak() // update ChatGPT chatbar inner width
     })
 
     // Add KEY LISTENER to enable flag on F11 + stop generating text on ESC
