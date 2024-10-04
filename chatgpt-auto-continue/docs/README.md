@@ -9,7 +9,11 @@
     </h6>
 </div>
 
-# <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/continue-symbol/white/icon32.png?46e9dc2"><img width=37 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/black/icon32.png?46e9dc2"></picture> ChatGPT Auto-Continue
+<img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png">
+
+<p>
+
+<div align="center">
 
 <a href="https://gf.chatgptautocontinue.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/Users-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="../LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -21,23 +25,24 @@
 <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=31 alt="[Mentioned in Awesome]" src="https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-auto-continue?tab=stats"><img height=31 alt="[jsDelivr stats]" src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-auto-continue?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Requests&labelColor=464646&color=2bbbd8"></a>
 
-### Automatically continue generating ChatGPT responses when chats cut off.
-
-<a href="https://greasyfork.chatgptautocontinue.com"><img height=45 title="Install this script" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://github.com/adamlui/chatgpt-auto-continue/discussions) /
-[Review](https://greasyfork.chatgptautocontinue.com/feedback#post-discussion) /
-[Contact author](https://github.com/adamlui)
 
-#
-
-<div align="center">
-
-<img width=388 src="https://media.chatgptautocontinue.com/images/screenshots/continue-button-crossed.png"> <img width=321 src="https://media.chatgptautocontinue.com/images/screenshots/auto-continue-on-notification-checked.png">
+<a href="https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue/">
+    <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
+<a href="https://greasyfork.chatgptautocontinue.com">
+    <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>
 
 ## 🚀 Installation
+
+### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> Browser extension:
+
+1. Install [ChatGPT Auto-Continue](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) Firefox add-on
+
+2. Visit [chatgpt.com](https://chatgpt.com) as normal, and chats will automatically continue
+
+### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=17.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey userscript:
 
 1. Install a userscript manager:
     - ScriptCat for [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Firefox](https://addons.mozilla.org/firefox/addon/scriptcat/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh)
@@ -45,9 +50,10 @@
     - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf) or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) for Chrome
     - or Tampermonkey for [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
 
-2. Install [ChatGPT Auto-Continue](https://greasyfork.chatgptautocontinue.com) (will load in userscript manager installed above)
+2. Install [ChatGPT Auto-Continue](https://greasyfork.chatgptautocontinue.com) userscript (will load in userscript manager installed above)
 
 3. Visit [chatgpt.com](https://chatgpt.com) as normal, and multi-reply conversations will automatically continue generating when cut-off!
+<br><br>
 
 ## ⚡ Dependencies
 
