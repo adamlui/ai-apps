@@ -11,6 +11,8 @@
 
 # 🤖 ChatGPT 应用程序 &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=检查这些%20ChatGPT%20应用程序%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
 
+### 利用 ChatGPT 惊人的 AI 或增强其 UX 的应用程序。
+
 ![](https://img.shields.io/badge/%E7%94%A8%E6%88%B7-200,000+-af68ff?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
 [![\[CodeFactor 等级\]](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F&logo=codefactor&logoColor=white&labelColor=464646&color=b3ff68&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
 [![\[许可证: MIT\]](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=&labelColor=464646&style=for-the-badge)](LICENSE.md)
