@@ -51,7 +51,7 @@
     - Violentmonkey* for [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)
     - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf)* or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland)* for Chrome
 
-2. Install [AmazonGPT](https://greasyfork.org/scripts/500663-amazongpt) userscript (will load in userscript manager installed above)
+2. Install [AmazonGPT](https://greasyfork.org/scripts/500663-amazongpt) userscript (will load in manager installed above)
 
 3. Visit [Amazon.com](https://amazon.com), engage bot!
 
