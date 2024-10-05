@@ -34,6 +34,18 @@
 
 </div>
 
+## 💡 關於
+
+当 ChatGPT 在对话中停止响应时，**ChatGPT 自动继续** 会自动继续聊天，无需再次单击“继续生成”。
+
+<div align="center">
+
+<img width=388 src="https://media.chatgptautocontinue.com/images/screenshots/continue-button-crossed.png"> <img width=321 src="https://media.chatgptautocontinue.com/images/screenshots/auto-continue-on-notification-checked.png">
+
+</div>
+
+<br>
+
 ## 🚀 如何安装
 
 ### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> 浏览器扩展:

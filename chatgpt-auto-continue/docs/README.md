@@ -34,6 +34,18 @@
 
 </div>
 
+## 💡 About
+
+**ChatGPT Auto-Continue** automatically continues the chat when ChatGPT stops responding mid-conversation, eliminating the need to ever click 'Continue generating' again.
+
+<div align="center">
+
+<img width=388 src="https://media.chatgptautocontinue.com/images/screenshots/continue-button-crossed.png"> <img width=321 src="https://media.chatgptautocontinue.com/images/screenshots/auto-continue-on-notification-checked.png">
+
+</div>
+
+<br>
+
 ## 🚀 Installation
 
 ### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> Browser extension:
