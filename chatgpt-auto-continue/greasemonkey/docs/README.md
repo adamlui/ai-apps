@@ -21,7 +21,7 @@
 <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=31 alt="[Mentioned in Awesome]" src="https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-auto-continue?tab=stats"><img height=31 alt="[jsDelivr stats]" src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-auto-continue?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Requests&labelColor=464646&color=2bbbd8"></a>
 
-### Automatically continue generating ChatGPT responses when chats cut off.
+<br>
 
 <a href="https://greasyfork.chatgptautocontinue.com"><img height=45 title="Install this script" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
@@ -31,13 +31,17 @@
 
 </div>
 
-#
+## 💡 About
+
+**ChatGPT Auto-Continue** automatically continues the chat when ChatGPT stops responding mid-conversation, eliminating the need to ever click 'Continue generating' again.
 
 <div align="center">
 
 <img width=388 src="https://media.chatgptautocontinue.com/images/screenshots/continue-button-crossed.png"> <img width=321 src="https://media.chatgptautocontinue.com/images/screenshots/auto-continue-on-notification-checked.png">
 
 </div>
+
+<br>
 
 ## 🚀 Installation
 

@@ -21,7 +21,7 @@
 <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=31 alt="[提及于 Awesome]" src="https://img.shields.io/badge/%E6%8F%90%E5%8F%8A%E4%BA%8E-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-auto-continue?tab=stats"><img height=31 alt="[jsDelivr 统计数据]" src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-auto-continue?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20%E8%AF%B7%E6%B1%82&labelColor=464646&color=2bbbd8"></a>
 
-### 聊天中断时自动继续生成 ChatGPT 响应。
+<br>
 
 <a href="https://greasyfork.chatgptautocontinue.com"><img height=45 title="安装这个脚本
 " src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/zh-cn/install-button.svg?54af935"></a><a href="#-如何安装"><img height=45 title="如何安装" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/help-button.svg"></a>
@@ -32,13 +32,17 @@
 
 </div>
 
-#
+## 💡 關於
+
+当 ChatGPT 在对话中停止响应时，**ChatGPT 自动继续** 会自动继续聊天，无需再次单击“继续生成”。
 
 <div align="center">
 
-<img width=432 src="https://media.chatgptautocontinue.com/images/screenshots/continue-button-crossed.png"> <img width=300 src="https://media.chatgptautocontinue.com/images/screenshots/zh-cn/auto-continue-on-notification-checked.png">
+<img width=388 src="https://media.chatgptautocontinue.com/images/screenshots/continue-button-crossed.png"> <img width=321 src="https://media.chatgptautocontinue.com/images/screenshots/auto-continue-on-notification-checked.png">
 
 </div>
+
+<br>
 
 ## 🚀 如何安装
 
