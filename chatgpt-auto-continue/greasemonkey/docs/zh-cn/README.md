@@ -55,6 +55,7 @@
 2. 安装 [ChatGPT 自动继续](https://greasyfork.chatgptautocontinue.com) (将加载上面安装的用户脚本管理器)
 
 3. 正常访问 [chatgpt.com](https://chatgpt.com)，多条回复对话中断时会自动继续生成!
+<br><br>
 
 ## ⚡ 依赖关系
 

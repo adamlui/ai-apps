@@ -54,6 +54,7 @@
 2. Install [ChatGPT Auto-Continue](https://greasyfork.chatgptautocontinue.com) (will load in userscript manager installed above)
 
 3. Visit [chatgpt.com](https://chatgpt.com) as normal, and multi-reply conversations will automatically continue generating when cut-off!
+<br><br>
 
 ## ⚡ Dependencies
 
