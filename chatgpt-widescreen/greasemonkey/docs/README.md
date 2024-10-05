@@ -1,4 +1,4 @@
-<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></img>
+<a href="https://greasyfork.chatgptwidescreen.com"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></img></a>
 
 <p>
 

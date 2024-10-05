@@ -1,4 +1,4 @@
-<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+<a href="https://greasyfork.chatgptinfinity.com"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
 <p>
 
