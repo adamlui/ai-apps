@@ -42,7 +42,7 @@
     - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf) or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) for Chrome
     - or Tampermonkey for [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
 
-2. Install [ChatGPT Auto-Talk](https://greasyfork.org/scripts/500940-chatgpt-auto-talk) (will load in userscript manager installed above)
+2. Install [ChatGPT Auto-Talk](https://greasyfork.org/scripts/500940-chatgpt-auto-talk) userscript (will load in userscript manager installed above)
 
 3. Visit [chatgpt.com](https://chatgpt.com) as normal, and replies will automatically be read aloud!
 

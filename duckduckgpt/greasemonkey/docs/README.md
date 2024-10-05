@@ -40,7 +40,7 @@
     - Violentmonkey* for [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)
     - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf)* or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland)* for Chrome
 
-2. Install [DuckDuckGPT](https://greasyfork.org/scripts/459849-duckduckgpt) (will load in userscript manager installed above)
+2. Install [DuckDuckGPT](https://greasyfork.org/scripts/459849-duckduckgpt) userscript (will load in userscript manager installed above)
 
 3. Visit [duckduckgo.com](https://duckduckgo.com), type your search, engage bot!
 
