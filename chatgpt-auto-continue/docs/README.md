@@ -48,7 +48,7 @@
 
 ### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> Browser extension:
 
-1. Install [ChatGPT Auto-Continue](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) Firefox add-on
+1. Install [ChatGPT Auto-Continue](https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue/) Firefox add-on
 
 2. Visit [chatgpt.com](https://chatgpt.com) as normal, and multi-reply conversations will automatically continue generating when cut-off!
 

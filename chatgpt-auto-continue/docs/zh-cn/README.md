@@ -48,7 +48,7 @@
 
 ### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> 浏览器扩展:
 
-1. 安装 [ChatGPT 自动继续](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) Firefox 附加组件
+1. 安装 [ChatGPT 自动继续](https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue/) Firefox 附加组件
 
 2. 正常访问 [chatgpt.com](https://chatgpt.com)，多条回复对话中断时会自动继续生成!
 
