@@ -14,10 +14,10 @@
  
 <br>
 
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/"><img height=70 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
+<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen"><img height=70 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
-[Review](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/reviews/) / 
+[Review](https://addons.mozilla.org/firefox/addon/chatgpt-widescreenreviews/) / 
 [Contact author](https://github.com/adamlui)
   
 </div>
@@ -179,3 +179,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT add-ons**</a> /
 <a href="#-">Back to top ↑</a>
+

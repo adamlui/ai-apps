@@ -47,7 +47,7 @@
 
 ### <img width=20 src="https://media.chatgptautocontinue.com/images/icons/continue-symbol/circled/icon32.png?0909ea8"> [ChatGPT Auto-Continue](../chatgpt-auto-continue) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 
-> <img height=14 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue/) /
+> <img height=14 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue) /
 <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptautocontinue.com) /
 <img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/paper-sheet/black.svg"> [Readme](../chatgpt-auto-continue/#readme) /
 <img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
@@ -71,7 +71,7 @@
 ### <img width=20 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT Infinity](../chatgpt-infinity) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 > <img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chrome.chatgptinfinity.com) /
-<img height=14 src="https://media.chatgptinfinity.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) /
+<img height=14 src="https://media.chatgptinfinity.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-infinity) /
 <img height=12 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> [Edge](https://edge.chatgptinfinity.com) /
 <img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptinfinity.com) /
 <img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/paper-sheet/black.svg"> [Readme](../chatgpt-infinity/#readme) /
@@ -82,7 +82,7 @@
 ### <img width=19 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen](../chatgpt-widescreen) &nbsp;<a href="https://chrome.chatgptwidescreen.com"><img height=20 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 > <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chrome.chatgptwidescreen.com) /
-<img height=14 src="https://media.chatgptwidescreen.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/) /
+<img height=14 src="https://media.chatgptwidescreen.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen) /
 <img height=12 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> [Edge](https://edge.chatgptwidescreen.com) /
 <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptwidescreen.com) /
 <img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/paper-sheet/black.svg"> [Readme](../chatgpt-widescreen/#readme) /
