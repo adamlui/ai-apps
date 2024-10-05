@@ -148,4 +148,4 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 <img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/gradient-aqua.png">
   
 <a href="https://github.com/adamlui/chatgpt-apps">**更多 ChatGPT 附加组件**</a> / 
-<a href="#-chatgpt-自动继续--">回到顶部 ↑</a>
+<a href="#------------------------------------------------简体中文---------english----">回到顶部 ↑</a>
