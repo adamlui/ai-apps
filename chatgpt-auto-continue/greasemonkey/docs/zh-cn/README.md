@@ -13,7 +13,7 @@
 
 <div align="center">
 
-<a href="https://gf.chatgptautocontinue.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/%E7%94%A8%E6%88%B7-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://gf.chatgptautocontinue.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/greasyfork/dt/466789?label=%E7%94%A8%E6%88%B7&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge"></a>
 <a href="LICENSE.md"><img height=31 alt="[许可证: MIT]" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-continue"><img height=31 alt="[CodeFactor 等级]" src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-continue?label=%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_auto_continue&utm_content=github_shield"><img height=31 alt="[由 chatgpt.js 提供支持]" src="https://img.shields.io/badge/%E4%BE%9B%E7%94%B5-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>

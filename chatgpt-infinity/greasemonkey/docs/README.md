@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![\[Greasy Fork\]](https://img.shields.io/badge/Users-100,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)](https://gf.chatgptinfinity.com)
+<a href="https://gf.chatgptinfinity.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/greasyfork/dt/465051?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge"></a>
 [![\[GitHub Stars\]](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=Stars&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/stargazers)
 [![\[License: MIT\]](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
 [![\[CodeFactor grade\]](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
