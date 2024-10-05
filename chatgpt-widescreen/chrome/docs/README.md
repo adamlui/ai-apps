@@ -1,4 +1,4 @@
-<a href="https://chrome.chatgptwidescreen.com"><img src="../media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+<h6> <a href="https://chrome.chatgptwidescreen.com"><img src="../media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
 
 <p>
 
@@ -191,4 +191,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT add-ons**</a> /
-<a href="https://github.com/adamlui/chatgpt-widescreen/#readme">Back to top ↑</a>
+<a href="#-">Back to top ↑</a>

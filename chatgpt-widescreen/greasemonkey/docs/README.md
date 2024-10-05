@@ -1,4 +1,4 @@
-<a href="https://greasyfork.chatgptwidescreen.com"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></img></a>
+<h6> <a href="https://greasyfork.chatgptwidescreen.com"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></img></a></h6>
 
 <p>
 
@@ -216,4 +216,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> /
-<a href="https://github.com/adamlui/chatgpt-widescreen/tree/main/greasemonkey/#readme">Back to top ↑</a>
+<a href="#-">Back to top ↑</a>
