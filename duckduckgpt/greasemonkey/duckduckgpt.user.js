@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.10.5
+// @version                2024.10.5.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -371,7 +371,7 @@
                 headers: { 'Accept': '*/*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
             method: 'PUT', streamable: true, accumulatesText: false,
             failFlags: [
-                'invalid_request_error', 'literal_error', 'me@promplate.dev', 'Model disabled', '^Not Found$',
+                'invalid_request_error', 'literal_error', 'me@promplate.dev', 'Model disabled', '^Not Found$', 'organization_restricted',
                 'Sorry, your account balance is insufficient', 'This service has been suspended', 'your free credit'],
             availModels: [
                 'deepseek-ai/deepseek-llm-67b-chat', 'gemma2-9b-it', 'THUDM/glm-4-9b-chat', 'gpt-4o-mini-2024-07-18',
