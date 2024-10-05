@@ -120,7 +120,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://docs.chatgptinfinity.com/#-readme) /
 [Discuss](https://github.com/adamlui/chatgpt-infinity/discussions)
 
-<img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT add-ons**</a> /
 <a href="#-">Back to top ↑</a>
