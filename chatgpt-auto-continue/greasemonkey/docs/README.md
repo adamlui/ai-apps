@@ -11,6 +11,8 @@
 
 <h6> <a href="https://greasyfork.chatgptautocontinue.com"><img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png"></a></h6>
 
+<div align="center">
+
 <a href="https://gf.chatgptautocontinue.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/Users-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="../LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/adamlui/chatgpt-auto-continue/commits"><img height=31 alt="[GitHub commits]" src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
@@ -28,6 +30,8 @@
 [Discuss](https://github.com/adamlui/chatgpt-auto-continue/discussions) /
 [Review](https://greasyfork.chatgptautocontinue.com/feedback#post-discussion) /
 [Contact author](https://github.com/adamlui)
+
+</div>
 
 #
 

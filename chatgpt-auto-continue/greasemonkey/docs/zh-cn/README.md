@@ -11,6 +11,8 @@
 
 <h6> <a href="https://greasyfork.chatgptautocontinue.com"><img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png"></a></h6>
 
+<div align="center">
+
 <a href="https://gf.chatgptautocontinue.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/badge/%E7%94%A8%E6%88%B7-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md"><img height=31 alt="[许可证: MIT]" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/adamlui/chatgpt-auto-continue/commits"><img height=31 alt="[GitHub 提交]" src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=%E6%8F%90%E4%BA%A4&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
@@ -29,6 +31,8 @@
 [讨论](https://github.com/adamlui/chatgpt-auto-continue/discussions) /
 [审查](https://greasyfork.chatgptautocontinue.com/feedback#post-discussion) /
 [联系作者](https://github.com/adamlui)
+
+</div>
 
 #
 
