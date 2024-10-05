@@ -1,7 +1,5 @@
 <h6> <a href="https://greasyfork.chatgptinfinity.com"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
 
-<p>
-
 <div align="center">
 
 [![\[Greasy Fork\]](https://img.shields.io/badge/Users-100,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)](https://gf.chatgptinfinity.com)

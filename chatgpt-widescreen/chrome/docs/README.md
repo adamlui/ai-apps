@@ -1,7 +1,5 @@
 <h6> <a href="https://chrome.chatgptwidescreen.com"><img src="../media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
 
-<p>
-
 <div align="center">
 
 ![](https://img.shields.io/badge/Users-5,000+-blue?logo=icinga&logoColor=white&labelColor=464646&style=for-the-badge)

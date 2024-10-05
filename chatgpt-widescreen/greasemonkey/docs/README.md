@@ -1,7 +1,5 @@
 <h6> <a href="https://greasyfork.chatgptwidescreen.com"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></img></a></h6>
 
-<p>
-
 <div align="center">
 
 [![\[Greasy Fork\]](https://img.shields.io/greasyfork/dt/461473?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge)](https://greasyfork.chatgptwidescreen.com)

@@ -1,7 +1,5 @@
 <h6> <a href="https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue"><img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png"></a></h6>
 
-<p>
-
 <div align="center">
 
 <a href="../LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>

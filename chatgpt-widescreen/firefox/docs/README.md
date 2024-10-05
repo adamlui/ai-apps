@@ -1,7 +1,5 @@
 <h6> <a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen"><img src="../../chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
 
-<p>
-
 <div align="center">
 
 [![\[License: MIT\]](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
