@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.10.4
+// @version                2024.10.5
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -3021,7 +3021,7 @@
                 config.openAIkey = await Promise.race([session.getOAItoken(), new Promise(reject => setTimeout(reject, 3000))])
 
             // Init prompt
-            const rqPrompt = 'Shoot me a numbered list of '
+            const rqPrompt = 'Print me a numbered list of '
                 + `${ get.related.replyIsQuestion ? 'possible answers to this question' : 'queries related to this one' }:\n\n"${query}"\n\n`
                 +   ( get.related.replyIsQuestion ? 'Generate answers as if in reply to a search engine chatbot asking the question.'
 
