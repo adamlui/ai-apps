@@ -9,7 +9,7 @@
     </h6>
 </div>
 
-<h6> <a href="https://greasyfork.chatgptautocontinue.com"><img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png"></a></h6>
+<a href="https://greasyfork.chatgptautocontinue.com"><img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png"></a>
 
 <div align="center">
 
@@ -138,4 +138,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/gradient-aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
-<a href="#-">Back to top ↑</a>
+<a href="#------------------------------------------------english---------简体中文----">Back to top ↑</a>
