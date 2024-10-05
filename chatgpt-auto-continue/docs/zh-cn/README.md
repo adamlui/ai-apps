@@ -40,7 +40,7 @@
 
 1. 安装 [ChatGPT 自动继续](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) Firefox 附加组件
 
-2. 正常访问 [chatgpt.com](https://chatgpt.com)，聊天将自动继续
+2. 正常访问 [chatgpt.com](https://chatgpt.com)，多条回复对话中断时会自动继续生成!
 
 ### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=17.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey userscript:
 

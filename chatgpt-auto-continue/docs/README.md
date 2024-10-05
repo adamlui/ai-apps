@@ -40,7 +40,7 @@
 
 1. Install [ChatGPT Auto-Continue](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/) Firefox add-on
 
-2. Visit [chatgpt.com](https://chatgpt.com) as normal, and chats will automatically continue
+2. Visit [chatgpt.com](https://chatgpt.com) as normal, and multi-reply conversations will automatically continue generating when cut-off!
 
 ### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=17.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey userscript:
 
