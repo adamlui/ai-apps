@@ -11,8 +11,6 @@
 
 <img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png">
 
-<p>
-
 <div align="center">
 
 <img height=31 src="https://img.shields.io/badge/Users-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></img>

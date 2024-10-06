@@ -12,8 +12,6 @@
 
 <img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
 
-<p>
-
 <div align="center">
 
 ![](https://img.shields.io/badge/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC-100,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
