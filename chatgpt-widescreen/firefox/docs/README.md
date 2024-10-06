@@ -12,8 +12,11 @@
  
 <br>
 
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=install-button"><img height=70 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
+<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=install-button">
+    <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
+
 <br>
+
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
 [Review](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/reviews?source=github&medium=readme&content=review-link) / 
 [Contact author](https://github.com/adamlui)

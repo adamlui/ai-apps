@@ -11,8 +11,11 @@
 
 <br>
 
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue?source=github&medium=readme&content=install-button"><img height=70 src="https://media.chatgptautocontinue.com/images/buttons/add-to-firefox-button.png"></a>
+<a href="https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue?source=github&medium=readme&content=install-button">
+    <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-firefox-button.png"></a>
+
 <br>
+
 [Discuss](https://github.com/adamlui/chatgpt-auto-continue/discussions) / 
 [Review](https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue/reviews?source=github&medium=readme&content=review-link) / 
 [Contact author](https://github.com/adamlui)
