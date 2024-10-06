@@ -2,7 +2,7 @@ name: Update usercount/jsDelivr shields in root READMEs
 
 on:
   schedule:
-    - cron: "25 2 * * 0,2,4" # every Sun/Tue/Thu @ 2:25 AM
+    - cron: "25 2 * * 2" # every Tue @ 2:25 AM
 
 jobs:
   update-root-usercount-jsd-shields:
@@ -21,9 +21,11 @@ jobs:
         run: |
           declare -A gf_scripts=( # for Greasy Fork script user counts
             ["460805"]="Autoclear ChatGPT History"
+            ["500663"]="AmazonGPT"
             ["462440"]="BraveGPT"
             ["466789"]="ChatGPT Auto-Continue"
             ["462422"]="ChatGPT Auto Refresh"
+            ["500940"]="ChatGPT Auto-Talk"
             ["465051"]="ChatGPT Infinity"
             ["461473"]="ChatGPT Widescreen Mode"
             ["459849"]="DuckDuckGPT"
@@ -33,6 +35,12 @@ jobs:
           declare -A chrome_extensions=( # for Chrome extension user counts
             ["amikeononomkhphopbflomhnmdijjpmb"]="ChatGPT Infinity"
             ["jgnjpnmofkalfliddjelaciggjgnphgm"]="ChatGPT Widescreen Mode"
+          )
+
+          declare -A ff_addons=( # for Firefox add-on daily user counts
+            ["chatgpt-auto-continue"]="ChatGPT Auto-Continuen"
+            ["chatgpt-infinity"]="ChatGPT Infinity"
+            ["chatgpt-widescreen"]="ChatGPT Widescreen"
           )
 
           declare -A edge_addons=( # for Edge addon user counts
@@ -83,7 +91,7 @@ jobs:
           }
 
           # Alphabetize arrays for more readable logging
-          for array_type in "gf_scripts" "chrome_extensions" "edge_addons" ; do
+          for array_type in "gf_scripts" "chrome_extensions" "edge_addons" "ff_addons" ; do
 
             # Extract IDs/names
             eval ids=\${!$array_type[@]} names=(\"\${$array_type[@]}\")
@@ -121,6 +129,16 @@ jobs:
             total_chrome_users=$((total_chrome_users + chrome_users))
           done ; echo -e "\n-----\nTotal Chrome users: $total_chrome_users\n-----\n"
 
+          # Fetch/sum FF add-on daily user counts
+          for tuple in "${sorted_ff_addons[@]}" ; do
+            app_id="${tuple##*:}" app_name="${tuple%%:*}"
+            base_url="https://addons.mozilla.org/api/v5/addons/addon/"
+            ff_users=$(curl -s "$base_url$app_id/" |
+              sed -n 's/.*"average_daily_users":\([0-9]*\).*/\1/p')
+            echo "$app_name FF users: $ff_users"
+            total_ff_users=$((total_ff_users + ff_users))
+          done ; echo -e "\n-----\nTotal Firefox users: $total_ff_users\n-----\n"
+
           # Fetch/sum Edge addon user counts
           for tuple in "${sorted_edge_addons[@]}" ; do
             app_id="${tuple##*:}" app_name="${tuple%%:*}"
@@ -143,7 +161,7 @@ jobs:
 
           # Format totals
           formatted_total_users=$(format_total "$((
-            total_gf_users + total_chrome_users + total_edge_users))")
+            total_gf_users + total_chrome_users + total_ff_users + total_edge_users))")
           echo "Formatted total users: $formatted_total_users"
           formatted_total_requests=$(format_total "$total_requests")
           echo "Formatted total monthly jsDelivr requests: $formatted_total_requests"
