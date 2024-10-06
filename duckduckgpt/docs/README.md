@@ -6,7 +6,7 @@
 </h1>
 
 <a href="https://gf.ddgpt.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/greasyfork/dt/459849?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge"></a>
-<a href="https://github.com/KudoAI/duckduckgpt/blob/main/LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge">
+<a href="../LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge">
 <a href="https://github.com/KudoAI/duckduckgpt/commits"><img height=31 alt="[GitHub commits]" src="https://img.shields.io/github/commit-activity/m/KudoAI/duckduckgpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge">
 <img height=31 src="https://img.shields.io/badge/Clones-936/month-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge">
 <a href="https://www.codefactor.io/repository/github/kudoai/duckduckgpt"><img height=31 alt="[CodeFactor grade]" src="https://img.shields.io/codefactor/grade/github/kudoai/duckduckgpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge">

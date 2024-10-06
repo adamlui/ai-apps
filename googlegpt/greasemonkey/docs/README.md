@@ -10,7 +10,7 @@
 <br>
 
 <a href="https://gf.googlegpt.io"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/greasyfork/dt/478597?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge"></a>
-<a href="https://github.com/KudoAI/googlegpt/blob/main/LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="../LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/googlegpt/commits"><img height=31 alt="[GitHub commits]" src="https://img.shields.io/github/commit-activity/m/KudoAI/googlegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <img height=31 src="https://img.shields.io/badge/Clones-1.1K/month-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge">
 <a href="https://www.codefactor.io/repository/github/KudoAI/googlegpt"><img height=31 alt="[CodeFactor grade]" src="https://img.shields.io/codefactor/grade/github/KudoAI/googlegpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
