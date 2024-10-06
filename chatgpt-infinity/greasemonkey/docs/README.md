@@ -30,6 +30,8 @@
 
 </div>
 
+<br>
+
 ## 💊 Benefits
 
 🧠 **Customizable Topic Selection** — Take control of your learning by choosing the specific topic you want ChatGPT to generate answers for
@@ -39,6 +41,7 @@
 ⏱️ **Adjustable Response Interval** — Fine-tune the speed of ChatGPT's replies by adjusting the response interval to match your desired pace
 
 📜 **Auto-Scroll** — Enjoy a seamless chat experience with the auto-scroll feature, ensuring that you never miss a single response
+<br><br>
 
 ## 🚀 Installation
 
@@ -105,11 +108,11 @@ ChatGPT Infinity is compatible w/ the following browsers using [ScriptCat](https
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.com/adamlui/chatgpt-infinity/pulls) (contributions of all kinds are welcome!)
 
-<a href="https://greasyfork.chatgptinfinity.com"><img height=40 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img title="How to install" height=40 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.chatgptinfinity.com"><img height=42 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img title="How to install" height=42 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-infinity/discussions) / 
-[Leave a review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) / 
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
+<br><br>
 
 ## 🧠 Contributors
 
