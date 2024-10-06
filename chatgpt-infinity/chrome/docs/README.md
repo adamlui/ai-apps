@@ -31,6 +31,8 @@
 
 </div>
 
+<br>
+
 ## 💊 Benefits
 
 🧠 **Customizable Topic Selection** — Take control of your learning by choosing the specific topic you want ChatGPT to generate answers for
@@ -40,6 +42,7 @@
 ⏱️ **Adjustable Response Interval** — Fine-tune the speed of ChatGPT's replies by adjusting the response interval to match your desired pace
 
 📜 **Auto-Scroll** — Enjoy a seamless chat experience with the auto-scroll feature, ensuring that you never miss a single response
+<br><br>
 
 ## 🚀 Installation
 
