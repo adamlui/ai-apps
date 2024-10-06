@@ -55,7 +55,7 @@
 <img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/paper-sheet/black.svg"> [Readme](../chatgpt-auto-continue/#readme) /
 <img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-apps@e773786/media/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
-<a href="../chatgpt-auto-continue"><img width=583 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.png"></a>
+<a href="../chatgpt-auto-continue"><img width=583 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a>
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT Auto Refresh ↻](../chatgpt-auto-refresh) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
 
