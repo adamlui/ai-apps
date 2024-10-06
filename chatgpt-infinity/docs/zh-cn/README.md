@@ -32,7 +32,7 @@
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://edge.chatgptinfinity.com">
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-infinity">
+<a href="https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
 <a href="https://greasyfork.chatgptinfinity.com">
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
@@ -63,7 +63,7 @@
 
 ### <img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"><img height=17 src="https://media.chatgptinfinity.com/images/icons/platforms/firefox/icon16.png"><img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
 
-1. 安装 ChatGPT 无限 扩展程序 ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com), [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-infinity))
+1. 安装 ChatGPT 无限 扩展程序 ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com), [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=platform-link))
 
 2. 正常访问 [chatgpt.com](https://chatgpt.com)，侧边栏和工具栏菜单中会出现一个切换开关
 
@@ -123,12 +123,12 @@ ChatGPT 无穷 与以下浏览器兼容:
 ### 🖥️ 台式
 
 - **[Google Chrome](https://www.chrome.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
-- **[Mozilla Firefox](https://www.firefox.com)** (通过 [Firefox 扩展程序](https://addons.mozilla.org/firefox/addon/chatgpt-infinity) 或 [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Mozilla Firefox](https://www.firefox.com)** (通过 [Firefox 扩展程序](https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=platform-link) 或 [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[Microsoft Edge](https://www.microsoft.com/edge)** (通过 [Edge 扩大](https://edge.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 - **[Opera](https://www.opera.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 - **[Brave](https://brave.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 - **[Vivaldi](https://vivaldi.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
-- **[LibreWolf](https://librewolf.net)** (通过 [Firefox 扩展程序](https://addons.mozilla.org/firefox/addon/chatgpt-infinity) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
+- **[LibreWolf](https://librewolf.net)** (通过 [Firefox 扩展程序](https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=platform-link) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 - **[Ghost](https://ghostbrowser.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 - **[QQ](https://browser.qq.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 - **[Whale](https://whale.naver.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
@@ -146,7 +146,7 @@ ChatGPT 无穷 与以下浏览器兼容:
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptinfinity.com">
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-edge-button.png"></a>
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-infinity">
+<a href="https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-firefox-button.png"></a>
 <a href="https://greasyfork.chatgptinfinity.com">
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-userscript-button.png"></a>

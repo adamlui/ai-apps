@@ -1,4 +1,4 @@
-<h6> <a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen"><img src="../../chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
+<h6> <a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=header-tile"><img src="../../chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
 
 <div align="center">
 
@@ -12,10 +12,10 @@
  
 <br>
 
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen"><img height=70 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
+<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=install-button"><img height=70 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
-[Review](https://addons.mozilla.org/firefox/addon/chatgpt-widescreenreviews/) / 
+[Review](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/reviews?source=github&medium=readme&content=review-link) / 
 [Contact author](https://github.com/adamlui)
   
 </div>
@@ -54,7 +54,7 @@
 
 ## 🚀 Installation
 
-1. Install [ChatGPT Widescreen](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen) Firefox add-on
+1. Install [ChatGPT Widescreen](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=add-on-link) Firefox add-on
 
 2. Visit [chatgpt.com](https://chatgpt.com), [perplexity.ai](https://perplexity.ai), or [poe.com](https://poe.com) & mode toggles are added to chatbar!
 
