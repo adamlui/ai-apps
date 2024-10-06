@@ -14,9 +14,8 @@
     settings.site = site // to load/save active tab's settings
 
     // Import DATA
-    const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
-    const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/sites.json`)).json())
+    const { app } = await chrome.storage.sync.get('app'),
+          { sites } = await chrome.storage.sync.get('sites')
 
     // Init CONFIG
     await settings.load('extensionDisabled', ...sites[site].availFeatures)

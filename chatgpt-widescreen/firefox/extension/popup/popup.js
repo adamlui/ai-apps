@@ -9,38 +9,12 @@
     settings.site = site // to load/save active tab's settings
 
     // Import DATA
-    const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
-    const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/sites.json`)).json())
+    const { app } = await chrome.storage.sync.get('app'),
+          { sites } = await chrome.storage.sync.get('sites')
 
     // Import ICONS
     const { icons } = await import(chrome.runtime.getURL('components/icons.js'))
     icons.appProps = app // for src's using urls.mediaHost
-
-    // Init SETTINGS props
-    Object.assign(app, { settings: {
-        fullerWindows: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_fullerWins'),
-            helptip: chrome.i18n.getMessage('helptip_fullerWins') },
-        tcbDisabled: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_tallerChatbox'),
-            helptip: chrome.i18n.getMessage('helptip_tallerChatbox') },
-        widerChatbox: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_widerChatbox'),
-            helptip: chrome.i18n.getMessage('helptip_widerChatbox') },
-        ncbDisabled: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_newChatBtn'),
-            helptip: chrome.i18n.getMessage('helptip_newChatBtn') },
-        hiddenHeader: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_hiddenHeader'),
-            helptip: chrome.i18n.getMessage('helptip_hiddenHeader') },
-        hiddenFooter: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_hiddenFooter'),
-            helptip: chrome.i18n.getMessage('helptip_hiddenFooter') },
-        notifDisabled: { type: 'toggle',
-            label: chrome.i18n.getMessage('menuLabel_modeNotifs'),
-            helptip: chrome.i18n.getMessage('helptip_modeNotifs') }
-    }})
 
     // Define FUNCTIONS
 
