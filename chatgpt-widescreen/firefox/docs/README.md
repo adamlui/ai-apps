@@ -95,6 +95,24 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
+<br>
+
+<div align="center">
+
+<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=install-button">
+    <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
+
+<br>
+
+[Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
+[More ChatGPT apps](https://github.com/adamlui/chatgpt-apps)
+  
+</div>
+
+<br>
+
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
+
 ## 🧠 Contributors
 
 This extension exists thanks to code, translations, issues & ideas from the following contributors:
