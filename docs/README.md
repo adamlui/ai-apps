@@ -13,10 +13,9 @@
 
 <picture>
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/logos/ai-apps/white-green.png">
-    <img width=688 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/logos/ai-apps/black-teal.png">
+    <img width=688 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps@e251222/images/logos/ai-apps/black-teal.png">
 </picture>
-
-<br>
+<br><br>
 
 <img height=31 src="https://img.shields.io/badge/Users-200,000+-af68ff?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></img>
 <a href="https://www.codefactor.io/repository/github/adamlui/ai-apps"><img alt="[CodeFactor grade]" height=31 src="https://img.shields.io/codefactor/grade/github/adamlui/ai-apps?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b3ff68&style=for-the-badge"></img></a>
