@@ -23,14 +23,14 @@
 [![\[CodeFactor グレード\]](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=%E3%82%B3%E3%83%BC%E3%83%89%E5%93%81%E8%B3%AA&logo=codefactor&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
 [![\[chatgpt.js によって供給される\]](https://img.shields.io/badge/%E3%81%AB%E3%82%88%E3%81%A3%E3%81%A6%E4%BE%9B%E7%B5%A6%E3%81%95%E3%82%8C%E3%82%8B-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_infinity&utm_content=github_shield)
 [![\[SonarCloud 脆弱性\]](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-infinity%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=%E8%84%86%E5%BC%B1%E6%80%A7&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-infinity)
-[![\[Google によって特集される\]](https://img.shields.io/badge/%E3%81%AB%E3%82%88%E3%81%A3%E3%81%A6%E7%89%B9%E9%9B%86%E3%81%95%E3%82%8C%E3%82%8B-Google-8afc25?logo=googlechrome&logoColor=white&labelColor=464646&style=for-the-badge)](https://chrome.chatgptinfinity.com)
+[![\[Google によって特集される\]](https://img.shields.io/badge/%E3%81%AB%E3%82%88%E3%81%A3%E3%81%A6%E7%89%B9%E9%9B%86%E3%81%95%E3%82%8C%E3%82%8B-Google-8afc25?logo=googlechrome&logoColor=white&labelColor=464646&style=for-the-badge)](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=featured-by-google-shield)
 [![\[Awesome で言及される\]](https://img.shields.io/badge/%E3%81%A7%E8%A8%80%E5%8F%8A%E3%81%95%E3%82%8C%E3%82%8B-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 <a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-infinity?tab=stats"><img alt="jsDelivr 統計" src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-infinity?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88&labelColor=464646&color=2bbbd8"></a>
 [![\[www.chatgptinfinity.com\]](https://img.shields.io/badge/%E3%82%A6%E3%82%A7%E3%83%96-www.chatgptinfinity.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptinfinity.com?utm_source=chatgpt_infinity&utm_content=github_shield)
 
 <br>
 
-<a href="https://chrome.chatgptinfinity.com">
+<a href="https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://edge.chatgptinfinity.com">
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
@@ -63,7 +63,7 @@
 
 ### <img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"><img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> ブラウザ拡張機能:
 
-1. ChatGPT Infinity 拡張機能をインストールします ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com))
+1. ChatGPT Infinity 拡張機能をインストールします ([Chrome](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link), [Edge](https://edge.chatgptinfinity.com))
 
 2. 通常通り [chatgpt.com](https://chatgpt.com) を訪れると、サイドバーとツールバーメニューにトグルが表示されます
 
@@ -119,20 +119,20 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 
 ### 🖥️ デスクトップ
 
-- **[Google Chrome](https://www.chrome.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[Google Chrome](https://www.chrome.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Mozilla Firefox](https://www.firefox.com)**（[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Microsoft Edge](https://www.microsoft.com/edge)**（[Edge アドオン](https://edge.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[Opera](https://www.opera.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[Brave](https://brave.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[Vivaldi](https://vivaldi.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[Opera](https://www.opera.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[Brave](https://brave.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[Vivaldi](https://vivaldi.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[LibreWolf](https://librewolf.net)**（[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[Ghost](https://ghostbrowser.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[QQ](https://browser.qq.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[Whale](https://whale.naver.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[Ghost](https://ghostbrowser.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[QQ](https://browser.qq.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[Whale](https://whale.naver.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 
 <br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/white/logo150x24.png"><img alt="Android" width=111 src="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png"></picture><br>
 
-- **[Kiwi](https://kiwibrowser.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[Kiwi](https://kiwibrowser.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)**（[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 
 <br>
@@ -141,7 +141,7 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 
 <div align="center">
 
-<a href="https://chrome.chatgptinfinity.com">
+<a href="https://chrome.chatgptinfinity.com?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptinfinity.com">
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-edge-button.png"></a>
