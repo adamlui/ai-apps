@@ -1,4 +1,4 @@
-<h6> <a href="https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue?source=github&medium=readme&content=header-tile"><img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png"></a></h6>
+<h6> <a href="https://ff.chatgptautocontinue.com?source=github&medium=readme&content=header-tile"><img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png"></a></h6>
 
 <div align="center">
 
@@ -10,13 +10,13 @@
 
 <br>
 
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue?source=github&medium=readme&content=install-button">
+<a href="https://ff.chatgptautocontinue.com?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-firefox-button.png"></a>
 
 <br>
 
 [Discuss](https://github.com/adamlui/chatgpt-auto-continue/discussions) / 
-[Review](https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue/reviews?source=github&medium=readme&content=review-link) / 
+[Review](https://ff.chatgptautocontinue.com/reviews?source=github&medium=readme&content=review-link) / 
 [Contact author](https://github.com/adamlui)
   
 </div>
@@ -35,7 +35,7 @@
 
 ## 🚀 Installation
 
-1. Install [ChatGPT Auto-Continue](https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue?source=github&medium=readme&content=add-on-link) Firefox add-on
+1. Install [ChatGPT Auto-Continue](https://ff.chatgptautocontinue.com?source=github&medium=readme&content=add-on-link) Firefox add-on
 
 2. Visit [chatgpt.com](https://chatgpt.com) as normal, and multi-reply conversations will automatically continue generating when cut-off!
 <br><br>

@@ -23,7 +23,7 @@
 
 <br>
 
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue?source=github&medium=readme&content=platform-badge">
+<a href="https://ff.chatgptautocontinue.com?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
 <a href="https://greasyfork.chatgptautocontinue.com">
     <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
@@ -46,7 +46,7 @@
 
 ### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> 浏览器扩展:
 
-1. 安装 [ChatGPT 自动继续](https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue?source=github&medium=readme&content=add-on-link) Firefox 附加组件
+1. 安装 [ChatGPT 自动继续](https://ff.chatgptautocontinue.com?source=github&medium=readme&content=add-on-link) Firefox 附加组件
 
 2. 正常访问 [chatgpt.com](https://chatgpt.com)，多条回复对话中断时会自动继续生成!
 

@@ -1,4 +1,4 @@
-<h6> <a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=header-tile"><img src="../../chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
+<h6> <a href="https://ff.chatgptwidescreen.com?source=github&medium=readme&content=header-tile"><img src="../../chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
 
 <div align="center">
 
@@ -12,13 +12,13 @@
  
 <br>
 
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=install-button">
+<a href="https://ff.chatgptwidescreen.com?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 
 <br>
 
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
-[Review](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/reviews?source=github&medium=readme&content=review-link) / 
+[Review](https://ff.chatgptwidescreen.com/reviews?source=github&medium=readme&content=review-link) / 
 [Contact author](https://github.com/adamlui)
   
 </div>
@@ -57,7 +57,7 @@
 
 ## 🚀 Installation
 
-1. Install [ChatGPT Widescreen](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=add-on-link) Firefox add-on
+1. Install [ChatGPT Widescreen](https://ff.chatgptwidescreen.com?source=github&medium=readme&content=add-on-link) Firefox add-on
 
 2. Visit [chatgpt.com](https://chatgpt.com), [perplexity.ai](https://perplexity.ai), or [poe.com](https://poe.com) & mode toggles are added to chatbar!
 
@@ -99,7 +99,7 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 <div align="center">
 
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=install-button">
+<a href="https://ff.chatgptwidescreen.com?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 
 <br>

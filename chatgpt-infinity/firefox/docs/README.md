@@ -1,4 +1,4 @@
-<h6> <a href="https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=header-tile"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
+<h6> <a href="https://ff.chatgptinfinity.com?source=github&medium=readme&content=header-tile"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
 
 <div align="center">
 
@@ -11,13 +11,13 @@
 
 <br>
 
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=install-button">
+<a href="https://ff.chatgptinfinity.com?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-firefox-button.png"></a>
 
 <br>
 
 [Discuss](https://github.com/adamlui/chatgpt-infinity/discussions) / 
-[Review](https://addons.mozilla.org/firefox/addon/chatgpt-infinity/reviews?source=github&medium=readme&content=review-link) / 
+[Review](https://ff.chatgptinfinity.com/reviews?source=github&medium=readme&content=review-link) / 
 [Contact author](https://github.com/adamlui)
   
 </div>
@@ -47,7 +47,7 @@
 
 ## 🚀 Installation
 
-1. Install [ChatGPT Infinity](https://addons.mozilla.org/firefox/addon/chatgpt-auto-continue?source=github&medium=readme&content=add-on-link) Firefox add-on
+1. Install [ChatGPT Infinity](https://ff.chatgptautocontinue.com?source=github&medium=readme&content=add-on-link) Firefox add-on
 
 2. Visit [chatgpt.com](https://chatgpt.com) as normal, and a toggle appears in the sidebar and toolbar menu
 <br><br>
@@ -77,7 +77,7 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 <div align="center">
 
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=install-button">
+<a href="https://ff.chatgptinfinity.com?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-firefox-button.png"></a>
 
 <br>

@@ -30,7 +30,7 @@
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://edge.chatgptinfinity.com">
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=platform-badge">
+<a href="https://ff.chatgptinfinity.com?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
 <a href="https://greasyfork.chatgptinfinity.com">
     <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
@@ -64,7 +64,7 @@
 
 ### <img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"><img height=17 src="https://media.chatgptinfinity.com/images/icons/platforms/firefox/icon16.png"><img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> Browser extension:
 
-1. Install ChatGPT Infinity extension ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com), [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=platform-link))
+1. Install ChatGPT Infinity extension ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com), [Firefox](https://ff.chatgptinfinity.com?source=github&medium=readme&content=platform-link))
 
 2. Visit [chatgpt.com](https://chatgpt.com) as normal, and a toggle appears in the sidebar and toolbar menu
 
@@ -125,12 +125,12 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 ### 🖥️ Desktop
 
 - **[Google Chrome](https://www.chrome.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
-- **[Mozilla Firefox](https://www.firefox.com)** (via [Firefox add-on](https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Mozilla Firefox](https://www.firefox.com)** (via [Firefox add-on](https://ff.chatgptinfinity.com?source=github&medium=readme&content=platform-link) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[Microsoft Edge](https://www.microsoft.com/edge)** (via [Edge add-on](https://edge.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[Opera](https://www.opera.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[Brave](https://brave.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[Vivaldi](https://vivaldi.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
-- **[LibreWolf](https://librewolf.net)** (via [Firefox add-on](https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=plattform-link) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[LibreWolf](https://librewolf.net)** (via [Firefox add-on](https://ff.chatgptinfinity.com?source=github&medium=readme&content=plattform-link) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[Ghost](https://ghostbrowser.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[QQ](https://browser.qq.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[Whale](https://whale.naver.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
@@ -150,7 +150,7 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptinfinity.com">
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-edge-button.png"></a>
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-infinity?source=github&medium=readme&content=install-button">
+<a href="https://ff.chatgptinfinity.com?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-firefox-button.png"></a>
 <a href="https://greasyfork.chatgptinfinity.com">
     <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-userscript-button.png"></a>

@@ -23,7 +23,7 @@
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://edge.chatgptwidescreen.com">
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=platform-badge">
+<a href="https://ff.chatgptwidescreen.com?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
 <a href="https://greasyfork.chatgptwidescreen.com">
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
@@ -78,7 +78,7 @@
 
 ### <img height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"><img height=17 src="https://media.chatgptwidescreen.com/images/icons/platforms/firefox/icon16.png"><img height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
 
-1. 安装 ChatGPT 宽屏模式扩展 ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com), [Firefox](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=platform-link))
+1. 安装 ChatGPT 宽屏模式扩展 ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com), [Firefox](https://ff.chatgptwidescreen.com?source=github&medium=readme&content=platform-link))
 
 2. 访问 [chatgpt.com](https://chatgpt.com), [perplexity.ai](https://perplexity.ai), 或 [poe.com](https://poe.com)，聊天栏已添加模式切换！
 
@@ -144,12 +144,12 @@ ChatGPT 寬屏模式 依賴於強大的 [chatgpt.js](https://github.com/KudoAI/c
 ChatGPT 宽屏模式 与以下浏览器兼容:
 
 - **[Google Chrome](https://www.chrome.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
-- **[Mozilla Firefox](https://www.firefox.com)** (通过 [Firefox 扩展程序](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=platform-link) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[Mozilla Firefox](https://www.firefox.com)** (通过 [Firefox 扩展程序](https://ff.chatgptwidescreen.com?source=github&medium=readme&content=platform-link) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 - **[Microsoft Edge](https://www.microsoft.com/edge)** (通过 [Edge 扩展程序](https://edge.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 - **[Opera](https://www.opera.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 - **[Brave](https://brave.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 - **[Vivaldi](https://vivaldi.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
-- **[LibreWolf](https://librewolf.net)** (通过 [Firefox 扩展程序](https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=platform-link) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[LibreWolf](https://librewolf.net)** (通过 [Firefox 扩展程序](https://ff.chatgptwidescreen.com?source=github&medium=readme&content=platform-link) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 - **[Ghost](https://ghostbrowser.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 - **[QQ](https://browser.qq.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 
@@ -161,7 +161,7 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
     <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptwidescreen.com">
     <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
-<a href="https://addons.mozilla.org/firefox/addon/chatgpt-widescreen?source=github&medium=readme&content=install-button">
+<a href="https://ff.chatgptwidescreen.com?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 <a href="https://greasyfork.chatgptwidescreen.com">
     <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-userscript-button.png"></a>
