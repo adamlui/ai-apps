@@ -9,7 +9,7 @@
     </h6>
 </div>
 
-# 🤖 AI apps &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20these%20%23ChatGPT%20add-ons%20out%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
+# 🤖 AI apps
 
 ![](https://img.shields.io/badge/Users-200,000+-af68ff?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
 [![\[CodeFactor grade\]](https://img.shields.io/codefactor/grade/github/adamlui/ai-apps?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b3ff68&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/ai-apps)
