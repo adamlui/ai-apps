@@ -151,7 +151,7 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 <br>
 
 [議論](https://github.com/adamlui/chatgpt-infinity/discussions) / 
-[その他の ChatGPT アドオン](https://github.com/adamlui/chatgpt-apps)
+[その他の ChatGPT アドオン](https://github.com/adamlui/ai-apps)
 
 </div>
 
@@ -174,7 +174,7 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 
 ## 🤖 その他の ChatGPT アプリ
 
-さらに素晴らしい ChatGPT アプリについては、こちらをご覧ください：https://github.com/adamlui/chatgpt-apps
+さらに素晴らしい ChatGPT アプリについては、こちらをご覧ください：https://github.com/adamlui/ai-apps
 <br><br>
 
 ## 📜 関連アプリ
@@ -202,5 +202,5 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 
 <img height=6px width="100%" src="https://media.chatgptinfinity.com/images/separators/gradient-aqua.png">
   
-<a href="https://github.com/adamlui/chatgpt-apps">**その他の ChatGPT アドオン**</a> / 
+<a href="https://github.com/adamlui/ai-apps">**その他の ChatGPT アドオン**</a> / 
 <a href="#">トップに戻る ↑</a>

@@ -117,7 +117,7 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 
 ## 🤖 更多 ChatGPT 应用
 
-如需更多精彩的 ChatGPT 应用，请访问：https://github.com/adamlui/chatgpt-apps
+如需更多精彩的 ChatGPT 应用，请访问：https://github.com/adamlui/ai-apps
 <br><br>
 
 ## 📜 相关脚本
@@ -145,5 +145,5 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 
 <img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/gradient-aqua.png">
   
-<a href="https://github.com/adamlui/chatgpt-apps">**更多 ChatGPT 附加组件**</a> / 
+<a href="https://github.com/adamlui/ai-apps">**更多 ChatGPT 附加组件**</a> / 
 <a href="#------------------------------------------------简体中文---------english----">回到顶部 ↑</a>

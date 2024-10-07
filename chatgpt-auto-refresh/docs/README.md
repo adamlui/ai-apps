@@ -186,7 +186,7 @@ This project exists thanks to code, testing, issues, translations & ideas from t
 
 ## 🤖 More ChatGPT apps
 
-For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
+For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <br><br>
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">

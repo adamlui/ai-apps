@@ -188,7 +188,7 @@ ChatGPT 自動更新 は、[ScriptCat](https://docs.scriptcat.org)、[Violentmon
 
 ## 🤖 その他の ChatGPT アプリ
 
-さらに多くの素晴らしい ChatGPT アプリについては、https://github.com/adamlui/chatgpt-apps をご覧ください。
+さらに多くの素晴らしい ChatGPT アプリについては、https://github.com/adamlui/ai-apps をご覧ください。
 <br><br>
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">

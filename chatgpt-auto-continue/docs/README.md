@@ -119,7 +119,7 @@ This project exists thanks to code, testing, issues, translations & ideas from t
 
 ## 🤖 More ChatGPT apps
 
-For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
+For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <br><br>
 
 ## 📜 Related scripts
@@ -147,5 +147,5 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 <img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/gradient-aqua.png">
   
-<a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT add-ons**</a> / 
+<a href="https://github.com/adamlui/ai-apps">**More ChatGPT add-ons**</a> / 
 <a href="#------------------------------------------------english---------简体中文----">Back to top ↑</a>

@@ -100,7 +100,7 @@
   "alert_switchingOff": { "message": "Slukning" },
   "notif_copiedToClipboard": { "message": "Kopieret til udklipsholder" },
   "btnLabel_sendQueryToApp": { "message": "Send søgeforespørgsel til GoogleGPT" },
-  "btnLabel_moreApps": { "message": "Flere ChatGPT-apps" },
+  "btnLabel_moreApps": { "message": "Flere ai-apps" },
   "btnLabel_leaveReview": { "message": "Skriv en anmeldelse" },
   "btnLabel_rateUs": { "message": "Bedøm os" },
   "btnLabel_getSupport": { "message": "Få hjælp" },

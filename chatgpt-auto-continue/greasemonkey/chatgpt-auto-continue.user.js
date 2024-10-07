@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.3.1
+// @version             2024.10.6
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -260,7 +260,7 @@
             },
             gitHub: 'https://github.com/adamlui/chatgpt-auto-continue',
             greasyFork: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue',
-            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            relatedApps: 'https://github.com/adamlui/ai-apps',
             review: { greasyFork: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue/feedback#post-discussion' },
             support: 'https://support.chatgptautocontinue.com'
         },

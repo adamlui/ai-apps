@@ -136,7 +136,7 @@ This project exists thanks to code, testing, issues, translations & ideas from t
 
 ## 🤖 More ChatGPT apps
 
-For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
+For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <br><br>
 
 ## 📜 Related apps

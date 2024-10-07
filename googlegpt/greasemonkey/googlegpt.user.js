@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.10.5.3
+// @version                  2024.10.6
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -421,7 +421,7 @@
             gitHub: 'https://github.com/KudoAI/googlegpt',
             greasyFork: 'https://greasyfork.org/scripts/478597-googlegpt',
             publisher: 'https://www.kudoai.com',
-            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            relatedApps: 'https://github.com/adamlui/ai-apps',
             review: { greasyFork: 'https://greasyfork.org/scripts/478597-googlegpt/feedback#post-discussion' },
             support: 'https://support.googlegpt.io'
         },

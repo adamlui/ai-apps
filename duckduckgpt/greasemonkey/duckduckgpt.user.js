@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.10.5.3
+// @version                2024.10.6
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -229,7 +229,7 @@
             gitHub: 'https://github.com/KudoAI/duckduckgpt',
             greasyFork: 'https://greasyfork.org/scripts/459849-duckduckgpt',
             publisher: 'https://www.kudoai.com',
-            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            relatedApps: 'https://github.com/adamlui/ai-apps',
             review: {
                 alternativeTo: 'https://alternativeto.net/software/duckduckgpt/about/',
                 greasyFork: 'https://greasyfork.org/scripts/459849-duckduckgpt/feedback#post-discussion',

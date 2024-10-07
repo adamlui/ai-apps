@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.3
+// @version             2024.10.6
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -273,7 +273,7 @@
             gitHub: 'https://github.com/adamlui/chatgpt-auto-refresh',
             greasyFork: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh',
             mediaHost: 'https://media.chatgptautorefresh.com',
-            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            relatedApps: 'https://github.com/adamlui/ai-apps',
             review: { greasyFork: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion' },
             support: 'https://support.chatgptautorefresh.com'
         },

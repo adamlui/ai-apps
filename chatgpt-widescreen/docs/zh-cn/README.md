@@ -169,7 +169,7 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 <br>
 
 [讨论](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
-[更多 ChatGPT 插件](https://github.com/adamlui/chatgpt-apps)
+[更多 ChatGPT 插件](https://github.com/adamlui/ai-apps)
 
 </div>
 
@@ -231,7 +231,7 @@ ChatGPT 宽屏模式 与以下浏览器兼容:
 
 ## 🤖 更多 ChatGPT 应用
 
-如需更多精彩的 ChatGPT 应用程序，请访问: https://github.com/adamlui/chatgpt-apps
+如需更多精彩的 ChatGPT 应用程序，请访问: https://github.com/adamlui/ai-apps
 <br><br>
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">

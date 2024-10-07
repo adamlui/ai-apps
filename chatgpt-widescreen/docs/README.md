@@ -169,7 +169,7 @@ ChatGPT Widescreen Mode is compatible w/ the following browsers:
 <br>
 
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
-[More ChatGPT add-ons](https://github.com/adamlui/chatgpt-apps)
+[More ChatGPT add-ons](https://github.com/adamlui/ai-apps)
 
 </div>
 
@@ -231,7 +231,7 @@ This project exists thanks to code, testing, issues, translations & ideas from t
 
 ## 🤖 More ChatGPT apps
 
-For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
+For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <br><br>
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
@@ -261,5 +261,5 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
-<a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT add-ons**</a> /
+<a href="https://github.com/adamlui/ai-apps">**More ChatGPT add-ons**</a> /
 <a href="#english--%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">Back to top ↑</a>

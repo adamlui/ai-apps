@@ -208,7 +208,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 
 ## 🤖 More ChatGPT apps
 
-For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
+For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <br><br>
 
 ## 📜 Related scripts

@@ -187,7 +187,7 @@ ChatGPT 自动刷新 与使用 [ScriptCat](https://docs.scriptcat.org)、[Violen
 
 ## 🤖 更多 ChatGPT 应用
 
-如需更多精彩的 ChatGPT 应用程序，请访问：https://github.com/adamlui/chatgpt-apps
+如需更多精彩的 ChatGPT 应用程序，请访问：https://github.com/adamlui/ai-apps
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">
 

@@ -155,7 +155,7 @@ ChatGPT 无穷 与以下浏览器兼容:
 <br>
 
 [讨论](https://github.com/adamlui/chatgpt-infinity/discussions) / 
-[更多 ChatGPT 附加组件](https://github.com/adamlui/chatgpt-apps)
+[更多 ChatGPT 附加组件](https://github.com/adamlui/ai-apps)
 
 </div>
 
@@ -183,7 +183,7 @@ ChatGPT 无穷 与以下浏览器兼容:
 
 ## 🤖 更多 ChatGPT 应用
 
-如需更多精彩的 ChatGPT 应用程序，请访问: https://github.com/adamlui/chatgpt-apps
+如需更多精彩的 ChatGPT 应用程序，请访问: https://github.com/adamlui/ai-apps
 <br><br>
 
 ## 📜 相关应用
@@ -211,5 +211,5 @@ ChatGPT 无穷 与以下浏览器兼容:
 
 <img height=6px width="100%" src="https://media.chatgptinfinity.com/images/separators/gradient-aqua.png">
   
-<a href="https://github.com/adamlui/chatgpt-apps">**更多 ChatGPT 附加组件**</a> / 
+<a href="https://github.com/adamlui/ai-apps">**更多 ChatGPT 附加组件**</a> / 
 <a href="#">回到顶部 ↑</a>

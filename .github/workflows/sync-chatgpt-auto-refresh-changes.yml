@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: (github.repository == 'adamlui/chatgpt-apps') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
+    if: (github.repository == 'adamlui/ai-apps') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
     runs-on: ubuntu-latest
     env:
       GIT_AUTHOR_NAME: ${{ github.event.commits[0].author.name }}
@@ -17,12 +17,12 @@ jobs:
 
     steps:
 
-      - name: Checkout adamlui/chatgpt-apps
+      - name: Checkout adamlui/ai-apps
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/chatgpt-apps
-          path: adamlui/chatgpt-apps
+          repository: adamlui/ai-apps
+          path: adamlui/ai-apps
           fetch-depth: 2
 
       - name: Checkout adamlui/chatgpt-auto-refresh
@@ -43,7 +43,7 @@ jobs:
         id: sync_docs
         run: |
           shopt -s globstar
-          cd ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh
+          cd ${{ github.workspace }}/adamlui/ai-apps/chatgpt-auto-refresh
           loc_prefixes=( "root" "gm" )
 
           # Sync LICENSE.md
@@ -79,13 +79,13 @@ jobs:
       - name: Sync chatgpt-auto-refresh/ to adamlui/chatgpt-auto-refresh/
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
-            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/ \
+            ${{ github.workspace }}/adamlui/ai-apps/chatgpt-auto-refresh/ \
             ${{ github.workspace }}/adamlui/chatgpt-auto-refresh/
 
       - name: Sync chatgpt-auto-refresh/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-auto-refresh/
         run: |
           rsync -avhr --delete \
-            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/ai-apps/chatgpt-auto-refresh/greasemonkey/ \
             ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-auto-refresh/
 
       - name: Escape backticks in commit msg
@@ -96,9 +96,9 @@ jobs:
           echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Push changes to adamlui/chatgpt-apps
+      - name: Push changes to adamlui/ai-apps
         run: |
-          cd ${{ github.workspace }}/adamlui/chatgpt-apps
+          cd ${{ github.workspace }}/adamlui/ai-apps
           git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`${{ steps.sync_docs.outputs.sync_src }}\`]" || true
@@ -109,7 +109,7 @@ jobs:
           cd ${{ github.workspace }}/adamlui/chatgpt-auto-refresh
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
           git push
 
       - name: Push changes to adamlui/userscripts
@@ -117,5 +117,5 @@ jobs:
           cd ${{ github.workspace }}/adamlui/userscripts
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/chatgpt-apps/chatgpt-auto-refresh\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps/chatgpt-auto-refresh\`]" || true
           git push

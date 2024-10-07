@@ -75,7 +75,7 @@
   "alert_switchingOn": { "message": "het inschakelen" },
   "alert_switchingOff": { "message": "Uitschakelen" },
   "notif_copiedToClipboard": { "message": "Gekopieerd naar klembord" },
-  "btnLabel_moreApps": { "message": "Meer ChatGPT-apps" },
+  "btnLabel_moreApps": { "message": "Meer ai-apps" },
   "btnLabel_leaveReview": { "message": "Beoordeling Plaatsen" },
   "btnLabel_rateUs": { "message": "Beoordeel Ons" },
   "btnLabel_getSupport": { "message": "Neem contact op" },

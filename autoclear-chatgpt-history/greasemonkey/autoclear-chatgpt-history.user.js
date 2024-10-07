@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.3
+// @version             2024.10.6
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -276,7 +276,7 @@
             gitHub: 'https://github.com/adamlui/autoclear-chatgpt-history',
             greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history',
             mediaHost: 'https://media.autoclearchatgpt.com',
-            relatedApps: 'https://github.com/adamlui/chatgpt-apps',
+            relatedApps: 'https://github.com/adamlui/ai-apps',
             review: { greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history/feedback#post-discussion' },
             support: 'https://support.autoclearchatgpt.com'
         },
