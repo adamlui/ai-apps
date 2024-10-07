@@ -49,8 +49,8 @@
 
 > <img height=14 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.chatgptautocontinue.com?source=github&medium=readme&content=platform-link) /
 <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptautocontinue.com) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps@e773786/media/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-auto-continue/docs/zh-cn/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps@e773786/media/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-auto-continue/docs/zh-cn/#readme) /
+<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../chatgpt-auto-continue"><img width=583 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a>
 
@@ -82,8 +82,8 @@
 <img height=14 src="https://media.chatgptinfinity.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.chatgptinfinity.com?source=github&medium=readme&content=platform-link) /
 <img height=12 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> [Edge](https://edge.chatgptinfinity.com) /
 <img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptinfinity.com) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps@e773786/media/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-infinity/docs/zh-cn/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps@e773786/media/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-infinity/docs/zh-cn/#readme) /
+<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../../chatgpt-infinity"><img width=583 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
@@ -94,8 +94,8 @@
 <img height=14 src="https://media.chatgptwidescreen.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.chatgptwidescreen.com?source=github&medium=readme&content=platform-link) /
 <img height=12 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> [Edge](https://edge.chatgptwidescreen.com) /
 <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptwidescreen.com) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps@e773786/media/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-widescreen/docs/zh-cn/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps@e773786/media/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-widescreen/docs/zh-cn/#readme) /
+<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../../chatgpt-widescreen"><img width=583 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
@@ -125,5 +125,5 @@
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
-<img height=11 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps@e773786/media/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions) /
+<img height=11 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions) /
 <a href="#------------------------------------------------%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87---------english----">回到顶部 ↑</a>
