@@ -9,7 +9,16 @@
     </h6>
 </div>
 
-# 🤖 adamlui / ai-apps
+<div align="center">
+
+<picture>
+    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/logos/ai-apps/white-green.png">
+    <img width=688 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/logos/ai-apps/black-teal.png">
+</picture>
+
+</div>
+
+<br>
 
 <img height=31 src="https://img.shields.io/badge/%E7%94%A8%E6%88%B7-200,000+-af68ff?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></img>
 <a href="https://www.codefactor.io/repository/github/adamlui/ai-apps"><img alt="[CodeFactor 等级]" height=31 src="https://img.shields.io/codefactor/grade/github/adamlui/ai-apps?label=%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F&logo=codefactor&logoColor=white&labelColor=464646&color=b3ff68&style=for-the-badge"></img></a>
