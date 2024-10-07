@@ -120,12 +120,12 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 ### 🖥️ デスクトップ
 
 - **[Google Chrome](https://www.chrome.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[Mozilla Firefox](https://www.firefox.com)**（[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[Mozilla Firefox](https://www.firefox.com)**（[Firefox 拡張機能](https://ff.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Microsoft Edge](https://www.microsoft.com/edge)**（[Edge アドオン](https://edge.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Opera](https://www.opera.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Brave](https://brave.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Vivaldi](https://vivaldi.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[LibreWolf](https://librewolf.net)**（[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[LibreWolf](https://librewolf.net)**（[Firefox 拡張機能](https://ff.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Ghost](https://ghostbrowser.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[QQ](https://browser.qq.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Whale](https://whale.naver.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com?source=github&medium=readme&content=platform-link)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
