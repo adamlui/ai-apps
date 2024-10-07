@@ -9,7 +9,7 @@
     </h6>
 </div>
 
-# 🤖 AI apps
+# 🤖 adamlui / ai-apps
 
 ![](https://img.shields.io/badge/Users-200,000+-af68ff?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
 [![\[CodeFactor grade\]](https://img.shields.io/codefactor/grade/github/adamlui/ai-apps?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b3ff68&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/ai-apps)
