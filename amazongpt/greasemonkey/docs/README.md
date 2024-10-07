@@ -132,7 +132,32 @@ This app exists thanks to code, translations, issues & ideas from the following 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
+
+## 📜 Related apps
+
+### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=21> [BraveGPT](https://www.bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
+
+> Bring the magic of AI to Brave Search (powered by GPT-4o!)
+<br>[Install](https://github.com/KudoAI/bravegpt/#-installation) /
+[Readme](https://github.com/KudoAI/bravegpt/#readme) /
+[Discuss](https://github.com/KudoAI/bravegpt/discussions)
+
+### <img width=17 src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
+
+> Bring the magic of AI to DuckDuckGo (powered by GPT-4o!)
+<br>[Install](https://github.com/KudoAI/duckduckgpt/#-installation) /
+[Readme](https://github.com/KudoAI/duckduckgpt/#readme) /
+[Discuss](https://github.com/KudoAI/duckduckgpt/discussions)
+
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg?699c63d"></a>
+
+> Bring the magic of AI to Google Search (powered by Google Gemma + GPT-4o!)
+<br>[Install](https://greasyfork.org/scripts/478597-googlegpt) /
+[Readme](https://github.kudoai.com/googlegpt/#readme) /
+[Discuss](https://github.kudoai.com/googlegpt/discussions)
+
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT apps**</a> / 
 <a href="#-bring-the-magic-of-ai-to-amazon-shopping-">Back to top ↑</a>
