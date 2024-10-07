@@ -23,9 +23,9 @@
 
 <br>
 
-<a href="https://chrome.chatgptautocontinue.com?source=github&medium=readme&content=platform-badge">
+<a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
-<a href="https://ff.chatgptautocontinue.com?source=github&medium=readme&content=platform-badge">
+<a href="https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
 <a href="https://greasyfork.chatgptautocontinue.com">
     <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
@@ -48,7 +48,7 @@
 
 ### <img height=16 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"><img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> Browser extension:
 
-1. Install ChatGPT Auto-Continue extension ([Chrome](https://chrome.chatgptautocontinue.com?source=github&medium=readme&content=platform-link), [Firefox](https://ff.chatgptautocontinue.com?source=github&medium=readme&content=platform-link))
+1. Install ChatGPT Auto-Continue extension ([Chrome](https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link), [Firefox](https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link))
 
 2. Visit [chatgpt.com](https://chatgpt.com) as normal, and multi-reply conversations will automatically continue generating when cut-off!
 
@@ -90,9 +90,9 @@ ChatGPT Auto-Continue relies on code from the powerful [chatgpt.js](https://gith
 
 <div align="center">
 
-<a href="https://chrome.chatgptautocontinue.com?source=github&medium=readme&content=install-button">
+<a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-chrome-button.png"></a>
-<a href="https://ff.chatgptautocontinue.com?source=github&medium=readme&content=install-button">
+<a href="https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-firefox-button.png"></a>
 <a href="https://greasyfork.chatgptautocontinue.com">
     <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-userscript-button.png"></a>
@@ -153,7 +153,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 [Readme](https://github.com/adamlui/chatgpt-auto-talk/#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-auto-talk/discussions)
 
-### <img width=16 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT Infinity](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com?source=github&medium=readme&content=featured-by-google-badge"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+### <img width=16 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT Infinity](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=featured-by-google-badge"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://docs.chatgptinfinity.com/#-installation) / 

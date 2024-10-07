@@ -1,4 +1,4 @@
-<h6> <a href="https://ff.chatgptwidescreen.com?source=github&medium=readme&content=header-tile"><img src="../../chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
+<h6> <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=header-tile"><img src="../../chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
 
 <div align="center">
 
@@ -12,7 +12,7 @@
  
 <br>
 
-<a href="https://ff.chatgptwidescreen.com?source=github&medium=readme&content=install-button">
+<a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 
 <br>
@@ -57,7 +57,7 @@
 
 ## 🚀 Installation
 
-1. Install [ChatGPT Widescreen](https://ff.chatgptwidescreen.com?source=github&medium=readme&content=add-on-link) Firefox add-on
+1. Install [ChatGPT Widescreen](https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=add-on-link) Firefox add-on
 
 2. Visit [chatgpt.com](https://chatgpt.com), [perplexity.ai](https://perplexity.ai), or [poe.com](https://poe.com) & mode toggles are added to chatbar!
 
@@ -99,7 +99,7 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 <div align="center">
 
-<a href="https://ff.chatgptwidescreen.com?source=github&medium=readme&content=install-button">
+<a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-firefox-button.png"></a>
 
 <br>
@@ -188,7 +188,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 [Readme](https://docs.bravegpt.com/#readme) /
 [Discuss](https://github.com/KudoAI/bravegpt/discussions)
 
-### <img width=16 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT Infinity](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com?source=github&medium=readme&content=featured-by-google-badge"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+### <img width=16 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT Infinity](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=featured-by-google-badge"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://docs.chatgptinfinity.com/#-installation) /
 [Readme](https://docs.chatgptinfinity.com/#-readme) /

@@ -109,13 +109,13 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 ChatGPT Widescreen Mode is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Violentmonkey](https://violentmonkey.github.io), [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf), [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) or [Tampermonkey](https://www.tampermonkey.net):
 
-- [Google Chrome](https://www.chrome.com) (also available on [Chrome Web Store](https://chrome.chatgptwidescreen.com?source=github&medium=readme&content=platform-link))
-- [Mozilla Firefox](https://www.firefox.com) (also available on [Firefox Add-on Store](https://ff.chatgptwidescreen.com?source=github&medium=readme&content=platform-link))
+- [Google Chrome](https://www.chrome.com) (also available on [Chrome Web Store](https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link))
+- [Mozilla Firefox](https://www.firefox.com) (also available on [Firefox Add-on Store](https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link))
 - [Microsoft Edge](https://www.microsoft.com/edge) (also available on [Edge Add-on Store](https://edge.chatgptwidescreen.com))
 - [Opera](https://www.opera.com)
 - [Brave](https://brave.com)
 - [Vivaldi](https://vivaldi.com)
-- [LibreWolf](https://librewolf.net) (also available on [Firefox Add-on Store](https://ff.chatgptwidescreen.com?source=github&medium=readme&content=platform-link))
+- [LibreWolf](https://librewolf.net) (also available on [Firefox Add-on Store](https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link))
 - [Ghost](https://ghostbrowser.com)
 - [QQ](https://browser.qq.com)
 
@@ -205,7 +205,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 [Readme](https://docs.bravegpt.com/#readme) /
 [Discuss](https://github.com/KudoAI/bravegpt/discussions)
 
-### <img width=16 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT Infinity](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com?source=github&medium=readme&content=featured-by-google-badge"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+### <img width=16 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT Infinity](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=featured-by-google-badge"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://docs.chatgptinfinity.com/#-greasemonkey-userscript) /
 [Readme](https://docs.chatgptinfinity.com/#-readme) /
