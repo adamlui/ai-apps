@@ -83,6 +83,26 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 </div>
 </h6>
 
+#
+
+<br>
+
+<div align="center">
+
+<a href="https://chrome.chatgptautocontinue.com">
+    <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-chrome-button.png"></a>
+<a href="https://ff.chatgptautocontinue.com?source=github&medium=readme&content=install-button">
+    <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-firefox-button.png"></a>
+<a href="https://greasyfork.chatgptautocontinue.com">
+    <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-userscript-button.png"></a>
+
+<br>
+
+[讨论](https://github.com/adamlui/chatgpt-auto-continue/discussions) / 
+[更多 ChatGPT 附加组件](https://github.com/adamlui/ai-apps)
+
+</div>
+
 ## 🧠 贡献者
 
 该项目的存在得益于以下贡献者的代码、测试、问题、翻译和想法：
