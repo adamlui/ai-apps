@@ -19,7 +19,7 @@
 
 ### 自动播放 ChatGPT 响应。
 
-<a href="https://greasyfork.org/scripts/500940-chatgpt-auto-talk"><img height=45 title="Install this script" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/buttons/greasy-fork/zh-cn/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/500940-chatgpt-auto-talk"><img height=45 alt="安装此脚本" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/buttons/greasy-fork/zh-cn/install-button.svg"></a><a href="#-installation"><img height=45 alt="如何安装" title="如何安装" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [讨论](https://github.com/adamlui/chatgpt-auto-talk/discussions) /
 [审查](https://greasyfork.org/scripts/500940-chatgpt-auto-talk#post-discussion) /

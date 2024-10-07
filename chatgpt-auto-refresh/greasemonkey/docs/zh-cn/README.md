@@ -22,7 +22,7 @@
 
 ### 通过后台请求保持 ChatGPT 会话新鲜，以消除网络错误 + Cloudflare 检查。
 
-<a href="https://greasyfork.chatgptautorefresh.com"><img height=45 title="安装这个脚本" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/zh-cn/install-button.svg"></a><a href="#-如何安装"><img height=45 title="如何安装" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.chatgptautorefresh.com"><img height=45 alt="安装这个脚本" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/zh-cn/install-button.svg"></a><a href="#-如何安装"><img height=45 alt="如何安装" title="如何安装" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [讨论](https://github.com/adamlui/chatgpt-auto-refresh/discussions) /
 [审查](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
@@ -138,7 +138,7 @@ ChatGPT 自动刷新 与使用 [ScriptCat](https://docs.scriptcat.org)、[Violen
 
 <br>
 
-<a href="https://greasyfork.chatgptautorefresh.com"><img title="安装这个脚本" height=45 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-如何安装"><img height=45 title="如何安装" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.chatgptautorefresh.com"><img height=45 alt="安装这个脚本" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/zh-cn/install-button.svg"></a><a href="#-如何安装"><img height=45 alt="如何安装" title="如何安装" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [讨论](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
 [发表评论](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
