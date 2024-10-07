@@ -91,6 +91,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 - [Mozilla Firefox](https://www.firefox.com)
 - [Microsoft Edge](https://www.microsoft.com/edge)
 - [Opera](https://www.opera.com)
+- [Opera GX](https://www.operagx.com)
 - [Brave](https://brave.com)
 - [Vivaldi](https://vivaldi.com)
 - [Waterfox](https://www.waterfox.net)
