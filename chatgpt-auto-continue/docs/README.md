@@ -23,6 +23,8 @@
 
 <br>
 
+<a href="https://chrome.chatgptautocontinue.com">
+    <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://ff.chatgptautocontinue.com?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
 <a href="https://greasyfork.chatgptautocontinue.com">
@@ -44,9 +46,9 @@
 
 ## 🚀 Installation
 
-### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> Browser extension:
+### <img height=16 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"><img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> Browser extension:
 
-1. Install [ChatGPT Auto-Continue](https://ff.chatgptautocontinue.com?source=github&medium=readme&content=add-on-link) Firefox add-on
+1. Install ChatGPT Auto-Continue extension ([Chrome](https://chrome.chatgptautocontinue.com), [Firefox](https://ff.chatgptautocontinue.com?source=github&medium=readme&content=platform-link))
 
 2. Visit [chatgpt.com](https://chatgpt.com) as normal, and multi-reply conversations will automatically continue generating when cut-off!
 

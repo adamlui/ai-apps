@@ -23,6 +23,8 @@
 
 <br>
 
+<a href="https://chrome.chatgptautocontinue.com">
+    <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://ff.chatgptautocontinue.com?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
 <a href="https://greasyfork.chatgptautocontinue.com">
@@ -44,9 +46,9 @@
 
 ## 🚀 如何安装
 
-### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> 浏览器扩展:
+### <img height=16 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"><img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> 浏览器扩展:
 
-1. 安装 [ChatGPT 自动继续](https://ff.chatgptautocontinue.com?source=github&medium=readme&content=add-on-link) Firefox 附加组件
+1. 安装 ChatGPT 自动继续 扩展程序 ([Chrome](https://chrome.chatgptautocontinue.com), [Firefox](https://ff.chatgptautocontinue.com?source=github&medium=readme&content=platform-link))
 
 2. 正常访问 [chatgpt.com](https://chatgpt.com)，多条回复对话中断时会自动继续生成!
 
