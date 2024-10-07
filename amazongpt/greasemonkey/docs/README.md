@@ -115,5 +115,17 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 
 <img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
 
+## 🧠 Contributors
+
+This app exists thanks to code, translations, issues & ideas from the following contributors:
+
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/175899275?first-contrib=2024.10.6-opera-gx-compatible-report&h=50&w=50&mask=circle&maxage=7d "@pasThal")](https://github.com/pasThal)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
+<a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.bravegpt.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.bravegpt.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
+
+<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
+
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT apps**</a> / 
 <a href="#-bring-the-magic-of-ai-to-amazon-shopping-">Back to top ↑</a>
