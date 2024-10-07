@@ -127,5 +127,12 @@ This app exists thanks to code, translations, issues & ideas from the following 
 
 <img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
 
+## 🤖 More ChatGPT apps
+
+For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
+<br><br>
+
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT apps**</a> / 
 <a href="#-bring-the-magic-of-ai-to-amazon-shopping-">Back to top ↑</a>
