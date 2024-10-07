@@ -121,7 +121,7 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 <br>
 
-<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=42 src="https://media.bravegpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://media.bravegpt.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=45 src="https://media.bravegpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img height=45 title="How to install" src="https://media.bravegpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.com/KudoAI/bravegpt/discussions) /
 [Leave a review](https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion) /

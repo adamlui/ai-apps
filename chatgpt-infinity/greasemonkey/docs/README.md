@@ -106,7 +106,7 @@ ChatGPT Infinity is compatible w/ the following browsers using [ScriptCat](https
 
 <br>
 
-<a href="https://greasyfork.chatgptinfinity.com"><img height=42 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img title="How to install" height=42 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.chatgptinfinity.com"><img height=45 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img title="How to install" height=45 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-infinity/discussions) / 
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)

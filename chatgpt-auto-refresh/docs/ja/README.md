@@ -142,7 +142,7 @@ ChatGPT 自動更新 は、[ScriptCat](https://docs.scriptcat.org)、[Violentmon
 
 <br>
 
-<a href="https://greasyfork.chatgptautorefresh.com"><img title="このスクリプトをインストール" height=42 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-インストール"><img height=42 title="インストール方法" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.chatgptautorefresh.com"><img title="このスクリプトをインストール" height=45 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-インストール"><img height=45 title="インストール方法" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [ディスカッション](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
 [レビューを残す](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /

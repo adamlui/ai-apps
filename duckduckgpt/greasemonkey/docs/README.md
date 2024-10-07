@@ -117,7 +117,7 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 <br>
 
-<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img height=42 alt="Install this script" src="https://media.ddgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=42 alt="How to install" title="How to install" src="https://media.ddgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img height=45 alt="Install this script" src="https://media.ddgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 alt="How to install" title="How to install" src="https://media.ddgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.com/KudoAI/duckduckgpt/discussions) /
 [Leave a review](https://greasyfork.org/scripts/459849-duckduckgpt/feedback#post-discussion) /
