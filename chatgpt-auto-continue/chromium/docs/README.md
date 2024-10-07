@@ -53,6 +53,22 @@ ChatGPT Auto-Continue relies on code from the powerful [chatgpt.js](https://gith
 </div>
 </h6>
 
+#
+
+<br>
+
+<div align="center">
+
+<a href="https://chrome.chatgptautocontinue.com">
+    <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-chrome-button.png"></a>
+
+<br>
+
+[Discuss](https://github.com/adamlui/chatgpt-auto-continue/discussions) /
+[More ChatGPT add-ons](https://github.com/adamlui/ai-apps)
+
+</div>
+
 ## 🧠 Contributors
 
 This project exists thanks to code, testing, issues, translations & ideas from the following contributors:
