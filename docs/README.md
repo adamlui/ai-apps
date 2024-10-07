@@ -16,7 +16,6 @@
 [![\[License: MIT\]](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
 <a href="https://github.com/adamlui/ai-apps/commits"><img alt="[GitHub commits]" src="https://img.shields.io/github/commit-activity/m/adamlui/ai-apps?label=Commits&logo=github&logoColor=white&labelColor=464646&color=869da0&style=for-the-badge"></a>
 [![\[SonarCloud vulnerabilities\]](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_ai-apps%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilities&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_ai-apps)
-[![\[Powered by chatgpt.js\]](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_apps&utm_content=github_shield)
 <img src="https://img.shields.io/badge/jsDelivr_Requests-1,400,000+/month-7bb7fc.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge">
 
 <img height=10px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">

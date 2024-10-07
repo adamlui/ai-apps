@@ -16,7 +16,6 @@
 [![\[许可证: MIT\]](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=&labelColor=464646&style=for-the-badge)](LICENSE.md)
 <a href="https://github.com/adamlui/ai-apps/commits"><img alt="[GitHub 提交]" src="https://img.shields.io/github/commit-activity/m/adamlui/ai-apps?label=%E6%8F%90%E4%BA%A4&logo=github&logoColor=white&labelColor=464646&color=869da0&style=for-the-badge"></a>
 [![\[SonarCloud 漏洞\]](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_ai-apps%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=%E6%BC%8F%E6%B4%9E&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_ai-apps)
-[![\[供电 chatgpt.js\]](https://img.shields.io/badge/%E4%BE%9B%E7%94%B5-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_apps&utm_content=github_shield)
 <img src="https://img.shields.io/badge/jsDelivr_%E8%AF%B7%E6%B1%82-1,400,000+/month-7bb7fc.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge">
 
 <img height=10px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
