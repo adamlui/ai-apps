@@ -13,7 +13,7 @@
 
 <picture>
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/logos/ai-apps/white-green.png">
-    <img width=575 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps@e251222/images/logos/ai-apps/black-teal.png">
+    <img width=575 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/logos/ai-apps/black-teal.png">
 </picture>
 <br><br>
 
