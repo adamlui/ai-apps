@@ -29,7 +29,6 @@
                 settings.save('infinityMode', false)
             syncStorageToUI()
         }
-        return true
     })
 
     // Init ENV info
