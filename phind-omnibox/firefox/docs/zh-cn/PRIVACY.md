@@ -16,4 +16,4 @@ Phind Omnibox 不会收集或存储任何用户数据。不会与第三方共享
 
 ## 更新
 
-要查看此政策的修订，请访问 https://github.com/adamlui/ai-apps/commits/main/phind-omnibox/chromium/docs/zh-cn/PRIVACY.md
+要查看此政策的修订，请访问 https://github.com/adamlui/ai-apps/commits/main/phind-omnibox/firefox/docs/zh-cn/PRIVACY.md

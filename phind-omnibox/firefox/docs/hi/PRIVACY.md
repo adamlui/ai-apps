@@ -16,4 +16,4 @@ Phind Omnibox किसी भी उपयोगकर्ता डेटा �
 
 ## अपडेट
 
-इस नीति में संशोधन देखने के लिए, https://github.com/adamlui/ai-apps/commits/main/phind-omnibox/chromium/docs/hi/PRIVACY.md पर जाएं
+इस नीति में संशोधन देखने के लिए, https://github.com/adamlui/ai-apps/commits/main/phind-omnibox/firefox/docs/hi/PRIVACY.md पर जाएं
