@@ -1,0 +1,19 @@
+{
+  "name": "ChatGPT Auto-Continue", "symbol": "≫",
+  "author": { "name": "Adam Lui", "url": "https://github.com/adamlui" },
+  "urls": {
+    "chatgptJS": "https://chatgpt.js.org",
+    "cjsMediaHost": "https://media.chatgptjs.org",
+    "donate": {
+      "cashApp": "https://cash.app/$adamlui",
+      "gitHub": "https://github.com/sponsors/adamlui",
+      "payPal": "https://paypal.me/adamlui"
+    },
+    "gitHub": "https://github.com/adamlui/chatgpt-auto-continue",
+    "greasyFork": "https://greasyfork.org/scripts/466789-chatgpt-auto-continue",
+    "mediaHost": "https://media.chatgptautocontinue.com",
+    "relatedApps": "https://github.com/adamlui/ai-apps",
+    "review": { "greasyFork": "https://greasyfork.org/scripts/466789-chatgpt-auto-continue/feedback#post-discussion" },
+    "support": "https://support.chatgptautocontinue.com"
+  }
+}

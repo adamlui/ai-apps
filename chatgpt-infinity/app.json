@@ -1,0 +1,23 @@
+{
+  "name": "ChatGPT Infinity", "symbol": "∞",
+  "author": { "name": "Adam Lui", "url": "https://github.com/adamlui" },
+  "urls": {
+    "chatgptJS": "https://chatgpt.js.org",
+    "cjsMediaHost": "https://media.chatgptjs.org",
+    "donate": {
+      "cashApp": "https://cash.app/$adamlui",
+      "gitHub": "https://github.com/sponsors/adamlui",
+      "payPal": "https://paypal.me/adamlui"
+    },
+    "gitHub": "https://github.com/adamlui/chatgpt-infinity",
+    "greasyFork": "https://greasyfork.org/scripts/465051-chatgpt-infinity",
+    "mediaHost": "https://media.chatgptinfinity.com",
+    "relatedApps": "https://github.com/adamlui/ai-apps",
+    "review": {
+      "alternativeTo": "https://alternativeto.net/software/chatgpt-infinity/about/",
+      "greasyFork": "https://greasyfork.org/scripts/465051-chatgpt-infinity#post-discussion",
+      "productHunt": "https://www.producthunt.com/products/chatgpt-infinity/reviews/new"
+    },
+    "support": "https://support.chatgptinfinity.com"
+  }
+}
