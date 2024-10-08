@@ -1,5 +1,5 @@
 {
   "appName": { "message": "Perplexity Omnibox" },
-  "appAuthor": { "message": "아담 루이" },
+  "appAuthor": { "message": "Adam Lui" },
   "appDesc": { "message": "검색주소창에 @ perplexity를 입력하여 Perplexity AI로 검색" }
 }
