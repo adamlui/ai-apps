@@ -1,0 +1,5 @@
+{
+  "appName": { "message": "You.com Omnibox" },
+  "appAuthor": { "message": "Adam Lui" },
+  "appDesc": { "message": "You.com으로 검색하려면 검색주소창에 @you 입력하세요" }
+}
