@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_appName__",
+  "short_name": "Perplexity 🔎",
+  "description": "__MSG_appDesc__",
+  "version": "2024.10.8",
+  "author": "Adam Lui",
+  "homepage_url": "https://github.com/adamlui/ai-apps",
+  "default_locale": "en",
+  "omnibox": { "keyword" : "@perplexity" },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "64": "icons/icon64.png",
+    "128": "icons/icon128.png",
+    "632": "icons/icon632.png"
+  },
+  "background": { "service_worker": "service-worker.js" },
+  "minimum_chrome_version": "88"
+}

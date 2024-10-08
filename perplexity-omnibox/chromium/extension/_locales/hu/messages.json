@@ -1,0 +1,5 @@
+{
+  "appName": { "message": "Perplexity Omnibox" },
+  "appAuthor": { "message": "Adam Lui" },
+  "appDesc": { "message": "Írja be a @ perplexity kifejezést a címsávba a kereséshez a Perplexity AI segítségével" }
+}
