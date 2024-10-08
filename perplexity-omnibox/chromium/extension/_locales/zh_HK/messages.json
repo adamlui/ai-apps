@@ -1,5 +1,5 @@
 {
   "appName": { "message": "Perplexity Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "在網址列中輸入@ perplexity ，即可使用Perplexity AI進行搜尋" }
+  "appDesc": { "message": "在網址列中輸入 @perplexity，即可使用 Perplexity AI 進行搜尋" }
 }
