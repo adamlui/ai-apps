@@ -1,12 +1,12 @@
 (async () => {
 
-    const site = /([^.]+)\.[^.]+$/.exec(new URL((await chrome.tabs.query(
-        { active: true, currentWindow: true }))[0].url).hostname)?.[1]
+    const env = { site: /([^.]+)\.[^.]+$/.exec(new URL((await chrome.tabs.query(
+        { active: true, currentWindow: true }))[0].url).hostname)?.[1] }
 
     // Import LIBS
     await import(chrome.runtime.getURL('lib/dom.js'))
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
-    settings.site = site // to load/save active tab's settings
+    settings.site = env.site // to load/save active tab's settings
 
     // Import DATA
     const { app } = await chrome.storage.sync.get('app'),
@@ -62,8 +62,8 @@
     // Create CHILD TOGGLES for matched pages
     const matchHosts = chrome.runtime.getManifest().content_scripts[0].matches
         .map(url => url.replace(/^https?:\/\/|\/.*$/g, ''))
-    if (matchHosts.some(host => host.includes(site))) {
-        await settings.load(sites[site].availFeatures)
+    if (matchHosts.some(host => host.includes(env.site))) {
+        await settings.load(sites[env.site].availFeatures)
 
         // Create/insert toggles section
         const togglesDiv = dom.create.elem('div', { class: 'menu' })
@@ -71,7 +71,7 @@
 
         // Create/inesrt individual toggles
         Object.keys(app.settings).forEach(key => {
-            if (sites[site].availFeatures.includes(key)) {
+            if (sites[env.site].availFeatures.includes(key)) {
 
                 // Init elems
                 const menuItemDiv = dom.create.elem('div', {
