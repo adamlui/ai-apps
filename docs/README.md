@@ -26,7 +26,7 @@
 
 </div>
 
-<img height=10px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 ### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=18> [AmazonGPT](../amazongpt) &nbsp;<img height=20 src="https://amazongpt.kudoai.com/assets/images/badges/wolfram-award/gold-badge.png">
 
@@ -137,13 +137,13 @@ Adds AI answers to Google Search (powered by Google Gemma + GPT-4o!)
 
 </div>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 ### Have an app idea or request?
 
 Create a new discsusion: https://github.com/adamlui/ai-apps/discussions/new?category=ideas
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 <img height=11 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions) /
 <a href="#------------------------------------------------english---------简体中文----">Back to top ↑</a>

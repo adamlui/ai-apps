@@ -26,7 +26,7 @@
 
 </div>
 
-<img height=10px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 ### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=18> [AmazonGPT](../../amazongpt) &nbsp;<img height=20 src="https://amazongpt.kudoai.com/assets/images/badges/wolfram-award/zh-cn/gold-badge.png">
 
@@ -139,13 +139,13 @@
 
 </div>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 ### 有应用创意或请求？
 
 创建新讨论：https://github.com/adamlui/ai-apps/discussions/new?category=ideas
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 <img height=11 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions) /
 <a href="#------------------------------------------------%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87---------english----">回到顶部 ↑</a>
