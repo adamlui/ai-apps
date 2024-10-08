@@ -1,7 +1,7 @@
 (async () => {
 
     // Init APP data
-    const app = { latestAssetCommitHash: '37060ca' }
+    const app = { latestAssetCommitHash: '698e2e7' }
     Object.assign(app, await (await fetch(chrome.runtime.getURL('app.json'))).json())
     app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
     Object.assign(app, { settings: {
@@ -30,7 +30,7 @@
     chrome.storage.sync.set({ app })
 
     // Init SITES data
-    const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/sites.json`)).json())
+    const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/data/sites.json`)).json())
     chrome.storage.sync.set({ sites })
 
     // Launch ChatGPT on install
