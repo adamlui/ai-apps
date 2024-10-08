@@ -137,6 +137,8 @@ Adds AI answers to Google Search (powered by Google Gemma + GPT-4o!)
 
 </div>
 
+<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
+
 ### Have an app idea or request?
 
 Create a new discsusion: https://github.com/adamlui/ai-apps/discussions/new?category=ideas

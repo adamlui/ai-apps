@@ -139,6 +139,8 @@
 
 </div>
 
+<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
+
 ### 有应用创意或请求？
 
 创建新讨论：https://github.com/adamlui/ai-apps/discussions/new?category=ideas
