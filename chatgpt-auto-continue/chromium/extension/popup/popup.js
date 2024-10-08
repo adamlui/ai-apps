@@ -8,7 +8,7 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
 
     // Ipmort APP data
-    const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
+    const { app } = await chrome.storage.sync.get('app')
 
     // Import ICONS
     const { icons } = await import(chrome.runtime.getURL('components/icons.js'))
@@ -60,12 +60,6 @@
     // Create CHILD toggles on chatgpt.com
     if (site == 'chatgpt') {
         await settings.load(settings.availKeys)
-
-        // Init SETTINGS props
-        Object.assign(app, { settings: {
-            notifDisabled: { type: 'toggle',
-                label: chrome.i18n.getMessage('menuLabel_modeNotifs') }
-        }})
 
         // Create/insert toggles section
         const togglesDiv = dom.create.elem('div', { class: 'menu' })

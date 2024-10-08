@@ -11,7 +11,7 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
 
     // Import APP data
-    const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
+    const { app } = await chrome.storage.sync.get('app')
 
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener((req, _, sendResp) => {

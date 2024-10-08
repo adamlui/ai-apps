@@ -8,7 +8,7 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
 
     // Ipmort APP data
-    const app = await (await fetch(chrome.runtime.getURL('app.json'))).json()
+    const { app } = await chrome.storage.sync.get('app')
 
     // Import ICONS
     const { icons } = await import(chrome.runtime.getURL('components/icons.js'))
@@ -76,26 +76,6 @@
         settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
         await settings.load(settings.availKeys)
 
-        // Init SETTINGS props
-        const re_all = new RegExp(`^(${chrome.i18n.getMessage('menuLabel_all')}|all|any|every)$`, 'i')
-        Object.assign(app, { settings: {
-            autoStart: { type: 'toggle',
-                label: chrome.i18n.getMessage('menuLabel_autoStart') },
-            toggleHidden: { type: 'toggle',
-                label: chrome.i18n.getMessage('menuLabel_toggleVis') },
-            autoScrollDisabled: { type: 'toggle',
-                label: chrome.i18n.getMessage('menuLabel_autoScroll') },
-            replyLanguage: { type: 'prompt', symbol: '🌐',
-                label: chrome.i18n.getMessage('menuLabel_replyLang'),
-                status: config.replyLanguage },
-            replyTopic: { type: 'prompt', symbol: '🧠',
-                label: chrome.i18n.getMessage('menuLabel_replyTopic'),
-                status: re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all') : toTitleCase(config.replyTopic) },
-            replyInterval: { type: 'prompt', symbol: '⌚',
-                label: chrome.i18n.getMessage('menuLabel_replyInt'),
-                status: `${config.replyInterval}s` }
-        }})
-
         // Create/insert toggles section
         const togglesDiv = dom.create.elem('div', { class: 'menu' })
         document.querySelector('.menu-header').insertAdjacentElement('afterend', togglesDiv)
@@ -120,6 +100,10 @@
         }
 
         // Create/insert settings toggles
+        const re_all = new RegExp(`^(${chrome.i18n.getMessage('menuLabel_all')}|all|any|every)$`, 'i')
+        app.settings.replyLanguage.status = config.replyLanguage
+        app.settings.replyTopic.status = re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all') : toTitleCase(config.replyTopic)
+        app.settings.replyInterval.status = `${config.replyInterval}s`
         Object.keys(app.settings).forEach(key => {
 
             // Init elems
