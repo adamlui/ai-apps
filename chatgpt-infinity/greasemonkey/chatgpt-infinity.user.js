@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.6
+// @version             2024.10.7
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -772,6 +772,14 @@
         }
     }
 
+    chatgpt.isIdle = function() { // replace waiting for chat to start in case of interrupts
+        return new Promise(resolve => { // when stop btn missing
+            new MutationObserver((_, obs) => {
+                if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve() }
+            }).observe(document.body, { childList: true, subtree: true })
+        })
+    }
+
     // Define INFINITY MODE functions
 
     const infinity = {
@@ -792,13 +800,7 @@
             if (!document.querySelector('[data-message-author-role]') // new chat reset due to OpenAI bug
                 && config.infinityMode) // ...and toggle still active
                     chatgpt.send(activatePrompt) // ...so prompt again
-            await new Promise(resolve => { // when stop btn missing
-                // ...instead of await chatgpt.isIdle() since method waits for chat to start
-                // but prev 3s sleep to fight OpenAI reset bug can be longer than start/stop
-                new MutationObserver((_, obs) => {
-                    if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve() }
-                }).observe(document.body, { childList: true, subtree: true })
-            })
+            await chatgpt.isIdle()
             if (config.infinityMode && !infinity.isActive) // double-check in case de-activated before scheduled
                 infinity.isActive = setTimeout(infinity.continue, parseInt(config.replyInterval, 10) * 1000)
         },
