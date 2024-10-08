@@ -37,8 +37,6 @@
 
 <a href="../../amazongpt"><img width=515 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/mice-md-reply-darkmode.png"></a>
 
-<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
-
 <div align="right">
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.autoclearchatgpt.com/images/icons/openai/black/icon32.png"></picture> [自动清除 ChatGPT 历史记录](../../autoclear-chatgpt-history) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://media.autoclearchatgpt.com/images/badges/awesome/badge.svg"></a>
@@ -50,8 +48,6 @@
 
 </div>
 
-<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
-
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=21> [BraveGPT](../../bravegpt) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
 为 Brave Search 添加 AI 答案（由 GPT-4o 提供支持！）
@@ -60,8 +56,6 @@
 [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../bravegpt"><img width=515 src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png"></a>
-
-<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 <div align="right">
 
@@ -77,16 +71,12 @@
 
 </div>
 
-<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
-
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT 自动刷新 ↻](../../chatgpt-auto-refresh) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
 
 保持 ChatGPT 会话新鲜，消除聊天时间限制 + 网络错误 + Cloudflare 检查。
 <br>[安装](../../chatgpt-auto-refresh/docs/zh-cn/#-如何安装) /
 [自述文件](../../chatgpt-auto-refresh/docs/zh-cn/#readme) /
 [讨论](https://github.com/adamlui/ai-apps/discussions)
-
-<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 <div align="right">
 
@@ -99,8 +89,6 @@
 
 </div>
 
-<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
-
 ### <img width=20 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT无限](../../chatgpt-infinity) &nbsp;<a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=featured-by-google-badge"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
@@ -112,8 +100,6 @@
 <img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../../chatgpt-infinity"><img width=583 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
-
-<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 <div align="right">
 
@@ -131,8 +117,6 @@
 
 </div>
 
-<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
-
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=20> [DuckDuckGPT](../../duckduckgpt) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
 
 为 DuckDuckGo 添加 AI 答案（由 GPT-4o 提供支持！）
@@ -141,8 +125,6 @@
 [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../../duckduckgpt"><img width=515 src="https://media.ddgpt.com/images/screenshots/desktop/how-to-becum-rich-query/lightmode.png"></a>
-
-<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 <div align="right">
 
@@ -156,8 +138,6 @@
 <a href="../../googlegpt"><img width=515 src="https://media.googlegpt.io/images/screenshots/zh-cn/desktop/javascript-arrays-query/darkmode.png"></a>
 
 </div>
-
-<img height=4px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 ### 有应用创意或请求？
 
