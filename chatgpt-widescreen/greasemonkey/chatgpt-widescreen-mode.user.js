@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.7
+// @version             2024.10.8
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -262,44 +262,27 @@
 
 (async () => {
 
+    // Init ENV vars
     const site = /([^.]+)\.[^.]+$/.exec(location.hostname)[1]
-
-    // Init APP info
-    const app = {
-        name: 'ChatGPT Widescreen Mode', symbol: '🖥️', configKeyPrefix: site + 'Widescreen',
-        author: { name: 'Adam Lui', url: 'https://github.com/adamlui' },
-        urls: {
-            chatgptJS: 'https://chatgpt.js.org',
-            donate: {
-                cashApp: 'https://cash.app/$adamlui',
-                gitHub: 'https://github.com/sponsors/adamlui',
-                payPal: 'https://paypal.me/adamlui'
-            },
-            gitHub: 'https://github.com/adamlui/chatgpt-widescreen',
-            greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
-            relatedApps: 'https://github.com/adamlui/ai-apps',
-            review: {
-                greasyFork: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback#post-discussion',
-                productHunt: 'https://www.producthunt.com/products/chatgpt-widescreen-mode/reviews/new'
-            },
-            support: 'https://support.chatgptwidescreen.com'
-        },
-        latestAssetCommitHash: '698e2e7' // for cached sites.json + messages.json
-    }
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
-    app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
-
-    // Init ENV info
     const env = {
         browser: { isFF: chatgpt.browser.isFirefox() },
         scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
     }
-
-    // Init SITE props
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+
+    // Init APP info
+    const app = { configKeyPrefix: site + 'Widescreen', latestAssetCommitHash: 'dc0a38e' },
+          assetHostURL = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@${app.latestAssetCommitHash}`
+    Object.assign(app, await new Promise(resolve => xhr({
+        method: 'GET', url: `${assetHostURL}/data/app.json`,
+        onload: resp => resolve(JSON.parse(resp.responseText))
+    })))
+    app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
+    
+    // Init SITE props
     const sites = Object.assign(Object.create(null), await new Promise(resolve => xhr({
-        method: 'GET', url: `${app.urls.assetHost}/data/sites.json`,
+        method: 'GET', url: `${assetHostURL}/data/sites.json`,
         onload: resp => resolve(JSON.parse(resp.responseText))
     })))
     sites.openai = { ...sites.chatgpt } // shallow copy to cover old domain
@@ -380,7 +363,7 @@
     }
     if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
         const localizedMsgs = await new Promise(resolve => {
-            const msgHostDir = app.urls.assetHost + '/chrome/extension/_locales/',
+            const msgHostDir = assetHostURL + '/chrome/extension/_locales/',
                   msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
             let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
             function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}

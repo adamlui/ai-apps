@@ -1,9 +1,9 @@
 (async () => {
 
     // Init APP data
-    const app = { latestAssetCommitHash: '698e2e7' }
-    Object.assign(app, await (await fetch(chrome.runtime.getURL('app.json'))).json())
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
+    const app = { latestAssetCommitHash: 'dc0a38e' },
+          assetHostURL = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@${app.latestAssetCommitHash}`
+    Object.assign(app, await (await fetch(`${assetHostURL}/data/app.json`)).json())
     Object.assign(app, { settings: {
         fullerWindows: { type: 'toggle',
             label: chrome.i18n.getMessage('menuLabel_fullerWins'),
@@ -30,7 +30,7 @@
     chrome.storage.sync.set({ app })
 
     // Init SITES data
-    const sites = Object.assign(Object.create(null), await (await fetch(`${app.urls.assetHost}/data/sites.json`)).json())
+    const sites = Object.assign(Object.create(null), await (await fetch(`${assetHostURL}/data/sites.json`)).json())
     chrome.storage.sync.set({ sites })
 
     // Launch ChatGPT on install
@@ -42,5 +42,5 @@
     // Sync modes/settings to activated tabs
     chrome.tabs.onActivated.addListener(activeInfo =>
         chrome.tabs.sendMessage(activeInfo.tabId, { action: 'sync.storageToUI' }))
-  
+
 })()

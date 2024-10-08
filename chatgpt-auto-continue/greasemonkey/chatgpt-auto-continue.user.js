@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.6
+// @version             2024.10.8
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -247,31 +247,19 @@
 
 (async () => {
 
+    // Init ENV vars
+    const env = { scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() },
+          xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+
     // Init APP info
-    const app = {
-        name: 'ChatGPT Auto-Continue', symbol: '≫', configKeyPrefix: 'chatGPTautoContinue',
-        author: { name: 'Adam Lui', url: 'https://github.com/adamlui' },
-        urls: {
-            chatgptJS: 'https://chatgpt.js.org',
-            donate: {
-                cashApp: 'https://cash.app/$adamlui',
-                gitHub: 'https://github.com/sponsors/adamlui',
-                payPal: 'https://paypal.me/adamlui'
-            },
-            gitHub: 'https://github.com/adamlui/chatgpt-auto-continue',
-            greasyFork: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue',
-            relatedApps: 'https://github.com/adamlui/ai-apps',
-            review: { greasyFork: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue/feedback#post-discussion' },
-            support: 'https://support.chatgptautocontinue.com'
-        },
-        latestAssetCommitHash: 'e125f8f' // for cached messages.json
-    }
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
+    const app = { configKeyPrefix: 'chatGPTautoContinue', latestAssetCommitHash: 'e4d1d02' },
+          assetHostURL = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-continue@${app.latestAssetCommitHash}`
+    Object.assign(app, await new Promise(resolve => xhr({
+        method: 'GET', url: `${assetHostURL}/app.json`,
+        onload: resp => resolve(JSON.parse(resp.responseText))
+    })))
     app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
-
-    // Init ENV info
-    const env = { scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})() }
 
     // Init CONFIG
     const config = { userLanguage: chatgpt.getUserLanguage() }
@@ -284,7 +272,6 @@
     } ; settings.load('notifDisabled')
 
     // Init app MESSAGES
-    const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
     app.msgs = {
         appName: app.name,
         appAuthor: app.author.name,
@@ -326,7 +313,7 @@
     }
     if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
         const localizedMsgs = await new Promise(resolve => {
-            const msgHostDir = app.urls.assetHost + '/chromium/extension/_locales/',
+            const msgHostDir = assetHostURL + '/chromium/extension/_locales/',
                   msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
             let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
             function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}

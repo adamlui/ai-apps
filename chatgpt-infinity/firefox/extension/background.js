@@ -1,8 +1,9 @@
 (async () => {
 
     // Init APP data
-    const app = { latestAssetCommitHash: 'cc76cff' }
-    Object.assign(app, await (await fetch(chrome.runtime.getURL('app.json'))).json())
+    const app = { latestAssetCommitHash: '190b1ee' },
+          assetHostURL = `https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity@${app.latestAssetCommitHash}`
+    Object.assign(app, await (await fetch(`${assetHostURL}/app.json`)).json())
     Object.assign(app, { settings: {
         autoStart: { type: 'toggle',
             label: chrome.i18n.getMessage('menuLabel_autoStart') },
