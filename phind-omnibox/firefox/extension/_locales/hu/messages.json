@@ -1,5 +1,5 @@
 {
   "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Írja be a @ phind parancsot a címsávba a Phind AI-val való kereséshez" }
+  "appDesc": { "message": "Írja be a @phind parancsot a címsávba a Phind AI-val való kereséshez" }
 }

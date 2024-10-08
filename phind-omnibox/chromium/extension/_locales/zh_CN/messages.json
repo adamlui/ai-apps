@@ -1,5 +1,5 @@
 {
   "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "刘展鹏 (Adam Lui)" },
-  "appDesc": { "message": "在地址栏中输入 @phind，使用 Phind AI 进行搜索" }
+  "appDesc": { "message": "在地址栏中输入 @phind Phind AI 进行搜索" }
 }
