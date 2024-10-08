@@ -1,0 +1,5 @@
+{
+  "appName": { "message": "Phind Omnibox" },
+  "appAuthor": { "message": "Adam Lui" },
+  "appDesc": { "message": "검색주소창에 @ phind를 입력하여 Phind AI로 검색" }
+}
