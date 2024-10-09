@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.6
+// @version             2024.10.8
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -262,35 +262,22 @@
 
 (async () => {
 
-    // Init APP info
-    const app = {
-        name: 'Autoclear ChatGPT History', symbol: '🕶️', configKeyPrefix: 'autoclearChatGPThistory',
-        author: { name: 'Adam Lui', url: 'https://github.com/adamlui' },
-        urls: {
-            chatgptJS: 'https://chatgpt.js.org',
-            donate: {
-                cashApp: 'https://cash.app/$adamlui',
-                gitHub: 'https://github.com/sponsors/adamlui',
-                payPal: 'https://paypal.me/adamlui'
-            },
-            gitHub: 'https://github.com/adamlui/autoclear-chatgpt-history',
-            greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history',
-            mediaHost: 'https://media.autoclearchatgpt.com',
-            relatedApps: 'https://github.com/adamlui/ai-apps',
-            review: { greasyFork: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history/feedback#post-discussion' },
-            support: 'https://support.autoclearchatgpt.com'
-        },
-        latestAssetCommitHash: '4b03a9d' // for cached messages.json + navicon
-    }
-    app.urls.assetHost = app.urls.gitHub.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${app.latestAssetCommitHash}`
-    app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
-
-    // Init ENV info
+    // Init ENV vars
     const env = {
         browser: { isMobile: chatgpt.browser.isMobile(), isFF: chatgpt.browser.isFirefox() },
         scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})()
     }
+    const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+
+    // Init APP info
+    const app = { configKeyPrefix: 'autoclearChatGPThistory', latestAssetCommitHash: '5c100fe' },
+    assetHostURL = `https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history@${app.latestAssetCommitHash}`
+    Object.assign(app, await new Promise(resolve => xhr({
+        method: 'GET', url: `${assetHostURL}/app.json`,
+        onload: resp => resolve(JSON.parse(resp.responseText))
+    })))
+    app.urls.update = app.urls.greasyFork.replace('https://', 'https://update.')
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${id}/${ name || 'script' }.meta.js`)
 
     // Init CONFIG
     const config = { userLanguage: chatgpt.getUserLanguage() }
@@ -303,7 +290,6 @@
     } ; settings.load('autoclear', 'buttonHidden', 'notifDisabled', 'toggleHidden')
 
     // Init app MESSAGES
-    const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
     app.msgs = {
         appName: app.name,
         appAuthor: app.author.name,
@@ -348,7 +334,7 @@
     }
     if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
         const localizedMsgs = await new Promise(resolve => {
-            const msgHostDir = app.urls.assetHost + '/greasemonkey/_locales/',
+            const msgHostDir = app.assetHostURL + '/greasemonkey/_locales/',
                   msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
             let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
             function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
