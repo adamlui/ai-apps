@@ -137,6 +137,20 @@
 
 <a href="../../perplexity-omnibox"><img width=583 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/perplexity-omnibox/assets/images/tiles/marquee/edge/tile675x270.png"></a>
 
+### <img width=17 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/phind-omnibox/assets/images/icons/phind/purple-gradient/icon32.png"> [Phind Omnibox](../../phind-omnibox)
+
+> 在地址栏中输入 @phind Phind AI 进行搜索
+<br><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/phind-omnibox?source=github&medium=readme&content=platform-link) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../phind-omnibox/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
+
+### <img width=17 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/you.com-omnibox/assets/images/icons/you.com/purple-gradient/icon32.png"> [You.com Omnibox](../../you.com-omnibox)
+
+> 在地址栏中输入 @you You.com 进行搜索
+<br><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/you-com-omnibox?source=github&medium=readme&content=platform-link) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../you.com-omnibox/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
+
 <img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 ### 有应用创意或请求？
