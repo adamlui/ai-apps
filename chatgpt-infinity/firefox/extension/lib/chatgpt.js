@@ -229,7 +229,6 @@ const chatgpt = {
     },
 
     browser: {
-        isFirefox() { return navigator.userAgent.includes('Firefox'); },
         isMobile() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
@@ -237,10 +236,8 @@ const chatgpt = {
     getChatBox() { return document.getElementById('prompt-textarea'); },
     getNewChatButton() { return document.querySelector('button[data-testid*="new-chat-button"]'); },
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
-    getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])'); },
     getScrollToBottomButton() { return document.querySelector('button:has([d^="M12 21C11.7348"])'); },
     getSendButton() { return document.querySelector('[data-testid="send-button"]'); },
-    getStopButton() { return document.querySelector('button[data-testid="stop-button"]'); },
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
 
     async isIdle(timeout = null) {
@@ -475,8 +472,6 @@ const chatgpt = {
     sidebar: {
         exists() { return !!chatgpt.getNewChatLink(); },
         hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
-        show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
-        isOff() { return !this.isOn(); },
         isOn() {
             const sidebar = (() => {
                 return chatgpt.sidebar.exists() ? document.querySelector('[class*="sidebar"]') : null; })();
