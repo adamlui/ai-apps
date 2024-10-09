@@ -117,6 +117,14 @@
 
 <a href="../googlegpt"><img width=515 src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png"></a>
 
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/perplexity-omnibox/assets/images/icons/perplexity/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/perplexity-omnibox/assets/images/icons/perplexity/turquoise/icon32.png"></picture> [Perplexity Omnibox](../perplexity-omnibox)
+
+> <img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chromewebstore.google.com/detail/perplexity-omnibox/ckhgddjdjkphbaediggjdddjdjgkalom?source=github&medium=readme&content=platform-link) /
+<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../../perplexity-omnibox/#readme) /
+<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+
+<a href="../perplexity-omnibox"><img width=583 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/perplexity-omnibox/assets/images/tiles/marquee/edge/tile675x270.png"></a>
+
 <img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 ### Have an app idea or request?
