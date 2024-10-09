@@ -1,4 +1,4 @@
-<h6> <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=header-tile"><img src="../media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
+<h6> <img src="../media/images/tiles/marquee-promo-tile-1400x560.png"></h6>
 
 <div align="center">
 
