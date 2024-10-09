@@ -1,0 +1,5 @@
+{
+  "appName": { "message": "Brave Omnibox" },
+  "appAuthor": { "message": "劉展鵬 (Adam Lui)" },
+  "appDesc": { "message": "在地址列中輸入 @brave Brave AI 進行搜尋" }
+}

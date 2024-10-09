@@ -1,0 +1,5 @@
+{
+  "appName": { "message": "Brave Omnibox" },
+  "appAuthor": { "message": "Adam Lui" },
+  "appDesc": { "message": "Tapez @brave dans la barre d'adresse pour effectuer une recherche avec Brave AI" }
+}
