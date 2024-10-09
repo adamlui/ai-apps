@@ -15,4 +15,4 @@ ChatGPT Auto-Continue does not collect nor store any user data. No information i
 
 ## Updates
 
-To view revisions to this policy, visit https://github.com/adamlui/chatgpt-auto-continue/commits/main/docs/PRIVACY.md
+To view revisions to this policy, visit https://github.com/adamlui/chatgpt-auto-continue/commits/main/greasemonkey/docs/PRIVACY.md
