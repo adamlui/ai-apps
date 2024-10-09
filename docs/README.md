@@ -57,6 +57,7 @@
 
 > <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link) /
 <img height=14 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link) /
+<img height=12 src="https://media.chatgptautocontinue.com/images/icons/platforms/edge/icon16.png"> [Edge](https://edge.chatgptautocontinue.com) /
 <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptautocontinue.com) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../chatgpt-auto-continue/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
