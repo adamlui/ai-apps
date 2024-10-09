@@ -32,8 +32,8 @@
 
 > 将 AI 添加到 Amazon 购物.
 <br><img height=13 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../../amazongpt/#-installation) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../amazongpt/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../amazongpt/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../../amazongpt"><img width=515 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/mice-md-reply-darkmode.png"></a>
 
@@ -41,15 +41,15 @@
 
 > 自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。
 <br><img height=13 src="https://media.autoclearchatgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.autoclearchatgpt.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../../autoclear-chatgpt-history/#-installation) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../autoclear-chatgpt-history/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../autoclear-chatgpt-history/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=21> [BraveGPT](../../bravegpt) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
 > 为 Brave Search 添加 AI 答案（由 GPT-4o 提供支持!）
 <br><img height=13 src="https://media.bravegpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.bravegpt.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../../bravegpt/#-installation) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../bravegpt/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../bravegpt/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../bravegpt"><img width=515 src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png"></a>
 
@@ -59,8 +59,8 @@
 <br><img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link) /
 <img height=14 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link) /
 <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptautocontinue.com) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-auto-continue/docs/zh-cn/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../chatgpt-auto-continue/docs/zh-cn/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../chatgpt-auto-continue"><img width=583 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a>
 
@@ -68,15 +68,15 @@
 
 > 保持 ChatGPT 会话新鲜，消除聊天时间限制 + 网络错误 + Cloudflare 检查。
 <br><img height=13 src="https://media.chatgptautorefresh.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautorefresh.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../../chatgpt-auto-refresh/docs/zh-cn/#-如何安装) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-auto-refresh/docs/zh-cn/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../chatgpt-auto-refresh/docs/zh-cn/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon32.png"></picture> [ChatGPT 自动谈话 📣](../chatgpt-auto-talk) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/badges/awesome/badge.svg"></a>
 
 > 自动播放 ChatGPT 的回复。
 <br><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../../chatgpt-auto-talk/docs/zh-cn/#-如何安装) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-auto-talk/docs/zh-cn/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../chatgpt-auto-talk/docs/zh-cn/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 ### <img width=20 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT无限](../../chatgpt-infinity) &nbsp;<a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=featured-by-google-badge"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
@@ -85,8 +85,8 @@
 <img height=14 src="https://media.chatgptinfinity.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.chatgptinfinity.com/?source=github&medium=readme&content=platform-link) /
 <img height=12 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> [Edge](https://edge.chatgptinfinity.com) /
 <img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptinfinity.com) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-infinity/docs/zh-cn/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../chatgpt-infinity/docs/zh-cn/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../../chatgpt-infinity"><img width=583 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
@@ -97,8 +97,8 @@
 <img height=14 src="https://media.chatgptwidescreen.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) /
 <img height=12 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> [Edge](https://edge.chatgptwidescreen.com) /
 <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptwidescreen.com) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../chatgpt-widescreen/docs/zh-cn/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../chatgpt-widescreen/docs/zh-cn/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../../chatgpt-widescreen"><img width=583 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
@@ -106,8 +106,8 @@
 
 > 为 DuckDuckGo 添加 AI 答案（由 GPT-4o 提供支持!）
 <br><img height=13 src="https://media.ddgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.ddgpt.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../../duckduckgpt/#-installation) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../duckduckgpt/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../duckduckgpt/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../../duckduckgpt"><img width=515 src="https://media.ddgpt.com/images/screenshots/desktop/how-to-becum-rich-query/lightmode.png"></a>
 
@@ -115,8 +115,8 @@
 
 > 为 Google Search 添加 AI 答案（由 Google Gemma + GPT-4o 提供支持!）
 <br><img height=13 src="https://media.googlegpt.io/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.googlegpt.io/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.org/scripts/478597-googlegpt) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../../googlegpt/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../googlegpt/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../../googlegpt"><img width=515 src="https://media.googlegpt.io/images/screenshots/zh-cn/desktop/javascript-arrays-query/darkmode.png"></a>
 
@@ -124,8 +124,8 @@
 
 > 在地址栏中输入 @perplexity 以使用 Perplexity AI 进行搜索
 <br><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chromewebstore.google.com/detail/perplexity-omnibox/ckhgddjdjkphbaediggjdddjdjgkalom?source=github&medium=readme&content=platform-link) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [自述文件](../perplexity-omnibox/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../perplexity-omnibox/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../../perplexity-omnibox"><img width=583 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/perplexity-omnibox/assets/images/tiles/marquee/edge/tile675x270.png"></a>
 

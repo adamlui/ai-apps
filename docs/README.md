@@ -32,8 +32,8 @@
 
 > Add AI to Amazon shopping.
 <br><img height=13 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../amazongpt/#-installation) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../amazongpt/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../amazongpt/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../amazongpt"><img width=515 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/mice-md-reply-darkmode.png"></a>
 
@@ -41,15 +41,15 @@
 
 > Auto-clear your ChatGPT query history for maximum privacy.
 <br><img height=13 src="https://media.autoclearchatgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.autoclearchatgpt.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../autoclear-chatgpt-history/#-installation) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../autoclear-chatgpt-history/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../autoclear-chatgpt-history/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=21> [BraveGPT](../bravegpt) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
 > Adds AI answers to Brave Search (powered by GPT-4o!)
 <br><img height=13 src="https://media.bravegpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.bravegpt.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../bravegpt/#-installation) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../bravegpt/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../bravegpt/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../bravegpt"><img width=515 src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png"></a>
 
@@ -58,8 +58,8 @@
 > <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link) /
 <img height=14 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link) /
 <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptautocontinue.com) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../chatgpt-auto-continue/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../chatgpt-auto-continue/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../chatgpt-auto-continue"><img width=583 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a>
 
@@ -67,15 +67,15 @@
 
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
 <br><img height=13 src="https://media.chatgptautorefresh.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautorefresh.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../chatgpt-auto-refresh/#-installation) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../chatgpt-auto-refresh/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../chatgpt-auto-refresh/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon32.png"></picture> [ChatGPT Auto-Talk 📣](../chatgpt-auto-talk) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/badges/awesome/badge.svg"></a>
 
 > Auto-play ChatGPT responses.
 <br><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../chatgpt-auto-talk/#-installation) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../chatgpt-auto-talk/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../chatgpt-auto-talk/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 ### <img width=20 src="https://media.chatgptinfinity.com/images/icons/infinity-symbol/circled/icon32.png?65fcf31"> [ChatGPT Infinity](../chatgpt-infinity) &nbsp;<a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=featured-by-google-badge"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
@@ -83,8 +83,8 @@
 <img height=14 src="https://media.chatgptinfinity.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.chatgptinfinity.com/?source=github&medium=readme&content=platform-link) /
 <img height=12 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> [Edge](https://edge.chatgptinfinity.com) /
 <img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptinfinity.com) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../chatgpt-infinity/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../chatgpt-infinity/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../chatgpt-infinity"><img width=583 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
@@ -94,8 +94,8 @@
 <img height=14 src="https://media.chatgptwidescreen.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link) /
 <img height=12 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> [Edge](https://edge.chatgptwidescreen.com) /
 <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.chatgptwidescreen.com) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../chatgpt-widescreen/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../chatgpt-widescreen/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../chatgpt-widescreen"><img width=583 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
@@ -103,8 +103,8 @@
 
 > Adds AI answers to DuckDuckGo (powered by GPT-4o!)
 <br><img height=13 src="https://media.ddgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.ddgpt.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../duckduckgpt/#-installation) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../duckduckgpt/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../duckduckgpt/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../duckduckgpt"><img width=515 src="https://media.ddgpt.com/images/screenshots/desktop/how-to-becum-rich-query/lightmode.png"></a>
 
@@ -112,16 +112,16 @@
 
 > Adds AI answers to Google Search (powered by Google Gemma + GPT-4o!)
 <br><img height=13 src="https://media.googlegpt.io/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.googlegpt.io/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](https://greasyfork.org/scripts/478597-googlegpt) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../googlegpt/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../googlegpt/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../googlegpt"><img width=515 src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png"></a>
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/perplexity-omnibox/assets/images/icons/perplexity/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/perplexity-omnibox/assets/images/icons/perplexity/turquoise/icon32.png"></picture> [Perplexity Omnibox](../perplexity-omnibox)
 
 > <img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chromewebstore.google.com/detail/perplexity-omnibox/ckhgddjdjkphbaediggjdddjdjgkalom?source=github&medium=readme&content=platform-link) /
-<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"> [Readme](../../perplexity-omnibox/#readme) /
-<img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions)
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../../perplexity-omnibox/#readme) /
+<picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 <a href="../perplexity-omnibox"><img width=583 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/perplexity-omnibox/assets/images/tiles/marquee/edge/tile675x270.png"></a>
 
