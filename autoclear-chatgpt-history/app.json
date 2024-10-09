@@ -3,10 +3,11 @@
   "author": { "name": "Adam Lui", "url": "https://github.com/adamlui" },
   "urls": {
     "chatgptJS": "https://chatgpt.js.org",
+    "cjsMediaHost": "https://media.chatgptjs.org",
     "donate": {
-        "cashApp": "https://cash.app/$adamlui",
-        "gitHub": "https://github.com/sponsors/adamlui",
-        "payPal": "https://paypal.me/adamlui"
+      "cashApp": "https://cash.app/$adamlui",
+      "gitHub": "https://github.com/sponsors/adamlui",
+      "payPal": "https://paypal.me/adamlui"
     },
     "gitHub": "https://github.com/adamlui/autoclear-chatgpt-history",
     "greasyFork": "https://greasyfork.org/scripts/460805-autoclear-chatgpt-history",
