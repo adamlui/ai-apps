@@ -4,4 +4,4 @@ chrome.action.onClicked.addListener(() =>
 
 // Query phind.com on omnibox query submitted
 chrome.omnibox.onInputEntered.addListener(query =>
-    chrome.tabs.update({ url: `https://www.phind.com/search?q=${query}` }))
+    chrome.tabs.update({ url: `https://www.phind.com/search?q=${decodeURIComponent(query)}` }))

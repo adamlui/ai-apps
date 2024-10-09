@@ -4,4 +4,4 @@ chrome.action.onClicked.addListener(() =>
 
 // Query perplexity.ai on omnibox query submitted
 chrome.omnibox.onInputEntered.addListener(query =>
-    chrome.tabs.update({ url: `https://www.perplexity.ai/search/new?q=${query}` }))
+    chrome.tabs.update({ url: `https://www.perplexity.ai/search/new?q=${decodeURIComponent(query)}` }))

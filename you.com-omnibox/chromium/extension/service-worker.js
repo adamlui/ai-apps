@@ -4,4 +4,4 @@ chrome.action.onClicked.addListener(() =>
 
 // Query you.com on omnibox query submitted
 chrome.omnibox.onInputEntered.addListener(query =>
-    chrome.tabs.update({ url: `https://www.you.com/search?q=${query}&tbm=youchat` }))
+    chrome.tabs.update({ url: `https://www.you.com/search?q=${decodeURIComponent(query)}&tbm=youchat` }))

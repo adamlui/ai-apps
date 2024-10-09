@@ -4,4 +4,4 @@ chrome.action.onClicked.addListener(() =>
 
 // Query Brave AI on omnibox query submitted
 chrome.omnibox.onInputEntered.addListener(query =>
-    chrome.tabs.update({ url: `https://search.brave.com/search?q=${query}&summary=1` }))
+    chrome.tabs.update({ url: `https://search.brave.com/search?q=${decodeURIComponent(query)}&summary=1` }))
