@@ -51,7 +51,7 @@
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../brave-omnibox/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
-<a href="../../brave-omnibox"><img width=483 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/brave-omnibox/assets/images/tiles/marquee/edge/tile625x250.png"></a>
+<a href="../../brave-omnibox"><img width=575 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/brave-omnibox/assets/images/tiles/marquee/edge/tile625x250.png"></a>
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=21> [BraveGPT](../../bravegpt) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
@@ -72,7 +72,7 @@
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../chatgpt-auto-continue/docs/zh-cn/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
-<a href="../chatgpt-auto-continue"><img width=483 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a>
+<a href="../chatgpt-auto-continue"><img width=575 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a>
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT 自动刷新 ↻](../../chatgpt-auto-refresh) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
 
@@ -98,7 +98,7 @@
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../chatgpt-infinity/docs/zh-cn/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
-<a href="../../chatgpt-infinity"><img width=483 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
+<a href="../../chatgpt-infinity"><img width=575 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
 ### <img width=19 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](../../chatgpt-widescreen) &nbsp;<a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=featured-by-google-badge"><img height=20 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
@@ -110,7 +110,7 @@
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../chatgpt-widescreen/docs/zh-cn/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
-<a href="../../chatgpt-widescreen"><img width=483 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
+<a href="../../chatgpt-widescreen"><img width=575 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=20> [DuckDuckGPT](../../duckduckgpt) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
 
@@ -137,7 +137,7 @@
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../perplexity-omnibox/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
-<a href="../../perplexity-omnibox"><img width=483 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/perplexity-omnibox/assets/images/tiles/marquee/edge/tile625x250.png"></a>
+<a href="../../perplexity-omnibox"><img width=575 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/perplexity-omnibox/assets/images/tiles/marquee/edge/tile625x250.png"></a>
 
 ### <img width=17 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/phind-omnibox/assets/images/icons/phind/purple-gradient/icon32.png"> [Phind Omnibox](../../phind-omnibox)
 
