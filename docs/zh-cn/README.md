@@ -45,7 +45,8 @@
 ### <img width=20 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/brave-omnibox/assets/images/icons/brave/icon32.png"> [Brave Omnibox](../../brave-omnibox)
 
 > <a href="../../brave-omnibox"><img width=450 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/brave-omnibox/assets/images/tiles/marquee/edge/tile625x250.png"></a>
-<br><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/brave-omnibox?source=github&medium=readme&content=platform-link) /
+<br><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chromewebstore.google.com/detail/brave-omnibox/obnaimomofoogphlhlaipeflcbneamnj?source=github&medium=readme&content=platform-link) /
+<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/firefox/icon16.png"> [Firefox](https://addons.mozilla.org/firefox/addon/brave-omnibox?source=github&medium=readme&content=platform-link) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [自述文件](../../brave-omnibox/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [讨论](https://github.com/adamlui/ai-apps/discussions)
 
