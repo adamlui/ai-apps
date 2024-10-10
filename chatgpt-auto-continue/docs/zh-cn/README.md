@@ -25,6 +25,8 @@
 
 <a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
+<a href="https://edge.chatgptautocontinue.com">
+    <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
 <a href="https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-badge">
     <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
 <a href="https://greasyfork.chatgptautocontinue.com">
@@ -46,9 +48,9 @@
 
 ## 🚀 如何安装
 
-### <img height=16 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"><img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"> 浏览器扩展:
+### <img height=16 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"><img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"><img height=16 src="https://media.chatgptautocontinue.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
 
-1. 安装 ChatGPT 自动继续 扩展程序 ([Chrome](https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link), [Firefox](https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link))
+1. 安装 ChatGPT 自动继续 扩展程序 ([Chrome](https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link), [Edge](https://edge.chatgptautocontinue.com), [Firefox](https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link))
 
 2. 正常访问 [chatgpt.com](https://chatgpt.com)，多条回复对话中断时会自动继续生成!
 
@@ -91,6 +93,8 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 
 <a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-chrome-button.png"></a>
+<a href="https://edge.chatgptautocontinue.com">
+    <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-edge-button.png"></a>
 <a href="https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=install-button">
     <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-firefox-button.png"></a>
 <a href="https://greasyfork.chatgptautocontinue.com">
