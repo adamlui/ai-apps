@@ -19,7 +19,7 @@
   "chrome_settings_overrides": {
     "search_provider": {
       "name": "Phind",
-      "search_url": "https://www.phind.com/search?q=${searchTerms}",
+      "search_url": "https://www.phind.com/search?q={searchTerms}",
       "favicon_url": "icons/icon16.png",
       "keyword": "@phind",
       "is_default": false

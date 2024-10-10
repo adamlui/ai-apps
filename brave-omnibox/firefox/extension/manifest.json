@@ -21,7 +21,7 @@
   "chrome_settings_overrides": {
     "search_provider": {
       "name": "Brave",
-      "search_url": "https://search.brave.com/search?q=${searchTerms}&summary=1",
+      "search_url": "https://search.brave.com/search?q={searchTerms}&summary=1",
       "favicon_url": "icons/icon16.png",
       "keyword": "@brave",
       "is_default": false

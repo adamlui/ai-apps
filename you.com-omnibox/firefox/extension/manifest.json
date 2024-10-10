@@ -20,7 +20,7 @@
   "chrome_settings_overrides": {
     "search_provider": {
       "name": "You.com",
-      "search_url": "https://www.you.com/search?q=${searchTerms}&tbm=youchat",
+      "search_url": "https://www.you.com/search?q={searchTerms}&tbm=youchat",
       "favicon_url": "icons/icon16.png",
       "keyword": "@you",
       "is_default": false
