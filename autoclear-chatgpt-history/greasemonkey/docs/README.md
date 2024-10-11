@@ -1,4 +1,6 @@
-# <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/openai/white/icon32.png"><img width=23 src="https://media.autoclearchatgpt.com/images/icons/openai/black/icon32.png"></picture> Autoclear ChatGPT History &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20cluttered%20ChatGPT%20chat%20history%3F%20Auto-clear%20it%20w%2F%20this%20plug-in%21&url=https://github.com/adamlui/autoclear-chatgpt-history&hashtags=javascript,openai,chatgpt)
+<a id="top"></a>
+
+<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/openai/white/icon32.png"><img width=23 src="https://media.autoclearchatgpt.com/images/icons/openai/black/icon32.png"></picture> Autoclear ChatGPT History &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20cluttered%20ChatGPT%20chat%20history%3F%20Auto-clear%20it%20w%2F%20this%20plug-in%21&url=https://github.com/adamlui/autoclear-chatgpt-history&hashtags=javascript,openai,chatgpt)
 
 <a href="https://greasyfork.autoclearchatgpt.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/greasyfork/dt/460805?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge"></a>
 <a href="../LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -146,4 +148,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <img height=6px width="100%" src="https://media.autoclearchatgpt.com/images/separators/gradient-aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
-<a href="#-autoclear-chatgpt-history-">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>

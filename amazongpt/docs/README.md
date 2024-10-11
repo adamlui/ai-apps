@@ -1,3 +1,5 @@
+<a href="#top">Back to top ↑</a>
+
 <div align="center">
 <picture>
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://amazongpt.kudoai.com/assets/images/logos/amazongpt/white-teal/logo1018x148.png">
@@ -158,4 +160,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 [Discuss](https://github.kudoai.com/googlegpt/discussions)
 
 <a href="https://github.com/adamlui/ai-apps">**More ChatGPT apps**</a> / 
-<a href="#-bring-the-magic-of-ai-to-amazon-shopping-">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>

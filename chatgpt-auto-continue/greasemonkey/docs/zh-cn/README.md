@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="right">
     <h6>
         <picture>
@@ -152,4 +154,4 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 <img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/gradient-aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**更多用户脚本**</a> / 
-<a href="#------------------------------------------------简体中文---------english----">回到顶部 ↑</a>
+<a href="#top">回到顶部 ↑</a>

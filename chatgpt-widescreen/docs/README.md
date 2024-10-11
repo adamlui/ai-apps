@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="right">
 <h5>English | <a href="zh-cn/#readme">简体中文</a></h5>
 </div>
@@ -262,4 +264,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 <a href="https://github.com/adamlui/ai-apps">**More ChatGPT add-ons**</a> /
-<a href="#english--%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>

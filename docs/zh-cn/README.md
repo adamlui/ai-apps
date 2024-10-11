@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="right">
     <h6>
         <picture>
@@ -145,4 +147,4 @@
 <img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 <img height=11 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [讨论](https://github.com/adamlui/ai-apps/discussions) /
-<a href="#------------------------------------------------%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87---------english----">回到顶部 ↑</a>
+<a href="#top">回到顶部 ↑</a>

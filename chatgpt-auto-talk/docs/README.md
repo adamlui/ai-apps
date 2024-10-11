@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="right">
     <h6>
         <picture>
@@ -106,4 +108,4 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/ai-apps
 <img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
-<a href="#-chatgpt-auto-talk-">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>

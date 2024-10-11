@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="right">
     <h6>
         <picture>
@@ -214,4 +216,4 @@ ChatGPT 自动刷新 与使用 [ScriptCat](https://docs.scriptcat.org)、[Violen
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**更多用户脚本**</a> /
-<a href="#%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87--english">回到顶部↑</a>
+<a href="#top">回到顶部↑</a>

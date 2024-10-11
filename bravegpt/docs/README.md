@@ -1,8 +1,10 @@
+<a id="top"></a>
+
 <h1>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/logos/bravegpt/darkmode/logo730x155.png">
-    <img alt="BraveGPT" width=322 src="https://media.bravegpt.com/images/logos/bravegpt/lightmode/logo730x155.png">
-  </picture>  
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/logos/bravegpt/darkmode/logo730x155.png">
+        <img alt="BraveGPT" width=322 src="https://media.bravegpt.com/images/logos/bravegpt/lightmode/logo730x155.png">
+    </picture>
 </h1>
 
 <a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/greasyfork/dt/462440?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge"></a>
@@ -244,4 +246,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> /
-<a href="#----------------">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>

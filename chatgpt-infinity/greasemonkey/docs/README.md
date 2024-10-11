@@ -1,4 +1,6 @@
-<h6> <a href="https://greasyfork.chatgptinfinity.com"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a></h6>
+<a id="top"></a>
+
+<a href="https://greasyfork.chatgptinfinity.com"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
 <div align="center">
 
@@ -165,4 +167,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <img height=6px width="100%" src="https://media.chatgptinfinity.com/images/separators/gradient-aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
-<a href="#-">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>

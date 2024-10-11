@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="right">
     <h6>
         <picture>
@@ -105,4 +107,4 @@ ChatGPT 自动谈话 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 <img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**更多用户脚本**</a> / 
-<a href="#-chatgpt-自动谈话-">回到顶部 ↑</a>
+<a href="#top">回到顶部 ↑</a>

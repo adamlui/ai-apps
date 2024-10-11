@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="right">
     <h6>
         <picture>
@@ -203,4 +205,4 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 <img height=6px width="100%" src="https://media.chatgptinfinity.com/images/separators/gradient-aqua.png">
   
 <a href="https://github.com/adamlui/ai-apps">**その他の ChatGPT アドオン**</a> / 
-<a href="#">トップに戻る ↑</a>
+<a href="#top">トップに戻る ↑</a>

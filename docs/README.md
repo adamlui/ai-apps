@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="right">
     <h6>
         <picture>
@@ -145,4 +147,4 @@ Create a new discsusion: https://github.com/adamlui/ai-apps/discussions/new?cate
 <img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
 <img height=11 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"> [Discuss](https://github.com/adamlui/ai-apps/discussions) /
-<a href="#------------------------------------------------english---------简体中文----">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>

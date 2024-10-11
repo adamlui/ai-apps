@@ -1,3 +1,5 @@
+<a href="#top">Back to top ↑</a>
+
 <div align="center">
 <picture>
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://amazongpt.kudoai.com/assets/images/logos/amazongpt/white-teal/logo1018x148.png">
@@ -132,7 +134,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <br><br>
 
-<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 ## 📜 Related apps
 
@@ -157,7 +159,5 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 [Readme](https://github.kudoai.com/googlegpt/#readme) /
 [Discuss](https://github.kudoai.com/googlegpt/discussions)
 
-<img height=6px width="100%" src="https://amazongpt.kudoai.com/assets/images/separators/gradient-aqua.png">
-
 <a href="https://github.com/adamlui/ai-apps">**More ChatGPT apps**</a> / 
-<a href="#-bring-the-magic-of-ai-to-amazon-shopping-">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>

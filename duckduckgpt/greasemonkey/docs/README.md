@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <h1>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://media.ddgpt.com/images/logos/duckduckgpt/darkmode/logo371x65.png">
@@ -237,4 +239,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <img height=6px width="100%" src="https://media.ddgpt.com/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
-<a href="#--------------">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>

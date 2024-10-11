@@ -1,4 +1,6 @@
-<h6> <img src="../media/images/tiles/marquee-promo-tile-1400x560.png"></h6>
+<a id="top"></a>
+
+<img src="../media/images/tiles/marquee-promo-tile-1400x560.png">
 
 <div align="center">
 
@@ -209,4 +211,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 <a href="https://github.com/adamlui/ai-apps">**More ChatGPT add-ons**</a> /
-<a href="#-">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>

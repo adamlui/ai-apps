@@ -1,4 +1,6 @@
-<h6> <img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png"></h6>
+<a id="top"></a>
+
+<img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png">
 
 <div align="center">
 
@@ -137,4 +139,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 <img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/ai-apps">**More ChatGPT add-ons**</a> /
-<a href="#-">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>
