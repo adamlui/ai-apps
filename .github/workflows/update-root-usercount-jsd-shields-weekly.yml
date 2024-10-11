@@ -33,6 +33,7 @@ jobs:
           )
 
           declare -A chrome_extensions=( # for Chrome extension user counts
+            ["lbojnhaafilddefkdgmbplkafnckaoga"]="ChatGPT Auto-Continue"
             ["amikeononomkhphopbflomhnmdijjpmb"]="ChatGPT Infinity"
             ["jgnjpnmofkalfliddjelaciggjgnphgm"]="ChatGPT Widescreen Mode"
           )
