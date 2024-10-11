@@ -1,4 +1,4 @@
-<a href="#top">Back to top ↑</a>
+<a href="#top"></a>
 
 <div align="center">
 <picture>
