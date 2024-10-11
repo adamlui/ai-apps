@@ -50,6 +50,7 @@ jobs:
           )
 
           declare -A edge_addons=( # for Edge addon user counts
+            ["kaicnimcjamamnlbaeaneofmdjibgepl"]="ChatGPT Auto-Continue"
             ["jgonecnbmehicpdpjkdekamhmlebfagb"]="ChatGPT Infinity"
             ["obnaaalnokmchdoagnhmllakaclaaooa"]="ChatGPT Widescreen Mode"
           )
