@@ -7,6 +7,8 @@ on:
 jobs:
   update-root-usercount-jsd-shields:
     runs-on: ubuntu-latest
+    env:
+      TZ: PST8PDT
 
     steps:
       - name: Checkout adamlui/ai-apps

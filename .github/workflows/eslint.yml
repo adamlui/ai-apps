@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   eslint:
     runs-on: ubuntu-latest
+    env:
+      TZ: PST8PDT
     steps:
 
       - name: Checkout repository code

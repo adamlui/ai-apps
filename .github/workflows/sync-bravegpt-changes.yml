@@ -9,6 +9,8 @@ jobs:
   build:
     if: (github.repository == 'adamlui/ai-apps') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
     runs-on: ubuntu-latest
+    env:
+      TZ: PST8PDT
 
     steps:
 
