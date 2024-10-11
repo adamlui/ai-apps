@@ -226,12 +226,18 @@ jobs:
              [ "$multi_shield_types_updated" = true ] && commit_msg+="/" ; commit_msg+="jsDelivr" ; fi
           commit_msg+=" shield counters in root READMEs"
           echo "commit_msg=$commit_msg" >> $GITHUB_OUTPUT # expose as output
+      
+      - name: Config committer
+        run: |
+          gpg --batch --import <(echo "${{ secrets.GPG_PRIVATE_KEY }}")
+          git config --global commit.gpgsign true
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git config --global user.signingkey  "${{ secrets.GPG_PRIVATE_ID }}"
 
       - name: Push to adamlui/ai-apps
         run: |
           cd ${{ github.workspace }}/adamlui/ai-apps
-          git config --global user.name "kudo-sync-bot"
-          git config --global user.email "auto-sync@kudoai.com"
           git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "${{ steps.update-shields.outputs.commit_msg }}" || true
