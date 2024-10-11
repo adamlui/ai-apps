@@ -38,9 +38,12 @@ jobs:
           )
 
           declare -A ff_addons=( # for Firefox add-on daily user counts
+            ["brave-omnibox"]="Brave Omnibox"
             ["chatgpt-auto-continue"]="ChatGPT Auto-Continue"
             ["chatgpt-infinity"]="ChatGPT Infinity"
             ["chatgpt-widescreen"]="ChatGPT Widescreen"
+            ["phind-omnibox"]="Phind Omnibox"
+            ["you-com-omnibox"]="You.com Omnibox"
           )
 
           declare -A edge_addons=( # for Edge addon user counts
