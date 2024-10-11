@@ -1,0 +1,63 @@
+name: Sync perplexity-omnibox/* to adamlui/perplexity-omnibox/*
+on:
+  push:
+    branches: [main]
+    paths: [perplexity-omnibox/**]
+
+jobs:
+  build:
+    if: (github.repository == 'adamlui/ai-apps') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout adamlui/ai-apps
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/ai-apps
+          path: adamlui/ai-apps
+
+      - name: Checkout adamlui/perplexity-omnibox
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/perplexity-omnibox
+          path: adamlui/perplexity-omnibox
+
+      - name: Sync perplexity-omnibox/* to adamlui/perplexity-omnibox/*
+        run: |
+          rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
+            ${{ github.workspace }}/adamlui/ai-apps/perplexity-omnibox/ \
+            ${{ github.workspace }}/adamlui/perplexity-omnibox/
+
+      - name: Escape backticks in commit msg
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          echo "ESCAPED_MSG<<EOF" >> $GITHUB_ENV
+          echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      
+      - name: Config committer
+        run: |
+          gpg --batch --import <(echo "${{ secrets.GPG_PRIVATE_KEY }}")
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git config --global user.signingkey  "${{ secrets.GPG_PRIVATE_ID }}"
+
+      - name: Push changes to adamlui/ai-apps
+        run: |
+          cd ${{ github.workspace }}/adamlui/ai-apps
+          git pull # again to sync w/ concurrent workflow updates
+          git add .
+          git commit -S -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
+          git push
+
+      - name: Push changes to adamlui/perplexity-omnibox
+        run: |
+          cd ${{ github.workspace }}/adamlui/perplexity-omnibox
+          git pull # again to sync w/ concurrent workflow updates
+          git add .
+          git commit -S -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
+          git push
