@@ -12,8 +12,6 @@ jobs:
     env:
       GIT_AUTHOR_NAME: ${{ github.event.commits[0].author.name }}
       GIT_AUTHOR_EMAIL: ${{ github.event.commits[0].author.email }}
-      GIT_COMMITTER_NAME: kudo-sync-bot
-      GIT_COMMITTER_EMAIL: auto-sync@kudoai.com
 
     steps:
 
@@ -83,13 +81,20 @@ jobs:
           echo "ESCAPED_MSG<<EOF" >> $GITHUB_ENV
           echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
+      
+      - name: Config committer
+        run: |
+          gpg --batch --import <(echo "${{ secrets.GPG_PRIVATE_KEY }}")
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git config --global user.signingkey  "${{ secrets.GPG_PRIVATE_ID }}"
 
       - name: Push changes to adamlui/ai-apps
         run: |
           cd ${{ github.workspace }}/adamlui/ai-apps
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
+          git commit -S -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
           git push
 
       - name: Push changes to adamlui/chatgpt-auto-continue
@@ -97,7 +102,7 @@ jobs:
           cd ${{ github.workspace }}/adamlui/chatgpt-auto-continue
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
+          git commit -S -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
           git push
 
       - name: Push changes to adamlui/userscripts
@@ -105,5 +110,5 @@ jobs:
           cd ${{ github.workspace }}/adamlui/userscripts
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps/chatgpt-auto-continue\`]" || true
+          git commit -S -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps/chatgpt-auto-continue\`]" || true
           git push

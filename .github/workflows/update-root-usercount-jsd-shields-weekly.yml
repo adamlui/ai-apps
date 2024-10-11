@@ -225,5 +225,5 @@ jobs:
           git config --global user.email "auto-sync@kudoai.com"
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "${{ steps.update-shields.outputs.commit_msg }}" || true
+          git commit -S -n -m "${{ steps.update-shields.outputs.commit_msg }}" || true
           git push
