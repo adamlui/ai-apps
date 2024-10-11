@@ -38,7 +38,7 @@ jobs:
           )
 
           declare -A ff_addons=( # for Firefox add-on daily user counts
-            ["chatgpt-auto-continue"]="ChatGPT Auto-Continuen"
+            ["chatgpt-auto-continue"]="ChatGPT Auto-Continue"
             ["chatgpt-infinity"]="ChatGPT Infinity"
             ["chatgpt-widescreen"]="ChatGPT Widescreen"
           )
