@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v3.3.2
+// This library is a condensed version of chatgpt.js v3.3.5
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // --------------------------------------------------------
 // Source: https://github.com/KudoAI/chatgpt.js
@@ -11,7 +11,7 @@ localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: 
 
 const chatgpt = {
 
-    getContinueButton() { return document.querySelector('button:has([d^="M4.47189"])'); },
+    getContinueButton() { return document.querySelector('button.btn:has([d^="M4.47189"])'); },
     getScrollToBottomButton() { return document.querySelector('button:has([d^="M12 21C11.7348"])'); },
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
 
