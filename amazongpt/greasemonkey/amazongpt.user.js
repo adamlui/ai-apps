@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.10.6.1
+// @version                2024.10.11
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -237,8 +237,9 @@
                 headers: { 'Accept': '*/*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
             method: 'PUT', streamable: true, accumulatesText: false,
             failFlags: [
-                'invalid_request_error', 'literal_error', 'me@promplate.dev', 'Model disabled', '^Not Found$',
-                'Sorry, your account balance is insufficient', 'This service has been suspended', 'your free credit'],
+                'invalid_request_error', 'literal_error', 'me@promplate.dev', 'Method Not Allowed', 'Model disabled',
+                '^Not Found$', 'Sorry, your account balance is insufficient', 'This service has been suspended',
+                'your free credit' ],
             availModels: [
                 'gemma2-9b-it', 'THUDM/glm-4-9b-chat', 'gpt-4o-mini-2024-07-18',
                 'llama3-70b-8192', 'mixtral-8x7b-32768', 'nous-hermes-2-mixtral-8x7b-dpo', 'Qwen/Qwen2-57B-A14B-Instruct',

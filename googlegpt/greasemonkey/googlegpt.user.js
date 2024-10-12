@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.10.6
+// @version                  2024.10.11
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -554,8 +554,9 @@
                 headers: { 'Accept': '*/*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
             method: 'PUT', streamable: true, accumulatesText: false,
             failFlags: [
-                'invalid_request_error', 'literal_error', 'me@promplate.dev', 'Model disabled', '^Not Found$',
-                'Sorry, your account balance is insufficient', 'This service has been suspended', 'your free credit'],
+                'invalid_request_error', 'literal_error', 'me@promplate.dev', 'Method Not Allowed', 'Model disabled',
+                '^Not Found$', 'Sorry, your account balance is insufficient', 'This service has been suspended',
+                'your free credit' ],
             availModels: [
                 'gemma2-9b-it', 'THUDM/glm-4-9b-chat', 'gpt-4o-mini-2024-07-18',
                 'llama3-70b-8192', 'mixtral-8x7b-32768', 'nous-hermes-2-mixtral-8x7b-dpo', 'Qwen/Qwen2-57B-A14B-Instruct',
