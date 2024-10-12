@@ -71,17 +71,20 @@
             if (env.site == 'chatgpt') {
                 const inputArea = chatbarDiv.querySelector(sites.chatgpt.selectors.input)
                 if (inputArea) {
-                    const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
-                    const visibleBtnTypes = [...btns.types, 'send'].filter(type =>
-                           !(type == 'fullWindow' && !sites[env.site].hasSidebar)
-                        && !(type == 'newChat' && config.ncbDisabled))
-                    visibleBtnTypes.forEach(btnType =>
-                        widths[btnType] = btns[btnType]?.getBoundingClientRect().width
-                                       || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
-                                                                    sites.chatgpt.selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
-                    const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
-                    inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -60 }px` // expand to close gap w/ buttons
-                    inputArea.style.width = '100%' // rid h-scrollbar
+                    if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
+                    else { // narrow it to not clash w/ buttons
+                        const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
+                        const visibleBtnTypes = [...btns.types, 'send'].filter(type =>
+                            !(type == 'fullWindow' && !sites[env.site].hasSidebar)
+                            && !(type == 'newChat' && config.ncbDisabled))
+                        visibleBtnTypes.forEach(btnType =>
+                            widths[btnType] = btns[btnType]?.getBoundingClientRect().width
+                                        || document.querySelector(`${sites.chatgpt.selectors.btns.send}, ${
+                                                                        sites.chatgpt.selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
+                        const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
+                        inputArea.parentNode.style.width = `${ widths.chatbar - totalBtnWidths -60 }px` // expand to close gap w/ buttons
+                        inputArea.style.width = '100%' // rid h-scrollbar
+                    }
                 }
             } else if (env.site == 'poe') {
                 const attachFileBtn = chatbarDiv.querySelector(sites.poe.selectors.btns.attachFile),
@@ -529,10 +532,15 @@
     }
 
     // Monitor NODE CHANGES to maintain button visibility + update colors
-    let isTempChat = false
+    let isTempChat = false, canvasWasOpen = chatgpt.canvasIsOpen()
     const nodeObserver = new MutationObserver(([mutation]) => {
         if (config.extensionDisabled) return
-        btns[env.site == 'chatgpt' && chatgpt.canvasIsOpen() ? 'remove' : 'insert']()
+        if (env.site == 'chatgpt') {
+            if (!canvasWasOpen && chatgpt.canvasIsOpen()) {
+                btns.remove() ; chatbar.tweak() ; canvasWasOpen = true
+            } else if (canvasWasOpen && !chatgpt.canvasIsOpen()) {
+                btns.insert() ; chatbar.tweak() ; canvasWasOpen = false }
+        } else btns.insert()
         if (env.site == 'chatgpt') { // Update button colors on ChatGPT scheme or temp chat toggle
             const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')
             if (chatbarIsBlack != isTempChat // temp chat toggled

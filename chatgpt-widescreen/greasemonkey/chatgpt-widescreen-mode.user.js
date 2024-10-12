@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.11
+// @version             2024.10.11.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -640,18 +640,21 @@
             if (/chatgpt|openai/.test(env.site)) {
                 const inputArea = chatbarDiv.querySelector(sites[env.site].selectors.input)
                 if (inputArea) {
-                    const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
-                    const visibleBtnTypes = [...btns.types, 'send'].filter(type =>
-                           !(type == 'fullWindow' && !sites[env.site].hasSidebar)
-                        && !(type == 'newChat' && config.ncbDisabled))
-                    visibleBtnTypes.forEach(btnType =>
-                        widths[btnType] = btns[btnType]?.getBoundingClientRect().width
-                                       || document.querySelector(`${sites[env.site].selectors.btns.send}, ${
-                                                                    sites[env.site].selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
-                    const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
-                    inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
-                        widths.chatbar - totalBtnWidths -( env.browser.isFF ? 60 : 43 )}px`
-                    inputArea.style.width = '100%' // rid h-scrollbar
+                    if (chatgpt.canvasIsOpen()) inputArea.parentNode.style.width = '100%'
+                    else { // narrow it to not clash w/ buttons
+                        const widths = { chatbar: chatbarDiv.getBoundingClientRect().width }
+                        const visibleBtnTypes = [...btns.types, 'send'].filter(type =>
+                            !(type == 'fullWindow' && !sites[env.site].hasSidebar)
+                            && !(type == 'newChat' && config.ncbDisabled))
+                        visibleBtnTypes.forEach(btnType =>
+                            widths[btnType] = btns[btnType]?.getBoundingClientRect().width
+                                        || document.querySelector(`${sites[env.site].selectors.btns.send}, ${
+                                                                        sites[env.site].selectors.btns.stop}`)?.getBoundingClientRect().width || 0 )
+                        const totalBtnWidths = visibleBtnTypes.reduce((sum, btnType) => sum + widths[btnType], 0)
+                        inputArea.parentNode.style.width = `${ // expand to close gap w/ buttons
+                            widths.chatbar - totalBtnWidths -( env.browser.isFF ? 60 : 43 )}px`
+                        inputArea.style.width = '100%' // rid h-scrollbar
+                    }
                 }
             } else if (env.site == 'poe') {
                 const attachFileBtn = chatbarDiv.querySelector(sites.poe.selectors.btns.attachFile),
@@ -1090,10 +1093,15 @@
     }
 
     // Monitor NODE CHANGES to maintain button visibility + update colors
-    let isTempChat = false
+    let isTempChat = false, canvasWasOpen = chatgpt.canvasIsOpen()
     const nodeObserver = new MutationObserver(([mutation]) => {
         if (config.extensionDisabled) return
-        btns[/chatgpt|openai/.test(env.site) && chatgpt.canvasIsOpen() ? 'remove' : 'insert']()
+        if (/chatgpt|openai/.test(env.site)) {
+            if (!canvasWasOpen && chatgpt.canvasIsOpen()) {
+                btns.remove() ; chatbar.tweak() ; canvasWasOpen = true
+            } else if (canvasWasOpen && !chatgpt.canvasIsOpen()) {
+                btns.insert() ; chatbar.tweak() ; canvasWasOpen = false }
+        } else btns.insert()
         if (/chatgpt|openai/.test(env.site)) { // Update button colors on ChatGPT scheme or temp chat toggle
             const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')
             if (chatbarIsBlack != isTempChat // temp chat toggled
