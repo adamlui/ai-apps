@@ -540,7 +540,8 @@
                 btns.remove() ; chatbar.tweak() ; canvasWasOpen = true
             } else if (canvasWasOpen && !chatgpt.canvasIsOpen()) {
                 btns.insert() ; chatbar.tweak() ; canvasWasOpen = false }
-        } else btns.insert()
+        }
+        btns.insert()
         if (env.site == 'chatgpt') { // Update button colors on ChatGPT scheme or temp chat toggle
             const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')
             if (chatbarIsBlack != isTempChat // temp chat toggled
