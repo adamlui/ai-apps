@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.10.11.1
+// @version                  2024.10.11.2
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -547,20 +547,6 @@
                 headers: { 'Accept': 'application/json, text/plain, */*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
             userID: '#/chat/' + Date.now() },
-        'Free Chat': {
-            endpoint: 'https://demo-railway.promplate.dev/single/chat_messages',
-            expectedOrigin: {
-                url: 'https://e10.frechat.xyz',
-                headers: { 'Accept': '*/*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
-            method: 'PUT', streamable: true, accumulatesText: false,
-            failFlags: [
-                'invalid_request_error', 'literal_error', 'me@promplate.dev', 'Method Not Allowed', 'Model disabled',
-                '^Not Found$', 'Sorry, your account balance is insufficient', 'This service has been suspended',
-                'your free credit' ],
-            availModels: [
-                'gemma2-9b-it', 'THUDM/glm-4-9b-chat', 'gpt-4o-mini-2024-07-18',
-                'llama3-70b-8192', 'mixtral-8x7b-32768', 'nous-hermes-2-mixtral-8x7b-dpo', 'Qwen/Qwen2-57B-A14B-Instruct',
-                '01-ai/Yi-1.5-34B-Chat-16K' ]},
         'GPTforLove': {
             endpoint: 'https://api11.gptforlove.com/chat-process',
             expectedOrigin: {
@@ -3199,9 +3185,6 @@
                     prompt: msgs[msgs.length - 1].content,
                     withoutContext: false, userId: apis.AIchatOS.userID, network: true
                 }
-            } else if (api == 'Free Chat') {
-                const availModels = apis['Free Chat'].availModels
-                payload = { messages: msgs, model: availModels[Math.floor(chatgpt.randomFloat() * availModels.length)] }
             } else if (api == 'GPTforLove') {
                 payload = {
                     prompt: msgs[msgs.length - 1].content,
@@ -3346,7 +3329,6 @@
                 +   ( get.related.replyIsQuestion ? 'Generate answers as if in reply to a search engine chatbot asking the question.'
 
                   // Extended instructions for non-question queries
-                  : get.related.api == 'Free Chat' ? '' // to evade long query detection
                   : ( 'Make sure to suggest a variety that can even greatly deviate from the original topic. '
                     + 'For example, if the original query asked about someone\'s wife, '
                         + ' a good related query could involve a different relative and using their name. '
@@ -3482,10 +3464,6 @@
                             }
                             handleProcessCompletion()
                         } catch (err) { handleProcessError(err) }
-                    } else if (caller.api == 'Free Chat') {
-                        try { // to show response or return related queries
-                            respText = resp.responseText ; handleProcessCompletion()
-                        } catch (err) { handleProcessError(err) }          
                     } else if (caller.api == 'GPTforLove') {
                         try { // to show response or return related queries
                             let chunks = resp.responseText.trim().split('\n'),
