@@ -161,17 +161,17 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 
 このプロジェクトは、以下の貢献者からのコード、テスト、問題、翻訳、アイデアのおかげで存在します：
 
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.04.28&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.30-doc-translations&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/82336164?first-contrib=2023.11.18-first-button-bug-report&h=50&w=50&mask=circle&maxage=7d "@Joker1718")](https://github.com/Joker1718)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/5162926?first-contrib=2023.11.27-ui-change-report&h=50&w=50&mask=circle&maxage=7d "@xspeed1989")](https://github.com/xspeed1989)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/37517008?first-contrib=2023.12.05-first-button-bug-report&h=50&w=50&mask=circle&maxage=7d "@Chipsum")](https://github.com/Chipsum)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-truncate-toggle-label-idea&h=50&w=50&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
-<a href="https://greasyfork.org/users/1000404-misspent"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=50 src="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.7.29-share-box-popup-bug-alert" title="misspent"></picture></a>
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22633385?first-contrib=2024.6.22-add-japanese-readme&h=50&w=50&mask=circle&maxage=7d "@eltociear")](https://github.com/eltociear)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
-<a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptinfinity.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptinfinity.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.04.28&h=47&w=47&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.30-doc-translations&h=47&w=47&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/82336164?first-contrib=2023.11.18-first-button-bug-report&h=47&w=47&mask=circle&maxage=7d "@Joker1718")](https://github.com/Joker1718)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/5162926?first-contrib=2023.11.27-ui-change-report&h=47&w=47&mask=circle&maxage=7d "@xspeed1989")](https://github.com/xspeed1989)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/37517008?first-contrib=2023.12.05-first-button-bug-report&h=47&w=47&mask=circle&maxage=7d "@Chipsum")](https://github.com/Chipsum)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-truncate-toggle-label-idea&h=47&w=47&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
+<a href="https://greasyfork.org/users/1000404-misspent"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=47 src="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.7.29-share-box-popup-bug-alert" title="misspent"></picture></a>
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22633385?first-contrib=2024.6.22-add-japanese-readme&h=47&w=47&mask=circle&maxage=7d "@eltociear")](https://github.com/eltociear)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=47&w=47&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=47&w=47&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
+<a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptinfinity.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=47&w=47&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptinfinity.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=47&w=47&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
 <br><br>
 
 ## 🤖 その他の ChatGPT アプリ
