@@ -3,7 +3,7 @@
   "name": "__MSG_appName__",
   "short_name": "Perplexity 🔎",
   "description": "__MSG_appDesc__",
-  "version": "2024.10.8.2",
+  "version": "2024.10.11",
   "author": "Adam Lui",
   "homepage_url": "https://github.com/adamlui/perplexity-omnibox",
   "default_locale": "en",
