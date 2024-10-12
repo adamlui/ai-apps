@@ -437,11 +437,15 @@
         }
     }
 
+    // Define UI functions
+
     function isFullWin() {
         return env.site == 'poe' ? !!document.getElementById('fullWindow-mode')
             : !sites[env.site].hasSidebar // false if sidebar non-existent
            || /\d+/.exec(getComputedStyle(document.querySelector(sites[env.site].selectors.sidebar))?.width || '')[0] < 100
     }
+
+    chatgpt.canvasIsOpen = function() { return document.querySelector('section.popover')?.getBoundingClientRect().top == 0 }
     
     // Run MAIN routine
 
@@ -527,7 +531,8 @@
     // Monitor NODE CHANGES to maintain button visibility + update colors
     let isTempChat = false
     const nodeObserver = new MutationObserver(([mutation]) => {
-        if (!config.extensionDisabled) btns.insert() // again or they constantly disappear
+        if (config.extensionDisabled) return
+        btns[env.site == 'chatgpt' && chatgpt.canvasIsOpen() ? 'remove' : 'insert']()
         if (env.site == 'chatgpt') { // Update button colors on ChatGPT scheme or temp chat toggle
             const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')
             if (chatbarIsBlack != isTempChat // temp chat toggled

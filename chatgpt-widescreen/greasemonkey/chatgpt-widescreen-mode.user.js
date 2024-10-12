@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.8.1
+// @version             2024.10.11
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -763,6 +763,16 @@
             setTimeout(() => chatbar.tweak(), 1)
         },
 
+        remove() {
+            const chatbarDiv = chatbar.get(),
+                  parentToRemoveFrom = env.site == 'perplexity' ? chatbarDiv?.lastChild : chatbarDiv
+            if (parentToRemoveFrom?.contains(btns.wideScreen)) { // remove all buttons
+                const btnsToRemove = [btns.newChat, btns.wideScreen, btns.fullScreen, tooltipDiv]
+                if (typeof btns.fullWindow != 'undefined') btnsToRemove.push(btns.fullWindow)
+                btnsToRemove.forEach(btn => btn.remove())
+            }
+        },
+
         updateColor() {
             btns.color = (
                 /chatgpt|openai/.test(env.site) ? (
@@ -966,11 +976,15 @@
         }
     }
 
+    // Define UI functions
+
     function isFullWin() {
         return env.site == 'poe' ? !!document.getElementById('fullWindow-mode')
             : !sites[env.site].hasSidebar // false if sidebar non-existent
            || /\d+/.exec(getComputedStyle(document.querySelector(sites[env.site].selectors.sidebar))?.width || '')[0] < 100
     }
+
+    chatgpt.canvasIsOpen = function() { return document.querySelector('section.popover')?.getBoundingClientRect().top == 0 }
 
     // Run MAIN routine
 
@@ -1078,8 +1092,9 @@
     // Monitor NODE CHANGES to maintain button visibility + update colors
     let isTempChat = false
     const nodeObserver = new MutationObserver(([mutation]) => {
-        if (!config.extensionDisabled) btns.insert() // again or they constantly disappear
-        if (env.site == 'chatgpt') { // Update button colors on ChatGPT scheme or temp chat toggle
+        if (config.extensionDisabled) return
+        btns[/chatgpt|openai/.test(env.site) && chatgpt.canvasIsOpen() ? 'remove' : 'insert']()
+        if (/chatgpt|openai/.test(env.site)) { // Update button colors on ChatGPT scheme or temp chat toggle
             const chatbarIsBlack = !!document.querySelector('div[class*="bg-black"]:not([id$="-btn"])')
             if (chatbarIsBlack != isTempChat // temp chat toggled
                 || mutation.target == document.documentElement && mutation.attributeName == 'class') { // scheme toggled
