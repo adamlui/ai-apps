@@ -6,6 +6,7 @@
         </picture>
         &nbsp;English |
         <a href="docs/zh-cn/LICENSE.md">简体中文</a> |
+        <a href="docs/ja/LICENSE.md">日本語</a> |
         <a href="docs/hi/LICENSE.md">हिंदी</a>
     </h6>
 </div>
