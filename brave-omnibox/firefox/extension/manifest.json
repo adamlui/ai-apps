@@ -5,7 +5,7 @@
   "description": "__MSG_appDesc__",
   "version": "2024.10.10.1",
   "author": "Adam Lui",
-  "homepage_url": "https://github.com/adamlui/ai-apps",
+  "homepage_url": "https://github.com/adamlui/brave-omnibox",
   "default_locale": "en",
   "action": { "default_title": "Brave AI" },
   "icons": {
