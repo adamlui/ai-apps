@@ -44,11 +44,11 @@
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../autoclear-chatgpt-history/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
-### <img width=20 src="https://cdn.jsdelivr.net/gh/adamlui/brave-omnibox/assets/images/icons/brave/icon32.png"> [Brave Omnibox](../brave-omnibox)
+### <img width=20 src="https://assets.braveomnibox.com/images/icons/brave/icon32.png"> [Brave Omnibox](../brave-omnibox)
 
-> <a href="../brave-omnibox"><img width=450 src="https://cdn.jsdelivr.net/gh/adamlui/brave-omnibox/assets/images/tiles/marquee/edge/tile625x250.png"></a>
-<br><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chrome.braveomnibox.com?source=github&medium=readme&content=platform-link) /
-<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.braveomnibox.com?source=github&medium=readme&content=platform-link) /
+> <a href="../brave-omnibox"><img width=450 src="https://assets.braveomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a>
+<br><img height=13 src="https://assets.braveomnibox.com/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chrome.braveomnibox.com?source=github&medium=readme&content=platform-link) /
+<img height=14 src="https://assets.braveomnibox.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.braveomnibox.com?source=github&medium=readme&content=platform-link) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../brave-omnibox/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
@@ -76,10 +76,10 @@
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../chatgpt-auto-refresh/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon32.png"></picture> [ChatGPT Auto-Talk 📣](../chatgpt-auto-talk) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/badges/awesome/badge.svg"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautotalk.com/images/icons/openai/white/icon32.png"><img width=19 src="https://assets.chatgptautotalk.com/images/icons/openai/black/icon32.png"></picture> [ChatGPT Auto-Talk 📣](../chatgpt-auto-talk) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://assets.chatgptautotalk.com/images/badges/awesome/badge.svg"></a>
 
 > Auto-play ChatGPT responses.
-<br><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../chatgpt-auto-talk/#-installation) /
+<br><img height=13 src="https://assets.chatgptautotalk.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://assets.chatgptautotalk.com/images/icons/platforms/violentmonkey/icon25.png"> [Greasemonkey](../chatgpt-auto-talk/#-installation) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../chatgpt-auto-talk/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
@@ -119,22 +119,22 @@
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/perplexity-omnibox/assets/images/icons/perplexity/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/perplexity-omnibox/assets/images/icons/perplexity/turquoise/icon32.png"></picture> [Perplexity Omnibox](../perplexity-omnibox)
 
-> <a href="../perplexity-omnibox"><img width=450 src="https://cdn.jsdelivr.net/gh/adamlui/perplexity-omnibox/assets/images/tiles/marquee/edge/tile625x250.png"></a>
-<br><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chrome.perplexityomnibox.com?source=github&medium=readme&content=platform-link) /
+> <a href="../perplexity-omnibox"><img width=450 src="https://assets.perplexityomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a>
+<br><img height=13 src="https://assets.perplexityomnibox.com/images/icons/platforms/chrome/icon16.png"> [Chrome](https://chrome.perplexityomnibox.com?source=github&medium=readme&content=platform-link) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../perplexity-omnibox/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 ### <img width=17 src="https://cdn.jsdelivr.net/gh/adamlui/phind-omnibox/assets/images/icons/phind/purple-gradient/icon32.png"> [Phind Omnibox](../phind-omnibox)
 
 > Type @phind in browser omnibox to search w/ Phind AI
-<br><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.phindomnibox.com?source=github&medium=readme&content=platform-link) /
+<br><img height=14 src="https://assets.phindomnibox.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.phindomnibox.com?source=github&medium=readme&content=platform-link) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../phind-omnibox/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
 ### <img width=17 src="https://cdn.jsdelivr.net/gh/adamlui/you.com-omnibox/assets/images/icons/you.com/purple-gradient/icon32.png"> [You.com Omnibox](../you.com-omnibox)
 
 > Type @you in browser omnibox to search w/ You.com
-<br><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.youomnibox.com?source=github&medium=readme&content=platform-link) /
+<br><img height=14 src="https://assets.youomnibox.com/images/icons/platforms/firefox/icon16.png"> [Firefox](https://ff.youomnibox.com?source=github&medium=readme&content=platform-link) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture> [Readme](../you.com-omnibox/#readme) /
 <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture> [Discuss](https://github.com/adamlui/ai-apps/discussions)
 
