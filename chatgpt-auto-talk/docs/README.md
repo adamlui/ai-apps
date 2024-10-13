@@ -21,10 +21,10 @@
 
 ### Automatically play ChatGPT responses.
 
-<a href="https://greasyfork.org/scripts/500940-chatgpt-auto-talk"><img height=45 alt="Install this script" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 alt="How to install" title="How to install" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://gf.chatgptautotalk.com"><img height=45 alt="Install this script" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 alt="How to install" title="How to install" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-auto-talk/discussions) /
-[Review](https://greasyfork.org/scripts/500940-chatgpt-auto-talk#post-discussion) /
+[Review](https://gf.chatgptautotalk.com#post-discussion) /
 [Contact author](https://github.com/adamlui)
 
 #
@@ -44,7 +44,7 @@
     - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf) or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) for Chrome
     - or Tampermonkey for [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
 
-2. Install [ChatGPT Auto-Talk](https://greasyfork.org/scripts/500940-chatgpt-auto-talk) userscript (will load in manager installed above)
+2. Install [ChatGPT Auto-Talk](https://gf.chatgptautotalk.com) userscript (will load in manager installed above)
 
 3. Visit [chatgpt.com](https://chatgpt.com) as normal, and replies will automatically be read aloud!
 

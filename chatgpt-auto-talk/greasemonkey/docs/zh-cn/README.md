@@ -21,10 +21,10 @@
 
 ### 自动播放 ChatGPT 响应。
 
-<a href="https://greasyfork.org/scripts/500940-chatgpt-auto-talk"><img height=45 alt="安装此脚本" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/zh-cn/install-button.svg"></a><a href="#-installation"><img height=45 alt="如何安装" title="如何安装" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://gf.chatgptautotalk.com"><img height=45 alt="安装此脚本" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/zh-cn/install-button.svg"></a><a href="#-installation"><img height=45 alt="如何安装" title="如何安装" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [讨论](https://github.com/adamlui/chatgpt-auto-talk/discussions) /
-[审查](https://greasyfork.org/scripts/500940-chatgpt-auto-talk#post-discussion) /
+[审查](https://gf.chatgptautotalk.com#post-discussion) /
 [联系作者](https://github.com/adamlui)
 
 #
@@ -44,7 +44,7 @@
     - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf) 或 [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) 为了 Chrome
     - 或 Tampermonkey 为了 [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) 或 [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
 
-2. 安装 [ChatGPT 自动谈话](https://greasyfork.org/scripts/500940-chatgpt-auto-talk) 用户脚本（将在上面安装的管理器中加载）
+2. 安装 [ChatGPT 自动谈话](https://gf.chatgptautotalk.com) 用户脚本（将在上面安装的管理器中加载）
 
 3. 正常访问 [chatgpt.com](https://chatgpt.com)，回复将自动朗读!
 
