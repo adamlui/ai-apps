@@ -3,15 +3,15 @@
 <div align="right">
     <h6>
         <picture>
-            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/earth/white/icon32.svg">
-            <img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/earth/black/icon32.svg">
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautotalk.com/images/icons/earth/white/icon32.svg">
+            <img height=14 src="https://assets.chatgptautotalk.com/images/icons/earth/black/icon32.svg">
         </picture>
         &nbsp;English |
         <a href="zh-cn/#readme">简体中文</a>
     </h6>
 </div>
 
-# <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/white/icon32.png"><img width=23 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon32.png"></picture> ChatGPT Auto-Talk 📣
+# <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautotalk.com/images/icons/openai/white/icon32.png"><img width=23 src="https://assets.chatgptautotalk.com/images/icons/openai/black/icon32.png"></picture> ChatGPT Auto-Talk 📣
 
 <a href="../LICENSE.md"><img height=31 alt="[License: MIT]" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-talk"><img height=31 alt="[CodeFactor grade]" src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-talk?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
@@ -21,7 +21,7 @@
 
 ### Automatically play ChatGPT responses.
 
-<a href="https://greasyfork.org/scripts/500940-chatgpt-auto-talk"><img height=45 alt="Install this script" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 alt="How to install" title="How to install" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/500940-chatgpt-auto-talk"><img height=45 alt="Install this script" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 alt="How to install" title="How to install" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-auto-talk/discussions) /
 [Review](https://greasyfork.org/scripts/500940-chatgpt-auto-talk#post-discussion) /
@@ -31,8 +31,8 @@
 
 <div align="center">
 
-<img width=305 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/screenshots/auto-talk-sidebar-toggle-enabled.png">
-<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/screenshots/auto-talk-on-notif.png">
+<img width=305 src="https://assets.chatgptautotalk.com/images/screenshots/auto-talk-sidebar-toggle-enabled.png">
+<img src="https://assets.chatgptautotalk.com/images/screenshots/auto-talk-on-notif.png">
 
 </div>
 
@@ -105,7 +105,7 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/ai-apps
 [Readme](https://docs.chatgptwidescreen.com/#readme) / 
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
-<img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptautotalk.com/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#top">Back to top ↑</a>

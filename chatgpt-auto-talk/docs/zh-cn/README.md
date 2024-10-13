@@ -3,15 +3,15 @@
 <div align="right">
     <h6>
         <picture>
-            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/earth/white/icon32.svg">
-            <img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/earth/black/icon32.svg">
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautotalk.com/images/icons/earth/white/icon32.svg">
+            <img height=14 src="https://assets.chatgptautotalk.com/images/icons/earth/black/icon32.svg">
         </picture>
         &nbsp;简体中文 |
         <a href="../../#readme">English</a>
     </h6>
 </div>
 
-# <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/white/icon32.png"><img width=23 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/icons/openai/black/icon32.png"></picture> ChatGPT 自动谈话 📣
+# <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautotalk.com/images/icons/openai/white/icon32.png"><img width=23 src="https://assets.chatgptautotalk.com/images/icons/openai/black/icon32.png"></picture> ChatGPT 自动谈话 📣
 
 <a href="LICENSE.md"><img height=31 alt="[许可证: MIT]" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-talk"><img height=31 alt="[CodeFactor 等级]" src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-talk?label=%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
@@ -21,7 +21,7 @@
 
 ### 自动播放 ChatGPT 响应。
 
-<a href="https://greasyfork.org/scripts/500940-chatgpt-auto-talk"><img height=45 alt="安装此脚本" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/buttons/greasy-fork/zh-cn/install-button.svg"></a><a href="#-installation"><img height=45 alt="如何安装" title="如何安装" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/500940-chatgpt-auto-talk"><img height=45 alt="安装此脚本" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/zh-cn/install-button.svg"></a><a href="#-installation"><img height=45 alt="如何安装" title="如何安装" src="https://assets.chatgptautotalk.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [讨论](https://github.com/adamlui/chatgpt-auto-talk/discussions) /
 [审查](https://greasyfork.org/scripts/500940-chatgpt-auto-talk#post-discussion) /
@@ -31,8 +31,8 @@
 
 <div align="center">
 
-<img width=305 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/screenshots/zh-cn/auto-talk-sidebar-toggle-enabled.png">
-<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/screenshots/zh-cn/auto-talk-on-notif.png">
+<img width=305 src="https://assets.chatgptautotalk.com/images/screenshots/zh-cn/auto-talk-sidebar-toggle-enabled.png">
+<img src="https://assets.chatgptautotalk.com/images/screenshots/zh-cn/auto-talk-on-notif.png">
 
 </div>
 
@@ -104,7 +104,7 @@ ChatGPT 自动谈话 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 [自述文件](https://docs.chatgptwidescreen.com/zh-cn/#readme) / 
 [讨论](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
-<img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk/assets/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://assets.chatgptautotalk.com/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**更多用户脚本**</a> / 
 <a href="#top">回到顶部 ↑</a>
