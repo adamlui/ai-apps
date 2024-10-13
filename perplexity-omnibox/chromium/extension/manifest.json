@@ -5,7 +5,7 @@
   "description": "__MSG_appDesc__",
   "version": "2024.10.11",
   "author": "Adam Lui",
-  "homepage_url": "https://github.com/adamlui/perplexity-omnibox",
+  "homepage_url": "https://www.perplexityomnibox.com",
   "default_locale": "en",
   "omnibox": { "keyword" : "@perplexity" },
   "action": { "default_title": "Perplexity.ai" },
