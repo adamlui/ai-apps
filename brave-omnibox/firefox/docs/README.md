@@ -1,3 +1,3 @@
 # Brave Omnibox for Firefox
 
-Install link: https://addons.mozilla.org/firefox/addon/brave-omnibox
+Install link: https://ff.braveomnibox.com
