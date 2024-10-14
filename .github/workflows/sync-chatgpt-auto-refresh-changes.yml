@@ -1,4 +1,4 @@
-name: Sync (chatgpt-auto-refresh/ to adamlui/chatgpt-auto-refresh/) && (chatgpt-auto-refresh/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-auto-refresh/)
+name: Sync chatgpt-auto-refresh/ to adamlui/chatgpt-auto-refresh/, then chatgpt-auto-refresh/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-auto-refresh/
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync docs between root & /greasemonkey
+      - name: Sync docs between root & greasemonkey/
         id: sync_docs
         run: |
           shopt -s globstar

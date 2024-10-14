@@ -36,7 +36,7 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync _locales/* between chatgpt-infinity/<chrome|firefox>/extension/
+      - name: Sync _locales/ between chatgpt-infinity/<chrome|firefox>/extension/
         run: |
           cd ${{ github.workspace }}/adamlui/ai-apps/chatgpt-infinity
           ff_dir="firefox/extension/_locales"
@@ -61,13 +61,13 @@ jobs:
               fi
           done
 
-      - name: Sync chatgpt-infinity/* to adamlui/chatgpt-infinity/*
+      - name: Sync chatgpt-infinity/ to adamlui/chatgpt-infinity/
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/ai-apps/chatgpt-infinity/ \
             ${{ github.workspace }}/adamlui/chatgpt-infinity/
 
-      - name: Sync chatgpt-infinity/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-infinity/*
+      - name: Sync chatgpt-infinity/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-infinity/
         run: |
           rsync -avhr --delete \
             ${{ github.workspace }}/adamlui/ai-apps/chatgpt-infinity/greasemonkey/ \

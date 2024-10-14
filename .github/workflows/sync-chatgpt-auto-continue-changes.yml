@@ -1,4 +1,4 @@
-name: Sync _locales/* between chatgpt-auto-continue/<chromium|firefox>/extension/, then chatgpt-auto-continue/* to adamlui/chatgpt-auto-continue/*, then chatgpt-auto-continue/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-auto-continue/*
+name: Sync _locales/ between chatgpt-auto-continue/<chromium|firefox>/extension/, then chatgpt-auto-continue/ to adamlui/chatgpt-auto-continue/*, then chatgpt-auto-continue/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-auto-continue/
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync _locales/* between chatgpt-auto-continue/<chromium|firefox>/extension/
+      - name: Sync _locales/ between chatgpt-auto-continue/<chromium|firefox>/extension/
         run: |
           cd ${{ github.workspace }}/adamlui/ai-apps/chatgpt-auto-continue
           ff_dir="firefox/extension/_locales"
@@ -61,13 +61,13 @@ jobs:
               fi
           done
 
-      - name: Sync chatgpt-auto-continue/* to adamlui/chatgpt-auto-continue/*
+      - name: Sync chatgpt-auto-continue/ to adamlui/chatgpt-auto-continue/
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/ai-apps/chatgpt-auto-continue/ \
             ${{ github.workspace }}/adamlui/chatgpt-auto-continue/
 
-      - name: Sync chatgpt-auto-continue/greasemonkey/* to adamlui/userscripts/chatgpt/chatgpt-auto-continue/*
+      - name: Sync chatgpt-auto-continue/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-auto-continue/
         run: |
           rsync -avhr --delete \
             ${{ github.workspace }}/adamlui/ai-apps/chatgpt-auto-continue/greasemonkey/ \

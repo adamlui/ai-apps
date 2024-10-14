@@ -1,4 +1,4 @@
-name: Sync (autoclear-chatgpt-history/ to adamlui/autoclear-chatgpt-history/) && (autoclear-chatgpt-history/greasemonkey/ to adamlui/userscripts/chatgpt/autoclear-chatgpt-history/)
+name: Sync autoclear-chatgpt-history/ to adamlui/autoclear-chatgpt-history/, then autoclear-chatgpt-history/greasemonkey/ to adamlui/userscripts/chatgpt/autoclear-chatgpt-history/
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync docs between root & /greasemonkey
+      - name: Sync docs between root & greasemonkey/
         id: sync_docs
         run: |
           shopt -s globstar

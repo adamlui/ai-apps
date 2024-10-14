@@ -235,7 +235,7 @@ jobs:
           git config --global user.email "auto-sync@kudoai.com"
           git config --global user.signingkey  "${{ secrets.GPG_PRIVATE_ID }}"
 
-      - name: Push to adamlui/ai-apps
+      - name: Push changes to adamlui/ai-apps
         run: |
           cd ${{ github.workspace }}/adamlui/ai-apps
           git pull # again to sync w/ concurrent workflow updates

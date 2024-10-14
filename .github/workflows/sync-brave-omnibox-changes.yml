@@ -1,4 +1,4 @@
-name: Sync _locales/* between brave-omnibox/<chromium|firefox>/extension/, then brave-omnibox/* to adamlui/brave-omnibox/*
+name: Sync _locales/ between brave-omnibox/<chromium|firefox>/extension/, then brave-omnibox/ to adamlui/brave-omnibox/
 on:
   push:
     branches: [main]
@@ -28,7 +28,7 @@ jobs:
           repository: adamlui/brave-omnibox
           path: adamlui/brave-omnibox
 
-      - name: Sync _locales/* between brave-omnibox/<chromium|firefox>/extension/
+      - name: Sync _locales/ between brave-omnibox/<chromium|firefox>/extension/
         run: |
           cd ${{ github.workspace }}/adamlui/ai-apps/brave-omnibox
           ff_dir="firefox/extension/_locales"
@@ -53,7 +53,7 @@ jobs:
               fi
           done
 
-      - name: Sync brave-omnibox/* to adamlui/brave-omnibox/*
+      - name: Sync brave-omnibox/ to adamlui/brave-omnibox/
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/ai-apps/brave-omnibox/ \

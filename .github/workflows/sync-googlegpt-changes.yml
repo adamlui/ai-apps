@@ -1,4 +1,4 @@
-name: Sync (googlegpt/ to KudoAI/googlegpt/) && (googlegpt/greasemonkey/ to adamlui/userscripts/chatgpt/googlegpt/)
+name: Sync googlegpt/ to KudoAI/googlegpt/, then googlegpt/greasemonkey/ to adamlui/userscripts/chatgpt/googlegpt/
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync docs between root & /greasemonkey
+      - name: Sync docs between root & greasemonkey/
         id: sync_docs
         run: |
           shopt -s globstar

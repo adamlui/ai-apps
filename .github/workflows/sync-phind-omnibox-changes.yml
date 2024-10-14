@@ -1,4 +1,4 @@
-name: Sync _locales/* between phind-omnibox/<chromium|firefox>/extension/, then phind-omnibox/* to adamlui/phind-omnibox/*
+name: Sync _locales/ between phind-omnibox/<chromium|firefox>/extension/, then phind-omnibox/ to adamlui/phind-omnibox/
 on:
   push:
     branches: [main]
@@ -28,7 +28,7 @@ jobs:
           repository: adamlui/phind-omnibox
           path: adamlui/phind-omnibox
 
-      - name: Sync _locales/* between phind-omnibox/<chromium|firefox>/extension/
+      - name: Sync _locales/ between phind-omnibox/<chromium|firefox>/extension/
         run: |
           cd ${{ github.workspace }}/adamlui/ai-apps/phind-omnibox
           ff_dir="firefox/extension/_locales"
@@ -53,7 +53,7 @@ jobs:
               fi
           done
 
-      - name: Sync phind-omnibox/* to adamlui/phind-omnibox/*
+      - name: Sync phind-omnibox/ to adamlui/phind-omnibox/
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/ai-apps/phind-omnibox/ \
