@@ -51,15 +51,18 @@ jobs:
                   # Get the latest commit timestamps for both files
                   ff_timestamp=$(git log -1 --format="%ct" -- "$ff_file" 2>/dev/null || echo 0)
                   chrome_timestamp=$(git log -1 --format="%ct" -- "$chrome_file" 2>/dev/null || echo 0)
-          
-                  # Sync the most recently updated file to the other dir
-                  if [[ $ff_timestamp -gt $chrome_timestamp ]] ; then
-                      cp -f "$ff_file" "$chrome_file"
-                  elif [[ $chrome_timestamp -gt $ff_timestamp ]] ; then
-                      cp -f "$chrome_file" "$ff_file"
+      
+                  # Sync the most recently updated messages.json to the other dir
+                  if [[ $ff_timestamp -ne $chrome_timestamp ]] ; then
+                    [[ "$locales_changed" != true ]] && locales_changed=true
+                    if [[ $ff_timestamp -gt $chrome_timestamp ]] ; then
+                        cp -f "$ff_file" "$chrome_file"
+                    else cp -f "$chrome_file" "$ff_file" ; fi
                   fi
+
               fi
           done
+          if [[ "$locales_changed" == true ]] ; then echo "locales_changed=true" >> $GITHUB_ENV ; fi
 
       - name: Sync chatgpt-infinity/ to adamlui/chatgpt-infinity/
         run: |
@@ -90,6 +93,7 @@ jobs:
           git config --global user.signingkey  "${{ secrets.GPG_PRIVATE_ID }}"
 
       - name: Push changes to adamlui/ai-apps
+        if: env.locales_changed == 'true'
         run: |
           cd ${{ github.workspace }}/adamlui/ai-apps
           git pull # again to sync w/ concurrent workflow updates
