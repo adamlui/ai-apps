@@ -37,7 +37,6 @@ jobs:
           path: adamlui/userscripts
 
       - name: Sync docs between root & greasemonkey/
-        id: sync_docs
         run: |
           shopt -s globstar
           cd ${{ github.workspace }}/adamlui/ai-apps/amazongpt
@@ -70,8 +69,8 @@ jobs:
                 cp -f "$gm_doc_path" "$root_doc_path" ; sync_src="greasemonkey" ; fi ; fi
           done
 
-          # Store sync src for commit msg in self-push step
-          echo "sync_src=$sync_src" >> $GITHUB_OUTPUT
+          # Expose sync src for commit msg in self-push step
+          echo "sync_src=$sync_src" >> $GITHUB_ENV
 
       - name: Sync amazongpt/ to KudoAI/amazongpt/
         run: |
@@ -106,7 +105,7 @@ jobs:
           cd ${{ github.workspace }}/adamlui/ai-apps
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`${{ steps.sync_docs.outputs.sync_src }}\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`${{ env.sync_src }}\`]" || true
           git push
 
       - name: Push changes to KudoAI/amazongpt

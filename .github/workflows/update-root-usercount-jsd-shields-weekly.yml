@@ -19,7 +19,6 @@ jobs:
           path: adamlui/ai-apps
 
       - name: Fetch/sum user + JSD request counts
-        id: get-stats
         run: |
           declare -A gf_scripts=( # for Greasy Fork script user counts
             ["460805"]="Autoclear ChatGPT History"
@@ -175,17 +174,17 @@ jobs:
           formatted_total_requests=$(format_total "$total_requests")
           echo "Formatted total monthly jsDelivr requests: $formatted_total_requests"
 
-          # Expose as outputs for update step next
-          echo "total_users=$formatted_total_users" >> $GITHUB_OUTPUT
-          echo "total_requests=$formatted_total_requests" >> $GITHUB_OUTPUT
+          # Expose totals for update step next
+          echo "total_users=$formatted_total_users" >> $GITHUB_ENV
+          echo "total_requests=$formatted_total_requests" >> $GITHUB_ENV
 
       - name: Update README shields
         id: update-shields
         run: |
           cd ${{ github.workspace }}/adamlui/ai-apps
 
-          total_users="${{ steps.get-stats.outputs.total_users }}"
-          total_requests="${{ steps.get-stats.outputs.total_requests }}"
+          total_users="${{ env.total_users }}"
+          total_requests="${{ env.total_requests }}"
 
           # Update usercount shields
           if [ "$total_users" == "0" ] ; then echo "Error getting total usercount"
