@@ -37,6 +37,8 @@ jobs:
             ["lbojnhaafilddefkdgmbplkafnckaoga"]="ChatGPT Auto-Continue"
             ["amikeononomkhphopbflomhnmdijjpmb"]="ChatGPT Infinity"
             ["jgnjpnmofkalfliddjelaciggjgnphgm"]="ChatGPT Widescreen Mode"
+            ["obnaimomofoogphlhlaipeflcbneamnj"]="Brave Omnibox"
+            ["ckhgddjdjkphbaediggjdddjdjgkalom"]="Perplexity Omnibox"
           )
 
           declare -A ff_addons=( # for Firefox add-on daily user counts
