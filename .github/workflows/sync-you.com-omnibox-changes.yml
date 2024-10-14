@@ -46,7 +46,7 @@ jobs:
 
               # Sync the most recently updated messages.json to the other dir
               if [[ $ff_timestamp -ne $chromium_timestamp ]] ; then
-                [[ "$locales_changed" != true ]] && locales_changed=true
+                [[ "$locales_updated" != true ]] && locales_updated=true
                 if [[ $ff_timestamp -gt $chromium_timestamp ]] ; then
                      cp -f "$ff_file" "$chromium_file"
                 else cp -f "$chromium_file" "$ff_file" ; fi
@@ -54,7 +54,7 @@ jobs:
 
             fi
           done
-          if [[ "$locales_changed" == true ]] ; then echo "locales_changed=true" >> $GITHUB_ENV ; fi
+          if [[ "$locales_updated" == true ]] ; then echo "locales_updated=true" >> $GITHUB_ENV ; fi
 
       - name: Sync you.com-omnibox/ to adamlui/you.com-omnibox/
         run: |
@@ -79,7 +79,7 @@ jobs:
           git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
 
       - name: Push changes to adamlui/ai-apps
-        if: env.locales_changed == 'true'
+        if: env.locales_updated == 'true'
         run: |
           cd ${{ github.workspace }}/adamlui/ai-apps
           git pull # again to sync w/ concurrent workflow updates
