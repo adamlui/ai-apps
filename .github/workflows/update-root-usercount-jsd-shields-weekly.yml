@@ -127,7 +127,7 @@ jobs:
             total_gf_users=$((total_gf_users + gf_users))
           done ; echo -e "\n-----\nTotal Greasy Fork users: $total_gf_users\n-----\n"
 
-          # Fetch/sum Chrome extension user counts
+          # Fetch/sum Chrome weekly user counts
           for tuple in "${sorted_chrome_extensions[@]}" ; do
             app_id="${tuple##*:}" app_name="${tuple%%:*}"
             base_url="https://img.shields.io/chrome-web-store/users/"
@@ -138,7 +138,7 @@ jobs:
             total_chrome_users=$((total_chrome_users + chrome_users))
           done ; echo -e "\n-----\nTotal Chrome users: $total_chrome_users\n-----\n"
 
-          # Fetch/sum FF add-on daily user counts
+          # Fetch/sum FF daily user counts
           for tuple in "${sorted_ff_addons[@]}" ; do
             app_id="${tuple##*:}" app_name="${tuple%%:*}"
             base_url="https://addons.mozilla.org/api/v5/addons/addon/"
@@ -148,7 +148,7 @@ jobs:
             total_ff_users=$((total_ff_users + ff_users))
           done ; echo -e "\n-----\nTotal Firefox users: $total_ff_users\n-----\n"
 
-          # Fetch/sum Edge addon user counts
+          # Fetch/sum Edge user counts
           for tuple in "${sorted_edge_addons[@]}" ; do
             app_id="${tuple##*:}" app_name="${tuple%%:*}"
             base_url="https://microsoftedge.microsoft.com/addons/getproductdetailsbycrxid/"
