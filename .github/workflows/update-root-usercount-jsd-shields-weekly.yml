@@ -179,7 +179,6 @@ jobs:
           echo "total_requests=$formatted_total_requests" >> $GITHUB_ENV
 
       - name: Update README shields
-        id: update-shields
         run: |
           cd ${{ github.workspace }}/adamlui/ai-apps
 
@@ -224,7 +223,7 @@ jobs:
           if [ "$requests_updated" = true ] ; then            
              [ "$multi_shield_types_updated" = true ] && commit_msg+="/" ; commit_msg+="jsDelivr" ; fi
           commit_msg+=" shield counters in root READMEs"
-          echo "commit_msg=$commit_msg" >> $GITHUB_OUTPUT # expose as output
+          echo "commit_msg=$commit_msg" >> $GITHUB_ENV # expose for push step
 
           if [ "$shield_types_updated" -gt 0 ] ; then echo "shields_updated=true" >> $GITHUB_ENV ; fi
       
@@ -243,5 +242,5 @@ jobs:
           cd ${{ github.workspace }}/adamlui/ai-apps
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "${{ steps.update-shields.outputs.commit_msg }}" || true
+          git commit -n -m "${{ env.commit_msg }}" || true
           git push
