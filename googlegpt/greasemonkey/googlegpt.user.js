@@ -149,7 +149,7 @@
 // @description:zu           Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author                   KudoAI
 // @namespace                https://kudoai.com
-// @version                  2024.10.11.3
+// @version                  2024.10.14
 // @license                  MIT
 // @icon                     https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64                   https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -543,7 +543,7 @@
         'AIchatOS': {
             endpoint: 'https://api.binjie.fun/api/generateStream',
             expectedOrigin: {
-                url: 'https://chat18.aichatos8.com',
+                url: 'https://chat18.aichatos68.com',
                 headers: { 'Accept': 'application/json, text/plain, */*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
             userID: '#/chat/' + Date.now() },
@@ -3398,31 +3398,33 @@
                 }
                 accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
                 if (accumulatedChunks.startsWith('{')) api.tryNew(caller)
-                try { // to show stream text
-                    let textToShow = ''
-                    if (caller.api == 'GPTforLove') { // extract parentID + latest chunk text
-                        const jsonLines = accumulatedChunks.split('\n'),
-                              nowResult = JSON.parse(jsonLines[jsonLines.length - 1])
-                        if (nowResult.id) apis.GPTforLove.parentID = nowResult.id // for contextual replies
-                        textToShow = nowResult.text
-                    } else textToShow = accumulatedChunks
-                    const failMatch = failFlagsAndURLs.exec(textToShow)
-                    if (failMatch) {
-                        log.debug('Response text', textToShow)
-                        log.error('Fail flag detected', `'${failMatch[0]}'`)
-                        if (caller.status !== 'done' && !caller.sender) api.tryNew(caller)
-                        return
-                    } else if (caller.status != 'done') { // app waiting or sending
-                        if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
-                        if (caller.sender == caller.api // app is sending from this caller.api
-                            && textToShow.trim() != '' // empty chunk not read
-                        ) show.reply(textToShow, footerContent)
-                    }
-                } catch (err) { log.error('Error showing stream', err.message) }
-                return reader.read().then(({ done, value }) => {
-                    if (caller.sender == caller.api) // am designated sender, recurse
-                        processStreamText({ done, value })
-                }).catch(err => log.error('Error reading stream', err.message))
+                else {
+                    try { // to show stream text
+                        let textToShow = ''
+                        if (caller.api == 'GPTforLove') { // extract parentID + latest chunk text
+                            const jsonLines = accumulatedChunks.split('\n'),
+                                  nowResult = JSON.parse(jsonLines[jsonLines.length - 1])
+                            if (nowResult.id) apis.GPTforLove.parentID = nowResult.id // for contextual replies
+                            textToShow = nowResult.text
+                        } else textToShow = accumulatedChunks
+                        const failMatch = failFlagsAndURLs.exec(textToShow)
+                        if (failMatch) {
+                            log.debug('Response text', textToShow)
+                            log.error('Fail flag detected', `'${failMatch[0]}'`)
+                            if (caller.status !== 'done' && !caller.sender) api.tryNew(caller)
+                            return
+                        } else if (caller.status != 'done') { // app waiting or sending
+                            if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
+                            if (caller.sender == caller.api // app is sending from this caller.api
+                                && textToShow.trim() != '' // empty chunk not read
+                            ) show.reply(textToShow, footerContent)
+                        }
+                    } catch (err) { log.error('Error showing stream', err.message) }
+                    return reader.read().then(({ done, value }) => {
+                        if (caller.sender == caller.api) // am designated sender, recurse
+                            processStreamText({ done, value })
+                    }).catch(err => log.error('Error reading stream', err.message))
+                }
             }
         },
 
