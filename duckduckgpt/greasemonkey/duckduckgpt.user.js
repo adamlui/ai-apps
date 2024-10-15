@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.10.14
+// @version                2024.10.14.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -360,7 +360,7 @@
         'AIchatOS': {
             endpoint: 'https://api.binjie.fun/api/generateStream',
             expectedOrigin: {
-                url: 'https://chat18.aichatos8.com',
+                url: 'https://chat18.aichatos68.com',
                 headers: { 'Accept': 'application/json, text/plain, */*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
             userID: '#/chat/' + Date.now() },

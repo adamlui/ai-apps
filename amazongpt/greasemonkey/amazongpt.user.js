@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.10.14.2
+// @version                2024.10.14.3
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -226,7 +226,7 @@
         'AIchatOS': {
             endpoint: 'https://api.binjie.fun/api/generateStream',
             expectedOrigin: {
-                url: 'https://chat18.aichatos8.com',
+                url: 'https://chat18.aichatos68.com',
                 headers: { 'Accept': 'application/json, text/plain, */*', 'Priority': 'u=0', 'Sec-Fetch-Site': 'cross-site' }},
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'],
             userID: '#/chat/' + Date.now() },
