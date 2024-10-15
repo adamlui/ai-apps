@@ -227,6 +227,7 @@ jobs:
           commit_msg+=" shield counters in root READMEs"
           echo "commit_msg=$commit_msg" >> $GITHUB_ENV # expose for push step
 
+          # Set Updated flag to check in subseuqent steps
           if [ "$shield_types_updated" -gt 0 ] ; then echo "shields_updated=true" >> $GITHUB_ENV ; fi
       
       - name: Config committer
