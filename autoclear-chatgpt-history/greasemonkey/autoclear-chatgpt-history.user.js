@@ -107,9 +107,9 @@
 // @name:yi             ויסמעקן טשאַטגפּט געשיכטע 🕶️
 // @name:zh             自动清除 ChatGPT 历史记录 🕶️
 // @name:zh-CN          自动清除 ChatGPT 历史记录 🕶️
-// @name:zh-HK          自動清除 ChatGPT 歷史記錄 🕶️
+// @name:zh-HK          自动清除 ChatGPT 历史记录 🕶️
 // @name:zh-SG          自动清除 ChatGPT 历史记录 🕶️
-// @name:zh-TW          自動清除 ChatGPT 歷史記錄 🕶️
+// @name:zh-TW          自动清除 ChatGPT 历史记录 🕶️
 // @name:zu             Sula ChatGPT Isifundo 🕶️
 // @description         Auto-clears chat history when visiting chatgpt.com
 // @description:af      Skoonmaak Chat Geskiedenis wanneer jy chatgpt.com besoek
@@ -154,7 +154,7 @@
 // @description:id      Menghapus otomatis riwayat obrolan saat mengunjungi chatgpt.com
 // @description:is      Hreinsar sjálfvirkt spjallshönnun þegar heimsókn er gerð á chatgpt.com
 // @description:it      Cancella automaticamente la cronologia della chat durante la visita a chatgpt.com
-// @description:ja      chatgpt.com を訪れる際に自動的にチャット履歴を消去します
+// @description:ja      chatgpt.com を访れる际に自动的にチャット履歴を消去します
 // @description:jv      Otomatis ngapus riwayat obrolan nalika ngunjungi chatgpt.com
 // @description:ka      თავისითად წაშლის ჩათის ისტორიას chatgpt.com-ზე მომსახურების დროს
 // @description:kab     Ireɣsan Ayren Tisstrir ChatGPT I yur-s achatgpt.com
@@ -219,13 +219,13 @@
 // @description:yi      רומט די פֿונען דער שאַט היסטאָריע ביי בעזוך בקוקן chatgpt.com
 // @description:zh      访问 chatgpt.com 时自动清除聊天记录
 // @description:zh-CN   访问 chatgpt.com 时自动清除聊天记录
-// @description:zh-HK   訪問 chatgpt.com 時自動清除聊天記錄
+// @description:zh-HK   访问 chatgpt.com 时自动清除聊天记录
 // @description:zh-SG   访问 chatgpt.com 时自动清除聊天记录
-// @description:zh-TW   訪問 chatgpt.com 時自動清除聊天記錄
+// @description:zh-TW   访问 chatgpt.com 时自动清除聊天记录
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.11.1
+// @version             2024.10.14
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -334,7 +334,7 @@
     }
     if (!config.userLanguage.startsWith('en')) { // localize msgs for non-English users
         const localizedMsgs = await new Promise(resolve => {
-            const msgHostDir = app.assetHostURL + '/greasemonkey/_locales/',
+            const msgHostDir = assetHostURL + '/greasemonkey/_locales/',
                   msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
             let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
             function fetchMsgs() { xhr({ method: 'GET', url: msgHref, onload: handleMsgs })}
