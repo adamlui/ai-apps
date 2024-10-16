@@ -140,7 +140,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 
 ### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com) <img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
-> Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing & reduced scrolling.
+> Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing & reduced scrolling.
 <br>[Install](https://github.com/adamlui/chatgpt-widescreen/#-installation) / 
 [Readme](https://github.com/adamlui/chatgpt-widescreen/#readme) / 
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions)
