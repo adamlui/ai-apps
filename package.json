@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/adamlui/ai-apps",
   "devDependencies": {
     "@adamlui/scss-to-css": "^1.10.10",
     "eslint": "^9.12.0",
