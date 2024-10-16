@@ -58,7 +58,7 @@ done
 
 # Commit bumps to Git
 echo -e "${by}\nCommitting $( [[ $MULTI_BUMP == true ]] && echo bumps || echo bump) to Git...\n${nc}"
-git add **/manifest.json
+git add ./**/manifest.json
 git commit -n -m "Bumped \`version\` to \`$NEW_VER\`"
 git push
 
