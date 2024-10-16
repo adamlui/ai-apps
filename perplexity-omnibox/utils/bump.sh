@@ -2,9 +2,9 @@
 
 # Init UI colors
 nc="\033[0m"    # no color
-br="\033[1;91m" # bright red for old versions
+br="\033[1;91m" # bright red
 by="\033[1;33m" # bright yellow
-bg="\033[1;92m" # bright green for success message and new versions
+bg="\033[1;92m" # bright green
 bw="\033[1;97m" # bright white
 
 # Init manifest path
