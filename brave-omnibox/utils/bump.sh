@@ -60,7 +60,7 @@ done
 
 # Define commit msg
 COMMIT_MSG="Bumped \`version\`"
-UNIQUE_VERSIONS=($(echo "${NEW_VERSIONS[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' '))
+UNIQUE_VERSIONS=($(printf "%s\n" "${NEW_VERSIONS[@]}" | sort -u))
 if [[ ${#UNIQUE_VERSIONS[@]} -eq 1 ]] ; then
     COMMIT_MSG+=" to \`${UNIQUE_VERSIONS[0]}\`" ; fi
 
