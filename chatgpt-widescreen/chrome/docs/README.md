@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-<img src="../media/images/tiles/marquee-promo-tile-1400x560.png">
+<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
 
 <div align="center">
 
