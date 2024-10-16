@@ -142,7 +142,7 @@
 
 ### Have an app idea or request?
 
-Create a new discsusion: https://github.com/adamlui/ai-apps/discussions/new?category=ideas
+Create a new discsussion: https://github.com/adamlui/ai-apps/discussions/new?category=ideas
 
 <img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
