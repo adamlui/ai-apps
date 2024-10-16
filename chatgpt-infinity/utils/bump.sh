@@ -31,6 +31,7 @@ if $MULTI_BUMP
 fi
 echo -e "${by}\nBumping ${VERSION_LABEL}...${nc}\n"
 TODAY=$(date +'%Y.%-m.%-d') # YYYY.M.D format
+NEW_VERSIONS=() # for dynamic commit msg
 for MANIFEST in "${MANIFESTS_TO_EDIT[@]}" ; do
 
     # Determine old/new versions
@@ -46,6 +47,7 @@ for MANIFEST in "${MANIFESTS_TO_EDIT[@]}" ; do
         # bump to $TODAY
             NEW_VER="$TODAY"
     fi
+    NEW_VERSIONS+=("$NEW_VER")
 
     # Bump old version
     sed -i "s/\"version\": \"$OLD_VER\"/\"version\": \"$NEW_VER\"/" "$MANIFEST"
@@ -56,10 +58,16 @@ for MANIFEST in "${MANIFESTS_TO_EDIT[@]}" ; do
     fi
 done
 
-# Commit bumps to Git
+# Define commit msg
+COMMIT_MSG="Bumped \`version\`"
+UNIQUE_VERSIONS=($(echo "${NEW_VERSIONS[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' '))
+if [[ ${#UNIQUE_VERSIONS[@]} -eq 1 ]] ; then
+    COMMIT_MSG+=" to \`${UNIQUE_VERSIONS[0]}\`" ; fi
+
+# Commit bumps
 echo -e "${by}\nCommitting $( [[ $MULTI_BUMP == true ]] && echo bumps || echo bump) to Git...\n${nc}"
 git add ./**/manifest.json
-git commit -n -m "Bumped \`version\` to \`$NEW_VER\`"
+git commit -n -m "$COMMIT_MSG"
 git push
 
 # Print final summary
