@@ -29,7 +29,7 @@ fi
 sed -i "s/\"version\": \"$OLD_VER\"/\"version\": \"$NEW_VER\"/" "$MANIFEST"
 echo -e "${bw}v${OLD_VER}${nc} → ${bg}v${NEW_VER}${nc}"
 
-# Commit bumps
+# Commit/push bump(s)
 echo -e "${by}\nCommitting $( [[ $MULTI_BUMP == true ]] && echo bumps || echo bump) to Git...\n${nc}"
 git add ./**/manifest.json
 git commit -n -m "Bumped \`version\` to $NEW_VER"

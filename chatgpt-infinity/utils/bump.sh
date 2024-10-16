@@ -64,7 +64,7 @@ UNIQUE_VERSIONS=($(echo "${NEW_VERSIONS[@]}" | tr ' ' '\n' | sort -u | tr '\n' '
 if [[ ${#UNIQUE_VERSIONS[@]} -eq 1 ]] ; then
     COMMIT_MSG+=" to \`${UNIQUE_VERSIONS[0]}\`" ; fi
 
-# Commit bumps
+# Commit/push bump(s)
 echo -e "${by}\nCommitting $( [[ $MULTI_BUMP == true ]] && echo bumps || echo bump) to Git...\n${nc}"
 git add ./**/manifest.json
 git commit -n -m "$COMMIT_MSG"
