@@ -29,7 +29,7 @@ if $MULTI_BUMP
     then VERSION_LABEL="versions in manifests"
     else VERSION_LABEL="version in ${MANIFESTS_TO_EDIT[0]}"
 fi
-echo -e "${by}\nBumping ${VERSION_LABEL}...${nc}"
+echo -e "${by}\nBumping ${VERSION_LABEL}...${nc}\n"
 TODAY=$(date +'%Y.%-m.%-d') # YYYY.M.D format
 for MANIFEST in "${MANIFESTS_TO_EDIT[@]}" ; do
 
