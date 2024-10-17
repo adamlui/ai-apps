@@ -1,5 +1,7 @@
 <a id="top"></a>
 
+<!-- Language selector -->
+
 <div align="right">
     <h6>
         <picture>
@@ -11,6 +13,8 @@
     </h6>
 </div>
 
+<!-- Header logo -->
+
 <div align="center">
 
 <picture>
@@ -18,6 +22,8 @@
     <img width=555 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/logos/ai-apps/black-teal.png">
 </picture>
 <br><br>
+
+<!-- Shields -->
 
 <img height=31 src="https://img.shields.io/badge/Users-200,000+-af68ff?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></img>
 <a href="https://www.codefactor.io/repository/github/adamlui/ai-apps"><img alt="[CodeFactor grade]" height=31 src="https://img.shields.io/codefactor/grade/github/adamlui/ai-apps?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b3ff68&style=for-the-badge"></img></a>
@@ -29,6 +35,8 @@
 </div>
 
 <img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
+
+<!-- AmazonGPT -->
 
 <h3>
     <a href="../amazongpt">
@@ -58,6 +66,8 @@
     </blockquote>
 </details>
 
+<!-- Autoclear ChatGPT History -->
+
 <h3>
     <a href="../autoclear-chatgpt-history">
         <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.autoclearchatgpt.com/images/icons/openai/black/icon32.png"></picture></a>
@@ -85,6 +95,8 @@
             Discuss</a>
     </blockquote>
 </details>
+
+<!-- Brave Omnibox -->
 
 <h3>
     <a href="../brave-omnibox">
@@ -119,6 +131,8 @@
     </blockquote>
 </details>
 
+<!-- BraveGPT -->
+
 <h3>
     <a href="../bravegpt">
         <img width=21 src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png"></a>
@@ -144,6 +158,8 @@
             Discuss</a>
     </blockquote>
 </details>
+
+<!-- ChatGPT Auto-Continue -->
 
 <h3>
     <a href="../chatgpt-auto-continue">
@@ -185,6 +201,8 @@
     </blockquote>
 </details>
 
+<!-- ChatGPT Auto Refresh -->
+
 <h3>
     <a href="../chatgpt-auto-refresh">
         <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture></a>
@@ -211,6 +229,8 @@
     </blockquote>
 </details>
 
+<!-- ChatGPT Auto-Talk -->
+
 <h3>
     <a href="../chatgpt-auto-talk">
         <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautotalk.com/images/icons/openai/white/icon32.png"><img width=19 src="https://assets.chatgptautotalk.com/images/icons/openai/black/icon32.png"></picture></a>
@@ -236,6 +256,8 @@
             Discuss</a>
     </blockquote>
 </details>
+
+<!-- ChatGPT Infinity -->
 
 <h3>
     <a href="../chatgpt-infinity">
@@ -276,6 +298,8 @@
             Discuss</a>
     </blockquote>
 </details>
+
+<!-- ChatGPT Widescreen -->
 
 <h3>
     <a href="../chatgpt-widescreen">
@@ -319,6 +343,8 @@
     </blockquote>
 </details>
 
+<!-- DuckDuckGPT -->
+
 <h3>
     <a href="../duckduckgpt">
         <img width=20 src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png"></a>
@@ -347,6 +373,8 @@
     </blockquote>
 </details>
 
+<!-- GoogleGPT -->
+
 <h3>
     <a href="../googlegpt">
         <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=19 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture></a>
@@ -374,6 +402,8 @@
             Discuss</a>
     </blockquote>
 </details>
+
+<!-- Perplexity Omnibox -->
 
 <h3>
     <a href="../perplexity-omnibox">
@@ -405,6 +435,8 @@
     </blockquote>
 </details>
 
+<!-- Phind Omnibox -->
+
 <h3>
     <a href="../phind-omnibox">
         <img width=17 src="https://cdn.jsdelivr.net/gh/adamlui/phind-omnibox/assets/images/icons/phind/purple-gradient/icon32.png"></a>
@@ -429,6 +461,8 @@
     </blockquote>
 </details>
 
+<!-- You.com Omnibox -->
+
 <h3>
     <a href="../you.com-omnibox">
         <img width=17 src="https://cdn.jsdelivr.net/gh/adamlui/you.com-omnibox/assets/images/icons/you.com/purple-gradient/icon32.png"></a>
@@ -451,6 +485,8 @@
             Discuss</a>
     </blockquote>
 </details>
+
+<!-- Footer -->
 
 <img height=6px width="100%" src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/separators/aqua-gradient.png">
 
