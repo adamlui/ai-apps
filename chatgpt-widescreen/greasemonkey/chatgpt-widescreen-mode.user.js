@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.10.12
+// @version             2024.10.17
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -265,7 +265,7 @@
     // Init ENV vars 
     const env = {
         browser: { isFF: chatgpt.browser.isFirefox() },
-        scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'other' }})(),
+        scriptManager: (() => { try { return GM_info.scriptHandler } catch (err) { return 'unknown' }})(),
         site: /([^.]+)\.[^.]+$/.exec(location.hostname)[1]
     }
     const xhr = env.scriptManager == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
