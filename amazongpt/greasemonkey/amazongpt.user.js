@@ -3,7 +3,7 @@
 // @description            Adds the magic of AI to Amazon shopping
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.10.17.1
+// @version                2024.10.17.2
 // @license                MIT
 // @icon                   https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png?v=0fddfc7
 // @icon64                 https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon64.png?v=0fddfc7
@@ -2501,7 +2501,7 @@
                     chunk = extractedChunks.join('')
                 }
                 accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
-                if (accumulatedChunks.startsWith('{')) api.tryNew(caller)
+                if (/^(?:{|event:)/.test(accumulatedChunks)) api.tryNew(caller)
                 else {
                     try { // to show stream text
                         let textToShow = ''
@@ -2591,7 +2591,7 @@
                     if (caller.status != 'done') {
                         log.debug('Response text', respText)
                         const failMatch = failFlagsAndURLs.exec(respText)
-                        if (failMatch || respText.startsWith('{')) {
+                        if (failMatch || /^(?:{|event:)/.test(respText) {
                             if (failMatch) log.error('Fail flag detected', `'${failMatch[0]}'`)
                             api.tryNew(caller)
                         } else {
