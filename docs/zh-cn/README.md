@@ -42,7 +42,7 @@
     <summary>在亚马逊购物中添加人工智能。</summary><br>
     <blockquote>
         <a href="../../amazongpt">
-            <img width=411 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/mice-md-reply-darkmode.png"></a><br>
+            <img width=511 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/mice-md-reply-darkmode.png"></a><br>
         <a href="../../amazongpt/#-installation">
             <img height=13 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/violentmonkey/icon25.png"></a>
         <a href="../../amazongpt/#-installation">
@@ -93,7 +93,7 @@
 <details><summary>在浏览器地址栏中输入 @brave 以获取 Brave AI 的结果。</summary><br>
     <blockquote>
         <a href="../../brave-omnibox">
-            <img width=450 src="https://assets.braveomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a><br>
+            <img width=600 src="https://assets.braveomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a><br>
         <a href="https://chrome.braveomnibox.com?source=github&medium=readme&content=platform-link">
             <img height=13 src="https://assets.braveomnibox.com/images/icons/platforms/chrome/icon16.png"></a>
         <a href="https://chrome.braveomnibox.com?source=github&medium=readme&content=platform-link">
@@ -125,7 +125,7 @@
     <summary>将 AI 的魔力带入 Brave Search（由 GPT-4o 提供支持!）</summary><br>
     <blockquote>
         <a href="../../bravegpt">
-            <img width=411 src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png"></a><br>
+            <img width=511 src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png"></a><br>
         <a href="../../bravegpt/#-installation">
             <img height=13 src="https://media.bravegpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.bravegpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
         <a href="../../bravegpt/#-installation">
@@ -151,7 +151,7 @@
     <summary>当 ChatGPT 响应被切断时自动继续生成答案。</summary><br>
     <blockquote>
         <a href="../../chatgpt-auto-continue">
-            <img width=450 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a><br>
+            <img width=600 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a><br>
         <a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
             <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"></a>
         <a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
@@ -243,7 +243,7 @@
     <summary>从无所不知的 ChatGPT 生成无尽的答案（任何语言!）</summary><br>
     <blockquote>
         <a href="../../chatgpt-infinity">
-            <img width=450 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a><br>
+            <img width=600 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a><br>
         <a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
             <img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"></a>
         <a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
@@ -284,7 +284,7 @@
         为 chatgpt.com + perplexity.ai + poe.com 添加宽屏 + 全屏模式，以增强观看体验 + 减少滚动。</summary><br>
     <blockquote>
         <a href="../../chatgpt-widescreen">
-            <img width=450 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a><br>
+            <img width=600 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a><br>
         <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
             <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"></a>
         <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
@@ -324,7 +324,7 @@
     <summary>将 AI 的魔力带到 DuckDuckGo（由 GPT-4o 提供支持!）</summary><br>
     <blockquote>
         <a href="../../duckduckgpt">
-            <img width=411 src="https://media.ddgpt.com/images/screenshots/desktop/how-to-becum-rich-query/lightmode.png"></a><br>
+            <img width=511 src="https://media.ddgpt.com/images/screenshots/desktop/how-to-becum-rich-query/lightmode.png"></a><br>
         <a href="../../duckduckgpt/#-installation">
             <img height=13 src="https://media.ddgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.ddgpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
         <a href="../../duckduckgpt/#-installation">
@@ -352,7 +352,7 @@
     <summary>将 AI 的魔力带入 Google 搜索（由 Google Gemma + GPT-4o 提供支持!）</summary><br>
     <blockquote>
         <a href="../../googlegpt">
-            <img width=411 src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png"></a><br>
+            <img width=511 src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png"></a><br>
         <a href="https://greasyfork.org/scripts/478597-googlegpt">
             <img height=13 src="https://media.googlegpt.io/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.googlegpt.io/images/icons/platforms/violentmonkey/icon25.png"></a>
         <a href="https://greasyfork.org/scripts/478597-googlegpt">
@@ -378,7 +378,7 @@
     <summary>在浏览器地址栏中输入 @perplexity 以获取 Perplexity AI 的结果。</summary><br>
     <blockquote>
         <a href="../../perplexity-omnibox">
-            <img width=450 src="https://assets.perplexityomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a><br>
+            <img width=600 src="https://assets.perplexityomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a><br>
         <a href="https://chrome.perplexityomnibox.com?source=github&medium=readme&content=platform-link">
             <img height=13 src="https://assets.perplexityomnibox.com/images/icons/platforms/chrome/icon16.png"></a>
         <a href="https://chrome.perplexityomnibox.com?source=github&medium=readme&content=platform-link">

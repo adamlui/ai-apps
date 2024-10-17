@@ -42,7 +42,7 @@
     <summary>Add AI to Amazon shopping.</summary><br>
     <blockquote>
         <a href="../amazongpt">
-            <img width=411 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/mice-md-reply-darkmode.png"></a><br>
+            <img width=511 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/mice-md-reply-darkmode.png"></a><br>
         <a href="../amazongpt/#-installation">
             <img height=13 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/violentmonkey/icon25.png"></a>
         <a href="../amazongpt/#-installation">
@@ -93,7 +93,7 @@
 <details><summary>Type @brave in browser address bar to get results from Brave AI.</summary><br>
     <blockquote>
         <a href="../brave-omnibox">
-            <img width=450 src="https://assets.braveomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a><br>
+            <img width=600 src="https://assets.braveomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a><br>
         <a href="https://chrome.braveomnibox.com?source=github&medium=readme&content=platform-link">
             <img height=13 src="https://assets.braveomnibox.com/images/icons/platforms/chrome/icon16.png"></a>
         <a href="https://chrome.braveomnibox.com?source=github&medium=readme&content=platform-link">
@@ -125,7 +125,7 @@
     <summary>Bring the magic of AI to Brave Search (powered by GPT-4o!)</summary><br>
     <blockquote>
         <a href="../bravegpt">
-            <img width=411 src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png"></a><br>
+            <img width=511 src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png"></a><br>
         <a href="../bravegpt/#-installation">
             <img height=13 src="https://media.bravegpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.bravegpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
         <a href="../bravegpt/#-installation">
@@ -151,7 +151,7 @@
     <summary>Automatically continue generating answers when ChatGPT responses get cut-off.</summary><br>
     <blockquote>
         <a href="../chatgpt-auto-continue">
-            <img width=450 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a><br>
+            <img width=600 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a><br>
         <a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
             <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"></a>
         <a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
@@ -243,7 +243,7 @@
     <summary>Generate endless answers from all-knowing ChatGPT (in any language!)</summary><br>
     <blockquote>
         <a href="../chatgpt-infinity">
-            <img width=450 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a><br>
+            <img width=600 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a><br>
         <a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
             <img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"></a>
         <a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
@@ -285,7 +285,7 @@
     </summary><br>
     <blockquote>
         <a href="../chatgpt-widescreen">
-            <img width=450 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a><br>
+            <img width=600 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a><br>
         <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
             <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"></a>
         <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
@@ -325,7 +325,7 @@
     <summary>Bring the magic of AI to DuckDuckGo (powered by GPT-4o!)</summary><br>
     <blockquote>
         <a href="../duckduckgpt">
-            <img width=411 src="https://media.ddgpt.com/images/screenshots/desktop/how-to-becum-rich-query/lightmode.png"></a><br>
+            <img width=511 src="https://media.ddgpt.com/images/screenshots/desktop/how-to-becum-rich-query/lightmode.png"></a><br>
         <a href="../duckduckgpt/#-installation">
             <img height=13 src="https://media.ddgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.ddgpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
         <a href="../duckduckgpt/#-installation">
@@ -353,7 +353,7 @@
     <summary>Bring the magic of AI to Google Search (powered by Google Gemma + GPT-4o!)</summary><br>
     <blockquote>
         <a href="../googlegpt">
-            <img width=411 src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png"></a><br>
+            <img width=511 src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png"></a><br>
         <a href="https://greasyfork.org/scripts/478597-googlegpt">
             <img height=13 src="https://media.googlegpt.io/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.googlegpt.io/images/icons/platforms/violentmonkey/icon25.png"></a>
         <a href="https://greasyfork.org/scripts/478597-googlegpt">
@@ -379,7 +379,7 @@
     <summary>Type @perplexity in browser address bar to get results from Perplexity AI.</summary><br>
     <blockquote>
         <a href="../perplexity-omnibox">
-            <img width=450 src="https://assets.perplexityomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a><br>
+            <img width=600 src="https://assets.perplexityomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a><br>
         <a href="https://chrome.perplexityomnibox.com?source=github&medium=readme&content=platform-link">
             <img height=13 src="https://assets.perplexityomnibox.com/images/icons/platforms/chrome/icon16.png"></a>
         <a href="https://chrome.perplexityomnibox.com?source=github&medium=readme&content=platform-link">
@@ -408,9 +408,9 @@
             <img height=14 src="https://assets.phindomnibox.com/images/icons/platforms/firefox/icon16.png"></a>
         <a href="https://ff.phindomnibox.com?source=github&medium=readme&content=platform-link">
             Firefox</a> /
-        <a href="../perplexity-omnibox/#readme">
+        <a href="../phind-omnibox/#readme">
             <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../perplexity-omnibox/#readme">
+        <a href="../phind-omnibox/#readme">
             Readme</a> /
         <a href="https://github.com/adamlui/ai-apps/discussions">
             <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
@@ -431,9 +431,9 @@
         <img height=14 src="https://assets.youomnibox.com/images/icons/platforms/firefox/icon16.png"></a>
     <a href="https://ff.youomnibox.com?source=github&medium=readme&content=platform-link">
         Firefox</a> /
-        <a href="../perplexity-omnibox/#readme">
+        <a href="../you.com-omnibox/#readme">
             <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../perplexity-omnibox/#readme">
+        <a href="../you.com-omnibox/#readme">
             Readme</a> /
         <a href="https://github.com/adamlui/ai-apps/discussions">
             <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
