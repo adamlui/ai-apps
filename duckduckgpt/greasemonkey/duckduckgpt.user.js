@@ -148,7 +148,7 @@
 // @description:zu         Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author                 KudoAI
 // @namespace              https://kudoai.com
-// @version                2024.10.17
+// @version                2024.10.17.1
 // @license                MIT
 // @icon                   https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64                 https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -170,15 +170,14 @@
 // @compatible             orion
 // @match                  *://duckduckgo.com/?*
 // @include                https://auth0.openai.com
-// @connect                binjie.fun
+// @connect                api.binjie.fun
+// @connect                api.openai.com
+// @connect                api11.gptforlove.com
+// @connect                cdn.jsdelivr.net
+// @connect                chatai.mixerbox.com
 // @connect                chatgpt.com
-// @connect                gptforlove.com
-// @connect                greasyfork.org
-// @connect                jsdelivr.net
-// @connect                mixerbox.com
-// @connect                openai.com
-// @connect                promplate.dev
-// @connect                sogou.com
+// @connect                update.greasyfork.org
+// @connect                fanyi.sogou.com
 // @require                https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.5/dist/chatgpt.min.js#sha256-rfC4kk8q0byrafp7X0Qf9vaa3JNvkHRwNnUt6uL2hUE=
 // @require                https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha256-dppVXeVTurw1ozOPNE3XqhYmDJPOosfbKQcHyQSE58w=
 // @require                https://cdn.jsdelivr.net/npm/generate-ip@2.4.2/dist/generate-ip.min.js#sha256-PRvQIDVWK/a+aAqEFVQv7RePbRe/tX6tWQVM80rAe2M=
