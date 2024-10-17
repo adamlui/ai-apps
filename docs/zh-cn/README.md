@@ -69,6 +69,8 @@
 <details>
     <summary>自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。</summary><br>
     <blockquote>
+        <a href="../../autoclear-chatgpt-history">
+            <img width=511 src="https://media.autoclearchatgpt.com/images/screenshots/demo.png"></a><br>
         <a href="../autoclear-chatgpt-history/#-installation">
             <img height=13 src="https://media.autoclearchatgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.autoclearchatgpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
         <a href="../autoclear-chatgpt-history/#-installation">

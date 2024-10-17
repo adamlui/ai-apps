@@ -69,6 +69,8 @@
 <details>
     <summary>Auto-clear your ChatGPT query history for maximum privacy.</summary><br>
     <blockquote>
+        <a href="../autoclear-chatgpt-history">
+            <img width=511 src="https://media.autoclearchatgpt.com/images/screenshots/demo.png"></a><br>
         <a href="../autoclear-chatgpt-history/#-installation">
             <img height=13 src="https://media.autoclearchatgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.autoclearchatgpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
         <a href="../autoclear-chatgpt-history/#-installation">
