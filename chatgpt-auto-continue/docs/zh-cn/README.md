@@ -11,11 +11,11 @@
     </h6>
 </div>
 
-<img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png">
+<a href="https://greasyfork.chatgptautocontinue.com"><img src="https://media.chatgptautocontinue.com/images//tiles/marquee/tile1400x560.png"></a>
 
 <div align="center">
 
-<img height=31 src="https://img.shields.io/badge/%E7%94%A8%E6%88%B7-10,000+-af68ff?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></img>
+<a href="https://gf.chatgptautocontinue.com"><img height=31 alt="[Greasy Fork]" src="https://img.shields.io/greasyfork/dt/466789?label=%E7%94%A8%E6%88%B7&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge"></a>
 <a href="LICENSE.md"><img height=31 alt="[许可证: MIT]" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-continue"><img height=31 alt="[CodeFactor 等级]" src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-continue?label=%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_auto_continue&utm_content=github_shield"><img height=31 alt="[由 chatgpt.js 提供支持]" src="https://img.shields.io/badge/%E4%BE%9B%E7%94%B5-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -25,14 +25,11 @@
 
 <br>
 
-<a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-badge">
-    <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
-<a href="https://edge.chatgptautocontinue.com">
-    <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
-<a href="https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-badge">
-    <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/firefox/available-for-firefox/raspberry-border-334x128.png"></a>
-<a href="https://greasyfork.chatgptautocontinue.com">
-    <img width=auto height=60 src="https://media.chatgptautocontinue.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
+<a href="https://greasyfork.chatgptautocontinue.com"><img height=45 alt="安装此脚本" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/zh-cn/install-button.svg?54af935"></a><a href="#-如何安装"><img height=45 alt="如何安装" title="如何安装" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/help-button.svg"></a>
+<br>
+[讨论](https://github.com/adamlui/chatgpt-auto-continue/discussions) /
+[审查](https://greasyfork.chatgptautocontinue.com/feedback#post-discussion) /
+[联系作者](https://github.com/adamlui)
 
 </div>
 
@@ -49,14 +46,6 @@
 <br>
 
 ## 🚀 如何安装
-
-### <img height=16 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"><img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"><img height=16 src="https://media.chatgptautocontinue.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
-
-1. 安装 ChatGPT 自动继续 扩展程序 ([Chrome](https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link), [Edge](https://edge.chatgptautocontinue.com), [Firefox](https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link))
-
-2. 正常访问 [chatgpt.com](https://chatgpt.com)，多条回复对话中断时会自动继续生成!
-
-### <img height=17 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=17.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey userscript:
 
 1. 安装用户脚本管理器：
     - ScriptCat 为了 [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Firefox](https://addons.mozilla.org/firefox/addon/scriptcat/) 或 [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh)
@@ -93,19 +82,10 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 
 <div align="center">
 
-<a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=install-button">
-    <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-chrome-button.png"></a>
-<a href="https://edge.chatgptautocontinue.com">
-    <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-edge-button.png"></a>
-<a href="https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=install-button">
-    <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-to-firefox-button.png"></a>
-<a href="https://greasyfork.chatgptautocontinue.com">
-    <img height=75 src="https://media.chatgptautocontinue.com/images/buttons/add-userscript-button.png"></a>
-
+<a href="https://greasyfork.chatgptautocontinue.com"><img height=45 alt="安装此脚本" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/zh-cn/install-button.svg"></a><a href="#-如何安装"><img alt="如何安装" title="如何安装" height=45 src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-
 [讨论](https://github.com/adamlui/chatgpt-auto-continue/discussions) / 
-[更多 ChatGPT 附加组件](https://github.com/adamlui/ai-apps)
+[更多 ChatGPT 用户脚本](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 </div>
 
@@ -173,5 +153,5 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 
 <img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/gradient-aqua.png">
   
-<a href="https://github.com/adamlui/ai-apps">**更多 ChatGPT 附加组件**</a> / 
+<a href="https://github.com/adamlui/userscripts">**更多用户脚本**</a> / 
 <a href="#top">回到顶部 ↑</a>
