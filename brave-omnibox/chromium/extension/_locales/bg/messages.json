@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Phind Omnibox" },
+  "appName": { "message": "Brave Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
   "appDesc": { "message": "Въведете @brave в адресната лента, за да получите резултати от Brave AI" }
 }

@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Phind Omnibox" },
+  "appName": { "message": "Brave Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
   "appDesc": { "message": "アドレスバーに @brave と入力して、Brave AI から結果を取得します" }
 }
