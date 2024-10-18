@@ -47,24 +47,26 @@
 </h3>
 
 <details>
-    <summary>Add AI to Amazon shopping.</summary><br>
-    <blockquote>
+    <summary>Add AI to Amazon shopping.</summary>
+    <br><blockquote>
         <a href="../amazongpt">
-            <img width=511 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/mice-md-reply-darkmode.png"></a><br>
-        <a href="../amazongpt/#-installation">
-            <img height=13 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/violentmonkey/icon25.png"></a>
-        <a href="../amazongpt/#-installation">
-            Greasemonkey</a> /
-        <a href="../amazongpt/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../amazongpt/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
+            <img width=511 src="https://amazongpt.kudoai.com/assets/images/screenshots/desktop/mice-md-reply-darkmode.png"></a>
     </blockquote>
 </details>
+
+<blockquote>
+    <a href="../amazongpt/#-installation">
+        <img height=13 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://amazongpt.kudoai.com/assets/images/icons/platforms/violentmonkey/icon25.png"></a>
+    <a href="../amazongpt/#-installation">
+        Greasemonkey</a> /
+    <a href="../amazongpt/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../amazongpt/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">Discuss</a>
+</blockquote>
 
 <!-- Autoclear ChatGPT History -->
 
@@ -77,24 +79,27 @@
 </h3>
 
 <details>
-    <summary>Auto-clear your ChatGPT query history for maximum privacy.</summary><br>
-    <blockquote>
+    <summary>Auto-clear your ChatGPT query history for maximum privacy.</summary>
+    <br><blockquote>
         <a href="../autoclear-chatgpt-history">
-            <img width=511 src="https://media.autoclearchatgpt.com/images/screenshots/demo.png"></a><br>
-        <a href="../autoclear-chatgpt-history/#-installation">
-            <img height=13 src="https://media.autoclearchatgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.autoclearchatgpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
-        <a href="../autoclear-chatgpt-history/#-installation">
-            Greasemonkey</a> /
-        <a href="../autoclear-chatgpt-history/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../autoclear-chatgpt-history/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
+            <img width=511 src="https://media.autoclearchatgpt.com/images/screenshots/demo.png"></a>
     </blockquote>
 </details>
+
+<blockquote>
+    <a href="../autoclear-chatgpt-history/#-installation">
+        <img height=13 src="https://media.autoclearchatgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.autoclearchatgpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
+    <a href="../autoclear-chatgpt-history/#-installation">
+        Greasemonkey</a> /
+    <a href="../autoclear-chatgpt-history/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../autoclear-chatgpt-history/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- Brave Omnibox -->
 
@@ -104,32 +109,35 @@
     <a href="../brave-omnibox">Brave Omnibox</a>
 </h3>
 
-<details><summary>Type @brave in browser address bar to get results from Brave AI.</summary><br>
-    <blockquote>
+<details><summary>Type @brave in browser address bar to get results from Brave AI.</summary>
+    <br><blockquote>
         <a href="../brave-omnibox">
-            <img width=600 src="https://assets.braveomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a><br>
-        <a href="https://chrome.braveomnibox.com?source=github&medium=readme&content=platform-link">
-            <img height=13 src="https://assets.braveomnibox.com/images/icons/platforms/chrome/icon16.png"></a>
-        <a href="https://chrome.braveomnibox.com?source=github&medium=readme&content=platform-link">
-            Chrome</a> /
-        <a href="https://ff.braveomnibox.com?source=github&medium=readme&content=platform-link">
-            <img height=14 src="https://assets.braveomnibox.com/images/icons/platforms/firefox/icon16.png"></a>
-        <a href="https://ff.braveomnibox.com?source=github&medium=readme&content=platform-link">
-            Firefox</a> /
-        <a href="https://edge.braveomnibox.com/?source=github&medium=readme&content=platform-link">
-            <img height=12 src="https://assets.braveomnibox.com/images/icons/platforms/edge/icon16.png"></a>
-        <a href="https://edge.braveomnibox.com/?source=github&medium=readme&content=platform-link">
-            Edge</a> /
-        <a href="../brave-omnibox/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../brave-omnibox/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
+            <img width=600 src="https://assets.braveomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a>
     </blockquote>
 </details>
+
+<blockquote>
+    <a href="https://chrome.braveomnibox.com?source=github&medium=readme&content=platform-link">
+        <img height=13 src="https://assets.braveomnibox.com/images/icons/platforms/chrome/icon16.png"></a>
+    <a href="https://chrome.braveomnibox.com?source=github&medium=readme&content=platform-link">
+        Chrome</a> /
+    <a href="https://ff.braveomnibox.com?source=github&medium=readme&content=platform-link">
+        <img height=14 src="https://assets.braveomnibox.com/images/icons/platforms/firefox/icon16.png"></a>
+    <a href="https://ff.braveomnibox.com?source=github&medium=readme&content=platform-link">
+        Firefox</a> /
+    <a href="https://edge.braveomnibox.com/?source=github&medium=readme&content=platform-link">
+        <img height=12 src="https://assets.braveomnibox.com/images/icons/platforms/edge/icon16.png"></a>
+    <a href="https://edge.braveomnibox.com/?source=github&medium=readme&content=platform-link">
+        Edge</a> /
+    <a href="../brave-omnibox/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../brave-omnibox/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- BraveGPT -->
 
@@ -142,22 +150,25 @@
 </h3>
 
 <details>
-    <summary>Bring the magic of AI to Brave Search (powered by GPT-4o!)</summary><br>
-    <blockquote>
+    <summary>Bring the magic of AI to Brave Search (powered by GPT-4o!)</summary>
+    <br><blockquote>
         <a href="../bravegpt">
-            <img width=511 src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png"></a><br>
-        <a href="../bravegpt/#-installation">
-            <img height=13 src="https://media.bravegpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.bravegpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
-        <a href="../bravegpt/#-installation">
-            Greasemonkey</a> /
-        <a href="../bravegpt/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
+            <img width=511 src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png"></a>
     </blockquote>
 </details>
+
+<blockquote>
+    <a href="../bravegpt/#-installation">
+        <img height=13 src="https://media.bravegpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.bravegpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
+    <a href="../bravegpt/#-installation">
+        Greasemonkey</a> /
+    <a href="../bravegpt/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- ChatGPT Auto-Continue -->
 
@@ -170,36 +181,39 @@
 </h3>
 
 <details>
-    <summary>Automatically continue generating answers when ChatGPT responses get cut-off.</summary><br>
-    <blockquote>
+    <summary>Automatically continue generating answers when ChatGPT responses get cut-off.</summary>
+    <br><blockquote>
         <a href="../chatgpt-auto-continue">
-            <img width=600 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a><br>
-        <a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
-            <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"></a>
-        <a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
-            Chrome</a> /
-        <a href="https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
-            <img height=14 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"></a>
-        <a href="https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
-            Firefox</a> /
-        <a href="https://edge.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
-            <img height=12 src="https://media.chatgptautocontinue.com/images/icons/platforms/edge/icon16.png"></a>
-        <a href="https://edge.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
-            Edge</a> /
-        <a href="https://gf.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
-            <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"></a>
-        <a href="https://gf.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
-            Greasemonkey</a> /
-        <a href="../chatgpt-auto-continue/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../chatgpt-auto-continue/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
+            <img width=600 src="https://media.chatgptautocontinue.com/images/tiles/marquee/tile625x250.gif"></a>
     </blockquote>
 </details>
+
+<blockquote>
+    <a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
+        <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/chrome/icon16.png"></a>
+    <a href="https://chrome.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
+        Chrome</a> /
+    <a href="https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
+        <img height=14 src="https://media.chatgptautocontinue.com/images/icons/platforms/firefox/icon16.png"></a>
+    <a href="https://ff.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
+        Firefox</a> /
+    <a href="https://edge.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
+        <img height=12 src="https://media.chatgptautocontinue.com/images/icons/platforms/edge/icon16.png"></a>
+    <a href="https://edge.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
+        Edge</a> /
+    <a href="https://gf.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
+        <img height=13 src="https://media.chatgptautocontinue.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautocontinue.com/images/icons/platforms/violentmonkey/icon25.png"></a>
+    <a href="https://gf.chatgptautocontinue.com/?source=github&medium=readme&content=platform-link">
+        Greasemonkey</a> /
+    <a href="../chatgpt-auto-continue/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../chatgpt-auto-continue/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- ChatGPT Auto Refresh -->
 
@@ -212,22 +226,23 @@
 </h3>
 
 <details>
-    <summary>Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.</summary><br>
-    <blockquote>
-        <a href="../chatgpt-auto-refresh/#-installation">
-            <img height=13 src="https://media.chatgptautorefresh.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautorefresh.com/images/icons/platforms/violentmonkey/icon25.png"></a>
-        <a href="../chatgpt-auto-refresh/#-installation">
-            Greasemonkey</a> /
-        <a href="../chatgpt-auto-refresh/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../chatgpt-auto-refresh/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
-    </blockquote>
+    <summary>Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.</summary>
 </details>
+
+<blockquote>
+    <a href="../chatgpt-auto-refresh/#-installation">
+        <img height=13 src="https://media.chatgptautorefresh.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptautorefresh.com/images/icons/platforms/violentmonkey/icon25.png"></a>
+    <a href="../chatgpt-auto-refresh/#-installation">
+        Greasemonkey</a> /
+    <a href="../chatgpt-auto-refresh/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../chatgpt-auto-refresh/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- ChatGPT Auto-Talk -->
 
@@ -240,22 +255,23 @@
 </h3>
 
 <details>
-    <summary>Auto-play ChatGPT responses.</summary><br>
-    <blockquote>
-        <a href="../chatgpt-auto-talk/#-installation">
-            <img height=13 src="https://assets.chatgptautotalk.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://assets.chatgptautotalk.com/images/icons/platforms/violentmonkey/icon25.png"></a>
-        <a href="../chatgpt-auto-talk/#-installation">
-            Greasemonkey</a> /
-        <a href="../chatgpt-auto-talk/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../chatgpt-auto-talk/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
-    </blockquote>
+    <summary>Auto-play ChatGPT responses.</summary>
 </details>
+
+<blockquote>
+    <a href="../chatgpt-auto-talk/#-installation">
+        <img height=13 src="https://assets.chatgptautotalk.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://assets.chatgptautotalk.com/images/icons/platforms/violentmonkey/icon25.png"></a>
+    <a href="../chatgpt-auto-talk/#-installation">
+        Greasemonkey</a> /
+    <a href="../chatgpt-auto-talk/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../chatgpt-auto-talk/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- ChatGPT Infinity -->
 
@@ -268,36 +284,39 @@
 </h3>
 
 <details>
-    <summary>Generate endless answers from all-knowing ChatGPT (in any language!)</summary><br>
-    <blockquote>
+    <summary>Generate endless answers from all-knowing ChatGPT (in any language!)</summary>
+    <br><blockquote>
         <a href="../chatgpt-infinity">
-            <img width=600 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a><br>
-        <a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
-            <img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"></a>
-        <a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
-            Chrome</a> /
-        <a href="https://ff.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
-            <img height=14 src="https://media.chatgptinfinity.com/images/icons/platforms/firefox/icon16.png"></a>
-        <a href="https://ff.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
-            Firefox</a> /
-        <a href="https://edge.chatgptinfinity.com">
-            <img height=12 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"></a>
-        <a href="https://edge.chatgptinfinity.com">
-            Edge</a> /
-        <a href="https://greasyfork.chatgptinfinity.com">
-            <img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"></a>
-        <a href="https://greasyfork.chatgptinfinity.com">
-            Greasemonkey</a> /
-        <a href="../chatgpt-infinity/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../chatgpt-infinity/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
+            <img width=600 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
     </blockquote>
 </details>
+
+<blockquote>
+    <a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
+        <img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"></a>
+    <a href="https://chrome.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
+        Chrome</a> /
+    <a href="https://ff.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
+        <img height=14 src="https://media.chatgptinfinity.com/images/icons/platforms/firefox/icon16.png"></a>
+    <a href="https://ff.chatgptinfinity.com/?source=github&medium=readme&content=platform-link">
+        Firefox</a> /
+    <a href="https://edge.chatgptinfinity.com">
+        <img height=12 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"></a>
+    <a href="https://edge.chatgptinfinity.com">
+        Edge</a> /
+    <a href="https://greasyfork.chatgptinfinity.com">
+        <img height=13 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"></a>
+    <a href="https://greasyfork.chatgptinfinity.com">
+        Greasemonkey</a> /
+    <a href="../chatgpt-infinity/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../chatgpt-infinity/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- ChatGPT Widescreen -->
 
@@ -312,36 +331,39 @@
 <details>
     <summary>
         Adds Widescreen + Fullscreen modes to chatgpt.com + perplexity.ai + poe.com for enhanced viewing + reduced scrolling.
-    </summary><br>
-    <blockquote>
+    </summary>
+    <br><blockquote>
         <a href="../chatgpt-widescreen">
-            <img width=600 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a><br>
-        <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
-            <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"></a>
-        <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
-            Chrome</a> /
-        <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
-            <img height=14 src="https://media.chatgptwidescreen.com/images/icons/platforms/firefox/icon16.png"></a>
-        <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
-            Firefox</a> /
-        <a href="https://edge.chatgptwidescreen.com">
-            <img height=12 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"></a>
-        <a href="https://edge.chatgptwidescreen.com">
-            Edge</a> /
-        <a href="https://greasyfork.chatgptwidescreen.com">
-            <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"></a>
-        <a href="https://greasyfork.chatgptwidescreen.com">
-            Greasemonkey</a> /
-        <a href="../chatgpt-widescreen/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../chatgpt-widescreen/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
+            <img width=600 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen/chrome/media/images/tiles/marquee-promo-tile-625x250.png"></a>
     </blockquote>
 </details>
+
+<blockquote>
+    <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
+        <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"></a>
+    <a href="https://chrome.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
+        Chrome</a> /
+    <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
+        <img height=14 src="https://media.chatgptwidescreen.com/images/icons/platforms/firefox/icon16.png"></a>
+    <a href="https://ff.chatgptwidescreen.com/?source=github&medium=readme&content=platform-link">
+        Firefox</a> /
+    <a href="https://edge.chatgptwidescreen.com">
+        <img height=12 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"></a>
+    <a href="https://edge.chatgptwidescreen.com">
+        Edge</a> /
+    <a href="https://greasyfork.chatgptwidescreen.com">
+        <img height=13 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"></a>
+    <a href="https://greasyfork.chatgptwidescreen.com">
+        Greasemonkey</a> /
+    <a href="../chatgpt-widescreen/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../chatgpt-widescreen/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- DuckDuckGPT -->
 
@@ -354,24 +376,27 @@
 </h3>
 
 <details>
-    <summary>Bring the magic of AI to DuckDuckGo (powered by GPT-4o!)</summary><br>
-    <blockquote>
+    <summary>Bring the magic of AI to DuckDuckGo (powered by GPT-4o!)</summary>
+    <br><blockquote>
         <a href="../duckduckgpt">
-            <img width=511 src="https://media.ddgpt.com/images/screenshots/desktop/how-to-becum-rich-query/lightmode.png"></a><br>
-        <a href="../duckduckgpt/#-installation">
-            <img height=13 src="https://media.ddgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.ddgpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
-        <a href="../duckduckgpt/#-installation">
-            Greasemonkey</a> /
-        <a href="../duckduckgpt/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../duckduckgpt/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
+            <img width=511 src="https://media.ddgpt.com/images/screenshots/desktop/how-to-becum-rich-query/lightmode.png"></a>
     </blockquote>
 </details>
+
+<blockquote>
+    <a href="../duckduckgpt/#-installation">
+        <img height=13 src="https://media.ddgpt.com/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.ddgpt.com/images/icons/platforms/violentmonkey/icon25.png"></a>
+    <a href="../duckduckgpt/#-installation">
+        Greasemonkey</a> /
+    <a href="../duckduckgpt/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../duckduckgpt/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- GoogleGPT -->
 
@@ -384,24 +409,27 @@
 </h3>
 
 <details>
-    <summary>Bring the magic of AI to Google Search (powered by Google Gemma + GPT-4o!)</summary><br>
-    <blockquote>
+    <summary>Bring the magic of AI to Google Search (powered by Google Gemma + GPT-4o!)</summary>
+    <br><blockquote>
         <a href="../googlegpt">
-            <img width=511 src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png"></a><br>
-        <a href="https://greasyfork.org/scripts/478597-googlegpt">
-            <img height=13 src="https://media.googlegpt.io/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.googlegpt.io/images/icons/platforms/violentmonkey/icon25.png"></a>
-        <a href="https://greasyfork.org/scripts/478597-googlegpt">
-            Greasemonkey</a> /
-        <a href="../googlegpt/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../googlegpt/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
+            <img width=511 src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png"></a>
     </blockquote>
 </details>
+
+<blockquote>
+    <a href="https://greasyfork.org/scripts/478597-googlegpt">
+        <img height=13 src="https://media.googlegpt.io/images/icons/platforms/tampermonkey/icon28.png"><img height=13.5 src="https://media.googlegpt.io/images/icons/platforms/violentmonkey/icon25.png"></a>
+    <a href="https://greasyfork.org/scripts/478597-googlegpt">
+        Greasemonkey</a> /
+    <a href="../googlegpt/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../googlegpt/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- Perplexity Omnibox -->
 
@@ -412,28 +440,31 @@
 </h3>
 
 <details>
-    <summary>Type @perplexity in browser address bar to get results from Perplexity AI.</summary><br>
-    <blockquote>
+    <summary>Type @perplexity in browser address bar to get results from Perplexity AI.</summary>
+    <br><blockquote>
         <a href="../perplexity-omnibox">
-            <img width=600 src="https://assets.perplexityomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a><br>
-        <a href="https://chrome.perplexityomnibox.com?source=github&medium=readme&content=platform-link">
-            <img height=13 src="https://assets.perplexityomnibox.com/images/icons/platforms/chrome/icon16.png"></a>
-        <a href="https://chrome.perplexityomnibox.com?source=github&medium=readme&content=platform-link">
-            Chrome</a> /
-        <a href="https://edge.perplexityomnibox.com/?source=github&medium=readme&content=platform-link">
-            <img height=12 src="https://assets.perplexityomnibox.com/images/icons/platforms/edge/icon16.png"></a>
-        <a href="https://edge.perplexityomnibox.com/?source=github&medium=readme&content=platform-link">
-            Edge</a> /
-        <a href="../perplexity-omnibox/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../perplexity-omnibox/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
+            <img width=600 src="https://assets.perplexityomnibox.com/images/tiles/marquee/edge/tile625x250.png"></a>
     </blockquote>
 </details>
+
+<blockquote>
+    <a href="https://chrome.perplexityomnibox.com?source=github&medium=readme&content=platform-link">
+        <img height=13 src="https://assets.perplexityomnibox.com/images/icons/platforms/chrome/icon16.png"></a>
+    <a href="https://chrome.perplexityomnibox.com?source=github&medium=readme&content=platform-link">
+        Chrome</a> /
+    <a href="https://edge.perplexityomnibox.com/?source=github&medium=readme&content=platform-link">
+        <img height=12 src="https://assets.perplexityomnibox.com/images/icons/platforms/edge/icon16.png"></a>
+    <a href="https://edge.perplexityomnibox.com/?source=github&medium=readme&content=platform-link">
+        Edge</a> /
+    <a href="../perplexity-omnibox/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../perplexity-omnibox/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- Phind Omnibox -->
 
@@ -444,22 +475,23 @@
 </h3>
 
 <details>
-    <summary>Type @phind in browser address bar to get results from Phind AI.</summary><br>
-    <blockquote>
-        <a href="https://ff.phindomnibox.com?source=github&medium=readme&content=platform-link">
-            <img height=14 src="https://assets.phindomnibox.com/images/icons/platforms/firefox/icon16.png"></a>
-        <a href="https://ff.phindomnibox.com?source=github&medium=readme&content=platform-link">
-            Firefox</a> /
-        <a href="../phind-omnibox/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../phind-omnibox/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
-    </blockquote>
+    <summary>Type @phind in browser address bar to get results from Phind AI.</summary>
 </details>
+
+<blockquote>
+    <a href="https://ff.phindomnibox.com?source=github&medium=readme&content=platform-link">
+        <img height=14 src="https://assets.phindomnibox.com/images/icons/platforms/firefox/icon16.png"></a>
+    <a href="https://ff.phindomnibox.com?source=github&medium=readme&content=platform-link">
+        Firefox</a> /
+    <a href="../phind-omnibox/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../phind-omnibox/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- You.com Omnibox -->
 
@@ -470,21 +502,23 @@
 </h3>
 
 <details>
-    <summary>Type @you in browser address bar to get results from You.com AI.</summary><br>
+    <summary>Type @you in browser address bar to get results from You.com AI.</summary>
+</details>
+
+<blockquote>
     <a href="https://ff.youomnibox.com?source=github&medium=readme&content=platform-link">
         <img height=14 src="https://assets.youomnibox.com/images/icons/platforms/firefox/icon16.png"></a>
     <a href="https://ff.youomnibox.com?source=github&medium=readme&content=platform-link">
         Firefox</a> /
-        <a href="../you.com-omnibox/#readme">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
-        <a href="../you.com-omnibox/#readme">
-            Readme</a> /
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
-        <a href="https://github.com/adamlui/ai-apps/discussions">
-            Discuss</a>
-    </blockquote>
-</details>
+    <a href="../you.com-omnibox/#readme">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/white.svg"><img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/paper-sheet/black.svg"></picture></a>
+    <a href="../you.com-omnibox/#readme">
+        Readme</a> /
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        <picture><source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/white.svg"><img height=12 src="https://cdn.jsdelivr.net/gh/adamlui/ai-apps/images/icons/speech-bubble-square/black.svg"></picture></a>
+    <a href="https://github.com/adamlui/ai-apps/discussions">
+        Discuss</a>
+</blockquote>
 
 <!-- Footer -->
 
