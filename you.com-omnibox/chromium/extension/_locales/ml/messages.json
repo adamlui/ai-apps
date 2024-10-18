@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "You.com Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "You.com AI ഉപയോഗിച്ച് തിരയാൻ വിലാസ ബാറിൽ @you എന്ന് ടൈപ്പ് ചെയ്യുക" }
+  "appDesc": { "message": "You.com AI-യിൽ നിന്ന് ഫലങ്ങൾ ലഭിക്കുന്നതിന് വിലാസ ബാറിൽ @you എന്ന് ടൈപ്പ് ചെയ്യുക" }
 }

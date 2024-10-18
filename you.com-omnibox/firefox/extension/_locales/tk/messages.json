@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "You.com Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "You.com AI bilen barlamak üçin @you adres çaryşyna ýazyň" }
+  "appDesc": { "message": "You.com AI-den netije almak üçin adres setirine @you ýazyň" }
 }

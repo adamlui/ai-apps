@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Brave Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "དྲ་ངོས་འདི་ཡི་བཟོ་བཅོས་མཐའ་མ་འདི་ཡི་བཟོ་བཅོས་མཐའ་མ་ལ །" }
+  "appDesc": { "message": "ཁ་བྱང་ཕྲ་རིང་ནང་ @brave ཡིག་འཇུག་བྱས་ནས་ Brave AI ནས་གྲུབ་འབྲས་ཐོབ་ཐུབ།" }
 }

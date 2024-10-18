@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Perplexity Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Perplexity AI yordamida qidirish uchun manzil satriga @perplexity kiriting" }
+  "appDesc": { "message": "Perplexity AI natijalarini olish uchun manzil satriga @perplexity yozing" }
 }

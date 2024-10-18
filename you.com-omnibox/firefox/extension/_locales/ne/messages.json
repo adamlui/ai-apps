@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "You.com Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "You.com AI सँग खोजी गर्न ठेगाना पट्टीमा @you टाइप गर्नुहोस्" }
+  "appDesc": { "message": "You.com AI बाट नतिजा प्राप्त गर्न ठेगाना पट्टीमा @you टाइप गर्नुहोस्" }
 }

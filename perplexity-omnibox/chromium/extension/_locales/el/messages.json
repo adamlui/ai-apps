@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Perplexity Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Πληκτρολογήστε @perplexity στη γραμμή διευθύνσεων για αναζήτηση με/ αμηχανία AI" }
+  "appDesc": { "message": "Πληκτρολογήστε @perplexity στη γραμμή διευθύνσεων για να λάβετε αποτελέσματα από την Perplexity AI" }
 }

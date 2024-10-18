@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "You.com Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Írd be a (z) @you szót a címsávba, ha a You.com AI" }
+  "appDesc": { "message": "Írja be a @you parancsot a címsávba, hogy eredményeket kapjon a You.com AI-tól" }
 }

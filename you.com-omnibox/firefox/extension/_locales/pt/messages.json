@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "You.com Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Escreva @you na barra de endereço para pesquisar com You.com AI" }
+  "appDesc": { "message": "Digite @you na barra de endereço para obter resultados do You.com AI" }
 }

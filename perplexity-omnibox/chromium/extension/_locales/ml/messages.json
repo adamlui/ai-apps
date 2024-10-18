@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Perplexity Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "W/PERPLEXITY AI തിരയുന്നതിന് വിലാസ ബാറിൽ @perplexity എന്ന് ടൈപ്പ് ചെയ്യുക" }
+  "appDesc": { "message": "Perplexity AI-യിൽ നിന്ന് ഫലങ്ങൾ ലഭിക്കുന്നതിന് വിലാസ ബാറിൽ @perplexity എന്ന് ടൈപ്പ് ചെയ്യുക" }
 }

@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "You.com Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Zadejte @you do adresního řádku pro vyhledávání na You.com AI" }
+  "appDesc": { "message": "Chcete-li získat výsledky z You.com AI, zadejte @you do adresního řádku" }
 }

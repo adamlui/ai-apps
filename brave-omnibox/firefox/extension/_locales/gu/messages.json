@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Brave Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Brave AI સાથે શોધવા માટે એડ્રેસ બારમાં @brave લખો" }
+  "appDesc": { "message": "Brave AI માંથી પરિણામો મેળવવા માટે એડ્રેસ બારમાં @brave લખો" }
 }

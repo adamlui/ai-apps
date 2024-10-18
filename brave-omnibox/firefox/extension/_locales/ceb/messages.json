@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Brave Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "I-type ang @brave sa address bar aron mangita uban Kanimo.com" }
+  "appDesc": { "message": "Type @brave sa address bar aron makakuha mga sangputanan gikan sa Brave AI" }
 }

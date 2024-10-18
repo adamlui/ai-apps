@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Brave Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Brave AI-i kaudu otsimiseks sisesta @brave aadressiribale" }
+  "appDesc": { "message": "Tippige aadressiribale @brave, et saada Brave AI tulemusi" }
 }

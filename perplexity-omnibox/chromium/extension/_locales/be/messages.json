@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Perplexity Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Увядзіце @perplexity у адраснай радку для пошуку w/ Perplexity AI" }
+  "appDesc": { "message": "Увядзіце @perplexity у адраснай радку, каб атрымаць вынікі ад Perplexity AI" }
 }

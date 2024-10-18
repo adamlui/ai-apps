@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Brave Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Írd be a (z) @brave szót a címsávba, ha a Brave AI" }
+  "appDesc": { "message": "Írja be a @brave parancsot a címsávba, hogy eredményeket kapjon a Brave AI-tól" }
 }

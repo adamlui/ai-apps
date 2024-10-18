@@ -1,5 +1,5 @@
 {
   "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Πληκτρολογήστε @phind στη γραμμή διευθύνσεων για αναζήτηση με Phind AI" }
+  "appDesc": { "message": "Πληκτρολογήστε @phind στη γραμμή διευθύνσεων για να λάβετε αποτελέσματα από την Phind AI" }
 }

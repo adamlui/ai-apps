@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Brave Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Сиз менен издөө үчүн дарек тилкесинде @brave териңиз Brave AI" }
+  "appDesc": { "message": "Brave AI ден натыйжаларды алуу үчүн @brave дарек тилкесине жазыңыз" }
 }

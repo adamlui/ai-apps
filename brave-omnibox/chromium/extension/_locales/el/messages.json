@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Brave Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Πληκτρολογήστε @brave στη γραμμή διευθύνσεων για να κάνετε αναζήτηση με το Brave AI" }
+  "appDesc": { "message": "Πληκτρολογήστε @brave στη γραμμή διευθύνσεων για να λάβετε αποτελέσματα από την Brave AI" }
 }

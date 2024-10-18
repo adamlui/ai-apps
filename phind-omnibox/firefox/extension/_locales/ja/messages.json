@@ -1,5 +1,5 @@
 {
   "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "アドレスバーに@phind AIで検索します" }
+  "appDesc": { "message": "アドレスバーに @phind と入力して、Phind AI から結果を取得します" }
 }

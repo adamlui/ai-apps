@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "You.com Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "You.com AI དང་གཅིག་ཁར་འཚོལ་ཞིབ་འབད་ནིའི་དོན་ལུ་ ཁ་བྱང་ཕྲ་རིང་ནང་ @you ཡིག་དཔར་རྐྱབས།" }
+  "appDesc": { "message": "@you འདི་ཁ་བྱང་གི་ཐིག་ཁྲམ་ནང་བཙུགས་ཏེ་ You.com AI ལས་ གྲུབ་འབྲས་ཚུ་ཐོབ་ཚུགས།" }
 }

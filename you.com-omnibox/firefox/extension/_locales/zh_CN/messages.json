@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "You.com Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "刘展鹏 (Adam Lui)" },
-  "appDesc": { "message": "在地址栏中输入 @you You.com AI 进行搜索" }
+  "appDesc": { "message": "在地址栏中输入 @you 以获取 You.com AI 的结果" }
 }

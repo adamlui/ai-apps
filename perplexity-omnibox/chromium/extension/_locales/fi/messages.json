@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Perplexity Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Kirjoita @perplexity osoitepalkkiin hakeaksesi häiriön tekoälyllä" }
+  "appDesc": { "message": "KirKirjoita osoitepalkkiin @perplexity saadaksesi tulokset Perplexity AI" }
 }

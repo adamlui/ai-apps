@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Perplexity Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "刘展鹏 (Adam Lui)" },
-  "appDesc": { "message": "在地址栏中输入 @perplexity Perplexity AI 进行搜索" }
+  "appDesc": { "message": "在地址栏中输入 @perplexity 以获取 Perplexity AI 的结果" }
 }

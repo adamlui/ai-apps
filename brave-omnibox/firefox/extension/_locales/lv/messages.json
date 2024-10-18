@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Brave Omnibox" },
+  "appName": { "message": "Phind Omnibox" },
   "appAuthor": { "message": "Adam Lui" },
-  "appDesc": { "message": "Ierakstiet @brave adreses joslā, lai meklētu vietnē Brave AI" }
+  "appDesc": { "message": "Ierakstiet @brave adreses joslā, lai iegūtu rezultātus no Brave AI" }
 }
