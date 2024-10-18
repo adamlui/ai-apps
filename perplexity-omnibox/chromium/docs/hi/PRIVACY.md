@@ -16,4 +16,4 @@ Perplexity Omnibox किसी भी उपयोगकर्ता डेट�
 
 ## अपडेट
 
-इस नीति में संशोधन देखने के लिए, https://github.com/adamlui/ai-apps/commits/main/perplexity-omnibox/chromium/docs/hi/PRIVACY.md पर जाएं
+इस नीति में संशोधन देखने के लिए, https://github.com/adamlui/ai-web-extensions/commits/main/perplexity-omnibox/chromium/docs/hi/PRIVACY.md पर जाएं

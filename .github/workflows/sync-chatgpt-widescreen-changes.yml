@@ -7,19 +7,19 @@ on:
 
 jobs:
   build:
-    if: (github.repository == 'adamlui/ai-apps') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
+    if: (github.repository == 'adamlui/ai-web-extensions') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
     runs-on: ubuntu-latest
     env:
       TZ: PST8PDT
 
     steps:
 
-      - name: Checkout adamlui/ai-apps
+      - name: Checkout adamlui/ai-web-extensions
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/ai-apps
-          path: adamlui/ai-apps
+          repository: adamlui/ai-web-extensions
+          path: adamlui/ai-web-extensions
           fetch-depth: 2
 
       - name: Checkout adamlui/chatgpt-widescreen
@@ -38,7 +38,7 @@ jobs:
 
       - name: Sync _locales/ between chatgpt-widescreen/<chrome|firefox>/extension/
         run: |
-          cd ${{ github.workspace }}/adamlui/ai-apps/chatgpt-widescreen
+          cd ${{ github.workspace }}/adamlui/ai-web-extensions/chatgpt-widescreen
           ff_dir="firefox/extension/_locales"
           chrome_dir="chrome/extension/_locales"
           
@@ -67,13 +67,13 @@ jobs:
       - name: Sync chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
-            ${{ github.workspace }}/adamlui/ai-apps/chatgpt-widescreen/ \
+            ${{ github.workspace }}/adamlui/ai-web-extensions/chatgpt-widescreen/ \
             ${{ github.workspace }}/adamlui/chatgpt-widescreen/
 
       - name: Sync chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
         run: |
           rsync -avhr --delete \
-            ${{ github.workspace }}/adamlui/ai-apps/chatgpt-widescreen/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/ai-web-extensions/chatgpt-widescreen/greasemonkey/ \
             ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
       - name: Escape backticks in commit msg
@@ -92,13 +92,13 @@ jobs:
           git config --global user.email "auto-sync@kudoai.com"
           git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
 
-      - name: Push changes to adamlui/ai-apps
+      - name: Push changes to adamlui/ai-web-extensions
         if: env.locales_updated == 'true'
         run: |
-          cd ${{ github.workspace }}/adamlui/ai-apps
+          cd ${{ github.workspace }}/adamlui/ai-web-extensions
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-web-extensions\`]" || true
           git push
 
       - name: Push changes to adamlui/chatgpt-widescreen
@@ -106,7 +106,7 @@ jobs:
           cd ${{ github.workspace }}/adamlui/chatgpt-widescreen
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-web-extensions\`]" || true
           git push
 
       - name: Push changes to adamlui/userscripts
@@ -114,5 +114,5 @@ jobs:
           cd ${{ github.workspace }}/adamlui/userscripts
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps/chatgpt-widescreen\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-web-extensions/chatgpt-widescreen\`]" || true
           git push

@@ -100,7 +100,7 @@
   "alert_switchingOff": { "message": "Uitschakelen" },
   "notif_copiedToClipboard": { "message": "Gekopieerd naar klembord" },
   "btnLabel_sendQueryToApp": { "message": "Stuur zoekopdracht naar GoogleGPT" },
-  "btnLabel_moreApps": { "message": "Meer ai-apps" },
+  "btnLabel_moreApps": { "message": "Meer ai-web-extensions" },
   "btnLabel_leaveReview": { "message": "Beoordeling Plaatsen" },
   "btnLabel_rateUs": { "message": "Beoordeel Ons" },
   "btnLabel_getSupport": { "message": "Neem contact op" },

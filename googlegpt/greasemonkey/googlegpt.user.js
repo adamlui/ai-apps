@@ -420,7 +420,7 @@
             gitHub: 'https://github.com/KudoAI/googlegpt',
             greasyFork: 'https://greasyfork.org/scripts/478597-googlegpt',
             publisher: 'https://www.kudoai.com',
-            relatedApps: 'https://github.com/adamlui/ai-apps',
+            relatedApps: 'https://github.com/adamlui/ai-web-extensions',
             review: { greasyFork: 'https://greasyfork.org/scripts/478597-googlegpt/feedback#post-discussion' },
             support: 'https://support.googlegpt.io'
         },

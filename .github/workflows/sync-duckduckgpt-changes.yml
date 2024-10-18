@@ -7,19 +7,19 @@ on:
 
 jobs:
   build:
-    if: (github.repository == 'adamlui/ai-apps') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
+    if: (github.repository == 'adamlui/ai-web-extensions') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
     runs-on: ubuntu-latest
     env:
       TZ: PST8PDT
 
     steps:
 
-      - name: Checkout adamlui/ai-apps
+      - name: Checkout adamlui/ai-web-extensions
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/ai-apps
-          path: adamlui/ai-apps
+          repository: adamlui/ai-web-extensions
+          path: adamlui/ai-web-extensions
 
       - name: Checkout KudoAI/duckduckgpt
         uses: actions/checkout@v4
@@ -38,7 +38,7 @@ jobs:
       - name: Sync docs between root & greasemonkey/
         run: |
           shopt -s globstar
-          cd ${{ github.workspace }}/adamlui/ai-apps/duckduckgpt
+          cd ${{ github.workspace }}/adamlui/ai-web-extensions/duckduckgpt
           loc_prefixes=( "root" "gm" )
 
           # Sync LICENSE.md
@@ -74,13 +74,13 @@ jobs:
       - name: Sync duckduckgpt/ to KudoAI/duckduckgpt/
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
-            ${{ github.workspace }}/adamlui/ai-apps/duckduckgpt/ \
+            ${{ github.workspace }}/adamlui/ai-web-extensions/duckduckgpt/ \
             ${{ github.workspace }}/KudoAI/duckduckgpt/
 
       - name: Sync duckduckgpt/greasemonkey/ to adamlui/userscripts/chatgpt/duckduckgpt/
         run: |
           rsync -avhr --delete \
-            ${{ github.workspace }}/adamlui/ai-apps/duckduckgpt/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/ai-web-extensions/duckduckgpt/greasemonkey/ \
             ${{ github.workspace }}/adamlui/userscripts/chatgpt/duckduckgpt/
 
       - name: Escape backticks in commit msg
@@ -99,9 +99,9 @@ jobs:
           git config --global user.email "auto-sync@kudoai.com"
           git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
 
-      - name: Push changes to adamlui/ai-apps
+      - name: Push changes to adamlui/ai-web-extensions
         run: |
-          cd ${{ github.workspace }}/adamlui/ai-apps
+          cd ${{ github.workspace }}/adamlui/ai-web-extensions
           git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`${{ env.sync_src }}\`]" || true
@@ -112,7 +112,7 @@ jobs:
           cd ${{ github.workspace }}/KudoAI/duckduckgpt
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-web-extensions\`]" || true
           git push
 
       - name: Push changes to adamlui/userscripts
@@ -120,5 +120,5 @@ jobs:
           cd ${{ github.workspace }}/adamlui/userscripts
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps/duckduckgpt\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-web-extensions/duckduckgpt\`]" || true
           git push

@@ -16,4 +16,4 @@ Brave Omnibox does not collect nor store any user data. No information is shared
 
 ## Updates
 
-To view revisions to this policy, visit https://github.com/adamlui/ai-apps/commits/main/brave-omnibox/docs/PRIVACY.md
+To view revisions to this policy, visit https://github.com/adamlui/ai-web-extensions/commits/main/brave-omnibox/docs/PRIVACY.md

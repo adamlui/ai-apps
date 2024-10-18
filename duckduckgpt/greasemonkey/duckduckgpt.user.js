@@ -228,7 +228,7 @@
             gitHub: 'https://github.com/KudoAI/duckduckgpt',
             greasyFork: 'https://greasyfork.org/scripts/459849-duckduckgpt',
             publisher: 'https://www.kudoai.com',
-            relatedApps: 'https://github.com/adamlui/ai-apps',
+            relatedApps: 'https://github.com/adamlui/ai-web-extensions',
             review: {
                 alternativeTo: 'https://alternativeto.net/software/duckduckgpt/about/',
                 greasyFork: 'https://greasyfork.org/scripts/459849-duckduckgpt/feedback#post-discussion',

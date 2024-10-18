@@ -75,7 +75,7 @@
   "alert_switchingOn": { "message": "SÅDAN TÆNDES DET" },
   "alert_switchingOff": { "message": "Slukning" },
   "notif_copiedToClipboard": { "message": "Kopieret til udklipsholder" },
-  "btnLabel_moreApps": { "message": "Flere ai-apps" },
+  "btnLabel_moreApps": { "message": "Flere ai-web-extensions" },
   "btnLabel_leaveReview": { "message": "Skriv en anmeldelse" },
   "btnLabel_rateUs": { "message": "Bedøm os" },
   "btnLabel_getSupport": { "message": "Få hjælp" },

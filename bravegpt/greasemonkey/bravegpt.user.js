@@ -228,7 +228,7 @@
             gitHub: 'https://github.com/KudoAI/bravegpt',
             greasyFork: 'https://greasyfork.org/scripts/462440-bravegpt',
             publisher: 'https://www.kudoai.com',
-            relatedApps: 'https://github.com/adamlui/ai-apps',
+            relatedApps: 'https://github.com/adamlui/ai-web-extensions',
             review: {
                 alternativeTo: 'https://alternativeto.net/software/bravegpt/about/',
                 greasyFork: 'https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion',

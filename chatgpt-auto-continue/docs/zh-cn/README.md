@@ -125,7 +125,7 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 
 ## 🤖 更多 ChatGPT 应用
 
-如需更多精彩的 ChatGPT 应用，请访问：https://github.com/adamlui/ai-apps
+如需更多精彩的 ChatGPT 应用，请访问：https://github.com/adamlui/ai-web-extensions
 <br><br>
 
 ## 📜 相关脚本

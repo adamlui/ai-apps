@@ -11,12 +11,12 @@ jobs:
       TZ: PST8PDT
 
     steps:
-      - name: Checkout adamlui/ai-apps
+      - name: Checkout adamlui/ai-web-extensions
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/ai-apps
-          path: adamlui/ai-apps
+          repository: adamlui/ai-web-extensions
+          path: adamlui/ai-web-extensions
 
       - name: Fetch/sum user + JSD request counts
         run: |
@@ -57,7 +57,7 @@ jobs:
           )
 
           jsd_gh_repos=( # for jsDelivr request counts
-            "adamlui/ai-apps" "adamlui/autoclear-chatgpt-history" "adamlui/brave-omnibox"
+            "adamlui/ai-web-extensions" "adamlui/autoclear-chatgpt-history" "adamlui/brave-omnibox"
             "KudoAI/bravegpt" "adamlui/chatgpt-auto-continue" "adamlui/chatgpt-auto-refresh"
             "adamlui/chatgpt-auto-talk" "adamlui/chatgpt-infinity" "adamlui/chatgpt-widescreen"
             "KudoAI/duckduckgpt" "KudoAI/googlegpt" "adamlui/perplexity-omnibox"
@@ -182,7 +182,7 @@ jobs:
 
       - name: Update README shields
         run: |
-          cd ${{ github.workspace }}/adamlui/ai-apps
+          cd ${{ github.workspace }}/adamlui/ai-web-extensions
 
           total_users="${{ env.total_users }}"
           total_requests="${{ env.total_requests }}"
@@ -239,10 +239,10 @@ jobs:
           git config --global user.email "auto-sync@kudoai.com"
           git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
 
-      - name: Push changes to adamlui/ai-apps
+      - name: Push changes to adamlui/ai-web-extensions
         if: env.shields_updated == 'true'
         run: |
-          cd ${{ github.workspace }}/adamlui/ai-apps
+          cd ${{ github.workspace }}/adamlui/ai-web-extensions
           git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "${{ env.commit_msg }}" || true

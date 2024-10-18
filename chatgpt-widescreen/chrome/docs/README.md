@@ -120,7 +120,7 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 <br>
 
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) /
-[More ChatGPT add-ons](https://github.com/adamlui/ai-apps)
+[More ChatGPT add-ons](https://github.com/adamlui/ai-web-extensions)
 
 </div>
 
@@ -183,7 +183,7 @@ This extension exists thanks to code, translations, issues & ideas from the foll
 
 ## 🤖 More ChatGPT apps
 
-For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
+For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-web-extensions
 <br><br>
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
@@ -211,5 +211,5 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
-<a href="https://github.com/adamlui/ai-apps">**More ChatGPT add-ons**</a> /
+<a href="https://github.com/adamlui/ai-web-extensions">**More ChatGPT add-ons**</a> /
 <a href="#top">Back to top ↑</a>

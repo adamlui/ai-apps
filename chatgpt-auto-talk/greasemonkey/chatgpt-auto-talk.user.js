@@ -265,7 +265,7 @@
             },
             gitHub: 'https://github.com/adamlui/chatgpt-auto-talk',
             greasyFork: 'https://greasyfork.org/en/scripts/500940-chatgpt-auto-talk',
-            relatedApps: 'https://github.com/adamlui/ai-apps',
+            relatedApps: 'https://github.com/adamlui/ai-web-extensions',
             review: { greasyFork: 'https://greasyfork.org/en/scripts/500940-chatgpt-auto-talk/feedback#post-discussion' },
             support: 'https://support.chatgptautotalk.com'
         },

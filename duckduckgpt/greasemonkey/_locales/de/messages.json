@@ -100,7 +100,7 @@
   "alert_switchingOff": { "message": "Abschaltung" },
   "notif_copiedToClipboard": { "message": "In Zwischenablage kopiert" },
   "btnLabel_sendQueryToApp": { "message": "Suchanfrage an DuckDuckGPT senden" },
-  "btnLabel_moreApps": { "message": "Weitere ai-apps" },
+  "btnLabel_moreApps": { "message": "Weitere ai-web-extensions" },
   "btnLabel_leaveReview": { "message": "Hinterlasse eine Bewertung" },
   "btnLabel_rateUs": { "message": "Bewerten Sie uns" },
   "btnLabel_getSupport": { "message": "Support erhalten" },

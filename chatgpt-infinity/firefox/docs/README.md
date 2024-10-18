@@ -86,7 +86,7 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 <br>
 
 [Discuss](https://github.com/adamlui/chatgpt-infinity/discussions) /
-[More ChatGPT add-ons](https://github.com/adamlui/ai-apps)
+[More ChatGPT add-ons](https://github.com/adamlui/ai-web-extensions)
 
 </div>
 
@@ -115,7 +115,7 @@ This project exists thanks to code, testing, issues, translations & ideas from t
 
 ## 🤖 More ChatGPT apps
 
-For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
+For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-web-extensions
 <br><br>
 
 ## 📜 Related apps
@@ -143,5 +143,5 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/ai-apps
 
 <img height=6px width="100%" src="https://media.chatgptinfinity.com/images/separators/gradient-aqua.png">
   
-<a href="https://github.com/adamlui/ai-apps">**More ChatGPT add-ons**</a> / 
+<a href="https://github.com/adamlui/ai-web-extensions">**More ChatGPT add-ons**</a> / 
 <a href="#top">Back to top ↑</a>

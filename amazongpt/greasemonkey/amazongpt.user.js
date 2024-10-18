@@ -104,7 +104,7 @@
             gitHub: 'https://github.com/KudoAI/amazongpt',
             greasyFork: 'https://greasyfork.org/scripts/500663-amazongpt',
             publisher: 'https://www.kudoai.com',
-            relatedApps: 'https://github.com/adamlui/ai-apps',
+            relatedApps: 'https://github.com/adamlui/ai-web-extensions',
             review: { greasyFork: 'https://greasyfork.org/scripts/500663-amazongpt/feedback#post-discussion' }
         },
         latestAssetCommitHash: '8def87a' // for cached messages.json

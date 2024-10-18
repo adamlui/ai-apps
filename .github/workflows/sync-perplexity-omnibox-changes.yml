@@ -6,19 +6,19 @@ on:
 
 jobs:
   build:
-    if: (github.repository == 'adamlui/ai-apps') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
+    if: (github.repository == 'adamlui/ai-web-extensions') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
     runs-on: ubuntu-latest
     env:
       TZ: PST8PDT
 
     steps:
 
-      - name: Checkout adamlui/ai-apps
+      - name: Checkout adamlui/ai-web-extensions
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/ai-apps
-          path: adamlui/ai-apps
+          repository: adamlui/ai-web-extensions
+          path: adamlui/ai-web-extensions
 
       - name: Checkout adamlui/perplexity-omnibox
         uses: actions/checkout@v4
@@ -30,7 +30,7 @@ jobs:
       - name: Sync perplexity-omnibox/ to adamlui/perplexity-omnibox/
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
-            ${{ github.workspace }}/adamlui/ai-apps/perplexity-omnibox/ \
+            ${{ github.workspace }}/adamlui/ai-web-extensions/perplexity-omnibox/ \
             ${{ github.workspace }}/adamlui/perplexity-omnibox/
 
       - name: Escape backticks in commit msg
@@ -49,12 +49,12 @@ jobs:
           git config --global user.email "auto-sync@kudoai.com"
           git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
 
-      - name: Push changes to adamlui/ai-apps
+      - name: Push changes to adamlui/ai-web-extensions
         run: |
-          cd ${{ github.workspace }}/adamlui/ai-apps
+          cd ${{ github.workspace }}/adamlui/ai-web-extensions
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-web-extensions\`]" || true
           git push
 
       - name: Push changes to adamlui/perplexity-omnibox
@@ -62,5 +62,5 @@ jobs:
           cd ${{ github.workspace }}/adamlui/perplexity-omnibox
           git pull # again to sync w/ concurrent workflow updates
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-apps\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`adamlui/ai-web-extensions\`]" || true
           git push

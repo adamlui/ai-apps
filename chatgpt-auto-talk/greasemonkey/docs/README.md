@@ -79,7 +79,7 @@ This project exists thanks to code, testing, issues, translations & ideas from t
 
 ## 🤖 More ChatGPT apps
 
-For even more epic ChatGPT apps, go here: https://github.com/adamlui/ai-apps
+For even more epic ChatGPT apps, go here: https://github.com/adamlui/ai-web-extensions
 <br><br>
 
 ## 📜 Related scripts
